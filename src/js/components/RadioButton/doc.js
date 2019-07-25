@@ -68,7 +68,7 @@ export const themeDoc = {
     defaultValue: '100%',
   },
   'radioButton.extend': {
-    description: 'ny additional style for the Radio Button.',
+    description: 'Any additional style for the RadioButton.',
     type: 'string | (props) => {}',
   },
   'radioButton.gap': {
