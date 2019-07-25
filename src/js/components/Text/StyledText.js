@@ -42,6 +42,10 @@ const weightStyle = css`
   font-weight: ${props => props.weight};
 `;
 
+const wordBreakStyle = css`
+  word-break: ${props => props.wordBreak};
+`;
+
 const StyledText = styled.span`
   ${genericStyles}
   ${props => sizeStyle(props)}
@@ -49,6 +53,7 @@ const StyledText = styled.span`
   ${props => props.truncate && truncateStyle}
   ${props => props.colorProp && colorStyle}
   ${props => props.weight && weightStyle}
+  ${props => props.wordBreak && wordBreakStyle}
 
   ${props => props.theme.text && props.theme.text.extend}
 `;

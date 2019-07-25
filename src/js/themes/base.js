@@ -227,6 +227,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       font: {
         ...fontSizing(0),
         // face: undefined,
+        // family: undefined,
       },
       hover: {
         background: {
@@ -343,7 +344,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         current: Subtract,
         next: Next,
         previous: Previous,
-        // color: undefined,
+        // color: { dark: undefined, light: undefined },
+      },
+      animation: {
+        duration: 1000,
+      },
+      disabled: {
+        icons: {
+          // color: { dark: undefined, light: undefined },
+        },
       },
     },
     chart: {
@@ -450,30 +459,33 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dataTable: {
-      header: {},
       groupHeader: {
-        border: { side: 'bottom', size: 'xsmall' },
-        fill: 'vertical',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
           dark: 'dark-2',
           light: 'light-2',
         },
+        border: { side: 'bottom', size: 'xsmall' },
+        fill: 'vertical',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
       },
+      groupEnd: {
+        border: { side: 'bottom', size: 'xsmall' },
+      },
+      header: {},
       icons: {
         ascending: FormDown,
         contract: FormUp,
         descending: FormUp,
         expand: FormDown,
       },
-      resize: {
-        border: {
-          side: 'right',
-          color: 'border',
-        },
-      },
       primary: {
         weight: 'bold',
+      },
+      resize: {
+        border: {
+          color: 'border',
+          side: 'right',
+        },
       },
     },
     diagram: {
@@ -690,13 +702,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       control: {
         // extend: undefined,
+        // open: undefined,
       },
       icons: {
         // color: { dark: undefined, light: undefined },
+        margin: { horizontal: 'small' },
         down: FormDown,
       },
       options: {
-        box: {
+        container: {
           align: 'start',
           pad: 'small',
         },

@@ -44,8 +44,9 @@ describe('Box', () => {
   test('wrap', () => {
     const component = renderer.create(
       <Grommet>
-        <Box wrap />
-        <Box wrap={false} />
+        {[true, false, 'reverse'].map(wrap => (
+          <Box key={`${wrap}`} wrap={wrap} />
+        ))}
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -118,6 +119,12 @@ describe('Box', () => {
         <Box background="light-1" />
         <Box background="dark-1" />
         <Box background="status-critical" />
+        <Box background="#aabbcc" />
+        <Box background="#def" />
+        <Box background="rgb(90, 80, 50)" />
+        <Box background="rgba(200, 100, 150, 0.8)" />
+        <Box background="hsl(10, 50%, 20%)" />
+        <Box background="hsla(10, 50%, 70%, 0.7)" />
         <Box background="url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)" />
         <Box
           background={{
@@ -159,6 +166,13 @@ describe('Box', () => {
             image:
               'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
             repeat: 'repeat',
+          }}
+        />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            opacity: 0.5,
           }}
         />
       </Grommet>,

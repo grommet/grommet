@@ -158,10 +158,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }
 ```
 
@@ -235,6 +236,14 @@ Custom messages. Used for accessibility by screen readers. Defaults to `{
   closeMenu: string,
   openMenu: string
 }
+```
+
+**open**
+
+Whether the state of the component should be open
+
+```
+boolean
 ```
 
 **size**

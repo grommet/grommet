@@ -148,6 +148,7 @@ Placeholder to use when no value is provided.
 ```
 string
 node
+element
 ```
 
 **plain**
@@ -290,6 +291,16 @@ Defaults to
 **textInput.extend**
 
 Any additional style for TextInput. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**textInput.container.extend**
+
+Any additional style for TextInput container. Expects `string | (props) => {}`.
 
 Defaults to
 

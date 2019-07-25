@@ -93,7 +93,78 @@ export const doc = DataTable => {
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),
+    step: PropTypes.number
+      .description('How many items to render at a time.')
+      .defaultValue(50),
   };
 
   return DocumentedDataTable;
+};
+
+export const themeDoc = {
+  'dataTable.groupHeader.background': {
+    description: 'The background color of the group header.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'dark-2', light: 'light-2' }",
+  },
+  'dataTable.groupHeader.border.side': {
+    description: 'The border side rendered for the group header.',
+    type: 'string',
+    defaultValue: 'bottom',
+  },
+  'dataTable.groupHeader.border.size': {
+    description: 'The border size of the group header border.',
+    type: 'string',
+    defaultValue: 'xsmall',
+  },
+  'dataTable.groupHeader.fill': {
+    description: 'Whether the height should fill the group header.',
+    type: 'string',
+    defaultValue: 'vertical',
+  },
+  'dataTable.groupHeader.pad': {
+    description: 'The pad used for the group header.',
+    type: 'string | object',
+    defaultValue: "{ horizontal: 'small', vertical: 'xsmall' }",
+  },
+  'dataTable.header': {
+    description: 'Styles for the header.',
+    type: 'object',
+    defaultValue: '{}',
+  },
+  'dataTable.icons.ascending': {
+    description: 'The ascending icon.',
+    type: 'React.Element',
+    defaultValue: '<FormDown />',
+  },
+  'dataTable.icons.contract': {
+    description: 'The contract icon.',
+    type: 'React.Element',
+    defaultValue: '<FormUp />',
+  },
+  'dataTable.icons.descending': {
+    description: 'The descending icon.',
+    type: 'React.Element',
+    defaultValue: '<FormUp />',
+  },
+  'dataTable.icons.expand': {
+    description: 'The expand icon.',
+    type: 'React.Element',
+    defaultValue: '<FormDown />',
+  },
+  'dataTable.primary.weight': {
+    description: 'The font weight for primary cells.',
+    type: 'string',
+    defaultValue: 'bold',
+  },
+  'dataTable.resize.border.color': {
+    description: 'The border color for resize.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'border',
+  },
+  'dataTable.resize.border.side': {
+    description: 'The border side used for resize.',
+    type: 'string',
+    defaultValue: 'right',
+  },
 };

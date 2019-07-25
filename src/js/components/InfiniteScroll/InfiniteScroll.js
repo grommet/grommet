@@ -114,8 +114,8 @@ class InfiniteScroll extends PureComponent {
       const endRect = findDOMNode(
         this.lastPageItemRef.current,
       ).getBoundingClientRect();
-      /* eslint-enable react/no-find-dom-node */
-      const nextPageHeight = endRect.y + endRect.height - beginRect.y;
+
+      const nextPageHeight = endRect.top + endRect.height - beginRect.top;
       // Check if the items are arranged in a single column or not.
       const multiColumn = nextPageHeight / step < endRect.height;
       const pageArea = endRect.height * endRect.width * step;

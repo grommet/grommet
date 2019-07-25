@@ -1258,8 +1258,8 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
-  background-size: cover;
+  background: #aabbcc;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1277,11 +1277,7 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  color: #444444;
+  background: #def;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1300,6 +1296,124 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  background: rgb(90,80,50);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background: rgba(200,100,150,0.8);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background: hsl(10,50%,20%);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background: hsla(10,50%,70%,0.7);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
+  background-size: cover;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #444444;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
@@ -1314,7 +1428,7 @@ exports[`Box background 1`] = `
   padding: 0px;
 }
 
-.c10 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1336,7 +1450,7 @@ exports[`Box background 1`] = `
   padding: 0px;
 }
 
-.c11 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1360,7 +1474,7 @@ exports[`Box background 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1382,7 +1496,7 @@ exports[`Box background 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1393,6 +1507,28 @@ exports[`Box background 1`] = `
   margin: 0px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: repeat;
+  background-position: center center;
+  background-size: cover;
+  color: inherit;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   color: inherit;
@@ -1556,6 +1692,90 @@ exports[`Box background 1`] = `
 
 @media only screen and (max-width:768px) {
   .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c20 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c20 {
     padding: 0px;
   }
 }
@@ -1601,6 +1821,27 @@ exports[`Box background 1`] = `
   />
   <div
     className="c13"
+  />
+  <div
+    className="c14"
+  />
+  <div
+    className="c15"
+  />
+  <div
+    className="c16"
+  />
+  <div
+    className="c17"
+  />
+  <div
+    className="c18"
+  />
+  <div
+    className="c19"
+  />
+  <div
+    className="c20"
   />
 </div>
 `;
@@ -5896,6 +6137,26 @@ exports[`Box wrap 1`] = `
   flex-wrap: wrap;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
@@ -5916,6 +6177,18 @@ exports[`Box wrap 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     padding: 0px;
   }
 }
@@ -5928,6 +6201,9 @@ exports[`Box wrap 1`] = `
   />
   <div
     className="c2"
+  />
+  <div
+    className="c3"
   />
 </div>
 `;

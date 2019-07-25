@@ -238,9 +238,148 @@ Whether to allow the user to sort columns.
 ```
 boolean
 ```
+
+**step**
+
+How many items to render at a time. Defaults to `50`.
+
+```
+number
+```
   
 ## Intrinsic element
 
 ```
 table
+```
+## Theme
+  
+**dataTable.groupHeader.background**
+
+The background color of the group header. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'dark-2', light: 'light-2' }
+```
+
+**dataTable.groupHeader.border.side**
+
+The border side rendered for the group header. Expects `string`.
+
+Defaults to
+
+```
+bottom
+```
+
+**dataTable.groupHeader.border.size**
+
+The border size of the group header border. Expects `string`.
+
+Defaults to
+
+```
+xsmall
+```
+
+**dataTable.groupHeader.fill**
+
+Whether the height should fill the group header. Expects `string`.
+
+Defaults to
+
+```
+vertical
+```
+
+**dataTable.groupHeader.pad**
+
+The pad used for the group header. Expects `string | object`.
+
+Defaults to
+
+```
+{ horizontal: 'small', vertical: 'xsmall' }
+```
+
+**dataTable.header**
+
+Styles for the header. Expects `object`.
+
+Defaults to
+
+```
+{}
+```
+
+**dataTable.icons.ascending**
+
+The ascending icon. Expects `React.Element`.
+
+Defaults to
+
+```
+<FormDown />
+```
+
+**dataTable.icons.contract**
+
+The contract icon. Expects `React.Element`.
+
+Defaults to
+
+```
+<FormUp />
+```
+
+**dataTable.icons.descending**
+
+The descending icon. Expects `React.Element`.
+
+Defaults to
+
+```
+<FormUp />
+```
+
+**dataTable.icons.expand**
+
+The expand icon. Expects `React.Element`.
+
+Defaults to
+
+```
+<FormDown />
+```
+
+**dataTable.primary.weight**
+
+The font weight for primary cells. Expects `string`.
+
+Defaults to
+
+```
+bold
+```
+
+**dataTable.resize.border.color**
+
+The border color for resize. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+border
+```
+
+**dataTable.resize.border.side**
+
+The border side used for resize. Expects `string`.
+
+Defaults to
+
+```
+right
 ```

@@ -45,6 +45,7 @@ class SelectContainer extends Component {
     searchPlaceholder: undefined,
     selected: undefined,
     value: '',
+    replace: true,
   };
 
   optionRefs = {};
@@ -346,16 +347,22 @@ class SelectContainer extends Component {
       dropHeight,
       emptySearchMessage,
       id,
+      onMore,
       onKeyDown,
       onSearch,
       options,
       searchPlaceholder,
       theme,
+      replace,
     } = this.props;
     const { activeIndex, search } = this.state;
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
+    const selectOptionsStyle = {
+      ...theme.select.options.box,
+      ...theme.select.options.container,
+    };
 
     return (
       <Keyboard
@@ -390,7 +397,12 @@ class SelectContainer extends Component {
             overflow="auto"
           >
             {options.length > 0 ? (
-              <InfiniteScroll items={options} step={theme.select.step} replace>
+              <InfiniteScroll
+                items={options}
+                step={theme.select.step}
+                onMore={onMore}
+                replace={replace}
+              >
                 {(option, index) => {
                   const isDisabled = this.isDisabled(index);
                   const isSelected = this.isSelected(index);
@@ -421,7 +433,7 @@ class SelectContainer extends Component {
                         })
                       ) : (
                         <OptionBox
-                          {...theme.select.options.box}
+                          {...selectOptionsStyle}
                           selected={isSelected}
                         >
                           <Text {...theme.select.options.text}>
@@ -439,7 +451,7 @@ class SelectContainer extends Component {
                 disabled
                 option={emptySearchMessage}
               >
-                <OptionBox {...theme.select.options.box}>
+                <OptionBox {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
                     {emptySearchMessage}
                   </Text>

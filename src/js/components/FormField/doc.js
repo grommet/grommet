@@ -17,8 +17,11 @@ export const doc = FormField => {
     .intrinsicElement('div');
 
   DocumentedFormField.propTypes = {
-    component: PropTypes.func.description(
-      `The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.`,
+    component: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.object,
+    ]).description(
+      `The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  `,
     ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any error text describing issues with the field',
@@ -47,7 +50,8 @@ export const doc = FormField => {
       }),
       PropTypes.func,
     ]).description(
-      `Validation rule. Provide a regular expression or a function. If a
+      `Validation rule when used within a grommet Form. Provide a regular
+      expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message

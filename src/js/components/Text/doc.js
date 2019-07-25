@@ -32,12 +32,14 @@ export const doc = Text => {
         'xxlarge',
       ]),
       PropTypes.string,
-    ]).description(
-      `The font size and line height are primarily driven by the chosen tag. But, it can
+    ])
+      .description(
+        `The font size and line height are primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
 adjustments.`,
-    ),
+      )
+      .defaultValue('medium'),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
          of indicating the DOM tag via the 'as' property.`,
@@ -58,6 +60,16 @@ is too long to all fit.`,
       PropTypes.oneOf(['normal', 'bold']),
       PropTypes.number,
     ]).description('Font weight'),
+    wordBreak: PropTypes.oneOf([
+      'normal',
+      'break-all',
+      'keep-all',
+      'break-word',
+    ])
+      .description(
+        'Whether words should break when reaching the end of a line.',
+      )
+      .defaultValue('normal'),
   };
 
   return DocumentedText;

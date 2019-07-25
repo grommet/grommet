@@ -11,30 +11,43 @@ import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
 
 const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
-  const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
+  let content;
   if (onToggle) {
-    return (
-      <TableCell size="xxsmall" plain verticalAlign="top">
-        <Button
-          fill
-          a11yTitle={expanded ? 'collapse' : 'expand'}
-          hoverIndicator
-          disabled={!onToggle}
-          onClick={onToggle}
-        >
-          <Box
-            {...{ ...theme.table[context], ...theme.dataTable[context] }}
-            {...rest}
-            align="center"
-            pad="xsmall"
-          >
-            <ExpandIcon color={normalizeColor('border', theme)} />
-          </Box>
-        </Button>
-      </TableCell>
+    const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
+    content = <ExpandIcon color={normalizeColor('border', theme)} />;
+  }
+  content = (
+    <Box
+      {...{ ...theme.table[context], ...theme.dataTable[context] }}
+      {...rest}
+      align="center"
+      pad="xsmall"
+    >
+      {content}
+    </Box>
+  );
+  if (onToggle) {
+    content = (
+      <Button
+        fill
+        a11yTitle={expanded ? 'collapse' : 'expand'}
+        hoverIndicator
+        disabled={!onToggle}
+        onClick={onToggle}
+      >
+        {content}
+      </Button>
     );
   }
-  return <TableCell size="xxsmall" verticalAlign="top" />;
+  return (
+    <TableCell
+      size="xxsmall"
+      plain
+      verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
+    >
+      {content}
+    </TableCell>
+  );
 };
 
 ExpanderCell.defaultProps = {};

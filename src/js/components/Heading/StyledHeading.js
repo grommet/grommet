@@ -12,9 +12,9 @@ const sizeStyle = props => {
     const data = levelStyle[size];
     const styles = [
       css`
-        font-size: ${data.size};
-        line-height: ${data.height};
-        max-width: ${data.maxWidth};
+        font-size: ${data ? data.size : size};
+        line-height: ${data ? data.height : 'normal'};
+        max-width: ${data ? data.maxWidth : levelStyle.medium.maxWidth};
         font-weight: ${levelStyle.font.weight || headingTheme.weight};
       `,
     ];
@@ -24,16 +24,18 @@ const sizeStyle = props => {
       if (breakpoint) {
         const responsiveData =
           headingTheme.level[Math.min(props.level + 1, 4)][size];
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          font-size: ${responsiveData.size};
-          line-height: ${responsiveData.height};
-          max-width: ${responsiveData.maxWidth};
-        `,
-          ),
-        );
+        if (responsiveData) {
+          styles.push(
+            breakpointStyle(
+              breakpoint,
+              `
+            font-size: ${responsiveData.size};
+            line-height: ${responsiveData.height};
+            max-width: ${responsiveData.maxWidth};
+          `,
+            ),
+          );
+        }
       }
     }
     return styles;

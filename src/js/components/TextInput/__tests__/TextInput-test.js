@@ -7,6 +7,7 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { TextInput } from '..';
+import { Keyboard } from '../../Keyboard';
 
 describe('TextInput', () => {
   beforeEach(createPortal);
@@ -108,6 +109,28 @@ describe('TextInput', () => {
         expect(container.firstChild).toMatchSnapshot();
         done();
       }, 50);
+    }, 50);
+  });
+
+  test('let escape events propagage if there are no suggestions', done => {
+    const callback = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <Keyboard onEsc={callback}>
+          <TextInput data-testid="test-input" id="item" name="item" />
+        </Keyboard>
+      </Grommet>,
+    );
+
+    fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
+    setTimeout(() => {
+      fireEvent.keyDown(getByTestId('test-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27,
+      });
+      expect(callback).toBeCalled();
+      done();
     }, 50);
   });
 
