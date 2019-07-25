@@ -7513,7 +7513,119 @@ function
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**radioButton.border.color**
+
+The color of the border of the Radio Button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}
+\`\`\`
+
+**radioButton.border.width**
+
+The width size of the border of the Radio Button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**radioButton.check.color**
+
+The color of the checked icon in the Radio Button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+string | { dark: string, light: string }
+\`\`\`
+
+**radioButton.check.extend**
+
+Any additional style for the Radio Button Check. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.check.radius**
+
+The radius size for the Radio Button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+100%
+\`\`\`
+
+**radioButton.extend**
+
+ny additional style for the Radio Button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.gap**
+
+The gap between the label and the Radio Button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**radioButton.size**
+
+The size of the Radio Buttons. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.hover.border.color**
+
+The color of the Radio Button border when hovered over. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+dark: white, light: black
+\`\`\`
+
+**radioButton.icon.extend**
+
+Any additional style for the Radio Button Icon. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.icon.size**
+
+The size of the icon in the Radio Button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RadioButtonGroup": "## RadioButtonGroup
 A group of radio buttons.
 
@@ -8825,7 +8937,6 @@ The title of the tab.
 
 \`\`\`
 string
-node
 \`\`\`
   
 ## Intrinsic element
