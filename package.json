@@ -37,6 +37,7 @@
     "test-update": "npm run generate-readme && jest --updateSnapshot",
     "test-watch": "jest --watchAll",
     "test-bundlesize": "bundlesize",
+    "test-visual": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
     "build-storybook": "build-storybook -c storybook -o storybook-static -s ./storybook/public",
@@ -59,6 +60,7 @@
     "recompose": "^0.30.0"
   },
   "devDependencies": {
+    "@applitools/eyes-storybook": "^2.7.19",
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.0.0",
