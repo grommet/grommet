@@ -83,7 +83,7 @@ export const themeDoc = {
   'radioButton.hover.border.color': {
     description: `The color of the Radio Button border when hovered over.`,
     type: 'string | { dark: string, light: string }',
-    defaultValue: 'dark: white, light: black',
+    defaultValue: '{dark: white, light: black}',
   },
   'radioButton.icon.extend': {
     description: 'Any additional style for the Radio Button Icon.',
