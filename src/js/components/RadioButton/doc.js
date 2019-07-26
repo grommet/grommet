@@ -87,7 +87,7 @@ export const themeDoc = {
     defaultValue: '{dark: white, light: black}',
   },
   'radioButton.icon.extend': {
-    description: 'Any additional style for the Radio Button Icon.',
+    description: 'Any additional style for the RadioButton icon.',
     type: 'string | (props) => {}',
   },
   'radioButton.icon.size': {
