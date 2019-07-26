@@ -63,7 +63,7 @@ export const themeDoc = {
     type: 'string | (props) => {}',
   },
   'radioButton.check.radius': {
-    description: 'The radius size for the Radio Button.',
+    description: 'The border-radius of the RadioButton.',
     type: 'string',
     defaultValue: '100%',
   },
