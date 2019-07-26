@@ -59,7 +59,7 @@ export const themeDoc = {
     defaultValue: 'string | { dark: string, light: string }',
   },
   'radioButton.check.extend': {
-    description: 'Any additional style for the Radio Button Check.',
+    description: 'Any additional style for the checked RadioButton.',
     type: 'string | (props) => {}',
   },
   'radioButton.check.radius': {
