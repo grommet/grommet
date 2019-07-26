@@ -49,7 +49,7 @@ export const themeDoc = {
       "{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}",
   },
   'radioButton.border.width': {
-    description: 'The width size of the border of the Radio Button.',
+    description: 'The width size of the border of the RadioButton.',
     type: 'string',
     defaultValue: '2px',
   },
