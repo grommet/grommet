@@ -40,3 +40,58 @@ with the same name so form submissions work.`,
 
   return DocumentedRadioButton;
 };
+
+export const themeDoc = {
+  'radioButton.border.color': {
+    description: 'The color of the border of the Radio Button.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue:
+      "{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}",
+  },
+  'radioButton.border.width': {
+    description: 'The width size of the border of the RadioButton.',
+    type: 'string',
+    defaultValue: '2px',
+  },
+  'radioButton.check.color': {
+    description: 'The color of the checked icon in the RadioButton.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
+  },
+  'radioButton.check.extend': {
+    description: 'Any additional style for the checked RadioButton.',
+    type: 'string | (props) => {}',
+  },
+  'radioButton.check.radius': {
+    description: 'The border-radius of the RadioButton.',
+    type: 'string',
+    defaultValue: '100%',
+  },
+  'radioButton.extend': {
+    description: 'Any additional style for the RadioButton.',
+    type: 'string | (props) => {}',
+  },
+  'radioButton.gap': {
+    description: 'The gap between the label and the RadioButton itself.',
+    type: 'string',
+    defaultValue: 'small',
+  },
+  'radioButton.size': {
+    description: 'The size of the RadioButton.',
+    type: 'string',
+    defaultValue: '24px',
+  },
+  'radioButton.hover.border.color': {
+    description: `The color of the RadioButton border when hovered over.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{dark: white, light: black}',
+  },
+  'radioButton.icon.extend': {
+    description: 'Any additional style for the RadioButton icon.',
+    type: 'string | (props) => {}',
+  },
+  'radioButton.icon.size': {
+    description: 'The size of the icon in the RadioButton.',
+    type: 'string',
+  },
+};
