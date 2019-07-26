@@ -84,7 +84,7 @@ Defaults to
 
 **radioButton.border.width**
 
-The width size of the border of the Radio Button. Expects `string`.
+The width size of the border of the RadioButton. Expects `string`.
 
 Defaults to
 
@@ -94,7 +94,7 @@ Defaults to
 
 **radioButton.check.color**
 
-The color of the checked icon in the Radio Button. Expects `string | { dark: string, light: string }`.
+The color of the checked icon in the RadioButton. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -104,7 +104,7 @@ string | { dark: string, light: string }
 
 **radioButton.check.extend**
 
-Any additional style for the Radio Button Check. Expects `string | (props) => {}`.
+Any additional style for the checked RadioButton. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -114,7 +114,7 @@ undefined
 
 **radioButton.check.radius**
 
-The radius size for the Radio Button. Expects `string`.
+The border-radius of the RadioButton. Expects `string`.
 
 Defaults to
 
@@ -134,7 +134,7 @@ undefined
 
 **radioButton.gap**
 
-The gap between the label and the Radio Button itself. Expects `string`.
+The gap between the label and the RadioButton itself. Expects `string`.
 
 Defaults to
 
@@ -144,7 +144,7 @@ small
 
 **radioButton.size**
 
-The size of the Radio Buttons. Expects `string`.
+The size of the RadioButton. Expects `string`.
 
 Defaults to
 
@@ -154,7 +154,7 @@ Defaults to
 
 **radioButton.hover.border.color**
 
-The color of the Radio Button border when hovered over. Expects `string | { dark: string, light: string }`.
+The color of the RadioButton border when hovered over. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -164,7 +164,7 @@ Defaults to
 
 **radioButton.icon.extend**
 
-Any additional style for the Radio Button Icon. Expects `string | (props) => {}`.
+Any additional style for the RadioButton icon. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -174,7 +174,7 @@ undefined
 
 **radioButton.icon.size**
 
-The size of the icon in the Radio Button. Expects `string`.
+The size of the icon in the RadioButton. Expects `string`.
 
 Defaults to
 
