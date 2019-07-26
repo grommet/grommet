@@ -2331,40 +2331,6 @@ exports[`DataTable resizeable 1`] = `
 `;
 
 exports[`DataTable search 1`] = `
-.c9 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2375,7 +2341,7 @@ exports[`DataTable search 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2465,7 +2431,7 @@ exports[`DataTable search 1`] = `
   vertical-align: bottom;
 }
 
-.c10 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2488,7 +2454,7 @@ exports[`DataTable search 1`] = `
   line-height: 24px;
 }
 
-.c12 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -2527,20 +2493,20 @@ exports[`DataTable search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -2622,20 +2588,7 @@ exports[`DataTable search 1`] = `
               aria-label="focus-search-a"
               class="c8"
               type="button"
-            >
-              <svg
-                aria-label="FormSearch"
-                class="c9"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M13.8,13.8 L18,18 L13.8,13.8 Z M10.5,15 C12.9852814,15 15,12.9852814 15,10.5 C15,8.01471863 12.9852814,6 10.5,6 C8.01471863,6 6,8.01471863 6,10.5 C6,12.9852814 8.01471863,15 10.5,15 Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
+            />
           </div>
         </th>
       </tr>
@@ -2647,14 +2600,14 @@ exports[`DataTable search 1`] = `
         class="c3"
       >
         <th
-          class="c10"
+          class="c9"
           scope="row"
         >
           <div
-            class="c11"
+            class="c10"
           >
             <span
-              class="c12"
+              class="c11"
             >
               Alpha
             </span>
@@ -2665,14 +2618,14 @@ exports[`DataTable search 1`] = `
         class="c3"
       >
         <th
-          class="c10"
+          class="c9"
           scope="row"
         >
           <div
-            class="c11"
+            class="c10"
           >
             <span
-              class="c12"
+              class="c11"
             >
               beta
             </span>
@@ -2683,14 +2636,14 @@ exports[`DataTable search 1`] = `
         class="c3"
       >
         <th
-          class="c10"
+          class="c9"
           scope="row"
         >
           <div
-            class="c11"
+            class="c10"
           >
             <span
-              class="c12"
+              class="c11"
             >
               []
             </span>
@@ -2779,41 +2732,7 @@ exports[`DataTable search 2`] = `
                 [
               </span>
             </div>
-            .c1 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
-}
-
-.c1 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c1 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c1 *[stroke*="#"],
-.c1 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c1 *[fill-rule],
-.c1 *[FILL-RULE],
-.c1 *[fill*="#"],
-.c1 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
+            .c0 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2843,20 +2762,7 @@ exports[`DataTable search 2`] = `
               aria-label="focus-search-a"
               class="c0"
               type="button"
-            >
-              <svg
-                aria-label="FormSearch"
-                class="c1"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M13.8,13.8 L18,18 L13.8,13.8 Z M10.5,15 C12.9852814,15 15,12.9852814 15,10.5 C15,8.01471863 12.9852814,6 10.5,6 C8.01471863,6 6,8.01471863 6,10.5 C6,12.9852814 8.01471863,15 10.5,15 Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
+            />
           </div>
         </th>
       </tr>
