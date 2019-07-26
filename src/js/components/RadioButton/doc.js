@@ -77,7 +77,7 @@ export const themeDoc = {
     defaultValue: 'small',
   },
   'radioButton.size': {
-    description: 'The size of the Radio Buttons.',
+    description: 'The size of the RadioButton.',
     type: 'string',
     defaultValue: '24px',
   },
