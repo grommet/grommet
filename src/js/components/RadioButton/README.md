@@ -99,7 +99,7 @@ The color of the checked icon in the RadioButton. Expects `string | { dark: stri
 Defaults to
 
 ```
-string | { dark: string, light: string }
+undefined
 ```
 
 **radioButton.check.extend**

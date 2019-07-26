@@ -56,7 +56,7 @@ export const themeDoc = {
   'radioButton.check.color': {
     description: 'The color of the checked icon in the RadioButton.',
     type: 'string | { dark: string, light: string }',
-    defaultValue: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
   },
   'radioButton.check.extend': {
     description: 'Any additional style for the checked RadioButton.',
