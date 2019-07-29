@@ -22,7 +22,7 @@ const SimpleCarousel = ({ initialChild }) => (
   </Grommet>
 );
 
-storiesOf('Carousel', module).add('Simple Carousel', () => <SimpleCarousel />);
-storiesOf('Carousel', module).add('Carousel With `initialChild`', () => (
+storiesOf('Carousel', module).add('Simple', () => <SimpleCarousel />);
+storiesOf('Carousel', module).add('Initial child`', () => (
   <SimpleCarousel initialChild={1} />
 ));

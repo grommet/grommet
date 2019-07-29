@@ -23,4 +23,4 @@ class SimpleWorldMap extends Component {
   }
 }
 
-storiesOf('WorldMap', module).add('Simple WorldMap', () => <SimpleWorldMap />);
+storiesOf('WorldMap', module).add('Simple', () => <SimpleWorldMap />);

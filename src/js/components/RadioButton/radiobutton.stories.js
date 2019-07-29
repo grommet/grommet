@@ -122,9 +122,7 @@ class CheckBoxInsideButton extends Component {
   }
 }
 storiesOf('RadioButton', module)
-  .add('Simple RadioButton', () => <SimpleRadioButton />)
-  .add('Disabled RadioButton', () => (
-    <SimpleRadioButton disabled selected="c2" />
-  ))
+  .add('Simple', () => <SimpleRadioButton />)
+  .add('Disabled', () => <SimpleRadioButton disabled selected="c2" />)
   .add('Custom Theme', () => <CustomRadioButton />)
   .add('Inside a Button Theme', () => <CheckBoxInsideButton />);

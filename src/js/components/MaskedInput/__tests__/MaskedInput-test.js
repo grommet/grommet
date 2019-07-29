@@ -2,6 +2,8 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, fireEvent, render } from 'react-testing-library';
 import { getByText } from 'dom-testing-library';
+import { Grommet } from '../../Grommet';
+import { Keyboard } from '../../Keyboard';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -124,6 +126,30 @@ describe('MaskedInput', () => {
       expect(onChange).toHaveReturnedWith('aa!');
       done();
     }, 300);
+  });
+
+  test('Escape events should propagage if there is no drop', done => {
+    const callback = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <Keyboard onEsc={callback}>
+          <MaskedInput data-testid="test-masked-input" id="item" name="item" />
+        </Keyboard>
+      </Grommet>,
+    );
+
+    fireEvent.change(getByTestId('test-masked-input'), {
+      target: { value: ' ' },
+    });
+    setTimeout(() => {
+      fireEvent.keyDown(getByTestId('test-masked-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27,
+      });
+      expect(callback).toBeCalled();
+      done();
+    }, 50);
   });
 
   test('next and previous without options', done => {
