@@ -7,7 +7,6 @@ import { Keyboard } from '../../Keyboard';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../..';
 import { MaskedInput } from '..';
 
 describe('MaskedInput', () => {
