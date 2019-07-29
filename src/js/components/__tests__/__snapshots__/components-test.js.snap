@@ -1291,6 +1291,12 @@ string",
         "format": "number",
         "name": "play",
       },
+      Object {
+        "description": "If specified, the index of
+      the first element to be shown. Defaults to 0.",
+        "format": "number",
+        "name": "initialChild",
+      },
     ],
     "usage": "import { Carousel } from 'grommet';
 <Carousel />",
@@ -2048,7 +2054,8 @@ string",
       Object {
         "description": "What text to put in the input. The caller should ensure that it
       is initially valid with respect to the mask.",
-        "format": "string",
+        "format": "string
+number",
         "name": "value",
       },
     ],

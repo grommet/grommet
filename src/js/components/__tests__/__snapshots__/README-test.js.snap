@@ -225,6 +225,16 @@ Defaults to
 <FormUp />
 \`\`\`
 
+**accordion.icons.color**
+
+The icon color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+control
+\`\`\`
+
 **accordion.icons.expand**
 
 The icon to use when the panel is collapsed. Expects \`React.Element\`.
@@ -2430,6 +2440,15 @@ boolean
 If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.
+
+\`\`\`
+number
+\`\`\`
+
+**initialChild**
+
+If specified, the index of
+      the first element to be shown. Defaults to 0.
 
 \`\`\`
 number
@@ -6543,6 +6562,7 @@ What text to put in the input. The caller should ensure that it
 
 \`\`\`
 string
+number
 \`\`\`
   
 ## Intrinsic element
@@ -7493,7 +7513,119 @@ function
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**radioButton.border.color**
+
+The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}
+\`\`\`
+
+**radioButton.border.width**
+
+The width size of the border of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**radioButton.check.color**
+
+The color of the checked icon in the RadioButton. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.check.extend**
+
+Any additional style for the checked RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.check.radius**
+
+The border-radius of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+100%
+\`\`\`
+
+**radioButton.extend**
+
+Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.gap**
+
+The gap between the label and the RadioButton itself. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**radioButton.size**
+
+The size of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**radioButton.hover.border.color**
+
+The color of the RadioButton border when hovered over. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{dark: white, light: black}
+\`\`\`
+
+**radioButton.icon.extend**
+
+Any additional style for the RadioButton icon. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.icon.size**
+
+The size of the icon in the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RadioButtonGroup": "## RadioButtonGroup
 A group of radio buttons.
 

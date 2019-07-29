@@ -12,10 +12,13 @@ export interface MaskedInputProps {
     regexp?: {};
     placeholder?: string;
   }>;
+  plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
-  value?: string;
+  value?: string | number;
 }
 
-declare const MaskedInput: React.ComponentClass<MaskedInputProps & JSX.IntrinsicElements['input']>;
+declare const MaskedInput: React.ComponentClass<
+    MaskedInputProps & Omit<JSX.IntrinsicElements['input'], keyof MaskedInputProps>
+>;
 
 export { MaskedInput };

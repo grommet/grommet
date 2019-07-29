@@ -13,7 +13,10 @@ import { Stack } from '../Stack';
 import { withFocus } from '../hocs';
 
 class Carousel extends Component {
-  state = { activeIndex: 0 };
+  constructor(p) {
+    super(p);
+    this.state = { activeIndex: p.initialChild };
+  }
 
   componentDidMount() {
     const { play } = this.props;
@@ -150,12 +153,15 @@ class Carousel extends Component {
             <Button
               fill="vertical"
               icon={
-                <PreviousIcon color={
-                  normalizeColor(
-                    previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
-                    theme
+                <PreviousIcon
+                  color={normalizeColor(
+                    previousIconDisabled
+                      ? theme.carousel.disabled.icons.color
+                      : theme.carousel.icons.color,
+                    theme,
                   )}
-                />}
+                />
+              }
               plain
               disabled={previousIconDisabled}
               onClick={onLeft}
@@ -169,12 +175,15 @@ class Carousel extends Component {
             <Button
               fill="vertical"
               icon={
-                <NextIcon color={
-                  normalizeColor(
-                    nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
-                    theme
+                <NextIcon
+                  color={normalizeColor(
+                    nextIconDisabled
+                      ? theme.carousel.disabled.icons.color
+                      : theme.carousel.icons.color,
+                    theme,
                   )}
-                />}
+                />
+              }
               plain
               disabled={nextIconDisabled}
               onClick={onRight}
@@ -187,7 +196,9 @@ class Carousel extends Component {
   }
 }
 
-Carousel.defaultProps = {};
+Carousel.defaultProps = {
+  initialChild: 0,
+};
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 
 let CarouselDoc;
