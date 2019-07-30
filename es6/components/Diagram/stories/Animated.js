@@ -32,7 +32,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
     color: 'accent-4',
     thickness: 'xsmall',
     round: true,
-    type: 'direct'
+    type: 'curved'
   }, rest);
 };
 
