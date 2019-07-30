@@ -1954,6 +1954,11 @@ node",
         "name": "pad",
       },
       Object {
+        "description": "Provides a hint that describes the expected value of the input field",
+        "format": "node",
+        "name": "placeholder",
+      },
+      Object {
         "description": "Whether the field is required.",
         "format": "boolean",
         "name": "required",

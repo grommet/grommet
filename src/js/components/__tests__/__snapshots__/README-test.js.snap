@@ -4824,6 +4824,14 @@ Whether to add padding to align with the padding of TextInput.
 boolean
 \`\`\`
 
+**placeholder**
+
+Provides a hint that describes the expected value of the input field
+
+\`\`\`
+node
+\`\`\`
+
 **required**
 
 Whether the field is required.
