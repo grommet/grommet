@@ -38,14 +38,29 @@ var doc = function doc(Button) {
 exports.doc = doc;
 
 var themeDoc = _extends({
+  'global.active.background.color': {
+    description: 'The background color when using active prop.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'active'
+  },
+  'global.active.background.opacity': {
+    description: 'The value used for active button background opacity.',
+    type: 'number | string',
+    defaultValue: 'medium'
+  },
+  'global.active.color': {
+    description: 'The text color when using active prop.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }"
+  },
   'global.hover.color': {
     description: 'The background color when hovering.',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }"
   },
   'global.edgeSize.small': {
     description: 'The padding around an icon-only button.',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
     defaultValue: '12px'
   },
   'global.colors.control': {
