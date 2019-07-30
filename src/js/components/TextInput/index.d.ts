@@ -14,13 +14,13 @@ export interface TextInputProps {
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
   onSuggestionsOpen?: ((...args: any[]) => any);
   onSuggestionsClose?: ((...args: any[]) => any);
-  placeholder?: string | React.ReactNode | JSX.Element;
+  placeholder?: string | React.ReactNode;
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
   value?: string | number;
 }
 
-declare const TextInput: React.ComponentClass<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size'>>;
+declare const TextInput: React.ComponentClass<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size' | "placeholder">>;
 
 export { TextInput };
