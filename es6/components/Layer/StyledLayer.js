@@ -42,7 +42,7 @@ var StyledOverlay = styled.div.withConfig({
 });
 
 var getMargin = function getMargin(margin, theme, position) {
-  var axis = position.includes('top') || position.includes('bottom') ? 'vertical' : 'horizontal';
+  var axis = position.indexOf('top') !== -1 || position.indexOf('bottom') !== -1 ? 'vertical' : 'horizontal';
   var marginValue = margin[position] || margin[axis] || margin;
   var marginApplied = theme.global.edgeSize[marginValue] || marginValue;
   var marginInTheme = !!theme.global.edgeSize[marginValue];
