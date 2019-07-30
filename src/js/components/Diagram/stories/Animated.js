@@ -21,7 +21,7 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   color: 'accent-4',
   thickness: 'xsmall',
   round: true,
-  type: 'direct',
+  type: 'curved',
   ...rest,
 });
 
