@@ -3362,8 +3362,7 @@ The suggestion contains the object chosen from the supplied suggestions.",
       },
       Object {
         "description": "Placeholder to use when no value is provided.",
-        "format": "string
-node",
+        "format": "node",
         "name": "placeholder",
       },
       Object {
