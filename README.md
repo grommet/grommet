@@ -64,7 +64,7 @@ version.
  1. Firefox >= 52
  1. Chrome >= 49
  1. Safari >= 10
- 1. IE 11 - The Grid, Clock, Video components aren't fully supported
+ 1. IE 11 latests - The Grid, Clock, Video components aren't fully supported
 
 ## Release History
 
