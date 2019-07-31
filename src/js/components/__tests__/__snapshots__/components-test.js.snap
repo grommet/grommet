@@ -2953,8 +2953,7 @@ function",
       },
       Object {
         "description": "The title of the tab.",
-        "format": "string
-node",
+        "format": "node",
         "name": "title",
       },
     ],
