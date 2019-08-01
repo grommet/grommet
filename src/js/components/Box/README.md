@@ -224,6 +224,7 @@ string
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
