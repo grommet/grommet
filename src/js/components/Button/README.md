@@ -286,19 +286,39 @@ button
 ```
 ## Theme
   
-**global.hover.background**
+**global.active.background.color**
 
-The background style when hovering. Expects `string | { color: string, opacity: string }`.
+The background color when using active prop. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-{ color: 'active', opacity: 'medium' }
+active
+```
+
+**global.active.background.opacity**
+
+The value used for active button background opacity. Expects `number | string`.
+
+Defaults to
+
+```
+medium
+```
+
+**global.active.color**
+
+The text color when using active prop. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
 ```
 
 **global.hover.color**
 
-The text color when hovering. Expects `string | { dark: string, light: string }`.
+The background color when hovering. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -308,7 +328,7 @@ Defaults to
 
 **global.edgeSize.small**
 
-The padding around an icon-only button. Expects `string`.
+The padding around an icon-only button. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
