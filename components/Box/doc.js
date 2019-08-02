@@ -39,7 +39,7 @@ var doc = function doc(Box) {
       dark: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string]),
       image: _reactDesc.PropTypes.string,
       position: _reactDesc.PropTypes.string,
-      opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.number, _reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong'])]),
+      opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.bool, _reactDesc.PropTypes.number, _reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong'])]),
       repeat: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['no-repeat', 'repeat']), _reactDesc.PropTypes.string]),
       size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['cover', 'contain']), _reactDesc.PropTypes.string]),
       light: _reactDesc.PropTypes.string
