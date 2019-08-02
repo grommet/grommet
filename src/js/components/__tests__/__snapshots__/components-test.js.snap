@@ -2953,8 +2953,7 @@ function",
       },
       Object {
         "description": "The title of the tab.",
-        "format": "string
-node",
+        "format": "node",
         "name": "title",
       },
     ],
@@ -3362,9 +3361,7 @@ The suggestion contains the object chosen from the supplied suggestions.",
       },
       Object {
         "description": "Placeholder to use when no value is provided.",
-        "format": "string
-node
-element",
+        "format": "node",
         "name": "placeholder",
       },
       Object {
