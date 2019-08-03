@@ -23,7 +23,6 @@ boolean
 The title of the tab.
 
 ```
-string
 node
 ```
   
