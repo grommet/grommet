@@ -1,12 +1,12 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { AlignSelfType } from "../../utils";
+import { AlignSelfType, MarginType } from "../../utils";
 
 export interface MenuProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  margin?: MarginType;
   disabled?: boolean;
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",left?: "right" | "left",right?: "right" | "left"};
   dropBackground?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean | number};

@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Omit, PolymorphicType, AlignSelfType } from "../../utils";
+import { AlignSelfType, Omit, PolymorphicType, MarginType } from "../../utils";
 
 export interface AnchorProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  margin?: MarginType;
   color?: string | {dark?: string,light?: string};
   href?: string;
   icon?: JSX.Element;
