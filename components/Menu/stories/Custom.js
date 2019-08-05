@@ -12,33 +12,6 @@ var _grommetIcons = require("grommet-icons");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var SimpleMenu = function SimpleMenu() {
-  return _react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, _react["default"].createElement(_grommet.Menu, {
-    dropProps: {
-      align: {
-        top: 'bottom',
-        left: 'left'
-      }
-    },
-    label: "actions",
-    items: [{
-      label: 'Launch',
-      onClick: function onClick() {}
-    }, {
-      label: 'Abort',
-      onClick: function onClick() {}
-    }, {
-      label: 'Disabled',
-      disabled: true
-    }]
-  })));
-};
-
 var CustomMenu = function CustomMenu() {
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -75,8 +48,6 @@ var CustomMenu = function CustomMenu() {
   })));
 };
 
-(0, _react2.storiesOf)('Menu', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleMenu, null);
-}).add('Custom', function () {
+(0, _react2.storiesOf)('Menu', module).add('Custom', function () {
   return _react["default"].createElement(CustomMenu, null);
 });

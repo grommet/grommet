@@ -4,33 +4,6 @@ import { Grommet, Box, Menu, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
 
-var SimpleMenu = function SimpleMenu() {
-  return React.createElement(Grommet, {
-    theme: grommet
-  }, React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, React.createElement(Menu, {
-    dropProps: {
-      align: {
-        top: 'bottom',
-        left: 'left'
-      }
-    },
-    label: "actions",
-    items: [{
-      label: 'Launch',
-      onClick: function onClick() {}
-    }, {
-      label: 'Abort',
-      onClick: function onClick() {}
-    }, {
-      label: 'Disabled',
-      disabled: true
-    }]
-  })));
-};
-
 var CustomMenu = function CustomMenu() {
   return React.createElement(Grommet, {
     theme: grommet
@@ -67,8 +40,6 @@ var CustomMenu = function CustomMenu() {
   })));
 };
 
-storiesOf('Menu', module).add('Simple', function () {
-  return React.createElement(SimpleMenu, null);
-}).add('Custom', function () {
+storiesOf('Menu', module).add('Custom', function () {
   return React.createElement(CustomMenu, null);
 });
