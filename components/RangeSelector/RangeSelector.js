@@ -188,7 +188,7 @@ function (_Component) {
       });
 
       window.removeEventListener('mousemove', _this.mouseMove);
-      window.removeEventListener('mouseup', _this.mouseMove);
+      window.removeEventListener('mouseup', _this.mouseUp);
     });
 
     return _this;
@@ -198,7 +198,7 @@ function (_Component) {
 
   _proto.componentWillUnmount = function componentWillUnmount() {
     window.removeEventListener('mousemove', this.mouseMove);
-    window.removeEventListener('mouseup', this.mouseMove);
+    window.removeEventListener('mouseup', this.mouseUp);
   };
 
   _proto.render = function render() {
