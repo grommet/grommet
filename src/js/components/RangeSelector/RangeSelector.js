@@ -33,7 +33,7 @@ class RangeSelector extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('mousemove', this.mouseMove);
-    window.removeEventListener('mouseup', this.mouseMove);
+    window.removeEventListener('mouseup', this.mouseUp);
   }
 
   valueForMouseCoord = event => {
@@ -126,7 +126,7 @@ class RangeSelector extends Component {
   mouseUp = () => {
     this.setState({ changing: undefined });
     window.removeEventListener('mousemove', this.mouseMove);
-    window.removeEventListener('mouseup', this.mouseMove);
+    window.removeEventListener('mouseup', this.mouseUp);
   };
 
   render() {

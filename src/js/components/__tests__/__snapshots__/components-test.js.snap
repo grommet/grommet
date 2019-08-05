@@ -393,6 +393,7 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
@@ -3361,9 +3362,7 @@ The suggestion contains the object chosen from the supplied suggestions.",
       },
       Object {
         "description": "Placeholder to use when no value is provided.",
-        "format": "string
-node
-element",
+        "format": "node",
         "name": "placeholder",
       },
       Object {
