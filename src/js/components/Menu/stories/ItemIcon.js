@@ -5,6 +5,8 @@ import { Grommet, Box, Menu, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { FormDown, Github, Slack } from 'grommet-icons';
 
+// This story offers a suggested workaround for issue #3209.
+
 const IconItemsMenu = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
