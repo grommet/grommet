@@ -812,6 +812,7 @@ string
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
@@ -8966,7 +8967,6 @@ boolean
 The title of the tab.
 
 \`\`\`
-string
 node
 \`\`\`
   
@@ -10481,9 +10481,7 @@ function
 Placeholder to use when no value is provided.
 
 \`\`\`
-string
 node
-element
 \`\`\`
 
 **plain**
