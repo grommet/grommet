@@ -24,7 +24,6 @@ export interface DeepMerge {
   <T extends object, S extends object[]>(target: T, ...sources: S): T & S[number];
 }
 
-export type MarginType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
 export type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
 export type PolymorphicType = keyof JSX.IntrinsicElements | React.ComponentType<any>
 
