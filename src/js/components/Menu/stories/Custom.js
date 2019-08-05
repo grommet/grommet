@@ -5,22 +5,6 @@ import { Grommet, Box, Menu, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { FormDown } from 'grommet-icons';
 
-const SimpleMenu = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Menu
-        dropProps={{ align: { top: 'bottom', left: 'left' } }}
-        label="actions"
-        items={[
-          { label: 'Launch', onClick: () => {} },
-          { label: 'Abort', onClick: () => {} },
-          { label: 'Disabled', disabled: true },
-        ]}
-      />
-    </Box>
-  </Grommet>
-);
-
 const CustomMenu = () => (
   <Grommet theme={grommet}>
     <Box
@@ -54,6 +38,4 @@ const CustomMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module)
-  .add('Simple', () => <SimpleMenu />)
-  .add('Custom', () => <CustomMenu />);
+storiesOf('Menu', module).add('Custom', () => <CustomMenu />);
