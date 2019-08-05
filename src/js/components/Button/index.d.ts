@@ -1,7 +1,6 @@
 import * as React from "react";
 import { ColorType, Omit, PolymorphicType, MarginType } from "../../utils";
 
-
 export interface ButtonProps {
   a11yTitle?: string;
   alignSelf?: "start" | "center" | "end" | "stretch";
