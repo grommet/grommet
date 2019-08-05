@@ -35,5 +35,5 @@ declare const removeUndefined: <T extends object>(obj: T) => NonUndefinedProps<T
 
 export {isObject, deepFreeze, deepMerge, removeUndefined};
 
-//Extracting types for common properties among components
+// Extracting types for common properties among components
 export type AlignSelfType = "start" | "center" | "end" | "stretch";
