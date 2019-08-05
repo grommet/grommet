@@ -1,6 +1,5 @@
 import * as React from "react";
-import { AlignSelfType, PolymorphicType, MarginType } from "../../utils";
-
+import { AlignContentType, AlignSelfType, MarginType, PolymorphicType, } from "../../utils";
 
 export interface BoxProps {
   a11yTitle?: string;
@@ -8,7 +7,7 @@ export interface BoxProps {
   gridArea?: string;
   margin?: MarginType;
   align?: "start" | "center" | "end" | "baseline" | "stretch";
-  alignContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
+  alignContent?: AlignContentType;
   animation?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"} | ("fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"})[];
   background?: string | {color?: string,dark?: boolean | string,image?: string,position?: string,opacity?: "weak" | "medium" | "strong" | number | boolean,repeat?: "no-repeat" | "repeat" | string,size?: "cover" | "contain" | string,light?: string};
   basis?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "auto" | string;
