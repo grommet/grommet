@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PolymorphicType, MarginType } from "../../utils";
+import { AlignContentType, MarginType, PolymorphicType, } from "../../utils";
 
 export interface GridProps {
   a11yTitle?: string;
@@ -7,7 +7,7 @@ export interface GridProps {
   gridArea?: string;
   margin?: MarginType;
   align?: "start" | "center" | "end" | "stretch";
-  alignContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
+  alignContent?: AlignContentType;
   areas?: {name?: string,start?: number[],end?: number[]}[];
   columns?: ("xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | string | string[])[] | "xsmall" | "small" | "medium" | "large" | "xlarge" | {count?: "fit" | "fill" | number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | string | string[]} | string;
   fill?: "horizontal" | "vertical" | boolean;
