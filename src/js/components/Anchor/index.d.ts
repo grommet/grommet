@@ -1,10 +1,17 @@
 import * as React from "react";
-import { AlignSelfType, ColorType, MarginType, Omit, PolymorphicType } from "../../utils";
+import { 
+  AlignSelfType, 
+  ColorType, 
+  GridAreaType, 
+  MarginType, 
+  Omit, 
+  PolymorphicType 
+} from "../../utils";
 
 export interface AnchorProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   color?: ColorType;
   href?: string;

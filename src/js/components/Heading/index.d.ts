@@ -1,11 +1,18 @@
 import * as React from "react";
-import { AlignSelfType, ColorType, MarginType, Omit, PolymorphicType } from "../../utils";
+import { 
+  AlignSelfType, 
+  ColorType, 
+  GridAreaType, 
+  MarginType, 
+  Omit, 
+  PolymorphicType 
+} from "../../utils";
 
 export interface HeadingProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
   as?: PolymorphicType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   color?: ColorType;
   level?: "1" | "2" | "3" | "4" | "5" | "6" | 1 | 2 | 3 | 4 | 5 | 6;

@@ -1,10 +1,10 @@
 import * as React from "react";
-import { AlignContentType, AlignSelfType, MarginType, PolymorphicType, } from "../../utils";
+import { AlignContentType, AlignSelfType, GridAreaType, MarginType, PolymorphicType, } from "../../utils";
 
 export interface GridProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   align?: "start" | "center" | "end" | "stretch";
   alignContent?: AlignContentType;

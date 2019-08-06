@@ -1,12 +1,12 @@
 import * as React from "react";
-import { AlignSelfType, MarginType } from "../../utils";
+import { AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface ImageProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
   fit?: "cover" | "contain";
   fallback?: string;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   opacity?: "weak" | "medium" | "strong" | string | boolean;
 }

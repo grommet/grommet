@@ -1,10 +1,10 @@
 import * as React from "react";
-import { AlignSelfType, MarginType } from "../../utils";
+import { AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface CarouselProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   fill?: boolean;
   play?: number;

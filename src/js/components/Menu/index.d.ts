@@ -1,11 +1,11 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { AlignSelfType, MarginType } from "../../utils";
+import { AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface MenuProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   disabled?: boolean;
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",left?: "right" | "left",right?: "right" | "left"};
