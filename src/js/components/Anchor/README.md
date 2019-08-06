@@ -123,6 +123,14 @@ string
 }
 ```
 
+**disabled**
+
+Whether the button is disabled.
+
+```
+boolean
+```
+
 **href**
 
 Hyperlink reference to place in the anchor.

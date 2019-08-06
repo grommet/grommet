@@ -135,6 +135,12 @@ string",
         "name": "color",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the button is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
         "description": "Hyperlink reference to place in the anchor.",
         "format": "string",
         "name": "href",

@@ -5,6 +5,7 @@ export interface AnchorProps {
   a11yTitle?: string;
   alignSelf?: AlignSelfType;
   gridArea?: string;
+  disabled?: boolean;
   margin?: MarginType;
   color?: ColorType;
   href?: string;
