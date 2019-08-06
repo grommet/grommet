@@ -164,8 +164,10 @@ function (_Component) {
       }
 
       return React.createElement(Box, {
+        fill: fill,
         overflow: "hidden"
       }, React.createElement(Box, {
+        fill: fill,
         animation: animation
       }, child));
     });

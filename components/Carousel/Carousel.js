@@ -181,8 +181,10 @@ function (_Component) {
       }
 
       return _react["default"].createElement(_Box.Box, {
+        fill: fill,
         overflow: "hidden"
       }, _react["default"].createElement(_Box.Box, {
+        fill: fill,
         animation: animation
       }, child));
     });
