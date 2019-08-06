@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { AlignSelfType, MarginType } from "../../utils";
+import { AlignSelfType, MarginType, PlaceHolderType } from "../../utils";
 
 export interface SelectProps {
   a11yTitle?: string;
@@ -29,7 +29,7 @@ export interface SelectProps {
   onSearch?: ((...args: any[]) => any);
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
-  placeholder?: string | React.ReactNode | JSX.Element;
+  placeholder?: PlaceHolderType;
   plain?: boolean;
   replace?: boolean;
   searchPlaceholder?: string;
