@@ -1,9 +1,9 @@
 import * as React from "react";
-import { MarginType } from "../../utils";
+import { AlignSelfType, MarginType } from "../../utils";
 
 export interface MeterProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
   background?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
