@@ -76,7 +76,7 @@ const StyledOverlay = styled.div`
 
 const getMargin = (margin, theme, position) => {
   const axis =
-    position.includes('top') || position.includes('bottom')
+    position.indexOf('top') !== -1 || position.indexOf('bottom') !== -1
       ? 'vertical'
       : 'horizontal';
   const marginValue = margin[position] || margin[axis] || margin;
