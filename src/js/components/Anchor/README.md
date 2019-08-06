@@ -125,7 +125,7 @@ string
 
 **disabled**
 
-Whether the button is disabled.
+Whether the anchor is disabled.
 
 ```
 boolean

@@ -30,7 +30,7 @@ or just use children.`,
       'Label color and icon color, if not specified on the icon.',
     ),
     disabled: PropTypes.bool
-      .description('Whether the button is disabled.')
+      .description('Whether the anchor is disabled.')
       .defaultValue(false),
     href: PropTypes.string.description(
       'Hyperlink reference to place in the anchor.',

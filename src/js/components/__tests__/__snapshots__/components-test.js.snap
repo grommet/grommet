@@ -136,7 +136,7 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the button is disabled.",
+        "description": "Whether the anchor is disabled.",
         "format": "boolean",
         "name": "disabled",
       },
