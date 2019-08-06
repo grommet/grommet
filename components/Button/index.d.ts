@@ -1,5 +1,5 @@
 import * as React from "react";
-import { AlignSelfType, Omit, PolymorphicType, MarginType } from "../../utils";
+import { AlignSelfType, ColorType, MarginType, Omit, PolymorphicType} from "../../utils";
 
 export interface ButtonProps {
   a11yTitle?: string;
@@ -7,7 +7,7 @@ export interface ButtonProps {
   gridArea?: string;
   margin?: MarginType;
   active?: boolean;
-  color?: string | {dark?: string,light?: string};
+  color?: ColorType;
   disabled?: boolean;
   fill?: "horizontal" | "vertical" | boolean;
   focusIndicator?: boolean;
