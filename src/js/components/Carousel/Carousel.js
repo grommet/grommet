@@ -128,8 +128,10 @@ class Carousel extends Component {
       }
 
       return (
-        <Box overflow="hidden">
-          <Box animation={animation}>{child}</Box>
+        <Box fill={fill} overflow="hidden">
+          <Box fill={fill} animation={animation}>
+            {child}
+          </Box>
         </Box>
       );
     });
