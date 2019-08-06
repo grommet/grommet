@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Omit, PolymorphicType, MarginType } from "../../utils";
+import { AlignSelfType, ColorType, MarginType, Omit, PolymorphicType } from "../../utils";
 
 export interface AnchorProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
-  color?: string | {dark?: string,light?: string};
+  color?: ColorType;
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;

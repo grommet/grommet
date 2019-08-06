@@ -1,10 +1,10 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { MarginType } from "../../utils";
+import { AlignSelfType, MarginType } from "../../utils";
 
 export interface SelectProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
   children?: ((...args: any[]) => any);
