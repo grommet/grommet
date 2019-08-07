@@ -1,12 +1,12 @@
 import * as React from "react";
 import { 
   A11yTitleType,
-  AlignSelfType, 
-  ColorType, 
-  GridAreaType, 
-  MarginType, 
-  Omit, 
-  PolymorphicType 
+  AlignSelfType,
+  ColorType,
+  GridAreaType,
+  MarginType,
+  Omit,
+  PolymorphicType
 } from "../../utils";
 
 export interface HeadingProps {
