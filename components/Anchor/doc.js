@@ -14,6 +14,7 @@ var doc = function doc(Anchor) {
   DocumentedAnchor.propTypes = _extends({}, _utils.genericProps, {
     a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
     color: _utils.colorPropType.description('Label color and icon color, if not specified on the icon.'),
+    disabled: _reactDesc.PropTypes.bool.description('Whether the anchor is disabled.').defaultValue(false),
     href: _reactDesc.PropTypes.string.description('Hyperlink reference to place in the anchor.'),
     icon: _reactDesc.PropTypes.element.description('Icon element to place in the anchor.'),
     label: _reactDesc.PropTypes.node.description('Label text to place in the anchor.'),

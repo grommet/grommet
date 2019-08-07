@@ -13,6 +13,7 @@ export interface AnchorProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: string;
+  disabled?: boolean;
   margin?: MarginType;
   color?: ColorType;
   href?: string;

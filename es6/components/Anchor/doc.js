@@ -7,6 +7,7 @@ export var doc = function doc(Anchor) {
   DocumentedAnchor.propTypes = _extends({}, genericProps, {
     a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
     color: colorPropType.description('Label color and icon color, if not specified on the icon.'),
+    disabled: PropTypes.bool.description('Whether the anchor is disabled.').defaultValue(false),
     href: PropTypes.string.description('Hyperlink reference to place in the anchor.'),
     icon: PropTypes.element.description('Icon element to place in the anchor.'),
     label: PropTypes.node.description('Label text to place in the anchor.'),

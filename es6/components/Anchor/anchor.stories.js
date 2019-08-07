@@ -63,6 +63,18 @@ storiesOf('Anchor', module).add('Default', function () {
       href: "#"
     }));
   })));
+}).add('Disabled', function () {
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(Box, {
+    margin: "small"
+  }, React.createElement(Anchor, {
+    disabled: true,
+    label: "Disabled Anchor"
+  }))));
 }).add('Inline', function () {
   return React.createElement(Grommet, {
     theme: grommet
