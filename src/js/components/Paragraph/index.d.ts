@@ -1,8 +1,15 @@
 import * as React from "react";
-import { AlignSelfType, ColorType, GridAreaType, MarginType, Omit } from "../../utils";
+import { 
+  A11yTitleType, 
+  AlignSelfType, 
+  ColorType, 
+  GridAreaType, 
+  MarginType, 
+  Omit 
+} from "../../utils";
 
 export interface ParagraphProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;

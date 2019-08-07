@@ -35,6 +35,7 @@ declare const removeUndefined: <T extends object>(obj: T) => NonUndefinedProps<T
 export {isObject, deepFreeze, deepMerge, removeUndefined};
 
 // Extracting types for common properties among components
+export type A11yTitleType = string;
 export type AlignContentType = "start" | "center" | "end" | "between" | "around" | "stretch";
 export type AlignSelfType = "start" | "center" | "end" | "stretch";
 export type GridAreaType = string;

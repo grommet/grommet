@@ -1,9 +1,9 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface MenuProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;

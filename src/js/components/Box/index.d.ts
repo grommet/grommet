@@ -1,8 +1,15 @@
 import * as React from "react";
-import { AlignContentType, AlignSelfType, GridAreaType, MarginType, PolymorphicType, } from "../../utils";
+import { 
+  A11yTitleType, 
+  AlignContentType, 
+  AlignSelfType, 
+  GridAreaType, 
+  MarginType, 
+  PolymorphicType, 
+} from "../../utils";
 
 export interface BoxProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;

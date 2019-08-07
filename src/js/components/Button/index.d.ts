@@ -1,5 +1,6 @@
 import * as React from "react";
 import { 
+  A11yTitleType,
   AlignSelfType, 
   ColorType, 
   GridAreaType, 
@@ -9,7 +10,7 @@ import {
 } from "../../utils";
 
 export interface ButtonProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;

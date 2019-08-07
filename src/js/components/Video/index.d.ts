@@ -1,8 +1,8 @@
 import * as React from "react";
-import { AlignSelfType, GridAreaType, MarginType, Omit } from "../../utils";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType, Omit } from "../../utils";
 
 export interface VideoProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
