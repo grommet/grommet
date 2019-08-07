@@ -1,9 +1,9 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { AlignSelfType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, MarginType } from "../../utils";
 
 export interface SelectProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
