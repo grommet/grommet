@@ -1,13 +1,21 @@
 import * as React from "react";
-import { Omit, PolymorphicType } from "../../utils";
+import { 
+  A11yTitleType,
+  AlignSelfType, 
+  ColorType, 
+  GridAreaType, 
+  MarginType, 
+  Omit, 
+  PolymorphicType
+} from "../../utils";
 
 export interface ButtonProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
   active?: boolean;
-  color?: string | {dark?: string,light?: string};
+  color?: ColorType;
   disabled?: boolean;
   fill?: "horizontal" | "vertical" | boolean;
   focusIndicator?: boolean;

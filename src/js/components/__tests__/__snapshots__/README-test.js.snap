@@ -390,6 +390,14 @@ string
 }
 \`\`\`
 
+**disabled**
+
+Whether the anchor is disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
 **href**
 
 Hyperlink reference to place in the anchor.
@@ -812,6 +820,7 @@ string
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak

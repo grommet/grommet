@@ -135,6 +135,12 @@ string",
         "name": "color",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the anchor is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
         "description": "Hyperlink reference to place in the anchor.",
         "format": "string",
         "name": "href",
@@ -393,6 +399,7 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
