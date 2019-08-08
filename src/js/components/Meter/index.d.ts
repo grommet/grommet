@@ -1,10 +1,10 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface MeterProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   background?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
   round?: boolean;
