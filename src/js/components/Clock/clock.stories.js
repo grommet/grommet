@@ -30,10 +30,10 @@ const CustomThemeAnalogClock = {
   },
 };
 
-const DigitalClock = () => (
+const DigitalClock = ({ ...rest }) => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
-      <Clock type="digital" />
+      <Clock type="digital" {...rest} />
     </Box>
   </Grommet>
 );
@@ -56,5 +56,8 @@ const CustomAnalogClock = () => (
 
 storiesOf('Clock', module)
   .add('Digital', () => <DigitalClock />)
+  .add('Digital Backward', () => (
+    <DigitalClock time="T10:00:00" run="backward" />
+  ))
   .add('Analog', () => <AnalogClock />)
   .add('Custom Analog', () => <CustomAnalogClock />);

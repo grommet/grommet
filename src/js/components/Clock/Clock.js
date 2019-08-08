@@ -52,7 +52,7 @@ class Clock extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { hourLimit, time } = nextProps;
     const { elements } = prevState;
-    if (!elements || time) {
+    if (!elements) {
       const nextElements = parseTime(time, hourLimit);
       if (!elements) {
         return { elements: nextElements };
