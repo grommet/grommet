@@ -79,7 +79,8 @@ boolean
 Placeholder to use when no value is provided.
 
 ```
-node
+string
+element
 ```
 
 **required**

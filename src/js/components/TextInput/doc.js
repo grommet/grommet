@@ -71,9 +71,10 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     onSuggestionsClose: PropTypes.func.description(
       'Function that will be called when the suggestions drop is closed.',
     ),
-    placeholder: PropTypes.node.description(
-      'Placeholder to use when no value is provided.',
-    ),
+    placeholder: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element,
+    ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance`,

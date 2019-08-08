@@ -1962,7 +1962,8 @@ node",
       },
       Object {
         "description": "Placeholder to use when no value is provided.",
-        "format": "node",
+        "format": "string
+element",
         "name": "placeholder",
       },
       Object {
@@ -2866,8 +2867,9 @@ function",
         "name": "open",
       },
       Object {
-        "description": "Placeholder text to use when no value is provided.",
-        "format": "node",
+        "description": "Placeholder to use when no value is provided.",
+        "format": "string
+element",
         "name": "placeholder",
       },
       Object {
@@ -3371,7 +3373,8 @@ The suggestion contains the object chosen from the supplied suggestions.",
       },
       Object {
         "description": "Placeholder to use when no value is provided.",
-        "format": "node",
+        "format": "string
+element",
         "name": "placeholder",
       },
       Object {
