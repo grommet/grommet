@@ -56,8 +56,6 @@ const CustomAnalogClock = () => (
 
 storiesOf('Clock', module)
   .add('Digital', () => <DigitalClock />)
-  .add('Digital Backward', () => (
-    <DigitalClock time="T10:00:00" run="backward" />
-  ))
+  .add('Digital Backward', () => <DigitalClock run="backward" />)
   .add('Analog', () => <AnalogClock />)
   .add('Custom Analog', () => <CustomAnalogClock />);
