@@ -328,4 +328,52 @@ describe('MaskedInput', function () {
       done();
     }, 300);
   });
+  test('applies custom global.hover theme to options', function (done) {
+    var customTheme = {
+      global: {
+        hover: {
+          background: {
+            color: 'lightgreen'
+          },
+          color: {
+            dark: 'lightgrey',
+            light: 'brand'
+          }
+        }
+      }
+    };
+    var onChange = jest.fn(function (event) {
+      return event.target.value;
+    });
+
+    var _render9 = render(React.createElement(Grommet, {
+      theme: customTheme
+    }, React.createElement(MaskedInput, {
+      "data-testid": "test-global-hover-theme",
+      plain: true,
+      size: "large",
+      id: "global-hover-theme",
+      name: "global-hover-theme",
+      mask: [{
+        length: [1, 2],
+        options: ['aa', 'bb', 'cc'],
+        regexp: /^[ab][ab]$|^[ab]$/
+      }, {
+        fixed: '!'
+      }],
+      value: "",
+      onChange: onChange
+    }))),
+        getByTestId = _render9.getByTestId,
+        container = _render9.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.focus(getByTestId('test-global-hover-theme'));
+    setTimeout(function () {
+      var optionButton = getByText(document, 'bb').closest('button');
+      fireEvent.mouseOver(optionButton);
+      expect(optionButton).toMatchSnapshot();
+      done();
+    }, 500);
+  });
 });

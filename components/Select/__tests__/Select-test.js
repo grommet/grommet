@@ -436,7 +436,7 @@ describe('Select', function () {
 
     expect(selectButton).toHaveStyleRule('background', 'purple');
   });
-  test("renders styled select options backwards compatible with legacy\n   documentation (select.options.box)", function () {
+  test("renders styled select options backwards compatible with legacy\n    documentation (select.options.box)", function () {
     var customTheme = {
       select: {
         options: {
@@ -538,5 +538,43 @@ describe('Select', function () {
     expect(optionButton.firstChild).not.toHaveStyleRule('background', 'lightblue');
     expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
     expect(optionButton.firstChild).toHaveStyleRule('border-bottom', 'solid 2px blue');
+  });
+  test('applies custom global.hover theme to options', function () {
+    var customTheme = {
+      global: {
+        hover: {
+          background: {
+            color: 'lightgreen'
+          },
+          color: {
+            dark: 'lightgrey',
+            light: 'brand'
+          }
+        }
+      }
+    };
+
+    var _render17 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, {
+      theme: customTheme
+    }, _react["default"].createElement(_2.Select, {
+      "data-testid": "applies-custom-hover-style",
+      id: "applies-custom-hover-style-id",
+      options: ['morning', 'afternoon', 'evening'],
+      placeholder: "Select..."
+    }))),
+        getByPlaceholderText = _render17.getByPlaceholderText,
+        getByText = _render17.getByText,
+        container = _render17.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var selectButton = getByPlaceholderText('Select...');
+
+    _reactTestingLibrary.fireEvent.click(selectButton);
+
+    var optionButton = getByText('afternoon').closest('button');
+
+    _reactTestingLibrary.fireEvent.mouseOver(optionButton);
+
+    expect(optionButton).toMatchSnapshot();
   });
 });

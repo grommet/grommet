@@ -53,7 +53,8 @@ function (_Component) {
     }, _react["default"].createElement(_Button.Button, _extends({
       tabIndex: "-1",
       ref: forwardRef,
-      role: "menuitem"
+      role: "menuitem",
+      hoverIndicator: "background"
     }, rest)));
   };
 

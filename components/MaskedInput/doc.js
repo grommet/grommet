@@ -32,6 +32,16 @@ var doc = function doc(MaskedInput) {
 exports.doc = doc;
 
 var themeDoc = _extends({
+  'global.hover.background': {
+    description: 'The background style when hovering.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }"
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }"
+  },
   'maskedInput.extend': {
     description: 'Any additional style for MaskedInput.',
     type: 'string | (props) => {}',
