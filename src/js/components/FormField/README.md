@@ -74,15 +74,6 @@ Whether to add padding to align with the padding of TextInput.
 boolean
 ```
 
-**placeholder**
-
-Placeholder to use when no value is provided.
-
-```
-string
-element
-```
-
 **required**
 
 Whether the field is required.

@@ -1961,12 +1961,6 @@ node",
         "name": "pad",
       },
       Object {
-        "description": "Placeholder to use when no value is provided.",
-        "format": "string
-element",
-        "name": "placeholder",
-      },
-      Object {
         "description": "Whether the field is required.",
         "format": "boolean",
         "name": "required",
