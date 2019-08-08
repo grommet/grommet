@@ -1,9 +1,9 @@
 import * as React from "react";
-import { MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, MarginType } from "../../utils";
 
 export interface ImageProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   fit?: "cover" | "contain";
   fallback?: string;
   gridArea?: string;

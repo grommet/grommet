@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Omit } from "../../utils";
+import { Omit, ColorType } from "../../utils";
 
 export interface RangeSelectorProps {
-  color?: string | {dark?: string,light?: string};
+  color?: ColorType;
   direction?: "horizontal" | "vertical";
   invert?: boolean;
   max?: number;

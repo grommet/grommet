@@ -1,9 +1,9 @@
 import * as React from "react";
-import { MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, MarginType } from "../../utils";
 
 export interface DistributionProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
   children?: ((...args: any[]) => any);

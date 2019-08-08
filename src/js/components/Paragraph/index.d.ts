@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Omit, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, ColorType, MarginType, Omit } from "../../utils";
 
 export interface ParagraphProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
-  color?: string | {dark?: string,light?: string};
+  color?: ColorType;
   responsive?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   textAlign?: "start" | "center" | "end";

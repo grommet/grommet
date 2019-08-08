@@ -1,9 +1,9 @@
 import * as React from "react";
-import { AlignContentType, MarginType, PolymorphicType, } from "../../utils";
+import { A11yTitleType, AlignContentType, AlignSelfType, MarginType, PolymorphicType, } from "../../utils";
 
 export interface GridProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
   align?: "start" | "center" | "end" | "stretch";
