@@ -1,4 +1,5 @@
 import * as React from "react";
+import { PlaceHolderType } from "../../utils";
 
 export interface FormFieldProps {
   error?: string | React.ReactNode;
@@ -7,11 +8,13 @@ export interface FormFieldProps {
   label?: string | React.ReactNode;
   name?: string;
   pad?: boolean;
+  // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
+  placeholder?: PlaceHolderType
   required?: boolean;
   component?: any;
   validate?: {regexp?: object,message?: string} | ((...args: any[]) => any);
 }
 
-declare const FormField: React.ComponentClass<FormFieldProps & JSX.IntrinsicElements['input']>;
+declare const FormField: React.ComponentClass<FormFieldProps & Omit<JSX.IntrinsicElements['input'], 'placeholder'>>;
 
 export { FormField };

@@ -136,9 +136,9 @@ export const doc = Select => {
     open: PropTypes.bool.description(`Control the state of the component.`),
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.node,
       PropTypes.element,
-    ]).description('Placeholder text to use when no value is provided.'),
+      PropTypes.node,
+    ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       'Whether this is a plain Select input with no border or padding.',
     ),
