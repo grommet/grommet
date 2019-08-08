@@ -12,12 +12,13 @@ import {
 export interface AnchorProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   color?: ColorType;
+  disabled?: boolean;
+  gridArea?: GridAreaType;
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
+  margin?: MarginType;
   onClick?: ((...args: any[]) => any);
   reverse?: boolean;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
