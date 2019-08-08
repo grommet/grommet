@@ -74,6 +74,7 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
+      PropTypes.node,
     ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.

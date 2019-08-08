@@ -339,6 +339,7 @@ Placeholder to use when no value is provided.
 ```
 string
 element
+node
 ```
 
 **plain**

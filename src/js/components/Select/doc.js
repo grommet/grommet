@@ -137,6 +137,7 @@ export const doc = Select => {
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
+      PropTypes.node,
     ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       'Whether this is a plain Select input with no border or padding.',
