@@ -1,10 +1,10 @@
 import * as React from "react";
-import { AlignSelfType, Omit, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType, Omit } from "../../utils";
 
 export interface VideoProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   autoPlay?: boolean;
   controls?: "false" | "over" | "below";

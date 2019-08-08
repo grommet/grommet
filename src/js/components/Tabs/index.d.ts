@@ -1,10 +1,10 @@
 import * as React from "react";
-import { AlignSelfType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface TabsProps {
-  a11yTitle?: string;
+  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   activeIndex?: number;
   children: React.ReactNode;
