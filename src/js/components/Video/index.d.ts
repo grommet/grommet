@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Omit, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, Omit, MarginType } from "../../utils";
 
 export interface VideoProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
   autoPlay?: boolean;

@@ -42,6 +42,15 @@ storiesOf('Anchor', module)
       </Box>
     </Grommet>
   ))
+  .add('Disabled', () => (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <Box margin="small">
+          <Anchor disabled label="Disabled Anchor" />
+        </Box>
+      </Box>
+    </Grommet>
+  ))
   .add('Inline', () => (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">

@@ -1,12 +1,19 @@
 import * as React from "react";
-import { Omit, PolymorphicType, MarginType } from "../../utils";
+import { 
+  A11yTitleType, 
+  AlignSelfType, 
+  ColorType, 
+  MarginType, 
+  Omit, 
+  PolymorphicType
+} from "../../utils";
 
 export interface TextProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
-  color?: string | {dark?: string,light?: string};
+  color?:  ColorType;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   tag?: PolymorphicType;
   as?: PolymorphicType;

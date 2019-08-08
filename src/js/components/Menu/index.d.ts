@@ -1,10 +1,10 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, MarginType } from "../../utils";
 
 export interface MenuProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   gridArea?: string;
   margin?: MarginType;
   disabled?: boolean;
