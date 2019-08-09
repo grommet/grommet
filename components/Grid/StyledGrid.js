@@ -70,20 +70,20 @@ var justifyContentStyle = (0, _styledComponents.css)(["justify-content:", ";"], 
 
 var gapStyle = function gapStyle(props) {
   if (typeof props.gap === 'string') {
-    var gapSize = props.theme.global.edgeSize[props.gap];
+    var gapSize = props.theme.global.edgeSize[props.gap] || props.gap;
     return "grid-gap: " + gapSize + " " + gapSize + ";";
   }
 
   if (props.gap.row && props.gap.column) {
-    return "\n      grid-row-gap: " + props.theme.global.edgeSize[props.gap.row] + ";\n      grid-column-gap: " + props.theme.global.edgeSize[props.gap.column] + ";\n    ";
+    return "\n      grid-row-gap: " + (props.theme.global.edgeSize[props.gap.row] || props.gap.row) + ";\n      grid-column-gap: " + (props.theme.global.edgeSize[props.gap.column] || props.gap.column) + ";\n    ";
   }
 
   if (props.gap.row) {
-    return "\n      grid-row-gap: " + props.theme.global.edgeSize[props.gap.row] + ";\n    ";
+    return "\n      grid-row-gap: " + (props.theme.global.edgeSize[props.gap.row] || props.gap.row) + ";\n    ";
   }
 
   if (props.gap.column) {
-    return "\n      grid-column-gap: " + props.theme.global.edgeSize[props.gap.column] + ";\n    ";
+    return "\n      grid-column-gap: " + (props.theme.global.edgeSize[props.gap.column] || props.gap.column) + ";\n    ";
   }
 
   return '';
