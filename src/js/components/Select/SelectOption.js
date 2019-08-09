@@ -25,7 +25,13 @@ class SelectOption extends Component {
     const { forwardRef, ...rest } = this.props;
     return (
       <Box flex={false}>
-        <Button tabIndex="-1" ref={forwardRef} role="menuitem" {...rest} />
+        <Button
+          tabIndex="-1"
+          ref={forwardRef}
+          role="menuitem"
+          hoverIndicator="background"
+          {...rest}
+        />
       </Box>
     );
   }

@@ -334,12 +334,12 @@ boolean
 
 **placeholder**
 
-Placeholder text to use when no value is provided.
+Placeholder to use when no value is provided.
 
 ```
 string
-node
 element
+node
 ```
 
 **plain**
@@ -441,6 +441,26 @@ string
   
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
+**global.hover.color**
+
+The text color when hovering. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
 **select.background**
 
 The background color used for Select. Expects `string`.

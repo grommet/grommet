@@ -2861,10 +2861,10 @@ function",
         "name": "open",
       },
       Object {
-        "description": "Placeholder text to use when no value is provided.",
+        "description": "Placeholder to use when no value is provided.",
         "format": "string
-node
-element",
+element
+node",
         "name": "placeholder",
       },
       Object {

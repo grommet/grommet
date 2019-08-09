@@ -316,9 +316,19 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
+**global.hover.background**
+
+The background style when hovering. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
 **global.hover.color**
 
-The background color when hovering. Expects `string | { dark: string, light: string }`.
+The text color when hovering. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
