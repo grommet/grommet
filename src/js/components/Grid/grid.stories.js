@@ -122,7 +122,7 @@ const customBreakpoints = deepMerge(grommet, {
 // columns, rows and areas are for Grid with a known number of contents / boxes.
 
 // If the size is small, we only see 1 column
-// if size if medium, we only 2 column
+// If the size is medium, we only see 2 columns
 // if size if large or xlarge, we 3 three columns
 const columns = {
   small: ['auto'],
