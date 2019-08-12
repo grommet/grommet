@@ -101,7 +101,7 @@ const NColumnGrid = () => (
 );
 
 // Two responsive grids
-//    - First one with known number of elements
+//    - First one with a known number of elements
 //    - Second one with an unknown number of elements
 
 // set custom breakpoints so we can see the changes
