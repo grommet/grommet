@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, Grid, Text, Heading } from 'grommet';
+import { Grommet, Box, Button, Grid, Text, Heading, ResponsiveContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
@@ -195,7 +195,7 @@ const listAnimalsBoxes = animals.map(animalName => (
   </Box>
 ));
 
-const ResponsiveContext = ({
+const Responsive = ({
   children,
   overrideColumns,
   overrideRows,
@@ -241,7 +241,7 @@ const ResponsiveGrid = () => (
   <Grommet theme={customBreakpoints}>
     <Box>
       <Heading level={2}>Resize me.</Heading>
-      <ResponsiveContext
+      <Responsive
         rows={rows}
         columns={columns}
         gap="small"
@@ -272,15 +272,15 @@ const ResponsiveGrid = () => (
         >
           <strong>Box 3</strong>
         </Box>
-      </ResponsiveContext>
-      <ResponsiveContext
+      </Responsive>
+      <Responsive
         gap="small"
         margin="medium"
         columns="medium"
         rows="xsmall"
       >
         {listAnimalsBoxes}
-      </ResponsiveContext>
+      </Responsive>
     </Box>
   </Grommet>
 );
