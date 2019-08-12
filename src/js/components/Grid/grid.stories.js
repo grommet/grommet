@@ -131,7 +131,7 @@ const columns = {
   xlarge: ['auto', 'auto', 'auto'],
 };
 
-// if size if small, we have 3 rows
+// If the size is small, we have 3 rows
 // if size if medium, we have 2 rows
 // If the size is large or xlarge, we have 1 row
 const rows = {
