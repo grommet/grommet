@@ -133,7 +133,7 @@ const columns = {
 
 // if size if small, we have 3 rows
 // if size if medium, we have 2 rows
-// if size if large or xlarge, we have 1 row
+// If the size is large or xlarge, we have 1 row
 const rows = {
   small: ['xsmall', 'xsmall', 'xsmall'],
   medium: ['xsmall', 'xsmall'],
