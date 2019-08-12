@@ -101,8 +101,8 @@ const NColumnGrid = () => (
 );
 
 // Two responsive grids
-//    - First one with known number of elements
-//    - Second one with unkown number of elements
+//    - First one with a known number of elements
+//    - Second one with an unknown number of elements
 
 // set custom breakpoints so we can see the changes
 const customBreakpoints = deepMerge(grommet, {
@@ -121,9 +121,9 @@ const customBreakpoints = deepMerge(grommet, {
 
 // columns, rows and areas are for Grid with a known number of contents / boxes.
 
-// if size if small, we only 1 column
-// if size if medium, we only 2 column
-// if size if large or xlarge, we 3 three columns
+// If the size is small, we only see 1 column
+// If the size is medium, we only see 2 columns
+// If the size is either large or xlarge, we see 3 columns
 const columns = {
   small: ['auto'],
   medium: ['auto', 'auto'],
@@ -131,9 +131,9 @@ const columns = {
   xlarge: ['auto', 'auto', 'auto'],
 };
 
-// if size if small, we have 3 rows
-// if size if medium, we have 2 rows
-// if size if large or xlarge, we have 1 row
+// If the size is small, we have 3 rows
+// If the size is medium, we have 2 rows
+// If the size is large or xlarge, we have 1 row
 const rows = {
   small: ['xsmall', 'xsmall', 'xsmall'],
   medium: ['xsmall', 'xsmall'],
