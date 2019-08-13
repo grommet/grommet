@@ -128,6 +128,15 @@ If specified, the number of
 number
 ```
 
+**initialChild**
+
+If specified, the index of
+      the first element to be shown. Defaults to 0.
+
+```
+number
+```
+
 **selectors**
 
 Whether to show carousel controls, and where to place them Defaults to `true`.

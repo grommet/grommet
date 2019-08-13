@@ -20,10 +20,10 @@ const customTheme = {
   },
 };
 
-const SimpleCarousel = props => (
+const SimpleCarousel = ({ initialChild, ...props }) => (
   <Grommet>
     <Box align="center" pad="large">
-      <Carousel {...props}>
+      <Carousel initialChild={initialChild} {...props}>
         <Box pad="xlarge" background="accent-1">
           <Attraction size="xlarge" />
         </Box>
@@ -59,4 +59,7 @@ const CustomCarousel = () => (
 storiesOf('Carousel', module)
   .add('Simple Carousel', () => <SimpleCarousel />)
   .add('Without Controls', () => <SimpleCarousel controls={false} play={1000} />)
-  .add('Custom Animation and Styles', () => <CustomCarousel />);
+  .add('Custom Animation and Styles', () => <CustomCarousel />)
+  .add('Initial child`', () => (
+  <SimpleCarousel initialChild={1} />
+));

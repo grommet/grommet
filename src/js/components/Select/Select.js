@@ -23,6 +23,7 @@ const StyledSelectDropButton = styled(DropButton)`
     props.theme.select &&
     props.theme.select.control &&
     props.theme.select.control.extend};
+  ${props => props.open && props.theme.select.control.open};
 `;
 
 StyledSelectDropButton.defaultProps = {};

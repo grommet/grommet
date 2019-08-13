@@ -135,6 +135,12 @@ string",
         "name": "color",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the anchor is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
         "description": "Hyperlink reference to place in the anchor.",
         "format": "string",
         "name": "href",
@@ -393,6 +399,7 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
@@ -1292,6 +1299,12 @@ string",
         "name": "play",
       },
       Object {
+        "description": "If specified, the index of
+      the first element to be shown. Defaults to 0.",
+        "format": "number",
+        "name": "initialChild",
+      },
+      Object {
         "defaultValue": true,
         "description": "Whether to show carousel controls, and where to place them",
         "format": "false
@@ -2034,7 +2047,10 @@ function",
     number
     [number],
   fixed: string,
-  options: [string],
+  options: [
+  string
+  number
+],
   regexp: 
     {
 
@@ -2054,7 +2070,8 @@ string",
       Object {
         "description": "What text to put in the input. The caller should ensure that it
       is initially valid with respect to the mask.",
-        "format": "string",
+        "format": "string
+number",
         "name": "value",
       },
     ],
@@ -2835,19 +2852,12 @@ function",
         "name": "onMore",
       },
       Object {
-        "defaultValue": true,
-        "description": "Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.",
-        "format": "boolean",
-        "name": "replace",
-      },
-      Object {
         "description": "Options can be either a string or an object. If an object is used, use
       children callback in order to render anything based on the current item.",
         "format": "[
   string
+  number
+  boolean
   element
   object
 ]",
@@ -2860,16 +2870,25 @@ function",
         "name": "open",
       },
       Object {
-        "description": "Placeholder text to use when no value is provided.",
+        "description": "Placeholder to use when no value is provided.",
         "format": "string
-node
-element",
+element
+node",
         "name": "placeholder",
       },
       Object {
         "description": "Whether this is a plain Select input with no border or padding.",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.",
+        "format": "boolean",
+        "name": "replace",
       },
       Object {
         "description": "Placeholder text to use in the search box when the search input is empty.",
@@ -2950,8 +2969,7 @@ function",
       },
       Object {
         "description": "The title of the tab.",
-        "format": "string
-node",
+        "format": "node",
         "name": "title",
       },
     ],
@@ -3359,9 +3377,7 @@ The suggestion contains the object chosen from the supplied suggestions.",
       },
       Object {
         "description": "Placeholder to use when no value is provided.",
-        "format": "string
-node
-element",
+        "format": "node",
         "name": "placeholder",
       },
       Object {

@@ -129,8 +129,8 @@ class MaskedInput extends Component {
   dropRef = React.createRef();
 
   componentDidUpdate() {
-    const { focused } = this.state;
-    if (focused) {
+    const { focus } = this.props;
+    if (focus) {
       this.locateCaret();
     }
   }
@@ -163,9 +163,13 @@ class MaskedInput extends Component {
         if (maskIndex && mask[maskIndex].fixed) {
           maskIndex -= 1; // fixed mask parts are never "active"
         }
-        if (activeMaskIndex !== maskIndex) {
+        if (maskIndex !== activeMaskIndex) {
           // eslint-disable-next-line react/no-did-update-set-state
-          this.setState({ activeMaskIndex: maskIndex, activeOptionIndex: -1 });
+          this.setState({
+            activeMaskIndex: maskIndex,
+            activeOptionIndex: -1,
+            showDrop: maskIndex >= 0 && mask[maskIndex].options && true,
+          });
         }
       }
     }, 10); // 10ms empirically chosen
@@ -174,7 +178,6 @@ class MaskedInput extends Component {
   onFocus = event => {
     const { onFocus } = this.props;
     this.locateCaret();
-    this.setState({ focused: true });
     if (onFocus) {
       onFocus(event);
     }
@@ -185,12 +188,14 @@ class MaskedInput extends Component {
     const { onBlur } = this.props;
     clearTimeout(this.blurTimeout);
     this.blurTimeout = setTimeout(() => {
+      const { showDrop } = this.state;
       if (
-        !this.dropRef.current ||
-        !this.dropRef.current.contains ||
-        !this.dropRef.current.contains(document.activeElement)
+        showDrop &&
+        this.dropRef.current &&
+        document.activeElement !== this.inputRef.current &&
+        !this.dropRef.current.parentNode.contains(document.activeElement)
       ) {
-        this.setState({ activeMaskIndex: undefined, focused: false });
+        this.setState({ activeMaskIndex: undefined, showDrop: false });
       }
     }, 10); // 10ms empirically chosen
     if (onBlur) {
@@ -242,9 +247,9 @@ class MaskedInput extends Component {
       index += 1;
     }
     const nextValue = nextValueParts.map(part => part.part).join('');
+    this.setValue(nextValue);
     // restore focus to input
     this.inputRef.current.focus();
-    this.setValue(nextValue);
   };
 
   onNextOption = event => {
@@ -279,11 +284,14 @@ class MaskedInput extends Component {
   };
 
   onEsc = event => {
-    // we have to stop both synthetic events and native events
-    // drop and layer should not close by pressing esc on this input
-    event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
-    this.inputRef.current.blur();
+    const { showDrop } = this.state;
+    if (showDrop) {
+      // we have to stop both synthetic events and native events
+      // drop and layer should not close by pressing esc on this input
+      event.stopPropagation();
+      event.nativeEvent.stopImmediatePropagation();
+      this.setState({ showDrop: false });
+    }
   };
 
   renderPlaceholder = () => {
@@ -306,7 +314,7 @@ class MaskedInput extends Component {
       ...rest
     } = this.props;
     const theme = this.context || propsTheme;
-    const { activeMaskIndex, activeOptionIndex } = this.state;
+    const { activeMaskIndex, showDrop } = this.state;
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -344,7 +352,7 @@ class MaskedInput extends Component {
             onChange={this.onChange}
           />
         </Keyboard>
-        {activeMaskIndex >= 0 && mask[activeMaskIndex].options && (
+        {showDrop && (
           <Drop
             id={id ? `masked-input-drop__${id}` : undefined}
             align={{ top: 'bottom', left: 'left' }}
@@ -361,13 +369,9 @@ class MaskedInput extends Component {
                       this.setState({ activeOptionIndex: index })
                     }
                     onFocus={() => {}}
+                    hoverIndicator="background"
                   >
-                    <Box
-                      pad={{ horizontal: 'small', vertical: 'xsmall' }}
-                      background={
-                        activeOptionIndex === index ? 'active' : undefined
-                      }
-                    >
+                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                       {option}
                     </Box>
                   </Button>

@@ -225,6 +225,16 @@ Defaults to
 <FormUp />
 \`\`\`
 
+**accordion.icons.color**
+
+The icon color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+control
+\`\`\`
+
 **accordion.icons.expand**
 
 The icon to use when the panel is collapsed. Expects \`React.Element\`.
@@ -378,6 +388,14 @@ string
   dark: string,
   light: string
 }
+\`\`\`
+
+**disabled**
+
+Whether the anchor is disabled.
+
+\`\`\`
+boolean
 \`\`\`
 
 **href**
@@ -802,6 +820,7 @@ string
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
@@ -1640,9 +1659,49 @@ button
 \`\`\`
 ## Theme
   
+**global.active.background.color**
+
+The background color when using active prop. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+active
+\`\`\`
+
+**global.active.background.opacity**
+
+The value used for active button background opacity. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**global.active.color**
+
+The text color when using active prop. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
+**global.hover.background**
+
+The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
 **global.hover.color**
 
-The background color when hovering. Expects \`string\`.
+The text color when hovering. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -1652,7 +1711,7 @@ Defaults to
 
 **global.edgeSize.small**
 
-The padding around an icon-only button. Expects \`string\`.
+The padding around an icon-only button. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2430,6 +2489,15 @@ boolean
 If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.
+
+\`\`\`
+number
+\`\`\`
+
+**initialChild**
+
+If specified, the index of
+      the first element to be shown. Defaults to 0.
 
 \`\`\`
 number
@@ -6170,9 +6238,22 @@ import { Layer } from 'grommet';
 
 **animate**
 
-Animation transition of the Layer content when it opens. Defaults to \`true\`.
+Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'. Defaults to \`true\`.
 
 \`\`\`
+boolean
+\`\`\`
+
+**animation**
+
+Animation transition of the Layer content when it opens. Defaults to \`slide\`.
+
+\`\`\`
+slide
+fadeIn
+none
 boolean
 \`\`\`
 
@@ -6511,7 +6592,10 @@ Describes the structure of the mask. If a regexp is provided, it should
     number
     [number],
   fixed: string,
-  options: [string],
+  options: [
+  string
+  number
+],
   regexp: 
     {
 
@@ -6538,6 +6622,7 @@ What text to put in the input. The caller should ensure that it
 
 \`\`\`
 string
+number
 \`\`\`
   
 ## Intrinsic element
@@ -6547,6 +6632,26 @@ input
 \`\`\`
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
+**global.hover.color**
+
+The text color when hovering. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
 **maskedInput.extend**
 
 Any additional style for MaskedInput. Expects \`string | (props) => {}\`.
@@ -7488,7 +7593,119 @@ function
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**radioButton.border.color**
+
+The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}
+\`\`\`
+
+**radioButton.border.width**
+
+The width size of the border of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**radioButton.check.color**
+
+The color of the checked icon in the RadioButton. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.check.extend**
+
+Any additional style for the checked RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.check.radius**
+
+The border-radius of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+100%
+\`\`\`
+
+**radioButton.extend**
+
+Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.gap**
+
+The gap between the label and the RadioButton itself. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**radioButton.size**
+
+The size of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**radioButton.hover.border.color**
+
+The color of the RadioButton border when hovered over. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{dark: white, light: black}
+\`\`\`
+
+**radioButton.icon.extend**
+
+Any additional style for the RadioButton icon. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.icon.size**
+
+The size of the icon in the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RadioButtonGroup": "## RadioButtonGroup
 A group of radio buttons.
 
@@ -8321,17 +8538,6 @@ Use this to indicate that 'items' doesn't contain all that it could.
 function
 \`\`\`
 
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced. Defaults to \`true\`.
-
-\`\`\`
-boolean
-\`\`\`
-
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use
@@ -8340,6 +8546,8 @@ Required. Options can be either a string or an object. If an object is used, use
 \`\`\`
 [
   string
+  number
+  boolean
   element
   object
 ]
@@ -8355,17 +8563,28 @@ boolean
 
 **placeholder**
 
-Placeholder text to use when no value is provided.
+Placeholder to use when no value is provided.
 
 \`\`\`
 string
-node
 element
+node
 \`\`\`
 
 **plain**
 
 Whether this is a plain Select input with no border or padding.
+
+\`\`\`
+boolean
+\`\`\`
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -8451,6 +8670,26 @@ string
   
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
+**global.hover.color**
+
+The text color when hovering. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
 **select.background**
 
 The background color used for Select. Expects \`string\`.
@@ -8484,6 +8723,16 @@ Defaults to
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.control.open**
+
+Any additional style for the control open state of the Select component. Expects \`object\`.
 
 Defaults to
 
@@ -8787,7 +9036,6 @@ boolean
 The title of the tab.
 
 \`\`\`
-string
 node
 \`\`\`
   
@@ -10302,9 +10550,7 @@ function
 Placeholder to use when no value is provided.
 
 \`\`\`
-string
 node
-element
 \`\`\`
 
 **plain**

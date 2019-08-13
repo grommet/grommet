@@ -33,3 +33,13 @@ declare const deepMerge: DeepMerge;
 declare const removeUndefined: <T extends object>(obj: T) => NonUndefinedProps<T>;
 
 export {isObject, deepFreeze, deepMerge, removeUndefined};
+
+// Extracting types for common properties among components
+export type A11yTitleType = string;
+export type AlignContentType = "start" | "center" | "end" | "between" | "around" | "stretch";
+export type AlignSelfType = "start" | "center" | "end" | "stretch";
+export type ColorType = string | {dark?: string,light?: string};
+export type CarouselControlsType = "true" | "false" | "arrows" | "selectors";
+export type GridAreaType = string;
+export type MarginType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+export type PlaceHolderType = string | JSX.Element | React.ReactNode;

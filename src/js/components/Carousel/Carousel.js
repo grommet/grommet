@@ -13,7 +13,10 @@ import { Stack } from '../Stack';
 import { withFocus } from '../hocs';
 
 class Carousel extends Component {
-  state = { activeIndex: 0 };
+  constructor(p) {
+    super(p);
+    this.state = { activeIndex: p.initialChild };
+  }
 
   componentDidMount() {
     const { play } = this.props;
@@ -127,8 +130,10 @@ class Carousel extends Component {
       }
 
       return (
-        <Box overflow="hidden">
-          <Box animation={animation}>{child}</Box>
+        <Box fill={fill} overflow="hidden">
+          <Box fill={fill} animation={animation}>
+            {child}
+          </Box>
         </Box>
       );
     });
@@ -202,6 +207,7 @@ class Carousel extends Component {
 }
 
 Carousel.defaultProps = {
+  initialChild: 0,
   controls: true,
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);

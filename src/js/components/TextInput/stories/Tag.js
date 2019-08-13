@@ -164,4 +164,4 @@ class TagTextInput extends Component {
   }
 }
 
-storiesOf('TextInput', module).add('Tag TextInput', () => <TagTextInput />);
+storiesOf('TextInput', module).add('Tag', () => <TagTextInput />);

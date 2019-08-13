@@ -1,5 +1,159 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MaskedInput applies custom global.hover theme to options 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  font-size: 22px;
+  line-height: 28px;
+  border: none;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      autocomplete="off"
+      class="c2"
+      data-testid="test-global-hover-theme"
+      id="global-hover-theme"
+      name="global-hover-theme"
+      placeholder="!"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`MaskedInput applies custom global.hover theme to options 2`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0:hover {
+  background-color: lightgreen;
+  color: #444444;
+  color: #7D4CDB;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<button
+  class="c0"
+  tabindex="-1"
+  type="button"
+>
+  <div
+    class="c1"
+  >
+    bb
+  </div>
+</button>
+`;
+
 exports[`MaskedInput basic 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -275,6 +429,12 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   text-align: inherit;
 }
 
+.c4:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -458,26 +618,6 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `
 
 @media only screen and (max-width:768px) {
   .hkPRCG {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jyWdAg {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jyWdAg {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jyWdAg {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -690,6 +830,12 @@ exports[`MaskedInput mask 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c4:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
 }
 
 .c0 {
@@ -1207,6 +1353,12 @@ exports[`MaskedInput option via mouse 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c4:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
 }
 
 .c0 {

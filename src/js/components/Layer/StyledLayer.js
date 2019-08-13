@@ -76,7 +76,7 @@ const StyledOverlay = styled.div`
 
 const getMargin = (margin, theme, position) => {
   const axis =
-    position.includes('top') || position.includes('bottom')
+    position.indexOf('top') !== -1 || position.indexOf('bottom') !== -1
       ? 'vertical'
       : 'horizontal';
   const marginValue = margin[position] || margin[axis] || margin;
@@ -197,11 +197,22 @@ const KEYFRAMES = {
   },
 };
 
-const getAnimationStyle = (animate = true, position, full) => {
-  const defaultAnimation = css`animation: ${KEYFRAMES[position][full]} 0.2s ease-in-out forwards`;
-
-  return animate ? defaultAnimation : '';
-}
+const getAnimationStyle = (props, position, full) => {
+  let animation =
+    props.animation !== undefined ? props.animation : props.animate;
+  if (animation === undefined) animation = 'slide';
+  let keys;
+  if (animation === 'slide' || animation === true) {
+    keys = KEYFRAMES[position][full];
+  } else if (animation === 'fadeIn') {
+    keys = keyframes`0% { opacity: 0 } 100% { opacity: 1 }`;
+  }
+  return keys
+    ? css`
+        animation: ${keys} 0.2s ease-in-out forwards;
+      `
+    : '';
+};
 
 // POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.
@@ -216,27 +227,27 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: 50%;
       transform: translateX(-50%);
-      ${props => getAnimationStyle(props.animate, 'center', 'vertical')}
+      ${props => getAnimationStyle(props, 'center', 'vertical')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 50%;
       transform: translateY(-50%);
-      ${props => getAnimationStyle(props.animate, 'center', 'horizontal')}
+      ${props => getAnimationStyle(props, 'center', 'horizontal')}
     `,
     true: margin => css`
       top: ${margin.top};
       bottom: ${margin.bottom};
       left: ${margin.left};
       right: ${margin.right};
-      ${props => getAnimationStyle(props.animate, 'center', 'true')}
+      ${props => getAnimationStyle(props, 'center', 'true')}
     `,
     false: () => css`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      ${props => getAnimationStyle(props.animate, 'center', 'false')}
+      ${props => getAnimationStyle(props, 'center', 'false')}
     `,
   },
 
@@ -246,14 +257,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0%);
-      ${props => getAnimationStyle(props.animate, 'top', 'vertical')}
+      ${props => getAnimationStyle(props, 'top', 'vertical')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: ${margin.top};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'horizontal')}
+      ${props => getAnimationStyle(props, 'top', 'horizontal')}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -261,13 +272,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')}
+      ${props => getAnimationStyle(props, 'top', 'true')}
     `,
     false: margin => css`
       top: ${margin.top};
       left: 50%;
       transform: translate(-50%, 0);
-      ${props => getAnimationStyle(props.animate, 'top', 'false')}
+      ${props => getAnimationStyle(props, 'top', 'false')}
     `,
   },
 
@@ -277,14 +288,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'vertical')}
+      ${props => getAnimationStyle(props, 'bottom', 'vertical')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.top};
       bottom: ${margin.bottom};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'horizontal')}
+      ${props => getAnimationStyle(props, 'bottom', 'horizontal')}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -292,13 +303,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
     false: margin => css`
       bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'false')}
+      ${props => getAnimationStyle(props, 'bottom', 'false')}
     `,
   },
 
@@ -308,14 +319,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'left', 'vertical')}
+      ${props => getAnimationStyle(props, 'left', 'vertical')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props.animate, 'left', 'horizontal')}
+      ${props => getAnimationStyle(props, 'left', 'horizontal')}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -323,13 +334,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'left', 'true')}
+      ${props => getAnimationStyle(props, 'left', 'true')}
     `,
     false: margin => css`
       left: ${margin.left};
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props.animate, 'left', 'false')}
+      ${props => getAnimationStyle(props, 'left', 'false')}
     `,
   },
 
@@ -339,14 +350,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'right', 'vertical')}
+      ${props => getAnimationStyle(props, 'right', 'vertical')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props.animate, 'right', 'horizontal')}
+      ${props => getAnimationStyle(props, 'right', 'horizontal')}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -354,13 +365,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'right', 'true')}
+      ${props => getAnimationStyle(props, 'right', 'true')}
     `,
     false: margin => css`
       right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props.animate, 'right', 'false')}
+      ${props => getAnimationStyle(props, 'right', 'false')}
     `,
   },
 
@@ -370,14 +381,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')};
+      ${props => getAnimationStyle(props, 'top', 'true')};
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 0;
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')};
+      ${props => getAnimationStyle(props, 'top', 'true')};
     `,
     true: margin => css`
       top: ${margin.top};
@@ -385,13 +396,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')};
+      ${props => getAnimationStyle(props, 'top', 'true')};
     `,
     false: margin => css`
       top: ${margin.top};
       right: ${margin.right};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')};
+      ${props => getAnimationStyle(props, 'top', 'true')};
     `,
   },
 
@@ -401,14 +412,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')}
+      ${props => getAnimationStyle(props, 'top', 'true')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 0;
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')}
+      ${props => getAnimationStyle(props, 'top', 'true')}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -416,13 +427,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')}
+      ${props => getAnimationStyle(props, 'top', 'true')}
     `,
     false: margin => css`
       top: ${margin.top};
       left: ${margin.left};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'top', 'true')}
+      ${props => getAnimationStyle(props, 'top', 'true')}
     `,
   },
 
@@ -432,14 +443,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       bottom: ${margin.bottom};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -447,13 +458,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
     false: margin => css`
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
   },
 
@@ -463,14 +474,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       bottom: ${margin.bottom};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -478,13 +489,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
     false: margin => css`
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateY(0);
-      ${props => getAnimationStyle(props.animate, 'bottom', 'true')}
+      ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
   },
 };
