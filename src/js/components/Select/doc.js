@@ -136,9 +136,9 @@ export const doc = Select => {
     open: PropTypes.bool.description(`Control the state of the component.`),
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.node,
       PropTypes.element,
-    ]).description('Placeholder text to use when no value is provided.'),
+      PropTypes.node,
+    ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       'Whether this is a plain Select input with no border or padding.',
     ),
@@ -201,6 +201,16 @@ export const doc = Select => {
 };
 
 export const themeDoc = {
+  'global.hover.background': {
+    description: 'The background style when hovering.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
   'select.background': {
     description: 'The background color used for Select.',
     type: 'string',

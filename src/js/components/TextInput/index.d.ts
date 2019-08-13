@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Omit } from "../../utils";
+import { Omit, PlaceHolderType, } from "../../utils";
 import { DropProps } from "../Drop";
 
 export interface TextInputProps {
@@ -14,7 +14,7 @@ export interface TextInputProps {
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
   onSuggestionsOpen?: ((...args: any[]) => any);
   onSuggestionsClose?: ((...args: any[]) => any);
-  placeholder?: React.ReactNode;
+  placeholder?: PlaceHolderType;
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];

@@ -1,18 +1,18 @@
 import * as React from "react";
 import { 
   A11yTitleType,
-  AlignSelfType,
-  ColorType,
-  MarginType,
-  Omit,
-  PolymorphicType 
-} 
-from "../../utils";
+  AlignSelfType, 
+  ColorType, 
+  GridAreaType, 
+  MarginType, 
+  Omit, 
+  PolymorphicType
+} from "../../utils";
 
 export interface ButtonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  gridArea?: string;
+  gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;
   color?: ColorType;
