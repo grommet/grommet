@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Omit, PlaceholderType, } from "../../utils";
+import { Omit, PlaceHolderType, } from "../../utils";
 import { DropProps } from "../Drop";
 
 export interface TextInputProps {
