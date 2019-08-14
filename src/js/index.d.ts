@@ -55,3 +55,4 @@ export * from './components/WorldMap';
 export * from './contexts/AnnounceContext';
 export * from './contexts/ResponsiveContext';
 export * from './contexts/ThemeContext';
+export * from './themes/index';
