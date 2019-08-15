@@ -139,7 +139,11 @@ stretch
 
 **areas**
 
-Area names and column,row coordinates.
+Grid areas.
+      If the value is an array of objects, it indicates the
+      area names and columns, row coordinates.
+      Otherwise an array of string arrays can be used to write
+      in a way similar to the gridArea css property.
 
 ```
 [{
@@ -147,6 +151,7 @@ Area names and column,row coordinates.
   start: [number],
   end: [number]
 }]
+[[string]]
 ```
 
 **columns**

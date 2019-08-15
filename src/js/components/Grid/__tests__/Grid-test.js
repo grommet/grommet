@@ -60,6 +60,24 @@ test('Grid areas renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Grid areas renders when given an array of string arrays', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Grid
+        rows={['xxsmall', 'medium', 'xsmall']}
+        columns={['3/4', '1/4']}
+        areas={[
+          ['header', 'header'],
+          ['sidebar', 'main'],
+          ['footer', 'footer'],
+        ]}
+      />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Grid justify renders', () => {
   const component = renderer.create(
     <Grommet>

@@ -54,13 +54,22 @@ space in the column axis.`,
       'around',
       'stretch',
     ]).description('How to align the contents along the column axis.'),
-    areas: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-        start: PropTypes.arrayOf(PropTypes.number),
-        end: PropTypes.arrayOf(PropTypes.number),
-      }),
-    ).description('Area names and column,row coordinates.'),
+    areas: PropTypes.oneOfType([
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          start: PropTypes.arrayOf(PropTypes.number),
+          end: PropTypes.arrayOf(PropTypes.number),
+        }),
+      ),
+      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+    ]).description(
+      `Grid areas.
+      If the value is an array of objects, it indicates the
+      area names and columns, row coordinates.
+      Otherwise an array of string arrays can be used to write
+      in a way similar to the gridArea css property.`,
+    ),
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
