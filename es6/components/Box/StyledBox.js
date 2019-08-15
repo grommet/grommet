@@ -115,7 +115,7 @@ var borderStyle = function borderStyle(data, responsive, theme) {
   var side = typeof data === 'string' ? data : data.side || 'all';
   var value = style + " " + (theme.global.borderSize[borderSize] || borderSize) + " " + color;
   var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  var responsiveValue = breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && style + " " + (breakpoint.borderSize[borderSize] || borderSize) + " " + color;
+  var responsiveValue = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && style + " " + (breakpoint.borderSize[borderSize] || borderSize) + " " + color;
 
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
     styles.push(css(["border-", ":", ";"], side, value));
@@ -156,7 +156,7 @@ var roundStyle = function roundStyle(data, responsive, theme) {
 
   if (typeof data === 'object') {
     var size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'] || data.size;
-    var responsiveSize = breakpoint && breakpoint.edgeSize[data.size] && (breakpoint.edgeSize[data.size] || data.size);
+    var responsiveSize = responsive && breakpoint && breakpoint.edgeSize[data.size] && (breakpoint.edgeSize[data.size] || data.size);
 
     if (data.corner === 'top') {
       styles.push(css(["border-top-left-radius:", ";border-top-right-radius:", ";"], size, size));
