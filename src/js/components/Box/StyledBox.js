@@ -167,6 +167,7 @@ const borderStyle = (data, responsive, theme) => {
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
   const responsiveValue =
+    responsive &&
     breakpoint &&
     (breakpoint.borderSize[borderSize] || borderSize) &&
     `${style} ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
@@ -247,6 +248,7 @@ const roundStyle = (data, responsive, theme) => {
       theme.global.edgeSize[data.size || 'medium'] ||
       data.size;
     const responsiveSize =
+      responsive &&
       breakpoint &&
       breakpoint.edgeSize[data.size] &&
       (breakpoint.edgeSize[data.size] || data.size);
