@@ -106,7 +106,7 @@ var PasswordInput = function PasswordInput(_ref) {
   }, rest)), _react["default"].createElement(_grommet.Button, {
     icon: reveal ? _react["default"].createElement(_grommetIcons.View, {
       size: "medium"
-    }) : _react["default"].createElement(_grommetIcons.FormLock, {
+    }) : _react["default"].createElement(_grommetIcons.Hide, {
       size: "medium"
     }),
     onClick: function onClick() {

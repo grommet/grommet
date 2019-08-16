@@ -10,7 +10,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { FormLock } from "grommet-icons/es6/icons/FormLock";
+import { Hide } from "grommet-icons/es6/icons/Hide";
 import { View } from "grommet-icons/es6/icons/View";
 import { Box, Grommet, TextInput, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -98,7 +98,7 @@ var PasswordInput = function PasswordInput(_ref) {
   }, rest)), React.createElement(Button, {
     icon: reveal ? React.createElement(View, {
       size: "medium"
-    }) : React.createElement(FormLock, {
+    }) : React.createElement(Hide, {
       size: "medium"
     }),
     onClick: function onClick() {
