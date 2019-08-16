@@ -69,23 +69,23 @@ const justifyContentStyle = css`
 
 const gapStyle = props => {
   if (typeof props.gap === 'string') {
-    const gapSize = props.theme.global.edgeSize[props.gap];
+    const gapSize = props.theme.global.edgeSize[props.gap] || props.gap;
     return `grid-gap: ${gapSize} ${gapSize};`;
   }
   if (props.gap.row && props.gap.column) {
     return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row]};
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column]};
+      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row] || props.gap.row};
+      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column] || props.gap.column};
     `;
   }
   if (props.gap.row) {
     return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row]};
+      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row] || props.gap.row};
     `;
   }
   if (props.gap.column) {
     return `
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column]};
+      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column] || props.gap.column};
     `;
   }
   return '';

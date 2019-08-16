@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { FormLock, View } from 'grommet-icons';
+import { Hide, View } from 'grommet-icons';
 
 import { Box, Grommet, TextInput, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -47,7 +47,7 @@ const PasswordInput = ({ value, ...rest }) => {
         {...rest}
       />
       <Button
-        icon={reveal ? <View size="medium" /> : <FormLock size="medium" />}
+        icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
         onClick={() => setReveal(!reveal)}
       />
     </Box>
