@@ -1,104 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, Grid, Text, Heading, ResponsiveContext } from 'grommet';
+import { Grommet, Box, Grid, Heading, ResponsiveContext } from 'grommet';
+
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-
-class AppGrid extends Component {
-  state = { sidebar: true };
-
-  render() {
-    const { sidebar } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Grid
-          fill
-          rows={['auto', 'flex']}
-          columns={['auto', 'flex']}
-          areas={[
-            { name: 'header', start: [0, 0], end: [1, 0] },
-            { name: 'sidebar', start: [0, 1], end: [0, 1] },
-            { name: 'main', start: [1, 1], end: [1, 1] },
-          ]}
-        >
-          <Box
-            gridArea="header"
-            direction="row"
-            align="center"
-            justify="between"
-            pad={{ horizontal: 'medium', vertical: 'small' }}
-            background="dark-2"
-          >
-            <Button onClick={() => this.setState({ sidebar: !sidebar })}>
-              <Text size="large">Title</Text>
-            </Button>
-            <Text>my@email</Text>
-          </Box>
-          {sidebar && (
-            <Box
-              gridArea="sidebar"
-              background="dark-3"
-              width="small"
-              animation={[
-                { type: 'fadeIn', duration: 300 },
-                { type: 'slideRight', size: 'xlarge', duration: 150 },
-              ]}
-            >
-              {['First', 'Second', 'Third'].map(name => (
-                <Button key={name} href="#" hoverIndicator>
-                  <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
-                    <Text>{name}</Text>
-                  </Box>
-                </Button>
-              ))}
-            </Box>
-          )}
-          <Box gridArea="main" justify="center" align="center">
-            <Text>main</Text>
-          </Box>
-        </Grid>
-      </Grommet>
-    );
-  }
-}
-
-const Percentages = () => (
-  <Grommet theme={grommet} full>
-    <Grid
-      fill
-      areas={[
-        { name: 'nav', start: [0, 0], end: [0, 0] },
-        { name: 'main', start: [1, 0], end: [1, 0] },
-      ]}
-      columns={['small', 'flex']}
-      rows={['flex']}
-      gap="small"
-    >
-      <Box gridArea="nav" background="brand" />
-      <Box gridArea="main" background="brand" />
-    </Grid>
-  </Grommet>
-);
-
-const NColumnGrid = () => (
-  <Grommet theme={grommet} full>
-    <Grid
-      columns={{
-        count: 6,
-        size: 'auto',
-      }}
-      gap="small"
-    >
-      <Box background="brand">Item 1</Box>
-      <Box background="brand">Item 2</Box>
-      <Box background="brand">Item 3</Box>
-      <Box background="brand">Item 4</Box>
-      <Box background="brand">Item 5</Box>
-      <Box background="brand">Item 6</Box>
-    </Grid>
-  </Grommet>
-);
 
 // Two responsive grids
 //    - First one with a known number of elements
@@ -141,7 +47,7 @@ const rows = {
   xlarge: ['xsmall'],
 };
 
-// set the different areas you need for every size
+// Set the different areas you need for every size
 const fixedGridAreas = {
   small: [
     { name: 'header', start: [0, 0], end: [0, 0] },
@@ -165,7 +71,7 @@ const fixedGridAreas = {
   ],
 };
 
-// let's say this is returned from an API
+// Let's say this is returned from an API
 const animals = [
   'dog',
   'cat',
@@ -204,7 +110,7 @@ const Responsive = ({
 }) => (
   <ResponsiveContext.Consumer>
     {size => {
-      // take into consideration if not array is sent but a simple string
+      // Take into consideration if not array is sent but a simple string
       let columnsVal = columns;
       if (columns) {
         if (columns[size]) {
@@ -219,7 +125,7 @@ const Responsive = ({
         }
       }
 
-      // also if areas is a simple array not an object of arrays for different sizes
+      // Also if areas is a simple array not an object of arrays for different sizes
       let areasVal = areas;
       if (areas && !Array.isArray(areas)) areasVal = areas[size];
 
@@ -273,20 +179,11 @@ const ResponsiveGrid = () => (
           <strong>Box 3</strong>
         </Box>
       </Responsive>
-      <Responsive
-        gap="small"
-        margin="medium"
-        columns="medium"
-        rows="xsmall"
-      >
+      <Responsive gap="small" margin="medium" columns="medium" rows="xsmall">
         {listAnimalsBoxes}
       </Responsive>
     </Box>
   </Grommet>
 );
 
-storiesOf('Grid', module)
-  .add('App', () => <AppGrid />)
-  .add('Percentages', () => <Percentages />)
-  .add('N-column layout', () => <NColumnGrid />)
-  .add('Responsive Grid', () => <ResponsiveGrid />);
+storiesOf('Grid', module).add('Responsive Grid', () => <ResponsiveGrid />);
