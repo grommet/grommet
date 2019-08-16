@@ -38,11 +38,11 @@ var ResponsiveGrid = function ResponsiveGrid(_ref) {
       areas = _ref.areas,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "areas"]);
 
-  return _react["default"].createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
-    return _react["default"].createElement(_grommet.Grid, _extends({
-      areas: areas[size]
-    }, props), children);
-  });
+  var size = _react["default"].useContext(_grommet.ResponsiveContext);
+
+  return _react["default"].createElement(_grommet.Grid, _extends({
+    areas: areas[size]
+  }, props), children);
 };
 
 var ResponsiveGridExample = function ResponsiveGridExample() {

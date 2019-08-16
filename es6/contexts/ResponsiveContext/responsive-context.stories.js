@@ -29,11 +29,10 @@ var ResponsiveGrid = function ResponsiveGrid(_ref) {
       areas = _ref.areas,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "areas"]);
 
-  return React.createElement(ResponsiveContext.Consumer, null, function (size) {
-    return React.createElement(Grid, _extends({
-      areas: areas[size]
-    }, props), children);
-  });
+  var size = React.useContext(ResponsiveContext);
+  return React.createElement(Grid, _extends({
+    areas: areas[size]
+  }, props), children);
 };
 
 var ResponsiveGridExample = function ResponsiveGridExample() {
