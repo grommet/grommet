@@ -1306,12 +1306,11 @@ string",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether to show carousel controls, and where to place them",
-        "format": "false
-true
+        "description": "Whether to show carousel controls and where to place them.",
+        "format": "[object Object]
 arrows
 selectors",
-        "name": "selectors",
+        "name": "controls",
       },
     ],
     "usage": "import { Carousel } from 'grommet';

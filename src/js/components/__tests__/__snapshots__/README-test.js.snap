@@ -2503,13 +2503,12 @@ If specified, the index of
 number
 \`\`\`
 
-**selectors**
+**controls**
 
-Whether to show carousel controls, and where to place them Defaults to \`true\`.
+Whether to show carousel controls and where to place them. Defaults to \`true\`.
 
 \`\`\`
-false
-true
+[object Object]
 arrows
 selectors
 \`\`\`
