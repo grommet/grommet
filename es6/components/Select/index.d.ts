@@ -6,7 +6,6 @@ export interface SelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
-  margin?: MarginType;
   children?: ((...args: any[]) => any);
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
@@ -19,6 +18,7 @@ export interface SelectProps {
   icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
+  margin?: MarginType;
   messages?: { multiple?: string };
   multiple?: boolean;
   name?: string;

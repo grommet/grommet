@@ -4,9 +4,9 @@ import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../ut
 export interface TableProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  caption?: string;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  caption?: string;
 }
 
 declare const Table: React.FC<TableProps & JSX.IntrinsicElements['table']>;
