@@ -14,10 +14,10 @@ export interface HeadingProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   as?: PolymorphicType;
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   color?: ColorType;
+  gridArea?: GridAreaType;
   level?: "1" | "2" | "3" | "4" | "5" | "6" | 1 | 2 | 3 | 4 | 5 | 6;
+  margin?: MarginType;
   responsive?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   textAlign?: TextAlignType;

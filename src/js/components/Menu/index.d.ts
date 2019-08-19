@@ -11,9 +11,9 @@ export interface MenuProps {
   dropTarget?: object;
   dropProps?: DropProps;
   gridArea?: GridAreaType;
-  justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
   icon?: boolean | React.ReactNode;
   items: object[];
+  justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
   label?: string | React.ReactNode;
   margin?: MarginType;
   messages?: {closeMenu?: string,openMenu?: string};

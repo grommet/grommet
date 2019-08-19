@@ -12,9 +12,9 @@ import {
 export interface ParagraphProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  color?: ColorType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  color?: ColorType;
   responsive?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   textAlign?: TextAlignType;

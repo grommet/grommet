@@ -4,12 +4,12 @@ import { A11yTitleType, AlignSelfType, GridAreaType, MarginType, Omit } from "..
 export interface VideoProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   autoPlay?: boolean;
   controls?: "false" | "over" | "below";
   fit?: "cover" | "contain";
+  gridArea?: GridAreaType;
   loop?: boolean;
+  margin?: MarginType;
   mute?: boolean;
 }
 

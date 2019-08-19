@@ -7,8 +7,8 @@ export interface TextInputProps {
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
   dropProps?: DropProps;
-  id?: string;
   focusIndicator?: boolean;
+  id?: string;
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);

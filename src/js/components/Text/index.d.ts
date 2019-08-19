@@ -13,12 +13,12 @@ import {
 export interface TextProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  as?: PolymorphicType;
+  color?:  ColorType;
   gridArea?: GridAreaType,
   margin?: MarginType;
-  color?:  ColorType;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   tag?: PolymorphicType;
-  as?: PolymorphicType;
   textAlign?: TextAlignType;
   truncate?: boolean;
   weight?: "normal" | "bold" | number;
