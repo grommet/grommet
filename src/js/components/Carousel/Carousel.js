@@ -81,7 +81,7 @@ class Carousel extends Component {
   };
 
   render() {
-    const { children, fill, focus, theme, controls, ...rest } = this.props;
+    const { children, controls, fill, focus, theme, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const showArrows = controls && controls !== 'selectors';

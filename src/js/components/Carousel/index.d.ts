@@ -1,12 +1,12 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType, CarouselControlsType } from "../../utils";
+import { A11yTitleType, AlignSelfType, CarouselControlsType, GridAreaType, MarginType,  } from "../../utils";
 
 export interface CarouselProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  controls?: CarouselControlsType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  controls?: CarouselControlsType;
   fill?: boolean;
   play?: number;
   initialChild?: number;

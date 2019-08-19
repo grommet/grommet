@@ -41,25 +41,25 @@ const SimpleCarousel = ({ initialChild, ...props }) => (
 const CustomCarousel = () => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
-        <Carousel controls='arrows'>
-          <Box pad="xlarge" background="accent-1">
-            <Attraction size="xlarge" />
-          </Box>
-          <Box pad="xlarge" background="accent-2">
-            <TreeOption size="xlarge" />
-          </Box>
-          <Box pad="xlarge" background="accent-3">
-            <Car size="xlarge" />
-          </Box>
-        </Carousel>
+      <Carousel controls="arrows">
+        <Box pad="xlarge" background="accent-1">
+          <Attraction size="xlarge" />
+        </Box>
+        <Box pad="xlarge" background="accent-2">
+          <TreeOption size="xlarge" />
+        </Box>
+        <Box pad="xlarge" background="accent-3">
+          <Car size="xlarge" />
+        </Box>
+      </Carousel>
     </Box>
   </Grommet>
 );
 
 storiesOf('Carousel', module)
   .add('Simple Carousel', () => <SimpleCarousel />)
-  .add('Without Controls', () => <SimpleCarousel controls={false} play={1000} />)
+  .add('Without Controls', () => (
+    <SimpleCarousel controls={false} play={1500} />
+  ))
   .add('Custom Animation and Styles', () => <CustomCarousel />)
-  .add('Initial child`', () => (
-  <SimpleCarousel initialChild={1} />
-));
+  .add('Initial Child`', () => <SimpleCarousel initialChild={1} />);
