@@ -6,7 +6,8 @@ import {
   GridAreaType,
   MarginType,
   Omit,
-  PolymorphicType
+  PolymorphicType,
+  TextAlignType
 } from "../../utils";
 
 export interface HeadingProps {
@@ -19,7 +20,7 @@ export interface HeadingProps {
   level?: "1" | "2" | "3" | "4" | "5" | "6" | 1 | 2 | 3 | 4 | 5 | 6;
   responsive?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
-  textAlign?: "start" | "center" | "end";
+  textAlign?: TextAlignType;
   truncate?: boolean;
 }
 

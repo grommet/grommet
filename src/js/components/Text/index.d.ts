@@ -6,7 +6,8 @@ import {
   GridAreaType, 
   MarginType, 
   Omit, 
-  PolymorphicType 
+  PolymorphicType,
+  TextAlignType 
 } from "../../utils";
 
 export interface TextProps {
@@ -18,7 +19,7 @@ export interface TextProps {
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   tag?: PolymorphicType;
   as?: PolymorphicType;
-  textAlign?: "start" | "center" | "end";
+  textAlign?: TextAlignType;
   truncate?: boolean;
   weight?: "normal" | "bold" | number;
   wordBreak?: "normal" | "break-all" | "keep-all" | "break-word";
