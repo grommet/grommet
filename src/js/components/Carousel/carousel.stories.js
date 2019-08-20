@@ -4,10 +4,26 @@ import { Attraction, Car, TreeOption } from 'grommet-icons';
 
 import { Grommet, Box, Carousel } from 'grommet';
 
-const SimpleCarousel = ({ initialChild }) => (
+const customTheme = {
+  carousel: {
+    animation: {
+      duration: 400,
+    },
+    icons: {
+      color: 'blue',
+    },
+    disabled: {
+      icons: {
+        color: 'grey',
+      },
+    },
+  },
+};
+
+const SimpleCarousel = ({ initialChild, ...props }) => (
   <Grommet>
     <Box align="center" pad="large">
-      <Carousel initialChild={initialChild}>
+      <Carousel initialChild={initialChild} {...props}>
         <Box pad="xlarge" background="accent-1">
           <Attraction size="xlarge" />
         </Box>
@@ -22,7 +38,30 @@ const SimpleCarousel = ({ initialChild }) => (
   </Grommet>
 );
 
-storiesOf('Carousel', module).add('Simple', () => <SimpleCarousel />);
-storiesOf('Carousel', module).add('Initial child`', () => (
-  <SimpleCarousel initialChild={1} />
-));
+const CustomCarousel = () => (
+  <Grommet theme={customTheme}>
+    <Box align="center" pad="large">
+      <Carousel controls="arrows">
+        <Box pad="xlarge" background="accent-1">
+          <Attraction size="xlarge" />
+        </Box>
+        <Box pad="xlarge" background="accent-2">
+          <TreeOption size="xlarge" />
+        </Box>
+        <Box pad="xlarge" background="accent-3">
+          <Car size="xlarge" />
+        </Box>
+      </Carousel>
+    </Box>
+  </Grommet>
+);
+
+storiesOf('Carousel', module)
+  .add('Simple Carousel', () => <SimpleCarousel />)
+  .add('Without Controls', () => (
+    <SimpleCarousel controls={false} play={1500} />
+  ))
+  .add('Custom Animation and Styles', () => (
+    <CustomCarousel controls="arrows" />
+  ))
+  .add('Initial Child`', () => <SimpleCarousel initialChild={1} />);
