@@ -3,13 +3,13 @@ import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../ut
 
 export interface TabsProps {
   a11yTitle?: A11yTitleType;
-  alignSelf?: AlignSelfType;
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   activeIndex?: number;
+  alignSelf?: AlignSelfType;
   children: React.ReactNode;
   flex?: "grow" | "shrink" | boolean;
+  gridArea?: GridAreaType;
   justify?: "start" | "center" | "end";
+  margin?: MarginType;
   messages?: {tabContents?: string};
   onActive?: ((...args: any[]) => any);
 }
