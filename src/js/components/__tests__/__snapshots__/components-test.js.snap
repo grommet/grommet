@@ -1307,7 +1307,7 @@ string",
       Object {
         "defaultValue": true,
         "description": "Whether to show carousel controls and where to place them.",
-        "format": "[object Object]
+        "format": "boolean
 arrows
 selectors",
         "name": "controls",

@@ -142,7 +142,7 @@ number
 Whether to show carousel controls and where to place them. Defaults to `true`.
 
 ```
-[object Object]
+boolean
 arrows
 selectors
 ```

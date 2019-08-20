@@ -61,5 +61,7 @@ storiesOf('Carousel', module)
   .add('Without Controls', () => (
     <SimpleCarousel controls={false} play={1500} />
   ))
-  .add('Custom Animation and Styles', () => <CustomCarousel />)
+  .add('Custom Animation and Styles', () => (
+    <CustomCarousel controls="arrows" />
+  ))
   .add('Initial Child`', () => <SimpleCarousel initialChild={1} />);
