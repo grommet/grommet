@@ -88,7 +88,6 @@ class DropButton extends Component {
       drop = (
         <Drop
           id={id ? `${id}__drop` : undefined}
-          restrictFocus
           align={dropAlign}
           target={dropTarget || (forwardRef || this.buttonRef).current}
           onClickOutside={this.onDropClose}
