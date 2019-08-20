@@ -247,18 +247,21 @@ Gap sizes between rows and/or columns.
 small
 medium
 large
+xlarge
 none
 {
   row: 
     small
     medium
     large
+    xlarge
     none
     string,
   column: 
     small
     medium
     large
+    xlarge
     none
     string
 }
