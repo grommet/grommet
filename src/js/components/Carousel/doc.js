@@ -29,7 +29,9 @@ export const doc = Carousel => {
       PropTypes.bool,
       PropTypes.oneOf(['arrows', 'selectors']),
     ])
-      .description(`Whether to show carousel controls and where to place them.`)
+      .description(
+        `Whether to show carousel controls and which type of controls.`,
+      )
       .defaultValue(true),
   };
 
