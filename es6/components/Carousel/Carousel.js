@@ -118,14 +118,17 @@ function (_Component) {
 
     var _this$props = this.props,
         children = _this$props.children,
+        controls = _this$props.controls,
         fill = _this$props.fill,
         focus = _this$props.focus,
         theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "fill", "focus", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "controls", "fill", "focus", "theme"]);
 
     var _this$state = this.state,
         activeIndex = _this$state.activeIndex,
         priorActiveIndex = _this$state.priorActiveIndex;
+    var showArrows = controls && controls !== 'selectors';
+    var showSelectors = controls && controls !== 'arrows';
     var lastIndex = Children.count(children) - 1;
     var onLeft = activeIndex > 0 ? this.onLeft : undefined;
     var onRight = activeIndex < lastIndex ? this.onRight : undefined;
@@ -187,7 +190,7 @@ function (_Component) {
       fill: true,
       direction: "row",
       justify: "between"
-    }, React.createElement(Button, {
+    }, showArrows && React.createElement(Button, {
       fill: "vertical",
       icon: React.createElement(PreviousIcon, {
         color: normalizeColor(previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
@@ -196,12 +199,13 @@ function (_Component) {
       disabled: previousIconDisabled,
       onClick: onLeft,
       hoverIndicator: true
-    }), React.createElement(Box, {
-      justify: "end"
+    }), showSelectors && React.createElement(Box, {
+      justify: "end",
+      fill: !showArrows && 'horizontal'
     }, React.createElement(Box, {
       direction: "row",
       justify: "center"
-    }, selectors)), React.createElement(Button, {
+    }, selectors)), showArrows && React.createElement(Button, {
       fill: "vertical",
       icon: React.createElement(NextIcon, {
         color: normalizeColor(nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
@@ -217,7 +221,8 @@ function (_Component) {
 }(Component);
 
 Carousel.defaultProps = {
-  initialChild: 0
+  initialChild: 0,
+  controls: true
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 var CarouselDoc;

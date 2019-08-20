@@ -136,6 +136,16 @@ If specified, the index of
 ```
 number
 ```
+
+**controls**
+
+Whether to show carousel controls and where to place them. Defaults to `true`.
+
+```
+boolean
+arrows
+selectors
+```
   
 ## Intrinsic element
 

@@ -134,14 +134,17 @@ function (_Component) {
 
     var _this$props = this.props,
         children = _this$props.children,
+        controls = _this$props.controls,
         fill = _this$props.fill,
         focus = _this$props.focus,
         theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "fill", "focus", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "controls", "fill", "focus", "theme"]);
 
     var _this$state = this.state,
         activeIndex = _this$state.activeIndex,
         priorActiveIndex = _this$state.priorActiveIndex;
+    var showArrows = controls && controls !== 'selectors';
+    var showSelectors = controls && controls !== 'arrows';
     var lastIndex = _react.Children.count(children) - 1;
     var onLeft = activeIndex > 0 ? this.onLeft : undefined;
     var onRight = activeIndex < lastIndex ? this.onRight : undefined;
@@ -205,7 +208,7 @@ function (_Component) {
       fill: true,
       direction: "row",
       justify: "between"
-    }, _react["default"].createElement(_Button.Button, {
+    }, showArrows && _react["default"].createElement(_Button.Button, {
       fill: "vertical",
       icon: _react["default"].createElement(PreviousIcon, {
         color: (0, _utils.normalizeColor)(previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
@@ -214,12 +217,13 @@ function (_Component) {
       disabled: previousIconDisabled,
       onClick: onLeft,
       hoverIndicator: true
-    }), _react["default"].createElement(_Box.Box, {
-      justify: "end"
+    }), showSelectors && _react["default"].createElement(_Box.Box, {
+      justify: "end",
+      fill: !showArrows && 'horizontal'
     }, _react["default"].createElement(_Box.Box, {
       direction: "row",
       justify: "center"
-    }, selectors)), _react["default"].createElement(_Button.Button, {
+    }, selectors)), showArrows && _react["default"].createElement(_Button.Button, {
       fill: "vertical",
       icon: _react["default"].createElement(NextIcon, {
         color: (0, _utils.normalizeColor)(nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
@@ -235,7 +239,8 @@ function (_Component) {
 }(_react.Component);
 
 Carousel.defaultProps = {
-  initialChild: 0
+  initialChild: 0,
+  controls: true
 };
 Object.setPrototypeOf(Carousel.defaultProps, _defaultProps.defaultProps);
 var CarouselDoc;
