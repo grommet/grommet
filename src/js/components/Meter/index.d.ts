@@ -4,9 +4,9 @@ import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../ut
 export interface MeterProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  background?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
   gridArea?: GridAreaType;
   margin?: MarginType;
-  background?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
   round?: boolean;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string;
   thickness?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
