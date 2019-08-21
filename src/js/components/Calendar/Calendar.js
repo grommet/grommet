@@ -41,7 +41,7 @@ const buildStartEnd = (reference, firstDayOfWeek) => {
   let start = new Date(reference);
   start.setDate(1); // first of month
 
-  // in case Sunday is the first day of the months and the user asked for Monday to be the first day of the week, we need to include Sunday and six days prior.
+  // in case Sunday is the first day of the month, and the user asked for Monday to be the first day of the week, we need to include Sunday and six days prior.
   if (start.getDay() === 0 && firstDayOfWeek === 1) {
     start = subtractDays(start, 6);
   } else {
