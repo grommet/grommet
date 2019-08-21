@@ -75,7 +75,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && focusStyle;
 }, function (props) {
-  return !props.plain && "\n    transition: 0.1s ease-in-out;\n  ";
+  return !props.plain && "\n    transition-property: color,\n      background-color,\n      border-color,\n      box-shadow;\n    transition-duration: 0.1s;\n    transition-timing-function: ease-in-out;\n  ";
 }, function (props) {
   return props.fillContainer && fillStyle(props.fillContainer);
 }, function (props) {
