@@ -63,8 +63,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -233,8 +233,8 @@ stretch",
       Object {
         "defaultValue": "none",
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -764,8 +764,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -999,8 +999,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1225,8 +1225,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1356,8 +1356,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1763,8 +1763,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1966,6 +1966,70 @@ node",
         "name": "name",
       },
       Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
         "description": "Whether to add padding to align with the padding of TextInput.",
         "format": "boolean",
         "name": "pad",
@@ -2123,8 +2187,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -2638,8 +2702,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -3069,8 +3133,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -3457,8 +3521,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -3591,8 +3655,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall

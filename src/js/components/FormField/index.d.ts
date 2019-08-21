@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Omit, PlaceHolderType } from "../../utils";
+import { Omit, PlaceHolderType, MarginType } from "../../utils";
 
 export interface FormFieldProps {
   error?: string | React.ReactNode;
   help?: string | React.ReactNode;
   htmlFor?: string;
   label?: string | React.ReactNode;
+  margin?: MarginType;
   name?: string;
   pad?: boolean;
   // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
