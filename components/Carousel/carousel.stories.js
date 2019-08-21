@@ -57,15 +57,18 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   })))));
 };
 
-var CustomCarousel = function CustomCarousel() {
+var CustomCarousel = function CustomCarousel(_ref2) {
+  var controls = _ref2.controls,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["controls"]);
+
   return _react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Carousel, {
-    controls: "arrows"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Carousel, _extends({
+    controls: controls
+  }, rest), _react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-1"
   }, _react["default"].createElement(_grommetIcons.Attraction, {
@@ -83,14 +86,14 @@ var CustomCarousel = function CustomCarousel() {
   })))));
 };
 
-(0, _react2.storiesOf)('Carousel', module).add('Simple Carousel', function () {
+(0, _react2.storiesOf)('Carousel', module).add('Simple', function () {
   return _react["default"].createElement(SimpleCarousel, null);
 }).add('Without Controls', function () {
   return _react["default"].createElement(SimpleCarousel, {
     controls: false,
     play: 1500
   });
-}).add('Custom Animation and Styles', function () {
+}).add('Custom Controls', function () {
   return _react["default"].createElement(CustomCarousel, {
     controls: "arrows"
   });

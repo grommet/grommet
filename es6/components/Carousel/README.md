@@ -139,7 +139,7 @@ number
 
 **controls**
 
-Whether to show carousel controls and where to place them. Defaults to `true`.
+Whether to show carousel controls and which type of controls. Defaults to `true`.
 
 ```
 boolean

@@ -51,15 +51,18 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   })))));
 };
 
-var CustomCarousel = function CustomCarousel() {
+var CustomCarousel = function CustomCarousel(_ref2) {
+  var controls = _ref2.controls,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["controls"]);
+
   return React.createElement(Grommet, {
     theme: customTheme
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Carousel, {
-    controls: "arrows"
-  }, React.createElement(Box, {
+  }, React.createElement(Carousel, _extends({
+    controls: controls
+  }, rest), React.createElement(Box, {
     pad: "xlarge",
     background: "accent-1"
   }, React.createElement(Attraction, {
@@ -77,14 +80,14 @@ var CustomCarousel = function CustomCarousel() {
   })))));
 };
 
-storiesOf('Carousel', module).add('Simple Carousel', function () {
+storiesOf('Carousel', module).add('Simple', function () {
   return React.createElement(SimpleCarousel, null);
 }).add('Without Controls', function () {
   return React.createElement(SimpleCarousel, {
     controls: false,
     play: 1500
   });
-}).add('Custom Animation and Styles', function () {
+}).add('Custom Controls', function () {
   return React.createElement(CustomCarousel, {
     controls: "arrows"
   });
