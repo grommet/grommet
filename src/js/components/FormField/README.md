@@ -74,6 +74,14 @@ Whether to add padding to align with the padding of TextInput.
 boolean
 ```
 
+**plain**
+
+Whether to render a border around the form field and handle  the focus indicator
+
+```
+boolean
+```
+
 **required**
 
 Whether the field is required.

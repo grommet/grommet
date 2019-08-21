@@ -1969,6 +1969,11 @@ node",
         "name": "pad",
       },
       Object {
+        "description": "Whether to render a border around the form field and handle  the focus indicator",
+        "format": "boolean",
+        "name": "plain",
+      },
+      Object {
         "description": "Whether the field is required.",
         "format": "boolean",
         "name": "required",

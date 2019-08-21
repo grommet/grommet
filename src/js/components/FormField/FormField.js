@@ -97,6 +97,7 @@ class FormFieldContent extends Component {
       label,
       name,
       pad,
+      plain,
       required,
       style,
       theme,
@@ -121,18 +122,19 @@ class FormFieldContent extends Component {
       contents = <Box {...formField.content}>{contents}</Box>;
     }
 
-    let borderColor;
-    if (focus && !normalizedError) {
-      borderColor = 'focus';
-    } else if (normalizedError) {
-      borderColor = (border && border.error.color) || 'status-critical';
-    } else {
-      borderColor = (border && border.color) || 'border';
-    }
     let abut;
     let outerStyle = style;
 
-    if (border) {
+    if (!plain && border) {
+      let borderColor;
+      if (focus && !normalizedError) {
+        borderColor = 'focus';
+      } else if (normalizedError) {
+        borderColor = border.error.color || 'status-critical';
+      } else {
+        borderColor = border.color || 'border';
+      }
+
       const normalizedChildren = children
         ? Children.map(children, child => {
             if (child) {
@@ -189,7 +191,7 @@ class FormFieldContent extends Component {
       <FormFieldBox
         className={className}
         border={
-          border && border.position === 'outer'
+          !plain && border && border.position === 'outer'
             ? { ...border, color: borderColor }
             : undefined
         }

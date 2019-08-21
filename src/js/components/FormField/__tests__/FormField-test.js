@@ -54,6 +54,16 @@ test('renders error', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('renders plain', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField plain />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('renders htmlFor', () => {
   const component = renderer.create(
     <Grommet>

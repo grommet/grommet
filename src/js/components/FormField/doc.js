@@ -42,6 +42,9 @@ export const doc = FormField => {
     pad: PropTypes.bool.description(
       'Whether to add padding to align with the padding of TextInput.',
     ),
+    plain: PropTypes.bool.description(
+      'Whether to render a border around the form field and handle  the focus indicator',
+    ),
     required: PropTypes.bool.description('Whether the field is required.'),
     validate: PropTypes.oneOfType([
       PropTypes.shape({
