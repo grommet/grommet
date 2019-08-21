@@ -1,14 +1,14 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, GapType, GridAreaType, MarginType } from "../../utils";
 
 export interface DistributionProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   children?: ((...args: any[]) => any);
   fill?: boolean;
-  gap?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  gap?: GapType | "xsmall" | "xlarge";
+  gridArea?: GridAreaType;
+  margin?: MarginType;
   values: {value: number, color?: string | {dark?: string,light?: string}}[];
 }
 
