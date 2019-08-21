@@ -19,28 +19,25 @@ const MenuItem = () => (
     <Gremlin />
   </Box>
 );
+
+const GremlinDropButton = () => (
+  <DropButton
+    alignSelf="center"
+    margin={{ vertical: 'small' }}
+    dropContent={renderItems()}
+    dropProps={{ align: { top: 'bottom' } }}
+  >
+    <MenuItem />
+  </DropButton>
+);
 const MenuDropButton = () => {
   return (
     <Grommet theme={grommet} full>
       <Box fill>
         <Box fill="vertical" width="xxsmall" background="dark-2">
-          <DropButton
-            alignSelf="center"
-            margin={{ vertical: 'small' }}
-            dropContent={renderItems()}
-            dropProps={{ align: { top: 'bottom' } }}
-          >
-            <MenuItem />
-          </DropButton>
+          <GremlinDropButton />
           <Box flex />
-          <DropButton
-            alignSelf="center"
-            margin={{ vertical: 'small' }}
-            dropContent={renderItems()}
-            dropProps={{ align: { top: 'bottom' } }}
-          >
-            <MenuItem />
-          </DropButton>
+          <GremlinDropButton />
         </Box>
       </Box>
     </Grommet>
