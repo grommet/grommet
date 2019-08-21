@@ -4,6 +4,7 @@ import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../ut
 export interface CarouselProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  controls?: boolean | "arrows" | "selectors";
   gridArea?: GridAreaType;
   margin?: MarginType;
   fill?: boolean;

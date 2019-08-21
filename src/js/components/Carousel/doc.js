@@ -25,6 +25,14 @@ export const doc = Carousel => {
       will loop through all children indefinitely.`),
     initialChild: PropTypes.number.description(`If specified, the index of
       the first element to be shown. Defaults to 0.`),
+    controls: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['arrows', 'selectors']),
+    ])
+      .description(
+        `Whether to show carousel controls and which type of controls.`,
+      )
+      .defaultValue(true),
   };
 
   return DocumentedCarousel;
