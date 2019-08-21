@@ -65,10 +65,8 @@ space in the column axis.`,
       PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
     ]).description(
       `Grid areas.
-      If the value is an array of objects, it indicates the
-      area names and columns, row coordinates.
-      Otherwise an array of string arrays can be used to write
-      in a way similar to the gridArea css property.`,
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.`,
     ),
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
