@@ -1304,6 +1304,14 @@ string",
         "format": "number",
         "name": "initialChild",
       },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to show carousel controls and where to place them.",
+        "format": "boolean
+arrows
+selectors",
+        "name": "controls",
+      },
     ],
     "usage": "import { Carousel } from 'grommet';
 <Carousel />",

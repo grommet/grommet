@@ -81,9 +81,11 @@ class Carousel extends Component {
   };
 
   render() {
-    const { children, fill, focus, theme, ...rest } = this.props;
+    const { children, controls, fill, focus, theme, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
+    const showArrows = controls && controls !== 'selectors';
+    const showSelectors = controls && controls !== 'arrows';
     const lastIndex = Children.count(children) - 1;
     const onLeft = activeIndex > 0 ? this.onLeft : undefined;
     const onRight = activeIndex < lastIndex ? this.onRight : undefined;
@@ -152,45 +154,51 @@ class Carousel extends Component {
             direction="row"
             justify="between"
           >
-            <Button
-              fill="vertical"
-              icon={
-                <PreviousIcon
-                  color={normalizeColor(
-                    previousIconDisabled
-                      ? theme.carousel.disabled.icons.color
-                      : theme.carousel.icons.color,
-                    theme,
-                  )}
-                />
-              }
-              plain
-              disabled={previousIconDisabled}
-              onClick={onLeft}
-              hoverIndicator
-            />
-            <Box justify="end">
-              <Box direction="row" justify="center">
-                {selectors}
+            {showArrows && (
+              <Button
+                fill="vertical"
+                icon={
+                  <PreviousIcon
+                    color={normalizeColor(
+                      previousIconDisabled
+                        ? theme.carousel.disabled.icons.color
+                        : theme.carousel.icons.color,
+                      theme,
+                    )}
+                  />
+                }
+                plain
+                disabled={previousIconDisabled}
+                onClick={onLeft}
+                hoverIndicator
+              />
+            )}
+            {showSelectors && (
+              <Box justify="end" fill={!showArrows && 'horizontal'}>
+                <Box direction="row" justify="center">
+                  {selectors}
+                </Box>
               </Box>
-            </Box>
-            <Button
-              fill="vertical"
-              icon={
-                <NextIcon
-                  color={normalizeColor(
-                    nextIconDisabled
-                      ? theme.carousel.disabled.icons.color
-                      : theme.carousel.icons.color,
-                    theme,
-                  )}
-                />
-              }
-              plain
-              disabled={nextIconDisabled}
-              onClick={onRight}
-              hoverIndicator
-            />
+            )}
+            {showArrows && (
+              <Button
+                fill="vertical"
+                icon={
+                  <NextIcon
+                    color={normalizeColor(
+                      nextIconDisabled
+                        ? theme.carousel.disabled.icons.color
+                        : theme.carousel.icons.color,
+                      theme,
+                    )}
+                  />
+                }
+                plain
+                disabled={nextIconDisabled}
+                onClick={onRight}
+                hoverIndicator
+              />
+            )}
           </Box>
         </Stack>
       </Keyboard>
@@ -200,6 +208,7 @@ class Carousel extends Component {
 
 Carousel.defaultProps = {
   initialChild: 0,
+  controls: true,
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 
