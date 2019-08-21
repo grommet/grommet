@@ -6,8 +6,8 @@ import { Grommet, Box, Calendar, DropButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const CalendarDropButton = () => {
-  const [date, setDate] = React.useState(undefined);
-  const [open, setOpen] = React.useState(undefined);
+  const [date, setDate] = React.useState();
+  const [open, setOpen] = React.useState();
 
   const onSelect = selectedDate => {
     setDate(selectedDate);

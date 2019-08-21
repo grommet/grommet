@@ -35,7 +35,7 @@ const SimpleDropButton = () => {
         <DropButton
           label="Open"
           open={open}
-          onClose={() => setOpen(undefined)}
+          onClose={onClose}
           dropContent={<DropContent onClose={onClose} />}
           dropProps={{ align: { top: 'bottom' } }}
         />
