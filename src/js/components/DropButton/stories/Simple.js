@@ -24,9 +24,11 @@ DropContent.propTypes = {
 
 const SimpleDropButton = () => {
   const [open, setOpen] = React.useState();
+  const onOpen = () => {
+    setOpen(true);
+  };
   const onClose = () => {
     setOpen(false);
-    setTimeout(() => setOpen(undefined), 1);
   };
 
   return (
@@ -35,6 +37,7 @@ const SimpleDropButton = () => {
         <DropButton
           label="Open"
           open={open}
+          onOpen={onOpen}
           onClose={onClose}
           dropContent={<DropContent onClose={onClose} />}
           dropProps={{ align: { top: 'bottom' } }}
