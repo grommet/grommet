@@ -124,9 +124,9 @@ class FormFieldContent extends Component {
 
     let abut;
     let outerStyle = style;
+    let borderColor;
 
     if (!plain && border) {
-      let borderColor;
       if (focus && !normalizedError) {
         borderColor = 'focus';
       } else if (normalizedError) {
