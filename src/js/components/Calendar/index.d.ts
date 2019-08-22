@@ -12,7 +12,7 @@ export interface CalendarProps {
   dates?: (string | string[])[];
   daysOfWeek?: boolean;
   disabled?: (string | string[])[];
-  firstDayOfWeek?: "0" | "1";
+  firstDayOfWeek?: 0 | 1;
   header?: ((...args: any[]) => any);
   locale?: string;
   onReference?: ((...args: any[]) => any);

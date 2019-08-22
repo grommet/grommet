@@ -127,7 +127,12 @@ const StyledButton = styled.button`
   ${props =>
     !props.plain &&
     `
-    transition: 0.1s ease-in-out;
+    transition-property: color,
+      background-color,
+      border-color,
+      box-shadow;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
   `}
   ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props =>
