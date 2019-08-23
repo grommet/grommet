@@ -393,6 +393,7 @@ function (_Component) {
     var theme = this.context || propsTheme;
     var _this$state6 = this.state,
         activeMaskIndex = _this$state6.activeMaskIndex,
+        activeOptionIndex = _this$state6.activeOptionIndex,
         showDrop = _this$state6.showDrop;
     return React.createElement(StyledMaskedInputContainer, {
       plain: plain
@@ -451,6 +452,7 @@ function (_Component) {
           });
         },
         onFocus: function onFocus() {},
+        active: index === activeOptionIndex,
         hoverIndicator: "background"
       }, React.createElement(Box, {
         pad: {
