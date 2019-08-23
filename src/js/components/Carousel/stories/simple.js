@@ -26,4 +26,9 @@ const SimpleCarousel = ({ initialChild, ...props }) => {
 
 export default SimpleCarousel;
 
-storiesOf('Carousel', module).add('Simple', () => <SimpleCarousel />);
+storiesOf('Carousel', module)
+  .add('Simple', () => <SimpleCarousel />)
+  .add('Initial Child', () => <SimpleCarousel initialChild={1} />)
+  .add('Without Controls', () => (
+    <SimpleCarousel controls={false} play={1500} />
+  ));
