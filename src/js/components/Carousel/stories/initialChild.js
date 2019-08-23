@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import SimpleCarousel from './simple';
+import SimpleCarousel from './Simple';
 
 const InitialChild = () => {
   return <SimpleCarousel initialChild={1} />;
