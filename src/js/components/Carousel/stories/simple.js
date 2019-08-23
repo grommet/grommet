@@ -24,8 +24,6 @@ const SimpleCarousel = ({ initialChild, ...props }) => {
   );
 };
 
-export default SimpleCarousel;
-
 storiesOf('Carousel', module)
   .add('Simple', () => <SimpleCarousel />)
   .add('Initial Child', () => <SimpleCarousel initialChild={1} />)
