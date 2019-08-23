@@ -8,21 +8,6 @@ import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
 import { Grommet, Box, Carousel } from 'grommet';
-var customTheme = {
-  carousel: {
-    animation: {
-      duration: 400
-    },
-    icons: {
-      color: 'blue'
-    },
-    disabled: {
-      icons: {
-        color: 'grey'
-      }
-    }
-  }
-};
 
 var SimpleCarousel = function SimpleCarousel(_ref) {
   var initialChild = _ref.initialChild,
@@ -51,48 +36,15 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   })))));
 };
 
-var CustomCarousel = function CustomCarousel(_ref2) {
-  var controls = _ref2.controls,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["controls"]);
-
-  return React.createElement(Grommet, {
-    theme: customTheme
-  }, React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, React.createElement(Carousel, _extends({
-    controls: controls
-  }, rest), React.createElement(Box, {
-    pad: "xlarge",
-    background: "accent-1"
-  }, React.createElement(Attraction, {
-    size: "xlarge"
-  })), React.createElement(Box, {
-    pad: "xlarge",
-    background: "accent-2"
-  }, React.createElement(TreeOption, {
-    size: "xlarge"
-  })), React.createElement(Box, {
-    pad: "xlarge",
-    background: "accent-3"
-  }, React.createElement(Car, {
-    size: "xlarge"
-  })))));
-};
-
 storiesOf('Carousel', module).add('Simple', function () {
   return React.createElement(SimpleCarousel, null);
+}).add('Initial Child', function () {
+  return React.createElement(SimpleCarousel, {
+    initialChild: 1
+  });
 }).add('Without Controls', function () {
   return React.createElement(SimpleCarousel, {
     controls: false,
     play: 1500
-  });
-}).add('Custom Controls', function () {
-  return React.createElement(CustomCarousel, {
-    controls: "arrows"
-  });
-}).add('Initial Child`', function () {
-  return React.createElement(SimpleCarousel, {
-    initialChild: 1
   });
 });
