@@ -26,7 +26,15 @@ export const doc = Distribution => {
       )
       .defaultValue(false),
     gap: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'none',
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
       PropTypes.string,
     ])
       .description('The amount of spacing between child elements.')

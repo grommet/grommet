@@ -200,6 +200,7 @@ export const doc = Box => {
     ),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
+        'none',
         'xxsmall',
         'xsmall',
         'small',

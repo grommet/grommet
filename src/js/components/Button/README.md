@@ -207,6 +207,7 @@ element
 The amount of spacing between icon and label in the button. Defaults to `small`.
 
 ```
+none
 xxsmall
 xsmall
 small
