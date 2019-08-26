@@ -19,7 +19,15 @@ const sizes = [
   'flex',
   'auto',
 ];
-const edgeSizes = ['small', 'medium', 'large', 'xlarge', 'none'];
+const edgeSizes = [
+  'xxsmall',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+  'none',
+];
 
 export const doc = Grid => {
   const DocumentedGrid = describe(Grid)

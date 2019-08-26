@@ -137,6 +137,8 @@ boolean
 The amount of spacing between child elements. Defaults to `xsmall`.
 
 ```
+none
+xxmsmall
 xsmall
 small
 medium

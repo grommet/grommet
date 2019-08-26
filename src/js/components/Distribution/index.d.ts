@@ -8,7 +8,7 @@ export interface DistributionProps {
   margin?: MarginType;
   children?: ((...args: any[]) => any);
   fill?: boolean;
-  gap?: GapType | "xsmall" | "xlarge";
+  gap?: GapType;
   values: {value: number, color?: string | {dark?: string,light?: string}}[];
 }
 

@@ -967,6 +967,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
@@ -1580,6 +1581,7 @@ element
 The amount of spacing between icon and label in the button. Defaults to \`small\`.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
@@ -4268,6 +4270,8 @@ boolean
 The amount of spacing between child elements. Defaults to \`xsmall\`.
 
 \`\`\`
+none
+xxmsmall
 xsmall
 small
 medium
@@ -5267,6 +5271,8 @@ boolean
 Gap sizes between rows and/or columns.
 
 \`\`\`
+xxsmall
+xsmall
 small
 medium
 large
@@ -5274,6 +5280,8 @@ xlarge
 none
 {
   row: 
+    xxsmall
+    xsmall
     small
     medium
     large
@@ -5281,6 +5289,8 @@ none
     none
     string,
   column: 
+    xxsmall
+    xsmall
     small
     medium
     large

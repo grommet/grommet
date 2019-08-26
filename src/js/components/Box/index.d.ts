@@ -24,7 +24,7 @@ export interface BoxProps {
   elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
   fill?: "horizontal" | "vertical" | boolean;
-  gap?: GapType | "xxsmall" | "xsmall" | "xlarge";
+  gap?: GapType;
   height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   justify?: "start" | "center" | "between" | "around" | "evenly" | "end";
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;

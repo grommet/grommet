@@ -20,7 +20,7 @@ export interface ButtonProps {
   disabled?: boolean;
   fill?: "horizontal" | "vertical" | boolean;
   focusIndicator?: boolean;
-  gap?: GapType | "xxsmall" | "xsmall" | "xlarge";
+  gap?: GapType;
   hoverIndicator?: boolean | string | "background" | {background?: boolean | string};
   href?: string;
   target?: "_self" | "_blank" | "_parent" | "_top";
