@@ -527,7 +527,8 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium
@@ -897,7 +898,8 @@ _top",
       Object {
         "defaultValue": "small",
         "description": "The amount of spacing between icon and label in the button.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium

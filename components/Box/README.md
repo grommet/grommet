@@ -371,6 +371,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 ```
+none
 xxsmall
 xsmall
 small

@@ -16,7 +16,7 @@ export var doc = function doc(Button) {
     href: PropTypes.string.description('If specified, the button will behave like an anchor tag.'),
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description("Specifies where to display the URL defined in the href property."),
     icon: PropTypes.element.description('Icon element to place in the button.'),
-    gap: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
+    gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description("Click handler. Not setting this property and not specifying a href\ncauses the Button to be disabled."),
     plain: PropTypes.bool.description("Whether this is a plain button with no border or pad.\nNon plain button will show both pad and border.\nThe plain button has no border and unless the icon prop exist it has no pad as well.").defaultValue(false),

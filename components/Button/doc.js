@@ -23,7 +23,7 @@ var doc = function doc(Button) {
     href: _reactDesc.PropTypes.string.description('If specified, the button will behave like an anchor tag.'),
     target: _reactDesc.PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description("Specifies where to display the URL defined in the href property."),
     icon: _reactDesc.PropTypes.element.description('Icon element to place in the button.'),
-    gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
+    gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
     label: _reactDesc.PropTypes.node.description('Label text to place in the button.'),
     onClick: _reactDesc.PropTypes.func.description("Click handler. Not setting this property and not specifying a href\ncauses the Button to be disabled."),
     plain: _reactDesc.PropTypes.bool.description("Whether this is a plain button with no border or pad.\nNon plain button will show both pad and border.\nThe plain button has no border and unless the icon prop exist it has no pad as well.").defaultValue(false),
