@@ -10,11 +10,11 @@ export var doc = function doc(Grid) {
   DocumentedGrid.propTypes = _extends({}, genericProps, {
     align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align the individual items inside the grid when there is extra\nspace in the column axis.").defaultValue('stretch'),
     alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the column axis.'),
-    areas: PropTypes.arrayOf(PropTypes.shape({
+    areas: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       start: PropTypes.arrayOf(PropTypes.number),
       end: PropTypes.arrayOf(PropTypes.number)
-    })).description('Area names and column,row coordinates.'),
+    })), PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))]).description("Grid areas.\n      Either area names and column,row coordinates.\n      Or, an array of string arrays that specify named grid areas."),
     columns: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(fixedSizes), PropTypes.shape({
       count: PropTypes.oneOfType([PropTypes.oneOf(['fit', 'fill']), PropTypes.number]),
       size: PropTypes.oneOfType([PropTypes.oneOf(fixedSizes), PropTypes.arrayOf(PropTypes.oneOf(sizes)), PropTypes.string])

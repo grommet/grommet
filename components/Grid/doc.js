@@ -18,11 +18,11 @@ var doc = function doc(Grid) {
   DocumentedGrid.propTypes = _extends({}, _utils.genericProps, {
     align: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align the individual items inside the grid when there is extra\nspace in the column axis.").defaultValue('stretch'),
     alignContent: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the column axis.'),
-    areas: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
+    areas: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       name: _reactDesc.PropTypes.string,
       start: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number),
       end: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)
-    })).description('Area names and column,row coordinates.'),
+    })), _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string))]).description("Grid areas.\n      Either area names and column,row coordinates.\n      Or, an array of string arrays that specify named grid areas."),
     columns: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.string])), _reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.string])), _reactDesc.PropTypes.oneOf(fixedSizes), _reactDesc.PropTypes.shape({
       count: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['fit', 'fill']), _reactDesc.PropTypes.number]),
       size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(fixedSizes), _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOf(sizes)), _reactDesc.PropTypes.string])

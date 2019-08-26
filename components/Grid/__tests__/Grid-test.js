@@ -78,6 +78,16 @@ test('Grid areas renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Grid areas renders when given an array of string arrays', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    rows: ['xxsmall', 'medium', 'xsmall'],
+    columns: ['3/4', '1/4'],
+    areas: [['header', 'header'], ['sidebar', 'main'], ['footer', 'footer']]
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Grid justify renders', function () {
   var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     justify: "start"

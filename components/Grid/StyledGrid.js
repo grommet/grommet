@@ -160,6 +160,14 @@ var areasStyle = function areasStyle(props) {
     console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
   }
 
+  if (Array.isArray(props.areas) && props.areas.every(function (area) {
+    return Array.isArray(area);
+  })) {
+    return "grid-template-areas: " + props.areas.map(function (area) {
+      return "\"" + area.join(' ') + "\"";
+    }).join(' ') + ";";
+  }
+
   var cells = props.rowsProp.map(function () {
     return props.columns.map(function () {
       return '.';

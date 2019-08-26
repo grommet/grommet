@@ -65,6 +65,15 @@ test('Grid areas renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Grid areas renders when given an array of string arrays', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    rows: ['xxsmall', 'medium', 'xsmall'],
+    columns: ['3/4', '1/4'],
+    areas: [['header', 'header'], ['sidebar', 'main'], ['footer', 'footer']]
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Grid justify renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
     justify: "start"
