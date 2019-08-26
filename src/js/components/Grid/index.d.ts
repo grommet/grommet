@@ -14,7 +14,7 @@ export interface GridProps {
   alignSelf?: AlignSelfType;
   align?: "start" | "center" | "end" | "stretch";
   alignContent?: AlignContentType;
-  areas?: {name?: string,start?: number[],end?: number[]}[];
+  areas?: {name?: string,start?: number[],end?: number[]}[] | string[][];
   as?: PolymorphicType;
   columns?: ("xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | string | string[])[] | "xsmall" | "small" | "medium" | "large" | "xlarge" | {count?: "fit" | "fill" | number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | string | string[]} | string;
   fill?: "horizontal" | "vertical" | boolean;
