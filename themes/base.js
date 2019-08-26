@@ -889,7 +889,9 @@ var generate = function generate(baseSpacing, scale) {
       xsmall: _extends({}, fontSizing(-1.5)),
       small: _extends({}, fontSizing(-1)),
       medium: _extends({}, fontSizing(0)),
+      // 18px
       large: _extends({}, fontSizing(1)),
+      // 22px
       xlarge: _extends({}, fontSizing(2)),
       xxlarge: _extends({}, fontSizing(4))
     },
