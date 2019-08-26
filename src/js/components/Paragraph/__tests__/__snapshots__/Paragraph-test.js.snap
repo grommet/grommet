@@ -177,6 +177,10 @@ exports[`Paragraph size renders 1`] = `
     className="c6"
     fill={true}
   />
+  <p
+    className="c2"
+    fill={false}
+  />
 </div>
 `;
 
