@@ -138,7 +138,7 @@ The amount of spacing between child elements. Defaults to `xsmall`.
 
 ```
 none
-xxmsmall
+xxsmall
 xsmall
 small
 medium

@@ -28,7 +28,7 @@ export const doc = Distribution => {
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',
-        'xxmsmall',
+        'xxsmall',
         'xsmall',
         'small',
         'medium',
