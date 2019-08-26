@@ -23,6 +23,7 @@ test('Paragraph size renders', () => {
       <Paragraph size="large" />
       <Paragraph size="xlarge" />
       <Paragraph size="xxlarge" />
+      <Paragraph fill />
     </Grommet>,
   );
   const tree = component.toJSON();
