@@ -806,8 +806,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     text: {
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
-      medium: { ...fontSizing(0) },
-      large: { ...fontSizing(1) },
+      medium: { ...fontSizing(0) }, // 18px
+      large: { ...fontSizing(1) }, // 22px
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
