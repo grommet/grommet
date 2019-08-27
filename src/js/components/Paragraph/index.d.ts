@@ -13,6 +13,7 @@ export interface ParagraphProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   color?: ColorType;
+  fill?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
   responsive?: boolean;

@@ -22,6 +22,9 @@ export const doc = Paragraph => {
     color: colorPropType.description(
       'A color identifier to use for the text color.',
     ),
+    fill: PropTypes.bool
+      .description('Whether the width should fill the container.')
+      .defaultValue(false),
     responsive: PropTypes.bool
       .description(`Whether margin should be scaled for mobile environments.`)
       .defaultValue(true),
