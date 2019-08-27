@@ -40,6 +40,12 @@ class Anchor extends Component {
       ...rest
     } = this.props;
 
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(
+        `The Anchor component will be deprecated in the upcoming releases. Please use grommet Link component instead. For more info refer to https://github.com/grommet/grommet/issues/3297.`,
+      );
+    }
+
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
       coloredIcon = cloneElement(icon, {
