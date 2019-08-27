@@ -18,7 +18,7 @@ var colorStyle = (0, _styledComponents.css)(["color:", ";"], function (props) {
 var sizeStyle = function sizeStyle(props) {
   var size = props.size || 'medium';
   var data = props.theme.paragraph[size];
-  return (0, _styledComponents.css)(["font-size:", ";line-height:", ";max-width:", ";"], data.size, data.height, data.maxWidth);
+  return (0, _styledComponents.css)(["font-size:", ";line-height:", ";max-width:", ";"], data.size, data.height, props.fill ? 'none' : data.maxWidth);
 };
 
 var TEXT_ALIGN_MAP = {

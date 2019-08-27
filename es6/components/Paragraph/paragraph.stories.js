@@ -15,7 +15,9 @@ var All = function All() {
     }, "Paragraph " + size, paragraphFiller);
   }), React.createElement(Paragraph, {
     color: "status-critical"
-  }, "This is an error message."));
+  }, "This is an error message."), React.createElement(Paragraph, {
+    fill: true
+  }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
 };
 
 storiesOf('Paragraph', module).add('All', function () {

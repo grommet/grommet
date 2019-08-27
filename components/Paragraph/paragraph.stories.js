@@ -23,7 +23,9 @@ var All = function All() {
     }, "Paragraph " + size, paragraphFiller);
   }), _react["default"].createElement(_grommet.Paragraph, {
     color: "status-critical"
-  }, "This is an error message."));
+  }, "This is an error message."), _react["default"].createElement(_grommet.Paragraph, {
+    fill: true
+  }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
 };
 
 (0, _react2.storiesOf)('Paragraph', module).add('All', function () {

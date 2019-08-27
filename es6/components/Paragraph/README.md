@@ -119,6 +119,14 @@ string
 }
 ```
 
+**fill**
+
+Whether the width should fill the container.
+
+```
+boolean
+```
+
 **responsive**
 
 Whether margin should be scaled for mobile environments. Defaults to `true`.

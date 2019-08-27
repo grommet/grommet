@@ -29,6 +29,10 @@ test('Paragraph size renders', function () {
     size: "xlarge"
   }), _react["default"].createElement(_.Paragraph, {
     size: "xxlarge"
+  }), _react["default"].createElement(_.Paragraph, {
+    fill: true
+  }), _react["default"].createElement(_.Paragraph, {
+    fill: false
   })));
 
   var tree = component.toJSON();
