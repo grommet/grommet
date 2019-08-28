@@ -169,4 +169,64 @@ describe('DataTable', () => {
     fireEvent.click(headerCell, {});
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('expandedGroupKeys', () => {
+    const { container, getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          primaryKey="b"
+          groupBy="a"
+          expandedGroupKeys={['one']}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onToggle', () => {
+    const onToggle = jest.fn(groupState => groupState);
+    const { getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          primaryKey="b"
+          groupBy="a"
+          onToggle={onToggle}
+        />
+      </Grommet>,
+    );
+
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
+
+    expect(onToggle).toBeCalled();
+    expect(onToggle.mock.results[0].value).toEqual({
+      one: { expanded: true },
+      two: { expanded: false },
+    });
+    expect(onToggle.mock.results[0].value).toMatchSnapshot();
+  });
 });
