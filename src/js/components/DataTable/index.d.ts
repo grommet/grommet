@@ -9,8 +9,10 @@ export interface DataTableProps {
   columns?: {align?: "center" | "start" | "end",aggregate?: "avg" | "max" | "min" | "sum",footer?: React.ReactNode | {aggregate?: boolean},header?: string | React.ReactNode | {aggregate?: boolean},primary?: boolean,property: string,render?: ((...args: any[]) => any),search?: boolean,sortable?: boolean}[];
   data?: {}[];
   groupBy?: string;
+  expandedGroupKeys?: Array<string>,
   onMore?: ((...args: any[]) => any);
   onSearch?: ((...args: any[]) => any);
+  onToggle?: ((...args: any[]) => any);
   primaryKey?: string;
   resizeable?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;

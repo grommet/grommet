@@ -12,6 +12,7 @@ class DataTable extends Component {
     columns: [],
     data: [],
     step: 50,
+    expandedGroupKeys: [],
   };
 
   state = {};
@@ -47,16 +48,21 @@ class DataTable extends Component {
 
   onToggleGroup = groupValue => () => {
     const { groupState } = this.state;
+    const { onToggle } = this.props;
     const nextGroupState = { ...groupState };
     nextGroupState[groupValue] = {
       ...nextGroupState[groupValue],
       expanded: !nextGroupState[groupValue].expanded,
     };
     this.setState({ groupState: nextGroupState });
+    if (onToggle) {
+      onToggle(nextGroupState);
+    }
   };
 
   onToggleGroups = () => {
     const { groupState } = this.state;
+    const { onToggle } = this.props;
     const expanded =
       Object.keys(groupState).filter(k => !groupState[k].expanded).length === 0;
     const nextGroupState = {};
@@ -64,6 +70,9 @@ class DataTable extends Component {
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     this.setState({ groupState: nextGroupState });
+    if (onToggle) {
+      onToggle(nextGroupState);
+    }
   };
 
   onResize = property => width => {

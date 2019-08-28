@@ -136,7 +136,7 @@ const sortData = (nextProps, prevState, nextState) => {
 };
 
 const groupData = (nextProps, prevState, nextState) => {
-  const { columns, groupBy } = nextProps;
+  const { columns, groupBy, expandedGroupKeys } = nextProps;
   const { data } = nextState;
 
   let groups;
@@ -155,7 +155,7 @@ const groupData = (nextProps, prevState, nextState) => {
           expanded:
             prevState.groupState && prevState.groupState[groupValue]
               ? prevState.groupState[groupValue].expanded
-              : false,
+              : expandedGroupKeys.some(key => key === groupValue),
         };
         groupMap[groupValue] = group;
       }
