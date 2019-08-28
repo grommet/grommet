@@ -37,6 +37,6 @@ export interface BoxProps {
   wrap?: boolean | "reverse";
 }
 
-declare const Box: React.ComponentClass<BoxProps & JSX.IntrinsicElements['div']>;
+export type BoxProps = React.ComponentClass<BoxProps & JSX.IntrinsicElements['div']>;
 
 export { Box };
