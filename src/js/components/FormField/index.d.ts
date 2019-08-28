@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PlaceHolderType } from "../../utils";
+import { Omit, PlaceHolderType } from "../../utils";
 
 export interface FormFieldProps {
   error?: string | React.ReactNode;
