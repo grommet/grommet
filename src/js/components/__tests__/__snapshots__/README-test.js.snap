@@ -6282,7 +6282,7 @@ boolean
 
 **animation**
 
-Animation transition of the Layer content when it opens. Defaults to \`slide\`.
+Animation transition of the Layer content when it opens and closes. Defaults to \`slide\`.
 
 \`\`\`
 slide
