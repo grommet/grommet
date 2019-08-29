@@ -22,7 +22,7 @@ export interface ButtonProps {
   fill?: "horizontal" | "vertical" | boolean;
   focusIndicator?: boolean;
   gap?: GapType;
-  hoverIndicator?: BackgroundType | "background" | boolean;
+  hoverIndicator?: BackgroundType | boolean;
   href?: string;
   target?: "_self" | "_blank" | "_parent" | "_top";
   icon?: JSX.Element;
