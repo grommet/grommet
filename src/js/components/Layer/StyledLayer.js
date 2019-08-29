@@ -197,6 +197,8 @@ const KEYFRAMES = {
   },
 };
 
+const animationDuration = 200;
+
 const getAnimationStyle = (props, position, full) => {
   let animation =
     props.animation !== undefined ? props.animation : props.animate;
@@ -209,7 +211,7 @@ const getAnimationStyle = (props, position, full) => {
   }
   return keys
     ? css`
-        animation: ${keys} 0.2s ease-in-out forwards;
+        animation: ${keys} ${animationDuration / 1000.0}s ease-in-out forwards;
       `
     : '';
 };
@@ -565,4 +567,4 @@ const StyledContainer = styled.div`
 StyledContainer.defaultProps = {};
 Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 
-export { StyledLayer, StyledOverlay, StyledContainer };
+export { animationDuration, StyledLayer, StyledOverlay, StyledContainer };
