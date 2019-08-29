@@ -54,7 +54,7 @@ class Layer extends Component {
       const clonedContainer = layerClone.querySelector(
         '[class^="StyledLayer__StyledContainer"]',
       );
-      clonedContainer.style = 'animation-direction: reverse';
+      clonedContainer.style.animationDirection = 'reverse';
       setTimeout(() => {
         // we add the id and query here so the unit tests work
         const clone = document.getElementById('layerClone');
