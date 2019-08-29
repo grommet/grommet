@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import { Add } from 'grommet-icons';
 
-import { Grommet, Anchor, Box, Text } from '../../components';
+import { Grommet, Link, Box, Text } from '../../components';
 import { dark } from '..';
 
 const colors = [
@@ -91,12 +91,12 @@ describe('Grommet', () => {
     const component = renderer.create(
       <Grommet theme={customTheme}>
         <Box>
-          <Anchor icon={<Add />} label="Add" />
-          <Anchor icon={<Add />} label="Add" color="custom" />
+          <Link href="#link" icon={<Add />} label="Add" />
+          <Link href="#link" icon={<Add />} label="Add" color="custom" />
         </Box>
         <Box background="dark-1">
-          <Anchor icon={<Add />} label="Add" />
-          <Anchor icon={<Add />} label="Add" color="custom" />
+          <Link href="#link" icon={<Add />} label="Add" />
+          <Link href="#link" icon={<Add />} label="Add" color="custom" />
         </Box>
       </Grommet>,
     );

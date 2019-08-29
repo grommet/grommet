@@ -5,121 +5,127 @@ import 'jest-styled-components';
 import { findAllByType } from '../../../utils';
 
 import { Grommet } from '../../Grommet';
-import { Anchor } from '..';
+import { Link, Anchor } from '..';
 
-test('Anchor renders', () => {
+test('Link renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor />
+      <Link href="#link" />
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Anchor renders with children', () => {
+test('Link renders with children', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href="#">children</Anchor>
+      <Link href="#link">children</Link>
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Anchor warns about invalid label render', () => {
+test('Link warns about invalid label render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Anchor href="#" label="Test">
+      <Link href="#link" label="Test">
         invalid
-      </Anchor>
+      </Link>
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
   expect(warnSpy).toHaveBeenCalledWith(
-    'Anchor should not have children if icon or label is provided',
+    'Link should not have children if icon or label is provided',
   );
 
   warnSpy.mockReset();
   warnSpy.mockRestore();
 });
 
-test('Anchor warns about invalid icon render', () => {
+test('Link warns about invalid icon render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Anchor href="#" icon={<svg />}>
+      <Link href="#link" icon={<svg />}>
         invalid
-      </Anchor>
+      </Link>
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
   expect(warnSpy).toHaveBeenCalledWith(
-    'Anchor should not have children if icon or label is provided',
+    'Link should not have children if icon or label is provided',
   );
 
   warnSpy.mockReset();
   warnSpy.mockRestore();
 });
 
-test('Anchor primary renders', () => {
+test('Link primary renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href="#" primary label="Test" />
+      <Link href="#link" primary label="Test" />
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Anchor focus renders', () => {
+test('Link focus renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href="#" focus label="Test" />
+      <Link href="#link" focus label="Test" />
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Anchor disabled renders', () => {
+test('Link disabled renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor disabled />
+      <Link href="#link" disabled />
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Anchor icon label renders', () => {
+test('Link icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor icon={<svg />} label="Test" onClick={() => {}} />
+      <Link href="#link" icon={<svg />} label="Test" onClick={() => {}} />
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Anchor reverse icon label renders', () => {
+test('Link reverse icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor reverse icon={<svg />} label="Test" onClick={() => {}} />
+      <Link
+        href="#link"
+        reverse
+        icon={<svg />}
+        label="Test"
+        onClick={() => {}}
+      />
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Anchor is clickable', () => {
+test('Link is clickable', () => {
   const onClick = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <Anchor href="#" label="Test" onClick={onClick} />
+      <Link href="#link" label="Test" onClick={onClick} />
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -132,7 +138,17 @@ test('Anchor is clickable', () => {
 test('renders tag', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href="#" label="Test" as="span" />
+      <Link href="#link" label="Test" as="span" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Old Anchors still work', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Anchor href="#link" label="Test" as="span" />
     </Grommet>,
   );
   const tree = component.toJSON();

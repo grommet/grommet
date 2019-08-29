@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Anchor disabled renders 1`] = `
+exports[`Link disabled renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -39,7 +39,7 @@ exports[`Anchor disabled renders 1`] = `
 </div>
 `;
 
-exports[`Anchor focus renders 1`] = `
+exports[`Link focus renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -88,7 +88,7 @@ exports[`Anchor focus renders 1`] = `
 >
   <a
     className="c1"
-    href="#"
+    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -97,7 +97,7 @@ exports[`Anchor focus renders 1`] = `
 </div>
 `;
 
-exports[`Anchor icon label renders 1`] = `
+exports[`Link icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -170,6 +170,7 @@ exports[`Anchor icon label renders 1`] = `
 >
   <a
     className="c1"
+    href="#link"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -194,7 +195,7 @@ exports[`Anchor icon label renders 1`] = `
 </div>
 `;
 
-exports[`Anchor primary renders 1`] = `
+exports[`Link primary renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -227,7 +228,7 @@ exports[`Anchor primary renders 1`] = `
 >
   <a
     className="c1"
-    href="#"
+    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -236,7 +237,7 @@ exports[`Anchor primary renders 1`] = `
 </div>
 `;
 
-exports[`Anchor renders 1`] = `
+exports[`Link renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -269,13 +270,14 @@ exports[`Anchor renders 1`] = `
 >
   <a
     className="c1"
+    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   />
 </div>
 `;
 
-exports[`Anchor renders with children 1`] = `
+exports[`Link renders with children 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -308,7 +310,7 @@ exports[`Anchor renders with children 1`] = `
 >
   <a
     className="c1"
-    href="#"
+    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -317,7 +319,7 @@ exports[`Anchor renders with children 1`] = `
 </div>
 `;
 
-exports[`Anchor reverse icon label renders 1`] = `
+exports[`Link reverse icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -390,6 +392,7 @@ exports[`Anchor reverse icon label renders 1`] = `
 >
   <a
     className="c1"
+    href="#link"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -414,7 +417,7 @@ exports[`Anchor reverse icon label renders 1`] = `
 </div>
 `;
 
-exports[`Anchor warns about invalid icon render 1`] = `
+exports[`Link warns about invalid icon render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -448,7 +451,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
 >
   <a
     className="c1"
-    href="#"
+    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -459,7 +462,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
 </div>
 `;
 
-exports[`Anchor warns about invalid label render 1`] = `
+exports[`Link warns about invalid label render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -492,12 +495,54 @@ exports[`Anchor warns about invalid label render 1`] = `
 >
   <a
     className="c1"
-    href="#"
+    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     Test
   </a>
+</div>
+`;
+
+exports[`Old Anchors still work 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+    href="#link"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Test
+  </span>
 </div>
 `;
 
@@ -534,7 +579,7 @@ exports[`renders tag 1`] = `
 >
   <span
     className="c1"
-    href="#"
+    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   >

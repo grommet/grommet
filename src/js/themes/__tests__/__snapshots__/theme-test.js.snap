@@ -272,6 +272,7 @@ exports[`Grommet custom theme 1`] = `
   >
     <a
       className="c2"
+      href="#link"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -303,6 +304,7 @@ exports[`Grommet custom theme 1`] = `
     </a>
     <a
       className="c6"
+      href="#link"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -338,6 +340,7 @@ exports[`Grommet custom theme 1`] = `
   >
     <a
       className="c9"
+      href="#link"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -369,6 +372,7 @@ exports[`Grommet custom theme 1`] = `
     </a>
     <a
       className="c6"
+      href="#link"
       onBlur={[Function]}
       onFocus={[Function]}
     >

@@ -24,30 +24,30 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledAnchor = styled.a`
+const StyledLink = styled.a`
   box-sizing: border-box;
   ${props => sizeStyle(props)}
   color: ${props =>
-    normalizeColor(props.colorProp || props.theme.anchor.color, props.theme)};
+    normalizeColor(props.colorProp || props.theme.link.color, props.theme)};
   ${props =>
-    props.theme.anchor.fontWeight &&
-    `font-weight: ${props.theme.anchor.fontWeight};`}
+    props.theme.link.fontWeight &&
+    `font-weight: ${props.theme.link.fontWeight};`}
   text-decoration: ${props =>
-    props.hasIcon ? 'none' : props.theme.anchor.textDecoration};
+    props.hasIcon ? 'none' : props.theme.link.textDecoration};
   cursor: pointer;
   outline: none;
   ${genericStyles}
 
   ${props =>
     !props.disabled &&
-    props.theme.anchor.hover &&
+    props.theme.link.hover &&
     css`
     &:hover {
-      ${props.theme.anchor.hover.textDecoration &&
-        `text-decoration: ${props.theme.anchor.hover.textDecoration};`}
-      ${props.theme.anchor.hover.fontWeight &&
-        `font-weight: ${props.theme.anchor.hover.fontWeight};`}
-      ${props.theme.anchor.hover.extend}
+      ${props.theme.link.hover.textDecoration &&
+        `text-decoration: ${props.theme.link.hover.textDecoration};`}
+      ${props.theme.link.hover.fontWeight &&
+        `font-weight: ${props.theme.link.hover.fontWeight};`}
+      ${props.theme.link.hover.extend}
     }
   `}
   ${props =>
@@ -58,10 +58,10 @@ const StyledAnchor = styled.a`
   `}
   ${props => props.disabled && disabledStyle}
   ${props => props.focus && focusStyle}
-  ${props => props.theme.anchor.extend}
+  ${props => props.theme.link.extend}
 `;
 
-StyledAnchor.defaultProps = {};
-Object.setPrototypeOf(StyledAnchor.defaultProps, defaultProps);
+StyledLink.defaultProps = {};
+Object.setPrototypeOf(StyledLink.defaultProps, defaultProps);
 
-export { StyledAnchor };
+export { StyledLink };

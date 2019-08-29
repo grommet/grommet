@@ -9,16 +9,16 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { withFocus, withForwardRef } from '../hocs';
 
-import { StyledAnchor } from './StyledAnchor';
+import { StyledLink } from './StyledLink';
 
-class Anchor extends Component {
+class Link extends Component {
   constructor(props) {
     super(props);
 
     const { children, icon, label } = props;
     if ((icon || label) && children) {
       console.warn(
-        'Anchor should not have children if icon or label is provided',
+        'Link should not have children if icon or label is provided',
       );
     }
   }
@@ -43,7 +43,7 @@ class Anchor extends Component {
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
       coloredIcon = cloneElement(icon, {
-        color: normalizeColor(color || theme.anchor.color, theme),
+        color: normalizeColor(color || theme.link.color, theme),
       });
     }
 
@@ -51,7 +51,7 @@ class Anchor extends Component {
     const second = reverse ? coloredIcon : label;
 
     return (
-      <StyledAnchor
+      <StyledLink
         {...rest}
         ref={forwardRef}
         aria-label={a11yTitle}
@@ -78,22 +78,22 @@ class Anchor extends Component {
         ) : (
           first || second || children
         )}
-      </StyledAnchor>
+      </StyledLink>
     );
   }
 }
 
-Anchor.defaultProps = {};
-Object.setPrototypeOf(Anchor.defaultProps, defaultProps);
+Link.defaultProps = {};
+Object.setPrototypeOf(Link.defaultProps, defaultProps);
 
-let AnchorDoc;
+let LinkDoc;
 if (process.env.NODE_ENV !== 'production') {
-  AnchorDoc = require('./doc').doc(Anchor); // eslint-disable-line global-require
+  LinkDoc = require('./doc').doc(Link); // eslint-disable-line global-require
 }
-const AnchorWrapper = compose(
+const LinkWrapper = compose(
   withFocus(),
   withTheme,
   withForwardRef,
-)(AnchorDoc || Anchor);
+)(LinkDoc || Link);
 
-export { AnchorWrapper as Anchor };
+export { LinkWrapper as Link };

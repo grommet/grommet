@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Anchor } from '../Anchor';
+import { Link } from '../Link';
 
-const HiddenAnchor = styled(Anchor)`
+const HiddenAnchor = styled(Link)`
   width: 0;
   height: 0;
   overflow: hidden;
