@@ -186,6 +186,18 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 ```
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+```
+function
+```
+
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
