@@ -176,9 +176,10 @@ class FormFieldContent extends Component {
         if (margin) {
           abutMargin = margin;
         } else if (border.size) {
+          // if the user defines a margin, then the default margin below will be overriden
           abutMargin = {
             bottom: `-${parseMetricToNum(
-              theme.global.borderSize[border.size],
+              theme.global.borderSize[border.size] || border.size,
             )}px`,
           };
         }
