@@ -194,7 +194,7 @@ describe('Layer', function () {
 
     expect(onEsc).toBeCalled();
   });
-  test('is accessible', function () {
+  test('is accessible', function (done) {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeLayer, {
       "data-testid": "test-layer-node"
@@ -215,11 +215,15 @@ describe('Layer', function () {
       key: 'Esc',
       keyCode: 27,
       which: 27
-    });
+    }); // because of de-animation, we test both the initial and delayed states
+
 
     bodyNode = (0, _domTestingLibrary.getByTestId)(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
-    expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-node')).toBeNull();
+    setTimeout(function () {
+      expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-node')).toBeNull();
+      done();
+    }, 300);
   });
   test('should be null prior to mounting, displayed after mount', function () {
     var ref = _react["default"].createRef();

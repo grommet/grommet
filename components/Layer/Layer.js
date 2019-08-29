@@ -11,6 +11,8 @@ var _utils = require("../../utils");
 
 var _LayerContainer = require("./LayerContainer");
 
+var _StyledLayer = require("./StyledLayer");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -54,6 +56,10 @@ function (_Component) {
   _proto.componentWillUnmount = function componentWillUnmount() {
     var _this2 = this;
 
+    var _this$props = this.props,
+        animate = _this$props.animate,
+        animation = _this$props.animation;
+
     if (this.originalFocusedElement) {
       if (this.originalFocusedElement.focus) {
         // wait for the fixed positioning to come back to normal
@@ -67,7 +73,22 @@ function (_Component) {
       }
     }
 
-    document.body.removeChild(this.layerContainer);
+    var activeAnimation = animation !== undefined ? animation : animate;
+
+    if (activeAnimation !== false) {
+      // undefined uses 'slide' as the default
+      // animate out and remove later
+      var layerClone = this.layerContainer.cloneNode(true);
+      layerClone.id = 'layerClone';
+      document.body.appendChild(layerClone);
+      var clonedContainer = layerClone.querySelector('[class^="StyledLayer__StyledContainer"]');
+      clonedContainer.style.animationDirection = 'reverse';
+      setTimeout(function () {
+        // we add the id and query here so the unit tests work
+        var clone = document.getElementById('layerClone');
+        if (clone) document.body.removeChild(clone);
+      }, _StyledLayer.animationDuration);
+    }
   };
 
   _proto.render = function render() {

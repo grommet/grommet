@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledContainer = exports.StyledOverlay = exports.StyledLayer = void 0;
+exports.StyledContainer = exports.StyledOverlay = exports.StyledLayer = exports.animationDuration = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -118,6 +118,8 @@ var KEYFRAMES = {
     "false": (0, _styledComponents.keyframes)(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"])
   }
 };
+var animationDuration = 200;
+exports.animationDuration = animationDuration;
 
 var getAnimationStyle = function getAnimationStyle(props, position, full) {
   var animation = props.animation !== undefined ? props.animation : props.animate;
@@ -130,7 +132,7 @@ var getAnimationStyle = function getAnimationStyle(props, position, full) {
     keys = (0, _styledComponents.keyframes)(["0%{opacity:0}100%{opacity:1}"]);
   }
 
-  return keys ? (0, _styledComponents.css)(["animation:", " 0.2s ease-in-out forwards;"], keys) : '';
+  return keys ? (0, _styledComponents.css)(["animation:", " ", "s ease-in-out forwards;"], keys, animationDuration / 1000.0) : '';
 }; // POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.
 // Basically, non-full axes combine 50% position with -50% translation.
