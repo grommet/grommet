@@ -46,7 +46,7 @@ class Layer extends Component {
 
     const activeAnimation = animation !== undefined ? animation : animate;
     if (activeAnimation !== false) {
-      // undefined still has fadeIn
+      // undefined uses 'slide' as the default
       // animate out and remove later
       const layerClone = this.layerContainer.cloneNode(true);
       layerClone.id = 'layerClone';
