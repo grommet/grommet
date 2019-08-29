@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { getNewContainer } from '../../utils';
 
 import { LayerContainer } from './LayerContainer';
+import { animationDuration } from './StyledLayer';
 
 class Layer extends Component {
   static defaultProps = {
@@ -58,7 +59,7 @@ class Layer extends Component {
         // we add the id and query here so the unit tests work
         const clone = document.getElementById('layerClone');
         if (clone) document.body.removeChild(clone);
-      }, 200); // matches 0.2s in StyledLayer.getAnimationStyle()
+      }, animationDuration);
     }
   }
 
