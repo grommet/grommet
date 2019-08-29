@@ -5,18 +5,20 @@ import {
   ColorType, 
   GridAreaType, 
   MarginType, 
-  Omit 
+  Omit,
+  TextAlignType
 } from "../../utils";
 
 export interface ParagraphProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  color?: ColorType;
+  fill?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  color?: ColorType;
   responsive?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
-  textAlign?: "start" | "center" | "end";
+  textAlign?: TextAlignType;
 }
 
 declare const Paragraph: React.FC<ParagraphProps & Omit<JSX.IntrinsicElements['p'], 'color'>>;

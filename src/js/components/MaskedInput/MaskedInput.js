@@ -314,7 +314,7 @@ class MaskedInput extends Component {
       ...rest
     } = this.props;
     const theme = this.context || propsTheme;
-    const { activeMaskIndex, showDrop } = this.state;
+    const { activeMaskIndex, activeOptionIndex, showDrop } = this.state;
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -369,6 +369,7 @@ class MaskedInput extends Component {
                       this.setState({ activeOptionIndex: index })
                     }
                     onFocus={() => {}}
+                    active={index === activeOptionIndex}
                     hoverIndicator="background"
                   >
                     <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>

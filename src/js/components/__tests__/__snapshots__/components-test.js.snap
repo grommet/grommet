@@ -527,7 +527,8 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium
@@ -897,7 +898,8 @@ _top",
       Object {
         "defaultValue": "small",
         "description": "The amount of spacing between icon and label in the button.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium
@@ -1303,6 +1305,14 @@ string",
       the first element to be shown. Defaults to 0.",
         "format": "number",
         "name": "initialChild",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to show carousel controls and which type of controls.",
+        "format": "boolean
+arrows
+selectors",
+        "name": "controls",
       },
     ],
     "usage": "import { Carousel } from 'grommet';

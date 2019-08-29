@@ -30,15 +30,14 @@ const customBreakpoints = deepMerge(grommet, {
   },
 });
 
-const ResponsiveGrid = ({ children, areas, ...props }) => (
-  <ResponsiveContext.Consumer>
-    {size => (
-      <Grid areas={areas[size]} {...props}>
-        {children}
-      </Grid>
-    )}
-  </ResponsiveContext.Consumer>
-);
+const ResponsiveGrid = ({ children, areas, ...props }) => {
+  const size = React.useContext(ResponsiveContext);
+  return (
+    <Grid areas={areas[size]} {...props}>
+      {children}
+    </Grid>
+  );
+};
 
 const ResponsiveGridExample = () => (
   <Grommet theme={customBreakpoints} full>

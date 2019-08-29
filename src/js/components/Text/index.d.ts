@@ -6,19 +6,20 @@ import {
   GridAreaType, 
   MarginType, 
   Omit, 
-  PolymorphicType 
+  PolymorphicType,
+  TextAlignType 
 } from "../../utils";
 
 export interface TextProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  as?: PolymorphicType;
+  color?:  ColorType;
   gridArea?: GridAreaType,
   margin?: MarginType;
-  color?:  ColorType;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   tag?: PolymorphicType;
-  as?: PolymorphicType;
-  textAlign?: "start" | "center" | "end";
+  textAlign?: TextAlignType;
   truncate?: boolean;
   weight?: "normal" | "bold" | number;
   wordBreak?: "normal" | "break-all" | "keep-all" | "break-word";

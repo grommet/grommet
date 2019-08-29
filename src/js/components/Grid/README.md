@@ -139,7 +139,9 @@ stretch
 
 **areas**
 
-Area names and column,row coordinates.
+Grid areas.
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.
 
 ```
 [{
@@ -147,6 +149,7 @@ Area names and column,row coordinates.
   start: [number],
   end: [number]
 }]
+[[string]]
 ```
 
 **columns**
@@ -244,21 +247,30 @@ boolean
 Gap sizes between rows and/or columns.
 
 ```
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 none
 {
   row: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string,
   column: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string
 }

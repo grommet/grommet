@@ -967,6 +967,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
@@ -1580,6 +1581,7 @@ element
 The amount of spacing between icon and label in the button. Defaults to \`small\`.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
@@ -2501,6 +2503,16 @@ If specified, the index of
 
 \`\`\`
 number
+\`\`\`
+
+**controls**
+
+Whether to show carousel controls and which type of controls. Defaults to \`true\`.
+
+\`\`\`
+boolean
+arrows
+selectors
 \`\`\`
   
 ## Intrinsic element
@@ -4258,6 +4270,8 @@ boolean
 The amount of spacing between child elements. Defaults to \`xsmall\`.
 
 \`\`\`
+none
+xxsmall
 xsmall
 small
 medium
@@ -5152,7 +5166,9 @@ stretch
 
 **areas**
 
-Area names and column,row coordinates.
+Grid areas.
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.
 
 \`\`\`
 [{
@@ -5160,6 +5176,7 @@ Area names and column,row coordinates.
   start: [number],
   end: [number]
 }]
+[[string]]
 \`\`\`
 
 **columns**
@@ -5257,21 +5274,30 @@ boolean
 Gap sizes between rows and/or columns.
 
 \`\`\`
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 none
 {
   row: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string,
   column: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string
 }
@@ -6237,7 +6263,7 @@ boolean
 
 **animation**
 
-Animation transition of the Layer content when it opens. Defaults to \`slide\`.
+Animation transition of the Layer content when it opens and closes. Defaults to \`slide\`.
 
 \`\`\`
 slide
@@ -7393,6 +7419,14 @@ string
   dark: string,
   light: string
 }
+\`\`\`
+
+**fill**
+
+Whether the width should fill the container.
+
+\`\`\`
+boolean
 \`\`\`
 
 **responsive**
@@ -10048,6 +10082,7 @@ The DOM tag or react component to use for the element. Defaults to \`span\`.
 \`\`\`
 string
 function
+element
 \`\`\`
 
 **textAlign**

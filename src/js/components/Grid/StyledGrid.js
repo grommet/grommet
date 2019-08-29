@@ -181,6 +181,14 @@ const areasStyle = props => {
   if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
     console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
   }
+  if (
+    Array.isArray(props.areas) &&
+    props.areas.every(area => Array.isArray(area))
+  ) {
+    return `grid-template-areas: ${props.areas
+      .map(area => `"${area.join(' ')}"`)
+      .join(' ')};`;
+  }
   const cells = props.rowsProp.map(() => props.columns.map(() => '.'));
   props.areas.forEach(area => {
     for (let row = area.start[1]; row <= area.end[1]; row += 1) {

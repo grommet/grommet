@@ -153,6 +153,7 @@ The DOM tag or react component to use for the element. Defaults to `span`.
 ```
 string
 function
+element
 ```
 
 **textAlign**

@@ -68,6 +68,7 @@ with plain Buttons.`,
     icon: PropTypes.element.description('Icon element to place in the button.'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
+        'none',
         'xxsmall',
         'xsmall',
         'small',
