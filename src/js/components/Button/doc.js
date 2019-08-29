@@ -49,7 +49,25 @@ export const doc = Button => {
       PropTypes.string,
       PropTypes.oneOf(['background']),
       PropTypes.shape({
-        background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+        color: PropTypes.string,
+        dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+        image: PropTypes.string,
+        position: PropTypes.string,
+        opacity: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.bool,
+          PropTypes.number,
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
+        ]),
+        repeat: PropTypes.oneOfType([
+          PropTypes.oneOf(['no-repeat', 'repeat']),
+          PropTypes.string,
+        ]),
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf(['cover', 'contain']),
+          PropTypes.string,
+        ]),
+        light: PropTypes.string,
       }),
     ])
       .description(
