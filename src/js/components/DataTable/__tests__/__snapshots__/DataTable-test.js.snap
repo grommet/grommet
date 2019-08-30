@@ -2074,7 +2074,7 @@ exports[`DataTable paths 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2101,7 +2101,7 @@ exports[`DataTable paths 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2125,7 +2125,7 @@ exports[`DataTable paths 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2134,7 +2134,7 @@ exports[`DataTable paths 1`] = `
   vertical-align: bottom;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2142,7 +2142,7 @@ exports[`DataTable paths 1`] = `
   height: 100%;
 }
 
-.c3 {
+.c4 {
   height: 100%;
 }
 
@@ -2152,12 +2152,12 @@ exports[`DataTable paths 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -2169,47 +2169,53 @@ exports[`DataTable paths 1`] = `
   height: 100%;
 }
 
+.c3:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -2231,31 +2237,31 @@ exports[`DataTable paths 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 c4"
       >
         <th
-          className="c4"
+          className="c5"
           scope="col"
         >
           <div
-            className="c5"
+            className="c6"
           >
             <span
-              className="c6"
+              className="c7"
             >
               A
             </span>
           </div>
         </th>
         <th
-          className="c4"
+          className="c5"
           scope="col"
         >
           <div
-            className="c5"
+            className="c6"
           >
             <span
-              className="c6"
+              className="c7"
             >
               B
             </span>
@@ -2265,32 +2271,35 @@ exports[`DataTable paths 1`] = `
     </thead>
     <tbody
       className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 c4"
       >
         <th
-          className="c7"
+          className="c8"
           scope="row"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
-              className="c9"
+              className="c10"
             >
               one
             </span>
           </div>
         </th>
         <td
-          className="c7"
+          className="c8"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
-              className="c6"
+              className="c7"
             >
               1
             </span>
@@ -2298,30 +2307,30 @@ exports[`DataTable paths 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 c4"
       >
         <th
-          className="c7"
+          className="c8"
           scope="row"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
-              className="c9"
+              className="c10"
             >
               two
             </span>
           </div>
         </th>
         <td
-          className="c7"
+          className="c8"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
-              className="c6"
+              className="c7"
             >
               2
             </span>
