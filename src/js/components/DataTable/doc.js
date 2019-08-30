@@ -66,6 +66,13 @@ export const doc = DataTable => {
       be combined with properties that expect all data to be present in the
       browser, such as columns.search, sortable, groupBy, or columns.aggregate.`,
     ),
+    onClickRow: PropTypes.func.description(
+      `When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.`,
+    ),
     onSearch: PropTypes.func.description(
       `When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property
@@ -102,6 +109,16 @@ export const doc = DataTable => {
 };
 
 export const themeDoc = {
+  'global.hover.background': {
+    description: 'The background style when hovering over an interactive row.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering over an interactive row.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
     type: 'string | { dark: string, light: string }',
@@ -166,5 +183,13 @@ export const themeDoc = {
     description: 'The border side used for resize.',
     type: 'string',
     defaultValue: 'right',
+  },
+  'table.row.hover.background': {
+    description: 'The background color when hovering over an interactive row.',
+    type: 'string | { color: string, opacity: string }',
+  },
+  'table.row.hover.color': {
+    description: 'The text color when hovering over an interactive row.',
+    type: 'string | { dark: string, light: string }',
   },
 };
