@@ -183,7 +183,7 @@ describe('Layer', () => {
     expect(onEsc).toBeCalled();
   });
 
-  test('is accessible', () => {
+  test('is accessible', done => {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
       <Grommet>
@@ -204,9 +204,13 @@ describe('Layer', () => {
     expect(layerNode).toMatchSnapshot();
 
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
+    // because of de-animation, we test both the initial and delayed states
     bodyNode = getByTestId(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
-    expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+    setTimeout(() => {
+      expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+      done();
+    }, 300);
   });
 
   test('should be null prior to mounting, displayed after mount', () => {
