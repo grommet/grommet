@@ -6,6 +6,7 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
+import { datumValue } from './buildState';
 
 var Cell = function Cell(_ref) {
   var _ref$column = _ref.column,
@@ -21,8 +22,12 @@ var Cell = function Cell(_ref) {
 
   if (render) {
     content = render(datum);
-  } else if (datum[property] !== undefined) {
-    content = datum[property];
+  } else {
+    var value = datumValue(datum, property);
+
+    if (value !== undefined) {
+      content = value;
+    }
   }
 
   if (typeof content === 'string' || typeof content === 'number') {

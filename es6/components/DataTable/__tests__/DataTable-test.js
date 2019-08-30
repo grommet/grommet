@@ -31,6 +31,30 @@ describe('DataTable', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('paths', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A'
+      }, {
+        property: 'b.c',
+        header: 'B'
+      }],
+      data: [{
+        a: 'one',
+        b: {
+          c: 1
+        }
+      }, {
+        a: 'two',
+        b: {
+          c: 2
+        }
+      }]
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('primaryKey', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(DataTable, {
       columns: [{

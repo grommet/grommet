@@ -1,5 +1,19 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+export var datumValue = function datumValue(datum, property) {
+  var parts = property.split('.');
+
+  if (parts.length === 1) {
+    return datum[property];
+  }
+
+  if (!datum[parts[0]]) {
+    return undefined;
+  }
+
+  return datumValue(datum[parts[0]], parts.slice(1).join('.'));
+};
+
 var sumReducer = function sumReducer(accumulated, next) {
   return accumulated + next;
 };
@@ -23,12 +37,12 @@ var aggregateColumn = function aggregateColumn(column, data) {
 
   if (column.aggregate === 'avg') {
     value = data.map(function (d) {
-      return d[column.property];
+      return datumValue(d, column.property);
     }).reduce(sumReducer);
     value /= data.length;
   } else {
     value = data.map(function (d) {
-      return d[column.property];
+      return datumValue(d, column.property);
     }).reduce(reducers[column.aggregate], 0);
   }
 
@@ -86,7 +100,7 @@ var filter = function filter(nextProps, prevState, nextState) {
   if (nextFilters) {
     nextData = data.filter(function (datum) {
       return !Object.keys(regexps).some(function (property) {
-        return !regexps[property].test(datum[property]);
+        return !regexps[property].test(datumValue(datum, property));
       });
     });
   }
@@ -168,7 +182,7 @@ var groupData = function groupData(nextProps, prevState, nextState) {
     groupState = {};
     var groupMap = {};
     data.forEach(function (datum) {
-      var groupValue = datum[groupBy];
+      var groupValue = datumValue(datum, groupBy);
 
       if (!groupMap[groupValue]) {
         var group = {
