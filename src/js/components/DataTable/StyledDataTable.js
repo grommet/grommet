@@ -36,8 +36,7 @@ const hoverStyle = css`
           props.theme.table.row &&
           props.theme.table.row.hover &&
           props.theme.table.row.hover.background) ||
-          (props.theme.global.hover && props.theme.global.hover.background) ||
-          'active',
+          props.theme.global.hover.background,
         props.theme,
       ),
       props.theme,
@@ -48,8 +47,7 @@ const hoverStyle = css`
         props.theme.table.row &&
         props.theme.table.row.hover &&
         props.theme.table.row.hover.color) ||
-        (props.theme.global.hover && props.theme.global.hover.color) ||
-        'text',
+        props.theme.global.hover.color,
       props.theme,
     )};
 `;

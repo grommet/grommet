@@ -266,6 +266,26 @@ table
 ```
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering over an interactive row. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
+**global.hover.color**
+
+The text color when hovering over an interactive row. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
 **dataTable.groupHeader.background**
 
 The background color of the group header. Expects `string | { dark: string, light: string }`.
@@ -394,4 +414,24 @@ Defaults to
 
 ```
 right
+```
+
+**table.row.hover.background**
+
+The background color when hovering over an interactive row. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.row.hover.color**
+
+The text color when hovering over an interactive row. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
 ```

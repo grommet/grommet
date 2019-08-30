@@ -109,6 +109,16 @@ export const doc = DataTable => {
 };
 
 export const themeDoc = {
+  'global.hover.background': {
+    description: 'The background style when hovering over an interactive row.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering over an interactive row.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
     type: 'string | { dark: string, light: string }',
@@ -173,5 +183,13 @@ export const themeDoc = {
     description: 'The border side used for resize.',
     type: 'string',
     defaultValue: 'right',
+  },
+  'table.row.hover.background': {
+    description: 'The background color when hovering over an interactive row.',
+    type: 'string | { color: string, opacity: string }',
+  },
+  'table.row.hover.color': {
+    description: 'The text color when hovering over an interactive row.',
+    type: 'string | { dark: string, light: string }',
   },
 };
