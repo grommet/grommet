@@ -873,6 +873,12 @@ var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
 
       },
+      // row: {
+      //   hover: {
+      //     background: undefined,
+      //     color: undefined,
+      //   },
+      // },
       footer: {
         align: 'start',
         pad: {

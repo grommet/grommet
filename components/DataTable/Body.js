@@ -5,11 +5,17 @@ exports.Body = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _recompose = require("recompose");
+
 var _InfiniteScroll = require("../InfiniteScroll");
 
 var _TableRow = require("../TableRow");
 
 var _TableCell = require("../TableCell");
+
+var _Keyboard = require("../Keyboard");
+
+var _hocs = require("../hocs");
 
 var _Cell = require("./Cell");
 
@@ -24,15 +30,36 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Body = function Body(_ref) {
   var columns = _ref.columns,
       data = _ref.data,
+      forwardRef = _ref.forwardRef,
       onMore = _ref.onMore,
+      onClickRow = _ref.onClickRow,
       primaryProperty = _ref.primaryProperty,
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "onMore", "primaryProperty", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "forwardRef", "onMore", "onClickRow", "primaryProperty", "size", "step", "theme"]);
 
-  return _react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
-    size: size
+  var _React$useState = _react["default"].useState(),
+      active = _React$useState[0],
+      setActive = _React$useState[1];
+
+  return _react["default"].createElement(_Keyboard.Keyboard, {
+    onEnter: onClickRow && active >= 0 ? function (event) {
+      event.persist();
+      var adjustedEvent = event;
+      adjustedEvent.datum = data[active];
+      onClickRow(adjustedEvent);
+    } : undefined,
+    onUp: onClickRow && active ? function () {
+      setActive(active - 1);
+    } : undefined,
+    onDown: onClickRow && data.length ? function () {
+      setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
+    } : undefined
+  }, _react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
+    ref: forwardRef,
+    size: size,
+    tabIndex: onClickRow ? 0 : undefined
   }, rest), _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: data,
     onMore: onMore,
@@ -41,10 +68,22 @@ var Body = function Body(_ref) {
     },
     scrollableAncestor: "window",
     step: step
-  }, function (datum) {
+  }, function (datum, index) {
     return _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       key: datum[primaryProperty],
-      size: size
+      size: size,
+      active: active >= 0 ? active === index : undefined,
+      onClick: onClickRow ? function (event) {
+        event.persist(); // extract from React's synthetic event pool
+
+        var adjustedEvent = event;
+        adjustedEvent.datum = datum;
+        onClickRow(adjustedEvent);
+      } : undefined,
+      onMouseOver: onClickRow ? function () {
+        return setActive(undefined);
+      } : undefined,
+      onFocus: onClickRow ? function () {} : undefined
     }, columns.map(function (column) {
       return _react["default"].createElement(_Cell.Cell, {
         key: column.property,
@@ -55,7 +94,8 @@ var Body = function Body(_ref) {
         scope: column.primary || column.property === primaryProperty ? 'row' : undefined
       });
     }));
-  }));
+  })));
 };
 
-exports.Body = Body;
+var ButtonWrapper = (0, _recompose.compose)((0, _hocs.withFocus)(), _hocs.withForwardRef)(Body);
+exports.Body = ButtonWrapper;

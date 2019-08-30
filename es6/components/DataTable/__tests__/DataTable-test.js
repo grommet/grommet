@@ -231,4 +231,31 @@ describe('DataTable', function () {
     fireEvent.click(headerCell, {});
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('click', function () {
+    var onClickRow = jest.fn();
+
+    var _render4 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A'
+      }],
+      data: [{
+        a: 'alpha'
+      }, {
+        a: 'beta'
+      }],
+      onClickRow: onClickRow
+    }))),
+        container = _render4.container,
+        getByText = _render4.getByText;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    expect(onClickRow).toBeCalledWith(expect.objectContaining({
+      datum: {
+        a: 'beta'
+      }
+    }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

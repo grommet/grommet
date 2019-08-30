@@ -142,6 +142,22 @@ var SimpleDataTable = function SimpleDataTable() {
   })));
 };
 
+var ClickableDataTable = function ClickableDataTable() {
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.DataTable, {
+    columns: columns,
+    data: DATA,
+    step: 10,
+    onClickRow: function onClickRow(event) {
+      return alert(JSON.stringify(event.datum, null, 2));
+    }
+  })));
+};
+
 var SizedDataTable = function SizedDataTable() {
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -357,6 +373,8 @@ function (_Component2) {
 
 (0, _react2.storiesOf)('DataTable', module).add('Simple', function () {
   return _react["default"].createElement(SimpleDataTable, null);
+}).add('Clickable', function () {
+  return _react["default"].createElement(ClickableDataTable, null);
 }).add('Sized', function () {
   return _react["default"].createElement(SizedDataTable, null);
 }).add('Tunable', function () {

@@ -30,6 +30,7 @@ var doc = function doc(DataTable) {
     data: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({})).description('Array of data objects.'),
     groupBy: _reactDesc.PropTypes.string.description('Property to group data by.'),
     onMore: _reactDesc.PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data rows have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed. This cannot\n      be combined with properties that expect all data to be present in the\n      browser, such as columns.search, sortable, groupBy, or columns.aggregate."),
+    onClickRow: _reactDesc.PropTypes.func.description("When supplied, this function will be called with an event object that\n      include a 'datum' property containing the data value associated with\n      the clicked row. You should not include interactive elements, like\n      Anchor or Button inside table cells as that can cause confusion with\n      overlapping interactive elements."),
     onSearch: _reactDesc.PropTypes.func.description("When supplied, and when at least one column has 'search' enabled,\n      this function will be called with an object with keys for property\n      names and values which are the search text strings. This is typically\n      employed so a back-end can be used to search through the data."),
     primaryKey: _reactDesc.PropTypes.string.description("When supplied, indicates the property for a data object to use to\n      get a unique identifier. See also the 'columns.primary' description.\n      Use this property when the columns approach will not work for your\n      data set."),
     resizeable: _reactDesc.PropTypes.bool.description('Whether to allow the user to resize column widths.'),
@@ -42,6 +43,16 @@ var doc = function doc(DataTable) {
 
 exports.doc = doc;
 var themeDoc = {
+  'global.hover.background': {
+    description: 'The background style when hovering over an interactive row.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }"
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering over an interactive row.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }"
+  },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
     type: 'string | { dark: string, light: string }',
@@ -106,6 +117,14 @@ var themeDoc = {
     description: 'The border side used for resize.',
     type: 'string',
     defaultValue: 'right'
+  },
+  'table.row.hover.background': {
+    description: 'The background color when hovering over an interactive row.',
+    type: 'string | { color: string, opacity: string }'
+  },
+  'table.row.hover.color': {
+    description: 'The text color when hovering over an interactive row.',
+    type: 'string | { dark: string, light: string }'
   }
 };
 exports.themeDoc = themeDoc;

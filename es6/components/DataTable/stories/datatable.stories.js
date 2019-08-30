@@ -134,6 +134,22 @@ var SimpleDataTable = function SimpleDataTable() {
   })));
 };
 
+var ClickableDataTable = function ClickableDataTable() {
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(DataTable, {
+    columns: columns,
+    data: DATA,
+    step: 10,
+    onClickRow: function onClickRow(event) {
+      return alert(JSON.stringify(event.datum, null, 2));
+    }
+  })));
+};
+
 var SizedDataTable = function SizedDataTable() {
   return React.createElement(Grommet, {
     theme: grommet
@@ -349,6 +365,8 @@ function (_Component2) {
 
 storiesOf('DataTable', module).add('Simple', function () {
   return React.createElement(SimpleDataTable, null);
+}).add('Clickable', function () {
+  return React.createElement(ClickableDataTable, null);
 }).add('Sized', function () {
   return React.createElement(SizedDataTable, null);
 }).add('Tunable', function () {

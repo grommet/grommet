@@ -68,7 +68,9 @@ var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint,
 
 
 exports.edgeStyle = edgeStyle;
-var focusStyle = (0, _styledComponents.css)(["> circle,> ellipse,> line,> path,> polygon,> polyline,> rect{outline:", " solid 2px;}border-color:", ";box-shadow:0 0 2px 2px ", ";::-moz-focus-inner{border:0;}"], function (props) {
+var focusStyle = (0, _styledComponents.css)(["> circle,> ellipse,> line,> path,> polygon,> polyline,> rect{outline:", " solid 2px;}outline-color:", ";border-color:", ";box-shadow:0 0 2px 2px ", ";::-moz-focus-inner{border:0;}"], function (props) {
+  return (0, _colors.normalizeColor)(props.theme.global.focus.border.color, props.theme);
+}, function (props) {
   return (0, _colors.normalizeColor)(props.theme.global.focus.border.color, props.theme);
 }, function (props) {
   return (0, _colors.normalizeColor)(props.theme.global.focus.border.color, props.theme);

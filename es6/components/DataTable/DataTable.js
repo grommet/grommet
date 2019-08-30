@@ -137,8 +137,9 @@ function (_Component) {
         size = _this$props.size,
         sortable = _this$props.sortable,
         step = _this$props.step,
+        onClickRow = _this$props.onClickRow,
         onSearch = _this$props.onSearch,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "step", "onSearch"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "step", "onClickRow", "onSearch"]);
 
     var _this$state = this.state,
         data = _this$state.data,
@@ -181,6 +182,7 @@ function (_Component) {
       columns: columns,
       data: data,
       onMore: onMore,
+      onClickRow: onClickRow,
       primaryProperty: primaryProperty,
       size: size,
       step: step
