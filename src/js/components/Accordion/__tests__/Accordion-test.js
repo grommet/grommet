@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from 'react-testing-library';
+import { cleanup, render, fireEvent } from '@testing-library/react';
 
 import { Accordion, AccordionPanel, Box, Grommet } from '../..';
 
