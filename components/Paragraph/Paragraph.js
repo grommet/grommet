@@ -15,10 +15,12 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var Paragraph = function Paragraph(_ref) {
   var color = _ref.color,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color"]);
+      fill = _ref.fill,
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "fill"]);
 
   return _react["default"].createElement(_StyledParagraph.StyledParagraph, _extends({
-    colorProp: color
+    colorProp: color,
+    fillProp: fill
   }, rest));
 };
 
