@@ -172,6 +172,23 @@ const GroupedDataTable = () => (
   </Grommet>
 );
 
+const expandedGroups = [DATA[2].location];
+
+const DefaultExpandedGroupTable = () => (
+  <Grommet theme={grommet}>
+    <DataTable
+      columns={groupColumns}
+      data={DATA}
+      groupBy={{
+        property: 'location',
+        expand: expandedGroups,
+        onChangeExpand: groupState => console.log(groupState),
+      }}
+      sortable
+    />
+  </Grommet>
+);
+
 class ServedDataTable extends Component {
   state = { data: DATA };
 
@@ -282,5 +299,6 @@ storiesOf('DataTable', module)
   .add('Sized', () => <SizedDataTable />)
   .add('Tunable', () => <TunableDataTable />)
   .add('Grouped', () => <GroupedDataTable />)
+  .add('Default expanded group', () => <DefaultExpandedGroupTable />)
   .add('Served', () => <ServedDataTable />)
   .add('Controlled', () => <ControlledDataTable />);

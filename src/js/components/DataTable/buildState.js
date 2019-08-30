@@ -136,27 +136,31 @@ const sortData = (nextProps, prevState, nextState) => {
 };
 
 const groupData = (nextProps, prevState, nextState) => {
-  const { columns, groupBy, expandedGroupKeys } = nextProps;
+  const { columns, groupBy } = nextProps;
   const { data } = nextState;
 
   let groups;
   let groupState;
+  let expandedState;
   if (groupBy) {
     groups = [];
     groupState = {};
     const groupMap = {};
     data.forEach(datum => {
-      const groupValue = datum[groupBy];
+      const groupByProperty = groupBy.property ? groupBy.property : groupBy;
+      const groupValue = datum[groupByProperty];
       if (!groupMap[groupValue]) {
         const group = { data: [], datum: {}, key: groupValue };
-        group.datum[groupBy] = groupValue;
+        group.datum[groupByProperty] = groupValue;
         groups.push(group);
-        groupState[groupValue] = {
-          expanded:
-            prevState.groupState && prevState.groupState[groupValue]
-              ? prevState.groupState[groupValue].expanded
-              : expandedGroupKeys.some(key => key === groupValue),
-        };
+        if (prevState.groupState && prevState.groupState[groupValue]) {
+          expandedState = prevState.groupState[groupValue];
+        } else {
+          expandedState = groupBy.expand
+            ? groupBy.expand.some(key => key === groupValue)
+            : false;
+        }
+        groupState[groupValue] = { expanded: expandedState };
         groupMap[groupValue] = group;
       }
       groupMap[groupValue].data.push(datum);

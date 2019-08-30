@@ -170,7 +170,32 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('expandedGroupKeys', () => {
+  test('groupBy property', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy={{ property: 'a' }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('groupBy expand', () => {
     const { container, getAllByLabelText } = render(
       <Grommet>
         <DataTable
@@ -185,8 +210,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2.2 },
           ]}
           primaryKey="b"
-          groupBy="a"
-          expandedGroupKeys={['one']}
+          groupBy={{ property: 'a', expand: ['one'] }}
         />
       </Grommet>,
     );
@@ -197,8 +221,8 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('onToggle', () => {
-    const onToggle = jest.fn(groupState => groupState);
+  test('groupBy onChangeExpand', () => {
+    const onChangeExpand = jest.fn(groupState => groupState);
     const { getAllByLabelText } = render(
       <Grommet>
         <DataTable
@@ -213,8 +237,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2.2 },
           ]}
           primaryKey="b"
-          groupBy="a"
-          onToggle={onToggle}
+          groupBy={{ property: 'a', onChangeExpand }}
         />
       </Grommet>,
     );
@@ -222,11 +245,8 @@ describe('DataTable', () => {
     const expandButtons = getAllByLabelText('expand');
     fireEvent.click(expandButtons[1], {});
 
-    expect(onToggle).toBeCalled();
-    expect(onToggle.mock.results[0].value).toEqual({
-      one: { expanded: true },
-      two: { expanded: false },
-    });
-    expect(onToggle.mock.results[0].value).toMatchSnapshot();
+    expect(onChangeExpand).toBeCalled();
+    expect(onChangeExpand.mock.results[0].value).toEqual(['one']);
+    expect(onChangeExpand.mock.results[0].value).toMatchSnapshot();
   });
 });
