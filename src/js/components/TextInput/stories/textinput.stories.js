@@ -22,8 +22,8 @@ const SimpleTextInput = () => {
   );
 };
 
-const PasswordInput = ({ value, ...rest }) => {
-  const [inputValue, setValue] = React.useState(value);
+const PasswordInput = () => {
+  const [value, setValue] = React.useState('');
   const [reveal, setReveal] = React.useState(false);
 
   return (
@@ -38,9 +38,8 @@ const PasswordInput = ({ value, ...rest }) => {
       <TextInput
         plain
         type={reveal ? 'text' : 'password'}
-        value={inputValue}
+        value={value}
         onChange={event => setValue(event.target.value)}
-        {...rest}
       />
       <Button
         icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
