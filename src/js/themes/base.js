@@ -797,6 +797,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // row: {
       //   hover: {
       //     background: undefined,
+      //     color: undefined,
       //   },
       // },
       footer: {
