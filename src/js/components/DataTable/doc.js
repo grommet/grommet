@@ -61,13 +61,13 @@ export const doc = DataTable => {
       PropTypes.shape({
         property: PropTypes.string,
         expand: PropTypes.arrayOf(PropTypes.string),
-        onChangeExpand: PropTypes.func,
+        onExpand: PropTypes.func,
       }),
     ]).description(`Property to group data by. If object is specified
       'property' is used to group data by, 'expand' accepts array of 
-       group keys groups that will be expanded by default and 'onChangeExpand'
-       is function that will be called after expand button is clicked
-       with an array of keys of expanded groups`),
+       group keys that sets expanded groups and 'onExpand' is a function
+       that will be called after expand button is clicked with
+       an array of keys of expanded groups.`),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
       It will be called when all of the data rows have been rendered.

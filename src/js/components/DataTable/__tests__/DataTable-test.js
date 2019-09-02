@@ -196,7 +196,7 @@ describe('DataTable', () => {
   });
 
   test('groupBy expand', () => {
-    const { container, getAllByLabelText } = render(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -215,14 +215,10 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-
-    const expandButtons = getAllByLabelText('expand');
-    fireEvent.click(expandButtons[1], {});
-    expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('groupBy onChangeExpand', () => {
-    const onChangeExpand = jest.fn(groupState => groupState);
+  test('groupBy onExpand', () => {
+    const onExpand = jest.fn(groupState => groupState);
     const { getAllByLabelText } = render(
       <Grommet>
         <DataTable
@@ -237,7 +233,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2.2 },
           ]}
           primaryKey="b"
-          groupBy={{ property: 'a', onChangeExpand }}
+          groupBy={{ property: 'a', onExpand }}
         />
       </Grommet>,
     );
@@ -245,8 +241,8 @@ describe('DataTable', () => {
     const expandButtons = getAllByLabelText('expand');
     fireEvent.click(expandButtons[1], {});
 
-    expect(onChangeExpand).toBeCalled();
-    expect(onChangeExpand.mock.results[0].value).toEqual(['one']);
-    expect(onChangeExpand.mock.results[0].value).toMatchSnapshot();
+    expect(onExpand).toBeCalled();
+    expect(onExpand.mock.results[0].value).toEqual(['one']);
+    expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
 });

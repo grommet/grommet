@@ -8,7 +8,7 @@ export interface DataTableProps {
   margin?: MarginType;
   columns?: {align?: "center" | "start" | "end",aggregate?: "avg" | "max" | "min" | "sum",footer?: React.ReactNode | {aggregate?: boolean},header?: string | React.ReactNode | {aggregate?: boolean},primary?: boolean,property: string,render?: ((...args: any[]) => any),search?: boolean,sortable?: boolean}[];
   data?: {}[];
-  groupBy?: string | { property: string, expand: Array<string>, onChangeExpand: ((...args: any[]) => any) };
+  groupBy?: string | { property: string, expand: Array<string>, onExpand: ((...args: any[]) => any) };
   onMore?: ((...args: any[]) => any);
   onSearch?: ((...args: any[]) => any);
   primaryKey?: string;

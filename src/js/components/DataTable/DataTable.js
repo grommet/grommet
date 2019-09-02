@@ -54,11 +54,11 @@ class DataTable extends Component {
       expanded: !nextGroupState[groupValue].expanded,
     };
     this.setState({ groupState: nextGroupState });
-    if (groupBy.onChangeExpand) {
+    if (groupBy.onExpand) {
       const expandedKeys = Object.keys(nextGroupState).filter(
         k => nextGroupState[k].expanded,
       );
-      groupBy.onChangeExpand(expandedKeys);
+      groupBy.onExpand(expandedKeys);
     }
   };
 
@@ -72,11 +72,11 @@ class DataTable extends Component {
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     this.setState({ groupState: nextGroupState });
-    if (groupBy.onChangeExpand) {
+    if (groupBy.onExpand) {
       const expandedKeys = Object.keys(nextGroupState).filter(
         k => nextGroupState[k].expanded,
       );
-      groupBy.onChangeExpand(expandedKeys);
+      groupBy.onExpand(expandedKeys);
     }
   };
 

@@ -153,12 +153,13 @@ const groupData = (nextProps, prevState, nextState) => {
         const group = { data: [], datum: {}, key: groupValue };
         group.datum[groupByProperty] = groupValue;
         groups.push(group);
-        if (prevState.groupState && prevState.groupState[groupValue]) {
-          expandedState = prevState.groupState[groupValue];
+        if (groupBy.expand) {
+          expandedState = groupBy.expand.some(key => key === groupValue);
         } else {
-          expandedState = groupBy.expand
-            ? groupBy.expand.some(key => key === groupValue)
-            : false;
+          expandedState =
+            prevState.groupState && prevState.groupState[groupValue]
+              ? prevState.groupState[groupValue]
+              : false;
         }
         groupState[groupValue] = { expanded: expandedState };
         groupMap[groupValue] = group;
