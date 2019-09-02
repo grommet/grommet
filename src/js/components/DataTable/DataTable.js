@@ -98,6 +98,7 @@ class DataTable extends Component {
       size,
       sortable,
       step,
+      onClickRow, // removing unknown DOM attributes
       onSearch, // removing unknown DOM attributes
       ...rest
     } = this.props;
@@ -149,6 +150,7 @@ class DataTable extends Component {
             columns={columns}
             data={data}
             onMore={onMore}
+            onClickRow={onClickRow}
             primaryProperty={primaryProperty}
             size={size}
             step={step}

@@ -2978,7 +2978,13 @@ function",
 <Tab />",
   },
   "Table": [Function],
-  "TableBody": [Function],
+  "TableBody": Object {
+    "description": "The body of a table.",
+    "intrinsicElement": "tbody",
+    "name": "TableBody",
+    "usage": "import { TableBody } from 'grommet';
+<TableBody />",
+  },
   "TableCell": Object {
     "description": "A cell of data in a table.",
     "intrinsicElement": "td",

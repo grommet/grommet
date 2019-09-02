@@ -135,6 +135,20 @@ const SimpleDataTable = () => (
   </Grommet>
 );
 
+const ClickableDataTable = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      {/* eslint-disable no-alert */}
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={10}
+        onClickRow={event => alert(JSON.stringify(event.datum, null, 2))}
+      />
+    </Box>
+  </Grommet>
+);
+
 const SizedDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
@@ -302,6 +316,7 @@ class ControlledDataTable extends Component {
 
 storiesOf('DataTable', module)
   .add('Simple', () => <SimpleDataTable />)
+  .add('Clickable', () => <ClickableDataTable />)
   .add('Sized', () => <SizedDataTable />)
   .add('Tunable', () => <TunableDataTable />)
   .add('Grouped', () => <GroupedDataTable />)
