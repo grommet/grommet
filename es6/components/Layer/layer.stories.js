@@ -196,7 +196,8 @@ function (_Component2) {
       onClick: this.onOpen,
       plain: true
     })), open && React.createElement(Layer, {
-      position: "top-right"
+      position: "top-right",
+      onEsc: this.onClose
     }, React.createElement(Box, {
       height: "small",
       overflow: "auto"

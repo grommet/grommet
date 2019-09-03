@@ -200,7 +200,8 @@ function (_Component2) {
       onClick: this.onOpen,
       plain: true
     })), open && _react["default"].createElement(_grommet.Layer, {
-      position: "top-right"
+      position: "top-right",
+      onEsc: this.onClose
     }, _react["default"].createElement(_grommet.Box, {
       height: "small",
       overflow: "auto"
