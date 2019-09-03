@@ -9,9 +9,9 @@ var _recompose = require("recompose");
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _defaultProps = require("../../default-props");
-
 var _utils = require("../../utils");
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -151,7 +151,8 @@ function (_Component) {
         theme = _this$props3.theme,
         validate = _this$props3.validate,
         onBlur = _this$props3.onBlur,
-        onFocus = _this$props3.onFocus;
+        onFocus = _this$props3.onFocus,
+        margin = _this$props3.margin;
     var formField = theme.formField;
     var border = formField.border;
     var normalizedError = error;
@@ -183,6 +184,7 @@ function (_Component) {
     }
 
     var abut;
+    var abutMargin;
     var outerStyle = style;
 
     if (border) {
@@ -211,15 +213,21 @@ function (_Component) {
 
       if (abut) {
         // marginBottom is set to overlap adjacent fields
-        var marginBottom = '-1px';
+        abutMargin = {
+          bottom: '-1px'
+        };
 
-        if (border.size) {
-          marginBottom = "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[border.size]) + "px";
+        if (margin) {
+          abutMargin = margin;
+        } else if (border.size) {
+          // if the user defines a margin, then the default margin below will be overriden
+          abutMargin = {
+            bottom: "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[border.size] || border.size) + "px"
+          };
         }
 
         outerStyle = _extends({
           position: focus ? 'relative' : undefined,
-          marginBottom: marginBottom,
           zIndex: focus ? 10 : undefined
         }, style);
       }
@@ -230,7 +238,7 @@ function (_Component) {
       border: border && border.position === 'outer' ? _extends({}, border, {
         color: borderColor
       }) : undefined,
-      margin: abut ? undefined : _extends({}, formField.margin),
+      margin: abut ? abutMargin : margin || _extends({}, formField.margin),
       style: outerStyle
     }, label && component !== _CheckBox.CheckBox || help ? _react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && _react["default"].createElement(_Text.Text, _extends({
       as: "label",

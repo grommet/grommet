@@ -12,8 +12,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { Text } from '../Text';
@@ -135,7 +135,8 @@ function (_Component) {
         theme = _this$props3.theme,
         validate = _this$props3.validate,
         onBlur = _this$props3.onBlur,
-        onFocus = _this$props3.onFocus;
+        onFocus = _this$props3.onFocus,
+        margin = _this$props3.margin;
     var formField = theme.formField;
     var border = formField.border;
     var normalizedError = error;
@@ -167,6 +168,7 @@ function (_Component) {
     }
 
     var abut;
+    var abutMargin;
     var outerStyle = style;
 
     if (border) {
@@ -195,15 +197,21 @@ function (_Component) {
 
       if (abut) {
         // marginBottom is set to overlap adjacent fields
-        var marginBottom = '-1px';
+        abutMargin = {
+          bottom: '-1px'
+        };
 
-        if (border.size) {
-          marginBottom = "-" + parseMetricToNum(theme.global.borderSize[border.size]) + "px";
+        if (margin) {
+          abutMargin = margin;
+        } else if (border.size) {
+          // if the user defines a margin, then the default margin below will be overriden
+          abutMargin = {
+            bottom: "-" + parseMetricToNum(theme.global.borderSize[border.size] || border.size) + "px"
+          };
         }
 
         outerStyle = _extends({
           position: focus ? 'relative' : undefined,
-          marginBottom: marginBottom,
           zIndex: focus ? 10 : undefined
         }, style);
       }
@@ -214,7 +222,7 @@ function (_Component) {
       border: border && border.position === 'outer' ? _extends({}, border, {
         color: borderColor
       }) : undefined,
-      margin: abut ? undefined : _extends({}, formField.margin),
+      margin: abut ? abutMargin : margin || _extends({}, formField.margin),
       style: outerStyle
     }, label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
       as: "label",

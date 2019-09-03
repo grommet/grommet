@@ -42,6 +42,75 @@ test('renders htmlFor', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('renders custom margin', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    margin: "medium"
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('forces empty margin', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    margin: "none"
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('renders abut correctly', function () {
+  var component = renderer.create(React.createElement(Grommet, {
+    theme: {
+      formField: {
+        border: {
+          color: 'border',
+          error: {
+            color: {
+              dark: 'white',
+              light: 'status-critical'
+            }
+          },
+          size: 'large',
+          position: 'outer',
+          side: 'all'
+        },
+        margin: {
+          bottom: 'small'
+        }
+      }
+    }
+  }, React.createElement(FormField, {
+    htmlFor: "test-id"
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('renders abut with forced margin', function () {
+  var component = renderer.create(React.createElement(Grommet, {
+    theme: {
+      formField: {
+        border: {
+          color: 'border',
+          error: {
+            color: {
+              dark: 'white',
+              light: 'status-critical'
+            }
+          },
+          size: 'large',
+          position: 'outer',
+          side: 'all'
+        },
+        margin: {
+          bottom: 'small'
+        }
+      }
+    }
+  }, React.createElement(FormField, {
+    margin: "medium",
+    htmlFor: "test-id"
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('renders custom formfield', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(CustomFormField, {
     htmlFor: "test-id"

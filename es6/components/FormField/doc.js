@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, marginProp } from '../../utils';
 export var doc = function doc(FormField) {
   var DocumentedFormField = describe(FormField).availableAt(getAvailableAtBadge('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {
@@ -9,6 +9,7 @@ export var doc = function doc(FormField) {
     htmlFor: PropTypes.string.description('The id of the input element contained in this field'),
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('A short label describing the field'),
     name: PropTypes.string.description("The name of the value data when in a Form and the name of\n      the input field."),
+    margin: marginProp,
     pad: PropTypes.bool.description('Whether to add padding to align with the padding of TextInput.'),
     required: PropTypes.bool.description('Whether the field is required.'),
     validate: PropTypes.oneOfType([PropTypes.shape({

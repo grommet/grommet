@@ -58,6 +58,79 @@ test('renders htmlFor', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('renders custom margin', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    margin: "medium"
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('forces empty margin', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    margin: "none"
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('renders abut correctly', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+    theme: {
+      formField: {
+        border: {
+          color: 'border',
+          error: {
+            color: {
+              dark: 'white',
+              light: 'status-critical'
+            }
+          },
+          size: 'large',
+          position: 'outer',
+          side: 'all'
+        },
+        margin: {
+          bottom: 'small'
+        }
+      }
+    }
+  }, _react["default"].createElement(_.FormField, {
+    htmlFor: "test-id"
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('renders abut with forced margin', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+    theme: {
+      formField: {
+        border: {
+          color: 'border',
+          error: {
+            color: {
+              dark: 'white',
+              light: 'status-critical'
+            }
+          },
+          size: 'large',
+          position: 'outer',
+          side: 'all'
+        },
+        margin: {
+          bottom: 'small'
+        }
+      }
+    }
+  }, _react["default"].createElement(_.FormField, {
+    margin: "medium",
+    htmlFor: "test-id"
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('renders custom formfield', function () {
   var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(CustomFormField, {
     htmlFor: "test-id"
