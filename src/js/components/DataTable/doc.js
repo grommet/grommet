@@ -69,7 +69,7 @@ export const doc = DataTable => {
       ...borderTypes,
       PropTypes.shape(borderShape),
     ]).description(
-      `Cell border. You can set the border per context be passing an
+      `Cell border. You can set the border per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
     columns: PropTypes.arrayOf(
