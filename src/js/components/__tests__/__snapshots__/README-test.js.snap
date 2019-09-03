@@ -990,6 +990,26 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
 
 **justify**
@@ -1171,6 +1191,26 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
 
 **wrap**
@@ -1543,8 +1583,27 @@ boolean
 string
 background
 {
-  background: 
+  color: string,
+  dark: 
     boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
     string
 }
 \`\`\`
@@ -3823,6 +3882,18 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 \`\`\`
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+\`\`\`
+function
+\`\`\`
+
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
@@ -3891,6 +3962,26 @@ table
 \`\`\`
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering over an interactive row. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
+**global.hover.color**
+
+The text color when hovering over an interactive row. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
 **dataTable.groupHeader.background**
 
 The background color of the group header. Expects \`string | { dark: string, light: string }\`.
@@ -4019,6 +4110,26 @@ Defaults to
 
 \`\`\`
 right
+\`\`\`
+
+**table.row.hover.background**
+
+The background color when hovering over an interactive row. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**table.row.hover.color**
+
+The text color when hovering over an interactive row. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Diagram": "## Diagram

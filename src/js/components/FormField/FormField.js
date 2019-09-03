@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp, react/prefer-stateless-function, max-classes-per-file */
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
@@ -238,7 +239,6 @@ class FormFieldContent extends Component {
 
 // Can't be a functional component because styled-components withTheme() needs
 // to attach a ref.
-/* eslint-disable-next-line react/no-multi-comp, react/prefer-stateless-function */
 class FormField extends Component {
   render() {
     return (

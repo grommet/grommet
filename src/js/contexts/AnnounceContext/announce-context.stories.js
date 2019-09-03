@@ -1,47 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
 import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
 
-class Announcer extends Component {
-  static propTypes = {
-    announce: PropTypes.func.isRequired,
-    message: PropTypes.string,
-    mode: PropTypes.string,
-    role: PropTypes.string,
-  };
-
-  static defaultProps = {
-    message: 'Here is a simple announcement. This will soon disappear',
-    mode: 'polite',
-    role: 'log',
-  }
-
-  componentDidMount() {
-    const { announce, message, mode } = this.props;
+const Announcer = ({ announce, message, mode, role }) => {
+  React.useEffect(() => {
     const timeout = 3000;
     announce(message, mode, timeout);
-  }
+  }, [message, mode]);
 
-  render() {
-    const { message, mode, role } = this.props;
-    return (
-      <Text align="center" role={role} aria-live={mode}>
-        {message}
-      </Text>
-    );
-  }
-}
+  return (
+    <Text align="center" role={role} aria-live={mode}>
+      {message}
+    </Text>
+  );
+};
+
+Announcer.propTypes = {
+  announce: PropTypes.func.isRequired,
+  message: PropTypes.string,
+  mode: PropTypes.string,
+  role: PropTypes.string,
+};
+
+Announcer.defaultProps = {
+  message: 'Here is a simple announcement. This will soon disappear',
+  mode: 'polite',
+  role: 'log',
+};
 
 const AnnounceContextComponent = props => (
   <Grommet theme={grommet} full>
-    <Box
-      justify="center"
-      align="center"
-      background="brand"
-      fill
-    >
+    <Box justify="center" align="center" background="brand" fill>
       <Heading>Welcome to announcement section</Heading>
       <AnnounceContext.Consumer>
         {announce => <Announcer announce={announce} {...props} />}

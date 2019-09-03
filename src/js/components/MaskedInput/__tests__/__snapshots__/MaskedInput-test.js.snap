@@ -563,7 +563,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 `;
 
 exports[`MaskedInput event target props are available option via mouse 3`] = `
-".fMpdhH {
+".iNPLOO {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -583,44 +583,44 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -966,7 +966,7 @@ exports[`MaskedInput mask 2`] = `
 `;
 
 exports[`MaskedInput mask 3`] = `
-".fMpdhH {
+".iNPLOO {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -986,44 +986,44 @@ exports[`MaskedInput mask 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -1132,7 +1132,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 dmrDMB"
+    class="StyledMaskedInput-sc-99vkfa-0 gYIJUg"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1489,7 +1489,7 @@ exports[`MaskedInput option via mouse 2`] = `
 `;
 
 exports[`MaskedInput option via mouse 3`] = `
-".fMpdhH {
+".iNPLOO {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1509,44 +1509,44 @@ exports[`MaskedInput option via mouse 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hkPRCG {
+  .iRNQge {
     padding-top: 3px;
     padding-bottom: 3px;
   }

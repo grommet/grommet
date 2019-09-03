@@ -1,6 +1,6 @@
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
-import grommetLight from './theme.js';
+import grommetLight from './theme';
 
 const req = require.context(
   '../src/js',
