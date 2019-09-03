@@ -52,6 +52,7 @@ export const doc = Button => {
         color: PropTypes.string,
         dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
         image: PropTypes.string,
+        light: PropTypes.string,
         position: PropTypes.string,
         opacity: PropTypes.oneOfType([
           PropTypes.string,
@@ -67,7 +68,6 @@ export const doc = Button => {
           PropTypes.oneOf(['cover', 'contain']),
           PropTypes.string,
         ]),
-        light: PropTypes.string,
       }),
     ])
       .description(

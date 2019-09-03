@@ -174,6 +174,7 @@ background
     boolean
     string,
   image: string,
+  light: string,
   position: string,
   opacity: 
     string
@@ -189,8 +190,7 @@ background
   size: 
     cover
     contain
-    string,
-  light: string
+    string
 }
 ```
 
