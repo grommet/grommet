@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import { compose } from 'recompose';
 
@@ -61,7 +61,7 @@ class Searcher extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         {filters[property] ? (
           <Box flex={false} pad={{ horizontal: 'small' }}>
             <Text>{filters[property]}</Text>
@@ -82,7 +82,7 @@ class Searcher extends Component {
             onFiltering(filtering === property ? undefined : property)
           }
         />
-      </Fragment>
+      </>
     );
   }
 }

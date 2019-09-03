@@ -101,7 +101,7 @@ class DropButton extends Component {
     }
 
     return (
-      <React.Fragment>
+      <>
         <Button
           id={id}
           ref={forwardRef || this.buttonRef}
@@ -110,7 +110,7 @@ class DropButton extends Component {
           onClick={this.onToggle}
         />
         {drop}
-      </React.Fragment>
+      </>
     );
   }
 }
