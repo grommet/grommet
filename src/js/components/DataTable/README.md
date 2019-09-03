@@ -134,6 +134,7 @@ Cell border. You can set the border per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.
 
 ```
+boolean
 horizontal
 vertical
 top
@@ -165,6 +166,7 @@ right
 }
 {
   header: 
+    boolean
     horizontal
     vertical
     top
@@ -195,6 +197,7 @@ right
         string
     },
   body: 
+    boolean
     horizontal
     vertical
     top
@@ -225,6 +228,7 @@ right
         string
     },
   footer: 
+    boolean
     horizontal
     vertical
     top

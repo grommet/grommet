@@ -214,6 +214,7 @@ describe('DataTable', () => {
           { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
         ].map(background => (
           <DataTable
+            key={JSON.stringify(background)}
             columns={[
               { property: 'a', header: 'A', footer: 'Total' },
               { property: 'b', header: 'B' },
@@ -241,6 +242,7 @@ describe('DataTable', () => {
           },
         ].map(border => (
           <DataTable
+            key={JSON.stringify(border)}
             columns={[
               { property: 'a', header: 'A', footer: 'Total' },
               { property: 'b', header: 'B' },
@@ -265,14 +267,15 @@ describe('DataTable', () => {
             header: 'small',
             body: { vertical: 'small', horizontal: 'medium' },
           },
-        ].map(border => (
+        ].map(pad => (
           <DataTable
+            key={JSON.stringify(pad)}
             columns={[
               { property: 'a', header: 'A', footer: 'Total' },
               { property: 'b', header: 'B' },
             ]}
             data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
-            border={border}
+            pad={pad}
           />
         ))}
       </Grommet>,

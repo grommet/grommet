@@ -26,6 +26,7 @@ parts.forEach(part => {
 });
 
 const borderTypes = [
+  PropTypes.bool,
   PropTypes.oneOf(sides),
   PropTypes.shape({
     color: PropTypes.oneOfType([
