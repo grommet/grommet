@@ -546,7 +546,27 @@ medium
 large
 xlarge
 xxlarge
-string",
+string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
         "name": "height",
       },
       Object {
@@ -708,7 +728,27 @@ medium
 large
 xlarge
 xxlarge
-string",
+string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
         "name": "width",
       },
       Object {

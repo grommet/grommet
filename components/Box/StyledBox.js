@@ -395,6 +395,27 @@ var animationInitialStyle = function animationInitialStyle(item) {
 
 var animationStyle = (0, _styledComponents.css)(["", ";"], function (props) {
   return (0, _styledComponents.css)(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
+});
+
+var getSize = function getSize(props, size) {
+  return props.theme.global.size[size] || size;
+};
+
+var heightObjectStyle = (0, _styledComponents.css)(["", ";", ";"], function (props) {
+  return props.heightProp.max && (0, _styledComponents.css)(["max-height:", ";"], getSize(props, props.heightProp.max));
+}, function (props) {
+  return props.heightProp.min && (0, _styledComponents.css)(["min-height:", ";"], getSize(props, props.heightProp.min));
+});
+var heightStyle = (0, _styledComponents.css)(["height:", ";"], function (props) {
+  return getSize(props, props.heightProp);
+});
+var widthObjectStyle = (0, _styledComponents.css)(["", ";", ";"], function (props) {
+  return props.widthProp.max && (0, _styledComponents.css)(["max-width:", ";"], getSize(props, props.widthProp.max));
+}, function (props) {
+  return props.widthProp.min && (0, _styledComponents.css)(["min-width:", ";"], getSize(props, props.widthProp.min));
+});
+var widthStyle = (0, _styledComponents.css)(["width:", ";"], function (props) {
+  return getSize(props, props.widthProp);
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
 var StyledBox = _styledComponents["default"].div.withConfig({
@@ -403,10 +424,6 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 })(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, _utils.genericStyles, function (props) {
-  return props.heightProp && "height: " + (props.theme.global.size[props.heightProp] || props.heightProp) + ";";
-}, function (props) {
-  return props.widthProp && "width: " + (props.theme.global.size[props.widthProp] || props.widthProp) + ";";
-}, function (props) {
   return props.align && alignStyle;
 }, function (props) {
   return props.alignContent && alignContentStyle;
@@ -416,6 +433,10 @@ var StyledBox = _styledComponents["default"].div.withConfig({
   return props.border && borderStyle(props.border, props.responsive, props.theme);
 }, function (props) {
   return props.directionProp && directionStyle(props.directionProp, props.theme);
+}, function (props) {
+  return props.heightProp && (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle);
+}, function (props) {
+  return props.widthProp && (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle);
 }, function (props) {
   return props.flex !== undefined && flexStyle;
 }, function (props) {

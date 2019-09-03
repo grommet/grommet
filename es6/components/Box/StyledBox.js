@@ -385,6 +385,27 @@ var animationInitialStyle = function animationInitialStyle(item) {
 
 var animationStyle = css(["", ";"], function (props) {
   return css(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
+});
+
+var getSize = function getSize(props, size) {
+  return props.theme.global.size[size] || size;
+};
+
+var heightObjectStyle = css(["", ";", ";"], function (props) {
+  return props.heightProp.max && css(["max-height:", ";"], getSize(props, props.heightProp.max));
+}, function (props) {
+  return props.heightProp.min && css(["min-height:", ";"], getSize(props, props.heightProp.min));
+});
+var heightStyle = css(["height:", ";"], function (props) {
+  return getSize(props, props.heightProp);
+});
+var widthObjectStyle = css(["", ";", ";"], function (props) {
+  return props.widthProp.max && css(["max-width:", ";"], getSize(props, props.widthProp.max));
+}, function (props) {
+  return props.widthProp.min && css(["min-width:", ";"], getSize(props, props.widthProp.min));
+});
+var widthStyle = css(["width:", ";"], function (props) {
+  return getSize(props, props.widthProp);
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
 var StyledBox = styled.div.withConfig({
@@ -393,10 +414,6 @@ var StyledBox = styled.div.withConfig({
 })(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, genericStyles, function (props) {
-  return props.heightProp && "height: " + (props.theme.global.size[props.heightProp] || props.heightProp) + ";";
-}, function (props) {
-  return props.widthProp && "width: " + (props.theme.global.size[props.widthProp] || props.widthProp) + ";";
-}, function (props) {
   return props.align && alignStyle;
 }, function (props) {
   return props.alignContent && alignContentStyle;
@@ -406,6 +423,10 @@ var StyledBox = styled.div.withConfig({
   return props.border && borderStyle(props.border, props.responsive, props.theme);
 }, function (props) {
   return props.directionProp && directionStyle(props.directionProp, props.theme);
+}, function (props) {
+  return props.heightProp && (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle);
+}, function (props) {
+  return props.widthProp && (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle);
 }, function (props) {
   return props.flex !== undefined && flexStyle;
 }, function (props) {
