@@ -60,6 +60,7 @@ exports[`Anchor focus renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
+  outline-color: #6FFFB0;
   border-color: #6FFFB0;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
