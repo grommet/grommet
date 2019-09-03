@@ -11,7 +11,14 @@ export var doc = function doc(Button) {
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the button expands to fill all of the available width and/or height.').defaultValue(false),
     focusIndicator: PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
     hoverIndicator: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.oneOf(['background']), PropTypes.shape({
-      background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+      color: PropTypes.string,
+      dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+      image: PropTypes.string,
+      light: PropTypes.string,
+      position: PropTypes.string,
+      opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number, PropTypes.oneOf(['weak', 'medium', 'strong'])]),
+      repeat: PropTypes.oneOfType([PropTypes.oneOf(['no-repeat', 'repeat']), PropTypes.string]),
+      size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string])
     })]).description("The hover indicator to apply when the user is mousing over the\nbutton. An object can be also be specified for color index support:\n{background: 'neutral-2'}. This prop is meant to be used only\nwith plain Buttons.").defaultValue(false),
     href: PropTypes.string.description('If specified, the button will behave like an anchor tag.'),
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description("Specifies where to display the URL defined in the href property."),
