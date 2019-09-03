@@ -512,5 +512,5 @@ The color of a given icon. Expects `string | { dark: string, light: string }`.
 Defaults to
 
 ```
-dark: #f8f8f8, light: #666666
+{ dark: #f8f8f8, light: #666666 }
 ```
