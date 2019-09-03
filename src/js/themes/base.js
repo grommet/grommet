@@ -338,6 +338,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           next: FormNext,
         },
       },
+      heading: { level: '4' }, // level ranges from 1-6
     },
     carousel: {
       icons: {
