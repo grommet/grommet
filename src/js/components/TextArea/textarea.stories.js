@@ -1,26 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-class SimpleTextArea extends Component {
-  state = { value: '' };
+const SimpleTextArea = props => {
+  const [value, setValue] = React.useState('');
 
-  onChange = event => this.setState({ value: event.target.value });
+  const onChange = event => setValue(event.target.value);
 
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large">
-          <TextArea value={value} onChange={this.onChange} {...this.props} />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <TextArea value={value} onChange={onChange} {...props} />
+      </Box>
+    </Grommet>
+  );
+};
 
 const customTheme = deepMerge(grommet, {
   textArea: {
@@ -31,46 +28,41 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-class ThemedTextArea extends Component {
-  state = { value: '' };
+const ThemedTextArea = () => {
+  const [value, setValue] = React.useState('');
 
-  onChange = event => this.setState({ value: event.target.value });
+  const onChange = event => setValue(event.target.value);
 
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet theme={customTheme}>
-        <Box
-          width="large"
-          height="medium"
-          border={{ color: 'brand', size: 'medium' }}
-        >
-          <TextArea value={value} onChange={this.onChange} fill />
-        </Box>
-      </Grommet>
-    );
-  }
-}
-class FillTextArea extends Component {
-  state = { value: '' };
+  return (
+    <Grommet theme={customTheme}>
+      <Box
+        width="large"
+        height="medium"
+        border={{ color: 'brand', size: 'medium' }}
+      >
+        <TextArea value={value} onChange={onChange} fill />
+      </Box>
+    </Grommet>
+  );
+};
 
-  onChange = event => this.setState({ value: event.target.value });
+const FillTextArea = () => {
+  const [value, setValue] = React.useState('');
 
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box
-          width="large"
-          height="medium"
-          border={{ color: 'brand', size: 'medium' }}
-        >
-          <TextArea value={value} onChange={this.onChange} fill />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  const onChange = event => setValue(event.target.value);
+
+  return (
+    <Grommet theme={grommet}>
+      <Box
+        width="large"
+        height="medium"
+        border={{ color: 'brand', size: 'medium' }}
+      >
+        <TextArea value={value} onChange={onChange} fill />
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('TextArea', module)
   .add('Simple', () => <SimpleTextArea resize />)

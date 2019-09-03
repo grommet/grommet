@@ -169,7 +169,7 @@ const groupData = (nextProps, prevState, nextState) => {
         } else {
           expandedState =
             prevState.groupState && prevState.groupState[groupValue]
-              ? prevState.groupState[groupValue]
+              ? prevState.groupState[groupValue].expanded
               : false;
         }
         groupState[groupValue] = { expanded: expandedState };

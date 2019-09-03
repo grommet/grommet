@@ -1,10 +1,10 @@
+/* eslint-disable react/no-multi-comp, react/no-find-dom-node, max-classes-per-file */
 import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { findScrollParents } from '../../utils';
 import { Box } from '../Box';
 
 // Wraps an item to ensure we can get a ref to it
-/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
 class Ref extends Component {
   render() {
     const { children } = this.props;
