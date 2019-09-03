@@ -52,7 +52,7 @@ class Layer extends Component {
       layerClone.id = 'layerClone';
       document.body.appendChild(layerClone);
       const clonedContainer = layerClone.querySelector(
-        '[class^="StyledLayer__StyledContainer"]',
+        '[class*="StyledLayer__StyledContainer"]',
       );
       clonedContainer.style.animationDirection = 'reverse';
       setTimeout(() => {

@@ -13,7 +13,7 @@ const sizeStyle = props => {
   return css`
     font-size: ${data.size};
     line-height: ${data.height};
-    max-width: ${props.fill ? 'none' : data.maxWidth};
+    max-width: ${props.fillProp ? 'none' : data.maxWidth};
   `;
 };
 

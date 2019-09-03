@@ -794,6 +794,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // border: undefined,
         // extend: undefined,
       },
+      // row: {
+      //   hover: {
+      //     background: undefined,
+      //     color: undefined,
+      //   },
+      // },
       footer: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
