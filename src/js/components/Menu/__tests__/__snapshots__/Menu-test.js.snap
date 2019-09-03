@@ -668,78 +668,78 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width:768px) {
-  .lgRCHI {
+  .dOxYCM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .lgRCHI {
+  .dOxYCM {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cVwgrz {
+  .dsOguw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cVwgrz {
+  .dsOguw {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ivYkuG {
+  .jnrdmJ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ivYkuG {
+  .jnrdmJ {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvxKol {
+  .liroKi {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvxKol {
+  .liroKi {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cbpbOe {
+  .lfXrbw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cbpbOe {
+  .lfXrbw {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gfbxOq {
+  .iLBPCY {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gfbxOq {
+  .iLBPCY {
     padding: 6px;
   }
 }
 
-.fvdSSs {
+.fLlzie {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -759,61 +759,61 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .fvdSSs {
+  .fLlzie {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvdSSs {
+  .fLlzie {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
+  .cwrzZU {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
+  .cwrzZU {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVyWoM {
+  .gQmRES {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVyWoM {
+  .gQmRES {
     padding: 6px;
   }
 }
@@ -2284,7 +2284,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lgRCHI"
+      class="StyledBox-sc-13pk1d4-0 dOxYCM"
     >
       <span
         class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -2734,78 +2734,78 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:768px) {
-  .lgRCHI {
+  .dOxYCM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .lgRCHI {
+  .dOxYCM {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cVwgrz {
+  .dsOguw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cVwgrz {
+  .dsOguw {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ivYkuG {
+  .jnrdmJ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ivYkuG {
+  .jnrdmJ {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvxKol {
+  .liroKi {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvxKol {
+  .liroKi {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cbpbOe {
+  .lfXrbw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cbpbOe {
+  .lfXrbw {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gfbxOq {
+  .iLBPCY {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gfbxOq {
+  .iLBPCY {
     padding: 6px;
   }
 }
 
-.fvdSSs {
+.fLlzie {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2825,61 +2825,61 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .fvdSSs {
+  .fLlzie {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvdSSs {
+  .fLlzie {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
+  .cwrzZU {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
+  .cwrzZU {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVyWoM {
+  .gQmRES {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVyWoM {
+  .gQmRES {
     padding: 6px;
   }
 }
@@ -3629,78 +3629,78 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:768px) {
-  .lgRCHI {
+  .dOxYCM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .lgRCHI {
+  .dOxYCM {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cVwgrz {
+  .dsOguw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cVwgrz {
+  .dsOguw {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ivYkuG {
+  .jnrdmJ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ivYkuG {
+  .jnrdmJ {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvxKol {
+  .liroKi {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvxKol {
+  .liroKi {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cbpbOe {
+  .lfXrbw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cbpbOe {
+  .lfXrbw {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gfbxOq {
+  .iLBPCY {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gfbxOq {
+  .iLBPCY {
     padding: 6px;
   }
 }
 
-.fvdSSs {
+.fLlzie {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3720,61 +3720,61 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .fvdSSs {
+  .fLlzie {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fvdSSs {
+  .fLlzie {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .fWrrBh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jqGCfM {
+  .hqGUhX {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
+  .cwrzZU {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
+  .cwrzZU {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVyWoM {
+  .gQmRES {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVyWoM {
+  .gQmRES {
     padding: 6px;
   }
 }
