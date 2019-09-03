@@ -11,8 +11,12 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
 const TableCell = ({
+  align,
+  background,
+  border,
   children,
   colSpan,
+  pad,
   plain,
   scope,
   size,
@@ -30,12 +34,22 @@ const TableCell = ({
       } else {
         tableContextTheme = theme.table && theme.table.body;
       }
-      const boxProps = { ...rest };
-      Object.keys(boxProps).forEach(key => {
-        if (tableContextTheme[key] && boxProps[key] === undefined) {
-          delete boxProps[key];
-        }
+      // merge tabelContextTheme and rest
+      const mergedProps = { ...tableContextTheme, ...rest };
+      Object.keys(mergedProps).forEach(key => {
+        if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
       });
+      // split out background, border, and pad
+      const cellProps = {
+        align: align || mergedProps.align || undefined,
+        background: background || mergedProps.background || undefined,
+        border: border || mergedProps.border || undefined,
+        pad: pad || mergedProps.pad || undefined,
+      };
+      delete mergedProps.align;
+      delete mergedProps.background;
+      delete mergedProps.border;
+      delete mergedProps.pad;
 
       return (
         <StyledTableCell
@@ -49,12 +63,13 @@ const TableCell = ({
             verticalAlign ||
             (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
           }
-          {...(plain ? rest : {})}
+          {...(plain ? mergedProps : {})}
+          {...cellProps}
         >
           {plain ? (
             children
           ) : (
-            <Box {...tableContextTheme} {...boxProps}>
+            <Box {...mergedProps} align={align}>
               {children}
             </Box>
           )}

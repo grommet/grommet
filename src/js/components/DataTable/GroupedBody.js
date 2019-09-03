@@ -5,10 +5,13 @@ import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
 export const GroupedBody = ({
+  background,
+  border,
   columns,
   groupBy,
   groups,
   groupState,
+  pad,
   primaryProperty,
   onToggle,
   size,
@@ -30,9 +33,12 @@ export const GroupedBody = ({
             {columns.map(column => (
               <Cell
                 key={column.property}
+                background={background}
+                border={border}
                 context={expanded ? 'groupHeader' : 'body'}
                 column={column}
                 datum={group.datum}
+                pad={pad}
                 scope={column.property === groupBy ? 'row' : undefined}
               />
             ))}
@@ -54,9 +60,12 @@ export const GroupedBody = ({
                   {columns.map(column => (
                     <Cell
                       key={column.property}
+                      background={background}
+                      border={border}
                       context={context}
                       column={column}
                       datum={datum}
+                      pad={pad}
                       scope={column.primary ? 'row' : undefined}
                     />
                   ))}

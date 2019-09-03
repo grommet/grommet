@@ -107,6 +107,156 @@ xlarge
 string
 ```
 
+**background**
+
+Cell background. You can set the background per context be passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+```
+string
+[string]
+{
+  header: 
+    string
+    [string],
+  body: 
+    string
+    [string],
+  footer: 
+    string
+    [string]
+}
+```
+
+**border**
+
+Cell border. You can set the border per context be passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+```
+horizontal
+vertical
+top
+bottom
+left
+right
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right,
+  size: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+{
+  header: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  body: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  footer: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    }
+}
+```
+
 **columns**
 
 A description of the data. The order controls the column order.
@@ -209,6 +359,68 @@ When supplied, and when at least one column has 'search' enabled,
 function
 ```
 
+**pad**
+
+Cell padding. You can set the padding per context be passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+{
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  header: custom,
+  body: custom,
+  footer: custom
+}
+```
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
@@ -226,6 +438,18 @@ Whether to allow the user to resize column widths.
 
 ```
 boolean
+```
+
+**rowProps**
+
+Row specific background, border, and pad, keyed by primary key value.
+      For example:
+      { "primary-key-value": { background: ..., border: ..., pad: ... }}.
+
+```
+{
+
+}
 ```
 
 **size**
