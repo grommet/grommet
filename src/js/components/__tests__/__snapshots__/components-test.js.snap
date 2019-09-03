@@ -546,7 +546,27 @@ medium
 large
 xlarge
 xxlarge
-string",
+string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
         "name": "height",
       },
       Object {
@@ -708,7 +728,27 @@ medium
 large
 xlarge
 xxlarge
-string",
+string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
         "name": "width",
       },
       Object {
@@ -2978,7 +3018,13 @@ function",
 <Tab />",
   },
   "Table": [Function],
-  "TableBody": [Function],
+  "TableBody": Object {
+    "description": "The body of a table.",
+    "intrinsicElement": "tbody",
+    "name": "TableBody",
+    "usage": "import { TableBody } from 'grommet';
+<TableBody />",
+  },
   "TableCell": Object {
     "description": "A cell of data in a table.",
     "intrinsicElement": "td",

@@ -35,6 +35,22 @@ describe('DataTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('paths', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b.c', header: 'B' },
+          ]}
+          data={[{ a: 'one', b: { c: 1 } }, { a: 'two', b: { c: 2 } }]}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('primaryKey', () => {
     const component = renderer.create(
       <Grommet>
@@ -167,6 +183,25 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('click', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    expect(onClickRow).toBeCalledWith(
+      expect.objectContaining({ datum: { a: 'beta' } }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });
