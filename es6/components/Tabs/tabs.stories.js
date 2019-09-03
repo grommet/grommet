@@ -1,10 +1,4 @@
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
@@ -66,292 +60,246 @@ UncontrolledTabs.propTypes = {
   plain: PropTypes.bool
 };
 
-var ControlledTabs =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(ControlledTabs, _Component);
+var ControlledTabs = function ControlledTabs() {
+  var _React$useState = React.useState(),
+      index = _React$useState[0],
+      setIndex = _React$useState[1];
 
-  function ControlledTabs() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "onActive", function (index) {
-      return _this.setState({
-        index: index
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = ControlledTabs.prototype;
-
-  _proto.render = function render() {
-    var index = this.state.index;
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Tabs, {
-      activeIndex: index,
-      onActive: this.onActive
-    }, React.createElement(Tab, {
-      title: "Tab 1"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 2"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 3"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, React.createElement(Car, {
-      size: "xlarge"
-    })))));
+  var onActive = function onActive(nextIndex) {
+    return setIndex(nextIndex);
   };
 
-  return ControlledTabs;
-}(Component);
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Tabs, {
+    activeIndex: index,
+    onActive: onActive
+  }, React.createElement(Tab, {
+    title: "Tab 1"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 2"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 3"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, React.createElement(Car, {
+    size: "xlarge"
+  })))));
+};
 
-var ResponsiveTabs =
-/*#__PURE__*/
-function (_Component2) {
-  _inheritsLoose(ResponsiveTabs, _Component2);
+var ResponsiveTabs = function ResponsiveTabs() {
+  var _React$useState2 = React.useState(),
+      index = _React$useState2[0],
+      setIndex = _React$useState2[1];
 
-  function ResponsiveTabs() {
-    var _this2;
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this2), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this2), "onActive", function (index) {
-      return _this2.setState({
-        index: index
-      });
-    });
-
-    return _this2;
-  }
-
-  var _proto2 = ResponsiveTabs.prototype;
-
-  _proto2.render = function render() {
-    var index = this.state.index;
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Tabs, {
-      activeIndex: index,
-      onActive: this.onActive
-    }, React.createElement(Tab, {
-      title: "Tab 1"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 2"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 3"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, React.createElement(Car, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 4"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 5"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 6"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, React.createElement(Car, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 7"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 8"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 9"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, React.createElement(Car, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 10"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 11"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 12"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 13"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, React.createElement(Car, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 14"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 15"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 16"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, React.createElement(Car, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 17"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 18"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, React.createElement(TreeOption, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 19"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, React.createElement(Car, {
-      size: "xlarge"
-    }))), React.createElement(Tab, {
-      title: "Tab 20"
-    }, React.createElement(Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, React.createElement(Attraction, {
-      size: "xlarge"
-    })))));
+  var onActive = function onActive(nextIndex) {
+    return setIndex(nextIndex);
   };
 
-  return ResponsiveTabs;
-}(Component);
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Tabs, {
+    activeIndex: index,
+    onActive: onActive
+  }, React.createElement(Tab, {
+    title: "Tab 1"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 2"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 3"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, React.createElement(Car, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 4"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 5"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 6"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, React.createElement(Car, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 7"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 8"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 9"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, React.createElement(Car, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 10"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 11"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 12"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 13"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, React.createElement(Car, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 14"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 15"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 16"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, React.createElement(Car, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 17"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 18"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 19"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, React.createElement(Car, {
+    size: "xlarge"
+  }))), React.createElement(Tab, {
+    title: "Tab 20"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Attraction, {
+    size: "xlarge"
+  })))));
+};
 
 var RichTabTitle = function RichTabTitle(_ref2) {
   var icon = _ref2.icon,

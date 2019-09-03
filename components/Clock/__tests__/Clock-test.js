@@ -6,7 +6,7 @@ require("jest-styled-components");
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 var _Grommet = require("../../Grommet");
 
@@ -19,7 +19,7 @@ var TIME = 'T18:23:34';
 var TIME2 = 'T18:23';
 var DATE = '2018-02-22T18:23:34-10:00';
 describe('Clock', function () {
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('time', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Clock, {
       run: false,
@@ -57,7 +57,7 @@ describe('Clock', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('run', function (done) {
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Clock, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Clock, {
       type: "analog",
       run: "forward",
       time: DURATION

@@ -4,7 +4,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
@@ -88,7 +88,7 @@ function (_Component) {
       })));
     }
 
-    return React.createElement(Fragment, null, filters[property] ? React.createElement(Box, {
+    return React.createElement(React.Fragment, null, filters[property] ? React.createElement(Box, {
       flex: false,
       pad: {
         horizontal: 'small'

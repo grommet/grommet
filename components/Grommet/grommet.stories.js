@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _grommetIcons = require("grommet-icons");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var customTheme = {
   global: {
@@ -31,7 +31,7 @@ var Themed = function Themed() {
 };
 
 var Plain = function Plain() {
-  return _react["default"].createElement(_react.Fragment, null, _react["default"].createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_grommet.Grommet, {
     plain: true
   }, _react["default"].createElement(_grommet.Box, {
     pad: "medium"

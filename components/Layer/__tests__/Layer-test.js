@@ -1,14 +1,12 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _react = _interopRequireDefault(require("react"));
 
 require("jest-styled-components");
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
-var _domTestingLibrary = require("dom-testing-library");
+var _dom = require("@testing-library/dom");
 
 var _portal = require("../../../utils/portal");
 
@@ -18,83 +16,41 @@ var _LayerContainer = require("../LayerContainer");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+var FakeLayer = function FakeLayer(_ref) {
+  var children = _ref.children,
+      dataTestid = _ref.dataTestid;
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  var _React$useState = _react["default"].useState(false),
+      showLayer = _React$useState[0],
+      setShowLayer = _React$useState[1];
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  _react["default"].useEffect(function () {
+    return setShowLayer(true);
+  }, []);
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+  var layer;
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var FakeLayer =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(FakeLayer, _Component);
-
-  function FakeLayer() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      showLayer: false
-    });
-
-    return _this;
+  if (showLayer) {
+    layer = _react["default"].createElement(_.Layer, {
+      onEsc: function onEsc() {
+        return setShowLayer(false);
+      }
+    }, _react["default"].createElement("div", {
+      "data-testid": dataTestid
+    }, "This is a layer", _react["default"].createElement("input", {
+      "data-testid": "test-input"
+    })));
   }
 
-  var _proto = FakeLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    this.setState({
-      showLayer: true
-    }); // eslint-disable-line
-  };
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$props = this.props,
-        children = _this$props.children,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children"]);
-
-    var showLayer = this.state.showLayer;
-    var layer;
-
-    if (showLayer) {
-      layer = _react["default"].createElement(_.Layer, {
-        onEsc: function onEsc() {
-          return _this2.setState({
-            showLayer: false
-          });
-        }
-      }, _react["default"].createElement("div", rest, "This is a layer", _react["default"].createElement("input", {
-        "data-testid": "test-input"
-      })));
-    }
-
-    return _react["default"].createElement(_.Grommet, null, layer, children);
-  };
-
-  return FakeLayer;
-}(_react.Component);
-
-_defineProperty(FakeLayer, "propTypes", {
-  children: _propTypes["default"].node.isRequired
-});
+  return _react["default"].createElement(_.Grommet, null, layer, children);
+};
 
 describe('Layer', function () {
   beforeEach(_portal.createPortal);
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   ['top', 'bottom', 'left', 'right', 'center'].forEach(function (position) {
     return test("position " + position, function () {
-      (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
         id: "position-test",
         position: position
       }, "This is a layer")));
@@ -103,7 +59,7 @@ describe('Layer', function () {
   });
   [true, false, 'horizontal', 'vertical'].forEach(function (full) {
     return test("full " + full, function () {
-      (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
         id: "full-test",
         full: full
       }, "This is a layer")));
@@ -112,7 +68,7 @@ describe('Layer', function () {
   });
   ['none', 'xsmall', 'small', 'medium', 'large'].forEach(function (margin) {
     return test("margin " + margin, function () {
-      (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
         id: "margin-test",
         margin: margin
       }, "This is a layer")));
@@ -120,7 +76,7 @@ describe('Layer', function () {
     });
   });
   test("custom margin", function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
       id: "margin-test",
       margin: {
         top: '50px',
@@ -132,7 +88,7 @@ describe('Layer', function () {
     (0, _portal.expectPortal)('margin-test').toMatchSnapshot();
   });
   test('hidden', function () {
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
       id: "hidden-test",
       position: "hidden"
     }, "This is a layer"))),
@@ -146,21 +102,21 @@ describe('Layer', function () {
     (0, _portal.expectPortal)('hidden-test').toMatchSnapshot();
   });
   test('plain', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
       id: "plain-test",
       plain: true
     }, "This is a plain layer")));
     (0, _portal.expectPortal)('plain-test').toMatchSnapshot();
   });
   test('non-modal', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
       id: "non-modal-test",
       modal: false
     }, "This is a non-modal layer")));
     (0, _portal.expectPortal)('non-modal-test').toMatchSnapshot();
   });
   test('dark context', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Box, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Box, {
       background: "dark-1"
     }, _react["default"].createElement(_.Layer, {
       id: "non-modal-test",
@@ -170,7 +126,7 @@ describe('Layer', function () {
   });
   ['slide', 'fadeIn', false, true].forEach(function (animation) {
     return test("animation " + animation, function () {
-      (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
         id: "animation-test",
         animation: animation
       }, "This is a layer")));
@@ -179,14 +135,14 @@ describe('Layer', function () {
   });
   test('invokes onEsc', function () {
     var onEsc = jest.fn();
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_LayerContainer.LayerContainer, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_LayerContainer.LayerContainer, {
       onEsc: onEsc
     }, _react["default"].createElement("input", {
       "data-testid": "test-input"
     }))));
-    var inputNode = (0, _domTestingLibrary.getByTestId)(document, 'test-input');
+    var inputNode = (0, _dom.getByTestId)(document, 'test-input');
 
-    _reactTestingLibrary.fireEvent.keyDown(inputNode, {
+    _react2.fireEvent.keyDown(inputNode, {
       key: 'Esc',
       keyCode: 27,
       which: 27
@@ -196,8 +152,8 @@ describe('Layer', function () {
   });
   test('is accessible', function (done) {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeLayer, {
-      "data-testid": "test-layer-node"
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeLayer, {
+      dataTestid: "test-layer-node"
     }, _react["default"].createElement("div", {
       "data-testid": "test-body-node"
     }, _react["default"].createElement("input", null), _react["default"].createElement("input", {
@@ -205,56 +161,56 @@ describe('Layer', function () {
     })))));
     /* eslint-enable jsx-a11y/tabindex-no-positive */
 
-    var bodyNode = (0, _domTestingLibrary.getByTestId)(document, 'test-body-node');
-    var layerNode = (0, _domTestingLibrary.getByTestId)(document, 'test-layer-node');
-    var inputNode = (0, _domTestingLibrary.getByTestId)(document, 'test-input');
+    var bodyNode = (0, _dom.getByTestId)(document, 'test-body-node');
+    var layerNode = (0, _dom.getByTestId)(document, 'test-layer-node');
+    var inputNode = (0, _dom.getByTestId)(document, 'test-input');
     expect(bodyNode).toMatchSnapshot();
     expect(layerNode).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.keyDown(inputNode, {
+    _react2.fireEvent.keyDown(inputNode, {
       key: 'Esc',
       keyCode: 27,
       which: 27
     }); // because of de-animation, we test both the initial and delayed states
 
 
-    bodyNode = (0, _domTestingLibrary.getByTestId)(document, 'test-body-node');
+    bodyNode = (0, _dom.getByTestId)(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
     setTimeout(function () {
-      expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-node')).toBeNull();
+      expect((0, _dom.queryByTestId)(document, 'test-layer-node')).toBeNull();
       done();
     }, 300);
   });
   test('should be null prior to mounting, displayed after mount', function () {
     var ref = _react["default"].createRef();
 
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
       "data-testid": "test-layer-container",
       ref: ref
     }, "Layer container is available")));
     ref.current.setState({
       islayerContainerAvailable: false
     });
-    expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-container')).toBeNull();
+    expect((0, _dom.queryByTestId)(document, 'test-layer-container')).toBeNull();
     ref.current.componentDidMount();
-    expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-container')).toMatchSnapshot();
+    expect((0, _dom.queryByTestId)(document, 'test-layer-container')).toMatchSnapshot();
   });
   test('focus on layer', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
       "data-testid": "focus-layer-test"
     }, _react["default"].createElement("input", null)), _react["default"].createElement("input", {
       autoFocus: true
     })));
     /* eslint-disable jsx-a11y/no-autofocus */
 
-    var layerNode = (0, _domTestingLibrary.getByTestId)(document, 'focus-layer-test');
+    var layerNode = (0, _dom.getByTestId)(document, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement.nodeName).toBe('A');
   });
   test('not steal focus from an autofocus focusable element', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
       "data-testid": "focus-layer-input-test"
     }, _react["default"].createElement("input", {
       autoFocus: true,
@@ -264,8 +220,8 @@ describe('Layer', function () {
     }, "Button"))));
     /* eslint-disable jsx-a11y/no-autofocus */
 
-    var layerNode = (0, _domTestingLibrary.getByTestId)(document, 'focus-layer-input-test');
-    var inputNode = (0, _domTestingLibrary.getByTestId)(document, 'focus-input');
+    var layerNode = (0, _dom.getByTestId)(document, 'focus-layer-input-test');
+    var inputNode = (0, _dom.getByTestId)(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement).toBe(inputNode);
   });

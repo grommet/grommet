@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -12,82 +12,41 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+var SimpleTextInput = function SimpleTextInput() {
+  var _React$useState = _react["default"].useState(''),
+      value = _React$useState[0],
+      setValue = _React$useState[1];
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var SimpleTextInput =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(SimpleTextInput, _Component);
-
-  function SimpleTextInput() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      value: ''
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "ref", _react["default"].createRef());
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
-      return _this.setState({
-        value: event.target.value
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = SimpleTextInput.prototype;
-
-  _proto.render = function render() {
-    var value = this.state.value;
-    return _react["default"].createElement(_grommet.Grommet, {
-      full: true,
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      fill: true,
-      align: "center",
-      justify: "start",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Box, {
-      width: "medium"
-    }, _react["default"].createElement(_grommet.TextInput, {
-      ref: this.ref,
-      value: value,
-      onChange: this.onChange
-    }))));
+  var onChange = function onChange(event) {
+    return setValue(event.target.value);
   };
 
-  return SimpleTextInput;
-}(_react.Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    full: true,
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    fill: true,
+    align: "center",
+    justify: "start",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Box, {
+    width: "medium"
+  }, _react["default"].createElement(_grommet.TextInput, {
+    value: value,
+    onChange: onChange
+  }))));
+};
 
-var PasswordInput = function PasswordInput(_ref) {
-  var value = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["value"]);
+var PasswordInput = function PasswordInput() {
+  var _React$useState2 = _react["default"].useState(''),
+      value = _React$useState2[0],
+      setValue = _React$useState2[1];
 
-  var _useState = (0, _react.useState)(value),
-      inputValue = _useState[0],
-      setValue = _useState[1];
-
-  var _useState2 = (0, _react.useState)(false),
-      reveal = _useState2[0],
-      setReveal = _useState2[1];
+  var _React$useState3 = _react["default"].useState(false),
+      reveal = _React$useState3[0],
+      setReveal = _React$useState3[1];
 
   return _react["default"].createElement(_grommet.Box, {
     width: "medium",
@@ -96,14 +55,14 @@ var PasswordInput = function PasswordInput(_ref) {
     align: "center",
     round: "small",
     border: true
-  }, _react["default"].createElement(_grommet.TextInput, _extends({
+  }, _react["default"].createElement(_grommet.TextInput, {
     plain: true,
     type: reveal ? 'text' : 'password',
-    value: inputValue,
+    value: value,
     onChange: function onChange(event) {
       return setValue(event.target.value);
     }
-  }, rest)), _react["default"].createElement(_grommet.Button, {
+  }), _react["default"].createElement(_grommet.Button, {
     icon: reveal ? _react["default"].createElement(_grommetIcons.View, {
       size: "medium"
     }) : _react["default"].createElement(_grommetIcons.Hide, {
@@ -119,66 +78,39 @@ var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
 
-var SuggestionsTextInput =
-/*#__PURE__*/
-function (_Component2) {
-  _inheritsLoose(SuggestionsTextInput, _Component2);
+var SuggestionsTextInput = function SuggestionsTextInput() {
+  var _React$useState4 = _react["default"].useState(''),
+      value = _React$useState4[0],
+      setValue = _React$useState4[1];
 
-  function SuggestionsTextInput() {
-    var _this2;
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this2), "state", {
-      value: ''
-    });
-
-    _defineProperty(_assertThisInitialized(_this2), "onChange", function (event) {
-      return _this2.setState({
-        value: event.target.value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this2), "onSelect", function (event) {
-      return _this2.setState({
-        value: event.suggestion
-      });
-    });
-
-    return _this2;
-  }
-
-  var _proto2 = SuggestionsTextInput.prototype;
-
-  _proto2.render = function render() {
-    var value = this.state.value;
-    return _react["default"].createElement(_grommet.Grommet, {
-      full: true,
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      fill: true,
-      align: "center",
-      justify: "start",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Box, {
-      width: "medium"
-    }, _react["default"].createElement(_grommet.TextInput, {
-      value: value,
-      dropProps: {
-        height: 'small'
-      },
-      onChange: this.onChange,
-      onSelect: this.onSelect,
-      suggestions: suggestions
-    }))));
+  var onChange = function onChange(event) {
+    return setValue(event.target.value);
   };
 
-  return SuggestionsTextInput;
-}(_react.Component);
+  var onSelect = function onSelect(event) {
+    return setValue(event.suggestion);
+  };
+
+  return _react["default"].createElement(_grommet.Grommet, {
+    full: true,
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    fill: true,
+    align: "center",
+    justify: "start",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Box, {
+    width: "medium"
+  }, _react["default"].createElement(_grommet.TextInput, {
+    value: value,
+    dropProps: {
+      height: 'small'
+    },
+    onChange: onChange,
+    onSelect: onSelect,
+    suggestions: suggestions
+  }))));
+};
 
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   textInput: {
@@ -203,68 +135,41 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var ThemedTextInput =
-/*#__PURE__*/
-function (_Component3) {
-  _inheritsLoose(ThemedTextInput, _Component3);
+var ThemedTextInput = function ThemedTextInput() {
+  var _React$useState5 = _react["default"].useState(''),
+      value = _React$useState5[0],
+      setValue = _React$useState5[1];
 
-  function ThemedTextInput() {
-    var _this3;
-
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    _this3 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this3), "state", {
-      value: ''
-    });
-
-    _defineProperty(_assertThisInitialized(_this3), "onChange", function (event) {
-      return _this3.setState({
-        value: event.target.value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this3), "onSelect", function (event) {
-      return _this3.setState({
-        value: event.suggestion
-      });
-    });
-
-    return _this3;
-  }
-
-  var _proto3 = ThemedTextInput.prototype;
-
-  _proto3.render = function render() {
-    var value = this.state.value;
-    return _react["default"].createElement(_grommet.Grommet, {
-      full: true,
-      theme: customTheme
-    }, _react["default"].createElement(_grommet.Box, {
-      fill: true,
-      align: "center",
-      justify: "start",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Box, {
-      width: "medium"
-    }, _react["default"].createElement(_grommet.TextInput, {
-      type: "password",
-      value: value,
-      dropProps: {
-        height: 'small'
-      },
-      onChange: this.onChange,
-      onSelect: this.onSelect,
-      suggestions: suggestions,
-      placeholder: _react["default"].createElement("span", null, "Enter something...")
-    }))));
+  var onChange = function onChange(event) {
+    return setValue(event.target.value);
   };
 
-  return ThemedTextInput;
-}(_react.Component);
+  var onSelect = function onSelect(event) {
+    return setValue(event.suggestion);
+  };
+
+  return _react["default"].createElement(_grommet.Grommet, {
+    full: true,
+    theme: customTheme
+  }, _react["default"].createElement(_grommet.Box, {
+    fill: true,
+    align: "center",
+    justify: "start",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Box, {
+    width: "medium"
+  }, _react["default"].createElement(_grommet.TextInput, {
+    type: "password",
+    value: value,
+    dropProps: {
+      height: 'small'
+    },
+    onChange: onChange,
+    onSelect: onSelect,
+    suggestions: suggestions,
+    placeholder: _react["default"].createElement("span", null, "Enter something...")
+  }))));
+};
 
 (0, _react2.storiesOf)('TextInput', module).add('Simple', function () {
   return _react["default"].createElement(SimpleTextInput, null);

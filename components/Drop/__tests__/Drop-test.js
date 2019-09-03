@@ -4,7 +4,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 require("jest-styled-components");
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 var _portal = require("../../../utils/portal");
 
@@ -92,14 +92,14 @@ function (_Component) {
 }(_react.Component);
 
 describe('Drop', function () {
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('basic', function () {
     window.scrollTo = jest.fn();
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, null));
+    (0, _react2.render)(_react["default"].createElement(TestInput, null));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('align left right top bottom', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       align: {
         left: 'right',
         top: 'bottom'
@@ -108,7 +108,7 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('align right right bottom top', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       align: {
         right: 'right',
         bottom: 'top'
@@ -117,7 +117,7 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('align left left', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       align: {
         left: 'left',
         bottom: 'bottom'
@@ -126,7 +126,7 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('align right left top top', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       align: {
         right: 'left',
         top: 'top'
@@ -135,7 +135,7 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('align right right bottom top', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       align: {
         right: 'right',
         bottom: 'top'
@@ -144,7 +144,7 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('align right right', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       align: {
         right: 'right'
       }
@@ -152,7 +152,7 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('invalid align', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       align: {
         whatever: 'right'
       }
@@ -160,67 +160,67 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('no stretch', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       stretch: false
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('close', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, null));
+    (0, _react2.render)(_react["default"].createElement(TestInput, null));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
-    (0, _reactTestingLibrary.cleanup)();
+    (0, _react2.cleanup)();
     expect(document.getElementById('drop-node')).toBeNull();
   });
   test('invoke onClickOutside', function () {
     var onClickOutside = jest.fn();
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       onClickOutside: onClickOutside
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
-    (0, _reactTestingLibrary.fireEvent)(document, new MouseEvent('mousedown', {
+    (0, _react2.fireEvent)(document, new MouseEvent('mousedown', {
       bubbles: true,
       cancelable: true
     }));
     expect(onClickOutside).toBeCalled();
   });
   test('resize', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, null));
+    (0, _react2.render)(_react["default"].createElement(TestInput, null));
     global.window.innerWidth = 1000;
     global.window.innerHeight = 1000;
-    (0, _reactTestingLibrary.fireEvent)(window, new Event('resize', {
+    (0, _react2.fireEvent)(window, new Event('resize', {
       bubbles: true,
       cancelable: true
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('restrict focus', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       restrictFocus: true
     }));
     expect(document.activeElement).toMatchSnapshot();
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
-    (0, _reactTestingLibrary.cleanup)();
+    (0, _react2.cleanup)();
     expect(document.activeElement).toMatchSnapshot();
   });
   test('default elevation renders', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, null));
+    (0, _react2.render)(_react["default"].createElement(TestInput, null));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('theme elevation renders', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       theme: customTheme
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('props elevation renders', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       theme: customTheme,
       elevation: "medium"
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
   test('plain renders', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(TestInput, {
+    (0, _react2.render)(_react["default"].createElement(TestInput, {
       plain: true
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();

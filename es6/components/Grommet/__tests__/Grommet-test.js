@@ -1,45 +1,19 @@
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render } from 'react-testing-library';
+import { cleanup, render } from '@testing-library/react';
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
 import { Grommet } from '..';
 import { Heading } from '../../Heading';
 import { AnnounceContext, ResponsiveContext } from '../../../contexts';
 
-var TestAnnouncer =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(TestAnnouncer, _Component);
-
-  function TestAnnouncer() {
-    return _Component.apply(this, arguments) || this;
-  }
-
-  var _proto = TestAnnouncer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var announce = this.props.announce;
-    announce('hello', 'assertive');
-  };
-
-  _proto.render = function render() {
-    return React.createElement("div", null, "hi");
-  };
-
-  return TestAnnouncer;
-}(Component);
-
-_defineProperty(TestAnnouncer, "propTypes", {
-  announce: PropTypes.func.isRequired
-});
+var TestAnnouncer = function TestAnnouncer(_ref) {
+  var announce = _ref.announce;
+  React.useEffect(function () {
+    return announce('hello', 'assertive');
+  });
+  return React.createElement("div", null, "hi");
+};
 
 var customBreakpointsTheme = {
   global: {
@@ -60,49 +34,17 @@ var customBreakpointsTheme = {
       }
     }
   }
-}; // eslint-disable-next-line react/no-multi-comp
+};
 
-var SSRTester =
-/*#__PURE__*/
-function (_Component2) {
-  _inheritsLoose(SSRTester, _Component2);
-
-  function SSRTester() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component2.call.apply(_Component2, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "sizes", []);
-
-    return _this;
-  }
-
-  var _proto2 = SSRTester.prototype;
-
-  _proto2.render = function render() {
-    var _this2 = this;
-
-    var ua = this.props.ua;
-    return React.createElement(Grommet, {
-      theme: customBreakpointsTheme,
-      userAgent: ua
-    }, React.createElement(ResponsiveContext.Consumer, null, function (size) {
-      _this2.sizes.push(size);
-
-      return _this2.sizes.map(function (s) {
-        return React.createElement(Heading, {
-          key: s
-        }, "Received size " + s + " for " + ua);
-      });
-    }));
-  };
-
-  return SSRTester;
-}(Component);
+var SSRTester = function SSRTester(_ref2) {
+  var ua = _ref2.ua;
+  return React.createElement(Grommet, {
+    theme: customBreakpointsTheme,
+    userAgent: ua
+  }, React.createElement(ResponsiveContext.Consumer, null, function (size) {
+    return React.createElement(Heading, null, "Received size " + size + " for " + ua);
+  }));
+};
 
 describe('Grommet', function () {
   afterEach(cleanup);

@@ -66,6 +66,7 @@ var Select = function Select(props) {
       messages = props.messages,
       onChange = props.onChange,
       onClose = props.onClose,
+      onMore = props.onMore,
       onOpen = props.onOpen,
       propOpen = props.open,
       options = props.options,
@@ -76,7 +77,7 @@ var Select = function Select(props) {
       theme = props.theme,
       value = props.value,
       valueLabel = props.valueLabel,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "onChange", "onClose", "onOpen", "open", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "onChange", "onClose", "onMore", "onOpen", "open", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
 
   var inputRef = (0, _react.useRef)();
 
@@ -203,7 +204,8 @@ var Select = function Select(props) {
     onOpen: onRequestOpen,
     onClose: onRequestClose,
     dropContent: _react["default"].createElement(_SelectContainer.SelectContainer, _extends({}, props, {
-      onChange: onSelectChange
+      onChange: onSelectChange,
+      onMore: onMore
     })),
     plain: plain,
     dropProps: _extends({}, dropProps)

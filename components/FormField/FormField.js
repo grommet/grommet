@@ -246,8 +246,6 @@ function (_Component) {
 }(_react.Component); // Can't be a functional component because styled-components withTheme() needs
 // to attach a ref.
 
-/* eslint-disable-next-line react/no-multi-comp, react/prefer-stateless-function */
-
 
 var FormField =
 /*#__PURE__*/

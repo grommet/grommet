@@ -4,12 +4,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
+/* eslint-disable react/no-multi-comp, react/no-find-dom-node, max-classes-per-file */
 import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { findScrollParents } from '../../utils';
 import { Box } from '../Box'; // Wraps an item to ensure we can get a ref to it
-
-/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
 
 var Ref =
 /*#__PURE__*/

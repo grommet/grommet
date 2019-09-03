@@ -6,7 +6,7 @@ require("jest-styled-components");
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 var _ = require("../..");
 
@@ -39,7 +39,7 @@ describe('Tabs', function () {
   test('change to second tab', function () {
     var onActive = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, {
       onActive: onActive
     }, _react["default"].createElement(_.Tab, {
       title: "Tab 1"
@@ -51,13 +51,13 @@ describe('Tabs', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByText('Tab 2'));
+    _react2.fireEvent.click(getByText('Tab 2'));
 
     expect(onActive).toBeCalledWith(1);
     expect(container.firstChild).toMatchSnapshot();
   });
   test('set on hover', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, null, _react["default"].createElement(_.Tab, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, null, _react["default"].createElement(_.Tab, {
       title: "Tab 1",
       onMouseOver: function onMouseOver() {},
       onMouseOut: function onMouseOut() {}
@@ -69,19 +69,19 @@ describe('Tabs', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.mouseOver(getByText('Tab 1'));
+    _react2.fireEvent.mouseOver(getByText('Tab 1'));
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.mouseOver(getByText('Tab 2'));
+    _react2.fireEvent.mouseOver(getByText('Tab 2'));
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.mouseOut(getByText('Tab 1'));
+    _react2.fireEvent.mouseOut(getByText('Tab 1'));
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.mouseOut(getByText('Tab 2'));
+    _react2.fireEvent.mouseOut(getByText('Tab 2'));
 
     expect(container.firstChild).toMatchSnapshot();
   });

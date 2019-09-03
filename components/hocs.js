@@ -39,21 +39,27 @@ var withFocus = function withFocus(_temp) {
     function (_Component) {
       _inheritsLoose(FocusableComponent, _Component);
 
-      function FocusableComponent() {
-        var _this;
+      FocusableComponent.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
+        var withFocusRef = nextProps.withFocusRef;
+        var wrappedRef = prevState.wrappedRef;
+        var nextWrappedRef = withFocusRef || wrappedRef;
 
-        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-          args[_key] = arguments[_key];
+        if (nextWrappedRef !== wrappedRef) {
+          return {
+            wrappedRef: nextWrappedRef
+          };
         }
 
-        _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+        return null;
+      };
+
+      // not in state because it doesn't affect rendering
+      function FocusableComponent(props) {
+        var _this;
+
+        _this = _Component.call(this, props) || this;
 
         _defineProperty(_assertThisInitialized(_this), "mouseActive", false);
-
-        _defineProperty(_assertThisInitialized(_this), "state", {
-          focus: false,
-          wrappedRef: _react["default"].createRef()
-        });
 
         _defineProperty(_assertThisInitialized(_this), "componentDidMount", function () {
           var wrappedRef = _this.state.wrappedRef; // components such as anchors and buttons should not retain focus after
@@ -128,22 +134,12 @@ var withFocus = function withFocus(_temp) {
           }, 1);
         });
 
+        _this.state = {
+          focus: false,
+          wrappedRef: _react["default"].createRef()
+        };
         return _this;
       }
-
-      FocusableComponent.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-        var withFocusRef = nextProps.withFocusRef;
-        var wrappedRef = prevState.wrappedRef;
-        var nextWrappedRef = withFocusRef || wrappedRef;
-
-        if (nextWrappedRef !== wrappedRef) {
-          return {
-            wrappedRef: nextWrappedRef
-          };
-        }
-
-        return null;
-      };
 
       var _proto = FocusableComponent.prototype;
 

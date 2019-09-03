@@ -8,6 +8,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/* eslint-disable react/no-multi-comp, react/prefer-stateless-function, max-classes-per-file */
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
@@ -228,8 +229,6 @@ function (_Component) {
   return FormFieldContent;
 }(Component); // Can't be a functional component because styled-components withTheme() needs
 // to attach a ref.
-
-/* eslint-disable-next-line react/no-multi-comp, react/prefer-stateless-function */
 
 
 var FormField =

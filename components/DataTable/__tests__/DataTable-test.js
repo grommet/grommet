@@ -6,7 +6,7 @@ var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
 require("jest-styled-components");
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 var _Grommet = require("../../Grommet");
 
@@ -15,7 +15,7 @@ var _ = require("..");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('DataTable', function () {
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('empty', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, null)));
 
@@ -113,7 +113,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('sort', function () {
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -139,12 +139,12 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
     var headerCell = getByText('A');
 
-    _reactTestingLibrary.fireEvent.click(headerCell, {});
+    _react2.fireEvent.click(headerCell, {});
 
     expect(container.firstChild).toMatchSnapshot();
   });
   test('search', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -162,12 +162,12 @@ describe('DataTable', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
+    _react2.fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
 
     var searchInput = container.querySelector('[name="search-a"]');
     expect(document.activeElement).toBe(searchInput);
 
-    _reactTestingLibrary.fireEvent.change(searchInput, {
+    _react2.fireEvent.change(searchInput, {
       target: {
         value: '['
       }
@@ -223,7 +223,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('groupBy', function () {
-    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -252,14 +252,14 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
     var headerCell = getByText('A');
 
-    _reactTestingLibrary.fireEvent.click(headerCell, {});
+    _react2.fireEvent.click(headerCell, {});
 
     expect(container.firstChild).toMatchSnapshot();
   });
   test('click', function () {
     var onClickRow = jest.fn();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -276,7 +276,7 @@ describe('DataTable', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByText('beta'));
+    _react2.fireEvent.click(getByText('beta'));
 
     expect(onClickRow).toBeCalledWith(expect.objectContaining({
       datum: {

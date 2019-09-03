@@ -105,7 +105,7 @@ function (_Component) {
       })));
     }
 
-    return _react["default"].createElement(_react.Fragment, null, filters[property] ? _react["default"].createElement(_Box.Box, {
+    return _react["default"].createElement(_react["default"].Fragment, null, filters[property] ? _react["default"].createElement(_Box.Box, {
       flex: false,
       pad: {
         horizontal: 'small'

@@ -1,80 +1,38 @@
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from 'react-testing-library';
-import { getByTestId, queryByTestId } from 'dom-testing-library';
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { getByTestId, queryByTestId } from '@testing-library/dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
-var FakeLayer =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(FakeLayer, _Component);
+var FakeLayer = function FakeLayer(_ref) {
+  var children = _ref.children,
+      dataTestid = _ref.dataTestid;
 
-  function FakeLayer() {
-    var _this;
+  var _React$useState = React.useState(false),
+      showLayer = _React$useState[0],
+      setShowLayer = _React$useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  React.useEffect(function () {
+    return setShowLayer(true);
+  }, []);
+  var layer;
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      showLayer: false
-    });
-
-    return _this;
+  if (showLayer) {
+    layer = React.createElement(Layer, {
+      onEsc: function onEsc() {
+        return setShowLayer(false);
+      }
+    }, React.createElement("div", {
+      "data-testid": dataTestid
+    }, "This is a layer", React.createElement("input", {
+      "data-testid": "test-input"
+    })));
   }
 
-  var _proto = FakeLayer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    this.setState({
-      showLayer: true
-    }); // eslint-disable-line
-  };
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$props = this.props,
-        children = _this$props.children,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children"]);
-
-    var showLayer = this.state.showLayer;
-    var layer;
-
-    if (showLayer) {
-      layer = React.createElement(Layer, {
-        onEsc: function onEsc() {
-          return _this2.setState({
-            showLayer: false
-          });
-        }
-      }, React.createElement("div", rest, "This is a layer", React.createElement("input", {
-        "data-testid": "test-input"
-      })));
-    }
-
-    return React.createElement(Grommet, null, layer, children);
-  };
-
-  return FakeLayer;
-}(Component);
-
-_defineProperty(FakeLayer, "propTypes", {
-  children: PropTypes.node.isRequired
-});
+  return React.createElement(Grommet, null, layer, children);
+};
 
 describe('Layer', function () {
   beforeEach(createPortal);
@@ -182,7 +140,7 @@ describe('Layer', function () {
   test('is accessible', function (done) {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(React.createElement(Grommet, null, React.createElement(FakeLayer, {
-      "data-testid": "test-layer-node"
+      dataTestid: "test-layer-node"
     }, React.createElement("div", {
       "data-testid": "test-body-node"
     }, React.createElement("input", null), React.createElement("input", {

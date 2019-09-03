@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { grommet, Grommet, Anchor, Box } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
@@ -23,7 +23,7 @@ var Themed = function Themed() {
 };
 
 var Plain = function Plain() {
-  return React.createElement(Fragment, null, React.createElement(Grommet, {
+  return React.createElement(React.Fragment, null, React.createElement(Grommet, {
     plain: true
   }, React.createElement(Box, {
     pad: "medium"

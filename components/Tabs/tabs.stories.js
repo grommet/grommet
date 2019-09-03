@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -17,14 +17,6 @@ var _themes = require("grommet/themes");
 var _utils = require("grommet/utils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var UncontrolledTabs = function UncontrolledTabs(_ref) {
   var plain = _ref.plain;
@@ -75,292 +67,246 @@ UncontrolledTabs.propTypes = {
   plain: _propTypes["default"].bool
 };
 
-var ControlledTabs =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(ControlledTabs, _Component);
+var ControlledTabs = function ControlledTabs() {
+  var _React$useState = _react["default"].useState(),
+      index = _React$useState[0],
+      setIndex = _React$useState[1];
 
-  function ControlledTabs() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "onActive", function (index) {
-      return _this.setState({
-        index: index
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = ControlledTabs.prototype;
-
-  _proto.render = function render() {
-    var index = this.state.index;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Tabs, {
-      activeIndex: index,
-      onActive: this.onActive
-    }, _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 1"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 2"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, _react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 3"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, _react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    })))));
+  var onActive = function onActive(nextIndex) {
+    return setIndex(nextIndex);
   };
 
-  return ControlledTabs;
-}(_react.Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Tabs, {
+    activeIndex: index,
+    onActive: onActive
+  }, _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 1"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 2"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 3"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, _react["default"].createElement(_grommetIcons.Car, {
+    size: "xlarge"
+  })))));
+};
 
-var ResponsiveTabs =
-/*#__PURE__*/
-function (_Component2) {
-  _inheritsLoose(ResponsiveTabs, _Component2);
+var ResponsiveTabs = function ResponsiveTabs() {
+  var _React$useState2 = _react["default"].useState(),
+      index = _React$useState2[0],
+      setIndex = _React$useState2[1];
 
-  function ResponsiveTabs() {
-    var _this2;
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this2), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this2), "onActive", function (index) {
-      return _this2.setState({
-        index: index
-      });
-    });
-
-    return _this2;
-  }
-
-  var _proto2 = ResponsiveTabs.prototype;
-
-  _proto2.render = function render() {
-    var index = this.state.index;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Tabs, {
-      activeIndex: index,
-      onActive: this.onActive
-    }, _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 1"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 2"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, _react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 3"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, _react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 4"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 5"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, _react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 6"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, _react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 7"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 8"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, _react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 9"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, _react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 10"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 11"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 12"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, _react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 13"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, _react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 14"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 15"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, _react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 16"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, _react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 17"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 18"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-2"
-    }, _react["default"].createElement(_grommetIcons.TreeOption, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 19"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-3"
-    }, _react["default"].createElement(_grommetIcons.Car, {
-      size: "xlarge"
-    }))), _react["default"].createElement(_grommet.Tab, {
-      title: "Tab 20"
-    }, _react["default"].createElement(_grommet.Box, {
-      margin: "small",
-      pad: "large",
-      align: "center",
-      background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.Attraction, {
-      size: "xlarge"
-    })))));
+  var onActive = function onActive(nextIndex) {
+    return setIndex(nextIndex);
   };
 
-  return ResponsiveTabs;
-}(_react.Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Tabs, {
+    activeIndex: index,
+    onActive: onActive
+  }, _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 1"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 2"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 3"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, _react["default"].createElement(_grommetIcons.Car, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 4"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 5"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 6"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, _react["default"].createElement(_grommetIcons.Car, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 7"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 8"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 9"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, _react["default"].createElement(_grommetIcons.Car, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 10"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 11"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 12"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 13"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, _react["default"].createElement(_grommetIcons.Car, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 14"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 15"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 16"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, _react["default"].createElement(_grommetIcons.Car, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 17"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 18"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 19"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-3"
+  }, _react["default"].createElement(_grommetIcons.Car, {
+    size: "xlarge"
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: "Tab 20"
+  }, _react["default"].createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-1"
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
+    size: "xlarge"
+  })))));
+};
 
 var RichTabTitle = function RichTabTitle(_ref2) {
   var icon = _ref2.icon,

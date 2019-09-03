@@ -563,10 +563,9 @@ function (_Component) {
   return Video;
 }(_react.Component);
 
-_defineProperty(Video, "defaultProps", {
+Video.defaultProps = {
   controls: 'over'
-});
-
+};
 Object.setPrototypeOf(Video.defaultProps, _defaultProps.defaultProps);
 var VideoDoc;
 

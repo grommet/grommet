@@ -6,7 +6,7 @@ var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
 require("jest-styled-components");
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 var _Grommet = require("../../Grommet");
 
@@ -17,7 +17,7 @@ var _Image = require("../../Image");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Carousel', function () {
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('basic', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, null, _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
@@ -41,7 +41,7 @@ describe('Carousel', function () {
     expect(tree).toMatchSnapshot();
   });
   test('navigate', function () {
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
       "data-testid": "test-carousel"
     }, _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
@@ -53,7 +53,7 @@ describe('Carousel', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.keyDown(getByTestId('test-carousel'), {
+    _react2.fireEvent.keyDown(getByTestId('test-carousel'), {
       key: 'Right',
       keyCode: 39,
       which: 39
@@ -61,7 +61,7 @@ describe('Carousel', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.keyDown(getByTestId('test-carousel'), {
+    _react2.fireEvent.keyDown(getByTestId('test-carousel'), {
       key: 'Left',
       keyCode: 37,
       which: 37
@@ -70,7 +70,7 @@ describe('Carousel', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('play', function (done) {
-    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
       play: 1000
     }, _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"

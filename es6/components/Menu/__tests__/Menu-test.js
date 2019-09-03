@@ -1,8 +1,8 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render } from 'react-testing-library';
-import { getByText as getByTextDOM } from 'dom-testing-library';
+import { cleanup, fireEvent, render } from '@testing-library/react';
+import { getByText as getByTextDOM } from '@testing-library/dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet, Menu } from '../..';
 describe('Menu', function () {
@@ -69,15 +69,15 @@ describe('Menu', function () {
         href: '/test'
       }]
     }))),
-        getByText = _render.getByText,
+        getByLabelText = _render.getByLabelText,
         container = _render.container;
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
-    fireEvent.click(getByText('Test'));
+    fireEvent.click(getByLabelText('Open Menu'));
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-menu__drop').toMatchSnapshot();
-    fireEvent.click(getByText('Test'));
+    fireEvent.click(getByLabelText('Close Menu'));
     expect(document.getElementById('test-menu__drop')).toBeNull();
     expect(window.scrollTo).toBeCalled();
   });
@@ -143,36 +143,36 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render4.getByText,
+        getByLabelText = _render4.getByLabelText,
         container = _render4.container;
 
     expect(container.firstChild).toMatchSnapshot(); // pressing down 3x: first opens the drop,
     // second moves to the first suggestion
     // third moves to the last suggestion
 
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     }); // moves to the first suggestion
 
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Up',
       keyCode: 38,
       which: 38
     }); // select that by pressing enter
 
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Enter',
       keyCode: 13,
       which: 13
@@ -190,16 +190,16 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render5.getByText,
+        getByLabelText = _render5.getByLabelText,
         container = _render5.container;
 
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Close Menu'), {
       key: 'Esc',
       keyCode: 27,
       which: 27
@@ -216,16 +216,16 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render6.getByText,
+        getByLabelText = _render6.getByLabelText,
         container = _render6.container;
 
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
-    fireEvent.keyDown(getByText('Test'), {
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Tab',
       keyCode: 9,
       which: 9

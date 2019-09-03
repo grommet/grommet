@@ -4,18 +4,18 @@ var _react = _interopRequireDefault(require("react"));
 
 require("jest-styled-components");
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 var _ = require("../..");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('SkipLink', function () {
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('basic', function () {
     jest.useFakeTimers();
 
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.SkipLinks, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.SkipLinks, {
       id: "skip-links"
     }, _react["default"].createElement(_.SkipLink, {
       id: "main",
@@ -42,7 +42,7 @@ describe('SkipLink', function () {
     document.getElementById('skip-links').querySelector('a').focus();
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(document.activeElement);
+    _react2.fireEvent.click(document.activeElement);
 
     document.getElementById('skip-links').querySelector('a').blur();
     jest.runAllTimers();

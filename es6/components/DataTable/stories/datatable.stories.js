@@ -1,12 +1,6 @@
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -199,169 +193,109 @@ var GroupedDataTable = function GroupedDataTable() {
   }));
 };
 
-var ServedDataTable =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(ServedDataTable, _Component);
+var ServedDataTable = function ServedDataTable() {
+  var _React$useState = React.useState(DATA),
+      data2 = _React$useState[0],
+      setData2 = _React$useState[1];
 
-  function ServedDataTable() {
-    var _this;
+  var onSearch = function onSearch(search) {
+    var nextData;
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+    if (search) {
+      var expressions = Object.keys(search).map(function (property) {
+        return {
+          property: property,
+          exp: new RegExp(search[property], 'i')
+        };
+      });
+      nextData = DATA.filter(function (d) {
+        return !expressions.some(function (e) {
+          return !e.exp.test(d[e.property]);
+        });
+      });
+    } else {
+      nextData = DATA;
     }
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      data: DATA
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSearch", function (search) {
-      var nextData;
-
-      if (search) {
-        var expressions = Object.keys(search).map(function (property) {
-          return {
-            property: property,
-            exp: new RegExp(search[property], 'i')
-          };
-        });
-        nextData = DATA.filter(function (d) {
-          return !expressions.some(function (e) {
-            return !e.exp.test(d[e.property]);
-          });
-        });
-      } else {
-        nextData = DATA;
-      }
-
-      _this.setState({
-        data: nextData
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = ServedDataTable.prototype;
-
-  _proto.render = function render() {
-    var servedData = this.state.data;
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Box, {
-      align: "center",
-      pad: "large"
-    }, React.createElement(DataTable, {
-      columns: columns.map(function (column) {
-        return _extends({}, column, {
-          search: column.property === 'name' || column.property === 'location'
-        });
-      }),
-      data: servedData,
-      onSearch: this.onSearch
-    })));
+    setData2(nextData);
   };
 
-  return ServedDataTable;
-}(Component);
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(DataTable, {
+    columns: columns.map(function (column) {
+      return _extends({}, column, {
+        search: column.property === 'name' || column.property === 'location'
+      });
+    }),
+    data: data2,
+    onSearch: onSearch
+  })));
+};
 
 var controlledColumns = columns.map(function (col) {
-  return Object.assign({}, col);
+  return _extends({}, col);
 });
 delete controlledColumns[0].footer;
 delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
 
-var ControlledDataTable =
-/*#__PURE__*/
-function (_Component2) {
-  _inheritsLoose(ControlledDataTable, _Component2);
+var ControlledDataTable = function ControlledDataTable() {
+  var _React$useState2 = React.useState([]),
+      checked = _React$useState2[0],
+      setChecked = _React$useState2[1];
 
-  function ControlledDataTable() {
-    var _this2;
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
+  var onCheck = function onCheck(event, value) {
+    if (event.target.checked) {
+      setChecked([].concat(checked, [value]));
+    } else {
+      setChecked(checked.filter(function (item) {
+        return item !== value;
+      }));
     }
-
-    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this2), "state", {
-      checked: []
-    });
-
-    _defineProperty(_assertThisInitialized(_this2), "onCheck", function (event, value) {
-      var checked = _this2.state.checked;
-
-      if (event.target.checked) {
-        checked.push(value);
-
-        _this2.setState({
-          checked: checked
-        });
-      } else {
-        _this2.setState({
-          checked: checked.filter(function (item) {
-            return item !== value;
-          })
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this2), "onCheckAll", function (event) {
-      return _this2.setState({
-        checked: event.target.checked ? DATA.map(function (datum) {
-          return datum.name;
-        }) : []
-      });
-    });
-
-    return _this2;
-  }
-
-  var _proto2 = ControlledDataTable.prototype;
-
-  _proto2.render = function render() {
-    var _this3 = this;
-
-    var checked = this.state.checked;
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Box, {
-      align: "center",
-      pad: "medium"
-    }, React.createElement(DataTable, {
-      columns: [{
-        property: 'checkbox',
-        render: function render(datum) {
-          return React.createElement(CheckBox, {
-            key: datum.name,
-            checked: checked.indexOf(datum.name) !== -1,
-            onChange: function onChange(e) {
-              return _this3.onCheck(e, datum.name);
-            }
-          });
-        },
-        header: React.createElement(CheckBox, {
-          checked: checked.length === DATA.length,
-          indeterminate: checked.length > 0 && checked.length < DATA.length,
-          onChange: this.onCheckAll
-        }),
-        sortable: false
-      }].concat(controlledColumns).map(function (col) {
-        return _extends({}, col);
-      }),
-      data: DATA,
-      sortable: true,
-      size: "medium"
-    })));
   };
 
-  return ControlledDataTable;
-}(Component);
+  var onCheckAll = function onCheckAll(event) {
+    return setChecked(event.target.checked ? DATA.map(function (datum) {
+      return datum.name;
+    }) : []);
+  };
+
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "medium"
+  }, React.createElement(DataTable, {
+    columns: [{
+      property: 'checkbox',
+      render: function render(datum) {
+        return React.createElement(CheckBox, {
+          key: datum.name,
+          checked: checked.indexOf(datum.name) !== -1,
+          onChange: function onChange(e) {
+            return onCheck(e, datum.name);
+          }
+        });
+      },
+      header: React.createElement(CheckBox, {
+        checked: checked.length === DATA.length,
+        indeterminate: checked.length > 0 && checked.length < DATA.length,
+        onChange: onCheckAll
+      }),
+      sortable: false
+    }].concat(controlledColumns).map(function (col) {
+      return _extends({}, col);
+    }),
+    data: DATA,
+    sortable: true,
+    size: "medium"
+  })));
+};
 
 storiesOf('DataTable', module).add('Simple', function () {
   return React.createElement(SimpleDataTable, null);

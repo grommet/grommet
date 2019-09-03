@@ -4,7 +4,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 require("jest-styled-components");
 
@@ -19,7 +19,7 @@ var _Button = require("../../Button");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Form', function () {
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('empty', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, null)));
 
@@ -38,7 +38,7 @@ describe('Form', function () {
     var validate = jest.fn().mockReturnValueOnce('too short').mockReturnValueOnce(undefined);
     var onSubmit = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -59,31 +59,31 @@ describe('Form', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
         value: 'v'
       }
     });
 
-    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+    _react2.fireEvent.click(getByText('Submit'));
 
     expect(validate).toBeCalledWith('v', {
       test: 'v'
     });
 
-    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
         value: 'value'
       }
     });
 
-    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test-2 input'), {
+    _react2.fireEvent.change(getByPlaceholderText('test-2 input'), {
       target: {
         value: 'value-2'
       }
     });
 
-    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+    _react2.fireEvent.click(getByText('Submit'));
 
     expect(validate).toBeCalledWith('value', {
       test: 'value',
@@ -99,7 +99,7 @@ describe('Form', function () {
   test('regexp validation', function () {
     var onSubmit = jest.fn();
 
-    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -117,30 +117,30 @@ describe('Form', function () {
         getByText = _render2.getByText,
         queryByText = _render2.queryByText;
 
-    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
         value: '1'
       }
     });
 
-    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+    _react2.fireEvent.click(getByText('Submit'));
 
     expect(getByText('invalid')).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
         value: 'a'
       }
     });
 
-    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+    _react2.fireEvent.click(getByText('Submit'));
 
     expect(queryByText('invalid')).toBeNull();
   });
   test('required validation', function () {
     var onSubmit = jest.fn();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -155,11 +155,11 @@ describe('Form', function () {
         getByText = _render3.getByText,
         queryByText = _render3.queryByText;
 
-    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+    _react2.fireEvent.click(getByText('Submit'));
 
     expect(queryByText('required')).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
         value: '1'
       }
@@ -170,7 +170,7 @@ describe('Form', function () {
   test('reset clears form', function () {
     var onReset = jest.fn();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onReset: onReset
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -185,20 +185,20 @@ describe('Form', function () {
         getByText = _render4.getByText,
         queryByText = _render4.queryByText;
 
-    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
         value: 'Input has changed'
       }
     });
 
-    _reactTestingLibrary.fireEvent.click(getByText('Reset'));
+    _react2.fireEvent.click(getByText('Reset'));
 
     expect(queryByText('Input has changed')).toBeNull();
   });
   test('initial values', function () {
     var _onSubmit = jest.fn();
 
-    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: function onSubmit(_ref) {
         var value = _ref.value;
         return _onSubmit({
@@ -221,7 +221,7 @@ describe('Form', function () {
         getByText = _render5.getByText,
         queryByText = _render5.queryByText;
 
-    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+    _react2.fireEvent.click(getByText('Submit'));
 
     expect(queryByText('required')).toBeNull();
     expect(_onSubmit).toBeCalledWith(expect.objectContaining({

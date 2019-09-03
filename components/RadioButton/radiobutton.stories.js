@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -10,65 +10,44 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+var SimpleRadioButton = function SimpleRadioButton(_ref) {
+  var selectedProp = _ref.selected,
+      rest = _objectWithoutPropertiesLoose(_ref, ["selected"]);
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  var _React$useState = _react["default"].useState(selectedProp),
+      selected = _React$useState[0],
+      setSelected = _React$useState[1];
 
-var SimpleRadioButton =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(SimpleRadioButton, _Component);
-
-  function SimpleRadioButton(props) {
-    var _this;
-
-    _this = _Component.call(this, props) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
-      return _this.setState({
-        selected: event.target.value
-      });
-    });
-
-    _this.state = {
-      selected: props.selected
-    };
-    return _this;
-  }
-
-  var _proto = SimpleRadioButton.prototype;
-
-  _proto.render = function render() {
-    var selected = this.state.selected;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      pad: "large",
-      gap: "small"
-    }, _react["default"].createElement(_grommet.RadioButton, _extends({
-      label: "Choice 1",
-      name: "radio",
-      value: "c1",
-      checked: selected === 'c1',
-      onChange: this.onChange
-    }, this.props)), _react["default"].createElement(_grommet.RadioButton, _extends({
-      label: "Choice 2",
-      name: "radio",
-      value: "c2",
-      checked: selected === 'c2',
-      onChange: this.onChange
-    }, this.props))));
+  var onChange = function onChange(event) {
+    return setSelected(event.target.value);
   };
 
-  return SimpleRadioButton;
-}(_react.Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large",
+    gap: "small"
+  }, _react["default"].createElement(_grommet.RadioButton, _extends({
+    label: "Choice 1",
+    name: "radio",
+    value: "c1",
+    checked: selected === 'c1',
+    onChange: onChange
+  }, rest)), _react["default"].createElement(_grommet.RadioButton, _extends({
+    label: "Choice 2",
+    name: "radio",
+    value: "c2",
+    checked: selected === 'c2',
+    onChange: onChange
+  }, rest))));
+};
 
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   radioButton: {
@@ -90,116 +69,62 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var CustomRadioButton =
-/*#__PURE__*/
-function (_Component2) {
-  _inheritsLoose(CustomRadioButton, _Component2);
+var CustomRadioButton = function CustomRadioButton() {
+  var _React$useState2 = _react["default"].useState(),
+      selected = _React$useState2[0],
+      setSelected = _React$useState2[1];
 
-  function CustomRadioButton() {
-    var _this2;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this2), "state", {
-      selected: undefined
-    });
-
-    _defineProperty(_assertThisInitialized(_this2), "onChange", function (event) {
-      return _this2.setState({
-        selected: event.target.value
-      });
-    });
-
-    return _this2;
-  }
-
-  var _proto2 = CustomRadioButton.prototype;
-
-  _proto2.render = function render() {
-    var selected = this.state.selected;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: customTheme
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      pad: "large",
-      gap: "small"
-    }, _react["default"].createElement(_grommet.RadioButton, {
-      label: "Choice 1",
-      name: "radio",
-      value: "c1",
-      checked: selected === 'c1',
-      onChange: this.onChange
-    }), _react["default"].createElement(_grommet.RadioButton, {
-      label: "Choice 2",
-      name: "radio",
-      value: "c2",
-      checked: selected === 'c2',
-      onChange: this.onChange
-    })));
+  var onChange = function onChange(event) {
+    return setSelected(event.target.value);
   };
 
-  return CustomRadioButton;
-}(_react.Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: customTheme
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large",
+    gap: "small"
+  }, _react["default"].createElement(_grommet.RadioButton, {
+    label: "Choice 1",
+    name: "radio",
+    value: "c1",
+    checked: selected === 'c1',
+    onChange: onChange
+  }), _react["default"].createElement(_grommet.RadioButton, {
+    label: "Choice 2",
+    name: "radio",
+    value: "c2",
+    checked: selected === 'c2',
+    onChange: onChange
+  })));
+};
 
-var CheckBoxInsideButton =
-/*#__PURE__*/
-function (_Component3) {
-  _inheritsLoose(CheckBoxInsideButton, _Component3);
+var CheckBoxInsideButton = function CheckBoxInsideButton() {
+  var _React$useState3 = _react["default"].useState(),
+      selected = _React$useState3[0],
+      setSelected = _React$useState3[1];
 
-  function CheckBoxInsideButton() {
-    var _this3;
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    _this3 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this3), "state", {
-      selected: undefined
-    });
-
-    return _this3;
-  }
-
-  var _proto3 = CheckBoxInsideButton.prototype;
-
-  _proto3.render = function render() {
-    var _this4 = this;
-
-    var selected = this.state.selected;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Button, {
-      hoverIndicator: "background",
-      onClick: function onClick() {
-        if (selected) {
-          _this4.setState({
-            selected: undefined
-          });
-        } else {
-          _this4.setState({
-            selected: 'c1'
-          });
-        }
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Button, {
+    hoverIndicator: "background",
+    onClick: function onClick() {
+      if (selected) {
+        setSelected(undefined);
+      } else {
+        setSelected('c1');
       }
-    }, _react["default"].createElement(_grommet.RadioButton, _extends({
-      label: "Choice 1",
-      name: "radio",
-      value: "c1",
-      checked: selected === 'c1'
-    }, this.props)))));
-  };
-
-  return CheckBoxInsideButton;
-}(_react.Component);
+    }
+  }, _react["default"].createElement(_grommet.RadioButton, {
+    label: "Choice 1",
+    name: "radio",
+    value: "c1",
+    checked: selected === 'c1'
+  }))));
+};
 
 (0, _react2.storiesOf)('RadioButton', module).add('Simple', function () {
   return _react["default"].createElement(SimpleRadioButton, null);

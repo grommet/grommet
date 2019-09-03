@@ -20,8 +20,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 // Wraps an item to ensure we can get a ref to it
-
-/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
 var Ref =
 /*#__PURE__*/
 function (_Component) {

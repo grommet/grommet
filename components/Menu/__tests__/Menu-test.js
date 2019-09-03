@@ -6,9 +6,9 @@ require("jest-styled-components");
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
-var _domTestingLibrary = require("dom-testing-library");
+var _dom = require("@testing-library/dom");
 
 var _portal = require("../../../utils/portal");
 
@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 describe('Menu', function () {
   beforeEach(_portal.createPortal);
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('basic', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       icon: _react["default"].createElement("svg", null),
@@ -70,7 +70,7 @@ describe('Menu', function () {
   test('open and close on click', function () {
     window.scrollTo = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -83,24 +83,24 @@ describe('Menu', function () {
         href: '/test'
       }]
     }))),
-        getByText = _render.getByText,
+        getByLabelText = _render.getByLabelText,
         container = _render.container;
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
 
-    _reactTestingLibrary.fireEvent.click(getByText('Test'));
+    _react2.fireEvent.click(getByLabelText('Open Menu'));
 
     expect(container.firstChild).toMatchSnapshot();
     (0, _portal.expectPortal)('test-menu__drop').toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByText('Test'));
+    _react2.fireEvent.click(getByLabelText('Close Menu'));
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
     expect(window.scrollTo).toBeCalled();
   });
   test('close by clicking outside', function (done) {
-    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -115,10 +115,10 @@ describe('Menu', function () {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
 
-    _reactTestingLibrary.fireEvent.click(getByText('Test'));
+    _react2.fireEvent.click(getByText('Test'));
 
     (0, _portal.expectPortal)('test-menu__drop').toMatchSnapshot();
-    (0, _reactTestingLibrary.fireEvent)(document, new MouseEvent('mousedown', {
+    (0, _react2.fireEvent)(document, new MouseEvent('mousedown', {
       bubbles: true,
       cancelable: true
     }));
@@ -130,7 +130,7 @@ describe('Menu', function () {
   test('select an item', function () {
     var onClick = jest.fn();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -145,10 +145,10 @@ describe('Menu', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByText('Test')); // click in the first menu item
+    _react2.fireEvent.click(getByText('Test')); // click in the first menu item
 
 
-    _reactTestingLibrary.fireEvent.click((0, _domTestingLibrary.getByText)(document, 'Item 1'));
+    _react2.fireEvent.click((0, _dom.getByText)(document, 'Item 1'));
 
     expect(onClick).toBeCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -156,7 +156,7 @@ describe('Menu', function () {
   test('navigate through suggestions and select', function () {
     var onClick = jest.fn();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -166,40 +166,40 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render4.getByText,
+        getByLabelText = _render4.getByLabelText,
         container = _render4.container;
 
     expect(container.firstChild).toMatchSnapshot(); // pressing down 3x: first opens the drop,
     // second moves to the first suggestion
     // third moves to the last suggestion
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     }); // moves to the first suggestion
 
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Up',
       keyCode: 38,
       which: 38
     }); // select that by pressing enter
 
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Enter',
       keyCode: 13,
       which: 13
@@ -209,7 +209,7 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('close on esc', function () {
-    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -218,18 +218,18 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render5.getByText,
+        getByLabelText = _render5.getByLabelText,
         container = _render5.container;
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Close Menu'), {
       key: 'Esc',
       keyCode: 27,
       which: 27
@@ -238,7 +238,7 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('close on tab', function () {
-    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render6 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -247,18 +247,18 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render6.getByText,
+        getByLabelText = _render6.getByLabelText,
         container = _render6.container;
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Tab',
       keyCode: 9,
       which: 9
@@ -267,7 +267,7 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('with dropAlign renders', function () {
-    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       dropAlign: {
         top: 'top',
@@ -285,7 +285,7 @@ describe('Menu', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.keyDown(getByText('Test'), {
+    _react2.fireEvent.keyDown(getByText('Test'), {
       key: 'Down',
       keyCode: 40,
       which: 40
@@ -294,7 +294,7 @@ describe('Menu', function () {
     (0, _portal.expectPortal)('test-menu__drop').toMatchSnapshot();
   });
   test('disabled', function () {
-    var _render8 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render8 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       disabled: true,
       label: "Test",
@@ -316,7 +316,7 @@ describe('Menu', function () {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
 
-    _reactTestingLibrary.fireEvent.click(getByText('Test'));
+    _react2.fireEvent.click(getByText('Test'));
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });

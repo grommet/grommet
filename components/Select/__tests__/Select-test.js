@@ -6,7 +6,7 @@ require("jest-styled-components");
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
-var _reactTestingLibrary = require("react-testing-library");
+var _react2 = require("@testing-library/react");
 
 var _grommetIcons = require("grommet-icons");
 
@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 describe('Select', function () {
   beforeEach(_portal.createPortal);
-  afterEach(_reactTestingLibrary.cleanup);
+  afterEach(_react2.cleanup);
   test('basic', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_2.Select, {
       id: "test-select",
@@ -32,7 +32,7 @@ describe('Select', function () {
   test('opens', function (done) {
     window.scrollTo = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       placeholder: "test select",
       id: "test-select",
       options: ['one', 'two']
@@ -43,7 +43,7 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     (0, _portal.expectPortal)('test-select__drop').toMatchSnapshot();
@@ -53,7 +53,7 @@ describe('Select', function () {
     }, 100);
   });
   test('complex options and children', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       options: [{
@@ -70,7 +70,7 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     (0, _portal.expectPortal)('test-select__drop').toMatchSnapshot();
@@ -79,7 +79,7 @@ describe('Select', function () {
     jest.useFakeTimers();
     var onSearch = jest.fn();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -90,7 +90,7 @@ describe('Select', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
     (0, _portal.expectPortal)('test-select__drop').toMatchSnapshot();
     setTimeout(function () {
@@ -98,7 +98,7 @@ describe('Select', function () {
       expect(document.activeElement).toMatchSnapshot();
       document.activeElement.value = 'a';
 
-      _reactTestingLibrary.fireEvent.input(document.activeElement);
+      _react2.fireEvent.input(document.activeElement);
 
       expect(onSearch).toBeCalledWith('a');
     }, 200);
@@ -131,7 +131,7 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -142,10 +142,10 @@ describe('Select', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select')); // pressing enter here nothing will happen
+    _react2.fireEvent.click(getByPlaceholderText('test select')); // pressing enter here nothing will happen
 
 
-    _reactTestingLibrary.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    _react2.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
 
     expect(onChange).toBeCalled();
     expect(window.scrollTo).toBeCalled();
@@ -154,7 +154,7 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       plain: true,
       value: _react["default"].createElement("span", null, "one"),
@@ -172,10 +172,10 @@ describe('Select', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByText('one')); // pressing enter here nothing will happen
+    _react2.fireEvent.click(getByText('one')); // pressing enter here nothing will happen
 
 
-    _reactTestingLibrary.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    _react2.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
 
     expect(onChange).toBeCalled();
     expect(window.scrollTo).toBeCalled();
@@ -184,7 +184,7 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render6 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -195,21 +195,21 @@ describe('Select', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
-    _reactTestingLibrary.fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+    _react2.fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
       key: 'Down',
       keyCode: 40,
       which: 40
     });
 
-    _reactTestingLibrary.fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+    _react2.fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
       key: 'Up',
       keyCode: 38,
       which: 38
     });
 
-    _reactTestingLibrary.fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+    _react2.fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
       key: 'Enter',
       keyCode: 13,
       which: 13
@@ -244,7 +244,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('multiple values', function () {
-    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -257,7 +257,7 @@ describe('Select', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     (0, _portal.expectPortal)('test-select__drop').toMatchSnapshot();
@@ -265,7 +265,7 @@ describe('Select', function () {
   test('select another option', function () {
     var onChange = jest.fn();
 
-    var _render8 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render8 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -279,16 +279,16 @@ describe('Select', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
-    _reactTestingLibrary.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    _react2.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
 
     expect(onChange).toBeCalled();
   });
   test('deselect an option', function () {
     var onChange = jest.fn();
 
-    var _render9 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render9 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -302,14 +302,14 @@ describe('Select', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
-    _reactTestingLibrary.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    _react2.fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
 
     expect(onChange).toBeCalled();
   });
   test('disabled', function () {
-    var _render10 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render10 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       disabled: true,
@@ -321,14 +321,14 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
   });
   ['small', 'medium', 'large'].forEach(function (dropHeight) {
     test(dropHeight + " drop container height", function () {
-      var _render11 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+      var _render11 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
         id: "test-select",
         size: "large",
         options: ['one', 'two'],
@@ -340,13 +340,13 @@ describe('Select', function () {
       })),
           getByPlaceholderText = _render11.getByPlaceholderText;
 
-      _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+      _react2.fireEvent.click(getByPlaceholderText('test select'));
 
       expect(document.activeElement).toMatchSnapshot();
     });
   });
   test('empty results search', function () {
-    var _render12 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    var _render12 = (0, _react2.render)(_react["default"].createElement(_2.Select, {
       id: "test-select",
       placeholder: "test select",
       options: [],
@@ -355,16 +355,16 @@ describe('Select', function () {
     })),
         getByPlaceholderText = _render12.getByPlaceholderText;
 
-    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+    _react2.fireEvent.click(getByPlaceholderText('test select'));
 
     document.activeElement.value = 'a';
 
-    _reactTestingLibrary.fireEvent.input(document.activeElement);
+    _react2.fireEvent.input(document.activeElement);
 
     expect(document.activeElement).toMatchSnapshot();
   });
   test('open default state', function () {
-    (0, _reactTestingLibrary.render)(_react["default"].createElement(_2.Select, {
+    (0, _react2.render)(_react["default"].createElement(_2.Select, {
       open: true,
       id: "test-select",
       placeholder: "test select",
@@ -414,7 +414,7 @@ describe('Select', function () {
       }
     };
 
-    var _render13 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, {
+    var _render13 = (0, _react2.render)(_react["default"].createElement(_.Grommet, {
       theme: customTheme
     }, _react["default"].createElement(_2.Select, {
       "data-testid": "test-select-style-open",
@@ -428,11 +428,11 @@ describe('Select', function () {
     var selectButton = container.querySelector('Button');
     expect(selectButton).toHaveStyleRule('background', 'purple');
 
-    _reactTestingLibrary.fireEvent.click(selectButton);
+    _react2.fireEvent.click(selectButton);
 
     expect(selectButton).toHaveStyleRule('background', 'lightgrey');
 
-    _reactTestingLibrary.fireEvent.click(selectButton);
+    _react2.fireEvent.click(selectButton);
 
     expect(selectButton).toHaveStyleRule('background', 'purple');
   });
@@ -447,7 +447,7 @@ describe('Select', function () {
       }
     };
 
-    var _render14 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, {
+    var _render14 = (0, _react2.render)(_react["default"].createElement(_.Grommet, {
       theme: customTheme
     }, _react["default"].createElement(_2.Select, {
       "data-testid": "test-select-style-options-1",
@@ -462,7 +462,7 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     var selectButton = getByPlaceholderText('Select...');
 
-    _reactTestingLibrary.fireEvent.click(selectButton);
+    _react2.fireEvent.click(selectButton);
 
     var optionButton = getByText('morning').closest('button');
     expect(optionButton.firstChild).toHaveStyleRule('background', 'lightblue');
@@ -478,7 +478,7 @@ describe('Select', function () {
       }
     };
 
-    var _render15 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, {
+    var _render15 = (0, _react2.render)(_react["default"].createElement(_.Grommet, {
       theme: customTheme
     }, _react["default"].createElement(_2.Select, {
       "data-testid": "test-select-style-options-2",
@@ -493,7 +493,7 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     var selectButton = getByPlaceholderText('Select...');
 
-    _reactTestingLibrary.fireEvent.click(selectButton);
+    _react2.fireEvent.click(selectButton);
 
     var optionButton = getByText('morning').closest('button');
     expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
@@ -517,7 +517,7 @@ describe('Select', function () {
       }
     };
 
-    var _render16 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, {
+    var _render16 = (0, _react2.render)(_react["default"].createElement(_.Grommet, {
       theme: customTheme
     }, _react["default"].createElement(_2.Select, {
       "data-testid": "test-select-style-options-3",
@@ -532,7 +532,7 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     var selectButton = getByPlaceholderText('Select...');
 
-    _reactTestingLibrary.fireEvent.click(selectButton);
+    _react2.fireEvent.click(selectButton);
 
     var optionButton = getByText('morning').closest('button');
     expect(optionButton.firstChild).not.toHaveStyleRule('background', 'lightblue');
@@ -554,7 +554,7 @@ describe('Select', function () {
       }
     };
 
-    var _render17 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, {
+    var _render17 = (0, _react2.render)(_react["default"].createElement(_.Grommet, {
       theme: customTheme
     }, _react["default"].createElement(_2.Select, {
       "data-testid": "applies-custom-hover-style",
@@ -569,11 +569,11 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     var selectButton = getByPlaceholderText('Select...');
 
-    _reactTestingLibrary.fireEvent.click(selectButton);
+    _react2.fireEvent.click(selectButton);
 
     var optionButton = getByText('afternoon').closest('button');
 
-    _reactTestingLibrary.fireEvent.mouseOver(optionButton);
+    _react2.fireEvent.mouseOver(optionButton);
 
     expect(optionButton).toMatchSnapshot();
   });
