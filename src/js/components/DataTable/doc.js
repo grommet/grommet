@@ -142,7 +142,7 @@ export const doc = DataTable => {
       PropTypes.string,
       PropTypes.shape(padShape),
     ]).description(
-      `Cell padding. You can set the padding per context be passing an
+      `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
     primaryKey: PropTypes.string.description(
