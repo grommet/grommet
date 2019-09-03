@@ -109,7 +109,7 @@ string
 
 **background**
 
-Cell background. You can set the background per context be passing an
+Cell background. You can set the background per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.
 
 ```
@@ -130,7 +130,7 @@ string
 
 **border**
 
-Cell border. You can set the border per context be passing an
+Cell border. You can set the border per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.
 
 ```
@@ -361,7 +361,7 @@ function
 
 **pad**
 
-Cell padding. You can set the padding per context be passing an
+Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.
 
 ```
