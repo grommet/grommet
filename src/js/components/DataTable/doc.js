@@ -62,7 +62,7 @@ export const doc = DataTable => {
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.shape(backgroundShape),
     ]).description(
-      `Cell background. You can set the background per context be passing an
+      `Cell background. You can set the background per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
     border: PropTypes.oneOfType([
