@@ -1875,7 +1875,7 @@ exports[`DataTable click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           >
             <span
               class="StyledText-sc-1sadyjn-0 bnqisW"
@@ -1893,7 +1893,7 @@ exports[`DataTable click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           >
             <span
               class="StyledText-sc-1sadyjn-0 bnqisW"
@@ -2625,7 +2625,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 emftoK"
+              class="StyledBox-sc-13pk1d4-0 czUhVo"
             >
               <svg
                 aria-label="FormDown"
@@ -2679,7 +2679,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 emftoK"
+              class="StyledBox-sc-13pk1d4-0 czUhVo"
             >
               <svg
                 aria-label="FormDown"
@@ -2701,7 +2701,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -2714,7 +2714,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           />
         </td>
       </tr>
@@ -2730,7 +2730,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 emftoK"
+              class="StyledBox-sc-13pk1d4-0 czUhVo"
             >
               <svg
                 aria-label="FormDown"
@@ -2752,7 +2752,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -2765,7 +2765,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           />
         </td>
       </tr>
@@ -4612,7 +4612,7 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hqTanT"
+            class="StyledBox-sc-13pk1d4-0 dRXgUe"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -4752,7 +4752,7 @@ exports[`DataTable search 2`] = `
               class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
             />
             <div
-              class="Resizer__ResizerBox-sc-8l808w-0 hnOyDj StyledBox-sc-13pk1d4-0 fVUQKQ"
+              class="Resizer__ResizerBox-sc-8l808w-0 hnOyDj StyledBox-sc-13pk1d4-0 keXFvx"
             />
           </div>
         </th>
@@ -5163,7 +5163,7 @@ exports[`DataTable sort 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 gQLnBt"
+              class="StyledBox-sc-13pk1d4-0 hfsUvK"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -5238,7 +5238,7 @@ exports[`DataTable sort 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 gQLnBt"
+              class="StyledBox-sc-13pk1d4-0 hfsUvK"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -5349,7 +5349,7 @@ exports[`DataTable sort 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           >
             <span
               class="StyledText-sc-1sadyjn-0 bnqisW"
@@ -5362,7 +5362,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 IRSNj"
+            class="StyledBox-sc-13pk1d4-0 fWrrBh"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"

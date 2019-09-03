@@ -134,13 +134,13 @@ exports[`Layer animation fadeIn 1`] = `
 
 exports[`Layer animation fadeIn 2`] = `
 "@media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     padding: 0px;
   }
 }"
@@ -278,13 +278,13 @@ exports[`Layer animation false 1`] = `
 
 exports[`Layer animation false 2`] = `
 "@media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     padding: 0px;
   }
 }"
@@ -424,13 +424,13 @@ exports[`Layer animation slide 1`] = `
 
 exports[`Layer animation slide 2`] = `
 "@media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     padding: 0px;
   }
 }"
@@ -570,13 +570,13 @@ exports[`Layer animation true 1`] = `
 
 exports[`Layer animation true 2`] = `
 "@media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     padding: 0px;
   }
 }"
@@ -793,13 +793,13 @@ exports[`Layer dark context 1`] = `
 
 exports[`Layer dark context 2`] = `
 "@media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iWUbCl {
+  .eFxwmq {
     padding: 0px;
   }
 }"
