@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
@@ -186,10 +186,10 @@ const GroupedDataTable = () => (
   </Grommet>
 );
 
-class ServedDataTable extends Component {
-  state = { data: DATA };
+const ServedDataTable = () => {
+  const [data2, setData2] = React.useState(DATA);
 
-  onSearch = search => {
+  const onSearch = search => {
     let nextData;
     if (search) {
       const expressions = Object.keys(search).map(property => ({
@@ -202,94 +202,81 @@ class ServedDataTable extends Component {
     } else {
       nextData = DATA;
     }
-    this.setState({ data: nextData });
+    setData2(nextData);
   };
 
-  render() {
-    const { data: servedData } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large">
-          <DataTable
-            columns={columns.map(column => ({
-              ...column,
-              search:
-                column.property === 'name' || column.property === 'location',
-            }))}
-            data={servedData}
-            onSearch={this.onSearch}
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <DataTable
+          columns={columns.map(column => ({
+            ...column,
+            search:
+              column.property === 'name' || column.property === 'location',
+          }))}
+          data={data2}
+          onSearch={onSearch}
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
-const controlledColumns = columns.map(col => Object.assign({}, col));
+const controlledColumns = columns.map(col => ({ ...col }));
 delete controlledColumns[0].footer;
 delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
 
-class ControlledDataTable extends Component {
-  state = {
-    checked: [],
-  };
+const ControlledDataTable = () => {
+  const [checked, setChecked] = React.useState([]);
 
-  onCheck = (event, value) => {
-    const { checked } = this.state;
+  const onCheck = (event, value) => {
     if (event.target.checked) {
-      checked.push(value);
-      this.setState({ checked });
+      setChecked([...checked, value]);
     } else {
-      this.setState({ checked: checked.filter(item => item !== value) });
+      setChecked(checked.filter(item => item !== value));
     }
   };
 
-  onCheckAll = event =>
-    this.setState({
-      checked: event.target.checked ? DATA.map(datum => datum.name) : [],
-    });
+  const onCheckAll = event =>
+    setChecked(event.target.checked ? DATA.map(datum => datum.name) : []);
 
-  render() {
-    const { checked } = this.state;
-
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="medium">
-          <DataTable
-            columns={[
-              {
-                property: 'checkbox',
-                render: datum => (
-                  <CheckBox
-                    key={datum.name}
-                    checked={checked.indexOf(datum.name) !== -1}
-                    onChange={e => this.onCheck(e, datum.name)}
-                  />
-                ),
-                header: (
-                  <CheckBox
-                    checked={checked.length === DATA.length}
-                    indeterminate={
-                      checked.length > 0 && checked.length < DATA.length
-                    }
-                    onChange={this.onCheckAll}
-                  />
-                ),
-                sortable: false,
-              },
-              ...controlledColumns,
-            ].map(col => ({ ...col }))}
-            data={DATA}
-            sortable
-            size="medium"
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="medium">
+        <DataTable
+          columns={[
+            {
+              property: 'checkbox',
+              render: datum => (
+                <CheckBox
+                  key={datum.name}
+                  checked={checked.indexOf(datum.name) !== -1}
+                  onChange={e => onCheck(e, datum.name)}
+                />
+              ),
+              header: (
+                <CheckBox
+                  checked={checked.length === DATA.length}
+                  indeterminate={
+                    checked.length > 0 && checked.length < DATA.length
+                  }
+                  onChange={onCheckAll}
+                />
+              ),
+              sortable: false,
+            },
+            ...controlledColumns,
+          ].map(col => ({ ...col }))}
+          data={DATA}
+          sortable
+          size="medium"
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('DataTable', module)
   .add('Simple', () => <SimpleDataTable />)

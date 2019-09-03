@@ -40,7 +40,7 @@ const customTheme = {
 };
 
 const CustomTheme = () => (
-  <React.Fragment>
+  <>
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
         <Button label="custom theme" onClick={() => {}} primary />
@@ -51,7 +51,7 @@ const CustomTheme = () => (
         <Button as="span" label="Custom as=span" path="/" />
       </Box>
     </Grommet>
-  </React.Fragment>
+  </>
 );
 
 storiesOf('Button', module).add('Custom', () => <CustomTheme />);
