@@ -3338,7 +3338,7 @@ exports[`DataTable groupBy property 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 gFEOoP"
+              class="StyledBox-sc-13pk1d4-0 gBySSp"
             >
               <svg
                 aria-label="FormDown"
@@ -3360,7 +3360,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 folWQp"
+            class="StyledBox-sc-13pk1d4-0 bWDcKd"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -3374,7 +3374,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 folWQp"
+            class="StyledBox-sc-13pk1d4-0 bWDcKd"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -3400,7 +3400,7 @@ exports[`DataTable groupBy property 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 emftoK"
+              class="StyledBox-sc-13pk1d4-0 czUhVo"
             >
               <svg
                 aria-label="FormDown"
@@ -3422,7 +3422,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="StyledBox-sc-13pk1d4-0 gUuXiG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -3435,7 +3435,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="StyledBox-sc-13pk1d4-0 gUuXiG"
           />
         </td>
       </tr>
@@ -3451,7 +3451,7 @@ exports[`DataTable groupBy property 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 emftoK"
+              class="StyledBox-sc-13pk1d4-0 czUhVo"
             >
               <svg
                 aria-label="FormDown"
@@ -3473,7 +3473,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="StyledBox-sc-13pk1d4-0 gUuXiG"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -3486,7 +3486,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="StyledBox-sc-13pk1d4-0 gUuXiG"
           />
         </td>
       </tr>
