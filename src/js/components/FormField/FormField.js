@@ -1,9 +1,10 @@
+/* eslint-disable react/no-multi-comp, react/prefer-stateless-function, max-classes-per-file */
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { Text } from '../Text';
@@ -103,6 +104,7 @@ class FormFieldContent extends Component {
       validate,
       onBlur,
       onFocus,
+      margin,
     } = this.props;
     const { formField } = theme;
     const { border } = formField;
@@ -130,6 +132,7 @@ class FormFieldContent extends Component {
       borderColor = (border && border.color) || 'border';
     }
     let abut;
+    let abutMargin;
     let outerStyle = style;
 
     if (border) {
@@ -170,15 +173,20 @@ class FormFieldContent extends Component {
         (border.side === 'all' || border.side === 'horizontal' || !border.side);
       if (abut) {
         // marginBottom is set to overlap adjacent fields
-        let marginBottom = '-1px';
-        if (border.size) {
-          marginBottom = `-${parseMetricToNum(
-            theme.global.borderSize[border.size],
-          )}px`;
+        abutMargin = { bottom: '-1px' };
+        if (margin) {
+          abutMargin = margin;
+        } else if (border.size) {
+          // if the user defines a margin, then the default margin below will be overriden
+          abutMargin = {
+            bottom: `-${parseMetricToNum(
+              theme.global.borderSize[border.size] || border.size,
+            )}px`,
+          };
         }
+
         outerStyle = {
           position: focus ? 'relative' : undefined,
-          marginBottom,
           zIndex: focus ? 10 : undefined,
           ...style,
         };
@@ -193,7 +201,7 @@ class FormFieldContent extends Component {
             ? { ...border, color: borderColor }
             : undefined
         }
-        margin={abut ? undefined : { ...formField.margin }}
+        margin={abut ? abutMargin : margin || { ...formField.margin }}
         style={outerStyle}
       >
         {(label && component !== CheckBox) || help ? (
@@ -231,7 +239,6 @@ class FormFieldContent extends Component {
 
 // Can't be a functional component because styled-components withTheme() needs
 // to attach a ref.
-/* eslint-disable-next-line react/no-multi-comp, react/prefer-stateless-function */
 class FormField extends Component {
   render() {
     return (

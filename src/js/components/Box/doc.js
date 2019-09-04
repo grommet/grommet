@@ -223,6 +223,32 @@ export const doc = Box => {
         'xxlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        min: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+        max: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
     ]).description('A fixed height.'),
     justify: PropTypes.oneOf([
       'around',
@@ -319,6 +345,32 @@ of indicating the DOM tag via the 'as' property.`,
         'xxlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        min: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+        max: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
     ]).description('A fixed width.'),
     wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])])
       .description(`Whether children can wrap if they can't all fit.`)

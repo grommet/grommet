@@ -7,6 +7,17 @@ import { GroupedBody } from './GroupedBody';
 import { buildState } from './buildState';
 import { StyledDataTable } from './StyledDataTable';
 
+const contexts = ['header', 'body', 'footer'];
+
+const normalizeProp = (prop, context) => {
+  if (prop) {
+    if (prop[context]) return prop[context];
+    if (contexts.some(c => prop[c])) return undefined;
+    return prop;
+  }
+  return undefined;
+};
+
 class DataTable extends Component {
   static defaultProps = {
     columns: [],
@@ -47,16 +58,24 @@ class DataTable extends Component {
 
   onToggleGroup = groupValue => () => {
     const { groupState } = this.state;
+    const { groupBy } = this.props;
     const nextGroupState = { ...groupState };
     nextGroupState[groupValue] = {
       ...nextGroupState[groupValue],
       expanded: !nextGroupState[groupValue].expanded,
     };
     this.setState({ groupState: nextGroupState });
+    if (groupBy.onExpand) {
+      const expandedKeys = Object.keys(nextGroupState).filter(
+        k => nextGroupState[k].expanded,
+      );
+      groupBy.onExpand(expandedKeys);
+    }
   };
 
   onToggleGroups = () => {
     const { groupState } = this.state;
+    const { groupBy } = this.props;
     const expanded =
       Object.keys(groupState).filter(k => !groupState[k].expanded).length === 0;
     const nextGroupState = {};
@@ -64,6 +83,12 @@ class DataTable extends Component {
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     this.setState({ groupState: nextGroupState });
+    if (groupBy.onExpand) {
+      const expandedKeys = Object.keys(nextGroupState).filter(
+        k => nextGroupState[k].expanded,
+      );
+      groupBy.onExpand(expandedKeys);
+    }
   };
 
   onResize = property => width => {
@@ -75,15 +100,20 @@ class DataTable extends Component {
 
   render() {
     const {
+      background,
+      border,
       /* eslint-disable-next-line react/prop-types */
       columns,
       data: propsData,
       groupBy,
       onMore,
+      pad,
       resizeable,
+      rowProps,
       size,
       sortable,
       step,
+      onClickRow, // removing unknown DOM attributes
       onSearch, // removing unknown DOM attributes
       ...rest
     } = this.props;
@@ -107,11 +137,14 @@ class DataTable extends Component {
     return (
       <StyledDataTable {...rest}>
         <Header
+          background={normalizeProp(background, 'header')}
+          border={normalizeProp(border, 'header')}
           columns={columns}
           filtering={filtering}
           filters={filters}
           groups={groups}
           groupState={groupState}
+          pad={normalizeProp(pad, 'header')}
           size={size}
           sort={sort}
           widths={widths}
@@ -123,28 +156,39 @@ class DataTable extends Component {
         />
         {groups ? (
           <GroupedBody
+            background={normalizeProp(background, 'body')}
+            border={normalizeProp(border, 'body')}
             columns={columns}
-            groupBy={groupBy}
+            groupBy={groupBy.property ? groupBy.property : groupBy}
             groups={groups}
             groupState={groupState}
+            pad={normalizeProp(pad, 'body')}
             primaryProperty={primaryProperty}
             onToggle={this.onToggleGroup}
           />
         ) : (
           <Body
+            background={normalizeProp(background, 'body')}
+            border={normalizeProp(border, 'body')}
             columns={columns}
             data={data}
             onMore={onMore}
+            onClickRow={onClickRow}
+            pad={normalizeProp(pad, 'body')}
             primaryProperty={primaryProperty}
+            rowProps={rowProps}
             size={size}
             step={step}
           />
         )}
         {showFooter && (
           <Footer
+            background={normalizeProp(background, 'footer')}
+            border={normalizeProp(border, 'footer')}
             columns={columns}
             footerValues={footerValues}
             groups={groups}
+            pad={normalizeProp(pad, 'footer')}
             primaryProperty={primaryProperty}
             size={size}
           />

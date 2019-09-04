@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, marginProp } from '../../utils';
 
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
@@ -39,6 +39,7 @@ export const doc = FormField => {
       `The name of the value data when in a Form and the name of
       the input field.`,
     ),
+    margin: marginProp,
     pad: PropTypes.bool.description(
       'Whether to add padding to align with the padding of TextInput.',
     ),

@@ -30,7 +30,9 @@ export const doc = Layer => {
       PropTypes.oneOf(['slide', 'fadeIn', 'none']),
       PropTypes.bool,
     ])
-      .description('Animation transition of the Layer content when it opens.')
+      .description(
+        'Animation transition of the Layer content when it opens and closes.',
+      )
       .defaultValue('slide'),
     full: PropTypes.oneOfType([
       PropTypes.bool,

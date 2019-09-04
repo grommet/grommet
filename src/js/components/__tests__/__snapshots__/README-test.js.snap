@@ -50,8 +50,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -314,8 +314,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -641,8 +641,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side. Defaults to \`none\`.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -990,6 +990,26 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
 
 **justify**
@@ -1171,6 +1191,26 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
 
 **wrap**
@@ -1421,8 +1461,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -1543,8 +1583,27 @@ boolean
 string
 background
 {
-  background: 
+  color: string,
+  dark: 
     boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
     string
 }
 \`\`\`
@@ -1928,8 +1987,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -2365,6 +2424,38 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.colors.icon**
+
+The color of a given icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: #f8f8f8, light: #666666 }
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
 ",
   "Carousel": "## Carousel
 A carousel that cycles through children. Child components
@@ -2413,8 +2504,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -2584,12 +2675,12 @@ undefined
 
 **global.colors.icon**
 
-The color used for Carousel icons. Expects \`string | { 'dark': string, 'light': string }\`.
+The color of a given icon. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-[object Object]
+{ dark: #f8f8f8, light: #666666 }
 \`\`\`
 
 **global.edgeSize**
@@ -2659,8 +2750,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -3285,8 +3376,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -3680,8 +3771,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -3744,6 +3835,160 @@ xlarge
 string
 \`\`\`
 
+**background**
+
+Cell background. You can set the background per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+\`\`\`
+string
+[string]
+{
+  header: 
+    string
+    [string],
+  body: 
+    string
+    [string],
+  footer: 
+    string
+    [string]
+}
+\`\`\`
+
+**border**
+
+Cell border. You can set the border per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+\`\`\`
+boolean
+horizontal
+vertical
+top
+bottom
+left
+right
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right,
+  size: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+{
+  header: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  body: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  footer: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    }
+}
+\`\`\`
+
 **columns**
 
 A description of the data. The order controls the column order.
@@ -3803,10 +4048,19 @@ Array of data objects. Defaults to \`[]\`.
 
 **groupBy**
 
-Property to group data by.
+Property to group data by. If object is specified
+      'property' is used to group data by, 'expand' accepts array of 
+       group keys that sets expanded groups and 'onExpand' is a function
+       that will be called after expand button is clicked with
+       an array of keys of expanded groups.
 
 \`\`\`
 string
+{
+  property: string,
+  expand: [string],
+  onExpand: function
+}
 \`\`\`
 
 **onMore**
@@ -3823,6 +4077,18 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 \`\`\`
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+\`\`\`
+function
+\`\`\`
+
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
@@ -3832,6 +4098,68 @@ When supplied, and when at least one column has 'search' enabled,
 
 \`\`\`
 function
+\`\`\`
+
+**pad**
+
+Cell padding. You can set the padding per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+{
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  header: custom,
+  body: custom,
+  footer: custom
+}
 \`\`\`
 
 **primaryKey**
@@ -3851,6 +4179,20 @@ Whether to allow the user to resize column widths.
 
 \`\`\`
 boolean
+\`\`\`
+
+**rowProps**
+
+Row specific background, border, and pad, keyed by primary key value.
+      For example:
+      { \\"primary-key-value\\": { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on DataTable.
+
+\`\`\`
+{
+
+}
 \`\`\`
 
 **size**
@@ -3891,6 +4233,26 @@ table
 \`\`\`
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering over an interactive row. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
+**global.hover.color**
+
+The text color when hovering over an interactive row. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
 **dataTable.groupHeader.background**
 
 The background color of the group header. Expects \`string | { dark: string, light: string }\`.
@@ -4019,6 +4381,26 @@ Defaults to
 
 \`\`\`
 right
+\`\`\`
+
+**table.row.hover.background**
+
+The background color when hovering over an interactive row. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**table.row.hover.color**
+
+The text color when hovering over an interactive row. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Diagram": "## Diagram
@@ -4180,8 +4562,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -4549,8 +4931,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -4849,6 +5231,73 @@ The name of the value data when in a Form and the name of
 string
 \`\`\`
 
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **pad**
 
 Whether to add padding to align with the padding of TextInput.
@@ -5075,8 +5524,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -5582,8 +6031,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -5902,8 +6351,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -6263,7 +6712,7 @@ boolean
 
 **animation**
 
-Animation transition of the Layer content when it opens. Defaults to \`slide\`.
+Animation transition of the Layer content when it opens and closes. Defaults to \`slide\`.
 
 \`\`\`
 slide
@@ -6778,8 +7227,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -7079,8 +7528,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -7345,8 +7794,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -8295,8 +8744,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -8905,8 +9354,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -9224,8 +9673,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -9701,8 +10150,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -9972,8 +10421,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -10859,8 +11308,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -11068,8 +11517,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none

@@ -4087,12 +4087,12 @@ exports[`Box height 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  height: 96px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 96px;
   padding: 0px;
 }
 
@@ -4105,12 +4105,12 @@ exports[`Box height 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  height: 192px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 192px;
   padding: 0px;
 }
 
@@ -4123,12 +4123,12 @@ exports[`Box height 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  height: 384px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 384px;
   padding: 0px;
 }
 
@@ -4141,12 +4141,12 @@ exports[`Box height 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  height: 768px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 768px;
   padding: 0px;
 }
 
@@ -4159,12 +4159,12 @@ exports[`Box height 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  height: 1152px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 1152px;
   padding: 0px;
 }
 
@@ -4177,12 +4177,12 @@ exports[`Box height 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  height: 111px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 111px;
   padding: 0px;
 }
 
@@ -5894,12 +5894,12 @@ exports[`Box width 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  width: 96px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
   padding: 0px;
 }
 
@@ -5912,12 +5912,12 @@ exports[`Box width 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  width: 192px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 192px;
   padding: 0px;
 }
 
@@ -5930,12 +5930,12 @@ exports[`Box width 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  width: 384px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 384px;
   padding: 0px;
 }
 
@@ -5948,12 +5948,12 @@ exports[`Box width 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  width: 768px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 768px;
   padding: 0px;
 }
 
@@ -5966,12 +5966,12 @@ exports[`Box width 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  width: 1152px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 1152px;
   padding: 0px;
 }
 
@@ -5984,12 +5984,12 @@ exports[`Box width 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  width: 111px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 111px;
   padding: 0px;
 }
 

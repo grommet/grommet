@@ -45,8 +45,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -216,12 +216,12 @@ undefined
 
 **global.colors.icon**
 
-The color used for Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
+The color of a given icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-[object Object]
+{ dark: #f8f8f8, light: #666666 }
 ```
 
 **global.edgeSize**

@@ -1,26 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class SimpleWorldMap extends Component {
-  state = {};
+const SimpleWorldMap = () => {
+  const [places, setPlaces] = React.useState();
 
-  onSelectPlace = place => {
-    this.setState({ places: [{ color: 'accent-1', location: place }] });
+  const onSelectPlace = place => {
+    setPlaces([{ color: 'accent-1', location: place }]);
   };
 
-  render() {
-    const { places } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large">
-          <WorldMap onSelectPlace={this.onSelectPlace} places={places} />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <WorldMap onSelectPlace={onSelectPlace} places={places} />
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('WorldMap', module).add('Simple', () => <SimpleWorldMap />);

@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { getNewContainer } from '../../utils';
 
 import { LayerContainer } from './LayerContainer';
+import { animationDuration } from './StyledLayer';
 
 class Layer extends Component {
   static defaultProps = {
@@ -26,6 +27,7 @@ class Layer extends Component {
   }
 
   componentWillUnmount() {
+    const { animate, animation } = this.props;
     if (this.originalFocusedElement) {
       if (this.originalFocusedElement.focus) {
         // wait for the fixed positioning to come back to normal
@@ -41,7 +43,24 @@ class Layer extends Component {
         this.originalFocusedElement.parentNode.focus();
       }
     }
-    document.body.removeChild(this.layerContainer);
+
+    const activeAnimation = animation !== undefined ? animation : animate;
+    if (activeAnimation !== false) {
+      // undefined uses 'slide' as the default
+      // animate out and remove later
+      const layerClone = this.layerContainer.cloneNode(true);
+      layerClone.id = 'layerClone';
+      document.body.appendChild(layerClone);
+      const clonedContainer = layerClone.querySelector(
+        '[class*="StyledLayer__StyledContainer"]',
+      );
+      clonedContainer.style.animationDirection = 'reverse';
+      setTimeout(() => {
+        // we add the id and query here so the unit tests work
+        const clone = document.getElementById('layerClone');
+        if (clone) document.body.removeChild(clone);
+      }, animationDuration);
+    }
   }
 
   render() {

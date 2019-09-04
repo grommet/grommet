@@ -1,3 +1,14 @@
+export const datumValue = (datum, property) => {
+  const parts = property.split('.');
+  if (parts.length === 1) {
+    return datum[property];
+  }
+  if (!datum[parts[0]]) {
+    return undefined;
+  }
+  return datumValue(datum[parts[0]], parts.slice(1).join('.'));
+};
+
 const sumReducer = (accumulated, next) => accumulated + next;
 const minReducer = (accumulated, next) =>
   accumulated === undefined ? next : Math.min(accumulated, next);
@@ -13,11 +24,11 @@ const reducers = {
 const aggregateColumn = (column, data) => {
   let value;
   if (column.aggregate === 'avg') {
-    value = data.map(d => d[column.property]).reduce(sumReducer);
+    value = data.map(d => datumValue(d, column.property)).reduce(sumReducer);
     value /= data.length;
   } else {
     value = data
-      .map(d => d[column.property])
+      .map(d => datumValue(d, column.property))
       .reduce(reducers[column.aggregate], 0);
   }
   return value;
@@ -73,7 +84,7 @@ const filter = (nextProps, prevState, nextState) => {
     nextData = data.filter(
       datum =>
         !Object.keys(regexps).some(
-          property => !regexps[property].test(datum[property]),
+          property => !regexps[property].test(datumValue(datum, property)),
         ),
     );
   }
@@ -141,22 +152,27 @@ const groupData = (nextProps, prevState, nextState) => {
 
   let groups;
   let groupState;
+  let expandedState;
   if (groupBy) {
     groups = [];
     groupState = {};
     const groupMap = {};
     data.forEach(datum => {
-      const groupValue = datum[groupBy];
+      const groupByProperty = groupBy.property ? groupBy.property : groupBy;
+      const groupValue = datumValue(datum, groupByProperty);
       if (!groupMap[groupValue]) {
         const group = { data: [], datum: {}, key: groupValue };
-        group.datum[groupBy] = groupValue;
+        group.datum[groupByProperty] = groupValue;
         groups.push(group);
-        groupState[groupValue] = {
-          expanded:
+        if (groupBy.expand) {
+          expandedState = groupBy.expand.some(key => key === groupValue);
+        } else {
+          expandedState =
             prevState.groupState && prevState.groupState[groupValue]
               ? prevState.groupState[groupValue].expanded
-              : false,
-        };
+              : false;
+        }
+        groupState[groupValue] = { expanded: expandedState };
         groupMap[groupValue] = group;
       }
       groupMap[groupValue].data.push(datum);
