@@ -1,5 +1,5 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, AnimateType, GridAreaType, MarginType } from "../../utils";
 
 export interface AccordionProps {
   a11yTitle?: A11yTitleType;
@@ -7,7 +7,7 @@ export interface AccordionProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   activeIndex?: number | number[];
-  animate?: boolean;
+  animate?: AnimateType;
   children?: React.ReactNode;
   onActive?: ((...args: any[]) => any);
   multiple?: boolean;
