@@ -115,7 +115,18 @@ export const doc = DataTable => {
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
     ),
-    groupBy: PropTypes.string.description('Property to group data by.'),
+    groupBy: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        property: PropTypes.string,
+        expand: PropTypes.arrayOf(PropTypes.string),
+        onExpand: PropTypes.func,
+      }),
+    ]).description(`Property to group data by. If object is specified
+      'property' is used to group data by, 'expand' accepts array of 
+       group keys that sets expanded groups and 'onExpand' is a function
+       that will be called after expand button is clicked with
+       an array of keys of expanded groups.`),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
       It will be called when all of the data rows have been rendered.

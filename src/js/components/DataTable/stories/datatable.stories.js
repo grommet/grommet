@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
@@ -193,6 +193,29 @@ const GroupedDataTable = () => (
   </Grommet>
 );
 
+class ControlledGroupedDataTable extends Component {
+  state = { expandedGroups: [DATA[2].location] };
+
+  render() {
+    const { expandedGroups } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <DataTable
+          columns={groupColumns}
+          data={DATA}
+          groupBy={{
+            property: 'location',
+            expand: expandedGroups,
+            onExpand: groupState =>
+              this.setState({ expandedGroups: groupState }),
+          }}
+          sortable
+        />
+      </Grommet>
+    );
+  }
+}
+
 const ServedDataTable = () => {
   const [data2, setData2] = React.useState(DATA);
 
@@ -311,6 +334,7 @@ storiesOf('DataTable', module)
   .add('Sized', () => <SizedDataTable />)
   .add('Tunable', () => <TunableDataTable />)
   .add('Grouped', () => <GroupedDataTable />)
+  .add('Controlled grouped', () => <ControlledGroupedDataTable />)
   .add('Served', () => <ServedDataTable />)
   .add('Controlled', () => <ControlledDataTable />)
   .add('Styled', () => <StyledDataTable />);
