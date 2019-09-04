@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(Calendar) {
   var DocumentedCalendar = describe(Calendar).availableAt(getAvailableAtBadge('Calendar')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />").intrinsicElement('div');
   DocumentedCalendar.propTypes = _extends({}, genericProps, {
@@ -23,7 +23,7 @@ export var doc = function doc(Calendar) {
   });
   return DocumentedCalendar;
 };
-export var themeDoc = {
+export var themeDoc = _extends({
   'global.size.small': {
     description: 'The width of the calendar when small.',
     type: 'string',
@@ -127,4 +127,4 @@ export var themeDoc = {
     description: 'Any additional style for the day of Calendar.',
     type: 'string | (props) => {}'
   }
-};
+}, themeDocUtils.iconColor, {}, themeDocUtils.edgeStyle('The possible sizes for margin.'));

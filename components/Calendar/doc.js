@@ -32,7 +32,8 @@ var doc = function doc(Calendar) {
 };
 
 exports.doc = doc;
-var themeDoc = {
+
+var themeDoc = _extends({
   'global.size.small': {
     description: 'The width of the calendar when small.',
     type: 'string',
@@ -136,5 +137,6 @@ var themeDoc = {
     description: 'Any additional style for the day of Calendar.',
     type: 'string | (props) => {}'
   }
-};
+}, _utils.themeDocUtils.iconColor, {}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+
 exports.themeDoc = themeDoc;

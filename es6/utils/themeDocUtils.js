@@ -32,6 +32,13 @@ export var themeDocUtils = {
       defaultValue: 'focus'
     }
   },
+  iconColor: {
+    'global.colors.icon': {
+      description: 'The color of a given icon.',
+      type: 'string | { dark: string, light: string }',
+      defaultValue: '{ dark: #f8f8f8, light: #666666 }'
+    }
+  },
   inputStyle: {
     'global.input.weight': {
       description: 'The font weight of the text entered.',
