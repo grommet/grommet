@@ -1,10 +1,10 @@
+/* eslint-disable react/no-multi-comp, react/no-find-dom-node, max-classes-per-file */
 import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { findScrollParents } from '../../utils';
 import { Box } from '../Box';
 
 // Wraps an item to ensure we can get a ref to it
-/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
 class Ref extends Component {
   render() {
     const { children } = this.props;
@@ -114,8 +114,8 @@ class InfiniteScroll extends PureComponent {
       const endRect = findDOMNode(
         this.lastPageItemRef.current,
       ).getBoundingClientRect();
-      /* eslint-enable react/no-find-dom-node */
-      const nextPageHeight = endRect.y + endRect.height - beginRect.y;
+
+      const nextPageHeight = endRect.top + endRect.height - beginRect.top;
       // Check if the items are arranged in a single column or not.
       const multiColumn = nextPageHeight / step < endRect.height;
       const pageArea = endRect.height * endRect.width * step;

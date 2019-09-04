@@ -129,17 +129,17 @@ class Diagram extends Component {
           const toRect = toElement.getBoundingClientRect();
           // There is no x and y when unit testing.
           const fromPoint = [
-            fromRect.x - containerRect.x || 0,
-            fromRect.y - containerRect.y || 0,
+            fromRect.left - containerRect.left || 0,
+            fromRect.top - containerRect.top || 0,
           ];
           const toPoint = [
-            toRect.x - containerRect.x || 0,
-            toRect.y - containerRect.y || 0,
+            toRect.left - containerRect.left || 0,
+            toRect.top - containerRect.top || 0,
           ];
           if (anchor === 'vertical') {
             fromPoint[0] += fromRect.width / 2;
             toPoint[0] += toRect.width / 2;
-            if (fromRect.y < toRect.y) {
+            if (fromRect.top < toRect.top) {
               fromPoint[1] += fromRect.height;
             } else {
               toPoint[1] += toRect.height;
@@ -147,7 +147,7 @@ class Diagram extends Component {
           } else if (anchor === 'horizontal') {
             fromPoint[1] += fromRect.height / 2;
             toPoint[1] += toRect.height / 2;
-            if (fromRect.x < toRect.x) {
+            if (fromRect.left < toRect.left) {
               fromPoint[0] += fromRect.width;
             } else {
               toPoint[0] += toRect.width;
@@ -203,7 +203,10 @@ class Diagram extends Component {
                 // eslint-disable-next-line react/no-array-index-key
                 key={index}
                 {...cleanedRest}
-                stroke={normalizeColor(color || theme.diagram.line.color, theme)}
+                stroke={normalizeColor(
+                  color || theme.diagram.line.color,
+                  theme,
+                )}
                 strokeWidth={strokeWidth}
                 strokeLinecap={round ? 'round' : 'butt'}
                 strokeLinejoin={round ? 'round' : 'miter'}

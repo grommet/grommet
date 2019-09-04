@@ -45,8 +45,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -127,6 +127,25 @@ If specified, the number of
 ```
 number
 ```
+
+**initialChild**
+
+If specified, the index of
+      the first element to be shown. Defaults to 0.
+
+```
+number
+```
+
+**controls**
+
+Whether to show carousel controls and which type of controls. Defaults to `true`.
+
+```
+boolean
+arrows
+selectors
+```
   
 ## Intrinsic element
 
@@ -143,6 +162,16 @@ Defaults to
 
 ```
 <Next />
+```
+
+**carousel.animation.duration**
+
+The duration of the Carousel animation. Expects `number`.
+
+Defaults to
+
+```
+1000
 ```
 
 **carousel.icons.previous**
@@ -167,7 +196,17 @@ Defaults to
 
 **carousel.icons.color**
 
-The color used for Carousel icons. Expects `string`.
+The color used for Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**carousel.disabled.icons.color**
+
+The color used for disabled Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
 
 Defaults to
 
@@ -177,12 +216,12 @@ undefined
 
 **global.colors.icon**
 
-The color used for Carousel icons. Expects `object`.
+The color of a given icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-[object Object]
+{ dark: #f8f8f8, light: #666666 }
 ```
 
 **global.edgeSize**

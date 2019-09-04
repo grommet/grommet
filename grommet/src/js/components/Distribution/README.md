@@ -47,8 +47,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -114,10 +114,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to `function children(value) {
-    return _react.default.createElement(_Box.Box, {
+    return _react["default"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react.default.createElement(_Text.Text, null, value.value));
+    }, _react["default"].createElement(_Text.Text, null, value.value));
   }`.
 
 ```
@@ -137,6 +137,8 @@ boolean
 The amount of spacing between child elements. Defaults to `xsmall`.
 
 ```
+none
+xxsmall
 xsmall
 small
 medium

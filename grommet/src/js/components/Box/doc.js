@@ -81,8 +81,10 @@ export const doc = Box => {
         image: PropTypes.string,
         position: PropTypes.string,
         opacity: PropTypes.oneOfType([
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
+          PropTypes.string,
           PropTypes.bool,
+          PropTypes.number,
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
         ]),
         repeat: PropTypes.oneOfType([
           PropTypes.oneOf(['no-repeat', 'repeat']),
@@ -198,6 +200,7 @@ export const doc = Box => {
     ),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
+        'none',
         'xxsmall',
         'xsmall',
         'small',
@@ -220,6 +223,32 @@ export const doc = Box => {
         'xxlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        min: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+        max: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
     ]).description('A fixed height.'),
     justify: PropTypes.oneOf([
       'around',
@@ -316,12 +345,35 @@ of indicating the DOM tag via the 'as' property.`,
         'xxlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        min: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+        max: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
     ]).description('A fixed width.'),
-    wrap: PropTypes.bool
-      .description(
-        `Whether children can wrap if they
-      can't all fit.`,
-      )
+    wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])])
+      .description(`Whether children can wrap if they can't all fit.`)
       .defaultValue(false),
   };
   return DocumentedBox;

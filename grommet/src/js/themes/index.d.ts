@@ -314,10 +314,13 @@ export declare const generate: (baseSpacing?: number, scale?: number) => DeepRea
           width: string;
       };
       check: {
+          extend: string;
           radius: string;
           thickness: string;
       };
-      icon: {};
+      extend: string;
+      color: string | { dark: string; light: string; };
+      icon: { size: string; extend: string };
       icons: {};
       hover: {
           border: {
@@ -333,9 +336,13 @@ export declare const generate: (baseSpacing?: number, scale?: number) => DeepRea
               dark: string;
               light: string;
           };
+          background: {
+            dark: string;
+            light: string;
+          };
           radius: string;
           size: string;
-          knob: {};
+          knob: { extend: string };
       };
   };
   clock: {

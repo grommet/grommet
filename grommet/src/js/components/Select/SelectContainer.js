@@ -45,6 +45,7 @@ class SelectContainer extends Component {
     searchPlaceholder: undefined,
     selected: undefined,
     value: '',
+    replace: true,
   };
 
   optionRefs = {};
@@ -52,6 +53,15 @@ class SelectContainer extends Component {
   searchRef = createRef();
 
   optionsRef = createRef();
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      initialOptions: props.options,
+      search: '',
+      activeIndex: -1,
+    };
+  }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { options, value, onSearch } = nextProps;
@@ -74,11 +84,6 @@ class SelectContainer extends Component {
     }
     return null;
   }
-
-  state = {
-    search: '',
-    activeIndex: -1,
-  };
 
   componentDidMount() {
     const { onSearch } = this.props;
@@ -131,38 +136,29 @@ class SelectContainer extends Component {
     onSearch(search);
   }, debounceDelay(this.props));
 
-  selectOption = (option, index) => () => {
-    const { multiple, onChange, options, selected, value } = this.props;
-
+  selectOption = option => () => {
+    const { multiple, onChange, value, selected } = this.props;
+    const { initialOptions } = this.state;
     if (onChange) {
-      let nextValue = option;
-      let nextSelected = index;
-      if (multiple) {
-        nextValue = [];
-        nextSelected = [];
-        let removed = false;
-        let selectedIndexes = [];
-
-        if (Array.isArray(selected)) {
-          selectedIndexes = selected;
-        } else if (Array.isArray(value)) {
-          selectedIndexes = value.map(v => options.indexOf(v));
-        }
-
-        selectedIndexes.forEach(selectedIndex => {
-          if (selectedIndex === index) {
-            removed = true;
-          } else {
-            nextValue.push(options[selectedIndex]);
-            nextSelected.push(selectedIndex);
-          }
-        });
-        if (!removed) {
-          nextValue.push(option);
-          nextSelected.push(index);
-        }
+      let nextValue = Array.isArray(value) ? value.slice() : [];
+      // preserve compatibility until selected is deprecated
+      if (selected) {
+        nextValue = selected.map(s => initialOptions[s]);
       }
 
+      if (multiple) {
+        if (nextValue.indexOf(option) !== -1) {
+          nextValue = nextValue.filter(v => v !== option);
+        } else {
+          nextValue.push(option);
+        }
+      } else {
+        nextValue = option;
+      }
+
+      const nextSelected = Array.isArray(nextValue)
+        ? nextValue.map(v => initialOptions.indexOf(v))
+        : initialOptions.indexOf(nextValue);
       onChange({
         option,
         value: nextValue,
@@ -255,7 +251,7 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     if (activeIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex], activeIndex)();
+      this.selectOption(options[activeIndex])();
     }
   };
 
@@ -351,16 +347,22 @@ class SelectContainer extends Component {
       dropHeight,
       emptySearchMessage,
       id,
+      onMore,
       onKeyDown,
       onSearch,
       options,
       searchPlaceholder,
       theme,
+      replace,
     } = this.props;
     const { activeIndex, search } = this.state;
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
+    const selectOptionsStyle = {
+      ...theme.select.options.box,
+      ...theme.select.options.container,
+    };
 
     return (
       <Keyboard
@@ -395,7 +397,12 @@ class SelectContainer extends Component {
             overflow="auto"
           >
             {options.length > 0 ? (
-              <InfiniteScroll items={options} step={theme.select.step} replace>
+              <InfiniteScroll
+                items={options}
+                step={theme.select.step}
+                onMore={onMore}
+                replace={replace}
+              >
                 {(option, index) => {
                   const isDisabled = this.isDisabled(index);
                   const isSelected = this.isSelected(index);
@@ -415,9 +422,7 @@ class SelectContainer extends Component {
                         !isDisabled ? this.onActiveOption(index) : undefined
                       }
                       onClick={
-                        !isDisabled
-                          ? this.selectOption(option, index)
-                          : undefined
+                        !isDisabled ? this.selectOption(option) : undefined
                       }
                     >
                       {children ? (
@@ -428,7 +433,7 @@ class SelectContainer extends Component {
                         })
                       ) : (
                         <OptionBox
-                          {...theme.select.options.box}
+                          {...selectOptionsStyle}
                           selected={isSelected}
                         >
                           <Text {...theme.select.options.text}>
@@ -446,7 +451,7 @@ class SelectContainer extends Component {
                 disabled
                 option={emptySearchMessage}
               >
-                <OptionBox {...theme.select.options.box}>
+                <OptionBox {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
                     {emptySearchMessage}
                   </Text>

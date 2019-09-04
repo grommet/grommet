@@ -157,6 +157,8 @@ export const focusStyle = css`
         normalizeColor(props.theme.global.focus.border.color, props.theme)}
       solid 2px;
   }
+  outline-color: ${props =>
+    normalizeColor(props.theme.global.focus.border.color, props.theme)};
   border-color: ${props =>
     normalizeColor(props.theme.global.focus.border.color, props.theme)};
   box-shadow: 0 0 2px 2px
@@ -171,6 +173,7 @@ export const focusStyle = css`
 export const inputStyle = css`
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: ${props =>

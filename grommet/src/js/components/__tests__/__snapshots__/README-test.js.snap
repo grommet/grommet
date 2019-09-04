@@ -50,8 +50,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -225,6 +225,16 @@ Defaults to
 <FormUp />
 \`\`\`
 
+**accordion.icons.color**
+
+The icon color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+control
+\`\`\`
+
 **accordion.icons.expand**
 
 The icon to use when the panel is collapsed. Expects \`React.Element\`.
@@ -235,14 +245,24 @@ Defaults to
 <FormDown />
 \`\`\`
 
-**accordion.border**
+**accordion.border.color**
 
-The border to use in the accordion. Expects \`React.Element\`.
+The border color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-side: bottom, color: border
+border
+\`\`\`
+
+**accordion.border.side**
+
+The border side to use in the accordion. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+bottom
 \`\`\`
 ",
   "Anchor": "## Anchor
@@ -294,8 +314,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -368,6 +388,14 @@ string
   dark: string,
   light: string
 }
+\`\`\`
+
+**disabled**
+
+Whether the anchor is disabled.
+
+\`\`\`
+boolean
 \`\`\`
 
 **href**
@@ -613,8 +641,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side. Defaults to \`none\`.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -792,10 +820,12 @@ string
   image: string,
   position: string,
   opacity: 
+    string
+    boolean
+    number
     weak
     medium
-    strong
-    boolean,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -937,6 +967,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
@@ -959,6 +990,26 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
 
 **justify**
@@ -1140,15 +1191,35 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
 
 **wrap**
 
-Whether children can wrap if they
-      can't all fit.
+Whether children can wrap if they can't all fit.
 
 \`\`\`
 boolean
+reverse
 \`\`\`
   
 ## Intrinsic element
@@ -1353,7 +1424,7 @@ You can provide a single function child that will be called with
 
 \`\`\`javascript
 import { Button } from 'grommet';
-<Button primary={true} label='Label' />
+<Button primary label='Label' />
 \`\`\`
 
 ## Properties
@@ -1390,8 +1461,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -1464,7 +1535,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 \`\`\`
 string
@@ -1484,9 +1555,11 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and height.
+Whether the button expands to fill all of the available width and/or height.
 
 \`\`\`
+horizontal
+vertical
 boolean
 \`\`\`
 
@@ -1510,8 +1583,27 @@ boolean
 string
 background
 {
-  background: 
+  color: string,
+  dark: 
     boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
     string
 }
 \`\`\`
@@ -1524,12 +1616,38 @@ If specified, the button will behave like an anchor tag.
 string
 \`\`\`
 
+**target**
+
+Specifies where to display the URL defined in the href property.
+
+\`\`\`
+_self
+_blank
+_parent
+_top
+\`\`\`
+
 **icon**
 
 Icon element to place in the button.
 
 \`\`\`
 element
+\`\`\`
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to \`small\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **label**
@@ -1551,8 +1669,8 @@ function
 
 **plain**
 
-Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.
 
 \`\`\`
@@ -1602,9 +1720,49 @@ button
 \`\`\`
 ## Theme
   
+**global.active.background.color**
+
+The background color when using active prop. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+active
+\`\`\`
+
+**global.active.background.opacity**
+
+The value used for active button background opacity. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**global.active.color**
+
+The text color when using active prop. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
+**global.hover.background**
+
+The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
 **global.hover.color**
 
-The background color when hovering. Expects \`string\`.
+The text color when hovering. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -1614,7 +1772,7 @@ Defaults to
 
 **global.edgeSize.small**
 
-The padding around an icon-only button. Expects \`string\`.
+The padding around an icon-only button. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -1829,8 +1987,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -2266,6 +2424,38 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.colors.icon**
+
+The color of a given icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: #f8f8f8, light: #666666 }
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
 ",
   "Carousel": "## Carousel
 A carousel that cycles through children. Child components
@@ -2314,8 +2504,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -2396,6 +2586,25 @@ If specified, the number of
 \`\`\`
 number
 \`\`\`
+
+**initialChild**
+
+If specified, the index of
+      the first element to be shown. Defaults to 0.
+
+\`\`\`
+number
+\`\`\`
+
+**controls**
+
+Whether to show carousel controls and which type of controls. Defaults to \`true\`.
+
+\`\`\`
+boolean
+arrows
+selectors
+\`\`\`
   
 ## Intrinsic element
 
@@ -2412,6 +2621,16 @@ Defaults to
 
 \`\`\`
 <Next />
+\`\`\`
+
+**carousel.animation.duration**
+
+The duration of the Carousel animation. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+1000
 \`\`\`
 
 **carousel.icons.previous**
@@ -2436,7 +2655,17 @@ Defaults to
 
 **carousel.icons.color**
 
-The color used for Carousel icons. Expects \`string\`.
+The color used for Carousel icons. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**carousel.disabled.icons.color**
+
+The color used for disabled Carousel icons. Expects \`string | { 'dark': string, 'light': string }\`.
 
 Defaults to
 
@@ -2446,12 +2675,12 @@ undefined
 
 **global.colors.icon**
 
-The color used for Carousel icons. Expects \`object\`.
+The color of a given icon. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-[object Object]
+{ dark: #f8f8f8, light: #666666 }
 \`\`\`
 
 **global.edgeSize**
@@ -2521,8 +2750,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -2899,7 +3128,209 @@ boolean
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**checkBox.border.color**
+
+The border color when unchecked. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'rgba(255, 255, 255, 0.5)', light: 'rgba(0, 0, 0, 0.15)' }
+\`\`\`
+
+**checkBox.border.width**
+
+The border width when unchecked. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**checkBox.check.extend**
+
+Any additional style for checked CheckBox. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.check.radius**
+
+The radius of the checked icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**checkBox.check.thickness**
+
+The stroke width of the checked icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**checkBox.color**
+
+The stroke color for the CheckBox icon, and the border when checked. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.extend**
+
+Any additional style for CheckBox. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.gap**
+
+The right margin of the CheckBox to its label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.hover.border.color**
+
+The border color on hover. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
+**checkBox.icon.size**
+
+The size of the checked icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.icon.extend**
+
+Any additional style for CheckBox icon. Expects \`string | (props)=>{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.icons.checked**
+
+The icon to use when checked. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.icons.indeterminate**
+
+The icon to use when indeterminate. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.size**
+
+The height and width used for the CheckBox icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**checkBox.toggle.background**
+
+The background color of the toggle. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.toggle.color**
+
+The color of the toggle knob. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#d9d9d9', light: '#d9d9d9' }
+\`\`\`
+
+**checkBox.toggle.extend**
+
+Any additional style for CheckBox toggle. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.toggle.knob.extend**
+
+Any additional style for the CheckBox toggle knob. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.toggle.radius**
+
+The border radius used for the toggle and the knob. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**checkBox.toggle.size**
+
+The width size of the toggle. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+42px
+\`\`\`
+",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -2945,8 +3376,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -3236,7 +3667,7 @@ Expand or collapse animation.
 
 \`\`\`javascript
 import { Collapsible } from 'grommet';
-<Collapsible open={true}>test</Collapsible>
+<Collapsible open>test</Collapsible>
 \`\`\`
 
 ## Properties
@@ -3340,8 +3771,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -3404,6 +3835,160 @@ xlarge
 string
 \`\`\`
 
+**background**
+
+Cell background. You can set the background per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+\`\`\`
+string
+[string]
+{
+  header: 
+    string
+    [string],
+  body: 
+    string
+    [string],
+  footer: 
+    string
+    [string]
+}
+\`\`\`
+
+**border**
+
+Cell border. You can set the border per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+\`\`\`
+boolean
+horizontal
+vertical
+top
+bottom
+left
+right
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right,
+  size: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+{
+  header: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  body: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  footer: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    }
+}
+\`\`\`
+
 **columns**
 
 A description of the data. The order controls the column order.
@@ -3463,10 +4048,19 @@ Array of data objects. Defaults to \`[]\`.
 
 **groupBy**
 
-Property to group data by.
+Property to group data by. If object is specified
+      'property' is used to group data by, 'expand' accepts array of 
+       group keys that sets expanded groups and 'onExpand' is a function
+       that will be called after expand button is clicked with
+       an array of keys of expanded groups.
 
 \`\`\`
 string
+{
+  property: string,
+  expand: [string],
+  onExpand: function
+}
 \`\`\`
 
 **onMore**
@@ -3483,6 +4077,18 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 \`\`\`
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+\`\`\`
+function
+\`\`\`
+
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
@@ -3492,6 +4098,68 @@ When supplied, and when at least one column has 'search' enabled,
 
 \`\`\`
 function
+\`\`\`
+
+**pad**
+
+Cell padding. You can set the padding per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+{
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  header: custom,
+  body: custom,
+  footer: custom
+}
 \`\`\`
 
 **primaryKey**
@@ -3511,6 +4179,20 @@ Whether to allow the user to resize column widths.
 
 \`\`\`
 boolean
+\`\`\`
+
+**rowProps**
+
+Row specific background, border, and pad, keyed by primary key value.
+      For example:
+      { \\"primary-key-value\\": { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on DataTable.
+
+\`\`\`
+{
+
+}
 \`\`\`
 
 **size**
@@ -3535,12 +4217,192 @@ Whether to allow the user to sort columns.
 \`\`\`
 boolean
 \`\`\`
+
+**step**
+
+How many items to render at a time. Defaults to \`50\`.
+
+\`\`\`
+number
+\`\`\`
   
 ## Intrinsic element
 
 \`\`\`
 table
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.hover.background**
+
+The background style when hovering over an interactive row. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
+**global.hover.color**
+
+The text color when hovering over an interactive row. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
+**dataTable.groupHeader.background**
+
+The background color of the group header. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'dark-2', light: 'light-2' }
+\`\`\`
+
+**dataTable.groupHeader.border.side**
+
+The border side rendered for the group header. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+bottom
+\`\`\`
+
+**dataTable.groupHeader.border.size**
+
+The border size of the group header border. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xsmall
+\`\`\`
+
+**dataTable.groupHeader.fill**
+
+Whether the height should fill the group header. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+vertical
+\`\`\`
+
+**dataTable.groupHeader.pad**
+
+The pad used for the group header. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+{ horizontal: 'small', vertical: 'xsmall' }
+\`\`\`
+
+**dataTable.header**
+
+Styles for the header. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{}
+\`\`\`
+
+**dataTable.icons.ascending**
+
+The ascending icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+
+**dataTable.icons.contract**
+
+The contract icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormUp />
+\`\`\`
+
+**dataTable.icons.descending**
+
+The descending icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormUp />
+\`\`\`
+
+**dataTable.icons.expand**
+
+The expand icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+
+**dataTable.primary.weight**
+
+The font weight for primary cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+bold
+\`\`\`
+
+**dataTable.resize.border.color**
+
+The border color for resize. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+border
+\`\`\`
+
+**dataTable.resize.border.side**
+
+The border side used for resize. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+right
+\`\`\`
+
+**table.row.hover.background**
+
+The background color when hovering over an interactive row. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**table.row.hover.color**
+
+The text color when hovering over an interactive row. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
@@ -3700,8 +4562,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -3767,10 +4629,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react.default.createElement(_Box.Box, {
+    return _react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react.default.createElement(_Text.Text, null, value.value));
+    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`
@@ -3790,6 +4652,8 @@ boolean
 The amount of spacing between child elements. Defaults to \`xsmall\`.
 
 \`\`\`
+none
+xxsmall
 xsmall
 small
 medium
@@ -4021,8 +4885,8 @@ Defaults to
   "DropButton": "## DropButton
 A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus
-      so that the contents behind it are not focusable. All properties of
-      Button can be passed through.
+      so that the contents behind it are not focusable. All properties and theme properties of
+      Button or Drop can be passed through.
       
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -4067,8 +4931,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -4316,10 +5180,11 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the form values when this field changes
+The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  
 
 \`\`\`
 function
+object
 \`\`\`
 
 **error**
@@ -4366,6 +5231,73 @@ The name of the value data when in a Form and the name of
 string
 \`\`\`
 
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **pad**
 
 Whether to add padding to align with the padding of TextInput.
@@ -4384,7 +5316,8 @@ boolean
 
 **validate**
 
-Validation rule. Provide a regular expression or a function. If a
+Validation rule when used within a grommet Form. Provide a regular
+      expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -4402,7 +5335,145 @@ function
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**formField.border.color**
+
+The border color. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+border
+\`\`\`
+
+**formField.border.error.color**
+
+The border color of the error. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'status-critical' },
+\`\`\`
+
+**formField.border.position**
+
+The border position. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+inner
+\`\`\`
+
+**formField.border.side**
+
+The border side of the FormField. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+bottom
+\`\`\`
+
+**formField.content.pad**
+
+The pad of the FormField content. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ horizontal: 'small', bottom: 'small' }
+\`\`\`
+
+**formField.error.color**
+
+The color of the FormField error. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'status-critical', light: 'status-critical' }
+\`\`\`
+
+**formField.error.margin**
+
+The margin used for the FormField error. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+{ vertical: 'xsmall', horizontal: 'small' }
+\`\`\`
+
+**formField.extend**
+
+Any additional style for FormField. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.help.color**
+
+The color of the FormField help. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'dark-3', light: 'dark-3' }
+\`\`\`
+
+**formField.help.margin**
+
+The margin for the FormField help. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+{ left: 'small' }
+\`\`\`
+
+**formField.label.margin**
+
+The margin for the FormField label. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+{ vertical: 'xsmall', horizontal: 'small' }
+\`\`\`
+
+**formField.margin**
+
+The margin of FormField. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+{ bottom: 'small' }
+\`\`\`
+
+**global.borderSize**
+
+The possible border sizes for FormField. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+  xsmall: '1px',
+  small: '2px',
+  medium: '4px',
+  large: '12px',
+  xlarge: '24px,
+}
+\`\`\`
+",
   "Grid": "## Grid
 A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
@@ -4453,8 +5524,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -4544,7 +5615,9 @@ stretch
 
 **areas**
 
-Area names and column,row coordinates.
+Grid areas.
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.
 
 \`\`\`
 [{
@@ -4552,6 +5625,7 @@ Area names and column,row coordinates.
   start: [number],
   end: [number]
 }]
+[[string]]
 \`\`\`
 
 **columns**
@@ -4649,21 +5723,30 @@ boolean
 Gap sizes between rows and/or columns.
 
 \`\`\`
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 none
 {
   row: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string,
   column: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string
 }
@@ -4948,8 +6031,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -5268,8 +6351,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -5619,9 +6702,22 @@ import { Layer } from 'grommet';
 
 **animate**
 
-Animation transition of the Layer content when it opens. Defaults to \`true\`.
+Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'. Defaults to \`true\`.
 
 \`\`\`
+boolean
+\`\`\`
+
+**animation**
+
+Animation transition of the Layer content when it opens and closes. Defaults to \`slide\`.
+
+\`\`\`
+slide
+fadeIn
+none
 boolean
 \`\`\`
 
@@ -5960,7 +7056,10 @@ Describes the structure of the mask. If a regexp is provided, it should
     number
     [number],
   fixed: string,
-  options: [string],
+  options: [
+  string
+  number
+],
   regexp: 
     {
 
@@ -5987,6 +7086,7 @@ What text to put in the input. The caller should ensure that it
 
 \`\`\`
 string
+number
 \`\`\`
   
 ## Intrinsic element
@@ -5996,6 +7096,26 @@ input
 \`\`\`
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
+**global.hover.color**
+
+The text color when hovering. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
 **maskedInput.extend**
 
 Any additional style for MaskedInput. Expects \`string | (props) => {}\`.
@@ -6107,8 +7227,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -6216,10 +7336,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }
 \`\`\`
 
@@ -6293,6 +7414,14 @@ Custom messages. Used for accessibility by screen readers. Defaults to \`{
   closeMenu: string,
   openMenu: string
 }
+\`\`\`
+
+**open**
+
+Whether the state of the component should be open
+
+\`\`\`
+boolean
 \`\`\`
 
 **size**
@@ -6399,8 +7528,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -6665,8 +7794,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -6739,6 +7868,14 @@ string
   dark: string,
   light: string
 }
+\`\`\`
+
+**fill**
+
+Whether the width should fill the container.
+
+\`\`\`
+boolean
 \`\`\`
 
 **responsive**
@@ -6928,7 +8065,119 @@ function
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**radioButton.border.color**
+
+The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}
+\`\`\`
+
+**radioButton.border.width**
+
+The width size of the border of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**radioButton.check.color**
+
+The color of the checked icon in the RadioButton. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.check.extend**
+
+Any additional style for the checked RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.check.radius**
+
+The border-radius of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+100%
+\`\`\`
+
+**radioButton.extend**
+
+Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.gap**
+
+The gap between the label and the RadioButton itself. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**radioButton.size**
+
+The size of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**radioButton.hover.border.color**
+
+The color of the RadioButton border when hovered over. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{dark: white, light: black}
+\`\`\`
+
+**radioButton.icon.extend**
+
+Any additional style for the RadioButton icon. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.icon.size**
+
+The size of the icon in the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RadioButtonGroup": "## RadioButtonGroup
 A group of radio buttons.
 
@@ -7362,7 +8611,7 @@ light-4
 
 **rangeSelector.edge.type**
 
-The edge style type. Expects \`string\`.
+The edge control type. Expects \`'bar' | 'disc' | node\`.
 
 Defaults to
 
@@ -7388,7 +8637,7 @@ An Anchor with support for React Router.
 
 \`\`\`javascript
 import { RoutedAnchor } from 'grommet';
-<RoutedAnchor primary={true} path='/documentation' />
+<RoutedAnchor primary path='/documentation' />
 \`\`\`
 
 ## Properties
@@ -7423,7 +8672,7 @@ A button with support for React Router.
 
 \`\`\`javascript
 import { RoutedButton } from 'grommet';
-<RoutedButton primary={true} path='/documentation' />
+<RoutedButton primary path='/documentation' />
 \`\`\`
 
 ## Properties
@@ -7495,8 +8744,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -7680,6 +8929,7 @@ A custom icon to be used when rendering the select. You can use false to not ren
 \`\`\`
 boolean
 function
+node
 \`\`\`
 
 **labelKey**
@@ -7748,6 +8998,18 @@ Function that will be called when the user types in the search input.
 function
 \`\`\`
 
+**onMore**
+
+Use this to indicate that 'items' doesn't contain all that it could.
+      It will be called when the entire list of items has been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed.
+
+\`\`\`
+function
+\`\`\`
+
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use
@@ -7756,6 +9018,8 @@ Required. Options can be either a string or an object. If an object is used, use
 \`\`\`
 [
   string
+  number
+  boolean
   element
   object
 ]
@@ -7763,7 +9027,7 @@ Required. Options can be either a string or an object. If an object is used, use
 
 **open**
 
-Initial state of the select component
+Control the state of the component.
 
 \`\`\`
 boolean
@@ -7771,16 +9035,28 @@ boolean
 
 **placeholder**
 
-Placeholder text to use when no value is provided.
+Placeholder to use when no value is provided.
 
 \`\`\`
 string
+element
 node
 \`\`\`
 
 **plain**
 
 Whether this is a plain Select input with no border or padding.
+
+\`\`\`
+boolean
+\`\`\`
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -7866,6 +9142,26 @@ string
   
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'active', opacity: 'medium' }
+\`\`\`
+
+**global.hover.color**
+
+The text color when hovering. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
 **select.background**
 
 The background color used for Select. Expects \`string\`.
@@ -7906,9 +9202,29 @@ Defaults to
 undefined
 \`\`\`
 
+**select.control.open**
+
+Any additional style for the control open state of the Select component. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **select.control.extend**
 
 Any additional style for the control of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.margin**
+
+The margin used for Select icons. Expects \`string | object\`.
 
 Defaults to
 
@@ -8038,8 +9354,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -8192,7 +9508,6 @@ boolean
 The title of the tab.
 
 \`\`\`
-string
 node
 \`\`\`
   
@@ -8358,8 +9673,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -8835,8 +10150,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -9106,8 +10421,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -9187,7 +10502,7 @@ string
 The font size and line height are primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
-adjustments.
+adjustments. Defaults to \`medium\`.
 
 \`\`\`
 xsmall
@@ -9216,6 +10531,7 @@ The DOM tag or react component to use for the element. Defaults to \`span\`.
 \`\`\`
 string
 function
+element
 \`\`\`
 
 **textAlign**
@@ -9245,6 +10561,17 @@ Font weight
 normal
 bold
 number
+\`\`\`
+
+**wordBreak**
+
+Whether words should break when reaching the end of a line. Defaults to \`normal\`.
+
+\`\`\`
+normal
+break-all
+keep-all
+break-word
 \`\`\`
   
 ## Intrinsic element
@@ -9417,6 +10744,18 @@ Whether user is allowed to resize the textarea. Defaults to \`true\`.
 vertical
 horizontal
 boolean
+\`\`\`
+
+**size**
+
+The size of the TextArea.
+
+\`\`\`
+small
+medium
+large
+xlarge
+string
 \`\`\`
   
 ## Intrinsic element
@@ -9684,7 +11023,6 @@ function
 Placeholder to use when no value is provided.
 
 \`\`\`
-string
 node
 \`\`\`
 
@@ -9835,6 +11173,16 @@ Defaults to
 undefined
 \`\`\`
 
+**textInput.container.extend**
+
+Any additional style for TextInput container. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **textInput.placeholder.extend**
 
 Any additional style for non-string placeholder inside TextInput. Expects \`string | (props) => {}\`.
@@ -9960,8 +11308,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -10169,8 +11517,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none

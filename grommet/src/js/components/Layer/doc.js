@@ -20,8 +20,20 @@ export const doc = Layer => {
 
   DocumentedLayer.propTypes = {
     animate: PropTypes.bool
-      .description('Animation transition of the Layer content when it opens.')
+      .description(
+        `Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'.`,
+      )
       .defaultValue(true),
+    animation: PropTypes.oneOfType([
+      PropTypes.oneOf(['slide', 'fadeIn', 'none']),
+      PropTypes.bool,
+    ])
+      .description(
+        'Animation transition of the Layer content when it opens and closes.',
+      )
+      .defaultValue('slide'),
     full: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['vertical', 'horizontal']),

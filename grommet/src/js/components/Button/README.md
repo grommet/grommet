@@ -10,7 +10,7 @@ You can provide a single function child that will be called with
 
 ```javascript
 import { Button } from 'grommet';
-<Button primary={true} label='Label' />
+<Button primary label='Label' />
 ```
 
 ## Properties
@@ -47,8 +47,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -121,7 +121,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 ```
 string
@@ -141,9 +141,11 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and height.
+Whether the button expands to fill all of the available width and/or height.
 
 ```
+horizontal
+vertical
 boolean
 ```
 
@@ -167,8 +169,27 @@ boolean
 string
 background
 {
-  background: 
+  color: string,
+  dark: 
     boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
     string
 }
 ```
@@ -181,12 +202,38 @@ If specified, the button will behave like an anchor tag.
 string
 ```
 
+**target**
+
+Specifies where to display the URL defined in the href property.
+
+```
+_self
+_blank
+_parent
+_top
+```
+
 **icon**
 
 Icon element to place in the button.
 
 ```
 element
+```
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to `small`.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **label**
@@ -208,8 +255,8 @@ function
 
 **plain**
 
-Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.
 
 ```
@@ -259,9 +306,49 @@ button
 ```
 ## Theme
   
+**global.active.background.color**
+
+The background color when using active prop. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+active
+```
+
+**global.active.background.opacity**
+
+The value used for active button background opacity. Expects `number | string`.
+
+Defaults to
+
+```
+medium
+```
+
+**global.active.color**
+
+The text color when using active prop. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
+**global.hover.background**
+
+The background style when hovering. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
 **global.hover.color**
 
-The background color when hovering. Expects `string`.
+The text color when hovering. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -271,7 +358,7 @@ Defaults to
 
 **global.edgeSize.small**
 
-The padding around an icon-only button. Expects `string`.
+The padding around an icon-only button. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

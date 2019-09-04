@@ -144,6 +144,12 @@ exports[`Paragraph size renders 1`] = `
   max-width: 816px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: none;
+}
+
 <div
   className="c0"
 >
@@ -166,6 +172,12 @@ exports[`Paragraph size renders 1`] = `
   <p
     className="c5"
     size="xxlarge"
+  />
+  <p
+    className="c6"
+  />
+  <p
+    className="c2"
   />
 </div>
 `;

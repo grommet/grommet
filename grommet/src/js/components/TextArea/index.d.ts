@@ -1,15 +1,16 @@
 import * as React from "react";
 
 export interface TextAreaProps {
-  id?: string;
   fill?: boolean;
   focusIndicator?: boolean;
+  id?: string;
   name?: string;
   onChange?: ((...args: any[]) => any);
   placeholder?: string;
   plain?: boolean;
-  value?: string;
   resize?: "vertical" | "horizontal" | boolean;
+  size?: "small" | "medium" | "large" | "xlarge" | string;
+  value?: string;
 }
 
 declare const TextArea: React.ComponentClass<TextAreaProps & JSX.IntrinsicElements['textarea']>;

@@ -29,8 +29,6 @@ exports[`Form regexp validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 6px;
-  margin-bottom: 6px;
   color: #FF4040;
 }
 
@@ -49,8 +47,6 @@ exports[`Form required validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 6px;
-  margin-bottom: 6px;
   color: #FF4040;
 }
 
@@ -128,8 +124,12 @@ exports[`Form update 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c5:hover {
@@ -139,6 +139,7 @@ exports[`Form update 1`] = `
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -310,6 +311,7 @@ exports[`Form with field 1`] = `
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;

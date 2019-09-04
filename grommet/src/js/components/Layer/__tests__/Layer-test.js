@@ -1,47 +1,36 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from 'react-testing-library';
-import { getByTestId, queryByTestId } from 'dom-testing-library';
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { getByTestId, queryByTestId } from '@testing-library/dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
-class FakeLayer extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+const FakeLayer = ({ children, dataTestid }) => {
+  const [showLayer, setShowLayer] = React.useState(false);
 
-  state = { showLayer: false };
+  React.useEffect(() => setShowLayer(true), []);
 
-  componentDidMount() {
-    this.setState({ showLayer: true }); // eslint-disable-line
-  }
-
-  render() {
-    const { children, ...rest } = this.props;
-    const { showLayer } = this.state;
-    let layer;
-    if (showLayer) {
-      layer = (
-        <Layer onEsc={() => this.setState({ showLayer: false })}>
-          <div {...rest}>
-            This is a layer
-            <input data-testid="test-input" />
-          </div>
-        </Layer>
-      );
-    }
-    return (
-      <Grommet>
-        {layer}
-        {children}
-      </Grommet>
+  let layer;
+  if (showLayer) {
+    layer = (
+      <Layer onEsc={() => setShowLayer(false)}>
+        <div data-testid={dataTestid}>
+          This is a layer
+          <input data-testid="test-input" />
+        </div>
+      </Layer>
     );
   }
-}
+  return (
+    <Grommet>
+      {layer}
+      {children}
+    </Grommet>
+  );
+};
 
 describe('Layer', () => {
   beforeEach(createPortal);
@@ -155,6 +144,19 @@ describe('Layer', () => {
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
+  ['slide', 'fadeIn', false, true].forEach(animation =>
+    test(`animation ${animation}`, () => {
+      render(
+        <Grommet>
+          <Layer id="animation-test" animation={animation}>
+            This is a layer
+          </Layer>
+        </Grommet>,
+      );
+      expectPortal('animation-test').toMatchSnapshot();
+    }),
+  );
+
   test('invokes onEsc', () => {
     const onEsc = jest.fn();
     render(
@@ -170,11 +172,11 @@ describe('Layer', () => {
     expect(onEsc).toBeCalled();
   });
 
-  test('is accessible', () => {
+  test('is accessible', done => {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
       <Grommet>
-        <FakeLayer data-testid="test-layer-node">
+        <FakeLayer dataTestid="test-layer-node">
           <div data-testid="test-body-node">
             <input />
             <input tabIndex="10" />
@@ -191,8 +193,63 @@ describe('Layer', () => {
     expect(layerNode).toMatchSnapshot();
 
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
+    // because of de-animation, we test both the initial and delayed states
     bodyNode = getByTestId(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
-    expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+    setTimeout(() => {
+      expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+      done();
+    }, 300);
+  });
+
+  test('should be null prior to mounting, displayed after mount', () => {
+    const ref = React.createRef();
+    render(
+      <Grommet>
+        <Layer data-testid="test-layer-container" ref={ref}>
+          Layer container is available
+        </Layer>
+      </Grommet>,
+    );
+
+    ref.current.setState({ islayerContainerAvailable: false });
+    expect(queryByTestId(document, 'test-layer-container')).toBeNull();
+
+    ref.current.componentDidMount();
+    expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
+  });
+
+  test('focus on layer', () => {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    render(
+      <Grommet>
+        <Layer data-testid="focus-layer-test">
+          <input />
+        </Layer>
+        <input autoFocus />
+      </Grommet>,
+    );
+    /* eslint-disable jsx-a11y/no-autofocus */
+
+    const layerNode = getByTestId(document, 'focus-layer-test');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement.nodeName).toBe('A');
+  });
+
+  test('not steal focus from an autofocus focusable element', () => {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    render(
+      <Grommet>
+        <Layer data-testid="focus-layer-input-test">
+          <input autoFocus data-testid="focus-input" />
+          <button type="button">Button</button>
+        </Layer>
+      </Grommet>,
+    );
+    /* eslint-disable jsx-a11y/no-autofocus */
+    const layerNode = getByTestId(document, 'focus-layer-input-test');
+    const inputNode = getByTestId(document, 'focus-input');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement).toBe(inputNode);
   });
 });

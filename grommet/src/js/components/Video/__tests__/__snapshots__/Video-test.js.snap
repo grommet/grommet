@@ -214,10 +214,6 @@ exports[`Video autoPlay renders 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c18 {
@@ -806,10 +802,6 @@ exports[`Video controls renders 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c18 {
@@ -1485,10 +1477,6 @@ exports[`Video fit renders 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c18 {
@@ -2162,10 +2150,6 @@ exports[`Video loop renders 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c18 {
@@ -2669,10 +2653,6 @@ exports[`Video mute renders 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c18 {
@@ -3176,10 +3156,6 @@ exports[`Video renders 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c18 {

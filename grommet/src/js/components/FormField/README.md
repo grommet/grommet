@@ -15,10 +15,11 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the form values when this field changes
+The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  
 
 ```
 function
+object
 ```
 
 **error**
@@ -65,6 +66,73 @@ The name of the value data when in a Form and the name of
 string
 ```
 
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
 **pad**
 
 Whether to add padding to align with the padding of TextInput.
@@ -83,7 +151,8 @@ boolean
 
 **validate**
 
-Validation rule. Provide a regular expression or a function. If a
+Validation rule when used within a grommet Form. Provide a regular
+      expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -101,4 +170,141 @@ function
 
 ```
 div
+```
+## Theme
+  
+**formField.border.color**
+
+The border color. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+border
+```
+
+**formField.border.error.color**
+
+The border color of the error. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'status-critical' },
+```
+
+**formField.border.position**
+
+The border position. Expects `string`.
+
+Defaults to
+
+```
+inner
+```
+
+**formField.border.side**
+
+The border side of the FormField. Expects `string`.
+
+Defaults to
+
+```
+bottom
+```
+
+**formField.content.pad**
+
+The pad of the FormField content. Expects `object`.
+
+Defaults to
+
+```
+{ horizontal: 'small', bottom: 'small' }
+```
+
+**formField.error.color**
+
+The color of the FormField error. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'status-critical', light: 'status-critical' }
+```
+
+**formField.error.margin**
+
+The margin used for the FormField error. Expects `string | object`.
+
+Defaults to
+
+```
+{ vertical: 'xsmall', horizontal: 'small' }
+```
+
+**formField.extend**
+
+Any additional style for FormField. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.help.color**
+
+The color of the FormField help. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'dark-3', light: 'dark-3' }
+```
+
+**formField.help.margin**
+
+The margin for the FormField help. Expects `string | object`.
+
+Defaults to
+
+```
+{ left: 'small' }
+```
+
+**formField.label.margin**
+
+The margin for the FormField label. Expects `string | object`.
+
+Defaults to
+
+```
+{ vertical: 'xsmall', horizontal: 'small' }
+```
+
+**formField.margin**
+
+The margin of FormField. Expects `string | object`.
+
+Defaults to
+
+```
+{ bottom: 'small' }
+```
+
+**global.borderSize**
+
+The possible border sizes for FormField. Expects `object`.
+
+Defaults to
+
+```
+{
+  xsmall: '1px',
+  small: '2px',
+  medium: '4px',
+  large: '12px',
+  xlarge: '24px,
+}
 ```

@@ -40,7 +40,14 @@ const headingPadMap = {
 const buildStartEnd = (reference, firstDayOfWeek) => {
   let start = new Date(reference);
   start.setDate(1); // first of month
-  start = subtractDays(start, start.getDay() - firstDayOfWeek); // beginning of week
+
+  // In case Sunday is the first day of the month, and the user asked for Monday to
+  // be the first day of the week, then we need to include Sunday and six days prior.
+  start =
+    start.getDay() === 0 && firstDayOfWeek === 1
+      ? (start = subtractDays(start, 6))
+      : (start = subtractDays(start, start.getDay() - firstDayOfWeek)); // beginning of week
+
   const end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
   return { start, end };
 };

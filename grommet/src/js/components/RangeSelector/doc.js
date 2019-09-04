@@ -116,8 +116,8 @@ export const themeDoc = {
     defaultValue: 'light-4',
   },
   'rangeSelector.edge.type': {
-    description: 'The edge style type.',
-    type: 'string',
+    description: 'The edge control type.',
+    type: "'bar' | 'disc' | node",
     defaultValue: undefined,
   },
   'global.spacing': {

@@ -1,15 +1,24 @@
 import * as React from "react";
-import { Omit } from "../../utils";
+import { 
+  A11yTitleType, 
+  AlignSelfType, 
+  ColorType, 
+  GridAreaType, 
+  MarginType, 
+  Omit,
+  TextAlignType
+} from "../../utils";
 
 export interface ParagraphProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  color?: string | {dark?: string,light?: string};
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  color?: ColorType;
+  fill?: boolean;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
   responsive?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
-  textAlign?: "start" | "center" | "end";
+  textAlign?: TextAlignType;
 }
 
 declare const Paragraph: React.FC<ParagraphProps & Omit<JSX.IntrinsicElements['p'], 'color'>>;

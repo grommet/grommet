@@ -49,8 +49,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -158,10 +158,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }
 ```
 
@@ -235,6 +236,14 @@ Custom messages. Used for accessibility by screen readers. Defaults to `{
   closeMenu: string,
   openMenu: string
 }
+```
+
+**open**
+
+Whether the state of the component should be open
+
+```
+boolean
 ```
 
 **size**
