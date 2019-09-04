@@ -75,10 +75,12 @@ const Body = ({
           step={step}
         >
           {(datum, index) => {
-            const primaryValue = datumValue(datum, primaryProperty);
+            const primaryValue = primaryProperty
+              ? datumValue(datum, primaryProperty)
+              : undefined;
             return (
               <StyledDataTableRow
-                key={primaryValue}
+                key={primaryValue || index}
                 size={size}
                 active={active >= 0 ? active === index : undefined}
                 onClick={
