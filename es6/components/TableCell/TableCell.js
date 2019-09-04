@@ -11,14 +11,18 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
 var TableCell = function TableCell(_ref) {
-  var children = _ref.children,
+  var align = _ref.align,
+      background = _ref.background,
+      border = _ref.border,
+      children = _ref.children,
       colSpan = _ref.colSpan,
+      pad = _ref.pad,
       plain = _ref.plain,
       scope = _ref.scope,
       size = _ref.size,
       theme = _ref.theme,
       verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "colSpan", "plain", "scope", "size", "theme", "verticalAlign"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "colSpan", "pad", "plain", "scope", "size", "theme", "verticalAlign"]);
 
   return React.createElement(TableContext.Consumer, null, function (tableContext) {
     var tableContextTheme;
@@ -29,24 +33,37 @@ var TableCell = function TableCell(_ref) {
       tableContextTheme = theme.table && theme.table.footer;
     } else {
       tableContextTheme = theme.table && theme.table.body;
-    }
+    } // merge tabelContextTheme and rest
 
-    var boxProps = _extends({}, rest);
 
-    Object.keys(boxProps).forEach(function (key) {
-      if (tableContextTheme[key] && boxProps[key] === undefined) {
-        delete boxProps[key];
-      }
-    });
+    var mergedProps = _extends({}, tableContextTheme, {}, rest);
+
+    Object.keys(mergedProps).forEach(function (key) {
+      if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
+    }); // split out background, border, and pad
+
+    var cellProps = {
+      align: align || mergedProps.align || undefined,
+      background: background || mergedProps.background || undefined,
+      border: border || mergedProps.border || undefined,
+      pad: pad || mergedProps.pad || undefined,
+      verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined
+    };
+    delete mergedProps.align;
+    delete mergedProps.background;
+    delete mergedProps.border;
+    delete mergedProps.pad;
+    delete mergedProps.verticalAlign;
     return React.createElement(StyledTableCell, _extends({
       as: scope ? 'th' : undefined,
       scope: scope,
       size: size,
       colSpan: colSpan,
       tableContext: tableContext,
-      tableContextTheme: tableContextTheme,
-      verticalAlign: verticalAlign || (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
-    }, plain ? rest : {}), plain ? children : React.createElement(Box, _extends({}, tableContextTheme, boxProps), children));
+      tableContextTheme: tableContextTheme
+    }, plain ? mergedProps : {}, cellProps), plain || !Object.keys(mergedProps).length ? children : React.createElement(Box, _extends({}, mergedProps, {
+      align: align
+    }), children));
   });
 };
 

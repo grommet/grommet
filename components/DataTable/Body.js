@@ -21,6 +21,8 @@ var _Cell = require("./Cell");
 
 var _StyledDataTable = require("./StyledDataTable");
 
+var _buildState = require("./buildState");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -28,16 +30,20 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Body = function Body(_ref) {
-  var columns = _ref.columns,
+  var background = _ref.background,
+      border = _ref.border,
+      columns = _ref.columns,
       data = _ref.data,
       forwardRef = _ref.forwardRef,
       onMore = _ref.onMore,
       onClickRow = _ref.onClickRow,
+      pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
+      rowProps = _ref.rowProps,
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "forwardRef", "onMore", "onClickRow", "primaryProperty", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "forwardRef", "onMore", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
@@ -69,8 +75,9 @@ var Body = function Body(_ref) {
     scrollableAncestor: "window",
     step: step
   }, function (datum, index) {
+    var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
     return _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
-      key: datum[primaryProperty],
+      key: primaryValue || index,
       size: size,
       active: active >= 0 ? active === index : undefined,
       onClick: onClickRow ? function (event) {
@@ -81,16 +88,29 @@ var Body = function Body(_ref) {
         onClickRow(adjustedEvent);
       } : undefined,
       onMouseOver: onClickRow ? function () {
+        return setActive(index);
+      } : undefined,
+      onMouseOut: onClickRow ? function () {
         return setActive(undefined);
       } : undefined,
-      onFocus: onClickRow ? function () {} : undefined
+      onFocus: onClickRow ? function () {
+        return setActive(index);
+      } : undefined,
+      onBlur: onClickRow ? function () {
+        return setActive(undefined);
+      } : undefined
     }, columns.map(function (column) {
       return _react["default"].createElement(_Cell.Cell, {
         key: column.property,
+        background: background,
+        border: border,
         context: "body",
         column: column,
         datum: datum,
+        index: index,
+        pad: pad,
         primaryProperty: primaryProperty,
+        rowProp: rowProps && rowProps[primaryValue],
         scope: column.primary || column.property === primaryProperty ? 'row' : undefined
       });
     }));

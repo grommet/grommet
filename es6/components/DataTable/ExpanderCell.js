@@ -27,7 +27,12 @@ var ExpanderCell = function ExpanderCell(_ref) {
     });
   }
 
-  content = React.createElement(Box, _extends({}, _extends({}, theme.table[context], {}, theme.dataTable[context]), rest, {
+  var normalizedThemeProps = _extends({}, theme.table[context], {}, theme.dataTable[context]);
+
+  delete normalizedThemeProps.background;
+  delete normalizedThemeProps.border;
+  delete normalizedThemeProps.pad;
+  content = React.createElement(Box, _extends({}, normalizedThemeProps, rest, {
     align: "center",
     pad: "xsmall"
   }), content);
@@ -45,7 +50,8 @@ var ExpanderCell = function ExpanderCell(_ref) {
   return React.createElement(TableCell, {
     size: "xxsmall",
     plain: true,
-    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
+    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top',
+    pad: "none"
   }, content);
 };
 

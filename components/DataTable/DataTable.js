@@ -29,6 +29,20 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var contexts = ['header', 'body', 'footer'];
+
+var normalizeProp = function normalizeProp(prop, context) {
+  if (prop) {
+    if (prop[context]) return prop[context];
+    if (contexts.some(function (c) {
+      return prop[c];
+    })) return undefined;
+    return prop;
+  }
+
+  return undefined;
+};
+
 var DataTable =
 /*#__PURE__*/
 function (_Component) {
@@ -158,17 +172,21 @@ function (_Component) {
 
   _proto.render = function render() {
     var _this$props = this.props,
+        background = _this$props.background,
+        border = _this$props.border,
         columns = _this$props.columns,
         propsData = _this$props.data,
         groupBy = _this$props.groupBy,
         onMore = _this$props.onMore,
+        pad = _this$props.pad,
         resizeable = _this$props.resizeable,
+        rowProps = _this$props.rowProps,
         size = _this$props.size,
         sortable = _this$props.sortable,
         step = _this$props.step,
         onClickRow = _this$props.onClickRow,
         onSearch = _this$props.onSearch,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "step", "onClickRow", "onSearch"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["background", "border", "columns", "data", "groupBy", "onMore", "pad", "resizeable", "rowProps", "size", "sortable", "step", "onClickRow", "onSearch"]);
 
     var _this$state = this.state,
         data = _this$state.data,
@@ -187,11 +205,14 @@ function (_Component) {
     }
 
     return _react["default"].createElement(_StyledDataTable.StyledDataTable, rest, _react["default"].createElement(_Header.Header, {
+      background: normalizeProp(background, 'header'),
+      border: normalizeProp(border, 'header'),
       columns: columns,
       filtering: filtering,
       filters: filters,
       groups: groups,
       groupState: groupState,
+      pad: normalizeProp(pad, 'header'),
       size: size,
       sort: sort,
       widths: widths,
@@ -201,24 +222,34 @@ function (_Component) {
       onSort: sortable ? this.onSort : undefined,
       onToggle: this.onToggleGroups
     }), groups ? _react["default"].createElement(_GroupedBody.GroupedBody, {
+      background: normalizeProp(background, 'body'),
+      border: normalizeProp(border, 'body'),
       columns: columns,
       groupBy: groupBy.property ? groupBy.property : groupBy,
       groups: groups,
       groupState: groupState,
+      pad: normalizeProp(pad, 'body'),
       primaryProperty: primaryProperty,
       onToggle: this.onToggleGroup
     }) : _react["default"].createElement(_Body.Body, {
+      background: normalizeProp(background, 'body'),
+      border: normalizeProp(border, 'body'),
       columns: columns,
       data: data,
       onMore: onMore,
       onClickRow: onClickRow,
+      pad: normalizeProp(pad, 'body'),
       primaryProperty: primaryProperty,
+      rowProps: rowProps,
       size: size,
       step: step
     }), showFooter && _react["default"].createElement(_Footer.Footer, {
+      background: normalizeProp(background, 'footer'),
+      border: normalizeProp(border, 'footer'),
       columns: columns,
       footerValues: footerValues,
       groups: groups,
+      pad: normalizeProp(pad, 'footer'),
       primaryProperty: primaryProperty,
       size: size
     }));

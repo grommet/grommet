@@ -199,12 +199,15 @@ delete groupColumns[1].footer;
 var GroupedDataTable = function GroupedDataTable() {
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react["default"].createElement(_grommet.DataTable, {
     columns: groupColumns,
     data: DATA,
     groupBy: "location",
     sortable: true
-  }));
+  })));
 };
 
 var ControlledGroupedDataTable =
@@ -359,6 +362,37 @@ var ControlledDataTable = function ControlledDataTable() {
   })));
 };
 
+var StyledDataTable = function StyledDataTable() {
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.DataTable, {
+    columns: columns,
+    data: DATA,
+    step: 10,
+    pad: {
+      horizontal: 'large',
+      vertical: 'medium'
+    },
+    background: {
+      header: 'dark-3',
+      body: ['light-1', 'light-3'],
+      footer: 'dark-3'
+    },
+    border: {
+      body: 'bottom'
+    },
+    rowProps: {
+      Eric: {
+        background: 'accent-2',
+        pad: 'large'
+      }
+    }
+  })));
+};
+
 (0, _react2.storiesOf)('DataTable', module).add('Simple', function () {
   return _react["default"].createElement(SimpleDataTable, null);
 }).add('Clickable', function () {
@@ -375,4 +409,6 @@ var ControlledDataTable = function ControlledDataTable() {
   return _react["default"].createElement(ServedDataTable, null);
 }).add('Controlled', function () {
   return _react["default"].createElement(ControlledDataTable, null);
+}).add('Styled', function () {
+  return _react["default"].createElement(StyledDataTable, null);
 });

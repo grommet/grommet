@@ -41,7 +41,12 @@ var ExpanderCell = function ExpanderCell(_ref) {
     });
   }
 
-  content = _react["default"].createElement(_Box.Box, _extends({}, _extends({}, theme.table[context], {}, theme.dataTable[context]), rest, {
+  var normalizedThemeProps = _extends({}, theme.table[context], {}, theme.dataTable[context]);
+
+  delete normalizedThemeProps.background;
+  delete normalizedThemeProps.border;
+  delete normalizedThemeProps.pad;
+  content = _react["default"].createElement(_Box.Box, _extends({}, normalizedThemeProps, rest, {
     align: "center",
     pad: "xsmall"
   }), content);
@@ -59,7 +64,8 @@ var ExpanderCell = function ExpanderCell(_ref) {
   return _react["default"].createElement(_TableCell.TableCell, {
     size: "xxsmall",
     plain: true,
-    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
+    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top',
+    pad: "none"
   }, content);
 };
 

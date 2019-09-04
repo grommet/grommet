@@ -11,18 +11,23 @@ import { Keyboard } from '../Keyboard';
 import { withFocus, withForwardRef } from '../hocs';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
+import { datumValue } from './buildState';
 
 var Body = function Body(_ref) {
-  var columns = _ref.columns,
+  var background = _ref.background,
+      border = _ref.border,
+      columns = _ref.columns,
       data = _ref.data,
       forwardRef = _ref.forwardRef,
       onMore = _ref.onMore,
       onClickRow = _ref.onClickRow,
+      pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
+      rowProps = _ref.rowProps,
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "forwardRef", "onMore", "onClickRow", "primaryProperty", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "forwardRef", "onMore", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
 
   var _React$useState = React.useState(),
       active = _React$useState[0],
@@ -54,8 +59,9 @@ var Body = function Body(_ref) {
     scrollableAncestor: "window",
     step: step
   }, function (datum, index) {
+    var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;
     return React.createElement(StyledDataTableRow, {
-      key: datum[primaryProperty],
+      key: primaryValue || index,
       size: size,
       active: active >= 0 ? active === index : undefined,
       onClick: onClickRow ? function (event) {
@@ -66,16 +72,29 @@ var Body = function Body(_ref) {
         onClickRow(adjustedEvent);
       } : undefined,
       onMouseOver: onClickRow ? function () {
+        return setActive(index);
+      } : undefined,
+      onMouseOut: onClickRow ? function () {
         return setActive(undefined);
       } : undefined,
-      onFocus: onClickRow ? function () {} : undefined
+      onFocus: onClickRow ? function () {
+        return setActive(index);
+      } : undefined,
+      onBlur: onClickRow ? function () {
+        return setActive(undefined);
+      } : undefined
     }, columns.map(function (column) {
       return React.createElement(Cell, {
         key: column.property,
+        background: background,
+        border: border,
         context: "body",
         column: column,
         datum: datum,
+        index: index,
+        pad: pad,
         primaryProperty: primaryProperty,
+        rowProp: rowProps && rowProps[primaryValue],
         scope: column.primary || column.property === primaryProperty ? 'row' : undefined
       });
     }));

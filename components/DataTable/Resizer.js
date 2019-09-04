@@ -48,7 +48,12 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "onMouseDown", function (event) {
       if (_this.ref.current) {
-        var element = _this.ref.current;
+        var element = _this.ref.current; // find TH parent
+
+        while (element && element.nodeName !== 'TH') {
+          element = element.parentNode;
+        }
+
         var rect = element.getBoundingClientRect();
 
         _this.setState({
@@ -90,27 +95,20 @@ function (_Component) {
   var _proto = Resizer.prototype;
 
   _proto.render = function render() {
-    var _this$props2 = this.props,
-        children = _this$props2.children,
-        onResize = _this$props2.onResize,
-        theme = _this$props2.theme;
+    var theme = this.props.theme;
     var start = this.state.start;
-
-    if (onResize) {
-      return _react["default"].createElement(_Box.Box, {
-        ref: this.ref,
-        direction: "row",
-        fill: true
-      }, children, _react["default"].createElement(ResizerBox, _extends({
-        flex: false
-      }, theme.dataTable.resize, {
-        onMouseDown: this.onMouseDown,
-        onMouseMove: start ? this.onMouseMove : undefined,
-        onMouseUp: start ? this.onMouseUp : undefined
-      })));
-    }
-
-    return children;
+    return _react["default"].createElement(ResizerBox, _extends({
+      ref: this.ref,
+      flex: false,
+      responsive: false,
+      pad: {
+        vertical: 'small'
+      }
+    }, theme.dataTable.resize, {
+      onMouseDown: this.onMouseDown,
+      onMouseMove: start ? this.onMouseMove : undefined,
+      onMouseUp: start ? this.onMouseUp : undefined
+    }));
   };
 
   return Resizer;

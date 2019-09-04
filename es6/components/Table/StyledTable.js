@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { genericStyles } from '../../utils';
+import { backgroundStyle, borderStyle, edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 var SIZE_MAP = {
   '1/2': '50%',
@@ -17,10 +17,18 @@ var sizeStyle = css(["width:", ";max-width:", ";overflow:hidden;"], function (pr
 var StyledTableCell = styled.td.withConfig({
   displayName: "StyledTable__StyledTableCell",
   componentId: "sc-1m3u5g-0"
-})(["margin:0;padding:0;font-weight:inherit;text-align:inherit;height:100%;", " ", " ", ""], function (props) {
+})(["margin:0;padding:0;font-weight:inherit;text-align:inherit;height:100%;", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return props.size && sizeStyle;
 }, function (props) {
   return props.verticalAlign && "vertical-align: " + props.verticalAlign + ";";
+}, function (props) {
+  return props.align && "text-align: " + props.align + ";";
+}, function (props) {
+  return props.background && backgroundStyle(props.background, props.theme);
+}, function (props) {
+  return props.border && borderStyle(props.border, props.responsive, props.theme);
+}, function (props) {
+  return props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.tableContextTheme && props.tableContextTheme.extend;
 });

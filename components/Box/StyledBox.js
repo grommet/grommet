@@ -116,46 +116,6 @@ var WRAP_MAP = {
 var wrapStyle = (0, _styledComponents.css)(["flex-wrap:", ";"], function (props) {
   return WRAP_MAP[props.wrapProp];
 });
-
-var borderStyle = function borderStyle(data, responsive, theme) {
-  var styles = [];
-  var color = (0, _utils.normalizeColor)(data.color || 'border', theme);
-  var borderSize = data.size || 'xsmall';
-  var style = data.style || 'solid';
-  var side = typeof data === 'string' ? data : data.side || 'all';
-  var value = style + " " + (theme.global.borderSize[borderSize] || borderSize) + " " + color;
-  var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  var responsiveValue = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && style + " " + (breakpoint.borderSize[borderSize] || borderSize) + " " + color;
-
-  if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-    styles.push((0, _styledComponents.css)(["border-", ":", ";"], side, value));
-
-    if (responsiveValue) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        border-" + side + ": " + responsiveValue + ";\n      "));
-    }
-  } else if (side === 'vertical') {
-    styles.push((0, _styledComponents.css)(["border-left:", ";border-right:", ";"], value, value));
-
-    if (responsiveValue) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        border-left: " + responsiveValue + ";\n        border-right: " + responsiveValue + ";\n      "));
-    }
-  } else if (side === 'horizontal') {
-    styles.push((0, _styledComponents.css)(["border-top:", ";border-bottom:", ";"], value, value));
-
-    if (responsiveValue) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        border-top: " + responsiveValue + ";\n        border-bottom: " + responsiveValue + ";\n      "));
-    }
-  } else {
-    styles.push((0, _styledComponents.css)(["border:", ";"], value));
-
-    if (responsiveValue) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "border: " + responsiveValue + ";"));
-    }
-  }
-
-  return styles;
-};
-
 var ROUND_MAP = {
   full: '100%'
 };
@@ -430,7 +390,7 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.background && (0, _utils.backgroundStyle)(props.background, props.theme);
 }, function (props) {
-  return props.border && borderStyle(props.border, props.responsive, props.theme);
+  return props.border && (0, _utils.borderStyle)(props.border, props.responsive, props.theme);
 }, function (props) {
   return props.directionProp && directionStyle(props.directionProp, props.theme);
 }, function (props) {

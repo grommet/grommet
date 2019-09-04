@@ -9,9 +9,41 @@ var _utils = require("../../utils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
+var parts = ['header', 'body', 'footer'];
+var padShape = {};
+sides.forEach(function (side) {
+  padShape[side] = _reactDesc.PropTypes.oneOf(sizes);
+});
+parts.forEach(function (part) {
+  padShape[part] = {};
+  sides.forEach(function (side) {
+    padShape[part][side] = _reactDesc.PropTypes.oneOf(sizes);
+  });
+});
+var backgroundShape = {};
+parts.forEach(function (part) {
+  backgroundShape[part] = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string)]);
+});
+var borderTypes = [_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(sides), _reactDesc.PropTypes.shape({
+  color: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+    dark: _reactDesc.PropTypes.string,
+    light: _reactDesc.PropTypes.string
+  })]),
+  side: _reactDesc.PropTypes.oneOf(sides),
+  size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.string])
+})];
+var borderShape = {};
+parts.forEach(function (part) {
+  borderShape[part] = _reactDesc.PropTypes.oneOfType(borderTypes);
+});
+
 var doc = function doc(DataTable) {
   var DocumentedDataTable = (0, _reactDesc.describe)(DataTable).availableAt((0, _utils.getAvailableAtBadge)('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />").intrinsicElement('table');
   DocumentedDataTable.propTypes = _extends({}, _utils.genericProps, {
+    background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string), _reactDesc.PropTypes.shape(backgroundShape)]).description("Cell background. You can set the background per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
+    border: _reactDesc.PropTypes.oneOfType([].concat(borderTypes, [_reactDesc.PropTypes.shape(borderShape)])).description("Cell border. You can set the border per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
     columns: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       align: _reactDesc.PropTypes.oneOf(['center', 'start', 'end']),
       aggregate: _reactDesc.PropTypes.oneOf(['avg', 'max', 'min', 'sum']),
@@ -36,8 +68,10 @@ var doc = function doc(DataTable) {
     onMore: _reactDesc.PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data rows have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed. This cannot\n      be combined with properties that expect all data to be present in the\n      browser, such as columns.search, sortable, groupBy, or columns.aggregate."),
     onClickRow: _reactDesc.PropTypes.func.description("When supplied, this function will be called with an event object that\n      include a 'datum' property containing the data value associated with\n      the clicked row. You should not include interactive elements, like\n      Anchor or Button inside table cells as that can cause confusion with\n      overlapping interactive elements."),
     onSearch: _reactDesc.PropTypes.func.description("When supplied, and when at least one column has 'search' enabled,\n      this function will be called with an object with keys for property\n      names and values which are the search text strings. This is typically\n      employed so a back-end can be used to search through the data."),
+    pad: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape(padShape)]).description("Cell padding. You can set the padding per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
     primaryKey: _reactDesc.PropTypes.string.description("When supplied, indicates the property for a data object to use to\n      get a unique identifier. See also the 'columns.primary' description.\n      Use this property when the columns approach will not work for your\n      data set."),
     resizeable: _reactDesc.PropTypes.bool.description('Whether to allow the user to resize column widths.'),
+    rowProps: _reactDesc.PropTypes.shape({}).description("Row specific background, border, and pad, keyed by primary key value.\n      For example:\n      { \"primary-key-value\": { background: ..., border: ..., pad: ... }},\n      where the background, border, and pad accept the same values as\n      the same named properties on DataTable."),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The height of the table body. If set, the table body will have a fixed\n      height and the rows will be scrollable within it. In order to preserve\n      header and footer cell alignment, all cells will have the same\n      width. This cannot be used in combination with 'resizeable'."),
     sortable: _reactDesc.PropTypes.bool.description('Whether to allow the user to sort columns.'),
     step: _reactDesc.PropTypes.number.description('How many items to render at a time.').defaultValue(50)

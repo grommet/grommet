@@ -510,7 +510,6 @@ export var generate = function generate(baseSpacing, scale) {
           side: 'bottom',
           size: 'xsmall'
         },
-        fill: 'vertical',
         pad: {
           horizontal: 'small',
           vertical: 'xsmall'
@@ -834,8 +833,7 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: 'xsmall'
         },
         border: 'bottom',
-        verticalAlign: 'bottom',
-        fill: 'vertical' // background: undefined,
+        verticalAlign: 'bottom' // background: undefined,
         // extend: undefined,
 
       },
@@ -844,7 +842,8 @@ export var generate = function generate(baseSpacing, scale) {
         pad: {
           horizontal: 'small',
           vertical: 'xsmall'
-        } // border: undefined,
+        } // background: undefined,
+        // border: undefined,
         // extend: undefined,
 
       },
@@ -861,8 +860,8 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: 'xsmall'
         },
         border: 'top',
-        verticalAlign: 'top',
-        fill: 'vertical' // extend: undefined,
+        verticalAlign: 'top' // background: undefined,
+        // extend: undefined,
 
       }
     },

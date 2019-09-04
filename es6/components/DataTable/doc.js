@@ -2,9 +2,40 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
+var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
+var parts = ['header', 'body', 'footer'];
+var padShape = {};
+sides.forEach(function (side) {
+  padShape[side] = PropTypes.oneOf(sizes);
+});
+parts.forEach(function (part) {
+  padShape[part] = {};
+  sides.forEach(function (side) {
+    padShape[part][side] = PropTypes.oneOf(sizes);
+  });
+});
+var backgroundShape = {};
+parts.forEach(function (part) {
+  backgroundShape[part] = PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]);
+});
+var borderTypes = [PropTypes.bool, PropTypes.oneOf(sides), PropTypes.shape({
+  color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+    dark: PropTypes.string,
+    light: PropTypes.string
+  })]),
+  side: PropTypes.oneOf(sides),
+  size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])
+})];
+var borderShape = {};
+parts.forEach(function (part) {
+  borderShape[part] = PropTypes.oneOfType(borderTypes);
+});
 export var doc = function doc(DataTable) {
   var DocumentedDataTable = describe(DataTable).availableAt(getAvailableAtBadge('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />").intrinsicElement('table');
   DocumentedDataTable.propTypes = _extends({}, genericProps, {
+    background: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string), PropTypes.shape(backgroundShape)]).description("Cell background. You can set the background per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
+    border: PropTypes.oneOfType([].concat(borderTypes, [PropTypes.shape(borderShape)])).description("Cell border. You can set the border per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
     columns: PropTypes.arrayOf(PropTypes.shape({
       align: PropTypes.oneOf(['center', 'start', 'end']),
       aggregate: PropTypes.oneOf(['avg', 'max', 'min', 'sum']),
@@ -29,8 +60,10 @@ export var doc = function doc(DataTable) {
     onMore: PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data rows have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed. This cannot\n      be combined with properties that expect all data to be present in the\n      browser, such as columns.search, sortable, groupBy, or columns.aggregate."),
     onClickRow: PropTypes.func.description("When supplied, this function will be called with an event object that\n      include a 'datum' property containing the data value associated with\n      the clicked row. You should not include interactive elements, like\n      Anchor or Button inside table cells as that can cause confusion with\n      overlapping interactive elements."),
     onSearch: PropTypes.func.description("When supplied, and when at least one column has 'search' enabled,\n      this function will be called with an object with keys for property\n      names and values which are the search text strings. This is typically\n      employed so a back-end can be used to search through the data."),
+    pad: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string, PropTypes.shape(padShape)]).description("Cell padding. You can set the padding per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
     primaryKey: PropTypes.string.description("When supplied, indicates the property for a data object to use to\n      get a unique identifier. See also the 'columns.primary' description.\n      Use this property when the columns approach will not work for your\n      data set."),
     resizeable: PropTypes.bool.description('Whether to allow the user to resize column widths.'),
+    rowProps: PropTypes.shape({}).description("Row specific background, border, and pad, keyed by primary key value.\n      For example:\n      { \"primary-key-value\": { background: ..., border: ..., pad: ... }},\n      where the background, border, and pad accept the same values as\n      the same named properties on DataTable."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The height of the table body. If set, the table body will have a fixed\n      height and the rows will be scrollable within it. In order to preserve\n      header and footer cell alignment, all cells will have the same\n      width. This cannot be used in combination with 'resizeable'."),
     sortable: PropTypes.bool.description('Whether to allow the user to sort columns.'),
     step: PropTypes.number.description('How many items to render at a time.').defaultValue(50)

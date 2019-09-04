@@ -11,90 +11,32 @@ exports[`DataTable aggregate 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -103,18 +45,16 @@ exports[`DataTable aggregate 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-}
-
-.c11 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
   vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   height: 100%;
 }
 
@@ -124,12 +64,12 @@ exports[`DataTable aggregate 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c10 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -139,84 +79,6 @@ exports[`DataTable aggregate 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -235,35 +97,27 @@ exports[`DataTable aggregate 1`] = `
       className=""
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -274,65 +128,49 @@ exports[`DataTable aggregate 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </td>
       </tr>
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              2
-            </span>
-          </div>
+            2
+          </span>
         </td>
       </tr>
     </tbody>
@@ -340,28 +178,496 @@ exports[`DataTable aggregate 1`] = `
       className=""
     >
       <tr
-        className="c4"
+        className="c3"
+      >
+        <td
+          className="c8"
+        />
+        <td
+          className="c8"
+        >
+          <span
+            className="c5"
+          >
+            3
+          </span>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`DataTable background 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  background: #6FFFB0;
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  background: #6FFFB0;
+  color: #444444;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  background: #6FFFB0;
+  color: #444444;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  background: #FD6FFF;
+  color: #444444;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  background: #81FCED;
+  color: #444444;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c8"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c8"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
       >
         <td
           className="c11"
         >
-          <div
-            className="c12"
-          />
+          <span
+            className="c7"
+          >
+            Total
+          </span>
         </td>
         <td
           className="c11"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c4"
+          scope="col"
         >
-          <div
-            className="c12"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              3
-            </span>
-          </div>
+            A
+          </span>
+        </th>
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
         </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c12"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c12"
+        />
       </tr>
     </tfoot>
   </table>
@@ -379,75 +685,35 @@ exports[`DataTable basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c8 {
+.c6 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   height: 100%;
 }
 
@@ -457,12 +723,12 @@ exports[`DataTable basic 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c10 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -472,58 +738,6 @@ exports[`DataTable basic 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -542,35 +756,27 @@ exports[`DataTable basic 1`] = `
       className=""
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -581,68 +787,654 @@ exports[`DataTable basic 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </td>
       </tr>
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              2
-            </span>
-          </div>
+            2
+          </span>
         </td>
       </tr>
     </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable border 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  border: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-top: solid 2px #6FFFB0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-top: solid 2px #6FFFB0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 2px #6FFFB0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c8"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c8"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c11"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c11"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c12"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c12"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c13"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c13"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c13"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c13"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c14"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c14"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c13"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c13"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c13"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c13"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c11"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c11"
+        />
+      </tr>
+    </tfoot>
   </table>
 </div>
 `;
@@ -658,75 +1450,35 @@ exports[`DataTable click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c9 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   height: 100%;
 }
 
@@ -736,12 +1488,12 @@ exports[`DataTable click 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -753,66 +1505,8 @@ exports[`DataTable click 1`] = `
   height: 100%;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-.c8 {
+.c6 {
   cursor: pointer;
-}
-
-.c8:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -831,21 +1525,17 @@ exports[`DataTable click 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c5"
+          class="c4"
           scope="col"
         >
-          <div
-            class="c6"
+          <span
+            class="c5"
           >
-            <span
-              class="c7"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
       </tr>
     </thead>
@@ -854,39 +1544,31 @@ exports[`DataTable click 1`] = `
       tabindex="0"
     >
       <tr
-        class="c8 c4"
+        class="c6 c3"
       >
         <th
-          class="c9"
+          class="c7"
           scope="row"
         >
-          <div
-            class="c10"
+          <span
+            class="c8"
           >
-            <span
-              class="c11"
-            >
-              alpha
-            </span>
-          </div>
+            alpha
+          </span>
         </th>
       </tr>
       <tr
-        class="c8 c4"
+        class="c6 c3"
       >
         <th
-          class="c9"
+          class="c7"
           scope="row"
         >
-          <div
-            class="c10"
+          <span
+            class="c8"
           >
-            <span
-              class="c11"
-            >
-              beta
-            </span>
-          </div>
+            beta
+          </span>
         </th>
       </tr>
     </tbody>
@@ -905,21 +1587,17 @@ exports[`DataTable click 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 bWDcKd"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
       </tr>
     </thead>
@@ -928,39 +1606,31 @@ exports[`DataTable click 2`] = `
       tabindex="0"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 OMrWP StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 epdvRE StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
           scope="row"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 bnqisW"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 bnqisW"
-            >
-              alpha
-            </span>
-          </div>
+            alpha
+          </span>
         </th>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 OMrWP StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 epdvRE StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
           scope="row"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 bnqisW"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 bnqisW"
-            >
-              beta
-            </span>
-          </div>
+            beta
+          </span>
         </th>
       </tr>
     </tbody>
@@ -979,7 +1649,7 @@ exports[`DataTable empty 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c3 {
   height: 100%;
 }
 
@@ -993,12 +1663,6 @@ exports[`DataTable empty 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -1017,7 +1681,7 @@ exports[`DataTable empty 1`] = `
       className=""
     >
       <tr
-        className="c3 c4"
+        className="c3"
       />
     </thead>
     <tbody
@@ -1041,90 +1705,32 @@ exports[`DataTable footer 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -1133,18 +1739,16 @@ exports[`DataTable footer 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-}
-
-.c11 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
   vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   height: 100%;
 }
 
@@ -1154,12 +1758,12 @@ exports[`DataTable footer 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c10 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -1169,84 +1773,6 @@ exports[`DataTable footer 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -1265,35 +1791,27 @@ exports[`DataTable footer 1`] = `
       className=""
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -1304,65 +1822,49 @@ exports[`DataTable footer 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </td>
       </tr>
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              2
-            </span>
-          </div>
+            2
+          </span>
         </td>
       </tr>
     </tbody>
@@ -1370,28 +1872,20 @@ exports[`DataTable footer 1`] = `
       className=""
     >
       <tr
-        className="c4"
+        className="c3"
       >
         <td
-          className="c11"
+          className="c8"
         >
-          <div
-            className="c12"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              Total
-            </span>
-          </div>
+            Total
+          </span>
         </td>
         <td
-          className="c11"
-        >
-          <div
-            className="c12"
-          />
-        </td>
+          className="c8"
+        />
       </tr>
     </tfoot>
   </table>
@@ -1399,7 +1893,7 @@ exports[`DataTable footer 1`] = `
 `;
 
 exports[`DataTable groupBy 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1410,25 +1904,25 @@ exports[`DataTable groupBy 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1443,81 +1937,7 @@ exports[`DataTable groupBy 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding: 6px;
-}
-
-.c12 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1536,53 +1956,9 @@ exports[`DataTable groupBy 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 6px;
-}
-
-.c9 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  vertical-align: bottom;
-}
-
-.c13 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
 }
 
 .c5 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-}
-
-.c4 {
-  height: 100%;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1606,10 +1982,82 @@ exports[`DataTable groupBy 1`] = `
   flex: 1 0 auto;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding: 0px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  padding: 0px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -1618,84 +2066,14 @@ exports[`DataTable groupBy 1`] = `
   height: 100%;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
+  .c6 {
     padding: 3px;
   }
 }
@@ -1716,22 +2094,22 @@ exports[`DataTable groupBy 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c4"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c7"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -1745,32 +2123,24 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="c9"
+          class="c8"
           scope="col"
         >
-          <div
-            class="c10"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          class="c9"
+          class="c8"
           scope="col"
         >
-          <div
-            class="c10"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -1778,22 +2148,22 @@ exports[`DataTable groupBy 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c10"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c12"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -1807,44 +2177,36 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="c13"
+          class="c11"
           scope="row"
         >
-          <div
-            class="c14"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          class="c13"
-        >
-          <div
-            class="c14"
-          />
-        </td>
+          class="c11"
+        />
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c10"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c12"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -1858,26 +2220,18 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="c13"
+          class="c11"
           scope="row"
         >
-          <div
-            class="c14"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          class="c13"
-        >
-          <div
-            class="c14"
-          />
-        </td>
+          class="c11"
+        />
       </tr>
     </tbody>
   </table>
@@ -1895,10 +2249,10 @@ exports[`DataTable groupBy 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fPACPW"
         >
           <button
             aria-label="expand"
@@ -1906,7 +2260,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 gBySSp"
+              class="StyledBox-sc-13pk1d4-0 czUhVo"
             >
               <svg
                 aria-label="FormDown"
@@ -1924,32 +2278,24 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 bWDcKd"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 bWDcKd"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -1957,10 +2303,10 @@ exports[`DataTable groupBy 2`] = `
       class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
         >
           <button
             aria-label="expand"
@@ -1986,32 +2332,24 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
           scope="row"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
-          />
-        </td>
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+        />
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
         >
           <button
             aria-label="expand"
@@ -2037,26 +2375,18 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
           scope="row"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
-          />
-        </td>
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+        />
       </tr>
     </tbody>
   </table>
@@ -2064,7 +2394,7 @@ exports[`DataTable groupBy 2`] = `
 `;
 
 exports[`DataTable groupBy expand 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2075,25 +2405,25 @@ exports[`DataTable groupBy expand 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2108,81 +2438,7 @@ exports[`DataTable groupBy expand 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding: 6px;
-}
-
-.c15 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2201,165 +2457,9 @@ exports[`DataTable groupBy expand 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 6px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding: 6px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  background: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 6px;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c9 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  vertical-align: bottom;
-}
-
-.c13 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
 }
 
 .c5 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-}
-
-.c17 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: bottom;
-}
-
-.c4 {
-  height: 100%;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2383,10 +2483,96 @@ exports[`DataTable groupBy expand 1`] = `
   flex: 1 0 auto;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding: 0px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  padding: 0px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: bottom;
+  text-align: start;
+  padding: 0px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -2395,173 +2581,15 @@ exports[`DataTable groupBy expand 1`] = `
   height: 100%;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c16 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c16 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c16 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c18 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c18 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c18 {
-    padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c19 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c19 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c19 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c19 {
-    padding-top: 3px;
-    padding-bottom: 3px;
   }
 }
 
@@ -2581,22 +2609,22 @@ exports[`DataTable groupBy expand 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c4"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c7"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -2610,32 +2638,24 @@ exports[`DataTable groupBy expand 1`] = `
           </button>
         </td>
         <th
-          class="c9"
+          class="c8"
           scope="col"
         >
-          <div
-            class="c10"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          class="c9"
+          class="c8"
           scope="col"
         >
-          <div
-            class="c10"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -2643,22 +2663,22 @@ exports[`DataTable groupBy expand 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c10"
         >
           <button
             aria-label="collapse"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c12"
+              class="c6"
             >
               <svg
                 aria-label="FormUp"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -2673,118 +2693,94 @@ exports[`DataTable groupBy expand 1`] = `
           </button>
         </td>
         <th
-          class="c13"
+          class="c11"
           scope="row"
         >
-          <div
-            class="c14"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          class="c13"
-        >
-          <div
-            class="c14"
-          />
-        </td>
+          class="c11"
+        />
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c10"
         >
           <div
-            class="c15"
+            class="c6"
           />
         </td>
         <td
-          class="c13"
+          class="c11"
         >
-          <div
-            class="c16"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </td>
         <td
-          class="c13"
+          class="c11"
         >
-          <div
-            class="c16"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              1.1
-            </span>
-          </div>
+            1.1
+          </span>
         </td>
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c17"
+          class="c12"
         >
           <div
-            class="c18"
+            class="c6"
           />
         </td>
         <td
-          class="c13"
+          class="c11"
         >
-          <div
-            class="c19"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </td>
         <td
-          class="c13"
+          class="c11"
         >
-          <div
-            class="c19"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              1.2
-            </span>
-          </div>
+            1.2
+          </span>
         </td>
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c10"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c15"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -2798,26 +2794,18 @@ exports[`DataTable groupBy expand 1`] = `
           </button>
         </td>
         <th
-          class="c13"
+          class="c11"
           scope="row"
         >
-          <div
-            class="c16"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          class="c13"
-        >
-          <div
-            class="c16"
-          />
-        </td>
+          class="c11"
+        />
       </tr>
     </tbody>
   </table>
@@ -2831,7 +2819,7 @@ Array [
 `;
 
 exports[`DataTable groupBy property 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2842,25 +2830,25 @@ exports[`DataTable groupBy property 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2875,81 +2863,7 @@ exports[`DataTable groupBy property 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding: 6px;
-}
-
-.c12 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2968,53 +2882,9 @@ exports[`DataTable groupBy property 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 6px;
-}
-
-.c9 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  vertical-align: bottom;
-}
-
-.c13 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
 }
 
 .c5 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-}
-
-.c4 {
-  height: 100%;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3038,10 +2908,82 @@ exports[`DataTable groupBy property 1`] = `
   flex: 1 0 auto;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding: 0px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  padding: 0px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -3050,84 +2992,14 @@ exports[`DataTable groupBy property 1`] = `
   height: 100%;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
+  .c6 {
     padding: 3px;
   }
 }
@@ -3148,22 +3020,22 @@ exports[`DataTable groupBy property 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c4"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c7"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -3177,32 +3049,24 @@ exports[`DataTable groupBy property 1`] = `
           </button>
         </td>
         <th
-          class="c9"
+          class="c8"
           scope="col"
         >
-          <div
-            class="c10"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          class="c9"
+          class="c8"
           scope="col"
         >
-          <div
-            class="c10"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -3210,22 +3074,22 @@ exports[`DataTable groupBy property 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c10"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c12"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -3239,44 +3103,36 @@ exports[`DataTable groupBy property 1`] = `
           </button>
         </td>
         <th
-          class="c13"
+          class="c11"
           scope="row"
         >
-          <div
-            class="c14"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          class="c13"
-        >
-          <div
-            class="c14"
-          />
-        </td>
+          class="c11"
+        />
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <td
-          class="c5"
+          class="c10"
         >
           <button
             aria-label="expand"
-            class="c6"
+            class="c5"
             type="button"
           >
             <div
-              class="c12"
+              class="c6"
             >
               <svg
                 aria-label="FormDown"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -3290,26 +3146,18 @@ exports[`DataTable groupBy property 1`] = `
           </button>
         </td>
         <th
-          class="c13"
+          class="c11"
           scope="row"
         >
-          <div
-            class="c14"
+          <span
+            class="c9"
           >
-            <span
-              class="c11"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          class="c13"
-        >
-          <div
-            class="c14"
-          />
-        </td>
+          class="c11"
+        />
       </tr>
     </tbody>
   </table>
@@ -3327,10 +3175,10 @@ exports[`DataTable groupBy property 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fPACPW"
         >
           <button
             aria-label="expand"
@@ -3338,7 +3186,7 @@ exports[`DataTable groupBy property 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 gBySSp"
+              class="StyledBox-sc-13pk1d4-0 czUhVo"
             >
               <svg
                 aria-label="FormDown"
@@ -3356,32 +3204,24 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 bWDcKd"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 bWDcKd"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -3389,10 +3229,10 @@ exports[`DataTable groupBy property 2`] = `
       class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
         >
           <button
             aria-label="expand"
@@ -3418,32 +3258,24 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
           scope="row"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
-          />
-        </td>
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+        />
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
         >
           <button
             aria-label="expand"
@@ -3469,33 +3301,25 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
           scope="row"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
-          />
-        </td>
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+        />
       </tr>
     </tbody>
   </table>
 </div>
 `;
 
-exports[`DataTable paths 1`] = `
+exports[`DataTable pad 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3506,64 +3330,41 @@ exports[`DataTable paths 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
   height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding: 12px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding: 12px;
 }
 
 .c8 {
@@ -3572,9 +3373,56 @@ exports[`DataTable paths 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding: 12px;
 }
 
-.c4 {
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c3 {
   height: 100%;
 }
 
@@ -3584,12 +3432,12 @@ exports[`DataTable paths 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c10 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -3599,58 +3447,6 @@ exports[`DataTable paths 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -3669,35 +3465,27 @@ exports[`DataTable paths 1`] = `
       className=""
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -3708,65 +3496,442 @@ exports[`DataTable paths 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </td>
       </tr>
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
         <td
           className="c8"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c7"
-            >
-              2
-            </span>
-          </div>
+            Total
+          </span>
+        </td>
+        <td
+          className="c8"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c9"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c11"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c11"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c10"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c10"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c12"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c12"
+        />
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`DataTable paths 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
         </td>
       </tr>
     </tbody>
@@ -3785,75 +3950,35 @@ exports[`DataTable primaryKey 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c8 {
+.c6 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   height: 100%;
 }
 
@@ -3863,12 +3988,12 @@ exports[`DataTable primaryKey 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c10 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -3878,58 +4003,6 @@ exports[`DataTable primaryKey 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -3948,35 +4021,27 @@ exports[`DataTable primaryKey 1`] = `
       className=""
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              A
-            </span>
-          </div>
+            A
+          </span>
         </th>
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
-          <div
-            className="c6"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              B
-            </span>
-          </div>
+            B
+          </span>
         </th>
       </tr>
     </thead>
@@ -3987,65 +4052,49 @@ exports[`DataTable primaryKey 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </td>
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </th>
       </tr>
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <td
-          className="c8"
+          className="c6"
         >
-          <div
-            className="c9"
+          <span
+            className="c5"
           >
-            <span
-              className="c7"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </td>
         <th
-          className="c8"
+          className="c6"
           scope="row"
         >
-          <div
-            className="c9"
+          <span
+            className="c7"
           >
-            <span
-              className="c10"
-            >
-              2
-            </span>
-          </div>
+            2
+          </span>
         </th>
       </tr>
     </tbody>
@@ -4064,7 +4113,7 @@ exports[`DataTable resizeable 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4073,68 +4122,20 @@ exports[`DataTable resizeable 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 100%;
   height: 100%;
   padding: 0px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4152,27 +4153,46 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
-.c5 {
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c11 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   height: 100%;
 }
 
@@ -4182,18 +4202,18 @@ exports[`DataTable resizeable 1`] = `
   width: inherit;
 }
 
-.c8 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c9 {
+.c8 {
   cursor: col-resize;
 }
 
@@ -4203,84 +4223,14 @@ exports[`DataTable resizeable 1`] = `
   height: 100%;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    border-right: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
+  .c5 {
     padding: 0px;
   }
 }
@@ -4301,48 +4251,56 @@ exports[`DataTable resizeable 1`] = `
       className=""
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
           <div
-            className="c6"
+            className="c5"
+            style={
+              Object {
+                "position": "relative",
+              }
+            }
           >
+            <span
+              className="c6"
+            >
+              A
+            </span>
             <div
               className="c7"
-            >
-              <span
-                className="c8"
-              >
-                A
-              </span>
-            </div>
+            />
             <div
-              className="c9 c10"
+              className="c8 c9"
               onMouseDown={[Function]}
             />
           </div>
         </th>
         <th
-          className="c5"
+          className="c4"
           scope="col"
         >
           <div
-            className="c6"
+            className="c5"
+            style={
+              Object {
+                "position": "relative",
+              }
+            }
           >
+            <span
+              className="c6"
+            >
+              B
+            </span>
             <div
               className="c7"
-            >
-              <span
-                className="c8"
-              >
-                B
-              </span>
-            </div>
+            />
             <div
-              className="c9 c10"
+              className="c8 c9"
               onMouseDown={[Function]}
             />
           </div>
@@ -4356,65 +4314,49 @@ exports[`DataTable resizeable 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c11"
+          className="c10"
           scope="row"
         >
-          <div
-            className="c12"
+          <span
+            className="c11"
           >
-            <span
-              className="c13"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          className="c11"
+          className="c10"
         >
-          <div
-            className="c12"
+          <span
+            className="c6"
           >
-            <span
-              className="c8"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </td>
       </tr>
       <tr
-        className="c3 c4"
+        className="c3"
       >
         <th
-          className="c11"
+          className="c10"
           scope="row"
         >
-          <div
-            className="c12"
+          <span
+            className="c11"
           >
-            <span
-              className="c13"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          className="c11"
+          className="c10"
         >
-          <div
-            className="c12"
+          <span
+            className="c6"
           >
-            <span
-              className="c8"
-            >
-              2
-            </span>
-          </div>
+            2
+          </span>
         </td>
       </tr>
     </tbody>
@@ -4422,8 +4364,219 @@ exports[`DataTable resizeable 1`] = `
 </div>
 `;
 
+exports[`DataTable rowProps 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  background: #6FFFB0;
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding: 48px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1 c2"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          className="c4"
+          scope="col"
+        >
+          <span
+            className="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <tr
+        className="c3"
+      >
+        <th
+          className="c6"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          className="c6"
+        >
+          <span
+            className="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="c3"
+      >
+        <th
+          className="c8"
+          scope="row"
+        >
+          <span
+            className="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          className="c8"
+        >
+          <span
+            className="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c3"
+      >
+        <td
+          className="c9"
+        >
+          <span
+            className="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          className="c9"
+        />
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
 exports[`DataTable search 1`] = `
-.c10 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4434,25 +4587,25 @@ exports[`DataTable search 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4467,31 +4620,7 @@ exports[`DataTable search 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4504,22 +4633,16 @@ exports[`DataTable search 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 100%;
   height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   padding: 0px;
 }
 
-.c7 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4528,65 +4651,27 @@ exports[`DataTable search 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
-.c5 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  vertical-align: bottom;
-}
-
-.c11 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-}
-
-.c4 {
-  height: 100%;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c13 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4606,10 +4691,63 @@ exports[`DataTable search 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c13 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c10 {
+  cursor: col-resize;
 }
 
 .c1 {
@@ -4618,67 +4756,15 @@ exports[`DataTable search 1`] = `
   height: 100%;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c5 {
     padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding-top: 3px;
-    padding-bottom: 3px;
   }
 }
 
@@ -4698,32 +4784,31 @@ exports[`DataTable search 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c5"
+          class="c4"
           scope="col"
         >
           <div
-            class="c6"
+            class="c5"
           >
+            <span
+              class="c6"
+            >
+              A
+            </span>
             <div
               class="c7"
-            >
-              <span
-                class="c8"
-              >
-                A
-              </span>
-            </div>
+            />
             <button
               aria-label="focus-search-a"
-              class="c9"
+              class="c8"
               type="button"
             >
               <svg
                 aria-label="FormSearch"
-                class="c10"
+                class="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -4734,6 +4819,12 @@ exports[`DataTable search 1`] = `
                 />
               </svg>
             </button>
+            <div
+              class="c7"
+            />
+            <div
+              class="c10 c11"
+            />
           </div>
         </th>
       </tr>
@@ -4742,57 +4833,45 @@ exports[`DataTable search 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
-          <div
-            class="c12"
+          <span
+            class="c13"
           >
-            <span
-              class="c13"
-            >
-              Alpha
-            </span>
-          </div>
+            Alpha
+          </span>
         </th>
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
-          <div
-            class="c12"
+          <span
+            class="c13"
           >
-            <span
-              class="c13"
-            >
-              beta
-            </span>
-          </div>
+            beta
+          </span>
         </th>
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
-          <div
-            class="c12"
+          <span
+            class="c13"
           >
-            <span
-              class="c13"
-            >
-              []
-            </span>
-          </div>
+            []
+          </span>
         </th>
       </tr>
     </tbody>
@@ -4811,24 +4890,23 @@ exports[`DataTable search 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kmpGNZ"
+            class="StyledBox-sc-13pk1d4-0 dRXgUe"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 hCCKYp"
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 fWSbXS"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+            />
             .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4955,6 +5033,12 @@ exports[`DataTable search 2`] = `
                 />
               </svg>
             </button>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+            />
+            <div
+              class="Resizer__ResizerBox-sc-8l808w-0 hnOyDj StyledBox-sc-13pk1d4-0 keXFvx"
+            />
           </div>
         </th>
       </tr>
@@ -4962,90 +5046,41 @@ exports[`DataTable search 2`] = `
     <tbody
       class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
     >
-      .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      .c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
+.c0 {
+  height: 100%;
+}
+
 .c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-}
-
-.c1 {
-  height: 100%;
-}
-
-.c4 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c0:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
 <tr
-        class="c0 c1"
+        class="c0"
       >
         <th
-          class="c2"
+          class="c1"
           scope="row"
         >
-          <div
-            class="c3"
+          <span
+            class="c2"
           >
-            <span
-              class="c4"
-            >
-              []
-            </span>
-          </div>
+            []
+          </span>
         </th>
       </tr>
     </tbody>
@@ -5064,31 +5099,7 @@ exports[`DataTable sort 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c8 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5101,62 +5112,15 @@ exports[`DataTable sort 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  width: 100%;
-  height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 0px;
 }
 
 .c5 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  vertical-align: bottom;
-}
-
-.c10 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-}
-
-.c4 {
-  height: 100%;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c7 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5172,25 +5136,56 @@ exports[`DataTable sort 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  width: 100%;
   height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c6 {
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
   height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c1 {
@@ -5199,55 +5194,15 @@ exports[`DataTable sort 1`] = `
   height: 100%;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+  .c6 {
+    padding: 0px;
   }
 }
 
@@ -5267,21 +5222,21 @@ exports[`DataTable sort 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c5"
+          class="c4"
           scope="col"
         >
           <button
-            class="c6 c7"
+            class="c5"
             type="button"
           >
             <div
-              class="c8"
+              class="c6"
             >
               <span
-                class="c9"
+                class="c7"
               >
                 A
               </span>
@@ -5289,18 +5244,18 @@ exports[`DataTable sort 1`] = `
           </button>
         </th>
         <th
-          class="c5"
+          class="c4"
           scope="col"
         >
           <button
-            class="c6 c7"
+            class="c5"
             type="button"
           >
             <div
-              class="c8"
+              class="c6"
             >
               <span
-                class="c9"
+                class="c7"
               >
                 B
               </span>
@@ -5313,96 +5268,72 @@ exports[`DataTable sort 1`] = `
       class=""
     >
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c10"
+          class="c8"
           scope="row"
         >
-          <div
-            class="c11"
+          <span
+            class="c9"
           >
-            <span
-              class="c12"
-            >
-              zero
-            </span>
-          </div>
+            zero
+          </span>
         </th>
         <td
-          class="c10"
+          class="c8"
         >
-          <div
-            class="c11"
+          <span
+            class="c7"
           >
-            <span
-              class="c9"
-            >
-              0
-            </span>
-          </div>
+            0
+          </span>
         </td>
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c10"
+          class="c8"
           scope="row"
         >
-          <div
-            class="c11"
+          <span
+            class="c9"
           >
-            <span
-              class="c12"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          class="c10"
+          class="c8"
         >
-          <div
-            class="c11"
+          <span
+            class="c7"
           >
-            <span
-              class="c9"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </td>
       </tr>
       <tr
-        class="c3 c4"
+        class="c3"
       >
         <th
-          class="c10"
+          class="c8"
           scope="row"
         >
-          <div
-            class="c11"
+          <span
+            class="c9"
           >
-            <span
-              class="c12"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          class="c10"
+          class="c8"
         >
-          <div
-            class="c11"
+          <span
+            class="c7"
           >
-            <span
-              class="c9"
-            >
-              2
-            </span>
-          </div>
+            2
+          </span>
         </td>
       </tr>
     </tbody>
@@ -5421,18 +5352,18 @@ exports[`DataTable sort 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 gSzznR"
+            class="StyledButton-sc-323bzc-0 iTBSwl"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 grnSyn"
+              class="StyledBox-sc-13pk1d4-0 hfsUvK"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -5499,15 +5430,15 @@ exports[`DataTable sort 2`] = `
           </button>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jfWrbb"
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 gSzznR"
+            class="StyledButton-sc-323bzc-0 iTBSwl"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 grnSyn"
+              class="StyledBox-sc-13pk1d4-0 hfsUvK"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -5522,243 +5453,129 @@ exports[`DataTable sort 2`] = `
     <tbody
       class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
     >
-      .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      .c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
+.c0 {
   height: 100%;
 }
 
-.c1 {
-  height: 100%;
-}
-
-.c5 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c4 {
+.c2 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c0:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
 <tr
-        class="c0 c1"
+        class="c0"
       >
         <th
-          class="c2"
+          class="c1"
           scope="row"
         >
-          <div
-            class="c3"
+          <span
+            class="c2"
           >
-            <span
-              class="c4"
-            >
-              one
-            </span>
-          </div>
+            one
+          </span>
         </th>
         <td
-          class="c2"
+          class="c1"
         >
-          <div
+          <span
             class="c3"
           >
-            <span
-              class="c5"
-            >
-              1
-            </span>
-          </div>
+            1
+          </span>
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 dBBtdf StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
           scope="row"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 bnqisW"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 bnqisW"
-            >
-              two
-            </span>
-          </div>
+            two
+          </span>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 gUuXiG"
+          <span
+            class="StyledText-sc-1sadyjn-0 fWSbXS"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
-            >
-              2
-            </span>
-          </div>
+            2
+          </span>
         </td>
       </tr>
-      .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      .c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
+.c0 {
   height: 100%;
 }
 
-.c1 {
-  height: 100%;
-}
-
-.c5 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c4 {
+.c2 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c0:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
 <tr
-        class="c0 c1"
+        class="c0"
       >
         <th
-          class="c2"
+          class="c1"
           scope="row"
         >
-          <div
-            class="c3"
+          <span
+            class="c2"
           >
-            <span
-              class="c4"
-            >
-              zero
-            </span>
-          </div>
+            zero
+          </span>
         </th>
         <td
-          class="c2"
+          class="c1"
         >
-          <div
+          <span
             class="c3"
           >
-            <span
-              class="c5"
-            >
-              0
-            </span>
-          </div>
+            0
+          </span>
         </td>
       </tr>
     </tbody>

@@ -191,12 +191,15 @@ delete groupColumns[1].footer;
 var GroupedDataTable = function GroupedDataTable() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(DataTable, {
     columns: groupColumns,
     data: DATA,
     groupBy: "location",
     sortable: true
-  }));
+  })));
 };
 
 var ControlledGroupedDataTable =
@@ -351,6 +354,37 @@ var ControlledDataTable = function ControlledDataTable() {
   })));
 };
 
+var StyledDataTable = function StyledDataTable() {
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(DataTable, {
+    columns: columns,
+    data: DATA,
+    step: 10,
+    pad: {
+      horizontal: 'large',
+      vertical: 'medium'
+    },
+    background: {
+      header: 'dark-3',
+      body: ['light-1', 'light-3'],
+      footer: 'dark-3'
+    },
+    border: {
+      body: 'bottom'
+    },
+    rowProps: {
+      Eric: {
+        background: 'accent-2',
+        pad: 'large'
+      }
+    }
+  })));
+};
+
 storiesOf('DataTable', module).add('Simple', function () {
   return React.createElement(SimpleDataTable, null);
 }).add('Clickable', function () {
@@ -367,4 +401,6 @@ storiesOf('DataTable', module).add('Simple', function () {
   return React.createElement(ServedDataTable, null);
 }).add('Controlled', function () {
   return React.createElement(ControlledDataTable, null);
+}).add('Styled', function () {
+  return React.createElement(StyledDataTable, null);
 });

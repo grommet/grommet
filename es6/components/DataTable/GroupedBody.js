@@ -7,14 +7,17 @@ import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 export var GroupedBody = function GroupedBody(_ref) {
-  var columns = _ref.columns,
+  var background = _ref.background,
+      border = _ref.border,
+      columns = _ref.columns,
       groupBy = _ref.groupBy,
       groups = _ref.groups,
       groupState = _ref.groupState,
+      pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
       onToggle = _ref.onToggle,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "groupBy", "groups", "groupState", "primaryProperty", "onToggle", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "primaryProperty", "onToggle", "size"]);
 
   return React.createElement(StyledDataTableBody, _extends({
     size: size
@@ -31,9 +34,12 @@ export var GroupedBody = function GroupedBody(_ref) {
     }), columns.map(function (column) {
       return React.createElement(Cell, {
         key: column.property,
+        background: background,
+        border: border,
         context: expanded ? 'groupHeader' : 'body',
         column: column,
         datum: group.datum,
+        pad: pad,
         scope: column.property === groupBy ? 'row' : undefined
       });
     })) : null;
@@ -51,9 +57,12 @@ export var GroupedBody = function GroupedBody(_ref) {
         }), columns.map(function (column) {
           return React.createElement(Cell, {
             key: column.property,
+            background: background,
+            border: border,
             context: context,
             column: column,
             datum: datum,
+            pad: pad,
             scope: column.primary ? 'row' : undefined
           });
         }));

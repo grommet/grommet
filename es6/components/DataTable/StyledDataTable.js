@@ -25,7 +25,7 @@ var StyledDataTableRow = styled(TableRow).withConfig({
 }, function (props) {
   return props.onClick && "\n    cursor: pointer;\n  ";
 }, function (props) {
-  return !props.active && hoverStyle;
+  return props.onClickRow && !props.active && hoverStyle;
 }, function (props) {
   return props.active && hoverStyle;
 });

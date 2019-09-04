@@ -28,10 +28,18 @@ var sizeStyle = (0, _styledComponents.css)(["width:", ";max-width:", ";overflow:
 var StyledTableCell = _styledComponents["default"].td.withConfig({
   displayName: "StyledTable__StyledTableCell",
   componentId: "sc-1m3u5g-0"
-})(["margin:0;padding:0;font-weight:inherit;text-align:inherit;height:100%;", " ", " ", ""], function (props) {
+})(["margin:0;padding:0;font-weight:inherit;text-align:inherit;height:100%;", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return props.size && sizeStyle;
 }, function (props) {
   return props.verticalAlign && "vertical-align: " + props.verticalAlign + ";";
+}, function (props) {
+  return props.align && "text-align: " + props.align + ";";
+}, function (props) {
+  return props.background && (0, _utils.backgroundStyle)(props.background, props.theme);
+}, function (props) {
+  return props.border && (0, _utils.borderStyle)(props.border, props.responsive, props.theme);
+}, function (props) {
+  return props.pad && (0, _utils.edgeStyle)('padding', props.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.tableContextTheme && props.tableContextTheme.extend;
 });

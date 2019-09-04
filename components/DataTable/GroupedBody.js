@@ -18,14 +18,17 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var GroupedBody = function GroupedBody(_ref) {
-  var columns = _ref.columns,
+  var background = _ref.background,
+      border = _ref.border,
+      columns = _ref.columns,
       groupBy = _ref.groupBy,
       groups = _ref.groups,
       groupState = _ref.groupState,
+      pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
       onToggle = _ref.onToggle,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "groupBy", "groups", "groupState", "primaryProperty", "onToggle", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "primaryProperty", "onToggle", "size"]);
 
   return _react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     size: size
@@ -42,9 +45,12 @@ var GroupedBody = function GroupedBody(_ref) {
     }), columns.map(function (column) {
       return _react["default"].createElement(_Cell.Cell, {
         key: column.property,
+        background: background,
+        border: border,
         context: expanded ? 'groupHeader' : 'body',
         column: column,
         datum: group.datum,
+        pad: pad,
         scope: column.property === groupBy ? 'row' : undefined
       });
     })) : null;
@@ -62,9 +68,12 @@ var GroupedBody = function GroupedBody(_ref) {
         }), columns.map(function (column) {
           return _react["default"].createElement(_Cell.Cell, {
             key: column.property,
+            background: background,
+            border: border,
             context: context,
             column: column,
             datum: datum,
+            pad: pad,
             scope: column.primary ? 'row' : undefined
           });
         }));

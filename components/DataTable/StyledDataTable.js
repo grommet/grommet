@@ -41,7 +41,7 @@ var StyledDataTableRow = (0, _styledComponents["default"])(_TableRow.TableRow).w
 }, function (props) {
   return props.onClick && "\n    cursor: pointer;\n  ";
 }, function (props) {
-  return !props.active && hoverStyle;
+  return props.onClickRow && !props.active && hoverStyle;
 }, function (props) {
   return props.active && hoverStyle;
 });

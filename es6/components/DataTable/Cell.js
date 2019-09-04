@@ -8,26 +8,33 @@ import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 import { datumValue } from './buildState';
 
+var normalizeProp = function normalizeProp(name, rowProp, prop) {
+  if (rowProp && rowProp[name]) return rowProp[name];
+  return prop;
+};
+
 var Cell = function Cell(_ref) {
-  var _ref$column = _ref.column,
+  var background = _ref.background,
+      border = _ref.border,
+      _ref$column = _ref.column,
       align = _ref$column.align,
       property = _ref$column.property,
       render = _ref$column.render,
       context = _ref.context,
       datum = _ref.datum,
+      index = _ref.index,
+      pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
+      rowProp = _ref.rowProp,
       scope = _ref.scope,
       theme = _ref.theme;
+  var value = datumValue(datum, property);
   var content;
 
   if (render) {
     content = render(datum);
-  } else {
-    var value = datumValue(datum, property);
-
-    if (value !== undefined) {
-      content = value;
-    }
+  } else if (value !== undefined) {
+    content = value;
   }
 
   if (typeof content === 'string' || typeof content === 'number') {
@@ -38,7 +45,10 @@ var Cell = function Cell(_ref) {
   return React.createElement(TableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
-    align: align
+    align: align,
+    background: normalizeProp('background', rowProp, Array.isArray(background) ? background[index % background.length] : background),
+    border: normalizeProp('border', rowProp, border),
+    pad: normalizeProp('pad', rowProp, pad)
   }), content);
 };
 

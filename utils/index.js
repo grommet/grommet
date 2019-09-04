@@ -16,6 +16,13 @@ Object.keys(_background).forEach(function (key) {
   exports[key] = _background[key];
 });
 
+var _border = require("./border");
+
+Object.keys(_border).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _border[key];
+});
+
 var _colors = require("./colors");
 
 Object.keys(_colors).forEach(function (key) {

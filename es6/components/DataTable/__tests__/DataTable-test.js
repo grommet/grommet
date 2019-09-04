@@ -258,6 +258,133 @@ describe('DataTable', function () {
     }));
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('background', function () {
+    var component = renderer.create(React.createElement(Grommet, null, ['accent-1', ['accent-1', 'accent-2'], {
+      header: 'accent-1',
+      body: 'accent-2',
+      footer: 'accent-3'
+    }].map(function (background) {
+      return React.createElement(DataTable, {
+        key: JSON.stringify(background),
+        columns: [{
+          property: 'a',
+          header: 'A',
+          footer: 'Total'
+        }, {
+          property: 'b',
+          header: 'B'
+        }],
+        data: [{
+          a: 'one',
+          b: 1
+        }, {
+          a: 'two',
+          b: 2
+        }],
+        background: background
+      });
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('border', function () {
+    var component = renderer.create(React.createElement(Grommet, null, [true, 'top', {
+      color: 'accent-1',
+      side: 'top',
+      size: 'small'
+    }, {
+      header: 'top',
+      body: {
+        color: 'accent-1',
+        side: 'top',
+        size: 'small'
+      }
+    }].map(function (border) {
+      return React.createElement(DataTable, {
+        key: JSON.stringify(border),
+        columns: [{
+          property: 'a',
+          header: 'A',
+          footer: 'Total'
+        }, {
+          property: 'b',
+          header: 'B'
+        }],
+        data: [{
+          a: 'one',
+          b: 1
+        }, {
+          a: 'two',
+          b: 2
+        }],
+        border: border
+      });
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('pad', function () {
+    var component = renderer.create(React.createElement(Grommet, null, ['small', {
+      vertical: 'small',
+      horizontal: 'medium'
+    }, {
+      header: 'small',
+      body: {
+        vertical: 'small',
+        horizontal: 'medium'
+      }
+    }].map(function (pad) {
+      return React.createElement(DataTable, {
+        key: JSON.stringify(pad),
+        columns: [{
+          property: 'a',
+          header: 'A',
+          footer: 'Total'
+        }, {
+          property: 'b',
+          header: 'B'
+        }],
+        data: [{
+          a: 'one',
+          b: 1
+        }, {
+          a: 'two',
+          b: 2
+        }],
+        pad: pad
+      });
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('rowProps', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A',
+        footer: 'Total'
+      }, {
+        property: 'b',
+        header: 'B'
+      }],
+      data: [{
+        a: 'one',
+        b: 1
+      }, {
+        a: 'two',
+        b: 2
+      }],
+      rowProps: {
+        one: {
+          background: 'accent-1',
+          border: 'bottom',
+          pad: 'large'
+        }
+      }
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('groupBy property', function () {
     var _render5 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
       columns: [{
