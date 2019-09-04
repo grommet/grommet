@@ -285,4 +285,114 @@ describe('DataTable', function () {
     }));
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('groupBy property', function () {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A'
+      }, {
+        property: 'b',
+        header: 'B'
+      }],
+      data: [{
+        a: 'one',
+        b: 1.1
+      }, {
+        a: 'one',
+        b: 1.2
+      }, {
+        a: 'two',
+        b: 2.1
+      }, {
+        a: 'two',
+        b: 2.2
+      }],
+      groupBy: {
+        property: 'a'
+      }
+    }))),
+        container = _render5.container,
+        getByText = _render5.getByText;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var headerCell = getByText('A');
+
+    _react2.fireEvent.click(headerCell, {});
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('groupBy expand', function () {
+    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A'
+      }, {
+        property: 'b',
+        header: 'B'
+      }],
+      data: [{
+        a: 'one',
+        b: 1.1
+      }, {
+        a: 'one',
+        b: 1.2
+      }, {
+        a: 'two',
+        b: 2.1
+      }, {
+        a: 'two',
+        b: 2.2
+      }],
+      primaryKey: "b",
+      groupBy: {
+        property: 'a',
+        expand: ['one']
+      }
+    }))),
+        container = _render6.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('groupBy onExpand', function () {
+    var onExpand = jest.fn(function (groupState) {
+      return groupState;
+    });
+
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A'
+      }, {
+        property: 'b',
+        header: 'B'
+      }],
+      data: [{
+        a: 'one',
+        b: 1.1
+      }, {
+        a: 'one',
+        b: 1.2
+      }, {
+        a: 'two',
+        b: 2.1
+      }, {
+        a: 'two',
+        b: 2.2
+      }],
+      primaryKey: "b",
+      groupBy: {
+        property: 'a',
+        onExpand: onExpand
+      }
+    }))),
+        getAllByLabelText = _render7.getAllByLabelText;
+
+    var expandButtons = getAllByLabelText('expand');
+
+    _react2.fireEvent.click(expandButtons[1], {});
+
+    expect(onExpand).toBeCalled();
+    expect(onExpand.mock.results[0].value).toEqual(['one']);
+    expect(onExpand.mock.results[0].value).toMatchSnapshot();
+  });
 });

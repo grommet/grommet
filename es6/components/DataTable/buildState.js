@@ -176,13 +176,15 @@ var groupData = function groupData(nextProps, prevState, nextState) {
   var data = nextState.data;
   var groups;
   var groupState;
+  var expandedState;
 
   if (groupBy) {
     groups = [];
     groupState = {};
     var groupMap = {};
     data.forEach(function (datum) {
-      var groupValue = datumValue(datum, groupBy);
+      var groupByProperty = groupBy.property ? groupBy.property : groupBy;
+      var groupValue = datumValue(datum, groupByProperty);
 
       if (!groupMap[groupValue]) {
         var group = {
@@ -190,10 +192,19 @@ var groupData = function groupData(nextProps, prevState, nextState) {
           datum: {},
           key: groupValue
         };
-        group.datum[groupBy] = groupValue;
+        group.datum[groupByProperty] = groupValue;
         groups.push(group);
+
+        if (groupBy.expand) {
+          expandedState = groupBy.expand.some(function (key) {
+            return key === groupValue;
+          });
+        } else {
+          expandedState = prevState.groupState && prevState.groupState[groupValue] ? prevState.groupState[groupValue].expanded : false;
+        }
+
         groupState[groupValue] = {
-          expanded: prevState.groupState && prevState.groupState[groupValue] ? prevState.groupState[groupValue].expanded : false
+          expanded: expandedState
         };
         groupMap[groupValue] = group;
       }

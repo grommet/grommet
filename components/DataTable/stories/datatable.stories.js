@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -8,7 +8,13 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -201,6 +207,54 @@ var GroupedDataTable = function GroupedDataTable() {
   }));
 };
 
+var ControlledGroupedDataTable =
+/*#__PURE__*/
+function (_Component) {
+  _inheritsLoose(ControlledGroupedDataTable, _Component);
+
+  function ControlledGroupedDataTable() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      expandedGroups: [DATA[2].location]
+    });
+
+    return _this;
+  }
+
+  var _proto = ControlledGroupedDataTable.prototype;
+
+  _proto.render = function render() {
+    var _this2 = this;
+
+    var expandedGroups = this.state.expandedGroups;
+    return _react["default"].createElement(_grommet.Grommet, {
+      theme: _themes.grommet
+    }, _react["default"].createElement(_grommet.DataTable, {
+      columns: groupColumns,
+      data: DATA,
+      groupBy: {
+        property: 'location',
+        expand: expandedGroups,
+        onExpand: function onExpand(groupState) {
+          return _this2.setState({
+            expandedGroups: groupState
+          });
+        }
+      },
+      sortable: true
+    }));
+  };
+
+  return ControlledGroupedDataTable;
+}(_react.Component);
+
 var ServedDataTable = function ServedDataTable() {
   var _React$useState = _react["default"].useState(DATA),
       data2 = _React$useState[0],
@@ -315,6 +369,8 @@ var ControlledDataTable = function ControlledDataTable() {
   return _react["default"].createElement(TunableDataTable, null);
 }).add('Grouped', function () {
   return _react["default"].createElement(GroupedDataTable, null);
+}).add('Controlled grouped', function () {
+  return _react["default"].createElement(ControlledGroupedDataTable, null);
 }).add('Served', function () {
   return _react["default"].createElement(ServedDataTable, null);
 }).add('Controlled', function () {

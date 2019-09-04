@@ -74,6 +74,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "onToggleGroup", function (groupValue) {
       return function () {
         var groupState = _this.state.groupState;
+        var groupBy = _this.props.groupBy;
 
         var nextGroupState = _extends({}, groupState);
 
@@ -84,11 +85,19 @@ function (_Component) {
         _this.setState({
           groupState: nextGroupState
         });
+
+        if (groupBy.onExpand) {
+          var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
+            return nextGroupState[k].expanded;
+          });
+          groupBy.onExpand(expandedKeys);
+        }
       };
     });
 
     _defineProperty(_assertThisInitialized(_this), "onToggleGroups", function () {
       var groupState = _this.state.groupState;
+      var groupBy = _this.props.groupBy;
       var expanded = Object.keys(groupState).filter(function (k) {
         return !groupState[k].expanded;
       }).length === 0;
@@ -102,6 +111,13 @@ function (_Component) {
       _this.setState({
         groupState: nextGroupState
       });
+
+      if (groupBy.onExpand) {
+        var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
+          return nextGroupState[k].expanded;
+        });
+        groupBy.onExpand(expandedKeys);
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "onResize", function (property) {
@@ -173,7 +189,7 @@ function (_Component) {
       onToggle: this.onToggleGroups
     }), groups ? React.createElement(GroupedBody, {
       columns: columns,
-      groupBy: groupBy,
+      groupBy: groupBy.property ? groupBy.property : groupBy,
       groups: groups,
       groupState: groupState,
       primaryProperty: primaryProperty,
