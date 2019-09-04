@@ -5,7 +5,6 @@ import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 
@@ -13,26 +12,28 @@ import { Cell } from './Cell';
 import { StyledDataTableFooter } from './StyledDataTable';
 
 const Footer = ({
+  background,
+  border,
   columns,
   footerValues,
   groups,
+  pad,
   primaryProperty,
   theme,
   ...rest
 }) => (
   <StyledDataTableFooter {...rest}>
     <TableRow>
-      {groups && (
-        <TableCell size="xxsmall" plain verticalAlign="top">
-          <Box {...{ ...theme.table.footer, ...theme.dataTable.footer }} />
-        </TableCell>
-      )}
+      {groups && <TableCell plain verticalAlign="top" />}
       {columns.map(column => (
         <Cell
           key={column.property}
+          background={background}
+          border={border}
           context="footer"
           column={column}
           datum={footerValues}
+          pad={pad}
           primaryProperty={primaryProperty}
         />
       ))}

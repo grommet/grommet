@@ -205,6 +205,104 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('background', () => {
+    const component = renderer.create(
+      <Grommet>
+        {[
+          'accent-1',
+          ['accent-1', 'accent-2'],
+          { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
+        ].map(background => (
+          <DataTable
+            key={JSON.stringify(background)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            background={background}
+          />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('border', () => {
+    const component = renderer.create(
+      <Grommet>
+        {[
+          true,
+          'top',
+          { color: 'accent-1', side: 'top', size: 'small' },
+          {
+            header: 'top',
+            body: { color: 'accent-1', side: 'top', size: 'small' },
+          },
+        ].map(border => (
+          <DataTable
+            key={JSON.stringify(border)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            border={border}
+          />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('pad', () => {
+    const component = renderer.create(
+      <Grommet>
+        {[
+          'small',
+          { vertical: 'small', horizontal: 'medium' },
+          {
+            header: 'small',
+            body: { vertical: 'small', horizontal: 'medium' },
+          },
+        ].map(pad => (
+          <DataTable
+            key={JSON.stringify(pad)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            pad={pad}
+          />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('rowProps', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          rowProps={{
+            one: { background: 'accent-1', border: 'bottom', pad: 'large' },
+          }}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('groupBy property', () => {
     const { container, getByText } = render(
       <Grommet>

@@ -2,6 +2,50 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
+const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
+const parts = ['header', 'body', 'footer'];
+
+const padShape = {};
+sides.forEach(side => {
+  padShape[side] = PropTypes.oneOf(sizes);
+});
+parts.forEach(part => {
+  padShape[part] = {};
+  sides.forEach(side => {
+    padShape[part][side] = PropTypes.oneOf(sizes);
+  });
+});
+
+const backgroundShape = {};
+parts.forEach(part => {
+  backgroundShape[part] = PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]);
+});
+
+const borderTypes = [
+  PropTypes.bool,
+  PropTypes.oneOf(sides),
+  PropTypes.shape({
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        dark: PropTypes.string,
+        light: PropTypes.string,
+      }),
+    ]),
+    side: PropTypes.oneOf(sides),
+    size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
+  }),
+];
+
+const borderShape = {};
+parts.forEach(part => {
+  borderShape[part] = PropTypes.oneOfType(borderTypes);
+});
+
 export const doc = DataTable => {
   const DocumentedDataTable = describe(DataTable)
     .availableAt(getAvailableAtBadge('DataTable'))
@@ -14,6 +58,21 @@ export const doc = DataTable => {
 
   DocumentedDataTable.propTypes = {
     ...genericProps,
+    background: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.shape(backgroundShape),
+    ]).description(
+      `Cell background. You can set the background per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.`,
+    ),
+    border: PropTypes.oneOfType([
+      ...borderTypes,
+      PropTypes.shape(borderShape),
+    ]).description(
+      `Cell border. You can set the border per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.`,
+    ),
     columns: PropTypes.arrayOf(
       PropTypes.shape({
         align: PropTypes.oneOf(['center', 'start', 'end']),
@@ -90,6 +149,14 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
     ),
+    pad: PropTypes.oneOfType([
+      PropTypes.oneOf(sizes),
+      PropTypes.string,
+      PropTypes.shape(padShape),
+    ]).description(
+      `Cell padding. You can set the padding per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.`,
+    ),
     primaryKey: PropTypes.string.description(
       `When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
@@ -98,6 +165,13 @@ export const doc = DataTable => {
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',
+    ),
+    rowProps: PropTypes.shape({}).description(
+      `Row specific background, border, and pad, keyed by primary key value.
+      For example:
+      { "primary-key-value": { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on DataTable.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),

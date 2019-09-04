@@ -182,7 +182,14 @@ delete groupColumns[1].footer;
 
 const GroupedDataTable = () => (
   <Grommet theme={grommet}>
-    <DataTable columns={groupColumns} data={DATA} groupBy="location" sortable />
+    <Box align="center" pad="large">
+      <DataTable
+        columns={groupColumns}
+        data={DATA}
+        groupBy="location"
+        sortable
+      />
+    </Box>
   </Grommet>
 );
 
@@ -301,6 +308,26 @@ const ControlledDataTable = () => {
   );
 };
 
+const StyledDataTable = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={10}
+        pad={{ horizontal: 'large', vertical: 'medium' }}
+        background={{
+          header: 'dark-3',
+          body: ['light-1', 'light-3'],
+          footer: 'dark-3',
+        }}
+        border={{ body: 'bottom' }}
+        rowProps={{ Eric: { background: 'accent-2', pad: 'large' } }}
+      />
+    </Box>
+  </Grommet>
+);
+
 storiesOf('DataTable', module)
   .add('Simple', () => <SimpleDataTable />)
   .add('Clickable', () => <ClickableDataTable />)
@@ -309,4 +336,5 @@ storiesOf('DataTable', module)
   .add('Grouped', () => <GroupedDataTable />)
   .add('Controlled grouped', () => <ControlledGroupedDataTable />)
   .add('Served', () => <ServedDataTable />)
-  .add('Controlled', () => <ControlledDataTable />);
+  .add('Controlled', () => <ControlledDataTable />)
+  .add('Styled', () => <StyledDataTable />);
