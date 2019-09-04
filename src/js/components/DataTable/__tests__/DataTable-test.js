@@ -204,4 +204,80 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('groupBy property', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy={{ property: 'a' }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('groupBy expand', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          primaryKey="b"
+          groupBy={{ property: 'a', expand: ['one'] }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('groupBy onExpand', () => {
+    const onExpand = jest.fn(groupState => groupState);
+    const { getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          primaryKey="b"
+          groupBy={{ property: 'a', onExpand }}
+        />
+      </Grommet>,
+    );
+
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
+
+    expect(onExpand).toBeCalled();
+    expect(onExpand.mock.results[0].value).toEqual(['one']);
+    expect(onExpand.mock.results[0].value).toMatchSnapshot();
+  });
 });
