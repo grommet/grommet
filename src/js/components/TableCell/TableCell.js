@@ -45,11 +45,13 @@ const TableCell = ({
         background: background || mergedProps.background || undefined,
         border: border || mergedProps.border || undefined,
         pad: pad || mergedProps.pad || undefined,
+        verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined,
       };
       delete mergedProps.align;
       delete mergedProps.background;
       delete mergedProps.border;
       delete mergedProps.pad;
+      delete mergedProps.verticalAlign;
 
       return (
         <StyledTableCell
@@ -59,10 +61,6 @@ const TableCell = ({
           colSpan={colSpan}
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
-          verticalAlign={
-            verticalAlign ||
-            (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
-          }
           {...(plain ? mergedProps : {})}
           {...cellProps}
         >
