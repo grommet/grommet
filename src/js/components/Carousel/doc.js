@@ -70,6 +70,6 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined,
   },
-  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
   ...themeDocUtils.iconColor,
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

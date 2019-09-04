@@ -211,6 +211,6 @@ export const themeDoc = {
     description: 'Any additional style for the day of Calendar.',
     type: 'string | (props) => {}',
   },
-  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
   ...themeDocUtils.iconColor,
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };
