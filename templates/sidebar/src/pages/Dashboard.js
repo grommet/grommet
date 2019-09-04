@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Heading, Markdown, Paragraph, RoutedAnchor } from "grommet";
-
-import { Gremlin } from "../components";
+import { Box, Heading, Markdown, Paragraph } from 'grommet';
+import RoutedAnchor from '../components/RoutedAnchor';
+import { Gremlin } from '../components';
 
 export const Dashboard = () => (
-  <Box align="center" pad={{ top: "large", horizontal: "small" }} fill>
+  <Box align="center" pad={{ top: 'large', horizontal: 'small' }} fill>
     <Box flex align="center" overflow="auto">
       <Heading textAlign="center" level="2">
         Grommet Pattern #2

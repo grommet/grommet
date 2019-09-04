@@ -1,7 +1,7 @@
 {
   "name": "dashboard-template",
   "version": "1.0.0",
-  "description": "ferret landing page",
+  "description": "Pattern for dashboard",
   "keywords": [],
   "license": "Apache-2.0",
   "main": "index.js",

@@ -1,7 +1,7 @@
 {
   "name": "cards-pattern",
   "version": "1.0.0",
-  "description": "Patterns for cards",
+  "description": "Pattern for cards",
   "keywords": [],
   "license": "Apache-2.0",
   "main": "index.js",

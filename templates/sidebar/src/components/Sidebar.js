@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { matchPath } from "react-router-dom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { matchPath } from 'react-router-dom';
 
-import { Box, RoutedButton, Text } from "grommet";
+import { Box, Text } from 'grommet';
 
-import { MenuButton, UserMenu } from "./";
+import RoutedButton from './RoutedButton';
+import { MenuButton, UserMenu } from './';
 
 export class Sidebar extends Component {
   static contextTypes = {
-    router: PropTypes.object
+    router: PropTypes.object,
   };
 
   render() {
@@ -27,8 +28,8 @@ export class Sidebar extends Component {
           hoverIndicator="dark-4"
           active={
             !!matchPath(router.route.location.pathname, {
-              path: "/",
-              exact: true
+              path: '/',
+              exact: true,
             })
           }
         >
@@ -36,7 +37,7 @@ export class Sidebar extends Component {
             flex={false}
             align="center"
             gap="xsmall"
-            pad={{ vertical: "small" }}
+            pad={{ vertical: 'small' }}
           >
             {appIcon}
             <Text size="xsmall">{appName}</Text>

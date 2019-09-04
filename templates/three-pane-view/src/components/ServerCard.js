@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Box, Text, RoutedButton } from "grommet";
+import { Box, Text } from "grommet";
+import RoutedButton from "./RoutedButton";
 import { Star } from "grommet-icons";
 
 import { StatusBadge } from ".";
