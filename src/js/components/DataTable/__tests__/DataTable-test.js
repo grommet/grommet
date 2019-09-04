@@ -204,4 +204,178 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('background', () => {
+    const component = renderer.create(
+      <Grommet>
+        {[
+          'accent-1',
+          ['accent-1', 'accent-2'],
+          { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
+        ].map(background => (
+          <DataTable
+            key={JSON.stringify(background)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            background={background}
+          />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('border', () => {
+    const component = renderer.create(
+      <Grommet>
+        {[
+          true,
+          'top',
+          { color: 'accent-1', side: 'top', size: 'small' },
+          {
+            header: 'top',
+            body: { color: 'accent-1', side: 'top', size: 'small' },
+          },
+        ].map(border => (
+          <DataTable
+            key={JSON.stringify(border)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            border={border}
+          />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('pad', () => {
+    const component = renderer.create(
+      <Grommet>
+        {[
+          'small',
+          { vertical: 'small', horizontal: 'medium' },
+          {
+            header: 'small',
+            body: { vertical: 'small', horizontal: 'medium' },
+          },
+        ].map(pad => (
+          <DataTable
+            key={JSON.stringify(pad)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            pad={pad}
+          />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('rowProps', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          rowProps={{
+            one: { background: 'accent-1', border: 'bottom', pad: 'large' },
+          }}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('groupBy property', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy={{ property: 'a' }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('groupBy expand', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          primaryKey="b"
+          groupBy={{ property: 'a', expand: ['one'] }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('groupBy onExpand', () => {
+    const onExpand = jest.fn(groupState => groupState);
+    const { getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          primaryKey="b"
+          groupBy={{ property: 'a', onExpand }}
+        />
+      </Grommet>,
+    );
+
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
+
+    expect(onExpand).toBeCalled();
+    expect(onExpand.mock.results[0].value).toEqual(['one']);
+    expect(onExpand.mock.results[0].value).toMatchSnapshot();
+  });
 });
