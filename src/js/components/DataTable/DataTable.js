@@ -47,16 +47,24 @@ class DataTable extends Component {
 
   onToggleGroup = groupValue => () => {
     const { groupState } = this.state;
+    const { groupBy } = this.props;
     const nextGroupState = { ...groupState };
     nextGroupState[groupValue] = {
       ...nextGroupState[groupValue],
       expanded: !nextGroupState[groupValue].expanded,
     };
     this.setState({ groupState: nextGroupState });
+    if (groupBy.onExpand) {
+      const expandedKeys = Object.keys(nextGroupState).filter(
+        k => nextGroupState[k].expanded,
+      );
+      groupBy.onExpand(expandedKeys);
+    }
   };
 
   onToggleGroups = () => {
     const { groupState } = this.state;
+    const { groupBy } = this.props;
     const expanded =
       Object.keys(groupState).filter(k => !groupState[k].expanded).length === 0;
     const nextGroupState = {};
@@ -64,6 +72,12 @@ class DataTable extends Component {
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     this.setState({ groupState: nextGroupState });
+    if (groupBy.onExpand) {
+      const expandedKeys = Object.keys(nextGroupState).filter(
+        k => nextGroupState[k].expanded,
+      );
+      groupBy.onExpand(expandedKeys);
+    }
   };
 
   onResize = property => width => {
@@ -125,7 +139,7 @@ class DataTable extends Component {
         {groups ? (
           <GroupedBody
             columns={columns}
-            groupBy={groupBy}
+            groupBy={groupBy.property ? groupBy.property : groupBy}
             groups={groups}
             groupState={groupState}
             primaryProperty={primaryProperty}
