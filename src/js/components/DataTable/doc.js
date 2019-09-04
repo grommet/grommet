@@ -158,7 +158,9 @@ export const doc = DataTable => {
     rowProps: PropTypes.shape({}).description(
       `Row specific background, border, and pad, keyed by primary key value.
       For example:
-      { "primary-key-value": { background: ..., border: ..., pad: ... }}.`,
+      { "primary-key-value": { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on DataTable.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),

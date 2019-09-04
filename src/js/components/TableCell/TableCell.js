@@ -66,7 +66,7 @@ const TableCell = ({
           {...(plain ? mergedProps : {})}
           {...cellProps}
         >
-          {plain ? (
+          {plain || !Object.keys(mergedProps).length ? (
             children
           ) : (
             <Box {...mergedProps} align={align}>

@@ -173,23 +173,6 @@ exports[`TableCell plain renders 1`] = `
 `;
 
 exports[`TableCell renders 1`] = `
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -204,7 +187,7 @@ exports[`TableCell renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -217,7 +200,7 @@ exports[`TableCell renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -251,18 +234,6 @@ exports[`TableCell renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -283,11 +254,7 @@ exports[`TableCell renders 1`] = `
       >
         <td
           className="c3"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
       </tr>
     </thead>
     <tbody
@@ -297,12 +264,8 @@ exports[`TableCell renders 1`] = `
         className="c2"
       >
         <td
-          className="c5"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+          className="c4"
+        />
       </tr>
     </tbody>
     <tfoot
@@ -312,12 +275,8 @@ exports[`TableCell renders 1`] = `
         className="c2"
       >
         <td
-          className="c6"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+          className="c5"
+        />
       </tr>
     </tfoot>
   </table>
@@ -325,23 +284,6 @@ exports[`TableCell renders 1`] = `
 `;
 
 exports[`TableCell scope renders 1`] = `
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -356,7 +298,7 @@ exports[`TableCell scope renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -389,18 +331,6 @@ exports[`TableCell scope renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -422,11 +352,7 @@ exports[`TableCell scope renders 1`] = `
         <th
           className="c3"
           scope="col"
-        >
-          <div
-            className="c4"
-          />
-        </th>
+        />
       </tr>
     </thead>
     <tbody
@@ -436,13 +362,9 @@ exports[`TableCell scope renders 1`] = `
         className="c2"
       >
         <th
-          className="c5"
+          className="c4"
           scope="row"
-        >
-          <div
-            className="c4"
-          />
-        </th>
+        />
       </tr>
     </tbody>
   </table>
@@ -450,23 +372,6 @@ exports[`TableCell scope renders 1`] = `
 `;
 
 exports[`TableCell size renders 1`] = `
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -483,7 +388,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -499,7 +404,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -515,7 +420,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c6 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -531,7 +436,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -547,7 +452,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -563,7 +468,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -579,7 +484,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -595,7 +500,7 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -631,18 +536,6 @@ exports[`TableCell size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -664,63 +557,39 @@ exports[`TableCell size renders 1`] = `
         <td
           className="c3"
           size="xsmall"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
+        <td
+          className="c4"
+          size="small"
+        />
         <td
           className="c5"
-          size="small"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+          size="medium"
+        />
         <td
           className="c6"
-          size="medium"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+          size="large"
+        />
+      </tr>
+    </tbody>
+  </table>
+  <table
+    className="c1"
+  >
+    <tbody
+      className=""
+    >
+      <tr
+        className="c2"
+      >
         <td
           className="c7"
-          size="large"
-        >
-          <div
-            className="c4"
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table
-    className="c1"
-  >
-    <tbody
-      className=""
-    >
-      <tr
-        className="c2"
-      >
-        <td
-          className="c8"
           size="1/2"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
         <td
-          className="c8"
+          className="c7"
           size="2/4"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
       </tr>
     </tbody>
   </table>
@@ -733,22 +602,14 @@ exports[`TableCell size renders 1`] = `
       <tr
         className="c2"
       >
+        <td
+          className="c8"
+          size="1/3"
+        />
         <td
           className="c9"
-          size="1/3"
-        >
-          <div
-            className="c4"
-          />
-        </td>
-        <td
-          className="c10"
           size="2/3"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
       </tr>
     </tbody>
   </table>
@@ -762,21 +623,13 @@ exports[`TableCell size renders 1`] = `
         className="c2"
       >
         <td
-          className="c11"
+          className="c10"
           size="1/4"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
         <td
-          className="c12"
+          className="c11"
           size="3/4"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
       </tr>
     </tbody>
   </table>
@@ -784,23 +637,6 @@ exports[`TableCell size renders 1`] = `
 `;
 
 exports[`TableCell verticalAlign renders 1`] = `
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -816,7 +652,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c5 {
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -831,7 +667,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -866,18 +702,6 @@ exports[`TableCell verticalAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -898,25 +722,13 @@ exports[`TableCell verticalAlign renders 1`] = `
       >
         <td
           className="c3"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
+        <td
+          className="c4"
+        />
         <td
           className="c5"
-        >
-          <div
-            className="c4"
-          />
-        </td>
-        <td
-          className="c6"
-        >
-          <div
-            className="c4"
-          />
-        </td>
+        />
       </tr>
     </thead>
   </table>
