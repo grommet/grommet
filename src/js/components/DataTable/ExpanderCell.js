@@ -16,15 +16,13 @@ const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
     content = <ExpandIcon color={normalizeColor('border', theme)} />;
   }
-  const normalizedThemeProps = {
-    ...theme.table[context],
-    ...theme.dataTable[context],
-  };
-  delete normalizedThemeProps.background;
-  delete normalizedThemeProps.border;
-  delete normalizedThemeProps.pad;
   content = (
-    <Box {...normalizedThemeProps} {...rest} align="center" pad="xsmall">
+    <Box
+      {...{ ...theme.table[context], ...theme.dataTable[context] }}
+      {...rest}
+      align="center"
+      pad="xsmall"
+    >
       {content}
     </Box>
   );
@@ -46,7 +44,6 @@ const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
       size="xxsmall"
       plain
       verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
-      pad="none"
     >
       {content}
     </TableCell>

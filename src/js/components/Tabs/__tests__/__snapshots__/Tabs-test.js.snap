@@ -1445,10 +1445,10 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kyubVG"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gFggBx"
+            class="StyledText-sc-1sadyjn-0 eotKNI"
           >
             Tab 2
           </span>
@@ -1502,10 +1502,10 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kyubVG"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gFggBx"
+            class="StyledText-sc-1sadyjn-0 eotKNI"
           >
             Tab 2
           </span>

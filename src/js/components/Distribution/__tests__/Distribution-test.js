@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render } from '@testing-library/react';
+import { render } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
 import { Distribution } from '..';

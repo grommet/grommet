@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { getByText } from '@testing-library/dom';
+import { cleanup, fireEvent, render } from 'react-testing-library';
+import { getByText } from 'dom-testing-library';
 import { Grommet } from '../../Grommet';
 import { Keyboard } from '../../Keyboard';
 

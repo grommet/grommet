@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render } from 'react-testing-library';
 
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
 
@@ -9,10 +10,20 @@ import { Grommet } from '..';
 import { Heading } from '../../Heading';
 import { AnnounceContext, ResponsiveContext } from '../../../contexts';
 
-const TestAnnouncer = ({ announce }) => {
-  React.useEffect(() => announce('hello', 'assertive'));
-  return <div>hi</div>;
-};
+class TestAnnouncer extends Component {
+  static propTypes = {
+    announce: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
+    const { announce } = this.props;
+    announce('hello', 'assertive');
+  }
+
+  render() {
+    return <div>hi</div>;
+  }
+}
 
 const customBreakpointsTheme = {
   global: {
@@ -35,15 +46,26 @@ const customBreakpointsTheme = {
   },
 };
 
-const SSRTester = ({ ua }) => {
-  return (
-    <Grommet theme={customBreakpointsTheme} userAgent={ua}>
-      <ResponsiveContext.Consumer>
-        {size => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
-      </ResponsiveContext.Consumer>
-    </Grommet>
-  );
-};
+// eslint-disable-next-line react/no-multi-comp
+class SSRTester extends Component {
+  sizes = [];
+
+  render() {
+    const { ua } = this.props;
+    return (
+      <Grommet theme={customBreakpointsTheme} userAgent={ua}>
+        <ResponsiveContext.Consumer>
+          {size => {
+            this.sizes.push(size);
+            return this.sizes.map(s => (
+              <Heading key={s}>{`Received size ${s} for ${ua}`}</Heading>
+            ));
+          }}
+        </ResponsiveContext.Consumer>
+      </Grommet>
+    );
+  }
+}
 
 describe('Grommet', () => {
   afterEach(cleanup);

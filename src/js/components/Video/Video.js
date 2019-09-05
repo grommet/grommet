@@ -63,6 +63,10 @@ const videoEvents = [
 ];
 
 class Video extends Component {
+  static defaultProps = {
+    controls: 'over',
+  };
+
   static getDerivedStateFromProps(nextProps, prevState) {
     const { forwardRef } = nextProps;
     const { videoRef } = prevState;
@@ -505,10 +509,6 @@ class Video extends Component {
     );
   }
 }
-
-Video.defaultProps = {
-  controls: 'over',
-};
 
 Object.setPrototypeOf(Video.defaultProps, defaultProps);
 

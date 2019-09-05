@@ -48,7 +48,6 @@ const Select = props => {
     messages,
     onChange,
     onClose,
-    onMore,
     onOpen,
     open: propOpen,
     options,
@@ -171,13 +170,7 @@ const Select = props => {
         margin={margin}
         onOpen={onRequestOpen}
         onClose={onRequestClose}
-        dropContent={
-          <SelectContainer
-            {...props}
-            onChange={onSelectChange}
-            onMore={onMore}
-          />
-        }
+        dropContent={<SelectContainer {...props} onChange={onSelectChange} />}
         plain={plain}
         dropProps={{ ...dropProps }}
       >

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RangeInput } from 'grommet';
@@ -7,19 +7,22 @@ import { deepMerge } from 'grommet/utils';
 
 import { Volume } from 'grommet-icons';
 
-const SimpleRangeInput = () => {
-  const [value, setValue] = React.useState(5);
+class SimpleRangeInput extends Component {
+  state = { value: 5 };
 
-  const onChange = event => setValue(event.target.value);
+  onChange = event => this.setState({ value: event.target.value });
 
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <RangeInput value={value} onChange={onChange} />
-      </Box>
-    </Grommet>
-  );
-};
+  render() {
+    const { value } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Box align="center" pad="large">
+          <RangeInput value={value} onChange={this.onChange} />
+        </Box>
+      </Grommet>
+    );
+  }
+}
 
 const customThemeRangeInput = deepMerge(grommet, {
   global: {
@@ -37,28 +40,31 @@ const customThemeRangeInput = deepMerge(grommet, {
   },
 });
 
-const CustomRangeInput = () => {
-  const [value, setValue] = React.useState(0.4);
+class CustomRangeInput extends Component {
+  state = { value: 0.4 };
 
-  const onChange = event => setValue(event.target.value);
+  onChange = event => this.setState({ value: event.target.value });
 
-  return (
-    <Grommet theme={customThemeRangeInput}>
-      <Box direction="row" align="center" pad="large" gap="small">
-        <Volume color="neutral-2" />
-        <Box align="center" width="small">
-          <RangeInput
-            min={0}
-            max={1}
-            step={0.1}
-            value={value}
-            onChange={onChange}
-          />
+  render() {
+    const { value } = this.state;
+    return (
+      <Grommet theme={customThemeRangeInput}>
+        <Box direction="row" align="center" pad="large" gap="small">
+          <Volume color="neutral-2" />
+          <Box align="center" width="small">
+            <RangeInput
+              min={0}
+              max={1}
+              step={0.1}
+              value={value}
+              onChange={this.onChange}
+            />
+          </Box>
         </Box>
-      </Box>
-    </Grommet>
-  );
-};
+      </Grommet>
+    );
+  }
+}
 
 storiesOf('RangeInput', module)
   .add('Simple', () => <SimpleRangeInput />)

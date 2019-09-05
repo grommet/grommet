@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';

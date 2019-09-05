@@ -2,7 +2,6 @@ import * as React from "react";
 import { 
   A11yTitleType,
   AlignSelfType, 
-  BackgroundType,
   ColorType,
   GapType, 
   GridAreaType, 
@@ -22,7 +21,7 @@ export interface ButtonProps {
   fill?: "horizontal" | "vertical" | boolean;
   focusIndicator?: boolean;
   gap?: GapType;
-  hoverIndicator?: BackgroundType | boolean;
+  hoverIndicator?: boolean | string | "background" | {background?: boolean | string};
   href?: string;
   target?: "_self" | "_blank" | "_parent" | "_top";
   icon?: JSX.Element;

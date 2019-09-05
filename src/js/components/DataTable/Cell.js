@@ -9,30 +9,22 @@ import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 import { datumValue } from './buildState';
 
-const normalizeProp = (name, rowProp, prop) => {
-  if (rowProp && rowProp[name]) return rowProp[name];
-  return prop;
-};
-
 const Cell = ({
-  background,
-  border,
   column: { align, property, render },
   context,
   datum,
-  index,
-  pad,
   primaryProperty,
-  rowProp,
   scope,
   theme,
 }) => {
-  const value = datumValue(datum, property);
   let content;
   if (render) {
     content = render(datum);
-  } else if (value !== undefined) {
-    content = value;
+  } else {
+    const value = datumValue(datum, property);
+    if (value !== undefined) {
+      content = value;
+    }
   }
 
   if (typeof content === 'string' || typeof content === 'number') {
@@ -42,20 +34,7 @@ const Cell = ({
   }
 
   return (
-    <TableCell
-      scope={scope}
-      {...theme.dataTable[context]}
-      align={align}
-      background={normalizeProp(
-        'background',
-        rowProp,
-        Array.isArray(background)
-          ? background[index % background.length]
-          : background,
-      )}
-      border={normalizeProp('border', rowProp, border)}
-      pad={normalizeProp('pad', rowProp, pad)}
-    >
+    <TableCell scope={scope} {...theme.dataTable[context]} align={align}>
       {content}
     </TableCell>
   );

@@ -38,8 +38,6 @@ export {isObject, deepFreeze, deepMerge, removeUndefined};
 export type A11yTitleType = string;
 export type AlignContentType = "start" | "center" | "end" | "between" | "around" | "stretch";
 export type AlignSelfType = "start" | "center" | "end" | "stretch";
-export type AnimateType = boolean;
-export type BackgroundType = string | {color?: string,dark?: boolean | string,image?: string,position?: string,opacity?: "weak" | "medium" | "strong" | number | boolean,repeat?: "no-repeat" | "repeat" | string,size?: "cover" | "contain" | string,light?: string};
 export type ColorType = string | {dark?: string,light?: string};
 export type GapType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 export type GridAreaType = string;

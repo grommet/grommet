@@ -5,13 +5,10 @@ import { findAllByType } from '../../utils';
 
 import { withFocus } from '../hocs';
 
-const TestDiv = React.forwardRef(({ focus, ...rest }, ref) => {
-  return (
-    <div ref={ref} {...rest}>
-      {focus ? 'focus' : 'no focus'}
-    </div>
-  );
-});
+const TestDiv = props => {
+  const { focus, ...rest } = props;
+  return <div {...rest}>{focus ? 'focus' : 'no focus'}</div>;
+};
 
 const Test = withFocus()(TestDiv);
 

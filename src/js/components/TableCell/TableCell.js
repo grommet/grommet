@@ -11,12 +11,8 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
 const TableCell = ({
-  align,
-  background,
-  border,
   children,
   colSpan,
-  pad,
   plain,
   scope,
   size,
@@ -34,24 +30,12 @@ const TableCell = ({
       } else {
         tableContextTheme = theme.table && theme.table.body;
       }
-      // merge tabelContextTheme and rest
-      const mergedProps = { ...tableContextTheme, ...rest };
-      Object.keys(mergedProps).forEach(key => {
-        if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
+      const boxProps = { ...rest };
+      Object.keys(boxProps).forEach(key => {
+        if (tableContextTheme[key] && boxProps[key] === undefined) {
+          delete boxProps[key];
+        }
       });
-      // split out background, border, and pad
-      const cellProps = {
-        align: align || mergedProps.align || undefined,
-        background: background || mergedProps.background || undefined,
-        border: border || mergedProps.border || undefined,
-        pad: pad || mergedProps.pad || undefined,
-        verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined,
-      };
-      delete mergedProps.align;
-      delete mergedProps.background;
-      delete mergedProps.border;
-      delete mergedProps.pad;
-      delete mergedProps.verticalAlign;
 
       return (
         <StyledTableCell
@@ -61,13 +45,16 @@ const TableCell = ({
           colSpan={colSpan}
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
-          {...(plain ? mergedProps : {})}
-          {...cellProps}
+          verticalAlign={
+            verticalAlign ||
+            (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
+          }
+          {...(plain ? rest : {})}
         >
-          {plain || !Object.keys(mergedProps).length ? (
+          {plain ? (
             children
           ) : (
-            <Box {...mergedProps} align={align}>
+            <Box {...tableContextTheme} {...boxProps}>
               {children}
             </Box>
           )}

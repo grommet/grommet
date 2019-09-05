@@ -46,8 +46,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
 
 ```
 none

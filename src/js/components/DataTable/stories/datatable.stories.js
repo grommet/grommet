@@ -182,44 +182,14 @@ delete groupColumns[1].footer;
 
 const GroupedDataTable = () => (
   <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <DataTable
-        columns={groupColumns}
-        data={DATA}
-        groupBy="location"
-        sortable
-      />
-    </Box>
+    <DataTable columns={groupColumns} data={DATA} groupBy="location" sortable />
   </Grommet>
 );
 
-class ControlledGroupedDataTable extends Component {
-  state = { expandedGroups: [DATA[2].location] };
+class ServedDataTable extends Component {
+  state = { data: DATA };
 
-  render() {
-    const { expandedGroups } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <DataTable
-          columns={groupColumns}
-          data={DATA}
-          groupBy={{
-            property: 'location',
-            expand: expandedGroups,
-            onExpand: groupState =>
-              this.setState({ expandedGroups: groupState }),
-          }}
-          sortable
-        />
-      </Grommet>
-    );
-  }
-}
-
-const ServedDataTable = () => {
-  const [data2, setData2] = React.useState(DATA);
-
-  const onSearch = search => {
+  onSearch = search => {
     let nextData;
     if (search) {
       const expressions = Object.keys(search).map(property => ({
@@ -232,101 +202,94 @@ const ServedDataTable = () => {
     } else {
       nextData = DATA;
     }
-    setData2(nextData);
+    this.setState({ data: nextData });
   };
 
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DataTable
-          columns={columns.map(column => ({
-            ...column,
-            search:
-              column.property === 'name' || column.property === 'location',
-          }))}
-          data={data2}
-          onSearch={onSearch}
-        />
-      </Box>
-    </Grommet>
-  );
-};
+  render() {
+    const { data: servedData } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Box align="center" pad="large">
+          <DataTable
+            columns={columns.map(column => ({
+              ...column,
+              search:
+                column.property === 'name' || column.property === 'location',
+            }))}
+            data={servedData}
+            onSearch={this.onSearch}
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
 
-const controlledColumns = columns.map(col => ({ ...col }));
+const controlledColumns = columns.map(col => Object.assign({}, col));
 delete controlledColumns[0].footer;
 delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
 
-const ControlledDataTable = () => {
-  const [checked, setChecked] = React.useState([]);
+class ControlledDataTable extends Component {
+  state = {
+    checked: [],
+  };
 
-  const onCheck = (event, value) => {
+  onCheck = (event, value) => {
+    const { checked } = this.state;
     if (event.target.checked) {
-      setChecked([...checked, value]);
+      checked.push(value);
+      this.setState({ checked });
     } else {
-      setChecked(checked.filter(item => item !== value));
+      this.setState({ checked: checked.filter(item => item !== value) });
     }
   };
 
-  const onCheckAll = event =>
-    setChecked(event.target.checked ? DATA.map(datum => datum.name) : []);
+  onCheckAll = event =>
+    this.setState({
+      checked: event.target.checked ? DATA.map(datum => datum.name) : [],
+    });
 
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="medium">
-        <DataTable
-          columns={[
-            {
-              property: 'checkbox',
-              render: datum => (
-                <CheckBox
-                  key={datum.name}
-                  checked={checked.indexOf(datum.name) !== -1}
-                  onChange={e => onCheck(e, datum.name)}
-                />
-              ),
-              header: (
-                <CheckBox
-                  checked={checked.length === DATA.length}
-                  indeterminate={
-                    checked.length > 0 && checked.length < DATA.length
-                  }
-                  onChange={onCheckAll}
-                />
-              ),
-              sortable: false,
-            },
-            ...controlledColumns,
-          ].map(col => ({ ...col }))}
-          data={DATA}
-          sortable
-          size="medium"
-        />
-      </Box>
-    </Grommet>
-  );
-};
+  render() {
+    const { checked } = this.state;
 
-const StyledDataTable = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <DataTable
-        columns={columns}
-        data={DATA}
-        step={10}
-        pad={{ horizontal: 'large', vertical: 'medium' }}
-        background={{
-          header: 'dark-3',
-          body: ['light-1', 'light-3'],
-          footer: 'dark-3',
-        }}
-        border={{ body: 'bottom' }}
-        rowProps={{ Eric: { background: 'accent-2', pad: 'large' } }}
-      />
-    </Box>
-  </Grommet>
-);
+    return (
+      <Grommet theme={grommet}>
+        <Box align="center" pad="medium">
+          <DataTable
+            columns={[
+              {
+                property: 'checkbox',
+                render: datum => (
+                  <CheckBox
+                    key={datum.name}
+                    checked={checked.indexOf(datum.name) !== -1}
+                    onChange={e => this.onCheck(e, datum.name)}
+                  />
+                ),
+                header: (
+                  <CheckBox
+                    checked={checked.length === DATA.length}
+                    indeterminate={
+                      checked.length > 0 && checked.length < DATA.length
+                    }
+                    onChange={this.onCheckAll}
+                  />
+                ),
+                sortable: false,
+              },
+              ...controlledColumns,
+            ].map(col => ({ ...col }))}
+            data={DATA}
+            sortable
+            size="medium"
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
 
 storiesOf('DataTable', module)
   .add('Simple', () => <SimpleDataTable />)
@@ -334,7 +297,5 @@ storiesOf('DataTable', module)
   .add('Sized', () => <SizedDataTable />)
   .add('Tunable', () => <TunableDataTable />)
   .add('Grouped', () => <GroupedDataTable />)
-  .add('Controlled grouped', () => <ControlledGroupedDataTable />)
   .add('Served', () => <ServedDataTable />)
-  .add('Controlled', () => <ControlledDataTable />)
-  .add('Styled', () => <StyledDataTable />);
+  .add('Controlled', () => <ControlledDataTable />);

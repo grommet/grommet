@@ -1,8 +1,8 @@
 import * as React from "react";
-import { AnimateType, MarginType } from "../../utils";
+import { MarginType } from "../../utils";
 
 export interface LayerProps {
-  animate?: AnimateType;
+  animate?: boolean;
   animation?: "none" | "slide" | "fadeIn" | boolean;
   full?: boolean | "vertical" | "horizontal";
   margin?: MarginType;

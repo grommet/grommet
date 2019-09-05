@@ -75,10 +75,8 @@ See the [Change Log].
 
 Grommet is produced using this great tool:
 
-- [BrowserStack] for browser emulators and simulators.
 - [Circle CI] for continuous integration.
 
-[browserstack]: https://www.browserstack.com/
 [change log]: https://github.com/grommet/grommet/wiki/Change-Log
 [circle ci]: https://circleci.com/gh/grommet/grommet/
 [contributing]: CONTRIBUTING.md

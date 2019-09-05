@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
 import { RangeSelector } from '..';

@@ -1,12 +1,12 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, AnimateType, GridAreaType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface CalendarProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  animate?: AnimateType
+  animate?: boolean;
   bounds?: string[];
   date?: string;
   dates?: (string | string[])[];
