@@ -9,14 +9,19 @@ import { withFocus, withForwardRef } from '../hocs';
 
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
+import { datumValue } from './buildState';
 
 const Body = ({
+  background,
+  border,
   columns,
   data,
   forwardRef,
   onMore,
   onClickRow,
+  pad,
   primaryProperty,
+  rowProps,
   size,
   step,
   theme,
@@ -69,40 +74,52 @@ const Body = ({
           scrollableAncestor="window"
           step={step}
         >
-          {(datum, index) => (
-            <StyledDataTableRow
-              key={datum[primaryProperty]}
-              size={size}
-              active={active >= 0 ? active === index : undefined}
-              onClick={
-                onClickRow
-                  ? event => {
-                      event.persist(); // extract from React's synthetic event pool
-                      const adjustedEvent = event;
-                      adjustedEvent.datum = datum;
-                      onClickRow(adjustedEvent);
+          {(datum, index) => {
+            const primaryValue = primaryProperty
+              ? datumValue(datum, primaryProperty)
+              : undefined;
+            return (
+              <StyledDataTableRow
+                key={primaryValue || index}
+                size={size}
+                active={active >= 0 ? active === index : undefined}
+                onClick={
+                  onClickRow
+                    ? event => {
+                        event.persist(); // extract from React's synthetic event pool
+                        const adjustedEvent = event;
+                        adjustedEvent.datum = datum;
+                        onClickRow(adjustedEvent);
+                      }
+                    : undefined
+                }
+                onMouseOver={onClickRow ? () => setActive(index) : undefined}
+                onMouseOut={onClickRow ? () => setActive(undefined) : undefined}
+                onFocus={onClickRow ? () => setActive(index) : undefined}
+                onBlur={onClickRow ? () => setActive(undefined) : undefined}
+              >
+                {columns.map(column => (
+                  <Cell
+                    key={column.property}
+                    background={background}
+                    border={border}
+                    context="body"
+                    column={column}
+                    datum={datum}
+                    index={index}
+                    pad={pad}
+                    primaryProperty={primaryProperty}
+                    rowProp={rowProps && rowProps[primaryValue]}
+                    scope={
+                      column.primary || column.property === primaryProperty
+                        ? 'row'
+                        : undefined
                     }
-                  : undefined
-              }
-              onMouseOver={onClickRow ? () => setActive(undefined) : undefined}
-              onFocus={onClickRow ? () => {} : undefined}
-            >
-              {columns.map(column => (
-                <Cell
-                  key={column.property}
-                  context="body"
-                  column={column}
-                  datum={datum}
-                  primaryProperty={primaryProperty}
-                  scope={
-                    column.primary || column.property === primaryProperty
-                      ? 'row'
-                      : undefined
-                  }
-                />
-              ))}
-            </StyledDataTableRow>
-          )}
+                  />
+                ))}
+              </StyledDataTableRow>
+            );
+          }}
         </InfiniteScroll>
       </StyledDataTableBody>
     </Keyboard>
