@@ -39,7 +39,8 @@ const WordBreak = () => (
         <Heading level={4}>{`word-break: ${value};`}</Heading>
         <Text wordBreak={value}>
           Honorificabilitudinitatibus califragilisticexpialidocious
-          Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu
+          Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu{' '}
+          {/* eslint-disable-line max-len */}
           グレートブリテンおよび北アイルランド連合王国という言葉は本当に長い言葉
         </Text>
       </Box>

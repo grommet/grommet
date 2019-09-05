@@ -252,7 +252,8 @@ class RangeSelector extends Component {
 
 let RangeSelectorDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RangeSelectorDoc = require('./doc').doc(RangeSelector);
 }
 const RangeSelectorWrapper = compose(withForwardRef)(
   RangeSelectorDoc || RangeSelector,

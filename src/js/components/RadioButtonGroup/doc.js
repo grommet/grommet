@@ -14,7 +14,8 @@ export const doc = RadioButtonGroup => {
 
   DocumentedRadioButtonGroup.propTypes = {
     name: PropTypes.string.description(
-      'The DOM name attribute value to use for the underlying <input/> elements.',
+      `The DOM name attribute value to use for the underlying <input/> 
+      elements.`,
     ).isRequired,
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks on of the radio

@@ -149,7 +149,9 @@ const Select = props => {
     inputValue = value;
   }
 
-  // const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
+  // const dark = theme.select.background
+  // ? colorIsDark(theme.select.background)
+  // : theme.dark;
   const iconColor = normalizeColor(
     theme.select.icons.color || 'control',
     theme,
@@ -236,7 +238,8 @@ Select.defaultProps = {
 
 let SelectDoc;
 if (process.env.NODE_ENV !== 'production') {
-  SelectDoc = require('./doc').doc(Select); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  SelectDoc = require('./doc').doc(Select);
 }
 const SelectWrapper = compose(
   withTheme,

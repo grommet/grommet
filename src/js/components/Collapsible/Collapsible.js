@@ -133,7 +133,8 @@ Object.setPrototypeOf(Collapsible.defaultProps, defaultProps);
 
 let CollapsibleDoc;
 if (process.env.NODE_ENV !== 'production') {
-  CollapsibleDoc = require('./doc').doc(Collapsible); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CollapsibleDoc = require('./doc').doc(Collapsible);
 }
 const CollapsibleWrapper = compose(withTheme)(CollapsibleDoc || Collapsible);
 

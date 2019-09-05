@@ -186,7 +186,8 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control. One icon per carousel image. Expects `element`.
+The icon to use on the middle navigation control. 
+      One icon per carousel image. Expects `element`.
 
 Defaults to
 

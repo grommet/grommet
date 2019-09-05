@@ -141,7 +141,8 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and/or height.
+Whether the button expands to fill all of the available width and/or 
+        height.
 
 ```
 horizontal
@@ -257,7 +258,8 @@ function
 
 Whether this is a plain button with no border or pad.
 Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as well.
+The plain button has no border and unless the icon prop exist it has no pad as 
+well.
 
 ```
 boolean
@@ -265,7 +267,8 @@ boolean
 
 **primary**
 
-Whether this is a primary button. There should be at most one per page or screen.
+Whether this is a primary button. There should be at most one per page
+         or screen.
 
 ```
 boolean
@@ -282,7 +285,8 @@ boolean
 
 **type**
 
-The type of button. Set the type to submit for the default button on forms. Defaults to `button`.
+The type of button. Set the type to submit for the default button on 
+        forms. Defaults to `button`.
 
 ```
 button
