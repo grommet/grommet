@@ -1951,6 +1951,62 @@ string",
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
   },
+  "FileInput": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=FileInput&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=fileinput&module=%2Fsrc%2FFileInput.js",
+      },
+    ],
+    "description": "A control to input one or more files.",
+    "intrinsicElement": "input",
+    "name": "FileInput",
+    "properties": Array [
+      Object {
+        "description": "The id attribute of the input.",
+        "format": "string",
+        "name": "id",
+      },
+      Object {
+        "defaultValue": Object {
+          "browse": "browse",
+          "dropPrompt": "Drop file here or",
+          "dropPromptMultiple": "Drop files here or",
+          "files": "files",
+          "remove": "remove",
+          "removeAll": "remove all",
+        },
+        "description": "Custom messages for FileInput. Used for accessibility by screen readers.",
+        "format": "{
+  browse: string,
+  dropPrompt: string,
+  dropPromptMultiple: string,
+  files: string,
+  remove: string,
+  removeAll: string
+}",
+        "name": "messages",
+      },
+      Object {
+        "description": "The name attribute of the input.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Function that will be called when one or more files are added the input.",
+        "format": "function",
+        "name": "onChange",
+      },
+    ],
+    "usage": "import { FileInput } from 'grommet';
+<FileInput id='file' name='file' />",
+  },
   "Form": [Function],
   "FormContext": Object {
     "$$typeof": Symbol(react.context),

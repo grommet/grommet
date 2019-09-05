@@ -6,6 +6,7 @@ import {
   Button,
   CheckBox,
   Grommet,
+  FileInput,
   Form,
   FormField,
   RadioButtonGroup,
@@ -17,8 +18,8 @@ import { grommet } from 'grommet/themes';
 
 const Example = () => (
   <Grommet full theme={grommet}>
-    <Box fill align="center" justify="center">
-      <Box width="medium">
+    <Box fill overflow="auto" align="center" justify="center" pad="large">
+      <Box flex={false} width="medium">
         <Form
           onReset={event => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
@@ -64,6 +65,7 @@ const Example = () => (
             min={15}
             max={75}
           />
+          <FormField label="File" name="file" component={FileInput} />
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />
