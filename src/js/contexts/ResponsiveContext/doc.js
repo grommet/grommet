@@ -28,8 +28,8 @@ export const doc = ResponsiveContext => {
 
 export const themeDoc = {
   'global.breakpoints': {
-    description: `The possible breakpoints that could affect border, direction, gap, 
-      margin, pad, and round.`,
+    description: `The possible breakpoints that could affect border, direction, 
+gap, margin, pad, and round.`,
     type: 'object',
     defaultValue: `{
     small: {

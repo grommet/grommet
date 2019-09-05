@@ -147,8 +147,8 @@ export const themeDoc = {
     defaultValue: 'rgba(0, 0, 0, 0.5)',
   },
   'layer.responsiveBreakpoint': {
-    description: `The actual breakpoint to trigger changes in the border, direction, gap,
-       margin, pad, and round.`,
+    description: `The actual breakpoint to trigger changes in the border, 
+direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
   },

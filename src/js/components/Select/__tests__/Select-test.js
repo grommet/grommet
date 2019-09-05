@@ -478,7 +478,8 @@ describe('Select', () => {
   });
 
   test(`renders styled select options combining select.options.box && 
-  select.options.container; select.options.container prioritized if conflict`, () => {
+  select.options.container; 
+  select.options.container prioritized if conflict`, () => {
     const customTheme = {
       select: {
         options: {

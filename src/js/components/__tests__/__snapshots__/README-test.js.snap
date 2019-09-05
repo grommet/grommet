@@ -1342,8 +1342,8 @@ undefined
 
 **box.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap, 
-      margin, pad, and round. Expects \`string\`.
+The actual breakpoint to trigger changes in the border, 
+    direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
 
@@ -6282,8 +6282,8 @@ undefined
 
 **heading.level**
 
-The level that impacts line height, max width, font size, weight and 
-      family of the Heading. Expects \`object\`.
+The level that impacts line height, max width, font size, 
+weight and family of the Heading. Expects \`object\`.
 
 Defaults to
 
@@ -6325,8 +6325,8 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. The actual 
-      values will be derived from global.breakpoints. Expects \`string\`.
+The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints. Expects \`string\`.
 
 Defaults to
 
@@ -6940,8 +6940,8 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap,
-       margin, pad, and round. Expects \`string\`.
+The actual breakpoint to trigger changes in the border, 
+direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
 
@@ -11725,8 +11725,8 @@ light-3
 
 **worldMap.continent.active**
 
-The size of the visual dots belonging to a continent when the continent 
-      is being hovered. Expects \`string\`.
+The size of the visual dots belonging to a continent when the
+continent is being hovered. Expects \`string\`.
 
 Defaults to
 
@@ -11736,8 +11736,8 @@ Defaults to
 
 **worldMap.continent.base**
 
-The size of the visual dots belonging to a continent that is not being
-       hovered. Expects \`string\`.
+The size of the visual dots belonging to a continent that is
+not being hovered. Expects \`string\`.
 
 Defaults to
 
@@ -11757,8 +11757,8 @@ light-4
 
 **worldMap.place.active**
 
-The size of a visual dot for an individual place in the map when it is 
-      being hovered. Expects \`string\`.
+The size of a visual dot for an individual place in the map 
+when it is being hovered. Expects \`string\`.
 
 Defaults to
 
@@ -11768,8 +11768,8 @@ Defaults to
 
 **worldMap.place.base**
 
-The size of the visual dot representing an individual place in the map
-       when it is not being hovered. Expects \`string\`.
+The size of the visual dot representing an individual place 
+in the map when it is not being hovered. Expects \`string\`.
 
 Defaults to
 

@@ -454,8 +454,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'box.responsiveBreakpoint': {
-    description: `The actual breakpoint to trigger changes in the border, direction, gap, 
-      margin, pad, and round.`,
+    description: `The actual breakpoint to trigger changes in the border, 
+    direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
   },

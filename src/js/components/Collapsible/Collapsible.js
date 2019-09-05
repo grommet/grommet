@@ -83,6 +83,7 @@ class Collapsible extends Component {
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
+            // eslint-disable-next-line max-len
             container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
             container.style[`max-${dimension}`] = open
               ? `${dimensionSize}px`

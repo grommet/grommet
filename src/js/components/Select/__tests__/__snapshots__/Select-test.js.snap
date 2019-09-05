@@ -6089,7 +6089,8 @@ exports[`Select renders styled select options backwards compatible with legacy
 `;
 
 exports[`Select renders styled select options combining select.options.box && 
-  select.options.container; select.options.container prioritized if conflict 1`] = `
+  select.options.container; 
+  select.options.container prioritized if conflict 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;

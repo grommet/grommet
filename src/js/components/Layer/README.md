@@ -224,8 +224,8 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap,
-       margin, pad, and round. Expects `string`.
+The actual breakpoint to trigger changes in the border, 
+direction, gap, margin, pad, and round. Expects `string`.
 
 Defaults to
 

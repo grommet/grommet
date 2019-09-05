@@ -32,6 +32,7 @@ const Color = () => (
   </Grommet>
 );
 
+/* eslint-disable max-len */
 const WordBreak = () => (
   <Grommet theme={grommet}>
     {wordBreakValues.map(value => (
@@ -39,14 +40,14 @@ const WordBreak = () => (
         <Heading level={4}>{`word-break: ${value};`}</Heading>
         <Text wordBreak={value}>
           Honorificabilitudinitatibus califragilisticexpialidocious
-          Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu{' '}
-          {/* eslint-disable-line max-len */}
+          Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu
           グレートブリテンおよび北アイルランド連合王国という言葉は本当に長い言葉
         </Text>
       </Box>
     ))}
   </Grommet>
 );
+/* eslint-enable max-len */
 
 storiesOf('Text', module)
   .add('All', () => <All />)
