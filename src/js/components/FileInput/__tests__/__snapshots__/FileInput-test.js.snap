@@ -59,6 +59,7 @@ exports[`FileInput accept 1`] = `
 .c3 {
   position: relative;
   display: block;
+  pointer-events: none;
 }
 
 .c6 {
@@ -121,6 +122,7 @@ exports[`FileInput accept 1`] = `
 
 <div
   class="c0"
+  tabindex="0"
 >
   <div
     class="c1"
@@ -129,6 +131,7 @@ exports[`FileInput accept 1`] = `
       accept="image/*"
       class="c2"
       name="file"
+      tabindex="-1"
       type="file"
     />
   </div>
@@ -137,7 +140,6 @@ exports[`FileInput accept 1`] = `
   >
     <div
       class="c4 c5"
-      tabindex="0"
     >
       <span
         class="c6"
@@ -214,6 +216,7 @@ exports[`FileInput basic 1`] = `
 .c3 {
   position: relative;
   display: block;
+  pointer-events: none;
 }
 
 .c6 {
@@ -276,6 +279,7 @@ exports[`FileInput basic 1`] = `
 
 <div
   class="c0"
+  tabindex="0"
 >
   <div
     class="c1"
@@ -283,6 +287,7 @@ exports[`FileInput basic 1`] = `
     <input
       class="c2"
       name="file"
+      tabindex="-1"
       type="file"
     />
   </div>
@@ -291,7 +296,6 @@ exports[`FileInput basic 1`] = `
   >
     <div
       class="c4 c5"
-      tabindex="0"
     >
       <span
         class="c6"
@@ -368,6 +372,7 @@ exports[`FileInput disabled 1`] = `
 .c3 {
   position: relative;
   display: block;
+  pointer-events: none;
 }
 
 .c6 {
@@ -430,6 +435,7 @@ exports[`FileInput disabled 1`] = `
 
 <div
   class="c0"
+  tabindex="0"
 >
   <div
     class="c1"
@@ -438,6 +444,7 @@ exports[`FileInput disabled 1`] = `
       class="c2"
       disabled=""
       name="file"
+      tabindex="-1"
       type="file"
     />
   </div>
@@ -446,7 +453,6 @@ exports[`FileInput disabled 1`] = `
   >
     <div
       class="c4 c5"
-      tabindex="0"
     >
       <span
         class="c6"
@@ -523,6 +529,7 @@ exports[`FileInput multiple 1`] = `
 .c3 {
   position: relative;
   display: block;
+  pointer-events: none;
 }
 
 .c6 {
@@ -585,6 +592,7 @@ exports[`FileInput multiple 1`] = `
 
 <div
   class="c0"
+  tabindex="0"
 >
   <div
     class="c1"
@@ -593,6 +601,7 @@ exports[`FileInput multiple 1`] = `
       class="c2"
       multiple=""
       name="file"
+      tabindex="-1"
       type="file"
     />
   </div>
@@ -601,7 +610,6 @@ exports[`FileInput multiple 1`] = `
   >
     <div
       class="c4 c5"
-      tabindex="0"
     >
       <span
         class="c6"

@@ -5,7 +5,8 @@ import { FormClose } from 'grommet-icons';
 
 import { defaultProps } from '../../default-props';
 
-import { withForwardRef } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
+import { focusStyle } from '../../utils';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -18,10 +19,12 @@ import { StyledFileInput } from './StyledFileInput';
 
 const ControlBox = styled(Box)`
   cursor: pointer;
+  ${props => props.focus && focusStyle}
 `;
 
 const FileInput = ({
   a11yTitle,
+  focus,
   forwardRef,
   messages,
   theme,
@@ -33,39 +36,49 @@ const FileInput = ({
   const internalRef = React.useRef();
 
   return (
-    <Stack guidingChild="last">
-      <StyledFileInput
-        ref={forwardRef || internalRef}
-        {...rest}
-        type="file"
-        onChange={event => {
-          event.persist();
-          const fileList = event.target.files;
-          const nextFiles = [...files];
-          for (let i = 0; i < fileList.length; i += 1) {
-            nextFiles.push(fileList[i]);
-          }
-          setFiles(nextFiles);
-          if (onChange) {
-            onChange(event);
-          }
-        }}
-      />
-      <Keyboard
-        onSpace={event => {
-          if (event.currentTarget === event.target) {
-            (forwardRef || internalRef).current.click();
-          }
-        }}
-        onEnter={event => {
-          if (event.currentTarget === event.target) {
-            (forwardRef || internalRef).current.click();
-          }
-        }}
+    <Keyboard
+      onSpace={event => {
+        if (event.currentTarget === event.target) {
+          (forwardRef || internalRef).current.click();
+        }
+      }}
+      onEnter={event => {
+        if (event.currentTarget === event.target) {
+          (forwardRef || internalRef).current.click();
+        }
+      }}
+    >
+      <Stack
+        a11yTitle={a11yTitle}
+        tabIndex={0}
+        guidingChild="last"
+        interactiveChild={files.length > 0 ? 'last' : 'first'}
+        onClick={() => (forwardRef || internalRef).current.click()}
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        onFocus={() => setHover(false)}
+        onBlur={() => setHover(false)}
       >
+        <StyledFileInput
+          ref={forwardRef || internalRef}
+          tabIndex={-1}
+          {...rest}
+          type="file"
+          onChange={event => {
+            event.persist();
+            const fileList = event.target.files;
+            const nextFiles = [...files];
+            for (let i = 0; i < fileList.length; i += 1) {
+              nextFiles.push(fileList[i]);
+            }
+            setFiles(nextFiles);
+            if (onChange) {
+              onChange(event);
+            }
+          }}
+        />
+
         <ControlBox
-          a11yTitle={a11yTitle}
-          tabIndex={0}
           border={{
             color: hover ? 'brand' : undefined,
             side: 'all',
@@ -74,11 +87,6 @@ const FileInput = ({
           }}
           align={files.length ? 'stretch' : 'center'}
           justify="center"
-          onClick={() => (forwardRef || internalRef).current.click()}
-          onMouseOver={() => setHover(true)}
-          onMouseOut={() => setHover(false)}
-          onFocus={() => setHover(true)}
-          onBlur={() => setHover(false)}
         >
           {files.length > 10 && (
             <Box direction="row" align="center" justify="between">
@@ -132,8 +140,8 @@ const FileInput = ({
             </Text>
           )}
         </ControlBox>
-      </Keyboard>
-    </Stack>
+      </Stack>
+    </Keyboard>
   );
 };
 
@@ -155,6 +163,7 @@ if (process.env.NODE_ENV !== 'production') {
   FileInputDoc = require('./doc').doc(FileInput); // eslint-disable-line global-require
 }
 const FileInputWrapper = compose(
+  withFocus(),
   withTheme,
   withForwardRef,
 )(FileInputDoc || FileInput);
