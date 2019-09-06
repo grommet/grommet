@@ -14,7 +14,8 @@ class FormFieldTextInput extends Component {
     const {
       target: { value },
     } = event;
-    const exp = new RegExp(value, 'i');
+    const escapedText = value.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+    const exp = new RegExp(escapedText, 'i');
     const suggestions = allSuggestions.filter(s => exp.test(s));
     this.setState({ value, suggestions });
   };

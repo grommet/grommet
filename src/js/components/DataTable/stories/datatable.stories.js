@@ -222,9 +222,13 @@ const ServedDataTable = () => {
   const onSearch = search => {
     let nextData;
     if (search) {
+      const escapedText = text => {
+        text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+        return new RegExp(escapedText, 'i');
+      };
       const expressions = Object.keys(search).map(property => ({
         property,
-        exp: new RegExp(search[property], 'i'),
+        exp: new RegExp(escapedText(search[property]), 'i'),
       }));
       nextData = DATA.filter(
         d => !expressions.some(e => !e.exp.test(d[e.property])),

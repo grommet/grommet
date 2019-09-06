@@ -42,7 +42,8 @@ class ObjectMultiSelect extends Component {
             }
             onClose={() => this.setState({ options: objectOptions })}
             onSearch={text => {
-              const exp = new RegExp(text, 'i');
+              const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+              const exp = new RegExp(escapedText, 'i');
               this.setState({
                 options: objectOptions.filter(o => exp.test(o.lab)),
               });

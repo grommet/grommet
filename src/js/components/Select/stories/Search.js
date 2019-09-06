@@ -35,7 +35,8 @@ class SearchSelect extends Component {
             onChange={({ option }) => this.setState({ value: option })}
             onClose={() => this.setState({ options: defaultOptions })}
             onSearch={text => {
-              const exp = new RegExp(text, 'i');
+              const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+              const exp = new RegExp(escapedText, 'i');
               this.setState({
                 options: defaultOptions.filter(o => exp.test(o)),
               });
