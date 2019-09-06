@@ -234,8 +234,8 @@ class Calendar extends Component {
           <Heading
             level={
               size === 'small'
-                ? theme.calendar.heading && theme.calendar.heading.level
-                : 3
+                ? ((theme.calendar.heading && theme.calendar.heading.level) || 4)
+                : ((theme.calendar.heading && theme.calendar.heading.level) || 4) - 1
             }
             size={size}
             margin="none"
