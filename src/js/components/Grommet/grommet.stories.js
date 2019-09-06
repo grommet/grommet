@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { grommet, Grommet, Anchor, Box } from 'grommet';

@@ -647,6 +647,7 @@ exports[`Button focus 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  outline-color: #6FFFB0;
   border-color: #6FFFB0;
   box-shadow: 0 0 2px 2px #6FFFB0;
   -webkit-transition-property: color, background-color, border-color, box-shadow;

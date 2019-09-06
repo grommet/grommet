@@ -7,6 +7,7 @@ import { defaultProps } from '../../default-props';
 
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
+import { datumValue } from './buildState';
 
 const Cell = ({
   column: { align, property, render },
@@ -19,8 +20,11 @@ const Cell = ({
   let content;
   if (render) {
     content = render(datum);
-  } else if (datum[property] !== undefined) {
-    content = datum[property];
+  } else {
+    const value = datumValue(datum, property);
+    if (value !== undefined) {
+      content = value;
+    }
   }
 
   if (typeof content === 'string' || typeof content === 'number') {
