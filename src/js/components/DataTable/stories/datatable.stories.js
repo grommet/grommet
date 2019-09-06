@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
@@ -182,9 +182,39 @@ delete groupColumns[1].footer;
 
 const GroupedDataTable = () => (
   <Grommet theme={grommet}>
-    <DataTable columns={groupColumns} data={DATA} groupBy="location" sortable />
+    <Box align="center" pad="large">
+      <DataTable
+        columns={groupColumns}
+        data={DATA}
+        groupBy="location"
+        sortable
+      />
+    </Box>
   </Grommet>
 );
+
+class ControlledGroupedDataTable extends Component {
+  state = { expandedGroups: [DATA[2].location] };
+
+  render() {
+    const { expandedGroups } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <DataTable
+          columns={groupColumns}
+          data={DATA}
+          groupBy={{
+            property: 'location',
+            expand: expandedGroups,
+            onExpand: groupState =>
+              this.setState({ expandedGroups: groupState }),
+          }}
+          sortable
+        />
+      </Grommet>
+    );
+  }
+}
 
 const ServedDataTable = () => {
   const [data2, setData2] = React.useState(DATA);
@@ -278,11 +308,33 @@ const ControlledDataTable = () => {
   );
 };
 
+const StyledDataTable = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={10}
+        pad={{ horizontal: 'large', vertical: 'medium' }}
+        background={{
+          header: 'dark-3',
+          body: ['light-1', 'light-3'],
+          footer: 'dark-3',
+        }}
+        border={{ body: 'bottom' }}
+        rowProps={{ Eric: { background: 'accent-2', pad: 'large' } }}
+      />
+    </Box>
+  </Grommet>
+);
+
 storiesOf('DataTable', module)
   .add('Simple', () => <SimpleDataTable />)
   .add('Clickable', () => <ClickableDataTable />)
   .add('Sized', () => <SizedDataTable />)
   .add('Tunable', () => <TunableDataTable />)
   .add('Grouped', () => <GroupedDataTable />)
+  .add('Controlled grouped', () => <ControlledGroupedDataTable />)
   .add('Served', () => <ServedDataTable />)
-  .add('Controlled', () => <ControlledDataTable />);
+  .add('Controlled', () => <ControlledDataTable />)
+  .add('Styled', () => <StyledDataTable />);

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = Calendar => {
   const DocumentedCalendar = describe(Calendar)
@@ -216,4 +216,6 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '768px',
   },
+  ...themeDocUtils.iconColor,
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };
