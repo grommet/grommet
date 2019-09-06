@@ -59,8 +59,7 @@ class ProgressiveDrop extends Component {
                           : 'You can interact with me'
                       }
                       onClick={() =>
-                        this.setState({ interactedWithInnerButton: true })
-                      }
+                        this.setState({ interactedWithInnerButton: true })}
                     />
                   </Box>
                 </Drop>

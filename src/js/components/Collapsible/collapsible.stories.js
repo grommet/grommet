@@ -171,8 +171,7 @@ class HorizontalCollapsible extends Component {
             </Heading>
             <Button
               onClick={() =>
-                this.setState({ openNotification: !openNotification })
-              }
+                this.setState({ openNotification: !openNotification })}
               icon={<Notification color="white" />}
             />
           </Box>

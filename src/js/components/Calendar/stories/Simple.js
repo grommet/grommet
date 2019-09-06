@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import { deepMerge } from 'grommet/utils';
 
-import { Box, Calendar, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Calendar, Grommet, grommet } from 'grommet';
+
+const customTheme = deepMerge(grommet,{
+  calendar:{
+    heading: {
+      level: '3' },
+  },
+});
+
 
 class SimpleCalendar extends Component {
   state = {};
@@ -15,12 +23,11 @@ class SimpleCalendar extends Component {
   render() {
     const { date } = this.state;
     return (
-      <Grommet theme={grommet}>
+      <Grommet theme={customTheme}>
         <Box align="center" pad="large">
           <Calendar
             date={date}
             onSelect={this.onSelect}
-            size="small"
             bounds={['2018-09-08', '2020-12-13']}
           />
         </Box>

@@ -61,7 +61,7 @@ class Searcher extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         {filters[property] ? (
           <Box flex={false} pad={{ horizontal: 'small' }}>
             <Text>{filters[property]}</Text>
@@ -79,10 +79,9 @@ class Searcher extends Component {
           }
           hoverIndicator
           onClick={() =>
-            onFiltering(filtering === property ? undefined : property)
-          }
+            onFiltering(filtering === property ? undefined : property)}
         />
-      </Fragment>
+      </>
     );
   }
 }

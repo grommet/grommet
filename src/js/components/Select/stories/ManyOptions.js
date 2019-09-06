@@ -58,8 +58,7 @@ class ManyOptions extends Component {
                     sensitivity: 'base',
                   });
                 }),
-              })
-            }
+              })}
             onChange={({ selected: nextSelected }) => {
               this.setState({ selected: nextSelected });
             }}

@@ -200,8 +200,7 @@ class FormLayer extends Component {
                       value={select}
                       onSearch={() => {}}
                       onChange={({ option }) =>
-                        this.setState({ select: option })
-                      }
+                        this.setState({ select: option })}
                     />
                   </FormField>
                   <FormField label="Third">

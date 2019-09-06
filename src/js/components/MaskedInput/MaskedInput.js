@@ -366,8 +366,7 @@ class MaskedInput extends Component {
                     tabIndex="-1"
                     onClick={this.onOption(option)}
                     onMouseOver={() =>
-                      this.setState({ activeOptionIndex: index })
-                    }
+                      this.setState({ activeOptionIndex: index })}
                     onFocus={() => {}}
                     active={index === activeOptionIndex}
                     hoverIndicator="background"

@@ -211,7 +211,7 @@ class ServedDataTable extends Component {
   }
 }
 
-const controlledColumns = columns.map(col => Object.assign({}, col));
+const controlledColumns = columns.map(col => ({ ...col}));
 delete controlledColumns[0].footer;
 delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;

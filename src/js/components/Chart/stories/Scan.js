@@ -30,8 +30,7 @@ class ScanChart extends Component {
         <Keyboard
           onLeft={() => this.setState({ active: Math.max(0, active - 1) })}
           onRight={() =>
-            this.setState({ active: Math.min(data.length - 1, active + 1) })
-          }
+            this.setState({ active: Math.min(data.length - 1, active + 1) })}
           onEsc={() => this.setState({ active: undefined })}
         >
           <Box tabIndex="0" direction="row" margin="large">
@@ -87,8 +86,7 @@ class ScanChart extends Component {
                           }
                           onMouseOver={() => this.setState({ active: i })}
                           onMouseOut={() =>
-                            this.setState({ active: undefined })
-                          }
+                            this.setState({ active: undefined })}
                           onFocus={() => {}}
                           onBlur={() => {}}
                         />

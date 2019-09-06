@@ -32,8 +32,7 @@ class CustomHeaderAccordion extends Component {
         <Accordion
           activeIndex={activeIndex}
           onActive={newActiveIndex =>
-            this.setState({ activeIndex: newActiveIndex })
-          }
+            this.setState({ activeIndex: newActiveIndex })}
         >
           <AccordionPanel
             header={renderPanelHeader('Panel 1', activeIndex.includes(0))}

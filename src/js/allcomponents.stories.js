@@ -320,8 +320,7 @@ class Components extends Component {
                 step={2}
                 value={baseSize}
                 onChange={event =>
-                  this.setState({ baseSize: parseInt(event.target.value, 10) })
-                }
+                  this.setState({ baseSize: parseInt(event.target.value, 10) })}
               />
             </Box>
             <Text size="small">{`${baseSize}px base spacing`}</Text>

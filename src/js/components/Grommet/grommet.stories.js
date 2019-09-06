@@ -21,7 +21,7 @@ const Themed = () => (
 );
 
 const Plain = () => (
-  <Fragment>
+  <>
     <Grommet plain>
       <Box pad="medium">
         <p>Plain Grommet</p>
@@ -32,7 +32,7 @@ const Plain = () => (
         <p>Not plain Grommet</p>
       </Box>
     </Grommet>
-  </Fragment>
+  </>
 );
 
 const GrommetVars = () => (

@@ -39,7 +39,7 @@ class Set extends Component {
           &nbsp;
         </Box>
         {this.targetRef.current && (
-          <Fragment>
+          <>
             {aligns.map((align, index) => (
               <OneDrop
                 // eslint-disable-next-line react/no-array-index-key
@@ -48,7 +48,7 @@ class Set extends Component {
                 target={this.targetRef.current}
               />
             ))}
-          </Fragment>
+          </>
         )}
       </Box>
     );
