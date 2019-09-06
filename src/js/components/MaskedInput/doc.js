@@ -42,7 +42,10 @@ export const doc = MaskedInput => {
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('The size of the text.'),
-    value: PropTypes.string.description(
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]).description(
       `What text to put in the input. The caller should ensure that it
       is initially valid with respect to the mask.`,
     ),
@@ -52,6 +55,16 @@ export const doc = MaskedInput => {
 };
 
 export const themeDoc = {
+  'global.hover.background': {
+    description: 'The background style when hovering.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
   'maskedInput.extend': {
     description: 'Any additional style for MaskedInput.',
     type: 'string | (props) => {}',

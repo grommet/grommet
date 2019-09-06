@@ -1,35 +1,31 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { FormLock, View } from 'grommet-icons';
+import { Hide, View } from 'grommet-icons';
 
 import { Box, Grommet, TextInput, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-class SimpleTextInput extends Component {
-  state = { value: '' };
+const SimpleTextInput = () => {
+  const [value, setValue] = React.useState('');
 
-  ref = React.createRef();
+  const onChange = event => setValue(event.target.value);
 
-  onChange = event => this.setState({ value: event.target.value });
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Box fill align="center" justify="start" pad="large">
-          <Box width="medium">
-            <TextInput ref={this.ref} value={value} onChange={this.onChange} />
-          </Box>
+  return (
+    <Grommet full theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Box width="medium">
+          <TextInput value={value} onChange={onChange} />
         </Box>
-      </Grommet>
-    );
-  }
-}
+      </Box>
+    </Grommet>
+  );
+};
 
-const PasswordInput = ({ value, ...rest }) => {
-  const [inputValue, setValue] = useState(value);
-  const [reveal, setReveal] = useState(false);
+const PasswordInput = () => {
+  const [value, setValue] = React.useState('');
+  const [reveal, setReveal] = React.useState(false);
+
   return (
     <Box
       width="medium"
@@ -42,12 +38,11 @@ const PasswordInput = ({ value, ...rest }) => {
       <TextInput
         plain
         type={reveal ? 'text' : 'password'}
-        value={inputValue}
+        value={value}
         onChange={event => setValue(event.target.value)}
-        {...rest}
       />
       <Button
-        icon={reveal ? <View size="medium" /> : <FormLock size="medium" />}
+        icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
         onClick={() => setReveal(!reveal)}
       />
     </Box>
@@ -58,32 +53,29 @@ const suggestions = Array(100)
   .fill()
   .map((_, i) => `suggestion ${i + 1}`);
 
-class SuggestionsTextInput extends Component {
-  state = { value: '' };
+const SuggestionsTextInput = () => {
+  const [value, setValue] = React.useState('');
 
-  onChange = event => this.setState({ value: event.target.value });
+  const onChange = event => setValue(event.target.value);
 
-  onSelect = event => this.setState({ value: event.suggestion });
+  const onSelect = event => setValue(event.suggestion);
 
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Box fill align="center" justify="start" pad="large">
-          <Box width="medium">
-            <TextInput
-              value={value}
-              dropProps={{ height: 'small' }}
-              onChange={this.onChange}
-              onSelect={this.onSelect}
-              suggestions={suggestions}
-            />
-          </Box>
+  return (
+    <Grommet full theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Box width="medium">
+          <TextInput
+            value={value}
+            dropProps={{ height: 'small' }}
+            onChange={onChange}
+            onSelect={onSelect}
+            suggestions={suggestions}
+          />
         </Box>
-      </Grommet>
-    );
-  }
-}
+      </Box>
+    </Grommet>
+  );
+};
 
 const customTheme = deepMerge(grommet, {
   textInput: {
@@ -127,37 +119,34 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-class ThemedTextInput extends Component {
-  state = { value: '' };
+const ThemedTextInput = () => {
+  const [value, setValue] = React.useState('');
 
-  onChange = event => this.setState({ value: event.target.value });
+  const onChange = event => setValue(event.target.value);
 
-  onSelect = event => this.setState({ value: event.suggestion });
+  const onSelect = event => setValue(event.suggestion);
 
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet full theme={customTheme}>
-        <Box fill align="center" justify="start" pad="large">
-          <Box width="medium">
-            <TextInput
-              type="password"
-              value={value}
-              dropProps={{ height: 'small' }}
-              onChange={this.onChange}
-              onSelect={this.onSelect}
-              suggestions={suggestions}
-              placeholder={<span>Enter something...</span>}
-            />
-          </Box>
+  return (
+    <Grommet full theme={customTheme}>
+      <Box fill align="center" justify="start" pad="large">
+        <Box width="medium">
+          <TextInput
+            type="password"
+            value={value}
+            dropProps={{ height: 'small' }}
+            onChange={onChange}
+            onSelect={onSelect}
+            suggestions={suggestions}
+            placeholder={<span>Enter something...</span>}
+          />
         </Box>
-      </Grommet>
-    );
-  }
-}
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('TextInput', module)
-  .add('Simple TextInput', () => <SimpleTextInput />)
-  .add('Password input', () => <PasswordInput />)
+  .add('Simple', () => <SimpleTextInput />)
+  .add('Password', () => <PasswordInput />)
   .add('Suggestions', () => <SuggestionsTextInput />)
   .add('Themed', () => <ThemedTextInput />);

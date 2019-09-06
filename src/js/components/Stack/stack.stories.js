@@ -24,5 +24,5 @@ const FillStack = () => (
 );
 
 storiesOf('Stack', module)
-  .add('Simple Stack', () => <SimpleStack />)
-  .add('Fill Stack', () => <FillStack />);
+  .add('Simple', () => <SimpleStack />)
+  .add('Fill', () => <FillStack />);

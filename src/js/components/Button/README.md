@@ -47,8 +47,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -169,8 +169,27 @@ boolean
 string
 background
 {
-  background: 
+  color: string,
+  dark: 
     boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
     string
 }
 ```
@@ -207,6 +226,7 @@ element
 The amount of spacing between icon and label in the button. Defaults to `small`.
 
 ```
+none
 xxsmall
 xsmall
 small
@@ -286,9 +306,49 @@ button
 ```
 ## Theme
   
+**global.active.background.color**
+
+The background color when using active prop. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+active
+```
+
+**global.active.background.opacity**
+
+The value used for active button background opacity. Expects `number | string`.
+
+Defaults to
+
+```
+medium
+```
+
+**global.active.color**
+
+The text color when using active prop. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
+**global.hover.background**
+
+The background style when hovering. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
 **global.hover.color**
 
-The background color when hovering. Expects `string`.
+The text color when hovering. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -298,7 +358,7 @@ Defaults to
 
 **global.edgeSize.small**
 
-The padding around an icon-only button. Expects `string`.
+The padding around an icon-only button. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

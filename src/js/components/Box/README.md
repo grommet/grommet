@@ -45,8 +45,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side. Defaults to `none`.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side. Defaults to `none`.
 
 ```
 none
@@ -224,6 +224,7 @@ string
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
@@ -370,6 +371,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 ```
+none
 xxsmall
 xsmall
 small
@@ -392,6 +394,26 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 ```
 
 **justify**
@@ -573,6 +595,26 @@ large
 xlarge
 xxlarge
 string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 ```
 
 **wrap**

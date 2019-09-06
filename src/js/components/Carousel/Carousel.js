@@ -13,7 +13,10 @@ import { Stack } from '../Stack';
 import { withFocus } from '../hocs';
 
 class Carousel extends Component {
-  state = { activeIndex: 0 };
+  constructor(p) {
+    super(p);
+    this.state = { activeIndex: p.initialChild };
+  }
 
   componentDidMount() {
     const { play } = this.props;
@@ -78,9 +81,11 @@ class Carousel extends Component {
   };
 
   render() {
-    const { children, fill, focus, theme, ...rest } = this.props;
+    const { children, controls, fill, focus, theme, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
+    const showArrows = controls && controls !== 'selectors';
+    const showSelectors = controls && controls !== 'arrows';
     const lastIndex = Children.count(children) - 1;
     const onLeft = activeIndex > 0 ? this.onLeft : undefined;
     const onRight = activeIndex < lastIndex ? this.onRight : undefined;
@@ -125,8 +130,10 @@ class Carousel extends Component {
       }
 
       return (
-        <Box overflow="hidden">
-          <Box animation={animation}>{child}</Box>
+        <Box fill={fill} overflow="hidden">
+          <Box fill={fill} animation={animation}>
+            {child}
+          </Box>
         </Box>
       );
     });
@@ -147,45 +154,6 @@ class Carousel extends Component {
             direction="row"
             justify="between"
           >
-            <Button
-              fill="vertical"
-              icon={
-                <PreviousIcon
-                  color={normalizeColor(
-                    previousIconDisabled
-                      ? theme.carousel.disabled.icons.color
-                      : theme.carousel.icons.color,
-                    theme,
-                  )}
-                />
-              }
-              plain
-              disabled={previousIconDisabled}
-              onClick={onLeft}
-              hoverIndicator
-            />
-            <Box justify="end">
-              <Box direction="row" justify="center">
-                {selectors}
-              </Box>
-            </Box>
-            <Button
-              fill="vertical"
-              icon={
-                <NextIcon
-                  color={normalizeColor(
-                    nextIconDisabled
-                      ? theme.carousel.disabled.icons.color
-                      : theme.carousel.icons.color,
-                    theme,
-                  )}
-                />
-              }
-              plain
-              disabled={nextIconDisabled}
-              onClick={onRight}
-              hoverIndicator
-            />
           </Box>
         </Stack>
       </Keyboard>
@@ -193,7 +161,10 @@ class Carousel extends Component {
   }
 }
 
-Carousel.defaultProps = {};
+Carousel.defaultProps = {
+  initialChild: 0,
+  controls: true,
+};
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 
 let CarouselDoc;

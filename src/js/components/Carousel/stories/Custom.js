@@ -4,10 +4,26 @@ import { Attraction, Car, TreeOption } from 'grommet-icons';
 
 import { Grommet, Box, Carousel } from 'grommet';
 
-const SimpleCarousel = () => (
-  <Grommet>
+const customTheme = {
+  carousel: {
+    animation: {
+      duration: 400,
+    },
+    icons: {
+      color: 'blue',
+    },
+    disabled: {
+      icons: {
+        color: 'grey',
+      },
+    },
+  },
+};
+
+const CustomCarousel = ({ controls, ...rest }) => (
+  <Grommet theme={customTheme}>
     <Box align="center" pad="large">
-      <Carousel>
+      <Carousel controls={controls} {...rest}>
         <Box pad="xlarge" background="accent-1">
           <Attraction size="xlarge" />
         </Box>
@@ -22,4 +38,4 @@ const SimpleCarousel = () => (
   </Grommet>
 );
 
-storiesOf('Carousel', module).add('Simple Carousel', () => <SimpleCarousel />);
+storiesOf('Carousel', module).add('Custom Controls', () => <CustomCarousel />);

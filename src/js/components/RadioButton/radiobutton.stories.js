@@ -1,44 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Grommet, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-class SimpleRadioButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { selected: props.selected };
-  }
+const SimpleRadioButton = ({ selected: selectedProp, ...rest }) => {
+  const [selected, setSelected] = React.useState(selectedProp);
 
-  onChange = event => this.setState({ selected: event.target.value });
+  const onChange = event => setSelected(event.target.value);
 
-  render() {
-    const { selected } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large" gap="small">
-          <RadioButton
-            label="Choice 1"
-            name="radio"
-            value="c1"
-            checked={selected === 'c1'}
-            onChange={this.onChange}
-            {...this.props}
-          />
-          <RadioButton
-            label="Choice 2"
-            name="radio"
-            value="c2"
-            checked={selected === 'c2'}
-            onChange={this.onChange}
-            {...this.props}
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large" gap="small">
+        <RadioButton
+          label="Choice 1"
+          name="radio"
+          value="c1"
+          checked={selected === 'c1'}
+          onChange={onChange}
+          {...rest}
+        />
+        <RadioButton
+          label="Choice 2"
+          name="radio"
+          value="c2"
+          checked={selected === 'c2'}
+          onChange={onChange}
+          {...rest}
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
 const customTheme = deepMerge(grommet, {
   radioButton: {
@@ -60,71 +54,63 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-class CustomRadioButton extends Component {
-  state = { selected: undefined };
+const CustomRadioButton = () => {
+  const [selected, setSelected] = React.useState();
 
-  onChange = event => this.setState({ selected: event.target.value });
+  const onChange = event => setSelected(event.target.value);
 
-  render() {
-    const { selected } = this.state;
-    return (
-      <Grommet theme={customTheme}>
-        <Box align="center" pad="large" gap="small">
+  return (
+    <Grommet theme={customTheme}>
+      <Box align="center" pad="large" gap="small">
+        <RadioButton
+          label="Choice 1"
+          name="radio"
+          value="c1"
+          checked={selected === 'c1'}
+          onChange={onChange}
+        />
+        <RadioButton
+          label="Choice 2"
+          name="radio"
+          value="c2"
+          checked={selected === 'c2'}
+          onChange={onChange}
+        />
+      </Box>
+    </Grommet>
+  );
+};
+
+const CheckBoxInsideButton = () => {
+  const [selected, setSelected] = React.useState();
+
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <Button
+          hoverIndicator="background"
+          onClick={() => {
+            if (selected) {
+              setSelected(undefined);
+            } else {
+              setSelected('c1');
+            }
+          }}
+        >
           <RadioButton
             label="Choice 1"
             name="radio"
             value="c1"
             checked={selected === 'c1'}
-            onChange={this.onChange}
           />
-          <RadioButton
-            label="Choice 2"
-            name="radio"
-            value="c2"
-            checked={selected === 'c2'}
-            onChange={this.onChange}
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+        </Button>
+      </Box>
+    </Grommet>
+  );
+};
 
-class CheckBoxInsideButton extends Component {
-  state = { selected: undefined };
-
-  render() {
-    const { selected } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large">
-          <Button
-            hoverIndicator="background"
-            onClick={() => {
-              if (selected) {
-                this.setState({ selected: undefined });
-              } else {
-                this.setState({ selected: 'c1' });
-              }
-            }}
-          >
-            <RadioButton
-              label="Choice 1"
-              name="radio"
-              value="c1"
-              checked={selected === 'c1'}
-              {...this.props}
-            />
-          </Button>
-        </Box>
-      </Grommet>
-    );
-  }
-}
 storiesOf('RadioButton', module)
-  .add('Simple RadioButton', () => <SimpleRadioButton />)
-  .add('Disabled RadioButton', () => (
-    <SimpleRadioButton disabled selected="c2" />
-  ))
+  .add('Simple', () => <SimpleRadioButton />)
+  .add('Disabled', () => <SimpleRadioButton disabled selected="c2" />)
   .add('Custom Theme', () => <CustomRadioButton />)
   .add('Inside a Button Theme', () => <CheckBoxInsideButton />);

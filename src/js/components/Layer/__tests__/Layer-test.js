@@ -1,47 +1,36 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from 'react-testing-library';
-import { getByTestId, queryByTestId } from 'dom-testing-library';
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { getByTestId, queryByTestId } from '@testing-library/dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
-class FakeLayer extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+const FakeLayer = ({ children, dataTestid }) => {
+  const [showLayer, setShowLayer] = React.useState(false);
 
-  state = { showLayer: false };
+  React.useEffect(() => setShowLayer(true), []);
 
-  componentDidMount() {
-    this.setState({ showLayer: true }); // eslint-disable-line
-  }
-
-  render() {
-    const { children, ...rest } = this.props;
-    const { showLayer } = this.state;
-    let layer;
-    if (showLayer) {
-      layer = (
-        <Layer onEsc={() => this.setState({ showLayer: false })}>
-          <div {...rest}>
-            This is a layer
-            <input data-testid="test-input" />
-          </div>
-        </Layer>
-      );
-    }
-    return (
-      <Grommet>
-        {layer}
-        {children}
-      </Grommet>
+  let layer;
+  if (showLayer) {
+    layer = (
+      <Layer onEsc={() => setShowLayer(false)}>
+        <div data-testid={dataTestid}>
+          This is a layer
+          <input data-testid="test-input" />
+        </div>
+      </Layer>
     );
   }
-}
+  return (
+    <Grommet>
+      {layer}
+      {children}
+    </Grommet>
+  );
+};
 
 describe('Layer', () => {
   beforeEach(createPortal);
@@ -183,11 +172,11 @@ describe('Layer', () => {
     expect(onEsc).toBeCalled();
   });
 
-  test('is accessible', () => {
+  test('is accessible', done => {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
       <Grommet>
-        <FakeLayer data-testid="test-layer-node">
+        <FakeLayer dataTestid="test-layer-node">
           <div data-testid="test-body-node">
             <input />
             <input tabIndex="10" />
@@ -204,9 +193,13 @@ describe('Layer', () => {
     expect(layerNode).toMatchSnapshot();
 
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
+    // because of de-animation, we test both the initial and delayed states
     bodyNode = getByTestId(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
-    expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+    setTimeout(() => {
+      expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+      done();
+    }, 300);
   });
 
   test('should be null prior to mounting, displayed after mount', () => {

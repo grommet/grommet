@@ -49,7 +49,25 @@ export const doc = Button => {
       PropTypes.string,
       PropTypes.oneOf(['background']),
       PropTypes.shape({
-        background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+        color: PropTypes.string,
+        dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+        image: PropTypes.string,
+        light: PropTypes.string,
+        position: PropTypes.string,
+        opacity: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.bool,
+          PropTypes.number,
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
+        ]),
+        repeat: PropTypes.oneOfType([
+          PropTypes.oneOf(['no-repeat', 'repeat']),
+          PropTypes.string,
+        ]),
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf(['cover', 'contain']),
+          PropTypes.string,
+        ]),
       }),
     ])
       .description(
@@ -68,6 +86,7 @@ with plain Buttons.`,
     icon: PropTypes.element.description('Icon element to place in the button.'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
+        'none',
         'xxsmall',
         'xsmall',
         'small',
@@ -118,14 +137,34 @@ end of the anchor.`,
 };
 
 export const themeDoc = {
+  'global.active.background.color': {
+    description: 'The background color when using active prop.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'active',
+  },
+  'global.active.background.opacity': {
+    description: 'The value used for active button background opacity.',
+    type: 'number | string',
+    defaultValue: 'medium',
+  },
+  'global.active.color': {
+    description: 'The text color when using active prop.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
+  'global.hover.background': {
+    description: 'The background style when hovering.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
   'global.hover.color': {
-    description: 'The background color when hovering.',
-    type: 'string',
+    description: 'The text color when hovering.',
+    type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
   'global.edgeSize.small': {
     description: 'The padding around an icon-only button.',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
     defaultValue: '12px',
   },
   'global.colors.control': {

@@ -1,7 +1,9 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from 'react-testing-library';
-import { getByText } from 'dom-testing-library';
+import { cleanup, fireEvent, render } from '@testing-library/react';
+import { getByText } from '@testing-library/dom';
+import { Grommet } from '../../Grommet';
+import { Keyboard } from '../../Keyboard';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -123,6 +125,30 @@ describe('MaskedInput', () => {
       expect(onChange).toHaveReturnedWith('aa!');
       done();
     }, 300);
+  });
+
+  test('Escape events should propagage if there is no drop', done => {
+    const callback = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <Keyboard onEsc={callback}>
+          <MaskedInput data-testid="test-masked-input" id="item" name="item" />
+        </Keyboard>
+      </Grommet>,
+    );
+
+    fireEvent.change(getByTestId('test-masked-input'), {
+      target: { value: ' ' },
+    });
+    setTimeout(() => {
+      fireEvent.keyDown(getByTestId('test-masked-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27,
+      });
+      expect(callback).toBeCalled();
+      done();
+    }, 50);
   });
 
   test('next and previous without options', done => {
@@ -259,5 +285,53 @@ describe('MaskedInput', () => {
       );
       done();
     }, 300);
+  });
+
+  test('applies custom global.hover theme to options', done => {
+    const customTheme = {
+      global: {
+        hover: {
+          background: {
+            color: 'lightgreen',
+          },
+          color: {
+            dark: 'lightgrey',
+            light: 'brand',
+          },
+        },
+      },
+    };
+
+    const onChange = jest.fn(event => event.target.value);
+    const { getByTestId, container } = render(
+      <Grommet theme={customTheme}>
+        <MaskedInput
+          data-testid="test-global-hover-theme"
+          plain
+          size="large"
+          id="global-hover-theme"
+          name="global-hover-theme"
+          mask={[
+            {
+              length: [1, 2],
+              options: ['aa', 'bb', 'cc'],
+              regexp: /^[ab][ab]$|^[ab]$/,
+            },
+            { fixed: '!' },
+          ]}
+          value=""
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.focus(getByTestId('test-global-hover-theme'));
+
+    setTimeout(() => {
+      const optionButton = getByText(document, 'bb').closest('button');
+      fireEvent.mouseOver(optionButton);
+      expect(optionButton).toMatchSnapshot();
+      done();
+    }, 500);
   });
 });

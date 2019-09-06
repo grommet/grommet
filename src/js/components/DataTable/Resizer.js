@@ -19,7 +19,9 @@ class Resizer extends Component {
 
   onMouseDown = event => {
     if (this.ref.current) {
-      const element = this.ref.current;
+      let element = this.ref.current;
+      // find TH parent
+      while (element && element.nodeName !== 'TH') element = element.parentNode;
       const rect = element.getBoundingClientRect();
       this.setState({ start: event.clientX, width: rect.width }, () => {
         document.addEventListener('mousemove', this.onMouseMove);
@@ -44,23 +46,20 @@ class Resizer extends Component {
   };
 
   render() {
-    const { children, onResize, theme } = this.props;
+    const { theme } = this.props;
     const { start } = this.state;
-    if (onResize) {
-      return (
-        <Box ref={this.ref} direction="row" fill>
-          {children}
-          <ResizerBox
-            flex={false}
-            {...theme.dataTable.resize}
-            onMouseDown={this.onMouseDown}
-            onMouseMove={start ? this.onMouseMove : undefined}
-            onMouseUp={start ? this.onMouseUp : undefined}
-          />
-        </Box>
-      );
-    }
-    return children;
+    return (
+      <ResizerBox
+        ref={this.ref}
+        flex={false}
+        responsive={false}
+        pad={{ vertical: 'small' }}
+        {...theme.dataTable.resize}
+        onMouseDown={this.onMouseDown}
+        onMouseMove={start ? this.onMouseMove : undefined}
+        onMouseUp={start ? this.onMouseUp : undefined}
+      />
+    );
   }
 }
 

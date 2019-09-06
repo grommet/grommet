@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from 'react-testing-library';
+import { cleanup, render, fireEvent } from '@testing-library/react';
 
 import { CaretDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -418,7 +418,7 @@ describe('Select', () => {
   });
 
   test(`renders styled select options backwards compatible with legacy
-   documentation (select.options.box)`, () => {
+    documentation (select.options.box)`, () => {
     const customTheme = {
       select: {
         options: {
@@ -443,7 +443,6 @@ describe('Select', () => {
 
     const selectButton = getByPlaceholderText('Select...');
     fireEvent.click(selectButton);
-
     const optionButton = getByText('morning').closest('button');
     expect(optionButton.firstChild).toHaveStyleRule('background', 'lightblue');
   });
@@ -497,6 +496,7 @@ describe('Select', () => {
         },
       },
     };
+
     const { getByPlaceholderText, getByText, container } = render(
       <Grommet theme={customTheme}>
         <Select
@@ -509,7 +509,6 @@ describe('Select', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-
     const selectButton = getByPlaceholderText('Select...');
     fireEvent.click(selectButton);
 
@@ -523,5 +522,40 @@ describe('Select', () => {
       'border-bottom',
       'solid 2px blue',
     );
+  });
+
+  test('applies custom global.hover theme to options', () => {
+    const customTheme = {
+      global: {
+        hover: {
+          background: {
+            color: 'lightgreen',
+          },
+          color: {
+            dark: 'lightgrey',
+            light: 'brand',
+          },
+        },
+      },
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="applies-custom-hover-style"
+          id="applies-custom-hover-style-id"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+
+    const optionButton = getByText('afternoon').closest('button');
+    fireEvent.mouseOver(optionButton);
+    expect(optionButton).toMatchSnapshot();
   });
 });

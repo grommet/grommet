@@ -63,8 +63,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -133,6 +133,12 @@ string",
   light: string
 }",
         "name": "color",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the anchor is disabled.",
+        "format": "boolean",
+        "name": "disabled",
       },
       Object {
         "description": "Hyperlink reference to place in the anchor.",
@@ -227,8 +233,8 @@ stretch",
       Object {
         "defaultValue": "none",
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -393,6 +399,7 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    string
     boolean
     number
     weak
@@ -520,7 +527,8 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium
@@ -538,7 +546,27 @@ medium
 large
 xlarge
 xxlarge
-string",
+string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
         "name": "height",
       },
       Object {
@@ -700,7 +728,27 @@ medium
 large
 xlarge
 xxlarge
-string",
+string
+{
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
         "name": "width",
       },
       Object {
@@ -756,8 +804,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -863,8 +911,27 @@ with plain Buttons.",
 string
 background
 {
-  background: 
+  color: string,
+  dark: 
     boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
     string
 }",
         "name": "hoverIndicator",
@@ -890,7 +957,8 @@ _top",
       Object {
         "defaultValue": "small",
         "description": "The amount of spacing between icon and label in the button.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium
@@ -990,8 +1058,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1216,8 +1284,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1291,6 +1359,20 @@ string",
         "format": "number",
         "name": "play",
       },
+      Object {
+        "description": "If specified, the index of
+      the first element to be shown. Defaults to 0.",
+        "format": "number",
+        "name": "initialChild",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to show carousel controls and which type of controls.",
+        "format": "boolean
+arrows
+selectors",
+        "name": "controls",
+      },
     ],
     "usage": "import { Carousel } from 'grommet';
 <Carousel />",
@@ -1333,8 +1415,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1740,8 +1822,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -1943,6 +2025,70 @@ node",
         "name": "name",
       },
       Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
         "description": "Whether to add padding to align with the padding of TextInput.",
         "format": "boolean",
         "name": "pad",
@@ -2048,7 +2194,8 @@ string",
       Object {
         "description": "What text to put in the input. The caller should ensure that it
       is initially valid with respect to the mask.",
-        "format": "string",
+        "format": "string
+number",
         "name": "value",
       },
     ],
@@ -2099,8 +2246,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -2614,8 +2761,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -2847,10 +2994,10 @@ function",
         "name": "open",
       },
       Object {
-        "description": "Placeholder text to use when no value is provided.",
+        "description": "Placeholder to use when no value is provided.",
         "format": "string
-node
-element",
+element
+node",
         "name": "placeholder",
       },
       Object {
@@ -2946,8 +3093,7 @@ function",
       },
       Object {
         "description": "The title of the tab.",
-        "format": "string
-node",
+        "format": "node",
         "name": "title",
       },
     ],
@@ -2955,7 +3101,13 @@ node",
 <Tab />",
   },
   "Table": [Function],
-  "TableBody": [Function],
+  "TableBody": Object {
+    "description": "The body of a table.",
+    "intrinsicElement": "tbody",
+    "name": "TableBody",
+    "usage": "import { TableBody } from 'grommet';
+<TableBody />",
+  },
   "TableCell": Object {
     "description": "A cell of data in a table.",
     "intrinsicElement": "td",
@@ -3046,8 +3198,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -3355,9 +3507,7 @@ The suggestion contains the object chosen from the supplied suggestions.",
       },
       Object {
         "description": "Placeholder to use when no value is provided.",
-        "format": "string
-node
-element",
+        "format": "node",
         "name": "placeholder",
       },
       Object {
@@ -3436,8 +3586,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall
@@ -3570,8 +3720,8 @@ stretch",
       },
       Object {
         "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
         "format": "none
 xxsmall
 xsmall

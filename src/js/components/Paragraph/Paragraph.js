@@ -2,8 +2,8 @@ import React from 'react';
 
 import { StyledParagraph } from './StyledParagraph';
 
-const Paragraph = ({ color, ...rest }) => (
-  <StyledParagraph colorProp={color} {...rest} />
+const Paragraph = ({ color, fill, ...rest }) => (
+  <StyledParagraph colorProp={color} fillProp={fill} {...rest} />
 );
 
 let ParagraphDoc;

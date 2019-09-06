@@ -465,7 +465,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           light: 'light-2',
         },
         border: { side: 'bottom', size: 'xsmall' },
-        fill: 'vertical',
         pad: { horizontal: 'small', vertical: 'xsmall' },
       },
       groupEnd: {
@@ -784,30 +783,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'bottom',
         verticalAlign: 'bottom',
-        fill: 'vertical',
         // background: undefined,
         // extend: undefined,
       },
       body: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
+        // background: undefined,
         // border: undefined,
         // extend: undefined,
       },
+      // row: {
+      //   hover: {
+      //     background: undefined,
+      //     color: undefined,
+      //   },
+      // },
       footer: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'top',
         verticalAlign: 'top',
-        fill: 'vertical',
+        // background: undefined,
         // extend: undefined,
       },
     },
     text: {
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
-      medium: { ...fontSizing(0) },
-      large: { ...fontSizing(1) },
+      medium: { ...fontSizing(0) }, // 18px
+      large: { ...fontSizing(1) }, // 22px
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },

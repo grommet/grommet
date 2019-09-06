@@ -369,13 +369,10 @@ class MaskedInput extends Component {
                       this.setState({ activeOptionIndex: index })
                     }
                     onFocus={() => {}}
+                    active={index === activeOptionIndex}
+                    hoverIndicator="background"
                   >
-                    <Box
-                      pad={{ horizontal: 'small', vertical: 'xsmall' }}
-                      background={
-                        activeOptionIndex === index ? 'active' : undefined
-                      }
-                    >
+                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                       {option}
                     </Box>
                   </Button>

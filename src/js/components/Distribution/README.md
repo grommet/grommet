@@ -47,8 +47,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -137,6 +137,8 @@ boolean
 The amount of spacing between child elements. Defaults to `xsmall`.
 
 ```
+none
+xxsmall
 xsmall
 small
 medium
