@@ -8932,9 +8932,9 @@ exports[`Calendar size 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
   font-weight: 600;
 }
 
@@ -9274,9 +9274,9 @@ exports[`Calendar size 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
   }
 }
 
@@ -9310,12 +9310,12 @@ exports[`Calendar size 1`] = `
         <div
           className="c4"
         >
-          <h4
+          <h1
             className="c5"
             size="small"
           >
             January 2018
-          </h4>
+          </h1>
         </div>
         <div
           className="c6"
