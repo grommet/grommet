@@ -178,4 +178,3 @@ class CustomSuggestionsTextInput extends Component {
 storiesOf('TextInput', module).add('Custom', () => (
   <CustomSuggestionsTextInput />
 ));
-
