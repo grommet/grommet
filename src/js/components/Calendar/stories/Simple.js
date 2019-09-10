@@ -38,4 +38,4 @@ class SimpleCalendar extends Component {
   }
 }
 
-storiesOf('Calendar', module).add('Simple', () => <SimpleCalendar />);
+storiesOf('Calendar', module).add('Simple', () => <SimpleCalendar />); 
