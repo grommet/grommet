@@ -79,7 +79,8 @@ class Searcher extends Component {
           }
           hoverIndicator
           onClick={() =>
-            onFiltering(filtering === property ? undefined : property)}
+            onFiltering(filtering === property ? undefined : property)
+          }
         />
       </>
     );
