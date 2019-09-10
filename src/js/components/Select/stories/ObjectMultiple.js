@@ -39,8 +39,8 @@ class ObjectMultiSelect extends Component {
             options={options}
             onChange={({ value: nextValue }) =>
               this.setState({ value: nextValue })
-            onClose={() => this.setState({ options: objectOptions })
             }
+            onClose={() => this.setState({ options: objectOptions })}
             onSearch={text => {
               const exp = new RegExp(text, 'i');
               this.setState({
