@@ -165,7 +165,8 @@ class CustomSuggestionsTextInput extends Component {
               placeholder="Enter your name..."
               onSuggestionsOpen={() => this.setState({ suggestionOpen: true })}
               onSuggestionsClose={() =>
-                this.setState({ suggestionOpen: false })}
+                this.setState({ suggestionOpen: false })
+              }
             />
           </Box>
         </Box>
@@ -177,3 +178,4 @@ class CustomSuggestionsTextInput extends Component {
 storiesOf('TextInput', module).add('Custom', () => (
   <CustomSuggestionsTextInput />
 ));
+
