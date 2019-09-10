@@ -630,7 +630,8 @@ class WorldMap extends Component {
           fill="none"
           fillRule="evenodd"
           onClick={() =>
-            onSelectPlace(coordToLatLon(activeCoords, origin, extent))}
+            onSelectPlace(coordToLatLon(activeCoords, origin, extent))
+          }
         >
           <path
             strokeLinecap="round"
