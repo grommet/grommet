@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.7.7",
+  "version": "2.7.8",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -151,7 +151,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "110 kB"
+      "maxSize": "120 kB"
     }
   ],
   "keywords": [

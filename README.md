@@ -59,14 +59,6 @@ version.
    [#i-made-this Slack channel][slack].
 1. Read more from the Grommet team on [Medium].
 
-## Browser Support
-
-1.  Edge >= 14
-1.  Firefox >= 52
-1.  Chrome >= 49
-1.  Safari >= 10
-1.  IE 11 latests - The Grid, Clock, Video components aren't fully supported
-
 ## Release History
 
 See the [Change Log].
@@ -75,8 +67,10 @@ See the [Change Log].
 
 Grommet is produced using this great tool:
 
+- [BrowserStack] for browser emulators and simulators.
 - [Circle CI] for continuous integration.
 
+[browserstack]: https://www.browserstack.com/
 [change log]: https://github.com/grommet/grommet/wiki/Change-Log
 [circle ci]: https://circleci.com/gh/grommet/grommet/
 [contributing]: CONTRIBUTING.md
