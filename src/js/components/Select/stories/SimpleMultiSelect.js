@@ -34,7 +34,8 @@ class SimpleMultiSelect extends Component {
             value={value}
             options={options}
             onChange={({ value: nextValue }) =>
-              this.setState({ value: nextValue })}
+              this.setState({ value: nextValue })
+            }
             onClose={() => this.setState({ options: defaultOptions })}
             onSearch={text => {
               const exp = new RegExp(text, 'i');
