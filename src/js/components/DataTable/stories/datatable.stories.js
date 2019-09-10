@@ -222,7 +222,7 @@ const ServedDataTable = () => {
   const onSearch = search => {
     let nextData;
     if (search) {
-      // The function below escapes regular expression special characters
+      // The function below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
       const escapedText = text => {
         text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
         return new RegExp(escapedText, 'i');

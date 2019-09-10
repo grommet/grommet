@@ -42,7 +42,7 @@ class ObjectMultiSelect extends Component {
             }
             onClose={() => this.setState({ options: objectOptions })}
             onSearch={text => {
-              // The line below escapes regular expression special characters
+              // The line below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
               const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
 
               // Create the regular expression with modified value which handles escaping special characters

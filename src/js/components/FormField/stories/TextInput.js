@@ -14,7 +14,7 @@ class FormFieldTextInput extends Component {
     const {
       target: { value },
     } = event;
-    // The line below escapes regular expression special characters
+    // The line below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
     const escapedText = value.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
 
     // Create the regular expression with modified value which handles escaping special characters

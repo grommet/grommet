@@ -35,7 +35,7 @@ class SearchSelect extends Component {
             onChange={({ option }) => this.setState({ value: option })}
             onClose={() => this.setState({ options: defaultOptions })}
             onSearch={text => {
-              // The line below escapes regular expression special characters
+              // The line below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
               const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
 
               // Create the regular expression with modified value which handles escaping special characters
