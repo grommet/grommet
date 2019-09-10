@@ -38,7 +38,7 @@ class ObjectMultiSelect extends Component {
             value={value}
             options={options}
             onChange={({ value: nextValue }) =>
-              this.setState({ value: nextValue })}
+              this.setState({ value: nextValue })
             onClose={() => this.setState({ options: objectOptions })
             }
             onSearch={text => {
