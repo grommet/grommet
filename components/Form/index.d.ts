@@ -4,7 +4,7 @@ export interface FormProps {
   errors?: {};
   messages?: {invalid?: string,required?: string};
   onChange?: ((...args: any[]) => any);
-  onSubmit?: ((...args: any[]) => any);
+  onSubmit?: ((event: React.FormEvent) => void);
   onReset?: ((event: React.SyntheticEvent) => any);
   value?: {};
 }
