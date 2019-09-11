@@ -259,10 +259,18 @@ var ServedDataTable = function ServedDataTable() {
     var nextData;
 
     if (search) {
+      // The function below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
+      var escapedText = function escapedText(text) {
+        text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+        return new RegExp(escapedText, 'i');
+      };
+
       var expressions = Object.keys(search).map(function (property) {
         return {
           property: property,
-          exp: new RegExp(search[property], 'i')
+          // Create the regular expression with modified value which handles escaping special characters
+          // Without escaping special characters, errors will appear in the console
+          exp: new RegExp(escapedText(search[property]), 'i')
         };
       });
       nextData = DATA.filter(function (d) {
