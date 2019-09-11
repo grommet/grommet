@@ -8,6 +8,6 @@ export interface TableCellProps {
   verticalAlign?: "top" | "middle" | "bottom";
 }
 
-export type TableCellTypes = TableCellProps & BoxTypes & JSX.IntrinsicElements['td'];
+declare const TableCell:  TableCellProps & BoxTypes & JSX.IntrinsicElements['td'];
 
 export { TableCell };
