@@ -41,7 +41,6 @@ To close the menu:
 To make a selection:
 - Enter key is pressed.
 - Space is pressed.
-
 */
 
 const Menu = forwardRef((props, ref) => {
@@ -115,24 +114,12 @@ const Menu = forwardRef((props, ref) => {
       onDropOpen();
     } else {
       let index;
-      switch (align.top) {
-        case 'bottom':
-          if (activeItemIndex + 1 === items.length) {
-            index = 0;
-          } else {
-            index = activeItemIndex + 1;
-          }
-          setActiveItemIndex(index);
-          break;
-        default:
-          if (activeItemIndex + 1 === items.length) {
-            index = items.length; // to loop access to mirrored button
-          } else {
-            index = activeItemIndex + 1;
-          }
-          setActiveItemIndex(index);
-          break;
+      if (activeItemIndex + 1 === items.length) {
+        index = align.top === 'bottom' ? 0 : items.length;
+      } else {
+        index = activeItemIndex + 1;
       }
+      setActiveItemIndex(index);
       buttonRefs[index].focus();
     }
   };
@@ -143,26 +130,16 @@ const Menu = forwardRef((props, ref) => {
       onDropOpen();
     } else {
       let index;
-      switch (align.top) {
-        case 'bottom':
-          if (activeItemIndex - 1 < 0) {
-            index = items.length - 1;
-          } else {
-            index = activeItemIndex - 1;
-          }
-          setActiveItemIndex(index);
-          break;
-        default:
-          if (activeItemIndex - 1 === -1) {
-            index = items.length; // allow focus on Menu DropButton
-          } else if (activeItemIndex - 1 < -1) {
-            index = items.length - 1; // loop to bottom of list
-          } else {
-            index = activeItemIndex - 1;
-          }
-          setActiveItemIndex(index);
-          break;
+      if (activeItemIndex - 1 < 0) {
+        if (align.top === 'top' && activeItemIndex - 1 === -1) {
+          index = items.length;
+        } else {
+          index = items.length - 1;
+        }
+      } else {
+        index = activeItemIndex - 1;
       }
+      setActiveItemIndex(index);
       buttonRefs[index].focus();
     }
   };
