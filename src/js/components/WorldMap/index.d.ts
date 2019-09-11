@@ -9,7 +9,7 @@ export interface WorldMapProps {
   gridArea?: GridAreaType;
   hoverColor?: string | {dark?: string,light?: string};
   margin?: MarginType;
-  onSelectPlace?: ((...args: any[]) => any);
+  onSelectPlace?: ((place: number[]) => void);
   places?: {color?: string | {dark?: string,light?: string},name?: string,location: number[],onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any)}[];
 }
 
