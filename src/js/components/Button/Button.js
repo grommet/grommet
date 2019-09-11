@@ -101,7 +101,7 @@ class Button extends Component {
         }
       } else {
         buttonIconColor = normalizeColor(
-          theme.button.color || theme.global.colors.text,
+          theme.button.color || theme.global.colors.icon,
           theme,
         );
       }

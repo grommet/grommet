@@ -8,8 +8,8 @@ exports[`Carousel basic 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c9 g {
@@ -469,8 +469,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c9 g {
@@ -930,8 +930,8 @@ exports[`Carousel navigate 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c9 g {
@@ -1414,7 +1414,7 @@ exports[`Carousel navigate 2`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 cZXyLU"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1443,8 +1443,8 @@ exports[`Carousel navigate 2`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c0 g {
@@ -1496,7 +1496,7 @@ exports[`Carousel navigate 2`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 cZXyLU"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1567,7 +1567,7 @@ exports[`Carousel navigate 3`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 cZXyLU"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1600,8 +1600,8 @@ exports[`Carousel navigate 3`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c0 g {
@@ -1648,7 +1648,7 @@ exports[`Carousel navigate 3`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 cZXyLU"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1673,8 +1673,8 @@ exports[`Carousel play 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c9 g {
@@ -2155,7 +2155,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 cZXyLU"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -2184,8 +2184,8 @@ exports[`Carousel play 2`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c0 g {
@@ -2237,7 +2237,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 cZXyLU"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
             viewBox="0 0 24 24"
           >
             <polyline

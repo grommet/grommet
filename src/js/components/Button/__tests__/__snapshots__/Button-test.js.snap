@@ -1371,7 +1371,7 @@ exports[`Button icon label 1`] = `
       className="c2"
     >
       <svg
-        color="#444444"
+        color="#666666"
       />
       <div
         className="c3"
@@ -1548,7 +1548,7 @@ exports[`Button reverse icon label 1`] = `
         className="c3"
       />
       <svg
-        color="#444444"
+        color="#666666"
       />
     </div>
   </button>
@@ -1599,7 +1599,7 @@ exports[`Button warns about invalid icon 1`] = `
     type="button"
   >
     <svg
-      color="#444444"
+      color="#666666"
     />
   </button>
 </div>
