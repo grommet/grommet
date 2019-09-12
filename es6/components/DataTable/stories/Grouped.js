@@ -1,0 +1,31 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Grommet, Box, DataTable } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { columns, DATA } from './data';
+var groupColumns = [].concat(columns);
+var first = groupColumns[0];
+groupColumns[0] = _extends({}, groupColumns[1]);
+groupColumns[1] = _extends({}, first);
+groupColumns[0].footer = groupColumns[1].footer;
+delete groupColumns[1].footer;
+
+var GroupedDataTable = function GroupedDataTable() {
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(DataTable, {
+    columns: groupColumns,
+    data: DATA,
+    groupBy: "location",
+    sortable: true
+  })));
+};
+
+storiesOf('DataTable', module).add('Grouped', function () {
+  return React.createElement(GroupedDataTable, null);
+});

@@ -1,0 +1,62 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Grommet, Box, DataTable } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { columns, DATA } from './data';
+
+var ServedDataTable = function ServedDataTable() {
+  var _React$useState = React.useState(DATA),
+      data2 = _React$useState[0],
+      setData2 = _React$useState[1];
+
+  var onSearch = function onSearch(search) {
+    var nextData;
+
+    if (search) {
+      // The function below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
+      var escapedText = function escapedText(text) {
+        text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+        return new RegExp(escapedText, 'i');
+      };
+
+      var expressions = Object.keys(search).map(function (property) {
+        return {
+          property: property,
+          // Create the regular expression with modified value which handles escaping special characters
+          // Without escaping special characters, errors will appear in the console
+          exp: new RegExp(escapedText(search[property]), 'i')
+        };
+      });
+      nextData = DATA.filter(function (d) {
+        return !expressions.some(function (e) {
+          return !e.exp.test(d[e.property]);
+        });
+      });
+    } else {
+      nextData = DATA;
+    }
+
+    setData2(nextData);
+  };
+
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(DataTable, {
+    columns: columns.map(function (column) {
+      return _extends({}, column, {
+        search: column.property === 'name' || column.property === 'location'
+      });
+    }),
+    data: data2,
+    onSearch: onSearch
+  })));
+};
+
+storiesOf('DataTable', module).add('Served', function () {
+  return React.createElement(ServedDataTable, null);
+});
