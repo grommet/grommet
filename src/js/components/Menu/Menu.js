@@ -123,7 +123,7 @@ class Menu extends Component {
         direction="row"
         justify={justifyContent}
         align="center"
-        pad="small"
+        pad={plain ? "none": "small"}
         gap={label && icon !== false ? 'small' : undefined}
       >
         <Text size={size}>{label}</Text>
