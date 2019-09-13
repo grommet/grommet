@@ -66,13 +66,14 @@ function (_Component) {
       var value;
 
       if (direction === 'vertical') {
-        var y = event.clientY - (rect.y || 0); // unit test resilience
+        // there is no x and y in unit testing
+        var y = event.clientY - (rect.top || 0); // unit test resilience
 
         var scaleY = rect.height / (max - min + 1) || 1; // unit test resilience
 
         value = Math.floor(y / scaleY) + min;
       } else {
-        var x = event.clientX - (rect.x || 0); // unit test resilience
+        var x = event.clientX - (rect.left || 0); // unit test resilience
 
         var scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
 
