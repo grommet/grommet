@@ -142,7 +142,7 @@ function (_Component) {
       direction: "row",
       justify: justifyContent,
       align: "center",
-      pad: "small",
+      pad: plain ? "none" : "small",
       gap: label && icon !== false ? 'small' : undefined
     }, React.createElement(Text, {
       size: size

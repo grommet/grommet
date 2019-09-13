@@ -161,7 +161,7 @@ function (_Component) {
       direction: "row",
       justify: justifyContent,
       align: "center",
-      pad: "small",
+      pad: plain ? "none" : "small",
       gap: label && icon !== false ? 'small' : undefined
     }, _react["default"].createElement(_Text.Text, {
       size: size
