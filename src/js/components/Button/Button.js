@@ -86,7 +86,7 @@ class Button extends Component {
     } = this.props;
     const { hover } = this.state;
 
-    let buttonIcon;
+    let buttonIcon = icon;
     if (icon && !icon.props.color) {
       let buttonIconColor;
       if (primary) {
