@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box } from '../Box';
+import { BoxType } from '../Box';
 
 export interface TableCellProps {
   plain?: boolean;
@@ -8,6 +8,6 @@ export interface TableCellProps {
   verticalAlign?: "top" | "middle" | "bottom";
 }
 
-declare const TableCell: TableCellProps & Box & JSX.IntrinsicElements['td'];
+declare const TableCell: React.FC<TableCellProps & BoxType & JSX.IntrinsicElements['td']>;
 
 export { TableCell };
