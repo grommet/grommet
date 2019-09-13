@@ -40,7 +40,8 @@
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
     "build-storybook": "build-storybook -c storybook -o storybook-static -s ./storybook/public",
-    "prettier": "pretty-quick --staged"
+    "prettier": "pretty-quick --staged",
+    "chromatic": "CHROMATIC_APP_CODE=ok10hcbrw9o chromatic test"
   },
   "peerDependencies": {
     "react": ">= 16.6.1",
@@ -117,6 +118,7 @@
     "regenerator-runtime": "^0.13.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.95.0",
+    "storybook-chromatic": "^2.2.2",
     "styled-components": "^4.1.1",
     "tarball-extract": "^0.0.6",
     "webpack": "^4.39.3",
