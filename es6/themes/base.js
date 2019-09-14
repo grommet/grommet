@@ -366,7 +366,11 @@ export var generate = function generate(baseSpacing, scale) {
           previous: FormPrevious,
           next: FormNext
         }
-      }
+      },
+      heading: {
+        level: '4'
+      } // level ranges from 1-6
+
     },
     carousel: {
       icons: {

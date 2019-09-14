@@ -218,7 +218,7 @@ function (_Component) {
           horizontal: headingPadMap[size] || 'small'
         }
       }, React.createElement(Heading, {
-        level: size === 'small' ? 4 : 3,
+        level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
         size: size,
         margin: "none"
       }, reference.toLocaleDateString(locale, {

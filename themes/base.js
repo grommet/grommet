@@ -391,7 +391,11 @@ var generate = function generate(baseSpacing, scale) {
           previous: _FormPrevious.FormPrevious,
           next: _FormNext.FormNext
         }
-      }
+      },
+      heading: {
+        level: '4'
+      } // level ranges from 1-6
+
     },
     carousel: {
       icons: {
