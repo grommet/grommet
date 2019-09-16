@@ -41,11 +41,12 @@ class RangeSelector extends Component {
     const rect = this.containerRef.current.getBoundingClientRect();
     let value;
     if (direction === 'vertical') {
-      const y = event.clientY - (rect.y || 0); // unit test resilience
+      // there is no x and y in unit testing
+      const y = event.clientY - (rect.top || 0); // unit test resilience
       const scaleY = rect.height / (max - min + 1) || 1; // unit test resilience
       value = Math.floor(y / scaleY) + min;
     } else {
-      const x = event.clientX - (rect.x || 0); // unit test resilience
+      const x = event.clientX - (rect.left || 0); // unit test resilience
       const scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
       value = Math.floor(x / scaleX) + min;
     }
