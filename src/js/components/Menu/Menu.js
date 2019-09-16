@@ -1,4 +1,4 @@
-import React, { useState, useEffect, forwardRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -43,7 +43,7 @@ To make a selection:
 - Space is pressed.
 */
 
-const Menu = forwardRef((props, ref) => {
+const Menu = props => {
   const {
     children,
     disabled,
@@ -51,7 +51,7 @@ const Menu = forwardRef((props, ref) => {
     dropBackground,
     dropProps,
     dropTarget,
-    // forwardRef,
+    forwardRef,
     justifyContent,
     icon,
     items,
@@ -207,7 +207,7 @@ const Menu = forwardRef((props, ref) => {
       onKeyDown={onKeyDown}
     >
       <DropButton
-        ref={ref}
+        ref={forwardRef}
         {...rest}
         a11yTitle={messages.openMenu || 'Open Menu'}
         disabled={disabled}
@@ -264,7 +264,7 @@ const Menu = forwardRef((props, ref) => {
       </DropButton>
     </Keyboard>
   );
-});
+};
 
 Menu.propTypes = {
   dropAlign: PropTypes.shape({
