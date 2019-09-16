@@ -10,7 +10,7 @@ const data = {
     'if you like my poems let them',
   ],
   Chaucer: ["The Knight's Tale", 'The General Prologue', "The Friar's Tale"],
-  Neruda: ['If You Fogot Me', 'Love Sonnet XVII'],
+  Neruda: ['If You Forget Me', 'Love Sonnet XVII'],
   Poe: ['The Raven', 'Romance', 'Song'],
   Whitman: ['To You', 'O Captain! My Captain!', 'O Me! O Life!'],
 };
