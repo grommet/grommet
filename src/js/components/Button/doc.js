@@ -50,7 +50,7 @@ export const doc = Button => {
       PropTypes.oneOf(['background']),
       PropTypes.shape({
         color: PropTypes.string,
-        dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+        dark: PropTypes.string,
         image: PropTypes.string,
         light: PropTypes.string,
         position: PropTypes.string,
@@ -72,9 +72,13 @@ export const doc = Button => {
     ])
       .description(
         `The hover indicator to apply when the user is mousing over the
-button. An object can be also be specified for color index support:
-{background: 'neutral-2'}. This prop is meant to be used only
-with plain Buttons.`,
+button. HoverIndicator can accept a boolean, string, and object
+Where the value of true or "background" applies theme.global.hover.background;
+a string specifying a color (e.g. '#999999'; 'neutral-1') Or, a 'url()' for an image;
+an object specifying color index support: (e.g.
+{color: 'neutral-2'}, {"dark": "light-1", "light": "dark-2"}).
+
+'hoverIndicator' is meant to be used only in combination with the 'plain' prop, as Button supports hover styling by default.`,
       )
       .defaultValue(false),
     href: PropTypes.string.description(
