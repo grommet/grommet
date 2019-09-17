@@ -5,6 +5,10 @@ exports.Image = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _recompose = require("recompose");
+
+var _hocs = require("../hocs");
+
 var _StyledImage = require("./StyledImage");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
@@ -15,10 +19,11 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var Image = function Image(_ref) {
   var fallback = _ref.fallback,
+      forwardRef = _ref.forwardRef,
       onError = _ref.onError,
       opacity = _ref.opacity,
       src = _ref.src,
-      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "onError", "opacity", "src"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "forwardRef", "onError", "opacity", "src"]);
 
   var _useState = (0, _react.useState)(false),
       imageMissing = _useState[0],
@@ -36,6 +41,7 @@ var Image = function Image(_ref) {
     onError: (onError || fallback) && handleError
   };
   return _react["default"].createElement(_StyledImage.StyledImage, _extends({}, rest, extraProps, {
+    ref: forwardRef,
     opacityProp: opacity,
     src: !imageMissing ? src : fallback
   }));
@@ -47,6 +53,5 @@ if (process.env.NODE_ENV !== 'production') {
   ImageDoc = require('./doc').doc(Image); // eslint-disable-line global-require
 }
 
-var ImageWrapper = ImageDoc || Image;
+var ImageWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(ImageDoc || Image);
 exports.Image = ImageWrapper;
-ImageWrapper.displayName = 'Image';
