@@ -385,6 +385,7 @@ const animationEnding = type => {
   return 'forwards';
 };
 
+/* ** XXX TBD WORKAROUND for issue with primitives: {{{
 const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
@@ -466,6 +467,7 @@ const animationStyle = css`
     animation: ${animationItemStyle(props.animation, props.theme)};
   `};
 `;
+// ** XXX END OF WORKAROUND }}} */
 
 const getSize = (props, size) => props.theme.global.size[size] || size;
 
@@ -542,7 +544,7 @@ const StyledBox = styled.div`
   ${props => props.wrapProp && wrapStyle}
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
-  ${props => props.animation && animationStyle}
+  ${/* XXX TBD */ null /* props => props.animation && animationStyle */}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
