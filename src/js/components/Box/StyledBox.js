@@ -506,7 +506,7 @@ const widthStyle = css`
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div`
+const StyledBox = styled.View`
   display: flex;
   box-sizing: border-box;
   outline: none;
@@ -584,7 +584,7 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
-const StyledBoxGap = styled.div`
+const StyledBoxGap = styled.View`
   flex: 0 0 auto;
   ${props =>
     props.gap &&

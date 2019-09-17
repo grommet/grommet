@@ -2,7 +2,7 @@ import styled, {
   ThemeContext,
   css,
   withTheme
-} from 'styled-components';
+} from 'styled-components/primitives';
 
 export { ThemeContext, css, withTheme };
 
