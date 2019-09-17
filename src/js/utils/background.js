@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '../styled-imports';
 
 import { colorIsDark, getRGBA, normalizeColor } from './colors';
 import { evalStyle } from './styles';

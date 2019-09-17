@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from '../../styled-imports';
 
 import { deepMerge } from '../../utils';
 

@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '../styled-imports';
 
 import { normalizeColor } from './colors';
 import { breakpointStyle, parseMetricToNum } from './mixins';

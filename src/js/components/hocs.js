@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import getDisplayName from 'recompose/getDisplayName';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { withTheme } from 'styled-components';
+import { withTheme } from '../styled-imports';
 import { AnnounceContext } from '../contexts';
 
 export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {

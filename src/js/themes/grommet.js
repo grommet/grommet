@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '../styled-imports';
 
 import { deepFreeze } from '../utils/object';
 

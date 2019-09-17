@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '../styled-imports';
 
 export const parseMetricToNum = fontAsString => {
   if (fontAsString.match(/\s/) && process.env.NODE_ENV !== 'production') {

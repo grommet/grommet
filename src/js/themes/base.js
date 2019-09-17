@@ -1,5 +1,5 @@
 import { rgba } from 'polished';
-import { css } from 'styled-components';
+import { css } from '../styled-imports';
 
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
