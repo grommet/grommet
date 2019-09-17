@@ -508,8 +508,10 @@ const widthStyle = css`
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.View`
   display: flex;
+  ${ /* XXX TBD NOT WORKING on React Native: }
   box-sizing: border-box;
   outline: none;
+  ${ /* XXX END OF TBD NOT WORKING on React Native ** */ undefined }
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
