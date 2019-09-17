@@ -15,7 +15,9 @@ class Box extends Component {
 
   static defaultProps = {
     direction: 'column',
+    /* XXX TBD WORKAROUND for issue with primitives: {{{
     margin: 'none',
+    // ** XXX END of WORKAROUND }}} */
     pad: 'none',
     responsive: true,
   };
