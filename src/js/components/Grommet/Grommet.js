@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { createGlobalStyle } from 'styled-components';
+// XXX TBD NOT SUPPORTED:
+// import { createGlobalStyle } from 'styled-components';
 
 import { colorIsDark } from 'grommet-styles';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
@@ -7,9 +8,11 @@ import { deepMerge, getBreakpoint, getDeviceBreakpoint } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 
+/* ** XXX TBD NOT SUPPORTED {{{
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `;
+// ** XXX END TBD NOT SUPPORTED }}} */
 
 class Grommet extends Component {
   static displayName = 'Grommet';
@@ -100,7 +103,7 @@ class Grommet extends Component {
           <StyledGrommet full={full} {...rest}>
             {children}
           </StyledGrommet>
-          {full && <FullGlobalStyle />}
+          {/* XXX TBD NOT SUPPORTED */ null /* full && <FullGlobalStyle /> */}
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
     );
