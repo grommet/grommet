@@ -41,6 +41,7 @@ class Grommet extends Component {
 
   state = {};
 
+  /* ** XXX TBD NOT SUPPORTED on React Native {{{
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
     this.onResize();
@@ -49,6 +50,7 @@ class Grommet extends Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.onResize);
   }
+  // *** XXX END TBD NOT SUPPORTED on React Native  }}} */
 
   onResize = () => {
     const { theme, responsive } = this.state;
