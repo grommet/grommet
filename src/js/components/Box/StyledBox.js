@@ -537,7 +537,7 @@ const StyledBox = styled.View`
     edgeStyle(
       'padding',
       props.pad,
-      props.responsive,
+      false, /* XXX TBD NOT WORKING on React Native: props.responsive, */
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
