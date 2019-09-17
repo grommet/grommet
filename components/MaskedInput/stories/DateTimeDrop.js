@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -10,26 +10,20 @@ var _themes = require("grommet/themes");
 
 var _grommetIcons = require("grommet-icons");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+var DropContent = function DropContent(_ref) {
+  var initialDate = _ref.date,
+      initialTime = _ref.time,
+      onClose = _ref.onClose;
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+  var _React$useState = _react["default"].useState(),
+      date = _React$useState[0],
+      setDate = _React$useState[1];
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var DropContent = function DropContent(props) {
-  var initialDate = props.date,
-      initialTime = props.time,
-      onClose = props.onClose;
-
-  var _useState = (0, _react.useState)(),
-      date = _useState[0],
-      setDate = _useState[1];
-
-  var _useState2 = (0, _react.useState)(),
-      time = _useState2[0],
-      setTime = _useState2[1];
+  var _React$useState2 = _react["default"].useState(),
+      time = _React$useState2[0],
+      setTime = _React$useState2[1];
 
   var close = function close() {
     return onClose(date || initialDate, time || initialTime);
@@ -86,85 +80,55 @@ var DropContent = function DropContent(props) {
   }))));
 };
 
-var DateTimeDropButton =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(DateTimeDropButton, _Component);
+var DateTimeDropButton = function DateTimeDropButton() {
+  var _React$useState3 = _react["default"].useState(),
+      date = _React$useState3[0],
+      setDate = _React$useState3[1];
 
-  function DateTimeDropButton() {
-    var _this;
+  var _React$useState4 = _react["default"].useState(''),
+      time = _React$useState4[0],
+      setTime = _React$useState4[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  var _React$useState5 = _react["default"].useState(),
+      open = _React$useState5[0],
+      setOpen = _React$useState5[1];
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      date: undefined,
-      time: ''
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onClose", function (date, time) {
-      _this.setState({
-        date: date,
-        time: time,
-        open: false
-      });
-
-      setTimeout(function () {
-        return _this.setState({
-          open: undefined
-        });
-      }, 1);
-    });
-
-    return _this;
-  }
-
-  var _proto = DateTimeDropButton.prototype;
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$state = this.state,
-        date = _this$state.date,
-        open = _this$state.open,
-        time = _this$state.time;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.DropButton, {
-      open: open,
-      onClose: function onClose() {
-        return _this2.setState({
-          open: false
-        });
-      },
-      onOpen: function onOpen() {
-        return _this2.setState({
-          open: true
-        });
-      },
-      dropContent: _react["default"].createElement(DropContent, {
-        date: date,
-        time: time,
-        onClose: this.onClose
-      })
-    }, _react["default"].createElement(_grommet.Box, {
-      direction: "row",
-      gap: "medium",
-      align: "center",
-      pad: "small"
-    }, _react["default"].createElement(_grommet.Text, {
-      color: date ? undefined : 'dark-5'
-    }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), _react["default"].createElement(_grommetIcons.Schedule, null)))));
+  var onClose = function onClose(nextDate, nextTime) {
+    setDate(nextDate);
+    setTime(nextTime);
+    setOpen(false);
+    setTimeout(function () {
+      return setOpen(undefined);
+    }, 1);
   };
 
-  return DateTimeDropButton;
-}(_react.Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.DropButton, {
+    open: open,
+    onClose: function onClose() {
+      return setOpen(false);
+    },
+    onOpen: function onOpen() {
+      return setOpen(true);
+    },
+    dropContent: _react["default"].createElement(DropContent, {
+      date: date,
+      time: time,
+      onClose: onClose
+    })
+  }, _react["default"].createElement(_grommet.Box, {
+    direction: "row",
+    gap: "medium",
+    align: "center",
+    pad: "small"
+  }, _react["default"].createElement(_grommet.Text, {
+    color: date ? undefined : 'dark-5'
+  }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), _react["default"].createElement(_grommetIcons.Schedule, null)))));
+};
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Date Time Drop', function () {
   return _react["default"].createElement(DateTimeDropButton, null);

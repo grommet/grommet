@@ -1,27 +1,21 @@
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component, useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Button, Grommet, Keyboard, Text, Calendar, MaskedInput, DropButton } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Schedule } from "grommet-icons/es6/icons/Schedule";
 
-var DropContent = function DropContent(props) {
-  var initialDate = props.date,
-      initialTime = props.time,
-      onClose = props.onClose;
+var DropContent = function DropContent(_ref) {
+  var initialDate = _ref.date,
+      initialTime = _ref.time,
+      onClose = _ref.onClose;
 
-  var _useState = useState(),
-      date = _useState[0],
-      setDate = _useState[1];
+  var _React$useState = React.useState(),
+      date = _React$useState[0],
+      setDate = _React$useState[1];
 
-  var _useState2 = useState(),
-      time = _useState2[0],
-      setTime = _useState2[1];
+  var _React$useState2 = React.useState(),
+      time = _React$useState2[0],
+      setTime = _React$useState2[1];
 
   var close = function close() {
     return onClose(date || initialDate, time || initialTime);
@@ -78,85 +72,55 @@ var DropContent = function DropContent(props) {
   }))));
 };
 
-var DateTimeDropButton =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(DateTimeDropButton, _Component);
+var DateTimeDropButton = function DateTimeDropButton() {
+  var _React$useState3 = React.useState(),
+      date = _React$useState3[0],
+      setDate = _React$useState3[1];
 
-  function DateTimeDropButton() {
-    var _this;
+  var _React$useState4 = React.useState(''),
+      time = _React$useState4[0],
+      setTime = _React$useState4[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  var _React$useState5 = React.useState(),
+      open = _React$useState5[0],
+      setOpen = _React$useState5[1];
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      date: undefined,
-      time: ''
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onClose", function (date, time) {
-      _this.setState({
-        date: date,
-        time: time,
-        open: false
-      });
-
-      setTimeout(function () {
-        return _this.setState({
-          open: undefined
-        });
-      }, 1);
-    });
-
-    return _this;
-  }
-
-  var _proto = DateTimeDropButton.prototype;
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$state = this.state,
-        date = _this$state.date,
-        open = _this$state.open,
-        time = _this$state.time;
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Box, {
-      align: "center",
-      pad: "large"
-    }, React.createElement(DropButton, {
-      open: open,
-      onClose: function onClose() {
-        return _this2.setState({
-          open: false
-        });
-      },
-      onOpen: function onOpen() {
-        return _this2.setState({
-          open: true
-        });
-      },
-      dropContent: React.createElement(DropContent, {
-        date: date,
-        time: time,
-        onClose: this.onClose
-      })
-    }, React.createElement(Box, {
-      direction: "row",
-      gap: "medium",
-      align: "center",
-      pad: "small"
-    }, React.createElement(Text, {
-      color: date ? undefined : 'dark-5'
-    }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), React.createElement(Schedule, null)))));
+  var onClose = function onClose(nextDate, nextTime) {
+    setDate(nextDate);
+    setTime(nextTime);
+    setOpen(false);
+    setTimeout(function () {
+      return setOpen(undefined);
+    }, 1);
   };
 
-  return DateTimeDropButton;
-}(Component);
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(DropButton, {
+    open: open,
+    onClose: function onClose() {
+      return setOpen(false);
+    },
+    onOpen: function onOpen() {
+      return setOpen(true);
+    },
+    dropContent: React.createElement(DropContent, {
+      date: date,
+      time: time,
+      onClose: onClose
+    })
+  }, React.createElement(Box, {
+    direction: "row",
+    gap: "medium",
+    align: "center",
+    pad: "small"
+  }, React.createElement(Text, {
+    color: date ? undefined : 'dark-5'
+  }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), React.createElement(Schedule, null)))));
+};
 
 storiesOf('MaskedInput', module).add('Date Time Drop', function () {
   return React.createElement(DateTimeDropButton, null);
