@@ -44,7 +44,10 @@
   },
   "peerDependencies": {
     "react": ">= 16.6.1",
+    "react-art": ">= 16.9.0",
     "react-dom": ">= 16.6.1",
+    "react-native-web": ">= 0.11.7",
+    "react-primitives": ">= 0.8.0",
     "styled-components": ">= 4.X"
   },
   "dependencies": {
@@ -111,8 +114,11 @@
     "prettier": "^1.16.4",
     "pretty-quick": "^1.8.0",
     "react": "^16.8.3",
+    "react-art": "^16.9.0",
     "react-dev-utils": "^9.0.3",
     "react-dom": "^16.8.3",
+    "react-native-web": "^0.11.7",
+    "react-primitives": "^0.8.0",
     "react-test-renderer": "^16.8.3",
     "regenerator-runtime": "^0.13.1",
     "require-reload": "^0.2.2",
