@@ -42,7 +42,13 @@ class Box extends Component {
       theme: propsTheme,
       ...rest
     } = this.props;
+    /* ** XXX TBD QUICK WORKAROUND for React Native:
     const theme = this.context || propsTheme;
+    // ** XXX ... */
+    const theme = this.context && this.context.global
+      ? this.context
+      : propsTheme;
+    // ** XXX END OF QUICK WORKAROUND for React Native
     let contents = children;
     if (gap) {
       contents = [];
