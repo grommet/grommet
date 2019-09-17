@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from '../../styled-imports';
 
 import { defaultProps } from '../../default-props';
 
