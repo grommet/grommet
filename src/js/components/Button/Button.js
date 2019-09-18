@@ -89,22 +89,17 @@ class Button extends Component {
     let buttonIcon = icon;
     if (icon && !icon.props.color) {
       let buttonIconColor;
-      if (primary) {
-        if (theme.button.color) {
+      if (!primary && theme.button.color){
+      buttonIconColor = normalizeColor(theme.button.color, theme);
+      }
+      else if (primary && theme.button.color) {
           buttonIconColor = normalizeColor(theme.button.color, theme);
-        } else {
-          const { props } = this;
+        } else if (primary && !theme.button.color) {
           buttonIconColor =
             theme.global.colors.text[
-              isDarkBackground(props) ? 'dark' : 'light'
+              isDarkBackground(this.props) ? 'dark' : 'light'
             ];
-        }
-      } else {
-        buttonIconColor = normalizeColor(
-          theme.button.color || theme.global.colors.icon,
-          theme,
-        );
-      }
+          }
       buttonIcon = cloneElement(icon, {
         color: buttonIconColor,
       });
