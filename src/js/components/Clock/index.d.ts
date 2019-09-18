@@ -7,7 +7,7 @@ export interface ClockProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   hourLimit?: "12" | "24" | "12" | "24";
-  onChange?: ((...args: any[]) => any);
+  onChange?: ((event: React.ChangeEvent) => void);
   precision?: "hours" | "minutes" | "seconds";
   run?: boolean | "backward" | "forward";
   size?: "small" | "medium" | "large" | "xlarge" | string;

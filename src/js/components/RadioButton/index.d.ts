@@ -6,7 +6,7 @@ export interface RadioButtonProps {
   id?: string;
   label?: React.ReactNode;
   name: string;
-  onChange?: ((...args: any[]) => any);
+  onChange?: ((event: React.ChangeEvent) => void);
 }
 
 declare const RadioButton: React.ComponentClass<RadioButtonProps & JSX.IntrinsicElements['input']>;
