@@ -24,6 +24,40 @@ const ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
+const BORDER_SHAPE = PropTypes.shape({
+  color: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
+  ]),
+  side: PropTypes.oneOf([
+    'top',
+    'left',
+    'bottom',
+    'right',
+    'horizontal',
+    'vertical',
+    'all',
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+    PropTypes.string,
+  ]),
+  style: PropTypes.oneOf([
+    'solid',
+    'dashed',
+    'dotted',
+    'double',
+    'groove',
+    'ridge',
+    'inset',
+    'outset',
+    'hidden',
+  ]).defaultValue('solid'),
+});
+
 // if you update values here, make sure to update in Drop/doc too.
 const overflowPropType = PropTypes.oneOfType([
   PropTypes.oneOf(OVERFLOW_VALUES),
@@ -130,39 +164,8 @@ export const doc = Box => {
         'vertical',
         'all',
       ]),
-      PropTypes.shape({
-        color: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.shape({
-            dark: PropTypes.string,
-            light: PropTypes.string,
-          }),
-        ]),
-        side: PropTypes.oneOf([
-          'top',
-          'left',
-          'bottom',
-          'right',
-          'horizontal',
-          'vertical',
-          'all',
-        ]),
-        size: PropTypes.oneOfType([
-          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-          PropTypes.string,
-        ]),
-        style: PropTypes.oneOf([
-          'solid',
-          'dashed',
-          'dotted',
-          'double',
-          'groove',
-          'ridge',
-          'inset',
-          'outset',
-          'hidden',
-        ]).defaultValue('solid'),
-      }),
+      BORDER_SHAPE,
+      PropTypes.arrayOf(BORDER_SHAPE),
     ]).description('Include a border.'),
     direction: PropTypes.oneOf([
       'row',

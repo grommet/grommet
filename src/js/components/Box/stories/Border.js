@@ -19,6 +19,21 @@ const BorderBox = () => (
           ),
         )}
       </Box>
+      <Box direction="row-responsive" gap="small" align="start">
+        <Box
+          pad="small"
+          border={[
+            { size: 'medium', style: 'dotted', side: 'top' },
+            {
+              size: 'medium',
+              style: 'double',
+              side: 'vertical',
+            },
+          ]}
+        >
+          custom top & vertical borders
+        </Box>
+      </Box>
       <Box pad="small" border={{ color: 'brand' }}>
         color
       </Box>

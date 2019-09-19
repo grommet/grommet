@@ -515,7 +515,12 @@ const StyledBox = styled.div`
   ${props => props.alignContent && alignContentStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props =>
-    props.border && borderStyle(props.border, props.responsive, props.theme)}
+    props.border &&
+    (Array.isArray(props.border)
+      ? props.border.map(border =>
+          borderStyle(border, props.responsive, props.theme),
+        )
+      : borderStyle(props.border, props.responsive, props.theme))}
   ${props =>
     props.directionProp && directionStyle(props.directionProp, props.theme)}
   ${props =>
