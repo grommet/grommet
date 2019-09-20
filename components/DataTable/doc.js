@@ -12,14 +12,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 var parts = ['header', 'body', 'footer'];
-var padShape = {};
+var padShapeSides = {};
 sides.forEach(function (side) {
-  padShape[side] = _reactDesc.PropTypes.oneOf(sizes);
+  padShapeSides[side] = _reactDesc.PropTypes.oneOf(sizes);
 });
+var padShapeParts = {};
 parts.forEach(function (part) {
-  padShape[part] = {};
+  padShapeParts[part] = {};
   sides.forEach(function (side) {
-    padShape[part][side] = _reactDesc.PropTypes.oneOf(sizes);
+    padShapeParts[part][side] = _reactDesc.PropTypes.oneOf(sizes);
   });
 });
 var backgroundShape = {};
@@ -68,7 +69,7 @@ var doc = function doc(DataTable) {
     onMore: _reactDesc.PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data rows have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed. This cannot\n      be combined with properties that expect all data to be present in the\n      browser, such as columns.search, sortable, groupBy, or columns.aggregate."),
     onClickRow: _reactDesc.PropTypes.func.description("When supplied, this function will be called with an event object that\n      include a 'datum' property containing the data value associated with\n      the clicked row. You should not include interactive elements, like\n      Anchor or Button inside table cells as that can cause confusion with\n      overlapping interactive elements."),
     onSearch: _reactDesc.PropTypes.func.description("When supplied, and when at least one column has 'search' enabled,\n      this function will be called with an object with keys for property\n      names and values which are the search text strings. This is typically\n      employed so a back-end can be used to search through the data."),
-    pad: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape(padShape)]).description("Cell padding. You can set the padding per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
+    pad: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape(padShapeSides), _reactDesc.PropTypes.shape(padShapeParts)]).description("Cell padding. You can set the padding per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
     primaryKey: _reactDesc.PropTypes.string.description("When supplied, indicates the property for a data object to use to\n      get a unique identifier. See also the 'columns.primary' description.\n      Use this property when the columns approach will not work for your\n      data set."),
     resizeable: _reactDesc.PropTypes.bool.description('Whether to allow the user to resize column widths.'),
     rowProps: _reactDesc.PropTypes.shape({}).description("Row specific background, border, and pad, keyed by primary key value.\n      For example:\n      { \"primary-key-value\": { background: ..., border: ..., pad: ... }},\n      where the background, border, and pad accept the same values as\n      the same named properties on DataTable."),
