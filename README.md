@@ -1,49 +1,87 @@
-# Grommet: The most advanced UX framework for enterprise apps
+# Grommet: focus on the essential experience
 
-[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://slackin.grommet.io)  [![Build Status](https://api.travis-ci.org/grommet/grommet.svg)](https://travis-ci.org/grommet/grommet)  [![Coverage Status](https://coveralls.io/repos/github/grommet/grommet/badge.svg?branch=master)](https://coveralls.io/github/grommet/grommet?branch=master) [![Code Climate](https://codeclimate.com/github/grommet/grommet/badges/gpa.svg)](https://codeclimate.com/github/grommet/grommet)  [![Dependency Status](https://david-dm.org/grommet/grommet.svg)](https://david-dm.org/grommet/grommet)  [![devDependency Status](https://david-dm.org/grommet/grommet/dev-status.svg)](https://david-dm.org/grommet/grommet#info=devDependencies)  [![CDNJS](https://img.shields.io/cdnjs/v/grommet.svg)](https://cdnjs.com/libraries/grommet)
+[![PRs Welcome](https://img.shields.io/badge/pr's-welcome-7d4cdb.svg)][contributing]
+[![slack](https://img.shields.io/badge/join%20the%20community-slack-fd6fff.svg)][slack]
+[![follow](https://img.shields.io/twitter/follow/grommet_io.svg?label=follow%20&style=social)][twitter]
+[![blogs](https://img.shields.io/badge/view%20blogs%20on-medium-000000.svg)][medium]
+[![npm package](https://img.shields.io/npm/v/grommet.svg?color=ffca58)][npm]
+[![npm downloads](https://img.shields.io/npm/dm/grommet.svg?color=3d138d)][npm]
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)][prettier]
 
-<img align="right" height="260" src="https://grommet.github.io/img/grommet.svg">
+<img align="right" height="260" src="https://v2.grommet.io/img/stak-hurrah.svg">
 
-### Documentation
+## Documentation
 
-Visit the [grommet.github.io](https://grommet.github.io/) website for more information.
+Visit the [Grommet v2] website for more information.
 
-### Support / Contributing
+## Support / Contributing
 
-Before opening an issue or pull request, please read the [Contributing](https://github.com/grommet/grommet/blob/master/CONTRIBUTING.md) guide.
+Before opening an issue or pull request, please read the [Contributing] guide.
 
-### Hello World
+## Install
 
-  The quickest way to get started is to access the [Hello World](https://grommet.github.io/docs/hello-world) page.
+You can install Grommet using either of the methods below.
 
-### Install
+For npm users:
 
-  You can install Grommet using either of the methods below.
+```shell
+  $ npm install grommet styled-components --save
+```
 
-  For Bower users:
-  ```
-    $ bower install grommet
-  ```
+For Yarn users:
 
-  For NPM users:
-  ```
-    $ npm install -g grommet
-  ```
+```shell
+  $ yarn add grommet styled-components
+```
 
-  Detailed instructions are on the [Get Started](https://grommet.github.io/docs/get-started) page.
+There are more detailed instructions in the [Grommet Starter] app tutorial for
+new apps. For incorporating Grommet into an existing app, see the [Existing App]
+version.
 
-### Build
+## Explore
 
-  Refer to the [Grommet Build Wiki](https://github.com/grommet/grommet/wiki/Building-Grommet) for instructions on how to install your local copy of Grommet.
+1. [Storybook] examples per component, you can create them locally by running:
 
-### Release History
+   ```shell
+     $ npm run storybook
+   ```
 
-  See the [Change Log](https://github.com/grommet/grommet/wiki/Change-Log).
+   or
 
-### Tools Behind Grommet
+   ```shell
+     $ yarn storybook
+   ```
 
- Grommet is produced using these great tools
- * [Travis CI](https://travis-ci.org/grommet/grommet) for continuous integration
- * [Sauce Labs](https://saucelabs.com/) for automated browser testing
- * [BrowserStack](https://www.browserstack.com) for manual browser testing
- * [Waffle.io](https://waffle.io/grommet/grommet) for backlog tracking
+1. Basic [code-sandbox playgrounds][playground] for each component.
+1. [Templates, patterns, and starters][sandboxes]: feel free to share with us
+   more pattern ideas on [Slack].
+1. End-to-end project examples from our community in the
+   [#i-made-this Slack channel][slack].
+1. Read more from the Grommet team on [Medium].
+
+## Release History
+
+See the [Change Log].
+
+## Tools Behind Grommet
+
+Grommet is produced using this great tool:
+
+- [BrowserStack] for browser emulators and simulators.
+- [Circle CI] for continuous integration.
+
+[browserstack]: https://www.browserstack.com/
+[change log]: https://github.com/grommet/grommet/wiki/Change-Log
+[circle ci]: https://circleci.com/gh/grommet/grommet/
+[contributing]: CONTRIBUTING.md
+[existing app]: https://github.com/grommet/grommet-starter-existing-app
+[grommet starter]: https://github.com/grommet/grommet-starter-new-app
+[grommet v2]: https://v2.grommet.io/
+[medium]: https://medium.com/grommet-io
+[npm]: https://www.npmjs.com/package/grommet
+[playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
+[prettier]: https://github.com/prettier/prettier
+[sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
+[slack]: http://slackin.grommet.io
+[storybook]: https://storybook.grommet.io
+[twitter]: https://twitter.com/grommet_io

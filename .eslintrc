@@ -1,89 +1,66 @@
----
-parser: babel-eslint
-
-parserOptions:
-  ecmaFeatures:
-    experimentalObjectRestSpread: true
-    jsx: true
-  sourceType: "module"
-
-plugins:
-  - react
-
-env:
-  browser: true
-  node: true
-  es6: true
-
-globals:
-  __DEV__: true
-  __THEME__: true
-  __DEV_MODE__: true
-  __SOCKET_HOST__: true
-  IntlPolyfill: true
-  Modernizr: true
-  describe: true
-  it: true
-  beforeEach: true
-  afterEach: true
-  before: true
-  after: true
-
-rules:
-  # ERRORS
-  space-before-blocks: 2
-  indent: [2, 2, { SwitchCase: 1 }]
-  brace-style: 2
-  comma-dangle: 2
-  no-unused-expressions: 2
-  eol-last: 2
-  dot-notation: 2
-  no-unused-vars: [2, args: none]
-  semi: [2, "always"]
-  max-len: 2
-
-  # DISABLED
-  #change soon back to max-len: [1, 80]
-  no-underscore-dangle: 0
-  new-cap: 0
-  no-use-before-define: 0
-  key-spacing: 0
-  eqeqeq: 0
-  strict: 0
-  space-unary-ops: 0
-  yoda: 0
-  no-loop-func: 0
-  no-trailing-spaces: 0
-  no-multi-spaces: 0
-  no-shadow: 0
-  no-alert: 0
-  no-process-exit: 0
-  no-extend-native: 0
-  block-scoped-var: 0
-  quotes: 0
-  jsx-quotes: 0
-  consistent-return: 0
-
-  # REACT DISABLED
-  react/display-name: 0
-  react/jsx-sort-prop-types: 0
-  react/prop-types: 0
-  react/no-did-mount-set-state: 0
-  react/no-did-update-set-state: 0
-  react/jsx-max-props-per-line: 0
-  react/jsx-sort-props: 0
-  react/no-multi-comp: 0
-  react/jsx-boolean-value: 0
-  react/no-danger: 0
-
-  react/jsx-curly-spacing: 1
-  react/jsx-no-duplicate-props: 1
-  react/jsx-no-undef: 1
-  react/jsx-uses-react: 1
-  react/jsx-uses-vars: 1
-  react/no-unknown-property: 1
-  react/react-in-jsx-scope: 1
-  react/self-closing-comp: 1
-  react/sort-comp: 0
-  react/jsx-wrap-multilines: 1
-
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "it": true,
+    "expect": true,
+    "describe": true,
+    "jest": true,
+    "document": true,
+    "test": true,
+    "window": true,
+    "fetch": true,
+    "WebSocket": true,
+    "alert": true,
+    "URLSearchParams": true,
+    "defaultProps": true,
+    "childContextTypes": true,
+    "contextTypes": true,
+    "state": true,
+    "Event": true,
+    "fail": true,
+    "afterEach": true,
+    "beforeEach": true,
+    "afterAll": true,
+    "MouseEvent": true,
+    "requestAnimationFrame": true
+  },
+  "rules": {
+    "indent": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-console": 0,
+    "react/jsx-filename-extension": 0,
+    "import/prefer-default-export": 0,
+    "react/prop-types": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-wrap-multilines": 0,
+    "no-useless-concat": 0,
+    "react/jsx-indent": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/state-in-constructor": 0,
+    "react/static-property-placement": 0,
+    "react/jsx-curly-newline": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.js", "**/stories/**"],
+      "rules": {
+        "import/no-unresolved": 0,
+        "import/extensions": 0,
+        "import/no-extraneous-dependencies": 0,
+        "react/no-multi-comp": 0
+      }
+    },
+    {
+      "files": ["anchor.stories.js"],
+      "rules": {
+        "react/jsx-one-expression-per-line": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+import * as React from "react";
+
+export interface MaskedInputProps {
+  id?: string;
+  mask?: Array<{
+    length?: number | number[];
+    fixed?: string;
+    options?: string[] | number[];
+    regexp?: {};
+    placeholder?: string;
+  }>;
+  name?: string;
+  onChange?: ((...args: any[]) => any);
+  onBlur?: ((event: React.FocusEvent) => any);
+  plain?: boolean;
+  size?: "small" | "medium" | "large" | "xlarge" | string;
+  value?: string | number;
+}
+
+declare const MaskedInput: React.ComponentClass<
+    MaskedInputProps & Omit<JSX.IntrinsicElements['input'], keyof MaskedInputProps>
+>;
+
+export { MaskedInput };

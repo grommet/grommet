@@ -1,10 +1,28 @@
 {
-  "presets": [ "env", "react" ],
+  "presets": ["./tools/grommet-babel-preset-es2015", "@babel/preset-react"],
   "plugins": [
-    "add-module-exports",
-    "transform-object-rest-spread",
-    "transform-react-es6-displayname",
-    "transform-object-assign",
-    "transform-class-properties"
-  ]
+    ["styled-components", { "useDisplayName": false }],
+    "@babel/plugin-proposal-class-properties"
+  ],
+  "env": {
+    "es6": {
+      "plugins": [
+        [
+          "transform-imports",
+          {
+            "grommet-icons$": {
+              "transform": "grommet-icons/es6/icons/${member}",
+              "preventFullImport": true,
+              "skipDefaultConversion": true
+            },
+            "grommet-icons/themes": {
+              "transform": "grommet-icons/es6/themes/${member}",
+              "preventFullImport": true,
+              "skipDefaultConversion": true
+            }
+          }
+        ]
+      ]
+    }
+  }
 }

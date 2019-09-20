@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Collapsible has correct default options 1`] = `
-<span
-  className="grommetux-collapsible__wrapper"
-/>
-`;
