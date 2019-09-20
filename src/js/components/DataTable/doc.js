@@ -6,14 +6,16 @@ const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 const parts = ['header', 'body', 'footer'];
 
-const padShape = {};
+const padShapeSides = {};
 sides.forEach(side => {
-  padShape[side] = PropTypes.oneOf(sizes);
+  padShapeSides[side] = PropTypes.oneOf(sizes);
 });
+
+const padShapeParts = {};
 parts.forEach(part => {
-  padShape[part] = {};
+  padShapeParts[part] = {};
   sides.forEach(side => {
-    padShape[part][side] = PropTypes.oneOf(sizes);
+    padShapeParts[part][side] = PropTypes.oneOf(sizes);
   });
 });
 
@@ -152,7 +154,8 @@ export const doc = DataTable => {
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(sizes),
       PropTypes.string,
-      PropTypes.shape(padShape),
+      PropTypes.shape(padShapeSides),
+      PropTypes.shape(padShapeParts),
     ]).description(
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
