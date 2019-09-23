@@ -26,7 +26,8 @@ export const doc = ResponsiveContext => {
 
 export const themeDoc = {
   'global.breakpoints': {
-    description: `The possible breakpoints that could affect border, direction, gap, margin, pad, and round. The default values help to optimize content for mobile, tablet, and computer.`,
+    description:
+      'The possible breakpoints that could affect border, direction, gap, margin, pad, and round. The default values help to optimize content for mobile, tablet, and computer.',
     type: 'object',
     defaultValue: `{
     small: {
