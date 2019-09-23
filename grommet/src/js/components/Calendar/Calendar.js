@@ -231,7 +231,16 @@ class Calendar extends Component {
     return (
       <Box direction="row" justify="between" align="center">
         <Box flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
-          <Heading level={size === 'small' ? 4 : 3} size={size} margin="none">
+          <Heading
+            level={
+              size === 'small'
+                ? (theme.calendar.heading && theme.calendar.heading.level) || 4
+                : ((theme.calendar.heading && theme.calendar.heading.level) ||
+                    4) - 1
+            }
+            size={size}
+            margin="none"
+          >
             {reference.toLocaleDateString(locale, {
               month: 'long',
               year: 'numeric',

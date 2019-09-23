@@ -1,5 +1,5 @@
 import * as React from "react";
-import { AnimateType, MarginType } from "../../utils";
+import { AnimateType, MarginType, KeyboardType } from "../../utils";
 
 export interface LayerProps {
   animate?: AnimateType;
@@ -8,7 +8,7 @@ export interface LayerProps {
   margin?: MarginType;
   modal?: boolean;
   onClickOutside?: ((...args: any[]) => any);
-  onEsc?: ((...args: any[]) => any);
+  onEsc?: KeyboardType;
   plain?: boolean;
   position?: "bottom" | "bottom-left" | "bottom-right" | "center" | "hidden" | "left" | "right" | "top" | "top-left" | "top-right";
   responsive?: boolean;
