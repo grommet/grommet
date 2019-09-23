@@ -6,6 +6,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
+import { Text } from '../Text';
 import { backgroundStyle, focusStyle, normalizeColor } from '../../utils';
 import { withFocus, withForwardRef } from '../hocs';
 
@@ -30,15 +31,25 @@ const StyledButton = styled(Button)`
   ${props => props.active && hoverStyle}
 `;
 
+const normalize = (item, index, property) => {
+  if (typeof property === 'function') {
+    return property(item, index);
+  }
+  return item[property];
+};
+
 const List = React.forwardRef((props, ref) => {
   const {
+    action,
     background,
     border,
     children,
     data,
     focus,
-    pad,
     itemProps,
+    pad,
+    primaryKey,
+    secondaryKey,
     step,
     theme,
     onClickItem,
@@ -55,6 +66,7 @@ const List = React.forwardRef((props, ref) => {
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.item = data[active];
+              adjustedEvent.index = active;
               onClickItem(adjustedEvent);
             }
           : undefined
@@ -95,20 +107,70 @@ const List = React.forwardRef((props, ref) => {
         >
           {(item, index) => {
             let content;
-            if (children) content = children(item);
-            else if (typeof item === 'object')
+            let boxProps = {};
+
+            if (children) {
+              content = children(item);
+            } else if (primaryKey) {
+              if (secondaryKey) {
+                content = [
+                  <Text key="p" weight="bold">
+                    {normalize(item, index, primaryKey)}
+                  </Text>,
+                  <Text key="s">{normalize(item, index, secondaryKey)}</Text>,
+                ];
+                boxProps = {
+                  direction: 'row',
+                  align: 'center',
+                  justify: 'between',
+                  gap: 'medium',
+                };
+              } else {
+                content = (
+                  <Text key="p" weight="bold">
+                    {normalize(item, index, primaryKey)}
+                  </Text>
+                );
+              }
+            } else if (typeof item === 'object') {
               content = item[Object.keys(item)[0]];
-            else content = item;
+            } else {
+              content = item;
+            }
+
+            if (action) {
+              content = [
+                <Box align="start">{content}</Box>,
+                action(item, index),
+              ];
+              boxProps = {
+                direction: 'row',
+                align: secondaryKey ? 'start' : 'center',
+                justify: 'between',
+                gap: 'medium',
+                pad: { ...(pad || {}), right: 'small' },
+              };
+            }
+
+            let adjustedBorder = border;
+            if (border === 'horizontal' && index) {
+              adjustedBorder = 'bottom';
+            }
+
+            if (itemProps && itemProps[index]) {
+              boxProps = { ...boxProps, ...itemProps[index] };
+            }
 
             if (onClickItem) {
               content = (
-                <Box as="li" flex={false}>
+                <Box key={index} as="li" flex={false}>
                   <StyledButton
                     active={active === index}
                     onClick={event => {
                       event.persist(); // extract from React's synthetic event pool
                       const adjustedEvent = event;
                       adjustedEvent.item = item;
+                      adjustedEvent.index = index;
                       onClickItem(adjustedEvent);
                     }}
                     onMouseOver={() => setActive(index)}
@@ -116,7 +178,12 @@ const List = React.forwardRef((props, ref) => {
                     onFocus={() => setActive(index)}
                     onBlur={() => setActive(undefined)}
                   >
-                    <Box pad={pad} background={background} border={border}>
+                    <Box
+                      pad={pad}
+                      background={background}
+                      border={adjustedBorder}
+                      {...boxProps}
+                    >
                       {content}
                     </Box>
                   </StyledButton>
@@ -125,11 +192,13 @@ const List = React.forwardRef((props, ref) => {
             } else {
               content = (
                 <Box
+                  key={index}
                   as="li"
                   flex={false}
                   pad={pad}
                   background={background}
-                  border={border}
+                  border={adjustedBorder}
+                  {...boxProps}
                 >
                   {content}
                 </Box>
@@ -144,7 +213,7 @@ const List = React.forwardRef((props, ref) => {
 });
 
 List.defaultProps = {
-  border: 'bottom',
+  border: 'horizontal',
   pad: { horizontal: 'medium', vertical: 'small' },
 };
 

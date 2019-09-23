@@ -2356,7 +2356,7 @@ string",
         "name": "background",
       },
       Object {
-        "defaultValue": "bottom",
+        "defaultValue": "horizontal",
         "description": "Item border.",
         "format": "boolean
 horizontal
@@ -2392,10 +2392,24 @@ right
       },
       Object {
         "description": "Array of data objects.",
-        "format": "[{
+        "format": "[
+  string
+  {
 
-}]",
+  }
+]",
         "name": "data",
+      },
+      Object {
+        "description": "Item specific background, border, and pad, keyed by data index.
+      For example:
+      { 27: { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on List.",
+        "format": "{
+
+}",
+        "name": "itemProps",
       },
       Object {
         "description": "Use this to indicate that 'data' doesn't contain all that it could.
@@ -2475,21 +2489,22 @@ string
         "name": "pad",
       },
       Object {
-        "description": "When supplied, indicates the property for a data object to use to
-      get a unique identifier.",
-        "format": "string",
+        "description": "When a string is supplied, it indicates the property in a data item object
+      to use to get the primary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the primary content.",
+        "format": "string
+function",
         "name": "primaryKey",
       },
       Object {
-        "description": "Item specific background, border, and pad, keyed by data index.
-      For example:
-      { 27: { background: ..., border: ..., pad: ... }},
-      where the background, border, and pad accept the same values as
-      the same named properties on List.",
-        "format": "{
-
-}",
-        "name": "itemProps",
+        "description": "When a string is supplied, it indicates the property in a data item object
+      to use to get the secondary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the secondary content.",
+        "format": "string
+function",
+        "name": "secondaryKey",
       },
       Object {
         "defaultValue": 50,

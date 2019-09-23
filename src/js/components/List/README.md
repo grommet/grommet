@@ -119,7 +119,7 @@ string
 
 **border**
 
-Item border. Defaults to `bottom`.
+Item border. Defaults to `horizontal`.
 
 ```
 boolean
@@ -159,9 +159,26 @@ right
 Array of data objects.
 
 ```
-[{
+[
+  string
+  {
 
-}]
+  }
+]
+```
+
+**itemProps**
+
+Item specific background, border, and pad, keyed by data index.
+      For example:
+      { 27: { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on List.
+
+```
+{
+
+}
 ```
 
 **onMore**
@@ -251,25 +268,26 @@ string
 
 **primaryKey**
 
-When supplied, indicates the property for a data object to use to
-      get a unique identifier.
+When a string is supplied, it indicates the property in a data item object
+      to use to get the primary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the primary content.
 
 ```
 string
+function
 ```
 
-**itemProps**
+**secondaryKey**
 
-Item specific background, border, and pad, keyed by data index.
-      For example:
-      { 27: { background: ..., border: ..., pad: ... }},
-      where the background, border, and pad accept the same values as
-      the same named properties on List.
+When a string is supplied, it indicates the property in a data item object
+      to use to get the secondary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the secondary content.
 
 ```
-{
-
-}
+string
+function
 ```
 
 **step**

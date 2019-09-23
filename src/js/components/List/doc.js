@@ -46,8 +46,15 @@ export const doc = List => {
       different backgrounds, modulo the array index.`,
     ),
     border: PropTypes.oneOfType([...borderTypes]).description(`Item border.`),
-    data: PropTypes.arrayOf(PropTypes.shape({})).description(
-      'Array of data objects.',
+    data: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
+    ).description('Array of data objects.'),
+    itemProps: PropTypes.shape({}).description(
+      `Item specific background, border, and pad, keyed by data index.
+      For example:
+      { 27: { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on List.`,
     ),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
@@ -68,16 +75,23 @@ export const doc = List => {
       PropTypes.string,
       PropTypes.shape(padShapeSides),
     ]).description(`Item padding.`),
-    primaryKey: PropTypes.string.description(
-      `When supplied, indicates the property for a data object to use to
-      get a unique identifier.`,
+    primaryKey: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+    ]).description(
+      `When a string is supplied, it indicates the property in a data item object
+      to use to get the primary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the primary content.`,
     ),
-    itemProps: PropTypes.shape({}).description(
-      `Item specific background, border, and pad, keyed by data index.
-      For example:
-      { 27: { background: ..., border: ..., pad: ... }},
-      where the background, border, and pad accept the same values as
-      the same named properties on List.`,
+    secondaryKey: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+    ]).description(
+      `When a string is supplied, it indicates the property in a data item object
+      to use to get the secondary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the secondary content.`,
     ),
     step: PropTypes.number
       .description('How many items to render at a time.')
