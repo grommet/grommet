@@ -41,11 +41,12 @@ class RangeSelector extends Component {
     const rect = this.containerRef.current.getBoundingClientRect();
     let value;
     if (direction === 'vertical') {
-      const y = event.clientY - (rect.y || 0); // unit test resilience
+      // there is no x and y in unit testing
+      const y = event.clientY - (rect.top || 0); // unit test resilience
       const scaleY = rect.height / (max - min + 1) || 1; // unit test resilience
       value = Math.floor(y / scaleY) + min;
     } else {
-      const x = event.clientX - (rect.x || 0); // unit test resilience
+      const x = event.clientX - (rect.left || 0); // unit test resilience
       const scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
       value = Math.floor(x / scaleX) + min;
     }
@@ -167,7 +168,8 @@ class RangeSelector extends Component {
           style={{ flex: `${lower - min} 0 0` }}
           background={
             invert
-              ? // preserve existing dark, instead of using darknes of this color
+              ? // preserve existing dark, instead of using darknes
+                // of this color
                 {
                   color: color || theme.rangeSelector.background.invert.color,
                   opacity,
@@ -205,7 +207,8 @@ class RangeSelector extends Component {
           background={
             invert
               ? undefined
-              : // preserve existing dark, instead of using darknes of this color
+              : // preserve existing dark, instead of using darknes of
+                // this color
                 { color: color || 'control', opacity, dark: theme.dark }
           }
           fill={fill}
@@ -234,7 +237,8 @@ class RangeSelector extends Component {
           style={{ flex: `${max - upper} 0 0` }}
           background={
             invert
-              ? // preserve existing dark, instead of using darknes of this color
+              ? // preserve existing dark, instead of using darknes of this
+                // color
                 {
                   color: color || theme.rangeSelector.background.invert.color,
                   opacity,
@@ -252,7 +256,8 @@ class RangeSelector extends Component {
 
 let RangeSelectorDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RangeSelectorDoc = require('./doc').doc(RangeSelector);
 }
 const RangeSelectorWrapper = compose(withForwardRef)(
   RangeSelectorDoc || RangeSelector,

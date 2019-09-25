@@ -121,9 +121,9 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag. But, it can
-be adjusted via this size property. The tag should be set for semantic
-correctness and accessibility. This size property allows for stylistic
+The font size and line height are primarily driven by the chosen tag. 
+But, it can be adjusted via this size property. The tag should be set for 
+semantic correctness and accessibility. This size property allows for stylistic
 adjustments. Defaults to `medium`.
 
 ```
@@ -215,7 +215,8 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
+The possible sizes of the text in terms of its font-size and 
+line-height. Expects `object`.
 
 Defaults to
 

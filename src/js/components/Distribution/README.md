@@ -126,7 +126,8 @@ function
 
 **fill**
 
-Whether the distribution expands to fill all of the available width and height.
+Whether the distribution expands to fill all of the available width 
+        and height.
 
 ```
 boolean

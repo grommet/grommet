@@ -49,7 +49,8 @@ node
 
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/> element.
+Required. The DOM name attribute value to use for the underlying <input/>
+       element.
 
 ```
 string

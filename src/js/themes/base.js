@@ -181,7 +181,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 0.3,
         },
       },
-      debounceDelay: 300, // The time to wait after the user stopped typing, measured in ms.
+      // The time to wait after the user stopped typing, measured in ms.
+      debounceDelay: 300,
       drop: {
         background: '#ffffff',
         border: {
@@ -338,6 +339,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           next: FormNext,
         },
       },
+      heading: { level: '4' }, // level ranges from 1-6
     },
     carousel: {
       icons: {

@@ -197,7 +197,8 @@ Array of value objects describing the data.
   
 **global.edgeSize**
 
-The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter. Expects `object`.
+The border-radius of the styled Meter. thickness, height and 
+    width of the Bar Meter, height of the Circle Meter. Expects `object`.
 
 Defaults to
 

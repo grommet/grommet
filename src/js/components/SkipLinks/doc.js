@@ -16,7 +16,8 @@ export const doc = SkipLinks => {
     messages: PropTypes.shape({
       skipTo: PropTypes.string,
     }).description(
-      'Custom messages for SkipLinks. Used for accessibility by screen readers.',
+      `Custom messages for SkipLinks. Used for accessibility by screen 
+readers.`,
     ),
   };
 
