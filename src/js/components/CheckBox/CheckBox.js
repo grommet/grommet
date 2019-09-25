@@ -190,7 +190,8 @@ Object.setPrototypeOf(CheckBox.defaultProps, defaultProps);
 
 let CheckBoxDoc;
 if (process.env.NODE_ENV !== 'production') {
-  CheckBoxDoc = require('./doc').doc(CheckBox); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CheckBoxDoc = require('./doc').doc(CheckBox);
 }
 const CheckBoxWrapper = compose(
   withFocus(),

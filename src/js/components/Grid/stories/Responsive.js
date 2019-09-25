@@ -125,7 +125,8 @@ const Responsive = ({
         }
       }
 
-      // Also if areas is a simple array not an object of arrays for different sizes
+      // Also if areas is a simple array not an object of arrays for
+      // different sizes
       let areasVal = areas;
       if (areas && !Array.isArray(areas)) areasVal = areas[size];
 
