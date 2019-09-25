@@ -22,7 +22,8 @@ export const doc = Distribution => {
     ),
     fill: PropTypes.bool
       .description(
-        'Whether the distribution expands to fill all of the available width and height.',
+        `Whether the distribution expands to fill all of the available width 
+        and height.`,
       )
       .defaultValue(false),
     gap: PropTypes.oneOfType([

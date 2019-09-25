@@ -39,6 +39,7 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
             <Text size="small">Important Info</Text>
           </Box>
         </AccordionPanel>
+        {/* eslint-disable-next-line max-len */}
         <AccordionPanel label="Panel 3 - uses custom theme heading level for sizing">
           <Box background="light-2" height="xsmall">
             <Text size="small">Important Info</Text>

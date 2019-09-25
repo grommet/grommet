@@ -34,7 +34,8 @@ export const doc = Menu => {
       right: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
     })
       .description(
-        `Where to place the drop down. The keys correspond to a side of the drop down.
+        `Where to place the drop down.
+The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and

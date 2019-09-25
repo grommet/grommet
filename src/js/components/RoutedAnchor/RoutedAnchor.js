@@ -16,7 +16,9 @@ class RoutedAnchor extends Component {
     const { path, method, ...rest } = this.props;
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
-        `This component will be deprecated in the upcoming releases. Please refer to https://github.com/grommet/grommet/issues/2855 for more information.`,
+        `This component will be deprecated in the upcoming releases. 
+        Please refer to https://github.com/grommet/grommet/issues/2855 
+        for more information.`,
       );
     }
     return (
@@ -49,7 +51,8 @@ class RoutedAnchor extends Component {
 
 let RoutedAnchorDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RoutedAnchorDoc = require('./doc').doc(RoutedAnchor); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RoutedAnchorDoc = require('./doc').doc(RoutedAnchor);
 }
 const RoutedAnchorWrapper = RoutedAnchorDoc || RoutedAnchor;
 

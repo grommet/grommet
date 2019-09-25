@@ -69,7 +69,8 @@ class SkipLinks extends Component {
 
 let SkipLinksDoc;
 if (process.env.NODE_ENV !== 'production') {
-  SkipLinksDoc = require('./doc').doc(SkipLinks); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  SkipLinksDoc = require('./doc').doc(SkipLinks);
 }
 const SkipLinksWrapper = SkipLinksDoc || SkipLinks;
 

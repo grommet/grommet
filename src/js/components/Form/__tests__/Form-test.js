@@ -144,7 +144,8 @@ describe('Form', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        {/* this test continues running forever if the whole event passed to onSubmit */}
+        {/* this test continues running forever if the whole event passed to 
+            onSubmit */}
         <Form onSubmit={({ value }) => onSubmit({ value })}>
           <FormField
             name="test"

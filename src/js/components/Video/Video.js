@@ -475,7 +475,8 @@ class Video extends Component {
 
     let style;
     if (rest.fit === 'contain' && controls === 'over') {
-      // constrain the size to fit the aspect ratio so the controls overlap correctly
+      // constrain the size to fit the aspect ratio so the controls
+      // overlap correctly
       if (width) {
         style = { width };
       } else if (height) {
@@ -514,7 +515,8 @@ Object.setPrototypeOf(Video.defaultProps, defaultProps);
 
 let VideoDoc;
 if (process.env.NODE_ENV !== 'production') {
-  VideoDoc = require('./doc').doc(Video); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  VideoDoc = require('./doc').doc(Video);
 }
 const VideoWrapper = compose(
   withTheme,

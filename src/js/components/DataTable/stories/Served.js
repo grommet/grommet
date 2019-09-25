@@ -12,15 +12,17 @@ const ServedDataTable = () => {
   const onSearch = search => {
     let nextData;
     if (search) {
-      // The function below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
+      // The function below escapes regular expression special characters:
+      // [ \ ^ $ . | ? * + ( )
       const escapedText = text => {
         text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
         return new RegExp(escapedText, 'i');
       };
       const expressions = Object.keys(search).map(property => ({
         property,
-        // Create the regular expression with modified value which handles escaping special characters
-        // Without escaping special characters, errors will appear in the console
+        // Create the regular expression with modified value which handles
+        // escaping special characters. Without escaping special characters,
+        // errors will appear in the console
         exp: new RegExp(escapedText(search[property]), 'i'),
       }));
       nextData = DATA.filter(

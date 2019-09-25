@@ -39,7 +39,8 @@ export const doc = Layer => {
       PropTypes.oneOf(['vertical', 'horizontal']),
     ])
       .description(
-        'Whether the width and/or height should fill the current viewport size.',
+        `Whether the width and/or height should fill the current viewport 
+        size.`,
       )
       .defaultValue(false),
     margin: PropTypes.oneOfType([
@@ -78,14 +79,17 @@ particular side of the layer`,
     ),
     modal: PropTypes.bool
       .description(
-        'Whether there should be an overlay preventing interaction underneath the layer.',
+        `Whether there should be an overlay preventing interaction underneath 
+        the layer.`,
       )
       .defaultValue(true),
     onClickOutside: PropTypes.func.description(
-      'Function that will be invoked on modal layers when the user clicks outside the layer.',
+      `Function that will be invoked on modal layers when the user clicks 
+      outside the layer.`,
     ),
     onEsc: PropTypes.func.description(
-      'Function that will be called when the user presses the escape key inside the layer.',
+      `Function that will be called when the user presses the escape key inside
+       the layer.`,
     ),
     plain: PropTypes.bool
       .description(
@@ -143,8 +147,8 @@ export const themeDoc = {
     defaultValue: 'rgba(0, 0, 0, 0.5)',
   },
   'layer.responsiveBreakpoint': {
-    description:
-      'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    description: `The actual breakpoint to trigger changes in the border, 
+direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
   },
@@ -154,6 +158,7 @@ export const themeDoc = {
     defaultValue: '10',
   },
   ...themeDocUtils.breakpointStyle(
-    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+    `The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round.`,
   ),
 };

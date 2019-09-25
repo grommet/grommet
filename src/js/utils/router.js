@@ -6,7 +6,8 @@ export const ROUTER_PROPS = {
   ).isRequired,
   method: PropTypes.oneOf(['push', 'replace'])
     .description(
-      'Indicates whether the browser history should be appended to or replaced.',
+      `Indicates whether the browser history should be appended to or 
+      replaced.`,
     )
     .defaultValue('push'),
 };
