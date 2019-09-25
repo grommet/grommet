@@ -36,7 +36,7 @@ const UnSelect = () => {
         direction="row"
         align="center"
         justify="center"
-        gap="medium"
+        gap="small"
       >
         <Select
           options={options}
@@ -45,7 +45,12 @@ const UnSelect = () => {
           placeholder="Select multiple options"
           multiple
         />
-        <Button onClick={onClickClearOptions} label="Clear All" />
+        <Button
+          onClick={onClickClearOptions}
+          disabled={!value}
+          plain
+          label="Clear All"
+        />    
       </Box>
     </Grommet>
   );
