@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Select, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { Trash } from 'grommet-icons';
 
 const optionList = [
   'One',
