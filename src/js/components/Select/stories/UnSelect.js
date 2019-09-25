@@ -5,7 +5,7 @@ import { Box, Grommet, Select, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Trash } from 'grommet-icons';
 
-const option = [
+const optionList = [
   'One',
   'Two',
   'Three',
@@ -19,14 +19,14 @@ const option = [
 ];
 
 const UnSelect = () => {
-  const [options] = useState(option);
+  const [options] = useState(optionList);
   const [value, setValue] = useState('');
 
   const onChange = e => {
     setValue(e.value);
   };
 
-  const onClick = () => {
+  const onClickClearOptions = () => {
     setValue('');
   };
 
@@ -35,7 +35,7 @@ const UnSelect = () => {
       <Box
         fill
         pad="medium"
-        direction="row-responsive"
+        direction="row"
         align="center"
         justify="center"
       >
@@ -46,7 +46,7 @@ const UnSelect = () => {
           placeholder="Select multiple options"
           multiple
         />
-        <Button onClick={onClick} icon={<Trash color="control" size="medium" />} />
+        <Button onClick={onClickClearOptions} icon={<Trash color="control" size="medium" />} />
       </Box>
     </Grommet>
   );
