@@ -16,7 +16,7 @@ var doc = function doc(Layer) {
   DocumentedLayer.propTypes = {
     animate: _reactDesc.PropTypes.bool.description("Whether to animate the Layer content when it opens. This\n        property is deprecated and will be removed in the next major version\n        of grommet. Instead, use 'animation'.").defaultValue(true),
     animation: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['slide', 'fadeIn', 'none']), _reactDesc.PropTypes.bool]).description('Animation transition of the Layer content when it opens and closes.').defaultValue('slide'),
-    full: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['vertical', 'horizontal'])]).description('Whether the width and/or height should fill the current viewport size.').defaultValue(false),
+    full: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['vertical', 'horizontal'])]).description("Whether the width and/or height should fill the current viewport \n        size.").defaultValue(false),
     margin: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(PAD_SIZES)), _reactDesc.PropTypes.shape({
       bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
       horizontal: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
@@ -25,9 +25,9 @@ var doc = function doc(Layer) {
       top: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
       vertical: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string])
     }), _reactDesc.PropTypes.string]).description("The amount of margin around the Layer. An object can be specified to\ndistinguish horizontal margin, vertical margin, and margin on a\nparticular side of the layer"),
-    modal: _reactDesc.PropTypes.bool.description('Whether there should be an overlay preventing interaction underneath the layer.').defaultValue(true),
-    onClickOutside: _reactDesc.PropTypes.func.description('Function that will be invoked on modal layers when the user clicks outside the layer.'),
-    onEsc: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the escape key inside the layer.'),
+    modal: _reactDesc.PropTypes.bool.description("Whether there should be an overlay preventing interaction underneath \n        the layer.").defaultValue(true),
+    onClickOutside: _reactDesc.PropTypes.func.description("Function that will be invoked on modal layers when the user clicks \n      outside the layer."),
+    onEsc: _reactDesc.PropTypes.func.description("Function that will be called when the user presses the escape key inside\n       the layer."),
     plain: _reactDesc.PropTypes.bool.description('Whether this is a plain Layer with no background color or border.').defaultValue(false),
     position: _reactDesc.PropTypes.oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'hidden', 'left', 'right', 'top', 'top-left', 'top-right']).description('Position of the layer content.').defaultValue('center'),
     responsive: _reactDesc.PropTypes.bool.description('Whether the layer should take full width and height on mobile').defaultValue(true)
@@ -64,7 +64,7 @@ var themeDoc = _extends({
     defaultValue: 'rgba(0, 0, 0, 0.5)'
   },
   'layer.responsiveBreakpoint': {
-    description: 'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    description: "The actual breakpoint to trigger changes in the border, \ndirection, gap, margin, pad, and round.",
     type: 'string',
     defaultValue: 'small'
   },
@@ -73,6 +73,6 @@ var themeDoc = _extends({
     type: 'number',
     defaultValue: '10'
   }
-}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect border, direction, gap, margin, pad, and round.'));
+}, _utils.themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
 
 exports.themeDoc = themeDoc;

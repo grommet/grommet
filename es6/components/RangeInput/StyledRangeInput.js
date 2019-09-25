@@ -26,6 +26,8 @@ var firefoxMicrosoftThumbStyle = css(["", " margin-top:0px;height:", ";width:", 
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.thumb && props.theme.rangeInput.thumb.extend;
 });
+/* eslint-disable max-len */
+
 var StyledRangeInput = styled.input.withConfig({
   displayName: "StyledRangeInput",
   componentId: "sc-15st9ck-0"
@@ -46,6 +48,8 @@ var StyledRangeInput = styled.input.withConfig({
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.extend;
 });
+/* eslint-enable max-len */
+
 StyledRangeInput.defaultProps = {};
 Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
 export { StyledRangeInput };

@@ -116,8 +116,8 @@ export var themeDoc = _extends({
     defaultValue: undefined
   },
   'box.responsiveBreakpoint': {
-    description: 'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    description: "The actual breakpoint to trigger changes in the border, \n    direction, gap, margin, pad, and round.",
     type: 'string',
     defaultValue: 'small'
   }
-}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), {}, themeDocUtils.breakpointStyle('The possible breakpoints that could affect border, direction, gap, margin, pad, and round.'));
+}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), {}, themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));

@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 var doc = function doc(RadioButtonGroup) {
   var DocumentedRadioButtonGroup = (0, _reactDesc.describe)(RadioButtonGroup).availableAt((0, _utils.getAvailableAtBadge)('RadioButtonGroup')).description('A group of radio buttons.').usage("import { RadioButtonGroup } from 'grommet';\n<RadioButtonGroup />").intrinsicElement('div');
   DocumentedRadioButtonGroup.propTypes = {
-    name: _reactDesc.PropTypes.string.description('The DOM name attribute value to use for the underlying <input/> elements.').isRequired,
+    name: _reactDesc.PropTypes.string.description("The DOM name attribute value to use for the underlying <input/> \n      elements.").isRequired,
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user clicks on of the radio\n      buttons. It will be passed a React event object."),
     options: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string), _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       disabled: _reactDesc.PropTypes.bool,

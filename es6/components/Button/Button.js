@@ -161,7 +161,8 @@ Object.setPrototypeOf(Button.defaultProps, defaultProps);
 var ButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  ButtonDoc = require('./doc').doc(Button); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  ButtonDoc = require('./doc').doc(Button);
 }
 
 var ButtonWrapper = compose(withFocus(), withTheme, withForwardRef)(ButtonDoc || Button);

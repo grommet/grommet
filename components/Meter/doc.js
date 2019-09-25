@@ -38,7 +38,7 @@ var doc = function doc(Meter) {
 exports.doc = doc;
 var themeDoc = {
   'global.edgeSize': {
-    description: 'The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter.',
+    description: "The border-radius of the styled Meter. thickness, height and \n    width of the Bar Meter, height of the Circle Meter.",
     type: 'object',
     defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
   },

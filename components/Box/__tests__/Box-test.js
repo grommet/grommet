@@ -122,6 +122,8 @@ describe('Box', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  /* eslint-disable max-len */
+
   test('background', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Box, {
       background: "brand"
@@ -189,6 +191,8 @@ describe('Box', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  /* eslint-enable max-len */
+
   test('basis', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Box, null, _react["default"].createElement(_.Box, {
       basis: "xsmall"

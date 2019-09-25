@@ -60,7 +60,8 @@ function (_Component) {
       var total = 0;
       values.forEach(function (v) {
         total += v.value;
-      }); // figure out how many of the values area needed to represent half of the total
+      }); // figure out how many of the values area needed to represent half of the
+      // total
 
       var subTotal = 0;
       var subIndex;
@@ -135,7 +136,8 @@ _defineProperty(Distribution, "defaultProps", {
 var DistributionDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  DistributionDoc = require('./doc').doc(Distribution); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  DistributionDoc = require('./doc').doc(Distribution);
 }
 
 var DistributionWrapper = DistributionDoc || Distribution;

@@ -328,8 +328,8 @@ function (_Component) {
     var _this2 = this;
 
     var onSearch = this.props.onSearch;
-    var activeIndex = this.state.activeIndex; // timeout need to send the operation through event loop and allow time to the portal
-    // to be available
+    var activeIndex = this.state.activeIndex; // timeout need to send the operation through event loop and allow
+    // time to the portal to be available
 
     setTimeout(function () {
       var optionsNode = _this2.optionsRef.current;

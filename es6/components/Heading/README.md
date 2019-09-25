@@ -268,7 +268,8 @@ undefined
 
 **heading.level**
 
-The level that impacts line height, max width, font size, weight and family of the Heading. Expects `object`.
+The level that impacts line height, max width, font size, 
+weight and family of the Heading. Expects `object`.
 
 Defaults to
 
@@ -310,7 +311,8 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects `string`.
+The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints. Expects `string`.
 
 Defaults to
 

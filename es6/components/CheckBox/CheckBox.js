@@ -163,7 +163,8 @@ Object.setPrototypeOf(CheckBox.defaultProps, defaultProps);
 var CheckBoxDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  CheckBoxDoc = require('./doc').doc(CheckBox); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CheckBoxDoc = require('./doc').doc(CheckBox);
 }
 
 var CheckBoxWrapper = compose(withFocus(), withTheme, withForwardRef)(CheckBoxDoc || CheckBox);

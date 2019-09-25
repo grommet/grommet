@@ -89,9 +89,11 @@ function (_Component) {
         });
       },
       onSearch: function onSearch(text) {
-        // The line below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
-        var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which handles escaping special characters
-        // Without escaping special characters, errors will appear in the console
+        // The line below escapes regular expression special characters:
+        // [ \ ^ $ . | ? * + ( )
+        var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which
+        // handles escaping special characters. Without escaping special
+        // characters, errors will appear in the console
 
         var exp = new RegExp(escapedText, 'i');
 

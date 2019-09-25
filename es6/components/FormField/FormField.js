@@ -8,6 +8,8 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// eslint-disable-next-line max-len
+
 /* eslint-disable react/no-multi-comp, react/prefer-stateless-function, max-classes-per-file */
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
@@ -204,7 +206,8 @@ function (_Component) {
         if (margin) {
           abutMargin = margin;
         } else if (border.size) {
-          // if the user defines a margin, then the default margin below will be overriden
+          // if the user defines a margin,
+          // then the default margin below will be overriden
           abutMargin = {
             bottom: "-" + parseMetricToNum(theme.global.borderSize[border.size] || border.size) + "px"
           };
@@ -268,7 +271,8 @@ Object.setPrototypeOf(FormField.defaultProps, defaultProps);
 var FormFieldDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  FormFieldDoc = require('./doc').doc(FormField);
 }
 
 var FormFieldWrapper = compose(withFocus({

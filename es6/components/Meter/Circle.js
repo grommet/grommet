@@ -88,8 +88,8 @@ var Circle = function Circle(props) {
       }, stroke, {
         strokeWidth: height,
         strokeLinecap: "round"
-      }, hoverProps, pathRest)); // If we are on a large enough path to not need re-drawing previous ones,
-      // clear the pathCaps we've collected already.
+      }, hoverProps, pathRest)); // If we are on a large enough path to not need re-drawing previous
+      // ones, clear the pathCaps we've collected already.
 
       if (endAngle - startAngle > 2 * anglePer) {
         pathCaps = [];

@@ -498,7 +498,7 @@ describe('Select', function () {
     var optionButton = getByText('morning').closest('button');
     expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
   });
-  test("renders styled select options combining select.options.box && \n  select.options.container; select.options.container prioritized if conflict", function () {
+  test("renders styled select options combining select.options.box && \n  select.options.container; \n  select.options.container prioritized if conflict", function () {
     var customTheme = {
       select: {
         options: {

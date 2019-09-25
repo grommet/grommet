@@ -5,7 +5,7 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Accordion) {
   var DocumentedAccordion = describe(Accordion).availableAt(getAvailableAtBadge('Accordion')).description('An accordion containing collapsible panels.').usage("import { Accordion, AccordionPanel } from 'grommet';\n<Accordion>\n  <AccordionPanel label='Panel 1'>...</AccordionPanel>\n  <AccordionPanel label='Panek 2'>...</AccordionPanel>\n</Accordion>").intrinsicElement('div');
   DocumentedAccordion.propTypes = _extends({}, genericProps, {
-    activeIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).description("Active panel index. If specified, Accordion will be a controlled component. This means that future\npanel changes will not work unless you subscribe to onActive function and update activeIndex\naccordingly.").defaultValue(0),
+    activeIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).description("Active panel index. If specified, Accordion will be a controlled \ncomponent. This means that future panel changes will not work unless you\nsubscribe to onActive function and update activeIndex accordingly.").defaultValue(0),
     animate: PropTypes.bool.description('Transition content in & out with a slide down animation.').defaultValue(true),
     children: PropTypes.node.description('Array of AccordionPanels.'),
     onActive: PropTypes.func.description("Function that will be called when the active index changes.\nIt will always send an array with currently active panel indexes."),

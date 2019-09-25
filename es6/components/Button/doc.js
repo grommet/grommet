@@ -8,7 +8,7 @@ export var doc = function doc(Button) {
     active: PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     color: colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
     disabled: PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
-    fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the button expands to fill all of the available width and/or height.').defaultValue(false),
+    fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description("Whether the button expands to fill all of the available width and/or \n        height.").defaultValue(false),
     focusIndicator: PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
     hoverIndicator: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.oneOf(['background']), PropTypes.shape({
       color: PropTypes.string,
@@ -26,10 +26,10 @@ export var doc = function doc(Button) {
     gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description("Click handler. Not setting this property and not specifying a href\ncauses the Button to be disabled."),
-    plain: PropTypes.bool.description("Whether this is a plain button with no border or pad.\nNon plain button will show both pad and border.\nThe plain button has no border and unless the icon prop exist it has no pad as well.").defaultValue(false),
-    primary: PropTypes.bool.description('Whether this is a primary button. There should be at most one per page or screen.').defaultValue(false),
+    plain: PropTypes.bool.description("Whether this is a plain button with no border or pad.\nNon plain button will show both pad and border.\nThe plain button has no border and unless the icon prop exist it has no pad as \nwell.").defaultValue(false),
+    primary: PropTypes.bool.description("Whether this is a primary button. There should be at most one per page\n         or screen.").defaultValue(false),
     reverse: PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\nend of the anchor.").defaultValue(false),
-    type: PropTypes.oneOf(['button', 'reset', 'submit']).description('The type of button. Set the type to submit for the default button on forms.').defaultValue('button'),
+    type: PropTypes.oneOf(['button', 'reset', 'submit']).description("The type of button. Set the type to submit for the default button on \n        forms.").defaultValue('button'),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag or react component to use for the element.")
   });
   return DocumentedButton;

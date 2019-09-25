@@ -34,10 +34,12 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
-      var value = event.target.value; // The line below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
+      var value = event.target.value; // The line below escapes regular expression special characters:
+      // [ \ ^ $ . | ? * + ( )
 
-      var escapedText = value.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which handles escaping special characters
-      // Without escaping special characters, errors will appear in the console
+      var escapedText = value.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which
+      // handles escaping special characters. Without escaping special
+      // characters, errors will appear in the console
 
       var exp = new RegExp(escapedText, 'i');
       var suggestions = allSuggestions.filter(function (s) {

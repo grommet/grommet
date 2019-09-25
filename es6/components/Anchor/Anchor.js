@@ -91,7 +91,8 @@ Object.setPrototypeOf(Anchor.defaultProps, defaultProps);
 var AnchorDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  AnchorDoc = require('./doc').doc(Anchor); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  AnchorDoc = require('./doc').doc(Anchor);
 }
 
 var AnchorWrapper = compose(withFocus(), withTheme, withForwardRef)(AnchorDoc || Anchor);

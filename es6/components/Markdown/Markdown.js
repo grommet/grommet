@@ -92,7 +92,8 @@ function (_Component) {
 var GrommetMarkdownDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown);
 }
 
 var GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;

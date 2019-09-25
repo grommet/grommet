@@ -47,7 +47,7 @@ var customToggleTheme = {
       },
       size: '36px',
       knob: {
-        extend: "\n          top: -4px;\n          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);\n        "
+        extend: "\n          top: -4px;\n          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12),\n           0px 2px 2px 0px rgba(0,0,0,0.24);\n        "
       },
       extend: function extend(_ref) {
         var checked = _ref.checked;

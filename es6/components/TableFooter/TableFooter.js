@@ -11,7 +11,8 @@ var TableFooter = function TableFooter(props) {
 var TableFooterDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  TableFooterDoc = require('./doc').doc(TableFooter); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableFooterDoc = require('./doc').doc(TableFooter);
 }
 
 var TableFooterWrapper = TableFooterDoc || TableFooter;

@@ -13,7 +13,7 @@ var doc = function doc(SkipLinks) {
     children: _reactDesc.PropTypes.node.description('Array of SkipLink').isRequired,
     messages: _reactDesc.PropTypes.shape({
       skipTo: _reactDesc.PropTypes.string
-    }).description('Custom messages for SkipLinks. Used for accessibility by screen readers.')
+    }).description("Custom messages for SkipLinks. Used for accessibility by screen \nreaders.")
   };
   return DocumentedSkipLinks;
 };

@@ -4,7 +4,8 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
 var opacityTypes = ['weak', 'medium', 'strong', '0.3', true, false];
-var SRC = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII=';
+var SRC = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII='; // eslint-disable-line max-len
+
 test('Image renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
     src: SRC

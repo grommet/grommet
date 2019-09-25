@@ -95,7 +95,8 @@ function (_Component) {
 var KeyboardDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  KeyboardDoc = require('./doc').doc(Keyboard); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  KeyboardDoc = require('./doc').doc(Keyboard);
 }
 
 var KeyboardWrapper = KeyboardDoc || Keyboard;

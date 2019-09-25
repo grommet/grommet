@@ -147,7 +147,8 @@ _defineProperty(DropButton, "defaultProps", {
 var DropButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  DropButtonDoc = require('./doc').doc(DropButton); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  DropButtonDoc = require('./doc').doc(DropButton);
 }
 
 var DropButtonWrapper = compose(withForwardRef)(DropButtonDoc || DropButton);

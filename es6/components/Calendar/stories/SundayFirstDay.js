@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Calendar, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes'; // When the first day of the month is Sunday, and the request of firstDayOfWeek is Monday, we are verifing we are not missing a week, issue 3253.
+import { grommet } from 'grommet/themes'; // When the first day of the month is Sunday, and the request of firstDayOfWeek
+// is Monday, we are verifing we are not missing a week, issue 3253.
 
 var SundayFirstDay = function SundayFirstDay() {
   return React.createElement(Grommet, {

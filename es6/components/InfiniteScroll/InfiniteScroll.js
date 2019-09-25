@@ -4,6 +4,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
+// eslint-disable-next-line max-len
+
 /* eslint-disable react/no-multi-comp, react/no-find-dom-node, max-classes-per-file */
 import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
@@ -311,7 +313,8 @@ _defineProperty(InfiniteScroll, "defaultProps", {
 var InfiniteScrollDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll);
 }
 
 var InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;

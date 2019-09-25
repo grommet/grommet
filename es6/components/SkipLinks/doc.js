@@ -6,7 +6,7 @@ export var doc = function doc(SkipLinks) {
     children: PropTypes.node.description('Array of SkipLink').isRequired,
     messages: PropTypes.shape({
       skipTo: PropTypes.string
-    }).description('Custom messages for SkipLinks. Used for accessibility by screen readers.')
+    }).description("Custom messages for SkipLinks. Used for accessibility by screen \nreaders.")
   };
   return DocumentedSkipLinks;
 };

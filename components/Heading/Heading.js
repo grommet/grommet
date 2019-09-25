@@ -33,7 +33,8 @@ Heading.defaultProps = {
 var HeadingDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  HeadingDoc = require('./doc').doc(Heading); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  HeadingDoc = require('./doc').doc(Heading);
 }
 
 var HeadingWrapper = HeadingDoc || Heading;

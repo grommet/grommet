@@ -14,7 +14,7 @@ var doc = function doc(RadioButton) {
     disabled: _reactDesc.PropTypes.bool.description("Same as React <input disabled={} />. Also adds a hidden input element\nwith the same name so form submissions work."),
     id: _reactDesc.PropTypes.string.description('The DOM id attribute value to use for the underlying <input/> element.'),
     label: _reactDesc.PropTypes.node.description('Label text to place next to the control.'),
-    name: _reactDesc.PropTypes.string.description('The DOM name attribute value to use for the underlying <input/> element.').isRequired,
+    name: _reactDesc.PropTypes.string.description("The DOM name attribute value to use for the underlying <input/>\n       element.").isRequired,
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user clicks the radio button. It\n      will be passed a React event object. The current state can be accessed\n      via event.target.checked. Same as React <input onChange={} />.")
   };
   return DocumentedRadioButton;

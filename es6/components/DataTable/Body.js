@@ -65,8 +65,8 @@ var Body = function Body(_ref) {
       size: size,
       active: active >= 0 ? active === index : undefined,
       onClick: onClickRow ? function (event) {
-        event.persist(); // extract from React's synthetic event pool
-
+        // extract from React's synthetic event pool
+        event.persist();
         var adjustedEvent = event;
         adjustedEvent.datum = datum;
         onClickRow(adjustedEvent);

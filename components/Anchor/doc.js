@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Anchor) {
-  var DocumentedAnchor = (0, _reactDesc.describe)(Anchor).availableAt((0, _utils.getAvailableAtBadge)('Anchor')).description('A text link.').details("We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.").usage("import { Anchor } from 'grommet';\n<Anchor href={location} label='Label' />").intrinsicElement('a');
+  var DocumentedAnchor = (0, _reactDesc.describe)(Anchor).availableAt((0, _utils.getAvailableAtBadge)('Anchor')).description('A text link.').details("We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.").usage("import { Anchor } from 'grommet';\n" + "<Anchor href={location} label='Label' />").intrinsicElement('a');
   DocumentedAnchor.propTypes = _extends({}, _utils.genericProps, {
     a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
     color: _utils.colorPropType.description('Label color and icon color, if not specified on the icon.'),
@@ -20,7 +20,7 @@ var doc = function doc(Anchor) {
     label: _reactDesc.PropTypes.node.description('Label text to place in the anchor.'),
     onClick: _reactDesc.PropTypes.func.description("Click handler. It can be used, for example,\n        to add analytics and track who clicked in the anchor."),
     reverse: _reactDesc.PropTypes.bool.description("Whether an icon and label should be reversed so that the\n        icon is at the end of the anchor.").defaultValue(false),
-    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size is typically driven by the components containing\nthis component. But, it can be adjusted directly via this size property, typically\nwhen it is not contained in a 'Heading', 'Paragraph', or 'Text'."),
+    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size is typically driven by the components containing\nthis component. But, it can be adjusted directly via this size property,\ntypically when it is not contained in a 'Heading', 'Paragraph', or 'Text'."),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag or react component to use for the element.")
   });
   return DocumentedAnchor;
@@ -40,7 +40,7 @@ var themeDoc = _extends({
     defaultValue: 600
   },
   'anchor.textDecoration': {
-    description: 'The text decoration of the label. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values.',
+    description: "The text decoration of the label. \nRefer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\nfor possible values.",
     type: 'string',
     defaultValue: 'none'
   },
@@ -50,7 +50,7 @@ var themeDoc = _extends({
     defaultValue: undefined
   },
   'anchor.hover.textDecoration': {
-    description: 'The text decoration of the label when hovering. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values.',
+    description: "The text decoration of the label when hovering. \nRefer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\nfor possible values.",
     type: 'string',
     defaultValue: 'underline'
   },

@@ -238,7 +238,8 @@ function (_Component) {
       style: {
         flex: lower - min + " 0 0"
       },
-      background: invert ? // preserve existing dark, instead of using darknes of this color
+      background: invert ? // preserve existing dark, instead of using darknes
+      // of this color
       {
         color: color || theme.rangeSelector.background.invert.color,
         opacity: opacity,
@@ -265,7 +266,8 @@ function (_Component) {
         flex: upper - lower + 1 + " 0 0",
         cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize'
       },
-      background: invert ? undefined : // preserve existing dark, instead of using darknes of this color
+      background: invert ? undefined : // preserve existing dark, instead of using darknes of
+      // this color
       {
         color: color || 'control',
         opacity: opacity,
@@ -291,7 +293,8 @@ function (_Component) {
       style: {
         flex: max - upper + " 0 0"
       },
-      background: invert ? // preserve existing dark, instead of using darknes of this color
+      background: invert ? // preserve existing dark, instead of using darknes of this
+      // color
       {
         color: color || theme.rangeSelector.background.invert.color,
         opacity: opacity,
@@ -324,7 +327,8 @@ _defineProperty(RangeSelector, "defaultProps", {
 var RangeSelectorDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RangeSelectorDoc = require('./doc').doc(RangeSelector);
 }
 
 var RangeSelectorWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(RangeSelectorDoc || RangeSelector);

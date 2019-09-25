@@ -105,6 +105,8 @@ describe('Box', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  /* eslint-disable max-len */
+
   test('background', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Box, {
       background: "brand"
@@ -171,6 +173,8 @@ describe('Box', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  /* eslint-enable max-len */
+
   test('basis', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Box, null, React.createElement(Box, {
       basis: "xsmall"

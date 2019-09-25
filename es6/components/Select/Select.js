@@ -165,7 +165,9 @@ var Select = function Select(props) {
     }
   } else {
     inputValue = value;
-  } // const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
+  } // const dark = theme.select.background
+  // ? colorIsDark(theme.select.background)
+  // : theme.dark;
 
 
   var iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
@@ -238,7 +240,8 @@ Select.defaultProps = _extends({
 var SelectDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  SelectDoc = require('./doc').doc(Select); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  SelectDoc = require('./doc').doc(Select);
 }
 
 var SelectWrapper = compose(withTheme, withForwardRef)(SelectDoc || Select);

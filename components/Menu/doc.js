@@ -21,7 +21,7 @@ var doc = function doc(Menu) {
       bottom: _reactDesc.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
       left: _reactDesc.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
       right: _reactDesc.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
-    }).description("Where to place the drop down. The keys correspond to a side of the drop down.\nThe values correspond to a side of the control. For instance,\n{left: 'left', top: 'bottom'} would align the left edges and the top of\nthe drop down to the bottom of the control. At most one of left or right and\none of top or bottom should be specified.").defaultValue({
+    }).description("Where to place the drop down.\nThe keys correspond to a side of the drop down.\nThe values correspond to a side of the control. For instance,\n{left: 'left', top: 'bottom'} would align the left edges and the top of\nthe drop down to the bottom of the control. At most one of left or right and\none of top or bottom should be specified.").defaultValue({
       top: 'top',
       left: 'left'
     }),

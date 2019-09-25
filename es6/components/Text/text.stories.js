@@ -25,6 +25,8 @@ var Color = function Color() {
     color: "accent-1"
   }, "Colored Text"));
 };
+/* eslint-disable max-len */
+
 
 var WordBreak = function WordBreak() {
   return React.createElement(Grommet, {
@@ -41,6 +43,8 @@ var WordBreak = function WordBreak() {
     }, "Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu \u30B0\u30EC\u30FC\u30C8\u30D6\u30EA\u30C6\u30F3\u304A\u3088\u3073\u5317\u30A2\u30A4\u30EB\u30E9\u30F3\u30C9\u9023\u5408\u738B\u56FD\u3068\u3044\u3046\u8A00\u8449\u306F\u672C\u5F53\u306B\u9577\u3044\u8A00\u8449"));
   }));
 };
+/* eslint-enable max-len */
+
 
 storiesOf('Text', module).add('All', function () {
   return React.createElement(All, null);

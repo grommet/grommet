@@ -535,7 +535,8 @@ function (_Component) {
     var style;
 
     if (rest.fit === 'contain' && controls === 'over') {
-      // constrain the size to fit the aspect ratio so the controls overlap correctly
+      // constrain the size to fit the aspect ratio so the controls
+      // overlap correctly
       if (width) {
         style = {
           width: width
@@ -570,7 +571,8 @@ Object.setPrototypeOf(Video.defaultProps, _defaultProps.defaultProps);
 var VideoDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  VideoDoc = require('./doc').doc(Video); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  VideoDoc = require('./doc').doc(Video);
 }
 
 var VideoWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(VideoDoc || Video);

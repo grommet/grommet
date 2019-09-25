@@ -71,7 +71,8 @@ function (_Component) {
 var TextAreaDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TextAreaDoc = require('./doc').doc(TextArea);
 }
 
 var TextAreaWrapper = (0, _recompose.compose)((0, _hocs.withFocus)({

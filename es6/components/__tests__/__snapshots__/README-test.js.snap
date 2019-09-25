@@ -116,9 +116,9 @@ string
 
 **activeIndex**
 
-Active panel index. If specified, Accordion will be a controlled component. This means that future
-panel changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.
+Active panel index. If specified, Accordion will be a controlled 
+component. This means that future panel changes will not work unless you
+subscribe to onActive function and update activeIndex accordingly.
 
 \`\`\`
 number
@@ -443,8 +443,8 @@ boolean
 **size**
 
 The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property, typically
-when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
+this component. But, it can be adjusted directly via this size property,
+typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
 
 \`\`\`
 xsmall
@@ -494,7 +494,9 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects \`string\`.
+The text decoration of the label. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values. Expects \`string\`.
 
 Defaults to
 
@@ -514,7 +516,9 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects \`string\`.
+The text decoration of the label when hovering. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values. Expects \`string\`.
 
 Defaults to
 
@@ -1338,7 +1342,8 @@ undefined
 
 **box.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects \`string\`.
+The actual breakpoint to trigger changes in the border, 
+    direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
 
@@ -1370,7 +1375,8 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round. Expects \`object\`.
 
 Defaults to
 
@@ -1555,7 +1561,8 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and/or height.
+Whether the button expands to fill all of the available width and/or 
+        height.
 
 \`\`\`
 horizontal
@@ -1671,7 +1678,8 @@ function
 
 Whether this is a plain button with no border or pad.
 Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as well.
+The plain button has no border and unless the icon prop exist it has no pad as 
+well.
 
 \`\`\`
 boolean
@@ -1679,7 +1687,8 @@ boolean
 
 **primary**
 
-Whether this is a primary button. There should be at most one per page or screen.
+Whether this is a primary button. There should be at most one per page
+         or screen.
 
 \`\`\`
 boolean
@@ -1696,7 +1705,8 @@ boolean
 
 **type**
 
-The type of button. Set the type to submit for the default button on forms. Defaults to \`button\`.
+The type of button. Set the type to submit for the default button on 
+        forms. Defaults to \`button\`.
 
 \`\`\`
 button
@@ -2133,9 +2143,11 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using \`bounds\`, if the current date is within that range.
-You can then use that to disable the previous and next buttons.
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+calendar to move between months.
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
+\`bounds\`, if the current date is within that range. You can then use that 
+to disable the previous and next buttons.
 
 
 \`\`\`
@@ -2152,7 +2164,8 @@ string
 
 **onReference**
 
-Called with an ISO8601 date when the user navigates to a different month.
+Called with an ISO8601 date when the user navigates to a different
+       month.
 
 \`\`\`
 function
@@ -2655,7 +2668,8 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control. One icon per carousel image. Expects \`element\`.
+The icon to use on the middle navigation control. 
+      One icon per carousel image. Expects \`element\`.
 
 Defaults to
 
@@ -3093,7 +3107,8 @@ node
 
 **name**
 
-The DOM name attribute value to use for the underlying <input/> element.
+The DOM name attribute value to use for the underlying <input/> 
+      element.
 
 \`\`\`
 string
@@ -4081,7 +4096,8 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.
+      browser, such as columns.search, sortable, groupBy, or 
+      columns.aggregate.
 
 \`\`\`
 function
@@ -4653,7 +4669,8 @@ function
 
 **fill**
 
-Whether the distribution expands to fill all of the available width and height.
+Whether the distribution expands to fill all of the available width 
+        and height.
 
 \`\`\`
 boolean
@@ -4707,9 +4724,9 @@ import { Drop } from 'grommet';
 
 **align**
 
-How to align the drop with respect to the target element. Not specifying
-      a vertical or horizontal alignment will cause it to be aligned in the
-      center. Defaults to \`{
+How to align the drop with respect to the target element. Not 
+        specifying a vertical or horizontal alignment will cause it to be 
+        aligned in the center. Defaults to \`{
   \\"top\\": \\"top\\",
   \\"left\\": \\"left\\"
 }\`.
@@ -4741,7 +4758,8 @@ function
 
 **onEsc**
 
-Function that will be called when the user presses the escape key inside the drop.
+Function that will be called when the user presses the escape key inside
+       the drop.
 
 \`\`\`
 function
@@ -4799,7 +4817,8 @@ boolean
 
 **target**
 
-Required. Target where the drop will be aligned to. This should be a React reference.
+Required. Target where the drop will be aligned to. This should be a React 
+      reference.
 
 \`\`\`
 object
@@ -4897,8 +4916,8 @@ Defaults to
   "DropButton": "## DropButton
 A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus
-      so that the contents behind it are not focusable. All properties and theme properties of
-      Button or Drop can be passed through.
+      so that the contents behind it are not focusable. All properties and 
+      theme properties of Button or Drop can be passed through.
       
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -5192,7 +5211,12 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  
+The component to insert in the FormField. Grommet will add update the 
+      form values when this field changes. Any additional properties 
+      (such as initial value) you pass to FormField will be forwarded to this
+      component. The component may be custom as long it supports the proporties
+      of name, value, onChange (event => {}), while event has either event.value
+      or event.target.value.
 
 \`\`\`
 function
@@ -5941,7 +5965,8 @@ boolean
 
 **plain**
 
-Whether or not Grommet should apply a global font-family, font-size, and line-height.
+Whether or not Grommet should apply a global font-family, font-size, 
+        and line-height.
 
 \`\`\`
 boolean
@@ -5965,7 +5990,8 @@ object
 
 **userAgent**
 
-User agent used to detect the device width for setting the initial breakpoint.
+User agent used to detect the device width for setting the initial 
+      breakpoint.
 
 \`\`\`
 string
@@ -6268,7 +6294,8 @@ undefined
 
 **heading.level**
 
-The level that impacts line height, max width, font size, weight and family of the Heading. Expects \`object\`.
+The level that impacts line height, max width, font size, 
+weight and family of the Heading. Expects \`object\`.
 
 Defaults to
 
@@ -6310,7 +6337,8 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects \`string\`.
+The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints. Expects \`string\`.
 
 Defaults to
 
@@ -6438,7 +6466,8 @@ contain
 
 **fallback**
 
-Specifies the URL of the fallback image used when src is failing to load
+Specifies the URL of the fallback image used when 
+      src is failing to load
 
 \`\`\`
 string
@@ -6735,7 +6764,8 @@ boolean
 
 **full**
 
-Whether the width and/or height should fill the current viewport size.
+Whether the width and/or height should fill the current viewport 
+        size.
 
 \`\`\`
 boolean
@@ -6805,7 +6835,8 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath the layer. Defaults to \`true\`.
+Whether there should be an overlay preventing interaction underneath 
+        the layer. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -6813,7 +6844,8 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks outside the layer.
+Function that will be invoked on modal layers when the user clicks 
+      outside the layer.
 
 \`\`\`
 function
@@ -6821,7 +6853,8 @@ function
 
 **onEsc**
 
-Function that will be called when the user presses the escape key inside the layer.
+Function that will be called when the user presses the escape key inside
+       the layer.
 
 \`\`\`
 function
@@ -6919,7 +6952,8 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects \`string\`.
+The actual breakpoint to trigger changes in the border, 
+direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
 
@@ -6939,7 +6973,8 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round. Expects \`object\`.
 
 Defaults to
 
@@ -7313,7 +7348,8 @@ boolean
 
 **dropAlign**
 
-Where to place the drop down. The keys correspond to a side of the drop down.
+Where to place the drop down.
+The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
@@ -7694,7 +7730,8 @@ Array of value objects describing the data.
   
 **global.edgeSize**
 
-The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter. Expects \`object\`.
+The border-radius of the styled Meter. thickness, height and 
+    width of the Bar Meter, height of the Circle Meter. Expects \`object\`.
 
 Defaults to
 
@@ -7930,7 +7967,8 @@ p
   
 **paragraph**
 
-The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects \`object\`.
+The possible sizes of the paragraph in terms of its max-width,
+     font-size and line-height. Expects \`object\`.
 
 Defaults to
 
@@ -8057,7 +8095,8 @@ node
 
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/> element.
+Required. The DOM name attribute value to use for the underlying <input/>
+       element.
 
 \`\`\`
 string
@@ -8205,7 +8244,8 @@ import { RadioButtonGroup } from 'grommet';
 
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/> elements.
+Required. The DOM name attribute value to use for the underlying <input/> 
+      elements.
 
 \`\`\`
 string
@@ -8664,7 +8704,8 @@ string
 
 **method**
 
-Indicates whether the browser history should be appended to or replaced. Defaults to \`push\`.
+Indicates whether the browser history should be appended to or 
+      replaced. Defaults to \`push\`.
 
 \`\`\`
 push
@@ -8699,7 +8740,8 @@ string
 
 **method**
 
-Indicates whether the browser history should be appended to or replaced. Defaults to \`push\`.
+Indicates whether the browser history should be appended to or 
+      replaced. Defaults to \`push\`.
 
 \`\`\`
 push
@@ -8936,7 +8978,8 @@ boolean
 
 **icon**
 
-A custom icon to be used when rendering the select. You can use false to not render an icon at all.
+A custom icon to be used when rendering the select. You can use false to
+       not render an icon at all.
 
 \`\`\`
 boolean
@@ -9076,7 +9119,8 @@ boolean
 
 **searchPlaceholder**
 
-Placeholder text to use in the search box when the search input is empty.
+Placeholder text to use in the search box when the search input is 
+      empty.
 
 \`\`\`
 string
@@ -9216,7 +9260,8 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control open state of the Select component. Expects \`object\`.
+Any additional style for the control open state of the Select 
+component. Expects \`object\`.
 
 Defaults to
 
@@ -9307,7 +9352,8 @@ node
 
 **messages**
 
-Custom messages for SkipLinks. Used for accessibility by screen readers. Defaults to \`{
+Custom messages for SkipLinks. Used for accessibility by screen 
+readers. Defaults to \`{
   \\"skipTo\\": \\"Skip To\\"
 }\`.
 
@@ -10511,9 +10557,9 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag. But, it can
-be adjusted via this size property. The tag should be set for semantic
-correctness and accessibility. This size property allows for stylistic
+The font size and line height are primarily driven by the chosen tag. 
+But, it can be adjusted via this size property. The tag should be set for 
+semantic correctness and accessibility. This size property allows for stylistic
 adjustments. Defaults to \`medium\`.
 
 \`\`\`
@@ -10605,7 +10651,8 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
+The possible sizes of the text in terms of its font-size and 
+line-height. Expects \`object\`.
 
 Defaults to
 
@@ -10973,7 +11020,8 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen readers. Defaults to \`{
+Custom messages for TextInput. Used for accessibility by screen 
+        readers. Defaults to \`{
   \\"enterSelect\\": \\"(Press Enter to Select)\\",
   \\"suggestionsCount\\": \\"suggestions available\\",
   \\"suggestionsExist\\": \\"This input has suggestions use arrow keys to navigate\\",
@@ -11142,7 +11190,8 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
+The possible sizes of the text in terms of its font-size and 
+    line-height. Expects \`object\`.
 
 Defaults to
 
@@ -11688,7 +11737,8 @@ light-3
 
 **worldMap.continent.active**
 
-The size of the visual dots belonging to a continent when the continent is being hovered. Expects \`string\`.
+The size of the visual dots belonging to a continent when the
+continent is being hovered. Expects \`string\`.
 
 Defaults to
 
@@ -11698,7 +11748,8 @@ Defaults to
 
 **worldMap.continent.base**
 
-The size of the visual dots belonging to a continent that is not being hovered. Expects \`string\`.
+The size of the visual dots belonging to a continent that is
+not being hovered. Expects \`string\`.
 
 Defaults to
 
@@ -11718,7 +11769,8 @@ light-4
 
 **worldMap.place.active**
 
-The size of a visual dot for an individual place in the map when it is being hovered. Expects \`string\`.
+The size of a visual dot for an individual place in the map 
+when it is being hovered. Expects \`string\`.
 
 Defaults to
 
@@ -11728,7 +11780,8 @@ Defaults to
 
 **worldMap.place.base**
 
-The size of the visual dot representing an individual place in the map when it is not being hovered. Expects \`string\`.
+The size of the visual dot representing an individual place 
+in the map when it is not being hovered. Expects \`string\`.
 
 Defaults to
 

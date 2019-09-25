@@ -321,7 +321,8 @@ _defineProperty(InfiniteScroll, "defaultProps", {
 var InfiniteScrollDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll);
 }
 
 var InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;

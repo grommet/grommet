@@ -267,7 +267,8 @@ _defineProperty(DataTable, "defaultProps", {
 var DataTableDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  DataTableDoc = require('./doc').doc(DataTable); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  DataTableDoc = require('./doc').doc(DataTable);
 }
 
 var DataTableWrapper = DataTableDoc || DataTable;

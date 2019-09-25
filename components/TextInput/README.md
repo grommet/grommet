@@ -84,7 +84,8 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen readers. Defaults to `{
+Custom messages for TextInput. Used for accessibility by screen 
+        readers. Defaults to `{
   "enterSelect": "(Press Enter to Select)",
   "suggestionsCount": "suggestions available",
   "suggestionsExist": "This input has suggestions use arrow keys to navigate",
@@ -253,7 +254,8 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
+The possible sizes of the text in terms of its font-size and 
+    line-height. Expects `object`.
 
 Defaults to
 

@@ -44,11 +44,12 @@ var headingPadMap = {
 var buildStartEnd = function buildStartEnd(reference, firstDayOfWeek) {
   var start = new Date(reference);
   start.setDate(1); // first of month
-  // In case Sunday is the first day of the month, and the user asked for Monday to
-  // be the first day of the week, then we need to include Sunday and six days prior.
+  // In case Sunday is the first day of the month, and the user asked for Monday
+  // to be the first day of the week, then we need to include Sunday and six
+  // days prior.
 
-  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = (0, _utils.subtractDays)(start, 6) : start = (0, _utils.subtractDays)(start, start.getDay() - firstDayOfWeek); // beginning of week
-
+  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = (0, _utils.subtractDays)(start, 6) : // beginning of week
+  start = (0, _utils.subtractDays)(start, start.getDay() - firstDayOfWeek);
   var end = (0, _utils.addDays)(start, 7 * 5 + 7); // 5 weeks to end of week
 
   return {
@@ -115,7 +116,8 @@ function (_Component) {
             targetStartEnd: undefined,
             slide: undefined
           });
-        } // Wait for animation to finish before cleaning up. Empirically determined.
+        } // Wait for animation to finish before cleaning up.
+        // Empirically determined.
 
       }, 800);
     });
@@ -490,7 +492,8 @@ Object.setPrototypeOf(Calendar.defaultProps, _defaultProps.defaultProps);
 var CalendarDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  CalendarDoc = require('./doc').doc(Calendar); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CalendarDoc = require('./doc').doc(Calendar);
 }
 
 var CalendarWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(CalendarDoc || Calendar);

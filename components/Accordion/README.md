@@ -112,9 +112,9 @@ string
 
 **activeIndex**
 
-Active panel index. If specified, Accordion will be a controlled component. This means that future
-panel changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.
+Active panel index. If specified, Accordion will be a controlled 
+component. This means that future panel changes will not work unless you
+subscribe to onActive function and update activeIndex accordingly.
 
 ```
 number

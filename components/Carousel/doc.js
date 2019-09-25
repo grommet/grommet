@@ -39,7 +39,7 @@ var themeDoc = _extends({
     defaultValue: '<Previous />'
   },
   'carousel.icons.current': {
-    description: 'The icon to use on the middle navigation control. One icon per carousel image.',
+    description: "The icon to use on the middle navigation control. \n      One icon per carousel image.",
     type: 'element',
     defaultValue: '<Next />'
   },

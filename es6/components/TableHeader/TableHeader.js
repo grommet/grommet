@@ -11,7 +11,8 @@ var TableHeader = function TableHeader(props) {
 var TableHeaderDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  TableHeaderDoc = require('./doc').doc(TableHeader); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableHeaderDoc = require('./doc').doc(TableHeader);
 }
 
 var TableHeaderWrapper = TableHeaderDoc || TableHeader;

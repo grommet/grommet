@@ -221,8 +221,9 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "setValue", function (nextValue) {
-      // Calling set value function directly on input because React library overrides
-      // setter `event.target.value =` and loses original event target fidelity.
+      // Calling set value function directly on input because React library
+      // overrides setter `event.target.value =` and loses original event
+      // target fidelity.
       // https://stackoverflow.com/a/46012210 &&
       // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
       var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
@@ -492,7 +493,8 @@ Object.setPrototypeOf(MaskedInput.defaultProps, _defaultProps.defaultProps);
 var MaskedInputDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  MaskedInputDoc = require('./doc').doc(MaskedInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  MaskedInputDoc = require('./doc').doc(MaskedInput);
 }
 
 var MaskedInputWrapper = (0, _recompose.compose)((0, _hocs.withFocus)({

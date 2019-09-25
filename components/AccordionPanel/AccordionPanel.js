@@ -193,7 +193,8 @@ Object.setPrototypeOf(AccordionPanel.defaultProps, _defaultProps.defaultProps);
 var AccordionPanelDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  AccordionPanelDoc = require('./doc').doc(AccordionPanel); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  AccordionPanelDoc = require('./doc').doc(AccordionPanel);
 }
 
 var AccordionPanelWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(AccordionPanelDoc || AccordionPanel);

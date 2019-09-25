@@ -104,7 +104,8 @@ _defineProperty(SkipLinks, "defaultProps", {
 var SkipLinksDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  SkipLinksDoc = require('./doc').doc(SkipLinks); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  SkipLinksDoc = require('./doc').doc(SkipLinks);
 }
 
 var SkipLinksWrapper = SkipLinksDoc || SkipLinks;

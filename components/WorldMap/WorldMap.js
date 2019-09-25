@@ -436,7 +436,8 @@ Object.setPrototypeOf(WorldMap.defaultProps, _defaultProps.defaultProps);
 var WorldMapDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  WorldMapDoc = require('./doc').doc(WorldMap); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  WorldMapDoc = require('./doc').doc(WorldMap);
 }
 
 var WorldMapWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(WorldMapDoc || WorldMap);

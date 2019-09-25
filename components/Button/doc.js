@@ -15,7 +15,7 @@ var doc = function doc(Button) {
     active: _reactDesc.PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     color: _utils.colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
     disabled: _reactDesc.PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
-    fill: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['horizontal', 'vertical']), _reactDesc.PropTypes.bool]).description('Whether the button expands to fill all of the available width and/or height.').defaultValue(false),
+    fill: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['horizontal', 'vertical']), _reactDesc.PropTypes.bool]).description("Whether the button expands to fill all of the available width and/or \n        height.").defaultValue(false),
     focusIndicator: _reactDesc.PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
     hoverIndicator: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string, _reactDesc.PropTypes.oneOf(['background']), _reactDesc.PropTypes.shape({
       color: _reactDesc.PropTypes.string,
@@ -33,10 +33,10 @@ var doc = function doc(Button) {
     gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
     label: _reactDesc.PropTypes.node.description('Label text to place in the button.'),
     onClick: _reactDesc.PropTypes.func.description("Click handler. Not setting this property and not specifying a href\ncauses the Button to be disabled."),
-    plain: _reactDesc.PropTypes.bool.description("Whether this is a plain button with no border or pad.\nNon plain button will show both pad and border.\nThe plain button has no border and unless the icon prop exist it has no pad as well.").defaultValue(false),
-    primary: _reactDesc.PropTypes.bool.description('Whether this is a primary button. There should be at most one per page or screen.').defaultValue(false),
+    plain: _reactDesc.PropTypes.bool.description("Whether this is a plain button with no border or pad.\nNon plain button will show both pad and border.\nThe plain button has no border and unless the icon prop exist it has no pad as \nwell.").defaultValue(false),
+    primary: _reactDesc.PropTypes.bool.description("Whether this is a primary button. There should be at most one per page\n         or screen.").defaultValue(false),
     reverse: _reactDesc.PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\nend of the anchor.").defaultValue(false),
-    type: _reactDesc.PropTypes.oneOf(['button', 'reset', 'submit']).description('The type of button. Set the type to submit for the default button on forms.').defaultValue('button'),
+    type: _reactDesc.PropTypes.oneOf(['button', 'reset', 'submit']).description("The type of button. Set the type to submit for the default button on \n        forms.").defaultValue('button'),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag or react component to use for the element.")
   });
   return DocumentedButton;

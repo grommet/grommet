@@ -33,7 +33,8 @@ var TableBody = function TableBody(_ref) {
 var TableBodyDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  TableBodyDoc = require('./doc').doc(TableBody); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableBodyDoc = require('./doc').doc(TableBody);
 }
 
 var TableBodyWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(TableBodyDoc || TableBody);

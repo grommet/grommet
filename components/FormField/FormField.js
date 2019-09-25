@@ -220,7 +220,8 @@ function (_Component) {
         if (margin) {
           abutMargin = margin;
         } else if (border.size) {
-          // if the user defines a margin, then the default margin below will be overriden
+          // if the user defines a margin,
+          // then the default margin below will be overriden
           abutMargin = {
             bottom: "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[border.size] || border.size) + "px"
           };
@@ -284,7 +285,8 @@ Object.setPrototypeOf(FormField.defaultProps, _defaultProps.defaultProps);
 var FormFieldDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  FormFieldDoc = require('./doc').doc(FormField);
 }
 
 var FormFieldWrapper = (0, _recompose.compose)((0, _hocs.withFocus)({

@@ -31,7 +31,7 @@ var doc = function doc(Select) {
     dropTarget: _reactDesc.PropTypes.object.description("Target where the options drop will be aligned to. This should be\n      a React reference. Typically, this is not required as the drop will be\n      aligned to the Select itself by default."),
     dropProps: _reactDesc.PropTypes.object.description('Any valid Drop prop.'),
     focusIndicator: _reactDesc.PropTypes.bool.description("Whether when 'plain' it should receive a focus outline."),
-    icon: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.func, _reactDesc.PropTypes.node]).description('A custom icon to be used when rendering the select. You can use false to not render an icon at all.'),
+    icon: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.func, _reactDesc.PropTypes.node]).description("A custom icon to be used when rendering the select. You can use false to\n       not render an icon at all."),
     labelKey: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("When the options array contains objects, this property indicates how\n      to determine the label of each option. If a string is\n      provided, it is used as the key to retrieve each option's label.\n      If a function is provided, it is called with the option and the\n      return value indicates the label."),
     messages: _reactDesc.PropTypes.shape({
       multiple: _reactDesc.PropTypes.string
@@ -47,7 +47,7 @@ var doc = function doc(Select) {
     placeholder: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.element, _reactDesc.PropTypes.node]).description('Placeholder to use when no value is provided.'),
     plain: _reactDesc.PropTypes.bool.description('Whether this is a plain Select input with no border or padding.'),
     replace: _reactDesc.PropTypes.bool.description("Whether to replace previously rendered items with a generic spacing\n      element when they have scrolled out of view. This is more performant but\n      means that in-page searching will not find elements that have been\n      replaced.").defaultValue(true),
-    searchPlaceholder: _reactDesc.PropTypes.string.description('Placeholder text to use in the search box when the search input is empty.'),
+    searchPlaceholder: _reactDesc.PropTypes.string.description("Placeholder text to use in the search box when the search input is \n      empty."),
     selected: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)]).description("Index of the currently selected option. When multiple, the set of\n      options selected. NOTE: This is deprecated in favor of indicating\n      the selected values via the 'value' property."),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('The size of the select.'),
     value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.element, // deprecated, use valueLabel
@@ -92,7 +92,7 @@ var themeDoc = {
     defaultValue: undefined
   },
   'select.control.open': {
-    description: 'Any additional style for the control open state of the Select component.',
+    description: "Any additional style for the control open state of the Select \ncomponent.",
     type: 'object',
     defaultValue: undefined
   },

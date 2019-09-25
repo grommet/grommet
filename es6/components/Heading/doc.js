@@ -21,7 +21,7 @@ export var themeDoc = _extends({}, themeDocUtils.breakpointStyle('The possible b
     defaultValue: undefined
   },
   'heading.level': {
-    description: 'The level that impacts line height, max width, font size, weight and family of the Heading.',
+    description: "The level that impacts line height, max width, font size, \nweight and family of the Heading.",
     type: 'object',
     defaultValue: "\n      1: {\n        medium: {\n          size: 34px,\n          height: 40px,\n          width: 826px,\n        },\n      },\n      weight: 600,\n      font:\n        {\n          family: undefined,\n        }"
   },
@@ -36,7 +36,7 @@ export var themeDoc = _extends({}, themeDocUtils.breakpointStyle('The possible b
     defaultValue: undefined
   },
   'heading.responsiveBreakpoint': {
-    description: 'The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints.',
+    description: "The breakpoint to trigger changes in the Heading layout. \nThe actual values will be derived from global.breakpoints.",
     type: 'string',
     defaultValue: 'small'
   }

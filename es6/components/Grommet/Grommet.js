@@ -153,7 +153,8 @@ _defineProperty(Grommet, "displayName", 'Grommet');
 var GrommetDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  GrommetDoc = require('./doc').doc(Grommet);
 }
 
 var GrommetWrapper = GrommetDoc || Grommet;

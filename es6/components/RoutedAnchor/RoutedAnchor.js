@@ -30,7 +30,7 @@ function (_Component) {
         rest = _objectWithoutPropertiesLoose(_this$props, ["path", "method"]);
 
     if (process.env.NODE_ENV !== 'production') {
-      console.warn("This component will be deprecated in the upcoming releases. Please refer to https://github.com/grommet/grommet/issues/2855 for more information.");
+      console.warn("This component will be deprecated in the upcoming releases. \n        Please refer to https://github.com/grommet/grommet/issues/2855 \n        for more information.");
     }
 
     return React.createElement(Anchor, _extends({}, rest, {
@@ -77,7 +77,8 @@ _defineProperty(RoutedAnchor, "defaultProps", {
 var RoutedAnchorDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  RoutedAnchorDoc = require('./doc').doc(RoutedAnchor); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RoutedAnchorDoc = require('./doc').doc(RoutedAnchor);
 }
 
 var RoutedAnchorWrapper = RoutedAnchorDoc || RoutedAnchor;

@@ -48,7 +48,8 @@ var getClockState = function getClockState(_ref) {
   var hour12 = hours > 12 ? hours - 12 : hours;
   var minuteAngle = minutes * ANGLE_UNIT;
   return {
-    // offset hour angle by half of the minute angle so that it gets closer to the next hour
+    // offset hour angle by half of the minute angle so that it gets closer
+    // to the next hour
     hourAngle: hour12 * HOUR_ANGLE_UNIT + minutes / 2,
     minuteAngle: minuteAngle,
     secondAngle: seconds * ANGLE_UNIT

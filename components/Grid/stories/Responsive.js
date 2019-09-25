@@ -146,7 +146,8 @@ var Responsive = function Responsive(_ref) {
       if (rows[size]) {
         rowsVal = rows[size];
       }
-    } // Also if areas is a simple array not an object of arrays for different sizes
+    } // Also if areas is a simple array not an object of arrays for
+    // different sizes
 
 
     var areasVal = areas;

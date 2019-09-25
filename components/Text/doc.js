@@ -13,7 +13,7 @@ var doc = function doc(Text) {
   var DocumentedText = (0, _reactDesc.describe)(Text).availableAt((0, _utils.getAvailableAtBadge)('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
   DocumentedText.propTypes = _extends({}, _utils.genericProps, {
     color: _utils.colorPropType.description('A color identifier to use for the text color.'),
-    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size and line height are primarily driven by the chosen tag. But, it can\nbe adjusted via this size property. The tag should be set for semantic\ncorrectness and accessibility. This size property allows for stylistic\nadjustments.").defaultValue('medium'),
+    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size and line height are primarily driven by the chosen tag. \nBut, it can be adjusted via this size property. The tag should be set for \nsemantic correctness and accessibility. This size property allows for stylistic\nadjustments.").defaultValue('medium'),
     tag: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func, _reactDesc.PropTypes.element]).description("The DOM tag or react component to use for the element.").defaultValue('span'),
     textAlign: _reactDesc.PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the component.').defaultValue('start'),
@@ -33,7 +33,7 @@ var themeDoc = _extends({
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
   },
   text: {
-    description: "The possible sizes of the text in terms of its font-size and line-height.",
+    description: "The possible sizes of the text in terms of its font-size and \nline-height.",
     type: 'object',
     defaultValue: "{\n      xsmall: {\n        size: '12px',\n        height: '18px',\n       },\n      small: {\n        size: '14px',\n        height: '20px',\n       },\n      medium: {\n        size: '18px',\n        height: '24px',\n      },\n      large: {\n        size: '22px',\n        height: '28px',\n      },\n      xlarge: {\n        size: '26px',\n        height: '32px',\n      },\n      xxlarge: {\n        size: '34px',\n        height: '40px',\n      },\n    }"
   },

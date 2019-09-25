@@ -483,7 +483,8 @@ Object.setPrototypeOf(TextInput.defaultProps, _defaultProps.defaultProps);
 var TextInputDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TextInputDoc = require('./doc').doc(TextInput);
 }
 
 var TextInputWrapper = (0, _recompose.compose)((0, _hocs.withFocus)({

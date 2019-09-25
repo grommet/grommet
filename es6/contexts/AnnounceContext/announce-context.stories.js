@@ -54,7 +54,7 @@ storiesOf('AnnounceContext', module).add('Polite', function () {
   return React.createElement(AnnounceContextComponent, null);
 }).add('Assertive', function () {
   return React.createElement(AnnounceContextComponent, {
-    message: "Turn on Accessibility feature to listen to this announcement. This will soon disappear",
+    message: "Turn on Accessibility feature to listen to this announcement.  This will soon disappear",
     mode: "assertive",
     role: "alert"
   });

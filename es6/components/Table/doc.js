@@ -4,7 +4,8 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Table) {
-  var DocumentedTable = describe(Table).availableAt(getAvailableAtBadge('Table')).description('A table of data organized in cells.').usage("import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';\n<Table />").intrinsicElement('table');
+  var DocumentedTable = describe(Table).availableAt(getAvailableAtBadge('Table')).description('A table of data organized in cells.').usage( // eslint-disable-next-line max-len
+  "import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';\n<Table />").intrinsicElement('table');
   DocumentedTable.propTypes = _extends({}, genericProps, {
     caption: PropTypes.string.description('One line description.')
   });

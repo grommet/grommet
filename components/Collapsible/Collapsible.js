@@ -104,6 +104,7 @@ function (_Component) {
         container.style.overflow = 'hidden';
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
+            // eslint-disable-next-line max-len
             container.style.transition = "max-" + dimension + " " + speed + "ms, visibility 50ms";
             container.style["max-" + dimension] = open ? dimensionSize + "px" : '0px';
             _this2.animationTimeout = setTimeout(function () {
@@ -150,7 +151,8 @@ Object.setPrototypeOf(Collapsible.defaultProps, _defaultProps.defaultProps);
 var CollapsibleDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  CollapsibleDoc = require('./doc').doc(Collapsible); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CollapsibleDoc = require('./doc').doc(Collapsible);
 }
 
 var CollapsibleWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(CollapsibleDoc || Collapsible);

@@ -27,7 +27,8 @@ var Paragraph = function Paragraph(_ref) {
 var ParagraphDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  ParagraphDoc = require('./doc').doc(Paragraph); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  ParagraphDoc = require('./doc').doc(Paragraph);
 }
 
 var ParagraphWrapper = ParagraphDoc || Paragraph;

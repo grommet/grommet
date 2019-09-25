@@ -343,7 +343,8 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.
+      browser, such as columns.search, sortable, groupBy, or 
+      columns.aggregate.
 
 ```
 function

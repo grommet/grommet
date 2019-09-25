@@ -37,7 +37,8 @@ function (_Component) {
 var RangeInputDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  RangeInputDoc = require('./doc').doc(RangeInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RangeInputDoc = require('./doc').doc(RangeInput);
 }
 
 var RangeInputWrapper = compose(withFocus(), withForwardRef)(RangeInputDoc || RangeInput);

@@ -130,7 +130,8 @@ _defineProperty(Accordion, "defaultProps", {
 var AccordionDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  AccordionDoc = require('./doc').doc(Accordion); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  AccordionDoc = require('./doc').doc(Accordion);
 }
 
 var AccordionWrapper = AccordionDoc || Accordion;

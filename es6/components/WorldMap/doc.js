@@ -9,12 +9,12 @@ export var themeDoc = {
     defaultValue: 'light-3'
   },
   'worldMap.continent.active': {
-    description: 'The size of the visual dots belonging to a continent when the continent is being hovered.',
+    description: "The size of the visual dots belonging to a continent when the\ncontinent is being hovered.",
     type: 'string',
     defaultValue: '8px'
   },
   'worldMap.continent.base': {
-    description: 'The size of the visual dots belonging to a continent that is not being hovered.',
+    description: "The size of the visual dots belonging to a continent that is\nnot being hovered.",
     type: 'string',
     defaultValue: '6px'
   },
@@ -24,12 +24,12 @@ export var themeDoc = {
     defaultValue: 'light-4'
   },
   'worldMap.place.active': {
-    description: 'The size of a visual dot for an individual place in the map when it is being hovered.',
+    description: "The size of a visual dot for an individual place in the map \nwhen it is being hovered.",
     type: 'string',
     defaultValue: '20px'
   },
   'worldMap.place.base': {
-    description: 'The size of the visual dot representing an individual place in the map when it is not being hovered.',
+    description: "The size of the visual dot representing an individual place \nin the map when it is not being hovered.",
     type: 'string',
     defaultValue: '8px'
   },

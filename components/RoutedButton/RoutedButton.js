@@ -80,7 +80,7 @@ function (_Component) {
         rest = _objectWithoutPropertiesLoose(_this$props2, ["href", "path", "method", "onClick"]);
 
     if (process.env.NODE_ENV !== 'production') {
-      console.warn("This component will be deprecated in the upcoming releases. Please refer to https://github.com/grommet/grommet/issues/2855 for more information.");
+      console.warn("This component will be deprecated in the upcoming releases.\n         Please refer to https://github.com/grommet/grommet/issues/2855 \n         for more information.");
     }
 
     return _react["default"].createElement(_Button.Button, _extends({}, rest, {
@@ -104,7 +104,8 @@ _defineProperty(RoutedButton, "defaultProps", {
 var RoutedButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  RoutedButtonDoc = require('./doc').doc(RoutedButton); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RoutedButtonDoc = require('./doc').doc(RoutedButton);
 }
 
 var RoutedButtonWrapper = RoutedButtonDoc || RoutedButton;

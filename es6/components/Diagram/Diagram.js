@@ -264,7 +264,8 @@ Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 var DiagramDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  DiagramDoc = require('./doc').doc(Diagram); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  DiagramDoc = require('./doc').doc(Diagram);
 }
 
 var DiagramWrapper = compose(withTheme)(DiagramDoc || Diagram);

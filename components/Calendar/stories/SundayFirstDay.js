@@ -10,7 +10,8 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// When the first day of the month is Sunday, and the request of firstDayOfWeek is Monday, we are verifing we are not missing a week, issue 3253.
+// When the first day of the month is Sunday, and the request of firstDayOfWeek
+// is Monday, we are verifing we are not missing a week, issue 3253.
 var SundayFirstDay = function SundayFirstDay() {
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet

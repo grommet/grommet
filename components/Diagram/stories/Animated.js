@@ -26,7 +26,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   diagram: {
-    extend: '@keyframes example { to { stroke-dashoffset: 0; } } path { stroke-dasharray: 500; stroke-dashoffset: 500; animation: example 3s linear forwards; }'
+    extend: "@keyframes \n  example {\n    to {\n      stroke-dashoffset: 0;\n    }\n  }\n  path {\n    stroke-dasharray: 500;\n    stroke-dashoffset: 500;\n    animation: example 3s linear forwards;\n  }"
   }
 });
 

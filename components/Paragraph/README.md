@@ -167,7 +167,8 @@ p
   
 **paragraph**
 
-The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects `object`.
+The possible sizes of the paragraph in terms of its max-width,
+     font-size and line-height. Expects `object`.
 
 Defaults to
 

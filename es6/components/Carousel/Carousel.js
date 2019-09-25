@@ -228,7 +228,8 @@ Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 var CarouselDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  CarouselDoc = require('./doc').doc(Carousel); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CarouselDoc = require('./doc').doc(Carousel);
 }
 
 var CarouselWrapper = compose(withFocus(), withTheme)(CarouselDoc || Carousel);

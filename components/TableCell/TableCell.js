@@ -85,7 +85,8 @@ Object.setPrototypeOf(TableCell.defaultProps, _defaultProps.defaultProps);
 var TableCellDoc;
 
 if (process.env.NODE_ENV !== 'production') {
-  TableCellDoc = require('./doc').doc(TableCell); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableCellDoc = require('./doc').doc(TableCell);
 }
 
 var TableCellWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(TableCellDoc || TableCell);
