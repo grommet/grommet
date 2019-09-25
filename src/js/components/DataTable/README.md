@@ -428,7 +428,9 @@ string
     small
     medium
     large
-    xlarge,
+    xlarge
+}
+{
   header: custom,
   body: custom,
   footer: custom
