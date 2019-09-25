@@ -131,7 +131,8 @@ Object.setPrototypeOf(RadioButtonGroup.defaultProps, defaultProps);
 
 let RadioButtonGroupDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RadioButtonGroupDoc = require('./doc').doc(RadioButtonGroup); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RadioButtonGroupDoc = require('./doc').doc(RadioButtonGroup);
 }
 const RadioButtonGroupWrapper = compose(withForwardRef)(
   RadioButtonGroupDoc || RadioButtonGroup,

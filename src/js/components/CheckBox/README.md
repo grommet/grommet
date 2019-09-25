@@ -46,7 +46,8 @@ node
 
 **name**
 
-The DOM name attribute value to use for the underlying <input/> element.
+The DOM name attribute value to use for the underlying <input/> 
+      element.
 
 ```
 string

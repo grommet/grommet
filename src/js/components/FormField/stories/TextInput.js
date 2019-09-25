@@ -14,11 +14,13 @@ class FormFieldTextInput extends Component {
     const {
       target: { value },
     } = event;
-    // The line below escapes regular expression special characters:  [ \ ^ $ . | ? * + ( )
+    // The line below escapes regular expression special characters:
+    // [ \ ^ $ . | ? * + ( )
     const escapedText = value.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
 
-    // Create the regular expression with modified value which handles escaping special characters
-    // Without escaping special characters, errors will appear in the console
+    // Create the regular expression with modified value which
+    // handles escaping special characters. Without escaping special
+    // characters, errors will appear in the console
     const exp = new RegExp(escapedText, 'i');
     const suggestions = allSuggestions.filter(s => exp.test(s));
     this.setState({ value, suggestions });

@@ -26,7 +26,8 @@ class TextArea extends Component {
 
 let TextAreaDoc;
 if (process.env.NODE_ENV !== 'production') {
-  TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TextAreaDoc = require('./doc').doc(TextArea);
 }
 const TextAreaWrapper = compose(
   withFocus({ focusWithMouse: true }),

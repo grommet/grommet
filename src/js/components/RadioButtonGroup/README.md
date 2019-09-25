@@ -13,7 +13,8 @@ import { RadioButtonGroup } from 'grommet';
 
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/> elements.
+Required. The DOM name attribute value to use for the underlying <input/> 
+      elements.
 
 ```
 string

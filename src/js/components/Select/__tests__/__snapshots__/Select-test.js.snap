@@ -312,7 +312,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -1057,7 +1057,7 @@ exports[`Select complex options and children 3`] = `
 }
 
 .c7:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -2477,7 +2477,7 @@ exports[`Select large drop container height 1`] = `
 }
 
 .c7:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -2817,7 +2817,7 @@ exports[`Select medium drop container height 1`] = `
 }
 
 .c7:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -4016,7 +4016,7 @@ exports[`Select multiple values 3`] = `
 }
 
 .c7:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -4849,7 +4849,7 @@ exports[`Select opens 3`] = `
 }
 
 .c7:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -5227,7 +5227,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hqGUhX"
   >
     <button
-      class="StyledButton-sc-323bzc-0 lnKzGb"
+      class="StyledButton-sc-323bzc-0 hJtPXk"
       role="menuitem"
       tabindex="-1"
       type="button"
@@ -5247,7 +5247,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hqGUhX"
   >
     <button
-      class="StyledButton-sc-323bzc-0 lnKzGb"
+      class="StyledButton-sc-323bzc-0 hJtPXk"
       role="menuitem"
       tabindex="-1"
       type="button"
@@ -6089,7 +6089,8 @@ exports[`Select renders styled select options backwards compatible with legacy
 `;
 
 exports[`Select renders styled select options combining select.options.box && 
-  select.options.container; select.options.container prioritized if conflict 1`] = `
+  select.options.container; 
+  select.options.container prioritized if conflict 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -7238,7 +7239,7 @@ exports[`Select search 2`] = `
 }
 
 .c10:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -9077,7 +9078,7 @@ exports[`Select small drop container height 1`] = `
 }
 
 .c7:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }

@@ -18,7 +18,8 @@ export const doc = Grommet => {
       .defaultValue(false),
     plain: PropTypes.bool
       .description(
-        'Whether or not Grommet should apply a global font-family, font-size, and line-height.',
+        `Whether or not Grommet should apply a global font-family, font-size, 
+        and line-height.`,
       )
       .defaultValue(false),
     cssVars: PropTypes.bool
@@ -28,7 +29,8 @@ export const doc = Grommet => {
       'Custom styles for Grommet app component.',
     ),
     userAgent: PropTypes.string.description(
-      'User agent used to detect the device width for setting the initial breakpoint.',
+      `User agent used to detect the device width for setting the initial 
+      breakpoint.`,
     ),
   };
 

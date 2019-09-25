@@ -9,8 +9,10 @@ export const addDays = (date, days) => {
   // where adding a day's worth when the time is midnight results in
   // being a day off.
   let hourDelta = result.getHours() - date.getHours();
-  // At this point, hourDelta is typically 0 (normal day), +23 (November daylight saving), or -23 (March Daylight saving)
-  // depending on which side of the switch we are on. Convert so that hourDelta is either +1 or -1.
+  // At this point, hourDelta is typically 0 (normal day),
+  // +23 (November daylight saving), or -23 (March Daylight saving)
+  // depending on which side of the switch we are on.
+  // Convert so that hourDelta is either +1 or -1.
   if (hourDelta === 23) {
     hourDelta -= 24;
   } else if (hourDelta === -23) {

@@ -136,7 +136,8 @@ export const doc = DataTable => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.`,
+      browser, such as columns.search, sortable, groupBy, or 
+      columns.aggregate.`,
     ),
     onClickRow: PropTypes.func.description(
       `When supplied, this function will be called with an event object that

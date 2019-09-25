@@ -68,7 +68,8 @@ export const doc = Meter => {
 
 export const themeDoc = {
   'global.edgeSize': {
-    description: 'The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter.',
+    description: `The border-radius of the styled Meter. thickness, height and 
+    width of the Bar Meter, height of the Circle Meter.`,
     type: 'object',
     defaultValue: `{
         none: '0px',
@@ -111,4 +112,4 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-}
+};

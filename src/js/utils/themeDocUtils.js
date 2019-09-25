@@ -1,5 +1,6 @@
 export const themeDocUtils = {
-  // 'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+  // 'The possible breakpoints that could affect border, direction, gap,
+  // margin, pad, and round.',
   breakpointStyle: description => ({
     'global.breakpoints': {
       description,

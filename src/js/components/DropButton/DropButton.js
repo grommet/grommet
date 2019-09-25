@@ -117,7 +117,8 @@ class DropButton extends Component {
 
 let DropButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
-  DropButtonDoc = require('./doc').doc(DropButton); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  DropButtonDoc = require('./doc').doc(DropButton);
 }
 const DropButtonWrapper = compose(withForwardRef)(DropButtonDoc || DropButton);
 

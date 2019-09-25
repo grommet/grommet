@@ -409,7 +409,8 @@ Object.setPrototypeOf(TextInput.defaultProps, defaultProps);
 
 let TextInputDoc;
 if (process.env.NODE_ENV !== 'production') {
-  TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TextInputDoc = require('./doc').doc(TextInput);
 }
 const TextInputWrapper = compose(
   withFocus({ focusWithMouse: true }),

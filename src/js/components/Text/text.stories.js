@@ -32,6 +32,7 @@ const Color = () => (
   </Grommet>
 );
 
+/* eslint-disable max-len */
 const WordBreak = () => (
   <Grommet theme={grommet}>
     {wordBreakValues.map(value => (
@@ -46,6 +47,7 @@ const WordBreak = () => (
     ))}
   </Grommet>
 );
+/* eslint-enable max-len */
 
 storiesOf('Text', module)
   .add('All', () => <All />)

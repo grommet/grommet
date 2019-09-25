@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-len
 /* eslint-disable react/no-multi-comp, react/prefer-stateless-function, max-classes-per-file */
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
@@ -177,7 +178,8 @@ class FormFieldContent extends Component {
         if (margin) {
           abutMargin = margin;
         } else if (border.size) {
-          // if the user defines a margin, then the default margin below will be overriden
+          // if the user defines a margin,
+          // then the default margin below will be overriden
           abutMargin = {
             bottom: `-${parseMetricToNum(
               theme.global.borderSize[border.size] || border.size,
@@ -254,7 +256,8 @@ Object.setPrototypeOf(FormField.defaultProps, defaultProps);
 
 let FormFieldDoc;
 if (process.env.NODE_ENV !== 'production') {
-  FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  FormFieldDoc = require('./doc').doc(FormField);
 }
 const FormFieldWrapper = compose(
   withFocus({ focusWithMouse: true }),

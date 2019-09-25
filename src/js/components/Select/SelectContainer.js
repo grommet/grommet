@@ -88,8 +88,8 @@ class SelectContainer extends Component {
   componentDidMount() {
     const { onSearch } = this.props;
     const { activeIndex } = this.state;
-    // timeout need to send the operation through event loop and allow time to the portal
-    // to be available
+    // timeout need to send the operation through event loop and allow
+    // time to the portal to be available
     setTimeout(() => {
       const optionsNode = this.optionsRef.current;
       if (onSearch) {
@@ -129,7 +129,8 @@ class SelectContainer extends Component {
     );
   };
 
-  // wait a debounceDelay of idle time in ms, before notifying that the search changed.
+  // wait a debounceDelay of idle time in ms, before notifying that the search
+  // changed.
   // the debounceDelay timer starts to count when the user stopped typing
   onSearch = debounce(search => {
     const { onSearch } = this.props;

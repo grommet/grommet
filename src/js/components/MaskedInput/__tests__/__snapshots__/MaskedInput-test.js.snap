@@ -113,7 +113,7 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -433,7 +433,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -836,7 +836,7 @@ exports[`MaskedInput mask 2`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
@@ -1359,7 +1359,7 @@ exports[`MaskedInput option via mouse 2`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221, 0.4);
   color: #444444;
   color: #000000;
 }
