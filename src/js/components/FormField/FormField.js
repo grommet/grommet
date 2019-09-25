@@ -106,14 +106,10 @@ class FormFieldContent extends Component {
       onBlur,
       onFocus,
       margin,
-      underline,
     } = this.props;
-    console.log(this.props);
     const { formField } = theme;
-    let { border } = formField;
-    if (underline === false) {
-      border = undefined;
-    }
+    const { border } = formField;
+
     let normalizedError = error;
     let contents = children;
 

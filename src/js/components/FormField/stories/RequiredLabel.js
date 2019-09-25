@@ -29,7 +29,7 @@ const LabelFormField = () => (
       <Form>
         <FormFieldLabel name="firstName" label="FirstName" required />
         <FormFieldLabel name="LastName" label="LastName" required />
-        <FormFieldLabel name="email" label="Email" underline={false} />
+        <FormFieldLabel name="email" label="Email" />
         <Button type="submit" label="Submit" primary />
         <Text margin={{ left: 'small' }} size="small" color="status-critical">
           * Required Field
