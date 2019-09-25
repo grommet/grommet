@@ -33,11 +33,11 @@ const UnSelect = () => {
   return (
     <Grommet theme={grommet}>
       <Box
-        fill
         pad="medium"
         direction="row"
         align="center"
         justify="center"
+        gap="medium"
       >
         <Select
           options={options}
@@ -46,7 +46,7 @@ const UnSelect = () => {
           placeholder="Select multiple options"
           multiple
         />
-        <Button onClick={onClickClearOptions} icon={<Trash color="control" size="medium" />} />
+        <Button onClick={onClickClearOptions} label="Clear All" />
       </Box>
     </Grommet>
   );
