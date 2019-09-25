@@ -43,7 +43,7 @@ const UnSelect = () => {
           options={options}
           onChange={e => onChange(e)}
           value={value}
-          placeholder="select"
+          placeholder="Select multiple options"
           multiple
         />
         <Button onClick={onClick} icon={<Trash color="control" size="medium" />} />
