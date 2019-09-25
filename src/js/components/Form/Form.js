@@ -127,6 +127,7 @@ class Form extends Component {
   render() {
     const { children, ...rest } = this.props;
     delete rest.messages;
+    delete rest.onChange;
     delete rest.theme;
     delete rest.value;
     const { errors, touched, value, messages } = this.state;
