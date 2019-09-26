@@ -39,6 +39,6 @@ export interface BoxProps {
 }
 
 declare const Box: React.ComponentClass<BoxProps & JSX.IntrinsicElements['div']>;
-export type BoxType = BoxProps & JSX.IntrinsicElements['div']
+export type BoxTypes = BoxProps & JSX.IntrinsicElements['div']
 
 export { Box };
