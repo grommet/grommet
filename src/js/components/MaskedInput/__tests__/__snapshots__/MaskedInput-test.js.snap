@@ -338,7 +338,7 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
 `;
 
 exports[`MaskedInput event target props are available option via mouse 2`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -438,7 +438,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -507,7 +507,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -741,7 +741,7 @@ exports[`MaskedInput mask 1`] = `
 `;
 
 exports[`MaskedInput mask 2`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -841,7 +841,7 @@ exports[`MaskedInput mask 2`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -910,7 +910,7 @@ exports[`MaskedInput mask 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1264,7 +1264,7 @@ exports[`MaskedInput option via mouse 1`] = `
 `;
 
 exports[`MaskedInput option via mouse 2`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1364,7 +1364,7 @@ exports[`MaskedInput option via mouse 2`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1433,7 +1433,7 @@ exports[`MaskedInput option via mouse 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
