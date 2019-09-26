@@ -59,7 +59,8 @@ class Keyboard extends Component {
 
 let KeyboardDoc;
 if (process.env.NODE_ENV !== 'production') {
-  KeyboardDoc = require('./doc').doc(Keyboard); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  KeyboardDoc = require('./doc').doc(Keyboard);
 }
 const KeyboardWrapper = KeyboardDoc || Keyboard;
 

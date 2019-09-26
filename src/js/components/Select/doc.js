@@ -83,7 +83,8 @@ export const doc = Select => {
       PropTypes.func,
       PropTypes.node,
     ]).description(
-      'A custom icon to be used when rendering the select. You can use false to not render an icon at all.',
+      `A custom icon to be used when rendering the select. You can use false to
+       not render an icon at all.`,
     ),
     labelKey: PropTypes.oneOfType([
       PropTypes.string,
@@ -151,7 +152,8 @@ export const doc = Select => {
       )
       .defaultValue(true),
     searchPlaceholder: PropTypes.string.description(
-      'Placeholder text to use in the search box when the search input is empty.',
+      `Placeholder text to use in the search box when the search input is 
+      empty.`,
     ),
     selected: PropTypes.oneOfType([
       PropTypes.number,
@@ -234,8 +236,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'select.control.open': {
-    description:
-      'Any additional style for the control open state of the Select component.',
+    description: `Any additional style for the control open state of the Select 
+component.`,
     type: 'object',
     defaultValue: undefined,
   },

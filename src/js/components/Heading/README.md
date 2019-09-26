@@ -310,7 +310,8 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects `string`.
+The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints. Expects `string`.
 
 Defaults to
 

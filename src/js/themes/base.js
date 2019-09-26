@@ -181,7 +181,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 0.3,
         },
       },
-      debounceDelay: 300, // The time to wait after the user stopped typing, measured in ms.
+      // The time to wait after the user stopped typing, measured in ms.
+      debounceDelay: 300,
       drop: {
         background: '#ffffff',
         border: {

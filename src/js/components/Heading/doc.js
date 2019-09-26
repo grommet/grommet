@@ -101,8 +101,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'heading.responsiveBreakpoint': {
-    description:
-      'The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints.',
+    description: `The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints.`,
     type: 'string',
     defaultValue: 'small',
   },

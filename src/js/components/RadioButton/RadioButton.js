@@ -107,7 +107,8 @@ Object.setPrototypeOf(RadioButton.defaultProps, defaultProps);
 
 let RadioButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RadioButtonDoc = require('./doc').doc(RadioButton);
 }
 const RadioButtonWrapper = compose(
   withTheme,

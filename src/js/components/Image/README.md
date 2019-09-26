@@ -118,7 +118,8 @@ contain
 
 **fallback**
 
-Specifies the URL of the fallback image used when src is failing to load
+Specifies the URL of the fallback image used when 
+      src is failing to load
 
 ```
 string
