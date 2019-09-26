@@ -3171,7 +3171,7 @@ node",
         "name": "selected",
       },
       Object {
-        "description": "The size of the select.",
+        "description": "The size of the text and icon.",
         "format": "small
 medium
 large
