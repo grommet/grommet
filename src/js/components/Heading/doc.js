@@ -72,7 +72,7 @@ export const themeDoc = {
   },
   'heading.level': {
     description:
-      'The level that impacts line height, max width, font size, weight and family of the Heading. Heading level is automatically adjusted at different screen sizes. These screen sizes are derived from the global.breakpoints entry in the theme object.',
+      'The level that impacts line-height, max-width, font size, weight and family of the Heading. Heading level is automatically adjusted at different screen sizes. These screen sizes are derived from breakpoints.',
     type: 'object',
     defaultValue: `
       1: {
