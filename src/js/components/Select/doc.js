@@ -166,7 +166,7 @@ export const doc = Select => {
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
-    ]).description('The size of the select.'),
+    ]).description('The size of the text and icon.'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element, // deprecated, use valueLabel
