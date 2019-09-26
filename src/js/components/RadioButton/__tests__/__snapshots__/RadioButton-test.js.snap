@@ -11,7 +11,7 @@ exports[`RadioButton checked renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -78,7 +78,7 @@ exports[`RadioButton checked renders 1`] = `
   border-radius: 100%;
 }
 
-.c2 {
+.c1 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -86,8 +86,8 @@ exports[`RadioButton checked renders 1`] = `
   cursor: pointer;
 }
 
-.c2:hover input:not([disabled]) + div,
-.c2:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -108,13 +108,13 @@ exports[`RadioButton checked renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     padding: 0px;
   }
 }
@@ -157,7 +157,7 @@ exports[`RadioButton checked renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c3 "
+      className="c3"
     >
       <input
         checked={true}
@@ -166,7 +166,7 @@ exports[`RadioButton checked renders 1`] = `
         type="radio"
       />
       <div
-        className="c5 "
+        className="c5"
       >
         <svg
           className="c6"
@@ -196,7 +196,7 @@ exports[`RadioButton disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -292,7 +292,7 @@ exports[`RadioButton disabled renders 1`] = `
   border-radius: 100%;
 }
 
-.c2 {
+.c1 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -301,8 +301,8 @@ exports[`RadioButton disabled renders 1`] = `
   cursor: default;
 }
 
-.c2:hover input:not([disabled]) + div,
-.c2:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -322,13 +322,13 @@ exports[`RadioButton disabled renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     padding: 0px;
   }
 }
@@ -390,7 +390,7 @@ exports[`RadioButton disabled renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c3 "
+      className="c3"
     >
       <input
         className="c4"
@@ -399,7 +399,7 @@ exports[`RadioButton disabled renders 1`] = `
         type="radio"
       />
       <div
-        className="c5 "
+        className="c5"
       />
     </div>
   </label>
@@ -409,7 +409,7 @@ exports[`RadioButton disabled renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c3 "
+      className="c3"
     >
       <input
         checked={true}
@@ -419,7 +419,7 @@ exports[`RadioButton disabled renders 1`] = `
         type="radio"
       />
       <div
-        className="c6 "
+        className="c6"
       >
         <svg
           className="c7"
@@ -449,7 +449,7 @@ exports[`RadioButton label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -516,7 +516,7 @@ exports[`RadioButton label renders 1`] = `
   border-radius: 100%;
 }
 
-.c2 {
+.c1 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -524,8 +524,8 @@ exports[`RadioButton label renders 1`] = `
   cursor: pointer;
 }
 
-.c2:hover input:not([disabled]) + div,
-.c2:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -539,13 +539,13 @@ exports[`RadioButton label renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     padding: 0px;
   }
 }
@@ -588,7 +588,7 @@ exports[`RadioButton label renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c3 "
+      className="c3"
     >
       <input
         className="c4"
@@ -596,7 +596,7 @@ exports[`RadioButton label renders 1`] = `
         type="radio"
       />
       <div
-        className="c5 "
+        className="c5"
       />
     </div>
     <span>
@@ -608,7 +608,7 @@ exports[`RadioButton label renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c3 "
+      className="c3"
     >
       <input
         className="c4"
@@ -616,7 +616,7 @@ exports[`RadioButton label renders 1`] = `
         type="radio"
       />
       <div
-        className="c5 "
+        className="c5"
       />
     </div>
     <div>
@@ -637,7 +637,7 @@ exports[`RadioButton renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -704,7 +704,7 @@ exports[`RadioButton renders 1`] = `
   border-radius: 100%;
 }
 
-.c2 {
+.c1 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -712,8 +712,8 @@ exports[`RadioButton renders 1`] = `
   cursor: pointer;
 }
 
-.c2:hover input:not([disabled]) + div,
-.c2:hover input:not([disabled]) + span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -727,13 +727,13 @@ exports[`RadioButton renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     padding: 0px;
   }
 }
@@ -776,7 +776,7 @@ exports[`RadioButton renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c3 "
+      className="c3"
     >
       <input
         className="c4"
@@ -784,7 +784,7 @@ exports[`RadioButton renders 1`] = `
         type="radio"
       />
       <div
-        className="c5 "
+        className="c5"
       />
     </div>
   </label>
@@ -794,7 +794,7 @@ exports[`RadioButton renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c3 "
+      className="c3"
     >
       <input
         className="c4"
@@ -803,7 +803,7 @@ exports[`RadioButton renders 1`] = `
         type="radio"
       />
       <div
-        className="c5 "
+        className="c5"
       />
     </div>
   </label>

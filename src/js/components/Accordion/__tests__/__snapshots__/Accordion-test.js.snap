@@ -337,7 +337,7 @@ exports[`Accordion AccordionPanel 1`] = `
       >
         <div
           aria-hidden={true}
-          className="c1 c10"
+          className="c10 c1"
           open={false}
         >
           Panel body 1
@@ -394,7 +394,7 @@ exports[`Accordion AccordionPanel 1`] = `
       >
         <div
           aria-hidden={true}
-          className="c1 c10"
+          className="c10 c1"
           open={false}
         >
           Panel body 2
@@ -1216,7 +1216,7 @@ exports[`Accordion change to second Panel 1`] = `
       >
         <div
           aria-hidden="true"
-          class="c1 c10"
+          class="c10 c1"
         >
           Panel body 1
         </div>
@@ -1267,7 +1267,7 @@ exports[`Accordion change to second Panel 1`] = `
       >
         <div
           aria-hidden="true"
-          class="c1 c10"
+          class="c10 c1"
         >
           Panel body 2
         </div>
@@ -1330,7 +1330,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 1
         </div>
@@ -1416,7 +1416,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="false"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 dMYckW"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 dMYckW StyledBox-sc-13pk1d4-0 fWrrBh"
           open=""
         >
           Panel body 2
@@ -2441,7 +2441,7 @@ exports[`Accordion complex title 1`] = `
         >
           <div
             aria-hidden={true}
-            className="c2 c9"
+            className="c9 c2"
             open={false}
           >
             Panel body 1
@@ -2492,7 +2492,7 @@ exports[`Accordion complex title 1`] = `
         >
           <div
             aria-hidden={true}
-            className="c2 c9"
+            className="c9 c2"
             open={false}
           >
             Panel body 2
@@ -2841,7 +2841,7 @@ exports[`Accordion custom accordion 1`] = `
       >
         <div
           aria-hidden={true}
-          className="c1 c10"
+          className="c10 c1"
           open={false}
         >
           Panel body 1
@@ -4155,7 +4155,7 @@ exports[`Accordion set on hover 1`] = `
       >
         <div
           aria-hidden="true"
-          class="c1 c10"
+          class="c10 c1"
         >
           Panel body 1
         </div>
@@ -4206,7 +4206,7 @@ exports[`Accordion set on hover 1`] = `
       >
         <div
           aria-hidden="true"
-          class="c1 c10"
+          class="c10 c1"
         >
           Panel body 2
         </div>
@@ -4269,7 +4269,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 1
         </div>
@@ -4320,7 +4320,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 2
         </div>
@@ -4383,7 +4383,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 1
         </div>
@@ -4434,7 +4434,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 2
         </div>
@@ -4497,7 +4497,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 1
         </div>
@@ -4548,7 +4548,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 2
         </div>
@@ -4611,7 +4611,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 1
         </div>
@@ -4662,7 +4662,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 fWrrBh Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 fWrrBh"
         >
           Panel body 2
         </div>

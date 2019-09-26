@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Drop align left left 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20,7 +20,7 @@ exports[`Drop align left left 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -45,19 +45,19 @@ exports[`Drop align left left 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -176,7 +176,7 @@ exports[`Drop align left left 2`] = `
 `;
 
 exports[`Drop align left right top bottom 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -195,7 +195,7 @@ exports[`Drop align left right top bottom 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -220,19 +220,19 @@ exports[`Drop align left right top bottom 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -325,7 +325,7 @@ exports[`Drop align left right top bottom 2`] = `
 `;
 
 exports[`Drop align right left top top 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -344,7 +344,7 @@ exports[`Drop align right left top top 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -369,19 +369,19 @@ exports[`Drop align right left top top 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -513,7 +513,7 @@ exports[`Drop align right left top top 2`] = `
 `;
 
 exports[`Drop align right right 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -532,7 +532,7 @@ exports[`Drop align right right 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -557,19 +557,19 @@ exports[`Drop align right right 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -701,7 +701,7 @@ exports[`Drop align right right 2`] = `
 `;
 
 exports[`Drop align right right bottom top 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -720,7 +720,7 @@ exports[`Drop align right right bottom top 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -745,19 +745,19 @@ exports[`Drop align right right bottom top 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -863,7 +863,7 @@ exports[`Drop align right right bottom top 2`] = `
 `;
 
 exports[`Drop align right right bottom top 3`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -882,7 +882,7 @@ exports[`Drop align right right bottom top 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -907,19 +907,19 @@ exports[`Drop align right right bottom top 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1051,7 +1051,7 @@ exports[`Drop align right right bottom top 4`] = `
 `;
 
 exports[`Drop basic 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1070,7 +1070,7 @@ exports[`Drop basic 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1095,19 +1095,19 @@ exports[`Drop basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1200,7 +1200,7 @@ exports[`Drop basic 2`] = `
 `;
 
 exports[`Drop close 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1219,7 +1219,7 @@ exports[`Drop close 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1244,19 +1244,19 @@ exports[`Drop close 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1388,7 +1388,7 @@ exports[`Drop close 2`] = `
 `;
 
 exports[`Drop default elevation renders 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1407,7 +1407,7 @@ exports[`Drop default elevation renders 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1432,19 +1432,19 @@ exports[`Drop default elevation renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1576,7 +1576,7 @@ exports[`Drop default elevation renders 2`] = `
 `;
 
 exports[`Drop invalid align 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1595,7 +1595,7 @@ exports[`Drop invalid align 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1620,19 +1620,19 @@ exports[`Drop invalid align 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1764,7 +1764,7 @@ exports[`Drop invalid align 2`] = `
 `;
 
 exports[`Drop invoke onClickOutside 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1783,7 +1783,7 @@ exports[`Drop invoke onClickOutside 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1808,19 +1808,19 @@ exports[`Drop invoke onClickOutside 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1952,7 +1952,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 `;
 
 exports[`Drop no stretch 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1971,7 +1971,7 @@ exports[`Drop no stretch 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1996,19 +1996,19 @@ exports[`Drop no stretch 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2140,7 +2140,7 @@ exports[`Drop no stretch 2`] = `
 `;
 
 exports[`Drop plain renders 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2158,7 +2158,7 @@ exports[`Drop plain renders 1`] = `
   overflow: auto;
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2181,19 +2181,19 @@ exports[`Drop plain renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2371,7 +2371,7 @@ exports[`Drop plain renders 2`] = `
 `;
 
 exports[`Drop props elevation renders 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2390,7 +2390,7 @@ exports[`Drop props elevation renders 1`] = `
   box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2415,19 +2415,19 @@ exports[`Drop props elevation renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2583,7 +2583,7 @@ exports[`Drop props elevation renders 2`] = `
 `;
 
 exports[`Drop resize 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2602,7 +2602,7 @@ exports[`Drop resize 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2627,19 +2627,19 @@ exports[`Drop resize 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2771,7 +2771,7 @@ exports[`Drop resize 2`] = `
 `;
 
 exports[`Drop restrict focus 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2790,7 +2790,7 @@ exports[`Drop restrict focus 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2815,19 +2815,19 @@ exports[`Drop restrict focus 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2851,7 +2851,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 fLlzie StyledDrop-sc-16s5rx8-0 hEnyXU"
+  class="StyledDrop-sc-16s5rx8-0 hEnyXU StyledBox-sc-13pk1d4-0 fLlzie"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -2972,7 +2972,7 @@ exports[`Drop restrict focus 3`] = `
 exports[`Drop restrict focus 4`] = `<body />`;
 
 exports[`Drop theme elevation renders 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2991,7 +2991,7 @@ exports[`Drop theme elevation renders 1`] = `
   box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
 }
 
-.c1 {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3016,19 +3016,19 @@ exports[`Drop theme elevation renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
+  .c1 {
     padding: 0px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
