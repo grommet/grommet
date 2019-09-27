@@ -71,9 +71,10 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'heading.level': {
-    description:
-      // eslint-disable-next-line max-len
-      'The level that impacts line-height, max-width, font size, weight and family of the Heading.Heading level is automatically adjusted at different screen sizes. These screen sizes are derived from breakpoints.',
+    description: `The level that impacts line-height, max-width, 
+font size, weight and family of the Heading. Heading level is automatically 
+adjusted at different screen sizes. These screen sizes are derived 
+from breakpoints.`,
     type: 'object',
     defaultValue: `
       1: {
