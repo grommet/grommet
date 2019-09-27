@@ -204,8 +204,9 @@ class MaskedInput extends Component {
   };
 
   setValue = nextValue => {
-    // Calling set value function directly on input because React library overrides
-    // setter `event.target.value =` and loses original event target fidelity.
+    // Calling set value function directly on input because React library
+    // overrides setter `event.target.value =` and loses original event
+    // target fidelity.
     // https://stackoverflow.com/a/46012210 &&
     // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
     const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
@@ -390,7 +391,8 @@ Object.setPrototypeOf(MaskedInput.defaultProps, defaultProps);
 
 let MaskedInputDoc;
 if (process.env.NODE_ENV !== 'production') {
-  MaskedInputDoc = require('./doc').doc(MaskedInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  MaskedInputDoc = require('./doc').doc(MaskedInput);
 }
 const MaskedInputWrapper = compose(
   withFocus({ focusWithMouse: true }),

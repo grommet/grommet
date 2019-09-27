@@ -268,7 +268,7 @@ undefined
 
 **heading.level**
 
-The level that impacts line-height, max-width, font size, weight and family of the Heading. Heading level is automatically adjusted at different screen sizes. These screen sizes are derived from breakpoints. Expects `object`.
+The level that impacts line-height, max-width, font size, weight and family of the Heading.Heading level is automatically adjusted at different screen sizes. These screen sizes are derived from breakpoints. Expects `object`.
 
 Defaults to
 
@@ -310,7 +310,8 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects `string`.
+The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints. Expects `string`.
 
 Defaults to
 

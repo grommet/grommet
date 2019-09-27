@@ -147,7 +147,8 @@ Object.setPrototypeOf(AccordionPanel.defaultProps, defaultProps);
 
 let AccordionPanelDoc;
 if (process.env.NODE_ENV !== 'production') {
-  AccordionPanelDoc = require('./doc').doc(AccordionPanel); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  AccordionPanelDoc = require('./doc').doc(AccordionPanel);
 }
 const AccordionPanelWrapper = compose(
   withTheme,
