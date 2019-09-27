@@ -378,4 +378,28 @@ describe('DataTable', () => {
     expect(onExpand.mock.results[0].value).toEqual(['one']);
     expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
+
+  test('replace', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          primaryKey="b"
+          step={2}
+          replace
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
