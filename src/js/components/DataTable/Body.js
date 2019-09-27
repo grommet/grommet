@@ -18,6 +18,7 @@ const Body = ({
   data,
   forwardRef,
   onMore,
+  replace,
   onClickRow,
   pad,
   primaryProperty,
@@ -66,6 +67,7 @@ const Body = ({
         <InfiniteScroll
           items={data}
           onMore={onMore}
+          replace={replace}
           renderMarker={marker => (
             <TableRow>
               <TableCell>{marker}</TableCell>
