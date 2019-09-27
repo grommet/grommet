@@ -18,7 +18,6 @@ const optionList = [
 ];
 
 const UnSelect = () => {
-  const [options] = useState(optionList);
   const [value, setValue] = useState('');
 
   const onChange = e => {
@@ -39,7 +38,7 @@ const UnSelect = () => {
         gap="small"
       >
         <Select
-          options={options}
+          options={optionList}
           onChange={e => onChange(e)}
           value={value}
           placeholder="Select multiple options"
