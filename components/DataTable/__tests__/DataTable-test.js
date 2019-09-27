@@ -526,4 +526,34 @@ describe('DataTable', function () {
     expect(onExpand.mock.results[0].value).toEqual(['one']);
     expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
+  test('replace', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A'
+      }, {
+        property: 'b',
+        header: 'B'
+      }],
+      data: [{
+        a: 'one',
+        b: 1.1
+      }, {
+        a: 'one',
+        b: 1.2
+      }, {
+        a: 'two',
+        b: 2.1
+      }, {
+        a: 'two',
+        b: 2.2
+      }],
+      primaryKey: "b",
+      step: 2,
+      replace: true
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

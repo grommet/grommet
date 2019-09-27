@@ -20,6 +20,7 @@ var Body = function Body(_ref) {
       data = _ref.data,
       forwardRef = _ref.forwardRef,
       onMore = _ref.onMore,
+      replace = _ref.replace,
       onClickRow = _ref.onClickRow,
       pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
@@ -27,7 +28,7 @@ var Body = function Body(_ref) {
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "forwardRef", "onMore", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "forwardRef", "onMore", "replace", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
 
   var _React$useState = React.useState(),
       active = _React$useState[0],
@@ -53,6 +54,7 @@ var Body = function Body(_ref) {
   }, rest), React.createElement(InfiniteScroll, {
     items: data,
     onMore: onMore,
+    replace: replace,
     renderMarker: function renderMarker(marker) {
       return React.createElement(TableRow, null, React.createElement(TableCell, null, marker));
     },

@@ -164,6 +164,7 @@ function (_Component) {
         propsData = _this$props.data,
         groupBy = _this$props.groupBy,
         onMore = _this$props.onMore,
+        replace = _this$props.replace,
         pad = _this$props.pad,
         resizeable = _this$props.resizeable,
         rowProps = _this$props.rowProps,
@@ -172,7 +173,7 @@ function (_Component) {
         step = _this$props.step,
         onClickRow = _this$props.onClickRow,
         onSearch = _this$props.onSearch,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["background", "border", "columns", "data", "groupBy", "onMore", "pad", "resizeable", "rowProps", "size", "sortable", "step", "onClickRow", "onSearch"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["background", "border", "columns", "data", "groupBy", "onMore", "replace", "pad", "resizeable", "rowProps", "size", "sortable", "step", "onClickRow", "onSearch"]);
 
     var _this$state = this.state,
         data = _this$state.data,
@@ -223,6 +224,7 @@ function (_Component) {
       columns: columns,
       data: data,
       onMore: onMore,
+      replace: replace,
       onClickRow: onClickRow,
       pad: normalizeProp(pad, 'body'),
       primaryProperty: primaryProperty,
