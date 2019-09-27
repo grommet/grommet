@@ -22,9 +22,9 @@ export const doc = Accordion => {
       PropTypes.arrayOf(PropTypes.number),
     ])
       .description(
-        `Active panel index. If specified, Accordion will be a controlled component. This means that future
-panel changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.`,
+        `Active panel index. If specified, Accordion will be a controlled 
+component. This means that future panel changes will not work unless you
+subscribe to onActive function and update activeIndex accordingly.`,
       )
       .defaultValue(0),
     animate: PropTypes.bool

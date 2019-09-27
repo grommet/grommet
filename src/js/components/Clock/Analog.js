@@ -30,7 +30,8 @@ const getClockState = ({ hours, minutes, seconds }) => {
   const minuteAngle = minutes * ANGLE_UNIT;
 
   return {
-    // offset hour angle by half of the minute angle so that it gets closer to the next hour
+    // offset hour angle by half of the minute angle so that it gets closer
+    // to the next hour
     hourAngle: hour12 * HOUR_ANGLE_UNIT + minutes / 2,
     minuteAngle,
     secondAngle: seconds * ANGLE_UNIT,
