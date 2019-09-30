@@ -6,7 +6,8 @@ const TableRow = props => <StyledTableRow {...props} />;
 
 let TableRowDoc;
 if (process.env.NODE_ENV !== 'production') {
-  TableRowDoc = require('./doc').doc(TableRow); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableRowDoc = require('./doc').doc(TableRow);
 }
 const TableRowWrapper = TableRowDoc || TableRow;
 

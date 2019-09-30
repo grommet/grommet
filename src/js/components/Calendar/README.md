@@ -191,9 +191,11 @@ The function passes the following options:
   }
 ```
 
-`onPreviousMonth` and `onNextMonth` are callbacks that will tell the calendar to move between months.
-`previousInBound` and `nextInBound` are booleans that tell, when using `bounds`, if the current date is within that range.
-You can then use that to disable the previous and next buttons.
+`onPreviousMonth` and `onNextMonth` are callbacks that will tell the 
+calendar to move between months.
+`previousInBound` and `nextInBound` are booleans that tell, when using 
+`bounds`, if the current date is within that range. You can then use that 
+to disable the previous and next buttons.
 
 
 ```
@@ -210,7 +212,8 @@ string
 
 **onReference**
 
-Called with an ISO8601 date when the user navigates to a different month.
+Called with an ISO8601 date when the user navigates to a different
+       month.
 
 ```
 function

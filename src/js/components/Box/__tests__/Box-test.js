@@ -110,6 +110,7 @@ describe('Box', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  /* eslint-disable max-len */
   test('background', () => {
     const component = renderer.create(
       <Grommet>
@@ -180,6 +181,7 @@ describe('Box', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  /* eslint-enable max-len */
 
   test('basis', () => {
     const component = renderer.create(

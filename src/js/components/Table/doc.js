@@ -8,6 +8,7 @@ export const doc = Table => {
     .availableAt(getAvailableAtBadge('Table'))
     .description('A table of data organized in cells.')
     .usage(
+      // eslint-disable-next-line max-len
       `import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';
 <Table />`,
     )
