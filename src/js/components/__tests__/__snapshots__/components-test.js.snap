@@ -479,7 +479,40 @@ all
     inset
     outset
     hidden
-}",
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]",
         "name": "border",
       },
       Object {
