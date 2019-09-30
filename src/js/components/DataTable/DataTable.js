@@ -107,6 +107,7 @@ class DataTable extends Component {
       data: propsData,
       groupBy,
       onMore,
+      replace,
       pad,
       resizeable,
       rowProps,
@@ -173,6 +174,7 @@ class DataTable extends Component {
             columns={columns}
             data={data}
             onMore={onMore}
+            replace={replace}
             onClickRow={onClickRow}
             pad={normalizeProp(pad, 'body')}
             primaryProperty={primaryProperty}
