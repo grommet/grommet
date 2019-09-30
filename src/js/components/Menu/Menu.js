@@ -30,8 +30,10 @@ To open menu when menu button is focused:
 - Space/Enter/Up arrow/Down arrow will open menu
 
 To navigate within menu:
-- Up/down arrow keys can be used and will loop through options (keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the Menu and continue through page content.
+- Up/down arrow keys can be used and will loop through options
+ (keeping focus within the Menu)
+- Tab can be used, but once the last menu item is reached, Tab will close the 
+Menu and continue through page content.
 
 To close the menu:
 - Tabbing beyond the first or last menu item.
@@ -68,7 +70,9 @@ const Menu = props => {
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
   const buttonRefs = {};
-  let timeoutID; // to track if focus is within the menu items, see menuOnFocus/menuOnBlur
+
+  // to track if focus is within the menu items, see menuOnFocus/menuOnBlur
+  let timeoutID;
 
   const [activeItemIndex, setActiveItemIndex] = useState(-1);
   const [isOpen, setOpen] = useState(open || false);
@@ -180,7 +184,8 @@ const Menu = props => {
     <Box flex={false}>
       <Button
         ref={r => {
-          buttonRefs[items.length] = r; // make it accessible at the end of all menu items
+          // make it accessible at the end of all menu items
+          buttonRefs[items.length] = r;
         }}
         a11yTitle={messages.closeMenu || 'Close Menu'}
         active={activeItemIndex === -1}

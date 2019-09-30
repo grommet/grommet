@@ -53,7 +53,8 @@ class Distribution extends Component {
         total += v.value;
       });
 
-      // figure out how many of the values area needed to represent half of the total
+      // figure out how many of the values area needed to represent half of the
+      // total
       let subTotal = 0;
       let subIndex;
       values.some((v, index) => {
@@ -118,7 +119,8 @@ class Distribution extends Component {
 
 let DistributionDoc;
 if (process.env.NODE_ENV !== 'production') {
-  DistributionDoc = require('./doc').doc(Distribution); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  DistributionDoc = require('./doc').doc(Distribution);
 }
 const DistributionWrapper = DistributionDoc || Distribution;
 

@@ -109,8 +109,8 @@ const Circle = props => {
             {...pathRest}
           />
         );
-        // If we are on a large enough path to not need re-drawing previous ones,
-        // clear the pathCaps we've collected already.
+        // If we are on a large enough path to not need re-drawing previous
+        // ones, clear the pathCaps we've collected already.
         if (endAngle - startAngle > 2 * anglePer) {
           pathCaps = [];
         }

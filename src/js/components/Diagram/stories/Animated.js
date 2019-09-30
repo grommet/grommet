@@ -9,8 +9,17 @@ import { data } from './data';
 
 const customTheme = deepMerge(grommet, {
   diagram: {
-    extend:
-      '@keyframes example { to { stroke-dashoffset: 0; } } path { stroke-dasharray: 500; stroke-dashoffset: 500; animation: example 3s linear forwards; }',
+    extend: `@keyframes 
+  example {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: example 3s linear forwards;
+  }`,
   },
 });
 
