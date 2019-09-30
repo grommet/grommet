@@ -380,7 +380,9 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.background && backgroundStyle(props.background, props.theme);
 }, function (props) {
-  return props.border && borderStyle(props.border, props.responsive, props.theme);
+  return props.border && (Array.isArray(props.border) ? props.border.map(function (border) {
+    return borderStyle(border, props.responsive, props.theme);
+  }) : borderStyle(props.border, props.responsive, props.theme));
 }, function (props) {
   return props.directionProp && directionStyle(props.directionProp, props.theme);
 }, function (props) {

@@ -23,6 +23,21 @@ var BorderBox = function BorderBox() {
       border: border
     }, border);
   })), React.createElement(Box, {
+    direction: "row-responsive",
+    gap: "small",
+    align: "start"
+  }, React.createElement(Box, {
+    pad: "small",
+    border: [{
+      size: 'medium',
+      style: 'dotted',
+      side: 'top'
+    }, {
+      size: 'medium',
+      style: 'double',
+      side: 'vertical'
+    }]
+  }, "custom top & vertical borders")), React.createElement(Box, {
     pad: "small",
     border: {
       color: 'brand'

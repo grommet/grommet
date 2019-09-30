@@ -390,7 +390,9 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.background && (0, _utils.backgroundStyle)(props.background, props.theme);
 }, function (props) {
-  return props.border && (0, _utils.borderStyle)(props.border, props.responsive, props.theme);
+  return props.border && (Array.isArray(props.border) ? props.border.map(function (border) {
+    return (0, _utils.borderStyle)(border, props.responsive, props.theme);
+  }) : (0, _utils.borderStyle)(props.border, props.responsive, props.theme));
 }, function (props) {
   return props.directionProp && directionStyle(props.directionProp, props.theme);
 }, function (props) {

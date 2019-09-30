@@ -30,6 +30,21 @@ var BorderBox = function BorderBox() {
       border: border
     }, border);
   })), _react["default"].createElement(_grommet.Box, {
+    direction: "row-responsive",
+    gap: "small",
+    align: "start"
+  }, _react["default"].createElement(_grommet.Box, {
+    pad: "small",
+    border: [{
+      size: 'medium',
+      style: 'dotted',
+      side: 'top'
+    }, {
+      size: 'medium',
+      style: 'double',
+      side: 'vertical'
+    }]
+  }, "custom top & vertical borders")), _react["default"].createElement(_grommet.Box, {
     pad: "small",
     border: {
       color: 'brand'
