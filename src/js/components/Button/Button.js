@@ -11,51 +11,50 @@ import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledButton } from './StyledButton';
 
-const isDarkBackground = props => {
-  const backgroundColor = normalizeBackground(
-    normalizeColor(
-      props.color ||
-        props.theme.button.primary.color ||
-        props.theme.global.colors.control ||
-        'brand',
-      props.theme,
-    ),
-    props.theme,
-  );
 
-  return colorIsDark(backgroundColor, props.theme);
-};
-
-const Button = props => {
-  const {
-    a11yTitle,
-    color, // munged to avoid styled-components putting it in the DOM
-    forwardRef,
-    children,
-    disabled,
-    icon,
-    gap,
-    fill, // munged to avoid styled-components putting it in the DOM
-    focus,
-    href,
-    label,
-    onClick,
-    onMouseOut,
-    onMouseOver,
-    plain,
-    primary,
-    reverse,
-    theme,
-    type,
-    as,
-    ...rest
-  } = props;
-
+const Button = ({
+  a11yTitle,
+  color, // munged to avoid styled-components putting it in the DOM
+  forwardRef,
+  children,
+  disabled,
+  icon,
+  gap,
+  fill, // munged to avoid styled-components putting it in the DOM
+  focus,
+  href,
+  label,
+  onClick,
+  onMouseOut,
+  onMouseOver,
+  plain,
+  primary,
+  reverse,
+  theme,
+  type,
+  as,
+  ...rest
+}) => {
   if ((icon || label) && children) {
     console.warn(
       'Button should not have children if icon or label is provided',
     );
   }
+
+  const isDarkBackground = () => {
+    const backgroundColor = normalizeBackground(
+      normalizeColor(
+        color ||
+          theme.button.primary.color ||
+          theme.global.colors.control ||
+          'brand',
+        theme,
+      ),
+      theme,
+    );
+  
+    return colorIsDark(backgroundColor, theme);
+  };
 
   const [hover, setHover] = useState(false);
 
@@ -78,7 +77,7 @@ const Button = props => {
   if (primary && icon && !icon.props.color) {
     buttonIcon = cloneElement(icon, {
       color:
-        theme.global.colors.text[isDarkBackground(props) ? 'dark' : 'light'],
+        theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
     });
   }
 
@@ -142,8 +141,8 @@ Object.setPrototypeOf(Button.defaultProps, defaultProps);
 
 let ButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
- // eslint-disable-next-line global-require
- ButtonDoc = require('./doc').doc(Button);
+  // eslint-disable-next-line global-require
+  ButtonDoc = require('./doc').doc(Button);
 }
 const ButtonWrapper = compose(
   withFocus(),
