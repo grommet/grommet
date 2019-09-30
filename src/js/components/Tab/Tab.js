@@ -13,44 +13,36 @@ import { normalizeColor } from '../../utils';
 
 import { StyledTab } from './StyledTab';
 
-const Tab = props => {
-  const {
-    active,
-    forwardRef,
-    plain,
-    title,
-    onMouseOver,
-    onMouseOut,
-    theme,
-    ...rest
-  } = props;
-
-  delete rest.onActivate;
-
+const Tab = ({
+  active,
+  forwardRef,
+  plain,
+  title,
+  onActivate,
+  onMouseOver,
+  onMouseOut,
+  theme,
+  ...rest
+}) => {
+  const [over, setOver] = useState(undefined);
   let normalizedTitle = title;
   const tabStyles = {};
 
-  const [state, setState] = useState({
-    active: props && active ? active : false,
-    over: undefined,
-  });
-
   const onMouseOverTab = event => {
-    setState({ over: true });
+    setOver(true);
     if (onMouseOver) {
       onMouseOver(event);
     }
   };
 
   const onMouseOutTab = event => {
-    setState({ over: undefined });
+    setOver(undefined);
     if (onMouseOut) {
       onMouseOut(event);
     }
   };
 
   const onClickTab = event => {
-    const { onActivate } = props;
     if (event) {
       event.preventDefault();
     }
@@ -64,7 +56,7 @@ const Tab = props => {
       normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
     } else {
       normalizedTitle = (
-        <Text color={state.over ? theme.tab.hover.color : theme.tab.color}>
+        <Text color={over ? theme.tab.hover.color : theme.tab.color}>
           {title}
         </Text>
       );
@@ -75,7 +67,7 @@ const Tab = props => {
         theme.tab.border.color || theme.global.control.border.color;
       if (active) {
         borderColor = theme.tab.border.active.color || borderColor;
-      } else if (state.over) {
+      } else if (over) {
         borderColor = theme.tab.border.hover.color || borderColor;
       }
       borderColor = normalizeColor(borderColor, theme);
