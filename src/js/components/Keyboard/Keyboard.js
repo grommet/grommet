@@ -1,4 +1,4 @@
-import { Children, Component, cloneElement } from 'react';
+import { Children, cloneElement, useEffect } from 'react';
 
 const KEYS = {
   8: 'onBackspace',
@@ -14,47 +14,37 @@ const KEYS = {
   16: 'onShift',
 };
 
-class Keyboard extends Component {
-  componentDidMount() {
-    /* eslint-disable-next-line react/prop-types */
-    const { target } = this.props;
-    if (target === 'document') {
-      document.addEventListener('keydown', this.onKeyDown);
-    }
-  }
-
-  componentWillUnmount() {
-    const { target } = this.props;
-    if (target === 'document') {
-      document.removeEventListener('keydown', this.onKeyDown);
-    }
-  }
-
-  onKeyDown = (event, ...rest) => {
-    /* eslint-disable-next-line react/prop-types */
-    const { onKeyDown } = this.props;
+function Keyboard(props) {
+  const onKeyDownHandler = (event, ...rest) => {
     const key = event.keyCode ? event.keyCode : event.which;
     const callbackName = KEYS[key];
-    /* eslint-disable react/destructuring-assignment */
-    if (callbackName && this.props[callbackName]) {
-      this.props[callbackName](event, ...rest);
+
+    if (callbackName && props[callbackName]) {
+      props[callbackName](event, ...rest);
     }
-    /* eslint-enable react/destructuring-assignment */
-    if (onKeyDown) {
-      onKeyDown(event, ...rest);
+
+    if (props.onKeyDown) {
+      props.onKeyDown(event, ...rest);
     }
   };
 
-  render() {
-    /* eslint-disable-next-line react/prop-types */
-    const { children, target } = this.props;
+  useEffect(() => {
+    if (props.target === 'document') {
+      document.addEventListener('keydown', onKeyDownHandler);
+    }
 
-    return target === 'document'
-      ? children
-      : cloneElement(Children.only(children), {
-          onKeyDown: this.onKeyDown,
-        });
-  }
+    return () => {
+      if (props.target === 'document') {
+        document.removeEventListener('keydown', onKeyDownHandler);
+      }
+    };
+  }, []);
+
+  return props.target === 'document'
+    ? props.children
+    : cloneElement(Children.only(props.children), {
+        onKeyDown: onKeyDownHandler,
+      });
 }
 
 let KeyboardDoc;
