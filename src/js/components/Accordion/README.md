@@ -8,7 +8,7 @@ An accordion containing collapsible panels.
 import { Accordion, AccordionPanel } from 'grommet';
 <Accordion>
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
-  <AccordionPanel label='Panek 2'>...</AccordionPanel>
+  <AccordionPanel label='Panel 2'>...</AccordionPanel>
 </Accordion>
 ```
 

@@ -10,7 +10,7 @@ import {
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
     .availableAt(getAvailableAtBadge('Heading'))
-    .description('Heading text structed in levels.')
+    .description('Heading text structured in levels.')
     .usage(
       `import { Heading } from 'grommet';
 <Heading />`,
