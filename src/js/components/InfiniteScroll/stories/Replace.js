@@ -4,7 +4,7 @@ import { grommet } from 'grommet/themes';
 
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 
-const allItems = Array(1000)
+const allItems = Array(100)
   .fill()
   .map((_, i) => `item ${i + 1}`);
 
