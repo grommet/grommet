@@ -1,7 +1,10 @@
 import * as React from "react";
-import { Omit, PlaceHolderType, MarginType } from "../../utils";
+import { BoxSideType, BoxSizeType, BoxStyleType, ColorType, Omit, PlaceHolderType, MarginType, SizeType, SideType, StyleType } from "../../utils";
+
+type PositionType = "inner" | "outer";
 
 export interface FormFieldProps {
+  border?: boolean | BoxSideType | {color?: ColorType, position?: PositionType, side?: BoxSideType, size?: BoxSizeType, style?: BoxStyleType} | ({color?: ColorType, position?: PositionType, side?: BoxSideType, size?: BoxSizeType, style?: BoxStyleType})[];
   error?: string | React.ReactNode;
   help?: string | React.ReactNode;
   htmlFor?: string;

@@ -74,6 +74,37 @@ test('renders custom margin', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('renders custom border', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField
+        border={[
+          {
+            color: 'brand',
+            side: 'left',
+            position: 'outer',
+            style: 'dashed',
+            size: 'medium',
+          },
+          { color: 'neutral-3', side: 'bottom', size: 'medium' },
+        ]}
+      />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('renders no border', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField border={false} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('forces empty margin', () => {
   const component = renderer.create(
     <Grommet>

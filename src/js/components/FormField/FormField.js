@@ -86,6 +86,41 @@ class FormFieldContent extends Component {
     );
   };
 
+  createBorder(border) {
+    this.borderArray = {
+      innerBorder: [],
+      outerBorder: [],
+    };
+    for (let i = 0; i < border.length; i += 1) {
+      if (border[i].position === 'inner' || border[i].position === undefined) {
+        this.borderArray.innerBorder.push(border[i]);
+      }
+      if (border[i].position === 'outer') {
+        this.borderArray.outerBorder.push(border[i]);
+      }
+    }
+    return this.borderArray;
+  }
+
+  checkAbut(border) {
+    this.borderArray = [];
+    for (let i = 0; i < border.length; i += 1) {
+      if (
+        border[i].position === 'outer' &&
+        (border[i].side === 'all' ||
+          border[i].side === 'horizontal' ||
+          border[i].side === 'bottom')
+      ) {
+        this.borderArray.push(border[i]);
+      }
+    }
+    if (this.borderArray.length >= 0) {
+      // final item determines the style of border
+      return this.borderArray[this.borderArray.length - 1];
+    }
+    return undefined;
+  }
+
   render() {
     const {
       children,
@@ -106,16 +141,14 @@ class FormFieldContent extends Component {
       onBlur,
       onFocus,
       margin,
-      underline,
     } = this.props;
+    let { border } = this.props;
     const { formField } = theme;
-    let { border } = formField;
-    if (underline === false) {
-      border = undefined;
+    if (border === undefined) {
+      border = formField.border;
     }
     let normalizedError = error;
     let contents = children;
-
     if (context) {
       const { addValidation, errors, value, update, messages } = context;
       addValidation(name, validateField(required, validate, messages));
@@ -159,27 +192,41 @@ class FormFieldContent extends Component {
             this.childContainerRef = ref;
           }}
           border={
-            border.position === 'inner'
-              ? {
+            Array.isArray(border)
+              ? this.createBorder(border).innerBorder
+              : border !== false &&
+                (border.position === 'inner' ||
+                  border.position === undefined) && {
                   ...border,
                   side: border.side || 'bottom',
                   color: borderColor,
                 }
-              : undefined
           }
         >
           {normalizedChildren}
         </Box>
       );
 
-      abut =
-        border.position === 'outer' &&
-        (border.side === 'all' || border.side === 'horizontal' || !border.side);
+      abut = Array.isArray(border)
+        ? this.checkAbut(border)
+        : border.position === 'outer' &&
+          (border.side === 'all' ||
+            border.side === 'horizontal' ||
+            !border.side);
       if (abut) {
         // marginBottom is set to overlap adjacent fields
         abutMargin = { bottom: '-1px' };
         if (margin) {
           abutMargin = margin;
+        } else if (Array.isArray(border)) {
+          const lastItem = this.checkAbut(border);
+          if (lastItem.size) {
+            abutMargin = {
+              bottom: `-${parseMetricToNum(
+                theme.global.borderSize[lastItem.size] || lastItem.size,
+              )}px`,
+            };
+          }
         } else if (border.size) {
           // if the user defines a margin,
           // then the default margin below will be overriden
@@ -202,9 +249,10 @@ class FormFieldContent extends Component {
       <FormFieldBox
         className={className}
         border={
-          border && border.position === 'outer'
-            ? { ...border, color: borderColor }
-            : undefined
+          Array.isArray(border)
+            ? this.createBorder(border).outerBorder
+            : border &&
+              border.position === 'outer' && { ...border, color: borderColor }
         }
         margin={abut ? abutMargin : margin || { ...formField.margin }}
         style={outerStyle}

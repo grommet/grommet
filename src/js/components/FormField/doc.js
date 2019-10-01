@@ -2,6 +2,41 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge, marginProp } from '../../utils';
 
+const BORDER_SHAPE = PropTypes.shape({
+  color: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
+  ]),
+  position: PropTypes.oneOf(['inner', 'outer']),
+  side: PropTypes.oneOf([
+    'top',
+    'left',
+    'bottom',
+    'right',
+    'horizontal',
+    'vertical',
+    'all',
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+    PropTypes.string,
+  ]),
+  style: PropTypes.oneOf([
+    'solid',
+    'dashed',
+    'dotted',
+    'double',
+    'groove',
+    'ridge',
+    'inset',
+    'outset',
+    'hidden',
+  ]).defaultValue('solid'),
+});
+
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
     .availableAt(getAvailableAtBadge('FormField'))
@@ -17,6 +52,20 @@ export const doc = FormField => {
     .intrinsicElement('div');
 
   DocumentedFormField.propTypes = {
+    border: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf([
+        'top',
+        'left',
+        'bottom',
+        'right',
+        'horizontal',
+        'vertical',
+        'all',
+      ]),
+      BORDER_SHAPE,
+      PropTypes.arrayOf(BORDER_SHAPE),
+    ]).description('Include a border.'),
     component: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.object,

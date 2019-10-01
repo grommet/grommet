@@ -4,16 +4,15 @@ import {
   AlignContentType, 
   AlignSelfType,
   BackgroundType,
+  BoxSideType,
+  BoxSizeType,
+  BoxStyleType,
+  ColorType,
   GapType, 
   GridAreaType, 
   MarginType, 
   PolymorphicType,
-  ColorType, 
 } from "../../utils";
-
-type SideType = "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all";
-type SizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
-type StyleType = "solid" | "dashed" | "dotted" | "double" | "groove" | "ridge" | "inset" | "outset" | "hidden";
 
 export interface BoxProps {
   a11yTitle?: A11yTitleType;
@@ -25,7 +24,7 @@ export interface BoxProps {
   animation?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"} | ("fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"})[];
   background?: BackgroundType;
   basis?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "auto" | string;
-  border?: boolean | SideType | {color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType} | ({color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType})[];
+  border?: boolean | BoxSideType | {color?: ColorType, side?: BoxSideType, size?: BoxSizeType, style?: BoxStyleType} | ({color?: ColorType, side?: BoxSideType, size?: BoxSizeType, style?: BoxStyleType})[];
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
   elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};

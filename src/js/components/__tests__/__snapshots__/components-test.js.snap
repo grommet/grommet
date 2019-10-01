@@ -2031,6 +2031,90 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
+        "description": "Include a border.",
+        "format": "boolean
+top
+left
+bottom
+right
+horizontal
+vertical
+all
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  position: 
+    inner
+    outer,
+  side: 
+    top
+    left
+    bottom
+    right
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  position: 
+    inner
+    outer,
+  side: 
+    top
+    left
+    bottom
+    right
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]",
+        "name": "border",
+      },
+      Object {
         "description": "The component to insert in the FormField. Grommet will add update the 
       form values when this field changes. Any additional properties 
       (such as initial value) you pass to FormField will be forwarded to this
