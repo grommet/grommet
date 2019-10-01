@@ -46,7 +46,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic test --app-code=$CHROMATIC_APP_CODE
+          command: yarn chromatic test --app-code=$CHROMATIC_APP_CODE --exit-zero-on-changes
   build:
     <<: *defaults
     steps:
