@@ -358,7 +358,7 @@ Whether to replace previously rendered items with a generic spacing
       replaced.
 
 ```
-function
+boolean
 ```
 
 **onClickRow**
