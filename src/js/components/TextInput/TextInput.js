@@ -297,9 +297,6 @@ class TextInput extends Component {
       <StyledSuggestions>
         <InfiniteScroll items={suggestions} step={theme.select.step}>
           {(suggestion, index) => {
-            const plain =
-              typeof suggestion === 'object' &&
-              typeof isValidElement(suggestion.label);
             return (
               <li key={`${stringLabel(suggestion)}-${index}`}>
                 <Button
@@ -313,13 +310,9 @@ class TextInput extends Component {
                     this.onClickSuggestion(suggestion, event);
                   }}
                 >
-                  {plain ? (
-                    renderLabel(suggestion)
-                  ) : (
-                    <Box align="start" pad="small">
-                      {renderLabel(suggestion)}
-                    </Box>
-                  )}
+                  <Box align="start" pad="small">
+                    {renderLabel(suggestion)}
+                  </Box>
                 </Button>
               </li>
             );
