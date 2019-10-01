@@ -191,9 +191,11 @@ The function passes the following options:
   }
 ```
 
-`onPreviousMonth` and `onNextMonth` are callbacks that will tell the calendar to move between months.
-`previousInBound` and `nextInBound` are booleans that tell, when using `bounds`, if the current date is within that range.
-You can then use that to disable the previous and next buttons.
+`onPreviousMonth` and `onNextMonth` are callbacks that will tell the 
+calendar to move between months.
+`previousInBound` and `nextInBound` are booleans that tell, when using 
+`bounds`, if the current date is within that range. You can then use that 
+to disable the previous and next buttons.
 
 
 ```
@@ -210,7 +212,8 @@ string
 
 **onReference**
 
-Called with an ISO8601 date when the user navigates to a different month.
+Called with an ISO8601 date when the user navigates to a different
+       month.
 
 ```
 function
@@ -273,154 +276,34 @@ div
 ```
 ## Theme
   
-**global.size.small**
+**calendar.day.extend**
 
-The width of the calendar when small. Expects `string`.
-
-Defaults to
-
-```
-192px
-```
-
-**global.size.medium**
-
-The width of the calendar when medium. Expects `string`.
+Any additional style for the day of Calendar. Expects `string | (props) => {}`.
 
 Defaults to
 
 ```
-384px
+undefined
 ```
 
-**global.size.large**
+**calendar.extend**
 
-The width of the calendar when large. Expects `string`.
+Any additional style for the Calendar. Expects `string | (props) => {}`.
 
 Defaults to
 
 ```
-768px
+undefined
 ```
 
-**calendar.small.fontSize**
+**calendar.heading.level**
 
-The font size to use for days when small. Expects `string`.
+The heading level used for the calendar. Expects `number`.
 
 Defaults to
 
 ```
-14px
-```
-
-**calendar.small.lineHeight**
-
-The line height to use for days when small. Expects `number`.
-
-Defaults to
-
-```
-1.375
-```
-
-**calendar.small.daySize**
-
-The size of a day when small. Expects `string`.
-
-Defaults to
-
-```
-27.42px
-```
-
-**calendar.small.slideDuration**
-
-How long it animate the slide between months when small. Expects `string`.
-
-Defaults to
-
-```
-0.2s
-```
-
-**calendar.medium.fontSize**
-
-The font size to use for days when medium. Expects `string`.
-
-Defaults to
-
-```
-18px
-```
-
-**calendar.medium.lineHeight**
-
-The line height to use for days when medium. Expects `number`.
-
-Defaults to
-
-```
-1.45
-```
-
-**calendar.medium.daySize**
-
-The size of a day when medium. Expects `string`.
-
-Defaults to
-
-```
-54.84px
-```
-
-**calendar.medium.slideDuration**
-
-How long it animate the slide between months when medium. Expects `string`.
-
-Defaults to
-
-```
-0.5s
-```
-
-**calendar.large.fontSize**
-
-The font size to use for days when large. Expects `string`.
-
-Defaults to
-
-```
-30px
-```
-
-**calendar.large.lineHeight**
-
-The line height to use for days when large. Expects `number`.
-
-Defaults to
-
-```
-1.11
-```
-
-**calendar.large.daySize**
-
-The size of a day when large. Expects `string`.
-
-Defaults to
-
-```
-109.7px
-```
-
-**calendar.large.slideDuration**
-
-How long it animate the slide between months when large. Expects `string`.
-
-Defaults to
-
-```
-0.8s
+4
 ```
 
 **calendar.icons.next**
@@ -463,24 +346,154 @@ Defaults to
 <FormPrevious />
 ```
 
-**calendar.extend**
+**calendar.large.daySize**
 
-Any additional style for the Calendar. Expects `string | (props) => {}`.
-
-Defaults to
-
-```
-undefined
-```
-
-**calendar.day.extend**
-
-Any additional style for the day of Calendar. Expects `string | (props) => {}`.
+The size of a day when large. Expects `string`.
 
 Defaults to
 
 ```
-undefined
+109.7px
+```
+
+**calendar.large.fontSize**
+
+The font size to use for days when large. Expects `string`.
+
+Defaults to
+
+```
+30px
+```
+
+**calendar.large.lineHeight**
+
+The line height to use for days when large. Expects `number`.
+
+Defaults to
+
+```
+1.11
+```
+
+**calendar.large.slideDuration**
+
+How long it animate the slide between months when large. Expects `string`.
+
+Defaults to
+
+```
+0.8s
+```
+
+**calendar.medium.daySize**
+
+The size of a day when medium. Expects `string`.
+
+Defaults to
+
+```
+54.84px
+```
+
+**calendar.medium.fontSize**
+
+The font size to use for days when medium. Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**calendar.medium.lineHeight**
+
+The line height to use for days when medium. Expects `number`.
+
+Defaults to
+
+```
+1.45
+```
+
+**calendar.medium.slideDuration**
+
+How long it animate the slide between months when medium. Expects `string`.
+
+Defaults to
+
+```
+0.5s
+```
+
+**calendar.small.daySize**
+
+The size of a day when small. Expects `string`.
+
+Defaults to
+
+```
+27.42px
+```
+
+**calendar.small.fontSize**
+
+The font size to use for days when small. Expects `string`.
+
+Defaults to
+
+```
+14px
+```
+
+**calendar.small.lineHeight**
+
+The line height to use for days when small. Expects `number`.
+
+Defaults to
+
+```
+1.375
+```
+
+**calendar.small.slideDuration**
+
+How long it animate the slide between months when small. Expects `string`.
+
+Defaults to
+
+```
+0.2s
+```
+
+**global.size.small**
+
+The width of the calendar when small. Expects `string`.
+
+Defaults to
+
+```
+192px
+```
+
+**global.size.medium**
+
+The width of the calendar when medium. Expects `string`.
+
+Defaults to
+
+```
+384px
+```
+
+**global.size.large**
+
+The width of the calendar when large. Expects `string`.
+
+Defaults to
+
+```
+768px
 ```
 
 **global.colors.icon**

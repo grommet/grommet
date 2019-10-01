@@ -43,6 +43,7 @@ export type BackgroundType = string | {color?: string,dark?: boolean | string,im
 export type ColorType = string | {dark?: string,light?: string};
 export type GapType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 export type GridAreaType = string;
+export type KeyboardType = ((event: React.KeyboardEvent<HTMLElement>) => void);
 export type MarginType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
 export type PlaceHolderType = string | JSX.Element | React.ReactNode;
 export type TextAlignType = "start" | "center" | "end";

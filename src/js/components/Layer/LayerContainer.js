@@ -93,9 +93,11 @@ class LayerContainer extends Component {
         responsive={responsive}
         ref={this.containerRef}
       >
+        {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         <HiddenAnchor ref={this.anchorRef} tabIndex="-1" aria-hidden="true" />
         {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
+        {/* eslint-enable max-len */}
         {children}
       </StyledContainer>
     );
