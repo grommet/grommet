@@ -12,7 +12,7 @@ An accordion containing collapsible panels.
 import { Accordion, AccordionPanel } from 'grommet';
 <Accordion>
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
-  <AccordionPanel label='Panek 2'>...</AccordionPanel>
+  <AccordionPanel label='Panel 2'>...</AccordionPanel>
 </Accordion>
 \`\`\`
 
@@ -4144,7 +4144,7 @@ Whether to replace previously rendered items with a generic spacing
       replaced.
 
 \`\`\`
-function
+boolean
 \`\`\`
 
 **onClickRow**
@@ -5258,7 +5258,7 @@ import { FormField } from 'grommet';
 The component to insert in the FormField. Grommet will add update the 
       form values when this field changes. Any additional properties 
       (such as initial value) you pass to FormField will be forwarded to this
-      component. The component may be custom as long it supports the proporties
+      component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value
       or event.target.value.
 
@@ -6069,7 +6069,7 @@ undefined
 \`\`\`
 ",
   "Heading": "## Heading
-Heading text structed in levels.
+Heading text structured in levels.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=heading&module=%2Fsrc%2FHeading.js)
 ## Usage
@@ -7076,7 +7076,7 @@ import { Markdown } from 'grommet';
 **components**
 
 Custom components and props to override html elements such as 'img'
-      or 'pre'. By default 'a', 'p', 'img', and table elements are overriden
+      or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
       with grommet components
 
 \`\`\`
