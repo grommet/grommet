@@ -21,7 +21,7 @@ export var themeDoc = _extends({}, themeDocUtils.breakpointStyle('The possible b
     defaultValue: undefined
   },
   'heading.level': {
-    description: "The level that impacts line height, max width, font size, \nweight and family of the Heading.",
+    description: "The level that impacts line-height, max-width, font size, \nweight and family of the Heading. Heading level is automatically adjusted at \ndifferent screen sizes. These screen sizes are derived from breakpoints.",
     type: 'object',
     defaultValue: "\n      1: {\n        medium: {\n          size: 34px,\n          height: 40px,\n          width: 826px,\n        },\n      },\n      weight: 600,\n      font:\n        {\n          family: undefined,\n        }"
   },
