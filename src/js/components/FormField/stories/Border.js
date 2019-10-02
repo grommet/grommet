@@ -3,16 +3,17 @@ import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, FormField, CheckBox, Grommet } from 'grommet';
 
-const FormFieldCustomBorder = props => {
+const FormFieldBorder = props => {
   const [checkBox1, setCheckBox1] = useState(false);
   const [checkBox2, setCheckBox2] = useState(false);
   const [checkBox3, setCheckBox3] = useState(false);
+  const boxPadding = { horizontal: 'small', vertical: 'xsmall' };
 
   return (
     <Grommet theme={grommet}>
       <Box justify="center" pad="large" direction="row" gap="medium">
         <FormField label="Default border" htmlFor="check-box" {...props}>
-          <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+          <Box pad={boxPadding}>
             <CheckBox
               id="check-box"
               label="CheckBox"
@@ -27,7 +28,7 @@ const FormFieldCustomBorder = props => {
           border={false}
           {...props}
         >
-          <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+          <Box pad={boxPadding}>
             <CheckBox
               id="check-box2"
               label="CheckBox"
@@ -51,7 +52,7 @@ const FormFieldCustomBorder = props => {
           ]}
           {...props}
         >
-          <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+          <Box pad={boxPadding}>
             <CheckBox
               id="check-box3"
               label="CheckBox"
@@ -65,6 +66,4 @@ const FormFieldCustomBorder = props => {
   );
 };
 
-storiesOf('FormField', module).add('Custom Border', () => (
-  <FormFieldCustomBorder />
-));
+storiesOf('FormField', module).add('Border', () => <FormFieldBorder />);

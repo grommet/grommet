@@ -19,7 +19,7 @@ const BORDER_SHAPE = PropTypes.shape({
     'horizontal',
     'vertical',
     'all',
-  ]),
+  ]).defaultValue('bottom'),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
     PropTypes.string,
