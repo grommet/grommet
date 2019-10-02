@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-function MultipleValues() {
+const MultipleValues = () => {
   const [ total ] = useState(100);
   const [ active, setActive ] = useState();
   const [ label, setLabel ] = useState();
@@ -49,6 +49,6 @@ function MultipleValues() {
       </Box>
     </Grommet>
   );
-}
+};
 
 storiesOf('Meter', module).add('Multiple Values', () => <MultipleValues />);

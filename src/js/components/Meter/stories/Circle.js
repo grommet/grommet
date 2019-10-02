@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Meter } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-function CircleMeter() {
+const CircleMeter = () => {
   const [ value, setValue ] = useState(20);
   const [ timer ] = useRef(setInterval(() => {
     setValue(value < 100 ? value + 8 : 20);
@@ -27,6 +27,6 @@ function CircleMeter() {
       </Box>
     </Grommet>
   );
-}
+};
 
 storiesOf('Meter', module).add('Circle', () => <CircleMeter />);

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-function LabelledMeter() {
+const LabelledMeter = () => {
   const meterValue = 30;
 
   return (
@@ -28,6 +28,6 @@ function LabelledMeter() {
       </Box>
     </Grommet>
   );
-}
+};
 
 storiesOf('Meter', module).add('Labelled', () => <LabelledMeter />);
