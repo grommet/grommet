@@ -6,13 +6,13 @@ import { grommet } from 'grommet/themes';
 
 function CircleMeter() {
   const [ value, setValue ] = useState(20);
-  const [ timer, setTimer ] = useRef(setInterval(() => {
+  const [ timer, ] = useRef(setInterval(() => {
     setValue(value < 100 ? value + 8 : 20);
   }, 2000));
 
   useEffect(() => {
     return () => {
-      timer && clearInterval(timer);
+      clearInterval(timer);
     }
   }, []);
 

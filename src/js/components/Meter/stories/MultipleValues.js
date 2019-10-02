@@ -5,7 +5,7 @@ import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 function MultipleValues() {
-  const [ total, setTotal ] = useState(100);
+  const [ total, ] = useState(100);
   const [ active, setActive ] = useState();
   const [ label, setLabel ] = useState();
 
@@ -22,14 +22,14 @@ function MultipleValues() {
                 onHover: over => {
                   setActive(over ? 70 : 0);
                   setLabel(over ? 'in use' : undefined);
-                }
+                },
               },
               {
                 value: 30,
                 onHover: over => {
                   setActive(over ? 30 : 0);
                   setLabel(over ? 'available' : undefined);
-                }
+                },
               },
             ]}
             max={100}
