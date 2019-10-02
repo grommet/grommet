@@ -5,7 +5,7 @@ import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const MultipleValues = () => {
-  const [ total ] = useState(100);
+  const total = 100;
   const [ active, setActive ] = useState();
   const [ label, setLabel ] = useState();
 
