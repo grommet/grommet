@@ -129,16 +129,11 @@ describe('RangeSelector', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(container.firstChild.firstChild, {
-      clientX: 0,
-      clientY: 0,
-    });
-    expect(onChange).toBeCalled();
-
     const map = {};
     window.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });
+
     const lowerControl = getByLabelText('Lower Bounds');
     fireEvent.mouseDown(lowerControl);
     fireEvent.mouseDown(lowerControl);
