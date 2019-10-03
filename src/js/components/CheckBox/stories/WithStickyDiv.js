@@ -1,8 +1,8 @@
-import { Box, CheckBox, Grommet } from 'grommet';
 import React, { useState } from 'react';
-
-import { grommet } from 'grommet/themes';
 import { storiesOf } from '@storybook/react';
+
+import { Box, CheckBox, Grommet } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const boxStyle = {
   position: 'relative',
