@@ -14,7 +14,7 @@ const KEYS = {
   16: 'onShift',
 };
 
-function Keyboard(props) {
+const Keyboard = props => {
   const onKeyDownHandler = (event, ...rest) => {
     const key = event.keyCode ? event.keyCode : event.which;
     const callbackName = KEYS[key];
@@ -45,7 +45,7 @@ function Keyboard(props) {
     : cloneElement(Children.only(props.children), {
         onKeyDown: onKeyDownHandler,
       });
-}
+};
 
 let KeyboardDoc;
 if (process.env.NODE_ENV !== 'production') {
