@@ -1,37 +1,29 @@
-import React, { Component } from 'react';
+import { Box, Button, CheckBox, Grommet, Text } from 'grommet';
+import React, { useState } from 'react';
+
+import { grommet } from 'grommet/themes';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, CheckBox, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+const CheckBoxInsideButton = () => {
+  const [checked, setChecked] = useState(false);
+  const onButtonClick = () => setChecked(!checked);
+  const onCheckboxChange = () => {};
 
-class CheckBoxInsideButton extends Component {
-  state = {
-    checked: false,
-  };
-
-  render() {
-    const { checked } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large">
-          <Button
-            hoverIndicator="background"
-            onClick={() => {
-              this.setState({ checked: !checked });
-            }}
-          >
-            <CheckBox
-              tabIndex="-1"
-              checked={checked}
-              label={<Text>Hi</Text>}
-              onChange={() => {}}
-            />
-          </Button>
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <Button hoverIndicator="background" onClick={onButtonClick}>
+          <CheckBox
+            tabIndex="-1"
+            checked={checked}
+            label={<Text>Hi</Text>}
+            onChange={onCheckboxChange}
+          />
+        </Button>
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('CheckBox', module).add('Inside a Button', () => (
   <CheckBoxInsideButton />
