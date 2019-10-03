@@ -92,23 +92,57 @@ describe('RangeSelector', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('step', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RangeSelector, {
-      step: 10,
-      values: [20, 30]
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  test('handle keyboard', function () {
-    var onChange = jest.fn();
+  test('step renders correct values', function () {
+    var values;
+
+    var setValues = function setValues(newValues) {
+      values = newValues;
+    };
+
+    var onChange = jest.fn(function (nextValues) {
+      return setValues(nextValues);
+    });
 
     var _render = render(React.createElement(Grommet, null, React.createElement(RangeSelector, {
-      values: [20, 30],
+      values: [0, 100],
+      step: 3,
       onChange: onChange
     }))),
         container = _render.container,
         getByLabelText = _render.getByLabelText;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var map = {};
+    window.addEventListener = jest.fn(function (event, cb) {
+      map[event] = cb;
+    });
+    var lowerControl = getByLabelText('Lower Bounds');
+    fireEvent.mouseDown(lowerControl);
+    fireEvent.mouseDown(lowerControl);
+    map.mousemove({
+      clientX: 31,
+      clientY: 20
+    });
+    expect(onChange).toBeCalled();
+    expect(values).toStrictEqual([33, 100]);
+    var upperControl = getByLabelText('Upper Bounds');
+    fireEvent.mouseDown(upperControl);
+    map.mousemove({
+      clientX: 80,
+      clientY: 15
+    });
+    expect(onChange).toBeCalled();
+    expect(values).toStrictEqual([0, 81]);
+  });
+  test('handle keyboard', function () {
+    var onChange = jest.fn();
+
+    var _render2 = render(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+      values: [20, 30],
+      onChange: onChange
+    }))),
+        container = _render2.container,
+        getByLabelText = _render2.getByLabelText;
 
     expect(container.firstChild).toMatchSnapshot();
     var lowerControl = getByLabelText('Lower Bounds');
@@ -137,12 +171,12 @@ describe('RangeSelector', function () {
   test('handle mouse', function () {
     var onChange = jest.fn();
 
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var _render3 = render(React.createElement(Grommet, null, React.createElement(RangeSelector, {
       values: [20, 30],
       onChange: onChange
     }))),
-        container = _render2.container,
-        getByLabelText = _render2.getByLabelText;
+        container = _render3.container,
+        getByLabelText = _render3.getByLabelText;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(container.firstChild.firstChild, {

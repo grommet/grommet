@@ -65,7 +65,7 @@ function (_Component) {
       } // align with closest step within [min, max]
 
 
-      var result = value + value % step;
+      var result = Math.ceil(value / step) * step;
 
       if (result < min) {
         return min;
