@@ -1,69 +1,82 @@
-import React, { Children, Component } from 'react';
+import React, { Children } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
-class Stack extends Component {
-  toChildIndex = child => {
-    const { children } = this.props;
-    let index = child;
-    if (index === 'first' || !index) {
-      index = 0;
-    } else if (index === 'last') {
-      index = React.Children.count(children) - 1;
+const buildStyleChildren = ({
+  fill,
+  guidingIndex,
+  interactiveIndex,
+  interactiveChild,
+  anchor,
+}) => {
+  let childIndex = 0;
+
+  return child => {
+    if (child) {
+      const interactive =
+        interactiveChild === undefined || interactiveIndex === childIndex;
+
+      const isGuidingIndex = childIndex === guidingIndex;
+      childIndex += 1;
+
+      const props = isGuidingIndex
+        ? {
+            guiding: true,
+            fillContainer: fill,
+          }
+        : {
+            anchor,
+          };
+
+      return (
+        <StyledStackLayer interactive={interactive} {...props}>
+          {child}
+        </StyledStackLayer>
+      );
     }
-    return index;
+
+    return child;
   };
+};
 
-  render() {
-    const {
-      anchor,
-      children,
+const toChildIndex = (child, children) => {
+  let index = child;
+
+  if (index === 'first' || !index) index = 0;
+  else if (index === 'last') index = React.Children.count(children) - 1;
+
+  return index;
+};
+
+const Stack = ({
+  anchor,
+  children,
+  fill,
+  guidingChild,
+  interactiveChild,
+  ...rest
+}) => {
+  const guidingIndex = toChildIndex(guidingChild, children);
+  const interactiveIndex =
+    interactiveChild && toChildIndex(interactiveChild, children);
+
+  const styledChildren = Children.map(
+    children,
+    buildStyleChildren({
       fill,
-      guidingChild,
+      guidingIndex,
+      interactiveIndex,
       interactiveChild,
-      ...rest
-    } = this.props;
+      anchor,
+    }),
+  );
 
-    const guidingIndex = this.toChildIndex(guidingChild);
-    const interactiveIndex =
-      interactiveChild && this.toChildIndex(interactiveChild);
-    let childIndex = 0;
-    const styledChildren = Children.map(children, child => {
-      if (child) {
-        const interactive =
-          interactiveChild === undefined || interactiveIndex === childIndex;
-        let layer;
-        if (childIndex === guidingIndex) {
-          layer = (
-            <StyledStackLayer
-              guiding
-              fillContainer={fill}
-              interactive={interactive}
-            >
-              {child}
-            </StyledStackLayer>
-          );
-        } else {
-          layer = (
-            <StyledStackLayer anchor={anchor} interactive={interactive}>
-              {child}
-            </StyledStackLayer>
-          );
-        }
-        childIndex += 1;
-        return layer;
-      }
-
-      return child;
-    });
-
-    return (
-      <StyledStack fillContainer={fill} {...rest}>
-        {styledChildren}
-      </StyledStack>
-    );
-  }
-}
+  return (
+    <StyledStack fillContainer={fill} {...rest}>
+      {styledChildren}
+    </StyledStack>
+  );
+};
 
 let StackDoc;
 if (process.env.NODE_ENV !== 'production') {
