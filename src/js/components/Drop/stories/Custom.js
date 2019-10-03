@@ -1,4 +1,4 @@
-import React, { createRef, Component } from 'react';
+import React, { useRef, useEffect, useReducer } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
@@ -15,38 +15,38 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-class Custom extends Component {
-  targetRef = createRef();
+const Custom = () => {
+  const targetRef = useRef(null);
 
-  componentDidMount() {
-    this.forceUpdate();
-  }
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
 
-  render() {
-    return (
-      <Grommet theme={customTheme} full>
-        <Box fill align="center" justify="center">
-          <Box
-            background="dark-3"
-            pad="medium"
-            align="center"
-            justify="start"
-            ref={this.targetRef}
-          >
-            Box
-          </Box>
-          {this.targetRef.current && (
-            <Drop
-              align={{ top: 'bottom', left: 'right' }}
-              target={this.targetRef.current}
-            >
-              <Box pad="small">This Drop uses a custom theme</Box>
-            </Drop>
-          )}
+  useEffect(() => {
+    forceUpdate();
+  }, []);
+
+  return (
+    <Grommet theme={customTheme} full>
+      <Box fill align="center" justify="center">
+        <Box
+          background="dark-3"
+          pad="medium"
+          align="center"
+          justify="start"
+          ref={targetRef}
+        >
+          Box
         </Box>
-      </Grommet>
-    );
-  }
-}
+        {targetRef.current && (
+          <Drop
+            align={{ top: 'bottom', left: 'right' }}
+            target={targetRef.current}
+          >
+            <Box pad="small">This Drop uses a custom theme</Box>
+          </Drop>
+        )}
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('Drop', module).add('Custom', () => <Custom />);

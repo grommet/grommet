@@ -1,50 +1,50 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
 import { DropContainer } from './DropContainer';
 
-class Drop extends Component {
-  static defaultProps = {
-    align: {
-      top: 'top',
-      left: 'left',
-    },
-    plain: false,
-  };
+const Drop = props => {
+  const originalFocusedElement = document.activeElement;
 
-  originalFocusedElement = document.activeElement;
+  const dropContainer = getNewContainer();
 
-  dropContainer = getNewContainer();
-
-  componentWillUnmount() {
-    const { restrictFocus } = this.props;
-    if (restrictFocus && this.originalFocusedElement) {
-      if (this.originalFocusedElement.focus) {
-        setFocusWithoutScroll(this.originalFocusedElement);
-      } else if (
-        this.originalFocusedElement.parentNode &&
-        this.originalFocusedElement.parentNode.focus
-      ) {
-        // required for IE11 and Edge
-        setFocusWithoutScroll(this.originalFocusedElement.parentNode);
+  useEffect(() => {
+    return () => {
+      const { restrictFocus } = props;
+      if (restrictFocus && originalFocusedElement) {
+        if (originalFocusedElement.focus) {
+          setFocusWithoutScroll(originalFocusedElement);
+        } else if (
+          originalFocusedElement.parentNode &&
+          originalFocusedElement.parentNode.focus
+        ) {
+          // required for IE11 and Edge
+          setFocusWithoutScroll(originalFocusedElement.parentNode);
+        }
       }
-    }
-    document.body.removeChild(this.dropContainer);
-  }
+      document.body.removeChild(dropContainer);
+    };
+  });
 
-  render() {
-    const {
-      target: dropTarget, // avoid DOM leakage
-      ...rest
-    } = this.props;
-    return createPortal(
-      <DropContainer dropTarget={dropTarget} {...rest} />,
-      this.dropContainer,
-    );
-  }
-}
+  const {
+    target: dropTarget, // avoid DOM leakage
+    ...rest
+  } = props;
+  return createPortal(
+    <DropContainer dropTarget={dropTarget} {...rest} />,
+    dropContainer,
+  );
+};
+
+Drop.defaultProps = {
+  align: {
+    top: 'top',
+    left: 'left',
+  },
+  plain: false,
+};
 
 let DropDoc;
 if (process.env.NODE_ENV !== 'production') {

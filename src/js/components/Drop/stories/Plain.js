@@ -1,42 +1,42 @@
-import React, { createRef, Component } from 'react';
+import React, { useRef, useReducer, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class PlainDrop extends Component {
-  targetRef = createRef();
+const PlainDrop = () => {
+  const targetRef = useRef(null);
 
-  componentDidMount() {
-    this.forceUpdate();
-  }
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
 
-  render() {
-    return (
-      <Grommet theme={grommet} full>
-        <Box background="brand" fill align="center" justify="center">
-          <Box
-            background="dark-3"
-            pad="medium"
-            align="center"
-            justify="start"
-            ref={this.targetRef}
-          >
-            Target
-          </Box>
-          {this.targetRef.current && (
-            <Drop
-              plain
-              align={{ top: 'bottom', left: 'left' }}
-              target={this.targetRef.current}
-            >
-              <Box pad="large">No background no shadow</Box>
-            </Drop>
-          )}
+  useEffect(() => {
+    forceUpdate();
+  });
+
+  return (
+    <Grommet theme={grommet} full>
+      <Box background="brand" fill align="center" justify="center">
+        <Box
+          background="dark-3"
+          pad="medium"
+          align="center"
+          justify="start"
+          ref={targetRef}
+        >
+          Target
         </Box>
-      </Grommet>
-    );
-  }
-}
+        {targetRef.current && (
+          <Drop
+            plain
+            align={{ top: 'bottom', left: 'left' }}
+            target={targetRef.current}
+          >
+            <Box pad="large">No background no shadow</Box>
+          </Drop>
+        )}
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('Drop', module).add('Plain', () => <PlainDrop />);
