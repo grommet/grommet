@@ -13,7 +13,8 @@ class RangeInput extends Component {
 }
 let RangeInputDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RangeInputDoc = require('./doc').doc(RangeInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RangeInputDoc = require('./doc').doc(RangeInput);
 }
 const RangeInputWrapper = compose(
   withFocus(),

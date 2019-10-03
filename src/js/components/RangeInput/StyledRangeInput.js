@@ -45,6 +45,7 @@ const firefoxMicrosoftThumbStyle = css`
     props.theme.rangeInput.thumb.extend}
 `;
 
+/* eslint-disable max-len */
 const StyledRangeInput = styled.input`
   box-sizing: border-box;
   position: relative;
@@ -142,6 +143,7 @@ const StyledRangeInput = styled.input`
   ${props => props.focus && focusStyle}
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
+/* eslint-enable max-len */
 
 StyledRangeInput.defaultProps = {};
 Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);

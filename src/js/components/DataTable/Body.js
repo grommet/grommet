@@ -18,6 +18,7 @@ const Body = ({
   data,
   forwardRef,
   onMore,
+  replace,
   onClickRow,
   pad,
   primaryProperty,
@@ -66,6 +67,7 @@ const Body = ({
         <InfiniteScroll
           items={data}
           onMore={onMore}
+          replace={replace}
           renderMarker={marker => (
             <TableRow>
               <TableCell>{marker}</TableCell>
@@ -86,7 +88,8 @@ const Body = ({
                 onClick={
                   onClickRow
                     ? event => {
-                        event.persist(); // extract from React's synthetic event pool
+                        // extract from React's synthetic event pool
+                        event.persist();
                         const adjustedEvent = event;
                         adjustedEvent.datum = datum;
                         onClickRow(adjustedEvent);

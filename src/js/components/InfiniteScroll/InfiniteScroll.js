@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-len
 /* eslint-disable react/no-multi-comp, react/no-find-dom-node, max-classes-per-file */
 import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
@@ -265,7 +266,8 @@ class InfiniteScroll extends PureComponent {
 
 let InfiniteScrollDoc;
 if (process.env.NODE_ENV !== 'production') {
-  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll);
 }
 const InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
 
