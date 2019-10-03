@@ -4,8 +4,12 @@ import React, { useState } from 'react';
 import { grommet } from 'grommet/themes';
 import { storiesOf } from '@storybook/react';
 
-const boxBackground = { color: 'neutral-1' };
-const boxStyle = { position: 'sticky', top: 0 };
+const boxStyle = {
+  position: 'relative',
+  display: 'block',
+};
+const titleBoxBackground = { color: 'neutral-1' };
+const titleBoxStyle = { position: 'sticky', top: 0 };
 
 const checkboxes = Array(8)
   .fill()
@@ -14,30 +18,21 @@ const checkboxes = Array(8)
 const removeItemFromArray = (array, value) =>
   array.filter(item => item !== value);
 
-const getChecks = ({ target }, checked, value) => {
-  if (target.checked) {
-    return [...checked, value];
-  }
-  return removeItemFromArray(checked, value);
-};
-
 const CheckBoxWithStickyDiv = () => {
   const [checks, setChecks] = useState([]);
-  const onCheck = value => event => setChecks(getChecks(event, checks, value));
+  const onCheck = value => ({ target }) => {
+    if (target.checked) {
+      setChecks([...checks, value]);
+    } else {
+      setChecks(removeItemFromArray(checks, value));
+    }
+  };
 
   return (
     <Grommet theme={grommet}>
       <Box pad="large" align="center">
-        <Box
-          height="120px"
-          width="120px"
-          overflow="auto"
-          style={{
-            position: 'relative',
-            display: 'block',
-          }}
-        >
-          <Box background={boxBackground} style={boxStyle}>
+        <Box height="120px" width="120px" overflow="auto" style={boxStyle}>
+          <Box background={titleBoxBackground} style={titleBoxStyle}>
             Click &amp; Scroll
           </Box>
           {checkboxes.map(item => (
