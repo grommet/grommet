@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.TextArea = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _recompose = require("recompose");
 
@@ -13,62 +13,31 @@ var _hocs = require("../hocs");
 
 var _StyledTextArea = require("./StyledTextArea");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+var TextArea = function TextArea(_ref) {
+  var fill = _ref.fill,
+      forwardRef = _ref.forwardRef,
+      rest = _objectWithoutPropertiesLoose(_ref, ["fill", "forwardRef"]);
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var TextArea =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(TextArea, _Component);
-
-  function TextArea() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "onEsc", function (event) {
-      // we have to stop both synthetic events and native events
-      // drop and layer should not close by pressing esc on this input
-      event.stopPropagation();
-      event.nativeEvent.stopImmediatePropagation();
-    });
-
-    return _this;
-  }
-
-  var _proto = TextArea.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        fill = _this$props.fill,
-        forwardRef = _this$props.forwardRef,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["fill", "forwardRef"]);
-
-    return _react["default"].createElement(_Keyboard.Keyboard, {
-      onEsc: this.onEsc
-    }, _react["default"].createElement(_StyledTextArea.StyledTextArea, _extends({
-      ref: forwardRef,
-      fillArg: fill
-    }, rest)));
+  var onEsc = function onEsc(event) {
+    // we have to stop both synthetic events and native events
+    // drop and layer should not close by pressing esc on this input
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
   };
 
-  return TextArea;
-}(_react.Component);
+  return _react["default"].createElement(_Keyboard.Keyboard, {
+    onEsc: onEsc
+  }, _react["default"].createElement(_StyledTextArea.StyledTextArea, _extends({
+    ref: forwardRef,
+    fillArg: fill
+  }, rest)));
+};
 
 var TextAreaDoc;
 
