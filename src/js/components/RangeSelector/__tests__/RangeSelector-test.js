@@ -119,7 +119,6 @@ describe('RangeSelector', () => {
     let values;
     const setValues = newValues => {
       values = newValues;
-      return values;
     };
     const onChange = jest.fn(nextValues => setValues(nextValues));
     const { container, getByLabelText } = render(
