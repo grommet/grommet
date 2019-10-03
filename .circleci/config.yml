@@ -39,6 +39,14 @@ jobs:
       - run:
           name: Running jest
           command: yarn test
+  chromatic:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running chromatic test
+          command: yarn chromatic test --app-code=$CHROMATIC_APP_CODE --exit-zero-on-changes
   build:
     <<: *defaults
     steps:
@@ -105,6 +113,12 @@ workflows:
           filters:
             tags:
               only: /.*/
+      - chromatic:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
       - build:
           requires:
             - checkout
@@ -120,6 +134,7 @@ workflows:
       - release:
           requires:
             - jest
+            - chromatic
             - lint
             - build
           filters:
@@ -129,6 +144,7 @@ workflows:
       - publish:
           requires:
             - jest
+            - chromatic
             - lint
             - build
           filters:
