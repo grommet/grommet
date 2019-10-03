@@ -115,14 +115,42 @@ describe('RangeSelector', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('step', () => {
-    const component = renderer.create(
+  test('step renders correct values', () => {
+    let values;
+    const setValues = newValues => {
+      values = newValues;
+      return values;
+    };
+    const onChange = jest.fn(nextValues => setValues(nextValues));
+    const { container, getByLabelText } = render(
       <Grommet>
-        <RangeSelector step={10} values={[20, 30]} />
+        <RangeSelector values={[0, 100]} step={3} onChange={onChange} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(container.firstChild.firstChild, {
+      clientX: 0,
+      clientY: 0,
+    });
+    expect(onChange).toBeCalled();
+
+    const map = {};
+    window.addEventListener = jest.fn((event, cb) => {
+      map[event] = cb;
+    });
+    const lowerControl = getByLabelText('Lower Bounds');
+    fireEvent.mouseDown(lowerControl);
+    fireEvent.mouseDown(lowerControl);
+    map.mousemove({ clientX: 31, clientY: 20 });
+    expect(onChange).toBeCalled();
+    expect(values).toStrictEqual([33, 100]);
+
+    const upperControl = getByLabelText('Upper Bounds');
+    fireEvent.mouseDown(upperControl);
+    map.mousemove({ clientX: 80, clientY: 15 });
+    expect(onChange).toBeCalled();
+    expect(values).toStrictEqual([0, 81]);
   });
 
   test('handle keyboard', () => {

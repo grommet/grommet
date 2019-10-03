@@ -51,7 +51,7 @@ class RangeSelector extends Component {
       value = Math.floor(x / scaleX) + min;
     }
     // align with closest step within [min, max]
-    const result = Math.round(value / step) * step;
+    const result = Math.ceil(value / step) * step;
     if (result < min) {
       return min;
     }
