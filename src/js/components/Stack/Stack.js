@@ -62,7 +62,7 @@ const Stack = ({
 
   const styledChildren = Children.map(
     children,
-    buildStyleChildren({
+    buildStyledChildren({
       fill,
       guidingIndex,
       interactiveIndex,
