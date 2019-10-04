@@ -14,35 +14,35 @@ const KEYS = {
   16: 'onShift',
 };
 
-const Keyboard = props => {
+const Keyboard = ({ target, children, onKeyDown, ...restProps }) => {
   const onKeyDownHandler = (event, ...rest) => {
     const key = event.keyCode ? event.keyCode : event.which;
     const callbackName = KEYS[key];
 
-    if (callbackName && props[callbackName]) {
-      props[callbackName](event, ...rest);
+    if (callbackName && restProps[callbackName]) {
+      restProps[callbackName](event, ...rest);
     }
 
-    if (props.onKeyDown) {
-      props.onKeyDown(event, ...rest);
+    if (onKeyDown) {
+      onKeyDown(event, ...rest);
     }
   };
 
   useEffect(() => {
-    if (props.target === 'document') {
+    if (target === 'document') {
       document.addEventListener('keydown', onKeyDownHandler);
     }
 
     return () => {
-      if (props.target === 'document') {
+      if (target === 'document') {
         document.removeEventListener('keydown', onKeyDownHandler);
       }
     };
   }, []);
 
-  return props.target === 'document'
-    ? props.children
-    : cloneElement(Children.only(props.children), {
+  return target === 'document'
+    ? children
+    : cloneElement(Children.only(children), {
         onKeyDown: onKeyDownHandler,
       });
 };
