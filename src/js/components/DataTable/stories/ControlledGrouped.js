@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, DataTable } from 'grommet';
@@ -13,28 +13,24 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
-class ControlledGroupedDataTable extends Component {
-  state = { expandedGroups: [DATA[2].location] };
+const ControlledGroupedDataTable = () => {
+  const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
 
-  render() {
-    const { expandedGroups } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <DataTable
-          columns={groupColumns}
-          data={DATA}
-          groupBy={{
-            property: 'location',
-            expand: expandedGroups,
-            onExpand: groupState =>
-              this.setState({ expandedGroups: groupState }),
-          }}
-          sortable
-        />
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <DataTable
+        columns={groupColumns}
+        data={DATA}
+        groupBy={{
+          property: 'location',
+          expand: expandedGroups,
+          onExpand: setExpandedGroups,
+        }}
+        sortable
+      />
+    </Grommet>
+  );
+};
 
 storiesOf('DataTable', module).add('Controlled grouped', () => (
   <ControlledGroupedDataTable />
