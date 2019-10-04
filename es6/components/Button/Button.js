@@ -2,13 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { cloneElement, Children, Component } from 'react';
+import React, { cloneElement, Children, useState } from 'react';
 import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
@@ -17,146 +11,117 @@ import { Box } from '../Box';
 import { withFocus, withForwardRef } from '../hocs';
 import { StyledButton } from './StyledButton';
 
-var isDarkBackground = function isDarkBackground(props) {
-  var backgroundColor = normalizeBackground(normalizeColor(props.color || props.theme.button.primary.color || props.theme.global.colors.control || 'brand', props.theme), props.theme);
-  return colorIsDark(backgroundColor, props.theme);
-};
+var Button = function Button(_ref) {
+  var a11yTitle = _ref.a11yTitle,
+      color = _ref.color,
+      forwardRef = _ref.forwardRef,
+      children = _ref.children,
+      disabled = _ref.disabled,
+      icon = _ref.icon,
+      gap = _ref.gap,
+      fill = _ref.fill,
+      focus = _ref.focus,
+      href = _ref.href,
+      label = _ref.label,
+      onClick = _ref.onClick,
+      onMouseOut = _ref.onMouseOut,
+      onMouseOver = _ref.onMouseOver,
+      plain = _ref.plain,
+      primary = _ref.primary,
+      reverse = _ref.reverse,
+      theme = _ref.theme,
+      type = _ref.type,
+      as = _ref.as,
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "gap", "fill", "focus", "href", "label", "onClick", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "theme", "type", "as"]);
 
-var Button =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Button, _Component);
-
-  function Button(props) {
-    var _this;
-
-    _this = _Component.call(this, props) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "onMouseOver", function (event) {
-      var onMouseOver = _this.props.onMouseOver;
-
-      _this.setState({
-        hover: true
-      });
-
-      if (onMouseOver) {
-        onMouseOver(event);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onMouseOut", function (event) {
-      var onMouseOut = _this.props.onMouseOut;
-
-      _this.setState({
-        hover: false
-      });
-
-      if (onMouseOut) {
-        onMouseOut(event);
-      }
-    });
-
-    var children = props.children,
-        icon = props.icon,
-        label = props.label;
-
-    if ((icon || label) && children) {
-      console.warn('Button should not have children if icon or label is provided');
-    }
-
-    return _this;
+  if ((icon || label) && children) {
+    console.warn('Button should not have children if icon or label is provided');
   }
 
-  var _proto = Button.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        a11yTitle = _this$props.a11yTitle,
-        color = _this$props.color,
-        forwardRef = _this$props.forwardRef,
-        children = _this$props.children,
-        disabled = _this$props.disabled,
-        icon = _this$props.icon,
-        gap = _this$props.gap,
-        fill = _this$props.fill,
-        focus = _this$props.focus,
-        href = _this$props.href,
-        label = _this$props.label,
-        onClick = _this$props.onClick,
-        plain = _this$props.plain,
-        primary = _this$props.primary,
-        reverse = _this$props.reverse,
-        theme = _this$props.theme,
-        type = _this$props.type,
-        as = _this$props.as,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "gap", "fill", "focus", "href", "label", "onClick", "plain", "primary", "reverse", "theme", "type", "as"]);
-
-    var hover = this.state.hover;
-    var buttonIcon = icon; // only change color if user did not specify the color themselves...
-
-    if (primary && icon && !icon.props.color) {
-      buttonIcon = cloneElement(icon, {
-        color: theme.global.colors.text[isDarkBackground(this.props) ? 'dark' : 'light']
-      });
-    }
-
-    var domTag = !as && href ? 'a' : as;
-    var first = reverse ? label : buttonIcon;
-    var second = reverse ? buttonIcon : label;
-    var contents;
-
-    if (first && second) {
-      contents = React.createElement(Box, {
-        direction: "row",
-        align: "center",
-        justify: "center",
-        gap: gap
-      }, first, second);
-    } else if (typeof children === 'function') {
-      contents = children({
-        hover: hover,
-        focus: focus
-      });
-    } else {
-      contents = first || second || children;
-    } // the key events are covered by withFocus()
-
-    /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-
-
-    return React.createElement(StyledButton, _extends({}, rest, {
-      as: domTag,
-      ref: forwardRef,
-      "aria-label": a11yTitle,
-      colorValue: color,
-      disabled: disabled,
-      hasIcon: !!icon,
-      gap: gap,
-      hasLabel: !!label,
-      fillContainer: fill,
-      focus: focus,
-      href: href,
-      onClick: onClick,
-      onMouseOver: this.onMouseOver,
-      onMouseOut: this.onMouseOut,
-      pad: !plain,
-      plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
-      primary: primary,
-      type: !href ? type : undefined
-    }), contents);
+  var isDarkBackground = function isDarkBackground() {
+    var backgroundColor = normalizeBackground(normalizeColor(color || theme.button.primary.color || theme.global.colors.control || 'brand', theme), theme);
+    return colorIsDark(backgroundColor, theme);
   };
 
-  return Button;
-}(Component);
+  var _useState = useState(false),
+      hover = _useState[0],
+      setHover = _useState[1];
 
-_defineProperty(Button, "defaultProps", {
+  var onMouseOverButton = function onMouseOverButton(event) {
+    setHover(true);
+
+    if (onMouseOver) {
+      onMouseOver(event);
+    }
+  };
+
+  var onMouseOutButton = function onMouseOutButton(event) {
+    setHover(false);
+
+    if (onMouseOut) {
+      onMouseOut(event);
+    }
+  };
+
+  var buttonIcon = icon; // only change color if user did not specify the color themselves...
+
+  if (primary && icon && !icon.props.color) {
+    buttonIcon = cloneElement(icon, {
+      color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light']
+    });
+  }
+
+  var domTag = !as && href ? 'a' : as;
+  var first = reverse ? label : buttonIcon;
+  var second = reverse ? buttonIcon : label;
+  var contents;
+
+  if (first && second) {
+    contents = React.createElement(Box, {
+      direction: "row",
+      align: "center",
+      justify: "center",
+      gap: gap
+    }, first, second);
+  } else if (typeof children === 'function') {
+    contents = children({
+      hover: hover,
+      focus: focus
+    });
+  } else {
+    contents = first || second || children;
+  } // the key events are covered by withFocus()
+
+  /* eslint-disable jsx-a11y/mouse-events-have-key-events */
+
+
+  return React.createElement(StyledButton, _extends({}, rest, {
+    as: domTag,
+    ref: forwardRef,
+    "aria-label": a11yTitle,
+    colorValue: color,
+    disabled: disabled,
+    hasIcon: !!icon,
+    gap: gap,
+    hasLabel: !!label,
+    fillContainer: fill,
+    focus: focus,
+    href: href,
+    onClick: onClick,
+    onMouseOver: onMouseOverButton,
+    onMouseOut: onMouseOutButton,
+    pad: !plain,
+    plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
+    primary: primary,
+    type: !href ? type : undefined
+  }), contents);
+};
+
+Button.defaultProps = {
   type: 'button',
   focusIndicator: true,
   gap: 'small'
-});
-
+};
 Object.setPrototypeOf(Button.defaultProps, defaultProps);
 var ButtonDoc;
 
