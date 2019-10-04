@@ -3,7 +3,7 @@ import { BoxProps } from '../Box'
 
 export interface RadioButtonGroupProps {
   name: string;
-  onChange?: ((...args: any[]) => any);
+  onChange?: ((event: React.ChangeEvent<HTMLInputElement>) => void);
   options: (string | { disabled?: boolean, id?: string, label?: (string | React.ReactNode), value: string})[];
   value?: string;
 }
