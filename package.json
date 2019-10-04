@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.7.8",
+  "version": "2.7.9",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -117,6 +117,7 @@
     "regenerator-runtime": "^0.13.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.95.0",
+    "storybook-chromatic": "^2.2.2",
     "styled-components": "^4.1.1",
     "tarball-extract": "^0.0.6",
     "webpack": "^4.39.3",
