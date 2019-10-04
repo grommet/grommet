@@ -11,6 +11,7 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var LabelledMeter = function LabelledMeter() {
+  var meterValue = 30;
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react["default"].createElement(_grommet.Box, {
@@ -22,7 +23,7 @@ var LabelledMeter = function LabelledMeter() {
     type: "circle",
     background: "light-2",
     values: [{
-      value: 30
+      value: meterValue
     }],
     size: "xsmall",
     thickness: "small"
@@ -35,7 +36,7 @@ var LabelledMeter = function LabelledMeter() {
   }, _react["default"].createElement(_grommet.Text, {
     size: "xlarge",
     weight: "bold"
-  }, "30"), _react["default"].createElement(_grommet.Text, {
+  }, meterValue), _react["default"].createElement(_grommet.Text, {
     size: "small"
   }, "%")))));
 };

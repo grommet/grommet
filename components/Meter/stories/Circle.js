@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -8,72 +8,39 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+var CircleMeter = function CircleMeter() {
+  var _useState = (0, _react.useState)(20),
+      value = _useState[0],
+      setValue = _useState[1];
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var CircleMeter =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(CircleMeter, _React$Component);
-
-  function CircleMeter() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      value: 20
-    });
-
-    return _this;
-  }
-
-  var _proto = CircleMeter.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    this.timer = setInterval(function () {
-      var value = _this2.state.value;
-
-      _this2.setState({
-        value: value < 100 ? value + 8 : 20
-      });
-    }, 2000);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    clearInterval(this.timer);
-  };
-
-  _proto.render = function render() {
-    var value = this.state.value;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Meter, {
-      type: "circle",
-      background: "light-2",
-      values: [{
-        value: value,
-        color: value > 50 ? 'accent-2' : 'accent-1'
-      }]
-    })));
-  };
-
-  return CircleMeter;
-}(_react["default"].Component);
+  var timer = (0, _react.useRef)();
+  clearTimeout(timer.current);
+  timer.current = setTimeout(function () {
+    setValue(value < 100 ? value + 8 : 20);
+  }, 2000);
+  (0, _react.useEffect)(function () {
+    return function () {
+      clearTimeout(timer.current);
+    };
+  }, []);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Meter, {
+    type: "circle",
+    background: "light-2",
+    values: [{
+      value: value,
+      color: value > 50 ? 'accent-2' : 'accent-1'
+    }]
+  })));
+};
 
 (0, _react2.storiesOf)('Meter', module).add('Circle', function () {
   return _react["default"].createElement(CircleMeter, null);

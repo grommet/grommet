@@ -4,6 +4,7 @@ import { Grommet, Box, Meter } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var BarMeter = function BarMeter() {
+  var value = 30;
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
@@ -13,7 +14,7 @@ var BarMeter = function BarMeter() {
     type: "bar",
     background: "light-2",
     values: [{
-      value: 30
+      value: value
     }]
   })));
 };

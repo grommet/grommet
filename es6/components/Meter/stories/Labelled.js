@@ -4,6 +4,7 @@ import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var LabelledMeter = function LabelledMeter() {
+  var meterValue = 30;
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
@@ -15,7 +16,7 @@ var LabelledMeter = function LabelledMeter() {
     type: "circle",
     background: "light-2",
     values: [{
-      value: 30
+      value: meterValue
     }],
     size: "xsmall",
     thickness: "small"
@@ -28,7 +29,7 @@ var LabelledMeter = function LabelledMeter() {
   }, React.createElement(Text, {
     size: "xlarge",
     weight: "bold"
-  }, "30"), React.createElement(Text, {
+  }, meterValue), React.createElement(Text, {
     size: "small"
   }, "%")))));
 };

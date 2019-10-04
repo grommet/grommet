@@ -11,6 +11,7 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var BarMeter = function BarMeter() {
+  var value = 30;
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react["default"].createElement(_grommet.Box, {
@@ -20,7 +21,7 @@ var BarMeter = function BarMeter() {
     type: "bar",
     background: "light-2",
     values: [{
-      value: 30
+      value: value
     }]
   })));
 };
