@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -20,48 +20,41 @@ const renderPanelHeader = (title, active) => (
   </Box>
 );
 
-class CustomHeaderAccordion extends Component {
-  state = {
-    activeIndex: [0],
-  };
+const CustomHeaderAccordion = () => {
+  const [activeIndex, setActiveIndex] = useState([0]);
 
-  render() {
-    const { activeIndex } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Accordion
-          activeIndex={activeIndex}
-          onActive={newActiveIndex =>
-            this.setState({ activeIndex: newActiveIndex })
-          }
+  return (
+    <Grommet theme={grommet}>
+      <Accordion
+        activeIndex={activeIndex}
+        onActive={newActiveIndex => setActiveIndex(newActiveIndex)}
+      >
+        <AccordionPanel
+          header={renderPanelHeader('Panel 1', activeIndex.includes(0))}
         >
-          <AccordionPanel
-            header={renderPanelHeader('Panel 1', activeIndex.includes(0))}
-          >
-            <Box pad="medium" background="light-2" style={{ height: '800px' }}>
-              <Text>Panel 1 contents</Text>
-              <TextInput />
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel
-            header={renderPanelHeader('Panel 2', activeIndex.includes(1))}
-          >
-            <Box pad="medium" background="light-2" style={{ height: '50px' }}>
-              <Text>Panel 2 contents</Text>
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel
-            header={renderPanelHeader('Panel 3', activeIndex.includes(2))}
-          >
-            <Box pad="medium" background="light-2" style={{ height: '300px' }}>
-              <Text>Panel 3 contents</Text>
-            </Box>
-          </AccordionPanel>
-        </Accordion>
-      </Grommet>
-    );
-  }
-}
+          <Box pad="medium" background="light-2" style={{ height: '800px' }}>
+            <Text>Panel 1 contents</Text>
+            <TextInput />
+          </Box>
+        </AccordionPanel>
+        <AccordionPanel
+          header={renderPanelHeader('Panel 2', activeIndex.includes(1))}
+        >
+          <Box pad="medium" background="light-2" style={{ height: '50px' }}>
+            <Text>Panel 2 contents</Text>
+          </Box>
+        </AccordionPanel>
+        <AccordionPanel
+          header={renderPanelHeader('Panel 3', activeIndex.includes(2))}
+        >
+          <Box pad="medium" background="light-2" style={{ height: '300px' }}>
+            <Text>Panel 3 contents</Text>
+          </Box>
+        </AccordionPanel>
+      </Accordion>
+    </Grommet>
+  );
+};
 
 storiesOf('Accordion', module).add('Custom Header', () => (
   <CustomHeaderAccordion />
