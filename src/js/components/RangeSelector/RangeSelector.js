@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useContext, useState, useRef } from 'react';
 import { compose } from 'recompose';
 import styled from 'styled-components';
 
@@ -13,32 +13,46 @@ const Container = styled(Box)`
   user-select: none;
 `;
 
-class RangeSelector extends Component {
-  static contextType = ThemeContext;
+const RangeSelector = ({
+  direction,
+  max,
+  messages,
+  min,
+  opacity,
+  step,
+  values,
+  onChange,
+  color,
+  forwardRef,
+  invert,
+  round,
+  theme: propsTheme,
+  ...rest
+}) => {
+  const context = useContext(ThemeContext);
+  const theme = context || propsTheme;
 
-  static defaultProps = {
-    direction: 'horizontal',
-    max: 100,
-    messages: { lower: 'Lower Bounds', upper: 'Upper Bounds' },
-    min: 0,
-    opacity: 'medium',
-    size: 'medium',
-    step: 1,
-    values: [],
-  };
+  const fill = direction === 'vertical' ? true : 'vertical';
+  const [lower, upper] = values;
+  const containerRef = useRef();
 
-  state = {};
+  const [lastState, setLastState] = useState({
+    lastChange: '',
+    lastValues: values,
+  });
+  const [changing, setChanging] = useState(undefined);
+  const [moveValue, setMoveValue] = useState(undefined);
 
-  containerRef = React.createRef();
+  const { lastChange } = lastState;
 
-  componentWillUnmount() {
-    window.removeEventListener('mousemove', this.mouseMove);
-    window.removeEventListener('mouseup', this.mouseUp);
-  }
+  useEffect(() => {
+    if (onChange) {
+      onChange(lastState.lastValues);
+    }
+  }, [lastState]);
 
-  valueForMouseCoord = event => {
-    const { direction, max, min, step } = this.props;
-    const rect = this.containerRef.current.getBoundingClientRect();
+  const valueForMouseCoord = event => {
+    const rect = containerRef.current.getBoundingClientRect();
     let value;
     if (direction === 'vertical') {
       // there is no x and y in unit testing
@@ -61,47 +75,39 @@ class RangeSelector extends Component {
     return result;
   };
 
-  onClick = event => {
-    const { onChange, values } = this.props;
-    const { lastChange } = this.state;
-    const value = this.valueForMouseCoord(event);
+  const onClick = event => {
+    const value = valueForMouseCoord(event);
     if (value <= values[0] || (value < values[1] && lastChange === 'lower')) {
-      this.setState({ lastChange: 'lower' }, () =>
-        onChange([value, values[1]]),
-      );
+      setLastState({
+        lastChange: 'lower',
+        lastValues: [value, values[1]],
+      });
     } else if (
       value >= values[1] ||
       (value > values[0] && lastChange === 'upper')
     ) {
-      this.setState({ lastChange: 'upper' }, () =>
-        onChange([values[0], value]),
-      );
+      setLastState({
+        lastChange: 'upper',
+        lastValues: [values[0], value],
+      });
     }
   };
 
-  lowerMouseDown = () => {
-    this.setState({ changing: 'lower' });
-    window.addEventListener('mousemove', this.mouseMove);
-    window.addEventListener('mouseup', this.mouseUp);
+  const lowerMouseDown = () => {
+    setChanging('lower');
   };
 
-  upperMouseDown = () => {
-    this.setState({ changing: 'upper' });
-    window.addEventListener('mousemove', this.mouseMove);
-    window.addEventListener('mouseup', this.mouseUp);
+  const upperMouseDown = () => {
+    setChanging('upper');
   };
 
-  selectionMouseDown = event => {
-    const moveValue = this.valueForMouseCoord(event);
-    this.setState({ changing: 'selection', moveValue });
-    window.addEventListener('mousemove', this.mouseMove);
-    window.addEventListener('mouseup', this.mouseUp);
+  const selectionMouseDown = event => {
+    setChanging('selection');
+    setMoveValue(valueForMouseCoord(event));
   };
 
-  mouseMove = event => {
-    const { max, min, onChange, values } = this.props;
-    const { changing, moveValue } = this.state;
-    const value = this.valueForMouseCoord(event);
+  const mouseMove = event => {
+    const value = valueForMouseCoord(event);
     let nextValues;
     if (changing === 'lower' && value <= values[1] && value !== moveValue) {
       nextValues = [value, values[1]];
@@ -118,141 +124,134 @@ class RangeSelector extends Component {
       }
     }
     if (nextValues) {
-      this.setState({ lastChange: changing, moveValue: value }, () => {
-        onChange(nextValues);
+      setLastState({
+        lastChange: changing,
+        lastValues: nextValues,
       });
+      setMoveValue(value);
     }
   };
 
-  mouseUp = () => {
-    this.setState({ changing: undefined });
-    window.removeEventListener('mousemove', this.mouseMove);
-    window.removeEventListener('mouseup', this.mouseUp);
+  const mouseUp = () => {
+    setChanging(undefined);
   };
 
-  render() {
-    const {
-      color,
-      direction,
-      forwardRef,
-      invert,
-      max,
-      messages,
-      min,
-      onChange,
-      opacity,
-      round,
-      size,
-      step,
-      values,
-      theme: propsTheme,
-      ...rest
-    } = this.props;
-    const theme = this.context || propsTheme;
-    const { nextLower, nextUpper } = this.state;
+  useEffect(() => {
+    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mouseup', mouseUp);
 
-    const lower = nextLower !== undefined ? nextLower : values[0];
-    const upper = nextUpper !== undefined ? nextUpper : values[1];
-    // It needs to be true when vertical, due to how browsers manage height
-    const fill = direction === 'vertical' ? true : 'vertical';
+    return () => {
+      window.removeEventListener('mousemove', mouseMove);
+      window.removeEventListener('mouseup', mouseUp);
+    };
+  }, [changing]);
 
-    return (
-      <Container
-        ref={this.containerRef}
-        direction={direction === 'vertical' ? 'column' : 'row'}
+  return (
+    <Container
+      ref={containerRef}
+      direction={direction === 'vertical' ? 'column' : 'row'}
+      fill={fill}
+      {...rest}
+      onClick={onChange ? onClick : undefined}
+    >
+      <Box
+        style={{ flex: `${lower - min} 0 0` }}
+        background={
+          invert
+            ? // preserve existing dark, instead of using darknes
+              // of this color
+              {
+                color: color || theme.rangeSelector.background.invert.color,
+                opacity,
+                dark: theme.dark,
+              }
+            : undefined
+        }
         fill={fill}
-        {...rest}
-        onClick={onChange ? this.onClick : undefined}
-      >
-        <Box
-          style={{ flex: `${lower - min} 0 0` }}
-          background={
-            invert
-              ? // preserve existing dark, instead of using darknes
-                // of this color
-                {
-                  color: color || theme.rangeSelector.background.invert.color,
-                  opacity,
-                  dark: theme.dark,
-                }
-              : undefined
-          }
-          fill={fill}
-          round={round}
-        />
-        <EdgeControl
-          a11yTitle={messages.lower}
-          tabIndex={0}
-          ref={forwardRef}
-          color={color}
-          direction={direction}
-          edge="lower"
-          onMouseDown={onChange ? this.lowerMouseDown : undefined}
-          onDecrease={
-            onChange && lower - step >= min
-              ? () => onChange([lower - step, upper])
-              : undefined
-          }
-          onIncrease={
-            onChange && lower + step <= upper
-              ? () => onChange([lower + step, upper])
-              : undefined
-          }
-        />
-        <Box
-          style={{
-            flex: `${upper - lower + 1} 0 0`,
-            cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize',
-          }}
-          background={
-            invert
-              ? undefined
-              : // preserve existing dark, instead of using darknes of
-                // this color
-                { color: color || 'control', opacity, dark: theme.dark }
-          }
-          fill={fill}
-          round={round}
-          onMouseDown={onChange ? this.selectionMouseDown : undefined}
-        />
-        <EdgeControl
-          a11yTitle={messages.upper}
-          tabIndex={0}
-          color={color}
-          direction={direction}
-          edge="upper"
-          onMouseDown={onChange ? this.upperMouseDown : undefined}
-          onDecrease={
-            onChange && upper - step >= lower
-              ? () => onChange([lower, upper - step])
-              : undefined
-          }
-          onIncrease={
-            onChange && upper + step <= max
-              ? () => onChange([lower, upper + step])
-              : undefined
-          }
-        />
-        <Box
-          style={{ flex: `${max - upper} 0 0` }}
-          background={
-            invert
-              ? // preserve existing dark, instead of using darknes of this
-                // color
-                {
-                  color: color || theme.rangeSelector.background.invert.color,
-                  opacity,
-                  dark: theme.dark,
-                }
-              : undefined
-          }
-          fill={fill}
-          round={round}
-        />
-      </Container>
-    );
-  }
-}
+        round={round}
+      />
+      <EdgeControl
+        a11yTitle={messages.lower}
+        tabIndex={0}
+        ref={forwardRef}
+        color={color}
+        direction={direction}
+        edge="lower"
+        onMouseDown={onChange ? lowerMouseDown : undefined}
+        onDecrease={
+          onChange && lower - step >= min
+            ? () => onChange([lower - step, upper])
+            : undefined
+        }
+        onIncrease={
+          onChange && lower + step <= upper
+            ? () => onChange([lower + step, upper])
+            : undefined
+        }
+      />
+      <Box
+        style={{
+          flex: `${upper - lower + 1} 0 0`,
+          cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize',
+        }}
+        background={
+          invert
+            ? undefined
+            : // preserve existing dark, instead of using darknes of
+              // this color
+              { color: color || 'control', opacity, dark: theme.dark }
+        }
+        fill={fill}
+        round={round}
+        onMouseDown={onChange ? selectionMouseDown : undefined}
+      />
+      <EdgeControl
+        a11yTitle={messages.upper}
+        tabIndex={0}
+        color={color}
+        direction={direction}
+        edge="upper"
+        onMouseDown={onChange ? upperMouseDown : undefined}
+        onDecrease={
+          onChange && upper - step >= lower
+            ? () => onChange([lower, upper - step])
+            : undefined
+        }
+        onIncrease={
+          onChange && upper + step <= max
+            ? () => onChange([lower, upper + step])
+            : undefined
+        }
+      />
+      <Box
+        style={{ flex: `${max - upper} 0 0` }}
+        background={
+          invert
+            ? // preserve existing dark, instead of using darknes of this
+              // color
+              {
+                color: color || theme.rangeSelector.background.invert.color,
+                opacity,
+                dark: theme.dark,
+              }
+            : undefined
+        }
+        fill={fill}
+        round={round}
+      />
+    </Container>
+  );
+};
+
+RangeSelector.defaultProps = {
+  direction: 'horizontal',
+  max: 100,
+  messages: { lower: 'Lower Bounds', upper: 'Upper Bounds' },
+  min: 0,
+  opacity: 'medium',
+  step: 1,
+  values: [],
+};
 
 let RangeSelectorDoc;
 if (process.env.NODE_ENV !== 'production') {

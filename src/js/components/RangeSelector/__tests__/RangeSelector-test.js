@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { RangeSelector } from '..';
@@ -136,13 +136,17 @@ describe('RangeSelector', () => {
     const lowerControl = getByLabelText('Lower Bounds');
     fireEvent.mouseDown(lowerControl);
     fireEvent.mouseDown(lowerControl);
-    map.mousemove({ clientX: 31, clientY: 20 });
+    act(() => {
+      map.mousemove({ clientX: 31, clientY: 20 });
+    });
     expect(onChange).toBeCalled();
     expect(values).toStrictEqual([33, 100]);
 
     const upperControl = getByLabelText('Upper Bounds');
     fireEvent.mouseDown(upperControl);
-    map.mousemove({ clientX: 80, clientY: 15 });
+    act(() => {
+      map.mousemove({ clientX: 80, clientY: 15 });
+    });
     expect(onChange).toBeCalled();
     expect(values).toStrictEqual([0, 81]);
   });
@@ -192,14 +196,20 @@ describe('RangeSelector', () => {
     });
     const lowerControl = getByLabelText('Lower Bounds');
     fireEvent.mouseDown(lowerControl);
-    map.mousemove({ clientX: 0, clientY: 0 });
+    act(() => {
+      map.mousemove({ clientX: 0, clientY: 0 });
+    });
     expect(onChange).toBeCalled();
 
-    map.mouseup();
+    act(() => {
+      map.mouseup();
+    });
+
     const upperControl = getByLabelText('Upper Bounds');
     fireEvent.mouseDown(upperControl);
-    map.mousemove({ clientX: 0, clientY: 0 });
+    act(() => {
+      map.mousemove({ clientX: 0, clientY: 0 });
+    });
     expect(onChange).toBeCalled();
-    map.mouseup();
   });
 });
