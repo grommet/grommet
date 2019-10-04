@@ -2,7 +2,7 @@ import React, { Children } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
-const buildStyleChildren = ({
+const buildStyledChildren = ({
   fill,
   guidingIndex,
   interactiveIndex,
