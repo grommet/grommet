@@ -1,4 +1,4 @@
-import React, { useRef, useState, cloneElement } from 'react';
+import React, { cloneElement, useRef, useState } from 'react';
 
 import { Box } from '../Box';
 import { Heading } from '../Heading';
@@ -10,11 +10,11 @@ const SkipLinks = ({ children, id, messages }) => {
   const layerRef = useRef(null);
 
   const onFocus = () => {
-    setShowLayer({ showLayer: true });
+    setShowLayer(true);
   };
 
   const removeLayer = () => {
-    setShowLayer({ showLayer: false });
+    setShowLayer(false);
   };
 
   const onBlur = () => {
