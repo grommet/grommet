@@ -55,7 +55,7 @@ const ThemedCheckBox = props => {
           {...props}
           label="Choice"
           checked={checked}
-          onChange={e => setChecked(e.target.checked)}
+          onChange={event => setChecked(event.target.checked)}
         />
       </Box>
     </Grommet>
