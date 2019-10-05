@@ -37,7 +37,7 @@ const IndeterminateCheckBox = () => {
           {checkboxes.map(item => (
             <CheckBox
               key={item}
-              checked={checked.indexOf(item) !== -1}
+              checked={checked.includes(item)}
               label={item}
               onChange={e => onCheck(e, item)}
             />
