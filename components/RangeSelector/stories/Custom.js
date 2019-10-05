@@ -18,12 +18,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var customThemeRangeSelector = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
     borderSize: {
@@ -50,79 +44,50 @@ var customThemeRangeSelector = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var CustomRangeSelector =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(CustomRangeSelector, _Component);
+var CustomRangeSelector = function CustomRangeSelector(_ref) {
+  var _ref$direction = _ref.direction,
+      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
+      rest = _objectWithoutPropertiesLoose(_ref, ["direction"]);
 
-  function CustomRangeSelector() {
-    var _this;
+  var _useState = (0, _react.useState)([12, 16]),
+      range = _useState[0],
+      setRange = _useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      values: [12, 16]
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (values) {
-      return _this.setState({
-        values: values
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = CustomRangeSelector.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        direction = _this$props.direction,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["direction"]);
-
-    var values = this.state.values;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: customThemeRangeSelector
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
-      direction: direction === 'vertical' ? 'column' : 'row',
-      justify: "between"
-    }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
-      return _react["default"].createElement(_grommet.Box, {
-        key: value,
-        width: "xxsmall",
-        height: "xxsmall",
-        align: "center",
-        pad: "small",
-        border: false
-      }, _react["default"].createElement(_grommet.Text, {
-        style: {
-          fontFamily: 'monospace'
-        }
-      }, value));
-    })), _react["default"].createElement(_grommet.RangeSelector, _extends({
-      invert: true,
-      direction: direction,
-      min: 10,
-      max: 20,
-      size: "full",
-      values: values,
-      onChange: this.onChange
-    }, rest)))));
+  var onChange = function onChange(values) {
+    setRange(values);
   };
 
-  return CustomRangeSelector;
-}(_react.Component);
-
-_defineProperty(CustomRangeSelector, "defaultProps", {
-  direction: 'horizontal'
-});
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: customThemeRangeSelector
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
+    direction: direction === 'vertical' ? 'column' : 'row',
+    justify: "between"
+  }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
+    return _react["default"].createElement(_grommet.Box, {
+      key: value,
+      width: "xxsmall",
+      height: "xxsmall",
+      align: "center",
+      pad: "small",
+      border: false
+    }, _react["default"].createElement(_grommet.Text, {
+      style: {
+        fontFamily: 'monospace'
+      }
+    }, value));
+  })), _react["default"].createElement(_grommet.RangeSelector, _extends({
+    invert: true,
+    direction: direction,
+    min: 10,
+    max: 20,
+    size: "full",
+    values: range,
+    onChange: onChange
+  }, rest)))));
+};
 
 (0, _react2.storiesOf)('RangeSelector', module).add('Custom', function () {
   return _react["default"].createElement(CustomRangeSelector, null);
