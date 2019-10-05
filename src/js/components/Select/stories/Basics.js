@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
@@ -37,40 +37,34 @@ const customRoundedTheme = deepMerge(grommet, {
   },
 });
 
-class SimpleSelect extends Component {
-  static propTypes = {
-    theme: PropTypes.shape({}),
-  };
+const SimpleSelect = ({ theme, ...rest }) => {
+  const options = ['one', 'two'];
+  const [value, setValue] = useState('');
 
-  static defaultProps = {
-    theme: undefined,
-  };
+  return (
+    <Grommet full theme={theme || grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          id="select"
+          name="select"
+          placeholder="Select"
+          value={value}
+          options={options}
+          onChange={({ option }) => setValue(option)}
+          {...rest}
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
-  state = {
-    options: ['one', 'two'],
-    value: '',
-  };
+SimpleSelect.propTypes = {
+  theme: PropTypes.shape({}),
+};
 
-  render() {
-    const { theme, ...rest } = this.props;
-    const { options, value } = this.state;
-    return (
-      <Grommet full theme={theme || grommet}>
-        <Box fill align="center" justify="start" pad="large">
-          <Select
-            id="select"
-            name="select"
-            placeholder="Select"
-            value={value}
-            options={options}
-            onChange={({ option }) => this.setState({ value: option })}
-            {...rest}
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+SimpleSelect.defaultProps = {
+  theme: undefined,
+};
 
 const defaultOptions = [];
 const objectOptions = [];
