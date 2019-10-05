@@ -18,8 +18,7 @@ const IndeterminateCheckBox = () => {
 
   const onCheck = (event, value) => {
     if (event.target.checked) {
-      checked.push(value);
-      setChecked(checked);
+      setChecked([...checked, value]);
     } else {
       setChecked(checked.filter(item => item !== value));
     }
