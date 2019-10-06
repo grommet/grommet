@@ -137,7 +137,7 @@ class SelectContainer extends Component {
     onSearch(search);
   }, debounceDelay(this.props));
 
-  selectOption = option => () => {
+  selectOption = option => event => {
     const { multiple, onChange, value, selected } = this.props;
     const { initialOptions } = this.state;
     if (onChange) {
@@ -164,6 +164,8 @@ class SelectContainer extends Component {
         option,
         value: nextValue,
         selected: nextSelected,
+        keyCode: event.keyCode,
+        key: event.key,
       });
     }
   };
@@ -252,7 +254,7 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     if (activeIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex])();
+      this.selectOption(options[activeIndex])(event);
     }
   };
 

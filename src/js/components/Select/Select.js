@@ -59,6 +59,7 @@ const Select = props => {
     theme,
     value,
     valueLabel,
+    onKeyPress,
     ...rest
   } = props;
   const inputRef = useRef();
@@ -87,6 +88,10 @@ const Select = props => {
     }
     if (onChange) {
       onChange({ ...event, target: inputRef.current }, ...args);
+    }
+    if (onKeyPress) {
+      // add function if onEnter is called
+      onKeyPress(event);
     }
   };
 

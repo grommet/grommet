@@ -47,6 +47,12 @@ class SearchSelect extends Component {
                 options: defaultOptions.filter(o => exp.test(o)),
               });
             }}
+            onKeyPress={event => {
+              // function for onEnter logic for displaying the value in alert
+              if (event.keyCode === 13 && event.option) {
+                alert(`selected ${event.option} on ${event.key} event`);
+              }
+            }}
           />
         </Box>
       </Grommet>
