@@ -1,12 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
 import { Box, Grommet, CheckBox } from 'grommet';
@@ -59,52 +53,25 @@ var customToggleTheme = {
   }
 };
 
-var ThemedToggle =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(ThemedToggle, _Component);
+var ThemedToggle = function ThemedToggle(props) {
+  var _useState = useState(false),
+      checked = _useState[0],
+      setChecked = _useState[1];
 
-  function ThemedToggle() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      checked: false
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
-      return _this.setState({
-        checked: event.target.checked
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = ThemedToggle.prototype;
-
-  _proto.render = function render() {
-    var checked = this.state.checked;
-    return React.createElement(Grommet, {
-      theme: deepMerge(grommet, customToggleTheme)
-    }, React.createElement(Box, {
-      align: "center",
-      pad: "large"
-    }, React.createElement(CheckBox, _extends({}, this.props, {
-      label: "Choice",
-      checked: checked,
-      onChange: this.onChange,
-      toggle: true
-    }))));
-  };
-
-  return ThemedToggle;
-}(Component);
+  return React.createElement(Grommet, {
+    theme: deepMerge(grommet, customToggleTheme)
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(CheckBox, _extends({}, props, {
+    label: "Choice",
+    checked: checked,
+    onChange: function onChange(event) {
+      return setChecked(event.target.checked);
+    },
+    toggle: true
+  }))));
+};
 
 storiesOf('CheckBox', module).add('Custom Toggle', function () {
   return React.createElement(ThemedToggle, null);
