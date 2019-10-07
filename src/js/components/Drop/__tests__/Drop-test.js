@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import 'jest-styled-components';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 
@@ -15,41 +15,34 @@ const customTheme = {
   },
 };
 
-class TestInput extends Component {
-  state = {
-    showDrop: false,
-  };
+const TestInput = ({ inputProps, theme, elevation, ...rest }) => {
+  const [showDrop, setShowDrop] = useState(false);
+  const inputRef = useRef(null);
 
-  inputRef = React.createRef();
+  useEffect(() => {
+    setShowDrop(true);
+  }, []);
 
-  componentDidMount() {
-    this.setState({ showDrop: true }); // eslint-disable-line
-  }
-
-  render() {
-    const { inputProps, theme, elevation, ...rest } = this.props;
-    const { showDrop } = this.state;
-    let drop;
-    if (showDrop) {
-      drop = (
-        <Drop
-          id="drop-node"
-          elevation={elevation}
-          target={this.inputRef.current}
-          {...rest}
-        >
-          this is a test
-        </Drop>
-      );
-    }
-    return (
-      <Grommet theme={theme}>
-        <input ref={this.inputRef} {...inputProps} />
-        {drop}
-      </Grommet>
+  let drop;
+  if (showDrop) {
+    drop = (
+      <Drop
+        id="drop-node"
+        elevation={elevation}
+        target={inputRef.current}
+        {...rest}
+      >
+        this is a test
+      </Drop>
     );
   }
-}
+  return (
+    <Grommet theme={theme}>
+      <input ref={inputRef} {...inputProps} />
+      {drop}
+    </Grommet>
+  );
+};
 
 describe('Drop', () => {
   afterEach(cleanup);

@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 const ProgressiveDrop = () => {
   const [openDrop, setOpenDrop] = useState(false);
   const [openInnerDrop, setOpenInnerDrop] = useState(false);
-  const [interactedWithInnerButton, setInterected] = useState(false);
+  const [interactedWithInnerButton, setInteracted] = useState(false);
 
   const boxRef = useRef(null);
   const innerBoxRef = useRef(null);
@@ -53,7 +53,7 @@ const ProgressiveDrop = () => {
                         ? 'Good job!'
                         : 'You can interact with me'
                     }
-                    onClick={() => setInterected(true)}
+                    onClick={() => setInteracted(true)}
                   />
                 </Box>
               </Drop>

@@ -5,14 +5,14 @@ import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
 import { DropContainer } from './DropContainer';
 
-const Drop = props => {
+const Drop = ({ target: dropTarget, ...rest }) => {
   const originalFocusedElement = document.activeElement;
 
   const dropContainer = getNewContainer();
 
   useEffect(() => {
     return () => {
-      const { restrictFocus } = props;
+      const { restrictFocus } = { ...rest };
       if (restrictFocus && originalFocusedElement) {
         if (originalFocusedElement.focus) {
           setFocusWithoutScroll(originalFocusedElement);
@@ -26,12 +26,7 @@ const Drop = props => {
       }
       document.body.removeChild(dropContainer);
     };
-  });
-
-  const {
-    target: dropTarget, // avoid DOM leakage
-    ...rest
-  } = props;
+  }, []);
   return createPortal(
     <DropContainer dropTarget={dropTarget} {...rest} />,
     dropContainer,

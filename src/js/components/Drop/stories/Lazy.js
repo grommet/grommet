@@ -28,6 +28,8 @@ const LazyDrop = () => {
 
   const [, forceUpdate] = useReducer(x => x + 1, 0);
 
+  const height = pad === 'small' ? 'xsmall' : undefined;
+
   useEffect(() => {
     forceUpdate();
     setTimeout(() => setPad({ pad: finalLazyPad }), 2000);
@@ -52,7 +54,7 @@ const LazyDrop = () => {
               responsive
             >
               <Box
-                height={pad === 'small' ? 'xsmall' : undefined}
+                height={height}
                 pad={{ horizontal: 'xlarge', vertical: pad }}
               >
                 align top to bottom
@@ -74,7 +76,7 @@ const LazyDrop = () => {
               responsive
             >
               <Box
-                height={pad === 'small' ? 'xsmall' : undefined}
+                height={height}
                 pad={{ horizontal: 'xlarge', vertical: pad }}
               >
                 align bottom to top
@@ -94,7 +96,7 @@ const LazyDrop = () => {
               responsive
             >
               <Box
-                height={pad === 'small' ? 'xsmall' : undefined}
+                height={height}
                 pad={{ horizontal: 'xlarge', vertical: pad }}
               >
                 align bottom to top
@@ -111,7 +113,7 @@ const LazyDrop = () => {
               responsive
             >
               <Box
-                height={pad === 'small' ? 'xsmall' : undefined}
+                height={height}
                 pad={{ horizontal: 'xlarge', vertical: pad }}
               >
                 align top to bottom
