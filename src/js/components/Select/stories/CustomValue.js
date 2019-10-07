@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { CaretDown } from 'grommet-icons';
@@ -6,44 +6,38 @@ import { CaretDown } from 'grommet-icons';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class CustomSelectValue extends Component {
-  state = {
-    options: ['one', 'two'],
-    value: undefined,
-  };
+const CustomSelectValue = () => {
+  const options = ['one', 'two'];
+  const [value, setValue] = useState(null);
 
-  render() {
-    const { options, value } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Box fill align="center" justify="start" pad="large">
-          <Select
-            id="select"
-            name="select"
-            placeholder="Select"
-            value={value}
-            options={options}
-            onChange={({ option }) => this.setState({ value: option })}
-            plain
-            valueLabel={
-              <Box
-                background="brand"
-                width="small"
-                round="small"
-                overflow="hidden"
-                align="center"
-              >
-                {value || 'Select...'}
-              </Box>
-            }
-            icon={false}
-            {...this.props}
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet full theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          id="select"
+          name="select"
+          placeholder="Select"
+          value={value}
+          options={options}
+          onChange={({ option }) => setValue(option)}
+          plain
+          valueLabel={
+            <Box
+              background="brand"
+              width="small"
+              round="small"
+              overflow="hidden"
+              align="center"
+            >
+              {value || 'Select...'}
+            </Box>
+          }
+          icon={false}
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('Select', module)
   .add('Custom Value', () => <CustomSelectValue />)
