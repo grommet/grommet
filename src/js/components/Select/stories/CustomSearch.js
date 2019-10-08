@@ -198,6 +198,9 @@ class CustomSearchSelect extends Component {
                   }, 500);
                 });
               }}
+              onClose={() =>
+                this.setState({ contentPartners: allContentPartners })
+              }
             >
               {this.renderOption}
             </Select>
