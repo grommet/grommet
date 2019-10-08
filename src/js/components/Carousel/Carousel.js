@@ -12,14 +12,21 @@ import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { withFocus } from '../hocs';
 
-const Carousel = props => {
-  const { initialChild, play: playProps } = props;
+const Carousel = ({
+  initialChild,
+  play: playProps,
+  children,
+  controls,
+  fill,
+  focus,
+  theme,
+  ...rest
+}) => {
   let timer;
   const [activeIndex, setActiveIndex] = useState(initialChild);
   const [priorActiveIndex, setPriorActiveIndex] = useState();
 
   const play = () => {
-    const { children } = props;
     clearInterval(timer);
     timer = setInterval(() => {
       const lastIndex = Children.count(children) - 1;
@@ -62,7 +69,6 @@ const Carousel = props => {
     setActiveIndex(index);
   };
 
-  const { children, controls, fill, focus, theme, ...rest } = props;
   const showArrows = controls && controls !== 'selectors';
   const showSelectors = controls && controls !== 'arrows';
   const lastIndex = Children.count(children) - 1;
