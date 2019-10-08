@@ -27,80 +27,57 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+var Anchor = function Anchor(_ref) {
+  var a11yTitle = _ref.a11yTitle,
+      children = _ref.children,
+      color = _ref.color,
+      disabled = _ref.disabled,
+      forwardRef = _ref.forwardRef,
+      href = _ref.href,
+      icon = _ref.icon,
+      focus = _ref.focus,
+      label = _ref.label,
+      onClick = _ref.onClick,
+      reverse = _ref.reverse,
+      theme = _ref.theme,
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "children", "color", "disabled", "forwardRef", "href", "icon", "focus", "label", "onClick", "reverse", "theme"]);
 
-var Anchor =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Anchor, _Component);
-
-  function Anchor(props) {
-    var _this;
-
-    _this = _Component.call(this, props) || this;
-    var children = props.children,
-        icon = props.icon,
-        label = props.label;
-
+  (0, _react.useEffect)(function () {
     if ((icon || label) && children) {
       console.warn('Anchor should not have children if icon or label is provided');
     }
+  }, [children, icon, label]);
+  var coloredIcon = icon;
 
-    return _this;
+  if (icon && !icon.props.color) {
+    coloredIcon = (0, _react.cloneElement)(icon, {
+      color: (0, _utils.normalizeColor)(color || theme.anchor.color, theme)
+    });
   }
 
-  var _proto = Anchor.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        a11yTitle = _this$props.a11yTitle,
-        children = _this$props.children,
-        color = _this$props.color,
-        disabled = _this$props.disabled,
-        forwardRef = _this$props.forwardRef,
-        href = _this$props.href,
-        icon = _this$props.icon,
-        focus = _this$props.focus,
-        label = _this$props.label,
-        onClick = _this$props.onClick,
-        reverse = _this$props.reverse,
-        theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "children", "color", "disabled", "forwardRef", "href", "icon", "focus", "label", "onClick", "reverse", "theme"]);
-
-    var coloredIcon = icon;
-
-    if (icon && !icon.props.color) {
-      coloredIcon = (0, _react.cloneElement)(icon, {
-        color: (0, _utils.normalizeColor)(color || theme.anchor.color, theme)
-      });
+  var first = reverse ? label : coloredIcon;
+  var second = reverse ? coloredIcon : label;
+  return _react["default"].createElement(_StyledAnchor.StyledAnchor, _extends({}, rest, {
+    ref: forwardRef,
+    "aria-label": a11yTitle,
+    colorProp: color,
+    disabled: disabled,
+    hasIcon: !!icon,
+    focus: focus,
+    hasLabel: label,
+    reverse: reverse,
+    href: !disabled ? href : undefined,
+    onClick: !disabled ? onClick : undefined
+  }), first && second ? _react["default"].createElement(_Box.Box, {
+    as: "span",
+    direction: "row",
+    align: "center",
+    gap: "small",
+    style: {
+      display: 'inline-flex'
     }
-
-    var first = reverse ? label : coloredIcon;
-    var second = reverse ? coloredIcon : label;
-    return _react["default"].createElement(_StyledAnchor.StyledAnchor, _extends({}, rest, {
-      ref: forwardRef,
-      "aria-label": a11yTitle,
-      colorProp: color,
-      disabled: disabled,
-      hasIcon: !!icon,
-      focus: focus,
-      hasLabel: label,
-      reverse: reverse,
-      href: !disabled ? href : undefined,
-      onClick: !disabled ? onClick : undefined
-    }), first && second ? _react["default"].createElement(_Box.Box, {
-      as: "span",
-      direction: "row",
-      align: "center",
-      gap: "small",
-      style: {
-        display: 'inline-flex'
-      }
-    }, first, second) : first || second || children);
-  };
-
-  return Anchor;
-}(_react.Component);
+  }, first, second) : first || second || children);
+};
 
 Anchor.defaultProps = {};
 Object.setPrototypeOf(Anchor.defaultProps, _defaultProps.defaultProps);
