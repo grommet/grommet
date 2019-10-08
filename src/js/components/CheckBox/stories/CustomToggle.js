@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
 
@@ -59,27 +59,22 @@ const customToggleTheme = {
   },
 };
 
-class ThemedToggle extends Component {
-  state = { checked: false };
+const ThemedToggle = props => {
+  const [checked, setChecked] = useState(false);
 
-  onChange = event => this.setState({ checked: event.target.checked });
-
-  render() {
-    const { checked } = this.state;
-    return (
-      <Grommet theme={deepMerge(grommet, customToggleTheme)}>
-        <Box align="center" pad="large">
-          <CheckBox
-            {...this.props}
-            label="Choice"
-            checked={checked}
-            onChange={this.onChange}
-            toggle
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={deepMerge(grommet, customToggleTheme)}>
+      <Box align="center" pad="large">
+        <CheckBox
+          {...props}
+          label="Choice"
+          checked={checked}
+          onChange={event => setChecked(event.target.checked)}
+          toggle
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('CheckBox', module).add('Custom Toggle', () => <ThemedToggle />);
