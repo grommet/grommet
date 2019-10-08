@@ -40,8 +40,4 @@ storiesOf('InfiniteScroll', module).add('Simple', function () {
       }, marker);
     }
   });
-}).add('Replace', function () {
-  return React.createElement(SimpleInfiniteScroll, {
-    replace: true
-  });
 });
