@@ -16,6 +16,8 @@ exports[`Image fit renders 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
 }
 
@@ -24,6 +26,8 @@ exports[`Image fit renders 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 

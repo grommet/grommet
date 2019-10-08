@@ -11,6 +11,8 @@ const FIT_MAP = {
 const fitStyle = css`
   flex: 1 1;
   overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
