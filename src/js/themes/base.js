@@ -1,3 +1,5 @@
+///<reference path="./base.d.ts" />
+
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 
