@@ -4,9 +4,16 @@ import { Add } from 'grommet-icons';
 
 import { Box, Button, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from '../../../utils';
+
+const customButtonIconColor = deepMerge(grommet, {
+  button: {
+    color: 'accent-2',
+  },
+});
 
 const IconLabel = () => (
-  <Grommet theme={grommet}>
+  <Grommet theme={customButtonIconColor}>
     <Box align="center" pad="large">
       <Box round="full" overflow="hidden" background="neutral-1">
         <Button icon={<Add />} hoverIndicator onClick={() => {}} />

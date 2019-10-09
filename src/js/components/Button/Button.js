@@ -74,13 +74,11 @@ const Button = ({
   let buttonIcon = icon;
   if (icon && !icon.props.color) {
     let buttonIconColor;
-    if (!primary && theme.button.color) {
-      buttonIconColor = normalizeColor(theme.button.color, theme);
-    } else if (primary && theme.button.color) {
-      buttonIconColor = normalizeColor(theme.button.color, theme);
-    } else if (primary && !theme.button.color) {
+    if (primary && !theme.button.color) {
       buttonIconColor =
         theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+    } else {
+      buttonIconColor = normalizeColor(theme.button.color, theme);
     }
     buttonIcon = cloneElement(icon, {
       color: buttonIconColor,
