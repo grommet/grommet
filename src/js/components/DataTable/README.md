@@ -350,6 +350,17 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 ```
 
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+```
+boolean
+```
+
 **onClickRow**
 
 When supplied, this function will be called with an event object that

@@ -139,6 +139,12 @@ export const doc = DataTable => {
       browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.`,
     ),
+    replace: PropTypes.bool.description(
+      `Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.`,
+    ),
     onClickRow: PropTypes.func.description(
       `When supplied, this function will be called with an event object that
       include a 'datum' property containing the data value associated with
