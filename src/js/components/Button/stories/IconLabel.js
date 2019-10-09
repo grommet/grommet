@@ -8,7 +8,7 @@ import { deepMerge } from '../../../utils';
 
 const customButtonIconColor = deepMerge(grommet, {
   button: {
-    color: 'accent-2',
+    color: {light: 'neutral-3', dark: 'white'},
   },
 });
 

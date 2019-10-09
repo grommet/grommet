@@ -74,9 +74,15 @@ const Button = ({
   let buttonIcon = icon;
   if (icon && !icon.props.color) {
     let buttonIconColor;
-    if (primary && !theme.button.color) {
-      buttonIconColor =
-        theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+    if (primary) {
+      if (theme.button.color) {
+        buttonIconColor =
+          theme.button.color[isDarkBackground() ? 'dark' : 'light'] ||
+          normalizeColor(theme.button.color, theme);
+      } else {
+        buttonIconColor =
+          theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+      }
     } else {
       buttonIconColor = normalizeColor(theme.button.color, theme);
     }
