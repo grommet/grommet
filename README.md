@@ -20,7 +20,7 @@ Before opening an issue or pull request, please read the [Contributing] guide.
 
 ## Install
 
-You can install Grommet using either of the methods below.
+You can install Grommet using either of the methods given below.
 
 For npm users:
 

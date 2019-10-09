@@ -311,6 +311,39 @@ all
     outset
     hidden
 }
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]
 ```
 
 **direction**
@@ -742,7 +775,8 @@ undefined
 
 **box.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects `string`.
+The actual breakpoint to trigger changes in the border, 
+    direction, gap, margin, pad, and round. Expects `string`.
 
 Defaults to
 
@@ -774,7 +808,8 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
+The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round. Expects `object`.
 
 Defaults to
 

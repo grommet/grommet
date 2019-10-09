@@ -110,6 +110,7 @@ describe('Box', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  /* eslint-disable max-len */
   test('background', () => {
     const component = renderer.create(
       <Grommet>
@@ -180,6 +181,7 @@ describe('Box', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  /* eslint-enable max-len */
 
   test('basis', () => {
     const component = renderer.create(
@@ -353,6 +355,12 @@ describe('Box', () => {
         <Box border={{ style: 'dotted' }} />
         <Box border={{ style: 'double' }} />
         <Box border={{ style: 'dashed' }} />
+        <Box
+          border={[
+            { side: 'top', color: 'accent-1', size: 'medium', style: 'dotted' },
+            { side: 'left', color: 'accent-2', size: 'large', style: 'dashed' },
+          ]}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();

@@ -51,7 +51,8 @@ class GrommetMarkdown extends Component {
 
 let GrommetMarkdownDoc;
 if (process.env.NODE_ENV !== 'production') {
-  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown);
 }
 const GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
 

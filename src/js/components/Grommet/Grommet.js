@@ -109,7 +109,8 @@ class Grommet extends Component {
 
 let GrommetDoc;
 if (process.env.NODE_ENV !== 'production') {
-  GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  GrommetDoc = require('./doc').doc(Grommet);
 }
 const GrommetWrapper = GrommetDoc || Grommet;
 
