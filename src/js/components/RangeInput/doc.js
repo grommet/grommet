@@ -47,7 +47,9 @@ export const themeDoc = {
   },
   'rangeInput.extend': {
     description: 'Any additional style for the RangeInput.',
-    type: 'string | (props) => {}',
+    type: `string | (props) => \`
+      color: #c9c19f;
+    \``,
     defaultValue: undefined,
   },
   'rangeInput.thumb.color': {
@@ -68,7 +70,9 @@ export const themeDoc = {
   },
   'rangeInput.track.extend': {
     description: 'Any additional style for the track.',
-    type: 'string | (props) => {}',
+    type: `string | (props) => \`
+      color: #c9c19f;
+    \``,
     defaultValue: undefined,
   },
   'rangeInput.track.height': {
