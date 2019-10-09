@@ -11,7 +11,6 @@ import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledButton } from './StyledButton';
 
-
 const Button = ({
   a11yTitle,
   color, // munged to avoid styled-components putting it in the DOM
@@ -52,7 +51,7 @@ const Button = ({
       ),
       theme,
     );
-  
+
     return colorIsDark(backgroundColor, theme);
   };
 
@@ -72,24 +71,21 @@ const Button = ({
     }
   };
 
-    let buttonIcon = icon;
-    if (icon && !icon.props.color) {
-      let buttonIconColor;
-      if (!primary && theme.button.color){
+  let buttonIcon = icon;
+  if (icon && !icon.props.color) {
+    let buttonIconColor;
+    if (!primary && theme.button.color) {
       buttonIconColor = normalizeColor(theme.button.color, theme);
-      }
-      else if (primary && theme.button.color) {
-          buttonIconColor = normalizeColor(theme.button.color, theme);
-        } else if (primary && !theme.button.color) {
-          buttonIconColor =
-            theme.global.colors.text[
-              isDarkBackground(this.props) ? 'dark' : 'light'
-            ];
-          }
-      buttonIcon = cloneElement(icon, {
-        color: buttonIconColor,
-      });
+    } else if (primary && theme.button.color) {
+      buttonIconColor = normalizeColor(theme.button.color, theme);
+    } else if (primary && !theme.button.color) {
+      buttonIconColor =
+        theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
     }
+    buttonIcon = cloneElement(icon, {
+      color: buttonIconColor,
+    });
+  }
 
   const domTag = !as && href ? 'a' : as;
   const first = reverse ? label : buttonIcon;
