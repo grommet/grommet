@@ -39,15 +39,6 @@ const buildStyledChildren = ({
   };
 };
 
-const toChildIndex = (child, children) => {
-  let index = child;
-
-  if (index === 'first' || !index) index = 0;
-  else if (index === 'last') index = React.Children.count(children) - 1;
-
-  return index;
-};
-
 const Stack = ({
   anchor,
   children,
@@ -56,9 +47,17 @@ const Stack = ({
   interactiveChild,
   ...rest
 }) => {
-  const guidingIndex = toChildIndex(guidingChild, children);
-  const interactiveIndex =
-    interactiveChild && toChildIndex(interactiveChild, children);
+  const toChildIndex = child => {
+    let index = child;
+
+    if (index === 'first' || !index) index = 0;
+    else if (index === 'last') index = React.Children.count(children) - 1;
+
+    return index;
+  };
+
+  const guidingIndex = toChildIndex(guidingChild);
+  const interactiveIndex = interactiveChild && toChildIndex(interactiveChild);
 
   const styledChildren = Children.map(
     children,
