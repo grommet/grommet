@@ -55,8 +55,8 @@ export const themeDoc = {
     defaultValue: '<Previous />',
   },
   'carousel.icons.current': {
-    description:
-      'The icon to use on the middle navigation control. One icon per carousel image.',
+    description: `The icon to use on the middle navigation control. 
+      One icon per carousel image.`,
     type: 'element',
     defaultValue: '<Next />',
   },

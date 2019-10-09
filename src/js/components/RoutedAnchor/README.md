@@ -21,7 +21,8 @@ string
 
 **method**
 
-Indicates whether the browser history should be appended to or replaced. Defaults to `push`.
+Indicates whether the browser history should be appended to or 
+      replaced. Defaults to `push`.
 
 ```
 push

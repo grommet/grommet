@@ -51,7 +51,7 @@ class RangeSelector extends Component {
       value = Math.floor(x / scaleX) + min;
     }
     // align with closest step within [min, max]
-    const result = value + (value % step);
+    const result = Math.ceil(value / step) * step;
     if (result < min) {
       return min;
     }
@@ -168,7 +168,8 @@ class RangeSelector extends Component {
           style={{ flex: `${lower - min} 0 0` }}
           background={
             invert
-              ? // preserve existing dark, instead of using darknes of this color
+              ? // preserve existing dark, instead of using darknes
+                // of this color
                 {
                   color: color || theme.rangeSelector.background.invert.color,
                   opacity,
@@ -206,7 +207,8 @@ class RangeSelector extends Component {
           background={
             invert
               ? undefined
-              : // preserve existing dark, instead of using darknes of this color
+              : // preserve existing dark, instead of using darknes of
+                // this color
                 { color: color || 'control', opacity, dark: theme.dark }
           }
           fill={fill}
@@ -235,7 +237,8 @@ class RangeSelector extends Component {
           style={{ flex: `${max - upper} 0 0` }}
           background={
             invert
-              ? // preserve existing dark, instead of using darknes of this color
+              ? // preserve existing dark, instead of using darknes of this
+                // color
                 {
                   color: color || theme.rangeSelector.background.invert.color,
                   opacity,
@@ -253,7 +256,8 @@ class RangeSelector extends Component {
 
 let RangeSelectorDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RangeSelectorDoc = require('./doc').doc(RangeSelector);
 }
 const RangeSelectorWrapper = compose(withForwardRef)(
   RangeSelectorDoc || RangeSelector,

@@ -44,7 +44,8 @@ export const doc = Paragraph => {
 
 export const themeDoc = {
   paragraph: {
-    description: `The possible sizes of the paragraph in terms of its max-width, font-size and line-height.`,
+    description: `The possible sizes of the paragraph in terms of its max-width,
+     font-size and line-height.`,
     type: 'object',
     defaultValue: `{
       small: {

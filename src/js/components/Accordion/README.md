@@ -8,7 +8,7 @@ An accordion containing collapsible panels.
 import { Accordion, AccordionPanel } from 'grommet';
 <Accordion>
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
-  <AccordionPanel label='Panek 2'>...</AccordionPanel>
+  <AccordionPanel label='Panel 2'>...</AccordionPanel>
 </Accordion>
 ```
 
@@ -112,9 +112,9 @@ string
 
 **activeIndex**
 
-Active panel index. If specified, Accordion will be a controlled component. This means that future
-panel changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.
+Active panel index. If specified, Accordion will be a controlled 
+component. This means that future panel changes will not work unless you
+subscribe to onActive function and update activeIndex accordingly.
 
 ```
 number

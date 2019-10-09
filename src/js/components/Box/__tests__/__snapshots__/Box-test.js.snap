@@ -1464,7 +1464,7 @@ exports[`Box background 1`] = `
   background-position: center center;
   background-size: cover;
   color: inherit;
-  background-color: rgba(111,255,176,1);
+  background-color: rgba(111,255,176, 1);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2601,6 +2601,25 @@ exports[`Box border 1`] = `
   padding: 0px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-top: dotted 4px #6FFFB0;
+  border-left: dashed 12px #FD6FFF;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -2873,6 +2892,30 @@ exports[`Box border 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c16 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    border-top: dotted 4px #6FFFB0;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    border-left: dashed 6px #FD6FFF;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2926,6 +2969,9 @@ exports[`Box border 1`] = `
   />
   <div
     className="c15"
+  />
+  <div
+    className="c16"
   />
 </div>
 `;
