@@ -140,36 +140,39 @@ describe('Menu', () => {
         <Menu
           id="test-menu"
           label="Test"
-          items={[{ label: 'Item 1' }, { label: 'Item 2', onClick }]}
+          items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]}
         />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    // pressing space: opens drop
-    // tab moves to menu label
-    // second moves to first item
-    // third moves to second item
+    // pressing down 3x: first opens the drop,
+    // second moves to the first suggestion
+    // third moves to the last suggestion
     fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Space',
-      keyCode: 32,
-      which: 32,
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
     });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
-      key: 'Tab',
-      keyCode: 9,
-      which: 9,
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
     });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
-      key: 'Tab',
-      keyCode: 9,
-      which: 9,
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
     });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
-      key: 'Tab',
-      keyCode: 9,
-      which: 9,
+
+    // moves to the first suggestion
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Up',
+      keyCode: 38,
+      which: 38,
     });
+
+    // select that by pressing enter
     fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Enter',
       keyCode: 13,

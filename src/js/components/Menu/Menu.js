@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -24,7 +24,7 @@ const ContainerBox = styled(Box)`
   ${props => props.theme.menu.extend};
 `;
 
-/* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
+/* Notes on keyboard interactivity (based on W3C) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
 
 To open menu when menu button is focused:
 - Space/Enter/Up arrow/Down arrow will open menu
@@ -70,29 +70,45 @@ const Menu = props => {
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
   const buttonRefs = {};
-  // const initialIndex = align.top === 'bottom' ? -1 : -2;
 
-  const [activeItemIndex, setActiveItemIndex] = useState('none');
+  // to track if focus is within the menu items, see menuOnFocus/menuOnBlur
+  let timeoutID;
+
+  const [activeItemIndex, setActiveItemIndex] = useState(-1);
   const [isOpen, setOpen] = useState(open || false);
+  const [isManagingFocus, setManagingFocus] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setManagingFocus(true);
+      if (isManagingFocus) {
+        if (align.top === 'bottom') {
+          buttonRefs[0].focus();
+          setActiveItemIndex(0);
+        } else {
+          buttonRefs[items.length].focus();
+          setActiveItemIndex(-1);
+        }
+      }
+    }
+  }, [isManagingFocus]);
 
   const onDropClose = () => {
-    setActiveItemIndex('none');
+    setActiveItemIndex(-1);
     setOpen(false);
+    setManagingFocus(false);
   };
 
   const onDropOpen = () => {
     setOpen(true);
+    setManagingFocus(true);
   };
 
   const onSelectMenuItem = event => {
-    if (isOpen) {
-      if (activeItemIndex >= 0) {
-        event.preventDefault();
-        event.stopPropagation();
-        buttonRefs[activeItemIndex].click();
-      }
-    } else {
-      onDropOpen();
+    if (activeItemIndex >= 0) {
+      event.preventDefault();
+      event.stopPropagation();
+      buttonRefs[activeItemIndex].click();
     }
   };
 
@@ -100,14 +116,9 @@ const Menu = props => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
-    } else if (
-      (event.keyCode === 9 || event.which === 9) &&
-      activeItemIndex + 1 === items.length
-    ) {
-      onDropClose(); // tab out of menu
     } else {
       let index;
-      if (activeItemIndex + 1 === items.length || activeItemIndex === 'none') {
+      if (activeItemIndex + 1 === items.length) {
         index = align.top === 'bottom' ? 0 : items.length;
       } else {
         index = activeItemIndex + 1;
@@ -121,12 +132,6 @@ const Menu = props => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
-    } else if (
-      (event.keyCode === 9 || event.which === 9) &&
-      ((align.top === 'bottom' && activeItemIndex - 1 < 0) ||
-        (align.top === 'top' && activeItemIndex - 1 < -1))
-    ) {
-      onDropClose(); // tab out of menu
     } else {
       let index;
       if (activeItemIndex - 1 < 0) {
@@ -140,6 +145,23 @@ const Menu = props => {
       }
       setActiveItemIndex(index);
       buttonRefs[index].focus();
+    }
+  };
+
+  const menuOnBlur = event => {
+    event.preventDefault();
+    timeoutID = setTimeout(() => {
+      if (isManagingFocus) {
+        onDropClose();
+      }
+    }, 0);
+  };
+
+  const menuOnFocus = event => {
+    event.preventDefault();
+    clearTimeout(timeoutID);
+    if (!isManagingFocus) {
+      onDropOpen();
     }
   };
 
@@ -183,8 +205,8 @@ const Menu = props => {
     <Keyboard
       onDown={onNextMenuItem}
       onUp={onPreviousMenuItem}
-      onSpace={onSelectMenuItem}
       onEnter={onSelectMenuItem}
+      onSpace={onSelectMenuItem}
       onEsc={onDropClose}
       onTab={onDropClose}
       onKeyDown={onKeyDown}
@@ -201,12 +223,12 @@ const Menu = props => {
         onOpen={onDropOpen}
         onClose={onDropClose}
         dropContent={
-          <Keyboard
-            onTab={event =>
-              event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
-            }
-          >
-            <ContainerBox background={dropBackground || theme.menu.background}>
+          <Keyboard onDown={onNextMenuItem} onUp={onPreviousMenuItem}>
+            <ContainerBox
+              background={dropBackground || theme.menu.background}
+              onFocus={menuOnFocus}
+              onBlur={menuOnBlur}
+            >
               {align.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (
