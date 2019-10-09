@@ -75,7 +75,7 @@ const folks = [
 ];
 
 const CustomSuggestionsTextInput = () => {
-  const [value, setValue] = useState('initialState');
+  const [value, setValue] = useState('');
   const [suggestionOpen, setSuggestionOpen] = useState(false);
   const [suggestedFolks, setSuggestedFolks] = useState([]);
 
