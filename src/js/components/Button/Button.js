@@ -11,6 +11,7 @@ import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledButton } from './StyledButton';
 
+
 const Button = ({
   a11yTitle,
   color, // munged to avoid styled-components putting it in the DOM
