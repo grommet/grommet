@@ -172,6 +172,10 @@ We review issues and pull requests on a weekly basis (sometimes more
 frequently). If you feel we missed yours don’t hesitate to ping us on
 [Slack][slack community]!
 
+## Testing Your Code
+
+- You can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser .
+
 ## Contributing to the Documentation
 
 Grommet uses an internal tool for most of its documentation. If you are looking
