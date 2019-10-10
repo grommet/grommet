@@ -147,7 +147,6 @@ started you should:
 1. fork the `grommet` repository
 1. clone it `git clone https://github.com/<your-username>/grommet.git`
 1. install dependencies using: `yarn install`
-1. start running the storybook locally using: `yarn storybook`
 
 The components code lives in `src/js/components`. The structure of the
 project is a bit particular since it is using lots of internal tooling to try to
@@ -172,6 +171,10 @@ into while contributing could include:
 We review issues and pull requests on a weekly basis (sometimes more
 frequently). If you feel we missed yours don’t hesitate to ping us on
 [Slack][slack community]!
+
+## Testing Your Code
+
+1. you can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser .
 
 ## Contributing to the Documentation
 
