@@ -14,34 +14,6 @@ import { withForwardRef } from '../hocs';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
 
-const onHandleMouseOver = ({ onMouseOver, theme, setHover }) => (...args) => {
-  const { dark } = theme;
-
-  setHover(dark ? 'light-4' : 'dark-3');
-
-  if (onMouseOver) onMouseOver(args);
-};
-
-const onHandleMouseOut = ({ onMouseOut, setHover }) => (...args) => {
-  setHover(undefined);
-
-  if (onMouseOut) onMouseOut(args);
-};
-
-const onHandleFocus = ({ onFocus, theme, setHover }) => (...args) => {
-  const { dark } = theme;
-
-  setHover(dark ? 'light-4' : 'dark-3');
-
-  if (onFocus) onFocus(args);
-};
-
-const onHandleBlur = ({ onBlur, setHover }) => (...args) => {
-  setHover(undefined);
-
-  if (onBlur) onBlur(args);
-};
-
 const AccordionPanel = ({
   children,
   header,
@@ -60,6 +32,34 @@ const AccordionPanel = ({
     theme,
   );
 
+  const onHandleMouseOver = () => (...args) => {
+    const { dark } = theme;
+
+    setHover(dark ? 'light-4' : 'dark-3');
+
+    if (onMouseOver) onMouseOver(args);
+  };
+
+  const onHandleMouseOut = () => (...args) => {
+    setHover(undefined);
+
+    if (onMouseOut) onMouseOut(args);
+  };
+
+  const onHandleFocus = () => (...args) => {
+    const { dark } = theme;
+
+    setHover(dark ? 'light-4' : 'dark-3');
+
+    if (onFocus) onFocus(args);
+  };
+
+  const onHandleBlur = () => (...args) => {
+    setHover(undefined);
+
+    if (onBlur) onBlur(args);
+  };
+
   return (
     <AccordionContext.Consumer>
       {panelContext => {
@@ -75,24 +75,10 @@ const AccordionPanel = ({
               aria-selected={active}
               aria-expanded={active}
               onClick={onPanelChange}
-              onMouseOver={onHandleMouseOver({
-                onMouseOver,
-                theme,
-                setHover,
-              })}
-              onMouseOut={onHandleMouseOut({
-                onMouseOut,
-                setHover,
-              })}
-              onFocus={onHandleFocus({
-                onFocus,
-                theme,
-                setHover,
-              })}
-              onBlur={onHandleBlur({
-                onBlur,
-                setHover,
-              })}
+              onMouseOver={onHandleMouseOver()}
+              onMouseOut={onHandleMouseOut()}
+              onFocus={onHandleFocus()}
+              onBlur={onHandleBlur()}
             >
               {header || (
                 <Box align="center" direction="row" justify="between" {...rest}>
