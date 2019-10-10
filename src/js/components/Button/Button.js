@@ -52,6 +52,7 @@ const Button = ({
       ),
       theme,
     );
+    
     return colorIsDark(backgroundColor, theme);
   };
 
