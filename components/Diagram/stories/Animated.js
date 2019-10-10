@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -12,13 +12,9 @@ var _utils = require("grommet/utils");
 
 var _data = require("./data");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -92,95 +88,73 @@ var Container = function Container(_ref3) {
   });
 };
 
-var Animated =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(Animated, _React$Component);
+var Animated = function Animated() {
+  var reducer = function reducer(draw) {
+    return !draw;
+  };
 
-  function Animated() {
-    var _this;
+  var _useReducer = (0, _react.useReducer)(reducer, true),
+      draw = _useReducer[0],
+      toogleDraw = _useReducer[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  (0, _react.useEffect)(function () {
+    var timer = setInterval(function () {
+      toogleDraw();
+    }, 2000);
+    return function () {
+      return clearInterval(timer);
+    };
+  }, [toogleDraw]);
+  var connections = [];
 
-    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      draw: true
-    });
-
-    return _this;
+  if (draw) {
+    connections.push(connection('4', '1', {
+      anchor: 'vertical'
+    }));
+    connections.push(connection('4', '2', {
+      anchor: 'vertical'
+    }));
+    connections.push(connection('4', '3', {
+      anchor: 'vertical'
+    }));
   }
 
-  var _proto = Animated.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    this.timer = setInterval(function () {
-      var draw = _this2.state.draw;
-
-      _this2.setState({
-        draw: !draw
-      });
-    }, 3000);
-  };
-
-  _proto.render = function render() {
-    var draw = this.state.draw;
-    var connections = [];
-
-    if (draw) {
-      connections.push(connection('4', '1', {
-        anchor: 'vertical'
-      }));
-      connections.push(connection('4', '2', {
-        anchor: 'vertical'
-      }));
-      connections.push(connection('4', '3', {
-        anchor: 'vertical'
-      }));
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: customTheme
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center"
+  }, _react["default"].createElement(_grommet.Box, {
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
+    alignSelf: "center",
+    margin: {
+      bottom: 'large'
     }
-
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: customTheme
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "center"
-    }, _react["default"].createElement(_grommet.Box, {
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
-      alignSelf: "center",
-      margin: {
-        bottom: 'large'
-      }
-    }, _react["default"].createElement(Container, {
-      node: _data.data[0],
-      index: 1
-    }), _react["default"].createElement(_grommet.Box, {
-      pad: "small"
-    }), _react["default"].createElement(_grommet.Box, {
-      id: "4",
-      width: "xsmall",
-      margin: {
-        bottom: 'large',
-        top: 'xlarge'
-      }
-    })), _react["default"].createElement(_grommet.Box, {
-      direction: "row",
-      gap: "xlarge"
-    }, [2, 3].map(function (id) {
-      return _react["default"].createElement(Container, {
-        node: _data.data[id - 1],
-        index: id
-      });
-    }))), _react["default"].createElement(_grommet.Diagram, {
-      connections: connections
-    })))));
-  };
-
-  return Animated;
-}(_react["default"].Component);
+  }, _react["default"].createElement(Container, {
+    node: _data.data[0],
+    index: 1
+  }), _react["default"].createElement(_grommet.Box, {
+    pad: "small"
+  }), _react["default"].createElement(_grommet.Box, {
+    id: "4",
+    width: "xsmall",
+    margin: {
+      bottom: 'large',
+      top: 'xlarge'
+    }
+  })), _react["default"].createElement(_grommet.Box, {
+    direction: "row",
+    gap: "xlarge"
+  }, [2, 3].map(function (id) {
+    return _react["default"].createElement(Container, {
+      key: id,
+      node: _data.data[id - 1],
+      index: id
+    });
+  }))), _react["default"].createElement(_grommet.Diagram, {
+    connections: connections
+  })))));
+};
 
 (0, _react2.storiesOf)('Diagram', module).add('Animated', function () {
   return _react["default"].createElement(Animated, null);

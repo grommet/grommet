@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -8,13 +8,9 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -52,88 +48,66 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 
 var fullTopRow = [1, 2, 3];
 
-var SimpleDiagram =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(SimpleDiagram, _React$Component);
+var SimpleDiagram = function SimpleDiagram() {
+  var reducer = function reducer(topRow) {
+    var sliceEnd = topRow.length < fullTopRow.length ? topRow.length + 1 : 1;
+    return fullTopRow.slice(0, sliceEnd);
+  };
 
-  function SimpleDiagram() {
-    var _this;
+  var _useReducer = (0, _react.useReducer)(reducer, fullTopRow.slice(0, 1)),
+      topRow = _useReducer[0],
+      dispatch = _useReducer[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  (0, _react.useEffect)(function () {
+    var timer = setInterval(function () {
+      dispatch();
+    }, 2000);
+    return function () {
+      return clearInterval(timer);
+    };
+  }, [dispatch]);
+  var connections = [connection('1', '5', {
+    color: 'accent-2'
+  })];
 
-    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      topRow: fullTopRow.slice(0, 1)
-    });
-
-    return _this;
+  if (topRow.length >= 2) {
+    connections.push(connection('1', '2', {
+      color: 'accent-1',
+      anchor: 'horizontal'
+    }));
   }
 
-  var _proto = SimpleDiagram.prototype;
+  if (topRow.length >= 3) {
+    connections.push(connection('3', '5', {
+      color: 'accent-2',
+      anchor: 'horizontal'
+    }));
+  }
 
-  _proto.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    this.timer = setInterval(function () {
-      var topRow = _this2.state.topRow;
-
-      _this2.setState({
-        topRow: fullTopRow.slice(0, topRow.length < fullTopRow.length ? topRow.length + 1 : 1)
-      });
-    }, 2000);
-  };
-
-  _proto.render = function render() {
-    var topRow = this.state.topRow;
-    var connections = [connection('1', '5', {
-      color: 'accent-2'
-    })];
-
-    if (topRow.length >= 2) {
-      connections.push(connection('1', '2', {
-        color: 'accent-1',
-        anchor: 'horizontal'
-      }));
-    }
-
-    if (topRow.length >= 3) {
-      connections.push(connection('3', '5', {
-        color: 'accent-2',
-        anchor: 'horizontal'
-      }));
-    }
-
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      align: "start",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Text, null, " Adding and removing nodes"), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
-      direction: "row"
-    }, topRow.map(function (id) {
-      return _react["default"].createElement(Node, {
-        key: id,
-        id: id
-      });
-    })), _react["default"].createElement(_grommet.Box, {
-      direction: "row"
-    }, [4, 5].map(function (id) {
-      return _react["default"].createElement(Node, {
-        key: id,
-        id: id,
-        background: "neutral-2"
-      });
-    }))), _react["default"].createElement(_grommet.Diagram, {
-      connections: connections
-    }))));
-  };
-
-  return SimpleDiagram;
-}(_react["default"].Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "start",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Text, null, " Adding and removing nodes"), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
+    direction: "row"
+  }, topRow.map(function (id) {
+    return _react["default"].createElement(Node, {
+      key: id,
+      id: id
+    });
+  })), _react["default"].createElement(_grommet.Box, {
+    direction: "row"
+  }, [4, 5].map(function (id) {
+    return _react["default"].createElement(Node, {
+      key: id,
+      id: id,
+      background: "neutral-2"
+    });
+  }))), _react["default"].createElement(_grommet.Diagram, {
+    connections: connections
+  }))));
+};
 
 (0, _react2.storiesOf)('Diagram', module).add('Progressing', function () {
   return _react["default"].createElement(SimpleDiagram, null);
