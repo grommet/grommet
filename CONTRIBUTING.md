@@ -174,7 +174,7 @@ frequently). If you feel we missed yours don’t hesitate to ping us on
 
 ## Testing Your Code
 
-1. you can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser .
+- You can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser .
 
 ## Contributing to the Documentation
 
