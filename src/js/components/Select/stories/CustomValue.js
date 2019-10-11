@@ -6,9 +6,9 @@ import { CaretDown } from 'grommet-icons';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CustomSelectValue = () => {
+const CustomSelectValue = ({ ...rest }) => {
   const options = ['one', 'two'];
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState('');
 
   return (
     <Grommet full theme={grommet}>
@@ -33,6 +33,7 @@ const CustomSelectValue = () => {
             </Box>
           }
           icon={false}
+          {...rest}
         />
       </Box>
     </Grommet>
