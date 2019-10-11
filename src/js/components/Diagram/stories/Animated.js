@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
@@ -66,58 +66,53 @@ const Container = ({ node, index }) => (
   />
 );
 
-class Animated extends React.Component {
-  state = {
-    draw: true,
-  };
+const Animated = () => {
+  const reducer = draw => !draw;
 
-  componentDidMount() {
-    this.timer = setInterval(() => {
-      const { draw } = this.state;
-      this.setState({
-        draw: !draw,
-      });
-    }, 3000);
+  const [draw, toogleDraw] = useReducer(reducer, true);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      toogleDraw();
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [toogleDraw]);
+
+  const connections = [];
+
+  if (draw) {
+    connections.push(connection('4', '1', { anchor: 'vertical' }));
+    connections.push(connection('4', '2', { anchor: 'vertical' }));
+    connections.push(connection('4', '3', { anchor: 'vertical' }));
   }
 
-  render() {
-    const { draw } = this.state;
-    const connections = [];
-
-    if (draw) {
-      connections.push(connection('4', '1', { anchor: 'vertical' }));
-      connections.push(connection('4', '2', { anchor: 'vertical' }));
-      connections.push(connection('4', '3', { anchor: 'vertical' }));
-    }
-
-    return (
-      <Grommet theme={customTheme}>
-        <Box align="center">
-          <Box pad="large">
-            <Stack>
-              <Box>
-                <Box alignSelf="center" margin={{ bottom: 'large' }}>
-                  <Container node={data[0]} index={1} />
-                  <Box pad="small" />
-                  <Box
-                    id="4"
-                    width="xsmall"
-                    margin={{ bottom: 'large', top: 'xlarge' }}
-                  />
-                </Box>
-                <Box direction="row" gap="xlarge">
-                  {[2, 3].map(id => (
-                    <Container node={data[id - 1]} index={id} />
-                  ))}
-                </Box>
+  return (
+    <Grommet theme={customTheme}>
+      <Box align="center">
+        <Box pad="large">
+          <Stack>
+            <Box>
+              <Box alignSelf="center" margin={{ bottom: 'large' }}>
+                <Container node={data[0]} index={1} />
+                <Box pad="small" />
+                <Box
+                  id="4"
+                  width="xsmall"
+                  margin={{ bottom: 'large', top: 'xlarge' }}
+                />
               </Box>
-              <Diagram connections={connections} />
-            </Stack>
-          </Box>
+              <Box direction="row" gap="xlarge">
+                {[2, 3].map(id => (
+                  <Container key={id} node={data[id - 1]} index={id} />
+                ))}
+              </Box>
+            </Box>
+            <Diagram connections={connections} />
+          </Stack>
         </Box>
-      </Grommet>
-    );
-  }
-}
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('Diagram', module).add('Animated', () => <Animated />);
