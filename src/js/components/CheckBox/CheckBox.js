@@ -44,7 +44,7 @@ const CheckBox = ({
   indeterminate,
   ...rest
 }) => {
-  const warnings = () => {
+  useEffect(() => {
     if (checked && indeterminate) {
       console.warn(
         'Checkbox cannot be "checked" and "indeterminate" at the same time.',
@@ -56,11 +56,7 @@ const CheckBox = ({
         'Checkbox of type toggle does not have "indeterminate" state.',
       );
     }
-  };
-
-  useEffect(() => {
-    warnings();
-  }, []);
+  }, [checked, toggle, indeterminate]);
 
   const themeableProps = {
     checked,
