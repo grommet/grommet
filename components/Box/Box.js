@@ -25,117 +25,94 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+var Box = function Box(_ref) {
+  var a11yTitle = _ref.a11yTitle,
+      background = _ref.background,
+      children = _ref.children,
+      direction = _ref.direction,
+      elevation = _ref.elevation,
+      fill = _ref.fill,
+      forwardRef = _ref.forwardRef,
+      gap = _ref.gap,
+      overflow = _ref.overflow,
+      responsive = _ref.responsive,
+      tag = _ref.tag,
+      as = _ref.as,
+      wrap = _ref.wrap,
+      width = _ref.width,
+      height = _ref.height,
+      propsTheme = _ref.theme,
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "background", "children", "direction", "elevation", "fill", "forwardRef", "gap", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "theme"]);
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  var contextTheme = (0, _react.useContext)(_contexts.ThemeContext);
+  var theme = contextTheme || propsTheme;
+  var contents = children;
 
-var Box =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Box, _Component);
+  if (gap) {
+    contents = [];
+    var firstIndex;
 
-  function Box() {
-    return _Component.apply(this, arguments) || this;
+    _react.Children.forEach(children, function (child, index) {
+      if (child) {
+        if (firstIndex === undefined) {
+          firstIndex = index;
+        } else {
+          contents.push(_react["default"].createElement(_StyledBox.StyledBoxGap // eslint-disable-next-line react/no-array-index-key
+          , {
+            key: "gap-" + index,
+            gap: gap,
+            directionProp: direction,
+            responsive: responsive
+          }));
+        }
+      }
+
+      contents.push(child);
+    });
   }
 
-  var _proto = Box.prototype;
+  var content = _react["default"].createElement(_StyledBox.StyledBox, _extends({
+    as: !as && tag ? tag : as,
+    "aria-label": a11yTitle,
+    background: background,
+    ref: forwardRef,
+    directionProp: direction,
+    elevationProp: elevation,
+    fillProp: fill,
+    overflowProp: overflow,
+    wrapProp: wrap,
+    widthProp: width,
+    heightProp: height,
+    responsive: responsive
+  }, rest), contents); // When a Box changes the darkness, it sets darkChanged so that StyledBox
+  // can know what the underlying darkness is when deciding which elevation
+  // to show.
 
-  _proto.render = function render() {
-    var _this$props = this.props,
-        a11yTitle = _this$props.a11yTitle,
-        background = _this$props.background,
-        children = _this$props.children,
-        direction = _this$props.direction,
-        elevation = _this$props.elevation,
-        fill = _this$props.fill,
-        forwardRef = _this$props.forwardRef,
-        gap = _this$props.gap,
-        overflow = _this$props.overflow,
-        responsive = _this$props.responsive,
-        tag = _this$props.tag,
-        as = _this$props.as,
-        wrap = _this$props.wrap,
-        width = _this$props.width,
-        height = _this$props.height,
-        propsTheme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "background", "children", "direction", "elevation", "fill", "forwardRef", "gap", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "theme"]);
 
-    var theme = this.context || propsTheme;
-    var contents = children;
+  if (background || theme.darkChanged) {
+    var dark = (0, _utils.backgroundIsDark)(background, theme);
+    var darkChanged = dark !== undefined && dark !== theme.dark;
 
-    if (gap) {
-      contents = [];
-      var firstIndex;
-
-      _react.Children.forEach(children, function (child, index) {
-        if (child) {
-          if (firstIndex === undefined) {
-            firstIndex = index;
-          } else {
-            contents.push(_react["default"].createElement(_StyledBox.StyledBoxGap // eslint-disable-next-line react/no-array-index-key
-            , {
-              key: "gap-" + index,
-              gap: gap,
-              directionProp: direction,
-              responsive: responsive
-            }));
-          }
-        }
-
-        contents.push(child);
-      });
+    if (darkChanged || theme.darkChanged) {
+      dark = dark === undefined ? theme.dark : dark;
+      content = _react["default"].createElement(_contexts.ThemeContext.Provider, {
+        value: _extends({}, theme, {
+          dark: dark,
+          darkChanged: darkChanged
+        })
+      }, content);
     }
+  }
 
-    var content = _react["default"].createElement(_StyledBox.StyledBox, _extends({
-      as: !as && tag ? tag : as,
-      "aria-label": a11yTitle,
-      background: background,
-      ref: forwardRef,
-      directionProp: direction,
-      elevationProp: elevation,
-      fillProp: fill,
-      overflowProp: overflow,
-      wrapProp: wrap,
-      widthProp: width,
-      heightProp: height,
-      responsive: responsive
-    }, rest), contents); // When a Box changes the darkness, it sets darkChanged so that StyledBox
-    // can know what the underlying darkness is when deciding which elevation
-    // to show.
+  return content;
+};
 
-
-    if (background || theme.darkChanged) {
-      var dark = (0, _utils.backgroundIsDark)(background, theme);
-      var darkChanged = dark !== undefined && dark !== theme.dark;
-
-      if (darkChanged || theme.darkChanged) {
-        dark = dark === undefined ? theme.dark : dark;
-        content = _react["default"].createElement(_contexts.ThemeContext.Provider, {
-          value: _extends({}, theme, {
-            dark: dark,
-            darkChanged: darkChanged
-          })
-        }, content);
-      }
-    }
-
-    return content;
-  };
-
-  return Box;
-}(_react.Component);
-
-_defineProperty(Box, "contextType", _contexts.ThemeContext);
-
-_defineProperty(Box, "displayName", 'Box');
-
-_defineProperty(Box, "defaultProps", {
+Box.defaultProps = {
   direction: 'column',
   margin: 'none',
   pad: 'none',
   responsive: true
-});
-
+};
 Object.setPrototypeOf(Box.defaultProps, _defaultProps.defaultProps);
 var BoxDoc;
 
