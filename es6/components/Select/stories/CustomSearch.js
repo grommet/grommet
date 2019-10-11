@@ -242,6 +242,11 @@ function (_Component) {
             });
           }, 500);
         });
+      },
+      onClose: function onClose() {
+        return _this2.setState({
+          contentPartners: allContentPartners
+        });
       }
     }, this.renderOption))));
   };
