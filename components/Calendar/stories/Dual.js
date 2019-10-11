@@ -14,152 +14,118 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var now = new Date();
 var next = new Date(now);
 next.setMonth(now.getMonth() + 1, 1);
 
-var DualCalendar =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(DualCalendar, _Component);
+var DualCalendar = function DualCalendar() {
+  var _useState = (0, _react.useState)(),
+      date = _useState[0],
+      setDate = _useState[1];
 
-  function DualCalendar() {
-    var _this;
+  var _useState2 = (0, _react.useState)(),
+      dates = _useState2[0],
+      setDates = _useState2[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var _useState3 = (0, _react.useState)(now),
+      reference1 = _useState3[0],
+      setReference1 = _useState3[1];
+
+  var _useState4 = (0, _react.useState)(next),
+      reference2 = _useState4[0],
+      setReference2 = _useState4[1];
+
+  var onSelect = function onSelect(arg) {
+    if (Array.isArray(arg)) {
+      setDate(undefined);
+      setDates(arg);
+    } else {
+      setDate(arg);
+      setDates(undefined);
     }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      reference1: now,
-      reference2: next
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSelect", function (arg) {
-      if (Array.isArray(arg)) {
-        _this.setState({
-          date: undefined,
-          dates: arg
-        });
-      } else {
-        _this.setState({
-          date: arg,
-          dates: undefined
-        });
-      }
-    });
-
-    return _this;
-  }
-
-  var _proto = DualCalendar.prototype;
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$state = this.state,
-        date = _this$state.date,
-        dates = _this$state.dates,
-        reference1 = _this$state.reference1,
-        reference2 = _this$state.reference2;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      justify: "center",
-      pad: "large",
-      direction: "row",
-      gap: "small"
-    }, _react["default"].createElement(_grommet.Calendar, {
-      animate: false,
-      showAdjacentDays: false,
-      range: true,
-      date: date,
-      dates: dates,
-      onSelect: this.onSelect,
-      reference: reference1.toISOString(),
-      onReference: function onReference(reference) {
-        var refDate = new Date(reference);
-        var nextDate = new Date(refDate);
-        nextDate.setMonth(refDate.getMonth() + 1, 1);
-
-        _this2.setState({
-          reference1: refDate,
-          reference2: nextDate
-        });
-      },
-      header: function header(_ref) {
-        var currentDate = _ref.date,
-            locale = _ref.locale,
-            onPreviousMonth = _ref.onPreviousMonth,
-            previousInBound = _ref.previousInBound;
-        return _react["default"].createElement(_grommet.Box, {
-          direction: "row",
-          align: "center",
-          justify: "between"
-        }, _react["default"].createElement(_grommet.Button, {
-          disabled: !previousInBound,
-          icon: _react["default"].createElement(_grommetIcons.Previous, null),
-          onClick: onPreviousMonth
-        }), _react["default"].createElement(_grommet.Heading, {
-          level: 3,
-          margin: "none"
-        }, currentDate.toLocaleDateString(locale, {
-          month: 'long',
-          year: 'numeric'
-        })), _react["default"].createElement(_grommetIcons.Blank, null));
-      }
-    }), _react["default"].createElement(_grommet.Calendar, {
-      animate: false,
-      showAdjacentDays: false,
-      date: date,
-      dates: dates,
-      range: true,
-      onSelect: this.onSelect,
-      reference: reference2.toISOString(),
-      onReference: function onReference(reference) {
-        var refDate = new Date(reference);
-        var priorDate = new Date(refDate);
-        priorDate.setMonth(refDate.getMonth() - 1, 1);
-
-        _this2.setState({
-          reference1: priorDate,
-          reference2: refDate
-        });
-      },
-      header: function header(_ref2) {
-        var currentDate = _ref2.date,
-            locale = _ref2.locale,
-            onNextMonth = _ref2.onNextMonth,
-            nextInBound = _ref2.nextInBound;
-        return _react["default"].createElement(_grommet.Box, {
-          direction: "row",
-          align: "center",
-          justify: "between"
-        }, _react["default"].createElement(_grommetIcons.Blank, null), _react["default"].createElement(_grommet.Heading, {
-          level: 3,
-          margin: "none"
-        }, currentDate.toLocaleDateString(locale, {
-          month: 'long',
-          year: 'numeric'
-        })), _react["default"].createElement(_grommet.Button, {
-          disabled: !nextInBound,
-          icon: _react["default"].createElement(_grommetIcons.Next, null),
-          onClick: onNextMonth
-        }));
-      }
-    })));
   };
 
-  return DualCalendar;
-}(_react.Component);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    justify: "center",
+    pad: "large",
+    direction: "row",
+    gap: "small"
+  }, _react["default"].createElement(_grommet.Calendar, {
+    animate: false,
+    showAdjacentDays: false,
+    range: true,
+    date: date,
+    dates: dates,
+    onSelect: onSelect,
+    reference: reference1.toISOString(),
+    onReference: function onReference(reference) {
+      var refDate = new Date(reference);
+      var nextDate = new Date(refDate);
+      nextDate.setMonth(refDate.getMonth() + 1, 1);
+      setReference1(refDate);
+      setReference2(nextDate);
+    },
+    header: function header(_ref) {
+      var currentDate = _ref.date,
+          locale = _ref.locale,
+          onPreviousMonth = _ref.onPreviousMonth,
+          previousInBound = _ref.previousInBound;
+      return _react["default"].createElement(_grommet.Box, {
+        direction: "row",
+        align: "center",
+        justify: "between"
+      }, _react["default"].createElement(_grommet.Button, {
+        disabled: !previousInBound,
+        icon: _react["default"].createElement(_grommetIcons.Previous, null),
+        onClick: onPreviousMonth
+      }), _react["default"].createElement(_grommet.Heading, {
+        level: 3,
+        margin: "none"
+      }, currentDate.toLocaleDateString(locale, {
+        month: 'long',
+        year: 'numeric'
+      })), _react["default"].createElement(_grommetIcons.Blank, null));
+    }
+  }), _react["default"].createElement(_grommet.Calendar, {
+    animate: false,
+    showAdjacentDays: false,
+    date: date,
+    dates: dates,
+    range: true,
+    onSelect: onSelect,
+    reference: reference2.toISOString(),
+    onReference: function onReference(reference) {
+      var refDate = new Date(reference);
+      var priorDate = new Date(refDate);
+      priorDate.setMonth(refDate.getMonth() - 1, 1);
+      setReference1(priorDate);
+      setReference2(refDate);
+    },
+    header: function header(_ref2) {
+      var currentDate = _ref2.date,
+          locale = _ref2.locale,
+          onNextMonth = _ref2.onNextMonth,
+          nextInBound = _ref2.nextInBound;
+      return _react["default"].createElement(_grommet.Box, {
+        direction: "row",
+        align: "center",
+        justify: "between"
+      }, _react["default"].createElement(_grommetIcons.Blank, null), _react["default"].createElement(_grommet.Heading, {
+        level: 3,
+        margin: "none"
+      }, currentDate.toLocaleDateString(locale, {
+        month: 'long',
+        year: 'numeric'
+      })), _react["default"].createElement(_grommet.Button, {
+        disabled: !nextInBound,
+        icon: _react["default"].createElement(_grommetIcons.Next, null),
+        onClick: onNextMonth
+      }));
+    }
+  })));
+};
 
 (0, _react2.storiesOf)('Calendar', module).add('Dual', function () {
   return _react["default"].createElement(DualCalendar, null);

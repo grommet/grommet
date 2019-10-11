@@ -1,10 +1,4 @@
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { createRef, Component } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Search } from "grommet-icons/es6/icons/Search";
 import { Box, Image, Grommet, Text, TextInput } from 'grommet';
@@ -57,154 +51,122 @@ var folks = [{
   imageUrl: 'https://s.gravatar.com/avatar/4ec9c3a91da89f278e4482811caad7f3?s=80'
 }];
 
-var CustomSuggestionsTextInput =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(CustomSuggestionsTextInput, _Component);
+var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
+  var _useState = useState(''),
+      value = _useState[0],
+      setValue = _useState[1];
 
-  function CustomSuggestionsTextInput() {
-    var _this;
+  var _useState2 = useState(false),
+      suggestionOpen = _useState2[0],
+      setSuggestionOpen = _useState2[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var _useState3 = useState([]),
+      suggestedFolks = _useState3[0],
+      setSuggestedFolks = _useState3[1];
+
+  var _useState4 = useState(),
+      updateState = _useState4[1];
+
+  var forceUpdate = useCallback(function () {
+    return updateState({});
+  }, []);
+  var boxRef = useRef();
+  useEffect(function () {
+    forceUpdate();
+  }, []);
+
+  var onChange = function onChange(event) {
+    var newValue = event.target.value;
+    setValue(newValue);
+
+    if (!newValue.trim()) {
+      setSuggestedFolks([]);
+    } else {
+      // simulate an async call to the backend
+      setTimeout(function () {
+        return setSuggestedFolks(folks);
+      }, 300);
     }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      value: '',
-      suggestionOpen: false,
-      suggestedFolks: []
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "boxRef", createRef());
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
-      return _this.setState({
-        value: event.target.value
-      }, function () {
-        var value = _this.state.value;
-
-        if (!value.trim()) {
-          _this.setState({
-            suggestedFolks: []
-          });
-        } else {
-          // simulate an async call to the backend
-          setTimeout(function () {
-            return _this.setState({
-              suggestedFolks: folks
-            });
-          }, 300);
-        }
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSelect", function (event) {
-      return _this.setState({
-        value: event.suggestion.value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderSuggestions", function () {
-      var _this$state = _this.state,
-          value = _this$state.value,
-          suggestedFolks = _this$state.suggestedFolks;
-      return suggestedFolks.filter(function (_ref) {
-        var name = _ref.name;
-        return name.toLowerCase().indexOf(value.toLowerCase()) >= 0;
-      }).map(function (_ref2, index, list) {
-        var name = _ref2.name,
-            imageUrl = _ref2.imageUrl;
-        return {
-          label: React.createElement(Box, {
-            direction: "row",
-            align: "center",
-            gap: "small",
-            border: index < list.length - 1 ? 'bottom' : undefined,
-            pad: "small"
-          }, React.createElement(Image, {
-            width: "48px",
-            src: imageUrl,
-            style: {
-              borderRadius: '100%'
-            }
-          }), React.createElement(Text, null, React.createElement("strong", null, name))),
-          value: name
-        };
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = CustomSuggestionsTextInput.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    this.forceUpdate();
   };
 
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$state2 = this.state,
-        suggestionOpen = _this$state2.suggestionOpen,
-        value = _this$state2.value;
-    return React.createElement(Grommet, {
-      theme: myCustomTheme,
-      full: true
-    }, React.createElement(Box, {
-      background: "dark-1",
-      fill: true,
-      align: "center",
-      pad: {
-        top: 'large'
-      }
-    }, React.createElement(Box, {
-      ref: this.boxRef,
-      width: "large",
-      direction: "row",
-      align: "center",
-      pad: {
-        horizontal: 'small',
-        vertical: 'xsmall'
-      },
-      round: "small",
-      elevation: suggestionOpen ? 'medium' : undefined,
-      border: {
-        side: 'all',
-        color: suggestionOpen ? 'transparent' : 'border'
-      },
-      style: suggestionOpen ? {
-        borderBottomLeftRadius: '0px',
-        borderBottomRightRadius: '0px'
-      } : undefined
-    }, React.createElement(Search, {
-      color: "brand"
-    }), React.createElement(TextInput, {
-      type: "search",
-      dropTarget: this.boxRef.current,
-      plain: true,
-      value: value,
-      onChange: this.onChange,
-      onSelect: this.onSelect,
-      suggestions: this.renderSuggestions(),
-      placeholder: "Enter your name...",
-      onSuggestionsOpen: function onSuggestionsOpen() {
-        return _this2.setState({
-          suggestionOpen: true
-        });
-      },
-      onSuggestionsClose: function onSuggestionsClose() {
-        return _this2.setState({
-          suggestionOpen: false
-        });
-      }
-    }))));
+  var onSelect = function onSelect(event) {
+    return setValue(event.suggestion.value);
   };
 
-  return CustomSuggestionsTextInput;
-}(Component);
+  var renderSuggestions = function renderSuggestions() {
+    return suggestedFolks.filter(function (_ref) {
+      var name = _ref.name;
+      return name.toLowerCase().indexOf(value.toLowerCase()) >= 0;
+    }).map(function (_ref2, index, list) {
+      var name = _ref2.name,
+          imageUrl = _ref2.imageUrl;
+      return {
+        label: React.createElement(Box, {
+          direction: "row",
+          align: "center",
+          gap: "small",
+          border: index < list.length - 1 ? 'bottom' : undefined,
+          pad: "small"
+        }, React.createElement(Image, {
+          width: "48px",
+          src: imageUrl,
+          style: {
+            borderRadius: '100%'
+          }
+        }), React.createElement(Text, null, React.createElement("strong", null, name))),
+        value: name
+      };
+    });
+  };
+
+  return React.createElement(Grommet, {
+    theme: myCustomTheme,
+    full: true
+  }, React.createElement(Box, {
+    background: "dark-1",
+    fill: true,
+    align: "center",
+    pad: {
+      top: 'large'
+    }
+  }, React.createElement(Box, {
+    ref: boxRef,
+    width: "large",
+    direction: "row",
+    align: "center",
+    pad: {
+      horizontal: 'small',
+      vertical: 'xsmall'
+    },
+    round: "small",
+    elevation: suggestionOpen ? 'medium' : undefined,
+    border: {
+      side: 'all',
+      color: suggestionOpen ? 'transparent' : 'border'
+    },
+    style: suggestionOpen ? {
+      borderBottomLeftRadius: '0px',
+      borderBottomRightRadius: '0px'
+    } : undefined
+  }, React.createElement(Search, {
+    color: "brand"
+  }), React.createElement(TextInput, {
+    type: "search",
+    dropTarget: boxRef.current,
+    plain: true,
+    value: value,
+    onChange: onChange,
+    onSelect: onSelect,
+    suggestions: renderSuggestions(),
+    placeholder: "Enter your name...",
+    onSuggestionsOpen: function onSuggestionsOpen() {
+      return setSuggestionOpen(true);
+    },
+    onSuggestionsClose: function onSuggestionsClose() {
+      return setSuggestionOpen(false);
+    }
+  }))));
+};
 
 storiesOf('TextInput', module).add('Custom', function () {
   return React.createElement(CustomSuggestionsTextInput, null);
