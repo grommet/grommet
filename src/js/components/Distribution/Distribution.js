@@ -16,12 +16,16 @@ Value.propTypes = {
 };
 
 const Distribution = ({
-  basis,
-  children,
-  direction,
+  basis = undefined,
+  children = value => (
+    <Box fill border>
+      <Text>{value.value}</Text>
+    </Box>
+  ),
+  direction = 'row',
   fill,
-  gap,
-  values,
+  gap = 'xsmall',
+  values = [],
   ...rest
 }) => {
   if (values.length === 1) {
@@ -100,18 +104,6 @@ const Distribution = ({
     );
   }
   return null;
-};
-
-Distribution.defaultProps = {
-  basis: undefined,
-  children: value => (
-    <Box fill border>
-      <Text>{value.value}</Text>
-    </Box>
-  ),
-  direction: 'row',
-  gap: 'xsmall',
-  values: [],
 };
 
 let DistributionDoc;
