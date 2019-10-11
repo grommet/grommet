@@ -18,32 +18,32 @@ declare const colors: {
 };
   
 type Colors = typeof colors & {
-  'accent-1': string;
-  'accent-2': string;
-  'accent-3': string;
-  'accent-4': string;
-  'neutral-1': string;
-  'neutral-2': string;
-  'neutral-3': string;
-  'neutral-4': string;
-  'dark-1': string;
-  'dark-2': string;
-  'dark-3': string;
+  'accent-1': ColorType;
+  'accent-2': ColorType;
+  'accent-3': ColorType;
+  'accent-4': ColorType;
+  'neutral-1': ColorType;
+  'neutral-2': ColorType;
+  'neutral-3': ColorType;
+  'neutral-4': ColorType;
+  'dark-1': ColorType;
+  'dark-2': ColorType;
+  'dark-3': ColorType;
   'dark-4': string;
-  'dark-5': string;
-  'dark-6': string;
-  'light-1': string;
-  'light-2': string;
-  'light-3': string;
-  'light-4': string;
-  'light-5': string;
-  'light-6': string;
-  'status-critical': string;
-  'status-error': string;
-  'status-warning': string;
-  'status-ok': string;
-  'status-unknown': string;
-  'status-disabled': string;
+  'dark-5': ColorType;
+  'dark-6': ColorType;
+  'light-1': ColorType;
+  'light-2': ColorType;
+  'light-3': ColorType;
+  'light-4': ColorType;
+  'light-5': ColorType;
+  'light-6': ColorType;
+  'status-critical': ColorType;
+  'status-error': ColorType;
+  'status-warning': ColorType;
+  'status-ok': ColorType;
+  'status-unknown': ColorType;
+  'status-disabled': ColorType;
 };
 
 export interface ThemeType {
@@ -159,16 +159,7 @@ export interface ThemeType {
       maxWidth: string;
     };
     hover: {
-      background: {
-        dark: {
-          color: ColorType;
-          opacity: OpacityType;
-        };
-        light: {
-          color: ColorType;
-          opacity: OpacityType;
-        };
-      };
+      background: BackgroundType;
       color: ColorType;
     };
     input: {
@@ -181,7 +172,7 @@ export interface ThemeType {
       weak: number;
     };
     selected: {
-      background: string;
+      background: BackgroundType;
       color: ColorType;
     };
     spacing: string;
@@ -218,9 +209,9 @@ export interface ThemeType {
       width: string;
       radius: string;
     };
-    primary: {};
+    primary: ColorType;
     disabled: {
-      opacity: number;
+      opacity: OpacityType;
     };
     minWidth: string;
     maxWidth: string;
@@ -286,10 +277,7 @@ export interface ThemeType {
     size: string;
     toggle: {
       color: ColorType;
-      background: {
-        dark: string;
-        light: string;
-      };
+      background: BackgroundType;
       radius: string;
       size: string;
       knob: { extend: string };
@@ -368,10 +356,7 @@ export interface ThemeType {
         horizontal: string;
         vertical: string;
       };
-      background: {
-        dark: string;
-        light: string;
-      };
+      background: BackgroundType;
     };
     icons: {
       ascending: any;
@@ -561,7 +546,7 @@ export interface ThemeType {
     };
   };
   layer: {
-    background: string;
+    background: BackgroundType;
     border: {
       radius: string;
     };
@@ -569,7 +554,7 @@ export interface ThemeType {
       zIndex: string;
     };
     overlay: {
-      background: string;
+      background: BackgroundType;
     };
     responsiveBreakpoint: string;
     zIndex: string;
@@ -733,7 +718,7 @@ export interface ThemeType {
   };
   video: {
     captions: {
-      background: string;
+      background: BackgroundType;
     };
     icons: {
       closedCaption: any;
