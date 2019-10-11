@@ -1,4 +1,10 @@
-import React, { useEffect, useContext, useState, useRef } from 'react';
+import React, {
+  useEffect,
+  useContext,
+  useState,
+  useRef,
+  useCallback,
+} from 'react';
 import { compose } from 'recompose';
 import styled from 'styled-components';
 
@@ -27,6 +33,7 @@ const RangeSelector = ({
   invert,
   round,
   theme: propsTheme,
+  size,
   ...rest
 }) => {
   const context = useContext(ThemeContext);
@@ -136,15 +143,23 @@ const RangeSelector = ({
     setChanging(undefined);
   };
 
-  useEffect(() => {
+  const addMouseEvent = useCallback(() => {
     window.addEventListener('mousemove', mouseMove);
     window.addEventListener('mouseup', mouseUp);
+  }, [mouseMove, mouseUp]);
+
+  const removeMouseEvent = useCallback(() => {
+    window.removeEventListener('mousemove', mouseMove);
+    window.removeEventListener('mouseup', mouseUp);
+  }, [mouseMove, mouseUp]);
+
+  useEffect(() => {
+    addMouseEvent();
 
     return () => {
-      window.removeEventListener('mousemove', mouseMove);
-      window.removeEventListener('mouseup', mouseUp);
+      removeMouseEvent();
     };
-  }, [changing]);
+  }, [changing, addMouseEvent, removeMouseEvent]);
 
   return (
     <Container
@@ -251,6 +266,7 @@ RangeSelector.defaultProps = {
   opacity: 'medium',
   step: 1,
   values: [],
+  size: 'medium',
 };
 
 let RangeSelectorDoc;

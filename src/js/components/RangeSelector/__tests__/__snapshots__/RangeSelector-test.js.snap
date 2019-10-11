@@ -4553,7 +4553,6 @@ exports[`RangeSelector size 1`] = `
 >
   <div
     className="c1 c2"
-    size="xxsmall"
   >
     <div
       className="c3"
@@ -4641,7 +4640,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    size="xsmall"
   >
     <div
       className="c3"
@@ -4729,7 +4727,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    size="small"
   >
     <div
       className="c3"
@@ -4817,7 +4814,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    size="medium"
   >
     <div
       className="c3"
@@ -4905,7 +4901,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    size="large"
   >
     <div
       className="c3"
@@ -4993,7 +4988,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    size="xlarge"
   >
     <div
       className="c3"
@@ -5081,7 +5075,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    size="full"
   >
     <div
       className="c3"
