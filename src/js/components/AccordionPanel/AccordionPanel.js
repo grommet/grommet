@@ -32,7 +32,7 @@ const AccordionPanel = ({
     theme,
   );
 
-  const onHandleMouseOver = () => (...args) => {
+  const onHandleMouseOver = (...args) => {
     const { dark } = theme;
 
     setHover(dark ? 'light-4' : 'dark-3');
@@ -40,13 +40,13 @@ const AccordionPanel = ({
     if (onMouseOver) onMouseOver(args);
   };
 
-  const onHandleMouseOut = () => (...args) => {
+  const onHandleMouseOut = (...args) => {
     setHover(undefined);
 
     if (onMouseOut) onMouseOut(args);
   };
 
-  const onHandleFocus = () => (...args) => {
+  const onHandleFocus = (...args) => {
     const { dark } = theme;
 
     setHover(dark ? 'light-4' : 'dark-3');
@@ -54,7 +54,7 @@ const AccordionPanel = ({
     if (onFocus) onFocus(args);
   };
 
-  const onHandleBlur = () => (...args) => {
+  const onHandleBlur = (...args) => {
     setHover(undefined);
 
     if (onBlur) onBlur(args);
@@ -75,10 +75,10 @@ const AccordionPanel = ({
               aria-selected={active}
               aria-expanded={active}
               onClick={onPanelChange}
-              onMouseOver={onHandleMouseOver()}
-              onMouseOut={onHandleMouseOut()}
-              onFocus={onHandleFocus()}
-              onBlur={onHandleBlur()}
+              onMouseOver={onHandleMouseOver}
+              onMouseOut={onHandleMouseOut}
+              onFocus={onHandleFocus}
+              onBlur={onHandleBlur}
             >
               {header || (
                 <Box align="center" direction="row" justify="between" {...rest}>
