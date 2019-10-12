@@ -7,7 +7,6 @@ import { AccordionContext } from './AccordionContext';
 const activeAsArray = active =>
   typeof active === 'number' ? [active] : active;
 
-/* eslint-disable react/destructuring-assignment */
 function Accordion({
   onActive,
   multiple,
