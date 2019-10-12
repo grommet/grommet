@@ -29,7 +29,7 @@ const stopLabelClick = event => {
   }
 };
 
-function CheckBox({
+const CheckBox = ({
   indeterminate,
   toggle,
   checked,
@@ -42,8 +42,8 @@ function CheckBox({
   onChange,
   reverse,
   theme,
-  ...restProps
-}) {
+  ...rest
+}) => {
   if (checked && indeterminate) {
     console.warn(
       'Checkbox cannot be "checked" and "indeterminate" at the same time.',
@@ -139,7 +139,7 @@ function CheckBox({
       {...themeableProps}
     >
       <StyledCheckBoxInput
-        {...restProps}
+        {...rest}
         ref={forwardRef}
         type="checkbox"
         {...removeUndefined({
@@ -174,7 +174,7 @@ function CheckBox({
       {second}
     </StyledCheckBoxContainer>
   );
-}
+};
 
 CheckBox.defaultProps = {};
 Object.setPrototypeOf(CheckBox.defaultProps, defaultProps);
