@@ -7,15 +7,15 @@ import { AccordionContext } from './AccordionContext';
 const activeAsArray = active =>
   typeof active === 'number' ? [active] : active;
 
-function Accordion({
+const Accordion = ({
   onActive,
   multiple,
   animate,
   children,
   messages,
   activeIndex,
-  ...restProps
-}) {
+  ...rest
+}) => {
   const [activeIndexes, setActiveIndexes] = useState([]);
   const [stateActiveIndex, setStateActiveIndex] = useState();
 
@@ -49,10 +49,10 @@ function Accordion({
   };
 
   // eslint-disable-next-line no-param-reassign
-  delete restProps.onActive;
+  delete rest.onActive;
 
   return (
-    <Box role="tablist" {...restProps}>
+    <Box role="tablist" {...rest}>
       {Children.toArray(children).map((panel, index) => (
         <AccordionContext.Provider
           key={`accordion-panel_${index + 0}`}
