@@ -14,7 +14,7 @@ import { withForwardRef } from '../hocs';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
 
-function AccordionPanel({
+const AccordionPanel =({
   onMouseOut,
   onMouseOver,
   onFocus,
@@ -23,8 +23,8 @@ function AccordionPanel({
   label,
   theme,
   children,
-  ...restProps
-}) {
+  ...rest
+}) => {
   const [hover, setHover] = useState();
   const { dark } = theme;
 
@@ -86,7 +86,7 @@ function AccordionPanel({
                   align="center"
                   direction="row"
                   justify="between"
-                  {...restProps}
+                  {...rest}
                 >
                   {typeof label === 'string' ? (
                     <Box pad={{ horizontal: 'xsmall' }}>
