@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -60,59 +60,35 @@ const findTarget = target => {
   return target;
 };
 
-class Diagram extends Component {
-  static defaultProps = { connections: [] };
+const Diagram = ({ connections, theme, ...rest }) => {
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [connectionPoints, setConnectionPoints] = useState();
+  const [prevConnections, setPrevConnections] = useState();
+  const svgRef = useRef();
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    // track whether the connections array changes so we can trigger re-placing
-    if (nextProps.connections !== prevState.connections) {
-      return {
-        connections: nextProps.connections,
-        connectionPoints: undefined,
-      };
-    }
-    return null;
+  // track whether the connections array changes so we can trigger re-placing
+  // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
+  if (connections !== prevConnections) {
+    setPrevConnections(connections);
+    setConnectionPoints(undefined);
   }
 
-  state = { height: 0, width: 0 };
-
-  svgRef = React.createRef();
-
-  componentDidMount() {
-    window.addEventListener('resize', this.onResize);
-    this.onResize();
-  }
-
-  componentDidUpdate() {
-    const { connectionPoints } = this.state;
-    if (!connectionPoints) {
-      this.placeConnections();
-    }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
-  }
-
-  onResize = () => {
-    const { width, height } = this.state;
-    const svg = this.svgRef.current;
+  const onResize = () => {
+    const svg = svgRef.current;
     if (svg) {
       const rect = svg.getBoundingClientRect();
       if (rect.width !== width || rect.height !== height) {
-        this.setState({
-          width: rect.width,
-          height: rect.height,
-          connectionPoints: undefined,
-        });
+        setWidth(rect.width);
+        setHeight(rect.height);
+        setConnectionPoints(undefined);
       }
     }
   };
 
-  placeConnections() {
-    const { connections } = this.props;
-    const containerRect = this.svgRef.current.getBoundingClientRect();
-    const connectionPoints = connections.map(
+  const placeConnections = () => {
+    const containerRect = svgRef.current.getBoundingClientRect();
+    const updatedConnectionPoints = connections.map(
       ({ anchor, fromTarget, toTarget }) => {
         let points;
         const fromElement = findTarget(fromTarget);
@@ -165,75 +141,83 @@ class Diagram extends Component {
         return points;
       },
     );
-    this.setState({ connectionPoints });
-  }
+    setConnectionPoints(updatedConnectionPoints);
+  };
 
-  render() {
-    const { connections, theme, ...rest } = this.props;
-    const { connectionPoints, height, width } = this.state;
+  useEffect(() => {
+    window.addEventListener('resize', onResize);
+    onResize();
 
-    let paths;
-    if (connectionPoints) {
-      paths = connections.map(
-        (
-          { anchor, color, offset, round, thickness, type, ...connectionRest },
-          index,
-        ) => {
-          let path;
-          const cleanedRest = { ...connectionRest };
-          delete cleanedRest.fromTarget;
-          delete cleanedRest.toTarget;
-          const points = connectionPoints[index];
-          if (points) {
-            const offsetWidth = offset
-              ? parseMetricToNum(theme.global.edgeSize[offset])
-              : 0;
-            const d = COMMANDS[type || 'curved'](
-              points[0],
-              points[1],
-              offsetWidth,
-              anchor,
-            );
-            const strokeWidth = thickness
-              ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness)
-              : 1;
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
 
-            path = (
-              <path
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
-                {...cleanedRest}
-                stroke={normalizeColor(
-                  color || theme.diagram.line.color,
-                  theme,
-                )}
-                strokeWidth={strokeWidth}
-                strokeLinecap={round ? 'round' : 'butt'}
-                strokeLinejoin={round ? 'round' : 'miter'}
-                fill="none"
-                d={d}
-              />
-            );
-          }
-
-          return path;
-        },
-      );
+  useEffect(() => {
+    if (!connectionPoints) {
+      placeConnections();
     }
+  }, [connectionPoints]);
 
-    return (
-      <StyledDiagram
-        ref={this.svgRef}
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio="xMinYMin meet"
-        {...rest}
-      >
-        <g>{paths}</g>
-      </StyledDiagram>
+  let paths;
+  if (connectionPoints) {
+    paths = connections.map(
+      (
+        { anchor, color, offset, round, thickness, type, ...connectionRest },
+        index,
+      ) => {
+        let path;
+        const cleanedRest = { ...connectionRest };
+        delete cleanedRest.fromTarget;
+        delete cleanedRest.toTarget;
+        const points = connectionPoints[index];
+        if (points) {
+          const offsetWidth = offset
+            ? parseMetricToNum(theme.global.edgeSize[offset])
+            : 0;
+          const d = COMMANDS[type || 'curved'](
+            points[0],
+            points[1],
+            offsetWidth,
+            anchor,
+          );
+          const strokeWidth = thickness
+            ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness)
+            : 1;
+
+          path = (
+            <path
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              {...cleanedRest}
+              stroke={normalizeColor(color || theme.diagram.line.color, theme)}
+              strokeWidth={strokeWidth}
+              strokeLinecap={round ? 'round' : 'butt'}
+              strokeLinejoin={round ? 'round' : 'miter'}
+              fill="none"
+              d={d}
+            />
+          );
+        }
+
+        return path;
+      },
     );
   }
-}
 
+  return (
+    <StyledDiagram
+      ref={svgRef}
+      viewBox={`0 0 ${width} ${height}`}
+      preserveAspectRatio="xMinYMin meet"
+      {...rest}
+    >
+      <g>{paths}</g>
+    </StyledDiagram>
+  );
+};
+
+Diagram.defaultProps = { connections: [] };
 Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 
 let DiagramDoc;
