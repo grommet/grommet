@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -29,160 +29,151 @@ const stopLabelClick = event => {
   }
 };
 
-class CheckBox extends Component {
-  constructor(props) {
-    super(props);
-    const { checked, indeterminate, toggle } = props;
-
-    if (checked && indeterminate) {
-      console.warn(
-        'Checkbox cannot be "checked" and "indeterminate" at the same time.',
-      );
-    }
-
-    if (toggle && indeterminate) {
-      console.warn(
-        'Checkbox of type toggle does not have "indeterminate" state.',
-      );
-    }
-  }
-
-  render() {
-    const {
-      checked,
-      disabled,
-      focus,
-      forwardRef,
-      id,
-      label,
-      name,
-      onChange,
-      reverse,
-      theme,
-      toggle,
-      indeterminate,
-      ...rest
-    } = this.props;
-
-    const themeableProps = {
-      checked,
-      disabled,
-      focus,
-      reverse,
-      toggle,
-      indeterminate,
-    };
-
-    let hidden;
-    if (disabled && checked) {
-      hidden = <input name={name} type="hidden" value="true" />;
-    }
-
-    const {
-      checked: CheckedIcon,
-      indeterminate: IndeterminateIcon,
-    } = theme.checkBox.icons;
-
-    let borderColor = normalizeColor(theme.checkBox.border.color, theme);
-    if (checked) {
-      borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
-    }
-
-    const visual = toggle ? (
-      <StyledCheckBoxToggle {...themeableProps}>
-        <StyledCheckBoxKnob {...themeableProps} />
-      </StyledCheckBoxToggle>
-    ) : (
-      <StyledCheckBoxBox
-        as={Box}
-        align="center"
-        justify="center"
-        width={theme.checkBox.size}
-        height={theme.checkBox.size}
-        border={{
-          size: theme.checkBox.border.width,
-          color: borderColor,
-        }}
-        round={theme.checkBox.check.radius}
-        {...themeableProps}
-      >
-        {!indeterminate &&
-          checked &&
-          (CheckedIcon ? (
-            <CheckedIcon theme={theme} as={StyledCheckBoxIcon} />
-          ) : (
-            <StyledCheckBoxIcon
-              theme={theme}
-              viewBox="0 0 24 24"
-              preserveAspectRatio="xMidYMid meet"
-              {...themeableProps}
-            >
-              <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
-            </StyledCheckBoxIcon>
-          ))}
-        {!checked &&
-          indeterminate &&
-          (IndeterminateIcon ? (
-            <IndeterminateIcon theme={theme} as={StyledCheckBoxIcon} />
-          ) : (
-            <StyledCheckBoxIcon
-              theme={theme}
-              viewBox="0 0 24 24"
-              preserveAspectRatio="xMidYMid meet"
-              {...themeableProps}
-            >
-              <path fill="none" d="M6,12 L18,12" />
-            </StyledCheckBoxIcon>
-          ))}
-      </StyledCheckBoxBox>
-    );
-
-    const side = reverse ? 'left' : 'right';
-    const checkBoxNode = (
-      <StyledCheckBox
-        as={Box}
-        align="center"
-        justify="center"
-        margin={label && { [side]: theme.checkBox.gap || 'small' }}
-        {...themeableProps}
-      >
-        <StyledCheckBoxInput
-          {...rest}
-          ref={forwardRef}
-          type="checkbox"
-          {...removeUndefined({
-            id,
-            name,
-            checked,
-            disabled,
-            onChange,
-          })}
-          {...themeableProps}
-        />
-        {visual}
-        {hidden}
-      </StyledCheckBox>
-    );
-
-    const normalizedLabel =
-      typeof label === 'string' ? <span>{label}</span> : label;
-
-    const first = reverse ? normalizedLabel : checkBoxNode;
-    const second = reverse ? checkBoxNode : normalizedLabel;
-
-    return (
-      <StyledCheckBoxContainer
-        reverse={reverse}
-        {...removeUndefined({ htmlFor: id, disabled })}
-        checked={checked}
-        onClick={stopLabelClick}
-        {...themeableProps}
-      >
-        {first}
-        {second}
-      </StyledCheckBoxContainer>
+function CheckBox({
+  indeterminate,
+  toggle,
+  checked,
+  disabled,
+  focus,
+  forwardRef,
+  id,
+  label,
+  name,
+  onChange,
+  reverse,
+  theme,
+  ...restProps
+}) {
+  if (checked && indeterminate) {
+    console.warn(
+      'Checkbox cannot be "checked" and "indeterminate" at the same time.',
     );
   }
+
+  if (toggle && indeterminate) {
+    console.warn(
+      'Checkbox of type toggle does not have "indeterminate" state.',
+    );
+  }
+
+  const themeableProps = {
+    checked,
+    disabled,
+    focus,
+    reverse,
+    toggle,
+    indeterminate,
+  };
+
+  let hidden;
+  if (disabled && checked) {
+    hidden = <input name={name} type="hidden" value="true" />;
+  }
+
+  const {
+    checked: CheckedIcon,
+    indeterminate: IndeterminateIcon,
+  } = theme.checkBox.icons;
+
+  let borderColor = normalizeColor(theme.checkBox.border.color, theme);
+  if (checked) {
+    borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
+  }
+
+  const visual = toggle ? (
+    <StyledCheckBoxToggle {...themeableProps}>
+      <StyledCheckBoxKnob {...themeableProps} />
+    </StyledCheckBoxToggle>
+  ) : (
+    <StyledCheckBoxBox
+      as={Box}
+      align="center"
+      justify="center"
+      width={theme.checkBox.size}
+      height={theme.checkBox.size}
+      border={{
+        size: theme.checkBox.border.width,
+        color: borderColor,
+      }}
+      round={theme.checkBox.check.radius}
+      {...themeableProps}
+    >
+      {!indeterminate &&
+        checked &&
+        (CheckedIcon ? (
+          <CheckedIcon theme={theme} as={StyledCheckBoxIcon} />
+        ) : (
+          <StyledCheckBoxIcon
+            theme={theme}
+            viewBox="0 0 24 24"
+            preserveAspectRatio="xMidYMid meet"
+            {...themeableProps}
+          >
+            <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
+          </StyledCheckBoxIcon>
+        ))}
+      {!checked &&
+        indeterminate &&
+        (IndeterminateIcon ? (
+          <IndeterminateIcon theme={theme} as={StyledCheckBoxIcon} />
+        ) : (
+          <StyledCheckBoxIcon
+            theme={theme}
+            viewBox="0 0 24 24"
+            preserveAspectRatio="xMidYMid meet"
+            {...themeableProps}
+          >
+            <path fill="none" d="M6,12 L18,12" />
+          </StyledCheckBoxIcon>
+        ))}
+    </StyledCheckBoxBox>
+  );
+
+  const side = reverse ? 'left' : 'right';
+  const checkBoxNode = (
+    <StyledCheckBox
+      as={Box}
+      align="center"
+      justify="center"
+      margin={label && { [side]: theme.checkBox.gap || 'small' }}
+      {...themeableProps}
+    >
+      <StyledCheckBoxInput
+        {...restProps}
+        ref={forwardRef}
+        type="checkbox"
+        {...removeUndefined({
+          id,
+          name,
+          checked,
+          disabled,
+          onChange,
+        })}
+        {...themeableProps}
+      />
+      {visual}
+      {hidden}
+    </StyledCheckBox>
+  );
+
+  const normalizedLabel =
+    typeof label === 'string' ? <span>{label}</span> : label;
+
+  const first = reverse ? normalizedLabel : checkBoxNode;
+  const second = reverse ? checkBoxNode : normalizedLabel;
+
+  return (
+    <StyledCheckBoxContainer
+      reverse={reverse}
+      {...removeUndefined({ htmlFor: id, disabled })}
+      checked={checked}
+      onClick={stopLabelClick}
+      {...themeableProps}
+    >
+      {first}
+      {second}
+    </StyledCheckBoxContainer>
+  );
 }
 
 CheckBox.defaultProps = {};
