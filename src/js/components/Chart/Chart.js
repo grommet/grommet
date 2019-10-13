@@ -1,4 +1,4 @@
-import React, { createRef, Component } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -7,7 +7,12 @@ import { normalizeColor, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { StyledChart } from './StyledChart';
-import { normalizeValues, normalizeBounds } from './utils';
+import {
+  normalizeValues,
+  normalizeBounds,
+  areNormalizedValuesEquals,
+  areNormalizedBoundsEquals,
+} from './utils';
 
 const renderBars = (values, bounds, scale, height) =>
   (values || []).map((valueArg, index) => {
@@ -111,46 +116,56 @@ const renderArea = (
   );
 };
 
-class Chart extends Component {
-  static defaultProps = {
-    color: 'accent-1',
-    overflow: false,
-    size: { width: 'medium', height: 'small' },
-    thickness: 'medium',
-    type: 'bar',
-  };
+const Chart = props => {
+  const {
+    color,
+    onClick,
+    onHover,
+    overflow,
+    round,
+    size,
+    theme,
+    thickness,
+    type,
+    values,
+    bounds,
+    ...rest
+  } = props;
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { bounds, values } = nextProps;
-    const { bounds: stateBounds, values: stateValues } = prevState;
-    if (!stateValues || values !== stateValues || bounds !== stateBounds) {
-      const nextValues = normalizeValues(values);
-      const nextBounds = normalizeBounds(bounds, nextValues);
-      return { bounds: nextBounds, values: nextValues };
-    }
-    return null;
+  const containerRef = useRef(null);
+
+  const [state, setState] = useState({
+    containerWidth: 0,
+    containerHeight: 0,
+  });
+  const {
+    containerWidth,
+    containerHeight,
+    values: valuesState,
+    bounds: boundsState,
+  } = state;
+
+  const nextValues = normalizeValues(values);
+  const nextBounds = normalizeBounds(bounds, nextValues);
+
+  if (
+    !valuesState ||
+    (!areNormalizedValuesEquals(values, valuesState) &&
+      !areNormalizedValuesEquals(valuesState, nextValues)) ||
+    (!areNormalizedBoundsEquals(bounds, boundsState) &&
+      !areNormalizedBoundsEquals(boundsState, nextBounds))
+  ) {
+    setState({ ...state, bounds: nextBounds, values: nextValues });
   }
 
-  containerRef = createRef();
-
-  state = { containerWidth: 0, containerHeight: 0 };
-
-  componentDidMount() {
-    window.addEventListener('resize', this.onResize);
-    this.onResize();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
-  }
-
-  onResize = () => {
-    const containerNode = this.containerRef.current;
+  const onResize = () => {
+    const containerNode = containerRef.current;
     if (containerNode) {
       const { parentNode } = containerNode;
       if (parentNode) {
         const rect = parentNode.getBoundingClientRect();
-        this.setState({
+        setState({
+          ...state,
           containerWidth: rect.width,
           containerHeight: rect.height,
         });
@@ -158,78 +173,81 @@ class Chart extends Component {
     }
   };
 
-  render() {
-    const {
-      color,
-      onClick,
-      onHover,
-      overflow,
-      round,
-      size,
-      theme,
-      thickness,
-      type,
-      ...rest
-    } = this.props;
-    delete rest.values;
-    const { bounds, containerWidth, containerHeight, values } = this.state;
+  useEffect(() => {
+    window.addEventListener('resize', onResize);
+    onResize();
 
-    const sizeWidth = typeof size === 'string' ? size : size.width || 'medium';
-    const sizeHeight =
-      typeof size === 'string' ? size : size.height || 'medium';
-    const width =
-      sizeWidth === 'full'
-        ? containerWidth
-        : parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
-    const height =
-      sizeHeight === 'full'
-        ? containerHeight
-        : parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
-    const strokeWidth = parseMetricToNum(theme.global.edgeSize[thickness]);
-    const scale = [
-      width / (bounds[0][1] - bounds[0][0]),
-      height / (bounds[1][1] - bounds[1][0]),
-    ];
-    const viewBox = overflow
-      ? `0 0 ${width} ${height}`
-      : `-${strokeWidth / 2} -${strokeWidth / 2} ${width +
-          strokeWidth} ${height + strokeWidth}`;
-    const colorName = typeof color === 'object' ? color.color : color;
-    const opacity = color.opacity
-      ? theme.global.opacity[color.opacity]
-      : undefined;
+    return function cleanup() {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
 
-    let contents;
-    if (type === 'bar') {
-      contents = renderBars(values, bounds, scale, height);
-    } else if (type === 'line') {
-      contents = renderLine(values, bounds, scale, height, this.props);
-    } else if (type === 'area') {
-      contents = renderArea(values, bounds, scale, height, this.props);
-    }
+  if (!boundsState || !valuesState) return null;
 
-    return (
-      <StyledChart
-        ref={this.containerRef}
-        viewBox={viewBox}
-        preserveAspectRatio="none"
-        width={size === 'full' ? '100%' : width}
-        height={size === 'full' ? '100%' : height}
-        {...rest}
-      >
-        <g
-          stroke={normalizeColor(colorName, theme)}
-          strokeWidth={strokeWidth}
-          strokeLinecap={round ? 'round' : 'butt'}
-          strokeLinejoin={round ? 'round' : 'miter'}
-          opacity={opacity}
-        >
-          {contents}
-        </g>
-      </StyledChart>
-    );
+  delete rest.values;
+
+  const sizeWidth = typeof size === 'string' ? size : size.width || 'medium';
+  const sizeHeight = typeof size === 'string' ? size : size.height || 'medium';
+  const width =
+    sizeWidth === 'full'
+      ? containerWidth
+      : parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
+  const height =
+    sizeHeight === 'full'
+      ? containerHeight
+      : parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
+  const strokeWidth = parseMetricToNum(theme.global.edgeSize[thickness]);
+  const scale = [
+    width / (boundsState[0][1] - boundsState[0][0]),
+    height / (boundsState[1][1] - boundsState[1][0]),
+  ];
+  const viewBox = overflow
+    ? `0 0 ${width} ${height}`
+    : `-${strokeWidth / 2} -${strokeWidth / 2} ${width + strokeWidth} ${height +
+        strokeWidth}`;
+  const colorName = typeof color === 'object' ? color.color : color;
+  const opacity = color.opacity
+    ? theme.global.opacity[color.opacity]
+    : undefined;
+
+  let contents;
+  if (type === 'bar') {
+    contents = renderBars(valuesState, boundsState, scale, height);
+  } else if (type === 'line') {
+    contents = renderLine(valuesState, boundsState, scale, height, props);
+  } else if (type === 'area') {
+    contents = renderArea(valuesState, boundsState, scale, height, props);
   }
-}
+
+  return (
+    <StyledChart
+      ref={containerRef}
+      viewBox={viewBox}
+      preserveAspectRatio="none"
+      width={size === 'full' ? '100%' : width}
+      height={size === 'full' ? '100%' : height}
+      {...rest}
+    >
+      <g
+        stroke={normalizeColor(colorName, theme)}
+        strokeWidth={strokeWidth}
+        strokeLinecap={round ? 'round' : 'butt'}
+        strokeLinejoin={round ? 'round' : 'miter'}
+        opacity={opacity}
+      >
+        {contents}
+      </g>
+    </StyledChart>
+  );
+};
+
+Chart.defaultProps = {
+  color: 'accent-1',
+  overflow: false,
+  size: { width: 'medium', height: 'small' },
+  thickness: 'medium',
+  type: 'bar',
+};
 
 Object.setPrototypeOf(Chart.defaultProps, defaultProps);
 
