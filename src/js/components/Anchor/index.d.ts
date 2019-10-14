@@ -25,6 +25,6 @@ export interface AnchorProps {
   as?: PolymorphicType;
 }
 
-declare const Anchor: React.RC<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
+declare const Anchor: React.FC<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
 
 export { Anchor };
