@@ -31,7 +31,7 @@ To open menu when menu button is focused:
 
 To navigate within menu:
 - Up/down arrow keys can be used and will loop through options
- (keeping focus within the Menu)
+(keeping focus within the Menu)
 - Tab can be used, but once the last menu item is reached, Tab will close the 
 Menu and continue through page content.
 
@@ -44,10 +44,6 @@ To make a selection:
 - Enter key is pressed.
 - Space is pressed.
 */
-
-const INDEX = {
-  NONE: 'none',
-};
 
 const Menu = props => {
   const {
@@ -74,12 +70,13 @@ const Menu = props => {
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
   const buttonRefs = {};
+  const NONE = 'none';
 
-  const [activeItemIndex, setActiveItemIndex] = useState(INDEX.NONE);
+  const [activeItemIndex, setActiveItemIndex] = useState(NONE);
   const [isOpen, setOpen] = useState(open || false);
 
   const onDropClose = () => {
-    setActiveItemIndex(INDEX.NONE);
+    setActiveItemIndex(NONE);
     setOpen(false);
   };
 
@@ -110,10 +107,7 @@ const Menu = props => {
       onDropClose(); // tab out of menu
     } else {
       let index;
-      if (
-        activeItemIndex + 1 === items.length ||
-        activeItemIndex === INDEX.NONE
-      ) {
+      if (activeItemIndex + 1 === items.length || activeItemIndex === NONE) {
         index = align.top === 'bottom' ? 0 : items.length;
       } else {
         index = activeItemIndex + 1;
@@ -137,7 +131,7 @@ const Menu = props => {
       let index;
       if (activeItemIndex - 1 < 0) {
         if (align.top === 'top' && activeItemIndex - 1 === -1) {
-          index = items.length;
+          index = items.length; // header menu button always end of buttonRefs
         } else {
           index = items.length - 1;
         }
@@ -174,6 +168,7 @@ const Menu = props => {
         a11yTitle={messages.closeMenu || 'Close Menu'}
         active={activeItemIndex === -1}
         focusIndicator={false}
+        hoverIndicator="background"
         plain={plain}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(-1)}
@@ -189,8 +184,8 @@ const Menu = props => {
     <Keyboard
       onDown={onNextMenuItem}
       onUp={onPreviousMenuItem}
-      onSpace={onSelectMenuItem}
       onEnter={onSelectMenuItem}
+      onSpace={onSelectMenuItem}
       onEsc={onDropClose}
       onTab={onDropClose}
       onKeyDown={onKeyDown}
