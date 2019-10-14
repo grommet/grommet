@@ -70,14 +70,14 @@ const Menu = props => {
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
   const buttonRefs = {};
-  const constants = {none: 'none'};
+  const constants = { none: 'none' };
   const tab = 9;
 
-  const [activeItemIndex, setActiveItemIndex] = useState(NONE);
+  const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
 
   const onDropClose = () => {
-    setActiveItemIndex(NONE);
+    setActiveItemIndex(constants.none);
     setOpen(false);
   };
 
@@ -108,7 +108,10 @@ const Menu = props => {
       onDropClose(); // tab out of menu
     } else {
       let index;
-      if (activeItemIndex + 1 === items.length || activeItemIndex === NONE) {
+      if (
+        activeItemIndex + 1 === items.length ||
+        activeItemIndex === constants.none
+      ) {
         index = align.top === 'bottom' ? 0 : items.length;
       } else {
         index = activeItemIndex + 1;
