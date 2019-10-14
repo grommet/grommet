@@ -70,7 +70,7 @@ const Menu = props => {
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
   const buttonRefs = {};
-  const NONE = 'none';
+  const constants = {none: 'none'};
   const tab = 9;
 
   const [activeItemIndex, setActiveItemIndex] = useState(NONE);
