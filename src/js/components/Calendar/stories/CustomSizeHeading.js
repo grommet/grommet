@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { deepMerge } from 'grommet/utils';
 
@@ -12,28 +12,24 @@ const customHeading = deepMerge(grommet, {
   },
 });
 
-class CustomSizeCalendar extends Component {
-  state = {};
+const CustomSizeCalendar = () => {
+  const [date, setDate] = useState();
 
-  onSelect = nextDate => {
-    const { date } = this.state;
-    this.setState({ date: nextDate !== date ? nextDate : undefined });
+  const onSelect = nextDate => {
+    setDate(nextDate !== date ? nextDate : undefined);
   };
 
-  render() {
-    const { date } = this.state;
-    return (
-      <Grommet theme={customHeading}>
-        <Box align="center" pad="large">
-          <Calendar
-            date={date}
-            onSelect={this.onSelect}
-            bounds={['2018-09-08', '2020-12-13']}
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={customHeading}>
+      <Box align="center" pad="large">
+        <Calendar
+          date={date}
+          onSelect={onSelect}
+          bounds={['2018-09-08', '2020-12-13']}
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('Calendar', module).add('Heading Size', () => <CustomSizeCalendar />);
