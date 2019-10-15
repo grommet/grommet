@@ -206,7 +206,7 @@ const Menu = props => {
         // On first tab into menu, the control button should not
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
-        tabIndex={activeItemIndex === constants.none && '-1'}
+        tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
