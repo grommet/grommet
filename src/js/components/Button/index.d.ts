@@ -4,6 +4,7 @@ import {
   AlignSelfType, 
   BackgroundType,
   ColorType,
+  FillType,
   GapType, 
   GridAreaType, 
   MarginType, 
@@ -19,7 +20,7 @@ export interface ButtonProps {
   active?: boolean;
   color?: ColorType;
   disabled?: boolean;
-  fill?: "horizontal" | "vertical" | boolean;
+  fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
   hoverIndicator?: BackgroundType | boolean;
