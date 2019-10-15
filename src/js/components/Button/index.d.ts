@@ -35,6 +35,6 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
-declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
+declare const Button: React.FC<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
 
 export { Button };
