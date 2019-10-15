@@ -17,117 +17,77 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var activeAsArray = function activeAsArray(active) {
   return typeof active === 'number' ? [active] : active;
 };
 
-var Accordion =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Accordion, _Component);
-
-  function Accordion() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      activeIndexes: []
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onPanelChange", function (index) {
-      var activeIndexes = _this.state.activeIndexes;
-      var nextActiveIndexes = [].concat(activeIndexes || []);
-      var _this$props = _this.props,
-          onActive = _this$props.onActive,
-          multiple = _this$props.multiple;
-      var activeIndex = nextActiveIndexes.indexOf(index);
-
-      if (activeIndex > -1) {
-        nextActiveIndexes.splice(activeIndex, 1);
-      } else if (multiple) {
-        nextActiveIndexes.push(index);
-      } else {
-        nextActiveIndexes = [index];
-      }
-
-      _this.setState({
-        activeIndexes: nextActiveIndexes
-      }, function () {
-        if (onActive) {
-          onActive(nextActiveIndexes);
-        }
-      });
-    });
-
-    return _this;
-  }
-
-  Accordion.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var activeIndex = nextProps.activeIndex;
-    var stateActiveIndexes = prevState.activeIndexes,
-        stateActiveIndex = prevState.activeIndex;
-    var activeIndexes = activeAsArray(activeIndex) || [];
-
-    if ((typeof activeIndex !== 'undefined' || activeIndex !== stateActiveIndex) && activeIndexes.join() !== stateActiveIndexes.join()) {
-      return {
-        activeIndexes: activeIndexes,
-        activeIndex: activeIndex
-      };
-    }
-
-    return null;
-  };
-
-  var _proto = Accordion.prototype;
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$props2 = this.props,
-        animate = _this$props2.animate,
-        children = _this$props2.children,
-        messages = _this$props2.messages,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["animate", "children", "messages"]);
-
-    var activeIndexes = this.state.activeIndexes;
-    delete rest.onActive;
-    return _react["default"].createElement(_Box.Box, _extends({
-      role: "tablist"
-    }, rest), _react.Children.toArray(children).map(function (panel, index) {
-      return _react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
-        key: "accordion-panel_" + (index + 0),
-        value: {
-          active: activeIndexes.indexOf(index) > -1,
-          animate: animate,
-          messages: messages,
-          onPanelChange: function onPanelChange() {
-            return _this2.onPanelChange(index);
-          }
-        }
-      }, panel);
-    }));
-  };
-
-  return Accordion;
-}(_react.Component);
-
-_defineProperty(Accordion, "defaultProps", {
-  animate: true,
-  messages: {
+var Accordion = function Accordion(_ref) {
+  var activeIndex = _ref.activeIndex,
+      _ref$animate = _ref.animate,
+      animate = _ref$animate === void 0 ? true : _ref$animate,
+      children = _ref.children,
+      _ref$messages = _ref.messages,
+      messages = _ref$messages === void 0 ? {
     tabContents: 'Tab Contents'
+  } : _ref$messages,
+      multiple = _ref.multiple,
+      onActive = _ref.onActive,
+      rest = _objectWithoutPropertiesLoose(_ref, ["activeIndex", "animate", "children", "messages", "multiple", "onActive"]);
+
+  var _useState = (0, _react.useState)([]),
+      activeIndexes = _useState[0],
+      setActiveIndexes = _useState[1];
+
+  var _useState2 = (0, _react.useState)(),
+      stateActiveIndex = _useState2[0],
+      setStateActiveIndex = _useState2[1]; // Derived state from props
+  // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
+
+
+  var derivedActiveIndexes = activeAsArray(activeIndex) || [];
+
+  if ((typeof activeIndex !== 'undefined' || activeIndex !== stateActiveIndex) && derivedActiveIndexes.join() !== activeIndexes.join()) {
+    setActiveIndexes(derivedActiveIndexes);
+    setStateActiveIndex(activeIndex);
   }
-});
+
+  var _onPanelChange = function onPanelChange(index) {
+    var nextActiveIndexes = [].concat(activeIndexes || []);
+    var nextActiveIndex = nextActiveIndexes.indexOf(index);
+
+    if (nextActiveIndex > -1) {
+      nextActiveIndexes.splice(nextActiveIndex, 1);
+    } else if (multiple) {
+      nextActiveIndexes.push(index);
+    } else {
+      nextActiveIndexes = [index];
+    }
+
+    setActiveIndexes(nextActiveIndexes);
+
+    if (onActive) {
+      onActive(nextActiveIndexes);
+    }
+  }; // eslint-disable-next-line no-param-reassign
+
+
+  delete rest.onActive;
+  return _react["default"].createElement(_Box.Box, _extends({
+    role: "tablist"
+  }, rest), _react.Children.toArray(children).map(function (panel, index) {
+    return _react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
+      key: "accordion-panel_" + (index + 0),
+      value: {
+        active: activeIndexes.indexOf(index) > -1,
+        animate: animate,
+        messages: messages,
+        onPanelChange: function onPanelChange() {
+          return _onPanelChange(index);
+        }
+      }
+    }, panel);
+  }));
+};
 
 var AccordionDoc;
 
