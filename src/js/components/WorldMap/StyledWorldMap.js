@@ -3,11 +3,34 @@ import styled from 'styled-components';
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const StyledWorldMap = styled.svg`
-  width: 100%;
+const fillStyle = fillProp => {
+  if (fillProp === 'horizontal') {
+    return `
+      width: 100%;
+      height: unset;
+    `;
+  }
+  if (fillProp === 'vertical') {
+    return `
+      width: unset;
+      height: 100%;
+    `;
+  }
+  if (fillProp) {
+    return `
+      width: 100%;
+      height: 100%;
+    `;
+  }
+  return '';
+};
 
-  ${genericStyles} ${props =>
-    props.theme.worldMap && props.theme.worldMap.extend};
+// undefined fillProp has width for backwards compatibility
+const StyledWorldMap = styled.svg`
+  ${genericStyles}
+  ${props =>
+    props.fillProp !== undefined ? fillStyle(props.fillProp) : 'width: 100%;'}
+  ${props => props.theme.worldMap && props.theme.worldMap.extend};
 `;
 
 StyledWorldMap.defaultProps = {};
