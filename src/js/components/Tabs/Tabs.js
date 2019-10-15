@@ -12,8 +12,8 @@ import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 const Tabs = ({
   children,
   flex,
-  justify,
-  messages: { tabContents },
+  justify = 'center',
+  messages = { tabContents: 'Tab Contents' },
   theme,
   ...rest
 }) => {
@@ -66,7 +66,7 @@ const Tabs = ({
     this,
   );
 
-  const tabContentTitle = `${activeTitle || ''} ${tabContents}`;
+  const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
 
   return (
     <StyledTabs
@@ -93,16 +93,6 @@ const Tabs = ({
     </StyledTabs>
   );
 };
-
-Tabs.defaultProps = {
-  justify: 'center',
-  messages: {
-    tabContents: 'Tab Contents',
-  },
-  responsive: true,
-};
-
-Object.setPrototypeOf(Tabs.defaultProps, defaultProps);
 
 let TabsDoc;
 if (process.env.NODE_ENV !== 'production') {
