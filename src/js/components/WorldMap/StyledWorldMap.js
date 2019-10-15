@@ -28,7 +28,8 @@ const fillStyle = fillProp => {
 // undefined fillProp has width for backwards compatibility
 const StyledWorldMap = styled.svg`
   ${genericStyles}
-  ${props => (props.fillProp ? fillStyle(props.fillProp) : 'width: 100%;')}
+  ${props =>
+    props.fillProp !== undefined ? fillStyle(props.fillProp) : 'width: 100%;'}
   ${props => props.theme.worldMap && props.theme.worldMap.extend};
 `;
 
