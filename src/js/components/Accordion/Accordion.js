@@ -8,12 +8,12 @@ const activeAsArray = active =>
   typeof active === 'number' ? [active] : active;
 
 const Accordion = ({
-  onActive,
-  multiple,
-  animate,
-  children,
-  messages,
   activeIndex,
+  animate = true,
+  children,
+  messages = { tabContents: 'Tab Contents' },
+  multiple,
+  onActive,
   ...rest
 }) => {
   const [activeIndexes, setActiveIndexes] = useState([]);
@@ -68,13 +68,6 @@ const Accordion = ({
       ))}
     </Box>
   );
-}
-
-Accordion.defaultProps = {
-  animate: true,
-  messages: {
-    tabContents: 'Tab Contents',
-  },
 };
 
 let AccordionDoc;
