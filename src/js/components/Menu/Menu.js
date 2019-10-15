@@ -69,8 +69,22 @@ const Menu = props => {
   const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
+  let controlButtonIndex;
+  if (align.top === 'top') {
+    controlButtonIndex = -1;
+  } else if (align.bottom === 'bottom') {
+    controlButtonIndex = items.length;
+  } else {
+    controlButtonIndex = undefined;
+  }
   const buttonRefs = {};
-  const constants = { none: 'none', tab: 9 };
+  const constants = {
+    none: 'none',
+    tab: 9,
+    menuControlIncludedTop: align.top === 'top' || undefined,
+    menuControlIncludedBottom: align.bottom === 'bottom' || undefined,
+    controlButtonIndex,
+  };
 
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
@@ -102,16 +116,25 @@ const Menu = props => {
       onDropOpen();
     } else if (
       (event.keyCode === constants.tab || event.which === constants.tab) &&
-      activeItemIndex === items.length - 1
+      ((!constants.menuControlIncludedBottom &&
+        activeItemIndex === items.length - 1) ||
+        (constants.menuControlIncludedBottom &&
+          activeItemIndex === controlButtonIndex))
     ) {
+      // User has reached end of the menu, this tab will close
+      // the menu drop because there are no more "next items" to access
       onDropClose();
     } else {
       let index;
       if (
-        activeItemIndex + 1 === items.length ||
+        (constants.menuControlIncludedBottom &&
+          activeItemIndex === controlButtonIndex) ||
+        (!constants.menuControlIncludedBottom &&
+          activeItemIndex === items.length - 1) ||
         activeItemIndex === constants.none
       ) {
-        index = align.top === 'bottom' ? 0 : items.length;
+        // place focus on the first menu item
+        index = 0;
       } else {
         index = activeItemIndex + 1;
       }
@@ -126,15 +149,21 @@ const Menu = props => {
       onDropOpen();
     } else if (
       (event.keyCode === constants.tab || event.which === constants.tab) &&
-      ((align.top === 'bottom' && activeItemIndex - 1 < 0) ||
-        (align.top === 'top' && activeItemIndex - 1 < -1))
+      ((constants.menuControlIncludedTop &&
+        activeItemIndex === controlButtonIndex) ||
+        (!constants.menuControlIncludedTop && activeItemIndex - 1 < 0))
     ) {
+      // User has reached beginning of the menu, this tab will close
+      // the menu drop because there are no more "previous items" to access
       onDropClose();
     } else {
       let index;
       if (activeItemIndex - 1 < 0) {
-        if (align.top === 'top' && activeItemIndex - 1 === -1) {
-          index = items.length; // header menu button always end of buttonRefs
+        if (
+          constants.menuControlIncludedTop &&
+          activeItemIndex - 1 === controlButtonIndex
+        ) {
+          index = items.length;
         } else {
           index = items.length - 1;
         }
@@ -169,11 +198,15 @@ const Menu = props => {
           buttonRefs[items.length] = r;
         }}
         a11yTitle={messages.closeMenu || 'Close Menu'}
-        active={activeItemIndex === -1}
+        active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         plain={plain}
         onClick={onDropClose}
-        onFocus={() => setActiveItemIndex(-1)}
+        onFocus={() => setActiveItemIndex(controlButtonIndex)}
+        // On first tab into menu, the control button should not
+        // be able to receive tab focus because the focus should
+        // go to the first menu item instead.
+        tabIndex={activeItemIndex === constants.none && '-1'}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -208,6 +241,7 @@ const Menu = props => {
             onTab={event =>
               event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
             }
+            onEnter={onSelectMenuItem}
           >
             <ContainerBox background={dropBackground || theme.menu.background}>
               {align.top === 'top' ? controlMirror : undefined}

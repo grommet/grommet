@@ -602,6 +602,7 @@ exports[`Menu close by clicking outside 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -2654,6 +2655,7 @@ exports[`Menu open and close on click 3`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -3563,6 +3565,7 @@ exports[`Menu with dropAlign renders 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div

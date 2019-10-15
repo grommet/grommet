@@ -3,7 +3,6 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
-
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Menu } from '../..';
@@ -146,31 +145,26 @@ describe('Menu', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    // pressing space: opens drop
-    // tab moves to menu label
-    // second moves to first item
-    // third moves to second item
+    // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Enter selects the item
     fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Space',
       keyCode: 32,
       which: 32,
     });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
+    fireEvent.keyDown(document.activeElement.firstChild, {
       key: 'Tab',
       keyCode: 9,
       which: 9,
     });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
+    fireEvent.keyDown(document.activeElement, {
       key: 'Tab',
       keyCode: 9,
       which: 9,
     });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
-      key: 'Tab',
-      keyCode: 9,
-      which: 9,
-    });
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
+    fireEvent.keyDown(document.activeElement, {
       key: 'Enter',
       keyCode: 13,
       which: 13,
