@@ -150,7 +150,8 @@ function (_Component) {
       pad: "large"
     }, React.createElement(Box, {
       direction: "row",
-      justify: "between"
+      justify: "between",
+      className: "chromatic-ignore"
     }, innerAxis[0].reverse().map(function (t) {
       return React.createElement(Text, {
         key: t
@@ -221,7 +222,8 @@ function (_Component) {
       border: {
         color: 'accent-2'
       },
-      round: true
+      round: true,
+      className: "chromatic-ignore"
     }, React.createElement(Text, {
       size: "large",
       weight: "bold"

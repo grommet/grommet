@@ -196,6 +196,7 @@ function (_Component) {
       }, _react["default"].createElement(_grommet.Text, {
         size: "large"
       }, data[active].value), _react["default"].createElement(_grommet.Text, {
+        className: "chromatic-ignore",
         size: "small"
       }, new Date(data[active].time).toLocaleDateString()))));
     }))), _react["default"].createElement(_grommet.Box, {
@@ -205,6 +206,7 @@ function (_Component) {
       align: "center"
     }, axis[0].map(function (t) {
       return _react["default"].createElement(_grommet.Text, {
+        className: "chromatic-ignore",
         key: t
       }, new Date(t).toLocaleDateString());
     }))))));

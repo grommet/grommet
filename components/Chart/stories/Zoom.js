@@ -201,7 +201,8 @@ function (_Component) {
       justify: "between"
     }, axis[0].map(function (t) {
       return _react["default"].createElement(_grommet.Text, {
-        key: t
+        key: t,
+        className: "chromatic-ignore"
       }, new Date(t).toLocaleDateString());
     }))), _react["default"].createElement(_grommet.Button, {
       hoverIndicator: true,

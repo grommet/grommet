@@ -185,6 +185,7 @@ function (_Component) {
       }, React.createElement(Text, {
         size: "large"
       }, data[active].value), React.createElement(Text, {
+        className: "chromatic-ignore",
         size: "small"
       }, new Date(data[active].time).toLocaleDateString()))));
     }))), React.createElement(Box, {
@@ -194,6 +195,7 @@ function (_Component) {
       align: "center"
     }, axis[0].map(function (t) {
       return React.createElement(Text, {
+        className: "chromatic-ignore",
         key: t
       }, new Date(t).toLocaleDateString());
     }))))));

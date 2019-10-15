@@ -188,8 +188,11 @@ var Components = function Components() {
   }, _react["default"].createElement(_grommet.Calendar, {
     size: "small"
   }), _react["default"].createElement(_grommet.Clock, {
-    type: "digital"
-  }), _react["default"].createElement(_grommet.Clock, null)), _react["default"].createElement(_grommet.Box, {
+    type: "digital",
+    className: "chromatic-ignore"
+  }), _react["default"].createElement(_grommet.Clock, {
+    className: "chromatic-ignore"
+  })), _react["default"].createElement(_grommet.Box, {
     key: "measure",
     gap: "medium"
   }, _react["default"].createElement(_grommet.Chart, {

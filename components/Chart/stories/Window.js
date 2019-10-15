@@ -162,7 +162,8 @@ function (_Component) {
       pad: "large"
     }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
-      justify: "between"
+      justify: "between",
+      className: "chromatic-ignore"
     }, innerAxis[0].reverse().map(function (t) {
       return _react["default"].createElement(_grommet.Text, {
         key: t
@@ -233,7 +234,8 @@ function (_Component) {
       border: {
         color: 'accent-2'
       },
-      round: true
+      round: true,
+      className: "chromatic-ignore"
     }, _react["default"].createElement(_grommet.Text, {
       size: "large",
       weight: "bold"

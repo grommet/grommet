@@ -6,11 +6,11 @@ import React, { Children } from 'react';
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
 var buildStyledChildren = function buildStyledChildren(_ref) {
-  var fill = _ref.fill,
+  var anchor = _ref.anchor,
+      fill = _ref.fill,
       guidingIndex = _ref.guidingIndex,
-      interactiveIndex = _ref.interactiveIndex,
       interactiveChild = _ref.interactiveChild,
-      anchor = _ref.anchor;
+      interactiveIndex = _ref.interactiveIndex;
   var childIndex = 0;
   return function (child) {
     if (child) {
@@ -49,11 +49,11 @@ var Stack = function Stack(_ref2) {
   var guidingIndex = toChildIndex(guidingChild);
   var interactiveIndex = interactiveChild && toChildIndex(interactiveChild);
   var styledChildren = Children.map(children, buildStyledChildren({
+    anchor: anchor,
     fill: fill,
     guidingIndex: guidingIndex,
-    interactiveIndex: interactiveIndex,
     interactiveChild: interactiveChild,
-    anchor: anchor
+    interactiveIndex: interactiveIndex
   }));
   return React.createElement(StyledStack, _extends({
     fillContainer: fill

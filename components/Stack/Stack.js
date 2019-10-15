@@ -16,11 +16,11 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var buildStyledChildren = function buildStyledChildren(_ref) {
-  var fill = _ref.fill,
+  var anchor = _ref.anchor,
+      fill = _ref.fill,
       guidingIndex = _ref.guidingIndex,
-      interactiveIndex = _ref.interactiveIndex,
       interactiveChild = _ref.interactiveChild,
-      anchor = _ref.anchor;
+      interactiveIndex = _ref.interactiveIndex;
   var childIndex = 0;
   return function (child) {
     if (child) {
@@ -60,11 +60,11 @@ var Stack = function Stack(_ref2) {
   var interactiveIndex = interactiveChild && toChildIndex(interactiveChild);
 
   var styledChildren = _react.Children.map(children, buildStyledChildren({
+    anchor: anchor,
     fill: fill,
     guidingIndex: guidingIndex,
-    interactiveIndex: interactiveIndex,
     interactiveChild: interactiveChild,
-    anchor: anchor
+    interactiveIndex: interactiveIndex
   }));
 
   return _react["default"].createElement(_StyledStack.StyledStack, _extends({

@@ -172,8 +172,11 @@ var Components = function Components() {
   }, React.createElement(Calendar, {
     size: "small"
   }), React.createElement(Clock, {
-    type: "digital"
-  }), React.createElement(Clock, null)), React.createElement(Box, {
+    type: "digital",
+    className: "chromatic-ignore"
+  }), React.createElement(Clock, {
+    className: "chromatic-ignore"
+  })), React.createElement(Box, {
     key: "measure",
     gap: "medium"
   }, React.createElement(Chart, {

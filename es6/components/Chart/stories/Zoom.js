@@ -189,7 +189,8 @@ function (_Component) {
       justify: "between"
     }, axis[0].map(function (t) {
       return React.createElement(Text, {
-        key: t
+        key: t,
+        className: "chromatic-ignore"
       }, new Date(t).toLocaleDateString());
     }))), React.createElement(Button, {
       hoverIndicator: true,
