@@ -5,7 +5,7 @@ import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const UncontrolledTabs = ({ plain }) => (
+const UncontrolledTabs = ({ plain = false }) => (
   <Grommet theme={grommet} full>
     <Box fill>
       <Tabs flex>
@@ -29,14 +29,10 @@ const UncontrolledTabs = ({ plain }) => (
   </Grommet>
 );
 
-UncontrolledTabs.defaultProps = {
-  plain: false,
-};
-
 UncontrolledTabs.propTypes = {
-  plain: PropTypes.bool,
+  plain: PropTypes.bool, // eslint-disable-line react/require-default-props
 };
 
-storiesOf('Tabs', module).add('Uncontrolled', () => <UncontrolledTabs />);
-
-export default UncontrolledTabs;
+storiesOf('Tabs', module)
+  .add('Uncontrolled', () => <UncontrolledTabs />)
+  .add('Plain', () => <UncontrolledTabs plain />);
