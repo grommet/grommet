@@ -3995,6 +3995,13 @@ string",
         "name": "continents",
       },
       Object {
+        "description": "Whether the width and/or height should fill the container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
+      },
+      Object {
         "description": "Called when the user clicks on a place.
         It is passed the location.",
         "format": "function",
