@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
@@ -19,24 +19,24 @@ const allSeasons = [
   'S10',
 ];
 
-class SeasonsSelect extends Component {
-  state = { selected: [] };
+const SeasonsSelect = () => {
+  const [selected, setSelected] = useState([]);
 
-  onRemoveSeason = season => {
-    const { selected } = this.state;
-    const nextSelected = [...selected];
-    nextSelected.splice(nextSelected.indexOf(allSeasons.indexOf(season)), 1);
-    this.setState({ selected: nextSelected });
+  const onRemoveSeason = season => {
+    const seasonIndex = allSeasons.indexOf(season);
+    setSelected(
+      selected.filter(selectedSeason => selectedSeason !== seasonIndex),
+    );
   };
 
-  renderSeason = season => (
+  const renderSeason = season => (
     <Button
       key={`season_tag_${season}`}
       href="#"
       onClick={event => {
         event.preventDefault();
         event.stopPropagation();
-        this.onRemoveSeason(season);
+        onRemoveSeason(season);
       }}
       onFocus={event => event.stopPropagation()}
     >
@@ -63,47 +63,44 @@ class SeasonsSelect extends Component {
     </Button>
   );
 
-  renderOption = (option, index, options, state) => (
+  const renderOption = (option, state) => (
     <Box pad="small" background={state.active ? 'active' : undefined}>
       {option}
     </Box>
   );
 
-  render() {
-    const { selected } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Box fill align="center" justify="center">
-          <Select
-            closeOnChange={false}
-            multiple
-            value={
-              <Box wrap direction="row" width="small">
-                {selected && selected.length ? (
-                  selected.map(index => this.renderSeason(allSeasons[index]))
-                ) : (
-                  <Box
-                    pad={{ vertical: 'xsmall', horizontal: 'small' }}
-                    margin="xsmall"
-                  >
-                    Select Season
-                  </Box>
-                )}
-              </Box>
-            }
-            options={allSeasons}
-            selected={selected}
-            disabled={[2, 6]}
-            onChange={({ selected: nextSelected }) => {
-              this.setState({ selected: nextSelected.sort() });
-            }}
-          >
-            {this.renderOption}
-          </Select>
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet full theme={grommet}>
+      <Box fill align="center" justify="center">
+        <Select
+          closeOnChange={false}
+          multiple
+          value={
+            <Box wrap direction="row" width="small">
+              {selected && selected.length ? (
+                selected.map(index => renderSeason(allSeasons[index]))
+              ) : (
+                <Box
+                  pad={{ vertical: 'xsmall', horizontal: 'small' }}
+                  margin="xsmall"
+                >
+                  Select Season
+                </Box>
+              )}
+            </Box>
+          }
+          options={allSeasons}
+          selected={selected}
+          disabled={[2, 6]}
+          onChange={({ selected: nextSelected }) => {
+            setSelected([...nextSelected].sort());
+          }}
+        >
+          {renderOption}
+        </Select>
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('Select', module).add('Seasons', () => <SeasonsSelect />);

@@ -84,6 +84,10 @@ const InfiniteScrollInTable = () => {
   );
 };
 
-storiesOf('Table', module).add('InfiniteScroll', () => (
-  <InfiniteScrollInTable />
-));
+storiesOf('Table', module).add(
+  'InfiniteScroll',
+  () => <InfiniteScrollInTable />,
+  {
+    chromatic: { disable: true },
+  },
+);
