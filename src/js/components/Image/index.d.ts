@@ -9,6 +9,7 @@ export interface ImageProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   opacity?: "weak" | "medium" | "strong" | string | boolean;
+  fill?: boolean;
 }
 
 declare const Image: React.FC<ImageProps & JSX.IntrinsicElements['img']>;

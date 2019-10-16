@@ -11,14 +11,18 @@ const FIT_MAP = {
 const fitStyle = css`
   flex: 1 1;
   overflow: hidden;
+  object-fit: ${props => FIT_MAP[props.fit]};
+`;
+
+const fillStyle = css`
   max-width: 100%;
   max-height: 100%;
-  object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
 const StyledImage = styled.img`
   ${genericStyles}
   ${props => props.fit && fitStyle}
+  ${props => props.fill && fillStyle}
   ${props => props.theme.image && props.theme.image.extend}
   ${props =>
     props.opacityProp &&

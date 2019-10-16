@@ -26,6 +26,9 @@ export const doc = Image => {
       PropTypes.string,
       PropTypes.bool,
     ]).description('Transparency of the image.'),
+    fill: PropTypes.bool.description(
+      'Set maximum width to that of parent element',
+    ),
   };
 
   return DocumentedImage;

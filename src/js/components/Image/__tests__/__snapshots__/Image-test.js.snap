@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Image fill renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+<div
+  className="c0"
+>
+  <img
+    className="c1"
+    fill={true}
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
+  />
+</div>
+`;
+
 exports[`Image fit renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -16,8 +43,6 @@ exports[`Image fit renders 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   overflow: hidden;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: cover;
 }
 
@@ -26,8 +51,6 @@ exports[`Image fit renders 1`] = `
   -ms-flex: 1 1;
   flex: 1 1;
   overflow: hidden;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
 }
 

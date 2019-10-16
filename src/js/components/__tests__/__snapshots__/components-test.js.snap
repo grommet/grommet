@@ -2287,6 +2287,11 @@ string
 boolean",
         "name": "opacity",
       },
+      Object {
+        "description": "Set maximum width to that of parent element",
+        "format": "boolean",
+        "name": "fill",
+      },
     ],
     "usage": "import { Image } from 'grommet';
 <Image/>",

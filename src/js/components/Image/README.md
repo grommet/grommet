@@ -136,6 +136,14 @@ strong
 string
 boolean
 ```
+
+**fill**
+
+Set maximum width to that of parent element
+
+```
+boolean
+```
   
 ## Intrinsic element
 
