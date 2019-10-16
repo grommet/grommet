@@ -3,11 +3,11 @@ import React, { Children } from 'react';
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
 const buildStyledChildren = ({
+  anchor,
   fill,
   guidingIndex,
-  interactiveIndex,
   interactiveChild,
-  anchor,
+  interactiveIndex,
 }) => {
   let childIndex = 0;
 
@@ -62,11 +62,11 @@ const Stack = ({
   const styledChildren = Children.map(
     children,
     buildStyledChildren({
+      anchor,
       fill,
       guidingIndex,
-      interactiveIndex,
       interactiveChild,
-      anchor,
+      interactiveIndex,
     }),
   );
 
