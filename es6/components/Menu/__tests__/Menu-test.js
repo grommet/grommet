@@ -137,42 +137,36 @@ describe('Menu', function () {
       id: "test-menu",
       label: "Test",
       items: [{
-        label: 'Item 1',
-        onClick: onClick
+        label: 'Item 1'
       }, {
-        label: 'Item 2'
+        label: 'Item 2',
+        onClick: onClick
       }]
     }))),
         getByLabelText = _render4.getByLabelText,
         container = _render4.container;
 
-    expect(container.firstChild).toMatchSnapshot(); // pressing down 3x: first opens the drop,
-    // second moves to the first suggestion
-    // third moves to the last suggestion
+    expect(container.firstChild).toMatchSnapshot(); // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Enter selects the item
 
     fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40
+      key: 'Space',
+      keyCode: 32,
+      which: 32
     });
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40
+    fireEvent.keyDown(document.activeElement.firstChild, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
     });
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40
-    }); // moves to the first suggestion
-
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Up',
-      keyCode: 38,
-      which: 38
-    }); // select that by pressing enter
-
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
+    });
+    fireEvent.keyDown(document.activeElement, {
       key: 'Enter',
       keyCode: 13,
       which: 13

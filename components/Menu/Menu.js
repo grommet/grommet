@@ -43,14 +43,14 @@ var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 })(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";"], function (props) {
   return props.theme.menu.extend;
 });
-/* Notes on keyboard interactivity (based on W3C) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
+/* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
 
 To open menu when menu button is focused:
 - Space/Enter/Up arrow/Down arrow will open menu
 
 To navigate within menu:
 - Up/down arrow keys can be used and will loop through options
- (keeping focus within the Menu)
+(keeping focus within the Menu)
 - Tab can be used, but once the last menu item is reached, Tab will close the 
 Menu and continue through page content.
 
@@ -87,11 +87,28 @@ var Menu = function Menu(props) {
   var MenuIcon = theme.menu.icons.down;
   var iconColor = (0, _utils.normalizeColor)('control', theme);
   var align = dropProps.align || dropAlign;
-  var buttonRefs = {}; // to track if focus is within the menu items, see menuOnFocus/menuOnBlur
+  var controlButtonIndex;
 
-  var timeoutID;
+  if (align.top === 'top') {
+    controlButtonIndex = -1;
+  } else if (align.bottom === 'bottom') {
+    controlButtonIndex = items.length;
+  } else {
+    controlButtonIndex = undefined;
+  }
 
-  var _useState = (0, _react.useState)(-1),
+  var buttonRefs = {};
+  var constants = {
+    none: 'none',
+    tab: 9,
+    // Menu control button included on top of menu items
+    controlTop: align.top === 'top' || undefined,
+    // Menu control button included on the bottom of menu items
+    controlBottom: align.bottom === 'bottom' || undefined,
+    controlButtonIndex: controlButtonIndex
+  };
+
+  var _useState = (0, _react.useState)(constants.none),
       activeItemIndex = _useState[0],
       setActiveItemIndex = _useState[1];
 
@@ -99,43 +116,29 @@ var Menu = function Menu(props) {
       isOpen = _useState2[0],
       setOpen = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(false),
-      isManagingFocus = _useState3[0],
-      setManagingFocus = _useState3[1];
-
-  (0, _react.useEffect)(function () {
-    if (isOpen) {
-      setManagingFocus(true);
-
-      if (isManagingFocus) {
-        if (align.top === 'bottom') {
-          buttonRefs[0].focus();
-          setActiveItemIndex(0);
-        } else {
-          buttonRefs[items.length].focus();
-          setActiveItemIndex(-1);
-        }
-      }
-    }
-  }, [isManagingFocus]);
-
   var onDropClose = function onDropClose() {
-    setActiveItemIndex(-1);
+    setActiveItemIndex(constants.none);
     setOpen(false);
-    setManagingFocus(false);
   };
 
   var onDropOpen = function onDropOpen() {
     setOpen(true);
-    setManagingFocus(true);
   };
 
   var onSelectMenuItem = function onSelectMenuItem(event) {
-    if (activeItemIndex >= 0) {
-      event.preventDefault();
-      event.stopPropagation();
-      buttonRefs[activeItemIndex].click();
+    if (isOpen) {
+      if (activeItemIndex >= 0) {
+        event.preventDefault();
+        event.stopPropagation();
+        buttonRefs[activeItemIndex].click();
+      }
+    } else {
+      onDropOpen();
     }
+  };
+
+  var isTab = function isTab(event) {
+    return event.keyCode === constants.tab || event.which === constants.tab;
   };
 
   var onNextMenuItem = function onNextMenuItem(event) {
@@ -143,11 +146,20 @@ var Menu = function Menu(props) {
 
     if (!isOpen) {
       onDropOpen();
+    } else if (isTab(event) && (!constants.controlBottom && activeItemIndex === items.length - 1 || constants.controlBottom && activeItemIndex === controlButtonIndex)) {
+      // User has reached end of the menu, this tab will close
+      // the menu drop because there are no more "next items" to access
+      onDropClose();
     } else {
       var index;
 
-      if (activeItemIndex + 1 === items.length) {
-        index = align.top === 'bottom' ? 0 : items.length;
+      if ( // This checks if the user has reached the end of the menu.
+      // In the case the the menu control button is located at the
+      // bottom of the menu, it checks if the user has reached the button.
+      // Otherwise, it checks if the user is at the last menu item.
+      constants.controlBottom && activeItemIndex === controlButtonIndex || !constants.controlBottom && activeItemIndex === items.length - 1 || activeItemIndex === constants.none) {
+        // place focus on the first menu item
+        index = 0;
       } else {
         index = activeItemIndex + 1;
       }
@@ -162,11 +174,15 @@ var Menu = function Menu(props) {
 
     if (!isOpen) {
       onDropOpen();
+    } else if (isTab(event) && (constants.controlTop && activeItemIndex === controlButtonIndex || !constants.controlTop && activeItemIndex - 1 < 0)) {
+      // User has reached beginning of the menu, this tab will close
+      // the menu drop because there are no more "previous items" to access
+      onDropClose();
     } else {
       var index;
 
       if (activeItemIndex - 1 < 0) {
-        if (align.top === 'top' && activeItemIndex - 1 === -1) {
+        if (constants.controlTop && activeItemIndex - 1 === controlButtonIndex) {
           index = items.length;
         } else {
           index = items.length - 1;
@@ -177,24 +193,6 @@ var Menu = function Menu(props) {
 
       setActiveItemIndex(index);
       buttonRefs[index].focus();
-    }
-  };
-
-  var menuOnBlur = function menuOnBlur(event) {
-    event.preventDefault();
-    timeoutID = setTimeout(function () {
-      if (isManagingFocus) {
-        onDropClose();
-      }
-    }, 0);
-  };
-
-  var menuOnFocus = function menuOnFocus(event) {
-    event.preventDefault();
-    clearTimeout(timeoutID);
-
-    if (!isManagingFocus) {
-      onDropOpen();
     }
   };
 
@@ -219,13 +217,17 @@ var Menu = function Menu(props) {
       buttonRefs[items.length] = r;
     },
     a11yTitle: messages.closeMenu || 'Close Menu',
-    active: activeItemIndex === -1,
+    active: activeItemIndex === controlButtonIndex,
     focusIndicator: false,
     plain: plain,
     onClick: onDropClose,
     onFocus: function onFocus() {
-      return setActiveItemIndex(-1);
-    }
+      return setActiveItemIndex(controlButtonIndex);
+    } // On first tab into menu, the control button should not
+    // be able to receive tab focus because the focus should
+    // go to the first menu item instead.
+    ,
+    tabIndex: activeItemIndex === constants.none ? '-1' : undefined
   }, typeof content === 'function' ? function () {
     return content(_extends({}, props, {
       drop: true
@@ -252,12 +254,12 @@ var Menu = function Menu(props) {
     onOpen: onDropOpen,
     onClose: onDropClose,
     dropContent: _react["default"].createElement(_Keyboard.Keyboard, {
-      onDown: onNextMenuItem,
-      onUp: onPreviousMenuItem
+      onTab: function onTab(event) {
+        return event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event);
+      },
+      onEnter: onSelectMenuItem
     }, _react["default"].createElement(ContainerBox, {
-      background: dropBackground || theme.menu.background,
-      onFocus: menuOnFocus,
-      onBlur: menuOnBlur
+      background: dropBackground || theme.menu.background
     }, align.top === 'top' ? controlMirror : undefined, _react["default"].createElement(_Box.Box, {
       overflow: "auto"
     }, items.map(function (item, index) {
