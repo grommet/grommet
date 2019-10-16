@@ -257,6 +257,8 @@ const Chart = React.forwardRef(
   },
 );
 
+Chart.displayName = 'Chart';
+
 let ChartDoc;
 if (process.env.NODE_ENV !== 'production') {
   ChartDoc = require('./doc').doc(Chart); // eslint-disable-line global-require

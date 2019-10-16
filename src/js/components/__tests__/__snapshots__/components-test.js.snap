@@ -1431,7 +1431,7 @@ selectors",
       },
     ],
     "description": "A graphical chart.",
-    "name": undefined,
+    "name": "Chart",
     "properties": Array [
       Object {
         "description": "Custom title to be used by screen readers.",
