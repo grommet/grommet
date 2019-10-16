@@ -101,7 +101,9 @@ class WindowChart extends Component {
     return (
       <Grommet theme={grommet}>
         <Box pad="large">
-          <Box direction="row" justify="between">
+          {/* className="chromatic-ignore" is used for the story testing. 
+              grommet doesn't reccomend the usage of className */}
+          <Box direction="row" justify="between" className="chromatic-ignore">
             {innerAxis[0].reverse().map(t => (
               <Text key={t}>{new Date(t).toLocaleDateString()}</Text>
             ))}
@@ -150,6 +152,7 @@ class WindowChart extends Component {
                   background={{ color: 'white', opacity: 'strong' }}
                   border={{ color: 'accent-2' }}
                   round
+                  className="chromatic-ignore"
                 >
                   <Text size="large" weight="bold">
                     {hover.value[1]}

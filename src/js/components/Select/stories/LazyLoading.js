@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, CheckBox, Grommet, Select } from 'grommet';
@@ -11,17 +11,14 @@ const dummyOptions = Array(2000)
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
   );
 
-class Option extends PureComponent {
-  render() {
-    const { value, selected } = this.props;
-    return (
-      <Box direction="row" gap="small" align="center" pad="xsmall">
-        <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
-        {value}
-      </Box>
-    );
-  }
-}
+const Option = ({ value, selected }) => {
+  return (
+    <Box direction="row" gap="small" align="center" pad="xsmall">
+      <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
+      {value}
+    </Box>
+  );
+};
 
 const LazyLoading = () => {
   const [selected, setSelected] = React.useState([]);
