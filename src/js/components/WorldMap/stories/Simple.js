@@ -13,7 +13,7 @@ const SimpleWorldMap = () => {
 
   return (
     <Grommet theme={grommet}>
-      <Box align="center" pad="large" border>
+      <Box align="center" pad="large">
         <WorldMap onSelectPlace={onSelectPlace} places={places} />
       </Box>
     </Grommet>
