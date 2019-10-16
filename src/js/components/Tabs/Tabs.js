@@ -94,6 +94,9 @@ const Tabs = ({
   );
 };
 
+Tabs.defaultProps = {};
+Object.setPrototypeOf(Tabs.defaultProps, defaultProps);
+
 let TabsDoc;
 if (process.env.NODE_ENV !== 'production') {
   TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
