@@ -1,6 +1,4 @@
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, CheckBox, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -13,35 +11,20 @@ var dummyOptions = Array(2000).fill().map(function (_, i) {
   });
 });
 
-var Option =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inheritsLoose(Option, _PureComponent);
-
-  function Option() {
-    return _PureComponent.apply(this, arguments) || this;
-  }
-
-  var _proto = Option.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        value = _this$props.value,
-        selected = _this$props.selected;
-    return React.createElement(Box, {
-      direction: "row",
-      gap: "small",
-      align: "center",
-      pad: "xsmall"
-    }, React.createElement(CheckBox, {
-      tabIndex: "-1",
-      checked: selected,
-      onChange: function onChange() {}
-    }), value);
-  };
-
-  return Option;
-}(PureComponent);
+var Option = function Option(_ref) {
+  var value = _ref.value,
+      selected = _ref.selected;
+  return React.createElement(Box, {
+    direction: "row",
+    gap: "small",
+    align: "center",
+    pad: "xsmall"
+  }, React.createElement(CheckBox, {
+    tabIndex: "-1",
+    checked: selected,
+    onChange: function onChange() {}
+  }), value);
+};
 
 var LazyLoading = function LazyLoading() {
   var _React$useState = React.useState([]),
@@ -79,8 +62,8 @@ var LazyLoading = function LazyLoading() {
     }));
   };
 
-  var onChange = function onChange(_ref) {
-    var nextSelected = _ref.selected;
+  var onChange = function onChange(_ref2) {
+    var nextSelected = _ref2.selected;
     return setSelected(nextSelected);
   };
 

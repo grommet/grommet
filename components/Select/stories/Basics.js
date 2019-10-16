@@ -22,12 +22,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var customRoundedTheme = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
     control: {
@@ -59,74 +53,43 @@ var customRoundedTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var SimpleSelect =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(SimpleSelect, _Component);
+var SimpleSelect = function SimpleSelect(_ref) {
+  var theme = _ref.theme,
+      rest = _objectWithoutPropertiesLoose(_ref, ["theme"]);
 
-  function SimpleSelect() {
-    var _this;
+  var options = ['one', 'two'];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var _useState = (0, _react.useState)(''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  return _react["default"].createElement(_grommet.Grommet, {
+    full: true,
+    theme: theme || _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    fill: true,
+    align: "center",
+    justify: "start",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Select, _extends({
+    id: "select",
+    name: "select",
+    placeholder: "Select",
+    value: value,
+    options: options,
+    onChange: function onChange(_ref2) {
+      var option = _ref2.option;
+      return setValue(option);
     }
+  }, rest))));
+};
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      options: ['one', 'two'],
-      value: ''
-    });
-
-    return _this;
-  }
-
-  var _proto = SimpleSelect.prototype;
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$props = this.props,
-        theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["theme"]);
-
-    var _this$state = this.state,
-        options = _this$state.options,
-        value = _this$state.value;
-    return _react["default"].createElement(_grommet.Grommet, {
-      full: true,
-      theme: theme || _themes.grommet
-    }, _react["default"].createElement(_grommet.Box, {
-      fill: true,
-      align: "center",
-      justify: "start",
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Select, _extends({
-      id: "select",
-      name: "select",
-      placeholder: "Select",
-      value: value,
-      options: options,
-      onChange: function onChange(_ref) {
-        var option = _ref.option;
-        return _this2.setState({
-          value: option
-        });
-      }
-    }, rest))));
-  };
-
-  return SimpleSelect;
-}(_react.Component);
-
-_defineProperty(SimpleSelect, "propTypes", {
+SimpleSelect.propTypes = {
   theme: _propTypes["default"].shape({})
-});
-
-_defineProperty(SimpleSelect, "defaultProps", {
+};
+SimpleSelect.defaultProps = {
   theme: undefined
-});
-
+};
 var defaultOptions = [];
 var objectOptions = [];
 
