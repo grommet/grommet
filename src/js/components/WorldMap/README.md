@@ -143,6 +143,16 @@ Continent details.
 }]
 ```
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
+```
+
 **onSelectPlace**
 
 Called when the user clicks on a place.

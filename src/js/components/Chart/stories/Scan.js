@@ -102,7 +102,10 @@ class ScanChart extends Component {
                             background="dark-3"
                           >
                             <Text size="large">{data[active].value}</Text>
-                            <Text size="small">
+                            {/* className="chromatic-ignore" is used for this 
+                              component testing. grommet doesn't reccomend the
+                              usage of className */}
+                            <Text className="chromatic-ignore" size="small">
                               {new Date(data[active].time).toLocaleDateString()}
                             </Text>
                           </Box>
@@ -121,7 +124,9 @@ class ScanChart extends Component {
                 align="center"
               >
                 {axis[0].map(t => (
-                  <Text key={t}>{new Date(t).toLocaleDateString()}</Text>
+                  <Text className="chromatic-ignore" key={t}>
+                    {new Date(t).toLocaleDateString()}
+                  </Text>
                 ))}
               </Box>
             </Box>
