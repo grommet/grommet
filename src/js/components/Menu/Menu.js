@@ -114,10 +114,12 @@ const Menu = props => {
 
   const onNextMenuItem = event => {
     event.preventDefault();
+    const isTab =
+      event.keyCode === constants.tab || event.which === constants.tab;
     if (!isOpen) {
       onDropOpen();
     } else if (
-      (event.keyCode === constants.tab || event.which === constants.tab) &&
+      isTab &&
       ((!constants.controlBottom && activeItemIndex === items.length - 1) ||
         (constants.controlBottom && activeItemIndex === controlButtonIndex))
     ) {
@@ -127,6 +129,10 @@ const Menu = props => {
     } else {
       let index;
       if (
+        // This checks if the user has reached the end of the menu.
+        // In the case the the menu control button is located at the
+        // bottom of the menu, it checks if the user has reached the button.
+        // Otherwise, it checks if the user is at the last menu item.
         (constants.controlBottom && activeItemIndex === controlButtonIndex) ||
         (!constants.controlBottom && activeItemIndex === items.length - 1) ||
         activeItemIndex === constants.none
@@ -143,10 +149,12 @@ const Menu = props => {
 
   const onPreviousMenuItem = event => {
     event.preventDefault();
+    const isTab =
+      event.keyCode === constants.tab || event.which === constants.tab;
     if (!isOpen) {
       onDropOpen();
     } else if (
-      (event.keyCode === constants.tab || event.which === constants.tab) &&
+      isTab &&
       ((constants.controlTop && activeItemIndex === controlButtonIndex) ||
         (!constants.controlTop && activeItemIndex - 1 < 0))
     ) {
