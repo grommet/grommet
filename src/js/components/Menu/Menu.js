@@ -81,8 +81,10 @@ const Menu = props => {
   const constants = {
     none: 'none',
     tab: 9,
-    menuControlIncludedTop: align.top === 'top' || undefined,
-    menuControlIncludedBottom: align.bottom === 'bottom' || undefined,
+    // Menu control button included on top of menu items
+    controlTop: align.top === 'top' || undefined,
+    // Menu control button included on bottom of menu items
+    controlBottom: align.bottom === 'bottom' || undefined,
     controlButtonIndex,
   };
 
@@ -116,10 +118,8 @@ const Menu = props => {
       onDropOpen();
     } else if (
       (event.keyCode === constants.tab || event.which === constants.tab) &&
-      ((!constants.menuControlIncludedBottom &&
-        activeItemIndex === items.length - 1) ||
-        (constants.menuControlIncludedBottom &&
-          activeItemIndex === controlButtonIndex))
+      ((!constants.controlBottom && activeItemIndex === items.length - 1) ||
+        (constants.controlBottom && activeItemIndex === controlButtonIndex))
     ) {
       // User has reached end of the menu, this tab will close
       // the menu drop because there are no more "next items" to access
@@ -127,10 +127,8 @@ const Menu = props => {
     } else {
       let index;
       if (
-        (constants.menuControlIncludedBottom &&
-          activeItemIndex === controlButtonIndex) ||
-        (!constants.menuControlIncludedBottom &&
-          activeItemIndex === items.length - 1) ||
+        (constants.controlBottom && activeItemIndex === controlButtonIndex) ||
+        (!constants.controlBottom && activeItemIndex === items.length - 1) ||
         activeItemIndex === constants.none
       ) {
         // place focus on the first menu item
@@ -149,9 +147,8 @@ const Menu = props => {
       onDropOpen();
     } else if (
       (event.keyCode === constants.tab || event.which === constants.tab) &&
-      ((constants.menuControlIncludedTop &&
-        activeItemIndex === controlButtonIndex) ||
-        (!constants.menuControlIncludedTop && activeItemIndex - 1 < 0))
+      ((constants.controlTop && activeItemIndex === controlButtonIndex) ||
+        (!constants.controlTop && activeItemIndex - 1 < 0))
     ) {
       // User has reached beginning of the menu, this tab will close
       // the menu drop because there are no more "previous items" to access
@@ -160,7 +157,7 @@ const Menu = props => {
       let index;
       if (activeItemIndex - 1 < 0) {
         if (
-          constants.menuControlIncludedTop &&
+          constants.controlTop &&
           activeItemIndex - 1 === controlButtonIndex
         ) {
           index = items.length;
