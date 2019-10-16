@@ -1431,7 +1431,7 @@ selectors",
       },
     ],
     "description": "A graphical chart.",
-    "name": "Chart",
+    "name": undefined,
     "properties": Array [
       Object {
         "description": "Custom title to be used by screen readers.",
@@ -1539,6 +1539,19 @@ string",
         "name": "color",
       },
       Object {
+        "description": "The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
+      },
+      Object {
         "description": "Called when the user clicks on it.
       This is only available when the type is line or area.",
         "format": "function",
@@ -1597,6 +1610,7 @@ full
     large
     xlarge
     full
+    auto
     string
 }
 string",
