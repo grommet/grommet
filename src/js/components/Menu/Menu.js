@@ -112,14 +112,16 @@ const Menu = props => {
     }
   };
 
+  const isTab = event => {
+    return event.keyCode === constants.tab || event.which === constants.tab;
+  };
+
   const onNextMenuItem = event => {
     event.preventDefault();
-    const isTab =
-      event.keyCode === constants.tab || event.which === constants.tab;
     if (!isOpen) {
       onDropOpen();
     } else if (
-      isTab &&
+      isTab(event) &&
       ((!constants.controlBottom && activeItemIndex === items.length - 1) ||
         (constants.controlBottom && activeItemIndex === controlButtonIndex))
     ) {
@@ -149,12 +151,10 @@ const Menu = props => {
 
   const onPreviousMenuItem = event => {
     event.preventDefault();
-    const isTab =
-      event.keyCode === constants.tab || event.which === constants.tab;
     if (!isOpen) {
       onDropOpen();
     } else if (
-      isTab &&
+      isTab(event) &&
       ((constants.controlTop && activeItemIndex === controlButtonIndex) ||
         (!constants.controlTop && activeItemIndex - 1 < 0))
     ) {
