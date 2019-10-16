@@ -4,6 +4,7 @@ import {
   AlignContentType, 
   AlignSelfType,
   BackgroundType,
+  FillType,
   GapType, 
   GridAreaType, 
   MarginType, 
@@ -29,7 +30,7 @@ export interface BoxProps {
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
   elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
-  fill?: "horizontal" | "vertical" | boolean;
+  fill?: FillType;
   gap?: GapType;
   height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string | {max?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string,min?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string};
   justify?: "around" | "between" | "center" | "end" | "evenly" | "start" | "stretch";
@@ -43,6 +44,7 @@ export interface BoxProps {
   wrap?: boolean | "reverse";
 }
 
-declare const Box: React.ComponentClass<BoxProps & JSX.IntrinsicElements['div']>;
+declare const Box: React.FC<BoxProps & JSX.IntrinsicElements['div']>;
+export type BoxTypes = BoxProps & JSX.IntrinsicElements['div']
 
 export { Box };
