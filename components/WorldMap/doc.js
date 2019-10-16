@@ -58,6 +58,7 @@ var doc = function doc(WorldMap) {
       onClick: _reactDesc.PropTypes.func,
       onHover: _reactDesc.PropTypes.func
     })).description('Continent details.'),
+    fill: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['horizontal', 'vertical']), _reactDesc.PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     onSelectPlace: _reactDesc.PropTypes.func.description("Called when the user clicks on a place.\n        It is passed the location."),
     places: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       color: _utils.colorPropType,

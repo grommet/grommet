@@ -49,6 +49,7 @@ export var doc = function doc(WorldMap) {
       onClick: PropTypes.func,
       onHover: PropTypes.func
     })).description('Continent details.'),
+    fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     onSelectPlace: PropTypes.func.description("Called when the user clicks on a place.\n        It is passed the location."),
     places: PropTypes.arrayOf(PropTypes.shape({
       color: colorPropType,

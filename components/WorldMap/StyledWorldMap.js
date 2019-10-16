@@ -11,10 +11,29 @@ var _defaultProps = require("../../default-props");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var fillStyle = function fillStyle(fillProp) {
+  if (fillProp === 'horizontal') {
+    return "\n      width: 100%;\n      height: unset;\n    ";
+  }
+
+  if (fillProp === 'vertical') {
+    return "\n      width: unset;\n      height: 100%;\n    ";
+  }
+
+  if (fillProp) {
+    return "\n      width: 100%;\n      height: 100%;\n    ";
+  }
+
+  return '';
+}; // undefined fillProp has width for backwards compatibility
+
+
 var StyledWorldMap = _styledComponents["default"].svg.withConfig({
   displayName: "StyledWorldMap",
   componentId: "had4c3-0"
-})(["width:100%;", " ", ";"], _utils.genericStyles, function (props) {
+})(["", " ", " ", ";"], _utils.genericStyles, function (props) {
+  return props.fillProp !== undefined ? fillStyle(props.fillProp) : 'width: 100%;';
+}, function (props) {
   return props.theme.worldMap && props.theme.worldMap.extend;
 });
 

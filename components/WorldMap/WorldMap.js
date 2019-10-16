@@ -303,10 +303,11 @@ function (_Component) {
 
     var _this$props = this.props,
         color = _this$props.color,
+        fill = _this$props.fill,
         onSelectPlace = _this$props.onSelectPlace,
         hoverColor = _this$props.hoverColor,
         theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["color", "onSelectPlace", "hoverColor", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["color", "fill", "onSelectPlace", "hoverColor", "theme"]);
 
     delete rest.places;
     delete rest.continents;
@@ -418,6 +419,7 @@ function (_Component) {
     return _react["default"].createElement(_StyledWorldMap.StyledWorldMap, _extends({
       viewBox: x + " " + y + " " + width + " " + height,
       preserveAspectRatio: "xMinYMin meet",
+      fillProp: fill,
       width: width,
       height: height
     }, interactiveProps, rest), _react["default"].createElement("g", {
