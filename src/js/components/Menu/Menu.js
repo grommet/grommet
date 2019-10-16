@@ -83,7 +83,7 @@ const Menu = props => {
     tab: 9,
     // Menu control button included on top of menu items
     controlTop: align.top === 'top' || undefined,
-    // Menu control button included on bottom of menu items
+    // Menu control button included on the bottom of menu items
     controlBottom: align.bottom === 'bottom' || undefined,
     controlButtonIndex,
   };
