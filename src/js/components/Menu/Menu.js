@@ -112,9 +112,8 @@ const Menu = props => {
     }
   };
 
-  const isTab = event => {
-    return event.keyCode === constants.tab || event.which === constants.tab;
-  };
+  const isTab = event =>
+    event.keyCode === constants.tab || event.which === constants.tab;
 
   const onNextMenuItem = event => {
     event.preventDefault();
