@@ -19,12 +19,14 @@ const HiddenAnchor = styled.a`
 
 const LayerContainer = ({
   children,
+  full = false,
   id,
-  modal,
+  margin = 'none',
+  modal = true,
   onClickOutside,
   onEsc,
   plain,
-  position,
+  position = 'center',
   responsive,
   theme: propsTheme,
   ...rest
@@ -70,6 +72,8 @@ const LayerContainer = ({
     <StyledContainer
       id={id}
       {...rest}
+      full={full}
+      margin={margin}
       position={position}
       plain={plain}
       responsive={responsive}
@@ -125,12 +129,8 @@ const LayerContainer = ({
   return content;
 };
 
-LayerContainer.defaultProps = {
-  full: false,
-  margin: 'none',
-  modal: true,
-  position: 'center',
-};
+LayerContainer.defaultProps = {};
+Object.setPrototypeOf(LayerContainer.defaultProps, defaultProps);
 
 Object.setPrototypeOf(LayerContainer.defaultProps, defaultProps);
 
