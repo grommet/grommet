@@ -437,9 +437,6 @@ exports[`Menu close by clicking outside 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221, 0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c11 {
@@ -605,6 +602,7 @@ exports[`Menu close by clicking outside 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -2492,9 +2490,6 @@ exports[`Menu open and close on click 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221, 0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c11 {
@@ -2660,6 +2655,7 @@ exports[`Menu open and close on click 3`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -3404,9 +3400,6 @@ exports[`Menu with dropAlign renders 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221, 0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c11 {
@@ -3572,6 +3565,7 @@ exports[`Menu with dropAlign renders 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div

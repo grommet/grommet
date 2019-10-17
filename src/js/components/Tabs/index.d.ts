@@ -14,6 +14,6 @@ export interface TabsProps {
   onActive?: ((...args: any[]) => any);
 }
 
-declare const Tabs: React.ComponentClass<TabsProps & JSX.IntrinsicElements['div']>;
+declare const Tabs: React.FC<TabsProps & JSX.IntrinsicElements['div']>;
 
 export { Tabs };
