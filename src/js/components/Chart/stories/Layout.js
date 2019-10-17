@@ -18,12 +18,12 @@ const LayoutChart = () => (
   <Grommet theme={grommet}>
     <Box margin="medium">
       <Heading level={2}>full</Heading>
-      <Box basis="small" pad="medium" border>
+      <Box pad="medium" border>
         <Chart type={type} values={values} size={{ width: 'full' }} round />
       </Box>
 
       <Heading level={2}>auto, gap</Heading>
-      <Box basis="small" pad="medium" border>
+      <Box pad="medium" border>
         <Chart
           type={type}
           values={values}
@@ -34,7 +34,7 @@ const LayoutChart = () => (
       </Box>
 
       <Heading level={2}>default</Heading>
-      <Box basis="small" pad="medium" border>
+      <Box pad="medium" border>
         <Chart type={type} values={values} round />
       </Box>
     </Box>

@@ -7,7 +7,7 @@ import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeValues, normalizeBounds } from './utils';
 
-const defaultSize = { height: 'small' };
+const defaultSize = { height: 'small', width: 'medium' };
 
 const Chart = React.forwardRef(
   (
@@ -60,7 +60,9 @@ const Chart = React.forwardRef(
         (nextValues.length - 1) * gapWidth;
 
       const sizeWidth =
-        typeof propsSize === 'string' ? propsSize : propsSize.width || 'medium';
+        typeof propsSize === 'string'
+          ? propsSize
+          : propsSize.width || defaultSize.width;
       let width;
       if (sizeWidth === 'full') {
         [width] = containerSize;
@@ -73,7 +75,7 @@ const Chart = React.forwardRef(
       const sizeHeight =
         typeof propsSize === 'string'
           ? propsSize
-          : propsSize.height || 'medium';
+          : propsSize.height || defaultSize.height;
       let height;
       if (sizeHeight === 'full') {
         [, height] = containerSize;

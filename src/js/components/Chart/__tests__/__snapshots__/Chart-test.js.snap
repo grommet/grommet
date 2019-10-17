@@ -177,9 +177,9 @@ exports[`Chart gap renders 1`] = `
   >
     <svg
       className="c2"
-      height={384}
+      height={192}
       preserveAspectRatio="none"
-      viewBox="-12 -12 84 408"
+      viewBox="-12 -12 84 216"
       width={60}
     >
       <g
@@ -195,16 +195,16 @@ exports[`Chart gap renders 1`] = `
             sixty
           </title>
           <path
-            d="M 60,384 L 60,0"
+            d="M 60,192 L 60,0"
           />
         </g>
       </g>
     </svg>
     <svg
       className="c2"
-      height={384}
+      height={192}
       preserveAspectRatio="none"
-      viewBox="-12 -12 96 408"
+      viewBox="-12 -12 96 216"
       width={72}
     >
       <g
@@ -220,16 +220,16 @@ exports[`Chart gap renders 1`] = `
             sixty
           </title>
           <path
-            d="M 72,384 L 72,0"
+            d="M 72,192 L 72,0"
           />
         </g>
       </g>
     </svg>
     <svg
       className="c2"
-      height={384}
+      height={192}
       preserveAspectRatio="none"
-      viewBox="-12 -12 120 408"
+      viewBox="-12 -12 120 216"
       width={96}
     >
       <g
@@ -245,7 +245,7 @@ exports[`Chart gap renders 1`] = `
             sixty
           </title>
           <path
-            d="M 96,384 L 96,0"
+            d="M 96,192 L 96,0"
           />
         </g>
       </g>
@@ -482,9 +482,9 @@ exports[`Chart size renders 1`] = `
   >
     <svg
       className="c1"
-      height={384}
+      height={192}
       preserveAspectRatio="none"
-      viewBox="-12 -12 24 408"
+      viewBox="-12 -12 24 216"
       width={0}
     >
       <g
@@ -500,16 +500,16 @@ exports[`Chart size renders 1`] = `
             sixty
           </title>
           <path
-            d="M 0,384 L 0,0"
+            d="M 0,192 L 0,0"
           />
         </g>
       </g>
     </svg>
     <svg
       className="c1"
-      height={384}
+      height={192}
       preserveAspectRatio="none"
-      viewBox="-12 -12 96 408"
+      viewBox="-12 -12 96 216"
       width={72}
     >
       <g
@@ -525,7 +525,7 @@ exports[`Chart size renders 1`] = `
             sixty
           </title>
           <path
-            d="M 72,384 L 72,0"
+            d="M 72,192 L 72,0"
           />
         </g>
       </g>
