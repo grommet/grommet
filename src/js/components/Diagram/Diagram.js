@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -60,11 +60,12 @@ const findTarget = target => {
   return target;
 };
 
-const Diagram = ({ connections = [], theme, ...rest }) => {
+const Diagram = ({ connections, theme, ...rest }) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [connectionPoints, setConnectionPoints] = useState();
   const [prevConnections, setPrevConnections] = useState();
+  const stateRef = useRef({});
   const svgRef = useRef();
 
   // track whether the connections array changes so we can trigger re-placing
@@ -74,17 +75,19 @@ const Diagram = ({ connections = [], theme, ...rest }) => {
     setConnectionPoints(undefined);
   }
 
-  const onResize = () => {
+  const onResize = useCallback(() => {
     const svg = svgRef.current;
+    const state = stateRef.current;
+
     if (svg) {
       const rect = svg.getBoundingClientRect();
-      if (rect.width !== width || rect.height !== height) {
+      if (rect.width !== state.width || rect.height !== state.height) {
         setWidth(rect.width);
         setHeight(rect.height);
         setConnectionPoints(undefined);
       }
     }
-  };
+  }, []);
 
   const placeConnections = () => {
     const containerRect = svgRef.current.getBoundingClientRect();
@@ -144,6 +147,17 @@ const Diagram = ({ connections = [], theme, ...rest }) => {
     setConnectionPoints(updatedConnectionPoints);
   };
 
+  // Sync state to ref on every render so we have access to latest state
+  // in `onResize` handler
+  useEffect(() => {
+    stateRef.current = {
+      width,
+      height,
+      connectionPoints,
+      prevConnections,
+    };
+  });
+
   useEffect(() => {
     window.addEventListener('resize', onResize);
     onResize();
@@ -151,7 +165,7 @@ const Diagram = ({ connections = [], theme, ...rest }) => {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, []);
+  }, [onResize]);
 
   useEffect(() => {
     if (!connectionPoints) {
@@ -217,7 +231,7 @@ const Diagram = ({ connections = [], theme, ...rest }) => {
   );
 };
 
-Diagram.defaultProps = {};
+Diagram.defaultProps = { connections: [] };
 Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 
 let DiagramDoc;
