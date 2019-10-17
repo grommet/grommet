@@ -45,7 +45,9 @@ describe('SkipLink', function () {
     _react2.fireEvent.click(document.activeElement);
 
     document.getElementById('skip-links').querySelector('a').blur();
-    jest.runAllTimers();
+    (0, _react2.act)(function () {
+      jest.runAllTimers();
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 });

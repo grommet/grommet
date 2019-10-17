@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { act, cleanup, render, fireEvent } from '@testing-library/react';
 import { Grommet, SkipLinks, SkipLink, SkipLinkTarget } from '../..';
 describe('SkipLink', function () {
   afterEach(cleanup);
@@ -35,7 +35,9 @@ describe('SkipLink', function () {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(document.activeElement);
     document.getElementById('skip-links').querySelector('a').blur();
-    jest.runAllTimers();
+    act(function () {
+      jest.runAllTimers();
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 });
