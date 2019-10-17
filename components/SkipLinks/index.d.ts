@@ -5,6 +5,6 @@ export interface SkipLinksProps {
   messages?: {skipTo?: string};
 }
 
-declare const SkipLinks: React.ComponentClass<SkipLinksProps>;
+declare const SkipLinks: React.FC<SkipLinksProps>;
 
 export { SkipLinks };
