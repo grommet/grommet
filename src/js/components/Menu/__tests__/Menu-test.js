@@ -189,7 +189,7 @@ describe('Menu', () => {
     // Pressing space opens drop
     // First tab moves to first item
     // Second tab moves to second item
-    // Third tab moves beyond last menu item and close menu
+    // Third tab moves beyond last menu item and closes menu
     fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Space',
       keyCode: 32,
