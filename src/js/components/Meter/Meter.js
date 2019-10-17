@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useMemo }  from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
@@ -14,38 +14,23 @@ const deriveMax = values => {
   return max;
 };
 
-class Meter extends Component {
-  static defaultProps = {
-    background: { color: 'light-2', opacity: 'medium' },
-    size: 'medium',
-    thickness: 'medium',
-    type: 'bar',
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { max } = prevState;
-    const nextMax = deriveMax(nextProps.values);
-    if (!max || nextMax !== max) {
-      return { max: nextMax };
-    }
-    return null;
+const Meter = (props) =>  {
+  const { type, ...rest } = props;
+  const memoizedMax = useMemo(() => deriveMax(props.values), [props.values]);
+  let content;
+  if (type === 'bar') {
+    content = <Bar max={memoizedMax} {...rest} />;
+  } else if (type === 'circle') {
+    content = <Circle max={memoizedMax} {...rest} />;
   }
+  return content;
+};
 
-  state = {};
-
-  render() {
-    const { type, ...rest } = this.props;
-    const { max } = this.state;
-
-    let content;
-    if (type === 'bar') {
-      content = <Bar max={max} {...rest} />;
-    } else if (type === 'circle') {
-      content = <Circle max={max} {...rest} />;
-    }
-
-    return content;
-  }
+Meter.defaultProps = {
+  background: { color: 'light-2', opacity: 'medium' },
+  size: 'medium',
+  thickness: 'medium',
+  type: 'bar',
 }
 
 let MeterDoc;
