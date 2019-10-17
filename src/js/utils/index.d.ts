@@ -41,6 +41,7 @@ export type AlignSelfType = "start" | "center" | "end" | "stretch";
 export type AnimateType = boolean;
 export type BackgroundType = string | {color?: string,dark?: boolean | string,image?: string,position?: string,opacity?: "weak" | "medium" | "strong" | number | boolean,repeat?: "no-repeat" | "repeat" | string,size?: "cover" | "contain" | string,light?: string};
 export type ColorType = string | {dark?: string,light?: string};
+export type FillType = "horizontal" | "vertical" | boolean;
 export type GapType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 export type GridAreaType = string;
 export type KeyboardType = ((event: React.KeyboardEvent<HTMLElement>) => void);
