@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.normalizeBounds = exports.normalizeValues = void 0;
+exports.areNormalizedBoundsEquals = exports.areNormalizedValuesEquals = exports.normalizeBounds = exports.normalizeValues = void 0;
 
 var normalizeValues = function normalizeValues(values) {
   return (values || []).map(function (value, index) {
@@ -40,3 +40,29 @@ var normalizeBounds = function normalizeBounds(bounds, values) {
 };
 
 exports.normalizeBounds = normalizeBounds;
+
+var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valuesY) {
+  if (!valuesX || !valuesY) return false;
+  if (valuesX.length !== valuesY.length) return false;
+  if (valuesX.length === 0) return true;
+  if (!valuesX[0].value || !valuesY[0].value) return false;
+  return valuesX.every(function (_, i) {
+    return valuesX[i].value.every(function (value, index) {
+      return value === valuesY[i].value[index];
+    });
+  });
+};
+
+exports.areNormalizedValuesEquals = areNormalizedValuesEquals;
+
+var areNormalizedBoundsEquals = function areNormalizedBoundsEquals(boundsX, boundsY) {
+  if (!boundsX || !boundsY) return false;
+  if (boundsX.length !== boundsY.length || !(boundsX.length > 0)) return false;
+  return boundsX.every(function (_, i) {
+    return boundsX[i].every(function (value, index) {
+      return value === boundsY[i][index];
+    });
+  });
+};
+
+exports.areNormalizedBoundsEquals = areNormalizedBoundsEquals;

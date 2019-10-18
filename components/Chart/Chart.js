@@ -11,8 +11,6 @@ var _styledComponents = require("styled-components");
 
 var _utils = require("../../utils");
 
-var _defaultProps = require("../../default-props");
-
 var _StyledChart = require("./StyledChart");
 
 var _utils2 = require("./utils");
@@ -20,12 +18,6 @@ var _utils2 = require("./utils");
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -154,144 +146,120 @@ var renderArea = function renderArea(values, bounds, scale, height, _ref3) {
   }, hoverProps, clickProps)));
 };
 
-var Chart =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Chart, _Component);
-
-  function Chart() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "containerRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      containerWidth: 0,
-      containerHeight: 0
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onResize", function () {
-      var containerNode = _this.containerRef.current;
-
-      if (containerNode) {
-        var parentNode = containerNode.parentNode;
-
-        if (parentNode) {
-          var rect = parentNode.getBoundingClientRect();
-
-          _this.setState({
-            containerWidth: rect.width,
-            containerHeight: rect.height
-          });
-        }
-      }
-    });
-
-    return _this;
-  }
-
-  Chart.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var bounds = nextProps.bounds,
-        values = nextProps.values;
-    var stateBounds = prevState.bounds,
-        stateValues = prevState.values;
-
-    if (!stateValues || values !== stateValues || bounds !== stateBounds) {
-      var nextValues = (0, _utils2.normalizeValues)(values);
-      var nextBounds = (0, _utils2.normalizeBounds)(bounds, nextValues);
-      return {
-        bounds: nextBounds,
-        values: nextValues
-      };
-    }
-
-    return null;
-  };
-
-  var _proto = Chart.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    window.addEventListener('resize', this.onResize);
-    this.onResize();
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
-  };
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        color = _this$props.color,
-        onClick = _this$props.onClick,
-        onHover = _this$props.onHover,
-        overflow = _this$props.overflow,
-        round = _this$props.round,
-        size = _this$props.size,
-        theme = _this$props.theme,
-        thickness = _this$props.thickness,
-        type = _this$props.type,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["color", "onClick", "onHover", "overflow", "round", "size", "theme", "thickness", "type"]);
-
-    delete rest.values;
-    var _this$state = this.state,
-        bounds = _this$state.bounds,
-        containerWidth = _this$state.containerWidth,
-        containerHeight = _this$state.containerHeight,
-        values = _this$state.values;
-    var sizeWidth = typeof size === 'string' ? size : size.width || 'medium';
-    var sizeHeight = typeof size === 'string' ? size : size.height || 'medium';
-    var width = sizeWidth === 'full' ? containerWidth : (0, _utils.parseMetricToNum)(theme.global.size[sizeWidth] || sizeWidth);
-    var height = sizeHeight === 'full' ? containerHeight : (0, _utils.parseMetricToNum)(theme.global.size[sizeHeight] || sizeHeight);
-    var strokeWidth = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness]);
-    var scale = [width / (bounds[0][1] - bounds[0][0]), height / (bounds[1][1] - bounds[1][0])];
-    var viewBox = overflow ? "0 0 " + width + " " + height : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (width + strokeWidth) + " " + (height + strokeWidth);
-    var colorName = typeof color === 'object' ? color.color : color;
-    var opacity = color.opacity ? theme.global.opacity[color.opacity] : undefined;
-    var contents;
-
-    if (type === 'bar') {
-      contents = renderBars(values, bounds, scale, height);
-    } else if (type === 'line') {
-      contents = renderLine(values, bounds, scale, height, this.props);
-    } else if (type === 'area') {
-      contents = renderArea(values, bounds, scale, height, this.props);
-    }
-
-    return _react["default"].createElement(_StyledChart.StyledChart, _extends({
-      ref: this.containerRef,
-      viewBox: viewBox,
-      preserveAspectRatio: "none",
-      width: size === 'full' ? '100%' : width,
-      height: size === 'full' ? '100%' : height
-    }, rest), _react["default"].createElement("g", {
-      stroke: (0, _utils.normalizeColor)(colorName, theme),
-      strokeWidth: strokeWidth,
-      strokeLinecap: round ? 'round' : 'butt',
-      strokeLinejoin: round ? 'round' : 'miter',
-      opacity: opacity
-    }, contents));
-  };
-
-  return Chart;
-}(_react.Component);
-
-_defineProperty(Chart, "defaultProps", {
-  color: 'accent-1',
-  overflow: false,
-  size: {
+var Chart = function Chart(_ref6) {
+  var _ref6$color = _ref6.color,
+      color = _ref6$color === void 0 ? 'accent-1' : _ref6$color,
+      onClick = _ref6.onClick,
+      onHover = _ref6.onHover,
+      _ref6$overflow = _ref6.overflow,
+      overflow = _ref6$overflow === void 0 ? false : _ref6$overflow,
+      round = _ref6.round,
+      _ref6$size = _ref6.size,
+      size = _ref6$size === void 0 ? {
     width: 'medium',
     height: 'small'
-  },
-  thickness: 'medium',
-  type: 'bar'
-});
+  } : _ref6$size,
+      theme = _ref6.theme,
+      _ref6$thickness = _ref6.thickness,
+      thickness = _ref6$thickness === void 0 ? 'medium' : _ref6$thickness,
+      _ref6$type = _ref6.type,
+      type = _ref6$type === void 0 ? 'bar' : _ref6$type,
+      values = _ref6.values,
+      bounds = _ref6.bounds,
+      rest = _objectWithoutPropertiesLoose(_ref6, ["color", "onClick", "onHover", "overflow", "round", "size", "theme", "thickness", "type", "values", "bounds"]);
 
-Object.setPrototypeOf(Chart.defaultProps, _defaultProps.defaultProps);
+  var containerRef = (0, _react.useRef)();
+
+  var _useState = (0, _react.useState)({
+    width: 0,
+    height: 0
+  }),
+      containerState = _useState[0],
+      setContainerState = _useState[1];
+
+  var _useState2 = (0, _react.useState)({
+    values: null,
+    bounds: null
+  }),
+      sizeState = _useState2[0],
+      setSizeState = _useState2[1];
+
+  var nextValues = (0, _utils2.normalizeValues)(values);
+  var nextBounds = (0, _utils2.normalizeBounds)(bounds, nextValues);
+
+  if (!sizeState.values || !(0, _utils2.areNormalizedValuesEquals)(values, sizeState.values) && !(0, _utils2.areNormalizedValuesEquals)(sizeState.values, nextValues) || !(0, _utils2.areNormalizedBoundsEquals)(bounds, sizeState.bounds) && !(0, _utils2.areNormalizedBoundsEquals)(sizeState.bounds, nextBounds)) {
+    setSizeState({
+      bounds: nextBounds,
+      values: nextValues
+    });
+  }
+
+  var onResize = function onResize() {
+    var containerNode = containerRef.current;
+
+    if (containerNode) {
+      var parentNode = containerNode.parentNode;
+
+      if (parentNode) {
+        var rect = parentNode.getBoundingClientRect();
+        setContainerState({
+          width: rect.width,
+          height: rect.height
+        });
+      }
+    }
+  };
+
+  (0, _react.useEffect)(function () {
+    window.addEventListener('resize', onResize);
+    onResize();
+    return function cleanup() {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
+  if (!sizeState.bounds || !sizeState.values) return null;
+  var sizeWidth = typeof size === 'string' ? size : size.width || 'medium';
+  var sizeHeight = typeof size === 'string' ? size : size.height || 'medium';
+  var width = sizeWidth === 'full' ? containerState.width : (0, _utils.parseMetricToNum)(theme.global.size[sizeWidth] || sizeWidth);
+  var height = sizeHeight === 'full' ? containerState.height : (0, _utils.parseMetricToNum)(theme.global.size[sizeHeight] || sizeHeight);
+  var strokeWidth = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness]);
+  var scale = [width / (sizeState.bounds[0][1] - sizeState.bounds[0][0]), height / (sizeState.bounds[1][1] - sizeState.bounds[1][0])];
+  var viewBox = overflow ? "0 0 " + width + " " + height : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (width + strokeWidth) + " " + (height + strokeWidth);
+  var colorName = typeof color === 'object' ? color.color : color;
+  var opacity = color.opacity ? theme.global.opacity[color.opacity] : undefined;
+  var contents;
+
+  if (type === 'bar') {
+    contents = renderBars(sizeState.values, sizeState.bounds, scale, height);
+  } else if (type === 'line') {
+    contents = renderLine(sizeState.values, sizeState.bounds, scale, height, {
+      onClick: onClick,
+      onHover: onHover
+    });
+  } else if (type === 'area') {
+    contents = renderArea(sizeState.values, sizeState.bounds, scale, height, {
+      color: color,
+      onClick: onClick,
+      onHover: onHover,
+      theme: theme
+    });
+  }
+
+  return _react["default"].createElement(_StyledChart.StyledChart, _extends({
+    ref: containerRef,
+    viewBox: viewBox,
+    preserveAspectRatio: "none",
+    width: size === 'full' ? '100%' : width,
+    height: size === 'full' ? '100%' : height
+  }, rest), _react["default"].createElement("g", {
+    stroke: (0, _utils.normalizeColor)(colorName, theme),
+    strokeWidth: strokeWidth,
+    strokeLinecap: round ? 'round' : 'butt',
+    strokeLinejoin: round ? 'round' : 'miter',
+    opacity: opacity
+  }, contents));
+};
+
 var ChartDoc;
 
 if (process.env.NODE_ENV !== 'production') {

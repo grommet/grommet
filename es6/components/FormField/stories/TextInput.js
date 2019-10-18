@@ -35,9 +35,9 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   };
 
   var onSelect = function onSelect(event) {
-    return setState(_extends({
+    return setState(_extends({}, state, {
       value: event.suggestion
-    }, state));
+    }));
   };
 
   return React.createElement(Grommet, {
