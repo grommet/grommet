@@ -84,7 +84,11 @@ function (_Component) {
       layerClone.id = 'layerClone';
       document.body.appendChild(layerClone);
       var clonedContainer = layerClone.querySelector('[class*="StyledLayer__StyledContainer"]');
-      clonedContainer.style.animationDirection = 'reverse';
+
+      if (clonedContainer && clonedContainer.style) {
+        clonedContainer.style.animationDirection = 'reverse';
+      }
+
       setTimeout(function () {
         // we add the id and query here so the unit tests work
         var clone = document.getElementById('layerClone');
