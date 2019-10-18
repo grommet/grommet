@@ -174,6 +174,45 @@ describe('Menu', () => {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
+  test('tab through menu until it closes', () => {
+    const { getByLabelText, container } = render(
+      <Grommet>
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Third tab moves beyond last menu item and closes menu
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
+    fireEvent.keyDown(document.activeElement.firstChild, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
   test('close on esc', () => {
     const { getByLabelText, container } = render(
       <Grommet>
