@@ -54,7 +54,7 @@ class Layer extends Component {
       const clonedContainer = layerClone.querySelector(
         '[class*="StyledLayer__StyledContainer"]',
       );
-      if (clonedContainer.style) {
+      if (clonedContainer && clonedContainer.style) {
         clonedContainer.style.animationDirection = 'reverse';
       }
       setTimeout(() => {
