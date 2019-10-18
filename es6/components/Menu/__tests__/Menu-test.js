@@ -174,7 +174,7 @@ describe('Menu', function () {
     expect(onClick).toBeCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
-  test('close on esc', function () {
+  test('tab through menu until it closes', function () {
     var _render5 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
@@ -187,20 +187,34 @@ describe('Menu', function () {
         getByLabelText = _render5.getByLabelText,
         container = _render5.container;
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot(); // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Third tab moves beyond last menu item and closes menu
+
     fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40
+      key: 'Space',
+      keyCode: 32,
+      which: 32
     });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
-      key: 'Esc',
-      keyCode: 27,
-      which: 27
+    fireEvent.keyDown(document.activeElement.firstChild, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
     });
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
-  test('close on tab', function () {
+  test('close on esc', function () {
     var _render6 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
@@ -219,6 +233,32 @@ describe('Menu', function () {
       keyCode: 40,
       which: 40
     });
+    fireEvent.keyDown(getByLabelText('Close Menu'), {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27
+    });
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+  test('close on tab', function () {
+    var _render7 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+      id: "test-menu",
+      label: "Test",
+      items: [{
+        label: 'Item 1'
+      }, {
+        label: 'Item 2'
+      }]
+    }))),
+        getByLabelText = _render7.getByLabelText,
+        container = _render7.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40
+    });
     fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Tab',
       keyCode: 9,
@@ -227,7 +267,7 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('with dropAlign renders', function () {
-    var _render7 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render8 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       dropAlign: {
         top: 'top',
@@ -240,8 +280,8 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render7.getByText,
-        container = _render7.container;
+        getByText = _render8.getByText,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.keyDown(getByText('Test'), {
@@ -252,7 +292,7 @@ describe('Menu', function () {
     expectPortal('test-menu__drop').toMatchSnapshot();
   });
   test('disabled', function () {
-    var _render8 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render9 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       disabled: true,
       label: "Test",
@@ -268,8 +308,8 @@ describe('Menu', function () {
     })), {
       attachTo: document.body.firstChild
     }),
-        getByText = _render8.getByText,
-        container = _render8.container;
+        getByText = _render9.getByText,
+        container = _render9.container;
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();

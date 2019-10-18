@@ -201,7 +201,7 @@ describe('Menu', function () {
     expect(onClick).toBeCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
-  test('close on esc', function () {
+  test('tab through menu until it closes', function () {
     var _render5 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
@@ -214,23 +214,38 @@ describe('Menu', function () {
         getByLabelText = _render5.getByLabelText,
         container = _render5.container;
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot(); // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Third tab moves beyond last menu item and closes menu
 
     _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40
+      key: 'Space',
+      keyCode: 32,
+      which: 32
     });
 
-    _react2.fireEvent.keyDown(getByLabelText('Close Menu'), {
-      key: 'Esc',
-      keyCode: 27,
-      which: 27
+    _react2.fireEvent.keyDown(document.activeElement.firstChild, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
+    });
+
+    _react2.fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
+    });
+
+    _react2.fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9
     });
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
-  test('close on tab', function () {
+  test('close on esc', function () {
     var _render6 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       label: "Test",
@@ -251,6 +266,35 @@ describe('Menu', function () {
       which: 40
     });
 
+    _react2.fireEvent.keyDown(getByLabelText('Close Menu'), {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27
+    });
+
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+  test('close on tab', function () {
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+      id: "test-menu",
+      label: "Test",
+      items: [{
+        label: 'Item 1'
+      }, {
+        label: 'Item 2'
+      }]
+    }))),
+        getByLabelText = _render7.getByLabelText,
+        container = _render7.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40
+    });
+
     _react2.fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Tab',
       keyCode: 9,
@@ -260,7 +304,7 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('with dropAlign renders', function () {
-    var _render7 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render8 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       dropAlign: {
         top: 'top',
@@ -273,8 +317,8 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render7.getByText,
-        container = _render7.container;
+        getByText = _render8.getByText,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -287,7 +331,7 @@ describe('Menu', function () {
     (0, _portal.expectPortal)('test-menu__drop').toMatchSnapshot();
   });
   test('disabled', function () {
-    var _render8 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
+    var _render9 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Menu, {
       id: "test-menu",
       disabled: true,
       label: "Test",
@@ -303,8 +347,8 @@ describe('Menu', function () {
     })), {
       attachTo: document.body.firstChild
     }),
-        getByText = _render8.getByText,
-        container = _render8.container;
+        getByText = _render9.getByText,
+        container = _render9.container;
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
