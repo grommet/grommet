@@ -29,7 +29,7 @@ const FormFieldTextInput = props => {
     setState({ value, suggestions });
   };
 
-  const onSelect = event => setState({ value: event.suggestion, ...state });
+  const onSelect = event => setState({ ...state, value: event.suggestion });
 
   return (
     <Grommet theme={grommet}>
