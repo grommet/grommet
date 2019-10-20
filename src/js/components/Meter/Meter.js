@@ -1,4 +1,4 @@
-import React, { useMemo }  from 'react';
+import React, { useMemo } from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
@@ -14,24 +14,39 @@ const deriveMax = values => {
   return max;
 };
 
-const Meter = (props) =>  {
-  const { type, ...rest } = props;
-  const memoizedMax = useMemo(() => deriveMax(props.values), [props.values]);
+const Meter = ({
+  background = { color: 'light-2', opacity: 'medium' },
+  size = 'medium',
+  thickness = 'medium',
+  type = 'bar',
+  values,
+  ...rest
+}) => {
+  const memoizedMax = useMemo(() => deriveMax(values), [values]);
   let content;
   if (type === 'bar') {
-    content = <Bar max={memoizedMax} {...rest} />;
+    content = 
+      <Bar 
+        max={memoizedMax} 
+        values={values} 
+        size={size} 
+        thickness={thickness} 
+        background={background} 
+        {...rest} 
+      />;
   } else if (type === 'circle') {
-    content = <Circle max={memoizedMax} {...rest} />;
+    content =
+      <Circle
+        max={memoizedMax}
+        values={values}
+        size={size}
+        thickness={thickness}
+        background={background}
+        {...rest}
+      />;
   }
   return content;
 };
-
-Meter.defaultProps = {
-  background: { color: 'light-2', opacity: 'medium' },
-  size: 'medium',
-  thickness: 'medium',
-  type: 'bar',
-}
 
 let MeterDoc;
 if (process.env.NODE_ENV !== 'production') {
