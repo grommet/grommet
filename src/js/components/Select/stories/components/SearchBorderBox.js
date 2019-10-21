@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import { Box } from '../../..';
 
@@ -74,32 +74,26 @@ const defaultStyle = css`
   `};
 `;
 
-const boxBorderTheme = {
-  box: {
-    extend: props => (props.searching ? searchingStyle : defaultStyle),
-  },
-};
+export const SearchBorderBox = ({ children, searching, ...rest }) => {
+  const [focus, setFocus] = useState(false);
 
-export class SearchBorderBox extends Component {
-  state = {
-    focus: false,
+  const boxBorderTheme = {
+    box: {
+      extend: searching ? searchingStyle : defaultStyle,
+    },
   };
 
-  render() {
-    const { children, searching, ...rest } = this.props;
-    const { focus } = this.state;
-    return (
-      <ThemeContext.Extend value={boxBorderTheme}>
-        <Box
-          focus={focus}
-          searching={searching}
-          onFocus={() => this.setState({ focus: true })}
-          onBlur={() => this.setState({ focus: false })}
-          {...rest}
-        >
-          {children}
-        </Box>
-      </ThemeContext.Extend>
-    );
-  }
-}
+  return (
+    <ThemeContext.Extend value={boxBorderTheme}>
+      <Box
+        focus={focus}
+        searching={searching}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
+        {...rest}
+      >
+        {children}
+      </Box>
+    </ThemeContext.Extend>
+  );
+};
