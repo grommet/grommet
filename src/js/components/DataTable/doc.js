@@ -6,14 +6,16 @@ const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 const parts = ['header', 'body', 'footer'];
 
-const padShape = {};
+const padShapeSides = {};
 sides.forEach(side => {
-  padShape[side] = PropTypes.oneOf(sizes);
+  padShapeSides[side] = PropTypes.oneOf(sizes);
 });
+
+const padShapeParts = {};
 parts.forEach(part => {
-  padShape[part] = {};
+  padShapeParts[part] = {};
   sides.forEach(side => {
-    padShape[part][side] = PropTypes.oneOf(sizes);
+    padShapeParts[part][side] = PropTypes.oneOf(sizes);
   });
 });
 
@@ -134,7 +136,14 @@ export const doc = DataTable => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.`,
+      browser, such as columns.search, sortable, groupBy, or 
+      columns.aggregate.`,
+    ),
+    replace: PropTypes.bool.description(
+      `Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.`,
     ),
     onClickRow: PropTypes.func.description(
       `When supplied, this function will be called with an event object that
@@ -152,7 +161,8 @@ export const doc = DataTable => {
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(sizes),
       PropTypes.string,
-      PropTypes.shape(padShape),
+      PropTypes.shape(padShapeSides),
+      PropTypes.shape(padShapeParts),
     ]).description(
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,

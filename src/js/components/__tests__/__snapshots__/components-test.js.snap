@@ -170,8 +170,8 @@ string",
       },
       Object {
         "description": "The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property, typically
-when it is not contained in a 'Heading', 'Paragraph', or 'Text'.",
+this component. But, it can be adjusted directly via this size property,
+typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.",
         "format": "xsmall
 small
 medium
@@ -479,7 +479,40 @@ all
     inset
     outset
     hidden
-}",
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]",
         "name": "border",
       },
       Object {
@@ -889,7 +922,8 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the button expands to fill all of the available width and/or height.",
+        "description": "Whether the button expands to fill all of the available width and/or 
+        height.",
         "format": "horizontal
 vertical
 boolean",
@@ -982,13 +1016,15 @@ causes the Button to be disabled.",
         "defaultValue": false,
         "description": "Whether this is a plain button with no border or pad.
 Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as well.",
+The plain button has no border and unless the icon prop exist it has no pad as 
+well.",
         "format": "boolean",
         "name": "plain",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a primary button. There should be at most one per page or screen.",
+        "description": "Whether this is a primary button. There should be at most one per page
+         or screen.",
         "format": "boolean",
         "name": "primary",
       },
@@ -1001,7 +1037,8 @@ end of the anchor.",
       },
       Object {
         "defaultValue": "button",
-        "description": "The type of button. Set the type to submit for the default button on forms.",
+        "description": "The type of button. Set the type to submit for the default button on 
+        forms.",
         "format": "button
 reset
 submit",
@@ -1183,9 +1220,11 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using \`bounds\`, if the current date is within that range.
-You can then use that to disable the previous and next buttons.
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+calendar to move between months.
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
+\`bounds\`, if the current date is within that range. You can then use that 
+to disable the previous and next buttons.
 ",
         "format": "function",
         "name": "header",
@@ -1197,7 +1236,8 @@ You can then use that to disable the previous and next buttons.
         "name": "locale",
       },
       Object {
-        "description": "Called with an ISO8601 date when the user navigates to a different month.",
+        "description": "Called with an ISO8601 date when the user navigates to a different
+       month.",
         "format": "function",
         "name": "onReference",
       },
@@ -1649,7 +1689,8 @@ area",
         "name": "label",
       },
       Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> element.",
+        "description": "The DOM name attribute value to use for the underlying <input/> 
+      element.",
         "format": "string",
         "name": "name",
       },
@@ -1793,8 +1834,8 @@ vertical",
     ],
     "description": "A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus
-      so that the contents behind it are not focusable. All properties and theme properties of
-      Button or Drop can be passed through.
+      so that the contents behind it are not focusable. All properties and 
+      theme properties of Button or Drop can be passed through.
       ",
     "intrinsicElement": "button",
     "name": "DropButton",
@@ -1990,7 +2031,12 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
-        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  ",
+        "description": "The component to insert in the FormField. Grommet will add update the 
+      form values when this field changes. Any additional properties 
+      (such as initial value) you pass to FormField will be forwarded to this
+      component. The component may be custom as long it supports the properties
+      of name, value, onChange (event => {}), while event has either event.value
+      or event.target.value.",
         "format": "function
 object",
         "name": "component",
@@ -2119,7 +2165,132 @@ function",
   "Grid": [Function],
   "Grommet": [Function],
   "Heading": [Function],
-  "Image": [Function],
+  "Image": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=image&module=%2Fsrc%2FImage.js",
+      },
+    ],
+    "description": "An image.",
+    "intrinsicElement": "img",
+    "name": "Image",
+    "properties": Array [
+      Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "How the image fills its container.",
+        "format": "cover
+contain",
+        "name": "fit",
+      },
+      Object {
+        "description": "Specifies the URL of the fallback image used when 
+      src is failing to load",
+        "format": "string",
+        "name": "fallback",
+      },
+      Object {
+        "description": "Transparency of the image.",
+        "format": "weak
+medium
+strong
+string
+boolean",
+        "name": "opacity",
+      },
+    ],
+    "usage": "import { Image } from 'grommet';
+<Image/>",
+  },
   "InfiniteScroll": [Function],
   "Keyboard": [Function],
   "Layer": [Function],
@@ -2319,7 +2490,8 @@ string",
           "left": "left",
           "top": "top",
         },
-        "description": "Where to place the drop down. The keys correspond to a side of the drop down.
+        "description": "Where to place the drop down.
+The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
@@ -2473,7 +2645,8 @@ with the same name so form submissions work.",
         "name": "label",
       },
       Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> element.",
+        "description": "The DOM name attribute value to use for the underlying <input/>
+       element.",
         "format": "string",
         "name": "name",
         "required": true,
@@ -2507,7 +2680,8 @@ with the same name so form submissions work.",
     "name": "RadioButtonGroup",
     "properties": Array [
       Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> elements.",
+        "description": "The DOM name attribute value to use for the underlying <input/> 
+      elements.",
         "format": "string",
         "name": "name",
         "required": true,
@@ -2914,7 +3088,8 @@ string",
         "name": "focusIndicator",
       },
       Object {
-        "description": "A custom icon to be used when rendering the select. You can use false to not render an icon at all.",
+        "description": "A custom icon to be used when rendering the select. You can use false to
+       not render an icon at all.",
         "format": "boolean
 function
 node",
@@ -3015,7 +3190,8 @@ node",
         "name": "replace",
       },
       Object {
-        "description": "Placeholder text to use in the search box when the search input is empty.",
+        "description": "Placeholder text to use in the search box when the search input is 
+      empty.",
         "format": "string",
         "name": "searchPlaceholder",
       },
@@ -3028,7 +3204,7 @@ node",
         "name": "selected",
       },
       Object {
-        "description": "The size of the select.",
+        "description": "The size of the text and icon.",
         "format": "small
 medium
 large
@@ -3470,7 +3646,8 @@ string",
           "suggestionsCount": "suggestions available",
           "suggestionsExist": "This input has suggestions use arrow keys to navigate",
         },
-        "description": "Custom messages for TextInput. Used for accessibility by screen readers.",
+        "description": "Custom messages for TextInput. Used for accessibility by screen 
+        readers.",
         "format": "{
   enterSelect: string,
   suggestionsCount: string,
@@ -3811,6 +3988,13 @@ string",
   onHover: function
 }]",
         "name": "continents",
+      },
+      Object {
+        "description": "Whether the width and/or height should fill the container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
       },
       Object {
         "description": "Called when the user clicks on a place.

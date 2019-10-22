@@ -1,21 +1,22 @@
 import * as React from "react";
+import { KeyboardType } from '../../utils';
 
 export interface KeyboardProps {
   target?: "component" | "document";
-  onBackspace?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onComma?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onDown?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onEnter?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onEsc?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onKeyDown?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onLeft?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onRight?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onShift?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onSpace?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onTab?: ((event: React.KeyboardEvent<HTMLElement>) => void);
-  onUp?: ((event: React.KeyboardEvent<HTMLElement>) => void);
+  onBackspace?: KeyboardType;
+  onComma?: KeyboardType;
+  onDown?: KeyboardType;
+  onEnter?: KeyboardType;
+  onEsc?: KeyboardType;
+  onKeyDown?: KeyboardType;
+  onLeft?: KeyboardType;
+  onRight?: KeyboardType;
+  onShift?: KeyboardType;
+  onSpace?: KeyboardType;
+  onTab?: KeyboardType;
+  onUp?: KeyboardType;
 }
 
-declare const Keyboard: React.ComponentClass<KeyboardProps>;
+declare const Keyboard: React.FC<KeyboardProps>;
 
 export { Keyboard };

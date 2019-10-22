@@ -98,7 +98,10 @@ const StyledDay = styled.div`
       backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
   ${props => props.otherMonth && 'opacity: 0.5;'}
   ${props => props.isSelected && 'font-weight: bold;'}
-  ${props => props.theme.calendar && props.theme.calendar.day && props.theme.calendar.day.extend}
+  ${props =>
+    props.theme.calendar &&
+    props.theme.calendar.day &&
+    props.theme.calendar.day.extend}
 `;
 
 StyledDay.defaultProps = {};

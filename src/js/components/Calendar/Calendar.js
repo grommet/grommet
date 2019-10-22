@@ -41,12 +41,14 @@ const buildStartEnd = (reference, firstDayOfWeek) => {
   let start = new Date(reference);
   start.setDate(1); // first of month
 
-  // In case Sunday is the first day of the month, and the user asked for Monday to
-  // be the first day of the week, then we need to include Sunday and six days prior.
+  // In case Sunday is the first day of the month, and the user asked for Monday
+  // to be the first day of the week, then we need to include Sunday and six
+  // days prior.
   start =
     start.getDay() === 0 && firstDayOfWeek === 1
       ? (start = subtractDays(start, 6))
-      : (start = subtractDays(start, start.getDay() - firstDayOfWeek)); // beginning of week
+      : // beginning of week
+        (start = subtractDays(start, start.getDay() - firstDayOfWeek));
 
   const end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
   return { start, end };
@@ -140,7 +142,8 @@ class Calendar extends Component {
           slide: undefined,
         });
       }
-      // Wait for animation to finish before cleaning up. Empirically determined.
+      // Wait for animation to finish before cleaning up.
+      // Empirically determined.
     }, 800);
   };
 
@@ -234,8 +237,9 @@ class Calendar extends Component {
           <Heading
             level={
               size === 'small'
-                ? ((theme.calendar.heading && theme.calendar.heading.level) || 4)
-                : ((theme.calendar.heading && theme.calendar.heading.level) || 4) - 1
+                ? (theme.calendar.heading && theme.calendar.heading.level) || 4
+                : ((theme.calendar.heading && theme.calendar.heading.level) ||
+                    4) - 1
             }
             size={size}
             margin="none"
@@ -420,7 +424,8 @@ Object.setPrototypeOf(Calendar.defaultProps, defaultProps);
 
 let CalendarDoc;
 if (process.env.NODE_ENV !== 'production') {
-  CalendarDoc = require('./doc').doc(Calendar); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CalendarDoc = require('./doc').doc(Calendar);
 }
 const CalendarWrapper = compose(withTheme)(CalendarDoc || Calendar);
 

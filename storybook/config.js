@@ -1,5 +1,5 @@
-import { addDecorator, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import { addParameters, configure } from '@storybook/react';
+import 'storybook-chromatic';
 import grommetLight from './theme';
 
 const req = require.context(
@@ -12,10 +12,12 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
     theme: grommetLight,
-  }),
-);
+    showNav: true,
+    showPanel: true, // show the code panel by default
+  },
+});
 
 configure(loadStories, module);

@@ -1,5 +1,5 @@
 ## Heading
-Heading text structed in levels.
+Heading text structured in levels.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=heading&module=%2Fsrc%2FHeading.js)
 ## Usage
@@ -268,7 +268,9 @@ undefined
 
 **heading.level**
 
-The level that impacts line height, max width, font size, weight and family of the Heading. Expects `object`.
+The level that impacts line-height, max-width, font size, 
+weight and family of the Heading. Heading level is automatically adjusted at 
+different screen sizes. These screen sizes are derived from breakpoints. Expects `object`.
 
 Defaults to
 
@@ -310,7 +312,8 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects `string`.
+The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints. Expects `string`.
 
 Defaults to
 
