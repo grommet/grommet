@@ -2,7 +2,7 @@
 
 exports[`Table caption renders 1`] = `
 .c2 {
-  display: none;
+  margin-bottom: 3px;
 }
 
 .c1 {
