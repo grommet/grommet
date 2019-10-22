@@ -54,7 +54,7 @@ StyledTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
 
 const StyledTableDataCaption = styled.caption`
-  display: none;
+  margin-bottom: ${props => props.theme.global.edgeSize.xxsmall};
 `;
 
 StyledTableDataCaption.defaultProps = {};
