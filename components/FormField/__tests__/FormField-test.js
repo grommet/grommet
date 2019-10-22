@@ -74,6 +74,14 @@ test('forces empty margin', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('renders pad', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    pad: true
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('renders abut correctly', function () {
   var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
     theme: {
