@@ -539,7 +539,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       margin: { bottom: 'small' },
     },
-    grommet: {},
+    grommet: {
+      // extend: undefined
+    },
     heading: {
       font: {
         // family: undefined
@@ -617,6 +619,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         zIndex: '15',
       },
+      // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },
