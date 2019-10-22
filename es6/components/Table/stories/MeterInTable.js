@@ -11,7 +11,10 @@ var MeterInTable = function MeterInTable() {
     align: "center",
     pad: "large"
   }, React.createElement(Box, {
-    border: true
+    border: true,
+    pad: {
+      top: 'xsmall'
+    }
   }, React.createElement(Table, {
     caption: "Meter Inside Table"
   }, React.createElement(TableBody, null, values.map(function (val) {

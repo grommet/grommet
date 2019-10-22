@@ -60,11 +60,7 @@ var CustomThemeTable = function CustomThemeTable() {
   }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Text, {
-    margin: {
-      vertical: 'medium'
-    }
-  }, "this Table is using a Custom theme"), _react["default"].createElement(_grommet.Table, {
+  }, _react["default"].createElement(_grommet.Table, {
     caption: "Custom Theme Table"
   }, _react["default"].createElement(_grommet.TableHeader, null, _react["default"].createElement(_grommet.TableRow, null, _data.columns.map(function (c) {
     return _react["default"].createElement(_grommet.TableCell, {

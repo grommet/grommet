@@ -37,7 +37,9 @@ Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
 var StyledTableDataCaption = styled.caption.withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
   componentId: "sc-1m3u5g-1"
-})(["display:none;"]);
+})(["margin-bottom:", ";"], function (props) {
+  return props.theme.global.edgeSize.xxsmall;
+});
 StyledTableDataCaption.defaultProps = {};
 Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
 var StyledTableRow = styled.tr.withConfig({

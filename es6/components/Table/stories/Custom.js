@@ -52,11 +52,7 @@ var CustomThemeTable = function CustomThemeTable() {
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Text, {
-    margin: {
-      vertical: 'medium'
-    }
-  }, "this Table is using a Custom theme"), React.createElement(Table, {
+  }, React.createElement(Table, {
     caption: "Custom Theme Table"
   }, React.createElement(TableHeader, null, React.createElement(TableRow, null, columns.map(function (c) {
     return React.createElement(TableCell, {

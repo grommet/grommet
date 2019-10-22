@@ -19,7 +19,10 @@ var MeterInTable = function MeterInTable() {
     align: "center",
     pad: "large"
   }, _react["default"].createElement(_grommet.Box, {
-    border: true
+    border: true,
+    pad: {
+      top: 'xsmall'
+    }
   }, _react["default"].createElement(_grommet.Table, {
     caption: "Meter Inside Table"
   }, _react["default"].createElement(_grommet.TableBody, null, values.map(function (val) {
