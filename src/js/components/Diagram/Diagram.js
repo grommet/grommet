@@ -60,7 +60,7 @@ const findTarget = target => {
   return target;
 };
 
-const Diagram = ({ connections, theme, ...rest }) => {
+const Diagram = ({ connections = [], theme, ...rest }) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [connectionPoints, setConnectionPoints] = useState();
@@ -229,7 +229,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
   );
 };
 
-Diagram.defaultProps = { connections: [] };
+Diagram.defaultProps = {};
 Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 
 let DiagramDoc;
