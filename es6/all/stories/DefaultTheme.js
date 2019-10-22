@@ -18,6 +18,6 @@ var CustomDefaultProps = function CustomDefaultProps() {
   }, "Hello");
 };
 
-storiesOf('Components', module).add('Default Theme', function () {
+storiesOf('Theme', module).add('Extend Default', function () {
   return React.createElement(CustomDefaultProps, null);
 });

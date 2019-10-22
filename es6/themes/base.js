@@ -600,7 +600,8 @@ export var generate = function generate(baseSpacing, scale) {
         bottom: 'small'
       }
     },
-    grommet: {},
+    grommet: {// extend: undefined
+    },
     heading: {
       font: {// family: undefined
       },
@@ -672,6 +673,7 @@ export var generate = function generate(baseSpacing, scale) {
       container: {
         zIndex: '15'
       },
+      // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)'
       },

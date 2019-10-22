@@ -377,6 +377,6 @@ var Components = function Components() {
   }, content))));
 };
 
-storiesOf('Components', module).add('All', function () {
+storiesOf('All', module).add('All', function () {
   return React.createElement(Components, null);
 });

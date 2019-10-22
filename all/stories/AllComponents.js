@@ -393,6 +393,6 @@ var Components = function Components() {
   }, content))));
 };
 
-(0, _react2.storiesOf)('Components', module).add('All', function () {
+(0, _react2.storiesOf)('All', module).add('All', function () {
   return _react["default"].createElement(Components, null);
 });
