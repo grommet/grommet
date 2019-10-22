@@ -65,7 +65,6 @@ const Diagram = ({ connections, theme, ...rest }) => {
   const [height, setHeight] = useState(0);
   const [connectionPoints, setConnectionPoints] = useState();
   const [prevConnections, setPrevConnections] = useState();
-  const stateRef = useRef({});
   const svgRef = useRef();
 
   // track whether the connections array changes so we can trigger re-placing
@@ -77,16 +76,34 @@ const Diagram = ({ connections, theme, ...rest }) => {
 
   const onResize = useCallback(() => {
     const svg = svgRef.current;
-    const state = stateRef.current;
 
     if (svg) {
       const rect = svg.getBoundingClientRect();
-      if (rect.width !== state.width || rect.height !== state.height) {
+      if (rect.width !== width || rect.height !== height) {
         setWidth(rect.width);
         setHeight(rect.height);
         setConnectionPoints(undefined);
       }
     }
+  }, [width, height]);
+
+  // Ref that stores handler
+  const savedOnResize = useRef();
+
+  // Update ref.current value if handler changes.
+  // This allows our effect below to always get latest handler
+  useEffect(() => {
+    savedOnResize.current = onResize;
+  }, [onResize]);
+
+  useEffect(() => {
+    const onResizeHandler = savedOnResize.current;
+    onResizeHandler();
+    window.addEventListener('resize', onResizeHandler);
+
+    return () => {
+      window.removeEventListener('resize', onResizeHandler);
+    };
   }, []);
 
   const placeConnections = () => {
@@ -146,26 +163,6 @@ const Diagram = ({ connections, theme, ...rest }) => {
     );
     setConnectionPoints(updatedConnectionPoints);
   };
-
-  // Sync state to ref on every render so we have access to latest state
-  // in `onResize` handler
-  useEffect(() => {
-    stateRef.current = {
-      width,
-      height,
-      connectionPoints,
-      prevConnections,
-    };
-  });
-
-  useEffect(() => {
-    window.addEventListener('resize', onResize);
-    onResize();
-
-    return () => {
-      window.removeEventListener('resize', onResize);
-    };
-  }, [onResize]);
 
   useEffect(() => {
     if (!connectionPoints) {
