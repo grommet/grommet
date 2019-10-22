@@ -45,6 +45,7 @@ export type ElevationType = "none" | "xsmall" | "small" | "medium" | "large" | "
 export type FillType = "horizontal" | "vertical" | boolean;
 export type GapType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 export type GridAreaType = string;
+export type JustifyContentType = "start" | "center" | "end" | "between" | "around" | "stretch";
 export type KeyboardType = ((event: React.KeyboardEvent<HTMLElement>) => void);
 export type MarginType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
 export type OpacityType = "weak" | "medium" | "strong" | string | true | false | number;
