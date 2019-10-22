@@ -2,13 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
+import React, { useMemo } from 'react';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 
@@ -25,73 +19,46 @@ var deriveMax = function deriveMax(values) {
   return max;
 };
 
-var Meter =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Meter, _Component);
-
-  function Meter() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    return _this;
-  }
-
-  Meter.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var max = prevState.max;
-    var nextMax = deriveMax(nextProps.values);
-
-    if (!max || nextMax !== max) {
-      return {
-        max: nextMax
-      };
-    }
-
-    return null;
-  };
-
-  var _proto = Meter.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        type = _this$props.type,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["type"]);
-
-    var max = this.state.max;
-    var content;
-
-    if (type === 'bar') {
-      content = React.createElement(Bar, _extends({
-        max: max
-      }, rest));
-    } else if (type === 'circle') {
-      content = React.createElement(Circle, _extends({
-        max: max
-      }, rest));
-    }
-
-    return content;
-  };
-
-  return Meter;
-}(Component);
-
-_defineProperty(Meter, "defaultProps", {
-  background: {
+var Meter = function Meter(_ref) {
+  var _ref$background = _ref.background,
+      background = _ref$background === void 0 ? {
     color: 'light-2',
     opacity: 'medium'
-  },
-  size: 'medium',
-  thickness: 'medium',
-  type: 'bar'
-});
+  } : _ref$background,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'medium' : _ref$size,
+      _ref$thickness = _ref.thickness,
+      thickness = _ref$thickness === void 0 ? 'medium' : _ref$thickness,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'bar' : _ref$type,
+      values = _ref.values,
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "size", "thickness", "type", "values"]);
+
+  var memoizedMax = useMemo(function () {
+    return deriveMax(values);
+  }, [values]);
+  var content;
+
+  if (type === 'bar') {
+    content = React.createElement(Bar, _extends({
+      max: memoizedMax,
+      values: values,
+      size: size,
+      thickness: thickness,
+      background: background
+    }, rest));
+  } else if (type === 'circle') {
+    content = React.createElement(Circle, _extends({
+      max: memoizedMax,
+      values: values,
+      size: size,
+      thickness: thickness,
+      background: background
+    }, rest));
+  }
+
+  return content;
+};
 
 var MeterDoc;
 
