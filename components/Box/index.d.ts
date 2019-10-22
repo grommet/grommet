@@ -4,6 +4,7 @@ import {
   AlignContentType, 
   AlignSelfType,
   BackgroundType,
+  ElevationType,
   FillType,
   GapType, 
   GridAreaType, 
@@ -29,7 +30,7 @@ export interface BoxProps {
   basis?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "auto" | string;
   border?: boolean | SideType | {color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType} | ({color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType})[];
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
-  elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  elevation?: ElevationType;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
   fill?: FillType;
   gap?: GapType;
