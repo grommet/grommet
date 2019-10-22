@@ -1,747 +1,913 @@
-import { DeepReadonly, ColorType, OpacityType, BackgroundType } from '../utils'
+import { 
+  BackgroundType, 
+  ColorType,  
+  DeepReadonly, 
+  GapType, 
+  MarginType,
+  OpacityType,
+  PadType, 
+} from '../utils'
+import { ReactComponentElement } from 'react';
 
 export declare const base: DeepReadonly<ThemeType>;
-export declare const generate: (baseSpacing: number, scale: number) => DeepReadonly<ThemeType>;
+export declare const generate: (baseSpacing?: number, scale?: number) => DeepReadonly<ThemeType>;
+
+type ExtendType = string | ((...args: any) => void);
 
 declare const colors: {
-  active: ColorType;
-  black: ColorType;
-  border: ColorType;
-  brand: ColorType;
-  control: ColorType;
-  focus: ColorType;
-  placeholder: ColorType;
-  selected: ColorType;
-  text: ColorType;
-  icon: ColorType;
-  white: ColorType;
+  active?: ColorType;
+  black?: ColorType;
+  border?: ColorType;
+  brand?: ColorType;
+  control?: ColorType;
+  focus?: ColorType;
+  placeholder?: ColorType;
+  selected?: ColorType;
+  text?: ColorType;
+  icon?: ColorType;
+  white?: ColorType;
 };
   
 type Colors = typeof colors & {
-  'accent-1': ColorType;
-  'accent-2': ColorType;
-  'accent-3': ColorType;
-  'accent-4': ColorType;
-  'neutral-1': ColorType;
-  'neutral-2': ColorType;
-  'neutral-3': ColorType;
-  'neutral-4': ColorType;
-  'dark-1': ColorType;
-  'dark-2': ColorType;
-  'dark-3': ColorType;
-  'dark-4': string;
-  'dark-5': ColorType;
-  'dark-6': ColorType;
-  'light-1': ColorType;
-  'light-2': ColorType;
-  'light-3': ColorType;
-  'light-4': ColorType;
-  'light-5': ColorType;
-  'light-6': ColorType;
-  'status-critical': ColorType;
-  'status-error': ColorType;
-  'status-warning': ColorType;
-  'status-ok': ColorType;
-  'status-unknown': ColorType;
-  'status-disabled': ColorType;
+  'accent-1'?: ColorType;
+  'accent-2'?: ColorType;
+  'accent-3'?: ColorType;
+  'accent-4'?: ColorType;
+  'neutral-1'?: ColorType;
+  'neutral-2'?: ColorType;
+  'neutral-3'?: ColorType;
+  'neutral-4'?: ColorType;
+  'dark-1'?: ColorType;
+  'dark-2'?: ColorType;
+  'dark-3'?: ColorType;
+  'dark-4'?: string;
+  'dark-5'?: ColorType;
+  'dark-6'?: ColorType;
+  'light-1'?: ColorType;
+  'light-2'?: ColorType;
+  'light-3'?: ColorType;
+  'light-4'?: ColorType;
+  'light-5'?: ColorType;
+  'light-6'?: ColorType;
+  'status-critical'?: ColorType;
+  'status-error'?: ColorType;
+  'status-warning'?: ColorType;
+  'status-ok'?: ColorType;
+  'status-unknown'?: ColorType;
+  'status-disabled'?: ColorType;
+  [x: string]: ColorType;
 };
 
 export interface ThemeType {
-  global: {
-    animation: {
-      duration: string;
-      jiggle: {
-        duration: string;
+  global?: {
+    active?: {
+      background?: {
+        color?: ColorType,
+        opacity?: OpacityType,
+      },
+      color?: ColorType,
+    },
+    animation?: {
+      duration?: string;
+      jiggle?: {
+        duration?: string;
       };
     };
-    borderSize: {
-      xsmall: string;
-      small: string;
-      medium: string;
-      large: string;
-      xlarge: string;
+    borderSize?: {
+      xsmall?: string;
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
     };
-    breakpoints: {
-      small: {
-        value: number;
-        borderSize: {
-          xsmall: string;
-          small: string;
-          medium: string;
-          large: string;
-          xlarge: string;
+    breakpoints?: {
+      small?: {
+        value?: number;
+        borderSize?: {
+          xsmall?: string;
+          small?: string;
+          medium?: string;
+          large?: string;
+          xlarge?: string;
         };
-        edgeSize: {
-          none: string;
-          hair: string;
-          xxsmall: string;
-          xsmall: string;
-          small: string;
-          medium: string;
-          large: string;
-          xlarge: string;
+        edgeSize?: {
+          none?: string;
+          hair?: string;
+          xxsmall?: string;
+          xsmall?: string;
+          small?: string;
+          medium?: string;
+          large?: string;
+          xlarge?: string;
         };
-        size: {
-          xxsmall: string;
-          xsmall: string;
-          small: string;
-          medium: string;
-          large: string;
-          xlarge: string;
-          full: string;
+        size?: {
+          xxsmall?: string;
+          xsmall?: string;
+          small?: string;
+          medium?: string;
+          large?: string;
+          xlarge?: string;
+          full?: string;
         };
       };
-      medium: {
-        value: number;
+      medium?: {
+        value?: number;
       };
-      large: {};
-    };
-    deviceBreakpoints: {
-      phone: string;
-      tablet: string;
-      computer: string;
-    };
-    colors: Colors;
-    control: {
-      border: {
-        width: string;
-        radius: string;
-        color: ColorType;
+      large?: {
+        value?: number;
       };
     };
-    debounceDelay: number;
-    drop: {
-      background: BackgroundType;
-      border: {
-        width: string;
-        radius: string;
+    deviceBreakpoints?: {
+      phone?: string;
+      tablet?: string;
+      computer?: string;
+    };
+    colors?: Colors;
+    control?: {
+      border?: {
+        width?: string;
+        radius?: string;
+        color?: ColorType;
       };
-      shadowSize: string;
-      zIndex: string;
+      disabled?: {
+        opacity: OpacityType;
+      }
     };
-    edgeSize: {
-      none: string;
-      hair: string;
-      xxsmall: string;
-      xsmall: string;
-      small: string;
-      medium: string;
-      large: string;
-      xlarge: string;
-      responsiveBreakpoint: string;
-    };
-    elevation: {
-      light: {
-        none: string;
-        xsmall: string;
-        small: string;
-        medium: string;
-        large: string;
-        xlarge: string;
+    debounceDelay?: number;
+    drop?: {
+      background?: BackgroundType;
+      border?: {
+        width?: string;
+        radius?: string;
       };
-      dark: {
-        none: string;
-        xsmall: string;
-        small: string;
-        medium: string;
-        large: string;
-        xlarge: string;
+      shadowSize?: string;
+      zIndex?: string;
+    };
+    edgeSize?: {
+      none?: string;
+      hair?: string;
+      xxsmall?: string;
+      xsmall?: string;
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
+      responsiveBreakpoint?: string;
+    };
+    elevation?: {
+      light?: {
+        none?: string;
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+      };
+      dark?: {
+        none?: string;
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
       };
     };
-    focus: {
-      border: {
-        color: ColorType;
+    focus?: {
+      border?: {
+        color?: ColorType;
       };
     };
-    font: {
-      size: string;
-      height: string;
-      maxWidth: string;
+    font?: {
+      face?: string,
+      family?: string,
+      height?: string;
+      maxWidth?: string;
+      size?: string;
     };
-    hover: {
-      background: BackgroundType;
-      color: ColorType;
+    hover?: {
+      background?: BackgroundType;
+      color?: ColorType;
     };
-    input: {
-      padding: string;
-      weight: number;
+    input?: {
+      padding?: string;
+      weight?: number;
     };
-    opacity: {
-      strong: number;
-      medium: number;
-      weak: number;
+    opacity?: {
+      strong?: number;
+      medium?: number;
+      weak?: number;
     };
-    selected: {
-      background: BackgroundType;
-      color: ColorType;
+    selected?: {
+      background?: BackgroundType;
+      color?: ColorType;
     };
-    spacing: string;
-    size: {
-      xxsmall: string;
-      xsmall: string;
-      small: string;
-      medium: string;
-      large: string;
-      xlarge: string;
-      xxlarge: string;
-      full: string;
+    spacing?: string;
+    size?: {
+      xxsmall?: string;
+      xsmall?: string;
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
+      xxlarge?: string;
+      full?: string;
+      [x: string]: string;
     };
   };
-  accordion: {
-    icons: {
-      collapse: any;
-      expand: any;
+  accordion?: {
+    border?: {
+      side?: string,
+      color?: ColorType,
+    },
+    heading?: {
+      level?: string;
+    }
+    icons?: {
+      collapse?: any;
+      expand?: any;
+      color?: ColorType;
     };
   };
-  anchor: {
-    textDecoration: string;
-    fontWeight: number;
-    color: ColorType;
-    hover: {
-      textDecoration: string;
+  anchor?: {
+    color?: ColorType;
+    extend?: ExtendType;
+    fontWeight?: number;
+    hover?: {
+      extend?: ExtendType;
+      textDecoration?: string;
     };
+    textDecoration?: string;
   };
-  box: {
-    responsiveBreakpoint: string;
+  box?: {
+    extend?: ExtendType;
+    responsiveBreakpoint?: string;
   };
-  button: {
-    border: {
-      width: string;
-      radius: string;
+  button?: {
+    border?: {
+      color?: ColorType;
+      width?: string;
+      radius?: string;
     };
-    primary: ColorType;
-    disabled: {
-      opacity: OpacityType;
+    disabled?: {
+      opacity?: OpacityType;
     };
-    minWidth: string;
-    maxWidth: string;
-    padding: {
-      vertical: string;
-      horizontal: string;
+    extend?: ExtendType;
+    minWidth?: string;
+    maxWidth?: string;
+    padding?: {
+      vertical?: string;
+      horizontal?: string;
     };
+    primary?: ColorType;
   };
-  calendar: {
-    small: {
-      fontSize: string;
-      lineHeight: number;
-      daySize: string;
-      slideDuration: string;
+  calendar?: {
+    small?: {
+      fontSize?: string;
+      lineHeight?: number;
+      daySize?: string;
+      slideDuration?: string;
     };
-    medium: {
-      fontSize: string;
-      lineHeight: number;
-      daySize: string;
-      slideDuration: string;
+    medium?: {
+      fontSize?: string;
+      lineHeight?: number;
+      daySize?: string;
+      slideDuration?: string;
     };
-    large: {
-      fontSize: string;
-      lineHeight: number;
-      daySize: string;
-      slideDuration: string;
+    large?: {
+      fontSize?: string;
+      lineHeight?: number;
+      daySize?: string;
+      slideDuration?: string;
     };
-    icons: {
-      previous: any;
-      next: any;
-      small: {
-        previous: any;
-        next: any;
-      };
-    };
-  };
-  carousel: {
-    icons: {
-      current: any;
-      next: any;
-      previous: any;
-    };
-  };
-  checkBox: {
-    border: {
-      color: ColorType;
-      width: string;
-    };
-    check: {
-      extend: string;
-      radius: string;
-      thickness: string;
-    };
-    extend: string;
-    color: ColorType;
-    icon: { size: string; extend: string };
-    icons: {};
-    hover: {
-      border: {
-        color: ColorType;
-      };
-    };
-    size: string;
-    toggle: {
-      color: ColorType;
-      background: BackgroundType;
-      radius: string;
-      size: string;
-      knob: { extend: string };
-    };
-  };
-  clock: {
-    analog: {
-      hour: {
-        color: ColorType;
-        width: string;
-        size: string;
-        shape: string;
-      };
-      minute: {
-        color: ColorType;
-        width: string;
-        size: string;
-        shape: string;
-      };
-      second: {
-        color: ColorType;
-        width: string;
-        size: string;
-        shape: string;
-      };
-      size: {
-        small: string;
-        medium: string;
-        large: string;
-        xlarge: string;
-        huge: string;
-      };
-    };
-    digital: {
-      text: {
-        xsmall: {
-          size: string;
-          height: number;
-        };
-        small: {
-          size: string;
-          height: number;
-        };
-        medium: {
-          size: string;
-          height: number;
-        };
-        large: {
-          size: string;
-          height: number;
-        };
-        xlarge: {
-          size: string;
-          height: number;
-        };
-        xxlarge: {
-          size: string;
-          height: number;
-        };
+    heading?: { 
+      level?: string;
+    },
+    icons?: {
+      previous?: any;
+      next?: any;
+      small?: {
+        previous?: any;
+        next?: any;
       };
     };
   };
-  collapsible: {
-    minSpeed: number;
-    baseline: number;
-  };
-  dataTable: {
-    header: {};
-    groupHeader: {
-      border: {
-        side: string;
-        size: string;
-      };
-      fill: string;
-      pad: {
-        horizontal: string;
-        vertical: string;
-      };
-      background: BackgroundType;
-    };
-    icons: {
-      ascending: any;
-      contract: any;
-      descending: any;
-      expand: any;
-    };
-    resize: {
-      border: {
-        side: string;
-        color: ColorType;
-      };
-    };
-    primary: {
-      weight: string;
+  carousel?: {
+    animation?: {
+      duration?: number,
+    },
+    disabled?: {
+      icons?: {
+        color?: ColorType;
+      }
+    },
+    icons?: {
+      color?: ColorType;
+      current?: any;
+      next?: any;
+      previous?: any;
     };
   };
-  formField: {
-    border: {
-      color: ColorType;
-      position: string;
-      side: string;
-      error: {
-        color: ColorType;
+  chart?: {
+    extend?: ExtendType;
+  }
+  checkBox?: {
+    border?: {
+      color?: ColorType;
+      width?: string;
+    };
+    check?: {
+      extend?: ExtendType;
+      radius?: string;
+      thickness?: string;
+    };
+    color?: ColorType;
+    extend?: ExtendType;
+    gap?: GapType;
+    hover?: {
+      border?: {
+        color?: ColorType;
       };
     };
-    error: {
-      color: ColorType;
+    icon?: { 
+      size?: string; 
+      extend?: ExtendType 
     };
-    help: {
-      color: ColorType;
+    icons?: {
+      checked?: any,
+      indeterminate?: any,
     };
-    label: {};
+    size?: string;
+    toggle?: {
+      background?: BackgroundType;
+      color?: ColorType;
+      extend?: ExtendType 
+      radius?: string;
+      size?: string;
+      knob?: { 
+        extend?: ExtendType 
+      };
+    };
   };
-  grommet: {};
-  heading: {
-    font: {};
-    level: {
-      1: {
-        font: {};
-        small: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        medium: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        large: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        xlarge: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
+  clock?: {
+    analog?: {
+      extend?: ExtendType;
+      hour?: {
+        color?: ColorType;
+        width?: string;
+        size?: string;
+        shape?: string;
       };
-      2: {
-        font: {};
-        small: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        medium: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        large: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        xlarge: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
+      minute?: {
+        color?: ColorType;
+        width?: string;
+        size?: string;
+        shape?: string;
       };
-      3: {
-        font: {};
-        small: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        medium: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        large: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        xlarge: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
+      second?: {
+        color?: ColorType;
+        width?: string;
+        size?: string;
+        shape?: string;
       };
-      4: {
-        font: {};
-        small: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        medium: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        large: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        xlarge: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
+      size?: {
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+        huge?: string;
       };
-      5: {
-        font: {};
-        small: {
-          size: string;
-          height: string;
-          maxWidth: string;
+    };
+    digital?: {
+      text?: {
+        xsmall?: {
+          size?: string;
+          height?: number;
         };
-        medium: {
-          size: string;
-          height: string;
-          maxWidth: string;
+        small?: {
+          size?: string;
+          height?: number;
         };
-        large: {
-          size: string;
-          height: string;
-          maxWidth: string;
+        medium?: {
+          size?: string;
+          height?: number;
         };
-        xlarge: {
-          size: string;
-          height: string;
-          maxWidth: string;
+        large?: {
+          size?: string;
+          height?: number;
         };
-      };
-      6: {
-        font: {};
-        small: {
-          size: string;
-          height: string;
-          maxWidth: string;
+        xlarge?: {
+          size?: string;
+          height?: number;
         };
-        medium: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        large: {
-          size: string;
-          height: string;
-          maxWidth: string;
-        };
-        xlarge: {
-          size: string;
-          height: string;
-          maxWidth: string;
+        xxlarge?: {
+          size?: string;
+          height?: number;
         };
       };
     };
-    responsiveBreakpoint: string;
-    weight: number;
   };
-  icon: {
-    size: {
-      small: string;
-      medium: string;
-      large: string;
-      xlarge: string;
-    };
+  collapsible?: {
+    minSpeed?: number;
+    baseline?: number;
   };
-  layer: {
-    background: BackgroundType;
-    border: {
-      radius: string;
+  dataTable?: {
+    header?: {};
+    groupHeader?: {
+      border?: {
+        side?: string;
+        size?: string;
+      };
+      fill?: string;
+      pad?: PadType;
+      background?: BackgroundType;
     };
-    container: {
-      zIndex: string;
-    };
-    overlay: {
-      background: BackgroundType;
-    };
-    responsiveBreakpoint: string;
-    zIndex: string;
-  };
-  menu: {
-    icons: {
-      down: any;
-    };
-  };
-  paragraph: {
-    small: {
-      size: string;
-      height: string;
-      maxWidth: string;
-    };
-    medium: {
-      size: string;
-      height: string;
-      maxWidth: string;
-    };
-    large: {
-      size: string;
-      height: string;
-      maxWidth: string;
-    };
-    xlarge: {
-      size: string;
-      height: string;
-      maxWidth: string;
-    };
-    xxlarge: {
-      size: string;
-      height: string;
-      maxWidth: string;
-    };
-  };
-  radioButton: {
-    border: {
-      color: ColorType;
-      width: string;
-    };
-    check: {
-      radius: string;
-    };
-    hover: {
-      border: {
-        color: ColorType;
+    groupEnd?: {
+      border?: {
+        side?: string;
+        size?: string;
       };
     };
-    icon: {};
-    icons: {};
-    gap: string;
-    size: string;
-  };
-  rangeInput: {
-    track: {
-      height: string;
-      color: any;
+    icons?: {
+      ascending?: any;
+      contract?: any;
+      descending?: any;
+      expand?: any;
     };
-    thumb: {};
-  };
-  select: {
-    container: {};
-    control: {};
-    icons: {
-      down: any;
-    };
-    step: number;
-  };
-  tab: {
-    active: {
-      color: ColorType;
-    };
-    border: {
-      side: string;
-      size: string;
-      color: ColorType;
-      active: {
-        color: ColorType;
-      };
-      hover: {
-        color: ColorType;
+    resize?: {
+      border?: {
+        side?: string;
+        color?: ColorType;
       };
     };
-    color: ColorType;
-    hover: {
-      color: ColorType;
-    };
-    margin: {
-      vertical: string;
-      horizontal: string;
-    };
-    pad: {
-      bottom: string;
+    primary?: {
+      weight?: string;
     };
   };
-  tabs: {
-    header: {};
-    panel: {};
+  diagram?: {
+    extend?: ExtendType;
+    line?: {
+      color: 'accent-1';
+    };
   };
-  table: {
-    header: {
-      align: string;
-      pad: {
-        horizontal: string;
-        vertical: string;
+  drop?: {
+    extend?: ExtendType,
+    maxHeight?: string, 
+  };
+  formField?: {
+    border?: {
+      color?: ColorType;
+      error?: {
+        color?: ColorType;
       };
-      border: string;
-      verticalAlign: string;
-      fill: string;
+      position?: string;
+      side?: string;
     };
-    body: {
-      align: string;
-      pad: {
-        horizontal: string;
-        vertical: string;
+    content?: {
+      pad?: PadType;
+    };
+    error?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
+    help?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
+    label?: {
+      margin?: MarginType;
+    };
+    margin?: MarginType;
+  };
+  grommet?: {
+    extend?: ExtendType;
+  };
+  heading?: {
+    extend?: ExtendType;
+    font?: {};
+    level?: {
+      1?: {
+        font?: {};
+        small?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        medium?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        large?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        xlarge?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+      };
+      2?: {
+        font?: {};
+        small?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        medium?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        large?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        xlarge?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+      };
+      3?: {
+        font?: {};
+        small?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        medium?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        large?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        xlarge?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+      };
+      4?: {
+        font?: {};
+        small?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        medium?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        large?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        xlarge?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+      };
+      5?: {
+        font?: {};
+        small?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        medium?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        large?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        xlarge?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+      };
+      6?: {
+        font?: {};
+        small?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        medium?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        large?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        xlarge?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
       };
     };
-    footer: {
-      align: string;
-      pad: {
-        horizontal: string;
-        vertical: string;
+    responsiveBreakpoint?: string;
+    weight?: number;
+  };
+  icon?: {
+    extend?: ExtendType,
+    size?: {
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
+      [x: string]: string,
+    };
+  };
+  layer?: {
+    background?: BackgroundType;
+    border?: {
+      radius?: string;
+    };
+    container?: {
+      zIndex?: string;
+    };
+    extend?: ExtendType;
+    overlay?: {
+      background?: BackgroundType;
+    };
+    responsiveBreakpoint?: string;
+    zIndex?: string;
+  };
+  maskedInput?: {
+    extend?: ExtendType;
+  };
+  menu?: {
+    background?: BackgroundType;
+    extend?: ExtendType,
+    icons?: {
+      down?: any;
+    };
+  };
+  meter?: {
+    color?: ColorType,
+    extend?: ExtendType,
+  },
+  paragraph?: {
+    extend?: ExtendType;
+    small?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    medium?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    large?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    xlarge?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    xxlarge?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+  };
+  radioButton?: {
+    border?: {
+      color?: ColorType;
+      width?: string;
+    };
+    check?: {
+      radius?: string;
+    };
+    hover?: {
+      border?: {
+        color?: ColorType;
       };
-      border: string;
-      verticalAlign: string;
-      fill: string;
+    };
+    icon?: {
+      extend?: ExtendType;
+      size?: string;
+    };
+    icons?: {
+      circle?: string;
+    };
+    gap?: string;
+    size?: string;
+  };
+  rangeInput?: {
+    track?: {
+      height?: string;
+      color?: any;
+    };
+    thumb?: {
+      color?: ColorType;
     };
   };
-  text: {
-    xsmall: {
-      size: string;
-      height: string;
-      maxWidth: string;
+  rangeSelector?: {
+    background?: {
+      invert?: {
+        color?: ColorType,
+      };
     };
-    small: {
-      size: string;
-      height: string;
-      maxWidth: string;
+    edge?: {
+      type?: string,
+    },
+  },
+  select?: {
+    background?: BackgroundType;
+    container?: {
+      extend?: ExtendType;
     };
-    medium: {
-      size: string;
-      height: string;
-      maxWidth: string;
+    control?: {
+      extend?: ExtendType;
+      open?: boolean;
     };
-    large: {
-      size: string;
-      height: string;
-      maxWidth: string;
+    extend?: ExtendType;
+    icons?: {
+      down?: any;
+      margin?: MarginType;
     };
-    xlarge: {
-      size: string;
-      height: string;
-      maxWidth: string;
+    options?: {
+      container?: {
+        align?: string,
+        pad?: string,
+      },
+      text?: {
+        margin?: MarginType,
+      },
+    },
+    searchInput?: ReactComponentElement; 
+    step?: number;
+  };
+  tab?: {
+    active?: {
+      background?: BackgroundType;
+      color?: ColorType;
     };
-    xxlarge: {
-      size: string;
-      height: string;
-      maxWidth: string;
+    background?: BackgroundType;
+    border?: {
+      side?: string;
+      size?: string;
+      color?: ColorType;
+      active?: {
+        color?: ColorType;
+      };
+      hover?: {
+        color?: ColorType;
+        extend?: ExtendType;
+      };
+    };
+    color?: ColorType;
+    extend?: ExtendType;
+    hover?: {
+      background?: BackgroundType;
+      color?: ColorType;
+      extend?: ExtendType;
+    };
+    margin?: MarginType;
+    pad?: PadType;
+  };
+  tabs?: {
+    background?: BackgroundType;
+    extend?: ExtendType;
+    gap?: GapType;
+    header?: {
+      background?: BackgroundType;
+      extend?: ExtendType;
+    };
+    panel?: {
+      extend?: ExtendType;
     };
   };
-  video: {
-    captions: {
-      background: BackgroundType;
+  table?: {
+    header?: {
+      background?: BackgroundType;
+      extend?: ExtendType;
+      align?: string;
+      pad?: PadType;
+      border?: string;
+      verticalAlign?: string;
+      fill?: string;
     };
-    icons: {
-      closedCaption: any;
-      configure: any;
-      fullScreen: any;
-      pause: any;
-      play: any;
-      reduceVolume: any;
-      volume: any;
+    body?: {
+      align?: string;
+      background?: BackgroundType;
+      border?: string;
+      extend?: ExtendType;
+      pad?: PadType;
+    };
+    footer?: {
+      align?: string;
+      background?: BackgroundType;
+      extend?: ExtendType;
+      pad?: PadType;
+      border?: string;
+      verticalAlign?: string;
+      fill?: string;
+    };
+    row?: {
+      hover?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
     };
   };
-  worldMap: {
-    color: ColorType;
-    continent: {
-      active: string;
-      base: string;
+  text?: {
+    xsmall?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
     };
-    hover: {
-      color: ColorType;
+    small?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
     };
-    place: {
-      active: string;
-      base: string;
+    medium?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    large?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    xlarge?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    xxlarge?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+  };
+  textArea?: {
+    extend?: ExtendType;
+    disabled?: OpacityType;
+  };
+  textInput?: {
+    extend?: ExtendType;
+    disabled?: OpacityType;
+  };
+  video?: {
+    captions?: {
+      background?: BackgroundType;
+    };
+    controls?: {
+      background?: BackgroundType;
+    };
+    icons?: {
+      closedCaption?: any;
+      color?: ColorType;
+      configure?: any;
+      fullScreen?: any;
+      pause?: any;
+      play?: any;
+      reduceVolume?: any;
+      volume?: any;
+    };
+    scrubber?: {
+      color?: ColorType;
+    }
+  };
+  worldMap?: {
+    color?: ColorType;
+    continent?: {
+      active?: string;
+      base?: string;
+    };
+    hover?: {
+      color?: ColorType;
+    };
+    place?: {
+      active?: string;
+      base?: string;
     };
   };
 }
