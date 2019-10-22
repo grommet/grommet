@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
-import { A11yTitleType, AlignSelfType, GridAreaType, JustifyContentType, MarginType} from "../../utils";
+import { A11yTitleType, AlignSelfType, GridAreaType, JustifyContentType, MarginType } from "../../utils";
 
 export interface MenuProps {
   a11yTitle?: A11yTitleType;
