@@ -87,10 +87,10 @@ const Diagram = ({ connections, theme, ...rest }) => {
     }
   }, [width, height]);
 
-  // Ref that stores handler
+  // Ref that stores resize handler
   const savedOnResize = useRef();
 
-  // Update ref.current value if handler changes.
+  // Update resize ref value if onResize changes.
   // This allows our effect below to always get latest handler
   useEffect(() => {
     savedOnResize.current = onResize;
@@ -99,6 +99,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
   useEffect(() => {
     const onResizeHandler = savedOnResize.current;
     onResizeHandler();
+
     window.addEventListener('resize', onResizeHandler);
 
     return () => {
