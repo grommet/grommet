@@ -133,7 +133,7 @@ class ZoomChart extends Component {
             </Stack>
             <Box direction="row" justify="between">
               {/* className="chromatic-ignore" is used for the story testing. 
-                  grommet doesn't reccomend the usage of className */}
+                  grommet doesn't recommend the usage of className */}
               {axis[0].map(t => (
                 <Text key={t} className="chromatic-ignore">
                   {new Date(t).toLocaleDateString()}
