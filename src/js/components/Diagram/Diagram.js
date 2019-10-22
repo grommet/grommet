@@ -97,7 +97,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
   }, [onResize]);
 
   useEffect(() => {
-    const onResizeHandler = savedOnResize.current;
+    const onResizeHandler = event => savedOnResize.current(event);
     onResizeHandler();
 
     window.addEventListener('resize', onResizeHandler);
