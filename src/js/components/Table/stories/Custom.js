@@ -50,9 +50,6 @@ const customTheme = {
 const CustomThemeTable = () => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
-      <Text margin={{ vertical: 'medium' }}>
-        this Table is using a Custom theme
-      </Text>
       <Table caption="Custom Theme Table">
         <TableHeader>
           <TableRow>
