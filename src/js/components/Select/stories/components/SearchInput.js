@@ -16,7 +16,7 @@ export const SearchInput = props => {
     return () => {
       clearTimeout(focusTimeout);
     };
-  });
+  }, []);
 
   return (
     <SearchInputContext.Consumer>
