@@ -84,6 +84,16 @@ test('forces empty margin', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('renders pad', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField pad />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('renders abut correctly', () => {
   const component = renderer.create(
     <Grommet
