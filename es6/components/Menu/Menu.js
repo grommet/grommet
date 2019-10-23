@@ -195,6 +195,7 @@ var Menu = function Menu(props) {
     a11yTitle: messages.closeMenu || 'Close Menu',
     active: activeItemIndex === controlButtonIndex,
     focusIndicator: false,
+    hoverIndicator: "background",
     plain: plain,
     onClick: onDropClose,
     onFocus: function onFocus() {
