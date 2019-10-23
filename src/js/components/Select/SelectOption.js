@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { withForwardRef } from '../hocs';
 
-function shouldComponentUpdate(prevProps, nextProps) {
+function areEqual(prevProps, nextProps) {
   const { active, disabled, option, selected } = prevProps;
   const {
     active: nextActive,
@@ -13,10 +13,10 @@ function shouldComponentUpdate(prevProps, nextProps) {
     selected: nextSelected,
   } = nextProps;
   return (
-    active !== nextActive ||
-    selected !== nextSelected ||
-    disabled !== nextDisabled ||
-    option !== nextOption
+    active === nextActive &&
+    selected === nextSelected &&
+    disabled === nextDisabled &&
+    option === nextOption
   );
 }
 
@@ -32,7 +32,7 @@ const SelectOption = React.memo(({ forwardRef, ...rest }) => {
       />
     </Box>
   );
-}, shouldComponentUpdate);
+}, areEqual);
 
 const SelectOptionWrapper = withForwardRef(SelectOption);
 

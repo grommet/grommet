@@ -312,6 +312,9 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221, 0.4);
+  color: #444444;
+  color: #000000;
 }
 
 .c0:hover {
