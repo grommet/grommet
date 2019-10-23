@@ -88,14 +88,6 @@ class RichChart extends Component {
               color={{ color: 'accent-1', opacity: 'medium' }}
               thickness="hair"
             />
-            {/* }
-            <Chart
-              {...chartProps}
-              type='bar'
-              color={{ color: 'accent-2', opacity: 'medium' }}
-              thickness='xsmall'
-            />
-            { */}
             <Chart
               {...chartProps}
               type="line"

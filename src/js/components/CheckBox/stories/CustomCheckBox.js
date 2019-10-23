@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, CheckBox } from 'grommet';
@@ -45,26 +45,21 @@ const customCheckBoxTheme = {
   },
 };
 
-class ThemedCheckBox extends Component {
-  state = { checked: false };
+const ThemedCheckBox = props => {
+  const [checked, setChecked] = useState(false);
 
-  onChange = event => this.setState({ checked: event.target.checked });
-
-  render() {
-    const { checked } = this.state;
-    return (
-      <Grommet theme={deepMerge(grommet, customCheckBoxTheme)}>
-        <Box align="center" pad="large">
-          <CheckBox
-            {...this.props}
-            label="Choice"
-            checked={checked}
-            onChange={this.onChange}
-          />
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={deepMerge(grommet, customCheckBoxTheme)}>
+      <Box align="center" pad="large">
+        <CheckBox
+          {...props}
+          label="Choice"
+          checked={checked}
+          onChange={event => setChecked(event.target.checked)}
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('CheckBox', module).add('Custom', () => <ThemedCheckBox />);

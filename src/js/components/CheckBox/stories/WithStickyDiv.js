@@ -1,61 +1,53 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, CheckBox } from 'grommet';
+import { Box, CheckBox, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class CheckBoxWithStickyDiv extends Component {
-  state = {
-    checked: [],
-    checkboxes: Array(8)
-      .fill()
-      .map((_, i) => `item ${i + 1}`),
-  };
+const boxStyle = {
+  position: 'relative',
+  display: 'block',
+};
+const titleBoxBackground = { color: 'neutral-1' };
+const titleBoxStyle = { position: 'sticky', top: 0 };
 
-  onCheck = (event, value) => {
-    const { checked } = this.state;
-    if (event.target.checked) {
-      checked.push(value);
-      this.setState({ checked });
+const checkboxes = Array(8)
+  .fill()
+  .map((_, i) => `item ${i + 1}`);
+
+const removeItemFromArray = (array, value) =>
+  array.filter(item => item !== value);
+
+const CheckBoxWithStickyDiv = () => {
+  const [checks, setChecks] = useState([]);
+  const onCheck = value => ({ target }) => {
+    if (target.checked) {
+      setChecks([...checks, value]);
     } else {
-      this.setState({ checked: checked.filter(item => item !== value) });
+      setChecks(removeItemFromArray(checks, value));
     }
   };
 
-  render() {
-    const { checked, checkboxes } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box pad="large" align="center">
-          <Box
-            height="120px"
-            width="120px"
-            overflow="auto"
-            style={{
-              position: 'relative',
-              display: 'block',
-            }}
-          >
-            <Box
-              background={{ color: 'neutral-1' }}
-              style={{ position: 'sticky', top: 0 }}
-            >
-              Click &amp; Scroll
-            </Box>
-            {checkboxes.map(item => (
-              <CheckBox
-                key={item}
-                checked={checked.indexOf(item) !== -1}
-                label={item}
-                onChange={e => this.onCheck(e, item)}
-              />
-            ))}
+  return (
+    <Grommet theme={grommet}>
+      <Box pad="large" align="center">
+        <Box height="120px" width="120px" overflow="auto" style={boxStyle}>
+          <Box background={titleBoxBackground} style={titleBoxStyle}>
+            Click &amp; Scroll
           </Box>
+          {checkboxes.map(item => (
+            <CheckBox
+              key={item}
+              checked={checks.includes(item)}
+              label={item}
+              onChange={onCheck(item)}
+            />
+          ))}
         </Box>
-      </Grommet>
-    );
-  }
-}
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('CheckBox', module).add('With Sticky Div', () => (
   <CheckBoxWithStickyDiv />

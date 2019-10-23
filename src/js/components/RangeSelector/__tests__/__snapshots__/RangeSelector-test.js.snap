@@ -5163,7 +5163,7 @@ exports[`RangeSelector size 1`] = `
 </div>
 `;
 
-exports[`RangeSelector step 1`] = `
+exports[`RangeSelector step renders correct values 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5387,93 +5387,52 @@ exports[`RangeSelector step 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
+    class="c1 c2"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 0 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        class="c5"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
       >
         <div
-          className="c6"
+          class="c6"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 101 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        class="c5"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
       >
         <div
-          className="c6"
+          class="c6"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 0 0 0px;"
     />
   </div>
 </div>
