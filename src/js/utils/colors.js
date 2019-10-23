@@ -84,8 +84,6 @@ const getRGBArray = color => {
 
 export const colorIsDark = color => {
   const [red, green, blue] = getRGBArray(color);
-  // http://www.had2know.com/technology/
-  //  color-contrast-calculator-web-design.html
   const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
   return brightness < 125;
 };
