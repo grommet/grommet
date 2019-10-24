@@ -31,6 +31,12 @@ var BackgroundBox = function BackgroundBox() {
   }, "brand"), _react["default"].createElement(_grommet.Box, {
     pad: "small",
     background: {
+      color: 'brand'
+    },
+    elevation: "large"
+  }, "brand object"), _react["default"].createElement(_grommet.Box, {
+    pad: "small",
+    background: {
       image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
     }
   }, "image"), _react["default"].createElement(_grommet.Box, {

@@ -128,7 +128,8 @@ var getRGBA = function getRGBA(color, opacity) {
         green = _getRGBArray2[1],
         blue = _getRGBArray2[2];
 
-    return "rgba(" + red + ", " + green + ", " + blue + ", \n      " + (typeof opacity === 'number' ? opacity : opacity || 1) + ")";
+    var alpha = typeof opacity === 'number' ? opacity : opacity || 1;
+    return "rgba(" + red + ", " + green + ", " + blue + ", " + alpha + ")";
   }
 
   return undefined;

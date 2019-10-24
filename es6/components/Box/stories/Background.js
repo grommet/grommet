@@ -24,6 +24,12 @@ var BackgroundBox = function BackgroundBox() {
   }, "brand"), React.createElement(Box, {
     pad: "small",
     background: {
+      color: 'brand'
+    },
+    elevation: "large"
+  }, "brand object"), React.createElement(Box, {
+    pad: "small",
+    background: {
       image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
     }
   }, "image"), React.createElement(Box, {
