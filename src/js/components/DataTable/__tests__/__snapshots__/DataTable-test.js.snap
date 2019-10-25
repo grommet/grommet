@@ -1983,7 +1983,7 @@ exports[`DataTable groupBy 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -2256,7 +2256,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 erAeXb"
+            class="StyledButton-sc-323bzc-0 gSzznR"
             type="button"
           >
             <div
@@ -2310,7 +2310,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 erAeXb"
+            class="StyledButton-sc-323bzc-0 gSzznR"
             type="button"
           >
             <div
@@ -2353,7 +2353,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 erAeXb"
+            class="StyledButton-sc-323bzc-0 gSzznR"
             type="button"
           >
             <div
@@ -2484,7 +2484,7 @@ exports[`DataTable groupBy expand 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -2909,7 +2909,7 @@ exports[`DataTable groupBy property 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -3182,7 +3182,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 erAeXb"
+            class="StyledButton-sc-323bzc-0 gSzznR"
             type="button"
           >
             <div
@@ -3236,7 +3236,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 erAeXb"
+            class="StyledButton-sc-323bzc-0 gSzznR"
             type="button"
           >
             <div
@@ -3279,7 +3279,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 erAeXb"
+            class="StyledButton-sc-323bzc-0 gSzznR"
             type="button"
           >
             <div
@@ -4899,7 +4899,7 @@ exports[`DataTable search 1`] = `
 }
 
 .c8:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -5217,7 +5217,7 @@ exports[`DataTable search 2`] = `
 }
 
 .c0:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }

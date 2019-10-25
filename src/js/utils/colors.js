@@ -93,8 +93,8 @@ export const colorIsDark = color => {
 export const getRGBA = (color, opacity) => {
   if (color && canExtractRGBArray(color)) {
     const [red, green, blue] = getRGBArray(color);
-    return `rgba(${red}, ${green}, ${blue}, 
-      ${typeof opacity === 'number' ? opacity : opacity || 1})`;
+    const alpha = typeof opacity === 'number' ? opacity : opacity || 1;
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
   }
   return undefined;
 };
