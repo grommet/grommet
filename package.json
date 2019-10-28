@@ -98,6 +98,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-react-hooks": "^2.2.0",
     "fs-extra": "^8.1.0",
     "grommet-theme-aruba": "^0.1.1",
     "grommet-theme-dxc": "^0.1.1",
