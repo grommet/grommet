@@ -1,6 +1,6 @@
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import { Children, cloneElement, useEffect } from 'react';
+import { Children, cloneElement, useCallback, useEffect } from 'react';
 var KEYS = {
   8: 'onBackspace',
   9: 'onTab',
@@ -21,7 +21,7 @@ var Keyboard = function Keyboard(_ref) {
       onKeyDown = _ref.onKeyDown,
       restProps = _objectWithoutPropertiesLoose(_ref, ["target", "children", "onKeyDown"]);
 
-  var onKeyDownHandler = function onKeyDownHandler(event) {
+  var onKeyDownHandler = useCallback(function (event) {
     var key = event.keyCode ? event.keyCode : event.which;
     var callbackName = KEYS[key];
 
@@ -36,8 +36,7 @@ var Keyboard = function Keyboard(_ref) {
     if (onKeyDown) {
       onKeyDown.apply(void 0, [event].concat(rest));
     }
-  };
-
+  }, [onKeyDown, restProps]);
   useEffect(function () {
     if (target === 'document') {
       document.addEventListener('keydown', onKeyDownHandler);
@@ -48,7 +47,7 @@ var Keyboard = function Keyboard(_ref) {
         document.removeEventListener('keydown', onKeyDownHandler);
       }
     };
-  }, []);
+  }, [onKeyDownHandler]);
   return target === 'document' ? children : cloneElement(Children.only(children), {
     onKeyDown: onKeyDownHandler
   });

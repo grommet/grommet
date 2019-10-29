@@ -27,7 +27,7 @@ var Keyboard = function Keyboard(_ref) {
       onKeyDown = _ref.onKeyDown,
       restProps = _objectWithoutPropertiesLoose(_ref, ["target", "children", "onKeyDown"]);
 
-  var onKeyDownHandler = function onKeyDownHandler(event) {
+  var onKeyDownHandler = (0, _react.useCallback)(function (event) {
     var key = event.keyCode ? event.keyCode : event.which;
     var callbackName = KEYS[key];
 
@@ -42,8 +42,7 @@ var Keyboard = function Keyboard(_ref) {
     if (onKeyDown) {
       onKeyDown.apply(void 0, [event].concat(rest));
     }
-  };
-
+  }, [onKeyDown, restProps]);
   (0, _react.useEffect)(function () {
     if (target === 'document') {
       document.addEventListener('keydown', onKeyDownHandler);
@@ -54,7 +53,7 @@ var Keyboard = function Keyboard(_ref) {
         document.removeEventListener('keydown', onKeyDownHandler);
       }
     };
-  }, []);
+  }, [onKeyDownHandler]);
   return target === 'document' ? children : (0, _react.cloneElement)(_react.Children.only(children), {
     onKeyDown: onKeyDownHandler
   });
