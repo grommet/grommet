@@ -9,7 +9,7 @@ export interface AccordionProps {
   activeIndex?: number | number[];
   animate?: AnimateType;
   children?: React.ReactNode;
-  onActive?: ((...args: any[]) => any);
+  onActive?: ((nextActiveIndexes: number[]) => void);
   multiple?: boolean;
   messages?: {tabContents?: string};
 }
