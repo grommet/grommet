@@ -24,9 +24,9 @@ class Grommet extends Component {
         // calculate if background is dark or not
         // otherwise respect the property passed in the theme
         const { colors } = nextTheme.global;
-        const color = themeMode
-          ? colors.background[themeMode]
-          : colors.background;
+        const color =
+          (themeMode && colors.background && colors.background[themeMode]) ||
+          colors.background;
         nextTheme.dark = color ? colorIsDark(color) : false;
       }
       return {
