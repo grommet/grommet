@@ -28,6 +28,10 @@ export const doc = Grommet => {
     theme: PropTypes.object.description(
       'Custom styles for Grommet app component.',
     ),
+    themeMode: PropTypes.oneOf(['dark', 'light']).description(
+      `Dark vs. light theme variation. Default is unspecified and left to
+      theme.`,
+    ),
     userAgent: PropTypes.string.description(
       `User agent used to detect the device width for setting the initial 
       breakpoint.`,

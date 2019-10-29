@@ -79,6 +79,7 @@ const Components = () => {
   const [checkBox, setCheckBox] = useState(true);
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
+  const [themeMode, setThemeMode] = useState();
   const [themeName, setThemeName] = useState('grommet');
   const [background, setBackground] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
@@ -275,6 +276,13 @@ const Components = () => {
           align="center"
           margin="small"
         >
+          <CheckBox
+            label="dark"
+            checked={themeMode === 'dark'}
+            onChange={() =>
+              setThemeMode(themeMode === 'dark' ? 'light' : 'dark')
+            }
+          />
           <Box basis="small">
             <Select
               plain
@@ -306,7 +314,7 @@ const Components = () => {
           <Text size="small">{`${baseSize}px base spacing`}</Text>
         </Box>
       </Grommet>
-      <Grommet theme={theme} style={{ flex: '1 1' }}>
+      <Grommet theme={theme} themeMode={themeMode} style={{ flex: '1 1' }}>
         <Box
           fill
           pad="medium"
