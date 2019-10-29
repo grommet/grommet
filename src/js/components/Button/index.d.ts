@@ -28,7 +28,7 @@ export interface ButtonProps {
   target?: "_self" | "_blank" | "_parent" | "_top";
   icon?: JSX.Element;
   label?: React.ReactNode;
-  onClick?: ((...args: any[]) => any);
+  onClick?: ((event: React.MouseEvent<HTMLButtonElement>) => void);
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
@@ -36,6 +36,6 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
-declare const Button: React.FC<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
+declare const Button: React.FC<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color' | 'onClick'>>;
 
 export { Button };
