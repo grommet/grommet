@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
 
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { StyledChart } from './StyledChart';
-import { normalizeValues, normalizeBounds } from './utils';
+import { normalizeBounds, normalizeValues } from './utils';
 
 const defaultSize = { height: 'small', width: 'medium' };
 
@@ -28,17 +28,17 @@ const Chart = React.forwardRef(
     },
     ref,
   ) => {
-    const theme = React.useContext(ThemeContext);
-    const [values, setValues] = React.useState([]);
-    const [bounds, setBounds] = React.useState([[0, 0], [0, 0]]);
-    const [containerSize, setContainerSize] = React.useState([0, 0]);
-    const [size, setSize] = React.useState([0, 0]);
-    const [scale, setScale] = React.useState([1, 1]);
-    const [strokeWidth, setStrokeWidth] = React.useState(0);
-    const containerRef = ref || React.useRef();
+    const theme = useContext(ThemeContext);
+    const [values, setValues] = useState([]);
+    const [bounds, setBounds] = useState([[0, 0], [0, 0]]);
+    const [containerSize, setContainerSize] = useState([0, 0]);
+    const [size, setSize] = useState([0, 0]);
+    const [scale, setScale] = useState([1, 1]);
+    const [strokeWidth, setStrokeWidth] = useState(0);
+    const containerRef = ref || useRef();
 
     // calculations
-    React.useEffect(() => {
+    useEffect(() => {
       const nextValues = normalizeValues(propsValues);
       setValues(nextValues);
 
@@ -98,11 +98,13 @@ const Chart = React.forwardRef(
       propsBounds,
       propsSize,
       propsValues,
+      theme.global.edgeSize,
+      theme.global.size,
       thickness,
     ]);
 
     // container size, if needed
-    React.useEffect(() => {
+    useEffect(() => {
       const onResize = () => {
         const containerNode = containerRef.current;
         if (containerNode) {
@@ -120,7 +122,7 @@ const Chart = React.forwardRef(
         return () => window.removeEventListener('resize', onResize);
       }
       return undefined;
-    }, []);
+    }, [containerRef, propsSize]);
 
     const renderBars = () =>
       (values || []).map((valueArg, index) => {

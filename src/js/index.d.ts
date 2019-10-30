@@ -56,3 +56,4 @@ export * from './contexts/AnnounceContext';
 export * from './contexts/ResponsiveContext';
 export * from './contexts/ThemeContext';
 export * from './themes/';
+export { defaultProps, extendDefaultTheme } from './default-props';

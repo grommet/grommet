@@ -4,10 +4,12 @@ import {
   AlignContentType, 
   AlignSelfType,
   BackgroundType,
+  ElevationType,
   FillType,
   GapType, 
   GridAreaType, 
   MarginType, 
+  PadType,
   PolymorphicType,
   ColorType, 
 } from "../../utils";
@@ -28,14 +30,14 @@ export interface BoxProps {
   basis?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "auto" | string;
   border?: boolean | SideType | {color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType} | ({color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType})[];
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
-  elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  elevation?: ElevationType;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
   fill?: FillType;
   gap?: GapType;
   height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string | {max?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string,min?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string};
   justify?: "around" | "between" | "center" | "end" | "evenly" | "start" | "stretch";
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;
-  pad?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  pad?: PadType;
   responsive?: boolean;
   round?: boolean | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string | {corner?: "top" | "left" | "bottom" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string};
   tag?: PolymorphicType;

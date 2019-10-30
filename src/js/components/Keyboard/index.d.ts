@@ -17,6 +17,6 @@ export interface KeyboardProps {
   onUp?: KeyboardType;
 }
 
-declare const Keyboard: React.ComponentClass<KeyboardProps>;
+declare const Keyboard: React.FC<KeyboardProps>;
 
 export { Keyboard };

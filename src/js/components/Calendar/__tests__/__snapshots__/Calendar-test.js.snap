@@ -161,7 +161,7 @@ exports[`Calendar date 1`] = `
 }
 
 .c13:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -1451,7 +1451,7 @@ exports[`Calendar dates 1`] = `
 }
 
 .c13:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -2741,7 +2741,7 @@ exports[`Calendar daysOfWeek 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -4098,7 +4098,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
 }
 
 .c13:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -7571,7 +7571,7 @@ exports[`Calendar reference 1`] = `
 }
 
 .c13:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -8917,7 +8917,7 @@ exports[`Calendar size 1`] = `
 }
 
 .c13:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
