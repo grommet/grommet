@@ -55,8 +55,7 @@ var CustomTheme = function CustomTheme() {
     pad: "large"
   }, _react["default"].createElement(_grommet.Button, {
     as: "span",
-    label: "Custom as=span",
-    path: "/"
+    label: "Custom as=span"
   }))));
 };
 

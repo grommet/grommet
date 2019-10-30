@@ -258,7 +258,9 @@ export interface ThemeType {
       vertical?: string;
       horizontal?: string;
     };
-    primary?: ColorType;
+    primary?: {
+      color?: ColorType;
+    }
   };
   calendar?: {
     small?: {
@@ -759,7 +761,8 @@ export interface ThemeType {
         margin?: MarginType,
       },
     },
-    searchInput?: ReactComponentElement; 
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
+    searchInput?: ReactComponentElement<any>;
     step?: number;
   };
   tab?: {

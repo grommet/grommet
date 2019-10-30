@@ -48,8 +48,7 @@ var CustomTheme = function CustomTheme() {
     pad: "large"
   }, React.createElement(Button, {
     as: "span",
-    label: "Custom as=span",
-    path: "/"
+    label: "Custom as=span"
   }))));
 };
 
