@@ -27,6 +27,7 @@
     "afterEach": true,
     "beforeEach": true,
     "afterAll": true,
+    "KeyboardEvent": true,
     "MouseEvent": true,
     "requestAnimationFrame": true
   },
