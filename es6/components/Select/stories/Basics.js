@@ -8,8 +8,12 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
+var colors = {
+  selected: 'neutral-3'
+};
 var customRoundedTheme = deepMerge(grommet, {
   global: {
+    colors: colors,
     control: {
       border: {
         radius: '24px'
