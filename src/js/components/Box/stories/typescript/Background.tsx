@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Grommet, Box } from 'grommet';
-import { grommet } from '../../../themes';
+import { grommet } from 'grommet/themes';
 
 const BackgroundBox = () => (
   <Grommet theme={grommet}>
@@ -43,4 +44,8 @@ const BackgroundBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Background', () => <BackgroundBox />);
+if (!isChromatic()) {
+  storiesOf('TypeScript/Box', module).add('Background', () => (
+    <BackgroundBox />
+  ));
+}
