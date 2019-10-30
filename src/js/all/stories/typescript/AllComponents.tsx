@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
 import {
   Grommet,
@@ -30,9 +31,9 @@ import {
   TextArea,
   TextInput,
   Video,
-} from '../../../components/index';
-import { dark, generate, grommet } from '../../../themes';
-import { deepMerge } from '../../../utils';
+} from 'grommet';
+import { dark, generate, grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
@@ -316,4 +317,6 @@ const Components = () => {
   );
 };
 
-storiesOf('TypeScript/All', module).add('All', () => <Components />);
+if (!isChromatic()) {
+  storiesOf('TypeScript/All', module).add('All', () => <Components />);
+}
