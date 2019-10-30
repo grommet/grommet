@@ -46,7 +46,7 @@
     "react/state-in-constructor": 0,
     "react/static-property-placement": 0,
     "react/jsx-curly-newline": 0,
-    "max-len": [2, {"ignoreUrls": true, "ignoreRegExpLiterals": true}],
+    "max-len": [2, { "ignoreUrls": true, "ignoreRegExpLiterals": true }],
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1
   },
