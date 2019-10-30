@@ -13,7 +13,7 @@ const SimpleAccordion = props => {
           <AccordionPanel label="Panel 1">
             <Box background="light-2" overflow="auto" height="medium">
               <Box height="large" flex={false}>
-                Panel 1 contents
+                Shimi 1 contents
               </Box>
             </Box>
           </AccordionPanel>
