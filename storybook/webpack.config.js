@@ -17,7 +17,7 @@ module.exports = async ({ config }) => {
   });
 
   config.module.rules.push({
-    test: /\.stories\.(ts|tsx)$|\/stories\/.*\.(ts|tsx)$/,
+    test: /stories\/.*\.(ts|tsx)$/,
     loaders: [
       {
         loader: require.resolve('awesome-typescript-loader'),

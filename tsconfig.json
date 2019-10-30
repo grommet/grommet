@@ -6,7 +6,7 @@
     "moduleResolution": "node",
     "outDir": "./dist/",
     "sourceMap": true,
-    "skipLibCheck": true, // ignore storybook typing issues
+    "skipLibCheck": true, // ignore internal typing issues of storybook
     "noImplicitAny": false,
     "module": "esnext",
     "target": "es6",

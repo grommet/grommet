@@ -2,7 +2,6 @@
 node_modules/**
 dist/**
 storybook-static/**
-storybook/dist/**
 .eslintcache
 coverage
 .vscode
