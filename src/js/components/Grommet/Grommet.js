@@ -16,10 +16,10 @@ class Grommet extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { theme = {}, themeMode } = nextProps;
-    const { theme: stateTheme, themeProp } = prevState;
+    const { theme: stateTheme, themeProp, themeModeProp } = prevState;
 
     const nextTheme = deepMerge(baseTheme, theme);
-    if (!stateTheme || theme !== themeProp) {
+    if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
       if (typeof theme.dark === 'undefined') {
         // calculate if background is dark or not
         // otherwise respect the property passed in the theme
@@ -32,6 +32,7 @@ class Grommet extends Component {
       return {
         theme: nextTheme,
         themeProp: theme,
+        themeModeProp: themeMode,
       };
     }
 

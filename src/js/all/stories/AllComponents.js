@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -84,7 +84,24 @@ const Components = () => {
   const [background, setBackground] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
 
-  const theme = deepMerge(generate(baseSize), themes[themeName]);
+  const theme = useMemo(
+    () => deepMerge(generate(baseSize), themes[themeName]),
+    [baseSize, themeName],
+  );
+
+  useEffect(() => {
+    if (
+      theme &&
+      theme.global.colors.background &&
+      theme.global.colors.background.dark
+    ) {
+      if (themeMode === undefined) {
+        setThemeMode('light');
+      }
+    } else if (themeMode !== undefined) {
+      setThemeMode(undefined);
+    }
+  }, [theme, themeMode]);
 
   const content = [
     <Box key="type" align="start">
@@ -276,13 +293,6 @@ const Components = () => {
           align="center"
           margin="small"
         >
-          <CheckBox
-            label="dark"
-            checked={themeMode === 'dark'}
-            onChange={() =>
-              setThemeMode(themeMode === 'dark' ? 'light' : 'dark')
-            }
-          />
           <Box basis="small">
             <Select
               plain
@@ -292,6 +302,15 @@ const Components = () => {
               onChange={event => setThemeName(event.option)}
             />
           </Box>
+          {themeMode !== undefined && (
+            <CheckBox
+              label="dark"
+              checked={themeMode === 'dark'}
+              onChange={() =>
+                setThemeMode(themeMode === 'dark' ? 'light' : 'dark')
+              }
+            />
+          )}
           <Box basis="small">
             <Select
               plain
