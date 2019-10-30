@@ -16,6 +16,21 @@ module.exports = async ({ config }) => {
     enforce: 'pre',
   });
 
+  config.module.rules.push({
+    test: /\.stories\.(ts|tsx)$|\/stories\/.*\.(ts|tsx)$/,
+    loaders: [
+      {
+        loader: require.resolve('awesome-typescript-loader'),
+        options: {
+          configFileName: './tsconfig.json',
+        },
+      },
+      {
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+      },
+    ],
+  });
+
   // eslint-disable-next-line no-param-reassign
   config.resolve.alias.grommet = path.resolve(__dirname, '../src/js');
 
