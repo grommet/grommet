@@ -2,14 +2,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 import { css } from 'styled-components';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Box } from '../../..';
 import { ThemeContext } from '../../../../contexts';
 import { normalizeColor } from '../../../../utils';
@@ -28,55 +22,25 @@ var boxBorderTheme = {
     }
   }
 };
-export var SearchBorderBox =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(SearchBorderBox, _Component);
+export var SearchBorderBox = function SearchBorderBox(_ref) {
+  var children = _ref.children,
+      searching = _ref.searching,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "searching"]);
 
-  function SearchBorderBox() {
-    var _this;
+  var _useState = useState(false),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  return React.createElement(ThemeContext.Extend, {
+    value: boxBorderTheme
+  }, React.createElement(Box, _extends({
+    focus: focus,
+    searching: searching,
+    onFocus: function onFocus() {
+      return setFocus(true);
+    },
+    onBlur: function onBlur() {
+      return setFocus(false);
     }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      focus: false
-    });
-
-    return _this;
-  }
-
-  var _proto = SearchBorderBox.prototype;
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$props = this.props,
-        children = _this$props.children,
-        searching = _this$props.searching,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "searching"]);
-
-    var focus = this.state.focus;
-    return React.createElement(ThemeContext.Extend, {
-      value: boxBorderTheme
-    }, React.createElement(Box, _extends({
-      focus: focus,
-      searching: searching,
-      onFocus: function onFocus() {
-        return _this2.setState({
-          focus: true
-        });
-      },
-      onBlur: function onBlur() {
-        return _this2.setState({
-          focus: false
-        });
-      }
-    }, rest), children));
-  };
-
-  return SearchBorderBox;
-}(Component);
+  }, rest), children));
+};
