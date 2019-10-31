@@ -29,6 +29,19 @@ export const doc = Chart => {
     ])
       .description('A color identifier to use for the graphic color.')
       .defaultValue('accent-1'),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'none',
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
+      PropTypes.string,
+    ]).description(`The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.`),
     onClick: PropTypes.func.description(`Called when the user clicks on it.
       This is only available when the type is line or area.`),
     onHover: PropTypes.func.description(`Called with a boolean argument
@@ -77,6 +90,7 @@ export const doc = Chart => {
             'large',
             'xlarge',
             'full',
+            'auto',
           ]),
           PropTypes.string,
         ]),
