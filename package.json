@@ -40,7 +40,8 @@
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
     "build-storybook": "build-storybook -c storybook -o storybook-static -s ./storybook/public",
-    "prettier": "pretty-quick --staged"
+    "prettier": "pretty-quick --staged",
+    "chromatic": "CHROMATIC_APP_CODE=9q99in2ygnh chromatic test"
   },
   "peerDependencies": {
     "react": ">= 16.6.1",
