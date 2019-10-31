@@ -23,8 +23,7 @@ var LineChart = function LineChart() {
     pad: "large"
   }, React.createElement(Chart, {
     type: "line",
-    values: [20, 30, 15],
-    size: "290px"
+    values: [20, 30, 15]
   })));
 };
 

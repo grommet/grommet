@@ -8,6 +8,8 @@ require("jest-styled-components");
 
 var _Grommet = require("../../Grommet");
 
+var _Box = require("../../Box");
+
 var _ = require("..");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -58,7 +60,19 @@ test('Chart size renders', function () {
   }), _react["default"].createElement(_.Chart, {
     size: "xlarge",
     values: VALUES
-  })));
+  }), _react["default"].createElement(_Box.Box, {
+    width: "large"
+  }, _react["default"].createElement(_.Chart, {
+    size: {
+      width: 'full'
+    },
+    values: VALUES
+  }), _react["default"].createElement(_.Chart, {
+    size: {
+      width: 'auto'
+    },
+    values: VALUES
+  }))));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -97,6 +111,32 @@ test('Chart cap renders', function () {
     round: true,
     values: VALUES
   })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('Chart gap renders', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_Box.Box, {
+    width: "large"
+  }, _react["default"].createElement(_.Chart, {
+    size: {
+      width: 'auto'
+    },
+    gap: "small",
+    values: VALUES
+  }), _react["default"].createElement(_.Chart, {
+    size: {
+      width: 'auto'
+    },
+    gap: "medium",
+    values: VALUES
+  }), _react["default"].createElement(_.Chart, {
+    size: {
+      width: 'auto'
+    },
+    gap: "large",
+    values: VALUES
+  }))));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { Chart, calcs } from '..';
 var VALUES = [{
   value: [1, 60],
@@ -47,7 +48,19 @@ test('Chart size renders', function () {
   }), React.createElement(Chart, {
     size: "xlarge",
     values: VALUES
-  })));
+  }), React.createElement(Box, {
+    width: "large"
+  }, React.createElement(Chart, {
+    size: {
+      width: 'full'
+    },
+    values: VALUES
+  }), React.createElement(Chart, {
+    size: {
+      width: 'auto'
+    },
+    values: VALUES
+  }))));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
@@ -84,6 +97,31 @@ test('Chart cap renders', function () {
     round: true,
     values: VALUES
   })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('Chart gap renders', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Box, {
+    width: "large"
+  }, React.createElement(Chart, {
+    size: {
+      width: 'auto'
+    },
+    gap: "small",
+    values: VALUES
+  }), React.createElement(Chart, {
+    size: {
+      width: 'auto'
+    },
+    gap: "medium",
+    values: VALUES
+  }), React.createElement(Chart, {
+    size: {
+      width: 'auto'
+    },
+    gap: "large",
+    values: VALUES
+  }))));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

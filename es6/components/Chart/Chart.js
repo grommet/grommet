@@ -2,241 +2,261 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useRef, useState, useEffect } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
-import { areNormalizedBoundsEquals, areNormalizedValuesEquals, normalizeBounds, normalizeValues } from './utils';
+import { normalizeBounds, normalizeValues } from './utils';
+var defaultSize = {
+  height: 'small',
+  width: 'medium'
+};
+var Chart = React.forwardRef(function (_ref, ref) {
+  var propsBounds = _ref.bounds,
+      _ref$color = _ref.color,
+      color = _ref$color === void 0 ? 'accent-1' : _ref$color,
+      gap = _ref.gap,
+      _ref$justify = _ref.justify,
+      justify = _ref$justify === void 0 ? 'between' : _ref$justify,
+      onClick = _ref.onClick,
+      onHover = _ref.onHover,
+      _ref$overflow = _ref.overflow,
+      overflow = _ref$overflow === void 0 ? false : _ref$overflow,
+      round = _ref.round,
+      _ref$size = _ref.size,
+      propsSize = _ref$size === void 0 ? defaultSize : _ref$size,
+      _ref$thickness = _ref.thickness,
+      thickness = _ref$thickness === void 0 ? 'medium' : _ref$thickness,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'bar' : _ref$type,
+      _ref$values = _ref.values,
+      propsValues = _ref$values === void 0 ? [] : _ref$values,
+      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "justify", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
 
-var renderBars = function renderBars(values, bounds, scale, height) {
-  return (values || []).map(function (valueArg, index) {
-    var label = valueArg.label,
-        onHover = valueArg.onHover,
-        value = valueArg.value,
-        rest = _objectWithoutPropertiesLoose(valueArg, ["label", "onHover", "value"]);
+  var theme = useContext(ThemeContext);
 
-    var key = "p-" + index;
-    var bottom = value.length === 2 ? bounds[1][0] : value[1];
-    var top = value.length === 2 ? value[1] : value[2];
+  var _useState = useState([]),
+      values = _useState[0],
+      setValues = _useState[1];
 
-    if (top !== 0) {
-      var d = "M " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (height - (bottom - bounds[1][0]) * scale[1])) + (" L " + (value[0] - bounds[0][0]) * scale[0] + ",") + ("" + (height - (top - bounds[1][0]) * scale[1]));
-      var hoverProps;
+  var _useState2 = useState([[0, 0], [0, 0]]),
+      bounds = _useState2[0],
+      setBounds = _useState2[1];
 
-      if (onHover) {
-        hoverProps = {
-          onMouseOver: function onMouseOver() {
-            return onHover(true);
-          },
-          onMouseLeave: function onMouseLeave() {
-            return onHover(false);
-          }
-        };
+  var _useState3 = useState([0, 0]),
+      containerSize = _useState3[0],
+      setContainerSize = _useState3[1];
+
+  var _useState4 = useState([0, 0]),
+      size = _useState4[0],
+      setSize = _useState4[1];
+
+  var _useState5 = useState([1, 1]),
+      scale = _useState5[0],
+      setScale = _useState5[1];
+
+  var _useState6 = useState(0),
+      strokeWidth = _useState6[0],
+      setStrokeWidth = _useState6[1];
+
+  var containerRef = ref || useRef(); // calculations
+
+  useEffect(function () {
+    var nextValues = normalizeValues(propsValues);
+    setValues(nextValues);
+    var nextBounds = normalizeBounds(propsBounds, nextValues);
+    setBounds(nextBounds);
+    var nextStrokeWidth = parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+    setStrokeWidth(nextStrokeWidth);
+    var gapWidth = gap ? parseMetricToNum(theme.global.edgeSize[gap] || gap) : nextStrokeWidth; // autoWidth is how wide we'd pefer
+
+    var autoWidth = nextStrokeWidth * nextValues.length + (nextValues.length - 1) * gapWidth;
+    var sizeWidth = typeof propsSize === 'string' ? propsSize : propsSize.width || defaultSize.width;
+    var width;
+
+    if (sizeWidth === 'full') {
+      width = containerSize[0];
+    } else if (sizeWidth === 'auto') {
+      width = autoWidth;
+    } else {
+      width = parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
+    }
+
+    var sizeHeight = typeof propsSize === 'string' ? propsSize : propsSize.height || defaultSize.height;
+    var height;
+
+    if (sizeHeight === 'full') {
+      height = containerSize[1];
+    } else {
+      height = parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
+    }
+
+    setSize([width, height]);
+    var nextScale = [(sizeWidth === 'auto' ? autoWidth : width) / (nextBounds[0][1] - nextBounds[0][0]), height / (nextBounds[1][1] - nextBounds[1][0])];
+    setScale(nextScale);
+  }, [containerSize, gap, justify, propsBounds, propsSize, propsValues, theme.global.edgeSize, theme.global.size, thickness]); // container size, if needed
+
+  useEffect(function () {
+    var onResize = function onResize() {
+      var containerNode = containerRef.current;
+
+      if (containerNode) {
+        var parentNode = containerNode.parentNode;
+
+        if (parentNode) {
+          var rect = parentNode.getBoundingClientRect();
+          setContainerSize([rect.width, rect.height]);
+        }
       }
+    };
 
-      return React.createElement("g", {
-        key: key,
-        fill: "none"
-      }, React.createElement("title", null, label), React.createElement("path", _extends({
-        d: d
-      }, hoverProps, rest)));
+    if (propsSize.width === 'full' || propsSize.height === 'full') {
+      window.addEventListener('resize', onResize);
+      onResize();
+      return function () {
+        return window.removeEventListener('resize', onResize);
+      };
     }
 
     return undefined;
-  });
-};
+  }, [containerRef, propsSize]);
 
-var renderLine = function renderLine(values, bounds, scale, height, _ref) {
-  var onClick = _ref.onClick,
-      onHover = _ref.onHover;
-  var d = '';
-  (values || []).forEach(function (_ref2, index) {
-    var value = _ref2.value;
-    d += (index ? ' L' : 'M') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (height - (value[1] - bounds[1][0]) * scale[1]));
-  });
-  var hoverProps;
+  var renderBars = function renderBars() {
+    return (values || []).map(function (valueArg, index) {
+      var label = valueArg.label,
+          valueOnHover = valueArg.onHover,
+          value = valueArg.value,
+          valueRest = _objectWithoutPropertiesLoose(valueArg, ["label", "onHover", "value"]);
 
-  if (onHover) {
-    hoverProps = {
-      onMouseOver: function onMouseOver() {
-        return onHover(true);
-      },
-      onMouseLeave: function onMouseLeave() {
-        return onHover(false);
+      var key = "p-" + index;
+      var bottom = value.length === 2 ? bounds[1][0] : value[1];
+      var top = value.length === 2 ? value[1] : value[2];
+
+      if (top !== 0) {
+        var d = "M " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1])) + (" L " + (value[0] - bounds[0][0]) * scale[0] + ",") + ("" + (size[1] - (top - bounds[1][0]) * scale[1]));
+        var hoverProps;
+
+        if (valueOnHover) {
+          hoverProps = {
+            onMouseOver: function onMouseOver() {
+              return valueOnHover(true);
+            },
+            onMouseLeave: function onMouseLeave() {
+              return valueOnHover(false);
+            }
+          };
+        }
+
+        return React.createElement("g", {
+          key: key,
+          fill: "none"
+        }, React.createElement("title", null, label), React.createElement("path", _extends({
+          d: d
+        }, hoverProps, valueRest)));
       }
-    };
-  }
 
-  var clickProps;
-
-  if (onClick) {
-    clickProps = {
-      onClick: onClick
-    };
-  }
-
-  return React.createElement("g", {
-    fill: "none"
-  }, React.createElement("path", _extends({
-    d: d
-  }, hoverProps, clickProps)));
-};
-
-var renderArea = function renderArea(values, bounds, scale, height, _ref3) {
-  var color = _ref3.color,
-      onClick = _ref3.onClick,
-      onHover = _ref3.onHover,
-      theme = _ref3.theme;
-  var d = '';
-  (values || []).forEach(function (_ref4, index) {
-    var value = _ref4.value;
-    var top = value.length === 2 ? value[1] : value[2];
-    d += (!index ? 'M' : ' L') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (height - (top - bounds[1][0]) * scale[1]));
-  });
-  (values || []).reverse().forEach(function (_ref5) {
-    var value = _ref5.value;
-    var bottom = value.length === 2 ? bounds[1][0] : value[1];
-    d += " L " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (height - (bottom - bounds[1][0]) * scale[1]));
-  });
-
-  if (d.length > 0) {
-    d += ' Z';
-  }
-
-  var hoverProps;
-
-  if (onHover) {
-    hoverProps = {
-      onMouseOver: function onMouseOver() {
-        return onHover(true);
-      },
-      onMouseLeave: function onMouseLeave() {
-        return onHover(false);
-      }
-    };
-  }
-
-  var clickProps;
-
-  if (onClick) {
-    clickProps = {
-      onClick: onClick
-    };
-  }
-
-  return React.createElement("g", {
-    fill: normalizeColor(color.color || color, theme)
-  }, React.createElement("path", _extends({
-    d: d
-  }, hoverProps, clickProps)));
-};
-
-var Chart = function Chart(_ref6) {
-  var _ref6$color = _ref6.color,
-      color = _ref6$color === void 0 ? 'accent-1' : _ref6$color,
-      onClick = _ref6.onClick,
-      onHover = _ref6.onHover,
-      _ref6$overflow = _ref6.overflow,
-      overflow = _ref6$overflow === void 0 ? false : _ref6$overflow,
-      round = _ref6.round,
-      _ref6$size = _ref6.size,
-      size = _ref6$size === void 0 ? {
-    width: 'medium',
-    height: 'small'
-  } : _ref6$size,
-      theme = _ref6.theme,
-      _ref6$thickness = _ref6.thickness,
-      thickness = _ref6$thickness === void 0 ? 'medium' : _ref6$thickness,
-      _ref6$type = _ref6.type,
-      type = _ref6$type === void 0 ? 'bar' : _ref6$type,
-      values = _ref6.values,
-      bounds = _ref6.bounds,
-      rest = _objectWithoutPropertiesLoose(_ref6, ["color", "onClick", "onHover", "overflow", "round", "size", "theme", "thickness", "type", "values", "bounds"]);
-
-  var containerRef = useRef();
-
-  var _useState = useState({
-    width: 0,
-    height: 0
-  }),
-      containerState = _useState[0],
-      setContainerState = _useState[1];
-
-  var _useState2 = useState({
-    values: null,
-    bounds: null
-  }),
-      sizeState = _useState2[0],
-      setSizeState = _useState2[1];
-
-  var nextValues = normalizeValues(values);
-  var nextBounds = normalizeBounds(bounds, nextValues);
-
-  if (!sizeState.values || !areNormalizedValuesEquals(values, sizeState.values) && !areNormalizedValuesEquals(sizeState.values, nextValues) || !areNormalizedBoundsEquals(bounds, sizeState.bounds) && !areNormalizedBoundsEquals(sizeState.bounds, nextBounds)) {
-    setSizeState({
-      bounds: nextBounds,
-      values: nextValues
+      return undefined;
     });
-  }
-
-  var onResize = function onResize() {
-    var containerNode = containerRef.current;
-
-    if (containerNode) {
-      var parentNode = containerNode.parentNode;
-
-      if (parentNode) {
-        var rect = parentNode.getBoundingClientRect();
-        setContainerState({
-          width: rect.width,
-          height: rect.height
-        });
-      }
-    }
   };
 
-  useEffect(function () {
-    window.addEventListener('resize', onResize);
-    onResize();
-    return function cleanup() {
-      window.removeEventListener('resize', onResize);
-    };
-  }, []);
-  if (!sizeState.bounds || !sizeState.values) return null;
-  var sizeWidth = typeof size === 'string' ? size : size.width || 'medium';
-  var sizeHeight = typeof size === 'string' ? size : size.height || 'medium';
-  var width = sizeWidth === 'full' ? containerState.width : parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
-  var height = sizeHeight === 'full' ? containerState.height : parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
-  var strokeWidth = parseMetricToNum(theme.global.edgeSize[thickness]);
-  var scale = [width / (sizeState.bounds[0][1] - sizeState.bounds[0][0]), height / (sizeState.bounds[1][1] - sizeState.bounds[1][0])];
-  var viewBox = overflow ? "0 0 " + width + " " + height : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (width + strokeWidth) + " " + (height + strokeWidth);
-  var colorName = typeof color === 'object' ? color.color : color;
-  var opacity = color.opacity ? theme.global.opacity[color.opacity] : undefined;
+  var renderLine = function renderLine() {
+    var d = '';
+    (values || []).forEach(function (_ref2, index) {
+      var value = _ref2.value;
+      d += (index ? ' L' : 'M') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (value[1] - bounds[1][0]) * scale[1]));
+    });
+    var hoverProps;
+
+    if (onHover) {
+      hoverProps = {
+        onMouseOver: function onMouseOver() {
+          return onHover(true);
+        },
+        onMouseLeave: function onMouseLeave() {
+          return onHover(false);
+        }
+      };
+    }
+
+    var clickProps;
+
+    if (onClick) {
+      clickProps = {
+        onClick: onClick
+      };
+    }
+
+    return React.createElement("g", {
+      fill: "none"
+    }, React.createElement("path", _extends({
+      d: d
+    }, hoverProps, clickProps)));
+  };
+
+  var renderArea = function renderArea() {
+    var d = '';
+    (values || []).forEach(function (_ref3, index) {
+      var value = _ref3.value;
+      var top = value.length === 2 ? value[1] : value[2];
+      d += (!index ? 'M' : ' L') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (top - bounds[1][0]) * scale[1]));
+    });
+    (values || []).reverse().forEach(function (_ref4) {
+      var value = _ref4.value;
+      var bottom = value.length === 2 ? bounds[1][0] : value[1];
+      d += " L " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1]));
+    });
+
+    if (d.length > 0) {
+      d += ' Z';
+    }
+
+    var hoverProps;
+
+    if (onHover) {
+      hoverProps = {
+        onMouseOver: function onMouseOver() {
+          return onHover(true);
+        },
+        onMouseLeave: function onMouseLeave() {
+          return onHover(false);
+        }
+      };
+    }
+
+    var clickProps;
+
+    if (onClick) {
+      clickProps = {
+        onClick: onClick
+      };
+    }
+
+    return React.createElement("g", {
+      fill: normalizeColor(color.color || color, theme)
+    }, React.createElement("path", _extends({
+      d: d
+    }, hoverProps, clickProps)));
+  };
+
   var contents;
 
   if (type === 'bar') {
-    contents = renderBars(sizeState.values, sizeState.bounds, scale, height);
+    contents = renderBars();
   } else if (type === 'line') {
-    contents = renderLine(sizeState.values, sizeState.bounds, scale, height, {
-      onClick: onClick,
-      onHover: onHover
-    });
+    contents = renderLine();
   } else if (type === 'area') {
-    contents = renderArea(sizeState.values, sizeState.bounds, scale, height, {
-      color: color,
-      onClick: onClick,
-      onHover: onHover,
-      theme: theme
-    });
+    contents = renderArea();
   }
 
+  var viewBox = overflow ? "0 0 " + size[0] + " " + size[1] : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (size[0] + strokeWidth) + " " + (size[1] + strokeWidth);
+  var colorName = typeof color === 'object' ? color.color : color;
+  var opacity = color.opacity ? theme.global.opacity[color.opacity] : undefined;
   return React.createElement(StyledChart, _extends({
     ref: containerRef,
     viewBox: viewBox,
     preserveAspectRatio: "none",
-    width: size === 'full' ? '100%' : width,
-    height: size === 'full' ? '100%' : height
+    width: size === 'full' ? '100%' : size[0],
+    height: size === 'full' ? '100%' : size[1]
   }, rest), React.createElement("g", {
     stroke: normalizeColor(colorName, theme),
     strokeWidth: strokeWidth,
@@ -244,13 +264,13 @@ var Chart = function Chart(_ref6) {
     strokeLinejoin: round ? 'round' : 'miter',
     opacity: opacity
   }, contents));
-};
-
+});
+Chart.displayName = 'Chart';
 var ChartDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   ChartDoc = require('./doc').doc(Chart); // eslint-disable-line global-require
 }
 
-var ChartWrapper = compose(withTheme)(ChartDoc || Chart);
+var ChartWrapper = ChartDoc || Chart;
 export { ChartWrapper as Chart };
