@@ -15,7 +15,7 @@ const BarChart = () => (
 const LineChart = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Chart type="line" values={[20, 30, 15]} size="290px" />
+      <Chart type="line" values={[20, 30, 15]} />
     </Box>
   </Grommet>
 );
