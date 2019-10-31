@@ -8,7 +8,7 @@ const Announcer = ({ announce, message, mode, role }) => {
   React.useEffect(() => {
     const timeout = 3000;
     announce(message, mode, timeout);
-  }, [message, mode]);
+  }, [announce, message, mode]);
 
   return (
     <Text align="center" role={role} aria-live={mode}>

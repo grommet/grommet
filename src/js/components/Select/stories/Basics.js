@@ -6,8 +6,13 @@ import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
+const colors = {
+  selected: 'neutral-3',
+};
+
 const customRoundedTheme = deepMerge(grommet, {
   global: {
+    colors,
     control: {
       border: {
         radius: '24px',
