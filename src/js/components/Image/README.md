@@ -139,7 +139,7 @@ boolean
 
 **fill**
 
-Set maximum width to that of parent element
+Whether the image expands to fill all of the available width and height
 
 ```
 boolean

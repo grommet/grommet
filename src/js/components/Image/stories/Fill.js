@@ -15,7 +15,11 @@ const Fill = () => {
         </Box>
         <Box height="small" width="small" border>
           <Anchor href="#">
-            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
+            <Image
+              fit="contain"
+              fill
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
           </Anchor>
         </Box>
       </Box>
