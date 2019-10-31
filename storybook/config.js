@@ -5,7 +5,7 @@ import grommetLight from './theme';
 const req = require.context(
   '../src/js',
   true,
-  /\.stories\.js$|\/stories\/.*\.js$/,
+  /\.stories\.js$|\/stories\/.*\.js$|\/stories\/.*\.ts$|\/stories\/.*\.tsx$/,
 );
 
 function loadStories() {
