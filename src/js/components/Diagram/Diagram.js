@@ -61,31 +61,31 @@ const findTarget = target => {
 };
 
 const Diagram = ({ connections, theme, ...rest }) => {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [connectionPoints, setConnectionPoints] = useState();
-  const [prevConnections, setPrevConnections] = useState();
   const svgRef = useRef();
 
-  // track whether the connections array changes so we can trigger re-placing
-  // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
-  if (connections !== prevConnections) {
-    setPrevConnections(connections);
+  useEffect(() => {
     setConnectionPoints(undefined);
-  }
+  }, [connections]);
 
   const onResize = useCallback(() => {
     const svg = svgRef.current;
 
     if (svg) {
       const rect = svg.getBoundingClientRect();
-      if (rect.width !== width || rect.height !== height) {
-        setWidth(rect.width);
-        setHeight(rect.height);
+      if (
+        rect.width !== dimensions.width ||
+        rect.height !== dimensions.height
+      ) {
+        setDimensions({
+          width: rect.width,
+          height: rect.height,
+        });
         setConnectionPoints(undefined);
       }
     }
-  }, [width, height]);
+  }, [dimensions.width, dimensions.height]);
 
   // Ref that stores resize handler
   const savedOnResize = useRef();
@@ -220,7 +220,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
   return (
     <StyledDiagram
       ref={svgRef}
-      viewBox={`0 0 ${width} ${height}`}
+      viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
       preserveAspectRatio="xMinYMin meet"
       {...rest}
     >
