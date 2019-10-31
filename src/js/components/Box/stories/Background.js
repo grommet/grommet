@@ -17,6 +17,9 @@ const BackgroundBox = () => (
       <Box pad="small" background="brand" elevation="large">
         brand
       </Box>
+      <Box pad="small" background={{ color: 'brand' }} elevation="large">
+        brand object
+      </Box>
       <Box
         pad="small"
         background={{

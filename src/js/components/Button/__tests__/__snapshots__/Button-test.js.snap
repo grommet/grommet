@@ -1019,7 +1019,7 @@ exports[`Button hoverIndicator background 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
