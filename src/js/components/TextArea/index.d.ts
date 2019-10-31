@@ -13,6 +13,6 @@ export interface TextAreaProps {
   value?: string;
 }
 
-declare const TextArea: React.ComponentClass<TextAreaProps & JSX.IntrinsicElements['textarea']>;
+declare const TextArea: React.FC<TextAreaProps & JSX.IntrinsicElements['textarea']>;
 
 export { TextArea };

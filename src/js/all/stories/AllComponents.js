@@ -150,8 +150,8 @@ const Components = () => {
     </Box>,
     <Box key="time" gap="medium">
       <Calendar size="small" />
-      <Clock type="digital" />
-      <Clock />
+      <Clock type="digital" className="chromatic-ignore" />
+      <Clock className="chromatic-ignore" />
     </Box>,
     <Box key="measure" gap="medium">
       <Chart
@@ -328,4 +328,4 @@ const Components = () => {
   );
 };
 
-storiesOf('Components', module).add('All', () => <Components />);
+storiesOf('All', module).add('All', () => <Components />);
