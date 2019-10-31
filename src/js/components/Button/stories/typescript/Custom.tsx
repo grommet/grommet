@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { grommet, Box, Button, Grommet } from 'grommet';
 
@@ -25,16 +26,16 @@ const customTheme = {
       let extraStyles = '';
       if (props.primary) {
         extraStyles = `
-            text-transform: uppercase;
-          `;
+          text-transform: uppercase;
+        `;
       }
       return `
-          color: white;
-          font-size: 12px;
-          font-weight: bold;
-  
-          ${extraStyles}
-        `;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+
+        ${extraStyles}
+      `;
     },
   },
 };
@@ -54,4 +55,6 @@ const CustomTheme = () => (
   </>
 );
 
-storiesOf('Button', module).add('Custom', () => <CustomTheme />);
+if (!isChromatic()) {
+  storiesOf('TypeScript/Button', module).add('Custom', () => <CustomTheme />);
+}
