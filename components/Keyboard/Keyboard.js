@@ -53,7 +53,7 @@ var Keyboard = function Keyboard(_ref) {
         document.removeEventListener('keydown', onKeyDownHandler);
       }
     };
-  }, [onKeyDownHandler]);
+  }, [onKeyDownHandler, target]);
   return target === 'document' ? children : (0, _react.cloneElement)(_react.Children.only(children), {
     onKeyDown: onKeyDownHandler
   });

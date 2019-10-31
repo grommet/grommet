@@ -14,7 +14,7 @@ var Announcer = function Announcer(_ref) {
   React.useEffect(function () {
     var timeout = 3000;
     announce(message, mode, timeout);
-  }, [message, mode]);
+  }, [announce, message, mode]);
   return React.createElement(Text, {
     align: "center",
     role: role,

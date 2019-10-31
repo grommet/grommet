@@ -85,7 +85,7 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
   var boxRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     forceUpdate();
-  }, []);
+  }, [forceUpdate]);
 
   var onChange = function onChange(event) {
     var newValue = event.target.value;

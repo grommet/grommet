@@ -23,7 +23,7 @@ var Announcer = function Announcer(_ref) {
   _react["default"].useEffect(function () {
     var timeout = 3000;
     announce(message, mode, timeout);
-  }, [message, mode]);
+  }, [announce, message, mode]);
 
   return _react["default"].createElement(_grommet.Text, {
     align: "center",
