@@ -19,11 +19,12 @@ export interface AnchorProps {
   icon?: JSX.Element;
   label?: React.ReactNode;
   margin?: MarginType;
+  onClick?: ((event: React.MouseEvent<HTMLAnchorElement>) => void);
   reverse?: boolean;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   as?: PolymorphicType;
 }
 
-declare const Anchor: React.FC<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
+declare const Anchor: React.FC<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color' | 'onClick'>>;
 
 export { Anchor };
