@@ -95,5 +95,5 @@ export const SearchBorderBox = ({ children, searching, ...rest }) => {
         {children}
       </Box>
     </ThemeContext.Extend>
-  )
-}
+  );
+};
