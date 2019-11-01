@@ -5,6 +5,7 @@ export interface RangeInputProps {
   min?: number | string;
   max?: number | string;
   name?: string;
+  onChange?: ((...args: any[]) => any);
   step?: number;
   value?: number | string;
 }
