@@ -8,19 +8,31 @@ import { deepMerge } from '../../../utils';
 
 const customButtonIconColor = deepMerge(grommet, {
   button: {
-    color: {light: 'neutral-3', dark: 'white'},
+    color: { light: 'brand', dark: 'accent-2' },
   },
 });
 
 const IconLabel = () => (
   <Grommet theme={customButtonIconColor}>
-    <Box align="center" pad="large">
+    <Box background="dark-2" align="center" pad="large">
       <Box round="full" overflow="hidden" background="neutral-1">
         <Button icon={<Add />} hoverIndicator onClick={() => {}} />
       </Box>
       <Box align="center" pad="large" gap="small">
-        <Button icon={<Add />} label="Add" onClick={() => {}} primary />
-        <Button icon={<Add />} label="Add" onClick={() => {}} />
+        <Button
+          color="black"
+          icon={<Add />}
+          label="Add"
+          onClick={() => {}}
+          primary
+        />
+        <Button
+          color="white"
+          icon={<Add />}
+          label="Add"
+          onClick={() => {}}
+          primary
+        />
         <Button icon={<Add />} label="Add" gap="xlarge" onClick={() => {}} />
         <Button
           icon={<Add />}
