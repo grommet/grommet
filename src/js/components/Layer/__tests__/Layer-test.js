@@ -203,20 +203,20 @@ describe('Layer', () => {
   });
 
   test('should be null prior to mounting, displayed after mount', () => {
-    const ref = React.createRef();
-    render(
+    const { container, unmount } = render(
       <Grommet>
-        <Layer data-testid="test-layer-container" ref={ref}>
+        <Layer data-testid="test-layer-container">
           Layer container is available
         </Layer>
       </Grommet>,
     );
 
-    ref.current.setState({ islayerContainerAvailable: false });
-    expect(queryByTestId(document, 'test-layer-container')).toBeNull();
-
-    ref.current.componentDidMount();
     expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
+    expect(container.firstChild).not.toBeNull();
+
+    unmount();
+
+    expect(container.firstChild).toBeNull();
   });
 
   test('focus on layer', () => {
