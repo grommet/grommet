@@ -41,7 +41,7 @@ const Keyboard = ({ target, children, onKeyDown, ...restProps }) => {
         document.removeEventListener('keydown', onKeyDownHandler);
       }
     };
-  }, [onKeyDownHandler]);
+  }, [onKeyDownHandler, target]);
 
   return target === 'document'
     ? children
