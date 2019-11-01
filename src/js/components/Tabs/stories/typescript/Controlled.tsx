@@ -33,8 +33,6 @@ const ControlledTabs = () => {
   );
 };
 
-storiesOf('Tabs', module).add('Controlled', () => <ControlledTabs />);
-
 if (!isChromatic()) {
   storiesOf('TypeScript/Tabs', module).add('Controlled', () => (
     <ControlledTabs />

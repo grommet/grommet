@@ -57,10 +57,6 @@ const CustomHeaderAccordion = () => {
   );
 };
 
-storiesOf('Accordion', module).add('Custom Header', () => (
-  <CustomHeaderAccordion />
-));
-
 if (!isChromatic()) {
   storiesOf('TypeScript/Accordion', module).add('Custom Header', () => (
     <CustomHeaderAccordion />
