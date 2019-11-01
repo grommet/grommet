@@ -2897,6 +2897,22 @@ string
 }
 \`\`\`
 
+**gap**
+
+The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
 **onClick**
 
 Called when the user clicks on it.
@@ -2968,6 +2984,7 @@ full
     large
     xlarge
     full
+    auto
     string
 }
 string
@@ -4695,6 +4712,29 @@ xlarge
     xlarge
     string
 }
+string
+\`\`\`
+
+**basis**
+
+A fixed or relative size along its container's main axis.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+auto
 string
 \`\`\`
 
@@ -11721,6 +11761,16 @@ Continent details.
   onClick: function,
   onHover: function
 }]
+\`\`\`
+
+**fill**
+
+Whether the width and/or height should fill the container.
+
+\`\`\`
+horizontal
+vertical
+boolean
 \`\`\`
 
 **onSelectPlace**

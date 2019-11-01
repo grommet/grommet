@@ -1464,7 +1464,7 @@ exports[`Box background 1`] = `
   background-position: center center;
   background-size: cover;
   color: inherit;
-  background-color: rgba(111,255,176, 1);
+  background-color: rgba(111,255,176,1);
   color: #444444;
   min-width: 0;
   min-height: 0;

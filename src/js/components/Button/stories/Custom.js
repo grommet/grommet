@@ -48,7 +48,7 @@ const CustomTheme = () => (
     </Grommet>
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <Button as="span" label="Custom as=span" path="/" />
+        <Button as="span" label="Custom as=span" />
       </Box>
     </Grommet>
   </>

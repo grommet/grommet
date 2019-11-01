@@ -4,6 +4,7 @@ import {
   AlignSelfType, 
   BackgroundType,
   ColorType,
+  FillType,
   GapType, 
   GridAreaType, 
   MarginType, 
@@ -19,7 +20,7 @@ export interface ButtonProps {
   active?: boolean;
   color?: ColorType;
   disabled?: boolean;
-  fill?: "horizontal" | "vertical" | boolean;
+  fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
   hoverIndicator?: BackgroundType | boolean;
@@ -27,7 +28,6 @@ export interface ButtonProps {
   target?: "_self" | "_blank" | "_parent" | "_top";
   icon?: JSX.Element;
   label?: React.ReactNode;
-  onClick?: ((...args: any[]) => any);
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
@@ -35,6 +35,6 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
-declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
+declare const Button: React.FC<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
 
 export { Button };

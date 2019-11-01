@@ -22,6 +22,4 @@ const CustomDefaultProps = () => (
   </Box>
 );
 
-storiesOf('Components', module).add('Default Theme', () => (
-  <CustomDefaultProps />
-));
+storiesOf('Theme', module).add('Extend Default', () => <CustomDefaultProps />);
