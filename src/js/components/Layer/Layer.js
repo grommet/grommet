@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { getNewContainer } from '../../utils';
@@ -6,73 +6,77 @@ import { getNewContainer } from '../../utils';
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 
-class Layer extends Component {
-  static defaultProps = {
-    full: false,
-    margin: 'none',
-    modal: true,
-    position: 'center',
-    responsive: true,
-  };
+const useLayerContainer = ({ animate, animation }) => {
+  const [layerContainer, setLayerContainer] = useState(null);
 
-  state = {
-    islayerContainerAvailable: false,
-  };
+  useEffect(() => {
+    const container = getNewContainer();
+    const originalFocusedElement = document.activeElement;
 
-  componentDidMount() {
-    // ensure document is available
-    this.originalFocusedElement = document.activeElement;
-    this.layerContainer = getNewContainer();
-    this.setState({ islayerContainerAvailable: true });
-  }
+    setLayerContainer(container);
 
-  componentWillUnmount() {
-    const { animate, animation } = this.props;
-    if (this.originalFocusedElement) {
-      if (this.originalFocusedElement.focus) {
-        // wait for the fixed positioning to come back to normal
-        // see layer styling for reference
+    return () => {
+      setLayerContainer(null);
+
+      if (originalFocusedElement) {
+        if (originalFocusedElement.focus) {
+          // wait for the fixed positioning to come back to normal
+          // see layer styling for reference
+          setTimeout(() => {
+            originalFocusedElement.focus();
+          }, 0);
+        } else if (
+          originalFocusedElement.parentNode &&
+          originalFocusedElement.parentNode.focus
+        ) {
+          // required for IE11 and Edge
+          originalFocusedElement.parentNode.focus();
+        }
+      }
+
+      const activeAnimation = animation !== undefined ? animation : animate;
+      if (activeAnimation !== false) {
+        // undefined uses 'slide' as the default
+        // animate out and remove later
+        const layerClone = container.cloneNode(true);
+
+        layerClone.id = 'layerClone';
+        document.body.appendChild(layerClone);
+
+        const clonedContainer = layerClone.querySelector(
+          '[class*="StyledLayer__StyledContainer"]',
+        );
+        if (clonedContainer && clonedContainer.style) {
+          clonedContainer.style.animationDirection = 'reverse';
+        }
         setTimeout(() => {
-          this.originalFocusedElement.focus();
-        }, 0);
-      } else if (
-        this.originalFocusedElement.parentNode &&
-        this.originalFocusedElement.parentNode.focus
-      ) {
-        // required for IE11 and Edge
-        this.originalFocusedElement.parentNode.focus();
+          // we add the id and query here so the unit tests work
+          const clone = document.getElementById('layerClone');
+
+          if (clone) document.body.removeChild(clone);
+        }, animationDuration);
       }
-    }
+    };
+  }, [animate, animation]);
 
-    const activeAnimation = animation !== undefined ? animation : animate;
-    if (activeAnimation !== false) {
-      // undefined uses 'slide' as the default
-      // animate out and remove later
-      const layerClone = this.layerContainer.cloneNode(true);
-      layerClone.id = 'layerClone';
-      document.body.appendChild(layerClone);
-      const clonedContainer = layerClone.querySelector(
-        '[class*="StyledLayer__StyledContainer"]',
-      );
-      if (clonedContainer && clonedContainer.style) {
-        clonedContainer.style.animationDirection = 'reverse';
-      }
-      setTimeout(() => {
-        // we add the id and query here so the unit tests work
-        const clone = document.getElementById('layerClone');
-        if (clone) document.body.removeChild(clone);
-      }, animationDuration);
-    }
-  }
+  return layerContainer;
+};
 
-  render() {
-    const { islayerContainerAvailable } = this.state;
+const Layer = props => {
+  const layerContainer = useLayerContainer(props);
 
-    return islayerContainerAvailable
-      ? createPortal(<LayerContainer {...this.props} />, this.layerContainer)
-      : null;
-  }
-}
+  return layerContainer
+    ? createPortal(<LayerContainer {...props} />, layerContainer)
+    : null;
+};
+
+Layer.defaultProps = {
+  full: false,
+  margin: 'none',
+  modal: true,
+  position: 'center',
+  responsive: true,
+};
 
 let LayerDoc;
 if (process.env.NODE_ENV !== 'production') {
