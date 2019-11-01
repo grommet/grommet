@@ -15,16 +15,15 @@ Value.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const Distribution = (props) => {
-  const {
-    basis,
-    children,
-    direction,
-    fill,
-    gap,
-    values,
-    ...rest
-  } = props;
+const Distribution = ({
+  basis,
+  children,
+  direction,
+  fill,
+  gap,
+  values,
+  ...rest
+}) => {
   if (values.length === 1) {
     const value = values[0];
     return (
@@ -34,11 +33,7 @@ const Distribution = (props) => {
     );
   }
   if (values.length > 1) {
-    // calculate total
-    let total = 0;
-    values.forEach(v => {
-      total += v.value;
-    });
+    const total = values.reduce(({ value }, total) => total + value, 0)
 
     // figure out how many of the values area needed to represent half of the
     // total
