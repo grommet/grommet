@@ -14,6 +14,7 @@ import {
   CheckBox,
   Clock,
   DataTable,
+  Distribution,
   FormField,
   Grid,
   Heading,
@@ -157,7 +158,7 @@ const Components = () => {
       />
     </Box>,
     <Box key="visualize" gap="small">
-      {/* <Distribution
+      <Distribution
         basis="small"
         values={[
           { value: 50, color: 'light-3' },
@@ -172,7 +173,7 @@ const Components = () => {
             <Text size="large">{value.value}</Text>
           </Box>
         )}
-      </Distribution> */}
+      </Distribution>
       <Stack>
         <Box>
           <Box direction="row">
