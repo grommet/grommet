@@ -6,8 +6,9 @@ import {
   FillType,
   GapType, 
   GridAreaType, 
+  JustifyContentType, 
   MarginType, 
-  PolymorphicType, 
+  PolymorphicType,
 } from "../../utils";
 
 export interface GridProps {
@@ -22,7 +23,7 @@ export interface GridProps {
   gap?: GapType | {row?: GapType,column?: GapType};
   gridArea?: GridAreaType;
   justify?: "start" | "center" | "end" | "stretch";
-  justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
+  justifyContent?: JustifyContentType;
   margin?: MarginType;
   rows?: ("xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | string | string[])[] | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   tag?: PolymorphicType;

@@ -328,4 +328,4 @@ const Components = () => {
   );
 };
 
-storiesOf('Components', module).add('All', () => <Components />);
+storiesOf('All', module).add('All', () => <Components />);
