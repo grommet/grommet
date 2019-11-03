@@ -2290,7 +2290,7 @@ boolean",
       Object {
         "description": "Whether the image expands to fill all of the available width and height",
         "format": "boolean",
-        "name": "fill",
+        "name": "fillProp",
       },
     ],
     "usage": "import { Image } from 'grommet';

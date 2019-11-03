@@ -11,16 +11,11 @@ exports[`Image fill renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
-  width: 100%;
-  height: 100%;
-}
-
 <div
   className="c0"
 >
   <img
-    className="c1"
+    className=""
     fill={true}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />

@@ -22,7 +22,7 @@ const fillStyle = css`
 const StyledImage = styled.img`
   ${genericStyles}
   ${props => props.fit && fitStyle}
-  ${props => props.fill && fillStyle}
+  ${props => props.fillProp && fillStyle}
   ${props => props.theme.image && props.theme.image.extend}
   ${props =>
     props.opacityProp &&
