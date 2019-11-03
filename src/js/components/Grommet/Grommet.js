@@ -3,7 +3,12 @@ import { createGlobalStyle } from 'styled-components';
 
 import { colorIsDark } from 'grommet-styles';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
-import { deepMerge, getBreakpoint, getDeviceBreakpoint } from '../../utils';
+import {
+  deepMerge,
+  getBreakpoint,
+  getDeviceBreakpoint,
+  normalizeColor,
+} from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 
@@ -93,6 +98,17 @@ class Grommet extends Component {
       stateResponsive ||
       this.deviceResponsive() ||
       theme.global.deviceBreakpoints.tablet;
+
+    //  Normalize colors for css variables and sets them on the global scope
+    const { cssVars } = this.props;
+    if (cssVars) {
+      Object.keys(theme.global.colors)
+        .filter(k => typeof theme.global.colors[k] === 'string')
+        .forEach(k => {
+          const color = normalizeColor(theme.global.colors[k], theme);
+          document.documentElement.style.setProperty(`--${k}`, color);
+        });
+    }
 
     return (
       <ThemeContext.Provider value={theme}>

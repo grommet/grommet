@@ -82,7 +82,16 @@ const getRGBArray = color => {
   return color;
 };
 
-export const colorIsDark = color => {
+export const colorIsDark = colorArg => {
+  let color = colorArg;
+  if (typeof color === 'string') {
+    const match = color.match('var\\(([^)]+)\\)');
+    if (match) {
+      color = window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue(match[1]);
+    }
+  }
   const [red, green, blue] = getRGBArray(color);
   const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
   // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html

@@ -14,12 +14,6 @@ const StyledGrommet = styled.div`
   ${props => props.full && fullStyle}
   ${props => props.theme.global.font.face}
   ${props => props.theme.grommet.extend}
-  ${props =>
-    props.cssVars &&
-    Object.keys(props.theme.global.colors)
-      .filter(k => typeof props.theme.global.colors[k] === 'string')
-      .map(k => `--${k}: ${props.theme.global.colors[k]};`)
-      .join('\n')}
 `;
 
 StyledGrommet.defaultProps = {};
