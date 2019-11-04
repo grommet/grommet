@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -89,19 +89,13 @@ const Components = () => {
     [baseSize, themeName],
   );
 
-  useEffect(() => {
-    if (
+  const themeCanMode = useMemo(
+    () =>
       theme &&
       theme.global.colors.background &&
-      theme.global.colors.background.dark
-    ) {
-      if (themeMode === undefined) {
-        setThemeMode('light');
-      }
-    } else if (themeMode !== undefined) {
-      setThemeMode(undefined);
-    }
-  }, [theme, themeMode]);
+      theme.global.colors.background.dark,
+    [theme],
+  );
 
   const content = [
     <Box key="type" align="start">
@@ -302,7 +296,7 @@ const Components = () => {
               onChange={event => setThemeName(event.option)}
             />
           </Box>
-          {themeMode !== undefined && (
+          {themeCanMode && (
             <CheckBox
               label="dark"
               checked={themeMode === 'dark'}
@@ -311,7 +305,7 @@ const Components = () => {
               }
             />
           )}
-          {!themeMode && (
+          {!themeCanMode && (
             <Box basis="small">
               <Select
                 plain

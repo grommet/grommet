@@ -20,14 +20,20 @@ class Grommet extends Component {
 
     const nextTheme = deepMerge(baseTheme, theme);
     if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
-      if (typeof theme.dark === 'undefined') {
-        // calculate if background is dark or not
-        // otherwise respect the property passed in the theme
-        const { colors } = nextTheme.global;
+      const {
+        colors: { background },
+      } = nextTheme.global;
+      // Determine whether to start in dark or light mode.
+      if (typeof background === 'object') {
+        // background is an object, use themeMode, theme default
+        // or first key
         const color =
-          (themeMode && colors.background && colors.background[themeMode]) ||
-          colors.background;
+          background[
+            themeMode || nextTheme.defaultMode || Object.keys(background)[0]
+          ];
         nextTheme.dark = color ? colorIsDark(color) : false;
+      } else if (nextTheme.dark === undefined) {
+        nextTheme.dark = (background && colorIsDark(background)) || false;
       }
       return {
         theme: nextTheme,
