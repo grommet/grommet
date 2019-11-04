@@ -6,6 +6,7 @@ export interface GrommetProps {
   full?: boolean;
   plain?: boolean;
   theme?: ThemeType;
+  themeMode?: "dark" | "light";
   userAgent?: string;
 }
 
