@@ -27,7 +27,8 @@ var normalizeColor = function normalizeColor(color, theme, required) {
 exports.normalizeColor = normalizeColor;
 
 var parseHexToRGB = function parseHexToRGB(color) {
-  return color.length === 4 ? color.match(/[A-Za-z0-9]{1}/g).map(function (v) {
+  return color.length < 7 // 7 is what's needed for '#RRGGBB'
+  ? color.match(/[A-Za-z0-9]{1}/g).map(function (v) {
     return parseInt("" + v + v, 16);
   }) : // https://stackoverflow.com/a/42429333
   color.match(/[A-Za-z0-9]{2}/g).map(function (v) {
@@ -69,9 +70,10 @@ var hslToRGB = function hslToRGB(h, s, l) {
   }
 
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
-};
+}; // allow for alpha: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
 
-var hexExp = /^#[A-Za-z0-9]{3}$|^#[A-Za-z0-9]{6}$/;
+
+var hexExp = /^#[A-Za-z0-9]{3,4}$|^#[A-Za-z0-9]{6,8}$/;
 var rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/; // e.g. hsl(240, 60%, 50%)
 
 var hslExp = /hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
