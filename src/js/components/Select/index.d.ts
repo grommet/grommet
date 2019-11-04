@@ -22,7 +22,7 @@ export interface SelectProps {
   messages?: { multiple?: string };
   multiple?: boolean;
   name?: string;
-  onChange?: ((...args: any[]) => any);
+  onChange?: ((...args: any[]) => void);
   onClose?: ((...args: any[]) => any);
   onMore?: ((...args: any[]) => any);
   onOpen?: ((...args: any[]) => any);

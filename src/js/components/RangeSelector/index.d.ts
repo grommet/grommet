@@ -8,7 +8,7 @@ export interface RangeSelectorProps {
   max?: number;
   messages?: {lower?: string,upper?: string};
   min?: number;
-  onChange?: ((...args: any[]) => any);
+  onChange?: ((...args: any[]) => void);
   opacity?: "weak" | "medium" | "strong" | string | boolean;
   round?: "xsmall" | "small" | "medium" | "large" | "full" | string;
   size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string;
