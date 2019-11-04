@@ -311,16 +311,18 @@ const Components = () => {
               }
             />
           )}
-          <Box basis="small">
-            <Select
-              plain
-              placeholder="background"
-              size="small"
-              options={['default', 'dark-1', 'light-1']}
-              value={background}
-              onChange={event => setBackground(event.option)}
-            />
-          </Box>
+          {!themeMode && (
+            <Box basis="small">
+              <Select
+                plain
+                placeholder="background"
+                size="small"
+                options={['default', 'dark-1', 'light-1']}
+                value={background}
+                onChange={event => setBackground(event.option)}
+              />
+            </Box>
+          )}
           <Box basis="small">
             <RangeInput
               min={16}
