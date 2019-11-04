@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, Menu, Meter, Paragraph, RadioButtonGroup, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
 import { grommet, dark } from 'grommet/themes';
@@ -70,19 +70,28 @@ var Components = function Components() {
       rangeSelector = _useState4[0],
       setRangeSelector = _useState4[1];
 
-  var _useState5 = useState('grommet'),
-      themeName = _useState5[0],
-      setThemeName = _useState5[1];
+  var _useState5 = useState(),
+      themeMode = _useState5[0],
+      setThemeMode = _useState5[1];
 
-  var _useState6 = useState(undefined),
-      background = _useState6[0],
-      setBackground = _useState6[1];
+  var _useState6 = useState('grommet'),
+      themeName = _useState6[0],
+      setThemeName = _useState6[1];
 
-  var _useState7 = useState(0),
-      tabIndex = _useState7[0],
-      setTabIndex = _useState7[1];
+  var _useState7 = useState(undefined),
+      background = _useState7[0],
+      setBackground = _useState7[1];
 
-  var theme = deepMerge(generate(baseSize), themes[themeName]);
+  var _useState8 = useState(0),
+      tabIndex = _useState8[0],
+      setTabIndex = _useState8[1];
+
+  var theme = useMemo(function () {
+    return deepMerge(generate(baseSize), themes[themeName]);
+  }, [baseSize, themeName]);
+  var themeCanMode = useMemo(function () {
+    return theme && theme.global.colors.background && theme.global.colors.background.dark;
+  }, [theme]);
   var content = [React.createElement(Box, {
     key: "type",
     align: "start"
@@ -333,7 +342,13 @@ var Components = function Components() {
     onChange: function onChange(event) {
       return setThemeName(event.option);
     }
-  })), React.createElement(Box, {
+  })), themeCanMode && React.createElement(CheckBox, {
+    label: "dark",
+    checked: themeMode === 'dark',
+    onChange: function onChange() {
+      return setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
+    }
+  }), !themeCanMode && React.createElement(Box, {
     basis: "small"
   }, React.createElement(Select, {
     plain: true,
@@ -358,6 +373,7 @@ var Components = function Components() {
     size: "small"
   }, baseSize + "px base spacing"))), React.createElement(Grommet, {
     theme: theme,
+    themeMode: themeMode,
     style: {
       flex: '1 1'
     }

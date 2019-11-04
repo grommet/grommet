@@ -63,23 +63,29 @@ function (_Component) {
 
   Grommet.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
     var _nextProps$theme = nextProps.theme,
-        theme = _nextProps$theme === void 0 ? {} : _nextProps$theme;
+        theme = _nextProps$theme === void 0 ? {} : _nextProps$theme,
+        themeMode = nextProps.themeMode;
     var stateTheme = prevState.theme,
-        themeProp = prevState.themeProp;
+        themeProp = prevState.themeProp,
+        themeModeProp = prevState.themeModeProp;
     var nextTheme = deepMerge(baseTheme, theme);
 
-    if (!stateTheme || theme !== themeProp) {
-      if (typeof theme.dark === 'undefined') {
-        // calculate if background is dark or not
-        // otherwise respect the property passed in the theme
-        var colors = nextTheme.global.colors;
-        var color = colors.background;
+    if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
+      var background = nextTheme.global.colors.background; // Determine whether to start in dark or light mode.
+
+      if (typeof background === 'object') {
+        // background is an object, use themeMode, theme default
+        // or first key
+        var color = background[themeMode || nextTheme.defaultMode || Object.keys(background)[0]];
         nextTheme.dark = color ? colorIsDark(color) : false;
+      } else if (nextTheme.dark === undefined) {
+        nextTheme.dark = background && colorIsDark(background) || false;
       }
 
       return {
         theme: nextTheme,
-        themeProp: theme
+        themeProp: theme,
+        themeModeProp: themeMode
       };
     }
 

@@ -86,19 +86,28 @@ var Components = function Components() {
       rangeSelector = _useState4[0],
       setRangeSelector = _useState4[1];
 
-  var _useState5 = (0, _react.useState)('grommet'),
-      themeName = _useState5[0],
-      setThemeName = _useState5[1];
+  var _useState5 = (0, _react.useState)(),
+      themeMode = _useState5[0],
+      setThemeMode = _useState5[1];
 
-  var _useState6 = (0, _react.useState)(undefined),
-      background = _useState6[0],
-      setBackground = _useState6[1];
+  var _useState6 = (0, _react.useState)('grommet'),
+      themeName = _useState6[0],
+      setThemeName = _useState6[1];
 
-  var _useState7 = (0, _react.useState)(0),
-      tabIndex = _useState7[0],
-      setTabIndex = _useState7[1];
+  var _useState7 = (0, _react.useState)(undefined),
+      background = _useState7[0],
+      setBackground = _useState7[1];
 
-  var theme = (0, _utils.deepMerge)((0, _base.generate)(baseSize), themes[themeName]);
+  var _useState8 = (0, _react.useState)(0),
+      tabIndex = _useState8[0],
+      setTabIndex = _useState8[1];
+
+  var theme = (0, _react.useMemo)(function () {
+    return (0, _utils.deepMerge)((0, _base.generate)(baseSize), themes[themeName]);
+  }, [baseSize, themeName]);
+  var themeCanMode = (0, _react.useMemo)(function () {
+    return theme && theme.global.colors.background && theme.global.colors.background.dark;
+  }, [theme]);
   var content = [_react["default"].createElement(_grommet.Box, {
     key: "type",
     align: "start"
@@ -349,7 +358,13 @@ var Components = function Components() {
     onChange: function onChange(event) {
       return setThemeName(event.option);
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), themeCanMode && _react["default"].createElement(_grommet.CheckBox, {
+    label: "dark",
+    checked: themeMode === 'dark',
+    onChange: function onChange() {
+      return setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
+    }
+  }), !themeCanMode && _react["default"].createElement(_grommet.Box, {
     basis: "small"
   }, _react["default"].createElement(_grommet.Select, {
     plain: true,
@@ -374,6 +389,7 @@ var Components = function Components() {
     size: "small"
   }, baseSize + "px base spacing"))), _react["default"].createElement(_grommet.Grommet, {
     theme: theme,
+    themeMode: themeMode,
     style: {
       flex: '1 1'
     }

@@ -6,6 +6,7 @@ import { hpe as hpeTheme } from 'grommet-theme-hpe';
 import { Grommet } from '..';
 import { Heading } from '../../Heading';
 import { AnnounceContext, ResponsiveContext } from '../../../contexts';
+import { grommet } from '../../../themes/grommet';
 
 var TestAnnouncer = function TestAnnouncer(_ref) {
   var announce = _ref.announce;
@@ -52,10 +53,23 @@ describe('Grommet', function () {
     var component = renderer.create(React.createElement(Grommet, null));
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('grommet theme', function () {
+    var component = renderer.create(React.createElement(Grommet, {
+      theme: grommet
+    }));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('hpe theme', function () {
     var component = renderer.create(React.createElement(Grommet, {
       theme: hpeTheme
     }, "Grommet App"));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  test('themeMode', function () {
+    var component = renderer.create(React.createElement(Grommet, {
+      theme: grommet,
+      themeMode: "dark"
+    }));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('cssVars', function () {

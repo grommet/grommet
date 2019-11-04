@@ -16,6 +16,8 @@ var _Heading = require("../../Heading");
 
 var _contexts = require("../../../contexts");
 
+var _grommet = require("../../../themes/grommet");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var TestAnnouncer = function TestAnnouncer(_ref) {
@@ -66,10 +68,25 @@ describe('Grommet', function () {
 
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('grommet theme', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+      theme: _grommet.grommet
+    }));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('hpe theme', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
       theme: _grommetThemeHpe.hpe
     }, "Grommet App"));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  test('themeMode', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+      theme: _grommet.grommet,
+      themeMode: "dark"
+    }));
 
     expect(component.toJSON()).toMatchSnapshot();
   });

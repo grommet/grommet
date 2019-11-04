@@ -7,6 +7,7 @@ export var doc = function doc(Grommet) {
     plain: PropTypes.bool.description("Whether or not Grommet should apply a global font-family, font-size, \n        and line-height.").defaultValue(false),
     cssVars: PropTypes.bool.description('Whether to expose the css variables.').defaultValue(false),
     theme: PropTypes.object.description('Custom styles for Grommet app component.'),
+    themeMode: PropTypes.oneOf(['dark', 'light']).description("Dark vs. light theme variation. Default is unspecified and left to\n      theme."),
     userAgent: PropTypes.string.description("User agent used to detect the device width for setting the initial \n      breakpoint.")
   };
   return DocumentedGrommet;
