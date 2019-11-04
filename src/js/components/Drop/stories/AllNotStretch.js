@@ -160,4 +160,4 @@ const AllDrops = () => (
   </Grommet>
 );
 
-storiesOf('Drop', module).add('All not stretch', () => <AllDrops />);
+storiesOf('Drop', module).add('All Positions', () => <AllDrops />);

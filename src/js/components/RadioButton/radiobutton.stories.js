@@ -113,4 +113,4 @@ storiesOf('RadioButton', module)
   .add('Simple', () => <SimpleRadioButton />)
   .add('Disabled', () => <SimpleRadioButton disabled selected="c2" />)
   .add('Custom Theme', () => <CustomRadioButton />)
-  .add('Inside a Button Theme', () => <CheckBoxInsideButton />);
+  .add('Inside a Button', () => <CheckBoxInsideButton />);

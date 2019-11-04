@@ -37,6 +37,6 @@ const GridAreasAlternative = () => {
   );
 };
 
-storiesOf('Grid', module).add('Areas prop alternative', () => (
+storiesOf('Grid', module).add('Areas Prop Alternative', () => (
   <GridAreasAlternative />
 ));

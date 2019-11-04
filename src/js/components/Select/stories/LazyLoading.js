@@ -76,4 +76,4 @@ const LazyLoading = () => {
   );
 };
 
-storiesOf('Select', module).add('Lazy Loading options', () => <LazyLoading />);
+storiesOf('Select', module).add('Lazy Loading Options', () => <LazyLoading />);

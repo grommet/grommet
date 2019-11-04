@@ -32,6 +32,6 @@ const ControlledGroupedDataTable = () => {
   );
 };
 
-storiesOf('DataTable', module).add('Controlled grouped', () => (
+storiesOf('DataTable', module).add('Controlled and Grouped', () => (
   <ControlledGroupedDataTable />
 ));

@@ -35,7 +35,7 @@ const SimpleAccordion = props => {
 
 storiesOf('Accordion', module)
   .add('Simple', () => <SimpleAccordion />)
-  .add('Dark no animation', () => (
+  .add('Dark, No Animation', () => (
     <SimpleAccordion animate={false} background="dark-2" />
   ))
   .add('Multiple', () => <SimpleAccordion multiple />);

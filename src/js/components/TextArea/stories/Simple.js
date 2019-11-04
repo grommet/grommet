@@ -20,4 +20,4 @@ const SimpleTextArea = props => {
 
 storiesOf('TextArea', module)
   .add('Simple', () => <SimpleTextArea resize />)
-  .add('Non resizable', () => <SimpleTextArea resize={false} />);
+  .add('Non-Resizable', () => <SimpleTextArea resize={false} />);
