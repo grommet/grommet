@@ -122,6 +122,138 @@ exports[`Chart cap renders 1`] = `
 </div>
 `;
 
+exports[`Chart gap renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 768px;
+  padding: 0px;
+}
+
+.c2 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <svg
+      className="c2"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 84 216"
+      width={60}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <title>
+            sixty
+          </title>
+          <path
+            d="M 60,192 L 60,0"
+          />
+        </g>
+      </g>
+    </svg>
+    <svg
+      className="c2"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 96 216"
+      width={72}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <title>
+            sixty
+          </title>
+          <path
+            d="M 72,192 L 72,0"
+          />
+        </g>
+      </g>
+    </svg>
+    <svg
+      className="c2"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 120 216"
+      width={96}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <title>
+            sixty
+          </title>
+          <path
+            d="M 96,192 L 96,0"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
 exports[`Chart renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -181,10 +313,40 @@ exports[`Chart size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 768px;
+  padding: 0px;
+}
+
 .c1 {
   display: block;
   max-width: 100%;
   overflow: visible;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 <div
@@ -315,6 +477,60 @@ exports[`Chart size renders 1`] = `
       </g>
     </g>
   </svg>
+  <div
+    className="c2"
+  >
+    <svg
+      className="c1"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 24 216"
+      width={0}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <title>
+            sixty
+          </title>
+          <path
+            d="M 0,192 L 0,0"
+          />
+        </g>
+      </g>
+    </svg>
+    <svg
+      className="c1"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 96 216"
+      width={72}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <title>
+            sixty
+          </title>
+          <path
+            d="M 72,192 L 72,0"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
 </div>
 `;
 

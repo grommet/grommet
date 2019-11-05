@@ -14,9 +14,11 @@ import {
   CheckBox,
   Clock,
   DataTable,
+  Distribution,
   FormField,
   Grid,
   Heading,
+  MaskedInput,
   Menu,
   Meter,
   Paragraph,
@@ -62,6 +64,8 @@ const themes = {
   v1,
 };
 
+const daysInMonth = (month: number) => new Date(2019, month, 0).getDate();
+
 const Components = () => {
   const [baseSize, setBaseSize] = useState(24);
   const [checkBox, setCheckBox] = useState(true);
@@ -70,6 +74,11 @@ const Components = () => {
   const [themeName] = useState('grommet');
   const [background] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
+  const [value, setValue] = useState('');
+  const [date, setDate] = useState('');
+  const [rangeInputValue, setRangeInputValue] = useState(24);
+  const [textAreaValue, setTextAreaValue] = useState('');
+  const [textInputValue, setTextInputValue] = useState('');
 
   const theme = deepMerge(generate(baseSize), themes[themeName]);
 
@@ -89,7 +98,8 @@ const Components = () => {
       <Select
         placeholder="Select"
         options={['One', 'Two']}
-        onChange={() => {}}
+        value={value}
+        onChange={event => setValue(event.option)}
       />
       <CheckBox
         name="check"
@@ -110,9 +120,51 @@ const Components = () => {
         value={radioButton}
         onChange={event => setRadioButton(event.target.value)}
       />
-      <TextInput placeholder="TextInput" />
-      <TextArea placeholder="TextArea" />
-      <RangeInput value={24} onChange={() => {}} />
+      <TextInput
+        placeholder="TextInput"
+        value={textInputValue}
+        onChange={event => setTextInputValue(event.target.value)}
+      />
+      <TextArea
+        placeholder="TextArea"
+        value={textAreaValue}
+        onChange={event => setTextAreaValue(event.target.value)}
+      />
+      <MaskedInput
+        mask={[
+          {
+            length: [1, 2],
+            options: Array.from({ length: 12 }, (v, k) => k + 1),
+            regexp: /^1[0,1-2]$|^0?[1-9]$|^0$/,
+            placeholder: 'mm',
+          },
+          { fixed: '/' },
+          {
+            length: [1, 2],
+            options: Array.from(
+              {
+                length: daysInMonth(parseInt(date.split('/')[0], 10)),
+              },
+              (v, k) => k + 1,
+            ),
+            regexp: /^[1-2][0-9]$|^3[0-1]$|^0?[1-9]$|^0$/,
+            placeholder: 'dd',
+          },
+          { fixed: '/' },
+          {
+            length: 4,
+            options: Array.from({ length: 100 }, (v, k) => 2019 - k),
+            regexp: /^[1-2]$|^19$|^20$|^19[0-9]$|^20[0-9]$|^19[0-9][0-9]$|^20[0-9][0-9]$/,
+            placeholder: 'yyyy',
+          },
+        ]}
+        value={date}
+        onChange={event => setDate(event.target.value)}
+      />
+      <RangeInput
+        value={rangeInputValue}
+        onChange={event => setRangeInputValue(event.target.value)}
+      />
       <Stack>
         <Box direction="row" justify="between">
           {[0, 1, 2, 3].map(value => (
@@ -157,7 +209,7 @@ const Components = () => {
       />
     </Box>,
     <Box key="visualize" gap="small">
-      {/* <Distribution
+      <Distribution
         basis="small"
         values={[
           { value: 50, color: 'light-3' },
@@ -172,7 +224,7 @@ const Components = () => {
             <Text size="large">{value.value}</Text>
           </Box>
         )}
-      </Distribution> */}
+      </Distribution>
       <Stack>
         <Box>
           <Box direction="row">

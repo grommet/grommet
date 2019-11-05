@@ -25,17 +25,18 @@ const Meter = ({
   const memoizedMax = useMemo(() => deriveMax(values), [values]);
   let content;
   if (type === 'bar') {
-    content = 
-      <Bar 
-        max={memoizedMax} 
-        values={values} 
-        size={size} 
-        thickness={thickness} 
-        background={background} 
-        {...rest} 
-      />;
+    content = (
+      <Bar
+        max={memoizedMax}
+        values={values}
+        size={size}
+        thickness={thickness}
+        background={background}
+        {...rest}
+      />
+    );
   } else if (type === 'circle') {
-    content =
+    content = (
       <Circle
         max={memoizedMax}
         values={values}
@@ -43,7 +44,8 @@ const Meter = ({
         thickness={thickness}
         background={background}
         {...rest}
-      />;
+      />
+    );
   }
   return content;
 };
