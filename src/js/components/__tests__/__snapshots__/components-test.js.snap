@@ -2589,7 +2589,8 @@ node",
           "closeMenu": "Close Menu",
           "openMenu": "Open Menu",
         },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided.",
         "format": "{
   closeMenu: string,
   openMenu: string
