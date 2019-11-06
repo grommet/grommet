@@ -84,8 +84,7 @@ const Button = ({
           : theme.button.color.light;
         buttonIconColor = normalizeColor(buttonColor, theme);
       } else {
-        buttonIconColor =
-          theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+        buttonIconColor = theme.global.colors.text[isDark ? 'dark' : 'light'];
       }
     } else {
       buttonIconColor = normalizeColor(theme.button.color, theme);
