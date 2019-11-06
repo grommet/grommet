@@ -14,7 +14,7 @@ const Grid = props => {
 
   return (
     <StyledGrid
-      a11yTitle={a11yTitle}
+      a11yTitleProp={a11yTitle}
       as={!as && tag ? tag : as}
       fillContainer={fill}
       rowsProp={rows}

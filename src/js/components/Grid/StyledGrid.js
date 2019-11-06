@@ -206,9 +206,9 @@ const areasStyle = props => {
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div.attrs({
-  'aria-label': props => props.a11yTitle,
-})`
+const StyledGrid = styled.div.attrs(props => ({
+  'aria-label': props.a11yTitleProp,
+}))`
   display: grid;
   box-sizing: border-box;
 
