@@ -30,6 +30,20 @@ var customTheme = {
     }
   }
 };
+var coloredButton = {
+  button: {
+    border: {
+      color: 'accent-1'
+    },
+    color: {
+      dark: 'accent-1',
+      light: 'dark-2'
+    },
+    primary: {
+      color: 'neutral-2'
+    }
+  }
+};
 
 var CustomTheme = function CustomTheme() {
   return React.createElement(React.Fragment, null, React.createElement(Grommet, {
@@ -40,6 +54,15 @@ var CustomTheme = function CustomTheme() {
   }, React.createElement(Button, {
     label: "custom theme",
     onClick: function onClick() {},
+    primary: true
+  }))), React.createElement(Grommet, {
+    theme: coloredButton
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(Button, {
+    as: "span",
+    label: "theme on dark background",
     primary: true
   }))), React.createElement(Grommet, {
     theme: grommet

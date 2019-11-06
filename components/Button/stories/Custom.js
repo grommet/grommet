@@ -37,6 +37,20 @@ var customTheme = {
     }
   }
 };
+var coloredButton = {
+  button: {
+    border: {
+      color: 'accent-1'
+    },
+    color: {
+      dark: 'accent-1',
+      light: 'dark-2'
+    },
+    primary: {
+      color: 'neutral-2'
+    }
+  }
+};
 
 var CustomTheme = function CustomTheme() {
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_grommet.Grommet, {
@@ -47,6 +61,15 @@ var CustomTheme = function CustomTheme() {
   }, _react["default"].createElement(_grommet.Button, {
     label: "custom theme",
     onClick: function onClick() {},
+    primary: true
+  }))), _react["default"].createElement(_grommet.Grommet, {
+    theme: coloredButton
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Button, {
+    as: "span",
+    label: "theme on dark background",
     primary: true
   }))), _react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet

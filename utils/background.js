@@ -109,7 +109,7 @@ var backgroundStyle = function backgroundStyle(backgroundArg, theme, textColorAr
     var _color3 = (0, _colors.normalizeColor)(background, theme);
 
     if (_color3) {
-      return (0, _styledComponents.css)(["background:", ";color:", ";"], _color3, textColor[(0, _colors.colorIsDark)(_color3) ? 'dark' : 'light']);
+      return (0, _styledComponents.css)(["background:", ";color:", ";"], _color3, (0, _colors.normalizeColor)(textColor[(0, _colors.colorIsDark)(_color3) ? 'dark' : 'light'], theme));
     }
   }
 

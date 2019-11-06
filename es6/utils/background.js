@@ -95,7 +95,7 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
     var _color3 = normalizeColor(background, theme);
 
     if (_color3) {
-      return css(["background:", ";color:", ";"], _color3, textColor[colorIsDark(_color3) ? 'dark' : 'light']);
+      return css(["background:", ";color:", ";"], _color3, normalizeColor(textColor[colorIsDark(_color3) ? 'dark' : 'light'], theme));
     }
   }
 
