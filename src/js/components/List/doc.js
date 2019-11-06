@@ -92,8 +92,8 @@ export const doc = List => {
       PropTypes.string,
       PropTypes.func,
     ]).description(
-      `When a string is supplied, it indicates the property in a data item object
-      to use to get the primary content. If a function is supplied, it
+      `When a string is supplied, it indicates the property in a data item
+      object to use to get the primary content. If a function is supplied, it
       will be called with the current data item object and should return
       a React element that will be rendered as the primary content.`,
     ),
@@ -101,8 +101,8 @@ export const doc = List => {
       PropTypes.string,
       PropTypes.func,
     ]).description(
-      `When a string is supplied, it indicates the property in a data item object
-      to use to get the secondary content. If a function is supplied, it
+      `When a string is supplied, it indicates the property in a data item
+      object to use to get the secondary content. If a function is supplied, it
       will be called with the current data item object and should return
       a React element that will be rendered as the secondary content.`,
     ),
@@ -126,12 +126,27 @@ export const themeDoc = {
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
   'list.extend': {
-    description: 'Any additional style for the List.',
+    description: 'Any additional style for the list.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'list.item.background': {
+    description: 'Background color for list items.',
+    type: 'string | [string]',
+    defaultValue: undefined,
+  },
+  'list.item.border': {
+    description: 'Border for list items.',
+    type: 'boolean | string | object',
+    defaultValue: 'horizontal',
+  },
+  'list.item.pad': {
+    description: 'Border for list items.',
+    type: 'boolean | string | object',
+    defaultValue: "{ horizontal: 'medium', vertical: 'small' }",
+  },
   'list.item.extend': {
-    description: 'Any additional style for the List items.',
+    description: 'Any additional style for the list items.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

@@ -629,8 +629,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     list: {
       item: {
         // background: undefined,
-        // border: undefined,
-        // pad: undefined,
+        border: 'horizontal',
+        pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
       },
       // extend: undefined,

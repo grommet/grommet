@@ -147,23 +147,19 @@ const List = React.forwardRef((props, ref) => {
                 align: secondaryKey ? 'start' : 'center',
                 justify: 'between',
                 gap: 'medium',
-                // pad: { ...(pad || {}), right: 'small' },
               };
             }
 
-            let adjustedBackground;
+            let adjustedBackground = background || theme.list.item.background;
             if (active === index) {
               adjustedBackground = theme.global.hover.background;
-            } else if (Array.isArray(background)) {
-              adjustedBackground = background[index % background.length];
-            } else if (background) {
-              adjustedBackground = background;
-            } else if (theme.list.item.background) {
-              adjustedBackground = theme.list.item.background;
+            } else if (Array.isArray(adjustedBackground)) {
+              adjustedBackground =
+                adjustedBackground[index % adjustedBackground.length];
             }
 
             let adjustedBorder = border || theme.list.item.border;
-            if (border === 'horizontal' && index) {
+            if (adjustedBorder === 'horizontal' && index) {
               adjustedBorder = 'bottom';
             }
 
@@ -210,11 +206,6 @@ const List = React.forwardRef((props, ref) => {
     </Keyboard>
   );
 });
-
-List.defaultProps = {
-  border: 'horizontal',
-  pad: { horizontal: 'medium', vertical: 'small' },
-};
 
 List.displayName = 'List';
 

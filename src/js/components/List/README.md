@@ -127,7 +127,7 @@ string
 
 **border**
 
-Item border. Defaults to `horizontal`.
+Item border.
 
 ```
 boolean
@@ -230,10 +230,7 @@ function
 
 **pad**
 
-Item padding. Defaults to `{
-  "horizontal": "medium",
-  "vertical": "small"
-}`.
+Item padding.
 
 ```
 xxsmall
@@ -291,8 +288,8 @@ string
 
 **primaryKey**
 
-When a string is supplied, it indicates the property in a data item object
-      to use to get the primary content. If a function is supplied, it
+When a string is supplied, it indicates the property in a data item
+      object to use to get the primary content. If a function is supplied, it
       will be called with the current data item object and should return
       a React element that will be rendered as the primary content.
 
@@ -303,8 +300,8 @@ function
 
 **secondaryKey**
 
-When a string is supplied, it indicates the property in a data item object
-      to use to get the secondary content. If a function is supplied, it
+When a string is supplied, it indicates the property in a data item
+      object to use to get the secondary content. If a function is supplied, it
       will be called with the current data item object and should return
       a React element that will be rendered as the secondary content.
 
@@ -350,7 +347,7 @@ Defaults to
 
 **list.extend**
 
-Any additional style for the List. Expects `string | (props) => {}`.
+Any additional style for the list. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -358,9 +355,39 @@ Defaults to
 undefined
 ```
 
+**list.item.background**
+
+Background color for list items. Expects `string | [string]`.
+
+Defaults to
+
+```
+undefined
+```
+
+**list.item.border**
+
+Border for list items. Expects `boolean | string | object`.
+
+Defaults to
+
+```
+horizontal
+```
+
+**list.item.pad**
+
+Border for list items. Expects `boolean | string | object`.
+
+Defaults to
+
+```
+{ horizontal: 'medium', vertical: 'small' }
+```
+
 **list.item.extend**
 
-Any additional style for the List items. Expects `string | (props) => {}`.
+Any additional style for the list items. Expects `string | (props) => {}`.
 
 Defaults to
 
