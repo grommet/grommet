@@ -15,7 +15,7 @@ export const doc = Markdown => {
   DocumentedMarkdown.propTypes = {
     components: PropTypes.shape({}).description(
       `Custom components and props to override html elements such as 'img'
-      or 'pre'. By default 'a', 'p', 'img', and table elements are overriden
+      or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
       with grommet components`,
     ),
   };

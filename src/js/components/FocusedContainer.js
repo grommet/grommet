@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 import {
   getBodyChildElements,
@@ -9,66 +8,53 @@ import {
 
 const isNotAncestorOf = child => parent => !parent.contains(child);
 
-export class FocusedContainer extends Component {
-  static defaultProps = {
-    hidden: false,
-    restrictScroll: false,
-  };
+export const FocusedContainer = ({
+  hidden = false,
+  restrictScroll = false,
+  children,
+  ...rest
+}) => {
+  const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
+  const ref = useRef(null);
 
-  static propTypes = {
-    hidden: PropTypes.bool,
-    restrictScroll: PropTypes.bool,
-  };
-
-  ref = React.createRef();
-
-  componentDidMount() {
-    const { hidden } = this.props;
-    // making sure trap focus always execute
-    // after removeTrap for the case where two drops
-    // are open at the same time
-    setTimeout(() => {
-      if (!hidden) {
-        this.trapFocus();
-      }
-    }, 0);
-  }
-
-  componentWillUnmount() {
-    this.removeTrap();
-  }
-
-  removeTrap = () => {
-    const { restrictScroll } = this.props;
-    const child = this.ref.current;
+  const removeTrap = () => {
+    const child = ref.current;
     getBodyChildElements()
       .filter(isNotAncestorOf(child))
       .forEach(makeNodeFocusable);
     if (restrictScroll) {
-      document.body.style.overflow = this.bodyOverflowStyle;
+      document.body.style.overflow = bodyOverflowStyle;
     }
   };
 
-  trapFocus = () => {
-    const { restrictScroll } = this.props;
-    const child = this.ref.current;
+  const trapFocus = () => {
+    const child = ref.current;
     getBodyChildElements()
       .filter(isNotAncestorOf(child))
       .forEach(makeNodeUnfocusable);
 
     if (restrictScroll) {
-      this.bodyOverflowStyle = document.body.style.overflow;
+      setBodyOverflowStyle(document.body.style.overflow);
       document.body.style.overflow = 'hidden';
     }
   };
 
-  render() {
-    const { children, hidden, ...rest } = this.props;
-    delete rest.restrictScroll;
-    return (
-      <div ref={this.ref} aria-hidden={hidden} {...rest}>
-        {children}
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!hidden) {
+        trapFocus();
+      }
+    }, 0);
+
+    return () => {
+      removeTrap();
+      clearTimeout(timer);
+    };
+  }, []);
+
+  return (
+    <div ref={ref} aria-hidden={hidden} {...rest}>
+      {children}
+    </div>
+  );
+};

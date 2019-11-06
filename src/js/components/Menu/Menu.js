@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -24,14 +24,16 @@ const ContainerBox = styled(Box)`
   ${props => props.theme.menu.extend};
 `;
 
-/* Notes on keyboard interactivity (based on W3C) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
+/* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
 
 To open menu when menu button is focused:
 - Space/Enter/Up arrow/Down arrow will open menu
 
 To navigate within menu:
-- Up/down arrow keys can be used and will loop through options (keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the Menu and continue through page content.
+- Up/down arrow keys can be used and will loop through options
+(keeping focus within the Menu)
+- Tab can be used, but once the last menu item is reached, Tab will close the 
+Menu and continue through page content.
 
 To close the menu:
 - Tabbing beyond the first or last menu item.
@@ -67,55 +69,77 @@ const Menu = props => {
   const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
+  let controlButtonIndex;
+  if (align.top === 'top') {
+    controlButtonIndex = -1;
+  } else if (align.bottom === 'bottom') {
+    controlButtonIndex = items.length;
+  } else {
+    controlButtonIndex = undefined;
+  }
   const buttonRefs = {};
-  let timeoutID; // to track if focus is within the menu items, see menuOnFocus/menuOnBlur
+  const constants = {
+    none: 'none',
+    tab: 9,
+    // Menu control button included on top of menu items
+    controlTop: align.top === 'top' || undefined,
+    // Menu control button included on the bottom of menu items
+    controlBottom: align.bottom === 'bottom' || undefined,
+    controlButtonIndex,
+  };
 
-  const [activeItemIndex, setActiveItemIndex] = useState(-1);
+  const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
-  const [isManagingFocus, setManagingFocus] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      setManagingFocus(true);
-      if (isManagingFocus) {
-        if (align.top === 'bottom') {
-          buttonRefs[0].focus();
-          setActiveItemIndex(0);
-        } else {
-          buttonRefs[items.length].focus();
-          setActiveItemIndex(-1);
-        }
-      }
-    }
-  }, [isManagingFocus]);
 
   const onDropClose = () => {
-    setActiveItemIndex(-1);
+    setActiveItemIndex(constants.none);
     setOpen(false);
-    setManagingFocus(false);
   };
 
   const onDropOpen = () => {
     setOpen(true);
-    setManagingFocus(true);
   };
 
   const onSelectMenuItem = event => {
-    if (activeItemIndex >= 0) {
-      event.preventDefault();
-      event.stopPropagation();
-      buttonRefs[activeItemIndex].click();
+    if (isOpen) {
+      if (activeItemIndex >= 0) {
+        event.preventDefault();
+        event.stopPropagation();
+        buttonRefs[activeItemIndex].click();
+      }
+    } else {
+      onDropOpen();
     }
   };
+
+  const isTab = event =>
+    event.keyCode === constants.tab || event.which === constants.tab;
 
   const onNextMenuItem = event => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
+    } else if (
+      isTab(event) &&
+      ((!constants.controlBottom && activeItemIndex === items.length - 1) ||
+        (constants.controlBottom && activeItemIndex === controlButtonIndex))
+    ) {
+      // User has reached end of the menu, this tab will close
+      // the menu drop because there are no more "next items" to access
+      onDropClose();
     } else {
       let index;
-      if (activeItemIndex + 1 === items.length) {
-        index = align.top === 'bottom' ? 0 : items.length;
+      if (
+        // This checks if the user has reached the end of the menu.
+        // In the case the the menu control button is located at the
+        // bottom of the menu, it checks if the user has reached the button.
+        // Otherwise, it checks if the user is at the last menu item.
+        (constants.controlBottom && activeItemIndex === controlButtonIndex) ||
+        (!constants.controlBottom && activeItemIndex === items.length - 1) ||
+        activeItemIndex === constants.none
+      ) {
+        // place focus on the first menu item
+        index = 0;
       } else {
         index = activeItemIndex + 1;
       }
@@ -128,10 +152,21 @@ const Menu = props => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
+    } else if (
+      isTab(event) &&
+      ((constants.controlTop && activeItemIndex === controlButtonIndex) ||
+        (!constants.controlTop && activeItemIndex - 1 < 0))
+    ) {
+      // User has reached beginning of the menu, this tab will close
+      // the menu drop because there are no more "previous items" to access
+      onDropClose();
     } else {
       let index;
       if (activeItemIndex - 1 < 0) {
-        if (align.top === 'top' && activeItemIndex - 1 === -1) {
+        if (
+          constants.controlTop &&
+          activeItemIndex - 1 === controlButtonIndex
+        ) {
           index = items.length;
         } else {
           index = items.length - 1;
@@ -141,23 +176,6 @@ const Menu = props => {
       }
       setActiveItemIndex(index);
       buttonRefs[index].focus();
-    }
-  };
-
-  const menuOnBlur = event => {
-    event.preventDefault();
-    timeoutID = setTimeout(() => {
-      if (isManagingFocus) {
-        onDropClose();
-      }
-    }, 0);
-  };
-
-  const menuOnFocus = event => {
-    event.preventDefault();
-    clearTimeout(timeoutID);
-    if (!isManagingFocus) {
-      onDropOpen();
     }
   };
 
@@ -180,14 +198,20 @@ const Menu = props => {
     <Box flex={false}>
       <Button
         ref={r => {
-          buttonRefs[items.length] = r; // make it accessible at the end of all menu items
+          // make it accessible at the end of all menu items
+          buttonRefs[items.length] = r;
         }}
         a11yTitle={messages.closeMenu || 'Close Menu'}
-        active={activeItemIndex === -1}
+        active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
+        hoverIndicator="background"
         plain={plain}
         onClick={onDropClose}
-        onFocus={() => setActiveItemIndex(-1)}
+        onFocus={() => setActiveItemIndex(controlButtonIndex)}
+        // On first tab into menu, the control button should not
+        // be able to receive tab focus because the focus should
+        // go to the first menu item instead.
+        tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -218,12 +242,13 @@ const Menu = props => {
         onOpen={onDropOpen}
         onClose={onDropClose}
         dropContent={
-          <Keyboard onDown={onNextMenuItem} onUp={onPreviousMenuItem}>
-            <ContainerBox
-              background={dropBackground || theme.menu.background}
-              onFocus={menuOnFocus}
-              onBlur={menuOnBlur}
-            >
+          <Keyboard
+            onTab={event =>
+              event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
+            }
+            onEnter={onSelectMenuItem}
+          >
+            <ContainerBox background={dropBackground || theme.menu.background}>
               {align.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (

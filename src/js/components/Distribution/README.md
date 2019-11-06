@@ -111,6 +111,29 @@ xlarge
 string
 ```
 
+**basis**
+
+A fixed or relative size along its container's main axis.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+auto
+string
+```
+
 **children**
 
 Function that will be called when each value is rendered. Defaults to `function children(value) {
@@ -126,7 +149,8 @@ function
 
 **fill**
 
-Whether the distribution expands to fill all of the available width and height.
+Whether the distribution expands to fill all of the available width 
+        and height.
 
 ```
 boolean

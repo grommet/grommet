@@ -34,9 +34,9 @@ export const doc = Text => {
       PropTypes.string,
     ])
       .description(
-        `The font size and line height are primarily driven by the chosen tag. But, it can
-be adjusted via this size property. The tag should be set for semantic
-correctness and accessibility. This size property allows for stylistic
+        `The font size and line height are primarily driven by the chosen tag. 
+But, it can be adjusted via this size property. The tag should be set for 
+semantic correctness and accessibility. This size property allows for stylistic
 adjustments.`,
       )
       .defaultValue('medium'),
@@ -86,7 +86,8 @@ export const themeDoc = {
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
   text: {
-    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+    description: `The possible sizes of the text in terms of its font-size and 
+line-height.`,
     type: 'object',
     defaultValue: `{
       xsmall: {

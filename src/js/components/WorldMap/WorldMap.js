@@ -516,7 +516,14 @@ class WorldMap extends Component {
   };
 
   render() {
-    const { color, onSelectPlace, hoverColor, theme, ...rest } = this.props;
+    const {
+      color,
+      fill, // munged to avoid styled-components putting it in the DOM
+      onSelectPlace,
+      hoverColor,
+      theme,
+      ...rest
+    } = this.props;
     delete rest.places;
     delete rest.continents;
     const {
@@ -650,6 +657,7 @@ class WorldMap extends Component {
       <StyledWorldMap
         viewBox={`${x} ${y} ${width} ${height}`}
         preserveAspectRatio="xMinYMin meet"
+        fillProp={fill}
         width={width}
         height={height}
         {...interactiveProps}
@@ -677,7 +685,8 @@ Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
 
 let WorldMapDoc;
 if (process.env.NODE_ENV !== 'production') {
-  WorldMapDoc = require('./doc').doc(WorldMap); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  WorldMapDoc = require('./doc').doc(WorldMap);
 }
 const WorldMapWrapper = compose(withTheme)(WorldMapDoc || WorldMap);
 

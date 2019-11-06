@@ -21,7 +21,8 @@ boolean
 
 **plain**
 
-Whether or not Grommet should apply a global font-family, font-size, and line-height.
+Whether or not Grommet should apply a global font-family, font-size, 
+        and line-height.
 
 ```
 boolean
@@ -43,9 +44,20 @@ Custom styles for Grommet app component.
 object
 ```
 
+**themeMode**
+
+Dark vs. light theme variation. Default is unspecified and left to
+      theme.
+
+```
+dark
+light
+```
+
 **userAgent**
 
-User agent used to detect the device width for setting the initial breakpoint.
+User agent used to detect the device width for setting the initial 
+      breakpoint.
 
 ```
 string

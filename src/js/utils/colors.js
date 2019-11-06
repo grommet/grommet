@@ -17,7 +17,7 @@ export const normalizeColor = (color, theme, required) => {
 };
 
 const parseHexToRGB = color =>
-  color.length === 4
+  color.length < 7 // 7 is what's needed for '#RRGGBB'
     ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(`${v}${v}`, 16))
     : // https://stackoverflow.com/a/42429333
       color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
@@ -58,7 +58,8 @@ const hslToRGB = (h, s, l) => {
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 };
 
-const hexExp = /^#[A-Za-z0-9]{3}$|^#[A-Za-z0-9]{6}$/;
+// allow for alpha: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
+const hexExp = /^#[A-Za-z0-9]{3,4}$|^#[A-Za-z0-9]{6,8}$/;
 const rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/;
 // e.g. hsl(240, 60%, 50%)
 const hslExp = /hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
@@ -84,16 +85,17 @@ const getRGBArray = color => {
 
 export const colorIsDark = color => {
   const [red, green, blue] = getRGBArray(color);
-  // http://www.had2know.com/technology/
-  //  color-contrast-calculator-web-design.html
   const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
+  // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
+  // Above domain is no longer registered.
   return brightness < 125;
 };
 
 export const getRGBA = (color, opacity) => {
   if (color && canExtractRGBArray(color)) {
     const [red, green, blue] = getRGBArray(color);
-    return `rgba(${red}, ${green}, ${blue}, ${typeof opacity === 'number' ? opacity : (opacity || 1)})`;
+    const alpha = typeof opacity === 'number' ? opacity : opacity || 1;
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
   }
   return undefined;
 };
