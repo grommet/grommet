@@ -57,7 +57,7 @@ const useLayerContainer = ({ animate, animation }) => {
         }, animationDuration);
       }
     };
-  }, [animate, animation]);
+  }, []);
 
   return layerContainer;
 };
