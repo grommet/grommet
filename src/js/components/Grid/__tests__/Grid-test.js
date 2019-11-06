@@ -17,12 +17,11 @@ test('Grid renders', () => {
 });
 
 test('a11yTitle renders', () => {
-  const { container, debug, getByLabelText } = render(
+  const { container, getByLabelText } = render(
     <Grommet>
       <Grid a11yTitle="My Grid" />
     </Grommet>,
   );
-  debug();
   const gridWithLabel = getByLabelText('My Grid');
   expect(gridWithLabel).toBeTruthy();
   expect(container).toMatchSnapshot();
