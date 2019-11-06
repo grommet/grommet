@@ -38,6 +38,9 @@ export const doc = List => {
 
   DocumentedList.propTypes = {
     ...genericProps,
+    as: PropTypes.string
+      .description('The DOM tag or react component to use for the element.')
+      .defaultValue('ul'),
     background: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
@@ -45,10 +48,19 @@ export const doc = List => {
       `Item background. An array value indicates that items should have
       different backgrounds, modulo the array index.`,
     ),
-    border: PropTypes.oneOfType([...borderTypes]).description(`Item border.`),
+    border: PropTypes.oneOfType(borderTypes).description(`Item border.`),
     data: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
     ).description('Array of data objects.'),
+    children: PropTypes.func.description(
+      `Function that will be called when each data item is rendered.
+      It will be passed three arguments, the individual data item, its index,
+      and an object indicating the state of the item, if any. It
+      should return a react element.
+      For example:
+      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
+      `,
+    ),
     itemProps: PropTypes.shape({}).description(
       `Item specific background, border, and pad, keyed by data index.
       For example:
@@ -65,10 +77,11 @@ export const doc = List => {
     ),
     onClickItem: PropTypes.func.description(
       `When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked item. You should not include interactive elements, like
-      Anchor or Button inside item as that can cause confusion with
-      overlapping interactive elements.`,
+      include a 'item' property containing the data value associated with
+      the clicked item and an 'index' property containing the index in 'data'
+      of the clicked item. You should not include interactive elements, like
+      Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
+      cause confusion with overlapping interactive elements.`,
     ),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(sizes),
@@ -103,21 +116,23 @@ export const doc = List => {
 
 export const themeDoc = {
   'global.hover.background': {
-    description: 'The background style when hovering over an interactive row.',
+    description: 'The background style when hovering over an interactive item.',
     type: 'string | { color: string, opacity: string }',
     defaultValue: "{ color: 'active', opacity: 'medium' }",
   },
   'global.hover.color': {
-    description: 'The text color when hovering over an interactive row.',
+    description: 'The text color when hovering over an interactive item.',
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
-  'list.item.hover.background': {
-    description: 'The background color when hovering over an interactive item.',
-    type: 'string | { color: string, opacity: string }',
+  'list.extend': {
+    description: 'Any additional style for the List.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
-  'list.item.hover.color': {
-    description: 'The text color when hovering over an interactive item.',
-    type: 'string | { dark: string, light: string }',
+  'list.item.extend': {
+    description: 'Any additional style for the List items.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
 };

@@ -4,14 +4,18 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { locations } from './data';
+import { data } from './data';
 
-const SimpleList = () => (
+const SecondaryKeyList = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <List data={locations} />
+      <List
+        data={data.slice(0, 10)}
+        primaryKey="entry"
+        secondaryKey="location"
+      />
     </Box>
   </Grommet>
 );
 
-storiesOf('List', module).add('Simple', () => <SimpleList />);
+storiesOf('List', module).add('secondaryKey', () => <SecondaryKeyList />);

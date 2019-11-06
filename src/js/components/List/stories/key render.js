@@ -16,10 +16,14 @@ const RenderedList = () => (
             {item.entry}
           </Text>
         )}
-        secondaryKey={item => <Text size="small">{item.location}</Text>}
+        secondaryKey={item => (
+          <Text size="small" color="dark-4">
+            {item.location}
+          </Text>
+        )}
       />
     </Box>
   </Grommet>
 );
 
-storiesOf('List', module).add('Rendered', () => <RenderedList />);
+storiesOf('List', module).add('key render', () => <RenderedList />);

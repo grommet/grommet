@@ -7,15 +7,18 @@ import { grommet } from 'grommet/themes';
 
 import { data } from './data';
 
-const ActionableList = () => (
+const ActionList = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <List
         data={data.slice(0, 10)}
-        action={() => <Menu icon={<More />} hoverIndicator />}
+        pad={{ left: 'small', right: 'none' }}
+        action={() => (
+          <Menu icon={<More />} hoverIndicator items={[{ label: 'one' }]} />
+        )}
       />
     </Box>
   </Grommet>
 );
 
-storiesOf('List', module).add('Actionable', () => <ActionableList />);
+storiesOf('List', module).add('action', () => <ActionList />);

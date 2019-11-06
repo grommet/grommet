@@ -107,6 +107,14 @@ xlarge
 string
 ```
 
+**as**
+
+The DOM tag or react component to use for the element. Defaults to `ul`.
+
+```
+string
+```
+
 **background**
 
 Item background. An array value indicates that items should have
@@ -167,6 +175,20 @@ Array of data objects.
 ]
 ```
 
+**children**
+
+Function that will be called when each data item is rendered.
+      It will be passed three arguments, the individual data item, its index,
+      and an object indicating the state of the item, if any. It
+      should return a react element.
+      For example:
+      `children={(item, index, { active }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **itemProps**
 
 Item specific background, border, and pad, keyed by data index.
@@ -196,10 +218,11 @@ function
 **onClickItem**
 
 When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked item. You should not include interactive elements, like
-      Anchor or Button inside item as that can cause confusion with
-      overlapping interactive elements.
+      include a 'item' property containing the data value associated with
+      the clicked item and an 'index' property containing the index in 'data'
+      of the clicked item. You should not include interactive elements, like
+      Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
+      cause confusion with overlapping interactive elements.
 
 ```
 function
@@ -307,7 +330,7 @@ ol
   
 **global.hover.background**
 
-The background style when hovering over an interactive row. Expects `string | { color: string, opacity: string }`.
+The background style when hovering over an interactive item. Expects `string | { color: string, opacity: string }`.
 
 Defaults to
 
@@ -317,7 +340,7 @@ Defaults to
 
 **global.hover.color**
 
-The text color when hovering over an interactive row. Expects `string | { dark: string, light: string }`.
+The text color when hovering over an interactive item. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -325,9 +348,9 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
-**list.item.hover.background**
+**list.extend**
 
-The background color when hovering over an interactive item. Expects `string | { color: string, opacity: string }`.
+Any additional style for the List. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -335,9 +358,9 @@ Defaults to
 undefined
 ```
 
-**list.item.hover.color**
+**list.item.extend**
 
-The text color when hovering over an interactive item. Expects `string | { dark: string, light: string }`.
+Any additional style for the List items. Expects `string | (props) => {}`.
 
 Defaults to
 

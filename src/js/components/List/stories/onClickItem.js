@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes';
 
 import { data } from './data';
 
-const ClickableList = () => {
+const OnClickItemList = () => {
   const [clicked, setClicked] = React.useState();
   return (
     <Grommet theme={grommet}>
@@ -22,4 +22,4 @@ const ClickableList = () => {
   );
 };
 
-storiesOf('List', module).add('Clickable', () => <ClickableList />);
+storiesOf('List', module).add('onClickItem', () => <OnClickItemList />);

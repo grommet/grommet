@@ -1,27 +1,30 @@
 import * as React from "react";
 import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
-export interface DataTableProps {
+type SizeType = "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string ;
+type SideType = "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" ;
+type PadSizeType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string ;
+type PadType = PadSizeType | {bottom?: PadSizeType,horizontal?: PadSizeType,left?: PadSizeType,right?: PadSizeType,top?: PadSizeType,vertical?: PadSizeType};
+type BorderType = boolean | SideType | {color?: string | {dark?: string,light?: string},side?: SideType,size?: SizeType};
+
+export interface ListProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  background?: string | {color?: string,dark?: string,light?: string,header?: string | {color?: string, dark?: string, light?: string},body?: string | {color?: string, dark?: string, light?: string},footer?: string | {color?: string, dark?: string, light?: string}};
-  border?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string,header?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string},body?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string},footer?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string}};
+  as?: string;
+  background?: string | string[];
+  border?: BorderType;
+  data?: string[] | {}[];
   gridArea?: GridAreaType;
+  itemProps?: { [_:string]: { background?: string, border?: BorderType, pad?: PadType}};
   margin?: MarginType;
-  columns?: {align?: "center" | "start" | "end",aggregate?: "avg" | "max" | "min" | "sum",footer?: React.ReactNode | {aggregate?: boolean},header?: string | React.ReactNode | {aggregate?: boolean},primary?: boolean,property: string,render?: ((...args: any[]) => any),search?: boolean,sortable?: boolean}[];
-  data?: {}[];
-  groupBy?: string | { property: string, expand: Array<string>, onExpand: ((...args: any[]) => any) };
   onMore?: ((...args: any[]) => any);
-  onSearch?: ((...args: any[]) => any);
-  pad?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,header?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string},body?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string},footer?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string}} | string;
-  primaryKey?: string;
-  resizeable?: boolean;
-  rowProps?: { [_:string]: { background?: {}, border?: {}, pad?: {}}};
-  size?: "small" | "medium" | "large" | "xlarge" | string;
-  sortable?: boolean;
+  onClickItem?: ((...args: any[]) => any);
+  pad?: PadType;
+  primaryKey?: string | ((...args: any[]) => any);
+  secondaryKey?: string | ((...args: any[]) => any);
   step?: number;
 }
 
-declare const DataTable: React.ComponentClass<DataTableProps & JSX.IntrinsicElements['table']>;
+declare const List: React.ComponentClass<ListProps & JSX.IntrinsicElements['ul']>;
 
-export { DataTable };
+export { List };
