@@ -1,8 +1,8 @@
 import { PropTypes } from 'react-desc';
 
 export const a11yTitlePropType = PropTypes.string.description(
-  `Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.`,
+  `Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.`,
 );
 
 export const backgroundPropType = PropTypes.oneOfType([

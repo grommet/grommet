@@ -211,8 +211,8 @@ function",
     "name": "Box",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -817,8 +817,8 @@ reverse",
     "name": "Button",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1076,8 +1076,8 @@ function",
     "name": "Calendar",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1306,8 +1306,8 @@ string",
     "name": "Carousel",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1438,8 +1438,8 @@ selectors",
     "name": "Chart",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1861,8 +1861,8 @@ vertical",
     "properties": Array [
       Object {
         "defaultValue": "Open Drop",
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2203,8 +2203,8 @@ function",
     "name": "Image",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2417,8 +2417,8 @@ number",
     "name": "Menu",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2936,8 +2936,8 @@ string",
     "name": "Select",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -3376,8 +3376,8 @@ bottom",
     "name": "Tabs",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -3766,8 +3766,8 @@ number",
     "name": "Video",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -3901,8 +3901,8 @@ contain",
     "name": "WorldMap",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers. When this prop is provided, 
-  an aria-label containing this string will be added to the element.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
