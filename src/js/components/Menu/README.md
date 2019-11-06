@@ -19,7 +19,8 @@ import { Menu } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When this prop is provided, 
+  an aria-label containing this string will be added to the element.
 
 ```
 string
