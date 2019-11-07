@@ -51,7 +51,7 @@ const Header = ({
           let content =
             typeof header === 'string' ? <Text>{header}</Text> : header;
 
-          if (onSort) {
+          if (onSort && sortable !== false) {
             const Icon =
               onSort &&
               sortable !== false &&
