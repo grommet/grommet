@@ -654,6 +654,19 @@ export interface ThemeType {
     responsiveBreakpoint?: string;
     zIndex?: string;
   };
+  list?: {
+    item?: {
+      background?: BackgroundType;
+      border?: string | {
+        side?: string,
+        color?: ColorType,
+        size?: string,
+      };
+      pad?: PadType;
+      extend?: ExtendType;
+    },
+    extend?: ExtendType;
+  };
   maskedInput?: {
     extend?: ExtendType;
   };

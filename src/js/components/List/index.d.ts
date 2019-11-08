@@ -11,14 +11,14 @@ export interface ListProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   as?: string;
-  background?: string | string[];
+  background?: string | string[] | { light: string | string[], dark: string | string[] };
   border?: BorderType;
   data?: string[] | {}[];
   gridArea?: GridAreaType;
   itemProps?: { [_:string]: { background?: string, border?: BorderType, pad?: PadType}};
   margin?: MarginType;
-  onMore?: ((...args: any[]) => any);
-  onClickItem?: ((...args: any[]) => any);
+  onMore?: () => void;
+  onClickItem?: (event: React.ClickEvent) => void;
   pad?: PadType;
   primaryKey?: string | ((...args: any[]) => any);
   secondaryKey?: string | ((...args: any[]) => any);
