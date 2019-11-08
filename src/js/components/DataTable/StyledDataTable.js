@@ -16,12 +16,8 @@ import { TableFooter } from '../TableFooter';
 const StyledDataTable = styled(Table)`
   border-spacing: 0;
   border-collapse: collapse;
-  height: 100%;
+  height: auto; /* helps Firefox to get table contents to not overflow */
 
-  /* Firefox hack to get table contents to not overflow */
-  @-moz-document url-prefix() {
-    height: auto;
-  }
   ${genericStyles};
 `;
 
