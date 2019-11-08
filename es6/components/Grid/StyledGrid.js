@@ -176,7 +176,11 @@ var areasStyle = function areasStyle(props) {
   }).join(' ') + ";";
 };
 
-var StyledGrid = styled.div.withConfig({
+var StyledGrid = styled.div.attrs(function (props) {
+  return {
+    'aria-label': props.a11yTitleProp
+  };
+}).withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
 })(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

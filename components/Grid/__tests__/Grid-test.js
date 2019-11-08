@@ -4,6 +4,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
+var _react2 = require("@testing-library/react");
+
 require("jest-styled-components");
 
 var _Grommet = require("../../Grommet");
@@ -17,6 +19,17 @@ test('Grid renders', function () {
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+test('a11yTitle renders', function () {
+  var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    a11yTitle: "My Grid"
+  }))),
+      container = _render.container,
+      getByLabelText = _render.getByLabelText;
+
+  var gridWithLabel = getByLabelText('My Grid');
+  expect(gridWithLabel).toBeTruthy();
+  expect(container).toMatchSnapshot();
 });
 test('Grid rows renders', function () {
   var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {

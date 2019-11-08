@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Grid } from '..';
@@ -7,6 +8,17 @@ test('Grid renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, null)));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+test('a11yTitle renders', function () {
+  var _render = render(React.createElement(Grommet, null, React.createElement(Grid, {
+    a11yTitle: "My Grid"
+  }))),
+      container = _render.container,
+      getByLabelText = _render.getByLabelText;
+
+  var gridWithLabel = getByLabelText('My Grid');
+  expect(gridWithLabel).toBeTruthy();
+  expect(container).toMatchSnapshot();
 });
 test('Grid rows renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {

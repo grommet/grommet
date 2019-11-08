@@ -14,13 +14,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Grid = function Grid(props) {
-  var fill = props.fill,
+  var a11yTitle = props.a11yTitle,
+      fill = props.fill,
       rows = props.rows,
       tag = props.tag,
       as = props.as,
-      rest = _objectWithoutPropertiesLoose(props, ["fill", "rows", "tag", "as"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "fill", "rows", "tag", "as"]);
 
   return _react["default"].createElement(_StyledGrid.StyledGrid, _extends({
+    a11yTitleProp: a11yTitle,
     as: !as && tag ? tag : as,
     fillContainer: fill,
     rowsProp: rows

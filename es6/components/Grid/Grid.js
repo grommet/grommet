@@ -6,13 +6,15 @@ import React from 'react';
 import { StyledGrid } from './StyledGrid';
 
 var Grid = function Grid(props) {
-  var fill = props.fill,
+  var a11yTitle = props.a11yTitle,
+      fill = props.fill,
       rows = props.rows,
       tag = props.tag,
       as = props.as,
-      rest = _objectWithoutPropertiesLoose(props, ["fill", "rows", "tag", "as"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "fill", "rows", "tag", "as"]);
 
   return React.createElement(StyledGrid, _extends({
+    a11yTitleProp: a11yTitle,
     as: !as && tag ? tag : as,
     fillContainer: fill,
     rowsProp: rows
