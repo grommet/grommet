@@ -233,7 +233,8 @@ function (_Component) {
       groupState: groupState,
       pad: normalizeProp(pad, 'body'),
       primaryProperty: primaryProperty,
-      onToggle: this.onToggleGroup
+      onToggle: this.onToggleGroup,
+      size: size
     }) : _react["default"].createElement(_Body.Body, {
       background: normalizeProp(background, 'body'),
       border: normalizeProp(border, 'body'),

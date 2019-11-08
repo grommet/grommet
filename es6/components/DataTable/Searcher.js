@@ -92,7 +92,9 @@ function (_Component) {
       flex: false,
       pad: {
         horizontal: 'small'
-      }
+      },
+      direction: "row",
+      align: "center"
     }, React.createElement(Text, null, filters[property])) : null, React.createElement(Button, {
       a11yTitle: "focus-search-" + property,
       icon: React.createElement(FormSearch, {

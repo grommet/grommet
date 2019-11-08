@@ -111,7 +111,9 @@ function (_Component) {
       flex: false,
       pad: {
         horizontal: 'small'
-      }
+      },
+      direction: "row",
+      align: "center"
     }, _react["default"].createElement(_Text.Text, null, filters[property])) : null, _react["default"].createElement(_Button.Button, {
       a11yTitle: "focus-search-" + property,
       icon: _react["default"].createElement(_FormSearch.FormSearch, {

@@ -36,6 +36,8 @@ var Footer = function Footer(_ref) {
 
   return _react["default"].createElement(_StyledDataTable.StyledDataTableFooter, rest, _react["default"].createElement(_TableRow.TableRow, null, groups && _react["default"].createElement(_TableCell.TableCell, {
     plain: true,
+    size: "xxsmall",
+    pad: "none",
     verticalAlign: "top"
   }), columns.map(function (column) {
     return _react["default"].createElement(_Cell.Cell, {

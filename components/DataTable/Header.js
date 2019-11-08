@@ -64,7 +64,7 @@ var Header = function Header(_ref) {
         sortable = _ref2.sortable;
     var content = typeof header === 'string' ? _react["default"].createElement(_Text.Text, null, header) : header;
 
-    if (onSort) {
+    if (onSort && sortable !== false) {
       var Icon = onSort && sortable !== false && sort && sort.property === property && theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
       content = _react["default"].createElement(_Button.Button, {
         plain: true,
@@ -78,25 +78,32 @@ var Header = function Header(_ref) {
     }
 
     if (search || onResize) {
-      content = _react["default"].createElement(_Box.Box, {
-        direction: "row",
-        align: "center",
-        justify: align,
-        gap: "small",
-        fill: "vertical",
-        style: onResize ? {
-          position: 'relative'
-        } : undefined
-      }, content, search && filters && _react["default"].createElement(_Searcher.Searcher, {
+      var resizer = onResize ? _react["default"].createElement(_Resizer.Resizer, {
+        property: property,
+        onResize: onResize
+      }) : null;
+      var searcher = search && filters ? _react["default"].createElement(_Searcher.Searcher, {
         filtering: filtering,
         filters: filters,
         property: property,
         onFilter: onFilter,
         onFiltering: onFiltering
-      }), _react["default"].createElement(_Resizer.Resizer, {
-        property: property,
-        onResize: onResize
-      }));
+      }) : null;
+      content = _react["default"].createElement(_Box.Box, {
+        direction: "row",
+        align: "center",
+        justify: !align || align === 'start' ? 'between' : align,
+        gap: "small",
+        fill: "vertical",
+        style: onResize ? {
+          position: 'relative'
+        } : undefined
+      }, content, searcher && resizer ? _react["default"].createElement(_Box.Box, {
+        flex: false,
+        direction: "row",
+        align: "center",
+        gap: "small"
+      }, searcher, resizer) : searcher || resizer);
     }
 
     return _react["default"].createElement(_TableCell.TableCell, {

@@ -22,6 +22,8 @@ var Footer = function Footer(_ref) {
 
   return React.createElement(StyledDataTableFooter, rest, React.createElement(TableRow, null, groups && React.createElement(TableCell, {
     plain: true,
+    size: "xxsmall",
+    pad: "none",
     verticalAlign: "top"
   }), columns.map(function (column) {
     return React.createElement(Cell, {

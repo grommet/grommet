@@ -863,8 +863,8 @@ var generate = function generate(baseSpacing, scale) {
           horizontal: 'small',
           vertical: 'xsmall'
         },
-        border: 'bottom',
-        verticalAlign: 'bottom' // background: undefined,
+        border: 'bottom' // verticalAlign: undefined,
+        // background: undefined,
         // extend: undefined,
 
       },
@@ -890,8 +890,8 @@ var generate = function generate(baseSpacing, scale) {
           horizontal: 'small',
           vertical: 'xsmall'
         },
-        border: 'top',
-        verticalAlign: 'top' // background: undefined,
+        border: 'top' // verticalAlign: undefined,
+        // background: undefined,
         // extend: undefined,
 
       }
