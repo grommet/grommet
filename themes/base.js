@@ -706,6 +706,18 @@ var generate = function generate(baseSpacing, scale) {
       // when Layer takes over the full screen
       zIndex: '10'
     },
+    list: {
+      item: {
+        // background: undefined,
+        border: 'horizontal',
+        pad: {
+          horizontal: 'medium',
+          vertical: 'small'
+        } // extend: undefined,
+
+      } // extend: undefined,
+
+    },
     maskedInput: {// extend: undefined,
     },
     menu: {

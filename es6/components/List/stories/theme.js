@@ -1,0 +1,33 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Grommet, Box, List } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from '../../../utils';
+import { locations } from './data';
+var theme = deepMerge(grommet, {
+  list: {
+    item: {
+      pad: {
+        horizontal: 'large',
+        vertical: 'xsmall'
+      },
+      background: ['white', 'light-2'],
+      border: true
+    }
+  }
+});
+
+var ThemedList = function ThemedList() {
+  return React.createElement(Grommet, {
+    theme: theme
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(List, {
+    data: locations
+  })));
+};
+
+storiesOf('List', module).add('theme', function () {
+  return React.createElement(ThemedList, null);
+});

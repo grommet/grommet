@@ -23,6 +23,7 @@ export * from './Image';
 export * from './InfiniteScroll';
 export * from './Keyboard';
 export * from './Layer';
+export * from './List';
 export * from './Markdown';
 export * from './MaskedInput';
 export * from './Menu';
