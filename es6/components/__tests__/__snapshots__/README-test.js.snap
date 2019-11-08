@@ -5559,6 +5559,16 @@ Defaults to
 { left: 'small' }
 \`\`\`
 
+**formField.label**
+
+Any props of Text that will be applied on the FormField label. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.label.margin**
 
 The margin for the FormField label. Expects \`string | object\`.

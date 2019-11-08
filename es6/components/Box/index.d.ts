@@ -5,6 +5,7 @@ import {
   AlignSelfType,
   BackgroundType,
   BasisType,
+  BorderType,
   ElevationType,
   FillType,
   GapType, 
@@ -29,7 +30,7 @@ export interface BoxProps {
   animation?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"} | ("fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"})[];
   background?: BackgroundType;
   basis?: BasisType;
-  border?: boolean | SideType | {color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType} | ({color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType})[];
+  border?: BorderType;
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
   elevation?: ElevationType;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
