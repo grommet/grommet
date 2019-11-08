@@ -3913,7 +3913,8 @@ string
 **background**
 
 Cell background. You can set the background per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'.
+      object with keys for 'heading', 'body', and/or 'footer'. If you pass
+      an array, rows will cycle between the array values.
 
 \`\`\`
 string
@@ -5556,6 +5557,16 @@ Defaults to
 
 \`\`\`
 { left: 'small' }
+\`\`\`
+
+**formField.label**
+
+Any props of Text that will be applied on the FormField label. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.label.margin**
