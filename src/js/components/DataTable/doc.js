@@ -67,7 +67,7 @@ export const doc = DataTable => {
     ]).description(
       `Cell background. You can set the background per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'. If you pass
-      an array, rows will cycle between they array values.`,
+      an array, rows will cycle between the array values.`,
     ),
     border: PropTypes.oneOfType([
       ...borderTypes,
