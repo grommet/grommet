@@ -35,7 +35,7 @@ parts.forEach(function (part) {
 export var doc = function doc(DataTable) {
   var DocumentedDataTable = describe(DataTable).availableAt(getAvailableAtBadge('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />").intrinsicElement('table');
   DocumentedDataTable.propTypes = _extends({}, genericProps, {
-    background: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string), PropTypes.shape(backgroundShape)]).description("Cell background. You can set the background per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
+    background: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string), PropTypes.shape(backgroundShape)]).description("Cell background. You can set the background per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'. If you pass\n      an array, rows will cycle between the array values."),
     border: PropTypes.oneOfType([].concat(borderTypes, [PropTypes.shape(borderShape)])).description("Cell border. You can set the border per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
     columns: PropTypes.arrayOf(PropTypes.shape({
       align: PropTypes.oneOf(['center', 'start', 'end']),
