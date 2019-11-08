@@ -5,7 +5,10 @@ import { deepFreeze } from '../utils/object';
 export const grommet = deepFreeze({
   global: {
     colors: {
-      background: '#ffffff',
+      background: {
+        light: '#ffffff',
+        dark: '#000000',
+      },
     },
     font: {
       family: `-apple-system,
