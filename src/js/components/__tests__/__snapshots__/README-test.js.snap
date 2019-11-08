@@ -2897,6 +2897,22 @@ string
 }
 \`\`\`
 
+**gap**
+
+The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
 **onClick**
 
 Called when the user clicks on it.
@@ -2968,6 +2984,7 @@ full
     large
     xlarge
     full
+    auto
     string
 }
 string
@@ -3896,7 +3913,8 @@ string
 **background**
 
 Cell background. You can set the background per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'.
+      object with keys for 'heading', 'body', and/or 'footer'. If you pass
+      an array, rows will cycle between the array values.
 
 \`\`\`
 string
@@ -4695,6 +4713,29 @@ xlarge
     xlarge
     string
 }
+string
+\`\`\`
+
+**basis**
+
+A fixed or relative size along its container's main axis.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+auto
 string
 \`\`\`
 
@@ -5518,6 +5559,16 @@ Defaults to
 { left: 'small' }
 \`\`\`
 
+**formField.label**
+
+Any props of Text that will be applied on the FormField label. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.label.margin**
 
 The margin for the FormField label. Expects \`string | object\`.
@@ -6030,6 +6081,16 @@ Custom styles for Grommet app component.
 
 \`\`\`
 object
+\`\`\`
+
+**themeMode**
+
+Dark vs. light theme variation. Default is unspecified and left to
+      theme.
+
+\`\`\`
+dark
+light
 \`\`\`
 
 **userAgent**
