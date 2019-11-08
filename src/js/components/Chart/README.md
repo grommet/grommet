@@ -133,6 +133,22 @@ string
 }
 ```
 
+**gap**
+
+The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **onClick**
 
 Called when the user clicks on it.
@@ -204,6 +220,7 @@ full
     large
     xlarge
     full
+    auto
     string
 }
 string

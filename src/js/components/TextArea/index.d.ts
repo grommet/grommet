@@ -5,7 +5,6 @@ export interface TextAreaProps {
   focusIndicator?: boolean;
   id?: string;
   name?: string;
-  onChange?: ((event: React.ChangeEvent) => void);
   placeholder?: string;
   plain?: boolean;
   resize?: "vertical" | "horizontal" | boolean;
