@@ -1,11 +1,13 @@
 import { 
   BackgroundType, 
+  BorderType,
   ColorType,  
   DeepReadonly, 
   GapType, 
   MarginType,
   OpacityType,
   PadType, 
+  TextProps,
 } from '../utils'
 import { ReactComponentElement } from 'react';
 
@@ -456,14 +458,7 @@ export interface ThemeType {
     maxHeight?: string, 
   };
   formField?: {
-    border?: {
-      color?: ColorType;
-      error?: {
-        color?: ColorType;
-      };
-      position?: string;
-      side?: string;
-    };
+    border?: BorderType;
     content?: {
       pad?: PadType;
     };
@@ -475,9 +470,7 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
-    label?: {
-      margin?: MarginType;
-    };
+    label?: TextProps;
     margin?: MarginType;
   };
   grommet?: {
@@ -653,6 +646,19 @@ export interface ThemeType {
     };
     responsiveBreakpoint?: string;
     zIndex?: string;
+  };
+  list?: {
+    item?: {
+      background?: BackgroundType;
+      border?: string | {
+        side?: string,
+        color?: ColorType,
+        size?: string,
+      };
+      pad?: PadType;
+      extend?: ExtendType;
+    },
+    extend?: ExtendType;
   };
   maskedInput?: {
     extend?: ExtendType;
