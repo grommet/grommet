@@ -9,13 +9,11 @@ exports[`Tabs Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -26,7 +24,6 @@ exports[`Tabs Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -39,7 +36,6 @@ exports[`Tabs Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -140,30 +136,6 @@ exports[`Tabs Tab 1`] = `
 
 .c9 {
   min-height: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -293,13 +265,11 @@ exports[`Tabs change to second tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -310,7 +280,6 @@ exports[`Tabs change to second tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -323,7 +292,6 @@ exports[`Tabs change to second tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -424,30 +392,6 @@ exports[`Tabs change to second tab 1`] = `
 
 .c9 {
   min-height: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -563,11 +507,11 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 fWrrBh"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 ckzykU"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
     >
       <button
         aria-expanded="false"
@@ -577,7 +521,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kyubVG"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 fxGSn"
         >
           <span
             class="StyledText-sc-1sadyjn-0 eotKNI"
@@ -594,7 +538,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -624,13 +568,11 @@ exports[`Tabs complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -641,7 +583,6 @@ exports[`Tabs complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -654,7 +595,6 @@ exports[`Tabs complex title 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -743,30 +683,6 @@ exports[`Tabs complex title 1`] = `
 
 .c7 {
   min-height: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -892,13 +808,11 @@ exports[`Tabs no Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -909,7 +823,6 @@ exports[`Tabs no Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -922,7 +835,6 @@ exports[`Tabs no Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -990,30 +902,6 @@ exports[`Tabs no Tab 1`] = `
 
 .c6 {
   min-height: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1087,13 +975,11 @@ exports[`Tabs set on hover 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -1104,7 +990,6 @@ exports[`Tabs set on hover 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1117,7 +1002,6 @@ exports[`Tabs set on hover 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1218,30 +1102,6 @@ exports[`Tabs set on hover 1`] = `
 
 .c9 {
   min-height: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1357,11 +1217,11 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 fWrrBh"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 ckzykU"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
     >
       <button
         aria-expanded="true"
@@ -1371,7 +1231,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1388,7 +1248,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kyubVG"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 fxGSn"
         >
           <span
             class="StyledText-sc-1sadyjn-0 eotKNI"
@@ -1414,11 +1274,11 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 fWrrBh"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 ckzykU"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
     >
       <button
         aria-expanded="true"
@@ -1428,7 +1288,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1445,7 +1305,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
         >
           <span
             class="StyledText-sc-1sadyjn-0 gFggBx"
@@ -1471,11 +1331,11 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 fWrrBh"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 ckzykU"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
     >
       <button
         aria-expanded="true"
@@ -1485,7 +1345,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1502,7 +1362,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
         >
           <span
             class="StyledText-sc-1sadyjn-0 gFggBx"
@@ -1528,11 +1388,11 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 fWrrBh"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 ckzykU"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
     >
       <button
         aria-expanded="true"
@@ -1542,7 +1402,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 hAQvDd"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1559,7 +1419,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kyubVG"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 fxGSn"
         >
           <span
             class="StyledText-sc-1sadyjn-0 eotKNI"

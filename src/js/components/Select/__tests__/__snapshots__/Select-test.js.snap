@@ -43,7 +43,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -57,7 +56,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -67,7 +65,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -79,7 +76,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -100,7 +96,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c2 {
@@ -185,39 +180,9 @@ exports[`Select applies custom global.hover theme to options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
   }
 }
 
@@ -283,7 +248,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -327,12 +291,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -402,7 +360,6 @@ exports[`Select basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -416,7 +373,6 @@ exports[`Select basic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -426,7 +382,6 @@ exports[`Select basic 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -438,7 +393,6 @@ exports[`Select basic 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -459,7 +413,6 @@ exports[`Select basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -534,39 +487,9 @@ exports[`Select basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -674,7 +597,6 @@ exports[`Select complex options and children 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -688,7 +610,6 @@ exports[`Select complex options and children 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -698,7 +619,6 @@ exports[`Select complex options and children 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -710,7 +630,6 @@ exports[`Select complex options and children 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -731,7 +650,6 @@ exports[`Select complex options and children 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -806,39 +724,9 @@ exports[`Select complex options and children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -898,10 +786,10 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hFIMGw"
+    class="StyledBox-sc-13pk1d4-0 cGyFlY"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hxmgAG"
+      class="StyledBox-sc-13pk1d4-0 gbHXHp"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
@@ -919,7 +807,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bSuKKc"
+      class="StyledBox-sc-13pk1d4-0 lgSzcm"
       style="min-width: auto;"
     >
       <svg
@@ -948,13 +836,11 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -967,13 +853,11 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c5 {
@@ -984,7 +868,6 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -993,7 +876,6 @@ exports[`Select complex options and children 3`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -1005,7 +887,6 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1014,7 +895,6 @@ exports[`Select complex options and children 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -1025,7 +905,6 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1035,7 +914,6 @@ exports[`Select complex options and children 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -1096,66 +974,6 @@ exports[`Select complex options and children 3`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1230,43 +1048,13 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:768px) {
-  .hFIMGw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hFIMGw {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .bSuKKc {
+  .lgSzcm {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .bSuKKc {
-    padding: 0px;
-  }
-}
-
-.fLlzie {
+.jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1274,86 +1062,18 @@ exports[`Select complex options and children 4`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jvdPnu {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jvdPnu {
-    padding: 0px;
   }
 }
 
@@ -1438,7 +1158,6 @@ exports[`Select deselect an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1452,7 +1171,6 @@ exports[`Select deselect an option 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -1462,7 +1180,6 @@ exports[`Select deselect an option 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1474,7 +1191,6 @@ exports[`Select deselect an option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -1495,7 +1211,6 @@ exports[`Select deselect an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -1570,39 +1285,9 @@ exports[`Select deselect an option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -1698,7 +1383,6 @@ exports[`Select disabled 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1712,7 +1396,6 @@ exports[`Select disabled 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -1722,7 +1405,6 @@ exports[`Select disabled 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1734,7 +1416,6 @@ exports[`Select disabled 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -1755,7 +1436,6 @@ exports[`Select disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -1832,39 +1512,9 @@ exports[`Select disabled 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -1926,10 +1576,10 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hFIMGw"
+    class="StyledBox-sc-13pk1d4-0 cGyFlY"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hxmgAG"
+      class="StyledBox-sc-13pk1d4-0 gbHXHp"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
@@ -1947,7 +1597,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bSuKKc"
+      class="StyledBox-sc-13pk1d4-0 lgSzcm"
       style="min-width: auto;"
     >
       <svg
@@ -1976,13 +1626,11 @@ exports[`Select empty results search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -1995,13 +1643,11 @@ exports[`Select empty results search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c8 {
@@ -2012,7 +1658,6 @@ exports[`Select empty results search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2021,7 +1666,6 @@ exports[`Select empty results search 1`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2033,7 +1677,6 @@ exports[`Select empty results search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2042,7 +1685,6 @@ exports[`Select empty results search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c11 {
@@ -2053,7 +1695,6 @@ exports[`Select empty results search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2074,7 +1715,6 @@ exports[`Select empty results search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2193,68 +1833,8 @@ exports[`Select empty results search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
   }
 }
 
@@ -2347,13 +1927,11 @@ exports[`Select large drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -2366,13 +1944,11 @@ exports[`Select large drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c5 {
@@ -2383,7 +1959,6 @@ exports[`Select large drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2392,7 +1967,6 @@ exports[`Select large drop container height 1`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2404,7 +1978,6 @@ exports[`Select large drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2413,7 +1986,6 @@ exports[`Select large drop container height 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -2424,7 +1996,6 @@ exports[`Select large drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2445,7 +2016,6 @@ exports[`Select large drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2455,7 +2025,6 @@ exports[`Select large drop container height 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -2525,74 +2094,8 @@ exports[`Select large drop container height 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
   }
 }
 
@@ -2687,13 +2190,11 @@ exports[`Select medium drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -2706,13 +2207,11 @@ exports[`Select medium drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c5 {
@@ -2723,7 +2222,6 @@ exports[`Select medium drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2732,7 +2230,6 @@ exports[`Select medium drop container height 1`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2744,7 +2241,6 @@ exports[`Select medium drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2753,7 +2249,6 @@ exports[`Select medium drop container height 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -2764,7 +2259,6 @@ exports[`Select medium drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2785,7 +2279,6 @@ exports[`Select medium drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2795,7 +2288,6 @@ exports[`Select medium drop container height 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -2865,74 +2357,8 @@ exports[`Select medium drop container height 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
   }
 }
 
@@ -3061,7 +2487,6 @@ exports[`Select modifies select control style on open 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3075,7 +2500,6 @@ exports[`Select modifies select control style on open 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -3085,7 +2509,6 @@ exports[`Select modifies select control style on open 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3097,7 +2520,6 @@ exports[`Select modifies select control style on open 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -3118,7 +2540,6 @@ exports[`Select modifies select control style on open 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c2 {
@@ -3204,39 +2625,9 @@ exports[`Select modifies select control style on open 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
   }
 }
 
@@ -3336,7 +2727,6 @@ exports[`Select multiple 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3350,7 +2740,6 @@ exports[`Select multiple 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -3360,7 +2749,6 @@ exports[`Select multiple 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3372,7 +2760,6 @@ exports[`Select multiple 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -3393,7 +2780,6 @@ exports[`Select multiple 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -3468,39 +2854,9 @@ exports[`Select multiple 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -3610,7 +2966,6 @@ exports[`Select multiple values 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3624,7 +2979,6 @@ exports[`Select multiple values 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -3634,7 +2988,6 @@ exports[`Select multiple values 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3646,7 +2999,6 @@ exports[`Select multiple values 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -3667,7 +3019,6 @@ exports[`Select multiple values 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -3742,39 +3093,9 @@ exports[`Select multiple values 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -3835,10 +3156,10 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hFIMGw"
+    class="StyledBox-sc-13pk1d4-0 cGyFlY"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hxmgAG"
+      class="StyledBox-sc-13pk1d4-0 gbHXHp"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
@@ -3857,7 +3178,7 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bSuKKc"
+      class="StyledBox-sc-13pk1d4-0 lgSzcm"
       style="min-width: auto;"
     >
       <svg
@@ -3886,13 +3207,11 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -3905,13 +3224,11 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c5 {
@@ -3922,7 +3239,6 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3931,7 +3247,6 @@ exports[`Select multiple values 3`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -3943,7 +3258,6 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3952,7 +3266,6 @@ exports[`Select multiple values 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c9 {
@@ -3963,7 +3276,6 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -3984,7 +3296,6 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3994,7 +3305,6 @@ exports[`Select multiple values 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -4070,74 +3380,8 @@ exports[`Select multiple values 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c9 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
   }
 }
 
@@ -4225,43 +3469,13 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:768px) {
-  .hFIMGw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hFIMGw {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .bSuKKc {
+  .lgSzcm {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .bSuKKc {
-    padding: 0px;
-  }
-}
-
-.fLlzie {
+.jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4269,97 +3483,23 @@ exports[`Select multiple values 4`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jvdPnu {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jvdPnu {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dvRMqm {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dvRMqm {
+  .bVmdog {
     padding: 3px;
   }
 }
@@ -4445,7 +3585,6 @@ exports[`Select opens 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4459,7 +3598,6 @@ exports[`Select opens 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -4469,7 +3607,6 @@ exports[`Select opens 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4481,7 +3618,6 @@ exports[`Select opens 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -4502,7 +3638,6 @@ exports[`Select opens 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -4577,39 +3712,9 @@ exports[`Select opens 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -4669,10 +3774,10 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hFIMGw"
+    class="StyledBox-sc-13pk1d4-0 cGyFlY"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hxmgAG"
+      class="StyledBox-sc-13pk1d4-0 gbHXHp"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
@@ -4690,7 +3795,7 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bSuKKc"
+      class="StyledBox-sc-13pk1d4-0 lgSzcm"
       style="min-width: auto;"
     >
       <svg
@@ -4719,13 +3824,11 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -4738,13 +3841,11 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c5 {
@@ -4755,7 +3856,6 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4764,7 +3864,6 @@ exports[`Select opens 3`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -4776,7 +3875,6 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4785,7 +3883,6 @@ exports[`Select opens 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -4796,7 +3893,6 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -4817,7 +3913,6 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4827,7 +3922,6 @@ exports[`Select opens 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -4897,74 +3991,8 @@ exports[`Select opens 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
   }
 }
 
@@ -5052,43 +4080,13 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:768px) {
-  .hFIMGw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hFIMGw {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .bSuKKc {
+  .lgSzcm {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .bSuKKc {
-    padding: 0px;
-  }
-}
-
-.fLlzie {
+.jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5096,86 +4094,18 @@ exports[`Select opens 4`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jvdPnu {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jvdPnu {
-    padding: 0px;
   }
 }
 
@@ -5219,12 +4149,12 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 eBHXEP StyledBox-sc-13pk1d4-0 cuJBzn"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 eBHXEP StyledBox-sc-13pk1d4-0 vSijk"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hqGUhX"
+    class="StyledBox-sc-13pk1d4-0 eCBRSq"
   >
     <button
       class="StyledButton-sc-323bzc-0 lnKzGb"
@@ -5233,7 +4163,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 jpkxgh"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 jaMGoX"
       >
         <span
           class="StyledText-sc-1sadyjn-0 cVkhuq"
@@ -5244,7 +4174,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 hqGUhX"
+    class="StyledBox-sc-13pk1d4-0 eCBRSq"
   >
     <button
       class="StyledButton-sc-323bzc-0 lnKzGb"
@@ -5253,7 +4183,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 jpkxgh"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 jaMGoX"
       >
         <span
           class="StyledText-sc-1sadyjn-0 cVkhuq"
@@ -5264,7 +4194,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 jvdPnu"
+    class="StyledBox-sc-13pk1d4-0 jpikRE"
   />
 </div>
 `;
@@ -5312,7 +4242,6 @@ exports[`Select renders custom icon 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5326,7 +4255,6 @@ exports[`Select renders custom icon 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -5336,7 +4264,6 @@ exports[`Select renders custom icon 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5348,7 +4275,6 @@ exports[`Select renders custom icon 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -5369,7 +4295,6 @@ exports[`Select renders custom icon 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -5444,39 +4369,9 @@ exports[`Select renders custom icon 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -5584,7 +4479,6 @@ exports[`Select renders default icon 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5598,7 +4492,6 @@ exports[`Select renders default icon 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -5608,7 +4501,6 @@ exports[`Select renders default icon 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5620,7 +4512,6 @@ exports[`Select renders default icon 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -5641,7 +4532,6 @@ exports[`Select renders default icon 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -5716,39 +4606,9 @@ exports[`Select renders default icon 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -5857,7 +4717,6 @@ exports[`Select renders styled select options backwards compatible with legacy
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5871,7 +4730,6 @@ exports[`Select renders styled select options backwards compatible with legacy
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -5881,7 +4739,6 @@ exports[`Select renders styled select options backwards compatible with legacy
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5893,7 +4750,6 @@ exports[`Select renders styled select options backwards compatible with legacy
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -5914,7 +4770,6 @@ exports[`Select renders styled select options backwards compatible with legacy
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c2 {
@@ -5999,39 +4854,9 @@ exports[`Select renders styled select options backwards compatible with legacy
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
   }
 }
 
@@ -6133,7 +4958,6 @@ exports[`Select renders styled select options combining select.options.box &&
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6147,7 +4971,6 @@ exports[`Select renders styled select options combining select.options.box &&
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -6157,7 +4980,6 @@ exports[`Select renders styled select options combining select.options.box &&
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6169,7 +4991,6 @@ exports[`Select renders styled select options combining select.options.box &&
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -6190,7 +5011,6 @@ exports[`Select renders styled select options combining select.options.box &&
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c2 {
@@ -6275,39 +5095,9 @@ exports[`Select renders styled select options combining select.options.box &&
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
   }
 }
 
@@ -6407,7 +5197,6 @@ exports[`Select renders styled select options using select.options.container 1`]
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6421,7 +5210,6 @@ exports[`Select renders styled select options using select.options.container 1`]
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -6431,7 +5219,6 @@ exports[`Select renders styled select options using select.options.container 1`]
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6443,7 +5230,6 @@ exports[`Select renders styled select options using select.options.container 1`]
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -6464,7 +5250,6 @@ exports[`Select renders styled select options using select.options.container 1`]
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c2 {
@@ -6549,39 +5334,9 @@ exports[`Select renders styled select options using select.options.container 1`]
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
   }
 }
 
@@ -6647,7 +5402,6 @@ exports[`Select renders without icon 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6661,7 +5415,6 @@ exports[`Select renders without icon 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -6671,7 +5424,6 @@ exports[`Select renders without icon 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6683,7 +5435,6 @@ exports[`Select renders without icon 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -6755,30 +5506,6 @@ exports[`Select renders without icon 1`] = `
 .c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
 }
 
 <button
@@ -6864,7 +5591,6 @@ exports[`Select search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6878,7 +5604,6 @@ exports[`Select search 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -6888,7 +5613,6 @@ exports[`Select search 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6900,7 +5624,6 @@ exports[`Select search 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -6921,7 +5644,6 @@ exports[`Select search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -6996,39 +5718,9 @@ exports[`Select search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -7089,13 +5781,11 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -7108,13 +5798,11 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c8 {
@@ -7125,7 +5813,6 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7134,7 +5821,6 @@ exports[`Select search 2`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -7146,7 +5832,6 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7155,7 +5840,6 @@ exports[`Select search 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c11 {
@@ -7166,7 +5850,6 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -7187,7 +5870,6 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7197,7 +5879,6 @@ exports[`Select search 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c4 {
@@ -7208,7 +5889,6 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7332,80 +6012,8 @@ exports[`Select search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
   }
 }
 
@@ -7513,43 +6121,13 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:768px) {
-  .hFIMGw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hFIMGw {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hxmgAG {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .bSuKKc {
+  .lgSzcm {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .bSuKKc {
-    padding: 0px;
-  }
-}
-
-.fLlzie {
+.jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7557,97 +6135,23 @@ exports[`Select search 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cuJBzn {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jvdPnu {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jvdPnu {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dvRMqm {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dvRMqm {
+  .bVmdog {
     padding: 3px;
   }
 }
@@ -7733,7 +6237,6 @@ exports[`Select select an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -7747,7 +6250,6 @@ exports[`Select select an option 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -7757,7 +6259,6 @@ exports[`Select select an option 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -7769,7 +6270,6 @@ exports[`Select select an option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -7790,7 +6290,6 @@ exports[`Select select an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -7865,39 +6364,9 @@ exports[`Select select an option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -7992,7 +6461,6 @@ exports[`Select select an option with complex options 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8006,7 +6474,6 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c2 {
@@ -8016,7 +6483,6 @@ exports[`Select select an option with complex options 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -8028,7 +6494,6 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c3 {
@@ -8049,7 +6514,6 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c0 {
@@ -8071,39 +6535,9 @@ exports[`Select select an option with complex options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
   }
 }
 
@@ -8187,7 +6621,6 @@ exports[`Select select an option with enter 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8201,7 +6634,6 @@ exports[`Select select an option with enter 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -8211,7 +6643,6 @@ exports[`Select select an option with enter 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -8223,7 +6654,6 @@ exports[`Select select an option with enter 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -8244,7 +6674,6 @@ exports[`Select select an option with enter 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -8319,39 +6748,9 @@ exports[`Select select an option with enter 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -8446,7 +6845,6 @@ exports[`Select select another option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8460,7 +6858,6 @@ exports[`Select select another option 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -8470,7 +6867,6 @@ exports[`Select select another option 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -8482,7 +6878,6 @@ exports[`Select select another option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -8503,7 +6898,6 @@ exports[`Select select another option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -8578,39 +6972,9 @@ exports[`Select select another option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -8706,7 +7070,6 @@ exports[`Select size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8720,7 +7083,6 @@ exports[`Select size 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c3 {
@@ -8730,7 +7092,6 @@ exports[`Select size 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -8742,7 +7103,6 @@ exports[`Select size 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -8763,7 +7123,6 @@ exports[`Select size 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c1 {
@@ -8840,39 +7199,9 @@ exports[`Select size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
   }
 }
 
@@ -8948,13 +7277,11 @@ exports[`Select small drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -8967,13 +7294,11 @@ exports[`Select small drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c5 {
@@ -8984,7 +7309,6 @@ exports[`Select small drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8993,7 +7317,6 @@ exports[`Select small drop container height 1`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -9005,7 +7328,6 @@ exports[`Select small drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -9014,7 +7336,6 @@ exports[`Select small drop container height 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c8 {
@@ -9025,7 +7346,6 @@ exports[`Select small drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -9046,7 +7366,6 @@ exports[`Select small drop container height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -9056,7 +7375,6 @@ exports[`Select small drop container height 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -9126,74 +7444,8 @@ exports[`Select small drop container height 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
   }
 }
 

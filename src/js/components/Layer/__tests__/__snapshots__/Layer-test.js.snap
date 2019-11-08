@@ -132,19 +132,7 @@ exports[`Layer animation fadeIn 1`] = `
 </div>
 `;
 
-exports[`Layer animation fadeIn 2`] = `
-"@media only screen and (max-width:768px) {
-  .eFxwmq {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eFxwmq {
-    padding: 0px;
-  }
-}"
-`;
+exports[`Layer animation fadeIn 2`] = `""`;
 
 exports[`Layer animation false 1`] = `
 .c0 {
@@ -276,19 +264,7 @@ exports[`Layer animation false 1`] = `
 </div>
 `;
 
-exports[`Layer animation false 2`] = `
-"@media only screen and (max-width:768px) {
-  .eFxwmq {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eFxwmq {
-    padding: 0px;
-  }
-}"
-`;
+exports[`Layer animation false 2`] = `""`;
 
 exports[`Layer animation slide 1`] = `
 .c0 {
@@ -422,19 +398,7 @@ exports[`Layer animation slide 1`] = `
 </div>
 `;
 
-exports[`Layer animation slide 2`] = `
-"@media only screen and (max-width:768px) {
-  .eFxwmq {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eFxwmq {
-    padding: 0px;
-  }
-}"
-`;
+exports[`Layer animation slide 2`] = `""`;
 
 exports[`Layer animation true 1`] = `
 .c0 {
@@ -568,19 +532,7 @@ exports[`Layer animation true 1`] = `
 </div>
 `;
 
-exports[`Layer animation true 2`] = `
-"@media only screen and (max-width:768px) {
-  .eFxwmq {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eFxwmq {
-    padding: 0px;
-  }
-}"
-`;
+exports[`Layer animation true 2`] = `""`;
 
 exports[`Layer custom margin 1`] = `
 .c0 {
@@ -791,19 +743,7 @@ exports[`Layer dark context 1`] = `
 </div>
 `;
 
-exports[`Layer dark context 2`] = `
-"@media only screen and (max-width:768px) {
-  .eFxwmq {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eFxwmq {
-    padding: 0px;
-  }
-}"
-`;
+exports[`Layer dark context 2`] = `""`;
 
 exports[`Layer focus on layer 1`] = `
 .c0 {

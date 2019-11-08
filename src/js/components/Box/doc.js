@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
+import {
+  getAvailableAtBadge,
+  genericProps,
+  hoverIndicatorPropType,
+  themeDocUtils,
+} from '../../utils';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -253,6 +258,12 @@ export const doc = Box => {
         ]),
       }),
     ]).description('A fixed height.'),
+    hoverIndicator: hoverIndicatorPropType
+      .description(
+        `When 'onClick' has been specified, the hover indicator to apply
+        when the user is mousing over the box.`,
+      )
+      .defaultValue(false),
     justify: PropTypes.oneOf([
       'around',
       'between',
@@ -264,6 +275,10 @@ export const doc = Box => {
     ])
       .description('How to align the contents along the main axis.')
       .defaultValue('stretch'),
+    onClick: PropTypes.func.description(
+      `Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.`,
+    ),
     overflow: overflowPropType.description('box overflow.'),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),

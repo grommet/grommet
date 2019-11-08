@@ -1945,7 +1945,6 @@ exports[`DataTable groupBy 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2064,12 +2063,6 @@ exports[`DataTable groupBy 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2260,7 +2253,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 czUhVo"
+              class="StyledBox-sc-13pk1d4-0 khydzg"
             >
               <svg
                 aria-label="FormDown"
@@ -2314,7 +2307,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 czUhVo"
+              class="StyledBox-sc-13pk1d4-0 khydzg"
             >
               <svg
                 aria-label="FormDown"
@@ -2357,7 +2350,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 czUhVo"
+              class="StyledBox-sc-13pk1d4-0 khydzg"
             >
               <svg
                 aria-label="FormDown"
@@ -2446,7 +2439,6 @@ exports[`DataTable groupBy expand 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2579,12 +2571,6 @@ exports[`DataTable groupBy expand 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2871,7 +2857,6 @@ exports[`DataTable groupBy property 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2990,12 +2975,6 @@ exports[`DataTable groupBy property 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -3186,7 +3165,7 @@ exports[`DataTable groupBy property 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 czUhVo"
+              class="StyledBox-sc-13pk1d4-0 khydzg"
             >
               <svg
                 aria-label="FormDown"
@@ -3240,7 +3219,7 @@ exports[`DataTable groupBy property 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 czUhVo"
+              class="StyledBox-sc-13pk1d4-0 khydzg"
             >
               <svg
                 aria-label="FormDown"
@@ -3283,7 +3262,7 @@ exports[`DataTable groupBy property 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 czUhVo"
+              class="StyledBox-sc-13pk1d4-0 khydzg"
             >
               <svg
                 aria-label="FormDown"
@@ -4121,7 +4100,6 @@ exports[`DataTable replace 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4131,7 +4109,6 @@ exports[`DataTable replace 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c4 {
@@ -4187,18 +4164,6 @@ exports[`DataTable replace 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4328,7 +4293,6 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4339,7 +4303,6 @@ exports[`DataTable resizeable 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  padding: 0px;
 }
 
 .c9 {
@@ -4350,7 +4313,6 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -4428,18 +4390,6 @@ exports[`DataTable resizeable 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4835,7 +4785,6 @@ exports[`DataTable search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4846,7 +4795,6 @@ exports[`DataTable search 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  padding: 0px;
 }
 
 .c11 {
@@ -4857,7 +4805,6 @@ exports[`DataTable search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -4961,18 +4908,6 @@ exports[`DataTable search 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding: 0px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -5104,7 +5039,7 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dRXgUe"
+            class="StyledBox-sc-13pk1d4-0 dWIgNK"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -5122,7 +5057,6 @@ exports[`DataTable search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5138,12 +5072,6 @@ exports[`DataTable search 2`] = `
 .c1 {
   font-size: 18px;
   line-height: 24px;
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -5244,7 +5172,7 @@ exports[`DataTable search 2`] = `
               class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
             />
             <div
-              class="Resizer__ResizerBox-sc-8l808w-0 hnOyDj StyledBox-sc-13pk1d4-0 keXFvx"
+              class="Resizer__ResizerBox-sc-8l808w-0 hnOyDj StyledBox-sc-13pk1d4-0 BOykO"
             />
           </div>
         </th>
@@ -5314,7 +5242,6 @@ exports[`DataTable sort 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5324,7 +5251,6 @@ exports[`DataTable sort 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 0px;
 }
 
 .c5 {
@@ -5399,18 +5325,6 @@ exports[`DataTable sort 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -5570,7 +5484,7 @@ exports[`DataTable sort 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hfsUvK"
+              class="StyledBox-sc-13pk1d4-0 eQTSO"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -5645,7 +5559,7 @@ exports[`DataTable sort 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hfsUvK"
+              class="StyledBox-sc-13pk1d4-0 eQTSO"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 fWSbXS"

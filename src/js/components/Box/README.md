@@ -46,7 +46,7 @@ string
 
 The amount of margin around the component. An object can
     be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side. Defaults to `none`.
+    margin on a particular side.
 
 ```
 none
@@ -449,6 +449,41 @@ string
 }
 ```
 
+**hoverIndicator**
+
+When 'onClick' has been specified, the hover indicator to apply
+        when the user is mousing over the box.
+
+```
+boolean
+string
+background
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string
+}
+```
+
 **justify**
 
 How to align the contents along the main axis. Defaults to `stretch`.
@@ -461,6 +496,15 @@ end
 evenly
 start
 stretch
+```
+
+**onClick**
+
+Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.
+
+```
+function
 ```
 
 **overflow**

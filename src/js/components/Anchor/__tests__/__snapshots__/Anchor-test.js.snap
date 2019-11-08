@@ -117,7 +117,6 @@ exports[`Anchor icon label renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -127,7 +126,6 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 0px;
 }
 
 .c3 {
@@ -152,18 +150,6 @@ exports[`Anchor icon label renders 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -337,7 +323,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -347,7 +332,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 0px;
 }
 
 .c3 {
@@ -372,18 +356,6 @@ exports[`Anchor reverse icon label renders 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div

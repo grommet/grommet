@@ -85,7 +85,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -122,12 +121,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   background-color: lightgreen;
   color: #444444;
   color: #7D4CDB;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -346,13 +339,11 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -365,13 +356,11 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -382,7 +371,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -391,7 +379,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c5 {
@@ -402,7 +389,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -460,36 +446,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -563,7 +519,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 `;
 
 exports[`MaskedInput event target props are available option via mouse 3`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -571,56 +527,24 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iRNQge {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iRNQge {
+  .biCOCm {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iRNQge {
+  .biCOCm {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -749,13 +673,11 @@ exports[`MaskedInput mask 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -768,13 +690,11 @@ exports[`MaskedInput mask 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -785,7 +705,6 @@ exports[`MaskedInput mask 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -794,7 +713,6 @@ exports[`MaskedInput mask 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c5 {
@@ -805,7 +723,6 @@ exports[`MaskedInput mask 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -863,36 +780,6 @@ exports[`MaskedInput mask 2`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -966,7 +853,7 @@ exports[`MaskedInput mask 2`] = `
 `;
 
 exports[`MaskedInput mask 3`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -974,56 +861,24 @@ exports[`MaskedInput mask 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iRNQge {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iRNQge {
+  .biCOCm {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iRNQge {
+  .biCOCm {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -1272,13 +1127,11 @@ exports[`MaskedInput option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -1291,13 +1144,11 @@ exports[`MaskedInput option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -1308,7 +1159,6 @@ exports[`MaskedInput option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1317,7 +1167,6 @@ exports[`MaskedInput option via mouse 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c5 {
@@ -1328,7 +1177,6 @@ exports[`MaskedInput option via mouse 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1386,36 +1234,6 @@ exports[`MaskedInput option via mouse 2`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1489,7 +1307,7 @@ exports[`MaskedInput option via mouse 2`] = `
 `;
 
 exports[`MaskedInput option via mouse 3`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1497,56 +1315,24 @@ exports[`MaskedInput option via mouse 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iRNQge {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iRNQge {
+  .biCOCm {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iRNQge {
+  .biCOCm {
     padding-top: 3px;
     padding-bottom: 3px;
   }

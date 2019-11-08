@@ -39,9 +39,6 @@ const RadioButton = ({
 
   return (
     <StyledRadioButtonContainer
-      as={props => <Box as="label" {...props} />}
-      direction="row"
-      align="center"
       {...removeUndefined({ htmlFor: id, disabled })}
       onClick={event => {
         // prevents clicking on the label trigging the event twice
