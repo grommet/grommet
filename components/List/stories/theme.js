@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-var _utils = require("../../../utils");
+var _utils = require("grommet/utils");
 
 var _data = require("./data");
 

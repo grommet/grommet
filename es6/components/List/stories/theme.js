@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { deepMerge } from '../../../utils';
+import { deepMerge } from 'grommet/utils';
 import { locations } from './data';
 var theme = deepMerge(grommet, {
   list: {
