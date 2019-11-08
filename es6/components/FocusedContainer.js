@@ -24,27 +24,26 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       setBodyOverflowStyle = _useState[1];
 
   var ref = useRef(null);
-
-  var removeTrap = function removeTrap() {
-    var child = ref.current;
-    getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeFocusable);
-
-    if (restrictScroll) {
-      document.body.style.overflow = bodyOverflowStyle;
-    }
-  };
-
-  var trapFocus = function trapFocus() {
-    var child = ref.current;
-    getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeUnfocusable);
-
-    if (restrictScroll) {
-      setBodyOverflowStyle(document.body.style.overflow);
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
   useEffect(function () {
+    var removeTrap = function removeTrap() {
+      var child = ref.current;
+      getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeFocusable);
+
+      if (restrictScroll) {
+        document.body.style.overflow = bodyOverflowStyle;
+      }
+    };
+
+    var trapFocus = function trapFocus() {
+      var child = ref.current;
+      getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeUnfocusable);
+
+      if (restrictScroll) {
+        setBodyOverflowStyle(document.body.style.overflow);
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
     var timer = setTimeout(function () {
       if (!hidden) {
         trapFocus();
@@ -54,7 +53,7 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       removeTrap();
       clearTimeout(timer);
     };
-  }, []);
+  }, [hidden, bodyOverflowStyle, restrictScroll]);
   return React.createElement("div", _extends({
     ref: ref,
     "aria-hidden": hidden

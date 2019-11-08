@@ -34,27 +34,26 @@ var FocusedContainer = function FocusedContainer(_ref) {
       setBodyOverflowStyle = _useState[1];
 
   var ref = (0, _react.useRef)(null);
-
-  var removeTrap = function removeTrap() {
-    var child = ref.current;
-    (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeFocusable);
-
-    if (restrictScroll) {
-      document.body.style.overflow = bodyOverflowStyle;
-    }
-  };
-
-  var trapFocus = function trapFocus() {
-    var child = ref.current;
-    (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeUnfocusable);
-
-    if (restrictScroll) {
-      setBodyOverflowStyle(document.body.style.overflow);
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
   (0, _react.useEffect)(function () {
+    var removeTrap = function removeTrap() {
+      var child = ref.current;
+      (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeFocusable);
+
+      if (restrictScroll) {
+        document.body.style.overflow = bodyOverflowStyle;
+      }
+    };
+
+    var trapFocus = function trapFocus() {
+      var child = ref.current;
+      (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeUnfocusable);
+
+      if (restrictScroll) {
+        setBodyOverflowStyle(document.body.style.overflow);
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
     var timer = setTimeout(function () {
       if (!hidden) {
         trapFocus();
@@ -64,7 +63,7 @@ var FocusedContainer = function FocusedContainer(_ref) {
       removeTrap();
       clearTimeout(timer);
     };
-  }, []);
+  }, [hidden, bodyOverflowStyle, restrictScroll]);
   return _react["default"].createElement("div", _extends({
     ref: ref,
     "aria-hidden": hidden
