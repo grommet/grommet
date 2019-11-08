@@ -24,7 +24,9 @@ const Footer = ({
 }) => (
   <StyledDataTableFooter {...rest}>
     <TableRow>
-      {groups && <TableCell plain verticalAlign="top" />}
+      {groups && (
+        <TableCell plain size="xxsmall" pad="none" verticalAlign="top" />
+      )}
       {columns.map(column => (
         <Cell
           key={column.property}
