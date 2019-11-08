@@ -1,5 +1,7 @@
 import { create } from '@storybook/theming';
 
+// https://storybook.js.org/docs/configurations/theming/
+
 export default create({
   base: 'light',
 
@@ -19,4 +21,5 @@ export default create({
   inputBorderRadius: 4,
 
   brandImage: '/grommet-logo.svg',
+  brandUrl: 'https://v2.grommet.io/',
 });

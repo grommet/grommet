@@ -6,12 +6,11 @@ export interface CheckBoxProps {
   id?: string;
   label?: React.ReactNode;
   name?: string;
-  onChange?: ((event: React.ChangeEvent) => void);
   reverse?: boolean;
   toggle?: boolean;
   indeterminate?: boolean;
 }
 
-declare const CheckBox: React.ComponentClass<CheckBoxProps & JSX.IntrinsicElements['input']>;
+declare const CheckBox: React.FC<CheckBoxProps & JSX.IntrinsicElements['input']>;
 
 export { CheckBox };
