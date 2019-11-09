@@ -137,7 +137,7 @@ string
 boolean
 ```
 
-**fillProp**
+**fill**
 
 Whether the image expands to fill all of the available width and height
 

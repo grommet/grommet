@@ -45,7 +45,7 @@ opacityTypes.forEach(opacity => {
 test('Image fillProp renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Image fillProp src={SRC} />
+      <Image fill src={SRC} />
     </Grommet>,
   );
   const tree = component.toJSON();
