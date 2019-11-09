@@ -19,7 +19,6 @@ exports[`List background array 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #6FFFB0;
   color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
@@ -46,7 +45,6 @@ exports[`List background array 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #6FFFB0;
   color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -72,7 +70,6 @@ exports[`List background array 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #FD6FFF;
   color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -98,12 +95,6 @@ exports[`List background array 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -125,12 +116,6 @@ exports[`List background array 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -146,12 +131,6 @@ exports[`List background array 1`] = `
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -227,7 +206,6 @@ exports[`List background string 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #6FFFB0;
   color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
@@ -254,7 +232,6 @@ exports[`List background string 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #6FFFB0;
   color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -280,12 +257,6 @@ exports[`List background string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -302,12 +273,6 @@ exports[`List background string 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -373,7 +338,6 @@ exports[`List border boolean 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -393,12 +357,6 @@ exports[`List border boolean 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -463,7 +421,6 @@ exports[`List border object 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 12px #6FFFB0;
   border-bottom: solid 12px #6FFFB0;
   min-width: 0;
@@ -484,12 +441,6 @@ exports[`List border object 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -555,7 +506,6 @@ exports[`List border side 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -580,7 +530,6 @@ exports[`List border side 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -604,12 +553,6 @@ exports[`List border side 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -626,12 +569,6 @@ exports[`List border side 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -697,7 +634,6 @@ exports[`List children render 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -722,7 +658,6 @@ exports[`List children render 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -746,12 +681,6 @@ exports[`List children render 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -768,12 +697,6 @@ exports[`List children render 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -839,7 +762,6 @@ exports[`List data objects 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -864,7 +786,6 @@ exports[`List data objects 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -888,12 +809,6 @@ exports[`List data objects 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -910,12 +825,6 @@ exports[`List data objects 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -981,7 +890,6 @@ exports[`List data strings 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1006,7 +914,6 @@ exports[`List data strings 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1030,12 +937,6 @@ exports[`List data strings 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -1052,12 +953,6 @@ exports[`List data strings 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -1152,7 +1047,6 @@ exports[`List itemProps 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1177,7 +1071,6 @@ exports[`List itemProps 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #6FFFB0;
   color: #444444;
   border-top: solid 2px rgba(0,0,0,0.33);
@@ -1201,12 +1094,6 @@ exports[`List itemProps 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -1223,12 +1110,6 @@ exports[`List itemProps 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -1287,7 +1168,6 @@ exports[`List onClickItem 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1302,6 +1182,7 @@ exports[`List onClickItem 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
+  cursor: pointer;
 }
 
 .c4 {
@@ -1312,7 +1193,6 @@ exports[`List onClickItem 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1326,6 +1206,7 @@ exports[`List onClickItem 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
+  cursor: pointer;
 }
 
 .c1 {
@@ -1336,12 +1217,6 @@ exports[`List onClickItem 1`] = `
 
 .c2 {
   cursor: pointer;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1362,12 +1237,6 @@ exports[`List onClickItem 1`] = `
   .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
   }
 }
 
@@ -1423,13 +1292,13 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="List__StyledItem-sc-130gdqg-1 gWkCAS StyledBox-sc-13pk1d4-0 ZjtmW"
+      class="List__StyledItem-sc-130gdqg-1 gWkCAS StyledBox-sc-13pk1d4-0 bgTiKL"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="List__StyledItem-sc-130gdqg-1 gWkCAS StyledBox-sc-13pk1d4-0 hmRwFa"
+      class="List__StyledItem-sc-130gdqg-1 gWkCAS StyledBox-sc-13pk1d4-0 eBSRid"
       tabindex="-1"
     >
       beta
@@ -1457,7 +1326,6 @@ exports[`List pad object 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1480,7 +1348,6 @@ exports[`List pad object 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1502,12 +1369,6 @@ exports[`List pad object 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -1517,12 +1378,6 @@ exports[`List pad object 1`] = `
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -1581,7 +1436,6 @@ exports[`List pad string 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1603,7 +1457,6 @@ exports[`List pad string 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1624,12 +1477,6 @@ exports[`List pad string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -1638,12 +1485,6 @@ exports[`List pad string 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
@@ -1701,7 +1542,6 @@ exports[`List primaryKey 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1726,7 +1566,6 @@ exports[`List primaryKey 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1756,12 +1595,6 @@ exports[`List primaryKey 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -1778,12 +1611,6 @@ exports[`List primaryKey 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
   }
 }
 
@@ -1857,7 +1684,6 @@ exports[`List secondaryKey 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1890,7 +1716,6 @@ exports[`List secondaryKey 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1940,12 +1765,6 @@ exports[`List secondaryKey 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
@@ -1962,12 +1781,6 @@ exports[`List secondaryKey 1`] = `
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
   }
 }
 
