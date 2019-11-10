@@ -17,29 +17,29 @@ export const FocusedContainer = ({
   const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
   const ref = useRef(null);
 
-  const removeTrap = () => {
-    const child = ref.current;
-    getBodyChildElements()
-      .filter(isNotAncestorOf(child))
-      .forEach(makeNodeFocusable);
-    if (restrictScroll) {
-      document.body.style.overflow = bodyOverflowStyle;
-    }
-  };
-
-  const trapFocus = () => {
-    const child = ref.current;
-    getBodyChildElements()
-      .filter(isNotAncestorOf(child))
-      .forEach(makeNodeUnfocusable);
-
-    if (restrictScroll) {
-      setBodyOverflowStyle(document.body.style.overflow);
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
   useEffect(() => {
+    const removeTrap = () => {
+      const child = ref.current;
+      getBodyChildElements()
+        .filter(isNotAncestorOf(child))
+        .forEach(makeNodeFocusable);
+      if (restrictScroll) {
+        document.body.style.overflow = bodyOverflowStyle;
+      }
+    };
+
+    const trapFocus = () => {
+      const child = ref.current;
+      getBodyChildElements()
+        .filter(isNotAncestorOf(child))
+        .forEach(makeNodeUnfocusable);
+
+      if (restrictScroll) {
+        setBodyOverflowStyle(document.body.style.overflow);
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
     const timer = setTimeout(() => {
       if (!hidden) {
         trapFocus();
@@ -50,7 +50,7 @@ export const FocusedContainer = ({
       removeTrap();
       clearTimeout(timer);
     };
-  }, []);
+  }, [hidden, bodyOverflowStyle, restrictScroll]);
 
   return (
     <div ref={ref} aria-hidden={hidden} {...rest}>

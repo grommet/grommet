@@ -26,7 +26,7 @@ export interface SelectProps {
   onClose?: ((...args: any[]) => any);
   onMore?: ((...args: any[]) => any);
   onOpen?: ((...args: any[]) => any);
-  onSearch?: ((...args: any[]) => any);
+  onSearch?: ((search: string) => void);
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
   placeholder?: PlaceHolderType;

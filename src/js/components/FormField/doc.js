@@ -119,6 +119,12 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: "{ left: 'small' }",
   },
+  'formField.label': {
+    description:
+      'Any props of Text that will be applied on the FormField label.',
+    type: 'object',
+    defaultValue: 'undefined',
+  },
   'formField.label.margin': {
     description: 'The margin for the FormField label.',
     type: 'string | object',
