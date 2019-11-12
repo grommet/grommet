@@ -81,7 +81,7 @@ var Header = function Header(_ref) {
           position: 'relative'
         } : undefined
       }, content, searcher && resizer ? React.createElement(Box, {
-        flex: false,
+        flex: "shrink",
         direction: "row",
         align: "center",
         gap: "small"
