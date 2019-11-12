@@ -39,11 +39,28 @@ const customTheme = {
   },
 };
 
+const coloredButton = {
+  button: {
+    border: {
+      color: 'accent-1',
+    },
+    color: { dark: 'accent-1', light: 'dark-2' },
+    primary: {
+      color: 'neutral-2',
+    },
+  },
+};
+
 const CustomTheme = () => (
   <>
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
         <Button label="custom theme" onClick={() => {}} primary />
+      </Box>
+    </Grommet>
+    <Grommet theme={coloredButton}>
+      <Box align="center" pad="large">
+        <Button as="span" label="theme on dark background" primary />
       </Box>
     </Grommet>
     <Grommet theme={grommet}>
