@@ -160,7 +160,8 @@ Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 
 let FileInputDoc;
 if (process.env.NODE_ENV !== 'production') {
-  FileInputDoc = require('./doc').doc(FileInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  FileInputDoc = require('./doc').doc(FileInput);
 }
 const FileInputWrapper = compose(
   withFocus(),

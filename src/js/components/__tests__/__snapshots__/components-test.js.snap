@@ -2037,7 +2037,8 @@ string",
           "remove": "remove",
           "removeAll": "remove all",
         },
-        "description": "Custom messages for FileInput. Used for accessibility by screen readers.",
+        "description": "Custom messages for FileInput. Used for accessibility by screen
+        readers.",
         "format": "{
   browse: string,
   dropPrompt: string,
@@ -2054,7 +2055,8 @@ string",
         "name": "name",
       },
       Object {
-        "description": "Function that will be called when one or more files are added the input.",
+        "description": "Function that will be called when one or more files are added the
+      input.",
         "format": "function",
         "name": "onChange",
       },

@@ -21,7 +21,8 @@ string
 
 **messages**
 
-Custom messages for FileInput. Used for accessibility by screen readers. Defaults to `{
+Custom messages for FileInput. Used for accessibility by screen
+        readers. Defaults to `{
   "browse": "browse",
   "dropPrompt": "Drop file here or",
   "dropPromptMultiple": "Drop files here or",
@@ -51,7 +52,8 @@ string
 
 **onChange**
 
-Function that will be called when one or more files are added the input.
+Function that will be called when one or more files are added the
+      input.
 
 ```
 function

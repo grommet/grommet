@@ -23,7 +23,8 @@ export const doc = FileInput => {
       removeAll: PropTypes.string,
     })
       .description(
-        'Custom messages for FileInput. Used for accessibility by screen readers.',
+        `Custom messages for FileInput. Used for accessibility by screen
+        readers.`,
       )
       .defaultValue({
         browse: 'browse',
@@ -35,7 +36,8 @@ export const doc = FileInput => {
       }),
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description(
-      'Function that will be called when one or more files are added the input.',
+      `Function that will be called when one or more files are added the
+      input.`,
     ),
   };
 
