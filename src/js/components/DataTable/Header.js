@@ -95,7 +95,7 @@ const Header = ({
               >
                 {content}
                 {searcher && resizer ? (
-                  <Box flex={false} direction="row" align="center" gap="small">
+                  <Box flex="shrink" direction="row" align="center" gap="small">
                     {searcher}
                     {resizer}
                   </Box>
