@@ -20,7 +20,7 @@ Before opening an issue or pull request, please read the [Contributing] guide.
 
 ## Install
 
-You can install Grommet using either of the methods below.
+You can install Grommet using either of the methods given below.
 
 For npm users:
 
@@ -58,14 +58,6 @@ version.
 1. End-to-end project examples from our community in the
    [#i-made-this Slack channel][slack].
 1. Read more from the Grommet team on [Medium].
-
-## Browser Support
-
-1.  Edge >= 14
-1.  Firefox >= 52
-1.  Chrome >= 49
-1.  Safari >= 10
-1.  IE 11 latests - The Grid, Clock, Video components aren't fully supported
 
 ## Release History
 

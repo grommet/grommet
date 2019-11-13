@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: circleci/node:10
+    - image: circleci/node:12
 
 jobs:
   checkout:
@@ -39,6 +39,22 @@ jobs:
       - run:
           name: Running jest
           command: yarn test
+  chromatic:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running chromatic test
+          command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes
+  chromatic-accept:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running chromatic test
+          command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     steps:
@@ -105,6 +121,22 @@ workflows:
           filters:
             tags:
               only: /.*/
+      - chromatic:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore:
+                - master
+      - chromatic-accept:
+          requires:
+            - checkout
+          filters:
+            branches:
+              only:
+                - master
       - build:
           requires:
             - checkout
@@ -120,6 +152,7 @@ workflows:
       - release:
           requires:
             - jest
+            - chromatic
             - lint
             - build
           filters:
@@ -129,6 +162,7 @@ workflows:
       - publish:
           requires:
             - jest
+            - chromatic
             - lint
             - build
           filters:

@@ -110,7 +110,8 @@ string
 **background**
 
 Cell background. You can set the background per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'.
+      object with keys for 'heading', 'body', and/or 'footer'. If you pass
+      an array, rows will cycle between the array values.
 
 ```
 string
@@ -343,10 +344,22 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.
+      browser, such as columns.search, sortable, groupBy, or 
+      columns.aggregate.
 
 ```
 function
+```
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+```
+boolean
 ```
 
 **onClickRow**
@@ -427,7 +440,9 @@ string
     small
     medium
     large
-    xlarge,
+    xlarge
+}
+{
   header: custom,
   body: custom,
   footer: custom

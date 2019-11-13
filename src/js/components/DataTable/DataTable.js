@@ -107,6 +107,7 @@ class DataTable extends Component {
       data: propsData,
       groupBy,
       onMore,
+      replace,
       pad,
       resizeable,
       rowProps,
@@ -165,6 +166,7 @@ class DataTable extends Component {
             pad={normalizeProp(pad, 'body')}
             primaryProperty={primaryProperty}
             onToggle={this.onToggleGroup}
+            size={size}
           />
         ) : (
           <Body
@@ -173,6 +175,7 @@ class DataTable extends Component {
             columns={columns}
             data={data}
             onMore={onMore}
+            replace={replace}
             onClickRow={onClickRow}
             pad={normalizeProp(pad, 'body')}
             primaryProperty={primaryProperty}
@@ -200,7 +203,8 @@ class DataTable extends Component {
 
 let DataTableDoc;
 if (process.env.NODE_ENV !== 'production') {
-  DataTableDoc = require('./doc').doc(DataTable); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  DataTableDoc = require('./doc').doc(DataTable);
 }
 const DataTableWrapper = DataTableDoc || DataTable;
 

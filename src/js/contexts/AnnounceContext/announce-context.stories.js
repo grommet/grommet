@@ -8,7 +8,7 @@ const Announcer = ({ announce, message, mode, role }) => {
   React.useEffect(() => {
     const timeout = 3000;
     announce(message, mode, timeout);
-  }, [message, mode]);
+  }, [announce, message, mode]);
 
   return (
     <Text align="center" role={role} aria-live={mode}>
@@ -45,7 +45,8 @@ storiesOf('AnnounceContext', module)
   .add('Polite', () => <AnnounceContextComponent />)
   .add('Assertive', () => (
     <AnnounceContextComponent
-      message="Turn on Accessibility feature to listen to this announcement. This will soon disappear"
+      message="Turn on Accessibility feature to listen to this announcement. 
+      This will soon disappear"
       mode="assertive"
       role="alert"
     />

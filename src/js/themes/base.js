@@ -181,7 +181,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 0.3,
         },
       },
-      debounceDelay: 300, // The time to wait after the user stopped typing, measured in ms.
+      // The time to wait after the user stopped typing, measured in ms.
+      debounceDelay: 300,
       drop: {
         background: '#ffffff',
         border: {
@@ -338,6 +339,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           next: FormNext,
         },
       },
+      heading: { level: '4' }, // level ranges from 1-6
     },
     carousel: {
       icons: {
@@ -537,7 +539,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       margin: { bottom: 'small' },
     },
-    grommet: {},
+    grommet: {
+      // extend: undefined
+    },
     heading: {
       font: {
         // family: undefined
@@ -615,11 +619,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         zIndex: '15',
       },
+      // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '10',
+    },
+    list: {
+      item: {
+        // background: undefined,
+        border: 'horizontal',
+        pad: { horizontal: 'medium', vertical: 'small' },
+        // extend: undefined,
+      },
+      // extend: undefined,
     },
     maskedInput: {
       // extend: undefined,
@@ -782,7 +796,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'bottom',
-        verticalAlign: 'bottom',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },
@@ -803,7 +817,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'top',
-        verticalAlign: 'top',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },

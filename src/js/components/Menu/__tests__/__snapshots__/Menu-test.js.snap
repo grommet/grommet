@@ -393,7 +393,7 @@ exports[`Menu close by clicking outside 2`] = `
   overflow: auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -439,25 +439,7 @@ exports[`Menu close by clicking outside 2`] = `
   text-align: inherit;
 }
 
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -557,13 +539,13 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding: 6px;
   }
 }
@@ -602,6 +584,7 @@ exports[`Menu close by clicking outside 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -637,11 +620,11 @@ exports[`Menu close by clicking outside 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 1
           </div>
@@ -651,11 +634,11 @@ exports[`Menu close by clicking outside 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 2
           </div>
@@ -2445,7 +2428,7 @@ exports[`Menu open and close on click 3`] = `
   overflow: auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2491,25 +2474,7 @@ exports[`Menu open and close on click 3`] = `
   text-align: inherit;
 }
 
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -2609,13 +2574,13 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding: 6px;
   }
 }
@@ -2654,6 +2619,7 @@ exports[`Menu open and close on click 3`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -2689,11 +2655,11 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 1
           </div>
@@ -2703,11 +2669,11 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 2
           </div>
@@ -2717,11 +2683,11 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <a
-          class="c11"
+          class="c5"
           href="/test"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 3
           </div>
@@ -2923,6 +2889,155 @@ exports[`Menu open and close on click 4`] = `
 `;
 
 exports[`Menu select an item 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu tab through menu until it closes 1`] = `
 .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3354,7 +3469,7 @@ exports[`Menu with dropAlign renders 2`] = `
   overflow: auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3400,25 +3515,7 @@ exports[`Menu with dropAlign renders 2`] = `
   text-align: inherit;
 }
 
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -3518,13 +3615,13 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding: 6px;
   }
 }
@@ -3563,6 +3660,7 @@ exports[`Menu with dropAlign renders 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -3598,11 +3696,11 @@ exports[`Menu with dropAlign renders 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 1
           </div>
@@ -3612,11 +3710,11 @@ exports[`Menu with dropAlign renders 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 2
           </div>

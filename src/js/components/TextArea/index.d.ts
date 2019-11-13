@@ -5,7 +5,6 @@ export interface TextAreaProps {
   focusIndicator?: boolean;
   id?: string;
   name?: string;
-  onChange?: ((...args: any[]) => any);
   placeholder?: string;
   plain?: boolean;
   resize?: "vertical" | "horizontal" | boolean;
@@ -13,6 +12,6 @@ export interface TextAreaProps {
   value?: string;
 }
 
-declare const TextArea: React.ComponentClass<TextAreaProps & JSX.IntrinsicElements['textarea']>;
+declare const TextArea: React.FC<TextAreaProps & JSX.IntrinsicElements['textarea']>;
 
 export { TextArea };

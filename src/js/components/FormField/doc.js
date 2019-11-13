@@ -21,7 +21,12 @@ export const doc = FormField => {
       PropTypes.func,
       PropTypes.object,
     ]).description(
-      `The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  `,
+      `The component to insert in the FormField. Grommet will add update the 
+      form values when this field changes. Any additional properties 
+      (such as initial value) you pass to FormField will be forwarded to this
+      component. The component may be custom as long it supports the properties
+      of name, value, onChange (event => {}), while event has either event.value
+      or event.target.value.`,
     ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any error text describing issues with the field',
@@ -113,6 +118,12 @@ export const themeDoc = {
     description: 'The margin for the FormField help.',
     type: 'string | object',
     defaultValue: "{ left: 'small' }",
+  },
+  'formField.label': {
+    description:
+      'Any props of Text that will be applied on the FormField label.',
+    type: 'object',
+    defaultValue: 'undefined',
   },
   'formField.label.margin': {
     description: 'The margin for the FormField label.',

@@ -10,8 +10,7 @@ export interface MaskedInputProps {
     placeholder?: string;
   }>;
   name?: string;
-  onChange?: ((...args: any[]) => any);
-  onBlur?: ((...args: any[]) => any);
+  onBlur?: ((event: React.FocusEvent) => any);
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   value?: string | number;

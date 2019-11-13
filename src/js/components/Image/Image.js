@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { compose } from 'recompose';
+import { withForwardRef } from '../hocs';
 import { StyledImage } from './StyledImage';
 
-const Image = ({ fallback, onError, opacity, src, ...rest }) => {
+const Image = ({ fallback, forwardRef, onError, opacity, src, ...rest }) => {
   const [imageMissing, setImageMissing] = useState(false);
   const handleError = event => {
     if (onError) {
@@ -16,6 +18,7 @@ const Image = ({ fallback, onError, opacity, src, ...rest }) => {
     <StyledImage
       {...rest}
       {...extraProps}
+      ref={forwardRef}
       opacityProp={opacity}
       src={!imageMissing ? src : fallback}
     />
@@ -26,7 +29,7 @@ let ImageDoc;
 if (process.env.NODE_ENV !== 'production') {
   ImageDoc = require('./doc').doc(Image); // eslint-disable-line global-require
 }
-const ImageWrapper = ImageDoc || Image;
-ImageWrapper.displayName = 'Image';
+
+const ImageWrapper = compose(withForwardRef)(ImageDoc || Image);
 
 export { ImageWrapper as Image };

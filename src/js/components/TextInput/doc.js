@@ -47,7 +47,8 @@ export const doc = TextInput => {
       suggestionIsOpen: PropTypes.string,
     })
       .description(
-        'Custom messages for TextInput. Used for accessibility by screen readers.',
+        `Custom messages for TextInput. Used for accessibility by screen 
+        readers.`,
       )
       .defaultValue({
         enterSelect: '(Press Enter to Select)',
@@ -133,7 +134,8 @@ export const themeDoc = {
     defaultValue: 20,
   },
   text: {
-    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+    description: `The possible sizes of the text in terms of its font-size and 
+    line-height.`,
     type: 'object',
     defaultValue: `{
       xsmall: {

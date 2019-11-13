@@ -21,7 +21,8 @@ node
 
 **messages**
 
-Custom messages for SkipLinks. Used for accessibility by screen readers. Defaults to `{
+Custom messages for SkipLinks. Used for accessibility by screen 
+readers. Defaults to `{
   "skipTo": "Skip To"
 }`.
 
