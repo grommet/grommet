@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
+import '@testing-library/jest-dom/extend-expect';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Menu } from '../..';
@@ -56,6 +57,31 @@ describe('Menu', () => {
       </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('gap between icon and label', () => {
+    window.scrollTo = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Menu
+          open
+          label="actions"
+          items={[
+            { label: 'Item 1', icon: <svg />, gap: 'xlarge' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    const firstItem = getByText('Item 1');
+    expect(
+      firstItem.getElementsByClassName(
+        'StyledBox__StyledBoxGap-sc-13pk1d4-1 bPCnCu',
+      )[0],
+    ).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot();
   });
 
   test('open and close on click', () => {
