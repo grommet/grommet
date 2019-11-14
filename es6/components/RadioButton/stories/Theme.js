@@ -1,0 +1,55 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Grommet, Box, Button, RadioButton } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
+var theme = deepMerge(grommet, {
+  radioButton: {
+    gap: 'xsmall',
+    size: '18px',
+    hover: {
+      border: {
+        color: 'dark-3'
+      }
+    },
+    check: {
+      color: {
+        light: 'neutral-1'
+      }
+    },
+    icon: {
+      size: '10px'
+    }
+  }
+});
+
+var ThemeRadioButton = function ThemeRadioButton() {
+  var _React$useState = React.useState(),
+      selected = _React$useState[0],
+      setSelected = _React$useState[1];
+
+  return React.createElement(Grommet, {
+    theme: theme
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large",
+    gap: "large"
+  }, React.createElement(RadioButton, {
+    label: "option 1",
+    name: "name",
+    value: "option 1",
+    checked: selected === 'option 1',
+    onChange: function onChange(event) {
+      return setSelected(event.target.value);
+    }
+  }), React.createElement(Button, {
+    label: "clear",
+    onClick: function onClick() {
+      return setSelected(undefined);
+    }
+  })));
+};
+
+storiesOf('RadioButton', module).add('Theme', function () {
+  return React.createElement(ThemeRadioButton, null);
+});

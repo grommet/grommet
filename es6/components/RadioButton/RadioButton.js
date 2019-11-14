@@ -13,6 +13,7 @@ import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, S
 
 var RadioButton = function RadioButton(_ref) {
   var checked = _ref.checked,
+      children = _ref.children,
       disabled = _ref.disabled,
       focus = _ref.focus,
       forwardRef = _ref.forwardRef,
@@ -21,7 +22,7 @@ var RadioButton = function RadioButton(_ref) {
       name = _ref.name,
       onChange = _ref.onChange,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "theme"]);
 
   var normalizedLabel = typeof label === 'string' ? React.createElement("span", null, label) : label;
   var Icon = theme.radioButton.icons.circle;
@@ -64,7 +65,9 @@ var RadioButton = function RadioButton(_ref) {
     checked: checked,
     disabled: disabled,
     onChange: onChange
-  }))), React.createElement(StyledRadioButtonBox, {
+  }))), children ? children({
+    checked: checked
+  }) : React.createElement(StyledRadioButtonBox, {
     focus: focus,
     as: Box,
     align: "center",
