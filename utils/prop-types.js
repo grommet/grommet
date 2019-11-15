@@ -5,7 +5,7 @@ exports.genericProps = exports.marginProp = exports.colorPropType = exports.back
 
 var _reactDesc = require("react-desc");
 
-var a11yTitlePropType = _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.');
+var a11yTitlePropType = _reactDesc.PropTypes.string.description("Custom label to be used by screen readers. When provided, an aria-label will\n   be added to the element.");
 
 exports.a11yTitlePropType = a11yTitlePropType;
 

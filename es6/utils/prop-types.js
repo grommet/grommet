@@ -1,5 +1,5 @@
 import { PropTypes } from 'react-desc';
-export var a11yTitlePropType = PropTypes.string.description('Custom title to be used by screen readers.');
+export var a11yTitlePropType = PropTypes.string.description("Custom label to be used by screen readers. When provided, an aria-label will\n   be added to the element.");
 export var backgroundPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   color: PropTypes.string,
   opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool])
