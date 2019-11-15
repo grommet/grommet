@@ -30,7 +30,7 @@ export var doc = function doc(Menu) {
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,
       openMenu: PropTypes.string
-    }).description('Custom messages. Used for accessibility by screen readers.').defaultValue({
+    }).description("Custom messages. Used for accessibility by screen readers. \n      These values will be overridden if an a11yTitle is provided.").defaultValue({
       openMenu: 'Open Menu',
       closeMenu: 'Close Menu'
     }),

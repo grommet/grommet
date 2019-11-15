@@ -42,7 +42,8 @@ To make a selection:
 */
 
 var Menu = function Menu(props) {
-  var children = props.children,
+  var a11yTitle = props.a11yTitle,
+      children = props.children,
       disabled = props.disabled,
       dropAlign = props.dropAlign,
       dropBackground = props.dropBackground,
@@ -59,7 +60,7 @@ var Menu = function Menu(props) {
       plain = props.plain,
       size = props.size,
       theme = props.theme,
-      rest = _objectWithoutPropertiesLoose(props, ["children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size", "theme"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size", "theme"]);
 
   var MenuIcon = theme.menu.icons.down;
   var iconColor = normalizeColor('control', theme);
@@ -192,7 +193,7 @@ var Menu = function Menu(props) {
       // make it accessible at the end of all menu items
       buttonRefs[items.length] = r;
     },
-    a11yTitle: messages.closeMenu || 'Close Menu',
+    a11yTitle: a11yTitle || messages.closeMenu || 'Close Menu',
     active: activeItemIndex === controlButtonIndex,
     focusIndicator: false,
     hoverIndicator: "background",
@@ -221,7 +222,7 @@ var Menu = function Menu(props) {
   }, React.createElement(DropButton, _extends({
     ref: forwardRef
   }, rest, {
-    a11yTitle: messages.openMenu || 'Open Menu',
+    a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
     disabled: disabled,
     dropAlign: align,
     dropTarget: dropTarget,

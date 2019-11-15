@@ -38,7 +38,7 @@ var doc = function doc(Menu) {
     messages: _reactDesc.PropTypes.shape({
       closeMenu: _reactDesc.PropTypes.string,
       openMenu: _reactDesc.PropTypes.string
-    }).description('Custom messages. Used for accessibility by screen readers.').defaultValue({
+    }).description("Custom messages. Used for accessibility by screen readers. \n      These values will be overridden if an a11yTitle is provided.").defaultValue({
       openMenu: 'Open Menu',
       closeMenu: 'Close Menu'
     }),
