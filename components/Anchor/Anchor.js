@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _Box = require("../Box");
@@ -35,7 +37,7 @@ var Anchor = (0, _react.forwardRef)(function (_ref, ref) {
       reverse = _ref.reverse,
       rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"]);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)(),
       focus = _useState[0],

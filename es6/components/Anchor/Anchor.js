@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { cloneElement, forwardRef, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
@@ -21,7 +22,7 @@ var Anchor = forwardRef(function (_ref, ref) {
       reverse = _ref.reverse,
       rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"]);
 
-  var theme = useContext(ThemeContext);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(),
       focus = _useState[0],

@@ -106,8 +106,7 @@ var Diagram = function Diagram(_ref) {
       window.removeEventListener('resize', onResizeHandler);
     };
   }, []);
-
-  var placeConnections = function placeConnections() {
+  var placeConnections = useCallback(function () {
     var containerRect = svgRef.current.getBoundingClientRect();
     var updatedConnectionPoints = connections.map(function (_ref2) {
       var anchor = _ref2.anchor,
@@ -164,13 +163,12 @@ var Diagram = function Diagram(_ref) {
       return points;
     });
     setConnectionPoints(updatedConnectionPoints);
-  };
-
+  }, [connections]);
   useEffect(function () {
     if (!connectionPoints) {
       placeConnections();
     }
-  }, [connectionPoints]);
+  }, [connectionPoints, placeConnections]);
   var paths;
 
   if (connectionPoints) {
