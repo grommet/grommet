@@ -2315,6 +2315,288 @@ boolean",
   "InfiniteScroll": [Function],
   "Keyboard": [Function],
   "Layer": [Function],
+  "List": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=List&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=list&module=%2Fsrc%2FList.js",
+      },
+    ],
+    "description": "An ordered list of items.",
+    "intrinsicElement": "ol",
+    "name": "List",
+    "properties": Array [
+      Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": "ul",
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string",
+        "name": "as",
+      },
+      Object {
+        "description": "Item background. An array value indicates that items should have
+      different backgrounds, modulo the array index.",
+        "format": "string
+[string]",
+        "name": "background",
+      },
+      Object {
+        "description": "Item border.",
+        "format": "boolean
+horizontal
+vertical
+top
+bottom
+left
+right
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right,
+  size: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}",
+        "name": "border",
+      },
+      Object {
+        "description": "Array of data objects.",
+        "format": "[
+  string
+  {
+
+  }
+]",
+        "name": "data",
+      },
+      Object {
+        "description": "Function that will be called when each data item is rendered.
+      It will be passed three arguments, the individual data item, its index,
+      and an object indicating the state of the item, if any. It
+      should return a react element.
+      For example:
+      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
+        "description": "Item specific background, border, and pad, keyed by data index.
+      For example:
+      { 27: { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on List.",
+        "format": "{
+
+}",
+        "name": "itemProps",
+      },
+      Object {
+        "description": "Use this to indicate that 'data' doesn't contain all that it could.
+      It will be called when all of the data items have been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed.",
+        "format": "function",
+        "name": "onMore",
+      },
+      Object {
+        "description": "When supplied, this function will be called with an event object that
+      include a 'item' property containing the data value associated with
+      the clicked item and an 'index' property containing the index in 'data'
+      of the clicked item. You should not include interactive elements, like
+      Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
+      cause confusion with overlapping interactive elements.",
+        "format": "function",
+        "name": "onClickItem",
+      },
+      Object {
+        "description": "Item padding.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+{
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}",
+        "name": "pad",
+      },
+      Object {
+        "description": "When a string is supplied, it indicates the property in a data item
+      object to use to get the primary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the primary content.",
+        "format": "string
+function",
+        "name": "primaryKey",
+      },
+      Object {
+        "description": "When a string is supplied, it indicates the property in a data item
+      object to use to get the secondary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the secondary content.",
+        "format": "string
+function",
+        "name": "secondaryKey",
+      },
+      Object {
+        "defaultValue": 50,
+        "description": "How many items to render at a time.",
+        "format": "number",
+        "name": "step",
+      },
+    ],
+    "usage": "import { List } from 'grommet';
+<List data={[...]} />",
+  },
   "Markdown": [Function],
   "MaskedInput": Object {
     "availableAt": Array [
@@ -2649,6 +2931,16 @@ string",
         "description": "Same as React <input checked={} />",
         "format": "boolean",
         "name": "checked",
+      },
+      Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
       },
       Object {
         "description": "Same as React <input disabled={} />. Also adds a hidden input element

@@ -51,7 +51,7 @@ const Header = ({
           let content =
             typeof header === 'string' ? <Text>{header}</Text> : header;
 
-          if (onSort) {
+          if (onSort && sortable !== false) {
             const Icon =
               onSort &&
               sortable !== false &&
@@ -71,26 +71,37 @@ const Header = ({
           }
 
           if (search || onResize) {
+            const resizer = onResize ? (
+              <Resizer property={property} onResize={onResize} />
+            ) : null;
+            const searcher =
+              search && filters ? (
+                <Searcher
+                  filtering={filtering}
+                  filters={filters}
+                  property={property}
+                  onFilter={onFilter}
+                  onFiltering={onFiltering}
+                />
+              ) : null;
             content = (
               <Box
                 direction="row"
                 align="center"
-                justify={align}
+                justify={!align || align === 'start' ? 'between' : align}
                 gap="small"
                 fill="vertical"
                 style={onResize ? { position: 'relative' } : undefined}
               >
                 {content}
-                {search && filters && (
-                  <Searcher
-                    filtering={filtering}
-                    filters={filters}
-                    property={property}
-                    onFilter={onFilter}
-                    onFiltering={onFiltering}
-                  />
+                {searcher && resizer ? (
+                  <Box flex="shrink" direction="row" align="center" gap="small">
+                    {searcher}
+                    {resizer}
+                  </Box>
+                ) : (
+                  searcher || resizer
                 )}
-                <Resizer property={property} onResize={onResize} />
               </Box>
             );
           }
