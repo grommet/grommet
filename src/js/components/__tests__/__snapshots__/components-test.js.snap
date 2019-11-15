@@ -2879,7 +2879,8 @@ node",
           "closeMenu": "Close Menu",
           "openMenu": "Open Menu",
         },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided.",
         "format": "{
   closeMenu: string,
   openMenu: string
@@ -2931,6 +2932,16 @@ string",
         "description": "Same as React <input checked={} />",
         "format": "boolean",
         "name": "checked",
+      },
+      Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
       },
       Object {
         "description": "Same as React <input disabled={} />. Also adds a hidden input element
