@@ -107,7 +107,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
     };
   }, []);
 
-  const placeConnections = () => {
+  const placeConnections = useCallback(() => {
     const containerRect = svgRef.current.getBoundingClientRect();
     const updatedConnectionPoints = connections.map(
       ({ anchor, fromTarget, toTarget }) => {
@@ -163,13 +163,13 @@ const Diagram = ({ connections, theme, ...rest }) => {
       },
     );
     setConnectionPoints(updatedConnectionPoints);
-  };
+  }, [connections]);
 
   useEffect(() => {
     if (!connectionPoints) {
       placeConnections();
     }
-  }, [connectionPoints]);
+  }, [connectionPoints, placeConnections]);
 
   let paths;
   if (connectionPoints) {
