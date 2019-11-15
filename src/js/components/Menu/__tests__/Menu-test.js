@@ -352,4 +352,26 @@ describe('Menu', () => {
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
+
+  test('reverse icon and label', () => {
+    window.scrollTo = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Menu
+          open
+          label="Test Menu"
+          items={[
+            { label: 'Item 1', icon: <svg />, reverse: true },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    // Label should come before icon
+    expect(getByText('Item 1').innerHTML).toEqual(
+      expect.stringMatching(/^Item 1/),
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -279,8 +279,9 @@ const Menu = props => {
                         direction="row"
                         gap={item.gap}
                       >
+                        {item.reverse && item.label}
                         {item.icon}
-                        {item.label}
+                        {!item.reverse && item.label}
                       </Box>
                     </Button>
                   </Box>
