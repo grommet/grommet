@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 
-import { ThemeContext } from '../../contexts';
+import { ThemeContext } from 'styled-components'
 import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
