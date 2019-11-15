@@ -5,17 +5,11 @@ exports.RadioButtonGroup = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
-var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
 
 var _Keyboard = require("../Keyboard");
 
 var _RadioButton = require("../RadioButton");
-
-var _hocs = require("../hocs");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -25,194 +19,135 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
+  var _ref$gap = _ref.gap,
+      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      name = _ref.name,
+      onChange = _ref.onChange,
+      optionsProp = _ref.options,
+      valueProp = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["gap", "name", "onChange", "options", "value"]);
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+  // normalize options to always use an object
+  var options = (0, _react.useMemo)(function () {
+    return optionsProp.map(function (o) {
+      return typeof o === 'string' ? {
+        id: o,
+        label: o,
+        value: o
+      } : o;
+    });
+  }, [optionsProp]);
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  var _useState = (0, _react.useState)(valueProp),
+      value = _useState[0],
+      setValue = _useState[1];
 
-var RadioButtonGroup =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(RadioButtonGroup, _Component);
+  (0, _react.useEffect)(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
 
-  function RadioButtonGroup() {
-    var _this;
+  var _useState2 = (0, _react.useState)(),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var optionRefs = (0, _react.useRef)([]);
+
+  var valueIndex = _react["default"].useMemo(function () {
+    var result;
+    options.some(function (option, index) {
+      if (option.value === value) {
+        result = index;
+        return true;
+      }
+
+      return false;
+    });
+    return result;
+  }, [options, value]);
+
+  (0, _react.useEffect)(function () {
+    if (focus && valueIndex >= 0) optionRefs.current[valueIndex].focus();
+  }, [focus, valueIndex]);
+
+  var onNext = function onNext() {
+    if (valueIndex !== undefined && valueIndex < options.length - 1) {
+      var nextIndex = valueIndex + 1;
+      var nextValue = options[nextIndex].value;
+      setValue(nextValue);
+
+      if (onChange) {
+        onChange({
+          target: {
+            value: nextValue
+          }
+        });
+      }
     }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "optionRefs", []);
-
-    _defineProperty(_assertThisInitialized(_this), "valueIndex", function () {
-      var _this$state = _this.state,
-          options = _this$state.options,
-          value = _this$state.value;
-      var result;
-      options.some(function (option, index) {
-        if (option.value === value) {
-          result = index;
-          return true;
-        }
-
-        return false;
-      });
-      return result;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onNext", function () {
-      var onChange = _this.props.onChange;
-      var options = _this.state.options;
-
-      var valueIndex = _this.valueIndex();
-
-      if (valueIndex !== undefined && valueIndex < options.length - 1) {
-        var nextIndex = valueIndex + 1;
-        var nextValue = options[nextIndex].value;
-
-        _this.setState({
-          value: nextValue
-        }, function () {
-          _this.optionRefs[nextIndex].focus();
-        });
-
-        if (onChange) {
-          onChange({
-            target: {
-              value: nextValue
-            }
-          });
-        }
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onPrevious", function () {
-      var onChange = _this.props.onChange;
-      var options = _this.state.options;
-
-      var valueIndex = _this.valueIndex();
-
-      if (valueIndex > 0) {
-        var nextIndex = valueIndex - 1;
-        var nextValue = options[nextIndex].value;
-
-        _this.setState({
-          value: nextValue
-        }, function () {
-          _this.optionRefs[nextIndex].focus();
-        });
-
-        if (onChange) {
-          onChange({
-            target: {
-              value: nextValue
-            }
-          });
-        }
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onFocus", function () {
-      // Delay just a wee bit so Chrome doesn't missing turning the button on.
-      // Chrome behaves differently in that focus is given to radio buttons
-      // when the user selects one, unlike Safari and Firefox.
-      setTimeout(function () {
-        var focus = _this.state.focus;
-
-        if (!focus) {
-          _this.setState({
-            focus: true
-          });
-        }
-      }, 1);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onBlur", function () {
-      var focus = _this.state.focus;
-
-      if (focus) {
-        _this.setState({
-          focus: false
-        });
-      }
-    });
-
-    return _this;
-  }
-
-  RadioButtonGroup.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps) {
-    var options = nextProps.options,
-        value = nextProps.value;
-    return {
-      options: options.map(function (o) {
-        return typeof o === 'string' ? {
-          id: o,
-          label: o,
-          value: o
-        } : o;
-      }),
-      value: value
-    };
   };
 
-  var _proto = RadioButtonGroup.prototype;
+  var onPrevious = function onPrevious() {
+    if (valueIndex > 0) {
+      var nextIndex = valueIndex - 1;
+      var nextValue = options[nextIndex].value;
+      setValue(nextValue);
 
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$props = this.props,
-        forwardRef = _this$props.forwardRef,
-        name = _this$props.name,
-        onChange = _this$props.onChange,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["forwardRef", "name", "onChange"]);
-
-    var _this$state2 = this.state,
-        focus = _this$state2.focus,
-        options = _this$state2.options,
-        selectedValue = _this$state2.value;
-    return _react["default"].createElement(_Keyboard.Keyboard, {
-      target: "document",
-      onUp: focus ? this.onPrevious : undefined,
-      onDown: focus ? this.onNext : undefined,
-      onLeft: focus ? this.onPrevious : undefined,
-      onRight: focus ? this.onNext : undefined
-    }, _react["default"].createElement(_Box.Box, _extends({
-      ref: forwardRef,
-      gap: "small"
-    }, rest), options.map(function (_ref, index) {
-      var disabled = _ref.disabled,
-          id = _ref.id,
-          label = _ref.label,
-          value = _ref.value;
-      return _react["default"].createElement(_RadioButton.RadioButton, {
-        ref: function ref(_ref2) {
-          _this2.optionRefs[index] = _ref2;
-        },
-        key: value,
-        name: name,
-        label: label,
-        disabled: disabled,
-        checked: value === selectedValue,
-        focus: focus && (value === selectedValue || selectedValue === undefined && !index),
-        id: id,
-        value: value,
-        onChange: onChange,
-        onFocus: _this2.onFocus,
-        onBlur: _this2.onBlur
-      });
-    })));
+      if (onChange) {
+        onChange({
+          target: {
+            value: nextValue
+          }
+        });
+      }
+    }
   };
 
-  return RadioButtonGroup;
-}(_react.Component);
+  var onFocus = function onFocus() {
+    // Delay just a wee bit so Chrome doesn't missing turning the button on.
+    // Chrome behaves differently in that focus is given to radio buttons
+    // when the user selects one, unlike Safari and Firefox.
+    setTimeout(function () {
+      return !focus && setFocus(true);
+    }, 1);
+  };
 
-RadioButtonGroup.defaultProps = {};
-Object.setPrototypeOf(RadioButtonGroup.defaultProps, _defaultProps.defaultProps);
+  var onBlur = function onBlur() {
+    return focus && setFocus(false);
+  };
+
+  return _react["default"].createElement(_Keyboard.Keyboard, {
+    target: "document",
+    onUp: focus ? onPrevious : undefined,
+    onDown: focus ? onNext : undefined,
+    onLeft: focus ? onPrevious : undefined,
+    onRight: focus ? onNext : undefined
+  }, _react["default"].createElement(_Box.Box, _extends({
+    ref: ref,
+    gap: gap
+  }, rest), options.map(function (_ref2, index) {
+    var disabled = _ref2.disabled,
+        id = _ref2.id,
+        label = _ref2.label,
+        optionValue = _ref2.value;
+    return _react["default"].createElement(_RadioButton.RadioButton, {
+      ref: function ref(aRef) {
+        optionRefs.current[index] = aRef;
+      },
+      key: optionValue,
+      name: name,
+      label: label,
+      disabled: disabled,
+      checked: optionValue === value,
+      focus: focus && (optionValue === value || value === undefined && !index),
+      id: id,
+      value: optionValue,
+      onChange: onChange,
+      onFocus: onFocus,
+      onBlur: onBlur
+    });
+  })));
+});
+RadioButtonGroup.displayName = 'RadioButtonGroup';
 var RadioButtonGroupDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -220,5 +155,5 @@ if (process.env.NODE_ENV !== 'production') {
   RadioButtonGroupDoc = require('./doc').doc(RadioButtonGroup);
 }
 
-var RadioButtonGroupWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(RadioButtonGroupDoc || RadioButtonGroup);
+var RadioButtonGroupWrapper = RadioButtonGroupDoc || RadioButtonGroup;
 exports.RadioButtonGroup = RadioButtonGroupWrapper;
