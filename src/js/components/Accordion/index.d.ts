@@ -8,7 +8,6 @@ export interface AccordionProps {
   margin?: MarginType;
   activeIndex?: number | number[];
   animate?: AnimateType;
-  children?: React.ReactNode;
   onActive?: ((activeIndexes: number[]) => void);
   multiple?: boolean;
   messages?: {tabContents?: string};
