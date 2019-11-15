@@ -40,6 +40,21 @@ describe('Menu', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('custom a11yTitle', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Menu
+          a11yTitle="My Menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    const menuWithLabel = getByLabelText('My Menu');
+    expect(menuWithLabel).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
   test('justify content', () => {
     const component = renderer.create(
       <Grommet>

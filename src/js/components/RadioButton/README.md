@@ -22,6 +22,19 @@ Same as React <input checked={} />
 boolean
 ```
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      `children={({ checked }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **disabled**
 
 Same as React <input disabled={} />. Also adds a hidden input element
