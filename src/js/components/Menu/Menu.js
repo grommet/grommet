@@ -273,7 +273,12 @@ const Menu = props => {
                         }
                       }}
                     >
-                      <Box align="start" pad="small" direction="row">
+                      <Box
+                        align="start"
+                        pad="small"
+                        direction="row"
+                        gap={item.gap}
+                      >
                         {item.icon}
                         {item.label}
                       </Box>
