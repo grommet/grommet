@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
+import '@testing-library/jest-dom/extend-expect';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet, Menu } from '../..';
 describe('Menu', function () {
@@ -70,10 +71,31 @@ describe('Menu', function () {
     })));
     expect(component.toJSON()).toMatchSnapshot();
   });
-  test('open and close on click', function () {
+  test('gap between icon and label', function () {
     window.scrollTo = jest.fn();
 
     var _render2 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+      open: true,
+      label: "actions",
+      items: [{
+        label: 'Item 1',
+        icon: React.createElement("svg", null),
+        gap: 'xlarge'
+      }, {
+        label: 'Item 2'
+      }]
+    }))),
+        container = _render2.container,
+        getByText = _render2.getByText;
+
+    var firstItem = getByText('Item 1');
+    expect(firstItem.querySelector('div[class^=StyledBox__StyledBoxGap]')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
+  test('open and close on click', function () {
+    window.scrollTo = jest.fn();
+
+    var _render3 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -86,8 +108,8 @@ describe('Menu', function () {
         href: '/test'
       }]
     }))),
-        getByLabelText = _render2.getByLabelText,
-        container = _render2.container;
+        getByLabelText = _render3.getByLabelText,
+        container = _render3.container;
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -99,7 +121,7 @@ describe('Menu', function () {
     expect(window.scrollTo).toBeCalled();
   });
   test('close by clicking outside', function (done) {
-    var _render3 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render4 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -108,8 +130,8 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render3.getByText,
-        container = _render3.container;
+        getByText = _render4.getByText,
+        container = _render4.container;
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -127,7 +149,7 @@ describe('Menu', function () {
   test('select an item', function () {
     var onClick = jest.fn();
 
-    var _render4 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render5 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -137,8 +159,8 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render4.getByText,
-        container = _render4.container;
+        getByText = _render5.getByText,
+        container = _render5.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Test')); // click in the first menu item
@@ -150,7 +172,7 @@ describe('Menu', function () {
   test('navigate through suggestions and select', function () {
     var onClick = jest.fn();
 
-    var _render5 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render6 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -160,8 +182,8 @@ describe('Menu', function () {
         onClick: onClick
       }]
     }))),
-        getByLabelText = _render5.getByLabelText,
-        container = _render5.container;
+        getByLabelText = _render6.getByLabelText,
+        container = _render6.container;
 
     expect(container.firstChild).toMatchSnapshot(); // Pressing space opens drop
     // First tab moves to first item
@@ -192,7 +214,7 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('tab through menu until it closes', function () {
-    var _render6 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render7 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
       items: [{
@@ -201,8 +223,8 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByLabelText = _render6.getByLabelText,
-        container = _render6.container;
+        getByLabelText = _render7.getByLabelText,
+        container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot(); // Pressing space opens drop
     // First tab moves to first item
@@ -232,32 +254,6 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('close on esc', function () {
-    var _render7 = render(React.createElement(Grommet, null, React.createElement(Menu, {
-      id: "test-menu",
-      label: "Test",
-      items: [{
-        label: 'Item 1'
-      }, {
-        label: 'Item 2'
-      }]
-    }))),
-        getByLabelText = _render7.getByLabelText,
-        container = _render7.container;
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40
-    });
-    fireEvent.keyDown(getByLabelText('Close Menu'), {
-      key: 'Esc',
-      keyCode: 27,
-      which: 27
-    });
-    expect(document.getElementById('test-menu__drop')).toBeNull();
-  });
-  test('close on tab', function () {
     var _render8 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       label: "Test",
@@ -276,6 +272,32 @@ describe('Menu', function () {
       keyCode: 40,
       which: 40
     });
+    fireEvent.keyDown(getByLabelText('Close Menu'), {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27
+    });
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+  test('close on tab', function () {
+    var _render9 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+      id: "test-menu",
+      label: "Test",
+      items: [{
+        label: 'Item 1'
+      }, {
+        label: 'Item 2'
+      }]
+    }))),
+        getByLabelText = _render9.getByLabelText,
+        container = _render9.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40
+    });
     fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Tab',
       keyCode: 9,
@@ -284,7 +306,7 @@ describe('Menu', function () {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
   test('with dropAlign renders', function () {
-    var _render9 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render10 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       dropAlign: {
         top: 'top',
@@ -297,8 +319,8 @@ describe('Menu', function () {
         label: 'Item 2'
       }]
     }))),
-        getByText = _render9.getByText,
-        container = _render9.container;
+        getByText = _render10.getByText,
+        container = _render10.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.keyDown(getByText('Test'), {
@@ -309,7 +331,7 @@ describe('Menu', function () {
     expectPortal('test-menu__drop').toMatchSnapshot();
   });
   test('disabled', function () {
-    var _render10 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+    var _render11 = render(React.createElement(Grommet, null, React.createElement(Menu, {
       id: "test-menu",
       disabled: true,
       label: "Test",
@@ -325,8 +347,8 @@ describe('Menu', function () {
     })), {
       attachTo: document.body.firstChild
     }),
-        getByText = _render10.getByText,
-        container = _render10.container;
+        getByText = _render11.getByText,
+        container = _render11.container;
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();

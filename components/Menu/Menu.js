@@ -295,7 +295,8 @@ var Menu = function Menu(props) {
         }), _react["default"].createElement(_Box.Box, {
           align: "start",
           pad: "small",
-          direction: "row"
+          direction: "row",
+          gap: item.gap
         }, item.icon, item.label)))
       );
     })), align.bottom === 'bottom' ? controlMirror : undefined))

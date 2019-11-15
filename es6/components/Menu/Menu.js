@@ -270,7 +270,8 @@ var Menu = function Menu(props) {
         }), React.createElement(Box, {
           align: "start",
           pad: "small",
-          direction: "row"
+          direction: "row",
+          gap: item.gap
         }, item.icon, item.label)))
       );
     })), align.bottom === 'bottom' ? controlMirror : undefined))
