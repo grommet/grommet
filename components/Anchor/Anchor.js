@@ -5,17 +5,11 @@ exports.Anchor = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _utils = require("../../utils");
 
-var _defaultProps = require("../../default-props");
-
 var _Box = require("../Box");
-
-var _hocs = require("../hocs");
 
 var _StyledAnchor = require("./StyledAnchor");
 
@@ -27,20 +21,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Anchor = function Anchor(_ref) {
+var Anchor = (0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
-      forwardRef = _ref.forwardRef,
       href = _ref.href,
       icon = _ref.icon,
-      focus = _ref.focus,
       label = _ref.label,
+      _onBlur = _ref.onBlur,
       onClick = _ref.onClick,
+      _onFocus = _ref.onFocus,
       reverse = _ref.reverse,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "children", "color", "disabled", "forwardRef", "href", "icon", "focus", "label", "onClick", "reverse", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+
+  var _useState = (0, _react.useState)(),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   (0, _react.useEffect)(function () {
     if ((icon || label) && children) {
@@ -58,7 +57,7 @@ var Anchor = function Anchor(_ref) {
   var first = reverse ? label : coloredIcon;
   var second = reverse ? coloredIcon : label;
   return _react["default"].createElement(_StyledAnchor.StyledAnchor, _extends({}, rest, {
-    ref: forwardRef,
+    ref: ref,
     "aria-label": a11yTitle,
     colorProp: color,
     disabled: disabled,
@@ -67,7 +66,15 @@ var Anchor = function Anchor(_ref) {
     hasLabel: label,
     reverse: reverse,
     href: !disabled ? href : undefined,
-    onClick: !disabled ? onClick : undefined
+    onClick: !disabled ? onClick : undefined,
+    onFocus: function onFocus(event) {
+      setFocus(true);
+      if (_onFocus) _onFocus(event);
+    },
+    onBlur: function onBlur(event) {
+      setFocus(false);
+      if (_onBlur) _onBlur(event);
+    }
   }), first && second ? _react["default"].createElement(_Box.Box, {
     as: "span",
     direction: "row",
@@ -77,10 +84,8 @@ var Anchor = function Anchor(_ref) {
       display: 'inline-flex'
     }
   }, first, second) : first || second || children);
-};
-
-Anchor.defaultProps = {};
-Object.setPrototypeOf(Anchor.defaultProps, _defaultProps.defaultProps);
+});
+Anchor.displayName = 'Anchor';
 var AnchorDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -88,5 +93,5 @@ if (process.env.NODE_ENV !== 'production') {
   AnchorDoc = require('./doc').doc(Anchor);
 }
 
-var AnchorWrapper = (0, _recompose.compose)((0, _hocs.withFocus)(), _styledComponents.withTheme, _hocs.withForwardRef)(AnchorDoc || Anchor);
+var AnchorWrapper = AnchorDoc || Anchor;
 exports.Anchor = AnchorWrapper;

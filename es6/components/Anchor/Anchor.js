@@ -2,29 +2,30 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { cloneElement, useEffect } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { cloneElement, forwardRef, useContext, useEffect, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
 import { StyledAnchor } from './StyledAnchor';
-
-var Anchor = function Anchor(_ref) {
+var Anchor = forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
-      forwardRef = _ref.forwardRef,
       href = _ref.href,
       icon = _ref.icon,
-      focus = _ref.focus,
       label = _ref.label,
+      _onBlur = _ref.onBlur,
       onClick = _ref.onClick,
+      _onFocus = _ref.onFocus,
       reverse = _ref.reverse,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "children", "color", "disabled", "forwardRef", "href", "icon", "focus", "label", "onClick", "reverse", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"]);
+
+  var theme = useContext(ThemeContext);
+
+  var _useState = useState(),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   useEffect(function () {
     if ((icon || label) && children) {
@@ -42,7 +43,7 @@ var Anchor = function Anchor(_ref) {
   var first = reverse ? label : coloredIcon;
   var second = reverse ? coloredIcon : label;
   return React.createElement(StyledAnchor, _extends({}, rest, {
-    ref: forwardRef,
+    ref: ref,
     "aria-label": a11yTitle,
     colorProp: color,
     disabled: disabled,
@@ -51,7 +52,15 @@ var Anchor = function Anchor(_ref) {
     hasLabel: label,
     reverse: reverse,
     href: !disabled ? href : undefined,
-    onClick: !disabled ? onClick : undefined
+    onClick: !disabled ? onClick : undefined,
+    onFocus: function onFocus(event) {
+      setFocus(true);
+      if (_onFocus) _onFocus(event);
+    },
+    onBlur: function onBlur(event) {
+      setFocus(false);
+      if (_onBlur) _onBlur(event);
+    }
   }), first && second ? React.createElement(Box, {
     as: "span",
     direction: "row",
@@ -61,10 +70,8 @@ var Anchor = function Anchor(_ref) {
       display: 'inline-flex'
     }
   }, first, second) : first || second || children);
-};
-
-Anchor.defaultProps = {};
-Object.setPrototypeOf(Anchor.defaultProps, defaultProps);
+});
+Anchor.displayName = 'Anchor';
 var AnchorDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -72,5 +79,5 @@ if (process.env.NODE_ENV !== 'production') {
   AnchorDoc = require('./doc').doc(Anchor);
 }
 
-var AnchorWrapper = compose(withFocus(), withTheme, withForwardRef)(AnchorDoc || Anchor);
+var AnchorWrapper = AnchorDoc || Anchor;
 export { AnchorWrapper as Anchor };
