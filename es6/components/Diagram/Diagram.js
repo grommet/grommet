@@ -2,13 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -59,87 +53,66 @@ var findTarget = function findTarget(target) {
   return target;
 };
 
-var Diagram =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Diagram, _Component);
+var Diagram = function Diagram(_ref) {
+  var connections = _ref.connections,
+      theme = _ref.theme,
+      rest = _objectWithoutPropertiesLoose(_ref, ["connections", "theme"]);
 
-  function Diagram() {
-    var _this;
+  var _useState = useState({
+    width: 0,
+    height: 0
+  }),
+      dimensions = _useState[0],
+      setDimensions = _useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  var _useState2 = useState(),
+      connectionPoints = _useState2[0],
+      setConnectionPoints = _useState2[1];
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+  var svgRef = useRef();
+  useEffect(function () {
+    setConnectionPoints(undefined);
+  }, [connections]);
+  var onResize = useCallback(function () {
+    var svg = svgRef.current;
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      height: 0,
-      width: 0
-    });
+    if (svg) {
+      var rect = svg.getBoundingClientRect();
 
-    _defineProperty(_assertThisInitialized(_this), "svgRef", React.createRef());
-
-    _defineProperty(_assertThisInitialized(_this), "onResize", function () {
-      var _this$state = _this.state,
-          width = _this$state.width,
-          height = _this$state.height;
-      var svg = _this.svgRef.current;
-
-      if (svg) {
-        var rect = svg.getBoundingClientRect();
-
-        if (rect.width !== width || rect.height !== height) {
-          _this.setState({
-            width: rect.width,
-            height: rect.height,
-            connectionPoints: undefined
-          });
-        }
+      if (rect.width !== dimensions.width || rect.height !== dimensions.height) {
+        setDimensions({
+          width: rect.width,
+          height: rect.height
+        });
+        setConnectionPoints(undefined);
       }
-    });
-
-    return _this;
-  }
-
-  Diagram.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    // track whether the connections array changes so we can trigger re-placing
-    if (nextProps.connections !== prevState.connections) {
-      return {
-        connections: nextProps.connections,
-        connectionPoints: undefined
-      };
     }
+  }, [dimensions.width, dimensions.height]); // Ref that stores resize handler
 
-    return null;
-  };
+  var savedOnResize = useRef(); // Update resize ref value if onResize changes.
+  // This allows our effect below to always get latest handler
 
-  var _proto = Diagram.prototype;
+  useEffect(function () {
+    savedOnResize.current = onResize;
+  }, [onResize]);
+  useEffect(function () {
+    var onResizeHandler = function onResizeHandler(event) {
+      return savedOnResize.current(event);
+    };
 
-  _proto.componentDidMount = function componentDidMount() {
-    window.addEventListener('resize', this.onResize);
-    this.onResize();
-  };
+    onResizeHandler();
+    window.addEventListener('resize', onResizeHandler);
+    return function () {
+      window.removeEventListener('resize', onResizeHandler);
+    };
+  }, []);
 
-  _proto.componentDidUpdate = function componentDidUpdate() {
-    var connectionPoints = this.state.connectionPoints;
-
-    if (!connectionPoints) {
-      this.placeConnections();
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
-  };
-
-  _proto.placeConnections = function placeConnections() {
-    var connections = this.props.connections;
-    var containerRect = this.svgRef.current.getBoundingClientRect();
-    var connectionPoints = connections.map(function (_ref) {
-      var anchor = _ref.anchor,
-          fromTarget = _ref.fromTarget,
-          toTarget = _ref.toTarget;
+  var placeConnections = function placeConnections() {
+    var containerRect = svgRef.current.getBoundingClientRect();
+    var updatedConnectionPoints = connections.map(function (_ref2) {
+      var anchor = _ref2.anchor,
+          fromTarget = _ref2.fromTarget,
+          toTarget = _ref2.toTarget;
       var points;
       var fromElement = findTarget(fromTarget);
       var toElement = findTarget(toTarget);
@@ -190,76 +163,65 @@ function (_Component) {
 
       return points;
     });
-    this.setState({
-      connectionPoints: connectionPoints
-    });
+    setConnectionPoints(updatedConnectionPoints);
   };
 
-  _proto.render = function render() {
-    var _this$props = this.props,
-        connections = _this$props.connections,
-        theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["connections", "theme"]);
-
-    var _this$state2 = this.state,
-        connectionPoints = _this$state2.connectionPoints,
-        height = _this$state2.height,
-        width = _this$state2.width;
-    var paths;
-
-    if (connectionPoints) {
-      paths = connections.map(function (_ref2, index) {
-        var anchor = _ref2.anchor,
-            color = _ref2.color,
-            offset = _ref2.offset,
-            round = _ref2.round,
-            thickness = _ref2.thickness,
-            type = _ref2.type,
-            connectionRest = _objectWithoutPropertiesLoose(_ref2, ["anchor", "color", "offset", "round", "thickness", "type"]);
-
-        var path;
-
-        var cleanedRest = _extends({}, connectionRest);
-
-        delete cleanedRest.fromTarget;
-        delete cleanedRest.toTarget;
-        var points = connectionPoints[index];
-
-        if (points) {
-          var offsetWidth = offset ? parseMetricToNum(theme.global.edgeSize[offset]) : 0;
-          var d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor);
-          var strokeWidth = thickness ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
-          path = React.createElement("path", _extends({
-            // eslint-disable-next-line react/no-array-index-key
-            key: index
-          }, cleanedRest, {
-            stroke: normalizeColor(color || theme.diagram.line.color, theme),
-            strokeWidth: strokeWidth,
-            strokeLinecap: round ? 'round' : 'butt',
-            strokeLinejoin: round ? 'round' : 'miter',
-            fill: "none",
-            d: d
-          }));
-        }
-
-        return path;
-      });
+  useEffect(function () {
+    if (!connectionPoints) {
+      placeConnections();
     }
+  }, [connectionPoints]);
+  var paths;
 
-    return React.createElement(StyledDiagram, _extends({
-      ref: this.svgRef,
-      viewBox: "0 0 " + width + " " + height,
-      preserveAspectRatio: "xMinYMin meet"
-    }, rest), React.createElement("g", null, paths));
-  };
+  if (connectionPoints) {
+    paths = connections.map(function (_ref3, index) {
+      var anchor = _ref3.anchor,
+          color = _ref3.color,
+          offset = _ref3.offset,
+          round = _ref3.round,
+          thickness = _ref3.thickness,
+          type = _ref3.type,
+          connectionRest = _objectWithoutPropertiesLoose(_ref3, ["anchor", "color", "offset", "round", "thickness", "type"]);
 
-  return Diagram;
-}(Component);
+      var path;
 
-_defineProperty(Diagram, "defaultProps", {
+      var cleanedRest = _extends({}, connectionRest);
+
+      delete cleanedRest.fromTarget;
+      delete cleanedRest.toTarget;
+      var points = connectionPoints[index];
+
+      if (points) {
+        var offsetWidth = offset ? parseMetricToNum(theme.global.edgeSize[offset]) : 0;
+        var d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor);
+        var strokeWidth = thickness ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
+        path = React.createElement("path", _extends({
+          // eslint-disable-next-line react/no-array-index-key
+          key: index
+        }, cleanedRest, {
+          stroke: normalizeColor(color || theme.diagram.line.color, theme),
+          strokeWidth: strokeWidth,
+          strokeLinecap: round ? 'round' : 'butt',
+          strokeLinejoin: round ? 'round' : 'miter',
+          fill: "none",
+          d: d
+        }));
+      }
+
+      return path;
+    });
+  }
+
+  return React.createElement(StyledDiagram, _extends({
+    ref: svgRef,
+    viewBox: "0 0 " + dimensions.width + " " + dimensions.height,
+    preserveAspectRatio: "xMinYMin meet"
+  }, rest), React.createElement("g", null, paths));
+};
+
+Diagram.defaultProps = {
   connections: []
-});
-
+};
 Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 var DiagramDoc;
 
