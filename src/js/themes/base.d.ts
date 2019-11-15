@@ -1,11 +1,13 @@
 import { 
   BackgroundType, 
+  BorderType,
   ColorType,  
   DeepReadonly, 
   GapType, 
   MarginType,
   OpacityType,
   PadType, 
+  TextProps,
 } from '../utils'
 import { ReactComponentElement } from 'react';
 
@@ -258,7 +260,9 @@ export interface ThemeType {
       vertical?: string;
       horizontal?: string;
     };
-    primary?: ColorType;
+    primary?: {
+      color?: ColorType;
+    }
   };
   calendar?: {
     small?: {
@@ -454,14 +458,7 @@ export interface ThemeType {
     maxHeight?: string, 
   };
   formField?: {
-    border?: {
-      color?: ColorType;
-      error?: {
-        color?: ColorType;
-      };
-      position?: string;
-      side?: string;
-    };
+    border?: BorderType;
     content?: {
       pad?: PadType;
     };
@@ -473,9 +470,7 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
-    label?: {
-      margin?: MarginType;
-    };
+    label?: TextProps;
     margin?: MarginType;
   };
   grommet?: {
@@ -652,6 +647,19 @@ export interface ThemeType {
     responsiveBreakpoint?: string;
     zIndex?: string;
   };
+  list?: {
+    item?: {
+      background?: BackgroundType;
+      border?: string | {
+        side?: string,
+        color?: ColorType,
+        size?: string,
+      };
+      pad?: PadType;
+      extend?: ExtendType;
+    },
+    extend?: ExtendType;
+  };
   maskedInput?: {
     extend?: ExtendType;
   };
@@ -759,7 +767,8 @@ export interface ThemeType {
         margin?: MarginType,
       },
     },
-    searchInput?: ReactComponentElement; 
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
+    searchInput?: ReactComponentElement<any>;
     step?: number;
   };
   tab?: {

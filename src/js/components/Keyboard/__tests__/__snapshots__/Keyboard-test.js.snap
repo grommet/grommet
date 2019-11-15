@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Keyboard calls onKeyDown 1`] = `
+exports[`Keyboard change onKeyDown 1`] = `
+<span>
+  hi
+</span>
+`;
+
+exports[`Keyboard change onKeyDown 2`] = `
+<span>
+  hi
+</span>
+`;
+
+exports[`Keyboard onDown 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -22,7 +34,7 @@ exports[`Keyboard calls onKeyDown 1`] = `
 </div>
 `;
 
-exports[`Keyboard renders 1`] = `
+exports[`Keyboard onKeyDown 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
