@@ -5,7 +5,9 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { normalizeColor } from '../../utils';
 
@@ -31,7 +33,7 @@ const Anchor = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
 
     useEffect(() => {
