@@ -91,9 +91,7 @@ describe('Menu', () => {
 
     const firstItem = getByText('Item 1');
     expect(
-      firstItem.getElementsByClassName(
-        'StyledBox__StyledBoxGap-sc-13pk1d4-1 bPCnCu',
-      )[0],
+      firstItem.querySelector('div[class^=StyledBox__StyledBoxGap]'),
     ).toBeInTheDocument();
 
     expect(container).toMatchSnapshot();
