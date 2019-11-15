@@ -1,141 +1,125 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { RadioButton } from '../RadioButton';
-import { withForwardRef } from '../hocs';
 
-class RadioButtonGroup extends Component {
-  static getDerivedStateFromProps(nextProps) {
-    const { options, value } = nextProps;
-    return {
-      options: options.map(o =>
-        typeof o === 'string' ? { id: o, label: o, value: o } : o,
-      ),
-      value,
+const RadioButtonGroup = forwardRef(
+  (
+    {
+      gap = 'small',
+      name,
+      onChange,
+      options: optionsProp,
+      value: valueProp,
+      ...rest
+    },
+    ref,
+  ) => {
+    // normalize options to always use an object
+    const options = useMemo(
+      () =>
+        optionsProp.map(o =>
+          typeof o === 'string' ? { id: o, label: o, value: o } : o,
+        ),
+      [optionsProp],
+    );
+    const [value, setValue] = useState(valueProp);
+    useEffect(() => setValue(valueProp), [valueProp]);
+    const [focus, setFocus] = useState();
+
+    const optionRefs = useRef([]);
+
+    const valueIndex = React.useMemo(() => {
+      let result;
+      options.some((option, index) => {
+        if (option.value === value) {
+          result = index;
+          return true;
+        }
+        return false;
+      });
+      return result;
+    }, [options, value]);
+
+    useEffect(() => {
+      if (focus && valueIndex >= 0) optionRefs.current[valueIndex].focus();
+    }, [focus, valueIndex]);
+
+    const onNext = () => {
+      if (valueIndex !== undefined && valueIndex < options.length - 1) {
+        const nextIndex = valueIndex + 1;
+        const nextValue = options[nextIndex].value;
+        setValue(nextValue);
+        if (onChange) {
+          onChange({ target: { value: nextValue } });
+        }
+      }
     };
-  }
 
-  state = {};
-
-  optionRefs = [];
-
-  valueIndex = () => {
-    const { options, value } = this.state;
-    let result;
-    options.some((option, index) => {
-      if (option.value === value) {
-        result = index;
-        return true;
+    const onPrevious = () => {
+      if (valueIndex > 0) {
+        const nextIndex = valueIndex - 1;
+        const nextValue = options[nextIndex].value;
+        setValue(nextValue);
+        if (onChange) {
+          onChange({ target: { value: nextValue } });
+        }
       }
-      return false;
-    });
-    return result;
-  };
+    };
 
-  onNext = () => {
-    const { onChange } = this.props;
-    const { options } = this.state;
-    const valueIndex = this.valueIndex();
-    if (valueIndex !== undefined && valueIndex < options.length - 1) {
-      const nextIndex = valueIndex + 1;
-      const nextValue = options[nextIndex].value;
-      this.setState({ value: nextValue }, () => {
-        this.optionRefs[nextIndex].focus();
-      });
-      if (onChange) {
-        onChange({ target: { value: nextValue } });
-      }
-    }
-  };
+    const onFocus = () => {
+      // Delay just a wee bit so Chrome doesn't missing turning the button on.
+      // Chrome behaves differently in that focus is given to radio buttons
+      // when the user selects one, unlike Safari and Firefox.
+      setTimeout(() => !focus && setFocus(true), 1);
+    };
 
-  onPrevious = () => {
-    const { onChange } = this.props;
-    const { options } = this.state;
-    const valueIndex = this.valueIndex();
-    if (valueIndex > 0) {
-      const nextIndex = valueIndex - 1;
-      const nextValue = options[nextIndex].value;
-      this.setState({ value: nextValue }, () => {
-        this.optionRefs[nextIndex].focus();
-      });
-      if (onChange) {
-        onChange({ target: { value: nextValue } });
-      }
-    }
-  };
+    const onBlur = () => focus && setFocus(false);
 
-  onFocus = () => {
-    // Delay just a wee bit so Chrome doesn't missing turning the button on.
-    // Chrome behaves differently in that focus is given to radio buttons
-    // when the user selects one, unlike Safari and Firefox.
-    setTimeout(() => {
-      const { focus } = this.state;
-      if (!focus) {
-        this.setState({ focus: true });
-      }
-    }, 1);
-  };
-
-  onBlur = () => {
-    const { focus } = this.state;
-    if (focus) {
-      this.setState({ focus: false });
-    }
-  };
-
-  render() {
-    const { forwardRef, name, onChange, ...rest } = this.props;
-    const { focus, options, value: selectedValue } = this.state;
     return (
       <Keyboard
         target="document"
-        onUp={focus ? this.onPrevious : undefined}
-        onDown={focus ? this.onNext : undefined}
-        onLeft={focus ? this.onPrevious : undefined}
-        onRight={focus ? this.onNext : undefined}
+        onUp={focus ? onPrevious : undefined}
+        onDown={focus ? onNext : undefined}
+        onLeft={focus ? onPrevious : undefined}
+        onRight={focus ? onNext : undefined}
       >
-        <Box ref={forwardRef} gap="small" {...rest}>
-          {options.map(({ disabled, id, label, value }, index) => (
+        <Box ref={ref} gap={gap} {...rest}>
+          {options.map(({ disabled, id, label, value: optionValue }, index) => (
             <RadioButton
-              ref={ref => {
-                this.optionRefs[index] = ref;
+              ref={aRef => {
+                optionRefs.current[index] = aRef;
               }}
-              key={value}
+              key={optionValue}
               name={name}
               label={label}
               disabled={disabled}
-              checked={value === selectedValue}
+              checked={optionValue === value}
               focus={
                 focus &&
-                (value === selectedValue ||
-                  (selectedValue === undefined && !index))
+                (optionValue === value || (value === undefined && !index))
               }
               id={id}
-              value={value}
+              value={optionValue}
               onChange={onChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
+              onFocus={onFocus}
+              onBlur={onBlur}
             />
           ))}
         </Box>
       </Keyboard>
     );
-  }
-}
+  },
+);
 
-RadioButtonGroup.defaultProps = {};
-Object.setPrototypeOf(RadioButtonGroup.defaultProps, defaultProps);
+RadioButtonGroup.displayName = 'RadioButtonGroup';
 
 let RadioButtonGroupDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   RadioButtonGroupDoc = require('./doc').doc(RadioButtonGroup);
 }
-const RadioButtonGroupWrapper = compose(withForwardRef)(
-  RadioButtonGroupDoc || RadioButtonGroup,
-);
+const RadioButtonGroupWrapper = RadioButtonGroupDoc || RadioButtonGroup;
 
 export { RadioButtonGroupWrapper as RadioButtonGroup };
