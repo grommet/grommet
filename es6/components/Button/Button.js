@@ -2,37 +2,43 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { cloneElement, Children, useState } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { cloneElement, Children, forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
 import { StyledButton } from './StyledButton';
-
-var Button = function Button(_ref) {
+var Button = forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       color = _ref.color,
-      forwardRef = _ref.forwardRef,
       children = _ref.children,
       disabled = _ref.disabled,
       icon = _ref.icon,
-      gap = _ref.gap,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
+      _ref$gap = _ref.gap,
+      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       fill = _ref.fill,
-      focus = _ref.focus,
       href = _ref.href,
       label = _ref.label,
+      _onBlur = _ref.onBlur,
       onClick = _ref.onClick,
+      _onFocus = _ref.onFocus,
       onMouseOut = _ref.onMouseOut,
       onMouseOver = _ref.onMouseOver,
       plain = _ref.plain,
       primary = _ref.primary,
       reverse = _ref.reverse,
-      theme = _ref.theme,
-      type = _ref.type,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'button' : _ref$type,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "gap", "fill", "focus", "href", "label", "onClick", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "theme", "type", "as"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "type", "as"]);
+
+  var theme = useContext(ThemeContext) || defaultProps.theme;
+
+  var _useState = useState(),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
@@ -43,9 +49,9 @@ var Button = function Button(_ref) {
     return colorIsDark(backgroundColor, theme);
   };
 
-  var _useState = useState(false),
-      hover = _useState[0],
-      setHover = _useState[1];
+  var _useState2 = useState(false),
+      hover = _useState2[0],
+      setHover = _useState2[1];
 
   var onMouseOverButton = function onMouseOverButton(event) {
     setHover(true);
@@ -90,14 +96,11 @@ var Button = function Button(_ref) {
     });
   } else {
     contents = first || second || children;
-  } // the key events are covered by withFocus()
-
-  /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-
+  }
 
   return React.createElement(StyledButton, _extends({}, rest, {
     as: domTag,
-    ref: forwardRef,
+    ref: ref,
     "aria-label": a11yTitle,
     colorValue: color,
     disabled: disabled,
@@ -106,8 +109,17 @@ var Button = function Button(_ref) {
     hasLabel: !!label,
     fillContainer: fill,
     focus: focus,
+    focusIndicator: focusIndicator,
     href: href,
     onClick: onClick,
+    onFocus: function onFocus(event) {
+      setFocus(true);
+      if (_onFocus) _onFocus(event);
+    },
+    onBlur: function onBlur(event) {
+      setFocus(false);
+      if (_onBlur) _onBlur(event);
+    },
     onMouseOver: onMouseOverButton,
     onMouseOut: onMouseOutButton,
     pad: !plain,
@@ -115,14 +127,8 @@ var Button = function Button(_ref) {
     primary: primary,
     type: !href ? type : undefined
   }), contents);
-};
-
-Button.defaultProps = {
-  type: 'button',
-  focusIndicator: true,
-  gap: 'small'
-};
-Object.setPrototypeOf(Button.defaultProps, defaultProps);
+});
+Button.displayName = 'Button';
 var ButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -130,5 +136,5 @@ if (process.env.NODE_ENV !== 'production') {
   ButtonDoc = require('./doc').doc(Button);
 }
 
-var ButtonWrapper = compose(withFocus(), withTheme, withForwardRef)(ButtonDoc || Button);
+var ButtonWrapper = ButtonDoc || Button;
 export { ButtonWrapper as Button };

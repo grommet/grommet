@@ -4,6 +4,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
+var _react2 = require("@testing-library/react");
+
 require("jest-styled-components");
 
 var _utils = require("../../../utils");
@@ -13,6 +15,7 @@ var _ = require("../..");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Button', function () {
+  afterEach(_react2.cleanup);
   test('basic', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       label: "Test",
@@ -110,14 +113,16 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('focus', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
-      focus: true,
+    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       label: "Test",
       onClick: function onClick() {}
-    })));
+    }))),
+        container = _render.container,
+        getByText = _render.getByText;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    _react2.fireEvent.focus(getByText('Test'));
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('disabled', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {

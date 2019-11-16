@@ -1,9 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import { findAllByType } from '../../../utils';
 import { Grommet, Button, Text } from '../..';
 describe('Button', function () {
+  afterEach(cleanup);
   test('basic', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
       label: "Test",
@@ -92,13 +94,15 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('focus', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
-      focus: true,
+    var _render = render(React.createElement(Grommet, null, React.createElement(Button, {
       label: "Test",
       onClick: function onClick() {}
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render.container,
+        getByText = _render.getByText;
+
+    fireEvent.focus(getByText('Test'));
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('disabled', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
