@@ -3141,7 +3141,7 @@ vertical",
           "lower": "Lower Bounds",
           "upper": "Upper Bounds",
         },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages used by screen readers for accessibility.",
         "format": "{
   lower: string,
   upper: string

@@ -17,7 +17,7 @@ var doc = function doc(RangeSelector) {
     messages: _reactDesc.PropTypes.shape({
       lower: _reactDesc.PropTypes.string,
       upper: _reactDesc.PropTypes.string
-    }).description('Custom messages. Used for accessibility by screen readers.'),
+    }).description('Custom messages used by screen readers for accessibility.'),
     min: _reactDesc.PropTypes.number.description('The minimum value permitted.').defaultValue(0),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user changes one of the\n      values. It will be passed an array of two numbers indicating\n      the new values selected."),
     opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.string, _reactDesc.PropTypes.bool]).description('Transparency of the selection indicator.').defaultValue('medium'),

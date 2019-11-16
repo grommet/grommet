@@ -10,7 +10,7 @@ export var doc = function doc(RangeSelector) {
     messages: PropTypes.shape({
       lower: PropTypes.string,
       upper: PropTypes.string
-    }).description('Custom messages. Used for accessibility by screen readers.'),
+    }).description('Custom messages used by screen readers for accessibility.'),
     min: PropTypes.number.description('The minimum value permitted.').defaultValue(0),
     onChange: PropTypes.func.description("Function that will be called when the user changes one of the\n      values. It will be passed an array of two numbers indicating\n      the new values selected."),
     opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.string, PropTypes.bool]).description('Transparency of the selection indicator.').defaultValue('medium'),
