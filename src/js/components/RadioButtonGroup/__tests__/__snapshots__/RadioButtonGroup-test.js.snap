@@ -804,7 +804,6 @@ exports[`RadioButtonGroup object options just value 1`] = `
 >
   <div
     className="c1"
-    value="two"
   >
     <label
       className="c2 c3"
@@ -1110,7 +1109,6 @@ exports[`RadioButtonGroup string options 1`] = `
 >
   <div
     className="c1"
-    value="one"
   >
     <label
       className="c2 c3"
