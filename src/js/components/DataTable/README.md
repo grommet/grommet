@@ -13,7 +13,8 @@ import { DataTable } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -110,7 +111,8 @@ string
 **background**
 
 Cell background. You can set the background per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'.
+      object with keys for 'heading', 'body', and/or 'footer'. If you pass
+      an array, rows will cycle between the array values.
 
 ```
 string

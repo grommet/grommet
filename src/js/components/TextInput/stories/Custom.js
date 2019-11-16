@@ -86,7 +86,7 @@ const CustomSuggestionsTextInput = () => {
 
   useEffect(() => {
     forceUpdate();
-  }, []);
+  }, [forceUpdate]);
 
   const onChange = event => {
     const { value: newValue } = event.target;

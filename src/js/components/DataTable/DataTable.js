@@ -166,6 +166,7 @@ class DataTable extends Component {
             pad={normalizeProp(pad, 'body')}
             primaryProperty={primaryProperty}
             onToggle={this.onToggleGroup}
+            size={size}
           />
         ) : (
           <Body

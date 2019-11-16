@@ -4,6 +4,8 @@ import {
   AlignContentType, 
   AlignSelfType,
   BackgroundType,
+  BasisType,
+  BorderType,
   ElevationType,
   FillType,
   GapType, 
@@ -27,8 +29,8 @@ export interface BoxProps {
   alignContent?: AlignContentType;
   animation?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"} | ("fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"})[];
   background?: BackgroundType;
-  basis?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "auto" | string;
-  border?: boolean | SideType | {color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType} | ({color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType})[];
+  basis?: BasisType;
+  border?: BorderType;
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
   elevation?: ElevationType;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};

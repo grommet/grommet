@@ -47,6 +47,14 @@ jobs:
       - run:
           name: Running chromatic test
           command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes
+  chromatic-accept:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running chromatic test
+          command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     steps:
@@ -119,6 +127,16 @@ workflows:
           filters:
             tags:
               only: /.*/
+            branches:
+              ignore:
+                - master
+      - chromatic-accept:
+          requires:
+            - checkout
+          filters:
+            branches:
+              only:
+                - master
       - build:
           requires:
             - checkout
