@@ -19,7 +19,8 @@ import { Menu } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -227,7 +228,8 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
+Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided. Defaults to `{
   "openMenu": "Open Menu",
   "closeMenu": "Close Menu"
 }`.

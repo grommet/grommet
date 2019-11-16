@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
+import '@testing-library/jest-dom/extend-expect';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Menu } from '../..';
@@ -39,6 +40,21 @@ describe('Menu', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('custom a11yTitle', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Menu
+          a11yTitle="My Menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    const menuWithLabel = getByLabelText('My Menu');
+    expect(menuWithLabel).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
   test('justify content', () => {
     const component = renderer.create(
       <Grommet>
@@ -56,6 +72,29 @@ describe('Menu', () => {
       </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('gap between icon and label', () => {
+    window.scrollTo = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Menu
+          open
+          label="actions"
+          items={[
+            { label: 'Item 1', icon: <svg />, gap: 'xlarge' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    const firstItem = getByText('Item 1');
+    expect(
+      firstItem.querySelector('div[class^=StyledBox__StyledBoxGap]'),
+    ).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot();
   });
 
   test('open and close on click', () => {

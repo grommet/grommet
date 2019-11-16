@@ -20,7 +20,8 @@ import { Accordion, AccordionPanel } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -615,7 +616,8 @@ import { Box } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -1470,7 +1472,8 @@ import { Button } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -2000,7 +2003,8 @@ import { Calendar } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -2530,7 +2534,8 @@ import { Carousel } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -2777,7 +2782,8 @@ import { Chart } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -3421,7 +3427,8 @@ import { Clock } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -3816,7 +3823,8 @@ import { DataTable } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -4622,7 +4630,8 @@ import { Distribution } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -5017,7 +5026,8 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers. Defaults to \`Open Drop\`.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element. Defaults to \`Open Drop\`.
 
 \`\`\`
 string
@@ -5625,7 +5635,8 @@ import { Grid } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -6144,7 +6155,8 @@ import { Heading } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -6467,7 +6479,8 @@ import { Image } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -7137,7 +7150,8 @@ import { List } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -7747,7 +7761,8 @@ import { Menu } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -7955,7 +7970,8 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to \`{
+Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided. Defaults to \`{
   \\"openMenu\\": \\"Open Menu\\",
   \\"closeMenu\\": \\"Close Menu\\"
 }\`.
@@ -8049,7 +8065,8 @@ import { Meter } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -8316,7 +8333,8 @@ import { Paragraph } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -8569,6 +8587,19 @@ Same as React <input checked={} />
 
 \`\`\`
 boolean
+\`\`\`
+
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
 \`\`\`
 
 **disabled**
@@ -9009,7 +9040,7 @@ number
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to \`{
+Custom messages used by screen readers for accessibility. Defaults to \`{
   \\"lower\\": \\"Lower Bounds\\",
   \\"upper\\": \\"Upper Bounds\\"
 }\`.
@@ -9275,7 +9306,8 @@ import { Select } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -9889,7 +9921,8 @@ import { Stack } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -10208,7 +10241,8 @@ import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -10685,7 +10719,8 @@ import { Tabs, Tab } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -10956,7 +10991,8 @@ import { Text } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -11846,7 +11882,8 @@ import { Video } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -12055,7 +12092,8 @@ import { WorldMap } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
