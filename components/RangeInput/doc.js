@@ -33,7 +33,7 @@ var themeDoc = _extends({}, _utils.themeDocUtils.focusStyle, {
   },
   'rangeInput.extend': {
     description: 'Any additional style for the RangeInput.',
-    type: 'string | (props) => {}',
+    type: "string | (props) => `\n      any CSS styling;\n    `",
     defaultValue: undefined
   },
   'rangeInput.thumb.color': {
@@ -53,7 +53,7 @@ var themeDoc = _extends({}, _utils.themeDocUtils.focusStyle, {
   },
   'rangeInput.track.extend': {
     description: 'Any additional style for the track.',
-    type: 'string | (props) => {}',
+    type: "string | (props) => `\n      any CSS styling;\n    `",
     defaultValue: undefined
   },
   'rangeInput.track.height': {

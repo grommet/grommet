@@ -101,7 +101,9 @@ Defaults to
 
 **rangeInput.extend**
 
-Any additional style for the RangeInput. Expects `string | (props) => {}`.
+Any additional style for the RangeInput. Expects `string | (props) => `
+      any CSS styling;
+    ``.
 
 Defaults to
 
@@ -141,7 +143,9 @@ Defaults to
 
 **rangeInput.track.extend**
 
-Any additional style for the track. Expects `string | (props) => {}`.
+Any additional style for the track. Expects `string | (props) => `
+      any CSS styling;
+    ``.
 
 Defaults to
 
