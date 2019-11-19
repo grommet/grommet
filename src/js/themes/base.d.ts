@@ -6,9 +6,9 @@ import {
   GapType, 
   MarginType,
   OpacityType,
-  PadType, 
-  TextProps,
+  PadType,
 } from '../utils'
+import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
 
 export declare const base: DeepReadonly<ThemeType>;

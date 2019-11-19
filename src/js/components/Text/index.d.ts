@@ -9,12 +9,14 @@ import {
   PolymorphicType,
   TextAlignType 
 } from "../../utils";
+import { ExtendType } from "src/js/themes/base";
 
 export interface TextProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   as?: PolymorphicType;
   color?:  ColorType;
+  extend?: ExtendType;
   gridArea?: GridAreaType,
   margin?: MarginType;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
