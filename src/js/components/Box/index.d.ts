@@ -16,10 +16,6 @@ import {
   ColorType, 
 } from "../../utils";
 
-type SideType = "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all";
-type SizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
-type StyleType = "solid" | "dashed" | "dotted" | "double" | "groove" | "ridge" | "inset" | "outset" | "hidden";
-
 export interface BoxProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
