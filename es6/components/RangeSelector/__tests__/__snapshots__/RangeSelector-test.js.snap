@@ -11,7 +11,7 @@ exports[`RangeSelector basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -144,7 +144,7 @@ exports[`RangeSelector basic 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -152,13 +152,13 @@ exports[`RangeSelector basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -327,7 +327,7 @@ exports[`RangeSelector color 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -460,7 +460,7 @@ exports[`RangeSelector color 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -468,13 +468,13 @@ exports[`RangeSelector color 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -643,7 +643,7 @@ exports[`RangeSelector direction 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -871,7 +871,7 @@ exports[`RangeSelector direction 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -879,13 +879,13 @@ exports[`RangeSelector direction 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -1089,7 +1089,7 @@ exports[`RangeSelector direction 1`] = `
     />
   </div>
   <div
-    className="c1 c8"
+    className="c8 c2"
   >
     <div
       className="c8"
@@ -1189,7 +1189,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1322,7 +1322,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1330,13 +1330,13 @@ exports[`RangeSelector handle keyboard 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -1464,7 +1464,7 @@ exports[`RangeSelector handle mouse 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1597,7 +1597,7 @@ exports[`RangeSelector handle mouse 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1605,13 +1605,13 @@ exports[`RangeSelector handle mouse 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -1739,7 +1739,7 @@ exports[`RangeSelector invert 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1893,7 +1893,7 @@ exports[`RangeSelector invert 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1901,13 +1901,13 @@ exports[`RangeSelector invert 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -2175,7 +2175,7 @@ exports[`RangeSelector max 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2308,7 +2308,7 @@ exports[`RangeSelector max 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2316,13 +2316,13 @@ exports[`RangeSelector max 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -2491,7 +2491,7 @@ exports[`RangeSelector min 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2624,7 +2624,7 @@ exports[`RangeSelector min 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2632,13 +2632,13 @@ exports[`RangeSelector min 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -2807,7 +2807,7 @@ exports[`RangeSelector opacity 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2981,7 +2981,7 @@ exports[`RangeSelector opacity 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2989,13 +2989,13 @@ exports[`RangeSelector opacity 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -3362,7 +3362,7 @@ exports[`RangeSelector round 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3661,7 +3661,7 @@ exports[`RangeSelector round 1`] = `
   border-radius: 100%;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3669,13 +3669,13 @@ exports[`RangeSelector round 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -4336,7 +4336,7 @@ exports[`RangeSelector size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4469,7 +4469,7 @@ exports[`RangeSelector size 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4477,13 +4477,13 @@ exports[`RangeSelector size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -5174,7 +5174,7 @@ exports[`RangeSelector step renders correct values 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5307,7 +5307,7 @@ exports[`RangeSelector step renders correct values 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -5315,13 +5315,13 @@ exports[`RangeSelector step renders correct values 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }

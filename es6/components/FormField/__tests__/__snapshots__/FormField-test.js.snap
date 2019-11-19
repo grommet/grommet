@@ -80,7 +80,7 @@ exports[`forces empty margin 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -213,14 +213,14 @@ exports[`renders 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
     />
   </div>
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -322,7 +322,7 @@ exports[`renders abut correctly 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
     style={
       Object {
         "position": undefined,
@@ -417,7 +417,7 @@ exports[`renders abut with forced margin 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
     style={
       Object {
         "position": undefined,
@@ -443,7 +443,7 @@ exports[`renders custom formfield 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -478,18 +478,18 @@ exports[`renders custom formfield 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c2 {
   font-size: 40px;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -605,7 +605,7 @@ exports[`renders custom margin 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -704,7 +704,7 @@ exports[`renders error 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -805,7 +805,7 @@ exports[`renders help 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <span
       className="c2"
@@ -899,7 +899,7 @@ exports[`renders htmlFor 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -997,7 +997,7 @@ exports[`renders label 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <label
       className="c2"
@@ -1129,7 +1129,7 @@ exports[`renders pad 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
