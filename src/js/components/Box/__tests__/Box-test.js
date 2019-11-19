@@ -1,11 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '..';
 
 describe('Box', () => {
+  afterEach(cleanup);
+
   test('default', () => {
     const component = renderer.create(
       <Grommet>
@@ -468,5 +471,19 @@ describe('Box', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('onClick', () => {
+    const onClick = jest.fn();
+    const { getByText, container } = render(
+      <Grommet>
+        <Box onClick={onClick}>test box</Box>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('test box'));
+
+    expect(onClick).toBeCalled();
   });
 });

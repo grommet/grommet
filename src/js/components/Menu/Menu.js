@@ -333,9 +333,6 @@ let MenuDoc;
 if (process.env.NODE_ENV !== 'production') {
   MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
 }
-const MenuWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(MenuDoc || Menu);
+const MenuWrapper = compose(withTheme, withForwardRef)(MenuDoc || Menu);
 
 export { MenuWrapper as Menu };

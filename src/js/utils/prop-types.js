@@ -69,3 +69,30 @@ export const genericProps = {
     this inside a parent Grid.`),
   margin: marginProp,
 };
+
+export const hoverIndicatorPropType = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.string,
+  PropTypes.oneOf(['background']),
+  PropTypes.shape({
+    color: PropTypes.string,
+    dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    image: PropTypes.string,
+    light: PropTypes.string,
+    position: PropTypes.string,
+    opacity: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+      PropTypes.number,
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+    ]),
+    repeat: PropTypes.oneOfType([
+      PropTypes.oneOf(['no-repeat', 'repeat']),
+      PropTypes.string,
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['cover', 'contain']),
+      PropTypes.string,
+    ]),
+  }),
+]);
