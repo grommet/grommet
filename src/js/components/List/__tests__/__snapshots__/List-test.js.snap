@@ -11,6 +11,43 @@ exports[`List background array 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -155,33 +192,37 @@ exports[`List background array 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
     </li>
     <li
-      className="c4 "
+      class="c4 "
     >
       three
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       four
+    </li>
+    <li
+      class="c5"
+    >
+      <div
+        class="c6"
+      />
     </li>
   </ul>
 </div>
@@ -196,6 +237,43 @@ exports[`List background string 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -297,23 +375,27 @@ exports[`List background string 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -328,6 +410,43 @@ exports[`List border boolean 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -380,23 +499,27 @@ exports[`List border boolean 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c2 "
+      class="c2 "
     >
       two
+    </li>
+    <li
+      class="c3"
+    >
+      <div
+        class="c4"
+      />
     </li>
   </ul>
 </div>
@@ -411,6 +534,43 @@ exports[`List border object 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -465,23 +625,27 @@ exports[`List border object 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c2 "
+      class="c2 "
     >
       two
+    </li>
+    <li
+      class="c3"
+    >
+      <div
+        class="c4"
+      />
     </li>
   </ul>
 </div>
@@ -545,6 +709,43 @@ exports[`List border side 1`] = `
   padding-bottom: 12px;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c1 {
   list-style: none;
   margin: 0;
@@ -593,23 +794,27 @@ exports[`List border side 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -673,6 +878,43 @@ exports[`List children render 1`] = `
   padding-bottom: 12px;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c1 {
   list-style: none;
   margin: 0;
@@ -721,23 +963,27 @@ exports[`List children render 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one - 0
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two - 1
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -801,6 +1047,43 @@ exports[`List data objects 1`] = `
   padding-bottom: 12px;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c1 {
   list-style: none;
   margin: 0;
@@ -849,23 +1132,27 @@ exports[`List data objects 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -929,6 +1216,43 @@ exports[`List data strings 1`] = `
   padding-bottom: 12px;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c1 {
   list-style: none;
   margin: 0;
@@ -977,23 +1301,27 @@ exports[`List data strings 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -1017,13 +1345,10 @@ exports[`List empty 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   />
 </div>
 `;
@@ -1061,6 +1386,43 @@ exports[`List itemProps 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1127,23 +1489,27 @@ exports[`List itemProps 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -1369,6 +1735,43 @@ exports[`List pad object 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1446,23 +1849,27 @@ exports[`List pad object 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -1479,6 +1886,43 @@ exports[`List pad string 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1552,23 +1996,27 @@ exports[`List pad string 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       one
     </li>
     <li
-      className="c3 "
+      class="c3 "
     >
       two
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c5"
+      />
     </li>
   </ul>
 </div>
@@ -1632,6 +2080,43 @@ exports[`List primaryKey 1`] = `
   padding-bottom: 12px;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c3 {
   font-size: 18px;
   line-height: 24px;
@@ -1686,31 +2171,35 @@ exports[`List primaryKey 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       <span
-        className="c3"
+        class="c3"
       >
         one
       </span>
     </li>
     <li
-      className="c4 "
+      class="c4 "
     >
       <span
-        className="c3"
+        class="c3"
       >
         two
       </span>
+    </li>
+    <li
+      class="c5"
+    >
+      <div
+        class="c6"
+      />
     </li>
   </ul>
 </div>
@@ -1725,6 +2214,43 @@ exports[`List secondaryKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1856,47 +2382,51 @@ exports[`List secondaryKey 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <ul
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
+    class="c1"
   >
     <li
-      className="c2 "
+      class="c2 "
     >
       <span
-        className="c3"
+        class="c3"
       >
         one
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <span
-        className="c5"
+        class="c5"
       >
         1
       </span>
     </li>
     <li
-      className="c6 "
+      class="c6 "
     >
       <span
-        className="c3"
+        class="c3"
       >
         two
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <span
-        className="c5"
+        class="c5"
       >
         2
       </span>
+    </li>
+    <li
+      class="c7"
+    >
+      <div
+        class="c8"
+      />
     </li>
   </ul>
 </div>

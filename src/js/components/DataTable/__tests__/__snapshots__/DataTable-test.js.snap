@@ -11,6 +11,25 @@ exports[`DataTable aggregate 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -38,7 +57,7 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -86,33 +105,33 @@ exports[`DataTable aggregate 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -120,72 +139,80 @@ exports[`DataTable aggregate 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c8"
+          class="c6"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c9"
         />
         <td
-          className="c8"
+          class="c9"
         >
           <span
-            className="c5"
+            class="c5"
           >
             3
           </span>
@@ -208,6 +235,25 @@ exports[`DataTable background 1`] = `
 }
 
 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -221,7 +267,20 @@ exports[`DataTable background 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -266,7 +325,7 @@ exports[`DataTable background 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -282,7 +341,7 @@ exports[`DataTable background 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -297,7 +356,7 @@ exports[`DataTable background 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -347,33 +406,33 @@ exports[`DataTable background 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -381,104 +440,112 @@ exports[`DataTable background 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c8"
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c10"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c8"
+          class="c10"
         />
       </tr>
     </tfoot>
   </table>
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c9"
+          class="c11"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c9"
+          class="c11"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -486,104 +553,112 @@ exports[`DataTable background 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c12"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c10"
+          class="c12"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c11"
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c13"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c11"
+          class="c13"
         />
       </tr>
     </tfoot>
   </table>
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -591,75 +666,83 @@ exports[`DataTable background 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c12"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c10"
+          class="c12"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c12"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c10"
+          class="c12"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c12"
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c14"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c12"
+          class="c14"
         />
       </tr>
     </tfoot>
@@ -676,6 +759,25 @@ exports[`DataTable basic 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c4 {
@@ -739,33 +841,33 @@ exports[`DataTable basic 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -773,55 +875,63 @@ exports[`DataTable basic 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+      >
+        <td
+          class="c6"
+        >
+          <div
+            class="c8"
+          />
         </td>
       </tr>
     </tbody>
@@ -840,7 +950,39 @@ exports[`DataTable border 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -868,7 +1010,7 @@ exports[`DataTable border 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -916,33 +1058,33 @@ exports[`DataTable border 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -950,104 +1092,112 @@ exports[`DataTable border 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             one
           </span>
         </th>
         <td
-          className="c4"
+          class="c4"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             two
           </span>
         </th>
         <td
-          className="c4"
+          class="c4"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c4"
+          class="c7"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c4"
         >
           <span
-            className="c6"
+            class="c6"
           >
             Total
           </span>
         </td>
         <td
-          className="c4"
+          class="c4"
         />
       </tr>
     </tfoot>
   </table>
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c7"
+          class="c9"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c7"
+          class="c9"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -1055,104 +1205,112 @@ exports[`DataTable border 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c7"
+          class="c9"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             one
           </span>
         </th>
         <td
-          className="c7"
+          class="c9"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c7"
+          class="c9"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             two
           </span>
         </th>
         <td
-          className="c7"
+          class="c9"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c7"
+          class="c7"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c9"
         >
           <span
-            className="c6"
+            class="c6"
           >
             Total
           </span>
         </td>
         <td
-          className="c7"
+          class="c9"
         />
       </tr>
     </tfoot>
   </table>
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c8"
+          class="c10"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c8"
+          class="c10"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -1160,104 +1318,112 @@ exports[`DataTable border 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c8"
+          class="c10"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             one
           </span>
         </th>
         <td
-          className="c8"
+          class="c10"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c8"
+          class="c10"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             two
           </span>
         </th>
         <td
-          className="c8"
+          class="c10"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c8"
+          class="c7"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c10"
         >
           <span
-            className="c6"
+            class="c6"
           >
             Total
           </span>
         </td>
         <td
-          className="c8"
+          class="c10"
         />
       </tr>
     </tfoot>
   </table>
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c7"
+          class="c9"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c7"
+          class="c9"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -1265,75 +1431,83 @@ exports[`DataTable border 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c8"
+          class="c10"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             one
           </span>
         </th>
         <td
-          className="c8"
+          class="c10"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c8"
+          class="c10"
           scope="row"
         >
           <span
-            className="c6"
+            class="c6"
           >
             two
           </span>
         </th>
         <td
-          className="c8"
+          class="c10"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c7"
+          class="c7"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c9"
         >
           <span
-            className="c6"
+            class="c6"
           >
             Total
           </span>
         </td>
         <td
-          className="c7"
+          class="c9"
         />
       </tr>
     </tfoot>
@@ -1614,23 +1788,20 @@ exports[`DataTable empty 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       />
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     />
   </table>
 </div>
@@ -1645,6 +1816,25 @@ exports[`DataTable footer 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c4 {
@@ -1674,7 +1864,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1722,33 +1912,33 @@ exports[`DataTable footer 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -1756,75 +1946,83 @@ exports[`DataTable footer 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c8"
+          class="c6"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c9"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c8"
+          class="c9"
         />
       </tr>
     </tfoot>
@@ -3246,39 +3444,23 @@ exports[`DataTable pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c4 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 12px;
-}
-
-.c6 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding: 12px;
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c8 {
@@ -3288,11 +3470,27 @@ exports[`DataTable pad 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  padding: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c9 {
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3300,10 +3498,17 @@ exports[`DataTable pad 1`] = `
   height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding: 12px;
 }
 
 .c10 {
@@ -3313,13 +3518,38 @@ exports[`DataTable pad 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding: 12px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
-.c11 {
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3367,33 +3597,33 @@ exports[`DataTable pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -3401,104 +3631,112 @@ exports[`DataTable pad 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c8"
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c10"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c8"
+          class="c10"
         />
       </tr>
     </tfoot>
   </table>
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c9"
+          class="c11"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c9"
+          class="c11"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -3506,104 +3744,112 @@ exports[`DataTable pad 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c12"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c10"
+          class="c12"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c12"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c10"
+          class="c12"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c11"
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c13"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c11"
+          class="c13"
         />
       </tr>
     </tfoot>
   </table>
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -3611,75 +3857,83 @@ exports[`DataTable pad 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c12"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c10"
+          class="c12"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c12"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c10"
+          class="c12"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c12"
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c14"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c12"
+          class="c14"
         />
       </tr>
     </tfoot>
@@ -3688,330 +3942,6 @@ exports[`DataTable pad 1`] = `
 `;
 
 exports[`DataTable paths 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c6 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c3 {
-  height: 100%;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c5 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  height: auto;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
-<div
-  className="c0"
->
-  <table
-    className="c1 c2"
-  >
-    <thead
-      className=""
-    >
-      <tr
-        className="c3 "
-      >
-        <th
-          className="c4"
-          scope="col"
-        >
-          <span
-            className="c5"
-          >
-            A
-          </span>
-        </th>
-        <th
-          className="c4"
-          scope="col"
-        >
-          <span
-            className="c5"
-          >
-            B
-          </span>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-    >
-      <tr
-        className="c3 "
-      >
-        <th
-          className="c6"
-          scope="row"
-        >
-          <span
-            className="c7"
-          >
-            one
-          </span>
-        </th>
-        <td
-          className="c6"
-        >
-          <span
-            className="c5"
-          >
-            1
-          </span>
-        </td>
-      </tr>
-      <tr
-        className="c3 "
-      >
-        <th
-          className="c6"
-          scope="row"
-        >
-          <span
-            className="c7"
-          >
-            two
-          </span>
-        </th>
-        <td
-          className="c6"
-        >
-          <span
-            className="c5"
-          >
-            2
-          </span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable primaryKey 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c6 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c3 {
-  height: 100%;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c5 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  height: auto;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
-<div
-  className="c0"
->
-  <table
-    className="c1 c2"
-  >
-    <thead
-      className=""
-    >
-      <tr
-        className="c3 "
-      >
-        <th
-          className="c4"
-          scope="col"
-        >
-          <span
-            className="c5"
-          >
-            A
-          </span>
-        </th>
-        <th
-          className="c4"
-          scope="col"
-        >
-          <span
-            className="c5"
-          >
-            B
-          </span>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-    >
-      <tr
-        className="c3 "
-      >
-        <td
-          className="c6"
-        >
-          <span
-            className="c5"
-          >
-            one
-          </span>
-        </td>
-        <th
-          className="c6"
-          scope="row"
-        >
-          <span
-            className="c7"
-          >
-            1
-          </span>
-        </th>
-      </tr>
-      <tr
-        className="c3 "
-      >
-        <td
-          className="c6"
-        >
-          <span
-            className="c5"
-          >
-            two
-          </span>
-        </td>
-        <th
-          className="c6"
-          scope="row"
-        >
-          <span
-            className="c7"
-          >
-            2
-          </span>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable replace 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4035,7 +3965,7 @@ exports[`DataTable replace 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -4102,33 +4032,33 @@ exports[`DataTable replace 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -4136,65 +4066,440 @@ exports[`DataTable replace 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
-        <td
-          className="c6"
+        <th
+          class="c6"
+          scope="row"
         >
           <span
-            className="c5"
+            class="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="c6"
+        >
+          <span
+            class="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c6"
+          scope="row"
+        >
+          <span
+            class="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c6"
+        >
+          <span
+            class="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+      >
+        <td
+          class="c6"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable primaryKey 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <td
+          class="c6"
+        >
+          <span
+            class="c5"
           >
             one
           </span>
         </td>
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
+          >
+            1
+          </span>
+        </th>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <td
+          class="c6"
+        >
+          <span
+            class="c5"
+          >
+            two
+          </span>
+        </td>
+        <th
+          class="c6"
+          scope="row"
+        >
+          <span
+            class="c7"
+          >
+            2
+          </span>
+        </th>
+      </tr>
+      <tr
+        class="c3"
+      >
+        <td
+          class="c6"
+        >
+          <div
+            class="c8"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable replace 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <td
+          class="c6"
+        >
+          <span
+            class="c5"
+          >
+            one
+          </span>
+        </td>
+        <th
+          class="c6"
+          scope="row"
+        >
+          <span
+            class="c7"
           >
             1.1
           </span>
         </th>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             one
           </span>
         </td>
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             1.2
           </span>
         </th>
       </tr>
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c6"
+          class="c6"
         >
           <div
-            className="c8"
+            class="c8"
           />
         </td>
       </tr>
@@ -4212,6 +4517,25 @@ exports[`DataTable resizeable 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c5 {
@@ -4331,121 +4655,119 @@ exports[`DataTable resizeable 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <div
-            className="c5"
-            style={
-              Object {
-                "position": "relative",
-              }
-            }
+            class="c5"
+            style="position: relative;"
           >
             <span
-              className="c6"
+              class="c6"
             >
               A
             </span>
             <div
-              className="c7"
+              class="c7"
             />
             <div
-              className="c8 c9"
-              onMouseDown={[Function]}
+              class="c8 c9"
             />
           </div>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <div
-            className="c5"
-            style={
-              Object {
-                "position": "relative",
-              }
-            }
+            class="c5"
+            style="position: relative;"
           >
             <span
-              className="c6"
+              class="c6"
             >
               B
             </span>
             <div
-              className="c7"
+              class="c7"
             />
             <div
-              className="c8 c9"
-              onMouseDown={[Function]}
+              class="c8 c9"
             />
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c10"
           scope="row"
         >
           <span
-            className="c11"
+            class="c11"
           >
             one
           </span>
         </th>
         <td
-          className="c10"
+          class="c10"
         >
           <span
-            className="c6"
+            class="c6"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c10"
+          class="c10"
           scope="row"
         >
           <span
-            className="c11"
+            class="c11"
           >
             two
           </span>
         </th>
         <td
-          className="c10"
+          class="c10"
         >
           <span
-            className="c6"
+            class="c6"
           >
             2
           </span>
+        </td>
+      </tr>
+      <tr
+        class="c3"
+      >
+        <td
+          class="c10"
+        >
+          <div
+            class="c12"
+          />
         </td>
       </tr>
     </tbody>
@@ -4462,6 +4784,25 @@ exports[`DataTable rowProps 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c4 {
@@ -4491,7 +4832,7 @@ exports[`DataTable rowProps 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4552,33 +4893,33 @@ exports[`DataTable rowProps 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <table
-    className="c1 c2"
+    class="c1 c2"
   >
     <thead
-      className=""
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             A
           </span>
         </th>
         <th
-          className="c4"
+          class="c4"
           scope="col"
         >
           <span
-            className="c5"
+            class="c5"
           >
             B
           </span>
@@ -4586,75 +4927,83 @@ exports[`DataTable rowProps 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      class=""
     >
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c6"
+          class="c6"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          className="c6"
+          class="c6"
         >
           <span
-            className="c5"
+            class="c5"
           >
             1
           </span>
         </td>
       </tr>
       <tr
-        className="c3 "
+        class="c3 "
       >
         <th
-          className="c8"
+          class="c8"
           scope="row"
         >
           <span
-            className="c7"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          className="c8"
+          class="c8"
         >
           <span
-            className="c5"
+            class="c5"
           >
             2
           </span>
         </td>
       </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
       <tr
-        className="c3"
+        class="c3"
       >
         <td
-          className="c9"
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c10"
         >
           <span
-            className="c7"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          className="c9"
+          class="c10"
         />
       </tr>
     </tfoot>
