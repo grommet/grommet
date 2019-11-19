@@ -56,7 +56,7 @@ exports[`DataTable aggregate 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -73,14 +73,14 @@ exports[`DataTable aggregate 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -95,7 +95,7 @@ exports[`DataTable aggregate 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -126,7 +126,7 @@ exports[`DataTable aggregate 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -149,7 +149,7 @@ exports[`DataTable aggregate 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -317,7 +317,7 @@ exports[`DataTable background 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -334,14 +334,14 @@ exports[`DataTable background 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -356,7 +356,7 @@ exports[`DataTable background 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -387,7 +387,7 @@ exports[`DataTable background 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -410,7 +410,7 @@ exports[`DataTable background 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -461,7 +461,7 @@ exports[`DataTable background 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c9"
@@ -492,7 +492,7 @@ exports[`DataTable background 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -515,7 +515,7 @@ exports[`DataTable background 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -566,7 +566,7 @@ exports[`DataTable background 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -597,7 +597,7 @@ exports[`DataTable background 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -620,7 +620,7 @@ exports[`DataTable background 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -709,7 +709,7 @@ exports[`DataTable basic 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -726,14 +726,14 @@ exports[`DataTable basic 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -748,7 +748,7 @@ exports[`DataTable basic 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -779,7 +779,7 @@ exports[`DataTable basic 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -802,7 +802,7 @@ exports[`DataTable basic 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -886,7 +886,7 @@ exports[`DataTable border 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -903,14 +903,14 @@ exports[`DataTable border 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -925,7 +925,7 @@ exports[`DataTable border 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -956,7 +956,7 @@ exports[`DataTable border 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -979,7 +979,7 @@ exports[`DataTable border 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -1030,7 +1030,7 @@ exports[`DataTable border 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c7"
@@ -1061,7 +1061,7 @@ exports[`DataTable border 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c7"
@@ -1084,7 +1084,7 @@ exports[`DataTable border 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c7"
@@ -1135,7 +1135,7 @@ exports[`DataTable border 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c8"
@@ -1166,7 +1166,7 @@ exports[`DataTable border 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c8"
@@ -1189,7 +1189,7 @@ exports[`DataTable border 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c8"
@@ -1240,7 +1240,7 @@ exports[`DataTable border 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c7"
@@ -1271,7 +1271,7 @@ exports[`DataTable border 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c8"
@@ -1294,7 +1294,7 @@ exports[`DataTable border 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c8"
@@ -1383,7 +1383,7 @@ exports[`DataTable click 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -1400,7 +1400,7 @@ exports[`DataTable click 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -1411,7 +1411,7 @@ exports[`DataTable click 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -1426,7 +1426,7 @@ exports[`DataTable click 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c4"
@@ -1445,7 +1445,7 @@ exports[`DataTable click 1`] = `
       tabindex="0"
     >
       <tr
-        class="c6 c3"
+        class="c3 c6"
       >
         <th
           class="c7"
@@ -1459,7 +1459,7 @@ exports[`DataTable click 1`] = `
         </th>
       </tr>
       <tr
-        class="c6 c3"
+        class="c3 c6"
       >
         <th
           class="c7"
@@ -1482,13 +1482,13 @@ exports[`DataTable click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 eIMhwq StyledTable-sc-1m3u5g-6 fGUmP"
+    class="StyledTable-sc-1m3u5g-6 fGUmP StyledDataTable-xrlyjm-0 eIMhwq"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
@@ -1503,11 +1503,11 @@ exports[`DataTable click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv"
       tabindex="0"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 epdvRE StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 epdvRE"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
@@ -1521,7 +1521,7 @@ exports[`DataTable click 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 epdvRE StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 epdvRE"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
@@ -1554,20 +1554,20 @@ exports[`DataTable empty 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -1582,7 +1582,7 @@ exports[`DataTable empty 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       />
     </thead>
     <tbody
@@ -1651,7 +1651,7 @@ exports[`DataTable footer 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -1668,14 +1668,14 @@ exports[`DataTable footer 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -1690,7 +1690,7 @@ exports[`DataTable footer 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -1721,7 +1721,7 @@ exports[`DataTable footer 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -1744,7 +1744,7 @@ exports[`DataTable footer 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -1947,7 +1947,7 @@ exports[`DataTable groupBy 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -1958,7 +1958,7 @@ exports[`DataTable groupBy 1`] = `
   line-height: 24px;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -1977,7 +1977,7 @@ exports[`DataTable groupBy 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -1992,7 +1992,7 @@ exports[`DataTable groupBy 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c4"
@@ -2046,7 +2046,7 @@ exports[`DataTable groupBy 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c10"
@@ -2089,7 +2089,7 @@ exports[`DataTable groupBy 1`] = `
         />
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c10"
@@ -2141,13 +2141,13 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 eIMhwq StyledTable-sc-1m3u5g-6 fGUmP"
+    class="StyledTable-sc-1m3u5g-6 fGUmP StyledDataTable-xrlyjm-0 eIMhwq"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 fPACPW"
@@ -2198,10 +2198,10 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
@@ -2244,7 +2244,7 @@ exports[`DataTable groupBy 2`] = `
         />
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
@@ -2461,7 +2461,7 @@ exports[`DataTable groupBy expand 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -2472,7 +2472,7 @@ exports[`DataTable groupBy expand 1`] = `
   line-height: 24px;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -2491,7 +2491,7 @@ exports[`DataTable groupBy expand 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -2506,7 +2506,7 @@ exports[`DataTable groupBy expand 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c4"
@@ -2560,7 +2560,7 @@ exports[`DataTable groupBy expand 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c10"
@@ -2604,7 +2604,7 @@ exports[`DataTable groupBy expand 1`] = `
         />
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c10"
@@ -2633,7 +2633,7 @@ exports[`DataTable groupBy expand 1`] = `
         </td>
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c12"
@@ -2662,7 +2662,7 @@ exports[`DataTable groupBy expand 1`] = `
         </td>
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c10"
@@ -2871,7 +2871,7 @@ exports[`DataTable groupBy property 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -2882,7 +2882,7 @@ exports[`DataTable groupBy property 1`] = `
   line-height: 24px;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -2901,7 +2901,7 @@ exports[`DataTable groupBy property 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -2916,7 +2916,7 @@ exports[`DataTable groupBy property 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c4"
@@ -2970,7 +2970,7 @@ exports[`DataTable groupBy property 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c10"
@@ -3013,7 +3013,7 @@ exports[`DataTable groupBy property 1`] = `
         />
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <td
           class="c10"
@@ -3065,13 +3065,13 @@ exports[`DataTable groupBy property 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 eIMhwq StyledTable-sc-1m3u5g-6 fGUmP"
+    class="StyledTable-sc-1m3u5g-6 fGUmP StyledDataTable-xrlyjm-0 eIMhwq"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 fPACPW"
@@ -3122,10 +3122,10 @@ exports[`DataTable groupBy property 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
@@ -3168,7 +3168,7 @@ exports[`DataTable groupBy property 2`] = `
         />
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hufzGX"
@@ -3317,7 +3317,7 @@ exports[`DataTable pad 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -3334,14 +3334,14 @@ exports[`DataTable pad 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -3356,7 +3356,7 @@ exports[`DataTable pad 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -3387,7 +3387,7 @@ exports[`DataTable pad 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -3410,7 +3410,7 @@ exports[`DataTable pad 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -3461,7 +3461,7 @@ exports[`DataTable pad 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c9"
@@ -3492,7 +3492,7 @@ exports[`DataTable pad 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -3515,7 +3515,7 @@ exports[`DataTable pad 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -3566,7 +3566,7 @@ exports[`DataTable pad 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -3597,7 +3597,7 @@ exports[`DataTable pad 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -3620,7 +3620,7 @@ exports[`DataTable pad 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -3709,7 +3709,7 @@ exports[`DataTable paths 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -3726,14 +3726,14 @@ exports[`DataTable paths 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -3748,7 +3748,7 @@ exports[`DataTable paths 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -3779,7 +3779,7 @@ exports[`DataTable paths 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -3802,7 +3802,7 @@ exports[`DataTable paths 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -3871,7 +3871,7 @@ exports[`DataTable primaryKey 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -3888,14 +3888,14 @@ exports[`DataTable primaryKey 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -3910,7 +3910,7 @@ exports[`DataTable primaryKey 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -3941,7 +3941,7 @@ exports[`DataTable primaryKey 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <td
           className="c6"
@@ -3964,7 +3964,7 @@ exports[`DataTable primaryKey 1`] = `
         </th>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <td
           className="c6"
@@ -4054,7 +4054,7 @@ exports[`DataTable replace 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -4071,7 +4071,7 @@ exports[`DataTable replace 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -4090,7 +4090,7 @@ exports[`DataTable replace 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -4105,7 +4105,7 @@ exports[`DataTable replace 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -4136,7 +4136,7 @@ exports[`DataTable replace 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <td
           className="c6"
@@ -4159,7 +4159,7 @@ exports[`DataTable replace 1`] = `
         </th>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <td
           className="c6"
@@ -4234,7 +4234,7 @@ exports[`DataTable resizeable 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4294,7 +4294,7 @@ exports[`DataTable resizeable 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -4311,11 +4311,11 @@ exports[`DataTable resizeable 1`] = `
   font-weight: bold;
 }
 
-.c8 {
+.c9 {
   cursor: col-resize;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -4334,7 +4334,7 @@ exports[`DataTable resizeable 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -4349,7 +4349,7 @@ exports[`DataTable resizeable 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -4412,7 +4412,7 @@ exports[`DataTable resizeable 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -4435,7 +4435,7 @@ exports[`DataTable resizeable 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c10"
@@ -4531,7 +4531,7 @@ exports[`DataTable rowProps 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -4548,14 +4548,14 @@ exports[`DataTable rowProps 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -4570,7 +4570,7 @@ exports[`DataTable rowProps 1`] = `
       className=""
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c4"
@@ -4601,7 +4601,7 @@ exports[`DataTable rowProps 1`] = `
       onKeyDown={[Function]}
     >
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c6"
@@ -4624,7 +4624,7 @@ exports[`DataTable rowProps 1`] = `
         </td>
       </tr>
       <tr
-        className="c3"
+        className="c3 "
       >
         <th
           className="c8"
@@ -4806,7 +4806,7 @@ exports[`DataTable search 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -4823,7 +4823,7 @@ exports[`DataTable search 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -4842,7 +4842,7 @@ exports[`DataTable search 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -4857,7 +4857,7 @@ exports[`DataTable search 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c4"
@@ -4900,7 +4900,7 @@ exports[`DataTable search 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c10"
@@ -4914,7 +4914,7 @@ exports[`DataTable search 1`] = `
         </th>
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c10"
@@ -4928,7 +4928,7 @@ exports[`DataTable search 1`] = `
         </th>
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c10"
@@ -4951,13 +4951,13 @@ exports[`DataTable search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 eIMhwq StyledTable-sc-1m3u5g-6 fGUmP"
+    class="StyledTable-sc-1m3u5g-6 fGUmP StyledDataTable-xrlyjm-0 eIMhwq"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
@@ -5109,7 +5109,7 @@ exports[`DataTable search 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv"
     >
       .c1 {
   margin: 0;
@@ -5135,7 +5135,7 @@ exports[`DataTable search 2`] = `
 }
 
 <tr
-        class="c0"
+        class="c0 "
       >
         <th
           class="c1"
@@ -5235,7 +5235,7 @@ exports[`DataTable sort 1`] = `
   height: 100%;
 }
 
-.c2 {
+.c1 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -5252,7 +5252,7 @@ exports[`DataTable sort 1`] = `
   font-weight: bold;
 }
 
-.c1 {
+.c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
@@ -5271,7 +5271,7 @@ exports[`DataTable sort 1`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-  .c2 {
+  .c1 {
     table-layout: fixed;
   }
 }
@@ -5286,7 +5286,7 @@ exports[`DataTable sort 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c4"
@@ -5332,7 +5332,7 @@ exports[`DataTable sort 1`] = `
       class=""
     >
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c8"
@@ -5355,7 +5355,7 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c8"
@@ -5378,7 +5378,7 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="c3"
+        class="c3 "
       >
         <th
           class="c8"
@@ -5410,13 +5410,13 @@ exports[`DataTable sort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 eIMhwq StyledTable-sc-1m3u5g-6 fGUmP"
+    class="StyledTable-sc-1m3u5g-6 fGUmP StyledDataTable-xrlyjm-0 eIMhwq"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
@@ -5515,7 +5515,7 @@ exports[`DataTable sort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx StyledDataTable__StyledDataTableBody-xrlyjm-2 bFXxPv"
     >
       .c1 {
   margin: 0;
@@ -5546,7 +5546,7 @@ exports[`DataTable sort 2`] = `
 }
 
 <tr
-        class="c0"
+        class="c0 "
       >
         <th
           class="c1"
@@ -5569,7 +5569,7 @@ exports[`DataTable sort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
@@ -5620,7 +5620,7 @@ exports[`DataTable sort 2`] = `
 }
 
 <tr
-        class="c0"
+        class="c0 "
       >
         <th
           class="c1"
