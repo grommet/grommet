@@ -194,7 +194,7 @@ exports[`Form update 1`] = `
 >
   <form>
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -213,7 +213,7 @@ exports[`Form update 1`] = `
       </div>
     </div>
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -348,7 +348,7 @@ exports[`Form with field 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c1"
+      className="c1 "
     >
       <div
         className="c2"

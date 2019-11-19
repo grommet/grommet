@@ -1,6 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton checked renders 1`] = `
+exports[`RadioButton basic 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c3 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2 "
+    >
+      <input
+        className="c3"
+        name="test"
+        type="radio"
+        value="1"
+      />
+      <div
+        className="c4 "
+      />
+    </div>
+  </label>
+  <label
+    className="c1"
+    htmlFor="test id"
+    onClick={[Function]}
+  >
+    <div
+      className="c2 "
+    >
+      <input
+        className="c3"
+        id="test id"
+        name="test"
+        type="radio"
+        value="2"
+      />
+      <div
+        className="c4 "
+      />
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioButton checked 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -114,16 +257,17 @@ exports[`RadioButton checked renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <input
         checked={true}
         className="c3"
-        name="test checked"
+        name="test"
         type="radio"
+        value="1"
       />
       <div
-        className="c4"
+        className="c4 "
       >
         <svg
           className="c5"
@@ -142,7 +286,140 @@ exports[`RadioButton checked renders 1`] = `
 </div>
 `;
 
-exports[`RadioButton disabled renders 1`] = `
+exports[`RadioButton children 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #6FFFB0;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c3 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2 "
+    >
+      <input
+        className="c3"
+        name="test"
+        type="radio"
+        value="1"
+      />
+      <div
+        className="c4"
+      />
+    </div>
+  </label>
+  <label
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2 "
+    >
+      <input
+        checked={true}
+        className="c3"
+        name="test"
+        type="radio"
+        value="2"
+      />
+      <div
+        className="c4"
+      />
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioButton disabled 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -290,16 +567,17 @@ exports[`RadioButton disabled renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <input
         className="c3"
         disabled={true}
-        name="test disabled"
+        name="test"
         type="radio"
+        value="1"
       />
       <div
-        className="c4"
+        className="c4 "
       />
     </div>
   </label>
@@ -309,17 +587,18 @@ exports[`RadioButton disabled renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <input
         checked={true}
         className="c3"
         disabled={true}
-        name="test checked disabled"
+        name="test"
         type="radio"
+        value="2"
       />
       <div
-        className="c5"
+        className="c5 "
       >
         <svg
           className="c6"
@@ -338,7 +617,7 @@ exports[`RadioButton disabled renders 1`] = `
 </div>
 `;
 
-exports[`RadioButton label renders 1`] = `
+exports[`RadioButton label 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -445,15 +724,16 @@ exports[`RadioButton label renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <input
         className="c3"
-        name="test label"
+        name="test"
         type="radio"
+        value="1"
       />
       <div
-        className="c4"
+        className="c4 "
       />
     </div>
     <span>
@@ -465,160 +745,20 @@ exports[`RadioButton label renders 1`] = `
     onClick={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <input
         className="c3"
-        name="test div label"
+        name="test"
         type="radio"
+        value="2"
       />
       <div
-        className="c4"
+        className="c4 "
       />
     </div>
     <div>
       test label
-    </div>
-  </label>
-</div>
-`;
-
-exports[`RadioButton renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 100%;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-}
-
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
-.c3 {
-  opacity: 0;
-  -moz-appearance: none;
-  width: 0;
-  height: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    border: solid 2px rgba(0,0,0,0.15);
-  }
-}
-
-<div
-  className="c0"
->
-  <label
-    className="c1"
-    onClick={[Function]}
-  >
-    <div
-      className="c2"
-    >
-      <input
-        className="c3"
-        name="test empty"
-        type="radio"
-      />
-      <div
-        className="c4"
-      />
-    </div>
-  </label>
-  <label
-    className="c1"
-    htmlFor="test id"
-    onClick={[Function]}
-  >
-    <div
-      className="c2"
-    >
-      <input
-        className="c3"
-        id="test id"
-        name="test name"
-        type="radio"
-      />
-      <div
-        className="c4"
-      />
     </div>
   </label>
 </div>

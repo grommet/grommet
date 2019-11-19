@@ -683,15 +683,10 @@ exports[`Button focus 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     Test

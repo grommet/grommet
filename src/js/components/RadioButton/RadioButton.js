@@ -18,6 +18,7 @@ import {
 
 const RadioButton = ({
   checked,
+  children,
   disabled,
   focus,
   forwardRef,
@@ -64,31 +65,35 @@ const RadioButton = ({
             onChange,
           })}
         />
-        <StyledRadioButtonBox
-          focus={focus}
-          as={Box}
-          align="center"
-          justify="center"
-          width={theme.radioButton.size}
-          height={theme.radioButton.size}
-          border={{
-            size: theme.radioButton.border.width,
-            color: borderColor,
-          }}
-          round={theme.radioButton.check.radius}
-        >
-          {checked &&
-            (Icon ? (
-              <Icon as={StyledRadioButtonIcon} />
-            ) : (
-              <StyledRadioButtonIcon
-                viewBox="0 0 24 24"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx={12} cy={12} r={6} />
-              </StyledRadioButtonIcon>
-            ))}
-        </StyledRadioButtonBox>
+        {children ? (
+          children({ checked })
+        ) : (
+          <StyledRadioButtonBox
+            focus={focus}
+            as={Box}
+            align="center"
+            justify="center"
+            width={theme.radioButton.size}
+            height={theme.radioButton.size}
+            border={{
+              size: theme.radioButton.border.width,
+              color: borderColor,
+            }}
+            round={theme.radioButton.check.radius}
+          >
+            {checked &&
+              (Icon ? (
+                <Icon as={StyledRadioButtonIcon} />
+              ) : (
+                <StyledRadioButtonIcon
+                  viewBox="0 0 24 24"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <circle cx={12} cy={12} r={6} />
+                </StyledRadioButtonIcon>
+              ))}
+          </StyledRadioButtonBox>
+        )}
       </StyledRadioButton>
       {normalizedLabel}
     </StyledRadioButtonContainer>

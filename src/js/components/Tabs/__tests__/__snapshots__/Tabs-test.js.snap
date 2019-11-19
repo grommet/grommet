@@ -41,7 +41,7 @@ exports[`Tabs Tab 1`] = `
   flex-wrap: wrap;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,14 +123,14 @@ exports[`Tabs Tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.c4:hover {
+.c5:hover {
   color: #000000;
 }
 
@@ -139,27 +139,27 @@ exports[`Tabs Tab 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding-bottom: 3px;
   }
 }
@@ -194,11 +194,11 @@ exports[`Tabs Tab 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
     role="tablist"
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <button
         aria-expanded={true}
@@ -235,7 +235,7 @@ exports[`Tabs Tab 1`] = `
         type="button"
       >
         <div
-          className="c4 c7"
+          className="c7 c5"
         >
           <span
             className="c8"
@@ -297,7 +297,7 @@ exports[`Tabs change to second tab 1`] = `
   flex-wrap: wrap;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -379,14 +379,14 @@ exports[`Tabs change to second tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.c4:hover {
+.c5:hover {
   color: #000000;
 }
 
@@ -395,27 +395,27 @@ exports[`Tabs change to second tab 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding-bottom: 3px;
   }
 }
@@ -450,11 +450,11 @@ exports[`Tabs change to second tab 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
     role="tablist"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <button
         aria-expanded="true"
@@ -481,7 +481,7 @@ exports[`Tabs change to second tab 1`] = `
         type="button"
       >
         <div
-          class="c4 c7"
+          class="c7 c5"
         >
           <span
             class="c8"
@@ -507,11 +507,11 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
+    class="StyledBox-sc-13pk1d4-0 koruWX StyledTabs-a4fwxl-2 jBsJwq"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
+      class="StyledBox-sc-13pk1d4-0 gZAHKT StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH"
     >
       <button
         aria-expanded="false"
@@ -521,7 +521,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 fxGSn"
+          class="StyledBox-sc-13pk1d4-0 fxGSn StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 eotKNI"
@@ -538,7 +538,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
+          class="StyledBox-sc-13pk1d4-0 jwjmVl StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -600,7 +600,7 @@ exports[`Tabs complex title 1`] = `
   flex-wrap: wrap;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -670,14 +670,14 @@ exports[`Tabs complex title 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.c4:hover {
+.c5:hover {
   color: #000000;
 }
 
@@ -686,27 +686,27 @@ exports[`Tabs complex title 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding-bottom: 3px;
   }
 }
@@ -741,11 +741,11 @@ exports[`Tabs complex title 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
     role="tablist"
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <button
         aria-expanded={true}
@@ -780,7 +780,7 @@ exports[`Tabs complex title 1`] = `
         type="button"
       >
         <div
-          className="c4 c6"
+          className="c6 c5"
         >
           <div>
             Tab 2
@@ -840,7 +840,7 @@ exports[`Tabs no Tab 1`] = `
   flex-wrap: wrap;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -889,14 +889,14 @@ exports[`Tabs no Tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.c4:hover {
+.c5:hover {
   color: #000000;
 }
 
@@ -905,27 +905,27 @@ exports[`Tabs no Tab 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding-bottom: 3px;
   }
 }
@@ -934,11 +934,11 @@ exports[`Tabs no Tab 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
     role="tablist"
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <button
         aria-expanded={true}
@@ -1007,7 +1007,7 @@ exports[`Tabs set on hover 1`] = `
   flex-wrap: wrap;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1089,14 +1089,14 @@ exports[`Tabs set on hover 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.c4:hover {
+.c5:hover {
   color: #000000;
 }
 
@@ -1105,27 +1105,27 @@ exports[`Tabs set on hover 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding-bottom: 3px;
   }
 }
@@ -1160,11 +1160,11 @@ exports[`Tabs set on hover 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
     role="tablist"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <button
         aria-expanded="true"
@@ -1191,7 +1191,7 @@ exports[`Tabs set on hover 1`] = `
         type="button"
       >
         <div
-          class="c4 c7"
+          class="c7 c5"
         >
           <span
             class="c8"
@@ -1217,11 +1217,11 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
+    class="StyledBox-sc-13pk1d4-0 koruWX StyledTabs-a4fwxl-2 jBsJwq"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
+      class="StyledBox-sc-13pk1d4-0 gZAHKT StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH"
     >
       <button
         aria-expanded="true"
@@ -1231,7 +1231,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
+          class="StyledBox-sc-13pk1d4-0 jwjmVl StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1248,7 +1248,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 fxGSn"
+          class="StyledBox-sc-13pk1d4-0 fxGSn StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 eotKNI"
@@ -1274,11 +1274,11 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
+    class="StyledBox-sc-13pk1d4-0 koruWX StyledTabs-a4fwxl-2 jBsJwq"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
+      class="StyledBox-sc-13pk1d4-0 gZAHKT StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH"
     >
       <button
         aria-expanded="true"
@@ -1288,7 +1288,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
+          class="StyledBox-sc-13pk1d4-0 jwjmVl StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1305,7 +1305,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
+          class="StyledBox-sc-13pk1d4-0 jwjmVl StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 gFggBx"
@@ -1331,11 +1331,11 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
+    class="StyledBox-sc-13pk1d4-0 koruWX StyledTabs-a4fwxl-2 jBsJwq"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
+      class="StyledBox-sc-13pk1d4-0 gZAHKT StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH"
     >
       <button
         aria-expanded="true"
@@ -1345,7 +1345,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
+          class="StyledBox-sc-13pk1d4-0 jwjmVl StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1362,7 +1362,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
+          class="StyledBox-sc-13pk1d4-0 jwjmVl StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 gFggBx"
@@ -1388,11 +1388,11 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 koruWX"
+    class="StyledBox-sc-13pk1d4-0 koruWX StyledTabs-a4fwxl-2 jBsJwq"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZAHKT"
+      class="StyledBox-sc-13pk1d4-0 gZAHKT StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH"
     >
       <button
         aria-expanded="true"
@@ -1402,7 +1402,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 jwjmVl"
+          class="StyledBox-sc-13pk1d4-0 jwjmVl StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 ikIgfp"
@@ -1419,7 +1419,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 fxGSn"
+          class="StyledBox-sc-13pk1d4-0 fxGSn StyledTab-sc-1nnwnsb-0 dGMZCN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 eotKNI"

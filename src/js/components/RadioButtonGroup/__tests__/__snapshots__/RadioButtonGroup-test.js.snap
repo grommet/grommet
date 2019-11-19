@@ -174,7 +174,7 @@ exports[`RadioButtonGroup object options 1`] = `
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={false}
@@ -187,7 +187,7 @@ exports[`RadioButtonGroup object options 1`] = `
           value="one"
         />
         <div
-          className="c5"
+          className="c5 "
         />
       </div>
       <span>
@@ -203,7 +203,7 @@ exports[`RadioButtonGroup object options 1`] = `
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={false}
@@ -216,7 +216,7 @@ exports[`RadioButtonGroup object options 1`] = `
           value="two"
         />
         <div
-          className="c5"
+          className="c5 "
         />
       </div>
       <span>
@@ -399,7 +399,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={false}
@@ -412,7 +412,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           value="one"
         />
         <div
-          className="c5"
+          className="c5 "
         />
       </div>
     </label>
@@ -424,7 +424,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={false}
@@ -436,7 +436,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           value="two"
         />
         <div
-          className="c5"
+          className="c5 "
         />
       </div>
     </label>
@@ -616,14 +616,13 @@ exports[`RadioButtonGroup object options just value 1`] = `
 >
   <div
     className="c1"
-    value="two"
   >
     <label
       className="c2"
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={false}
@@ -635,7 +634,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
           value="one"
         />
         <div
-          className="c5"
+          className="c5 "
         />
       </div>
     </label>
@@ -647,7 +646,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={true}
@@ -659,7 +658,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
           value="two"
         />
         <div
-          className="c7"
+          className="c7 "
         >
           <svg
             className="c8"
@@ -851,7 +850,6 @@ exports[`RadioButtonGroup string options 1`] = `
 >
   <div
     className="c1"
-    value="one"
   >
     <label
       className="c2"
@@ -859,7 +857,7 @@ exports[`RadioButtonGroup string options 1`] = `
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={true}
@@ -872,7 +870,7 @@ exports[`RadioButtonGroup string options 1`] = `
           value="one"
         />
         <div
-          className="c5"
+          className="c5 "
         >
           <svg
             className="c6"
@@ -900,7 +898,7 @@ exports[`RadioButtonGroup string options 1`] = `
       onClick={[Function]}
     >
       <div
-        className="c3"
+        className="c3 "
       >
         <input
           checked={false}
@@ -913,7 +911,7 @@ exports[`RadioButtonGroup string options 1`] = `
           value="two"
         />
         <div
-          className="c8"
+          className="c8 "
         />
       </div>
       <span>
