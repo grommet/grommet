@@ -185,22 +185,22 @@ exports[`List background array 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
     <li
-      className="c4"
+      className="c4 "
     >
       three
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       four
     </li>
@@ -341,12 +341,12 @@ exports[`List background string 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
@@ -431,12 +431,12 @@ exports[`List border boolean 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c2"
+      className="c2 "
     >
       two
     </li>
@@ -523,12 +523,12 @@ exports[`List border object 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c2"
+      className="c2 "
     >
       two
     </li>
@@ -665,12 +665,12 @@ exports[`List border side 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
@@ -807,12 +807,12 @@ exports[`List children render 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one - 0
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two - 1
     </li>
@@ -949,12 +949,12 @@ exports[`List data objects 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
@@ -1091,12 +1091,12 @@ exports[`List data strings 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
@@ -1255,12 +1255,12 @@ exports[`List itemProps 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
@@ -1279,7 +1279,7 @@ exports[`List onClickItem 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1334,32 +1334,32 @@ exports[`List onClickItem 1`] = `
   padding: 0;
 }
 
-.c2 {
+.c3 {
   cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -1405,7 +1405,7 @@ exports[`List onClickItem 1`] = `
       alpha
     </li>
     <li
-      class="c2 c4"
+      class="c4 c3"
       tabindex="-1"
     >
       beta
@@ -1423,13 +1423,13 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="List__StyledItem-sc-130gdqg-1 gWkCAS StyledBox-sc-13pk1d4-0 ZjtmW"
+      class="StyledBox-sc-13pk1d4-0 ZjtmW List__StyledItem-sc-130gdqg-1 gWkCAS"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="List__StyledItem-sc-130gdqg-1 gWkCAS StyledBox-sc-13pk1d4-0 hmRwFa"
+      class="StyledBox-sc-13pk1d4-0 hmRwFa List__StyledItem-sc-130gdqg-1 gWkCAS"
       tabindex="-1"
     >
       beta
@@ -1549,12 +1549,12 @@ exports[`List pad object 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
@@ -1669,12 +1669,12 @@ exports[`List pad string 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       one
     </li>
     <li
-      className="c3"
+      className="c3 "
     >
       two
     </li>
@@ -1817,7 +1817,7 @@ exports[`List primaryKey 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       <span
         className="c3"
@@ -1826,7 +1826,7 @@ exports[`List primaryKey 1`] = `
       </span>
     </li>
     <li
-      className="c4"
+      className="c4 "
     >
       <span
         className="c3"
@@ -2001,7 +2001,7 @@ exports[`List secondaryKey 1`] = `
     onKeyDown={[Function]}
   >
     <li
-      className="c2"
+      className="c2 "
     >
       <span
         className="c3"
@@ -2018,7 +2018,7 @@ exports[`List secondaryKey 1`] = `
       </span>
     </li>
     <li
-      className="c6"
+      className="c6 "
     >
       <span
         className="c3"
