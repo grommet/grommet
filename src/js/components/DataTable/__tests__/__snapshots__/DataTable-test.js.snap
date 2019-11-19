@@ -1352,6 +1352,25 @@ exports[`DataTable click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -1472,6 +1491,17 @@ exports[`DataTable click 1`] = `
           </span>
         </th>
       </tr>
+      <tr
+        class="c3"
+      >
+        <td
+          class="c7"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -1533,6 +1563,17 @@ exports[`DataTable click 2`] = `
             beta
           </span>
         </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 dsVlPf"
+          />
+        </td>
       </tr>
     </tbody>
   </table>
@@ -4666,6 +4707,25 @@ exports[`DataTable search 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4877,6 +4937,17 @@ exports[`DataTable search 1`] = `
           </span>
         </th>
       </tr>
+      <tr
+        class="c3"
+      >
+        <td
+          class="c10"
+        >
+          <div
+            class="c12"
+          />
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -5077,6 +5148,17 @@ exports[`DataTable search 2`] = `
           </span>
         </th>
       </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 dsVlPf"
+          />
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -5091,6 +5173,25 @@ exports[`DataTable sort 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c6 {
@@ -5315,6 +5416,17 @@ exports[`DataTable sort 1`] = `
           </span>
         </td>
       </tr>
+      <tr
+        class="c3"
+      >
+        <td
+          class="c8"
+        >
+          <div
+            class="c10"
+          />
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -5483,24 +5595,52 @@ exports[`DataTable sort 2`] = `
           </span>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
+      .c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  height: 100%;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+<tr
+        class="c0 "
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+          class="c1"
           scope="row"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 bnqisW"
+            class="c2"
           >
             two
           </span>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+          class="c1"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 fWSbXS"
+            class="c3"
           >
             2
           </span>
@@ -5555,6 +5695,17 @@ exports[`DataTable sort 2`] = `
           >
             0
           </span>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 IXbyK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 dsVlPf"
+          />
         </td>
       </tr>
     </tbody>
