@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.selectedStyle = exports.activeStyle = exports.backgroundStyle = exports.backgroundIsDark = exports.normalizeBackground = void 0;
+exports.getHoverIndicatorStyle = exports.selectedStyle = exports.activeStyle = exports.backgroundStyle = exports.backgroundIsDark = exports.normalizeBackground = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -129,3 +129,17 @@ var selectedStyle = (0, _styledComponents.css)(["", " color:", ";"], function (p
   return (0, _colors.normalizeColor)(props.theme.global.selected.color, props.theme);
 });
 exports.selectedStyle = selectedStyle;
+
+var getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicator, theme) {
+  var background;
+
+  if (hoverIndicator === true || hoverIndicator === 'background') {
+    background = theme.global.hover.background;
+  } else {
+    background = hoverIndicator;
+  }
+
+  return (0, _styledComponents.css)(["", " color:", ";"], backgroundStyle(background, theme), (0, _colors.normalizeColor)(theme.global.hover.color, theme));
+};
+
+exports.getHoverIndicatorStyle = getHoverIndicatorStyle;

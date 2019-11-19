@@ -46,15 +46,7 @@ var RadioButton = function RadioButton(_ref) {
     borderColor = (0, _utils.normalizeColor)(theme.radioButton.color || 'control', theme);
   }
 
-  return _react["default"].createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({
-    as: function as(props) {
-      return _react["default"].createElement(_Box.Box, _extends({
-        as: "label"
-      }, props));
-    },
-    direction: "row",
-    align: "center"
-  }, (0, _utils.removeUndefined)({
+  return _react["default"].createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({}, (0, _utils.removeUndefined)({
     htmlFor: id,
     disabled: disabled
   }), {

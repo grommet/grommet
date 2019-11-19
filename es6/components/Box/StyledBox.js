@@ -2,7 +2,7 @@ var _FLEX_MAP;
 
 import styled, { css, keyframes } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, genericStyles, overflowStyle } from '../../utils';
+import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle } from '../../utils';
 var ALIGN_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -346,6 +346,9 @@ var animationInitialStyle = function animationInitialStyle(item) {
 var animationStyle = css(["", ";"], function (props) {
   return css(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 });
+var interactiveStyle = css(["cursor:pointer;&:hover{", "}"], function (props) {
+  return props.hoverIndicator && getHoverIndicatorStyle(props.hoverIndicator, props.theme);
+});
 
 var getSize = function getSize(props, size) {
   return props.theme.global.size[size] || size;
@@ -371,7 +374,7 @@ var widthStyle = css(["width:", ";"], function (props) {
 var StyledBox = styled.div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
-})(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, genericStyles, function (props) {
   return props.align && alignStyle;
@@ -409,6 +412,10 @@ var StyledBox = styled.div.withConfig({
   return props.elevationProp && elevationStyle;
 }, function (props) {
   return props.animation && animationStyle;
+}, function (props) {
+  return props.onClick && interactiveStyle;
+}, function (props) {
+  return props.onClick && props.focus && focusStyle;
 }, function (props) {
   return props.theme.box && props.theme.box.extend;
 });

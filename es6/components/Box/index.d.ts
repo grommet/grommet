@@ -37,7 +37,9 @@ export interface BoxProps {
   fill?: FillType;
   gap?: GapType;
   height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string | {max?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string,min?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string};
+  hoverIndicator?: BackgroundType | boolean;
   justify?: "around" | "between" | "center" | "end" | "evenly" | "start" | "stretch";
+  onClick?: ((...args: any[]) => any);
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;
   pad?: PadType;
   responsive?: boolean;

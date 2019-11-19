@@ -29,20 +29,8 @@ function getHoverColor(props) {
   return (0, _utils.normalizeColor)(props.theme.button.border.color || 'control', props.theme);
 }
 
-function getHoverIndicatorStyle(hoverIndicator, theme) {
-  var background;
-
-  if (hoverIndicator === true || hoverIndicator === 'background') {
-    background = theme.global.hover.background;
-  } else {
-    background = hoverIndicator;
-  }
-
-  return (0, _styledComponents.css)(["", " color:", ";"], (0, _utils.backgroundStyle)(background, theme), (0, _utils.normalizeColor)(theme.global.hover.color, theme));
-}
-
 var hoverStyle = (0, _styledComponents.css)(["&:hover{", " ", ";}"], function (props) {
-  return props.hoverIndicator && getHoverIndicatorStyle(props.hoverIndicator, props.theme);
+  return props.hoverIndicator && (0, _utils.getHoverIndicatorStyle)(props.hoverIndicator, props.theme);
 }, function (props) {
   return !props.plain && (0, _styledComponents.css)(["box-shadow:0px 0px 0px 2px ", ";"], getHoverColor(props));
 });

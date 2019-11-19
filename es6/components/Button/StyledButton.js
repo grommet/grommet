@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { activeStyle, backgroundStyle, disabledStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { activeStyle, backgroundStyle, disabledStyle, focusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var basicStyle = function basicStyle(props) {
@@ -16,18 +16,6 @@ function getHoverColor(props) {
   }
 
   return normalizeColor(props.theme.button.border.color || 'control', props.theme);
-}
-
-function getHoverIndicatorStyle(hoverIndicator, theme) {
-  var background;
-
-  if (hoverIndicator === true || hoverIndicator === 'background') {
-    background = theme.global.hover.background;
-  } else {
-    background = hoverIndicator;
-  }
-
-  return css(["", " color:", ";"], backgroundStyle(background, theme), normalizeColor(theme.global.hover.color, theme));
 }
 
 var hoverStyle = css(["&:hover{", " ", ";}"], function (props) {

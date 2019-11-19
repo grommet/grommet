@@ -1,9 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Box } from '..';
 describe('Box', function () {
+  afterEach(cleanup);
   test('default', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Box, null)));
     var tree = component.toJSON();
@@ -578,5 +580,18 @@ describe('Box', function () {
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  test('onClick', function () {
+    var onClick = jest.fn();
+
+    var _render = render(React.createElement(Grommet, null, React.createElement(Box, {
+      onClick: onClick
+    }, "test box"))),
+        getByText = _render.getByText,
+        container = _render.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('test box'));
+    expect(onClick).toBeCalled();
   });
 });

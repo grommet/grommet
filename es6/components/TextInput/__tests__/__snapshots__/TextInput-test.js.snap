@@ -137,13 +137,11 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -156,13 +154,11 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -174,7 +170,6 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -254,24 +249,6 @@ exports[`TextInput close suggestion drop 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -338,7 +315,7 @@ exports[`TextInput close suggestion drop 2`] = `
 `;
 
 exports[`TextInput close suggestion drop 3`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -346,37 +323,17 @@ exports[`TextInput close suggestion drop 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -525,13 +482,11 @@ exports[`TextInput complex suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -544,13 +499,11 @@ exports[`TextInput complex suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -620,18 +573,6 @@ exports[`TextInput complex suggestions 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
     display: -webkit-box;
@@ -685,7 +626,7 @@ exports[`TextInput complex suggestions 2`] = `
 `;
 
 exports[`TextInput complex suggestions 3`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -693,37 +634,17 @@ exports[`TextInput complex suggestions 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -931,13 +852,11 @@ exports[`TextInput large drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -950,13 +869,11 @@ exports[`TextInput large drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -968,7 +885,6 @@ exports[`TextInput large drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -1048,24 +964,6 @@ exports[`TextInput large drop height 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -1132,7 +1030,7 @@ exports[`TextInput large drop height 1`] = `
 `;
 
 exports[`TextInput large drop height 2`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1140,37 +1038,17 @@ exports[`TextInput large drop height 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -1246,13 +1124,11 @@ exports[`TextInput medium drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -1265,13 +1141,11 @@ exports[`TextInput medium drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -1283,7 +1157,6 @@ exports[`TextInput medium drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -1363,24 +1236,6 @@ exports[`TextInput medium drop height 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -1447,7 +1302,7 @@ exports[`TextInput medium drop height 1`] = `
 `;
 
 exports[`TextInput medium drop height 2`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1455,37 +1310,17 @@ exports[`TextInput medium drop height 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -1702,13 +1537,11 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -1721,13 +1554,11 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -1739,7 +1570,6 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -1819,24 +1649,6 @@ exports[`TextInput select suggestion 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -1903,7 +1715,7 @@ exports[`TextInput select suggestion 2`] = `
 `;
 
 exports[`TextInput select suggestion 3`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1911,37 +1723,17 @@ exports[`TextInput select suggestion 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -2018,13 +1810,11 @@ exports[`TextInput small drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -2037,13 +1827,11 @@ exports[`TextInput small drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2055,7 +1843,6 @@ exports[`TextInput small drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2135,24 +1922,6 @@ exports[`TextInput small drop height 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -2219,7 +1988,7 @@ exports[`TextInput small drop height 1`] = `
 `;
 
 exports[`TextInput small drop height 2`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2227,37 +1996,17 @@ exports[`TextInput small drop height 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -2379,13 +2128,11 @@ exports[`TextInput suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -2398,13 +2145,11 @@ exports[`TextInput suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2416,7 +2161,6 @@ exports[`TextInput suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2496,24 +2240,6 @@ exports[`TextInput suggestions 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c6 {
     padding: 6px;
   }
@@ -2580,7 +2306,7 @@ exports[`TextInput suggestions 2`] = `
 `;
 
 exports[`TextInput suggestions 3`] = `
-".iNPLOO {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2588,37 +2314,17 @@ exports[`TextInput suggestions 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jpkxgh {
+  .jaMGoX {
     padding: 6px;
   }
 }

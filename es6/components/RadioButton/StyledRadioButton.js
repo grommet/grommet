@@ -5,7 +5,7 @@ var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
 var StyledRadioButtonContainer = styled.label.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonContainer",
   componentId: "g1f6ld-0"
-})(["user-select:none;", " ", ":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}", ";"], function (props) {
+})(["display:flex;flex-direction:row;align-items:center;user-select:none;", " ", ":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}", ";"], function (props) {
   return props.disabled && disabledStyle;
 }, function (props) {
   return !props.disabled && 'cursor: pointer;';

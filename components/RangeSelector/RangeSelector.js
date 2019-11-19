@@ -235,6 +235,7 @@ function (_Component) {
       direction: direction === 'vertical' ? 'column' : 'row',
       fill: fill
     }, rest, {
+      tabIndex: "-1",
       onClick: onChange ? this.onClick : undefined
     }), _react["default"].createElement(_Box.Box, {
       style: {

@@ -2,35 +2,70 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { Children, useContext } from 'react';
-import { compose } from 'recompose';
-import { withForwardRef, withTheme } from '../hocs';
-import { ThemeContext } from '../../contexts';
+import React, { Children, forwardRef, useContext, useMemo, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
+import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
-
-var Box = function Box(_ref) {
+var Box = forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       background = _ref.background,
       children = _ref.children,
-      direction = _ref.direction,
+      _ref$direction = _ref.direction,
+      direction = _ref$direction === void 0 ? 'column' : _ref$direction,
       elevation = _ref.elevation,
       fill = _ref.fill,
-      forwardRef = _ref.forwardRef,
       gap = _ref.gap,
+      _onBlur = _ref.onBlur,
+      onClick = _ref.onClick,
+      _onFocus = _ref.onFocus,
       overflow = _ref.overflow,
-      responsive = _ref.responsive,
+      _ref$responsive = _ref.responsive,
+      responsive = _ref$responsive === void 0 ? true : _ref$responsive,
       tag = _ref.tag,
       as = _ref.as,
       wrap = _ref.wrap,
       width = _ref.width,
       height = _ref.height,
-      propsTheme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "background", "children", "direction", "elevation", "fill", "forwardRef", "gap", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "theme"]);
+      tabIndex = _ref.tabIndex,
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "background", "children", "direction", "elevation", "fill", "gap", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"]);
 
-  var contextTheme = useContext(ThemeContext);
-  var theme = contextTheme || propsTheme;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var focusable = useMemo(function () {
+    return onClick && !(tabIndex < 0);
+  }, [onClick, tabIndex]);
+
+  var _useState = useState(),
+      focus = _useState[0],
+      setFocus = _useState[1];
+
+  var clickProps = useMemo(function () {
+    if (focusable) {
+      return {
+        onClick: onClick,
+        onFocus: function onFocus(event) {
+          setFocus(true);
+          if (_onFocus) _onFocus(event);
+        },
+        onBlur: function onBlur(event) {
+          setFocus(false);
+          if (_onBlur) _onBlur(event);
+        }
+      };
+    }
+
+    var result = {};
+    if (_onBlur) result.onBlur = _onBlur;
+    if (onClick) result.onClick = onClick;
+    if (_onFocus) result.onFocus = _onFocus;
+    return result;
+  }, [focusable, onClick, _onFocus, _onBlur]);
+  var adjustedTabIndex = useMemo(function () {
+    if (tabIndex !== undefined) return tabIndex;
+    if (focusable) return 0;
+    return undefined;
+  }, [focusable, tabIndex]);
   var contents = children;
 
   if (gap) {
@@ -59,18 +94,27 @@ var Box = function Box(_ref) {
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
     background: background,
-    ref: forwardRef,
+    ref: ref,
     directionProp: direction,
     elevationProp: elevation,
     fillProp: fill,
+    focus: focus,
     overflowProp: overflow,
     wrapProp: wrap,
     widthProp: width,
     heightProp: height,
-    responsive: responsive
-  }, rest), contents); // When a Box changes the darkness, it sets darkChanged so that StyledBox
+    responsive: responsive,
+    tabIndex: adjustedTabIndex
+  }, clickProps, rest), contents);
+
+  if (onClick) {
+    content = React.createElement(Keyboard, {
+      onEnter: onClick
+    }, content);
+  } // When a Box changes the darkness, it sets darkChanged so that StyledBox
   // can know what the underlying darkness is when deciding which elevation
   // to show.
+
 
   if (background || theme.darkChanged) {
     var dark = backgroundIsDark(background, theme);
@@ -88,20 +132,13 @@ var Box = function Box(_ref) {
   }
 
   return content;
-};
-
-Box.defaultProps = {
-  direction: 'column',
-  margin: 'none',
-  pad: 'none',
-  responsive: true
-};
-Object.setPrototypeOf(Box.defaultProps, defaultProps);
+});
+Box.displayName = 'Box';
 var BoxDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
 }
 
-var BoxWrapper = compose(withTheme, withForwardRef)(BoxDoc || Box);
+var BoxWrapper = BoxDoc || Box;
 export { BoxWrapper as Box };

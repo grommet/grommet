@@ -358,6 +358,9 @@ var animationInitialStyle = function animationInitialStyle(item) {
 var animationStyle = (0, _styledComponents.css)(["", ";"], function (props) {
   return (0, _styledComponents.css)(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 });
+var interactiveStyle = (0, _styledComponents.css)(["cursor:pointer;&:hover{", "}"], function (props) {
+  return props.hoverIndicator && (0, _utils.getHoverIndicatorStyle)(props.hoverIndicator, props.theme);
+});
 
 var getSize = function getSize(props, size) {
   return props.theme.global.size[size] || size;
@@ -383,7 +386,7 @@ var widthStyle = (0, _styledComponents.css)(["width:", ";"], function (props) {
 var StyledBox = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
-})(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, _utils.genericStyles, function (props) {
   return props.align && alignStyle;
@@ -421,6 +424,10 @@ var StyledBox = _styledComponents["default"].div.withConfig({
   return props.elevationProp && elevationStyle;
 }, function (props) {
   return props.animation && animationStyle;
+}, function (props) {
+  return props.onClick && interactiveStyle;
+}, function (props) {
+  return props.onClick && props.focus && _utils.focusStyle;
 }, function (props) {
   return props.theme.box && props.theme.box.extend;
 });

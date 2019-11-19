@@ -111,3 +111,14 @@ export var selectedStyle = css(["", " color:", ";"], function (props) {
 }, function (props) {
   return normalizeColor(props.theme.global.selected.color, props.theme);
 });
+export var getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicator, theme) {
+  var background;
+
+  if (hoverIndicator === true || hoverIndicator === 'background') {
+    background = theme.global.hover.background;
+  } else {
+    background = hoverIndicator;
+  }
+
+  return css(["", " color:", ";"], backgroundStyle(background, theme), normalizeColor(theme.global.hover.color, theme));
+};

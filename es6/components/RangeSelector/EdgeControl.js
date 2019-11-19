@@ -95,6 +95,7 @@ var EdgeControl = function EdgeControl(_ref) {
       minHeight: size,
       zIndex: 10
     },
+    tabIndex: 0,
     onFocus: function onFocus() {
       return setFocused(true);
     },

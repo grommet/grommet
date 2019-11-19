@@ -4,6 +4,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
+var _react2 = require("@testing-library/react");
+
 require("jest-styled-components");
 
 var _Grommet = require("../../Grommet");
@@ -13,6 +15,7 @@ var _ = require("..");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Box', function () {
+  afterEach(_react2.cleanup);
   test('default', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Box, null)));
 
@@ -612,5 +615,20 @@ describe('Box', function () {
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  test('onClick', function () {
+    var onClick = jest.fn();
+
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Box, {
+      onClick: onClick
+    }, "test box"))),
+        getByText = _render.getByText,
+        container = _render.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.click(getByText('test box'));
+
+    expect(onClick).toBeCalled();
   });
 });

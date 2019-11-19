@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
+import { getAvailableAtBadge, genericProps, hoverIndicatorPropType, themeDocUtils } from '../../utils';
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 var ANIMATION_TYPE = PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
@@ -55,7 +55,9 @@ export var doc = function doc(Box) {
       min: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]),
       max: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string])
     })]).description('A fixed height.'),
+    hoverIndicator: hoverIndicatorPropType.description("When 'onClick' has been specified, the hover indicator to apply\n        when the user is mousing over the box.").defaultValue(false),
     justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']).description('How to align the contents along the main axis.').defaultValue('stretch'),
+    onClick: PropTypes.func.description("Click handler. Setting this property adds additional attributes to\n      the DOM for accessibility."),
     overflow: overflowPropType.description('box overflow.'),
     pad: PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(PAD_SIZES)), PropTypes.shape({
       bottom: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
@@ -100,6 +102,21 @@ export var themeDoc = _extends({
     description: 'The color of the border',
     type: 'string | { dark: string, light: string }',
     defaultValue: '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }'
+  },
+  'global.hover.background.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'active'
+  },
+  'global.hover.background.opacity': {
+    description: 'The opacity of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'medium'
+  },
+  'global.hover.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: "white", light: "black" }'
   },
   'global.opacity.medium': {
     description: 'The value used when background opacity is set to true.',
