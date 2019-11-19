@@ -111,6 +111,7 @@ exports[`SkipLink basic 3`] = `
     />
     Main Content
     <input
+      tabindex="-1"
       type="text"
       value="main content"
     />
@@ -123,6 +124,7 @@ exports[`SkipLink basic 3`] = `
       tabindex="-1"
     />
     <input
+      tabindex="-1"
       type="text"
       value="footer"
     />
