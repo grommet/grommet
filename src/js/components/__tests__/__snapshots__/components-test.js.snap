@@ -232,7 +232,6 @@ stretch",
         "name": "gridArea",
       },
       Object {
-        "defaultValue": "none",
         "description": "The amount of margin around the component. An object can
     be specified to distinguish horizontal margin, vertical margin, and
     margin on a particular side.",
@@ -604,6 +603,41 @@ string
         "name": "height",
       },
       Object {
+        "defaultValue": false,
+        "description": "The hover indicator to apply when the user is mousing over the
+button. An object can be also be specified for color index support:
+{background: 'neutral-2'}. This prop is meant to be used only
+with plain Buttons.",
+        "format": "boolean
+string
+background
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string
+}",
+        "name": "hoverIndicator",
+      },
+      Object {
         "defaultValue": "stretch",
         "description": "How to align the contents along the main axis.",
         "format": "around
@@ -614,6 +648,12 @@ evenly
 start
 stretch",
         "name": "justify",
+      },
+      Object {
+        "description": "Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.",
+        "format": "function",
+        "name": "onClick",
       },
       Object {
         "description": "box overflow.",
@@ -3141,7 +3181,7 @@ vertical",
           "lower": "Lower Bounds",
           "upper": "Upper Bounds",
         },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages used by screen readers for accessibility.",
         "format": "{
   lower: string,
   upper: string
