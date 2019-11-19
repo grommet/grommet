@@ -779,6 +779,36 @@ Defaults to
 { dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }
 ```
 
+**global.hover.background.color**
+
+The color of the default background when hovering Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+active
+```
+
+**global.hover.background.opacity**
+
+The opacity of the default background when hovering Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+medium
+```
+
+**global.hover.color**
+
+The color of the default background when hovering Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: "white", light: "black" }
+```
+
 **global.opacity.medium**
 
 The value used when background opacity is set to true. Expects `number`.

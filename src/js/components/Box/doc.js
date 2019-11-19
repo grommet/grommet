@@ -447,6 +447,21 @@ export const themeDoc = {
     defaultValue:
       '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }',
   },
+  'global.hover.background.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'active',
+  },
+  'global.hover.background.opacity': {
+    description: 'The opacity of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'medium',
+  },
+  'global.hover.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: "white", light: "black" }',
+  },
   'global.opacity.medium': {
     description: 'The value used when background opacity is set to true.',
     type: 'number',
