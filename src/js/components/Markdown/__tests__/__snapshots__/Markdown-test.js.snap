@@ -53,46 +53,11 @@ exports[`Markdown renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c6 {
@@ -118,7 +83,12 @@ exports[`Markdown renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-  vertical-align: bottom;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c11 {
@@ -127,6 +97,11 @@ exports[`Markdown renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -168,52 +143,6 @@ exports[`Markdown renders 1`] = `
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding-top: 3px;
-    padding-bottom: 3px;
   }
 }
 
@@ -336,7 +265,7 @@ exports[`Markdown renders 1`] = `
             className="c11"
           >
             <div
-              className="c12"
+              className="c10"
               style={Object {}}
             >
               <em>
@@ -348,7 +277,7 @@ exports[`Markdown renders 1`] = `
             className="c11"
           >
             <div
-              className="c12"
+              className="c10"
               style={Object {}}
             >
               <code>
@@ -360,7 +289,7 @@ exports[`Markdown renders 1`] = `
             className="c11"
           >
             <div
-              className="c12"
+              className="c10"
               style={Object {}}
             >
               <strong>
@@ -376,7 +305,7 @@ exports[`Markdown renders 1`] = `
             className="c11"
           >
             <div
-              className="c12"
+              className="c10"
               style={Object {}}
             >
               1
@@ -386,7 +315,7 @@ exports[`Markdown renders 1`] = `
             className="c11"
           >
             <div
-              className="c12"
+              className="c10"
               style={Object {}}
             >
               2
@@ -396,7 +325,7 @@ exports[`Markdown renders 1`] = `
             className="c11"
           >
             <div
-              className="c12"
+              className="c10"
               style={Object {}}
             >
               3

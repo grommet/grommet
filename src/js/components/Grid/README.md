@@ -18,7 +18,8 @@ import { Grid } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -48,8 +49,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -139,7 +140,9 @@ stretch
 
 **areas**
 
-Area names and column,row coordinates.
+Grid areas.
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.
 
 ```
 [{
@@ -147,6 +150,7 @@ Area names and column,row coordinates.
   start: [number],
   end: [number]
 }]
+[[string]]
 ```
 
 **columns**
@@ -244,21 +248,30 @@ boolean
 Gap sizes between rows and/or columns.
 
 ```
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 none
 {
   row: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string,
   column: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string
 }

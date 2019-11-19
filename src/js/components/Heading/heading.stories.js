@@ -76,4 +76,4 @@ const CustomHeading = () => (
 storiesOf('Heading', module)
   .add('All', () => <All />)
   .add('Color', () => <Color />)
-  .add('Custom Heading', () => <CustomHeading />);
+  .add('Custom', () => <CustomHeading />);

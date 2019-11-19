@@ -64,6 +64,92 @@ test('renders htmlFor', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('renders custom margin', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField margin="medium" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('forces empty margin', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField margin="none" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('renders pad', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField pad />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('renders abut correctly', () => {
+  const component = renderer.create(
+    <Grommet
+      theme={{
+        formField: {
+          border: {
+            color: 'border',
+            error: {
+              color: {
+                dark: 'white',
+                light: 'status-critical',
+              },
+            },
+            size: 'large',
+            position: 'outer',
+            side: 'all',
+          },
+          margin: { bottom: 'small' },
+        },
+      }}
+    >
+      <FormField htmlFor="test-id" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('renders abut with forced margin', () => {
+  const component = renderer.create(
+    <Grommet
+      theme={{
+        formField: {
+          border: {
+            color: 'border',
+            error: {
+              color: {
+                dark: 'white',
+                light: 'status-critical',
+              },
+            },
+            size: 'large',
+            position: 'outer',
+            side: 'all',
+          },
+          margin: { bottom: 'small' },
+        },
+      }}
+    >
+      <FormField margin="medium" htmlFor="test-id" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('renders custom formfield', () => {
   const component = renderer.create(
     <Grommet>

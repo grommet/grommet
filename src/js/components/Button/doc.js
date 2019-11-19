@@ -4,6 +4,7 @@ import {
   colorPropType,
   genericProps,
   getAvailableAtBadge,
+  hoverIndicatorPropType,
   themeDocUtils,
 } from '../../utils';
 
@@ -18,7 +19,7 @@ export const doc = Button => {
     )
     .usage(
       `import { Button } from 'grommet';
-<Button primary={true} label='Label' />`,
+<Button primary label='Label' />`,
     )
     .intrinsicElement('button');
 
@@ -28,27 +29,24 @@ export const doc = Button => {
       .description('Whether the button is active.')
       .defaultValue(false),
     color: colorPropType.description(
-      'Fill color for primary, border color otherwise.',
+      'Fill color for primary, label color for plain, border color otherwise.',
     ),
     disabled: PropTypes.bool
       .description('Whether the button is disabled.')
       .defaultValue(false),
-    fill: PropTypes.bool
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ])
       .description(
-        'Whether the button expands to fill all of the available width and height.',
+        `Whether the button expands to fill all of the available width and/or 
+        height.`,
       )
       .defaultValue(false),
     focusIndicator: PropTypes.bool
       .description("Whether when 'plain' it should receive a focus outline.")
       .defaultValue(true),
-    hoverIndicator: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.string,
-      PropTypes.oneOf(['background']),
-      PropTypes.shape({
-        background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-      }),
-    ])
+    hoverIndicator: hoverIndicatorPropType
       .description(
         `The hover indicator to apply when the user is mousing over the
 button. An object can be also be specified for color index support:
@@ -59,7 +57,26 @@ with plain Buttons.`,
     href: PropTypes.string.description(
       'If specified, the button will behave like an anchor tag.',
     ),
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description(
+      `Specifies where to display the URL defined in the href property.`,
+    ),
     icon: PropTypes.element.description('Icon element to place in the button.'),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'none',
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
+      PropTypes.string,
+    ])
+      .description(
+        `The amount of spacing between icon and label in the button.`,
+      )
+      .defaultValue('small'),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
@@ -67,14 +84,16 @@ causes the Button to be disabled.`,
     ),
     plain: PropTypes.bool
       .description(
-        `Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
-The plain button has no border and unless the icon prop exist it has no pad as well.`,
+        `Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
+The plain button has no border and unless the icon prop exist it has no pad as 
+well.`,
       )
       .defaultValue(false),
     primary: PropTypes.bool
       .description(
-        'Whether this is a primary button. There should be at most one per page or screen.',
+        `Whether this is a primary button. There should be at most one per page
+         or screen.`,
       )
       .defaultValue(false),
     reverse: PropTypes.bool
@@ -85,7 +104,8 @@ end of the anchor.`,
       .defaultValue(false),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
-        'The type of button. Set the type to submit for the default button on forms.',
+        `The type of button. Set the type to submit for the default button on 
+        forms.`,
       )
       .defaultValue('button'),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
@@ -97,14 +117,34 @@ end of the anchor.`,
 };
 
 export const themeDoc = {
+  'global.active.background.color': {
+    description: 'The background color when using active prop.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'active',
+  },
+  'global.active.background.opacity': {
+    description: 'The value used for active button background opacity.',
+    type: 'number | string',
+    defaultValue: 'medium',
+  },
+  'global.active.color': {
+    description: 'The text color when using active prop.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
+  'global.hover.background': {
+    description: 'The background style when hovering.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
   'global.hover.color': {
-    description: 'The background color when hovering.',
-    type: 'string',
+    description: 'The text color when hovering.',
+    type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
   'global.edgeSize.small': {
     description: 'The padding around an icon-only button.',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
     defaultValue: '12px',
   },
   'global.colors.control': {

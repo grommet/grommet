@@ -45,6 +45,7 @@ class SelectContainer extends Component {
     searchPlaceholder: undefined,
     selected: undefined,
     value: '',
+    replace: true,
   };
 
   optionRefs = {};
@@ -87,8 +88,8 @@ class SelectContainer extends Component {
   componentDidMount() {
     const { onSearch } = this.props;
     const { activeIndex } = this.state;
-    // timeout need to send the operation through event loop and allow time to the portal
-    // to be available
+    // timeout need to send the operation through event loop and allow
+    // time to the portal to be available
     setTimeout(() => {
       const optionsNode = this.optionsRef.current;
       if (onSearch) {
@@ -128,7 +129,8 @@ class SelectContainer extends Component {
     );
   };
 
-  // wait a debounceDelay of idle time in ms, before notifying that the search changed.
+  // wait a debounceDelay of idle time in ms, before notifying that the search
+  // changed.
   // the debounceDelay timer starts to count when the user stopped typing
   onSearch = debounce(search => {
     const { onSearch } = this.props;
@@ -346,16 +348,22 @@ class SelectContainer extends Component {
       dropHeight,
       emptySearchMessage,
       id,
+      onMore,
       onKeyDown,
       onSearch,
       options,
       searchPlaceholder,
       theme,
+      replace,
     } = this.props;
     const { activeIndex, search } = this.state;
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
+    const selectOptionsStyle = {
+      ...theme.select.options.box,
+      ...theme.select.options.container,
+    };
 
     return (
       <Keyboard
@@ -390,7 +398,12 @@ class SelectContainer extends Component {
             overflow="auto"
           >
             {options.length > 0 ? (
-              <InfiniteScroll items={options} step={theme.select.step} replace>
+              <InfiniteScroll
+                items={options}
+                step={theme.select.step}
+                onMore={onMore}
+                replace={replace}
+              >
                 {(option, index) => {
                   const isDisabled = this.isDisabled(index);
                   const isSelected = this.isSelected(index);
@@ -421,7 +434,7 @@ class SelectContainer extends Component {
                         })
                       ) : (
                         <OptionBox
-                          {...theme.select.options.box}
+                          {...selectOptionsStyle}
                           selected={isSelected}
                         >
                           <Text {...theme.select.options.text}>
@@ -439,7 +452,7 @@ class SelectContainer extends Component {
                 disabled
                 option={emptySearchMessage}
               >
-                <OptionBox {...theme.select.options.box}>
+                <OptionBox {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
                     {emptySearchMessage}
                   </Text>

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, marginProp } from '../../utils';
 
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
@@ -17,8 +17,16 @@ export const doc = FormField => {
     .intrinsicElement('div');
 
   DocumentedFormField.propTypes = {
-    component: PropTypes.func.description(
-      `The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.`,
+    component: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.object,
+    ]).description(
+      `The component to insert in the FormField. Grommet will add update the 
+      form values when this field changes. Any additional properties 
+      (such as initial value) you pass to FormField will be forwarded to this
+      component. The component may be custom as long it supports the properties
+      of name, value, onChange (event => {}), while event has either event.value
+      or event.target.value.`,
     ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any error text describing issues with the field',
@@ -36,6 +44,7 @@ export const doc = FormField => {
       `The name of the value data when in a Form and the name of
       the input field.`,
     ),
+    margin: marginProp,
     pad: PropTypes.bool.description(
       'Whether to add padding to align with the padding of TextInput.',
     ),
@@ -47,7 +56,8 @@ export const doc = FormField => {
       }),
       PropTypes.func,
     ]).description(
-      `Validation rule. Provide a regular expression or a function. If a
+      `Validation rule when used within a grommet Form. Provide a regular
+      expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -108,6 +118,12 @@ export const themeDoc = {
     description: 'The margin for the FormField help.',
     type: 'string | object',
     defaultValue: "{ left: 'small' }",
+  },
+  'formField.label': {
+    description:
+      'Any props of Text that will be applied on the FormField label.',
+    type: 'object',
+    defaultValue: 'undefined',
   },
   'formField.label.margin': {
     description: 'The margin for the FormField label.',

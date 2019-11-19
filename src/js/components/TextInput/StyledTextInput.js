@@ -24,8 +24,8 @@ const plainStyle = css`
 const StyledTextInput = styled.input`
   ${inputStyle} width: 100%;
 
-  ${props => props.size && sizeStyle(props)} ${props =>
-  props.plain && plainStyle}
+  ${props => props.size && sizeStyle(props)}
+  ${props => props.plain && plainStyle}
 
   ${placeholderStyle}
 
@@ -49,6 +49,11 @@ Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 const StyledTextInputContainer = styled.div`
   position: relative;
   width: 100%;
+
+  ${props =>
+    props.theme.textInput &&
+    props.theme.textInput.container &&
+    props.theme.textInput.container.extend};
 `;
 
 StyledTextInputContainer.defaultProps = {};

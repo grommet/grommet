@@ -7,7 +7,14 @@ import { grommet } from 'grommet/themes';
 const BarChart = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Chart type="bar" values={[[10, 20], [20, 30], [30, 15]]} />
+      <Chart
+        type="bar"
+        values={[
+          [10, 20],
+          [20, 30],
+          [30, 15],
+        ]}
+      />
     </Box>
   </Grommet>
 );
@@ -15,7 +22,7 @@ const BarChart = () => (
 const LineChart = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Chart type="line" values={[20, 30, 15]} size="290px" />
+      <Chart type="line" values={[20, 30, 15]} />
     </Box>
   </Grommet>
 );

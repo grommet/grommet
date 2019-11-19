@@ -1,13 +1,22 @@
 import * as React from "react";
+import { 
+  A11yTitleType, 
+  AlignSelfType, 
+  BasisType, 
+  GapType, 
+  GridAreaType, 
+  MarginType 
+} from "../../utils";
 
 export interface DistributionProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  basis?: BasisType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
   children?: ((...args: any[]) => any);
   fill?: boolean;
-  gap?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  gap?: GapType;
   values: {value: number, color?: string | {dark?: string,light?: string}}[];
 }
 

@@ -17,7 +17,8 @@ import { Stack } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -47,8 +48,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none

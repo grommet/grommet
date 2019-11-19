@@ -1,21 +1,23 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
+import { A11yTitleType, AlignSelfType, GridAreaType, JustifyContentType, MarginType } from "../../utils";
 
 export interface MenuProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   disabled?: boolean;
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",left?: "right" | "left",right?: "right" | "left"};
-  dropBackground?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
+  dropBackground?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean | number};
   dropTarget?: object;
   dropProps?: DropProps;
-  justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
+  gridArea?: GridAreaType;
   icon?: boolean | React.ReactNode;
   items: object[];
+  justifyContent?: JustifyContentType;
   label?: string | React.ReactNode;
+  margin?: MarginType;
   messages?: {closeMenu?: string,openMenu?: string};
+  open?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 

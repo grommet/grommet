@@ -1,15 +1,16 @@
 import * as React from "react";
+import { ElevationType, KeyboardType } from "../../utils";
 
 export interface DropProps {
   align?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
-  elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  elevation?: ElevationType;
   onClickOutside?: ((...args: any[]) => any);
-  onEsc?: ((...args: any[]) => any);
+  onEsc?: KeyboardType;
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;
   responsive?: boolean;
   restrictFocus?: boolean;
   stretch?: boolean;
-  target: object;
+  target?: object;
   plain?: boolean;
 }
 

@@ -1,5 +1,539 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Layer animation fadeIn 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: gdMPTF 0.2s ease-in-out forwards;
+  animation: gdMPTF 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="animation-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="animation-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer animation fadeIn 2`] = `""`;
+
+exports[`Layer animation false 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="animation-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="animation-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer animation false 2`] = `""`;
+
+exports[`Layer animation slide 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="animation-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="animation-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer animation slide 2`] = `""`;
+
+exports[`Layer animation true 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="animation-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="animation-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer animation true 2`] = `""`;
+
 exports[`Layer custom margin 1`] = `
 .c0 {
   font-size: 18px;
@@ -209,18 +743,81 @@ exports[`Layer dark context 1`] = `
 </div>
 `;
 
-exports[`Layer dark context 2`] = `
-"@media only screen and (max-width:768px) {
-  .iWUbCl {
-    margin: 0px;
-  }
+exports[`Layer dark context 2`] = `""`;
+
+exports[`Layer focus on layer 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
 }
 
 @media only screen and (max-width:768px) {
-  .iWUbCl {
-    padding: 0px;
+  .c0 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
   }
-}"
+}
+
+<div
+  class="c0"
+  data-testid="focus-layer-test"
+>
+  <a
+    aria-hidden="true"
+    class="c1"
+    tabindex="-1"
+  />
+  <input />
+</div>
 `;
 
 exports[`Layer full false 1`] = `
@@ -885,7 +1482,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 OHbxU"
+    class="StyledLayer__StyledContainer-rmtehz-2 bwhceh"
     id="hidden-test"
   >
     <a
@@ -1677,6 +2274,88 @@ exports[`Layer non-modal 1`] = `
 `;
 
 exports[`Layer non-modal 2`] = `""`;
+
+exports[`Layer not steal focus from an autofocus focusable element 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  data-testid="focus-layer-input-test"
+>
+  <a
+    aria-hidden="true"
+    class="c1"
+    tabindex="-1"
+  />
+  <input
+    data-testid="focus-input"
+  />
+  <button
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
 
 exports[`Layer plain 1`] = `
 .c0 {
@@ -2477,3 +3156,78 @@ exports[`Layer position top 1`] = `
 `;
 
 exports[`Layer position top 2`] = `""`;
+
+exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  data-testid="test-layer-container"
+>
+  <a
+    aria-hidden="true"
+    class="c1"
+    tabindex="-1"
+  />
+  Layer container is available
+</div>
+`;

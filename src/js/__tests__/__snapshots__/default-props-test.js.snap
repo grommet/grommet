@@ -9,7 +9,6 @@ exports[`default theme is used 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
@@ -17,19 +16,6 @@ exports[`default theme is used 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -46,7 +32,6 @@ exports[`extends default theme 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: red;
   color: #444444;
   min-width: 0;
@@ -54,19 +39,6 @@ exports[`extends default theme 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -83,7 +55,6 @@ exports[`extends default theme twice 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: red;
   color: #444444;
   min-width: 0;
@@ -91,19 +62,6 @@ exports[`extends default theme twice 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -120,7 +78,6 @@ exports[`extends default theme twice 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: blue;
   color: #444444;
   min-width: 0;
@@ -128,19 +85,6 @@ exports[`extends default theme twice 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -167,7 +111,6 @@ exports[`uses Grommet theme instead of default 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   background: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
@@ -175,11 +118,10 @@ exports[`uses Grommet theme instead of default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c0 {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
   line-height: 24px;
   background: #ffffff;
@@ -189,18 +131,6 @@ exports[`uses Grommet theme instead of default 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
 }
 
 <div

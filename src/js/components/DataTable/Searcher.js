@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import { compose } from 'recompose';
 
@@ -19,6 +19,14 @@ class Searcher extends Component {
   inputRef = React.createRef();
 
   componentDidMount() {
+    this.focusInputIfNeeded();
+  }
+
+  componentDidUpdate() {
+    this.focusInputIfNeeded();
+  }
+
+  focusInputIfNeeded() {
     /* eslint-disable-next-line react/prop-types */
     const { filtering, property } = this.props;
     if (this.inputRef.current && filtering === property) {
@@ -41,6 +49,7 @@ class Searcher extends Component {
         <Keyboard onEsc={() => onFiltering(undefined)}>
           <Box flex pad={{ horizontal: 'small' }}>
             <TextInput
+              name={`search-${property}`}
               ref={this.inputRef}
               value={filters[property]}
               onChange={event => onFilter(property, event.target.value)}
@@ -52,13 +61,19 @@ class Searcher extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         {filters[property] ? (
-          <Box flex={false} pad={{ horizontal: 'small' }}>
+          <Box
+            flex={false}
+            pad={{ horizontal: 'small' }}
+            direction="row"
+            align="center"
+          >
             <Text>{filters[property]}</Text>
           </Box>
         ) : null}
         <Button
+          a11yTitle={`focus-search-${property}`}
           icon={
             <FormSearch
               color={normalizeColor(
@@ -72,7 +87,7 @@ class Searcher extends Component {
             onFiltering(filtering === property ? undefined : property)
           }
         />
-      </Fragment>
+      </>
     );
   }
 }

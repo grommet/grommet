@@ -17,16 +17,45 @@ export const doc = Distribution => {
 
   DocumentedDistribution.propTypes = {
     ...genericProps,
+    basis: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+        'full',
+        '1/2',
+        '1/3',
+        '2/3',
+        '1/4',
+        '2/4',
+        '3/4',
+        'auto',
+      ]),
+      PropTypes.string,
+    ]).description("A fixed or relative size along its container's main axis."),
     children: PropTypes.func.description(
       'Function that will be called when each value is rendered.',
     ),
     fill: PropTypes.bool
       .description(
-        'Whether the distribution expands to fill all of the available width and height.',
+        `Whether the distribution expands to fill all of the available width 
+        and height.`,
       )
       .defaultValue(false),
     gap: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'none',
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
       PropTypes.string,
     ])
       .description('The amount of spacing between child elements.')

@@ -1,16 +1,17 @@
 import * as React from "react";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface StackProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   anchor?: "center" | "left" | "right" | "top" | "bottom" | "top-left" | "bottom-left" | "top-right" | "bottom-right";
   fill?: boolean;
+  gridArea?: GridAreaType;
   guidingChild?: number | "first" | "last";
   interactiveChild?: number | "first" | "last";
+  margin?: MarginType;
 }
 
-declare const Stack: React.ComponentClass<StackProps & JSX.IntrinsicElements['div']>;
+declare const Stack: React.FC<StackProps & JSX.IntrinsicElements['div']>;
 
 export { Stack };

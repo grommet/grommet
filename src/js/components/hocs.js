@@ -19,10 +19,13 @@ export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
 
     mouseActive = false; // not in state because it doesn't affect rendering
 
-    state = {
-      focus: false,
-      wrappedRef: React.createRef(),
-    };
+    constructor(props) {
+      super(props);
+      this.state = {
+        focus: false,
+        wrappedRef: React.createRef(),
+      };
+    }
 
     componentDidMount = () => {
       const { wrappedRef } = this.state;

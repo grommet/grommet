@@ -11,8 +11,12 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
 const TableCell = ({
+  align,
+  background,
+  border,
   children,
   colSpan,
+  pad,
   plain,
   scope,
   size,
@@ -30,12 +34,24 @@ const TableCell = ({
       } else {
         tableContextTheme = theme.table && theme.table.body;
       }
-      const boxProps = { ...rest };
-      Object.keys(boxProps).forEach(key => {
-        if (tableContextTheme[key] && boxProps[key] === undefined) {
-          delete boxProps[key];
-        }
+      // merge tabelContextTheme and rest
+      const mergedProps = { ...tableContextTheme, ...rest };
+      Object.keys(mergedProps).forEach(key => {
+        if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
       });
+      // split out background, border, and pad
+      const cellProps = {
+        align: align || mergedProps.align || undefined,
+        background: background || mergedProps.background || undefined,
+        border: border || mergedProps.border || undefined,
+        pad: pad || mergedProps.pad || undefined,
+        verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined,
+      };
+      delete mergedProps.align;
+      delete mergedProps.background;
+      delete mergedProps.border;
+      delete mergedProps.pad;
+      delete mergedProps.verticalAlign;
 
       return (
         <StyledTableCell
@@ -45,16 +61,13 @@ const TableCell = ({
           colSpan={colSpan}
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
-          verticalAlign={
-            verticalAlign ||
-            (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
-          }
-          {...(plain ? rest : {})}
+          {...(plain ? mergedProps : {})}
+          {...cellProps}
         >
-          {plain ? (
+          {plain || !Object.keys(mergedProps).length ? (
             children
           ) : (
-            <Box {...tableContextTheme} {...boxProps}>
+            <Box {...mergedProps} align={align}>
               {children}
             </Box>
           )}
@@ -69,7 +82,8 @@ Object.setPrototypeOf(TableCell.defaultProps, defaultProps);
 
 let TableCellDoc;
 if (process.env.NODE_ENV !== 'production') {
-  TableCellDoc = require('./doc').doc(TableCell); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableCellDoc = require('./doc').doc(TableCell);
 }
 const TableCellWrapper = compose(withTheme)(TableCellDoc || TableCell);
 

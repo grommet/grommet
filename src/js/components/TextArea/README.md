@@ -85,6 +85,18 @@ vertical
 horizontal
 boolean
 ```
+
+**size**
+
+The size of the TextArea.
+
+```
+small
+medium
+large
+xlarge
+string
+```
   
 ## Intrinsic element
 

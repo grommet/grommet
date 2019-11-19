@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -13,6 +14,17 @@ test('Grid renders', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('a11yTitle renders', () => {
+  const { container, getByLabelText } = render(
+    <Grommet>
+      <Grid a11yTitle="My Grid" />
+    </Grommet>,
+  );
+  const gridWithLabel = getByLabelText('My Grid');
+  expect(gridWithLabel).toBeTruthy();
+  expect(container).toMatchSnapshot();
 });
 
 test('Grid rows renders', () => {
@@ -52,6 +64,24 @@ test('Grid areas renders', () => {
           { name: 'main', start: [1, 0], end: [1, 0] },
           { name: 'sidebar', start: [1, 1], end: [1, 1] },
           { name: 'footer', start: [2, 0], end: [2, 1] },
+        ]}
+      />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Grid areas renders when given an array of string arrays', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Grid
+        rows={['xxsmall', 'medium', 'xsmall']}
+        columns={['3/4', '1/4']}
+        areas={[
+          ['header', 'header'],
+          ['sidebar', 'main'],
+          ['footer', 'footer'],
         ]}
       />
     </Grommet>,

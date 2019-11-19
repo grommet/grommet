@@ -1,18 +1,19 @@
 import * as React from "react";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 
 export interface TabsProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  a11yTitle?: A11yTitleType;
   activeIndex?: number;
+  alignSelf?: AlignSelfType;
   children: React.ReactNode;
   flex?: "grow" | "shrink" | boolean;
+  gridArea?: GridAreaType;
   justify?: "start" | "center" | "end";
+  margin?: MarginType;
   messages?: {tabContents?: string};
-  onActive?: ((...args: any[]) => any);
+  onActive?: ((index: number) => void);
 }
 
-declare const Tabs: React.ComponentClass<TabsProps & JSX.IntrinsicElements['div']>;
+declare const Tabs: React.FC<TabsProps & JSX.IntrinsicElements['div']>;
 
 export { Tabs };

@@ -160,6 +160,9 @@ into while contributing could include:
   A pre-commit hook exists which runs the test suite and aborts the commit if
   any fail. To manually run tests, you should run `yarn test`. If you need to
   update snapshots then run `yarn test-update`.
+- If you would like to use your development branch in a local project for
+  testing and debugging purposes, [this guide](https://github.com/grommet/grommet/wiki/How-to-Apply-Your-Grommet-Development-Branch-to-a-Local-Project) shares steps to
+  link local projects.
 - We are actively working on providing a seamless TypeScript experience. Don’t
   forget to update corresponding `index.d.ts` files.
 - For code syntax alignment in your pull request, use [prettier].
@@ -168,6 +171,10 @@ into while contributing could include:
 We review issues and pull requests on a weekly basis (sometimes more
 frequently). If you feel we missed yours don’t hesitate to ping us on
 [Slack][slack community]!
+
+## Testing Your Code
+
+- You can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser .
 
 ## Contributing to the Documentation
 

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Carousel basic 1`] = `
-.c11 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,30 +12,30 @@ exports[`Carousel basic 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c15 {
+.c13 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -46,25 +46,25 @@ exports[`Carousel basic 1`] = `
   stroke: #7D4CDB;
 }
 
-.c15 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -87,13 +87,11 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -105,13 +103,11 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -122,13 +118,11 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
   -webkit-animation: iyuEas 1s 0s forwards;
   animation: iyuEas 1s 0s forwards;
@@ -142,7 +136,6 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -154,25 +147,6 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding: 0px;
 }
 
 .c10 {
@@ -183,28 +157,6 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -214,10 +166,9 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
-.c13 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -225,7 +176,6 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -235,10 +185,9 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -256,15 +205,11 @@ exports[`Carousel basic 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
-  width: 100%;
   height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  line-height: 0;
 }
 
-.c14 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -284,7 +229,7 @@ exports[`Carousel basic 1`] = `
   padding: 12px;
 }
 
-.c16 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -300,15 +245,11 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  width: 100%;
   height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  line-height: 0;
 }
 
-.c16:hover {
+.c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -329,102 +270,6 @@ exports[`Carousel basic 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -475,45 +320,37 @@ exports[`Carousel basic 1`] = `
         className="c7"
         tabIndex="0"
       >
-        <div
+        <button
           className="c8"
+          disabled={true}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          type="button"
         >
-          <button
+          <svg
+            aria-label="Previous"
             className="c9"
-            disabled={true}
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            type="button"
+            viewBox="0 0 24 24"
           >
-            <div
-              className="c10"
-            >
-              <svg
-                aria-label="Previous"
-                className="c11"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  strokeWidth="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              strokeWidth="2"
+              transform="matrix(-1 0 0 1 24 0)"
+            />
+          </svg>
+        </button>
         <div
-          className="c12"
+          className="c10"
         >
           <div
-            className="c13"
+            className="c11"
           >
             <button
-              className="c14"
+              className="c12"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -523,7 +360,7 @@ exports[`Carousel basic 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                className="c15"
+                className="c13"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -535,7 +372,7 @@ exports[`Carousel basic 1`] = `
               </svg>
             </button>
             <button
-              className="c14"
+              className="c12"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -545,7 +382,7 @@ exports[`Carousel basic 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                className="c11"
+                className="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -558,45 +395,37 @@ exports[`Carousel basic 1`] = `
             </button>
           </div>
         </div>
-        <div
-          className="c8"
+        <button
+          className="c14"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          type="button"
         >
-          <button
-            className="c16"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            type="button"
+          <svg
+            aria-label="Next"
+            className="c9"
+            viewBox="0 0 24 24"
           >
-            <div
-              className="c10"
-            >
-              <svg
-                aria-label="Next"
-                className="c11"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Carousel navigate 1`] = `
-.c11 {
+exports[`Carousel basic with \`initialChild: 1\` 1`] = `
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -607,30 +436,30 @@ exports[`Carousel navigate 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c15 {
+.c13 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -641,25 +470,25 @@ exports[`Carousel navigate 1`] = `
   stroke: #7D4CDB;
 }
 
-.c15 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -682,31 +511,12 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -717,13 +527,26 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   opacity: 1;
   -webkit-animation: iyuEas 1s 0s forwards;
   animation: iyuEas 1s 0s forwards;
@@ -737,7 +560,6 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -749,25 +571,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding: 0px;
 }
 
 .c10 {
@@ -778,28 +581,6 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -809,10 +590,9 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
-.c13 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -820,7 +600,6 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -830,10 +609,9 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
-.c9 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -851,15 +629,11 @@ exports[`Carousel navigate 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
-  width: 100%;
   height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  line-height: 0;
 }
 
-.c14 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -879,7 +653,7 @@ exports[`Carousel navigate 1`] = `
   padding: 12px;
 }
 
-.c16 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -895,15 +669,435 @@ exports[`Carousel navigate 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  width: 100%;
   height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  line-height: 0;
 }
 
-.c16:hover {
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c5 {
+  position: relative;
+  display: block;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c6"
+        >
+          <img
+            className=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c7"
+        tabIndex="0"
+      >
+        <button
+          className="c8"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            className="c9"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              strokeWidth="2"
+              transform="matrix(-1 0 0 1 24 0)"
+            />
+          </svg>
+        </button>
+        <div
+          className="c10"
+        >
+          <div
+            className="c11"
+          >
+            <button
+              className="c12"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                className="c9"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
+            <button
+              className="c12"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                className="c13"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          className="c14"
+          disabled={true}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            className="c9"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: iyuEas 1s 0s forwards;
+  animation: iyuEas 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -924,102 +1118,6 @@ exports[`Carousel navigate 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -1068,46 +1166,38 @@ exports[`Carousel navigate 1`] = `
         class="c7"
         tabindex="0"
       >
-        <div
+        <button
           class="c8"
+          disabled=""
+          type="button"
         >
-          <button
+          <svg
+            aria-label="Previous"
             class="c9"
-            disabled=""
-            type="button"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Previous"
-                class="c11"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(-1 0 0 1 24 0)"
+            />
+          </svg>
+        </button>
         <div
-          class="c12"
+          class="c10"
         >
           <div
-            class="c13"
+            class="c11"
           >
             <button
-              class="c14"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="c15"
+                class="c13"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1119,12 +1209,12 @@ exports[`Carousel navigate 1`] = `
               </svg>
             </button>
             <button
-              class="c14"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="c11"
+                class="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1137,31 +1227,23 @@ exports[`Carousel navigate 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="c8"
+        <button
+          class="c14"
+          type="button"
         >
-          <button
-            class="c16"
-            type="button"
+          <svg
+            aria-label="Next"
+            class="c9"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Next"
-                class="c11"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -1180,10 +1262,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMweLo"
+          class="StyledBox-sc-13pk1d4-0 gpYXbQ"
         >
           <img
             class="StyledImage-ey4zx9-0 fmkmCl"
@@ -1196,10 +1278,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kyLFAf"
+          class="StyledBox-sc-13pk1d4-0 iGLPUa"
         >
           <img
             class="StyledImage-ey4zx9-0 fmkmCl"
@@ -1212,40 +1294,32 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        class="StyledBox-sc-13pk1d4-0 isxigL"
         tabindex="0"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        <button
+          class="StyledButton-sc-323bzc-0 hgsmht"
+          type="button"
         >
-          <button
-            class="StyledButton-sc-323bzc-0 kZFYMs"
-            type="button"
+          <svg
+            aria-label="Previous"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
-            >
-              <svg
-                aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(-1 0 0 1 24 0)"
+            />
+          </svg>
+        </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+          class="StyledBox-sc-13pk1d4-0 hVgORc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 exddWn"
+            class="StyledBox-sc-13pk1d4-0 bJWcnh"
           >
             <button
               class="StyledButton-sc-323bzc-0 lgwBfH"
@@ -1283,32 +1357,24 @@ exports[`Carousel navigate 2`] = `
             </button>
           </div>
         </div>
-        <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        <button
+          class="StyledButton-sc-323bzc-0 kbrpgv"
+          disabled=""
+          type="button"
         >
-          <button
-            class="StyledButton-sc-323bzc-0 kEACYB"
-            disabled=""
-            type="button"
+          <svg
+            aria-label="Next"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
-            >
-              <svg
-                aria-label="Next"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -1327,10 +1393,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iDtakW"
+          class="StyledBox-sc-13pk1d4-0 hokQpI"
         >
           <img
             class="StyledImage-ey4zx9-0 fmkmCl"
@@ -1343,10 +1409,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMweLo"
+          class="StyledBox-sc-13pk1d4-0 gpYXbQ"
         >
           <img
             class="StyledImage-ey4zx9-0 fmkmCl"
@@ -1359,41 +1425,33 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        class="StyledBox-sc-13pk1d4-0 isxigL"
         tabindex="0"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        <button
+          class="StyledButton-sc-323bzc-0 kbrpgv"
+          disabled=""
+          type="button"
         >
-          <button
-            class="StyledButton-sc-323bzc-0 kEACYB"
-            disabled=""
-            type="button"
+          <svg
+            aria-label="Previous"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
-            >
-              <svg
-                aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(-1 0 0 1 24 0)"
+            />
+          </svg>
+        </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+          class="StyledBox-sc-13pk1d4-0 hVgORc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 exddWn"
+            class="StyledBox-sc-13pk1d4-0 bJWcnh"
           >
             <button
               class="StyledButton-sc-323bzc-0 lgwBfH"
@@ -1431,31 +1489,23 @@ exports[`Carousel navigate 3`] = `
             </button>
           </div>
         </div>
-        <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        <button
+          class="StyledButton-sc-323bzc-0 hgsmht"
+          type="button"
         >
-          <button
-            class="StyledButton-sc-323bzc-0 kZFYMs"
-            type="button"
+          <svg
+            aria-label="Next"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
-            >
-              <svg
-                aria-label="Next"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -1463,7 +1513,7 @@ exports[`Carousel navigate 3`] = `
 `;
 
 exports[`Carousel play 1`] = `
-.c11 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1474,30 +1524,30 @@ exports[`Carousel play 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c15 {
+.c13 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1508,25 +1558,25 @@ exports[`Carousel play 1`] = `
   stroke: #7D4CDB;
 }
 
-.c15 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1549,13 +1599,11 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -1567,13 +1615,11 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -1584,13 +1630,11 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
   -webkit-animation: iyuEas 1s 0s forwards;
   animation: iyuEas 1s 0s forwards;
@@ -1604,7 +1648,6 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1616,25 +1659,6 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  padding: 0px;
 }
 
 .c10 {
@@ -1645,28 +1669,6 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1676,10 +1678,9 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
-.c13 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1687,7 +1688,6 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1697,10 +1697,9 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1718,15 +1717,11 @@ exports[`Carousel play 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
-  width: 100%;
   height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  line-height: 0;
 }
 
-.c14 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1746,7 +1741,7 @@ exports[`Carousel play 1`] = `
   padding: 12px;
 }
 
-.c16 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1762,15 +1757,11 @@ exports[`Carousel play 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  width: 100%;
   height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  line-height: 0;
 }
 
-.c16:hover {
+.c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -1791,102 +1782,6 @@ exports[`Carousel play 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c13 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -1934,46 +1829,38 @@ exports[`Carousel play 1`] = `
         class="c7"
         tabindex="0"
       >
-        <div
+        <button
           class="c8"
+          disabled=""
+          type="button"
         >
-          <button
+          <svg
+            aria-label="Previous"
             class="c9"
-            disabled=""
-            type="button"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Previous"
-                class="c11"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(-1 0 0 1 24 0)"
+            />
+          </svg>
+        </button>
         <div
-          class="c12"
+          class="c10"
         >
           <div
-            class="c13"
+            class="c11"
           >
             <button
-              class="c14"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="c15"
+                class="c13"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1985,12 +1872,12 @@ exports[`Carousel play 1`] = `
               </svg>
             </button>
             <button
-              class="c14"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="c11"
+                class="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2003,31 +1890,23 @@ exports[`Carousel play 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="c8"
+        <button
+          class="c14"
+          type="button"
         >
-          <button
-            class="c16"
-            type="button"
+          <svg
+            aria-label="Next"
+            class="c9"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="c10"
-            >
-              <svg
-                aria-label="Next"
-                class="c11"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -2045,10 +1924,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMweLo"
+          class="StyledBox-sc-13pk1d4-0 gpYXbQ"
         >
           <img
             class="StyledImage-ey4zx9-0 fmkmCl"
@@ -2061,10 +1940,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kyLFAf"
+          class="StyledBox-sc-13pk1d4-0 iGLPUa"
         >
           <img
             class="StyledImage-ey4zx9-0 fmkmCl"
@@ -2077,40 +1956,32 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        class="StyledBox-sc-13pk1d4-0 isxigL"
         tabindex="0"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        <button
+          class="StyledButton-sc-323bzc-0 hgsmht"
+          type="button"
         >
-          <button
-            class="StyledButton-sc-323bzc-0 kZFYMs"
-            type="button"
+          <svg
+            aria-label="Previous"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
-            >
-              <svg
-                aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(-1 0 0 1 24 0)"
+            />
+          </svg>
+        </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+          class="StyledBox-sc-13pk1d4-0 hVgORc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 exddWn"
+            class="StyledBox-sc-13pk1d4-0 bJWcnh"
           >
             <button
               class="StyledButton-sc-323bzc-0 lgwBfH"
@@ -2148,32 +2019,24 @@ exports[`Carousel play 2`] = `
             </button>
           </div>
         </div>
-        <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        <button
+          class="StyledButton-sc-323bzc-0 kbrpgv"
+          disabled=""
+          type="button"
         >
-          <button
-            class="StyledButton-sc-323bzc-0 kEACYB"
-            disabled=""
-            type="button"
+          <svg
+            aria-label="Next"
+            class="StyledIcon-ofa7kd-0 iOkQrb"
+            viewBox="0 0 24 24"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
-            >
-              <svg
-                aria-label="Next"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            <polyline
+              fill="none"
+              points="7 2 17 12 7 22"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>

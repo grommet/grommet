@@ -1,11 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '..';
 
 describe('Box', () => {
+  afterEach(cleanup);
+
   test('default', () => {
     const component = renderer.create(
       <Grommet>
@@ -44,8 +47,9 @@ describe('Box', () => {
   test('wrap', () => {
     const component = renderer.create(
       <Grommet>
-        <Box wrap />
-        <Box wrap={false} />
+        {[true, false, 'reverse'].map(wrap => (
+          <Box key={`${wrap}`} wrap={wrap} />
+        ))}
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -109,6 +113,7 @@ describe('Box', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  /* eslint-disable max-len */
   test('background', () => {
     const component = renderer.create(
       <Grommet>
@@ -118,6 +123,12 @@ describe('Box', () => {
         <Box background="light-1" />
         <Box background="dark-1" />
         <Box background="status-critical" />
+        <Box background="#aabbcc" />
+        <Box background="#def" />
+        <Box background="rgb(90, 80, 50)" />
+        <Box background="rgba(200, 100, 150, 0.8)" />
+        <Box background="hsl(10, 50%, 20%)" />
+        <Box background="hsla(10, 50%, 70%, 0.7)" />
         <Box background="url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)" />
         <Box
           background={{
@@ -161,11 +172,19 @@ describe('Box', () => {
             repeat: 'repeat',
           }}
         />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            opacity: 0.5,
+          }}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  /* eslint-enable max-len */
 
   test('basis', () => {
     const component = renderer.create(
@@ -339,6 +358,12 @@ describe('Box', () => {
         <Box border={{ style: 'dotted' }} />
         <Box border={{ style: 'double' }} />
         <Box border={{ style: 'dashed' }} />
+        <Box
+          border={[
+            { side: 'top', color: 'accent-1', size: 'medium', style: 'dotted' },
+            { side: 'left', color: 'accent-2', size: 'large', style: 'dashed' },
+          ]}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -446,5 +471,19 @@ describe('Box', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('onClick', () => {
+    const onClick = jest.fn();
+    const { getByText, container } = render(
+      <Grommet>
+        <Box onClick={onClick}>test box</Box>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('test box'));
+
+    expect(onClick).toBeCalled();
   });
 });

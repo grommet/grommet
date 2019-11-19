@@ -2,13 +2,14 @@ import React from 'react';
 
 import { StyledParagraph } from './StyledParagraph';
 
-const Paragraph = ({ color, ...rest }) => (
-  <StyledParagraph colorProp={color} {...rest} />
+const Paragraph = ({ color, fill, ...rest }) => (
+  <StyledParagraph colorProp={color} fillProp={fill} {...rest} />
 );
 
 let ParagraphDoc;
 if (process.env.NODE_ENV !== 'production') {
-  ParagraphDoc = require('./doc').doc(Paragraph); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  ParagraphDoc = require('./doc').doc(Paragraph);
 }
 const ParagraphWrapper = ParagraphDoc || Paragraph;
 

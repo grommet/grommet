@@ -1,97 +1,91 @@
-import React, { cloneElement, Children, Component } from 'react';
-import { compose } from 'recompose';
+import React, {
+  cloneElement,
+  Children,
+  forwardRef,
+  useContext,
+  useState,
+} from 'react';
 
-import { withTheme } from 'styled-components';
-
+import { ThemeContext } from 'styled-components';
 import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledButton } from './StyledButton';
 
-const isDarkBackground = props => {
-  const backgroundColor = normalizeBackground(
-    normalizeColor(
-      props.color ||
-        props.theme.button.primary.color ||
-        props.theme.global.colors.control ||
-        'brand',
-      props.theme,
-    ),
-    props.theme,
-  );
+const Button = forwardRef(
+  (
+    {
+      a11yTitle,
+      color, // munged to avoid styled-components putting it in the DOM
+      children,
+      disabled,
+      icon,
+      focusIndicator = true,
+      gap = 'small',
+      fill, // munged to avoid styled-components putting it in the DOM
+      href,
+      label,
+      onBlur,
+      onClick,
+      onFocus,
+      onMouseOut,
+      onMouseOver,
+      plain,
+      primary,
+      reverse,
+      type = 'button',
+      as,
+      ...rest
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [focus, setFocus] = useState();
 
-  return colorIsDark(backgroundColor, props.theme);
-};
-
-class Button extends Component {
-  static defaultProps = {
-    type: 'button',
-    focusIndicator: true,
-  };
-
-  constructor(props) {
-    super(props);
-
-    const { children, icon, label } = props;
     if ((icon || label) && children) {
       console.warn(
         'Button should not have children if icon or label is provided',
       );
     }
-  }
 
-  state = {};
+    const isDarkBackground = () => {
+      const backgroundColor = normalizeBackground(
+        normalizeColor(
+          color ||
+            theme.button.primary.color ||
+            theme.global.colors.control ||
+            'brand',
+          theme,
+        ),
+        theme,
+      );
 
-  onMouseOver = event => {
-    const { onMouseOver } = this.props;
-    this.setState({ hover: true });
-    if (onMouseOver) {
-      onMouseOver(event);
-    }
-  };
+      return colorIsDark(backgroundColor, theme);
+    };
 
-  onMouseOut = event => {
-    const { onMouseOut } = this.props;
-    this.setState({ hover: false });
-    if (onMouseOut) {
-      onMouseOut(event);
-    }
-  };
+    const [hover, setHover] = useState(false);
 
-  render() {
-    const {
-      a11yTitle,
-      color, // munged to avoid styled-components putting it in the DOM
-      forwardRef,
-      children,
-      disabled,
-      icon,
-      fill, // munged to avoid styled-components putting it in the DOM
-      focus,
-      href,
-      label,
-      onClick,
-      plain,
-      primary,
-      reverse,
-      theme,
-      type,
-      as,
-      ...rest
-    } = this.props;
-    const { hover } = this.state;
+    const onMouseOverButton = event => {
+      setHover(true);
+      if (onMouseOver) {
+        onMouseOver(event);
+      }
+    };
+
+    const onMouseOutButton = event => {
+      setHover(false);
+      if (onMouseOut) {
+        onMouseOut(event);
+      }
+    };
 
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
     if (primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(icon, {
-        color:
-          theme.global.colors.text[
-            isDarkBackground(this.props) ? 'dark' : 'light'
-          ],
+        color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
       });
     }
 
@@ -102,7 +96,7 @@ class Button extends Component {
     let contents;
     if (first && second) {
       contents = (
-        <Box direction="row" align="center" justify="center" gap="small">
+        <Box direction="row" align="center" justify="center" gap={gap}>
           {first}
           {second}
         </Box>
@@ -112,24 +106,32 @@ class Button extends Component {
     } else {
       contents = first || second || children;
     }
-    // the key events are covered by withFocus()
-    /* eslint-disable jsx-a11y/mouse-events-have-key-events */
     return (
       <StyledButton
         {...rest}
         as={domTag}
-        ref={forwardRef}
+        ref={ref}
         aria-label={a11yTitle}
         colorValue={color}
         disabled={disabled}
         hasIcon={!!icon}
+        gap={gap}
         hasLabel={!!label}
         fillContainer={fill}
         focus={focus}
+        focusIndicator={focusIndicator}
         href={href}
         onClick={onClick}
-        onMouseOver={this.onMouseOver}
-        onMouseOut={this.onMouseOut}
+        onFocus={event => {
+          setFocus(true);
+          if (onFocus) onFocus(event);
+        }}
+        onBlur={event => {
+          setFocus(false);
+          if (onBlur) onBlur(event);
+        }}
+        onMouseOver={onMouseOverButton}
+        onMouseOut={onMouseOutButton}
         pad={!plain}
         plain={
           typeof plain !== 'undefined'
@@ -142,19 +144,16 @@ class Button extends Component {
         {contents}
       </StyledButton>
     );
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(Button.defaultProps, defaultProps);
+Button.displayName = 'Button';
 
 let ButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
-  ButtonDoc = require('./doc').doc(Button); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  ButtonDoc = require('./doc').doc(Button);
 }
-const ButtonWrapper = compose(
-  withFocus(),
-  withTheme,
-  withForwardRef,
-)(ButtonDoc || Button);
+const ButtonWrapper = ButtonDoc || Button;
 
 export { ButtonWrapper as Button };

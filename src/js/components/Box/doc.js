@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
+import {
+  getAvailableAtBadge,
+  genericProps,
+  hoverIndicatorPropType,
+  themeDocUtils,
+} from '../../utils';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -22,6 +27,40 @@ const ANIMATION_SHAPE = PropTypes.shape({
   delay: PropTypes.number,
   duration: PropTypes.number,
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+});
+
+const BORDER_SHAPE = PropTypes.shape({
+  color: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
+  ]),
+  side: PropTypes.oneOf([
+    'top',
+    'left',
+    'bottom',
+    'right',
+    'horizontal',
+    'vertical',
+    'all',
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+    PropTypes.string,
+  ]),
+  style: PropTypes.oneOf([
+    'solid',
+    'dashed',
+    'dotted',
+    'double',
+    'groove',
+    'ridge',
+    'inset',
+    'outset',
+    'hidden',
+  ]).defaultValue('solid'),
 });
 
 // if you update values here, make sure to update in Drop/doc too.
@@ -81,8 +120,10 @@ export const doc = Box => {
         image: PropTypes.string,
         position: PropTypes.string,
         opacity: PropTypes.oneOfType([
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
+          PropTypes.string,
           PropTypes.bool,
+          PropTypes.number,
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
         ]),
         repeat: PropTypes.oneOfType([
           PropTypes.oneOf(['no-repeat', 'repeat']),
@@ -128,39 +169,8 @@ export const doc = Box => {
         'vertical',
         'all',
       ]),
-      PropTypes.shape({
-        color: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.shape({
-            dark: PropTypes.string,
-            light: PropTypes.string,
-          }),
-        ]),
-        side: PropTypes.oneOf([
-          'top',
-          'left',
-          'bottom',
-          'right',
-          'horizontal',
-          'vertical',
-          'all',
-        ]),
-        size: PropTypes.oneOfType([
-          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-          PropTypes.string,
-        ]),
-        style: PropTypes.oneOf([
-          'solid',
-          'dashed',
-          'dotted',
-          'double',
-          'groove',
-          'ridge',
-          'inset',
-          'outset',
-          'hidden',
-        ]).defaultValue('solid'),
-      }),
+      BORDER_SHAPE,
+      PropTypes.arrayOf(BORDER_SHAPE),
     ]).description('Include a border.'),
     direction: PropTypes.oneOf([
       'row',
@@ -198,6 +208,7 @@ export const doc = Box => {
     ),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
+        'none',
         'xxsmall',
         'xsmall',
         'small',
@@ -220,7 +231,39 @@ export const doc = Box => {
         'xxlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        min: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+        max: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
     ]).description('A fixed height.'),
+    hoverIndicator: hoverIndicatorPropType
+      .description(
+        `When 'onClick' has been specified, the hover indicator to apply
+        when the user is mousing over the box.`,
+      )
+      .defaultValue(false),
     justify: PropTypes.oneOf([
       'around',
       'between',
@@ -232,6 +275,10 @@ export const doc = Box => {
     ])
       .description('How to align the contents along the main axis.')
       .defaultValue('stretch'),
+    onClick: PropTypes.func.description(
+      `Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.`,
+    ),
     overflow: overflowPropType.description('box overflow.'),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),
@@ -316,12 +363,35 @@ of indicating the DOM tag via the 'as' property.`,
         'xxlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        min: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+        max: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
     ]).description('A fixed width.'),
-    wrap: PropTypes.bool
-      .description(
-        `Whether children can wrap if they
-      can't all fit.`,
-      )
+    wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])])
+      .description(`Whether children can wrap if they can't all fit.`)
       .defaultValue(false),
   };
   return DocumentedBox;
@@ -377,6 +447,21 @@ export const themeDoc = {
     defaultValue:
       '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }',
   },
+  'global.hover.background.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'active',
+  },
+  'global.hover.background.opacity': {
+    description: 'The opacity of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'medium',
+  },
+  'global.hover.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: "white", light: "black" }',
+  },
   'global.opacity.medium': {
     description: 'The value used when background opacity is set to true.',
     type: 'number',
@@ -402,8 +487,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'box.responsiveBreakpoint': {
-    description:
-      'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    description: `The actual breakpoint to trigger changes in the border, 
+    direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
   },
@@ -411,6 +496,7 @@ export const themeDoc = {
     'The possible sizes for any of gap, margin, and pad.',
   ),
   ...themeDocUtils.breakpointStyle(
-    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+    `The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round.`,
   ),
 };

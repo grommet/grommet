@@ -10,14 +10,14 @@ export const themeDoc = {
     defaultValue: 'light-3',
   },
   'worldMap.continent.active': {
-    description:
-      'The size of the visual dots belonging to a continent when the continent is being hovered.',
+    description: `The size of the visual dots belonging to a continent when the
+continent is being hovered.`,
     type: 'string',
     defaultValue: '8px',
   },
   'worldMap.continent.base': {
-    description:
-      'The size of the visual dots belonging to a continent that is not being hovered.',
+    description: `The size of the visual dots belonging to a continent that is
+not being hovered.`,
     type: 'string',
     defaultValue: '6px',
   },
@@ -27,14 +27,14 @@ export const themeDoc = {
     defaultValue: 'light-4',
   },
   'worldMap.place.active': {
-    description:
-      'The size of a visual dot for an individual place in the map when it is being hovered.',
+    description: `The size of a visual dot for an individual place in the map 
+when it is being hovered.`,
     type: 'string',
     defaultValue: '20px',
   },
   'worldMap.place.base': {
-    description:
-      'The size of the visual dot representing an individual place in the map when it is not being hovered.',
+    description: `The size of the visual dot representing an individual place 
+in the map when it is not being hovered.`,
     type: 'string',
     defaultValue: '8px',
   },
@@ -70,6 +70,12 @@ export const doc = WorldMap => {
         onHover: PropTypes.func,
       }),
     ).description('Continent details.'),
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]).description(
+      'Whether the width and/or height should fill the container.',
+    ),
     onSelectPlace: PropTypes.func
       .description(`Called when the user clicks on a place.
         It is passed the location.`),

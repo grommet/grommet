@@ -13,7 +13,8 @@ import { WorldMap } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -43,8 +44,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -143,6 +144,16 @@ Continent details.
 }]
 ```
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
+```
+
 **onSelectPlace**
 
 Called when the user clicks on a place.
@@ -202,7 +213,8 @@ light-3
 
 **worldMap.continent.active**
 
-The size of the visual dots belonging to a continent when the continent is being hovered. Expects `string`.
+The size of the visual dots belonging to a continent when the
+continent is being hovered. Expects `string`.
 
 Defaults to
 
@@ -212,7 +224,8 @@ Defaults to
 
 **worldMap.continent.base**
 
-The size of the visual dots belonging to a continent that is not being hovered. Expects `string`.
+The size of the visual dots belonging to a continent that is
+not being hovered. Expects `string`.
 
 Defaults to
 
@@ -232,7 +245,8 @@ light-4
 
 **worldMap.place.active**
 
-The size of a visual dot for an individual place in the map when it is being hovered. Expects `string`.
+The size of a visual dot for an individual place in the map 
+when it is being hovered. Expects `string`.
 
 Defaults to
 
@@ -242,7 +256,8 @@ Defaults to
 
 **worldMap.place.base**
 
-The size of the visual dot representing an individual place in the map when it is not being hovered. Expects `string`.
+The size of the visual dot representing an individual place 
+in the map when it is not being hovered. Expects `string`.
 
 Defaults to
 

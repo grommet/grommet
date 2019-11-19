@@ -15,10 +15,16 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.
+The component to insert in the FormField. Grommet will add update the 
+      form values when this field changes. Any additional properties 
+      (such as initial value) you pass to FormField will be forwarded to this
+      component. The component may be custom as long it supports the properties
+      of name, value, onChange (event => {}), while event has either event.value
+      or event.target.value.
 
 ```
 function
+object
 ```
 
 **error**
@@ -65,6 +71,73 @@ The name of the value data when in a Form and the name of
 string
 ```
 
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
 **pad**
 
 Whether to add padding to align with the padding of TextInput.
@@ -83,7 +156,8 @@ boolean
 
 **validate**
 
-Validation rule. Provide a regular expression or a function. If a
+Validation rule when used within a grommet Form. Provide a regular
+      expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -202,6 +276,16 @@ Defaults to
 
 ```
 { left: 'small' }
+```
+
+**formField.label**
+
+Any props of Text that will be applied on the FormField label. Expects `object`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **formField.label.margin**

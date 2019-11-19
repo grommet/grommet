@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = Calendar => {
   const DocumentedCalendar = describe(Calendar)
@@ -62,16 +62,19 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using \`bounds\`, if the current date is within that range.
-You can then use that to disable the previous and next buttons.
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+calendar to move between months.
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
+\`bounds\`, if the current date is within that range. You can then use that 
+to disable the previous and next buttons.
 `,
     ),
     locale: PropTypes.string
       .description('The locale to use.')
       .defaultValue('en-US'),
     onReference: PropTypes.func.description(
-      `Called with an ISO8601 date when the user navigates to a different month.`,
+      `Called with an ISO8601 date when the user navigates to a different
+       month.`,
     ),
     onSelect: PropTypes.func.description(`Called with an ISO8601 date when
       the user selects a day.
@@ -106,80 +109,18 @@ You can then use that to disable the previous and next buttons.
 };
 
 export const themeDoc = {
-  'global.size.small': {
-    description: 'The width of the calendar when small.',
-    type: 'string',
-    defaultValue: '192px',
+  'calendar.day.extend': {
+    description: 'Any additional style for the day of Calendar.',
+    type: 'string | (props) => {}',
   },
-  'global.size.medium': {
-    description: 'The width of the calendar when medium.',
-    type: 'string',
-    defaultValue: '384px',
+  'calendar.extend': {
+    description: 'Any additional style for the Calendar.',
+    type: 'string | (props) => {}',
   },
-  'global.size.large': {
-    description: 'The width of the calendar when large.',
-    type: 'string',
-    defaultValue: '768px',
-  },
-  'calendar.small.fontSize': {
-    description: 'The font size to use for days when small.',
-    type: 'string',
-    defaultValue: '14px',
-  },
-  'calendar.small.lineHeight': {
-    description: 'The line height to use for days when small.',
+  'calendar.heading.level': {
+    description: 'The heading level used for the calendar.',
     type: 'number',
-    defaultValue: 1.375,
-  },
-  'calendar.small.daySize': {
-    description: 'The size of a day when small.',
-    type: 'string',
-    defaultValue: '27.42px',
-  },
-  'calendar.small.slideDuration': {
-    description: 'How long it animate the slide between months when small.',
-    type: 'string',
-    defaultValue: '0.2s',
-  },
-  'calendar.medium.fontSize': {
-    description: 'The font size to use for days when medium.',
-    type: 'string',
-    defaultValue: '18px',
-  },
-  'calendar.medium.lineHeight': {
-    description: 'The line height to use for days when medium.',
-    type: 'number',
-    defaultValue: 1.45,
-  },
-  'calendar.medium.daySize': {
-    description: 'The size of a day when medium.',
-    type: 'string',
-    defaultValue: '54.84px',
-  },
-  'calendar.medium.slideDuration': {
-    description: 'How long it animate the slide between months when medium.',
-    type: 'string',
-    defaultValue: '0.5s',
-  },
-  'calendar.large.fontSize': {
-    description: 'The font size to use for days when large.',
-    type: 'string',
-    defaultValue: '30px',
-  },
-  'calendar.large.lineHeight': {
-    description: 'The line height to use for days when large.',
-    type: 'number',
-    defaultValue: 1.11,
-  },
-  'calendar.large.daySize': {
-    description: 'The size of a day when large.',
-    type: 'string',
-    defaultValue: '109.7px',
-  },
-  'calendar.large.slideDuration': {
-    description: 'How long it animate the slide between months when large.',
-    type: 'string',
-    defaultValue: '0.8s',
+    defaultValue: '4',
   },
   'calendar.icons.next': {
     description: 'The icon to use for the next month navigation control.',
@@ -203,12 +144,81 @@ export const themeDoc = {
     type: 'element',
     defaultValue: '<FormPrevious />',
   },
-  'calendar.extend': {
-    description: 'Any additional style for the Calendar.',
-    type: 'string | (props) => {}',
+  'calendar.large.daySize': {
+    description: 'The size of a day when large.',
+    type: 'string',
+    defaultValue: '109.7px',
   },
-  'calendar.day.extend': {
-    description: 'Any additional style for the day of Calendar.',
-    type: 'string | (props) => {}',
+  'calendar.large.fontSize': {
+    description: 'The font size to use for days when large.',
+    type: 'string',
+    defaultValue: '30px',
   },
+  'calendar.large.lineHeight': {
+    description: 'The line height to use for days when large.',
+    type: 'number',
+    defaultValue: 1.11,
+  },
+  'calendar.large.slideDuration': {
+    description: 'How long it animate the slide between months when large.',
+    type: 'string',
+    defaultValue: '0.8s',
+  },
+  'calendar.medium.daySize': {
+    description: 'The size of a day when medium.',
+    type: 'string',
+    defaultValue: '54.84px',
+  },
+  'calendar.medium.fontSize': {
+    description: 'The font size to use for days when medium.',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'calendar.medium.lineHeight': {
+    description: 'The line height to use for days when medium.',
+    type: 'number',
+    defaultValue: 1.45,
+  },
+  'calendar.medium.slideDuration': {
+    description: 'How long it animate the slide between months when medium.',
+    type: 'string',
+    defaultValue: '0.5s',
+  },
+  'calendar.small.daySize': {
+    description: 'The size of a day when small.',
+    type: 'string',
+    defaultValue: '27.42px',
+  },
+  'calendar.small.fontSize': {
+    description: 'The font size to use for days when small.',
+    type: 'string',
+    defaultValue: '14px',
+  },
+  'calendar.small.lineHeight': {
+    description: 'The line height to use for days when small.',
+    type: 'number',
+    defaultValue: 1.375,
+  },
+  'calendar.small.slideDuration': {
+    description: 'How long it animate the slide between months when small.',
+    type: 'string',
+    defaultValue: '0.2s',
+  },
+  'global.size.small': {
+    description: 'The width of the calendar when small.',
+    type: 'string',
+    defaultValue: '192px',
+  },
+  'global.size.medium': {
+    description: 'The width of the calendar when medium.',
+    type: 'string',
+    defaultValue: '384px',
+  },
+  'global.size.large': {
+    description: 'The width of the calendar when large.',
+    type: 'string',
+    defaultValue: '768px',
+  },
+  ...themeDocUtils.iconColor,
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

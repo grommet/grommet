@@ -6,7 +6,7 @@ A button with support for React Router.
 
 ```javascript
 import { RoutedButton } from 'grommet';
-<RoutedButton primary={true} path='/documentation' />
+<RoutedButton primary path='/documentation' />
 ```
 
 ## Properties
@@ -21,7 +21,8 @@ string
 
 **method**
 
-Indicates whether the browser history should be appended to or replaced. Defaults to `push`.
+Indicates whether the browser history should be appended to or 
+      replaced. Defaults to `push`.
 
 ```
 push

@@ -1,5 +1,6 @@
 export * from './mixins';
 export * from './background';
+export * from './border';
 export * from './colors';
 export * from './debounce';
 export * from './DOM';

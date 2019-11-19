@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet, Tab, Tabs } from '../..';
 

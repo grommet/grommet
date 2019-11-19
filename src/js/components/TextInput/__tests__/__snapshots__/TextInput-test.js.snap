@@ -4,6 +4,7 @@ exports[`TextInput basic 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -69,6 +70,7 @@ exports[`TextInput close suggestion drop 1`] = `
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -127,7 +129,7 @@ exports[`TextInput close suggestion drop 1`] = `
 `;
 
 exports[`TextInput close suggestion drop 2`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -135,18 +137,16 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -154,13 +154,11 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -172,7 +170,6 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -215,7 +212,7 @@ exports[`TextInput close suggestion drop 2`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -247,26 +244,8 @@ exports[`TextInput close suggestion drop 2`] = `
   list-style-type: none;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -276,7 +255,7 @@ exports[`TextInput close suggestion drop 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -289,7 +268,7 @@ exports[`TextInput close suggestion drop 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -336,7 +315,7 @@ exports[`TextInput close suggestion drop 2`] = `
 `;
 
 exports[`TextInput close suggestion drop 3`] = `
-".fMpdhH {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -344,37 +323,17 @@ exports[`TextInput close suggestion drop 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cYihDV {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -428,11 +387,11 @@ exports[`TextInput close suggestion drop 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 bkKCTq"
+      class="StyledTextInput-sc-1x30a0s-0 kvYrcH"
       data-testid="test-input"
       id="item"
       name="item"
@@ -456,6 +415,7 @@ exports[`TextInput complex suggestions 1`] = `
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -514,7 +474,7 @@ exports[`TextInput complex suggestions 1`] = `
 `;
 
 exports[`TextInput complex suggestions 2`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -522,18 +482,16 @@ exports[`TextInput complex suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -541,13 +499,11 @@ exports[`TextInput complex suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -581,7 +537,7 @@ exports[`TextInput complex suggestions 2`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -613,24 +569,12 @@ exports[`TextInput complex suggestions 2`] = `
   list-style-type: none;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -643,7 +587,7 @@ exports[`TextInput complex suggestions 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -682,7 +626,7 @@ exports[`TextInput complex suggestions 2`] = `
 `;
 
 exports[`TextInput complex suggestions 3`] = `
-".fMpdhH {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -690,37 +634,17 @@ exports[`TextInput complex suggestions 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cYihDV {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -773,6 +697,7 @@ exports[`TextInput disabled 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -841,6 +766,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -903,11 +829,11 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 bkKCTq"
+      class="StyledTextInput-sc-1x30a0s-0 kvYrcH"
       data-testid="test-input"
       id="item"
       name="item"
@@ -918,7 +844,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
 `;
 
 exports[`TextInput large drop height 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -926,18 +852,16 @@ exports[`TextInput large drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -945,13 +869,11 @@ exports[`TextInput large drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -963,7 +885,6 @@ exports[`TextInput large drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -1006,7 +927,7 @@ exports[`TextInput large drop height 1`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1038,26 +959,8 @@ exports[`TextInput large drop height 1`] = `
   list-style-type: none;
 }
 
-.c2 {
+.c3 {
   max-height: 768px;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1067,7 +970,7 @@ exports[`TextInput large drop height 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1080,7 +983,7 @@ exports[`TextInput large drop height 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -1127,7 +1030,7 @@ exports[`TextInput large drop height 1`] = `
 `;
 
 exports[`TextInput large drop height 2`] = `
-".fMpdhH {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1135,37 +1038,17 @@ exports[`TextInput large drop height 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cYihDV {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -1233,7 +1116,7 @@ exports[`TextInput large drop height 2`] = `
 `;
 
 exports[`TextInput medium drop height 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1241,18 +1124,16 @@ exports[`TextInput medium drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1260,13 +1141,11 @@ exports[`TextInput medium drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -1278,7 +1157,6 @@ exports[`TextInput medium drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -1321,7 +1199,7 @@ exports[`TextInput medium drop height 1`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1353,26 +1231,8 @@ exports[`TextInput medium drop height 1`] = `
   list-style-type: none;
 }
 
-.c2 {
+.c3 {
   max-height: 384px;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1382,7 +1242,7 @@ exports[`TextInput medium drop height 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1395,7 +1255,7 @@ exports[`TextInput medium drop height 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -1442,7 +1302,7 @@ exports[`TextInput medium drop height 1`] = `
 `;
 
 exports[`TextInput medium drop height 2`] = `
-".fMpdhH {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1450,37 +1310,17 @@ exports[`TextInput medium drop height 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cYihDV {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -1555,6 +1395,7 @@ exports[`TextInput select a suggestion 1`] = `
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -1626,6 +1467,7 @@ exports[`TextInput select suggestion 1`] = `
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -1687,7 +1529,7 @@ exports[`TextInput select suggestion 1`] = `
 `;
 
 exports[`TextInput select suggestion 2`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1695,18 +1537,16 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1714,13 +1554,11 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -1732,7 +1570,6 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -1775,7 +1612,7 @@ exports[`TextInput select suggestion 2`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1807,26 +1644,8 @@ exports[`TextInput select suggestion 2`] = `
   list-style-type: none;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1836,7 +1655,7 @@ exports[`TextInput select suggestion 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1849,7 +1668,7 @@ exports[`TextInput select suggestion 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -1896,7 +1715,7 @@ exports[`TextInput select suggestion 2`] = `
 `;
 
 exports[`TextInput select suggestion 3`] = `
-".fMpdhH {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1904,37 +1723,17 @@ exports[`TextInput select suggestion 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cYihDV {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -1988,11 +1787,11 @@ exports[`TextInput select suggestion 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 eUDPhm"
+      class="StyledTextInput-sc-1x30a0s-0 dAMXNk"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2003,7 +1802,7 @@ exports[`TextInput select suggestion 4`] = `
 `;
 
 exports[`TextInput small drop height 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2011,18 +1810,16 @@ exports[`TextInput small drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2030,13 +1827,11 @@ exports[`TextInput small drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2048,7 +1843,6 @@ exports[`TextInput small drop height 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2091,7 +1885,7 @@ exports[`TextInput small drop height 1`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2123,26 +1917,8 @@ exports[`TextInput small drop height 1`] = `
   list-style-type: none;
 }
 
-.c2 {
+.c3 {
   max-height: 192px;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2152,7 +1928,7 @@ exports[`TextInput small drop height 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2165,7 +1941,7 @@ exports[`TextInput small drop height 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -2212,7 +1988,7 @@ exports[`TextInput small drop height 1`] = `
 `;
 
 exports[`TextInput small drop height 2`] = `
-".fMpdhH {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2220,37 +1996,17 @@ exports[`TextInput small drop height 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cYihDV {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .jaMGoX {
     padding: 6px;
   }
 }
@@ -2309,6 +2065,7 @@ exports[`TextInput suggestions 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -2363,7 +2120,7 @@ exports[`TextInput suggestions 1`] = `
 `;
 
 exports[`TextInput suggestions 2`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2371,18 +2128,16 @@ exports[`TextInput suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2390,13 +2145,11 @@ exports[`TextInput suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2408,7 +2161,6 @@ exports[`TextInput suggestions 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2451,7 +2203,7 @@ exports[`TextInput suggestions 2`] = `
   color: #000000;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2483,26 +2235,8 @@ exports[`TextInput suggestions 2`] = `
   list-style-type: none;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2512,7 +2246,7 @@ exports[`TextInput suggestions 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2525,7 +2259,7 @@ exports[`TextInput suggestions 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -2572,7 +2306,7 @@ exports[`TextInput suggestions 2`] = `
 `;
 
 exports[`TextInput suggestions 3`] = `
-".fMpdhH {
+".jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2580,37 +2314,17 @@ exports[`TextInput suggestions 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .cYihDV {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cYihDV {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .jaMGoX {
     padding: 6px;
   }
 }

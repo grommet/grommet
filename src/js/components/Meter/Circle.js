@@ -21,7 +21,7 @@ const Circle = props => {
     ...rest
   } = props;
   const width =
-    size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
+    size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const height = parseMetricToNum(
     theme.global.edgeSize[thickness] || thickness,
   );
@@ -41,7 +41,9 @@ const Circle = props => {
       const key = `p-${index}`;
       const colorName =
         color ||
-        (index === values.length - 1 ? theme.meter.color : defaultColor(index, theme));
+        (index === values.length - 1
+          ? theme.meter.color
+          : defaultColor(index, theme));
 
       let endAngle;
       if (startValue + value >= max) {
@@ -107,8 +109,8 @@ const Circle = props => {
             {...pathRest}
           />
         );
-        // If we are on a large enough path to not need re-drawing previous ones,
-        // clear the pathCaps we've collected already.
+        // If we are on a large enough path to not need re-drawing previous
+        // ones, clear the pathCaps we've collected already.
         if (endAngle - startAngle > 2 * anglePer) {
           pathCaps = [];
         }

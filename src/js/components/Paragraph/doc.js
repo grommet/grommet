@@ -22,6 +22,9 @@ export const doc = Paragraph => {
     color: colorPropType.description(
       'A color identifier to use for the text color.',
     ),
+    fill: PropTypes.bool
+      .description('Whether the width should fill the container.')
+      .defaultValue(false),
     responsive: PropTypes.bool
       .description(`Whether margin should be scaled for mobile environments.`)
       .defaultValue(true),
@@ -41,7 +44,8 @@ export const doc = Paragraph => {
 
 export const themeDoc = {
   paragraph: {
-    description: `The possible sizes of the paragraph in terms of its max-width, font-size and line-height.`,
+    description: `The possible sizes of the paragraph in terms of its max-width,
+     font-size and line-height.`,
     type: 'object',
     defaultValue: `{
       small: {

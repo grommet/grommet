@@ -1,10 +1,11 @@
+// eslint-disable-next-line max-len
+/* eslint-disable react/no-multi-comp, react/no-find-dom-node, max-classes-per-file */
 import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { findScrollParents } from '../../utils';
 import { Box } from '../Box';
 
 // Wraps an item to ensure we can get a ref to it
-/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
 class Ref extends Component {
   render() {
     const { children } = this.props;
@@ -23,8 +24,8 @@ class InfiniteScroll extends PureComponent {
     const lastPage = Math.ceil(items.length / step) - 1;
     if (
       prevState.beginPage === undefined ||
-      ((show && show >= step * (prevState.lastPage + 1)) ||
-        lastPage !== prevState.lastPage)
+      (show && show >= step * (prevState.lastPage + 1)) ||
+        lastPage !== prevState.lastPage
     ) {
       let endPage = prevState.endPage || 0;
       if (show && show >= step * (endPage + 1)) {
@@ -114,8 +115,8 @@ class InfiniteScroll extends PureComponent {
       const endRect = findDOMNode(
         this.lastPageItemRef.current,
       ).getBoundingClientRect();
-      /* eslint-enable react/no-find-dom-node */
-      const nextPageHeight = endRect.y + endRect.height - beginRect.y;
+
+      const nextPageHeight = endRect.top + endRect.height - beginRect.top;
       // Check if the items are arranged in a single column or not.
       const multiColumn = nextPageHeight / step < endRect.height;
       const pageArea = endRect.height * endRect.width * step;
@@ -265,7 +266,8 @@ class InfiniteScroll extends PureComponent {
 
 let InfiniteScrollDoc;
 if (process.env.NODE_ENV !== 'production') {
-  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll);
 }
 const InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
 

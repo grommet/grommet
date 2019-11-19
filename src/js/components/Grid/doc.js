@@ -19,7 +19,15 @@ const sizes = [
   'flex',
   'auto',
 ];
-const edgeSizes = ['small', 'medium', 'large', 'none'];
+const edgeSizes = [
+  'xxsmall',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+  'none',
+];
 
 export const doc = Grid => {
   const DocumentedGrid = describe(Grid)
@@ -54,13 +62,20 @@ space in the column axis.`,
       'around',
       'stretch',
     ]).description('How to align the contents along the column axis.'),
-    areas: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-        start: PropTypes.arrayOf(PropTypes.number),
-        end: PropTypes.arrayOf(PropTypes.number),
-      }),
-    ).description('Area names and column,row coordinates.'),
+    areas: PropTypes.oneOfType([
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          start: PropTypes.arrayOf(PropTypes.number),
+          end: PropTypes.arrayOf(PropTypes.number),
+        }),
+      ),
+      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+    ]).description(
+      `Grid areas.
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.`,
+    ),
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([

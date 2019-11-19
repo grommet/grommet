@@ -50,7 +50,7 @@ number
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
+Custom messages used by screen readers for accessibility. Defaults to `{
   "lower": "Lower Bounds",
   "upper": "Upper Bounds"
 }`.
@@ -211,7 +211,7 @@ light-4
 
 **rangeSelector.edge.type**
 
-The edge style type. Expects `'bar' | 'disc'`.
+The edge control type. Expects `'bar' | 'disc' | node`.
 
 Defaults to
 

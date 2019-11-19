@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -16,60 +16,58 @@ import {
   StyledRadioButtonBox,
 } from './StyledRadioButton';
 
-class RadioButton extends Component {
-  render() {
-    const {
-      checked,
-      disabled,
-      focus,
-      forwardRef,
-      id,
-      label,
-      name,
-      onChange,
-      theme,
-      ...rest
-    } = this.props;
+const RadioButton = ({
+  checked,
+  children,
+  disabled,
+  focus,
+  forwardRef,
+  id,
+  label,
+  name,
+  onChange,
+  theme,
+  ...rest
+}) => {
+  const normalizedLabel =
+    typeof label === 'string' ? <span>{label}</span> : label;
 
-    const normalizedLabel =
-      typeof label === 'string' ? <span>{label}</span> : label;
+  const Icon = theme.radioButton.icons.circle;
+  let borderColor = normalizeColor(theme.radioButton.border.color, theme);
+  if (checked) {
+    borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
+  }
 
-    const Icon = theme.radioButton.icons.circle;
-    let borderColor = normalizeColor(theme.radioButton.border.color, theme);
-    if (checked) {
-      borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
-    }
-
-    return (
-      <StyledRadioButtonContainer
-        as={props => <Box as="label" {...props} />}
-        direction="row"
-        align="center"
-        {...removeUndefined({ htmlFor: id, disabled })}
-        onClick={event => {
-          // prevents clicking on the label trigging the event twice
-          // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
-          if (event.target.type !== 'radio') {
-            event.stopPropagation();
-          }
-        }}
+  return (
+    <StyledRadioButtonContainer
+      {...removeUndefined({ htmlFor: id, disabled })}
+      onClick={event => {
+        // prevents clicking on the label trigging the event twice
+        // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
+        if (event.target.type !== 'radio') {
+          event.stopPropagation();
+        }
+      }}
+    >
+      <StyledRadioButton
+        as={Box}
+        margin={{ right: theme.radioButton.gap || 'small' }}
       >
-        <StyledRadioButton
-          as={Box}
-          margin={{ right: theme.radioButton.gap || 'small' }}
-        >
-          <StyledRadioButtonInput
-            {...rest}
-            ref={forwardRef}
-            type="radio"
-            {...removeUndefined({
-              id,
-              name,
-              checked,
-              disabled,
-              onChange,
-            })}
-          />
+        <StyledRadioButtonInput
+          {...rest}
+          ref={forwardRef}
+          type="radio"
+          {...removeUndefined({
+            id,
+            name,
+            checked,
+            disabled,
+            onChange,
+          })}
+        />
+        {children ? (
+          children({ checked })
+        ) : (
           <StyledRadioButtonBox
             focus={focus}
             as={Box}
@@ -95,19 +93,20 @@ class RadioButton extends Component {
                 </StyledRadioButtonIcon>
               ))}
           </StyledRadioButtonBox>
-        </StyledRadioButton>
-        {normalizedLabel}
-      </StyledRadioButtonContainer>
-    );
-  }
-}
+        )}
+      </StyledRadioButton>
+      {normalizedLabel}
+    </StyledRadioButtonContainer>
+  );
+};
 
 RadioButton.defaultProps = {};
 Object.setPrototypeOf(RadioButton.defaultProps, defaultProps);
 
 let RadioButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RadioButtonDoc = require('./doc').doc(RadioButton);
 }
 const RadioButtonWrapper = compose(
   withTheme,

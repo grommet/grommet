@@ -47,8 +47,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -123,6 +123,14 @@ string
 }
 ```
 
+**disabled**
+
+Whether the anchor is disabled.
+
+```
+boolean
+```
+
 **href**
 
 Hyperlink reference to place in the anchor.
@@ -168,8 +176,8 @@ boolean
 **size**
 
 The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property, typically
-when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
+this component. But, it can be adjusted directly via this size property,
+typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
 
 ```
 xsmall
@@ -219,7 +227,9 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
+The text decoration of the label. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values. Expects `string`.
 
 Defaults to
 
@@ -239,7 +249,9 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
+The text decoration of the label when hovering. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values. Expects `string`.
 
 Defaults to
 

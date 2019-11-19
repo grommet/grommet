@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from 'react-testing-library';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 
 import { expectPortal } from '../../../utils/portal';
 

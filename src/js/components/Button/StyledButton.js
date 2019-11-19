@@ -6,6 +6,7 @@ import {
   disabledStyle,
   focusStyle,
   genericStyles,
+  getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -46,19 +47,6 @@ function getHoverColor(props) {
   );
 }
 
-function getHoverIndicatorStyle(hoverIndicator, theme) {
-  let background;
-  if (hoverIndicator === true || hoverIndicator === 'background') {
-    ({ background } = theme.global.hover);
-  } else {
-    background = hoverIndicator;
-  }
-  return css`
-    ${backgroundStyle(background, theme)}
-    color: ${normalizeColor(theme.global.hover.color, theme)};
-  `;
-}
-
 const hoverStyle = css`
   &:hover {
     ${props =>
@@ -71,15 +59,26 @@ const hoverStyle = css`
   }
 `;
 
-const fillStyle = `
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-`;
+const fillStyle = fillContainer => {
+  if (fillContainer === 'horizontal') {
+    return 'width: 100%;';
+  }
+  if (fillContainer === 'vertical') {
+    return 'height: 100%;';
+  }
+  if (fillContainer) {
+    return `
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      flex: 1 0 auto;
+    `;
+  }
+  return undefined;
+};
 
-const plainStyle = css`
-  color: inherit;
+const plainStyle = props => css`
+  color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
   border: none;
   padding: 0;
   text-align: inherit;
@@ -99,7 +98,7 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${genericStyles}
-  ${props => props.plain && plainStyle}
+  ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
@@ -116,9 +115,14 @@ const StyledButton = styled.button`
   ${props =>
     !props.plain &&
     `
-    transition: 0.1s ease-in-out;
+    transition-property: color,
+      background-color,
+      border-color,
+      box-shadow;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
   `}
-  ${props => props.fillContainer && fillStyle}
+  ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props =>
     props.hasIcon &&
     !props.hasLabel &&

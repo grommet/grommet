@@ -1,14 +1,14 @@
 import * as React from "react";
-import { Omit } from "../../utils";
+import { Omit, ColorType } from "../../utils";
 
 export interface RangeSelectorProps {
-  color?: string | {dark?: string,light?: string};
+  color?: ColorType;
   direction?: "horizontal" | "vertical";
   invert?: boolean;
   max?: number;
   messages?: {lower?: string,upper?: string};
   min?: number;
-  onChange?: ((...args: any[]) => any);
+  onChange?: ((...args: any[]) => void);
   opacity?: "weak" | "medium" | "strong" | string | boolean;
   round?: "xsmall" | "small" | "medium" | "large" | "full" | string;
   size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string;

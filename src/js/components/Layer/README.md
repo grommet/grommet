@@ -15,15 +15,29 @@ import { Layer } from 'grommet';
 
 **animate**
 
-Animation transition of the Layer content when it opens. Defaults to `true`.
+Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'. Defaults to `true`.
 
 ```
 boolean
 ```
 
+**animation**
+
+Animation transition of the Layer content when it opens and closes. Defaults to `slide`.
+
+```
+slide
+fadeIn
+none
+boolean
+```
+
 **full**
 
-Whether the width and/or height should fill the current viewport size.
+Whether the width and/or height should fill the current viewport 
+        size.
 
 ```
 boolean
@@ -93,7 +107,8 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath the layer. Defaults to `true`.
+Whether there should be an overlay preventing interaction underneath 
+        the layer. Defaults to `true`.
 
 ```
 boolean
@@ -101,7 +116,8 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks outside the layer.
+Function that will be invoked on modal layers when the user clicks 
+      outside the layer.
 
 ```
 function
@@ -109,7 +125,8 @@ function
 
 **onEsc**
 
-Function that will be called when the user presses the escape key inside the layer.
+Function that will be called when the user presses the escape key inside
+       the layer.
 
 ```
 function
@@ -207,7 +224,8 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects `string`.
+The actual breakpoint to trigger changes in the border, 
+direction, gap, margin, pad, and round. Expects `string`.
 
 Defaults to
 
@@ -227,7 +245,8 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
+The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round. Expects `object`.
 
 Defaults to
 

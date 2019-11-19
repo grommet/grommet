@@ -48,6 +48,16 @@ Defaults to
 <FormUp />
 ```
 
+**accordion.icons.color**
+
+The icon color to use in the accordion. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+control
+```
+
 **accordion.icons.expand**
 
 The icon to use when the panel is collapsed. Expects `React.Element`.
@@ -58,12 +68,22 @@ Defaults to
 <FormDown />
 ```
 
-**accordion.border**
+**accordion.border.color**
 
-The border to use in the accordion. Expects `React.Element`.
+The border color to use in the accordion. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-side: bottom, color: border
+border
+```
+
+**accordion.border.side**
+
+The border side to use in the accordion. Expects `string`.
+
+Defaults to
+
+```
+bottom
 ```

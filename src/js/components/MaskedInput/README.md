@@ -55,7 +55,10 @@ Describes the structure of the mask. If a regexp is provided, it should
     number
     [number],
   fixed: string,
-  options: [string],
+  options: [
+  string
+  number
+],
   regexp: 
     {
 
@@ -82,6 +85,7 @@ What text to put in the input. The caller should ensure that it
 
 ```
 string
+number
 ```
   
 ## Intrinsic element
@@ -91,6 +95,26 @@ input
 ```
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
+**global.hover.color**
+
+The text color when hovering. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
 **maskedInput.extend**
 
 Any additional style for MaskedInput. Expects `string | (props) => {}`.

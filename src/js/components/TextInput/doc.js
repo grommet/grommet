@@ -47,7 +47,8 @@ export const doc = TextInput => {
       suggestionIsOpen: PropTypes.string,
     })
       .description(
-        'Custom messages for TextInput. Used for accessibility by screen readers.',
+        `Custom messages for TextInput. Used for accessibility by screen 
+        readers.`,
       )
       .defaultValue({
         enterSelect: '(Press Enter to Select)',
@@ -71,10 +72,9 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     onSuggestionsClose: PropTypes.func.description(
       'Function that will be called when the suggestions drop is closed.',
     ),
-    placeholder: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.node,
-    ]).description('Placeholder to use when no value is provided.'),
+    placeholder: PropTypes.node.description(
+      'Placeholder to use when no value is provided.',
+    ),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance`,
@@ -134,7 +134,8 @@ export const themeDoc = {
     defaultValue: 20,
   },
   text: {
-    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+    description: `The possible sizes of the text in terms of its font-size and 
+    line-height.`,
     type: 'object',
     defaultValue: `{
       xsmall: {
@@ -165,6 +166,11 @@ export const themeDoc = {
   },
   'textInput.extend': {
     description: 'Any additional style for TextInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'textInput.container.extend': {
+    description: 'Any additional style for TextInput container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

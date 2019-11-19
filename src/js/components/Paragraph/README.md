@@ -13,7 +13,8 @@ import { Paragraph } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -43,8 +44,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -119,6 +120,14 @@ string
 }
 ```
 
+**fill**
+
+Whether the width should fill the container.
+
+```
+boolean
+```
+
 **responsive**
 
 Whether margin should be scaled for mobile environments. Defaults to `true`.
@@ -159,7 +168,8 @@ p
   
 **paragraph**
 
-The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects `object`.
+The possible sizes of the paragraph in terms of its max-width,
+     font-size and line-height. Expects `object`.
 
 Defaults to
 

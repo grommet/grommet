@@ -39,19 +39,36 @@ const customTheme = {
   },
 };
 
+const coloredButton = {
+  button: {
+    border: {
+      color: 'accent-1',
+    },
+    color: { dark: 'accent-1', light: 'dark-2' },
+    primary: {
+      color: 'neutral-2',
+    },
+  },
+};
+
 const CustomTheme = () => (
-  <React.Fragment>
+  <>
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
         <Button label="custom theme" onClick={() => {}} primary />
       </Box>
     </Grommet>
-    <Grommet theme={grommet}>
+    <Grommet theme={coloredButton}>
       <Box align="center" pad="large">
-        <Button as="span" label="Custom as=span" path="/" />
+        <Button as="span" label="theme on dark background" primary />
       </Box>
     </Grommet>
-  </React.Fragment>
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <Button as="span" label="Custom as=span" />
+      </Box>
+    </Grommet>
+  </>
 );
 
 storiesOf('Button', module).add('Custom', () => <CustomTheme />);

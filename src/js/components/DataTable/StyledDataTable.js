@@ -1,6 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import {
+  backgroundStyle,
+  focusStyle,
+  genericStyles,
+  normalizeColor,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
@@ -11,12 +16,37 @@ import { TableFooter } from '../TableFooter';
 const StyledDataTable = styled(Table)`
   border-spacing: 0;
   border-collapse: collapse;
-  height: 100%;
+  height: auto; /* helps Firefox to get table contents to not overflow */
+
   ${genericStyles};
 `;
 
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
+
+const hoverStyle = css`
+  ${props =>
+    backgroundStyle(
+      normalizeColor(
+        (props.theme.table &&
+          props.theme.table.row &&
+          props.theme.table.row.hover &&
+          props.theme.table.row.hover.background) ||
+          props.theme.global.hover.background,
+        props.theme,
+      ),
+      props.theme,
+    )}
+  color: ${props =>
+    normalizeColor(
+      (props.theme.table &&
+        props.theme.table.row &&
+        props.theme.table.row.hover &&
+        props.theme.table.row.hover.color) ||
+        props.theme.global.hover.color,
+      props.theme,
+    )};
+`;
 
 const StyledDataTableRow = styled(TableRow)`
   ${props =>
@@ -25,7 +55,16 @@ const StyledDataTableRow = styled(TableRow)`
     display: table;
     width: 100%;
     table-layout: fixed;
-  `};
+  `}
+  ${props =>
+    props.onClick &&
+    `
+    cursor: pointer;
+  `}
+  &:hover {
+    ${props => props.onClickRow && !props.active && hoverStyle}
+  }
+  ${props => props.active && hoverStyle}
 `;
 
 StyledDataTableRow.defaultProps = {};
@@ -39,7 +78,8 @@ const StyledDataTableBody = styled(TableBody)`
     width: 100%;
     max-height: ${props.theme.global.size[props.size]};
     overflow: auto;
-  `};
+  `}
+  ${props => props.focus && focusStyle}
 `;
 
 StyledDataTableBody.defaultProps = {};
@@ -52,7 +92,7 @@ const StyledDataTableHeader = styled(TableHeader)`
     display: table;
     width: 100%;
     table-layout: fixed;
-  `};
+  `}
 `;
 
 StyledDataTableHeader.defaultProps = {};
@@ -65,7 +105,7 @@ const StyledDataTableFooter = styled(TableFooter)`
     display: table;
     width: 100%;
     table-layout: fixed;
-  `};
+  `}
 `;
 
 StyledDataTableFooter.defaultProps = {};

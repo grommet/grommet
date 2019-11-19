@@ -1,20 +1,21 @@
 import * as React from "react";
+import { A11yTitleType, AlignSelfType, AnimateType, GridAreaType, MarginType } from "../../utils";
 
 export interface CalendarProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  animate?: boolean;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  animate?: AnimateType
   bounds?: string[];
   date?: string;
   dates?: (string | string[])[];
   daysOfWeek?: boolean;
   disabled?: (string | string[])[];
-  firstDayOfWeek?: "0" | "1";
+  firstDayOfWeek?: 0 | 1;
   header?: ((...args: any[]) => any);
   locale?: string;
-  onReference?: ((...args: any[]) => any);
+  onReference?: ((reference: string) => void);
   onSelect?: ((...args: any[]) => any);
   range?: boolean;
   reference?: string;

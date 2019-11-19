@@ -51,6 +51,7 @@ test('Heading size renders', () => {
       <Heading level={4} size="medium" />
       <Heading level={4} size="large" />
       <Heading level={4} size="xlarge" />
+      <Heading level={1} size="77px" />
     </Grommet>,
   );
   const tree = component.toJSON();

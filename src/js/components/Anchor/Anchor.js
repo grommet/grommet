@@ -1,44 +1,48 @@
-import React, { cloneElement, Component } from 'react';
-import { compose } from 'recompose';
+import React, {
+  cloneElement,
+  forwardRef,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
-import { withTheme } from 'styled-components';
-
-import { normalizeColor } from '../../utils';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
+import { normalizeColor } from '../../utils';
+
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledAnchor } from './StyledAnchor';
 
-class Anchor extends Component {
-  constructor(props) {
-    super(props);
-
-    const { children, icon, label } = props;
-    if ((icon || label) && children) {
-      console.warn(
-        'Anchor should not have children if icon or label is provided',
-      );
-    }
-  }
-
-  render() {
-    const {
+const Anchor = forwardRef(
+  (
+    {
       a11yTitle,
       children,
       color,
       disabled,
-      forwardRef,
       href,
       icon,
-      focus,
       label,
+      onBlur,
       onClick,
+      onFocus,
       reverse,
-      theme,
       ...rest
-    } = this.props;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [focus, setFocus] = useState();
+
+    useEffect(() => {
+      if ((icon || label) && children) {
+        console.warn(
+          'Anchor should not have children if icon or label is provided',
+        );
+      }
+    }, [children, icon, label]);
 
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
@@ -53,7 +57,7 @@ class Anchor extends Component {
     return (
       <StyledAnchor
         {...rest}
-        ref={forwardRef}
+        ref={ref}
         aria-label={a11yTitle}
         colorProp={color}
         disabled={disabled}
@@ -63,6 +67,14 @@ class Anchor extends Component {
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
+        onFocus={event => {
+          setFocus(true);
+          if (onFocus) onFocus(event);
+        }}
+        onBlur={event => {
+          setFocus(false);
+          if (onBlur) onBlur(event);
+        }}
       >
         {first && second ? (
           <Box
@@ -80,20 +92,16 @@ class Anchor extends Component {
         )}
       </StyledAnchor>
     );
-  }
-}
+  },
+);
 
-Anchor.defaultProps = {};
-Object.setPrototypeOf(Anchor.defaultProps, defaultProps);
+Anchor.displayName = 'Anchor';
 
 let AnchorDoc;
 if (process.env.NODE_ENV !== 'production') {
-  AnchorDoc = require('./doc').doc(Anchor); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  AnchorDoc = require('./doc').doc(Anchor);
 }
-const AnchorWrapper = compose(
-  withFocus(),
-  withTheme,
-  withForwardRef,
-)(AnchorDoc || Anchor);
+const AnchorWrapper = AnchorDoc || Anchor;
 
 export { AnchorWrapper as Anchor };

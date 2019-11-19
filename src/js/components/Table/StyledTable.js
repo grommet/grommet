@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import {
+  backgroundStyle,
+  borderStyle,
+  edgeStyle,
+  genericStyles,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const SIZE_MAP = {
@@ -29,6 +34,19 @@ const StyledTableCell = styled.td`
 
   ${props => props.size && sizeStyle}
   ${props => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
+  ${props => props.align && `text-align: ${props.align};`}
+  ${props => props.background && backgroundStyle(props.background, props.theme)}
+  ${props =>
+    props.border && borderStyle(props.border, props.responsive, props.theme)}
+  ${props =>
+    props.pad &&
+    edgeStyle(
+      'padding',
+      props.pad,
+      props.responsive,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    )}
   ${props => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
@@ -36,7 +54,7 @@ StyledTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
 
 const StyledTableDataCaption = styled.caption`
-  display: none;
+  margin-bottom: ${props => props.theme.global.edgeSize.xxsmall};
 `;
 
 StyledTableDataCaption.defaultProps = {};

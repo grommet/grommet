@@ -20,7 +20,7 @@ Before opening an issue or pull request, please read the [Contributing] guide.
 
 ## Install
 
-You can install Grommet using either of the methods below.
+You can install Grommet using either of the methods given below.
 
 For npm users:
 
@@ -67,8 +67,10 @@ See the [Change Log].
 
 Grommet is produced using this great tool:
 
+- [BrowserStack] for browser emulators and simulators.
 - [Circle CI] for continuous integration.
 
+[browserstack]: https://www.browserstack.com/
 [change log]: https://github.com/grommet/grommet/wiki/Change-Log
 [circle ci]: https://circleci.com/gh/grommet/grommet/
 [contributing]: CONTRIBUTING.md

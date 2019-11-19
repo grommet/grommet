@@ -14,6 +14,13 @@ const IconLabel = () => (
       <Box align="center" pad="large" gap="small">
         <Button icon={<Add />} label="Add" onClick={() => {}} primary />
         <Button icon={<Add />} label="Add" onClick={() => {}} />
+        <Button icon={<Add />} label="Add" gap="xlarge" onClick={() => {}} />
+        <Button
+          icon={<Add />}
+          label="500px gap"
+          gap="500px"
+          onClick={() => {}}
+        />
       </Box>
     </Box>
   </Grommet>

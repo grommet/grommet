@@ -19,7 +19,8 @@ import { Menu } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -49,8 +50,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -123,7 +124,8 @@ boolean
 
 **dropAlign**
 
-Where to place the drop down. The keys correspond to a side of the drop down.
+Where to place the drop down.
+The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
@@ -158,10 +160,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }
 ```
 
@@ -225,7 +228,8 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
+Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided. Defaults to `{
   "openMenu": "Open Menu",
   "closeMenu": "Close Menu"
 }`.
@@ -235,6 +239,14 @@ Custom messages. Used for accessibility by screen readers. Defaults to `{
   closeMenu: string,
   openMenu: string
 }
+```
+
+**open**
+
+Whether the state of the component should be open
+
+```
+boolean
 ```
 
 **size**

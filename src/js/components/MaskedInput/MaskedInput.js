@@ -129,8 +129,8 @@ class MaskedInput extends Component {
   dropRef = React.createRef();
 
   componentDidUpdate() {
-    const { focused } = this.state;
-    if (focused) {
+    const { focus } = this.props;
+    if (focus) {
       this.locateCaret();
     }
   }
@@ -163,9 +163,13 @@ class MaskedInput extends Component {
         if (maskIndex && mask[maskIndex].fixed) {
           maskIndex -= 1; // fixed mask parts are never "active"
         }
-        if (activeMaskIndex !== maskIndex) {
+        if (maskIndex !== activeMaskIndex) {
           // eslint-disable-next-line react/no-did-update-set-state
-          this.setState({ activeMaskIndex: maskIndex, activeOptionIndex: -1 });
+          this.setState({
+            activeMaskIndex: maskIndex,
+            activeOptionIndex: -1,
+            showDrop: maskIndex >= 0 && mask[maskIndex].options && true,
+          });
         }
       }
     }, 10); // 10ms empirically chosen
@@ -174,7 +178,6 @@ class MaskedInput extends Component {
   onFocus = event => {
     const { onFocus } = this.props;
     this.locateCaret();
-    this.setState({ focused: true });
     if (onFocus) {
       onFocus(event);
     }
@@ -185,17 +188,34 @@ class MaskedInput extends Component {
     const { onBlur } = this.props;
     clearTimeout(this.blurTimeout);
     this.blurTimeout = setTimeout(() => {
+      const { showDrop } = this.state;
       if (
-        !this.dropRef.current ||
-        !this.dropRef.current.contains ||
-        !this.dropRef.current.contains(document.activeElement)
+        showDrop &&
+        this.dropRef.current &&
+        document.activeElement !== this.inputRef.current &&
+        !this.dropRef.current.parentNode.contains(document.activeElement)
       ) {
-        this.setState({ activeMaskIndex: undefined, focused: false });
+        this.setState({ activeMaskIndex: undefined, showDrop: false });
       }
     }, 10); // 10ms empirically chosen
     if (onBlur) {
       onBlur(event);
     }
+  };
+
+  setValue = nextValue => {
+    // Calling set value function directly on input because React library
+    // overrides setter `event.target.value =` and loses original event
+    // target fidelity.
+    // https://stackoverflow.com/a/46012210 &&
+    // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
+    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+      window.HTMLInputElement.prototype,
+      'value',
+    ).set;
+    nativeInputValueSetter.call(this.inputRef.current, nextValue);
+    const event = new Event('input', { bubbles: true });
+    this.inputRef.current.dispatchEvent(event);
   };
 
   // This could be due to a paste or as the user is typing.
@@ -207,13 +227,17 @@ class MaskedInput extends Component {
     // Align with the mask.
     const valueParts = parseValue(mask, value);
     const nextValue = valueParts.map(part => part.part).join('');
-    if (onChange) {
-      onChange({ target: { ...event.target, value: nextValue } });
+    if (value === nextValue) {
+      if (onChange) {
+        onChange(event);
+      }
+    } else {
+      this.setValue(nextValue);
     }
   };
 
   onOption = option => () => {
-    const { onChange, mask } = this.props;
+    const { mask } = this.props;
     const { activeMaskIndex, valueParts } = this.state;
     const nextValueParts = [...valueParts];
     nextValueParts[activeMaskIndex] = { part: option };
@@ -224,11 +248,9 @@ class MaskedInput extends Component {
       index += 1;
     }
     const nextValue = nextValueParts.map(part => part.part).join('');
+    this.setValue(nextValue);
     // restore focus to input
     this.inputRef.current.focus();
-    if (onChange) {
-      onChange({ target: { value: nextValue } });
-    }
   };
 
   onNextOption = event => {
@@ -263,11 +285,14 @@ class MaskedInput extends Component {
   };
 
   onEsc = event => {
-    // we have to stop both synthetic events and native events
-    // drop and layer should not close by pressing esc on this input
-    event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
-    this.inputRef.current.blur();
+    const { showDrop } = this.state;
+    if (showDrop) {
+      // we have to stop both synthetic events and native events
+      // drop and layer should not close by pressing esc on this input
+      event.stopPropagation();
+      event.nativeEvent.stopImmediatePropagation();
+      this.setState({ showDrop: false });
+    }
   };
 
   renderPlaceholder = () => {
@@ -290,7 +315,7 @@ class MaskedInput extends Component {
       ...rest
     } = this.props;
     const theme = this.context || propsTheme;
-    const { activeMaskIndex, activeOptionIndex } = this.state;
+    const { activeMaskIndex, activeOptionIndex, showDrop } = this.state;
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -328,7 +353,7 @@ class MaskedInput extends Component {
             onChange={this.onChange}
           />
         </Keyboard>
-        {activeMaskIndex >= 0 && mask[activeMaskIndex].options && (
+        {showDrop && (
           <Drop
             id={id ? `masked-input-drop__${id}` : undefined}
             align={{ top: 'bottom', left: 'left' }}
@@ -345,13 +370,10 @@ class MaskedInput extends Component {
                       this.setState({ activeOptionIndex: index })
                     }
                     onFocus={() => {}}
+                    active={index === activeOptionIndex}
+                    hoverIndicator="background"
                   >
-                    <Box
-                      pad={{ horizontal: 'small', vertical: 'xsmall' }}
-                      background={
-                        activeOptionIndex === index ? 'active' : undefined
-                      }
-                    >
+                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                       {option}
                     </Box>
                   </Button>
@@ -369,7 +391,8 @@ Object.setPrototypeOf(MaskedInput.defaultProps, defaultProps);
 
 let MaskedInputDoc;
 if (process.env.NODE_ENV !== 'production') {
-  MaskedInputDoc = require('./doc').doc(MaskedInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  MaskedInputDoc = require('./doc').doc(MaskedInput);
 }
 const MaskedInputWrapper = compose(
   withFocus({ focusWithMouse: true }),

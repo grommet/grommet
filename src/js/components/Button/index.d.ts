@@ -1,21 +1,33 @@
 import * as React from "react";
-import { Omit, PolymorphicType } from "../../utils";
+import { 
+  A11yTitleType,
+  AlignSelfType, 
+  BackgroundType,
+  ColorType,
+  FillType,
+  GapType, 
+  GridAreaType, 
+  MarginType, 
+  Omit, 
+  PolymorphicType
+} from "../../utils";
 
 export interface ButtonProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
   active?: boolean;
-  color?: string | {dark?: string,light?: string};
+  color?: ColorType;
   disabled?: boolean;
-  fill?: boolean;
+  fill?: FillType;
   focusIndicator?: boolean;
-  hoverIndicator?: boolean | string | "background" | {background?: boolean | string};
+  gap?: GapType;
+  hoverIndicator?: BackgroundType | boolean;
   href?: string;
+  target?: "_self" | "_blank" | "_parent" | "_top";
   icon?: JSX.Element;
   label?: React.ReactNode;
-  onClick?: ((...args: any[]) => any);
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
@@ -23,6 +35,6 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
-declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
+declare const Button: React.FC<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
 
 export { Button };

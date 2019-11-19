@@ -19,8 +19,12 @@ exports[`Button as 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -70,8 +74,12 @@ exports[`Button basic 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -124,8 +132,12 @@ exports[`Button children function 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -187,8 +199,12 @@ exports[`Button color 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -216,8 +232,12 @@ exports[`Button color 1`] = `
   background: #6FFFB0;
   color: #444444;
   border-radius: 18px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c2:hover {
@@ -245,8 +265,12 @@ exports[`Button color 1`] = `
   background: #111111;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c3:hover {
@@ -274,8 +298,12 @@ exports[`Button color 1`] = `
   background: #123;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c4:hover {
@@ -363,8 +391,12 @@ exports[`Button disabled 1`] = `
   line-height: 24px;
   opacity: 0.3;
   cursor: default;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c0 {
@@ -392,6 +424,210 @@ exports[`Button disabled 1`] = `
 </div>
 `;
 
+exports[`Button fill 1`] = `
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+}
+
+.c4:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  height: 100%;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <button
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <button
+      className="c2"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      type="button"
+    />
+    <button
+      className="c3"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      type="button"
+    />
+    <button
+      className="c4"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      type="button"
+    />
+    <button
+      className="c5"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      type="button"
+    />
+  </button>
+</div>
+`;
+
 exports[`Button focus 1`] = `
 .c1 {
   display: inline-block;
@@ -411,10 +647,15 @@ exports[`Button focus 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  outline-color: #6FFFB0;
   border-color: #6FFFB0;
   box-shadow: 0 0 2px 2px #6FFFB0;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1 > circle,
@@ -442,15 +683,10 @@ exports[`Button focus 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     Test
@@ -881,8 +1117,12 @@ exports[`Button href 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -922,7 +1162,6 @@ exports[`Button icon label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -936,7 +1175,6 @@ exports[`Button icon label 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c3 {
@@ -964,8 +1202,12 @@ exports[`Button icon label 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -980,18 +1222,6 @@ exports[`Button icon label 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -1041,8 +1271,12 @@ exports[`Button primary 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -1085,7 +1319,6 @@ exports[`Button reverse icon label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1099,7 +1332,6 @@ exports[`Button reverse icon label 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c3 {
@@ -1127,8 +1359,12 @@ exports[`Button reverse icon label 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1:hover {
@@ -1143,18 +1379,6 @@ exports[`Button reverse icon label 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div

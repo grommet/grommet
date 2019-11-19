@@ -6,7 +6,7 @@ An Anchor with support for React Router.
 
 ```javascript
 import { RoutedAnchor } from 'grommet';
-<RoutedAnchor primary={true} path='/documentation' />
+<RoutedAnchor primary path='/documentation' />
 ```
 
 ## Properties
@@ -21,7 +21,8 @@ string
 
 **method**
 
-Indicates whether the browser history should be appended to or replaced. Defaults to `push`.
+Indicates whether the browser history should be appended to or 
+      replaced. Defaults to `push`.
 
 ```
 push

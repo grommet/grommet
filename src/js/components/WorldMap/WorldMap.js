@@ -17,7 +17,14 @@ const CONTINENTS = [
   {
     name: 'Australia',
     origin: [74, 32],
-    area: [[4, 0], [7, 1], [15, 7], [13, 9], [0, 6], [0, 2]],
+    area: [
+      [4, 0],
+      [7, 1],
+      [15, 7],
+      [13, 9],
+      [0, 6],
+      [0, 2],
+    ],
     dots: [
       [4, 0, 1],
       [2, 1, 6],
@@ -210,7 +217,16 @@ const CONTINENTS = [
   {
     name: 'South America',
     origin: [22, 26],
-    area: [[2, 0], [5, 0], [11, 4], [11, 8], [3, 18], [2, 17], [0, 4], [0, 3]],
+    area: [
+      [2, 0],
+      [5, 0],
+      [11, 4],
+      [11, 8],
+      [3, 18],
+      [2, 17],
+      [0, 4],
+      [0, 3],
+    ],
     dots: [
       [2, 0, 4],
       [1, 1, 7],
@@ -236,7 +252,15 @@ const CONTINENTS = [
   {
     name: 'North America',
     origin: [0, 0],
-    area: [[21, 0], [39, 0], [39, 6], [22, 26], [16, 23], [2, 12], [0, 7]],
+    area: [
+      [21, 0],
+      [39, 0],
+      [39, 6],
+      [22, 26],
+      [16, 23],
+      [2, 12],
+      [0, 7],
+    ],
     dots: [
       [22, 0, 6],
       [29, 0, 1],
@@ -516,7 +540,14 @@ class WorldMap extends Component {
   };
 
   render() {
-    const { color, onSelectPlace, hoverColor, theme, ...rest } = this.props;
+    const {
+      color,
+      fill, // munged to avoid styled-components putting it in the DOM
+      onSelectPlace,
+      hoverColor,
+      theme,
+      ...rest
+    } = this.props;
     delete rest.places;
     delete rest.continents;
     const {
@@ -650,6 +681,7 @@ class WorldMap extends Component {
       <StyledWorldMap
         viewBox={`${x} ${y} ${width} ${height}`}
         preserveAspectRatio="xMinYMin meet"
+        fillProp={fill}
         width={width}
         height={height}
         {...interactiveProps}
@@ -677,7 +709,8 @@ Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
 
 let WorldMapDoc;
 if (process.env.NODE_ENV !== 'production') {
-  WorldMapDoc = require('./doc').doc(WorldMap); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  WorldMapDoc = require('./doc').doc(WorldMap);
 }
 const WorldMapWrapper = compose(withTheme)(WorldMapDoc || WorldMap);
 

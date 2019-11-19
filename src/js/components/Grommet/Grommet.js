@@ -15,21 +15,30 @@ class Grommet extends Component {
   static displayName = 'Grommet';
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { theme = {} } = nextProps;
-    const { theme: stateTheme, themeProp } = prevState;
+    const { theme = {}, themeMode } = nextProps;
+    const { theme: stateTheme, themeProp, themeModeProp } = prevState;
 
     const nextTheme = deepMerge(baseTheme, theme);
-    if (!stateTheme || theme !== themeProp) {
-      if (typeof theme.dark === 'undefined') {
-        // calculate if background is dark or not
-        // otherwise respect the property passed in the theme
-        const { colors } = nextTheme.global;
-        const color = colors.background;
+    if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
+      const {
+        colors: { background },
+      } = nextTheme.global;
+      // Determine whether to start in dark or light mode.
+      if (typeof background === 'object') {
+        // background is an object, use themeMode, theme default
+        // or first key
+        const color =
+          background[
+            themeMode || nextTheme.defaultMode || Object.keys(background)[0]
+          ];
         nextTheme.dark = color ? colorIsDark(color) : false;
+      } else if (nextTheme.dark === undefined) {
+        nextTheme.dark = (background && colorIsDark(background)) || false;
       }
       return {
         theme: nextTheme,
         themeProp: theme,
+        themeModeProp: themeMode,
       };
     }
 
@@ -109,7 +118,8 @@ class Grommet extends Component {
 
 let GrommetDoc;
 if (process.env.NODE_ENV !== 'production') {
-  GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  GrommetDoc = require('./doc').doc(Grommet);
 }
 const GrommetWrapper = GrommetDoc || Grommet;
 

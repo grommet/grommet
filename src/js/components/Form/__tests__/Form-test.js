@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from 'react-testing-library';
+import { cleanup, render, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -138,5 +138,32 @@ describe('Form', () => {
     });
     fireEvent.click(getByText('Reset'));
     expect(queryByText('Input has changed')).toBeNull();
+  });
+
+  test('initial values', () => {
+    const onSubmit = jest.fn();
+    const { getByText, queryByText } = render(
+      <Grommet>
+        {/* this test continues running forever if the whole event passed to 
+            onSubmit */}
+        <Form onSubmit={({ value }) => onSubmit({ value })}>
+          <FormField
+            name="test"
+            required
+            placeholder="test input"
+            value="Initial value"
+          />
+          <FormField name="test2" value="Initial value2" />
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    fireEvent.click(getByText('Submit'));
+    expect(queryByText('required')).toBeNull();
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: { test: 'Initial value', test2: 'Initial value2' },
+      }),
+    );
   });
 });

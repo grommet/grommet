@@ -105,6 +105,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
 
   const result = deepMerge(iconBase, {
     global: {
+      active: {
+        background: {
+          color: 'active',
+          opacity: 'medium',
+        },
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+      },
       animation: {
         duration: '1s',
         jiggle: {
@@ -171,7 +181,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 0.3,
         },
       },
-      debounceDelay: 300, // The time to wait after the user stopped typing, measured in ms.
+      // The time to wait after the user stopped typing, measured in ms.
+      debounceDelay: 300,
       drop: {
         background: '#ffffff',
         border: {
@@ -217,17 +228,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       font: {
         ...fontSizing(0),
         // face: undefined,
+        // family: undefined,
       },
       hover: {
         background: {
-          dark: {
-            color: 'active',
-            opacity: 'medium',
-          },
-          light: {
-            color: 'active',
-            opacity: 'medium',
-          },
+          color: 'active',
+          opacity: 'medium',
         },
         color: {
           dark: 'white',
@@ -333,13 +339,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           next: FormNext,
         },
       },
+      heading: { level: '4' }, // level ranges from 1-6
     },
     carousel: {
       icons: {
         current: Subtract,
         next: Next,
         previous: Previous,
-        // color: undefined,
+        // color: { dark: undefined, light: undefined },
+      },
+      animation: {
+        duration: 1000,
+      },
+      disabled: {
+        icons: {
+          // color: { dark: undefined, light: undefined },
+        },
       },
     },
     chart: {
@@ -446,30 +461,32 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dataTable: {
-      header: {},
       groupHeader: {
-        border: { side: 'bottom', size: 'xsmall' },
-        fill: 'vertical',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
           dark: 'dark-2',
           light: 'light-2',
         },
+        border: { side: 'bottom', size: 'xsmall' },
+        pad: { horizontal: 'small', vertical: 'xsmall' },
       },
+      groupEnd: {
+        border: { side: 'bottom', size: 'xsmall' },
+      },
+      header: {},
       icons: {
         ascending: FormDown,
         contract: FormUp,
         descending: FormUp,
         expand: FormDown,
       },
-      resize: {
-        border: {
-          side: 'right',
-          color: 'border',
-        },
-      },
       primary: {
         weight: 'bold',
+      },
+      resize: {
+        border: {
+          color: 'border',
+          side: 'right',
+        },
       },
     },
     diagram: {
@@ -522,7 +539,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       margin: { bottom: 'small' },
     },
-    grommet: {},
+    grommet: {
+      // extend: undefined
+    },
     heading: {
       font: {
         // family: undefined
@@ -600,11 +619,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         zIndex: '15',
       },
+      // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '10',
+    },
+    list: {
+      item: {
+        // background: undefined,
+        border: 'horizontal',
+        pad: { horizontal: 'medium', vertical: 'small' },
+        // extend: undefined,
+      },
+      // extend: undefined,
     },
     maskedInput: {
       // extend: undefined,
@@ -686,13 +715,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       control: {
         // extend: undefined,
+        // open: undefined,
       },
       icons: {
         // color: { dark: undefined, light: undefined },
+        margin: { horizontal: 'small' },
         down: FormDown,
       },
       options: {
-        box: {
+        container: {
           align: 'start',
           pad: 'small',
         },
@@ -765,31 +796,37 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'bottom',
-        verticalAlign: 'bottom',
-        fill: 'vertical',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },
       body: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
+        // background: undefined,
         // border: undefined,
         // extend: undefined,
       },
+      // row: {
+      //   hover: {
+      //     background: undefined,
+      //     color: undefined,
+      //   },
+      // },
       footer: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'top',
-        verticalAlign: 'top',
-        fill: 'vertical',
+        // verticalAlign: undefined,
+        // background: undefined,
         // extend: undefined,
       },
     },
     text: {
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
-      medium: { ...fontSizing(0) },
-      large: { ...fontSizing(1) },
+      medium: { ...fontSizing(0) }, // 18px
+      large: { ...fontSizing(1) }, // 22px
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },

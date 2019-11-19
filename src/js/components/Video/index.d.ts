@@ -1,17 +1,18 @@
 import * as React from "react";
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType, Omit } from "../../utils";
 
 export interface VideoProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   autoPlay?: boolean;
   controls?: "false" | "over" | "below";
   fit?: "cover" | "contain";
+  gridArea?: GridAreaType;
   loop?: boolean;
+  margin?: MarginType;
   mute?: boolean;
 }
 
-declare const Video: React.ComponentClass<VideoProps & JSX.IntrinsicElements['video']>;
+declare const Video: React.ComponentClass<VideoProps & JSX.IntrinsicElements['video'] & Omit<JSX.IntrinsicElements['video'], 'controls'>>;
 
 export { Video };

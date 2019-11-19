@@ -1,21 +1,22 @@
 import React from 'react';
 import { compose } from 'recompose';
-
 import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
 import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
-import { Sorter } from './Sorter';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
 
 const Header = ({
+  background,
+  border,
   columns,
   filtering,
   filters,
@@ -26,23 +27,12 @@ const Header = ({
   onResize,
   onSort,
   onToggle,
+  pad,
   sort,
   theme,
   widths,
   ...rest
 }) => {
-  const dataTableContextTheme = {
-    ...theme.table.header,
-    ...theme.dataTable.header,
-  };
-  // The tricky part here is that we need to manage the theme styling
-  // to make sure that the background, border, and padding are applied
-  // at the right places depending on the mix of controls in each header cell.
-  const outerThemeProps = (({ border, background }) => ({
-    border,
-    background,
-  }))(dataTableContextTheme);
-  const { border, background, ...innerThemeProps } = dataTableContextTheme;
   return (
     <StyledDataTableHeader {...rest}>
       <StyledDataTableRow>
@@ -60,38 +50,32 @@ const Header = ({
         {columns.map(({ property, header, align, search, sortable }) => {
           let content =
             typeof header === 'string' ? <Text>{header}</Text> : header;
+
           if (onSort && sortable !== false) {
+            const Icon =
+              onSort &&
+              sortable !== false &&
+              sort &&
+              sort.property === property &&
+              theme.dataTable.icons[
+                sort.ascending ? 'ascending' : 'descending'
+              ];
             content = (
-              <Sorter
-                align={align}
-                fill={!search}
-                property={property}
-                onSort={onSort}
-                sort={sort}
-                themeProps={search ? innerThemeProps : dataTableContextTheme}
-              >
-                {content}
-              </Sorter>
+              <Button plain fill="vertical" onClick={onSort(property)}>
+                <Box direction="row" align="center" gap="xsmall">
+                  {content}
+                  {Icon && <Icon />}
+                </Box>
+              </Button>
             );
           }
 
-          if (search && filters) {
-            if (!onSort) {
-              content = (
-                <Box justify="center" align={align} {...innerThemeProps}>
-                  {content}
-                </Box>
-              );
-            }
-            content = (
-              <Box
-                fill
-                direction="row"
-                justify="between"
-                align="center"
-                {...outerThemeProps}
-              >
-                {content}
+          if (search || onResize) {
+            const resizer = onResize ? (
+              <Resizer property={property} onResize={onResize} />
+            ) : null;
+            const searcher =
+              search && filters ? (
                 <Searcher
                   filtering={filtering}
                   filters={filters}
@@ -99,34 +83,38 @@ const Header = ({
                   onFilter={onFilter}
                   onFiltering={onFiltering}
                 />
-              </Box>
-            );
-          } else if (!onSort || sortable === false) {
+              ) : null;
             content = (
               <Box
-                {...dataTableContextTheme}
-                fill
-                justify="center"
-                align={align}
+                direction="row"
+                align="center"
+                justify={!align || align === 'start' ? 'between' : align}
+                gap="small"
+                fill="vertical"
+                style={onResize ? { position: 'relative' } : undefined}
               >
                 {content}
+                {searcher && resizer ? (
+                  <Box flex="shrink" direction="row" align="center" gap="small">
+                    {searcher}
+                    {resizer}
+                  </Box>
+                ) : (
+                  searcher || resizer
+                )}
               </Box>
-            );
-          }
-
-          if (onResize) {
-            content = (
-              <Resizer property={property} onResize={onResize}>
-                {content}
-              </Resizer>
             );
           }
 
           return (
             <TableCell
               key={property}
-              scope="col"
+              align={align}
+              background={background}
+              border={border}
+              pad={pad}
               plain
+              scope="col"
               style={
                 widths && widths[property]
                   ? { width: widths[property] }

@@ -1,7 +1,11 @@
 import { css } from 'styled-components';
 
-export const parseMetricToNum = fontAsString =>
-  parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
+export const parseMetricToNum = fontAsString => {
+  if (fontAsString.match(/\s/) && process.env.NODE_ENV !== 'production') {
+    console.warn(`Invalid single measurement value: "${fontAsString}"`);
+  }
+  return parseFloat(fontAsString.match(/\d+(\.\d+)?/), 10);
+};
 
 export const fontSize = (size, lineHeight) => css`
   font-size: ${props =>

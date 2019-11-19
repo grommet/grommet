@@ -4,10 +4,12 @@ import { defaultProps } from '../../default-props';
 
 import {
   backgroundStyle,
+  borderStyle,
   breakpointStyle,
   edgeStyle,
+  focusStyle,
   genericStyles,
-  normalizeColor,
+  getHoverIndicatorStyle,
   overflowStyle,
 } from '../../utils';
 
@@ -146,84 +148,14 @@ const justifyStyle = css`
   justify-content: ${props => JUSTIFY_MAP[props.justify]};
 `;
 
-const wrapStyle = 'flex-wrap: wrap;';
-
-const borderStyle = (data, responsive, theme) => {
-  const styles = [];
-  const color = normalizeColor(data.color || 'border', theme);
-  const borderSize = data.size || 'xsmall';
-  const style = data.style || 'solid';
-  const side = typeof data === 'string' ? data : data.side || 'all';
-  const value = `${style} ${theme.global.borderSize[borderSize] ||
-    borderSize} ${color}`;
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveValue =
-    breakpoint &&
-    (breakpoint.borderSize[borderSize] || borderSize) &&
-    `${style} ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
-  if (
-    side === 'top' ||
-    side === 'bottom' ||
-    side === 'left' ||
-    side === 'right'
-  ) {
-    styles.push(css`border-${side}: ${value};`);
-    if (responsiveValue) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        border-${side}: ${responsiveValue};
-      `,
-        ),
-      );
-    }
-  } else if (side === 'vertical') {
-    styles.push(css`
-      border-left: ${value};
-      border-right: ${value};
-    `);
-    if (responsiveValue) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        border-left: ${responsiveValue};
-        border-right: ${responsiveValue};
-      `,
-        ),
-      );
-    }
-  } else if (side === 'horizontal') {
-    styles.push(css`
-      border-top: ${value};
-      border-bottom: ${value};
-    `);
-    if (responsiveValue) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        border-top: ${responsiveValue};
-        border-bottom: ${responsiveValue};
-      `,
-        ),
-      );
-    }
-  } else {
-    styles.push(
-      css`
-        border: ${value};
-      `,
-    );
-    if (responsiveValue) {
-      styles.push(breakpointStyle(breakpoint, `border: ${responsiveValue};`));
-    }
-  }
-  return styles;
+const WRAP_MAP = {
+  true: 'wrap',
+  reverse: 'wrap-reverse',
 };
+
+const wrapStyle = css`
+  flex-wrap: ${props => WRAP_MAP[props.wrapProp]};
+`;
 
 const ROUND_MAP = {
   full: '100%',
@@ -240,6 +172,7 @@ const roundStyle = (data, responsive, theme) => {
       theme.global.edgeSize[data.size || 'medium'] ||
       data.size;
     const responsiveSize =
+      responsive &&
       breakpoint &&
       breakpoint.edgeSize[data.size] &&
       (breakpoint.edgeSize[data.size] || data.size);
@@ -536,6 +469,52 @@ const animationStyle = css`
   `};
 `;
 
+const interactiveStyle = css`
+  cursor: pointer;
+
+  &:hover {
+    ${props =>
+      props.hoverIndicator &&
+      getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+  }
+`;
+
+const getSize = (props, size) => props.theme.global.size[size] || size;
+
+const heightObjectStyle = css`
+  ${props =>
+    props.heightProp.max &&
+    css`
+      max-height: ${getSize(props, props.heightProp.max)};
+    `};
+  ${props =>
+    props.heightProp.min &&
+    css`
+      min-height: ${getSize(props, props.heightProp.min)};
+    `};
+`;
+
+const heightStyle = css`
+  height: ${props => getSize(props, props.heightProp)};
+`;
+
+const widthObjectStyle = css`
+  ${props =>
+    props.widthProp.max &&
+    css`
+      max-width: ${getSize(props, props.widthProp.max)};
+    `};
+  ${props =>
+    props.widthProp.min &&
+    css`
+      min-width: ${getSize(props, props.widthProp.min)};
+    `};
+`;
+
+const widthStyle = css`
+  width: ${props => getSize(props, props.widthProp)};
+`;
+
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
@@ -544,19 +523,24 @@ const StyledBox = styled.div`
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
-  ${props =>
-    props.heightProp &&
-    `height: ${props.theme.global.size[props.heightProp] || props.heightProp};`}
-  ${props =>
-    props.widthProp &&
-    `width: ${props.theme.global.size[props.widthProp] || props.widthProp};`}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props =>
-    props.border && borderStyle(props.border, props.responsive, props.theme)}
+    props.border &&
+    (Array.isArray(props.border)
+      ? props.border.map(border =>
+          borderStyle(border, props.responsive, props.theme),
+        )
+      : borderStyle(props.border, props.responsive, props.theme))}
   ${props =>
     props.directionProp && directionStyle(props.directionProp, props.theme)}
+  ${props =>
+    props.heightProp &&
+    (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle)}
+  ${props =>
+    props.widthProp &&
+    (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle)}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}
@@ -576,6 +560,8 @@ const StyledBox = styled.div`
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
+  ${props => props.onClick && interactiveStyle}
+  ${props => props.onClick && props.focus && focusStyle}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
