@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
@@ -7,19 +6,21 @@ import { List } from '..';
 describe('List', function () {
   afterEach(cleanup);
   test('empty', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, null)));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    var _render = render(React.createElement(Grommet, null, React.createElement(List, null))),
+        container = _render.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('data strings', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render2 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two']
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render2.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('data objects', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render3 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: [{
         a: 'one',
         b: 1
@@ -27,14 +28,15 @@ describe('List', function () {
         a: 'two',
         b: 2
       }]
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render3.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('onClickItem', function () {
     var onClickItem = jest.fn();
 
-    var _render = render(React.createElement(Grommet, null, React.createElement(List, {
+    var _render4 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: [{
         a: 'alpha'
       }, {
@@ -42,8 +44,8 @@ describe('List', function () {
       }],
       onClickItem: onClickItem
     }))),
-        container = _render.container,
-        getByText = _render.getByText;
+        container = _render4.container,
+        getByText = _render4.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
@@ -55,60 +57,66 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('background string', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render5 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
       background: "accent-1"
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render5.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('background array', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render6 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two', 'three', 'four'],
       background: ['accent-1', 'accent-2']
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render6.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('border boolean', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render7 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
       border: true
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render7.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('border side', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render8 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
       border: "horizontal"
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render8.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('border object', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render9 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
       border: {
         color: 'accent-1',
         side: 'horizontal',
         size: 'large'
       }
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render9.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('children render', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render10 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two']
     }, function (item, index) {
       return item + " - " + index;
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render10.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('itemProps', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render11 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
       itemProps: {
         1: {
@@ -120,30 +128,33 @@ describe('List', function () {
           pad: 'large'
         }
       }
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render11.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('pad string', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render12 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
       pad: "large"
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render12.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('pad object', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render13 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
       pad: {
         horizontal: 'large'
       }
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render13.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('primaryKey', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render14 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: [{
         a: 'one',
         b: 1
@@ -152,12 +163,13 @@ describe('List', function () {
         b: 2
       }],
       primaryKey: "a"
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render14.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('secondaryKey', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(List, {
+    var _render15 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: [{
         a: 'one',
         b: 1
@@ -167,8 +179,9 @@ describe('List', function () {
       }],
       primaryKey: "a",
       secondaryKey: "b"
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render15.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -15,10 +15,6 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 // Wraps an item to ensure we can get a ref to it
@@ -41,284 +37,205 @@ function (_Component) {
   return Ref;
 }(_react.Component);
 
-var InfiniteScroll =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inheritsLoose(InfiniteScroll, _PureComponent);
+var InfiniteScroll = function InfiniteScroll(_ref) {
+  var children = _ref.children,
+      _ref$items = _ref.items,
+      items = _ref$items === void 0 ? [] : _ref$items,
+      onMore = _ref.onMore,
+      renderMarker = _ref.renderMarker,
+      replace = _ref.replace,
+      show = _ref.show,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? 50 : _ref$step;
+  // the last page we have items for
+  var lastPage = (0, _react.useMemo)(function () {
+    return Math.ceil(items.length / step);
+  }, [items.length, step]); // the first page we are displaying
 
-  function InfiniteScroll() {
-    var _this;
+  var _useState = (0, _react.useState)(0),
+      beginPage = _useState[0],
+      setBeginPage = _useState[1]; // the last page we are displaying
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+
+  var _useState2 = (0, _react.useState)(show ? Math.floor((show + step) / step) - 1 : 0),
+      endPage = _useState2[0],
+      setEndPage = _useState2[1]; // how tall we've measured a page to be
+
+
+  var _useState3 = (0, _react.useState)(),
+      pageHeight = _useState3[0],
+      setPageHeight = _useState3[1]; // how much area a page requires
+
+
+  var _useState4 = (0, _react.useState)(),
+      pageArea = _useState4[0],
+      setPageArea = _useState4[1]; // whether the items are laid out in a grid instead of linearly
+
+
+  var _useState5 = (0, _react.useState)(),
+      multiColumn = _useState5[0],
+      setMultiColumn = _useState5[1]; // what we're waiting for onMore to give us
+
+
+  var _useState6 = (0, _react.useState)(0),
+      pendingLength = _useState6[0],
+      setPendingLength = _useState6[1];
+
+  var belowMarkerRef = (0, _react.useRef)();
+  var firstPageItemRef = (0, _react.useRef)();
+  var lastPageItemRef = (0, _react.useRef)();
+  var showRef = (0, _react.useRef)(); // calculating space based on where the first and last items being displayed
+  // are located
+
+  (0, _react.useEffect)(function () {
+    if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
+      /* eslint-disable react/no-find-dom-node */
+      var beginRect = (0, _reactDom.findDOMNode)(firstPageItemRef.current).getBoundingClientRect();
+      var endRect = (0, _reactDom.findDOMNode)(lastPageItemRef.current).getBoundingClientRect();
+      var nextPageHeight = endRect.top + endRect.height - beginRect.top; // Check if the items are arranged in a single column or not.
+
+      var nextMultiColumn = nextPageHeight / step < endRect.height;
+      var nextPageArea = endRect.height * endRect.width * step;
+      setPageHeight(nextPageHeight);
+      setPageArea(nextPageArea);
+      setMultiColumn(nextMultiColumn);
+    }
+  }, [pageHeight, step]); // scroll handling
+
+  (0, _react.useEffect)(function () {
+    var scrollParents;
+
+    var onScroll = function onScroll() {
+      var scrollParent = scrollParents[0]; // Determine the window into the first scroll parent
+
+      var top;
+      var height;
+      var width;
+
+      if (scrollParent === document) {
+        top = document.documentElement.scrollTop || document.body.scrollTop;
+        height = window.innerHeight;
+        width = window.innerWidth;
+      } else {
+        top = scrollParent.scrollTop;
+        var rect = scrollParent.getBoundingClientRect();
+        height = rect.height;
+        width = rect.width;
+      } // Figure out which pages we should make visible based on the scroll
+      // window.
+
+
+      var offset = height / 4;
+      var nextBeginPage = replace ? Math.min(lastPage, Math.max(0, multiColumn ? Math.floor(Math.max(0, top - offset) * width / pageArea) : Math.floor(Math.max(0, top - offset) / pageHeight))) : 0;
+      var nextEndPage = Math.min(lastPage, Math.max(!replace && endPage || 0, multiColumn ? Math.ceil((top + height + offset) * width / pageArea) : Math.floor((top + height + offset) / pageHeight)));
+      if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
+      if (nextEndPage !== endPage) setEndPage(nextEndPage);
+    };
+
+    if (pageHeight && belowMarkerRef.current) {
+      scrollParents = (0, _utils.findScrollParents)(belowMarkerRef.current);
+      scrollParents.forEach(function (scrollParent) {
+        return scrollParent.addEventListener('scroll', onScroll);
+      });
+      onScroll();
     }
 
-    _this = _PureComponent.call.apply(_PureComponent, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "initialScroll", false);
-
-    _defineProperty(_assertThisInitialized(_this), "belowMarkerRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "firstPageItemRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "lastPageItemRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "showRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "addScrollListener", function () {
-      var pageHeight = _this.state.pageHeight;
-
-      if (pageHeight && _this.belowMarkerRef.current && !_this.scrollParents) {
-        _this.scrollParents = (0, _utils.findScrollParents)(_this.belowMarkerRef.current);
-
-        _this.scrollParents.forEach(function (scrollParent) {
-          return scrollParent.addEventListener('scroll', _this.onScroll);
+    return function () {
+      if (scrollParents) {
+        scrollParents.forEach(function (scrollParent) {
+          return scrollParent.removeEventListener('scroll', onScroll);
         });
       }
-    });
+    };
+  }, [beginPage, endPage, lastPage, multiColumn, pageArea, pageHeight, replace]); // check if we need to ask for more
 
-    _defineProperty(_assertThisInitialized(_this), "removeScrollListener", function () {
-      if (_this.scrollParents) {
-        _this.scrollParents.forEach(function (scrollParent) {
-          return scrollParent.removeEventListener('scroll', _this.place);
-        });
+  (0, _react.useEffect)(function () {
+    if (onMore && endPage === lastPage && items.length >= pendingLength) {
+      // remember we've asked for more, so we don't keep asking if it takes
+      // a while
+      setPendingLength(items.length + 1);
+      onMore();
+    }
+  }, [endPage, items.length, lastPage, onMore, pendingLength, step]); // scroll to any 'show'
 
-        _this.scrollParents = undefined;
+  (0, _react.useEffect)(function () {
+    // ride out any animation delays, 100ms empirically measured
+    var timer = setTimeout(function () {
+      if (show && showRef.current) {
+        (0, _reactDom.findDOMNode)(showRef.current).scrollIntoView();
       }
+    }, 100);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [show]);
+  var firstIndex = beginPage * step;
+  var lastIndex = Math.min((endPage + 1) * step, items.length) - 1;
+  var result = [];
+
+  if (replace && pageHeight && firstIndex) {
+    var marker = _react["default"].createElement(_Box.Box, {
+      key: "above",
+      flex: false,
+      height: beginPage * pageHeight + "px"
     });
 
-    _defineProperty(_assertThisInitialized(_this), "scrollShow", function () {
-      var show = _this.props.show;
+    if (renderMarker) {
+      // need to give it a key
+      marker = _react["default"].cloneElement(renderMarker(marker), {
+        key: 'above'
+      });
+    }
 
-      if (show && !_this.initialScroll && _this.showRef.current) {
-        _this.initialScroll = true; // on initial render, scroll to any 'show'
-
-        (0, _reactDom.findDOMNode)(_this.showRef.current).scrollIntoView();
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "setPageHeight", function () {
-      var step = _this.props.step;
-      var pageHeight = _this.state.pageHeight;
-
-      if (_this.firstPageItemRef.current && _this.lastPageItemRef.current && !pageHeight) {
-        /* eslint-disable react/no-find-dom-node */
-        var beginRect = (0, _reactDom.findDOMNode)(_this.firstPageItemRef.current).getBoundingClientRect();
-        var endRect = (0, _reactDom.findDOMNode)(_this.lastPageItemRef.current).getBoundingClientRect();
-        var nextPageHeight = endRect.top + endRect.height - beginRect.top; // Check if the items are arranged in a single column or not.
-
-        var multiColumn = nextPageHeight / step < endRect.height;
-        var pageArea = endRect.height * endRect.width * step; // In case the pageHeight is smaller than the visible area,
-        // we call onScroll to set the page boundaries appropriately.
-
-        _this.setState({
-          multiColumn: multiColumn,
-          pageArea: pageArea,
-          pageHeight: nextPageHeight
-        }, _this.onScroll);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onScroll", function () {
-      var _this$props = _this.props,
-          onMore = _this$props.onMore,
-          replace = _this$props.replace;
-      var _this$state = _this.state,
-          beginPage = _this$state.beginPage,
-          endPage = _this$state.endPage,
-          lastPage = _this$state.lastPage,
-          multiColumn = _this$state.multiColumn,
-          pageArea = _this$state.pageArea,
-          pageHeight = _this$state.pageHeight;
-
-      if (_this.scrollParents && _this.scrollParents[0] && pageHeight) {
-        var scrollParent = _this.scrollParents[0]; // Determine the window into the first scroll parent
-
-        var top;
-        var height;
-        var width;
-
-        if (scrollParent === document) {
-          top = document.documentElement.scrollTop || document.body.scrollTop;
-          height = window.innerHeight;
-          width = window.innerWidth;
-        } else {
-          top = scrollParent.scrollTop;
-          var rect = scrollParent.getBoundingClientRect();
-          height = rect.height;
-          width = rect.width;
-        } // Figure out which pages we should make visible based on the scroll
-        // window.
-
-
-        var offset = height / 4;
-        var nextBeginPage = replace ? Math.min(lastPage, Math.max(0, multiColumn ? Math.floor(Math.max(0, top - offset) * width / pageArea) : Math.floor(Math.max(0, top - offset) / pageHeight))) : 0;
-        var nextEndPage = Math.min(lastPage, Math.max(!replace && endPage || 0, multiColumn ? Math.ceil((top + height + offset) * width / pageArea) : Math.floor((top + height + offset) / pageHeight)));
-
-        if (nextBeginPage !== beginPage || nextEndPage !== endPage) {
-          _this.setState({
-            beginPage: nextBeginPage,
-            endPage: nextEndPage
-          }, function () {
-            if (onMore && nextEndPage === lastPage) {
-              onMore();
-            }
-          });
-        }
-      }
-    });
-
-    return _this;
+    result.push(marker);
   }
 
-  InfiniteScroll.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var items = nextProps.items,
-        show = nextProps.show,
-        step = nextProps.step;
-    var lastPage = Math.ceil(items.length / step) - 1;
+  items.slice(firstIndex, lastIndex + 1).forEach(function (item, index) {
+    var itemsIndex = firstIndex + index;
+    var child = children(item, itemsIndex); // we only need the Refs if we don't know the pageHeight
 
-    if (prevState.beginPage === undefined || show && show >= step * (prevState.lastPage + 1) || lastPage !== prevState.lastPage) {
-      var endPage = prevState.endPage || 0;
-
-      if (show && show >= step * (endPage + 1)) {
-        endPage = Math.floor((show + step) / step) - 1;
-      }
-
-      return {
-        beginPage: 0,
-        endPage: endPage,
-        lastPage: lastPage,
-        pageHeight: undefined
-      };
+    if (!pageHeight && itemsIndex === 0) {
+      child = _react["default"].createElement(Ref, {
+        key: "first",
+        ref: firstPageItemRef
+      }, child);
+    } else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) {
+      child = _react["default"].createElement(Ref, {
+        key: "last",
+        ref: lastPageItemRef
+      }, child);
     }
 
-    return null;
-  };
-
-  var _proto2 = InfiniteScroll.prototype;
-
-  _proto2.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    // ride out any animation, 100ms was chosen empirically
-    clearTimeout(this.animationDelayTimer);
-    this.animationDelayTimer = setTimeout(function () {
-      _this2.setPageHeight();
-
-      _this2.addScrollListener();
-
-      _this2.scrollShow();
-
-      _this2.onScroll();
-    }, 100);
-  };
-
-  _proto2.componentDidUpdate = function componentDidUpdate() {
-    this.setPageHeight();
-    this.removeScrollListener();
-    this.addScrollListener();
-    this.scrollShow();
-  };
-
-  _proto2.componentWillUnmount = function componentWillUnmount() {
-    this.removeScrollListener();
-    clearTimeout(this.animationDelayTimer);
-    clearTimeout(this.scrollTimer);
-  };
-
-  _proto2.render = function render() {
-    var _this3 = this;
-
-    var _this$props2 = this.props,
-        children = _this$props2.children,
-        items = _this$props2.items,
-        onMore = _this$props2.onMore,
-        renderMarker = _this$props2.renderMarker,
-        replace = _this$props2.replace,
-        show = _this$props2.show,
-        step = _this$props2.step;
-    var _this$state2 = this.state,
-        beginPage = _this$state2.beginPage,
-        endPage = _this$state2.endPage,
-        lastPage = _this$state2.lastPage,
-        pageHeight = _this$state2.pageHeight;
-    var firstIndex = beginPage * step;
-    var lastIndex = (endPage + 1) * step - 1;
-    var result = [];
-
-    if (replace && pageHeight && firstIndex) {
-      var marker = _react["default"].createElement(_Box.Box, {
-        key: "above",
-        flex: false,
-        height: beginPage * pageHeight + "px"
-      });
-
-      if (renderMarker) {
-        // need to give it a key
-        marker = _react["default"].cloneElement(renderMarker(marker), {
-          key: 'above'
-        });
-      }
-
-      result.push(marker);
+    if (show && show === itemsIndex) {
+      child = _react["default"].createElement(Ref, {
+        key: "show",
+        ref: showRef
+      }, child);
     }
 
-    items.slice(firstIndex, lastIndex + 1).forEach(function (item, index) {
-      var itemsIndex = firstIndex + index;
-      var child = children(item, itemsIndex);
+    result.push(child);
+  });
 
-      if (!pageHeight && itemsIndex === 0) {
-        child = _react["default"].createElement(Ref, {
-          key: "first",
-          ref: _this3.firstPageItemRef
-        }, child);
-      } else if (!pageHeight && itemsIndex === step - 1) {
-        child = _react["default"].createElement(Ref, {
-          key: "last",
-          ref: _this3.lastPageItemRef
-        }, child);
-      }
-
-      if (show && show === itemsIndex) {
-        child = _react["default"].createElement(Ref, {
-          key: "show",
-          ref: _this3.showRef
-        }, child);
-      }
-
-      result.push(child);
+  if (endPage < lastPage || replace || onMore) {
+    var _marker = _react["default"].createElement(_Box.Box, {
+      key: "below",
+      ref: belowMarkerRef,
+      flex: false,
+      height: (replace ? (lastPage - endPage) * pageHeight : 0) + "px"
     });
 
-    if (endPage < lastPage || replace || onMore) {
-      var _marker = _react["default"].createElement(_Box.Box, {
-        key: "below",
-        ref: this.belowMarkerRef,
-        flex: false,
-        height: (replace ? (lastPage - endPage) * pageHeight : 0) + "px"
+    if (renderMarker) {
+      // need to give it a key
+      _marker = _react["default"].cloneElement(renderMarker(_marker), {
+        key: 'below'
       });
-
-      if (renderMarker) {
-        // need to give it a key
-        _marker = _react["default"].cloneElement(renderMarker(_marker), {
-          key: 'below'
-        });
-      }
-
-      result.push(_marker);
     }
 
-    return result;
-  };
+    result.push(_marker);
+  }
 
-  return InfiniteScroll;
-}(_react.PureComponent);
-
-_defineProperty(InfiniteScroll, "defaultProps", {
-  items: [],
-  step: 50
-});
+  return result;
+};
 
 var InfiniteScrollDoc;
 
@@ -328,6 +245,4 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 var InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
-/* eslint-enable react/no-find-dom-node, react/no-multi-comp */
-
 exports.InfiniteScroll = InfiniteScrollWrapper;

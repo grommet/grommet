@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 import { grommet } from 'grommet/themes';
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 var allItems = Array(240).fill().map(function (_, i) {
@@ -25,8 +26,10 @@ var InfiniteScrollReplace = function InfiniteScrollReplace(props) {
   }));
 };
 
-storiesOf('InfiniteScroll', module).add('Replace', function () {
-  return React.createElement(InfiniteScrollReplace, {
-    replace: true
+if (!isChromatic()) {
+  storiesOf('InfiniteScroll', module).add('Replace', function () {
+    return React.createElement(InfiniteScrollReplace, {
+      replace: true
+    });
   });
-});
+}

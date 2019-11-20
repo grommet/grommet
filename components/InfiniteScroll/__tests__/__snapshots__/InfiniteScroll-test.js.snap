@@ -11,8 +11,27 @@ exports[`InfiniteScroll basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     0
@@ -26,6 +45,9 @@ exports[`InfiniteScroll basic 1`] = `
   <div>
     3
   </div>
+  <div
+    class="c1"
+  />
 </div>
 `;
 
@@ -60,7 +82,7 @@ exports[`InfiniteScroll renderMarker 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     0
@@ -70,7 +92,7 @@ exports[`InfiniteScroll renderMarker 1`] = `
   </div>
   <div>
     <div
-      className="c1"
+      class="c1"
     />
   </div>
 </div>
@@ -100,14 +122,14 @@ exports[`InfiniteScroll replace 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     0
@@ -116,7 +138,7 @@ exports[`InfiniteScroll replace 1`] = `
     1
   </div>
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -132,8 +154,27 @@ exports[`InfiniteScroll show 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     0
@@ -147,6 +188,9 @@ exports[`InfiniteScroll show 1`] = `
   <div>
     3
   </div>
+  <div
+    class="c1"
+  />
 </div>
 `;
 
@@ -181,7 +225,7 @@ exports[`InfiniteScroll step 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     0
@@ -190,7 +234,7 @@ exports[`InfiniteScroll step 1`] = `
     1
   </div>
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;

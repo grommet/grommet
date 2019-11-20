@@ -2,7 +2,7 @@
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+var _react2 = require("@testing-library/react");
 
 require("jest-styled-components");
 
@@ -20,32 +20,32 @@ describe('InfiniteScroll', function () {
   }
 
   test('basic', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, null), _react["default"].createElement(_.InfiniteScroll, {
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, null), _react["default"].createElement(_.InfiniteScroll, {
       items: items
     }, function (item, index) {
       return _react["default"].createElement("div", {
         key: index
       }, item);
-    })));
+    }))),
+        container = _render.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('step', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2
     }, function (item, index) {
       return _react["default"].createElement("div", {
         key: index
       }, item);
-    })));
+    }))),
+        container = _render2.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('show', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2,
       show: 3
@@ -53,13 +53,13 @@ describe('InfiniteScroll', function () {
       return _react["default"].createElement("div", {
         key: index
       }, item);
-    })));
+    }))),
+        container = _render3.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('renderMarker', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2,
       renderMarker: function renderMarker(m) {
@@ -69,13 +69,13 @@ describe('InfiniteScroll', function () {
       return _react["default"].createElement("div", {
         key: index
       }, item);
-    })));
+    }))),
+        container = _render4.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('replace', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2,
       replace: true
@@ -83,9 +83,9 @@ describe('InfiniteScroll', function () {
       return _react["default"].createElement("div", {
         key: index
       }, item);
-    })));
+    }))),
+        container = _render5.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

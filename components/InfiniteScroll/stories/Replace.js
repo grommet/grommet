@@ -4,6 +4,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
+var _isChromatic = _interopRequireDefault(require("storybook-chromatic/isChromatic"));
+
 var _themes = require("grommet/themes");
 
 var _grommet = require("grommet");
@@ -33,8 +35,10 @@ var InfiniteScrollReplace = function InfiniteScrollReplace(props) {
   }));
 };
 
-(0, _react2.storiesOf)('InfiniteScroll', module).add('Replace', function () {
-  return _react["default"].createElement(InfiniteScrollReplace, {
-    replace: true
+if (!(0, _isChromatic["default"])()) {
+  (0, _react2.storiesOf)('InfiniteScroll', module).add('Replace', function () {
+    return _react["default"].createElement(InfiniteScrollReplace, {
+      replace: true
+    });
   });
-});
+}

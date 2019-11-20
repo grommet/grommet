@@ -2,8 +2,6 @@
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
-
 require("jest-styled-components");
 
 var _react2 = require("@testing-library/react");
@@ -17,13 +15,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 describe('DataTable', function () {
   afterEach(_react2.cleanup);
   test('empty', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, null)));
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, null))),
+        container = _render.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('basic', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -38,13 +36,13 @@ describe('DataTable', function () {
         a: 'two',
         b: 2
       }]
-    })));
+    }))),
+        container = _render2.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('paths', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -63,13 +61,13 @@ describe('DataTable', function () {
           c: 2
         }
       }]
-    })));
+    }))),
+        container = _render3.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('primaryKey', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -85,13 +83,13 @@ describe('DataTable', function () {
         b: 2
       }],
       primaryKey: "b"
-    })));
+    }))),
+        container = _render4.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('footer', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -107,13 +105,13 @@ describe('DataTable', function () {
         a: 'two',
         b: 2
       }]
-    })));
+    }))),
+        container = _render5.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('sort', function () {
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -133,8 +131,8 @@ describe('DataTable', function () {
       }],
       sortable: true
     }))),
-        container = _render.container,
-        getByText = _render.getByText;
+        container = _render6.container,
+        getByText = _render6.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
     var headerCell = getByText('A');
@@ -144,7 +142,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('search', function () {
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -158,7 +156,7 @@ describe('DataTable', function () {
         a: '[]'
       }]
     }))),
-        container = _render2.container;
+        container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -176,7 +174,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('resizeable', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render8 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -192,13 +190,13 @@ describe('DataTable', function () {
         b: 2
       }],
       resizeable: true
-    })));
+    }))),
+        container = _render8.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('aggregate', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render9 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -217,13 +215,13 @@ describe('DataTable', function () {
         a: 'two',
         b: 2
       }]
-    })));
+    }))),
+        container = _render9.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('groupBy', function () {
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render10 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -246,8 +244,8 @@ describe('DataTable', function () {
       }],
       groupBy: "a"
     }))),
-        container = _render3.container,
-        getByText = _render3.getByText;
+        container = _render10.container,
+        getByText = _render10.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
     var headerCell = getByText('A');
@@ -259,7 +257,7 @@ describe('DataTable', function () {
   test('click', function () {
     var onClickRow = jest.fn();
 
-    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render11 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -271,8 +269,8 @@ describe('DataTable', function () {
       }],
       onClickRow: onClickRow
     }))),
-        container = _render4.container,
-        getByText = _render4.getByText;
+        container = _render11.container,
+        getByText = _render11.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -286,7 +284,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('background', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, ['accent-1', ['accent-1', 'accent-2'], {
+    var _render12 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, ['accent-1', ['accent-1', 'accent-2'], {
       header: 'accent-1',
       body: 'accent-2',
       footer: 'accent-3'
@@ -310,13 +308,13 @@ describe('DataTable', function () {
         }],
         background: background
       });
-    })));
+    }))),
+        container = _render12.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('border', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, [true, 'top', {
+    var _render13 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, [true, 'top', {
       color: 'accent-1',
       side: 'top',
       size: 'small'
@@ -347,13 +345,13 @@ describe('DataTable', function () {
         }],
         border: border
       });
-    })));
+    }))),
+        container = _render13.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('pad', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, ['small', {
+    var _render14 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, ['small', {
       vertical: 'small',
       horizontal: 'medium'
     }, {
@@ -382,13 +380,13 @@ describe('DataTable', function () {
         }],
         pad: pad
       });
-    })));
+    }))),
+        container = _render14.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('rowProps', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render15 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -411,13 +409,13 @@ describe('DataTable', function () {
           pad: 'large'
         }
       }
-    })));
+    }))),
+        container = _render15.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('groupBy property', function () {
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render16 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -442,8 +440,8 @@ describe('DataTable', function () {
         property: 'a'
       }
     }))),
-        container = _render5.container,
-        getByText = _render5.getByText;
+        container = _render16.container,
+        getByText = _render16.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
     var headerCell = getByText('A');
@@ -453,7 +451,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('groupBy expand', function () {
-    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render17 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -480,7 +478,7 @@ describe('DataTable', function () {
         expand: ['one']
       }
     }))),
-        container = _render6.container;
+        container = _render17.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -489,7 +487,7 @@ describe('DataTable', function () {
       return groupState;
     });
 
-    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render18 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -516,7 +514,7 @@ describe('DataTable', function () {
         onExpand: onExpand
       }
     }))),
-        getAllByLabelText = _render7.getAllByLabelText;
+        getAllByLabelText = _render18.getAllByLabelText;
 
     var expandButtons = getAllByLabelText('expand');
 
@@ -527,7 +525,7 @@ describe('DataTable', function () {
     expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
   test('replace', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render19 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -551,9 +549,9 @@ describe('DataTable', function () {
       primaryKey: "b",
       step: 2,
       replace: true
-    })));
+    }))),
+        container = _render19.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

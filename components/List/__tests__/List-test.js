@@ -2,8 +2,6 @@
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
-
 require("jest-styled-components");
 
 var _react2 = require("@testing-library/react");
@@ -17,21 +15,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 describe('List', function () {
   afterEach(_react2.cleanup);
   test('empty', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, null)));
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, null))),
+        container = _render.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('data strings', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two']
-    })));
+    }))),
+        container = _render2.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('data objects', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: [{
         a: 'one',
         b: 1
@@ -39,15 +37,15 @@ describe('List', function () {
         a: 'two',
         b: 2
       }]
-    })));
+    }))),
+        container = _render3.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('onClickItem', function () {
     var onClickItem = jest.fn();
 
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: [{
         a: 'alpha'
       }, {
@@ -55,8 +53,8 @@ describe('List', function () {
       }],
       onClickItem: onClickItem
     }))),
-        container = _render.container,
-        getByText = _render.getByText;
+        container = _render4.container,
+        getByText = _render4.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -70,66 +68,66 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('background string', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two'],
       background: "accent-1"
-    })));
+    }))),
+        container = _render5.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('background array', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two', 'three', 'four'],
       background: ['accent-1', 'accent-2']
-    })));
+    }))),
+        container = _render6.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('border boolean', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two'],
       border: true
-    })));
+    }))),
+        container = _render7.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('border side', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render8 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two'],
       border: "horizontal"
-    })));
+    }))),
+        container = _render8.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('border object', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render9 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two'],
       border: {
         color: 'accent-1',
         side: 'horizontal',
         size: 'large'
       }
-    })));
+    }))),
+        container = _render9.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('children render', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render10 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two']
     }, function (item, index) {
       return item + " - " + index;
-    })));
+    }))),
+        container = _render10.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('itemProps', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render11 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two'],
       itemProps: {
         1: {
@@ -141,33 +139,33 @@ describe('List', function () {
           pad: 'large'
         }
       }
-    })));
+    }))),
+        container = _render11.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('pad string', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render12 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two'],
       pad: "large"
-    })));
+    }))),
+        container = _render12.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('pad object', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render13 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: ['one', 'two'],
       pad: {
         horizontal: 'large'
       }
-    })));
+    }))),
+        container = _render13.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('primaryKey', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render14 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: [{
         a: 'one',
         b: 1
@@ -176,13 +174,13 @@ describe('List', function () {
         b: 2
       }],
       primaryKey: "a"
-    })));
+    }))),
+        container = _render14.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('secondaryKey', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render15 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
       data: [{
         a: 'one',
         b: 1
@@ -192,9 +190,9 @@ describe('List', function () {
       }],
       primaryKey: "a",
       secondaryKey: "b"
-    })));
+    }))),
+        container = _render15.container;
 
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

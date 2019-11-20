@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { InfiniteScroll } from '..';
@@ -11,30 +11,32 @@ describe('InfiniteScroll', function () {
   }
 
   test('basic', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(InfiniteScroll, null), React.createElement(InfiniteScroll, {
+    var _render = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, null), React.createElement(InfiniteScroll, {
       items: items
     }, function (item, index) {
       return React.createElement("div", {
         key: index
       }, item);
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('step', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render2 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
       items: items,
       step: 2
     }, function (item, index) {
       return React.createElement("div", {
         key: index
       }, item);
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render2.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('show', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render3 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
       items: items,
       step: 2,
       show: 3
@@ -42,12 +44,13 @@ describe('InfiniteScroll', function () {
       return React.createElement("div", {
         key: index
       }, item);
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render3.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('renderMarker', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render4 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
       items: items,
       step: 2,
       renderMarker: function renderMarker(m) {
@@ -57,12 +60,13 @@ describe('InfiniteScroll', function () {
       return React.createElement("div", {
         key: index
       }, item);
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render4.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   test('replace', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render5 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
       items: items,
       step: 2,
       replace: true
@@ -70,8 +74,9 @@ describe('InfiniteScroll', function () {
       return React.createElement("div", {
         key: index
       }, item);
-    })));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    }))),
+        container = _render5.container;
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
