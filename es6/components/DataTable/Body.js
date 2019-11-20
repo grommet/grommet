@@ -71,6 +71,7 @@ var Body = function Body(_ref) {
         event.persist();
         var adjustedEvent = event;
         adjustedEvent.datum = datum;
+        adjustedEvent.index = index;
         onClickRow(adjustedEvent);
       } : undefined,
       onMouseOver: onClickRow ? function () {
