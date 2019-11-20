@@ -42,7 +42,7 @@ type Colors = typeof colors & {
   'dark-1'?: ColorType;
   'dark-2'?: ColorType;
   'dark-3'?: ColorType;
-  'dark-4'?: string;
+  'dark-4'?: ColorType;
   'dark-5'?: ColorType;
   'dark-6'?: ColorType;
   'light-1'?: ColorType;
