@@ -6,19 +6,19 @@ import { grommet } from 'grommet/themes';
 
 import { allItems } from './Basics';
 
-const LazyInfiniteScroll = () => {
-  const [items, setItems] = useState(allItems.slice(0, 200));
+const OnMoreInfiniteScroll = ({ props }) => {
+  const [items, setItems] = useState(allItems.slice(0, 50));
 
   const onMore = () => {
     setTimeout(() => {
-      setItems(allItems.slice(0, items.length + 200));
+      setItems(allItems.slice(0, items.length + 50));
     }, 1000);
   };
 
   return (
     <Grommet theme={grommet}>
       <Box>
-        <InfiniteScroll items={items} onMore={onMore}>
+        <InfiniteScroll items={items} onMore={onMore} {...props}>
           {item => (
             <Box
               key={item}
@@ -35,4 +35,6 @@ const LazyInfiniteScroll = () => {
   );
 };
 
-storiesOf('InfiniteScroll', module).add('onMore', () => <LazyInfiniteScroll />);
+storiesOf('InfiniteScroll', module)
+  .add('onMore', () => <OnMoreInfiniteScroll />)
+  .add('onMore step', () => <OnMoreInfiniteScroll step={75} />);

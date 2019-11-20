@@ -910,7 +910,7 @@ exports[`Select complex options and children 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2021,7 +2021,7 @@ exports[`Select large drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2284,7 +2284,7 @@ exports[`Select medium drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3301,7 +3301,7 @@ exports[`Select multiple values 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3918,7 +3918,7 @@ exports[`Select opens 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -4194,7 +4194,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 jpikRE"
+    class="StyledBox-sc-13pk1d4-0 dsVlPf"
   />
 </div>
 `;
@@ -5875,7 +5875,7 @@ exports[`Select search 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -7371,7 +7371,7 @@ exports[`Select small drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: NaNpx;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
