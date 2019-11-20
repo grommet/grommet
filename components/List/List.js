@@ -86,7 +86,7 @@ var List = _react["default"].forwardRef(function (props, ref) {
     onUp: onClickItem && active ? function () {
       setActive(active - 1);
     } : undefined,
-    onDown: onClickItem && data.length ? function () {
+    onDown: onClickItem && data && data.length ? function () {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
     } : undefined
   }, _react["default"].createElement(StyledList, _extends({
