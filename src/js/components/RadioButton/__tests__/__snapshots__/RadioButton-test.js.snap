@@ -19,7 +19,6 @@ exports[`RadioButton basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -88,12 +87,6 @@ exports[`RadioButton basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     border: solid 2px rgba(0,0,0,0.15);
   }
@@ -105,6 +98,8 @@ exports[`RadioButton basic 1`] = `
   <label
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -124,6 +119,8 @@ exports[`RadioButton basic 1`] = `
     className="c1"
     htmlFor="test id"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -162,7 +159,6 @@ exports[`RadioButton checked 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -238,12 +234,6 @@ exports[`RadioButton checked 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     border: solid 2px #7D4CDB;
   }
@@ -255,6 +245,8 @@ exports[`RadioButton checked 1`] = `
   <label
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -305,7 +297,6 @@ exports[`RadioButton children 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -365,12 +356,6 @@ exports[`RadioButton children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     padding: 6px;
   }
@@ -382,6 +367,8 @@ exports[`RadioButton children 1`] = `
   <label
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -400,6 +387,8 @@ exports[`RadioButton children 1`] = `
   <label
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -438,7 +427,6 @@ exports[`RadioButton disabled 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -541,12 +529,6 @@ exports[`RadioButton disabled 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     border: solid 2px rgba(0,0,0,0.15);
   }
@@ -565,6 +547,8 @@ exports[`RadioButton disabled 1`] = `
     className="c1"
     disabled={true}
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -585,6 +569,8 @@ exports[`RadioButton disabled 1`] = `
     className="c1"
     disabled={true}
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -628,22 +614,6 @@ exports[`RadioButton label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -669,6 +639,22 @@ exports[`RadioButton label 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c1 {
@@ -705,14 +691,14 @@ exports[`RadioButton label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
+  .c4 {
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    border: solid 2px rgba(0,0,0,0.15);
+  .c2 {
+    margin-right: 6px;
   }
 }
 
@@ -722,6 +708,8 @@ exports[`RadioButton label 1`] = `
   <label
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
@@ -743,6 +731,8 @@ exports[`RadioButton label 1`] = `
   <label
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="c2 "
