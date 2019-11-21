@@ -8,6 +8,8 @@ require("jest-styled-components");
 
 var _Grommet = require("../../Grommet");
 
+var _Box = require("../../Box");
+
 var _ = require("..");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -73,6 +75,24 @@ describe('RadioButtonGroup', function () {
         value: 'two'
       }]
     })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('children', function () {
+    var child = function child(_ref) {
+      var checked = _ref.checked;
+      return _react["default"].createElement(_Box.Box, {
+        pad: "small",
+        background: checked ? 'accent-1' : 'control'
+      });
+    };
+
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+      name: "test",
+      options: ['one', 'two'],
+      value: "one"
+    }, child)));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();

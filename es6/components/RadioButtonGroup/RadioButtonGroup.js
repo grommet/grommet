@@ -7,13 +7,14 @@ import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { RadioButton } from '../RadioButton';
 var RadioButtonGroup = forwardRef(function (_ref, ref) {
-  var _ref$gap = _ref.gap,
+  var children = _ref.children,
+      _ref$gap = _ref.gap,
       gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       name = _ref.name,
       onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["gap", "name", "onChange", "options", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "gap", "name", "onChange", "options", "value"]);
 
   // normalize options to always use an object
   var options = useMemo(function () {
@@ -120,7 +121,7 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
       },
       key: optionValue,
       name: name,
-      label: label,
+      label: !children ? label : undefined,
       disabled: disabled,
       checked: optionValue === value,
       focus: focus && (optionValue === value || value === undefined && !index),
@@ -129,7 +130,9 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
       onChange: onChange,
       onFocus: onFocus,
       onBlur: onBlur
-    });
+    }, children ? function (state) {
+      return children(optionsProp[index], state);
+    } : null);
   })));
 });
 RadioButtonGroup.displayName = 'RadioButtonGroup';

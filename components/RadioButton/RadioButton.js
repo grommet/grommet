@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.RadioButton = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
@@ -19,7 +19,9 @@ var _hocs = require("../hocs");
 
 var _StyledRadioButton = require("./StyledRadioButton");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -37,6 +39,10 @@ var RadioButton = function RadioButton(_ref) {
       onChange = _ref.onChange,
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "theme"]);
+
+  var _useState = (0, _react.useState)(),
+      hover = _useState[0],
+      setHover = _useState[1];
 
   var normalizedLabel = typeof label === 'string' ? _react["default"].createElement("span", null, label) : label;
   var Icon = theme.radioButton.icons.circle;
@@ -56,12 +62,18 @@ var RadioButton = function RadioButton(_ref) {
       if (event.target.type !== 'radio') {
         event.stopPropagation();
       }
+    },
+    onMouseEnter: function onMouseEnter() {
+      return setHover(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return setHover(false);
     }
   }), _react["default"].createElement(_StyledRadioButton.StyledRadioButton, {
     as: _Box.Box,
-    margin: {
+    margin: label ? {
       right: theme.radioButton.gap || 'small'
-    }
+    } : undefined
   }, _react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({}, rest, {
     ref: forwardRef,
     type: "radio"
@@ -72,7 +84,8 @@ var RadioButton = function RadioButton(_ref) {
     disabled: disabled,
     onChange: onChange
   }))), children ? children({
-    checked: checked
+    checked: checked,
+    hover: hover
   }) : _react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, {
     focus: focus,
     as: _Box.Box,

@@ -20,13 +20,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
-  var _ref$gap = _ref.gap,
+  var children = _ref.children,
+      _ref$gap = _ref.gap,
       gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       name = _ref.name,
       onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["gap", "name", "onChange", "options", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "gap", "name", "onChange", "options", "value"]);
 
   // normalize options to always use an object
   var options = (0, _react.useMemo)(function () {
@@ -135,7 +136,7 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
       },
       key: optionValue,
       name: name,
-      label: label,
+      label: !children ? label : undefined,
       disabled: disabled,
       checked: optionValue === value,
       focus: focus && (optionValue === value || value === undefined && !index),
@@ -144,7 +145,9 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
       onChange: onChange,
       onFocus: onFocus,
       onBlur: onBlur
-    });
+    }, children ? function (state) {
+      return children(optionsProp[index], state);
+    } : null);
   })));
 });
 RadioButtonGroup.displayName = 'RadioButtonGroup';

@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
+import React, { useState } from 'react';
 import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -24,6 +24,10 @@ var RadioButton = function RadioButton(_ref) {
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "theme"]);
 
+  var _useState = useState(),
+      hover = _useState[0],
+      setHover = _useState[1];
+
   var normalizedLabel = typeof label === 'string' ? React.createElement("span", null, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = normalizeColor(theme.radioButton.border.color, theme);
@@ -42,12 +46,18 @@ var RadioButton = function RadioButton(_ref) {
       if (event.target.type !== 'radio') {
         event.stopPropagation();
       }
+    },
+    onMouseEnter: function onMouseEnter() {
+      return setHover(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return setHover(false);
     }
   }), React.createElement(StyledRadioButton, {
     as: Box,
-    margin: {
+    margin: label ? {
       right: theme.radioButton.gap || 'small'
-    }
+    } : undefined
   }, React.createElement(StyledRadioButtonInput, _extends({}, rest, {
     ref: forwardRef,
     type: "radio"
@@ -58,7 +68,8 @@ var RadioButton = function RadioButton(_ref) {
     disabled: disabled,
     onChange: onChange
   }))), children ? children({
-    checked: checked
+    checked: checked,
+    hover: hover
   }) : React.createElement(StyledRadioButtonBox, {
     focus: focus,
     as: Box,

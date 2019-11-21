@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { RadioButtonGroup } from '..';
 describe('RadioButtonGroup', function () {
   test('default', function () {
@@ -60,6 +61,23 @@ describe('RadioButtonGroup', function () {
         value: 'two'
       }]
     })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('children', function () {
+    var child = function child(_ref) {
+      var checked = _ref.checked;
+      return React.createElement(Box, {
+        pad: "small",
+        background: checked ? 'accent-1' : 'control'
+      });
+    };
+
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+      name: "test",
+      options: ['one', 'two'],
+      value: "one"
+    }, child)));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
