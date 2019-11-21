@@ -7,6 +7,7 @@ import { RadioButton } from '../RadioButton';
 const RadioButtonGroup = forwardRef(
   (
     {
+      children,
       gap = 'small',
       name,
       onChange,
@@ -93,7 +94,7 @@ const RadioButtonGroup = forwardRef(
               }}
               key={optionValue}
               name={name}
-              label={label}
+              label={!children ? label : undefined}
               disabled={disabled}
               checked={optionValue === value}
               focus={
@@ -105,7 +106,9 @@ const RadioButtonGroup = forwardRef(
               onChange={onChange}
               onFocus={onFocus}
               onBlur={onBlur}
-            />
+            >
+              {children ? state => children(optionsProp[index], state) : null}
+            </RadioButton>
           ))}
         </Box>
       </Keyboard>

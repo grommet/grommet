@@ -11,6 +11,19 @@ import { RadioButtonGroup } from 'grommet';
 
 ## Properties
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      `children={(option, { checked }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **name**
 
 Required. The DOM name attribute value to use for the underlying <input/> 
