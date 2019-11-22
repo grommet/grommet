@@ -48,7 +48,8 @@
     "react/jsx-curly-newline": 0,
     "max-len": [2, { "ignoreUrls": true, "ignoreRegExpLiterals": true }],
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1
+    "react-hooks/exhaustive-deps": 1,
+    "react/sort-comp": 0
   },
   "overrides": [
     {

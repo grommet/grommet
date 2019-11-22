@@ -21,7 +21,7 @@ function
 
 **items**
 
-The children callback will be called to render each item. Defaults to `[]`.
+The children callback will be called to render each item.
 
 ```
 [any]

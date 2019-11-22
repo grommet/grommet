@@ -211,7 +211,8 @@ function",
     "name": "Box",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -231,7 +232,6 @@ stretch",
         "name": "gridArea",
       },
       Object {
-        "defaultValue": "none",
         "description": "The amount of margin around the component. An object can
     be specified to distinguish horizontal margin, vertical margin, and
     margin on a particular side.",
@@ -603,6 +603,41 @@ string
         "name": "height",
       },
       Object {
+        "defaultValue": false,
+        "description": "The hover indicator to apply when the user is mousing over the
+button. An object can be also be specified for color index support:
+{background: 'neutral-2'}. This prop is meant to be used only
+with plain Buttons.",
+        "format": "boolean
+string
+background
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string
+}",
+        "name": "hoverIndicator",
+      },
+      Object {
         "defaultValue": "stretch",
         "description": "How to align the contents along the main axis.",
         "format": "around
@@ -613,6 +648,12 @@ evenly
 start
 stretch",
         "name": "justify",
+      },
+      Object {
+        "description": "Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.",
+        "format": "function",
+        "name": "onClick",
       },
       Object {
         "description": "box overflow.",
@@ -816,7 +857,8 @@ reverse",
     "name": "Button",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1074,7 +1116,8 @@ function",
     "name": "Calendar",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1303,7 +1346,8 @@ string",
     "name": "Carousel",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1434,7 +1478,8 @@ selectors",
     "name": "Chart",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1856,7 +1901,8 @@ vertical",
     "properties": Array [
       Object {
         "defaultValue": "Open Drop",
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2197,7 +2243,8 @@ function",
     "name": "Image",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2331,7 +2378,8 @@ boolean",
     "name": "List",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2697,7 +2745,8 @@ number",
     "name": "Menu",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2876,7 +2925,8 @@ node",
           "closeMenu": "Close Menu",
           "openMenu": "Open Menu",
         },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided.",
         "format": "{
   closeMenu: string,
   openMenu: string
@@ -2930,6 +2980,16 @@ string",
         "name": "checked",
       },
       Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
         "description": "Same as React <input disabled={} />. Also adds a hidden input element
 with the same name so form submissions work.",
         "format": "boolean",
@@ -2980,6 +3040,16 @@ with the same name so form submissions work.",
     "intrinsicElement": "div",
     "name": "RadioButtonGroup",
     "properties": Array [
+      Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
       Object {
         "description": "The DOM name attribute value to use for the underlying <input/> 
       elements.",
@@ -3126,7 +3196,7 @@ vertical",
           "lower": "Lower Bounds",
           "upper": "Upper Bounds",
         },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages used by screen readers for accessibility.",
         "format": "{
   lower: string,
   upper: string
@@ -3215,7 +3285,8 @@ string",
     "name": "Select",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -3654,7 +3725,8 @@ bottom",
     "name": "Tabs",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -4043,7 +4115,8 @@ number",
     "name": "Video",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -4177,7 +4250,8 @@ contain",
     "name": "WorldMap",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },

@@ -6,6 +6,7 @@ import {
   disabledStyle,
   focusStyle,
   genericStyles,
+  getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -44,19 +45,6 @@ function getHoverColor(props) {
     props.theme.button.border.color || 'control',
     props.theme,
   );
-}
-
-function getHoverIndicatorStyle(hoverIndicator, theme) {
-  let background;
-  if (hoverIndicator === true || hoverIndicator === 'background') {
-    ({ background } = theme.global.hover);
-  } else {
-    background = hoverIndicator;
-  }
-  return css`
-    ${backgroundStyle(background, theme)}
-    color: ${normalizeColor(theme.global.hover.color, theme)};
-  `;
 }
 
 const hoverStyle = css`

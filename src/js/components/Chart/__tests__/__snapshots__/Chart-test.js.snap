@@ -141,32 +141,18 @@ exports[`Chart gap renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   width: 768px;
-  padding: 0px;
 }
 
 .c2 {
   display: block;
   max-width: 100%;
   overflow: visible;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -321,32 +307,18 @@ exports[`Chart size renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   width: 768px;
-  padding: 0px;
 }
 
 .c1 {
   display: block;
   max-width: 100%;
   overflow: visible;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div
