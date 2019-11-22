@@ -2348,6 +2348,11 @@ string
 boolean",
         "name": "opacity",
       },
+      Object {
+        "description": "Whether the image expands to fill all of the available width and height",
+        "format": "boolean",
+        "name": "fill",
+      },
     ],
     "usage": "import { Image } from 'grommet';
 <Image/>",

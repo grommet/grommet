@@ -41,3 +41,13 @@ opacityTypes.forEach(opacity => {
     expect(tree).toMatchSnapshot();
   });
 });
+
+test('Image fillProp renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Image fill src={SRC} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
