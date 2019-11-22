@@ -18,7 +18,7 @@ export interface ListProps {
   itemProps?: { [_:string]: { background?: string, border?: BorderType, pad?: PadType}};
   margin?: MarginType;
   onMore?: () => void;
-  onClickItem?: (event: React.ClickEvent) => void;
+  onClickItem?: (event: React.MouseEvent) => void;
   pad?: PadType;
   primaryKey?: string | ((...args: any[]) => any);
   secondaryKey?: string | ((...args: any[]) => any);
