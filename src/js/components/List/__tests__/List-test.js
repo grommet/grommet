@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
@@ -10,33 +9,35 @@ describe('List', () => {
   afterEach(cleanup);
 
   test('empty', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('data strings', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('data objects', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        <List data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]} />
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onClickItem', () => {
@@ -58,17 +59,16 @@ describe('List', () => {
   });
 
   test('background string', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} background="accent-1" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('background array', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
           data={['one', 'two', 'three', 'four']}
@@ -76,32 +76,29 @@ describe('List', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border boolean', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} border />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border side', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} border="horizontal" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border object', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
           data={['one', 'two']}
@@ -109,24 +106,22 @@ describe('List', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children render', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']}>
           {(item, index) => `${item} - ${index}`}
         </List>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('itemProps', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
           data={['one', 'two']}
@@ -140,51 +135,55 @@ describe('List', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad string', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} pad="large" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad object', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} pad={{ horizontal: 'large' }} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('primaryKey', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        <List data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]} primaryKey="a" />
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey="a"
+        />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('secondaryKey', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
           primaryKey="a"
           secondaryKey="b"
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -29,6 +29,7 @@ const RadioButton = ({
   theme,
   ...rest
 }) => {
+  const [hover, setHover] = useState();
   const normalizedLabel =
     typeof label === 'string' ? <span>{label}</span> : label;
 
@@ -48,10 +49,12 @@ const RadioButton = ({
           event.stopPropagation();
         }
       }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <StyledRadioButton
         as={Box}
-        margin={{ right: theme.radioButton.gap || 'small' }}
+        margin={label ? { right: theme.radioButton.gap || 'small' } : undefined}
       >
         <StyledRadioButtonInput
           {...rest}
@@ -66,7 +69,7 @@ const RadioButton = ({
           })}
         />
         {children ? (
-          children({ checked })
+          children({ checked, hover })
         ) : (
           <StyledRadioButtonBox
             focus={focus}

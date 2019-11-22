@@ -69,7 +69,7 @@ const List = React.forwardRef((props, ref) => {
           : undefined
       }
       onDown={
-        onClickItem && data.length
+        onClickItem && data && data.length
           ? () => {
               setActive(
                 active >= 0 ? Math.min(active + 1, data.length - 1) : 0,
