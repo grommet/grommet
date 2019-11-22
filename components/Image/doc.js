@@ -14,7 +14,8 @@ var doc = function doc(Image) {
   DocumentedImage.propTypes = _extends({}, _utils.genericProps, {
     fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
     fallback: _reactDesc.PropTypes.string.description("Specifies the URL of the fallback image used when \n      src is failing to load"),
-    opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.string, _reactDesc.PropTypes.bool]).description('Transparency of the image.')
+    opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.string, _reactDesc.PropTypes.bool]).description('Transparency of the image.'),
+    fill: _reactDesc.PropTypes.bool.description('Whether the image expands to fill all of the available width and height')
   });
   return DocumentedImage;
 };

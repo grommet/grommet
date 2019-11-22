@@ -7,7 +7,8 @@ export var doc = function doc(Image) {
   DocumentedImage.propTypes = _extends({}, genericProps, {
     fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
     fallback: PropTypes.string.description("Specifies the URL of the fallback image used when \n      src is failing to load"),
-    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.string, PropTypes.bool]).description('Transparency of the image.')
+    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.string, PropTypes.bool]).description('Transparency of the image.'),
+    fill: PropTypes.bool.description('Whether the image expands to fill all of the available width and height')
   });
   return DocumentedImage;
 };

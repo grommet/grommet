@@ -12,8 +12,9 @@ var Image = function Image(_ref) {
       forwardRef = _ref.forwardRef,
       onError = _ref.onError,
       opacity = _ref.opacity,
+      fill = _ref.fill,
       src = _ref.src,
-      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "forwardRef", "onError", "opacity", "src"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "forwardRef", "onError", "opacity", "fill", "src"]);
 
   var _useState = useState(false),
       imageMissing = _useState[0],
@@ -33,6 +34,7 @@ var Image = function Image(_ref) {
   return React.createElement(StyledImage, _extends({}, rest, extraProps, {
     ref: forwardRef,
     opacityProp: opacity,
+    fillProp: fill,
     src: !imageMissing ? src : fallback
   }));
 };

@@ -8,11 +8,14 @@ var FIT_MAP = {
 var fitStyle = css(["flex:1 1;overflow:hidden;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
 });
+var fillStyle = css(["width:100%;height:100%;"]);
 var StyledImage = styled.img.withConfig({
   displayName: "StyledImage",
   componentId: "ey4zx9-0"
-})(["", " ", " ", " ", ""], genericStyles, function (props) {
+})(["", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.fit && fitStyle;
+}, function (props) {
+  return props.fillProp && fillStyle;
 }, function (props) {
   return props.theme.image && props.theme.image.extend;
 }, function (props) {

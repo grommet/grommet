@@ -34,3 +34,11 @@ opacityTypes.forEach(function (opacity) {
     expect(tree).toMatchSnapshot();
   });
 });
+test('Image fillProp renders', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
+    fill: true,
+    src: SRC
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
