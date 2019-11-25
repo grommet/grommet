@@ -91,6 +91,7 @@ const EdgeControl = ({
             minHeight: size,
             zIndex: 10,
           }}
+          tabIndex={0}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           {...rest}

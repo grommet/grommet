@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.7.11",
+  "version": "2.8.1",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@testing-library/dom": "^6.1.0",
+    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.1.3",
     "css": "^2.2.3",
     "grommet-icons": "^4.2.0",

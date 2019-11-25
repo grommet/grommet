@@ -6,7 +6,6 @@
     "moduleResolution": "node",
     "outDir": "./dist/",
     "sourceMap": true,
-    "skipLibCheck": true, // ignore internal typing issues of storybook
     "noImplicitAny": false,
     "module": "esnext",
     "target": "es6",
@@ -19,7 +18,8 @@
       "grommet": ["src/js"],
       "grommet/themes": ["src/js/themes"],
       "grommet/utils": ["src/js/utils"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types/", "./src/@types/"]
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*"]

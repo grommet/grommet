@@ -92,6 +92,7 @@ const Body = ({
                         event.persist();
                         const adjustedEvent = event;
                         adjustedEvent.datum = datum;
+                        adjustedEvent.index = index;
                         onClickRow(adjustedEvent);
                       }
                     : undefined
@@ -129,9 +130,6 @@ const Body = ({
   );
 };
 
-const ButtonWrapper = compose(
-  withFocus(),
-  withForwardRef,
-)(Body);
+const ButtonWrapper = compose(withFocus(), withForwardRef)(Body);
 
 export { ButtonWrapper as Body };
