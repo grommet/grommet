@@ -33,7 +33,8 @@ const Distribution = ({
     );
   }
   if (values.length > 1) {
-    const total = values.reduce(({ value }, total) => total + value, 0)
+    const reducer = (accumulator, { value }) => accumulator + value;
+    const total = values.reduce(reducer, 0);
 
     // figure out how many of the values area needed to represent half of the
     // total
@@ -96,7 +97,7 @@ const Distribution = ({
     );
   }
   return null;
-}
+};
 
 Distribution.defaultProps = {
   basis: undefined,
@@ -109,7 +110,6 @@ Distribution.defaultProps = {
   gap: 'xsmall',
   values: [],
 };
-
 
 let DistributionDoc;
 if (process.env.NODE_ENV !== 'production') {
