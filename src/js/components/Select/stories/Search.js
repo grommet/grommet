@@ -41,6 +41,13 @@ const SearchSelect = () => {
             const exp = new RegExp(escapedText, 'i');
             setOptions(defaultOptions.filter(o => exp.test(o)));
           }}
+          onKeyPress={event => {
+            // function for onEnter logic for displaying the value in alert
+            if (event.keyCode === 13 && event.option) {
+              // eslint-disable-next-line no-alert
+              alert(`selected ${event.option} on ${event.key} event`);
+            }
+          }}
         />
       </Box>
     </Grommet>
