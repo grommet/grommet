@@ -21,7 +21,6 @@ const customFormFieldTheme: ThemeType = {
       size: 'xsmall',
       margin: { vertical: '0', bottom: 'small', horizontal: '0' },
       weight: 600,
-      extend: 'shimi',
     },
     border: false,
     margin: '0',

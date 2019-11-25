@@ -1,5 +1,164 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`RadioButtonGroup children 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #6FFFB0;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled]) + div,
+.c2:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c3 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    height: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <label
+      className="c2"
+      htmlFor="one"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="c1 "
+      >
+        <input
+          checked={true}
+          className="c3"
+          id="one"
+          name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          type="radio"
+          value="one"
+        />
+        <div
+          className="c4"
+        />
+      </div>
+    </label>
+    <div
+      className="c5"
+    />
+    <label
+      className="c2"
+      htmlFor="two"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="c1 "
+      >
+        <input
+          checked={false}
+          className="c3"
+          id="two"
+          name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          type="radio"
+          value="two"
+        />
+        <div
+          className="c4"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
 exports[`RadioButtonGroup default 1`] = `
 .c0 {
   font-size: 18px;
@@ -172,6 +331,8 @@ exports[`RadioButtonGroup object options 1`] = `
       className="c2"
       htmlFor="onE"
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="c3 "
@@ -201,6 +362,8 @@ exports[`RadioButtonGroup object options 1`] = `
       className="c2"
       htmlFor="twO"
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="c3 "
@@ -253,23 +416,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -296,14 +443,14 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   border-radius: 100%;
 }
 
-.c6 {
+.c5 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   height: 12px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -322,8 +469,8 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   cursor: pointer;
 }
 
-.c7:hover input:not([disabled]) + div,
-.c7:hover input:not([disabled]) + span {
+.c6:hover input:not([disabled]) + div,
+.c6:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -352,7 +499,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   border-color: #000000;
 }
 
-.c8 {
+.c7 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -361,7 +508,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   cursor: pointer;
 }
 
-.c4 {
+.c3 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -370,19 +517,13 @@ exports[`RadioButtonGroup object options disabled 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c5 {
     height: 6px;
   }
 }
@@ -397,13 +538,15 @@ exports[`RadioButtonGroup object options disabled 1`] = `
       className="c2"
       disabled={true}
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
-        className="c3 "
+        className="c1 "
       >
         <input
           checked={false}
-          className="c4"
+          className="c3"
           disabled={true}
           name="test"
           onBlur={[Function]}
@@ -412,23 +555,25 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           value="one"
         />
         <div
-          className="c5 "
+          className="c4 "
         />
       </div>
     </label>
     <div
-      className="c6"
+      className="c5"
     />
     <label
-      className="c7"
+      className="c6"
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
-        className="c3 "
+        className="c1 "
       >
         <input
           checked={false}
-          className="c8"
+          className="c7"
           name="test"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -436,7 +581,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           value="two"
         />
         <div
-          className="c5 "
+          className="c4 "
         />
       </div>
     </label>
@@ -470,23 +615,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -513,7 +642,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
   border-radius: 100%;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -540,7 +669,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
   border-radius: 100%;
 }
 
-.c6 {
+.c5 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -571,7 +700,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
   border-color: #000000;
 }
 
-.c4 {
+.c3 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -580,7 +709,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
   cursor: pointer;
 }
 
-.c8 {
+.c7 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
@@ -588,25 +717,19 @@ exports[`RadioButtonGroup object options just value 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c5 {
     height: 6px;
   }
 }
@@ -620,13 +743,15 @@ exports[`RadioButtonGroup object options just value 1`] = `
     <label
       className="c2"
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
-        className="c3 "
+        className="c1 "
       >
         <input
           checked={false}
-          className="c4"
+          className="c3"
           name="test"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -634,23 +759,25 @@ exports[`RadioButtonGroup object options just value 1`] = `
           value="one"
         />
         <div
-          className="c5 "
+          className="c4 "
         />
       </div>
     </label>
     <div
-      className="c6"
+      className="c5"
     />
     <label
       className="c2"
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
-        className="c3 "
+        className="c1 "
       >
         <input
           checked={true}
-          className="c4"
+          className="c3"
           name="test"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -658,10 +785,10 @@ exports[`RadioButtonGroup object options just value 1`] = `
           value="two"
         />
         <div
-          className="c7 "
+          className="c6 "
         >
           <svg
-            className="c8"
+            className="c7"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
@@ -855,6 +982,8 @@ exports[`RadioButtonGroup string options 1`] = `
       className="c2"
       htmlFor="one"
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="c3 "
@@ -896,6 +1025,8 @@ exports[`RadioButtonGroup string options 1`] = `
       className="c2"
       htmlFor="two"
       onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <div
         className="c3 "

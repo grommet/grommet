@@ -6677,6 +6677,14 @@ strong
 string
 boolean
 \`\`\`
+
+**fill**
+
+Whether the image expands to fill all of the available width and height
+
+\`\`\`
+boolean
+\`\`\`
   
 ## Intrinsic element
 
@@ -6728,7 +6736,7 @@ function
 
 **items**
 
-The children callback will be called to render each item. Defaults to \`[]\`.
+The children callback will be called to render each item.
 
 \`\`\`
 [any]
@@ -8849,6 +8857,19 @@ import { RadioButtonGroup } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+\`\`\`
 
 **name**
 
