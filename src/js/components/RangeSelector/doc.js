@@ -28,9 +28,7 @@ export const doc = RangeSelector => {
     messages: PropTypes.shape({
       lower: PropTypes.string,
       upper: PropTypes.string,
-    }).description(
-      'Custom messages. Used for accessibility by screen readers.',
-    ),
+    }).description('Custom messages used by screen readers for accessibility.'),
     min: PropTypes.number
       .description('The minimum value permitted.')
       .defaultValue(0),

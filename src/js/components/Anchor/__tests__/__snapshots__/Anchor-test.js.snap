@@ -85,13 +85,11 @@ exports[`Anchor focus renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
+    class="c1"
     href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     Test
   </a>
@@ -117,7 +115,6 @@ exports[`Anchor icon label renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -127,7 +124,6 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 0px;
 }
 
 .c3 {
@@ -152,18 +148,6 @@ exports[`Anchor icon label renders 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -276,6 +260,48 @@ exports[`Anchor renders 1`] = `
 </div>
 `;
 
+exports[`Anchor renders tag 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Test
+  </span>
+</div>
+`;
+
 exports[`Anchor renders with children 1`] = `
 .c0 {
   font-size: 18px;
@@ -337,7 +363,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -347,7 +372,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 0px;
 }
 
 .c3 {
@@ -372,18 +396,6 @@ exports[`Anchor reverse icon label renders 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -499,47 +511,5 @@ exports[`Anchor warns about invalid label render 1`] = `
   >
     Test
   </a>
-</div>
-`;
-
-exports[`renders tag 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  box-sizing: border-box;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.c1:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-<div
-  className="c0"
->
-  <span
-    className="c1"
-    href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
-  >
-    Test
-  </span>
 </div>
 `;

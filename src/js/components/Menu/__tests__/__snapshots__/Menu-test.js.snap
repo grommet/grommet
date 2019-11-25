@@ -9,7 +9,6 @@ exports[`Menu basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -64,12 +63,6 @@ exports[`Menu basic 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -153,7 +146,6 @@ exports[`Menu close by clicking outside 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -208,12 +200,6 @@ exports[`Menu close by clicking outside 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -302,7 +288,6 @@ exports[`Menu close by clicking outside 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -319,7 +304,7 @@ exports[`Menu close by clicking outside 2`] = `
   padding: 12px;
 }
 
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -327,18 +312,16 @@ exports[`Menu close by clicking outside 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -346,13 +329,11 @@ exports[`Menu close by clicking outside 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -363,7 +344,6 @@ exports[`Menu close by clicking outside 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -372,7 +352,6 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c10 {
@@ -383,13 +362,11 @@ exports[`Menu close by clicking outside 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -401,7 +378,6 @@ exports[`Menu close by clicking outside 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -450,7 +426,7 @@ exports[`Menu close by clicking outside 2`] = `
   line-height: 24px;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -474,73 +450,13 @@ exports[`Menu close by clicking outside 2`] = `
   animation-delay: 0.01s;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
   }
 }
 
@@ -551,7 +467,7 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -564,7 +480,7 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -651,78 +567,42 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width:768px) {
-  .dOxYCM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dOxYCM {
+  .iSjcfI {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dsOguw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dsOguw {
+  .eWNIN {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jnrdmJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
+  .btzjkK {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .liroKi {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
+  .copgmi {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .lfXrbw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
+  .eFsIrR {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iLBPCY {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
+  .dagJyH {
     padding: 6px;
   }
 }
 
-.fLlzie {
+.jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -730,73 +610,17 @@ exports[`Menu close by clicking outside 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
+  .bPKsO {
     padding: 6px;
   }
 }
@@ -882,7 +706,6 @@ exports[`Menu close on esc 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -937,12 +760,6 @@ exports[`Menu close on esc 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1031,7 +848,6 @@ exports[`Menu close on tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1090,12 +906,6 @@ exports[`Menu close on tab 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     padding: 6px;
   }
 }
@@ -1134,6 +944,149 @@ exports[`Menu close on tab 1`] = `
       </svg>
     </div>
   </button>
+</div>
+`;
+
+exports[`Menu custom a11yTitle 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-label="My Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
 </div>
 `;
 
@@ -1180,7 +1133,6 @@ exports[`Menu custom message 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1235,12 +1187,6 @@ exports[`Menu custom message 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1334,7 +1280,6 @@ exports[`Menu disabled 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1395,12 +1340,6 @@ exports[`Menu disabled 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     padding: 6px;
   }
 }
@@ -1440,6 +1379,149 @@ exports[`Menu disabled 1`] = `
       </svg>
     </div>
   </button>
+</div>
+`;
+
+exports[`Menu gap between icon and label 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-label="Open Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          actions
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
 </div>
 `;
 
@@ -1486,7 +1568,6 @@ exports[`Menu justify content 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1511,7 +1592,6 @@ exports[`Menu justify content 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1536,7 +1616,6 @@ exports[`Menu justify content 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1561,7 +1640,6 @@ exports[`Menu justify content 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1586,7 +1664,6 @@ exports[`Menu justify content 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1611,7 +1688,6 @@ exports[`Menu justify content 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1666,19 +1742,7 @@ exports[`Menu justify content 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
   }
 }
 
@@ -1690,19 +1754,7 @@ exports[`Menu justify content 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
   }
 }
 
@@ -1714,19 +1766,7 @@ exports[`Menu justify content 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
   }
 }
 
@@ -2001,7 +2041,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2056,12 +2095,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2150,7 +2183,6 @@ exports[`Menu open and close on click 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2209,12 +2241,6 @@ exports[`Menu open and close on click 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     padding: 6px;
   }
 }
@@ -2267,7 +2293,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dOxYCM"
+      class="StyledBox-sc-13pk1d4-0 iSjcfI"
     >
       <span
         class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -2337,7 +2363,6 @@ exports[`Menu open and close on click 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2354,7 +2379,7 @@ exports[`Menu open and close on click 3`] = `
   padding: 12px;
 }
 
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2362,18 +2387,16 @@ exports[`Menu open and close on click 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2381,13 +2404,11 @@ exports[`Menu open and close on click 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -2398,7 +2419,6 @@ exports[`Menu open and close on click 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2407,7 +2427,6 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c10 {
@@ -2418,13 +2437,11 @@ exports[`Menu open and close on click 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -2436,7 +2453,6 @@ exports[`Menu open and close on click 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2485,7 +2501,7 @@ exports[`Menu open and close on click 3`] = `
   line-height: 24px;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2509,73 +2525,13 @@ exports[`Menu open and close on click 3`] = `
   animation-delay: 0.01s;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
   }
 }
 
@@ -2586,7 +2542,7 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2599,7 +2555,7 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -2700,78 +2656,42 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:768px) {
-  .dOxYCM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dOxYCM {
+  .iSjcfI {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dsOguw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dsOguw {
+  .eWNIN {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jnrdmJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
+  .btzjkK {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .liroKi {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
+  .copgmi {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .lfXrbw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
+  .eFsIrR {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iLBPCY {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
+  .dagJyH {
     padding: 6px;
   }
 }
 
-.fLlzie {
+.jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2779,73 +2699,17 @@ exports[`Menu open and close on click 4`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
+  .bPKsO {
     padding: 6px;
   }
 }
@@ -2931,7 +2795,6 @@ exports[`Menu select an item 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2986,12 +2849,6 @@ exports[`Menu select an item 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -3080,7 +2937,6 @@ exports[`Menu tab through menu until it closes 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3135,12 +2991,6 @@ exports[`Menu tab through menu until it closes 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -3229,7 +3079,6 @@ exports[`Menu with dropAlign renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3284,12 +3133,6 @@ exports[`Menu with dropAlign renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -3378,7 +3221,6 @@ exports[`Menu with dropAlign renders 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3395,7 +3237,7 @@ exports[`Menu with dropAlign renders 2`] = `
   padding: 12px;
 }
 
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3403,18 +3245,16 @@ exports[`Menu with dropAlign renders 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3422,13 +3262,11 @@ exports[`Menu with dropAlign renders 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -3439,7 +3277,6 @@ exports[`Menu with dropAlign renders 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3448,7 +3285,6 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c10 {
@@ -3459,13 +3295,11 @@ exports[`Menu with dropAlign renders 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
@@ -3477,7 +3311,6 @@ exports[`Menu with dropAlign renders 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -3526,7 +3359,7 @@ exports[`Menu with dropAlign renders 2`] = `
   line-height: 24px;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3550,73 +3383,13 @@ exports[`Menu with dropAlign renders 2`] = `
   animation-delay: 0.01s;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
   }
 }
 
@@ -3627,7 +3400,7 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3640,7 +3413,7 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -3727,78 +3500,42 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:768px) {
-  .dOxYCM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dOxYCM {
+  .iSjcfI {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dsOguw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dsOguw {
+  .eWNIN {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .jnrdmJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
+  .btzjkK {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .liroKi {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
+  .copgmi {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .lfXrbw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
+  .eFsIrR {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iLBPCY {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
+  .dagJyH {
     padding: 6px;
   }
 }
 
-.fLlzie {
+.jqIewH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3806,73 +3543,17 @@ exports[`Menu with dropAlign renders 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
+  .bPKsO {
     padding: 6px;
   }
 }

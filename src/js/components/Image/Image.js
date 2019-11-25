@@ -3,7 +3,15 @@ import { compose } from 'recompose';
 import { withForwardRef } from '../hocs';
 import { StyledImage } from './StyledImage';
 
-const Image = ({ fallback, forwardRef, onError, opacity, src, ...rest }) => {
+const Image = ({
+  fallback,
+  forwardRef,
+  onError,
+  opacity,
+  fill,
+  src,
+  ...rest
+}) => {
   const [imageMissing, setImageMissing] = useState(false);
   const handleError = event => {
     if (onError) {
@@ -20,6 +28,7 @@ const Image = ({ fallback, forwardRef, onError, opacity, src, ...rest }) => {
       {...extraProps}
       ref={forwardRef}
       opacityProp={opacity}
+      fillProp={fill}
       src={!imageMissing ? src : fallback}
     />
   );
