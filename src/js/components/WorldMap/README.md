@@ -13,7 +13,8 @@ import { WorldMap } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -141,6 +142,16 @@ Continent details.
   onClick: function,
   onHover: function
 }]
+```
+
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
 ```
 
 **onSelectPlace**

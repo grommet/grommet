@@ -70,6 +70,12 @@ export const doc = WorldMap => {
         onHover: PropTypes.func,
       }),
     ).description('Continent details.'),
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]).description(
+      'Whether the width and/or height should fill the container.',
+    ),
     onSelectPlace: PropTypes.func
       .description(`Called when the user clicks on a place.
         It is passed the location.`),

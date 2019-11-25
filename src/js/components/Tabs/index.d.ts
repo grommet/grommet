@@ -11,9 +11,9 @@ export interface TabsProps {
   justify?: "start" | "center" | "end";
   margin?: MarginType;
   messages?: {tabContents?: string};
-  onActive?: ((...args: any[]) => any);
+  onActive?: ((index: number) => void);
 }
 
-declare const Tabs: React.ComponentClass<TabsProps & JSX.IntrinsicElements['div']>;
+declare const Tabs: React.FC<TabsProps & JSX.IntrinsicElements['div']>;
 
 export { Tabs };

@@ -1,5 +1,11 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GapType,
+  GridAreaType,
+  MarginType,
+} from "../../utils";
 
 export interface ChartProps {
   a11yTitle?: A11yTitleType;
@@ -8,6 +14,7 @@ export interface ChartProps {
   margin?: MarginType;
   bounds?: number[][];
   color?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
+  gap?: GapType;
   onClick?: ((...args: any[]) => any);
   onHover?: ((...args: any[]) => any);
   overflow?: boolean;

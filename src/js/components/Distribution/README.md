@@ -17,7 +17,8 @@ import { Distribution } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -108,6 +109,29 @@ xlarge
     xlarge
     string
 }
+string
+```
+
+**basis**
+
+A fixed or relative size along its container's main axis.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+auto
 string
 ```
 

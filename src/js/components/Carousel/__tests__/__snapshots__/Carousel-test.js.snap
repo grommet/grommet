@@ -87,13 +87,11 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -105,13 +103,11 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -122,13 +118,11 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
   -webkit-animation: iyuEas 1s 0s forwards;
   animation: iyuEas 1s 0s forwards;
@@ -142,7 +136,6 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -154,7 +147,6 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -165,7 +157,6 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -175,7 +166,6 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -186,7 +176,6 @@ exports[`Carousel basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -196,7 +185,6 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c8 {
@@ -262,7 +250,7 @@ exports[`Carousel basic 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -282,78 +270,6 @@ exports[`Carousel basic 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -595,13 +511,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -613,13 +527,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -630,13 +542,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
   -webkit-animation: iyuEas 1s 0s forwards;
   animation: iyuEas 1s 0s forwards;
@@ -650,7 +560,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -662,7 +571,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -673,7 +581,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -683,7 +590,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -694,7 +600,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -704,7 +609,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c14 {
@@ -770,7 +674,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 }
 
 .c8:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -790,78 +694,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -1103,13 +935,11 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -1121,13 +951,11 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -1138,13 +966,11 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
   -webkit-animation: iyuEas 1s 0s forwards;
   animation: iyuEas 1s 0s forwards;
@@ -1158,7 +984,6 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1170,7 +995,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -1181,7 +1005,6 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1191,7 +1014,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -1202,7 +1024,6 @@ exports[`Carousel navigate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1212,7 +1033,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c8 {
@@ -1278,7 +1098,7 @@ exports[`Carousel navigate 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -1298,78 +1118,6 @@ exports[`Carousel navigate 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -1514,13 +1262,13 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bokefz"
+          class="StyledBox-sc-13pk1d4-0 gpYXbQ"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 kMJMHe"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -1530,13 +1278,13 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 lcSSFj"
+          class="StyledBox-sc-13pk1d4-0 iGLPUa"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 kMJMHe"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -1546,11 +1294,11 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jrOMEy"
+        class="StyledBox-sc-13pk1d4-0 isxigL"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hDmjOk"
+          class="StyledButton-sc-323bzc-0 hgsmht"
           type="button"
         >
           <svg
@@ -1568,10 +1316,10 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kqKhFd"
+          class="StyledBox-sc-13pk1d4-0 hVgORc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 NzzAu"
+            class="StyledBox-sc-13pk1d4-0 bJWcnh"
           >
             <button
               class="StyledButton-sc-323bzc-0 lgwBfH"
@@ -1645,13 +1393,13 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 blUujK"
+          class="StyledBox-sc-13pk1d4-0 hokQpI"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 kMJMHe"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -1661,13 +1409,13 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bokefz"
+          class="StyledBox-sc-13pk1d4-0 gpYXbQ"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 kMJMHe"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -1677,7 +1425,7 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jrOMEy"
+        class="StyledBox-sc-13pk1d4-0 isxigL"
         tabindex="0"
       >
         <button
@@ -1700,10 +1448,10 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kqKhFd"
+          class="StyledBox-sc-13pk1d4-0 hVgORc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 NzzAu"
+            class="StyledBox-sc-13pk1d4-0 bJWcnh"
           >
             <button
               class="StyledButton-sc-323bzc-0 lgwBfH"
@@ -1742,7 +1490,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 hDmjOk"
+          class="StyledButton-sc-323bzc-0 hgsmht"
           type="button"
         >
           <svg
@@ -1851,13 +1599,11 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -1869,13 +1615,11 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -1886,13 +1630,11 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
   -webkit-animation: iyuEas 1s 0s forwards;
   animation: iyuEas 1s 0s forwards;
@@ -1906,7 +1648,6 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1918,7 +1659,6 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -1929,7 +1669,6 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1939,7 +1678,6 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -1950,7 +1688,6 @@ exports[`Carousel play 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1960,7 +1697,6 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c8 {
@@ -2026,7 +1762,7 @@ exports[`Carousel play 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
@@ -2046,78 +1782,6 @@ exports[`Carousel play 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -2260,13 +1924,13 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bokefz"
+          class="StyledBox-sc-13pk1d4-0 gpYXbQ"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 kMJMHe"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -2276,13 +1940,13 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 egLqqe"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 lcSSFj"
+          class="StyledBox-sc-13pk1d4-0 iGLPUa"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 kMJMHe"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -2292,11 +1956,11 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jrOMEy"
+        class="StyledBox-sc-13pk1d4-0 isxigL"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hDmjOk"
+          class="StyledButton-sc-323bzc-0 hgsmht"
           type="button"
         >
           <svg
@@ -2314,10 +1978,10 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kqKhFd"
+          class="StyledBox-sc-13pk1d4-0 hVgORc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 NzzAu"
+            class="StyledBox-sc-13pk1d4-0 bJWcnh"
           >
             <button
               class="StyledButton-sc-323bzc-0 lgwBfH"

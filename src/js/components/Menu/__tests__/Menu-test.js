@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
-
+import '@testing-library/jest-dom/extend-expect';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Menu } from '../..';
@@ -40,6 +40,21 @@ describe('Menu', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('custom a11yTitle', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Menu
+          a11yTitle="My Menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    const menuWithLabel = getByLabelText('My Menu');
+    expect(menuWithLabel).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
   test('justify content', () => {
     const component = renderer.create(
       <Grommet>
@@ -57,6 +72,29 @@ describe('Menu', () => {
       </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('gap between icon and label', () => {
+    window.scrollTo = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Menu
+          open
+          label="actions"
+          items={[
+            { label: 'Item 1', icon: <svg />, gap: 'xlarge' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    const firstItem = getByText('Item 1');
+    expect(
+      firstItem.querySelector('div[class^=StyledBox__StyledBoxGap]'),
+    ).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot();
   });
 
   test('open and close on click', () => {
@@ -140,46 +178,77 @@ describe('Menu', () => {
         <Menu
           id="test-menu"
           label="Test"
-          items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]}
+          items={[{ label: 'Item 1' }, { label: 'Item 2', onClick }]}
         />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    // pressing down 3x: first opens the drop,
-    // second moves to the first suggestion
-    // third moves to the last suggestion
+    // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Enter selects the item
     fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40,
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
     });
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40,
+    fireEvent.keyDown(document.activeElement.firstChild, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
     });
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Down',
-      keyCode: 40,
-      which: 40,
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
     });
-
-    // moves to the first suggestion
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
-      key: 'Up',
-      keyCode: 38,
-      which: 38,
-    });
-
-    // select that by pressing enter
-    fireEvent.keyDown(getByLabelText('Open Menu'), {
+    fireEvent.keyDown(document.activeElement, {
       key: 'Enter',
       keyCode: 13,
       which: 13,
     });
 
     expect(onClick).toBeCalled();
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('tab through menu until it closes', () => {
+    const { getByLabelText, container } = render(
+      <Grommet>
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Third tab moves beyond last menu item and closes menu
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
+    fireEvent.keyDown(document.activeElement.firstChild, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
