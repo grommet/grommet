@@ -1676,10 +1676,11 @@ string",
       },
       Object {
         "defaultValue": "bar",
-        "description": "The visual type of meter.",
+        "description": "The visual type of chart.",
         "format": "bar
 line
-area",
+area
+point",
         "name": "type",
       },
       Object {

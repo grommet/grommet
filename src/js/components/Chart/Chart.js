@@ -110,9 +110,9 @@ const Chart = React.forwardRef(
     if (
       containerRef.current &&
       propsSize &&
-        (propsSize === 'full' ||
-          propsSize.height === 'full' ||
-          propsSize.width === 'full')
+      (propsSize === 'full' ||
+        propsSize.height === 'full' ||
+        propsSize.width === 'full')
     ) {
       const containerNode = containerRef.current;
       if (containerNode) {
@@ -245,6 +245,58 @@ const Chart = React.forwardRef(
       );
     };
 
+    const renderPoints = () =>
+      (values || []).map((valueArg, index) => {
+        const { label, onHover: valueOnHover, value, ...valueRest } = valueArg;
+
+        const key = `p-${index}`;
+
+        let hoverProps;
+        if (valueOnHover) {
+          hoverProps = {
+            onMouseOver: () => valueOnHover(true),
+            onMouseLeave: () => valueOnHover(false),
+          };
+        }
+
+        const center = value.length === 2 ? value[1] : value[2];
+        let shape;
+        if (round) {
+          const cx = (value[0] - bounds[0][0]) * scale[0];
+          const cy = size[1] - (center - bounds[1][0]) * scale[1];
+          shape = (
+            <circle
+              cx={cx}
+              cy={cy}
+              r={strokeWidth / 2}
+              {...hoverProps}
+              {...valueRest}
+            />
+          );
+        } else {
+          const x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
+          const y =
+            size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
+          shape = (
+            <rect
+              x={x}
+              y={y}
+              width={strokeWidth}
+              height={strokeWidth}
+              {...hoverProps}
+              {...valueRest}
+            />
+          );
+        }
+
+        return (
+          <g key={key} stroke="none">
+            <title>{label}</title>
+            {shape}
+          </g>
+        );
+      });
+
     let contents;
     if (type === 'bar') {
       contents = renderBars();
@@ -252,6 +304,8 @@ const Chart = React.forwardRef(
       contents = renderLine();
     } else if (type === 'area') {
       contents = renderArea();
+    } else if (type === 'point') {
+      contents = renderPoints();
     }
 
     const viewBox = overflow
@@ -273,8 +327,11 @@ const Chart = React.forwardRef(
         {...rest}
       >
         <g
-          stroke={normalizeColor(colorName, theme)}
-          strokeWidth={strokeWidth}
+          stroke={
+            type !== 'point' ? normalizeColor(colorName, theme) : undefined
+          }
+          strokeWidth={type !== 'point' ? strokeWidth : undefined}
+          fill={type === 'point' ? normalizeColor(colorName, theme) : undefined}
           strokeLinecap={round ? 'round' : 'butt'}
           strokeLinejoin={round ? 'round' : 'miter'}
           opacity={opacity}
