@@ -244,12 +244,13 @@ string
 
 **type**
 
-The visual type of meter. Defaults to `bar`.
+The visual type of chart. Defaults to `bar`.
 
 ```
 bar
 line
 area
+point
 ```
 
 **values**
