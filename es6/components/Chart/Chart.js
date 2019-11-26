@@ -6,18 +6,18 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
-import { normalizeBounds, normalizeValues } from './utils';
+import { normalizeBounds, normalizeValues } from './utils'; // use constants so re-renders don't re-trigger effects
+
 var defaultSize = {
   height: 'small',
   width: 'medium'
 };
+var defaultValues = [];
 var Chart = React.forwardRef(function (_ref, ref) {
   var propsBounds = _ref.bounds,
       _ref$color = _ref.color,
       color = _ref$color === void 0 ? 'accent-1' : _ref$color,
       gap = _ref.gap,
-      _ref$justify = _ref.justify,
-      justify = _ref$justify === void 0 ? 'between' : _ref$justify,
       onClick = _ref.onClick,
       onHover = _ref.onHover,
       _ref$overflow = _ref.overflow,
@@ -30,8 +30,8 @@ var Chart = React.forwardRef(function (_ref, ref) {
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
-      propsValues = _ref$values === void 0 ? [] : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "justify", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
+      propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
+      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
 
   var theme = useContext(ThemeContext);
 
@@ -94,25 +94,34 @@ var Chart = React.forwardRef(function (_ref, ref) {
     setSize([width, height]);
     var nextScale = [(sizeWidth === 'auto' ? autoWidth : width) / (nextBounds[0][1] - nextBounds[0][0]), height / (nextBounds[1][1] - nextBounds[1][0])];
     setScale(nextScale);
-  }, [containerSize, gap, justify, propsBounds, propsSize, propsValues, theme.global.edgeSize, theme.global.size, thickness]); // container size, if needed
+  }, [containerSize, gap, propsBounds, propsSize, propsValues, theme.global.edgeSize, theme.global.size, thickness]); // set container size when we get ref or when size changes
 
-  useEffect(function () {
-    var onResize = function onResize() {
-      var containerNode = containerRef.current;
+  if (containerRef.current && propsSize && (propsSize === 'full' || propsSize.height === 'full' || propsSize.width === 'full')) {
+    var containerNode = containerRef.current;
 
-      if (containerNode) {
-        var parentNode = containerNode.parentNode;
+    if (containerNode) {
+      var parentNode = containerNode.parentNode;
 
-        if (parentNode) {
-          var rect = parentNode.getBoundingClientRect();
+      if (parentNode) {
+        var rect = parentNode.getBoundingClientRect();
+
+        if (rect.width !== containerSize[0] || rect.height !== containerSize[1]) {
           setContainerSize([rect.width, rect.height]);
         }
       }
+    }
+  } // container size, if needed
+
+
+  useEffect(function () {
+    var onResize = function onResize() {
+      var parentNode = containerRef.current.parentNode;
+      var rect = parentNode.getBoundingClientRect();
+      setContainerSize([rect.width, rect.height]);
     };
 
-    if (propsSize.width === 'full' || propsSize.height === 'full') {
+    if (propsSize && (propsSize === 'full' || propsSize.width === 'full' || propsSize.height === 'full')) {
       window.addEventListener('resize', onResize);
-      onResize();
       return function () {
         return window.removeEventListener('resize', onResize);
       };
