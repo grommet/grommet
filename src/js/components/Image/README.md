@@ -137,6 +137,14 @@ strong
 string
 boolean
 ```
+
+**fill**
+
+Whether the image expands to fill all of the available width and height
+
+```
+boolean
+```
   
 ## Intrinsic element
 

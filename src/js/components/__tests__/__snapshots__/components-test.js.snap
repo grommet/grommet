@@ -232,7 +232,6 @@ stretch",
         "name": "gridArea",
       },
       Object {
-        "defaultValue": "none",
         "description": "The amount of margin around the component. An object can
     be specified to distinguish horizontal margin, vertical margin, and
     margin on a particular side.",
@@ -604,6 +603,41 @@ string
         "name": "height",
       },
       Object {
+        "defaultValue": false,
+        "description": "The hover indicator to apply when the user is mousing over the
+button. An object can be also be specified for color index support:
+{background: 'neutral-2'}. This prop is meant to be used only
+with plain Buttons.",
+        "format": "boolean
+string
+background
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string
+}",
+        "name": "hoverIndicator",
+      },
+      Object {
         "defaultValue": "stretch",
         "description": "How to align the contents along the main axis.",
         "format": "around
@@ -614,6 +648,12 @@ evenly
 start
 stretch",
         "name": "justify",
+      },
+      Object {
+        "description": "Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.",
+        "format": "function",
+        "name": "onClick",
       },
       Object {
         "description": "box overflow.",
@@ -1636,10 +1676,11 @@ string",
       },
       Object {
         "defaultValue": "bar",
-        "description": "The visual type of meter.",
+        "description": "The visual type of chart.",
         "format": "bar
 line
-area",
+area
+point",
         "name": "type",
       },
       Object {
@@ -2307,6 +2348,11 @@ strong
 string
 boolean",
         "name": "opacity",
+      },
+      Object {
+        "description": "Whether the image expands to fill all of the available width and height",
+        "format": "boolean",
+        "name": "fill",
       },
     ],
     "usage": "import { Image } from 'grommet';
@@ -2995,6 +3041,16 @@ with the same name so form submissions work.",
     "intrinsicElement": "div",
     "name": "RadioButtonGroup",
     "properties": Array [
+      Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
       Object {
         "description": "The DOM name attribute value to use for the underlying <input/> 
       elements.",

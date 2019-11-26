@@ -43,7 +43,6 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -59,7 +58,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c7 {
@@ -70,7 +68,6 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -83,7 +80,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c8 {
@@ -94,7 +90,6 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -103,7 +98,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c14 {
@@ -114,7 +108,6 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -132,7 +125,6 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -285,57 +277,9 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    margin: 0px;
   }
 }
 
@@ -580,7 +524,6 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -596,7 +539,6 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c7 {
@@ -607,7 +549,6 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -620,7 +561,6 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c8 {
@@ -631,7 +571,6 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -640,7 +579,6 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c14 {
@@ -651,7 +589,6 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -669,7 +606,6 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -694,7 +630,6 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -708,7 +643,6 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c5 {
@@ -883,48 +817,6 @@ exports[`Video controls renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
@@ -933,25 +825,7 @@ exports[`Video controls renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c17 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c20 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c20 {
-    padding: 0px;
   }
 }
 
@@ -1306,7 +1180,6 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1322,7 +1195,6 @@ exports[`Video fit renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c7 {
@@ -1333,7 +1205,6 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1346,7 +1217,6 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c8 {
@@ -1357,7 +1227,6 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1366,7 +1235,6 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c14 {
@@ -1377,7 +1245,6 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1395,7 +1262,6 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1566,57 +1432,9 @@ exports[`Video fit renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    margin: 0px;
   }
 }
 
@@ -1979,7 +1797,6 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1995,7 +1812,6 @@ exports[`Video loop renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c7 {
@@ -2006,7 +1822,6 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2019,7 +1834,6 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c8 {
@@ -2030,7 +1844,6 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2039,7 +1852,6 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c14 {
@@ -2050,7 +1862,6 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2068,7 +1879,6 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2221,57 +2031,9 @@ exports[`Video loop renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    margin: 0px;
   }
 }
 
@@ -2482,7 +2244,6 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2498,7 +2259,6 @@ exports[`Video mute renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c7 {
@@ -2509,7 +2269,6 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2522,7 +2281,6 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c8 {
@@ -2533,7 +2291,6 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2542,7 +2299,6 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c14 {
@@ -2553,7 +2309,6 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2571,7 +2326,6 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2724,57 +2478,9 @@ exports[`Video mute renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    margin: 0px;
   }
 }
 
@@ -2985,7 +2691,6 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3001,7 +2706,6 @@ exports[`Video renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c7 {
@@ -3012,7 +2716,6 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3025,7 +2728,6 @@ exports[`Video renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c8 {
@@ -3036,7 +2738,6 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3045,7 +2746,6 @@ exports[`Video renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding: 0px;
 }
 
 .c14 {
@@ -3056,7 +2756,6 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3074,7 +2773,6 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3227,57 +2925,9 @@ exports[`Video renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    margin: 0px;
   }
 }
 
