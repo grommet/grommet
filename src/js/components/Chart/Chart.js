@@ -107,7 +107,13 @@ const Chart = React.forwardRef(
     ]);
 
     // set container size when we get ref or when size changes
-    if (containerRef.current && propsSize === 'full') {
+    if (
+      containerRef.current &&
+      propsSize &&
+        (propsSize === 'full' ||
+          propsSize.height === 'full' ||
+          propsSize.width === 'full')
+    ) {
       const containerNode = containerRef.current;
       if (containerNode) {
         const { parentNode } = containerNode;
@@ -131,7 +137,12 @@ const Chart = React.forwardRef(
         setContainerSize([rect.width, rect.height]);
       };
 
-      if (propsSize.width === 'full' || propsSize.height === 'full') {
+      if (
+        propsSize &&
+        (propsSize === 'full' ||
+          propsSize.width === 'full' ||
+          propsSize.height === 'full')
+      ) {
         window.addEventListener('resize', onResize);
         return () => window.removeEventListener('resize', onResize);
       }
