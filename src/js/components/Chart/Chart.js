@@ -7,7 +7,9 @@ import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
 
+// use constants so re-renders don't re-trigger effects
 const defaultSize = { height: 'small', width: 'medium' };
+const defaultValues = [];
 
 const Chart = React.forwardRef(
   (
@@ -15,7 +17,6 @@ const Chart = React.forwardRef(
       bounds: propsBounds,
       color = 'accent-1',
       gap,
-      justify = 'between',
       onClick,
       onHover,
       overflow = false,
@@ -23,14 +24,17 @@ const Chart = React.forwardRef(
       size: propsSize = defaultSize,
       thickness = 'medium',
       type = 'bar',
-      values: propsValues = [],
+      values: propsValues = defaultValues,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext);
     const [values, setValues] = useState([]);
-    const [bounds, setBounds] = useState([[0, 0], [0, 0]]);
+    const [bounds, setBounds] = useState([
+      [0, 0],
+      [0, 0],
+    ]);
     const [containerSize, setContainerSize] = useState([0, 0]);
     const [size, setSize] = useState([0, 0]);
     const [scale, setScale] = useState([1, 1]);
@@ -94,7 +98,6 @@ const Chart = React.forwardRef(
     }, [
       containerSize,
       gap,
-      justify,
       propsBounds,
       propsSize,
       propsValues,
@@ -103,22 +106,44 @@ const Chart = React.forwardRef(
       thickness,
     ]);
 
-    // container size, if needed
-    useEffect(() => {
-      const onResize = () => {
-        const containerNode = containerRef.current;
-        if (containerNode) {
-          const { parentNode } = containerNode;
-          if (parentNode) {
-            const rect = parentNode.getBoundingClientRect();
+    // set container size when we get ref or when size changes
+    if (
+      containerRef.current &&
+      propsSize &&
+        (propsSize === 'full' ||
+          propsSize.height === 'full' ||
+          propsSize.width === 'full')
+    ) {
+      const containerNode = containerRef.current;
+      if (containerNode) {
+        const { parentNode } = containerNode;
+        if (parentNode) {
+          const rect = parentNode.getBoundingClientRect();
+          if (
+            rect.width !== containerSize[0] ||
+            rect.height !== containerSize[1]
+          ) {
             setContainerSize([rect.width, rect.height]);
           }
         }
+      }
+    }
+
+    // container size, if needed
+    useEffect(() => {
+      const onResize = () => {
+        const { parentNode } = containerRef.current;
+        const rect = parentNode.getBoundingClientRect();
+        setContainerSize([rect.width, rect.height]);
       };
 
-      if (propsSize.width === 'full' || propsSize.height === 'full') {
+      if (
+        propsSize &&
+        (propsSize === 'full' ||
+          propsSize.width === 'full' ||
+          propsSize.height === 'full')
+      ) {
         window.addEventListener('resize', onResize);
-        onResize();
         return () => window.removeEventListener('resize', onResize);
       }
       return undefined;
