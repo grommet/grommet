@@ -119,6 +119,44 @@ exports[`Chart cap renders 1`] = `
       </g>
     </g>
   </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <circle
+          cx={384}
+          cy={0}
+          r={12}
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <circle
+          cx={0}
+          cy={192}
+          r={12}
+        />
+      </g>
+    </g>
+  </svg>
 </div>
 `;
 
@@ -141,32 +179,18 @@ exports[`Chart gap renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   width: 768px;
-  padding: 0px;
 }
 
 .c2 {
   display: block;
   max-width: 100%;
   overflow: visible;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -321,32 +345,18 @@ exports[`Chart size renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   width: 768px;
-  padding: 0px;
 }
 
 .c1 {
   display: block;
   max-width: 100%;
   overflow: visible;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -767,6 +777,46 @@ exports[`Chart type renders 1`] = `
       >
         <path
           d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <rect
+          height={24}
+          width={24}
+          x={372}
+          y={-12}
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <rect
+          height={24}
+          width={24}
+          x={-12}
+          y={180}
         />
       </g>
     </g>

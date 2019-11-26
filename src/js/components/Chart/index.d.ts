@@ -21,7 +21,7 @@ export interface ChartProps {
   round?: boolean;
   size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | {height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string,width?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string} | string;
   thickness?: "hair" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "none" | string;
-  type?: "bar" | "line" | "area";
+  type?: "bar" | "line" | "area" | "point";
   values: (number | number[] | {label?: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number | number[]})[];
 }
 

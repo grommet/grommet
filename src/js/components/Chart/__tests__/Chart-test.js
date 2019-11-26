@@ -27,6 +27,7 @@ test('Chart type renders', () => {
       <Chart type="bar" values={VALUES} />
       <Chart type="line" values={VALUES} />
       <Chart type="area" values={VALUES} />
+      <Chart type="point" values={VALUES} />
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -71,6 +72,7 @@ test('Chart cap renders', () => {
       <Chart round values={VALUES} />
       <Chart type="line" round values={VALUES} />
       <Chart type="area" round values={VALUES} />
+      <Chart type="point" round values={VALUES} />
     </Grommet>,
   );
   const tree = component.toJSON();
