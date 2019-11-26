@@ -32,7 +32,7 @@ var doc = function doc(Chart) {
       height: 'small'
     }),
     thickness: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), _reactDesc.PropTypes.string]).description('The width of the stroke.').defaultValue('medium'),
-    type: _reactDesc.PropTypes.oneOf(['bar', 'line', 'area']).description('The visual type of meter.').defaultValue('bar'),
+    type: _reactDesc.PropTypes.oneOf(['bar', 'line', 'area', 'point']).description('The visual type of chart.').defaultValue('bar'),
     values: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number), _reactDesc.PropTypes.shape({
       label: _reactDesc.PropTypes.string,
       // for accessibility of bars

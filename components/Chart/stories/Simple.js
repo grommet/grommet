@@ -52,10 +52,28 @@ var AreaChart = function AreaChart() {
   })));
 };
 
+var PointChart = function PointChart() {
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Chart, {
+    type: "point",
+    values: [[10, 20], [20, 30], [30, 15]]
+  }), _react["default"].createElement(_grommet.Chart, {
+    type: "point",
+    values: [[10, 20], [20, 30], [30, 15]],
+    round: true
+  })));
+};
+
 (0, _react2.storiesOf)('Chart', module).add('Bar', function () {
   return _react["default"].createElement(BarChart, null);
 }).add('Line', function () {
   return _react["default"].createElement(LineChart, null);
 }).add('Area', function () {
   return _react["default"].createElement(AreaChart, null);
+}).add('Point', function () {
+  return _react["default"].createElement(PointChart, null);
 });

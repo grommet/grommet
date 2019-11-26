@@ -25,7 +25,7 @@ export var doc = function doc(Chart) {
       height: 'small'
     }),
     thickness: PropTypes.oneOfType([PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), PropTypes.string]).description('The width of the stroke.').defaultValue('medium'),
-    type: PropTypes.oneOf(['bar', 'line', 'area']).description('The visual type of meter.').defaultValue('bar'),
+    type: PropTypes.oneOf(['bar', 'line', 'area', 'point']).description('The visual type of chart.').defaultValue('bar'),
     values: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number), PropTypes.shape({
       label: PropTypes.string,
       // for accessibility of bars

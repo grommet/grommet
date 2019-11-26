@@ -39,6 +39,9 @@ test('Chart type renders', function () {
   }), _react["default"].createElement(_.Chart, {
     type: "area",
     values: VALUES
+  }), _react["default"].createElement(_.Chart, {
+    type: "point",
+    values: VALUES
   })));
 
   var tree = component.toJSON();
@@ -108,6 +111,10 @@ test('Chart cap renders', function () {
     values: VALUES
   }), _react["default"].createElement(_.Chart, {
     type: "area",
+    round: true,
+    values: VALUES
+  }), _react["default"].createElement(_.Chart, {
+    type: "point",
     round: true,
     values: VALUES
   })));

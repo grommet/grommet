@@ -45,10 +45,28 @@ var AreaChart = function AreaChart() {
   })));
 };
 
+var PointChart = function PointChart() {
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(Chart, {
+    type: "point",
+    values: [[10, 20], [20, 30], [30, 15]]
+  }), React.createElement(Chart, {
+    type: "point",
+    values: [[10, 20], [20, 30], [30, 15]],
+    round: true
+  })));
+};
+
 storiesOf('Chart', module).add('Bar', function () {
   return React.createElement(BarChart, null);
 }).add('Line', function () {
   return React.createElement(LineChart, null);
 }).add('Area', function () {
   return React.createElement(AreaChart, null);
+}).add('Point', function () {
+  return React.createElement(PointChart, null);
 });

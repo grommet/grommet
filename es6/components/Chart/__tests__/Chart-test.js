@@ -28,6 +28,9 @@ test('Chart type renders', function () {
   }), React.createElement(Chart, {
     type: "area",
     values: VALUES
+  }), React.createElement(Chart, {
+    type: "point",
+    values: VALUES
   })));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -94,6 +97,10 @@ test('Chart cap renders', function () {
     values: VALUES
   }), React.createElement(Chart, {
     type: "area",
+    round: true,
+    values: VALUES
+  }), React.createElement(Chart, {
+    type: "point",
     round: true,
     values: VALUES
   })));

@@ -262,6 +262,56 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     }, hoverProps, clickProps)));
   };
 
+  var renderPoints = function renderPoints() {
+    return (values || []).map(function (valueArg, index) {
+      var label = valueArg.label,
+          valueOnHover = valueArg.onHover,
+          value = valueArg.value,
+          valueRest = _objectWithoutPropertiesLoose(valueArg, ["label", "onHover", "value"]);
+
+      var key = "p-" + index;
+      var hoverProps;
+
+      if (valueOnHover) {
+        hoverProps = {
+          onMouseOver: function onMouseOver() {
+            return valueOnHover(true);
+          },
+          onMouseLeave: function onMouseLeave() {
+            return valueOnHover(false);
+          }
+        };
+      }
+
+      var center = value.length === 2 ? value[1] : value[2];
+      var shape;
+
+      if (round) {
+        var cx = (value[0] - bounds[0][0]) * scale[0];
+        var cy = size[1] - (center - bounds[1][0]) * scale[1];
+        shape = _react["default"].createElement("circle", _extends({
+          cx: cx,
+          cy: cy,
+          r: strokeWidth / 2
+        }, hoverProps, valueRest));
+      } else {
+        var x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
+        var y = size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
+        shape = _react["default"].createElement("rect", _extends({
+          x: x,
+          y: y,
+          width: strokeWidth,
+          height: strokeWidth
+        }, hoverProps, valueRest));
+      }
+
+      return _react["default"].createElement("g", {
+        key: key,
+        stroke: "none"
+      }, _react["default"].createElement("title", null, label), shape);
+    });
+  };
+
   var contents;
 
   if (type === 'bar') {
@@ -270,6 +320,8 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     contents = renderLine();
   } else if (type === 'area') {
     contents = renderArea();
+  } else if (type === 'point') {
+    contents = renderPoints();
   }
 
   var viewBox = overflow ? "0 0 " + size[0] + " " + size[1] : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (size[0] + strokeWidth) + " " + (size[1] + strokeWidth);
@@ -282,8 +334,9 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     width: size === 'full' ? '100%' : size[0],
     height: size === 'full' ? '100%' : size[1]
   }, rest), _react["default"].createElement("g", {
-    stroke: (0, _utils.normalizeColor)(colorName, theme),
-    strokeWidth: strokeWidth,
+    stroke: type !== 'point' ? (0, _utils.normalizeColor)(colorName, theme) : undefined,
+    strokeWidth: type !== 'point' ? strokeWidth : undefined,
+    fill: type === 'point' ? (0, _utils.normalizeColor)(colorName, theme) : undefined,
     strokeLinecap: round ? 'round' : 'butt',
     strokeLinejoin: round ? 'round' : 'miter',
     opacity: opacity
