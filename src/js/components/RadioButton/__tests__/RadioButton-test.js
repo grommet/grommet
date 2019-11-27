@@ -3,47 +3,68 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { RadioButton } from '..';
 
-test('RadioButton renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RadioButton name="test empty" />
-      <RadioButton id="test id" name="test name" />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+describe('RadioButton', () => {
+  test('basic', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RadioButton name="test" value="1" />
+        <RadioButton id="test id" name="test" value="2" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-test('RadioButton label renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RadioButton label="test label" name="test label" />
-      <RadioButton label={<div>test label</div>} name="test div label" />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+  test('label', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RadioButton label="test label" name="test" value="1" />
+        <RadioButton label={<div>test label</div>} name="test" value="2" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-test('RadioButton checked renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RadioButton checked name="test checked" />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+  test('checked', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RadioButton checked name="test" value="1" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-test('RadioButton disabled renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RadioButton disabled name="test disabled" />
-      <RadioButton disabled checked name="test checked disabled" />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  test('disabled', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RadioButton disabled name="test" value="1" />
+        <RadioButton disabled checked name="test" value="2" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('children', () => {
+    const child = ({ checked }) => (
+      <Box pad="small" background={checked ? 'accent-1' : 'control'} />
+    );
+    const component = renderer.create(
+      <Grommet>
+        <RadioButton name="test" value="1">
+          {child}
+        </RadioButton>
+        <RadioButton checked name="test" value="2">
+          {child}
+        </RadioButton>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

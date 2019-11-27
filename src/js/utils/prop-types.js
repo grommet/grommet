@@ -1,7 +1,8 @@
 import { PropTypes } from 'react-desc';
 
 export const a11yTitlePropType = PropTypes.string.description(
-  'Custom title to be used by screen readers.',
+  `Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.`,
 );
 
 export const backgroundPropType = PropTypes.oneOfType([
@@ -68,3 +69,30 @@ export const genericProps = {
     this inside a parent Grid.`),
   margin: marginProp,
 };
+
+export const hoverIndicatorPropType = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.string,
+  PropTypes.oneOf(['background']),
+  PropTypes.shape({
+    color: PropTypes.string,
+    dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    image: PropTypes.string,
+    light: PropTypes.string,
+    position: PropTypes.string,
+    opacity: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+      PropTypes.number,
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+    ]),
+    repeat: PropTypes.oneOfType([
+      PropTypes.oneOf(['no-repeat', 'repeat']),
+      PropTypes.string,
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['cover', 'contain']),
+      PropTypes.string,
+    ]),
+  }),
+]);

@@ -6,7 +6,6 @@ export interface CheckBoxProps {
   id?: string;
   label?: React.ReactNode;
   name?: string;
-  onChange?: ((event: React.ChangeEvent) => void);
   reverse?: boolean;
   toggle?: boolean;
   indeterminate?: boolean;
