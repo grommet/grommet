@@ -47,6 +47,7 @@ To make a selection:
 
 const Menu = props => {
   const {
+    a11yTitle,
     children,
     disabled,
     dropAlign,
@@ -201,9 +202,10 @@ const Menu = props => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
-        a11yTitle={messages.closeMenu || 'Close Menu'}
+        a11yTitle={a11yTitle || messages.closeMenu || 'Close Menu'}
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
+        hoverIndicator="background"
         plain={plain}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
@@ -232,7 +234,7 @@ const Menu = props => {
       <DropButton
         ref={forwardRef}
         {...rest}
-        a11yTitle={messages.openMenu || 'Open Menu'}
+        a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
@@ -271,7 +273,12 @@ const Menu = props => {
                         }
                       }}
                     >
-                      <Box align="start" pad="small" direction="row">
+                      <Box
+                        align="start"
+                        pad="small"
+                        direction="row"
+                        gap={item.gap}
+                      >
                         {item.icon}
                         {item.label}
                       </Box>
@@ -326,9 +333,6 @@ let MenuDoc;
 if (process.env.NODE_ENV !== 'production') {
   MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
 }
-const MenuWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(MenuDoc || Menu);
+const MenuWrapper = compose(withTheme, withForwardRef)(MenuDoc || Menu);
 
 export { MenuWrapper as Menu };

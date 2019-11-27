@@ -1,4 +1,4 @@
-import { Children, cloneElement, useEffect } from 'react';
+import { Children, cloneElement, useCallback, useEffect } from 'react';
 
 const KEYS = {
   8: 'onBackspace',
@@ -15,18 +15,21 @@ const KEYS = {
 };
 
 const Keyboard = ({ target, children, onKeyDown, ...restProps }) => {
-  const onKeyDownHandler = (event, ...rest) => {
-    const key = event.keyCode ? event.keyCode : event.which;
-    const callbackName = KEYS[key];
+  const onKeyDownHandler = useCallback(
+    (event, ...rest) => {
+      const key = event.keyCode ? event.keyCode : event.which;
+      const callbackName = KEYS[key];
 
-    if (callbackName && restProps[callbackName]) {
-      restProps[callbackName](event, ...rest);
-    }
+      if (callbackName && restProps[callbackName]) {
+        restProps[callbackName](event, ...rest);
+      }
 
-    if (onKeyDown) {
-      onKeyDown(event, ...rest);
-    }
-  };
+      if (onKeyDown) {
+        onKeyDown(event, ...rest);
+      }
+    },
+    [onKeyDown, restProps],
+  );
 
   useEffect(() => {
     if (target === 'document') {
@@ -38,7 +41,7 @@ const Keyboard = ({ target, children, onKeyDown, ...restProps }) => {
         document.removeEventListener('keydown', onKeyDownHandler);
       }
     };
-  }, []);
+  }, [onKeyDownHandler, target]);
 
   return target === 'document'
     ? children

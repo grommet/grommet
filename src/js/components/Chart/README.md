@@ -13,7 +13,8 @@ import { Chart } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -133,6 +134,22 @@ string
 }
 ```
 
+**gap**
+
+The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **onClick**
 
 Called when the user clicks on it.
@@ -204,6 +221,7 @@ full
     large
     xlarge
     full
+    auto
     string
 }
 string
@@ -226,12 +244,13 @@ string
 
 **type**
 
-The visual type of meter. Defaults to `bar`.
+The visual type of chart. Defaults to `bar`.
 
 ```
 bar
 line
 area
+point
 ```
 
 **values**

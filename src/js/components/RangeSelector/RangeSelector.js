@@ -162,6 +162,7 @@ class RangeSelector extends Component {
         direction={direction === 'vertical' ? 'column' : 'row'}
         fill={fill}
         {...rest}
+        tabIndex="-1"
         onClick={onChange ? this.onClick : undefined}
       >
         <Box

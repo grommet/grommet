@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { Chart, calcs } from '..';
 
 const VALUES = [
@@ -26,6 +27,7 @@ test('Chart type renders', () => {
       <Chart type="bar" values={VALUES} />
       <Chart type="line" values={VALUES} />
       <Chart type="area" values={VALUES} />
+      <Chart type="point" values={VALUES} />
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -40,6 +42,10 @@ test('Chart size renders', () => {
       <Chart size="medium" values={VALUES} />
       <Chart size="large" values={VALUES} />
       <Chart size="xlarge" values={VALUES} />
+      <Box width="large">
+        <Chart size={{ width: 'full' }} values={VALUES} />
+        <Chart size={{ width: 'auto' }} values={VALUES} />
+      </Box>
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -66,6 +72,21 @@ test('Chart cap renders', () => {
       <Chart round values={VALUES} />
       <Chart type="line" round values={VALUES} />
       <Chart type="area" round values={VALUES} />
+      <Chart type="point" round values={VALUES} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Chart gap renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box width="large">
+        <Chart size={{ width: 'auto' }} gap="small" values={VALUES} />
+        <Chart size={{ width: 'auto' }} gap="medium" values={VALUES} />
+        <Chart size={{ width: 'auto' }} gap="large" values={VALUES} />
+      </Box>
     </Grommet>,
   );
   const tree = component.toJSON();

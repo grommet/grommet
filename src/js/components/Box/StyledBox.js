@@ -7,7 +7,9 @@ import {
   borderStyle,
   breakpointStyle,
   edgeStyle,
+  focusStyle,
   genericStyles,
+  getHoverIndicatorStyle,
   overflowStyle,
 } from '../../utils';
 
@@ -467,6 +469,16 @@ const animationStyle = css`
   `};
 `;
 
+const interactiveStyle = css`
+  cursor: pointer;
+
+  &:hover {
+    ${props =>
+      props.hoverIndicator &&
+      getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+  }
+`;
+
 const getSize = (props, size) => props.theme.global.size[size] || size;
 
 const heightObjectStyle = css`
@@ -548,6 +560,8 @@ const StyledBox = styled.div`
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
+  ${props => props.onClick && interactiveStyle}
+  ${props => props.onClick && props.focus && focusStyle}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
