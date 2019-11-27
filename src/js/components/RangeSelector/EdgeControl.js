@@ -106,6 +106,9 @@ const EdgeControl = ({
 EdgeControl.defaultProps = {};
 Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 
-const EdgeControlWrapper = compose(withForwardRef, withTheme)(EdgeControl);
+const EdgeControlWrapper = compose(
+  withForwardRef,
+  withTheme,
+)(EdgeControl);
 
 export { EdgeControlWrapper as EdgeControl };
