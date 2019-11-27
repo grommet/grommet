@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.SelectOption = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _Box = require("../Box");
 
@@ -11,57 +11,37 @@ var _Button = require("../Button");
 
 var _hocs = require("../hocs");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+function areEqual(prevProps, nextProps) {
+  var active = prevProps.active,
+      disabled = prevProps.disabled,
+      option = prevProps.option,
+      selected = prevProps.selected;
+  var nextActive = nextProps.active,
+      nextDisabled = nextProps.disabled,
+      nextOption = nextProps.option,
+      nextSelected = nextProps.selected;
+  return active === nextActive && selected === nextSelected && disabled === nextDisabled && option === nextOption;
+}
 
-var SelectOption =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(SelectOption, _Component);
+var SelectOption = _react["default"].memo(function (_ref) {
+  var forwardRef = _ref.forwardRef,
+      rest = _objectWithoutPropertiesLoose(_ref, ["forwardRef"]);
 
-  function SelectOption() {
-    return _Component.apply(this, arguments) || this;
-  }
-
-  var _proto = SelectOption.prototype;
-
-  _proto.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
-    var _this$props = this.props,
-        active = _this$props.active,
-        disabled = _this$props.disabled,
-        option = _this$props.option,
-        selected = _this$props.selected;
-    var nextActive = nextProps.active,
-        nextDisabled = nextProps.disabled,
-        nextOption = nextProps.option,
-        nextSelected = nextProps.selected;
-    return active !== nextActive || selected !== nextSelected || disabled !== nextDisabled || option !== nextOption;
-  };
-
-  _proto.render = function render() {
-    var _this$props2 = this.props,
-        forwardRef = _this$props2.forwardRef,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["forwardRef"]);
-
-    return _react["default"].createElement(_Box.Box, {
-      flex: false
-    }, _react["default"].createElement(_Button.Button, _extends({
-      tabIndex: "-1",
-      ref: forwardRef,
-      role: "menuitem",
-      hoverIndicator: "background"
-    }, rest)));
-  };
-
-  return SelectOption;
-}(_react.Component);
+  return _react["default"].createElement(_Box.Box, {
+    flex: false
+  }, _react["default"].createElement(_Button.Button, _extends({
+    tabIndex: "-1",
+    ref: forwardRef,
+    role: "menuitem",
+    hoverIndicator: "background"
+  }, rest)));
+}, areEqual);
 
 var SelectOptionWrapper = (0, _hocs.withForwardRef)(SelectOption);
 exports.SelectOption = SelectOptionWrapper;
