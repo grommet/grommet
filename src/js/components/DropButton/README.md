@@ -17,7 +17,8 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers. Defaults to `Open Drop`.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element. Defaults to `Open Drop`.
 
 ```
 string

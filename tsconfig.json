@@ -1,0 +1,26 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "esnext",
+    "target": "es6",
+    "jsx": "react",
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "strict": false,
+    "baseUrl": "./",
+    "paths": {
+      "grommet": ["src/js"],
+      "grommet/themes": ["src/js/themes"],
+      "grommet/utils": ["src/js/utils"]
+    },
+    "typeRoots": ["./node_modules/@types/", "./src/@types/"]
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
+}

@@ -1,9 +1,17 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, GapType, GridAreaType, MarginType } from "../../utils";
+import { 
+  A11yTitleType, 
+  AlignSelfType, 
+  BasisType, 
+  GapType, 
+  GridAreaType, 
+  MarginType 
+} from "../../utils";
 
 export interface DistributionProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  basis?: BasisType;
   gridArea?: GridAreaType;
   margin?: MarginType;
   children?: ((...args: any[]) => any);

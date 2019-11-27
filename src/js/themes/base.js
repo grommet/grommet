@@ -626,6 +626,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '10',
     },
+    list: {
+      item: {
+        // background: undefined,
+        border: 'horizontal',
+        pad: { horizontal: 'medium', vertical: 'small' },
+        // extend: undefined,
+      },
+      // extend: undefined,
+    },
     maskedInput: {
       // extend: undefined,
     },
@@ -787,7 +796,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'bottom',
-        verticalAlign: 'bottom',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },
@@ -808,7 +817,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'top',
-        verticalAlign: 'top',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },

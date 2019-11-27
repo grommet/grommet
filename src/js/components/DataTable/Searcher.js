@@ -47,7 +47,12 @@ const Searcher = ({
   ) : (
     <>
       {filters[property] ? (
-        <Box flex={false} pad={{ horizontal: 'small' }}>
+        <Box
+          flex={false}
+          pad={{ horizontal: 'small' }}
+          direction="row"
+          align="center"
+        >
           <Text>{filters[property]}</Text>
         </Box>
       ) : null}

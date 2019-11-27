@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -79,11 +79,23 @@ const Components = () => {
   const [checkBox, setCheckBox] = useState(true);
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
+  const [themeMode, setThemeMode] = useState();
   const [themeName, setThemeName] = useState('grommet');
   const [background, setBackground] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
 
-  const theme = deepMerge(generate(baseSize), themes[themeName]);
+  const theme = useMemo(
+    () => deepMerge(generate(baseSize), themes[themeName]),
+    [baseSize, themeName],
+  );
+
+  const themeCanMode = useMemo(
+    () =>
+      theme &&
+      theme.global.colors.background &&
+      theme.global.colors.background.dark,
+    [theme],
+  );
 
   const content = [
     <Box key="type" align="start">
@@ -284,16 +296,27 @@ const Components = () => {
               onChange={event => setThemeName(event.option)}
             />
           </Box>
-          <Box basis="small">
-            <Select
-              plain
-              placeholder="background"
-              size="small"
-              options={['default', 'dark-1', 'light-1']}
-              value={background}
-              onChange={event => setBackground(event.option)}
+          {themeCanMode && (
+            <CheckBox
+              label="dark"
+              checked={themeMode === 'dark'}
+              onChange={() =>
+                setThemeMode(themeMode === 'dark' ? 'light' : 'dark')
+              }
             />
-          </Box>
+          )}
+          {!themeCanMode && (
+            <Box basis="small">
+              <Select
+                plain
+                placeholder="background"
+                size="small"
+                options={['default', 'dark-1', 'light-1']}
+                value={background}
+                onChange={event => setBackground(event.option)}
+              />
+            </Box>
+          )}
           <Box basis="small">
             <RangeInput
               min={16}
@@ -306,7 +329,7 @@ const Components = () => {
           <Text size="small">{`${baseSize}px base spacing`}</Text>
         </Box>
       </Grommet>
-      <Grommet theme={theme} style={{ flex: '1 1' }}>
+      <Grommet theme={theme} themeMode={themeMode} style={{ flex: '1 1' }}>
         <Box
           fill
           pad="medium"

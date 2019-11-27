@@ -9,6 +9,9 @@ const disabledStyle = `
 `;
 
 const StyledRadioButtonContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   user-select: none;
   ${props => props.disabled && disabledStyle} ${props =>
     !props.disabled &&

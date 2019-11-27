@@ -91,6 +91,7 @@ const EdgeControl = ({
             minHeight: size,
             zIndex: 10,
           }}
+          tabIndex={0}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           {...rest}
@@ -105,9 +106,6 @@ const EdgeControl = ({
 EdgeControl.defaultProps = {};
 Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 
-const EdgeControlWrapper = compose(
-  withForwardRef,
-  withTheme,
-)(EdgeControl);
+const EdgeControlWrapper = compose(withForwardRef, withTheme)(EdgeControl);
 
 export { EdgeControlWrapper as EdgeControl };

@@ -19,14 +19,12 @@ exports[`forces empty margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c1 {
@@ -43,13 +41,6 @@ exports[`forces empty margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -59,20 +50,8 @@ exports[`forces empty margin 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
   }
 }
 
@@ -80,7 +59,7 @@ exports[`forces empty margin 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -114,7 +93,6 @@ exports[`renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -125,14 +103,12 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -186,26 +162,8 @@ exports[`renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
   }
 }
 
@@ -213,14 +171,14 @@ exports[`renders 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
     />
   </div>
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -253,23 +211,6 @@ exports[`renders abut correctly 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -285,19 +226,21 @@ exports[`renders abut correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 @media only screen and (max-width:768px) {
@@ -312,17 +255,11 @@ exports[`renders abut correctly 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
     style={
       Object {
         "position": undefined,
@@ -356,13 +293,11 @@ exports[`renders abut with forced margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c1 {
@@ -380,19 +315,6 @@ exports[`renders abut with forced margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -407,17 +329,11 @@ exports[`renders abut with forced margin 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
     style={
       Object {
         "position": undefined,
@@ -443,7 +359,7 @@ exports[`renders custom formfield 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -457,7 +373,6 @@ exports[`renders custom formfield 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -468,47 +383,27 @@ exports[`renders custom formfield 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
-.c1 {
+.c2 {
   font-size: 40px;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
   }
 }
 
@@ -544,14 +439,12 @@ exports[`renders custom margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c1 {
@@ -568,13 +461,6 @@ exports[`renders custom margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -584,20 +470,8 @@ exports[`renders custom margin 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     margin: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
   }
 }
 
@@ -605,7 +479,7 @@ exports[`renders custom margin 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -639,7 +513,6 @@ exports[`renders error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -650,14 +523,12 @@ exports[`renders error 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px #FF4040;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -677,26 +548,8 @@ exports[`renders error 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     border-bottom: solid 1px #FF4040;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
   }
 }
 
@@ -704,7 +557,7 @@ exports[`renders error 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -743,7 +596,6 @@ exports[`renders help 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -754,14 +606,12 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -778,26 +628,8 @@ exports[`renders help 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
   }
 }
 
@@ -805,7 +637,7 @@ exports[`renders help 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <span
       className="c2"
@@ -844,7 +676,6 @@ exports[`renders htmlFor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -855,14 +686,12 @@ exports[`renders htmlFor 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 @media only screen and (max-width:768px) {
@@ -872,26 +701,8 @@ exports[`renders htmlFor 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
   }
 }
 
@@ -899,7 +710,7 @@ exports[`renders htmlFor 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <div
       className="c2"
@@ -933,7 +744,6 @@ exports[`renders label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -944,14 +754,12 @@ exports[`renders label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c2 {
@@ -970,26 +778,8 @@ exports[`renders label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
   }
 }
 
@@ -997,7 +787,7 @@ exports[`renders label 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <label
       className="c2"
@@ -1007,6 +797,109 @@ exports[`renders label 1`] = `
     <div
       className="c3"
     />
+  </div>
+</div>
+`;
+
+exports[`renders pad 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 "
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      />
+    </div>
   </div>
 </div>
 `;

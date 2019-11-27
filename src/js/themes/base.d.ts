@@ -1,12 +1,14 @@
 import { 
   BackgroundType, 
+  BorderType,
   ColorType,  
   DeepReadonly, 
   GapType, 
   MarginType,
   OpacityType,
-  PadType, 
+  PadType,
 } from '../utils'
+import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
 
 export declare const base: DeepReadonly<ThemeType>;
@@ -40,7 +42,7 @@ type Colors = typeof colors & {
   'dark-1'?: ColorType;
   'dark-2'?: ColorType;
   'dark-3'?: ColorType;
-  'dark-4'?: string;
+  'dark-4'?: ColorType;
   'dark-5'?: ColorType;
   'dark-6'?: ColorType;
   'light-1'?: ColorType;
@@ -258,7 +260,9 @@ export interface ThemeType {
       vertical?: string;
       horizontal?: string;
     };
-    primary?: ColorType;
+    primary?: {
+      color?: ColorType;
+    }
   };
   calendar?: {
     small?: {
@@ -454,14 +458,7 @@ export interface ThemeType {
     maxHeight?: string, 
   };
   formField?: {
-    border?: {
-      color?: ColorType;
-      error?: {
-        color?: ColorType;
-      };
-      position?: string;
-      side?: string;
-    };
+    border?: BorderType;
     content?: {
       pad?: PadType;
     };
@@ -473,9 +470,7 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
-    label?: {
-      margin?: MarginType;
-    };
+    label?: TextProps;
     margin?: MarginType;
   };
   grommet?: {
@@ -652,6 +647,19 @@ export interface ThemeType {
     responsiveBreakpoint?: string;
     zIndex?: string;
   };
+  list?: {
+    item?: {
+      background?: BackgroundType;
+      border?: string | {
+        side?: string,
+        color?: ColorType,
+        size?: string,
+      };
+      pad?: PadType;
+      extend?: ExtendType;
+    },
+    extend?: ExtendType;
+  };
   maskedInput?: {
     extend?: ExtendType;
   };
@@ -759,7 +767,8 @@ export interface ThemeType {
         margin?: MarginType,
       },
     },
-    searchInput?: ReactComponentElement; 
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
+    searchInput?: ReactComponentElement<any>;
     step?: number;
   };
   tab?: {

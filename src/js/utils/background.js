@@ -115,7 +115,10 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
     if (color) {
       return css`
         background: ${color};
-        color: ${textColor[colorIsDark(color) ? 'dark' : 'light']};
+        color: ${normalizeColor(
+          textColor[colorIsDark(color) ? 'dark' : 'light'],
+          theme,
+        )};
       `;
     }
   }
@@ -142,3 +145,16 @@ export const selectedStyle = css`
   color: ${props =>
     normalizeColor(props.theme.global.selected.color, props.theme)};
 `;
+
+export const getHoverIndicatorStyle = (hoverIndicator, theme) => {
+  let background;
+  if (hoverIndicator === true || hoverIndicator === 'background') {
+    ({ background } = theme.global.hover);
+  } else {
+    background = hoverIndicator;
+  }
+  return css`
+    ${backgroundStyle(background, theme)}
+    color: ${normalizeColor(theme.global.hover.color, theme)};
+  `;
+};
