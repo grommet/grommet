@@ -113,8 +113,8 @@ export const doc = Chart => {
     ])
       .description('The width of the stroke.')
       .defaultValue('medium'),
-    type: PropTypes.oneOf(['bar', 'line', 'area'])
-      .description('The visual type of meter.')
+    type: PropTypes.oneOf(['bar', 'line', 'area', 'point'])
+      .description('The visual type of chart.')
       .defaultValue('bar'),
     values: PropTypes.arrayOf(
       PropTypes.oneOfType([
