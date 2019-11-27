@@ -241,7 +241,7 @@ const Chart = React.forwardRef(
       }
 
       return (
-        <g stroke="none">
+        <g>
           <path d={d} {...hoverProps} {...clickProps} />
         </g>
       );
@@ -326,7 +326,7 @@ const Chart = React.forwardRef(
       : undefined;
 
     let stroke;
-    if (type !== 'point' && type !== 'area') {
+    if (type !== 'point') {
       if (useGradient) stroke = '#fff';
       else stroke = normalizeColor(colorName, theme);
     } else stroke = 'none';
@@ -359,6 +359,7 @@ const Chart = React.forwardRef(
               .sort((c1, c2) => c2.value - c1.value)
               .map(({ value, color: gradientColor }) => (
                 <stop
+                  key={value}
                   offset={
                     (size[1] - (value - bounds[1][0]) * scale[1]) / size[1]
                   }

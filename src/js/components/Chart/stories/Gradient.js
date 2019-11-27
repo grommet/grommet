@@ -17,9 +17,9 @@ const GradientCharts = () => (
         type="bar"
         color={gradient}
         values={[
-          [0, 20],
-          [1, 30],
-          [2, 15],
+          [10, 20],
+          [20, 30],
+          [30, 15],
         ]}
       />
       <Chart type="line" color={gradient} values={[20, 30, 15]} />

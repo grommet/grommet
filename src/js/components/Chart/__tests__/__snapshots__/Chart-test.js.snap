@@ -108,14 +108,12 @@ exports[`Chart cap renders 1`] = `
   >
     <g
       fill="#6FFFB0"
-      stroke="none"
+      stroke="#6FFFB0"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={24}
     >
-      <g
-        stroke="none"
-      >
+      <g>
         <path
           d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
@@ -922,14 +920,12 @@ exports[`Chart type renders 1`] = `
   >
     <g
       fill="#6FFFB0"
-      stroke="none"
+      stroke="#6FFFB0"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
-      <g
-        stroke="none"
-      >
+      <g>
         <path
           d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
