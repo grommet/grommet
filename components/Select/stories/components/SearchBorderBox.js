@@ -29,13 +29,6 @@ var searchingStyle = (0, _styledComponents.css)(["position:relative;outline:none
 var defaultStyle = (0, _styledComponents.css)(["position:relative;outline:none;&:after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:transparent;transition:width 0.2s ease,background 0.2s ease,left 0.2s ease;}", ";"], function (props) {
   return props.focus && "\n    box-shadow: none;\n    &:after {\n      left: 0;\n      width: 100%;\n      background: " + (0, _utils.normalizeColor)('brand', props.theme) + ";\n    }\n  ";
 });
-var boxBorderTheme = {
-  box: {
-    extend: function extend(props) {
-      return props.searching ? searchingStyle : defaultStyle;
-    }
-  }
-};
 
 var SearchBorderBox = function SearchBorderBox(_ref) {
   var children = _ref.children,
@@ -46,6 +39,11 @@ var SearchBorderBox = function SearchBorderBox(_ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
+  var boxBorderTheme = {
+    box: {
+      extend: searching ? searchingStyle : defaultStyle
+    }
+  };
   return _react["default"].createElement(_contexts.ThemeContext.Extend, {
     value: boxBorderTheme
   }, _react["default"].createElement(_.Box, _extends({
