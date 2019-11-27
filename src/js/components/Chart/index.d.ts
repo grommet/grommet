@@ -13,7 +13,7 @@ export interface ChartProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   bounds?: number[][];
-  color?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
+  color?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean} | {color?: string,value: number | number[]}[];
   gap?: GapType;
   onClick?: ((...args: any[]) => any);
   onHover?: ((...args: any[]) => any);

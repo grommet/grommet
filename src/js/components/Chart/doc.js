@@ -26,6 +26,12 @@ export const doc = Chart => {
           PropTypes.bool,
         ]),
       }),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          color: PropTypes.string,
+          value: PropTypes.number,
+        }),
+      ),
     ])
       .description('A color identifier to use for the graphic color.')
       .defaultValue('accent-1'),

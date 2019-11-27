@@ -132,6 +132,10 @@ string
     strong
     boolean
 }
+[{
+  color: string,
+  value: number
+}]
 ```
 
 **gap**

@@ -1580,7 +1580,11 @@ string",
     medium
     strong
     boolean
-}",
+}
+[{
+  color: string,
+  value: number
+}]",
         "name": "color",
       },
       Object {
