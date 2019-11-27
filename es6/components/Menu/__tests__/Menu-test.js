@@ -355,4 +355,25 @@ describe('Menu', function () {
     fireEvent.click(getByText('Test'));
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
+  test('reverse icon and label', function () {
+    window.scrollTo = jest.fn();
+
+    var _render12 = render(React.createElement(Grommet, null, React.createElement(Menu, {
+      open: true,
+      label: "Test Menu",
+      items: [{
+        label: 'Item 1',
+        icon: React.createElement("svg", null),
+        reverse: true
+      }, {
+        label: 'Item 2'
+      }]
+    }))),
+        container = _render12.container,
+        getByText = _render12.getByText; // Label should come before icon
+
+
+    expect(getByText('Item 1').innerHTML).toEqual(expect.stringMatching(/^Item 1/));
+    expect(container).toMatchSnapshot();
+  });
 });

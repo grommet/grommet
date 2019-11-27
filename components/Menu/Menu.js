@@ -297,7 +297,7 @@ var Menu = function Menu(props) {
           pad: "small",
           direction: "row",
           gap: item.gap
-        }, item.icon, item.label)))
+        }, item.reverse && item.label, item.icon, !item.reverse && item.label)))
       );
     })), align.bottom === 'bottom' ? controlMirror : undefined))
   }), content));
