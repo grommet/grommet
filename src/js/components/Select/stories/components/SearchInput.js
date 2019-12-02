@@ -1,32 +1,30 @@
-import React, { createRef, Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { TextInput } from '../../..';
 
 import { SearchBorderBox } from './SearchBorderBox';
 import { SearchInputContext } from './SearchInputContext';
 
-export class SearchInput extends Component {
-  textInputRef = createRef();
+export const SearchInput = props => {
+  const textInputRef = useRef();
 
-  componentDidMount() {
-    this.focusTimeout = setTimeout(() => {
-      this.textInputRef.current.focus();
+  useEffect(() => {
+    const focusTimeout = setTimeout(() => {
+      textInputRef.current.focus();
     }, 300);
-  }
 
-  componentWillUnmount() {
-    clearTimeout(this.focusTimeout);
-  }
+    return () => {
+      clearTimeout(focusTimeout);
+    };
+  }, []);
 
-  render() {
-    return (
-      <SearchInputContext.Consumer>
-        {({ searching }) => (
-          <SearchBorderBox searching={searching}>
-            <TextInput {...this.props} plain ref={this.textInputRef} />
-          </SearchBorderBox>
-        )}
-      </SearchInputContext.Consumer>
-    );
-  }
-}
+  return (
+    <SearchInputContext.Consumer>
+      {({ searching }) => (
+        <SearchBorderBox searching={searching}>
+          <TextInput {...props} plain ref={textInputRef} />
+        </SearchBorderBox>
+      )}
+    </SearchInputContext.Consumer>
+  );
+};
