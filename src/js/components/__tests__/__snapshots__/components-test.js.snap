@@ -1571,7 +1571,8 @@ string",
       },
       Object {
         "defaultValue": "accent-1",
-        "description": "A color identifier to use for the graphic color.",
+        "description": "A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask.",
         "format": "string
 {
   color: string,

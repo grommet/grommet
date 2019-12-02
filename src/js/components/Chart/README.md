@@ -120,7 +120,8 @@ The limits for the values, specified as a two dimensional array.
 
 **color**
 
-A color identifier to use for the graphic color. Defaults to `accent-1`.
+A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Defaults to `accent-1`.
 
 ```
 string

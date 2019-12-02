@@ -33,7 +33,10 @@ export const doc = Chart => {
         }),
       ),
     ])
-      .description('A color identifier to use for the graphic color.')
+      .description(
+        `A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask.`,
+      )
       .defaultValue('accent-1'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
