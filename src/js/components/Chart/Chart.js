@@ -355,7 +355,7 @@ const Chart = React.forwardRef(
 
     let defs;
     let gradientRect;
-    if (useGradient) {
+    if (useGradient && size[1]) {
       const gradientId = `${id}-gradient`;
       const maskId = `${id}-mask`;
       defs = (
