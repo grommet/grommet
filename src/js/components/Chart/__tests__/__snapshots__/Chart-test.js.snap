@@ -244,7 +244,7 @@ exports[`Chart color renders 1`] = `
   >
     <defs>
       <linearGradient
-        id="gradient"
+        id="undefined-gradient"
         x1={0}
         x2={0}
         y1={0}
@@ -260,11 +260,11 @@ exports[`Chart color renders 1`] = `
         />
       </linearGradient>
       <mask
-        id="mask"
+        id="undefined-mask"
       >
         <g
           fill="none"
-          stroke="#fff"
+          stroke="#ffffff"
           strokeLinecap="butt"
           strokeLinejoin="miter"
           strokeWidth={24}
@@ -283,9 +283,9 @@ exports[`Chart color renders 1`] = `
       </mask>
     </defs>
     <rect
-      fill="url(#gradient)"
+      fill="url(#undefined-gradient)"
       height={216}
-      mask="url(#mask)"
+      mask="url(#undefined-mask)"
       width={408}
       x={-12}
       y={-12}

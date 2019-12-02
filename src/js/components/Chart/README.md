@@ -154,6 +154,16 @@ xlarge
 string
 ```
 
+**id**
+
+A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.
+
+```
+string
+```
+
 **onClick**
 
 Called when the user clicks on it.

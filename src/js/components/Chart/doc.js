@@ -48,6 +48,9 @@ export const doc = Chart => {
       PropTypes.string,
     ]).description(`The amount of spacing between data points. This
       is only used when the size specifies width as 'auto'.`),
+    id: PropTypes.string.description(`A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.`),
     onClick: PropTypes.func.description(`Called when the user clicks on it.
       This is only available when the type is line or area.`),
     onHover: PropTypes.func.description(`Called with a boolean argument

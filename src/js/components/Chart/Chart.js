@@ -7,6 +7,8 @@ import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
 
+const gradientMaskColor = '#ffffff';
+
 // use constants so re-renders don't re-trigger effects
 const defaultSize = { height: 'small', width: 'medium' };
 const defaultValues = [];
@@ -17,6 +19,7 @@ const Chart = React.forwardRef(
       bounds: propsBounds,
       color = 'accent-1',
       gap,
+      id,
       onClick,
       onHover,
       overflow = false,
@@ -327,13 +330,13 @@ const Chart = React.forwardRef(
 
     let stroke;
     if (type !== 'point') {
-      if (useGradient) stroke = '#fff';
+      if (useGradient) stroke = gradientMaskColor;
       else stroke = normalizeColor(colorName, theme);
     } else stroke = 'none';
 
     let fill;
     if (type === 'point' || type === 'area') {
-      if (useGradient) fill = '#fff';
+      if (useGradient) fill = gradientMaskColor;
       else fill = normalizeColor(colorName, theme);
     } else fill = 'none';
 
@@ -351,10 +354,13 @@ const Chart = React.forwardRef(
     );
 
     let defs;
+    let gradientRect;
     if (useGradient) {
+      const gradientId = `${id}-gradient`;
+      const maskId = `${id}-mask`;
       defs = (
         <defs>
-          <linearGradient id="gradient" x1={0} y1={0} x2={0} y2={1}>
+          <linearGradient id={gradientId} x1={0} y1={0} x2={0} y2={1}>
             {color
               .sort((c1, c2) => c2.value - c1.value)
               .map(({ value, color: gradientColor }) => (
@@ -367,14 +373,26 @@ const Chart = React.forwardRef(
                 />
               ))}
           </linearGradient>
-          <mask id="mask">{drawing}</mask>
+          <mask id={maskId}>{drawing}</mask>
         </defs>
+      );
+
+      gradientRect = (
+        <rect
+          x={viewBounds[0]}
+          y={viewBounds[1]}
+          width={viewBounds[2]}
+          height={viewBounds[3]}
+          fill={`url(#${gradientId})`}
+          mask={`url(#${maskId})`}
+        />
       );
     }
 
     return (
       <StyledChart
         ref={containerRef}
+        id={id}
         viewBox={viewBox}
         preserveAspectRatio="none"
         width={size === 'full' ? '100%' : size[0]}
@@ -382,18 +400,7 @@ const Chart = React.forwardRef(
         {...rest}
       >
         {defs}
-        {useGradient ? (
-          <rect
-            x={viewBounds[0]}
-            y={viewBounds[1]}
-            width={viewBounds[2]}
-            height={viewBounds[3]}
-            fill="url(#gradient)"
-            mask="url(#mask)"
-          />
-        ) : (
-          drawing
-        )}
+        {useGradient ? gradientRect : drawing}
       </StyledChart>
     );
   },

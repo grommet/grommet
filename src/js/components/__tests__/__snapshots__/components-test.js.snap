@@ -1601,6 +1601,13 @@ string",
         "name": "gap",
       },
       Object {
+        "description": "A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.",
+        "format": "string",
+        "name": "id",
+      },
+      Object {
         "description": "Called when the user clicks on it.
       This is only available when the type is line or area.",
         "format": "function",
