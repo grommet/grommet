@@ -132,6 +132,29 @@ test('Chart gap renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Chart color renders', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Chart, {
+    color: "brand",
+    values: VALUES
+  }), React.createElement(Chart, {
+    color: {
+      color: 'brand',
+      opacity: 'strong'
+    },
+    values: VALUES
+  }), React.createElement(Chart, {
+    color: [{
+      value: 0,
+      color: 'brand'
+    }, {
+      value: 60,
+      color: 'border'
+    }],
+    values: VALUES
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Chart calcs', function () {
   var result = calcs([1, 2, 3]);
   expect(result).toMatchSnapshot();

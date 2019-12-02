@@ -21,7 +21,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-// use constants so re-renders don't re-trigger effects
+var gradientMaskColor = '#ffffff'; // use constants so re-renders don't re-trigger effects
+
 var defaultSize = {
   height: 'small',
   width: 'medium'
@@ -33,6 +34,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       _ref$color = _ref.color,
       color = _ref$color === void 0 ? 'accent-1' : _ref$color,
       gap = _ref.gap,
+      id = _ref.id,
       onClick = _ref.onClick,
       onHover = _ref.onHover,
       _ref$overflow = _ref.overflow,
@@ -46,7 +48,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "id", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
 
@@ -144,6 +146,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
 
     return undefined;
   }, [containerRef, propsSize]);
+  var useGradient = Array.isArray(color);
 
   var renderBars = function renderBars() {
     return (values || []).map(function (valueArg, index) {
@@ -255,9 +258,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       };
     }
 
-    return _react["default"].createElement("g", {
-      fill: (0, _utils.normalizeColor)(color.color || color, theme)
-    }, _react["default"].createElement("path", _extends({
+    return _react["default"].createElement("g", null, _react["default"].createElement("path", _extends({
       d: d
     }, hoverProps, clickProps)));
   };
@@ -324,23 +325,74 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     contents = renderPoints();
   }
 
-  var viewBox = overflow ? "0 0 " + size[0] + " " + size[1] : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (size[0] + strokeWidth) + " " + (size[1] + strokeWidth);
-  var colorName = typeof color === 'object' ? color.color : color;
+  var viewBounds = overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
+  var viewBox = viewBounds.join(' ');
+  var colorName = !useGradient && typeof color === 'object' ? color.color : color;
   var opacity = color.opacity ? theme.global.opacity[color.opacity] : undefined;
+  var stroke;
+
+  if (type !== 'point') {
+    if (useGradient) stroke = gradientMaskColor;else stroke = (0, _utils.normalizeColor)(colorName, theme);
+  } else stroke = 'none';
+
+  var fill;
+
+  if (type === 'point' || type === 'area') {
+    if (useGradient) fill = gradientMaskColor;else fill = (0, _utils.normalizeColor)(colorName, theme);
+  } else fill = 'none';
+
+  var drawing = _react["default"].createElement("g", {
+    stroke: stroke,
+    strokeWidth: type !== 'point' ? strokeWidth : undefined,
+    fill: fill,
+    strokeLinecap: round ? 'round' : 'butt',
+    strokeLinejoin: round ? 'round' : 'miter',
+    opacity: opacity
+  }, contents);
+
+  var defs;
+  var gradientRect;
+
+  if (useGradient && size[1]) {
+    var gradientId = id + "-gradient";
+    var maskId = id + "-mask";
+    defs = _react["default"].createElement("defs", null, _react["default"].createElement("linearGradient", {
+      id: gradientId,
+      x1: 0,
+      y1: 0,
+      x2: 0,
+      y2: 1
+    }, color.sort(function (c1, c2) {
+      return c2.value - c1.value;
+    }).map(function (_ref5) {
+      var value = _ref5.value,
+          gradientColor = _ref5.color;
+      return _react["default"].createElement("stop", {
+        key: value,
+        offset: (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
+        stopColor: (0, _utils.normalizeColor)(gradientColor, theme)
+      });
+    })), _react["default"].createElement("mask", {
+      id: maskId
+    }, drawing));
+    gradientRect = _react["default"].createElement("rect", {
+      x: viewBounds[0],
+      y: viewBounds[1],
+      width: viewBounds[2],
+      height: viewBounds[3],
+      fill: "url(#" + gradientId + ")",
+      mask: "url(#" + maskId + ")"
+    });
+  }
+
   return _react["default"].createElement(_StyledChart.StyledChart, _extends({
     ref: containerRef,
+    id: id,
     viewBox: viewBox,
     preserveAspectRatio: "none",
     width: size === 'full' ? '100%' : size[0],
     height: size === 'full' ? '100%' : size[1]
-  }, rest), _react["default"].createElement("g", {
-    stroke: type !== 'point' ? (0, _utils.normalizeColor)(colorName, theme) : undefined,
-    strokeWidth: type !== 'point' ? strokeWidth : undefined,
-    fill: type === 'point' ? (0, _utils.normalizeColor)(colorName, theme) : undefined,
-    strokeLinecap: round ? 'round' : 'butt',
-    strokeLinejoin: round ? 'round' : 'miter',
-    opacity: opacity
-  }, contents));
+  }, rest), defs, useGradient ? gradientRect : drawing);
 });
 
 Chart.displayName = 'Chart';

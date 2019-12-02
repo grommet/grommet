@@ -6,7 +6,8 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
-import { normalizeBounds, normalizeValues } from './utils'; // use constants so re-renders don't re-trigger effects
+import { normalizeBounds, normalizeValues } from './utils';
+var gradientMaskColor = '#ffffff'; // use constants so re-renders don't re-trigger effects
 
 var defaultSize = {
   height: 'small',
@@ -18,6 +19,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       _ref$color = _ref.color,
       color = _ref$color === void 0 ? 'accent-1' : _ref$color,
       gap = _ref.gap,
+      id = _ref.id,
       onClick = _ref.onClick,
       onHover = _ref.onHover,
       _ref$overflow = _ref.overflow,
@@ -31,7 +33,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "id", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
 
   var theme = useContext(ThemeContext);
 
@@ -129,6 +131,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
 
     return undefined;
   }, [containerRef, propsSize]);
+  var useGradient = Array.isArray(color);
 
   var renderBars = function renderBars() {
     return (values || []).map(function (valueArg, index) {
@@ -240,9 +243,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       };
     }
 
-    return React.createElement("g", {
-      fill: normalizeColor(color.color || color, theme)
-    }, React.createElement("path", _extends({
+    return React.createElement("g", null, React.createElement("path", _extends({
       d: d
     }, hoverProps, clickProps)));
   };
@@ -309,23 +310,73 @@ var Chart = React.forwardRef(function (_ref, ref) {
     contents = renderPoints();
   }
 
-  var viewBox = overflow ? "0 0 " + size[0] + " " + size[1] : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (size[0] + strokeWidth) + " " + (size[1] + strokeWidth);
-  var colorName = typeof color === 'object' ? color.color : color;
+  var viewBounds = overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
+  var viewBox = viewBounds.join(' ');
+  var colorName = !useGradient && typeof color === 'object' ? color.color : color;
   var opacity = color.opacity ? theme.global.opacity[color.opacity] : undefined;
+  var stroke;
+
+  if (type !== 'point') {
+    if (useGradient) stroke = gradientMaskColor;else stroke = normalizeColor(colorName, theme);
+  } else stroke = 'none';
+
+  var fill;
+
+  if (type === 'point' || type === 'area') {
+    if (useGradient) fill = gradientMaskColor;else fill = normalizeColor(colorName, theme);
+  } else fill = 'none';
+
+  var drawing = React.createElement("g", {
+    stroke: stroke,
+    strokeWidth: type !== 'point' ? strokeWidth : undefined,
+    fill: fill,
+    strokeLinecap: round ? 'round' : 'butt',
+    strokeLinejoin: round ? 'round' : 'miter',
+    opacity: opacity
+  }, contents);
+  var defs;
+  var gradientRect;
+
+  if (useGradient && size[1]) {
+    var gradientId = id + "-gradient";
+    var maskId = id + "-mask";
+    defs = React.createElement("defs", null, React.createElement("linearGradient", {
+      id: gradientId,
+      x1: 0,
+      y1: 0,
+      x2: 0,
+      y2: 1
+    }, color.sort(function (c1, c2) {
+      return c2.value - c1.value;
+    }).map(function (_ref5) {
+      var value = _ref5.value,
+          gradientColor = _ref5.color;
+      return React.createElement("stop", {
+        key: value,
+        offset: (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
+        stopColor: normalizeColor(gradientColor, theme)
+      });
+    })), React.createElement("mask", {
+      id: maskId
+    }, drawing));
+    gradientRect = React.createElement("rect", {
+      x: viewBounds[0],
+      y: viewBounds[1],
+      width: viewBounds[2],
+      height: viewBounds[3],
+      fill: "url(#" + gradientId + ")",
+      mask: "url(#" + maskId + ")"
+    });
+  }
+
   return React.createElement(StyledChart, _extends({
     ref: containerRef,
+    id: id,
     viewBox: viewBox,
     preserveAspectRatio: "none",
     width: size === 'full' ? '100%' : size[0],
     height: size === 'full' ? '100%' : size[1]
-  }, rest), React.createElement("g", {
-    stroke: type !== 'point' ? normalizeColor(colorName, theme) : undefined,
-    strokeWidth: type !== 'point' ? strokeWidth : undefined,
-    fill: type === 'point' ? normalizeColor(colorName, theme) : undefined,
-    strokeLinecap: round ? 'round' : 'butt',
-    strokeLinejoin: round ? 'round' : 'miter',
-    opacity: opacity
-  }, contents));
+  }, rest), defs, useGradient ? gradientRect : drawing);
 });
 Chart.displayName = 'Chart';
 var ChartDoc;

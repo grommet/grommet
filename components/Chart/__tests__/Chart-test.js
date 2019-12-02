@@ -148,6 +148,30 @@ test('Chart gap renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Chart color renders', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+    color: "brand",
+    values: VALUES
+  }), _react["default"].createElement(_.Chart, {
+    color: {
+      color: 'brand',
+      opacity: 'strong'
+    },
+    values: VALUES
+  }), _react["default"].createElement(_.Chart, {
+    color: [{
+      value: 0,
+      color: 'brand'
+    }, {
+      value: 60,
+      color: 'border'
+    }],
+    values: VALUES
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Chart calcs', function () {
   var result = (0, _.calcs)([1, 2, 3]);
   expect(result).toMatchSnapshot();
