@@ -35,7 +35,11 @@ export const doc = Chart => {
     ])
       .description(
         `A color identifier to use for the graphic color. If an
-      array is specified, it is used to create a gradient mask.`,
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change.`,
       )
       .defaultValue('accent-1'),
     gap: PropTypes.oneOfType([
