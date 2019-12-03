@@ -11,6 +11,7 @@ export var doc = function doc(Meter) {
       color: 'light-2',
       opacity: 'medium'
     }),
+    max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description('The maximum value for the Meter.'),
     round: PropTypes.bool.description('Whether to round the line ends').defaultValue(false),
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     thickness: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
