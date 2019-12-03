@@ -127,6 +127,15 @@ string
 }
 ```
 
+**max**
+
+The maximum value for the Meter.
+
+```
+number
+string
+```
+
 **round**
 
 Whether to round the line ends

@@ -93,6 +93,24 @@ test('Chart gap renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Chart color renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Chart color="brand" values={VALUES} />
+      <Chart color={{ color: 'brand', opacity: 'strong' }} values={VALUES} />
+      <Chart
+        color={[
+          { value: 0, color: 'brand' },
+          { value: 60, color: 'border' },
+        ]}
+        values={VALUES}
+      />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Chart calcs', () => {
   const result = calcs([1, 2, 3]);
   expect(result).toMatchSnapshot();
