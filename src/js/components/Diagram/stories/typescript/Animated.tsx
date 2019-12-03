@@ -1,11 +1,12 @@
 import React, { useReducer, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
 import { Diamond } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 
-import { data } from './data';
+import { data } from '../data';
 
 const customTheme = deepMerge(grommet, {
   diagram: {
@@ -23,7 +24,11 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
+const connection = (
+  fromTarget: string,
+  toTarget: string,
+  { ...rest } = {},
+) => ({
   fromTarget,
   toTarget,
   anchor: 'vertical',
@@ -34,16 +39,10 @@ const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   ...rest,
 });
 
-const DiamondContainer = ({ carat, color, cut, align, id, name, textSize }) => (
-  <Box
-    align={align || 'center'}
-    alignSelf="center"
-    direction="row"
-    gap="medium"
-    key={id}
-  >
+const DiamondContainer = ({ carat, color, cut, id, name, textSize }) => (
+  <Box align="center" alignSelf="center" direction="row" gap="medium" key={id}>
     <Diamond id={id} size="xlarge" color="neutral-3" />
-    <Box align={align}>
+    <Box>
       <Text size="medium" weight="bold">
         {name}
       </Text>
@@ -73,7 +72,7 @@ const Animated = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      toogleDraw();
+      toogleDraw(undefined);
     }, 2000);
     return () => clearInterval(timer);
   }, [toogleDraw]);
@@ -115,4 +114,6 @@ const Animated = () => {
   );
 };
 
-storiesOf('Diagram', module).add('Animated', () => <Animated />);
+if (!isChromatic()) {
+  storiesOf('TypeScript/Diagram', module).add('Animated', () => <Animated />);
+}
