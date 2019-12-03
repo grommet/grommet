@@ -18,6 +18,7 @@ export interface MenuProps {
   margin?: MarginType;
   messages?: {closeMenu?: string,openMenu?: string};
   open?: boolean;
+  plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
