@@ -18,8 +18,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   diagram: {
     extend: "@keyframes \n  example {\n    to {\n      stroke-dashoffset: 0;\n    }\n  }\n  path {\n    stroke-dasharray: 500;\n    stroke-dashoffset: 500;\n    animation: example 3s linear forwards;\n  }"
@@ -28,8 +26,7 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
 
 var connection = function connection(fromTarget, toTarget, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
-      color = _ref.color,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color"]);
+      rest = _extends({}, _ref);
 
   return _extends({
     fromTarget: fromTarget,
