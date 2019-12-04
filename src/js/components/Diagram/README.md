@@ -90,7 +90,8 @@ Defaults to
 
 **global.graph.colors**
 
-The colors to use when not specified via connections. Expects `[string]`.
+The colors to use when not specified via connections or via
+    theme.diagram.line.color. Expects `[string]`.
 
 Defaults to
 

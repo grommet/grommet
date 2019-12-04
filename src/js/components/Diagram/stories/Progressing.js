@@ -47,14 +47,12 @@ const SimpleDiagram = () => {
   const connections = [connection('1', '5')];
 
   if (topRow.length >= 2) {
-    connections.push(
-      connection('1', '2', { anchor: 'horizontal' }),
-    );
+    connections.push(connection('1', '2', { anchor: 'horizontal' }));
   }
 
   if (topRow.length >= 3) {
     connections.push(
-      connection('3', '5', { anchor: 'horizontal' }),
+      connection('3', '5', { anchor: 'horizontal', color: 'brand' }),
     );
   }
 

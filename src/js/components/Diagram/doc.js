@@ -69,7 +69,8 @@ export const themeDoc = {
     }`,
   },
   'global.graph.colors': {
-    description: 'The colors to use when not specified via connections.',
+    description: `The colors to use when not specified via connections or via
+    theme.diagram.line.color.`,
     type: '[string]',
     defaultValue: "['accent-1', 'neutral-1', 'accent-2', 'neutral-2']",
   },
@@ -83,4 +84,4 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'accent-1',
   },
-}
+};
