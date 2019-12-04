@@ -34,6 +34,10 @@ For Yarn users:
   $ yarn add grommet styled-components
 ```
 
+Install standalone components, or import for local code modifications:
+
+[bit.dev/grommet/grommet](https://bit.dev/grommet/grommet)
+
 There are more detailed instructions in the [Grommet Starter] app tutorial for
 new apps. For incorporating Grommet into an existing app, see the [Existing App]
 version.
