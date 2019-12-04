@@ -3,7 +3,8 @@ import {
   BorderType,
   ColorType,  
   DeepReadonly, 
-  GapType, 
+  GapType,
+  GraphColorsType,
   MarginType,
   OpacityType,
   PadType,
@@ -187,7 +188,7 @@ export interface ThemeType {
       size?: string;
     };
     graph?: {
-      colors?: string[] | {dark?: string[],light?: string[]};
+      colors?: GraphColorsType;
     },
     hover?: {
       background?: BackgroundType;
@@ -453,7 +454,7 @@ export interface ThemeType {
   diagram?: {
     extend?: ExtendType;
     line?: {
-      color: 'accent-1';
+      color?: ColorType;
     };
   };
   drop?: {
@@ -675,7 +676,7 @@ export interface ThemeType {
   };
   meter?: {
     color?: ColorType,
-    colors?: string[] | {dark?: string[], light?: string[]},
+    colors?: GraphColorsType,
     extend?: ExtendType,
   },
   paragraph?: {
