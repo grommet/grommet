@@ -2241,6 +2241,7 @@ function",
   },
   "Grid": [Function],
   "Grommet": [Function],
+  "Header": [Function],
   "Heading": [Function],
   "Image": Object {
     "availableAt": Array [
