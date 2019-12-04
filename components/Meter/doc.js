@@ -43,6 +43,10 @@ var themeDoc = {
     type: 'object',
     defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
   },
+  'global.graph.colors': {
+    description: 'The colors to use when not specified via values.',
+    type: '[string] or { dark: [string], light: [string] }'
+  },
   'global.opacity.medium': {
     description: 'The opacity value used on the Meter color.',
     type: 'number',

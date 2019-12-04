@@ -226,6 +226,16 @@ Defaults to
     }
 ```
 
+**global.graph.colors**
+
+The colors to use when not specified via values. Expects `[string] or { dark: [string], light: [string] }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.opacity.medium**
 
 The opacity value used on the Meter color. Expects `number`.

@@ -31,8 +31,7 @@ var defaultValues = [];
 
 var Chart = _react["default"].forwardRef(function (_ref, ref) {
   var propsBounds = _ref.bounds,
-      _ref$color = _ref.color,
-      color = _ref$color === void 0 ? 'accent-1' : _ref$color,
+      color = _ref.color,
       gap = _ref.gap,
       id = _ref.id,
       onClick = _ref.onClick,
@@ -146,7 +145,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
 
     return undefined;
   }, [containerRef, propsSize]);
-  var useGradient = Array.isArray(color);
+  var useGradient = color && Array.isArray(color);
 
   var renderBars = function renderBars() {
     return (values || []).map(function (valueArg, index) {
@@ -327,8 +326,16 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
 
   var viewBounds = overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
   var viewBox = viewBounds.join(' ');
-  var colorName = !useGradient && typeof color === 'object' ? color.color : color;
-  var opacity = color.opacity ? theme.global.opacity[color.opacity] : undefined;
+  var colorName;
+
+  if (!useGradient) {
+    if (color && color.color) colorName = color.color;else if (color) colorName = color;else if (theme.chart && theme.chart.color) colorName = theme.chart.color;else if (theme.global.graph && theme.global.graph.colors) {
+      var colors = theme.global.graph.colors[theme.dark ? 'dark' : 'light'] || theme.global.graph.colors;
+      colorName = colors[0];
+    }
+  }
+
+  var opacity = color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
   var stroke;
 
   if (type !== 'point') {

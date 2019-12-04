@@ -273,6 +273,9 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       font: _extends({}, fontSizing(0)),
+      // graph: {
+      //   colors: [],
+      // },
       hover: {
         background: {
           color: 'active',
@@ -412,7 +415,9 @@ var generate = function generate(baseSpacing, scale) {
         }
       }
     },
-    chart: {// extend: undefined,
+    chart: {
+      color: 'accent-1' // extend: undefined,
+
     },
     checkBox: {
       border: {
@@ -728,7 +733,8 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     meter: {
-      color: 'accent-1' // extend: undefined,
+      color: 'accent-1' // colors: [],
+      // extend: undefined,
 
     },
     paragraph: {

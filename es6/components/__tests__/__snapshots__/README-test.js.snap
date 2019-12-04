@@ -3180,6 +3180,16 @@ Defaults to
     }
 \`\`\`
 
+**global.graph.colors**
+
+The color to use when not specified via color. Expects \`[string] or { dark: [string], light: [string] }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **global.opacity**
 
 The opacity of the Chart stroke. Expects \`string\`.
@@ -4683,6 +4693,17 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
+\`\`\`
+
+**global.graph.colors**
+
+The colors to use when not specified via connections or via
+    theme.diagram.line.color. Expects \`[string] or { dark: [string], light: [string] }\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **diagram.extend**
@@ -8394,6 +8415,16 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
+\`\`\`
+
+**global.graph.colors**
+
+The colors to use when not specified via values. Expects \`[string] or { dark: [string], light: [string] }\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.opacity.medium**

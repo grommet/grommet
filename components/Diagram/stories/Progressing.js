@@ -26,7 +26,7 @@ var Node = function Node(_ref) {
     margin: "small",
     pad: "medium",
     round: "small",
-    background: "neutral-1"
+    background: "dark-3"
   }, rest));
 };
 
@@ -39,7 +39,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
     fromTarget: fromTarget,
     toTarget: toTarget,
     anchor: 'vertical',
-    color: color || 'accent-1',
+    color: color,
     thickness: 'xsmall',
     round: true,
     type: 'rectilinear'
@@ -66,21 +66,18 @@ var SimpleDiagram = function SimpleDiagram() {
       return clearInterval(timer);
     };
   }, [dispatch]);
-  var connections = [connection('1', '5', {
-    color: 'accent-2'
-  })];
+  var connections = [connection('1', '5')];
 
   if (topRow.length >= 2) {
     connections.push(connection('1', '2', {
-      color: 'accent-1',
       anchor: 'horizontal'
     }));
   }
 
   if (topRow.length >= 3) {
     connections.push(connection('3', '5', {
-      color: 'accent-2',
-      anchor: 'horizontal'
+      anchor: 'horizontal',
+      color: 'brand'
     }));
   }
 
@@ -102,7 +99,7 @@ var SimpleDiagram = function SimpleDiagram() {
     return _react["default"].createElement(Node, {
       key: id,
       id: id,
-      background: "neutral-2"
+      background: "dark-2"
     });
   }))), _react["default"].createElement(_grommet.Diagram, {
     connections: connections

@@ -207,11 +207,18 @@ var Diagram = function Diagram(_ref) {
         var offsetWidth = offset ? (0, _utils.parseMetricToNum)(theme.global.edgeSize[offset]) : 0;
         var d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor);
         var strokeWidth = thickness ? (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness) : 1;
+        var colorName = color || theme.diagram.line && theme.diagram.line.color;
+
+        if (!colorName && theme.global.graph && theme.global.graph.colors) {
+          var colors = theme.global.graph.colors[theme.dark ? 'dark' : 'light'] || theme.global.graph.colors;
+          colorName = colors[index % colors.length];
+        }
+
         path = _react["default"].createElement("path", _extends({
           // eslint-disable-next-line react/no-array-index-key
           key: index
         }, cleanedRest, {
-          stroke: (0, _utils.normalizeColor)(color || theme.diagram.line.color, theme),
+          stroke: (0, _utils.normalizeColor)(colorName, theme),
           strokeWidth: strokeWidth,
           strokeLinecap: round ? 'round' : 'butt',
           strokeLinejoin: round ? 'round' : 'miter',
