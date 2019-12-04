@@ -11,10 +11,6 @@ export const doc = Header => {
 <Header />`,
     );
 
-  DocumentedHeader.propTypes = {
-    ...genericProps,
-  };
-
   return DocumentedHeader;
 };
 
