@@ -230,9 +230,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // face: undefined,
         // family: undefined,
       },
-      graph: {
-        colors: ['accent-1', 'neutral-1', 'accent-2', 'neutral-2'],
-      },
+      // graph: {
+      //   colors: [],
+      // },
       hover: {
         background: {
           color: 'active',
@@ -361,6 +361,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     chart: {
+      color: 'accent-1',
       // extend: undefined,
     },
     checkBox: {
@@ -649,7 +650,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     meter: {
-      // color: undefined,
+      color: 'accent-1',
       // colors: [],
       // extend: undefined,
     },

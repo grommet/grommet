@@ -228,12 +228,12 @@ Defaults to
 
 **global.graph.colors**
 
-The colors to use when not specified via values. Expects `[string]`.
+The colors to use when not specified via values. Expects `undefined`.
 
 Defaults to
 
 ```
-['accent-1', 'neutral-1', 'accent-2', 'neutral-2']
+undefined
 ```
 
 **global.opacity.medium**

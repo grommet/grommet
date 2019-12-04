@@ -71,8 +71,7 @@ export const themeDoc = {
   'global.graph.colors': {
     description: `The colors to use when not specified via connections or via
     theme.diagram.line.color.`,
-    type: '[string]',
-    defaultValue: "['accent-1', 'neutral-1', 'accent-2', 'neutral-2']",
+    type: '[string] or { dark: [string], light: [string] }',
   },
   'diagram.extend': {
     description: 'Any additional style for Diagram.',

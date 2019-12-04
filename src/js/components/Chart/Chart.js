@@ -326,18 +326,16 @@ const Chart = React.forwardRef(
     if (!useGradient) {
       if (color && color.color) colorName = color.color;
       else if (color) colorName = color;
+      else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
       else if (theme.global.graph && theme.global.graph.colors) {
         const colors =
           theme.global.graph.colors[theme.dark ? 'dark' : 'light'] ||
           theme.global.graph.colors;
         [colorName] = colors;
-      } else {
-        colorName = 'accent-1'; // backwards compatible
       }
     }
-    const opacity = (color && color.opacity)
-      ? theme.global.opacity[color.opacity]
-      : undefined;
+    const opacity =
+      color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
 
     let stroke;
     if (type !== 'point') {
