@@ -12,5 +12,3 @@ import { Header } from 'grommet';
 ## Properties
 
   
-## Theme
-  

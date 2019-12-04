@@ -13,5 +13,3 @@ export const doc = Header => {
 
   return DocumentedHeader;
 };
-
-export const themeDoc = {};
