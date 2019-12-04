@@ -88,7 +88,7 @@ export const themeDoc = {
   },
   'global.graph.colors': {
     description: 'The colors to use when not specified via values.',
-    ttype: '[string] or { dark: [string], light: [string] }',
+    type: '[string] or { dark: [string], light: [string] }',
   },
   'global.opacity.medium': {
     description: 'The opacity value used on the Meter color.',
