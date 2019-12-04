@@ -88,6 +88,16 @@ Defaults to
     }
 ```
 
+**global.graph.colors**
+
+The colors to use when not specified via connections. Expects `[string]`.
+
+Defaults to
+
+```
+['accent-1', 'neutral-1', 'accent-2', 'neutral-2']
+```
+
 **diagram.extend**
 
 Any additional style for Diagram. Expects `string | (props) => {}`.

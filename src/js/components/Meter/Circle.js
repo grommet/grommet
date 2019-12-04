@@ -39,11 +39,7 @@ const Circle = props => {
     .forEach((valueArg, index) => {
       const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
       const key = `p-${index}`;
-      const colorName =
-        color ||
-        (index === values.length - 1
-          ? theme.meter.color
-          : defaultColor(index, theme));
+      const colorName = color || defaultColor(index, theme);
 
       let endAngle;
       if (startValue + value >= max) {

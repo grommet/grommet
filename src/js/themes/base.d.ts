@@ -186,6 +186,9 @@ export interface ThemeType {
       maxWidth?: string;
       size?: string;
     };
+    graph?: {
+      colors?: string[] | {dark?: string[],light?: string[]};
+    },
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -672,6 +675,7 @@ export interface ThemeType {
   };
   meter?: {
     color?: ColorType,
+    colors?: string[] | {dark?: string[], light?: string[]},
     extend?: ExtendType,
   },
   paragraph?: {

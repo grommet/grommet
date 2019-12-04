@@ -230,6 +230,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // face: undefined,
         // family: undefined,
       },
+      graph: {
+        colors: ['accent-1', 'neutral-1', 'accent-2', 'neutral-2'],
+      },
       hover: {
         background: {
           color: 'active',
@@ -491,9 +494,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     diagram: {
       // extend: undefined,
-      line: {
-        color: 'accent-1',
-      },
+      // line: {
+      //   color: undefined,
+      // },
     },
     // drop: {
     //   extend: undefined,
@@ -646,7 +649,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     meter: {
-      color: 'accent-1',
+      // color: undefined,
+      // colors: [],
       // extend: undefined,
     },
     paragraph: {

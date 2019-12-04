@@ -201,6 +201,11 @@ export const themeDoc = {
         responsiveBreakpoint: 'small',
     }`,
   },
+  'global.graph.colors': {
+    description: 'The color to use when not specified via color.',
+    type: '[string]',
+    defaultValue: "['accent-1', 'neutral-1', 'accent-2', 'neutral-2']",
+  },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',
     type: 'string',

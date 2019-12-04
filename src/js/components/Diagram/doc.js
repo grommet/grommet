@@ -68,6 +68,11 @@ export const themeDoc = {
         responsiveBreakpoint: 'small',
     }`,
   },
+  'global.graph.colors': {
+    description: 'The colors to use when not specified via connections.',
+    type: '[string]',
+    defaultValue: "['accent-1', 'neutral-1', 'accent-2', 'neutral-2']",
+  },
   'diagram.extend': {
     description: 'Any additional style for Diagram.',
     type: 'string | (props) => {}',
