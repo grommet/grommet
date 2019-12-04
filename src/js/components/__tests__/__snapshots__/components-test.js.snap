@@ -2661,6 +2661,7 @@ function",
     "usage": "import { List } from 'grommet';
 <List data={[...]} />",
   },
+  "Main": [Function],
   "Markdown": [Function],
   "MaskedInput": Object {
     "availableAt": Array [
