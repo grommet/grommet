@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.themeDoc = exports.doc = void 0;
+exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -13,5 +13,3 @@ var doc = function doc(Header) {
 };
 
 exports.doc = doc;
-var themeDoc = {};
-exports.themeDoc = themeDoc;

@@ -19,7 +19,6 @@ const Simple = () => (
   <Grommet theme={grommet}>
     <Header background="light-4" pad="small">
       <Avatar />
-      {/* <HPE /> */}
       <Box direction="row" gap="medium">
         <Anchor label="Home" href="#" />
         <Anchor label="Profile" href="#" />
