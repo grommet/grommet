@@ -142,6 +142,13 @@ Object.keys(_Grommet).forEach(function (key) {
   exports[key] = _Grommet[key];
 });
 
+var _Header = require("./Header");
+
+Object.keys(_Header).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _Header[key];
+});
+
 var _Heading = require("./Heading");
 
 Object.keys(_Heading).forEach(function (key) {
