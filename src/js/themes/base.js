@@ -494,9 +494,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     diagram: {
       // extend: undefined,
-      // line: {
-      //   color: undefined,
-      // },
+      line: {
+        color: 'accent-1',
+      },
     },
     // drop: {
     //   extend: undefined,
