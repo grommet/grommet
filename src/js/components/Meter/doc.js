@@ -23,6 +23,9 @@ export const doc = Meter => {
       color: 'light-2',
       opacity: 'medium',
     }),
+    max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
+      'The maximum value for the Meter.',
+    ),
     round: PropTypes.bool
       .description('Whether to round the line ends')
       .defaultValue(false),
