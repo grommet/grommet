@@ -6247,8 +6247,6 @@ import { Header } from 'grommet';
 
 ## Properties
 
-  
-## Theme
   ",
   "Heading": "## Heading
 Heading text structured in levels.

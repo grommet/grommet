@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box } from '../Box';
 
-const Header = ({ children, ...rest }) => (
+const Header = ({ ...rest }) => (
   <Box
     align="center"
     as="header"
