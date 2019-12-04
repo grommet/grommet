@@ -11,9 +11,7 @@ const Header = ({ children, ...rest }) => (
     justify="between"
     gap="medium"
     {...rest}
-  >
-    {children}
-  </Box>
+  />
 );
 
 let HeaderDoc;

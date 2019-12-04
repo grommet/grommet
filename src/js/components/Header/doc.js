@@ -1,6 +1,6 @@
 import { describe } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils';
 
 export const doc = Header => {
   const DocumentedHeader = describe(Header)
