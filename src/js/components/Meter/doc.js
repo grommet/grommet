@@ -86,6 +86,10 @@ export const themeDoc = {
         responsiveBreakpoint: 'small',
     }`,
   },
+  'global.graph.colors': {
+    description: 'The colors to use when not specified via values.',
+    type: '[string] or { dark: [string], light: [string] }',
+  },
   'global.opacity.medium': {
     description: 'The opacity value used on the Meter color.',
     type: 'number',

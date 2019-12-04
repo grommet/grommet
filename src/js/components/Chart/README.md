@@ -337,6 +337,16 @@ Defaults to
     }
 ```
 
+**global.graph.colors**
+
+The color to use when not specified via color. Expects `[string] or { dark: [string], light: [string] }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.opacity**
 
 The opacity of the Chart stroke. Expects `string`.
