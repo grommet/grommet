@@ -21,14 +21,14 @@ export const strokeProps = (color, theme) => {
 
 const neutralExp = /^neutral-\d+/;
 
-export const defaultColor = (index, theme) => {
+export const defaultColor = (index, theme, valuesLength) => {
+  if (index === valuesLength - 1 && theme.meter.color) {
+    return theme.meter.color;
+  }
   if (theme.meter && theme.meter.colors) {
     const colors =
       theme.meter.colors[theme.dark ? 'dark' : 'light'] || theme.meter.colors;
     return colors[index % colors.length];
-  }
-  if (theme.meter && index === 0 && theme.meter.color) {
-    return theme.meter.color;
   }
   if (theme.global.graph && theme.global.graph.colors) {
     const colors =

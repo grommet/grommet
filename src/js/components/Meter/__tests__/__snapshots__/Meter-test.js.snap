@@ -264,7 +264,7 @@ exports[`Meter many values 1`] = `
     <path
       d="M 336,12 L 384,12"
       fill="none"
-      stroke="#A2423D"
+      stroke="#6FFFB0"
       strokeLinecap="butt"
       strokeWidth={24}
     />
@@ -313,7 +313,7 @@ exports[`Meter many values 1`] = `
     <path
       d="M 0,12 L 48,12"
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#00873D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
