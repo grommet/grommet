@@ -25,6 +25,7 @@ export * from './components/InfiniteScroll';
 export * from './components/Keyboard';
 export * from './components/Layer';
 export * from './components/List';
+export * from './components/Main';
 export * from './components/Markdown';
 export * from './components/MaskedInput';
 export * from './components/Menu';
