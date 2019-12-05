@@ -25,6 +25,7 @@ export * from './InfiniteScroll';
 export * from './Keyboard';
 export * from './Layer';
 export * from './List';
+export * from './Main';
 export * from './Markdown';
 export * from './MaskedInput';
 export * from './Menu';

@@ -191,6 +191,13 @@ Object.keys(_List).forEach(function (key) {
   exports[key] = _List[key];
 });
 
+var _Main = require("./Main");
+
+Object.keys(_Main).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _Main[key];
+});
+
 var _Markdown = require("./Markdown");
 
 Object.keys(_Markdown).forEach(function (key) {
