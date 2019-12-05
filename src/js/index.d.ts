@@ -14,6 +14,7 @@ export * from './components/Diagram';
 export * from './components/Distribution';
 export * from './components/Drop';
 export * from './components/DropButton';
+export * from './components/Footer';
 export * from './components/Form';
 export * from './components/FormField';
 export * from './components/Grid';
