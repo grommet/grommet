@@ -114,6 +114,13 @@ Object.keys(_DropButton).forEach(function (key) {
   exports[key] = _DropButton[key];
 });
 
+var _Footer = require("./Footer");
+
+Object.keys(_Footer).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _Footer[key];
+});
+
 var _Form = require("./Form");
 
 Object.keys(_Form).forEach(function (key) {
