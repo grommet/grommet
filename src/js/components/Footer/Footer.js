@@ -5,6 +5,7 @@ import { Box } from '../Box';
 const Footer = ({ ...rest }) => (
   <Box
     as="footer"
+    align="center"
     direction="row"
     flex={false}
     gap="medium"
