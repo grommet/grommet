@@ -1,16 +1,19 @@
 export const normalizeColor = (color, theme, required) => {
-  const colorSpec = theme.global.colors[color] || color;
+  const colorSpec =
+    theme.global.colors[color] !== undefined
+      ? theme.global.colors[color]
+      : color;
   // If the color has a light or dark object, use that
   let result = colorSpec;
   if (colorSpec) {
-    if (theme.dark && colorSpec.dark) {
+    if (theme.dark && colorSpec.dark !== undefined) {
       result = colorSpec.dark;
-    } else if (!theme.dark && colorSpec.light) {
+    } else if (!theme.dark && colorSpec.light !== undefined) {
       result = colorSpec.light;
     }
   }
   // allow one level of indirection in color names
-  if (result && theme.global.colors[result]) {
+  if (result && theme.global.colors[result] !== undefined) {
     result = normalizeColor(result, theme);
   }
   return required && result === color ? 'inherit' : result;
