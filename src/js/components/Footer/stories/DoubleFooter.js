@@ -41,11 +41,17 @@ const DoubleFooter = () => {
       <Footer background="dark-1" pad="large">
         <FooterContent />
       </Footer>
-      <Footer background="dark-2" pad="small" justify="center">
+      <Footer
+        background="dark-2"
+        pad={{ horizontal: 'large', vertical: 'small' }}
+      >
         <Box direction="row" gap="small">
           <GrommetIcon color="brand" />
           <Text alignSelf="center">grommet.io</Text>
         </Box>
+        <Text textAlign="center" size="small">
+          © 2019 Copyright
+        </Text>
       </Footer>
     </Grommet>
   );

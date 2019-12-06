@@ -12,14 +12,9 @@ const Simple = () => (
       <Box flex />
     </Main>
     <Footer background="light-4" justify="center" pad="small">
-      <Box>
-        <Text textAlign="center" size="small">
-          © 2019 Copyright
-        </Text>
-        <Text textAlign="center" color="brand" size="xsmall">
-          Grommet.io
-        </Text>
-      </Box>
+      <Text textAlign="center" size="small">
+        © 2019 Copyright Grommet
+      </Text>
     </Footer>
   </Grommet>
 );

@@ -38,15 +38,17 @@ const Social = () => (
       </Text>
       <Box flex />
     </Main>
-    <Footer background="light-4" pad="medium">
-      <Box align="center">
+    <Footer background="light-4" pad="small">
+      <Box align="center" direction="row" gap="xsmall">
         <GrommetIcon color="brand" size="medium" />
-        <Text alignSelf="center" color="brand">
-          grommet.io
+        <Text alignSelf="center" color="brand" size="small">
+          Grommet
         </Text>
       </Box>
       <Media />
-      <Anchor href="/">Sponsors</Anchor>
+      <Text textAlign="center" size="xsmall">
+        ©Copyright
+      </Text>
     </Footer>
   </Grommet>
 );
