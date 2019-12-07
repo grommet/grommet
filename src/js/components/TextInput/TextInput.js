@@ -1,7 +1,6 @@
 import React, { Component, isValidElement } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
-import { sizeStyle } from 'grommet-styles';
 
 import { defaultProps } from '../../default-props';
 
@@ -11,6 +10,7 @@ import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { withAnnounce, withFocus, withForwardRef } from '../hocs';
+import { sizeStyle } from '../../utils';
 
 import {
   StyledTextInput,
