@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
-var _grommetStyles = require("grommet-styles");
-
 var _contexts = require("../../contexts");
 
 var _utils = require("../../utils");
@@ -93,9 +91,9 @@ function (_Component) {
         // background is an object, use themeMode, theme default
         // or first key
         var color = background[themeMode || nextTheme.defaultMode || Object.keys(background)[0]];
-        nextTheme.dark = color ? (0, _grommetStyles.colorIsDark)(color) : false;
+        nextTheme.dark = color ? (0, _utils.colorIsDark)(color) : false;
       } else if (nextTheme.dark === undefined) {
-        nextTheme.dark = background && (0, _grommetStyles.colorIsDark)(background) || false;
+        nextTheme.dark = background && (0, _utils.colorIsDark)(background) || false;
       }
 
       return {

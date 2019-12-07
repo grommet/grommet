@@ -110,3 +110,6 @@ export var disabledStyle = function disabledStyle(componentStyle) {
     return componentStyle || props.theme.global.control.disabled.opacity;
   });
 };
+export var sizeStyle = function sizeStyle(name, value, theme) {
+  return css(["", ":", ";"], name, theme.global.size[value] || value);
+};

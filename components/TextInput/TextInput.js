@@ -9,8 +9,6 @@ var _recompose = require("recompose");
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _grommetStyles = require("grommet-styles");
-
 var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
@@ -24,6 +22,8 @@ var _InfiniteScroll = require("../InfiniteScroll");
 var _Keyboard = require("../Keyboard");
 
 var _hocs = require("../hocs");
+
+var _utils = require("../../utils");
 
 var _StyledTextInput = require("./StyledTextInput");
 
@@ -65,7 +65,7 @@ var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "TextInput__ContainerBox",
   componentId: "sc-1ai0c08-0"
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
-  return props.dropHeight ? (0, _grommetStyles.sizeStyle)('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
+  return props.dropHeight ? (0, _utils.sizeStyle)('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
 });
 
 var TextInput =

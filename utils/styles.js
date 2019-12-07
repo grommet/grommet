@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.disabledStyle = exports.genericStyles = exports.evalStyle = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.evalStyle = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -136,3 +136,9 @@ var disabledStyle = function disabledStyle(componentStyle) {
 };
 
 exports.disabledStyle = disabledStyle;
+
+var sizeStyle = function sizeStyle(name, value, theme) {
+  return (0, _styledComponents.css)(["", ":", ";"], name, theme.global.size[value] || value);
+};
+
+exports.sizeStyle = sizeStyle;

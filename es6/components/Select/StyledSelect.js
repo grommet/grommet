@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { sizeStyle } from 'grommet-styles';
+import { sizeStyle } from '../../utils';
 export var StyledContainer = styled.div.withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "znp66n-0"
