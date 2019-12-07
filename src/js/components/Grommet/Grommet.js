@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-import { colorIsDark } from 'grommet-styles';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
-import { deepMerge, getBreakpoint, getDeviceBreakpoint } from '../../utils';
+import {
+  colorIsDark,
+  deepMerge,
+  getBreakpoint,
+  getDeviceBreakpoint,
+} from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 
