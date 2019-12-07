@@ -1,5 +1,6 @@
 import * as React from "react";
 import { DropProps } from "../Drop";
+import { ButtonType } from "../Button";
 import { A11yTitleType, AlignSelfType, GridAreaType, JustifyContentType, MarginType } from "../../utils";
 
 export interface MenuProps {
@@ -18,10 +19,9 @@ export interface MenuProps {
   margin?: MarginType;
   messages?: {closeMenu?: string,openMenu?: string};
   open?: boolean;
-  plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
-declare const Menu: React.ComponentClass<MenuProps & JSX.IntrinsicElements['button']>;
+declare const Menu: React.FC<MenuProps & ButtonType>;
 
 export { Menu };
