@@ -2069,6 +2069,7 @@ string",
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
   },
+  "Footer": [Function],
   "Form": [Function],
   "FormContext": Object {
     "$$typeof": Symbol(react.context),
@@ -2661,6 +2662,7 @@ function",
     "usage": "import { List } from 'grommet';
 <List data={[...]} />",
   },
+  "Main": [Function],
   "Markdown": [Function],
   "MaskedInput": Object {
     "availableAt": Array [

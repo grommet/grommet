@@ -50,6 +50,7 @@ export type ColorType = string | {dark?: string,light?: string};
 export type ElevationType = "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 export type FillType = "horizontal" | "vertical" | boolean;
 export type GapType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+export type GraphColorsType = string[] | {dark?: string[],light?: string[]};
 export type GridAreaType = string;
 export type JustifyContentType = "start" | "center" | "end" | "between" | "around" | "stretch";
 export type KeyboardType = ((event: React.KeyboardEvent<HTMLElement>) => void);

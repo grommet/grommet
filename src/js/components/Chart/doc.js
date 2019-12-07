@@ -201,6 +201,10 @@ export const themeDoc = {
         responsiveBreakpoint: 'small',
     }`,
   },
+  'global.graph.colors': {
+    description: 'The color to use when not specified via color.',
+    type: '[string] or { dark: [string], light: [string] }',
+  },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',
     type: 'string',

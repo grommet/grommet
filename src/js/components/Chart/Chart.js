@@ -17,7 +17,7 @@ const Chart = React.forwardRef(
   (
     {
       bounds: propsBounds,
-      color = 'accent-1',
+      color,
       gap,
       id,
       onClick,
@@ -152,7 +152,7 @@ const Chart = React.forwardRef(
       return undefined;
     }, [containerRef, propsSize]);
 
-    const useGradient = Array.isArray(color);
+    const useGradient = color && Array.isArray(color);
 
     const renderBars = () =>
       (values || []).map((valueArg, index) => {
@@ -322,11 +322,20 @@ const Chart = React.forwardRef(
           size[1] + strokeWidth,
         ];
     const viewBox = viewBounds.join(' ');
-    const colorName =
-      !useGradient && typeof color === 'object' ? color.color : color;
-    const opacity = color.opacity
-      ? theme.global.opacity[color.opacity]
-      : undefined;
+    let colorName;
+    if (!useGradient) {
+      if (color && color.color) colorName = color.color;
+      else if (color) colorName = color;
+      else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
+      else if (theme.global.graph && theme.global.graph.colors) {
+        const colors =
+          theme.global.graph.colors[theme.dark ? 'dark' : 'light'] ||
+          theme.global.graph.colors;
+        [colorName] = colors;
+      }
+    }
+    const opacity =
+      color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
 
     let stroke;
     if (type !== 'point') {
