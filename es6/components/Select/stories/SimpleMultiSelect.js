@@ -3,16 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var defaultOptions = [];
-var objectOptions = [];
 
 for (var i = 1; i <= 200; i += 1) {
   defaultOptions.push("option " + i);
-  objectOptions.push({
-    lab: "option " + i,
-    val: i,
-    dis: i % 5 === 0,
-    sel: i % 13 === 0
-  });
 }
 
 var SimpleMultiSelect = function SimpleMultiSelect() {
