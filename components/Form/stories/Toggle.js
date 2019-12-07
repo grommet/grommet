@@ -31,6 +31,6 @@ var FormFieldToggle = function FormFieldToggle(props) {
   })))));
 };
 
-(0, _react2.storiesOf)('FormField', module).add('Toggle', function () {
+(0, _react2.storiesOf)('Form', module).add('Toggle', function () {
   return _react["default"].createElement(FormFieldToggle, null);
 });

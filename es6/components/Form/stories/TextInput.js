@@ -4,9 +4,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-var allSuggestions = Array(100).fill().map(function (_, i) {
-  return "suggestion " + (i + 1);
-});
+import { allSuggestions } from './data';
 
 var FormFieldTextInput = function FormFieldTextInput(props) {
   var _useState = useState({
@@ -58,6 +56,6 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   }))));
 };
 
-storiesOf('FormField', module).add('TextInput', function () {
+storiesOf('Form', module).add('TextInput', function () {
   return React.createElement(FormFieldTextInput, null);
 });

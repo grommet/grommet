@@ -2,23 +2,28 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, FormField, Form, TextArea, Grommet } from 'grommet';
+import { grommet, Box, FormField, CheckBox, Grommet } from 'grommet';
 
-var FormFieldTextArea = function FormFieldTextArea(props) {
+var FormFieldCheckBox = function FormFieldCheckBox(props) {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Form, null, React.createElement(FormField, _extends({
+  }, React.createElement(FormField, _extends({
     label: "Label",
-    htmlFor: "text-area"
-  }, props, {
-    component: TextArea,
-    placeholder: "placeholder"
+    htmlFor: "check-box"
+  }, props), React.createElement(Box, {
+    pad: {
+      horizontal: 'small',
+      vertical: 'xsmall'
+    }
+  }, React.createElement(CheckBox, {
+    id: "check-box",
+    label: "CheckBox"
   })))));
 };
 
-storiesOf('FormField', module).add('TextArea', function () {
-  return React.createElement(FormFieldTextArea, null);
+storiesOf('Form', module).add('CheckBox', function () {
+  return React.createElement(FormFieldCheckBox, null);
 });

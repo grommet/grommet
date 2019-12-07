@@ -2,9 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, FormField, TextInput, Grommet } from 'grommet';
+import { grommet, Box, FormField, CheckBox, Grommet } from 'grommet';
 
-var FormFieldHelpError = function FormFieldHelpError(props) {
+var FormFieldToggle = function FormFieldToggle(props) {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
@@ -12,18 +12,19 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
     pad: "large"
   }, React.createElement(FormField, _extends({
     label: "Label",
-    htmlFor: "text-input"
-  }, props, {
-    help: "Text to help the user know what is possible",
-    error: "Text to call attention to an issue with this field"
-  }), React.createElement(TextInput, {
-    id: "text-input",
-    placeholder: "placeholder",
-    value: "Value",
-    onChange: function onChange() {}
-  }))));
+    htmlFor: "check-box"
+  }, props), React.createElement(Box, {
+    pad: {
+      horizontal: 'small',
+      vertical: 'xsmall'
+    }
+  }, React.createElement(CheckBox, {
+    id: "check-box",
+    label: "CheckBox",
+    toggle: true
+  })))));
 };
 
-storiesOf('FormField', module).add('Help and Error', function () {
-  return React.createElement(FormFieldHelpError, null);
+storiesOf('Form', module).add('Toggle', function () {
+  return React.createElement(FormFieldToggle, null);
 });

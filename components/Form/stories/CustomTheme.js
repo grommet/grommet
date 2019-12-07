@@ -50,6 +50,6 @@ var CustomFormField = function CustomFormField() {
   }))));
 };
 
-(0, _react2.storiesOf)('FormField', module).add('Custom Theme', function () {
+(0, _react2.storiesOf)('Form', module).add('Custom Theme', function () {
   return _react["default"].createElement(CustomFormField, null);
 });

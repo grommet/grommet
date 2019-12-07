@@ -42,6 +42,6 @@ var CustomFormField = function CustomFormField() {
   }))));
 };
 
-storiesOf('FormField', module).add('Custom Theme', function () {
+storiesOf('Form', module).add('Custom Theme', function () {
   return React.createElement(CustomFormField, null);
 });

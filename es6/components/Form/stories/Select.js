@@ -3,9 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { grommet, Box, FormField, Select, Grommet } from 'grommet';
-var allOptions = Array(100).fill().map(function (_, i) {
-  return "option " + (i + 1);
-});
+import { allOptions } from './data';
 
 var FormFieldSelect = function FormFieldSelect(props) {
   var _useState = useState(''),
@@ -32,6 +30,6 @@ var FormFieldSelect = function FormFieldSelect(props) {
   }))));
 };
 
-storiesOf('FormField', module).add('Select', function () {
+storiesOf('Form', module).add('Select', function () {
   return React.createElement(FormFieldSelect, null);
 });
