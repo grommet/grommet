@@ -19,4 +19,4 @@ const FormFieldTextArea = props => (
   </Grommet>
 );
 
-storiesOf('FormField', module).add('TextArea', () => <FormFieldTextArea />);
+storiesOf('Form', module).add('TextArea', () => <FormFieldTextArea />);
