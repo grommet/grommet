@@ -26,8 +26,21 @@ export const doc = Chart => {
           PropTypes.bool,
         ]),
       }),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          color: PropTypes.string,
+          value: PropTypes.number,
+        }),
+      ),
     ])
-      .description('A color identifier to use for the graphic color.')
+      .description(
+        `A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change.`,
+      )
       .defaultValue('accent-1'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
@@ -42,6 +55,9 @@ export const doc = Chart => {
       PropTypes.string,
     ]).description(`The amount of spacing between data points. This
       is only used when the size specifies width as 'auto'.`),
+    id: PropTypes.string.description(`A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.`),
     onClick: PropTypes.func.description(`Called when the user clicks on it.
       This is only available when the type is line or area.`),
     onHover: PropTypes.func.description(`Called with a boolean argument
@@ -184,6 +200,10 @@ export const themeDoc = {
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }`,
+  },
+  'global.graph.colors': {
+    description: 'The color to use when not specified via color.',
+    type: '[string] or { dark: [string], light: [string] }',
   },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',

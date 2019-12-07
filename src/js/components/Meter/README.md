@@ -127,6 +127,15 @@ string
 }
 ```
 
+**max**
+
+The maximum value for the Meter.
+
+```
+number
+string
+```
+
 **round**
 
 Whether to round the line ends
@@ -215,6 +224,16 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
+```
+
+**global.graph.colors**
+
+The colors to use when not specified via values. Expects `[string] or { dark: [string], light: [string] }`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **global.opacity.medium**

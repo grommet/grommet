@@ -23,6 +23,9 @@ export const doc = Meter => {
       color: 'light-2',
       opacity: 'medium',
     }),
+    max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
+      'The maximum value for the Meter.',
+    ),
     round: PropTypes.bool
       .description('Whether to round the line ends')
       .defaultValue(false),
@@ -82,6 +85,10 @@ export const themeDoc = {
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }`,
+  },
+  'global.graph.colors': {
+    description: 'The colors to use when not specified via values.',
+    type: '[string] or { dark: [string], light: [string] }',
   },
   'global.opacity.medium': {
     description: 'The opacity value used on the Meter color.',

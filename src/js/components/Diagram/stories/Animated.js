@@ -23,7 +23,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
+const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   fromTarget,
   toTarget,
   anchor: 'vertical',
