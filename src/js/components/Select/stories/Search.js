@@ -5,15 +5,8 @@ import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const defaultOptions = [];
-const objectOptions = [];
 for (let i = 1; i <= 200; i += 1) {
   defaultOptions.push(`option ${i}`);
-  objectOptions.push({
-    lab: `option ${i}`,
-    val: i,
-    dis: i % 5 === 0,
-    sel: i % 13 === 0,
-  });
 }
 
 const SearchSelect = () => {

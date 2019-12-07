@@ -5,11 +5,33 @@ import isChromatic from 'storybook-chromatic/isChromatic';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+// the prefix name of the Create option entry
+const prefix = 'Create';
+
 const defaultOptions = [];
+for (let i = 1; i <= 5; i += 1) {
+  defaultOptions.push(`option ${i}`);
+}
 
 const updateCreateOption = (text: string) => {
-  defaultOptions.pop();
-  defaultOptions.push(`Create '${text}'`);
+  const len = defaultOptions.length;
+  if (defaultOptions[len - 1].includes(prefix)) {
+    // remove Create option before adding an updated one
+    defaultOptions.pop();
+  }
+  defaultOptions.push(`${prefix} '${text}'`);
+};
+
+// improving Search support of special characters
+const getRegExp = text => {
+  // The line below escapes regular expression special characters:
+  // [ \ ^ $ . | ? * + ( )
+  const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+
+  // Create the regular expression with modified value which
+  // handles escaping special characters. Without escaping special
+  // characters, errors will appear in the console
+  return new RegExp(escapedText, 'i');
 };
 
 const CreateOption = () => {
@@ -25,30 +47,19 @@ const CreateOption = () => {
           placeholder="Select"
           value={value}
           options={options}
-          onChange={event => {
-            const { option } = event;
-            if (option.includes('Create')) {
-              defaultOptions.pop();
+          onChange={({ option }) => {
+            if (option.includes(prefix)) {
+              defaultOptions.pop(); // remove Create option
               defaultOptions.push(searchValue);
               setValue(searchValue);
-              defaultOptions.push('Create');
             } else {
               setValue(option);
             }
-            console.log(searchValue);
-            console.log(event);
           }}
           onClose={() => setOptions(defaultOptions)}
           onSearch={(text: string) => {
             updateCreateOption(text);
-            // The line below escapes regular expression special characters:
-            // [ \ ^ $ . | ? * + ( )
-            const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-
-            // Create the regular expression with modified value which
-            // handles escaping special characters. Without escaping special
-            // characters, errors will appear in the console
-            const exp = new RegExp(escapedText, 'i');
+            const exp = getRegExp(text);
             setOptions(defaultOptions.filter(o => exp.test(o)));
             setSearchValue(text);
           }}
@@ -59,7 +70,5 @@ const CreateOption = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Select', module).add('Create Option', () => (
-    <CreateOption />
-  ));
+  storiesOf('Select', module).add('Create Option', () => <CreateOption />);
 }
