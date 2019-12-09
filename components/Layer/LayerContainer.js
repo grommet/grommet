@@ -160,7 +160,7 @@ function (_Component) {
     if (theme.layer.background) {
       var dark = (0, _utils.backgroundIsDark)(theme.layer.background, theme);
 
-      if (dark !== theme.dark) {
+      if (dark !== undefined && dark !== theme.dark) {
         content = _react["default"].createElement(_contexts.ThemeContext.Provider, {
           value: _extends({}, theme, {
             dark: dark

@@ -145,31 +145,11 @@ describe('Button', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('hoverIndicator as object', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: true
-      }
-    }, "hoverIndicator")));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
   test('hoverIndicator as object with color', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
       onClick: function onClick() {},
       hoverIndicator: {
-        background: 'brand'
-      }
-    }, "hoverIndicator")));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  test('hoverIndicator as object with colorIndex', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: 'accent-1'
+        color: 'brand'
       }
     }, "hoverIndicator")));
     var tree = component.toJSON();
@@ -179,25 +159,7 @@ describe('Button', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
       onClick: function onClick() {},
       hoverIndicator: {
-        background: 'accent'
-      }
-    }, "hoverIndicator")));
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: 'invalid'
-      }
-    }, "hoverIndicator")));
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  test('hoverIndicator as object with invalid colorIndex', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: 'accent-100'
+        color: 'invalid'
       }
     }, "hoverIndicator")));
     var tree = component.toJSON();

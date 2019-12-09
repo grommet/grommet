@@ -74,23 +74,40 @@ var hslToRGB = function hslToRGB(h, s, l) {
 
 
 var hexExp = /^#[A-Za-z0-9]{3,4}$|^#[A-Za-z0-9]{6,8}$/;
-var rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/; // e.g. hsl(240, 60%, 50%)
+var rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?\)/;
+var rgbaExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/; // e.g. hsl(240, 60%, 50%)
 
 var hslExp = /hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
 
 var canExtractRGBArray = function canExtractRGBArray(color) {
-  return hexExp.test(color) || rgbExp.test(color) || hslExp.test(color);
+  return hexExp.test(color) || rgbExp.test(color) || rgbaExp.test(color) || hslExp.test(color);
 };
 
 var getRGBArray = function getRGBArray(color) {
   if (hexExp.test(color)) {
-    return parseHexToRGB(color);
+    var _parseHexToRGB = parseHexToRGB(color),
+        red = _parseHexToRGB[0],
+        green = _parseHexToRGB[1],
+        blue = _parseHexToRGB[2],
+        alpha = _parseHexToRGB[3];
+
+    return [red, green, blue, alpha !== undefined ? alpha / 255.0 : undefined];
   }
 
   var match = color.match(rgbExp);
 
   if (match) {
-    return match.splice(1);
+    return match.splice(1).map(function (v) {
+      return parseInt(v, 10);
+    });
+  }
+
+  match = color.match(rgbaExp);
+
+  if (match) {
+    return match.splice(1).map(function (v) {
+      return parseFloat(v, 10);
+    });
   }
 
   match = color.match(hslExp);
@@ -113,8 +130,11 @@ var colorIsDark = function colorIsDark(color) {
   var _getRGBArray = getRGBArray(color),
       red = _getRGBArray[0],
       green = _getRGBArray[1],
-      blue = _getRGBArray[2];
+      blue = _getRGBArray[2],
+      alpha = _getRGBArray[3]; // if there is an alpha and it's greater than 50%, we can't really tell
 
+
+  if (alpha < 0.5) return undefined;
   var brightness = (299 * red + 587 * green + 114 * blue) / 1000; // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
   // Above domain is no longer registered.
 
@@ -128,10 +148,20 @@ var getRGBA = function getRGBA(color, opacity) {
     var _getRGBArray2 = getRGBArray(color),
         red = _getRGBArray2[0],
         green = _getRGBArray2[1],
-        blue = _getRGBArray2[2];
+        blue = _getRGBArray2[2],
+        alpha = _getRGBArray2[3];
 
-    var alpha = typeof opacity === 'number' ? opacity : opacity || 1;
-    return "rgba(" + red + ", " + green + ", " + blue + ", " + alpha + ")";
+    var normalizedAlpha;
+
+    if (opacity !== undefined) {
+      normalizedAlpha = opacity;
+    } else if (alpha !== undefined) {
+      normalizedAlpha = alpha;
+    } else {
+      normalizedAlpha = 1;
+    }
+
+    return "rgba(" + red + ", " + green + ", " + blue + ", " + normalizedAlpha + ")";
   }
 
   return undefined;

@@ -170,33 +170,11 @@ describe('Button', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('hoverIndicator as object', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: true
-      }
-    }, "hoverIndicator")));
-
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
   test('hoverIndicator as object with color', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
-        background: 'brand'
-      }
-    }, "hoverIndicator")));
-
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  test('hoverIndicator as object with colorIndex', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: 'accent-1'
+        color: 'brand'
       }
     }, "hoverIndicator")));
 
@@ -207,26 +185,7 @@ describe('Button', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
-        background: 'accent'
-      }
-    }, "hoverIndicator")));
-
-    var tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: 'invalid'
-      }
-    }, "hoverIndicator")));
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  test('hoverIndicator as object with invalid colorIndex', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
-      onClick: function onClick() {},
-      hoverIndicator: {
-        background: 'accent-100'
+        color: 'invalid'
       }
     }, "hoverIndicator")));
 

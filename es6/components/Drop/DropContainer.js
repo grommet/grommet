@@ -325,7 +325,7 @@ function (_Component) {
     if (theme.global.drop.background) {
       var dark = backgroundIsDark(theme.global.drop.background, theme);
 
-      if (dark !== theme.dark) {
+      if (dark !== undefined && dark !== theme.dark) {
         content = React.createElement(ThemeContext.Provider, {
           value: _extends({}, theme, {
             dark: dark

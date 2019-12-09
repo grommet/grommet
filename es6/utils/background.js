@@ -60,9 +60,9 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
       var color;
 
       if (background.dark === false) {
-        color = textColor.light;
+        color = normalizeColor(textColor.light || textColor, theme);
       } else if (background.dark) {
-        color = textColor.dark;
+        color = normalizeColor(textColor.dark || textColor, theme);
       } else if (!textColorArg) {
         color = 'inherit';
       }
@@ -75,13 +75,13 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
 
       var backgroundColor = getRGBA(_color2, background.opacity === true ? theme.global.opacity.medium : theme.global.opacity[background.opacity] || background.opacity) || _color2;
 
-      styles.push(css(["background-color:", ";", ""], backgroundColor, (!background.opacity || background.opacity !== 'weak') && "color: " + textColor[background.dark || colorIsDark(backgroundColor) ? 'dark' : 'light'] + ";"));
+      styles.push(css(["background-color:", ";", ""], backgroundColor, (!background.opacity || background.opacity !== 'weak') && "color: " + normalizeColor(textColor[background.dark || colorIsDark(backgroundColor) ? 'dark' : 'light'] || textColor, theme) + ";"));
     }
 
     if (background.dark === false) {
-      styles.push(css(["color:", ";"], textColor.light));
+      styles.push(css(["color:", ";"], textColor.light || textColor));
     } else if (background.dark) {
-      styles.push(css(["color:", ";"], textColor.dark));
+      styles.push(css(["color:", ";"], textColor.dark || textColor));
     }
 
     return styles;
@@ -92,24 +92,20 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
       return css(["background:", " no-repeat center center;background-size:cover;"], background);
     }
 
-    var _color3 = normalizeColor(background, theme);
+    var _backgroundColor = normalizeColor(background, theme);
 
-    if (_color3) {
-      return css(["background:", ";color:", ";"], _color3, normalizeColor(textColor[colorIsDark(_color3) ? 'dark' : 'light'], theme));
+    if (_backgroundColor) {
+      return css(["background:", ";color:", ";"], _backgroundColor, normalizeColor(textColor[colorIsDark(_backgroundColor) ? 'dark' : 'light'] || textColor, theme));
     }
   }
 
   return undefined;
 };
-export var activeStyle = css(["", " color:", ";"], function (props) {
-  return backgroundStyle(normalizeColor(props.theme.global.active.background, props.theme), props.theme);
-}, function (props) {
-  return normalizeColor(props.theme.global.active.color, props.theme);
+export var activeStyle = css(["", ""], function (props) {
+  return backgroundStyle(normalizeColor(props.theme.global.active.background, props.theme), props.theme, props.theme.global.active.color);
 });
-export var selectedStyle = css(["", " color:", ";"], function (props) {
-  return backgroundStyle(normalizeColor(props.theme.global.selected.background, props.theme), props.theme);
-}, function (props) {
-  return normalizeColor(props.theme.global.selected.color, props.theme);
+export var selectedStyle = css(["", ""], function (props) {
+  return backgroundStyle(normalizeColor(props.theme.global.selected.background, props.theme), props.theme, props.theme.global.selected.color);
 });
 export var getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicator, theme) {
   var background;
@@ -120,5 +116,5 @@ export var getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicat
     background = hoverIndicator;
   }
 
-  return css(["", " color:", ";"], backgroundStyle(background, theme), normalizeColor(theme.global.hover.color, theme));
+  return css(["", ""], backgroundStyle(background, theme, theme.global.hover.color));
 };
