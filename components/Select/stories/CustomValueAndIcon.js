@@ -4,6 +4,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _react2 = require("@storybook/react");
 
+var _grommetIcons = require("grommet-icons");
+
 var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
@@ -12,20 +14,16 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var defaultOptions = [];
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-for (var i = 1; i <= 200; i += 1) {
-  defaultOptions.push("option " + i);
-}
+var CustomSelect = function CustomSelect(_ref) {
+  var rest = _extends({}, _ref);
 
-var SimpleMultiSelect = function SimpleMultiSelect() {
-  var _useState = (0, _react.useState)(defaultOptions),
-      options = _useState[0],
-      setOptions = _useState[1];
+  var options = ['one', 'two'];
 
-  var _useState2 = (0, _react.useState)(''),
-      value = _useState2[0],
-      setValue = _useState2[1];
+  var _useState = (0, _react.useState)(''),
+      value = _useState[0],
+      setValue = _useState[1];
 
   return _react["default"].createElement(_grommet.Grommet, {
     full: true,
@@ -35,34 +33,30 @@ var SimpleMultiSelect = function SimpleMultiSelect() {
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Select, {
-    size: "medium",
+  }, _react["default"].createElement(_grommet.Select, _extends({
+    id: "select",
+    name: "select",
     placeholder: "Select",
-    multiple: true,
     value: value,
     options: options,
-    onChange: function onChange(_ref) {
-      var nextValue = _ref.value;
-      return setValue(nextValue);
+    onChange: function onChange(_ref2) {
+      var option = _ref2.option;
+      return setValue(option);
     },
-    onClose: function onClose() {
-      return setOptions(defaultOptions);
-    },
-    onSearch: function onSearch(text) {
-      // The line below escapes regular expression special characters:
-      // [ \ ^ $ . | ? * + ( )
-      var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which
-      // handles escaping special characters. Without escaping special
-      // characters, errors will appear in the console
-
-      var exp = new RegExp(escapedText, 'i');
-      setOptions(defaultOptions.filter(function (o) {
-        return exp.test(o);
-      }));
-    }
-  })));
+    plain: true,
+    valueLabel: _react["default"].createElement(_grommet.Box, {
+      background: "brand",
+      width: "small",
+      round: "small",
+      overflow: "hidden",
+      align: "center"
+    }, value || 'Select...'),
+    icon: _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommetIcons.CaretDown, {
+      color: "black"
+    }))
+  }, rest))));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Multiple', function () {
-  return _react["default"].createElement(SimpleMultiSelect, null);
+(0, _react2.storiesOf)('Select', module).add('Custom', function () {
+  return _react["default"].createElement(CustomSelect, null);
 });

@@ -6,7 +6,7 @@ import { CaretDown } from "grommet-icons/es6/icons/CaretDown";
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var CustomSelectValue = function CustomSelectValue(_ref) {
+var CustomSelect = function CustomSelect(_ref) {
   var rest = _extends({}, _ref);
 
   var options = ['one', 'two'];
@@ -41,16 +41,12 @@ var CustomSelectValue = function CustomSelectValue(_ref) {
       overflow: "hidden",
       align: "center"
     }, value || 'Select...'),
-    icon: false
-  }, rest))));
-};
-
-storiesOf('Select', module).add('Custom Value', function () {
-  return React.createElement(CustomSelectValue, null);
-}).add('Custom Icon', function () {
-  return React.createElement(CustomSelectValue, {
     icon: React.createElement(Box, null, React.createElement(CaretDown, {
       color: "black"
     }))
-  });
+  }, rest))));
+};
+
+storiesOf('Select', module).add('Custom', function () {
+  return React.createElement(CustomSelect, null);
 });
