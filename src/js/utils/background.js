@@ -59,9 +59,9 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
     if (background.image) {
       let color;
       if (background.dark === false) {
-        color = textColor.light || textColor;
+        color = normalizeColor(textColor.light || textColor, theme);
       } else if (background.dark) {
-        color = textColor.dark || textColor;
+        color = normalizeColor(textColor.dark || textColor, theme);
       } else if (!textColorArg) {
         color = 'inherit';
       }
