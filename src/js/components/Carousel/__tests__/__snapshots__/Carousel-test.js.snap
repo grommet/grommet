@@ -251,7 +251,6 @@ exports[`Carousel basic 1`] = `
 
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -675,7 +674,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 
 .c8:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -1099,7 +1097,6 @@ exports[`Carousel navigate 1`] = `
 
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -1298,7 +1295,7 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hgsmht"
+          class="StyledButton-sc-323bzc-0 elJpSO"
           type="button"
         >
           <svg
@@ -1490,7 +1487,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 hgsmht"
+          class="StyledButton-sc-323bzc-0 elJpSO"
           type="button"
         >
           <svg
@@ -1763,7 +1760,6 @@ exports[`Carousel play 1`] = `
 
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -1960,7 +1956,7 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hgsmht"
+          class="StyledButton-sc-323bzc-0 elJpSO"
           type="button"
         >
           <svg
