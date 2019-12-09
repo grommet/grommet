@@ -15,4 +15,4 @@ const FormFieldToggle = props => (
   </Grommet>
 );
 
-storiesOf('FormField', module).add('Toggle', () => <FormFieldToggle />);
+storiesOf('Form', module).add('Toggle', () => <FormFieldToggle />);

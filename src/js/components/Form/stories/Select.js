@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, FormField, Select, Grommet } from 'grommet';
-
-const allOptions = Array(100)
-  .fill()
-  .map((_, i) => `option ${i + 1}`);
+import { allOptions } from './data';
 
 const FormFieldSelect = props => {
   const [value, setValue] = useState('');
@@ -27,4 +24,4 @@ const FormFieldSelect = props => {
   );
 };
 
-storiesOf('FormField', module).add('Select', () => <FormFieldSelect />);
+storiesOf('Form', module).add('Select', () => <FormFieldSelect />);
