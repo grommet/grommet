@@ -88,6 +88,17 @@ Defaults to
     }
 ```
 
+**global.graph.colors**
+
+The colors to use when not specified via connections or via
+    theme.diagram.line.color. Expects `[string] or { dark: [string], light: [string] }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **diagram.extend**
 
 Any additional style for Diagram. Expects `string | (props) => {}`.

@@ -18,9 +18,9 @@ const MultipleValues = () => {
             background="light-2"
             values={[
               {
-                value: 70,
+                value: 60,
                 onHover: over => {
-                  setActive(over ? 70 : 0);
+                  setActive(over ? 60 : 0);
                   setLabel(over ? 'in use' : undefined);
                 },
               },

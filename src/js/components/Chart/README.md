@@ -120,7 +120,12 @@ The limits for the values, specified as a two dimensional array.
 
 **color**
 
-A color identifier to use for the graphic color. Defaults to `accent-1`.
+A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change. Defaults to `accent-1`.
 
 ```
 string
@@ -132,6 +137,10 @@ string
     strong
     boolean
 }
+[{
+  color: string,
+  value: number
+}]
 ```
 
 **gap**
@@ -147,6 +156,16 @@ small
 medium
 large
 xlarge
+string
+```
+
+**id**
+
+A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.
+
+```
 string
 ```
 
@@ -316,6 +335,16 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
+```
+
+**global.graph.colors**
+
+The color to use when not specified via color. Expects `[string] or { dark: [string], light: [string] }`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **global.opacity**

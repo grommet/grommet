@@ -40,10 +40,7 @@ const Bar = props => {
       const delta = (value * (width - 2 * capOffset)) / max;
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
       const colorName =
-        color ||
-        (index === values.length - 1
-          ? theme.meter.color
-          : defaultColor(index, theme));
+        color || defaultColor(index, theme, values ? values.length : 0);
       let hoverProps;
       if (onHover) {
         hoverProps = {
