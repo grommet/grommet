@@ -163,8 +163,7 @@ exports[`Video autoPlay renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c16 {
@@ -482,7 +481,7 @@ exports[`Video controls renders 1`] = `
   stroke: none;
 }
 
-.c22 {
+.c21 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -493,25 +492,25 @@ exports[`Video controls renders 1`] = `
   stroke: #666666;
 }
 
-.c22 g {
+.c21 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c22 *:not([stroke])[fill="none"] {
+.c21 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c22 *[stroke*="#"],
-.c22 *[STROKE*="#"] {
+.c21 *[stroke*="#"],
+.c21 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c22 *[fill-rule],
-.c22 *[FILL-RULE],
-.c22 *[fill*="#"],
-.c22 *[FILL*="#"] {
+.c21 *[fill-rule],
+.c21 *[FILL-RULE],
+.c21 *[fill*="#"],
+.c21 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -667,8 +666,7 @@ exports[`Video controls renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c16 {
@@ -687,32 +685,6 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c21 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c21:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c9 {
@@ -1025,7 +997,7 @@ exports[`Video controls renders 1`] = `
         className="c20"
       >
         <button
-          className="c21"
+          className="c5"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1035,7 +1007,7 @@ exports[`Video controls renders 1`] = `
         >
           <svg
             aria-label="Play"
-            className="c22"
+            className="c21"
             viewBox="0 0 24 24"
           >
             <polygon
@@ -1119,7 +1091,7 @@ exports[`Video controls renders 1`] = `
             />
             <svg
               aria-label="Actions"
-              className="c22"
+              className="c21"
               viewBox="0 0 24 24"
             >
               <path
@@ -1300,8 +1272,7 @@ exports[`Video fit renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c16 {
@@ -1917,8 +1888,7 @@ exports[`Video loop renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c16 {
@@ -2364,8 +2334,7 @@ exports[`Video mute renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c16 {
@@ -2811,8 +2780,7 @@ exports[`Video renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c16 {
