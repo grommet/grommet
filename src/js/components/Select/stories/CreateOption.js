@@ -5,7 +5,7 @@ import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 // the prefix name of the Create option entry
-const prefix = 'Create'; 
+const prefix = 'Create';
 
 const defaultOptions = [];
 for (let i = 1; i <= 5; i += 1) {
