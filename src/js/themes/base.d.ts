@@ -322,6 +322,7 @@ export interface ThemeType {
     };
   };
   chart?: {
+    color?: ColorType;
     extend?: ExtendType;
   }
   checkBox?: {

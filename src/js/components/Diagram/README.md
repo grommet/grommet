@@ -80,7 +80,7 @@ undefined
 
 **diagram.line.color**
 
-The color of the connection line. Expects `string`.
+The color of the connection line. Expects `string | {dark: string, light: string}`.
 
 Defaults to
 
