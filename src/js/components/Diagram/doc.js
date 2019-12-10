@@ -64,7 +64,7 @@ export const themeDoc = {
     defaultValue: 'accent-1',
   },
   'global.colors': {
-    description: 'color options',
+    description: 'Color options.',
     type: 'object',
     defaultValue: `{
       "accent-1": "#6FFFB0",
