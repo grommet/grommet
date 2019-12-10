@@ -329,10 +329,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
   var colorName;
 
   if (!useGradient) {
-    if (color && color.color) colorName = color.color;else if (color) colorName = color;else if (theme.chart && theme.chart.color) colorName = theme.chart.color;else if (theme.global.graph && theme.global.graph.colors) {
-      var colors = theme.global.graph.colors[theme.dark ? 'dark' : 'light'] || theme.global.graph.colors;
-      colorName = colors[0];
-    }
+    if (color && color.color) colorName = color.color;else if (color) colorName = color;else if (theme.chart && theme.chart.color) colorName = theme.chart.color;else colorName = 'graph-0';
   }
 
   var opacity = color && color.opacity ? theme.global.opacity[color.opacity] : undefined;

@@ -38,14 +38,15 @@ var doc = function doc(Meter) {
 
 exports.doc = doc;
 var themeDoc = {
+  'global.colors': {
+    description: 'Color options.',
+    type: 'object',
+    defaultValue: "{\n      \"accent-1\": \"#6FFFB0\",\n      \"graph-0\": \"accent-1\",\n      ...\n    }"
+  },
   'global.edgeSize': {
     description: "The border-radius of the styled Meter. thickness, height and \n    width of the Bar Meter, height of the Circle Meter.",
     type: 'object',
     defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
-  },
-  'global.graph.colors': {
-    description: 'The colors to use when not specified via values.',
-    type: '[string] or { dark: [string], light: [string] }'
   },
   'global.opacity.medium': {
     description: 'The opacity value used on the Meter color.',

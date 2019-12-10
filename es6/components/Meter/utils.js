@@ -23,14 +23,17 @@ export var defaultColor = function defaultColor(index, theme, valuesLength) {
   }
 
   if (theme.meter && theme.meter.colors) {
-    var colors = theme.meter.colors[theme.dark ? 'dark' : 'light'] || theme.meter.colors;
-    return colors[index % colors.length];
-  }
-
-  if (theme.global.graph && theme.global.graph.colors) {
-    var _colors = theme.global.graph.colors[theme.dark ? 'dark' : 'light'] || theme.global.graph.colors;
+    var _colors = theme.meter.colors[theme.dark ? 'dark' : 'light'] || theme.meter.colors;
 
     return _colors[index % _colors.length];
+  }
+
+  var colors = Object.keys(theme.global.colors).filter(function (n) {
+    return n.match(/^graph-[0-9]$/);
+  });
+
+  if (colors.length > 0) {
+    return colors[index % colors.length];
   } // Deprecate using "neutral-*" color names. Remove eventually.
 
 

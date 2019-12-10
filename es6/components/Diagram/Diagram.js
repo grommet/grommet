@@ -195,8 +195,10 @@ var Diagram = function Diagram(_ref) {
         var strokeWidth = thickness ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
         var colorName = color || theme.diagram.line && theme.diagram.line.color;
 
-        if (!colorName && theme.global.graph && theme.global.graph.colors) {
-          var colors = theme.global.graph.colors[theme.dark ? 'dark' : 'light'] || theme.global.graph.colors;
+        if (!colorName) {
+          var colors = Object.keys(theme.global.colors).filter(function (n) {
+            return n.match(/^graph-[0-9]$/);
+          });
           colorName = colors[index % colors.length];
         }
 

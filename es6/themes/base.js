@@ -46,6 +46,10 @@ var colors = {
     light: 'brand'
   },
   focus: focusColor,
+  // "graph-0": 'accent-1',
+  // "graph-1": 'neutral-1',
+  // "graph-2": 'accent-2',
+  // "graph-3": 'neutral-2',
   placeholder: '#AAAAAA',
   selected: 'brand',
   text: {
@@ -248,9 +252,6 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       font: _extends({}, fontSizing(0)),
-      // graph: {
-      //   colors: [],
-      // },
       hover: {
         background: {
           color: 'active',

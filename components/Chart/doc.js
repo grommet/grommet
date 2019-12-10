@@ -57,29 +57,30 @@ var docCalcs = function docCalcs(calcs) {
 
 exports.docCalcs = docCalcs;
 var themeDoc = {
+  'chart.color': {
+    description: 'Color of the Chart.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'accent-1'
+  },
   'chart.extend': {
     description: 'Any additional style for the Chart.',
     type: 'string | (props) => {}',
     defaultValue: undefined
   },
   'global.colors': {
-    description: 'color options used for Chart fill area.',
+    description: 'Color options.',
     type: 'object',
-    defaultValue: 'accent-1'
+    defaultValue: "{\n      \"accent-1\": \"#6FFFB0\",\n      \"graph-0\": \"accent-1\",\n      ...\n    }"
   },
   'global.edgeSize': {
     description: 'The possible sizes for the thickness in the Chart.',
     type: 'object',
     defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
   },
-  'global.graph.colors': {
-    description: 'The color to use when not specified via color.',
-    type: '[string] or { dark: [string], light: [string] }'
-  },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',
-    type: 'string',
-    defaultValue: undefined
+    type: 'object',
+    defaultValue: "{\n      strong: 0.8,\n      medium: 0.4,\n      weak: 0.1,\n    }"
   },
   'global.size': {
     description: 'The possible sizes for Chart width and height.',
