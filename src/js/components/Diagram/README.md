@@ -90,7 +90,7 @@ accent-1
 
 **global.colors**
 
-color options Expects `object`.
+Color options. Expects `object`.
 
 Defaults to
 
@@ -99,6 +99,7 @@ Defaults to
       "accent-1": "#6FFFB0",
       "graph-0": "accent-1",
       "graph-1": "neutral-1",
+      ...
     }
 ```
 

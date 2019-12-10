@@ -299,7 +299,7 @@ Required. Array of value objects describing the data.
   
 **chart.color**
 
-Color of the Chart. Expects `string | (props) => {}`.
+Color of the Chart. Expects `string | {dark: string, light: string}`.
 
 Defaults to
 
@@ -319,7 +319,7 @@ undefined
 
 **global.colors**
 
-color options Expects `object`.
+Color options. Expects `object`.
 
 Defaults to
 
@@ -327,6 +327,7 @@ Defaults to
 {
       "accent-1": "#6FFFB0",
       "graph-0": "accent-1",
+      ...
     }
 ```
 
@@ -352,7 +353,7 @@ Defaults to
 
 **global.opacity**
 
-The opacity of the Chart stroke. Expects `string`.
+The opacity of the Chart stroke. Expects `object`.
 
 Defaults to
 

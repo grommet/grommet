@@ -178,7 +178,7 @@ const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`,
 export const themeDoc = {
   'chart.color': {
     description: 'Color of the Chart.',
-    type: 'string | {dark: string, light: string},
+    type: 'string | {dark: string, light: string}',
     defaultValue: 'accent-1',
   },
   'chart.extend': {
@@ -187,11 +187,12 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'global.colors': {
-    description: 'color options',
+    description: 'Color options.',
     type: 'object',
     defaultValue: `{
       "accent-1": "#6FFFB0",
       "graph-0": "accent-1",
+      ...
     }`,
   },
   'global.edgeSize': {
@@ -211,7 +212,7 @@ export const themeDoc = {
   },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',
-    type: 'string',
+    type: 'object',
     defaultValue: `{
       strong: 0.8,
       medium: 0.4,

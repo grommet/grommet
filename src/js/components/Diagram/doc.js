@@ -70,6 +70,7 @@ export const themeDoc = {
       "accent-1": "#6FFFB0",
       "graph-0": "accent-1",
       "graph-1": "neutral-1",
+      ...
     }`,
   },
   'global.edgeSize': {

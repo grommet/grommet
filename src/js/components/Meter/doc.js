@@ -71,11 +71,12 @@ export const doc = Meter => {
 
 export const themeDoc = {
   'global.colors': {
-    description: 'color options',
+    description: 'Color options.',
     type: 'object',
     defaultValue: `{
       "accent-1": "#6FFFB0",
       "graph-0": "accent-1",
+      ...
     }`,
   },
   'global.edgeSize': {
