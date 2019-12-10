@@ -178,7 +178,7 @@ const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`,
 export const themeDoc = {
   'chart.color': {
     description: 'Color of the Chart.',
-    type: 'string | (props) => {}',
+    type: 'string | {dark: string, light: string},
     defaultValue: 'accent-1',
   },
   'chart.extend': {
