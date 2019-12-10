@@ -18,7 +18,7 @@ export interface ListProps {
   itemProps?: { [_:string]: { background?: string, border?: BorderType, pad?: PadType}};
   margin?: MarginType;
   onMore?: () => void;
-  onClickItem?: ((event: {item?: {}, index?: number}) => void);
+  onClickItem?: ((event: {item?: {}, index?: number, datum?: {}, target?: HTMLElement}) => void);
   pad?: PadType;
   primaryKey?: string | ((...args: any[]) => any);
   secondaryKey?: string | ((...args: any[]) => any);
