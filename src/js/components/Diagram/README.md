@@ -68,37 +68,6 @@ svg
 ```
 ## Theme
   
-**global.edgeSize**
-
-The possible sizes for the connections thickness and offset. Expects `object`.
-
-Defaults to
-
-```
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-```
-
-**global.graph.colors**
-
-The colors to use when not specified via connections or via
-    theme.diagram.line.color. Expects `[string] or { dark: [string], light: [string] }`.
-
-Defaults to
-
-```
-undefined
-```
-
 **diagram.extend**
 
 Any additional style for Diagram. Expects `string | (props) => {}`.
@@ -117,4 +86,38 @@ Defaults to
 
 ```
 accent-1
+```
+
+**global.colors**
+
+color options Expects `object`.
+
+Defaults to
+
+```
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      "graph-1": "neutral-1",
+    }
+```
+
+**global.edgeSize**
+
+The possible sizes for the connections thickness and offset. Expects `object`.
+
+Defaults to
+
+```
+{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }
 ```

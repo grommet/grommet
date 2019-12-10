@@ -205,6 +205,19 @@ Array of value objects describing the data.
   
 ## Theme
   
+**global.colors**
+
+color options Expects `object`.
+
+Defaults to
+
+```
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+    }
+```
+
 **global.edgeSize**
 
 The border-radius of the styled Meter. thickness, height and 
@@ -224,16 +237,6 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
-```
-
-**global.graph.colors**
-
-The colors to use when not specified via values. Expects `[string] or { dark: [string], light: [string] }`.
-
-Defaults to
-
-```
-undefined
 ```
 
 **global.opacity.medium**
