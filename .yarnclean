@@ -1,0 +1,3 @@
+# Working around styled-components types issue as suggested in
+# https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33311/#issuecomment-546727329
+@types/react-native

@@ -34,6 +34,19 @@ declare const removeUndefined: <T extends object>(obj: T) => NonUndefinedProps<T
 
 export {isObject, deepFreeze, deepMerge, removeUndefined};
 
+/*
+ * Utility type for inferring the props type of a component.
+ *
+ * Example:
+ *
+ * ```typescript
+ * import { Box } from 'grommet';
+ *
+ * type BoxProps = PropsOf<typeof Box>;
+ * ```
+ */
+export type PropsOf<TComponent> = TComponent extends React.ComponentType<infer P> ? P : never;
+
 // Extracting types for common properties among components
 type BoxSideType = "top" | "left" | "bottom" | "right" | "start" | "end" | "horizontal" | "vertical" | "all" | "between";
 type BoxSizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
