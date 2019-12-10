@@ -60,7 +60,7 @@ export const themeDoc = {
   },
   'diagram.line.color': {
     description: 'The color of the connection line.',
-    type: 'string',
+    type: 'string | {dark: string, light: string}',
     defaultValue: 'accent-1',
   },
   'global.colors': {
