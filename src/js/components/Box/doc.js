@@ -206,6 +206,12 @@ export const doc = Box => {
     ]).description(
       'Whether the width and/or height should fill the container.',
     ),
+    focusIndicator: PropTypes.bool
+      .description(
+        `When interactive via 'onClick', whether it should receive a focus
+        outline.`,
+      )
+      .defaultValue(true),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',

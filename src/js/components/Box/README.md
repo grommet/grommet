@@ -398,6 +398,15 @@ vertical
 boolean
 ```
 
+**focusIndicator**
+
+When interactive via 'onClick', whether it should receive a focus
+        outline. Defaults to `true`.
+
+```
+boolean
+```
+
 **gap**
 
 The amount of spacing between child elements. This
