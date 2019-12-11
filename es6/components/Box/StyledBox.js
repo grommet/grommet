@@ -415,7 +415,7 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.onClick && interactiveStyle;
 }, function (props) {
-  return props.onClick && props.focus && focusStyle;
+  return props.onClick && props.focus && props.focusIndicator !== false && focusStyle;
 }, function (props) {
   return props.theme.box && props.theme.box.extend;
 });
