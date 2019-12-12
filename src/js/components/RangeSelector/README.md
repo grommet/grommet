@@ -50,7 +50,7 @@ number
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
+Custom messages used by screen readers for accessibility. Defaults to `{
   "lower": "Lower Bounds",
   "upper": "Upper Bounds"
 }`.

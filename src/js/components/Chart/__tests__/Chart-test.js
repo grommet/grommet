@@ -27,6 +27,7 @@ test('Chart type renders', () => {
       <Chart type="bar" values={VALUES} />
       <Chart type="line" values={VALUES} />
       <Chart type="area" values={VALUES} />
+      <Chart type="point" values={VALUES} />
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -71,6 +72,7 @@ test('Chart cap renders', () => {
       <Chart round values={VALUES} />
       <Chart type="line" round values={VALUES} />
       <Chart type="area" round values={VALUES} />
+      <Chart type="point" round values={VALUES} />
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -85,6 +87,24 @@ test('Chart gap renders', () => {
         <Chart size={{ width: 'auto' }} gap="medium" values={VALUES} />
         <Chart size={{ width: 'auto' }} gap="large" values={VALUES} />
       </Box>
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Chart color renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Chart color="brand" values={VALUES} />
+      <Chart color={{ color: 'brand', opacity: 'strong' }} values={VALUES} />
+      <Chart
+        color={[
+          { value: 0, color: 'brand' },
+          { value: 60, color: 'border' },
+        ]}
+        values={VALUES}
+      />
     </Grommet>,
   );
   const tree = component.toJSON();

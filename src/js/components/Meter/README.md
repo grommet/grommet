@@ -13,7 +13,8 @@ import { Meter } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -126,6 +127,15 @@ string
 }
 ```
 
+**max**
+
+The maximum value for the Meter.
+
+```
+number
+string
+```
+
 **round**
 
 Whether to round the line ends
@@ -195,6 +205,20 @@ Array of value objects describing the data.
   
 ## Theme
   
+**global.colors**
+
+Color options. Expects `object`.
+
+Defaults to
+
+```
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }
+```
+
 **global.edgeSize**
 
 The border-radius of the styled Meter. thickness, height and 

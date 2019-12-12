@@ -13,7 +13,8 @@ import { Chart } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -119,7 +120,12 @@ The limits for the values, specified as a two dimensional array.
 
 **color**
 
-A color identifier to use for the graphic color. Defaults to `accent-1`.
+A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change. Defaults to `accent-1`.
 
 ```
 string
@@ -131,6 +137,10 @@ string
     strong
     boolean
 }
+[{
+  color: string,
+  value: number
+}]
 ```
 
 **gap**
@@ -146,6 +156,16 @@ small
 medium
 large
 xlarge
+string
+```
+
+**id**
+
+A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.
+
+```
 string
 ```
 
@@ -243,12 +263,13 @@ string
 
 **type**
 
-The visual type of meter. Defaults to `bar`.
+The visual type of chart. Defaults to `bar`.
 
 ```
 bar
 line
 area
+point
 ```
 
 **values**
@@ -276,6 +297,16 @@ Required. Array of value objects describing the data.
   
 ## Theme
   
+**chart.color**
+
+Color of the Chart. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+accent-1
+```
+
 **chart.extend**
 
 Any additional style for the Chart. Expects `string | (props) => {}`.
@@ -288,12 +319,16 @@ undefined
 
 **global.colors**
 
-color options used for Chart fill area. Expects `object`.
+Color options. Expects `object`.
 
 Defaults to
 
 ```
-accent-1
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }
 ```
 
 **global.edgeSize**
@@ -318,12 +353,16 @@ Defaults to
 
 **global.opacity**
 
-The opacity of the Chart stroke. Expects `string`.
+The opacity of the Chart stroke. Expects `object`.
 
 Defaults to
 
 ```
-undefined
+{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }
 ```
 
 **global.size**

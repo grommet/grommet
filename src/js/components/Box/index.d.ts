@@ -5,6 +5,7 @@ import {
   AlignSelfType,
   BackgroundType,
   BasisType,
+  BorderType,
   ElevationType,
   FillType,
   GapType, 
@@ -14,10 +15,6 @@ import {
   PolymorphicType,
   ColorType, 
 } from "../../utils";
-
-type SideType = "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all";
-type SizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
-type StyleType = "solid" | "dashed" | "dotted" | "double" | "groove" | "ridge" | "inset" | "outset" | "hidden";
 
 export interface BoxProps {
   a11yTitle?: A11yTitleType;
@@ -29,14 +26,17 @@ export interface BoxProps {
   animation?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"} | ("fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay?: number,duration?: number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge"})[];
   background?: BackgroundType;
   basis?: BasisType;
-  border?: boolean | SideType | {color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType} | ({color?: ColorType, side?: SideType, size?: SizeType, style?: StyleType})[];
+  border?: BorderType;
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
   elevation?: ElevationType;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
   fill?: FillType;
+  focusIndicator?: boolean;
   gap?: GapType;
   height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string | {max?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string,min?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string};
+  hoverIndicator?: BackgroundType | boolean;
   justify?: "around" | "between" | "center" | "end" | "evenly" | "start" | "stretch";
+  onClick?: ((...args: any[]) => any);
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;
   pad?: PadType;
   responsive?: boolean;

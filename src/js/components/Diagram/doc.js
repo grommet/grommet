@@ -53,6 +53,26 @@ export const doc = Diagram => {
 };
 
 export const themeDoc = {
+  'diagram.extend': {
+    description: 'Any additional style for Diagram.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'diagram.line.color': {
+    description: 'The color of the connection line.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'accent-1',
+  },
+  'global.colors': {
+    description: 'Color options.',
+    type: 'object',
+    defaultValue: `{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      "graph-1": "neutral-1",
+      ...
+    }`,
+  },
   'global.edgeSize': {
     description: 'The possible sizes for the connections thickness and offset.',
     type: 'object',
@@ -68,14 +88,4 @@ export const themeDoc = {
         responsiveBreakpoint: 'small',
     }`,
   },
-  'diagram.extend': {
-    description: 'Any additional style for Diagram.',
-    type: 'string | (props) => {}',
-    defaultValue: undefined,
-  },
-  'diagram.line.color': {
-    description: 'The color of the connection line.',
-    type: 'string',
-    defaultValue: 'accent-1',
-  },
-}
+};

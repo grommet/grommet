@@ -14,9 +14,15 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
+const fillStyle = css`
+  width: 100%;
+  height: 100%;
+`;
+
 const StyledImage = styled.img`
   ${genericStyles}
   ${props => props.fit && fitStyle}
+  ${props => props.fillProp && fillStyle}
   ${props => props.theme.image && props.theme.image.extend}
   ${props =>
     props.opacityProp &&

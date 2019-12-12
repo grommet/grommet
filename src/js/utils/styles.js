@@ -265,3 +265,7 @@ export const disabledStyle = componentStyle => css`
     componentStyle || props.theme.global.control.disabled.opacity};
   cursor: default;
 `;
+
+export const sizeStyle = (name, value, theme) => css`
+  ${name}: ${theme.global.size[value] || value};
+`;

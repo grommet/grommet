@@ -23,6 +23,9 @@ export const doc = Meter => {
       color: 'light-2',
       opacity: 'medium',
     }),
+    max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
+      'The maximum value for the Meter.',
+    ),
     round: PropTypes.bool
       .description('Whether to round the line ends')
       .defaultValue(false),
@@ -67,6 +70,15 @@ export const doc = Meter => {
 };
 
 export const themeDoc = {
+  'global.colors': {
+    description: 'Color options.',
+    type: 'object',
+    defaultValue: `{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }`,
+  },
   'global.edgeSize': {
     description: `The border-radius of the styled Meter. thickness, height and 
     width of the Bar Meter, height of the Circle Meter.`,

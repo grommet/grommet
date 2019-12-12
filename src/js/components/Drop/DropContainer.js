@@ -318,7 +318,7 @@ class DropContainer extends Component {
 
     if (theme.global.drop.background) {
       const dark = backgroundIsDark(theme.global.drop.background, theme);
-      if (dark !== theme.dark) {
+      if (dark !== undefined && dark !== theme.dark) {
         content = (
           <ThemeContext.Provider value={{ ...theme, dark }}>
             {content}
