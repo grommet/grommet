@@ -77,5 +77,5 @@ const Example = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Form', module).add('All TS', () => <Example />);
+  storiesOf('TypeScript/Form', module).add('All FormFields', () => <Example />);
 }
