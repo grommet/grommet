@@ -28,5 +28,5 @@ const StyledDataTable = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('DataTable', module).add('Styled TS', () => <StyledDataTable />);
+  storiesOf('TypeScript/DataTable', module).add('Style', () => <StyledDataTable />);
 }
