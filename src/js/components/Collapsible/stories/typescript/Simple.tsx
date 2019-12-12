@@ -29,7 +29,7 @@ const SimpleCollapsible = props => {
   );
 };
 if (!isChromatic()) {
-  storiesOf('Collapsible', module).add('Default TS', () => (
+  storiesOf('TypeScript/Collapsible', module).add('Default', () => (
     <SimpleCollapsible />
   ));
 }
