@@ -13,6 +13,7 @@ const StyledRadioButtonContainer = styled.label`
   flex-direction: row;
   align-items: center;
   user-select: none;
+  width: fit-content;
   ${props => props.disabled && disabledStyle} ${props =>
     !props.disabled &&
     'cursor: pointer;'}
