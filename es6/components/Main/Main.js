@@ -9,7 +9,7 @@ var Main = function Main(_ref) {
   return React.createElement(Box, _extends({
     as: "main",
     fill: "vertical",
-    flex: false,
+    flex: "grow",
     overflow: "auto"
   }, rest));
 };

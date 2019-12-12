@@ -17,7 +17,7 @@ var Main = function Main(_ref) {
   return _react["default"].createElement(_Box.Box, _extends({
     as: "main",
     fill: "vertical",
-    flex: false,
+    flex: "grow",
     overflow: "auto"
   }, rest));
 };
