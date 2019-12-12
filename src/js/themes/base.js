@@ -62,6 +62,10 @@ const colors = {
     light: 'brand',
   },
   focus: focusColor,
+  // "graph-0": 'accent-1',
+  // "graph-1": 'neutral-1',
+  // "graph-2": 'accent-2',
+  // "graph-3": 'neutral-2',
   placeholder: '#AAAAAA',
   selected: 'brand',
   text: {
@@ -230,9 +234,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // face: undefined,
         // family: undefined,
       },
-      // graph: {
-      //   colors: [],
-      // },
       hover: {
         background: {
           color: 'active',

@@ -561,7 +561,11 @@ const StyledBox = styled.div`
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
   ${props => props.onClick && interactiveStyle}
-  ${props => props.onClick && props.focus && focusStyle}
+  ${props =>
+    props.onClick &&
+    props.focus &&
+    props.focusIndicator !== false &&
+    focusStyle}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 

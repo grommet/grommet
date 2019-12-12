@@ -58,6 +58,12 @@ type Colors = typeof colors & {
   'status-ok'?: ColorType;
   'status-unknown'?: ColorType;
   'status-disabled'?: ColorType;
+  'graph-0'?: ColorType;
+  'graph-1'?: ColorType;
+  'graph-2'?: ColorType;
+  'graph-3'?: ColorType;
+  'graph-4'?: ColorType;
+  'graph-5'?: ColorType;
   [x: string]: ColorType;
 };
 
@@ -316,6 +322,7 @@ export interface ThemeType {
     };
   };
   chart?: {
+    color?: ColorType;
     extend?: ExtendType;
   }
   checkBox?: {

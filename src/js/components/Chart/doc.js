@@ -176,15 +176,24 @@ const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`,
 };
 
 export const themeDoc = {
+  'chart.color': {
+    description: 'Color of the Chart.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'accent-1',
+  },
   'chart.extend': {
     description: 'Any additional style for the Chart.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'global.colors': {
-    description: 'color options used for Chart fill area.',
+    description: 'Color options.',
     type: 'object',
-    defaultValue: 'accent-1',
+    defaultValue: `{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }`,
   },
   'global.edgeSize': {
     description: 'The possible sizes for the thickness in the Chart.',
@@ -201,14 +210,14 @@ export const themeDoc = {
         responsiveBreakpoint: 'small',
     }`,
   },
-  'global.graph.colors': {
-    description: 'The color to use when not specified via color.',
-    type: '[string] or { dark: [string], light: [string] }',
-  },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',
-    type: 'string',
-    defaultValue: undefined,
+    type: 'object',
+    defaultValue: `{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }`,
   },
   'global.size': {
     description: 'The possible sizes for Chart width and height.',

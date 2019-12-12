@@ -129,7 +129,7 @@ class LayerContainer extends Component {
 
     if (theme.layer.background) {
       const dark = backgroundIsDark(theme.layer.background, theme);
-      if (dark !== theme.dark) {
+      if (dark !== undefined && dark !== theme.dark) {
         content = (
           <ThemeContext.Provider value={{ ...theme, dark }}>
             {content}
