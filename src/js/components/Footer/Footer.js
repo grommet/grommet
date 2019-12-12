@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box } from '../Box';
 
-const Footer = ({ ...rest }) => (
+const Footer = ({ round, ...rest }) => (
   <Box
     as="footer"
     align="center"
@@ -10,6 +10,8 @@ const Footer = ({ ...rest }) => (
     flex={false}
     gap="medium"
     justify="between"
+    round={round}
+    overflow={round ? 'hidden' : undefined}
     {...rest}
   />
 );
