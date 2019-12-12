@@ -95,7 +95,7 @@ for (var i = 1; i <= 200; i += 1) {
 
 storiesOf('Select', module).add('Simple', function () {
   return React.createElement(SimpleSelect, null);
-}).add('Custom', function () {
+}).add('Custom Theme', function () {
   return React.createElement(SimpleSelect, {
     open: true,
     theme: customRoundedTheme

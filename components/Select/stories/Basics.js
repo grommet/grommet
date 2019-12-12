@@ -109,7 +109,7 @@ for (var i = 1; i <= 200; i += 1) {
 
 (0, _react2.storiesOf)('Select', module).add('Simple', function () {
   return _react["default"].createElement(SimpleSelect, null);
-}).add('Custom', function () {
+}).add('Custom Theme', function () {
   return _react["default"].createElement(SimpleSelect, {
     open: true,
     theme: customRoundedTheme
