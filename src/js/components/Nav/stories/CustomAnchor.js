@@ -20,7 +20,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const Sidebar = () => (
+const CustomAnchor = () => (
   <Grommet full theme={customTheme}>
     <Box background="dark-1" pad="large" fill>
       <Box direction="row" pad={{ vertical: 'medium' }}>
@@ -40,4 +40,4 @@ const Sidebar = () => (
   </Grommet>
 );
 
-storiesOf('Nav', module).add('Sidebar', () => <Sidebar />);
+storiesOf('Nav', module).add('Custom Anchor', () => <CustomAnchor />);
