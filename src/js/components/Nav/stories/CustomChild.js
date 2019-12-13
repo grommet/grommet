@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet, Nav, Text } from 'grommet';
 
-// TOD remove sidebar Button story
 const SidebarButton = ({ label, ...rest }) => (
   <Button plain {...rest}>
     {({ hover }) => (
