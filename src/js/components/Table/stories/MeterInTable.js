@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
@@ -22,7 +23,6 @@ const MeterInTable = () => (
         <Table caption="Meter Inside Table">
           <TableBody>
             {values.map((val, index) => (
-              // eslint-disable-next-line react/no-array-index-key
               <TableRow key={index}>
                 <TableCell>
                   <Meter
