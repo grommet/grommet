@@ -10,6 +10,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/* eslint-disable react/no-array-index-key */
 var values = [20, 40, 60, 80, 100];
 
 var MeterInTable = function MeterInTable() {
@@ -25,8 +26,10 @@ var MeterInTable = function MeterInTable() {
     }
   }, _react["default"].createElement(_grommet.Table, {
     caption: "Meter Inside Table"
-  }, _react["default"].createElement(_grommet.TableBody, null, values.map(function (val) {
-    return _react["default"].createElement(_grommet.TableRow, null, _react["default"].createElement(_grommet.TableCell, null, _react["default"].createElement(_grommet.Meter, {
+  }, _react["default"].createElement(_grommet.TableBody, null, values.map(function (val, index) {
+    return _react["default"].createElement(_grommet.TableRow, {
+      key: index
+    }, _react["default"].createElement(_grommet.TableCell, null, _react["default"].createElement(_grommet.Meter, {
       type: "bar",
       values: [{
         value: val

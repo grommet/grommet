@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Meter, Table, TableBody, TableCell, TableRow, Text } from 'grommet';
@@ -17,8 +18,10 @@ var MeterInTable = function MeterInTable() {
     }
   }, React.createElement(Table, {
     caption: "Meter Inside Table"
-  }, React.createElement(TableBody, null, values.map(function (val) {
-    return React.createElement(TableRow, null, React.createElement(TableCell, null, React.createElement(Meter, {
+  }, React.createElement(TableBody, null, values.map(function (val, index) {
+    return React.createElement(TableRow, {
+      key: index
+    }, React.createElement(TableCell, null, React.createElement(Meter, {
       type: "bar",
       values: [{
         value: val
