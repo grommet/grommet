@@ -1,15 +1,17 @@
 import React from 'react';
 
+import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 
-const Nav = ({ ...rest }) => (
-  <Box
-    align="center"
-    as="nav"
-    flex={false}
-    gap="medium"
-    {...rest}
-  />
+
+ // TODO resolve whether children should be allowed with items
+const Nav = ({ children, items = [], ...rest }) => (
+  <Box as="nav" flex={false} gap="medium" {...rest}>
+    {items.map(item => (
+      <Anchor href={item.href} label={item.label} />
+    ))}
+    {children}
+  </Box>
 );
 
 let NavDoc;
