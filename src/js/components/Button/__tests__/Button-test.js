@@ -4,6 +4,7 @@ import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { findAllByType } from '../../../utils';
+// eslint-disable-next-line import/named
 import { Grommet, Button, Text } from '../..';
 
 describe('Button', () => {
@@ -227,16 +228,16 @@ describe('Button', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  const themetest = {
-    button: {
-      color: 'red',
-    },
-  };
+  // const themetest = {
+  //   button: {
+  //     color: 'red',
+  //   },
+  // };
 
   test('Button icon color renders', () => {
     const component = renderer.create(
-      <Grommet theme={themetest}>
-        <Button icon={<svg />} label="Test" onClick={() => {}} />
+      <Grommet>
+        <Button icon={<svg color="pink" />} label="Test" onClick={() => {}} />
       </Grommet>,
     );
     const tree = component.toJSON();

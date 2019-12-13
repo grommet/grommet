@@ -82,10 +82,25 @@ const Button = forwardRef(
     };
 
     let buttonIcon = icon;
-    // only change color if user did not specify the color themselves...
-    if (primary && icon && !icon.props.color) {
+    if (icon && !icon.props.color) {
+      let buttonIconColor;
+      let buttonColor;
+      let isDark;
+      if (primary) {
+        if (theme.button.color) {
+          isDark = isDarkBackground();
+          buttonColor = isDark
+            ? theme.button.color.dark
+            : theme.button.color.light;
+          buttonIconColor = normalizeColor(buttonColor, theme);
+        } else {
+          buttonIconColor = theme.global.colors.text[isDark ? 'dark' : 'light'];
+        }
+      } else {
+        buttonIconColor = normalizeColor(theme.button.color, theme);
+      }
       buttonIcon = cloneElement(icon, {
-        color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
+        color: buttonIconColor,
       });
     }
 

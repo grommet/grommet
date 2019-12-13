@@ -45,7 +45,7 @@ exports[`Button Button icon color renders 1`] = `
   text-transform: none;
   border: 2px solid #7D4CDB;
   border-radius: 18px;
-  color: red;
+  color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
@@ -86,7 +86,9 @@ exports[`Button Button icon color renders 1`] = `
     <div
       className="c2"
     >
-      <svg />
+      <svg
+        color="pink"
+      />
       <div
         className="c3"
       />
