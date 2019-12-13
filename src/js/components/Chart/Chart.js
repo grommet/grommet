@@ -7,6 +7,8 @@ import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
 
+const gradientMaskColor = '#ffffff';
+
 // use constants so re-renders don't re-trigger effects
 const defaultSize = { height: 'small', width: 'medium' };
 const defaultValues = [];
@@ -15,8 +17,9 @@ const Chart = React.forwardRef(
   (
     {
       bounds: propsBounds,
-      color = 'accent-1',
+      color,
       gap,
+      id,
       onClick,
       onHover,
       overflow = false,
@@ -149,6 +152,8 @@ const Chart = React.forwardRef(
       return undefined;
     }, [containerRef, propsSize]);
 
+    const useGradient = color && Array.isArray(color);
+
     const renderBars = () =>
       (values || []).map((valueArg, index) => {
         const { label, onHover: valueOnHover, value, ...valueRest } = valueArg;
@@ -239,7 +244,7 @@ const Chart = React.forwardRef(
       }
 
       return (
-        <g fill={normalizeColor(color.color || color, theme)}>
+        <g>
           <path d={d} {...hoverProps} {...clickProps} />
         </g>
       );
@@ -308,36 +313,98 @@ const Chart = React.forwardRef(
       contents = renderPoints();
     }
 
-    const viewBox = overflow
-      ? `0 0 ${size[0]} ${size[1]}`
-      : `-${strokeWidth / 2} -${strokeWidth / 2} ${size[0] +
-          strokeWidth} ${size[1] + strokeWidth}`;
-    const colorName = typeof color === 'object' ? color.color : color;
-    const opacity = color.opacity
-      ? theme.global.opacity[color.opacity]
-      : undefined;
+    const viewBounds = overflow
+      ? [0, 0, size[0], size[1]]
+      : [
+          -(strokeWidth / 2),
+          -(strokeWidth / 2),
+          size[0] + strokeWidth,
+          size[1] + strokeWidth,
+        ];
+    const viewBox = viewBounds.join(' ');
+    let colorName;
+    if (!useGradient) {
+      if (color && color.color) colorName = color.color;
+      else if (color) colorName = color;
+      else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
+      else colorName = 'graph-0';
+    }
+    const opacity =
+      color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
+
+    let stroke;
+    if (type !== 'point') {
+      if (useGradient) stroke = gradientMaskColor;
+      else stroke = normalizeColor(colorName, theme);
+    } else stroke = 'none';
+
+    let fill;
+    if (type === 'point' || type === 'area') {
+      if (useGradient) fill = gradientMaskColor;
+      else fill = normalizeColor(colorName, theme);
+    } else fill = 'none';
+
+    const drawing = (
+      <g
+        stroke={stroke}
+        strokeWidth={type !== 'point' ? strokeWidth : undefined}
+        fill={fill}
+        strokeLinecap={round ? 'round' : 'butt'}
+        strokeLinejoin={round ? 'round' : 'miter'}
+        opacity={opacity}
+      >
+        {contents}
+      </g>
+    );
+
+    let defs;
+    let gradientRect;
+    if (useGradient && size[1]) {
+      const gradientId = `${id}-gradient`;
+      const maskId = `${id}-mask`;
+      defs = (
+        <defs>
+          <linearGradient id={gradientId} x1={0} y1={0} x2={0} y2={1}>
+            {color
+              .sort((c1, c2) => c2.value - c1.value)
+              .map(({ value, color: gradientColor }) => (
+                <stop
+                  key={value}
+                  offset={
+                    (size[1] - (value - bounds[1][0]) * scale[1]) / size[1]
+                  }
+                  stopColor={normalizeColor(gradientColor, theme)}
+                />
+              ))}
+          </linearGradient>
+          <mask id={maskId}>{drawing}</mask>
+        </defs>
+      );
+
+      gradientRect = (
+        <rect
+          x={viewBounds[0]}
+          y={viewBounds[1]}
+          width={viewBounds[2]}
+          height={viewBounds[3]}
+          fill={`url(#${gradientId})`}
+          mask={`url(#${maskId})`}
+        />
+      );
+    }
 
     return (
       <StyledChart
         ref={containerRef}
+        id={id}
         viewBox={viewBox}
         preserveAspectRatio="none"
         width={size === 'full' ? '100%' : size[0]}
         height={size === 'full' ? '100%' : size[1]}
         {...rest}
       >
-        <g
-          stroke={
-            type !== 'point' ? normalizeColor(colorName, theme) : undefined
-          }
-          strokeWidth={type !== 'point' ? strokeWidth : undefined}
-          fill={type === 'point' ? normalizeColor(colorName, theme) : undefined}
-          strokeLinecap={round ? 'round' : 'butt'}
-          strokeLinejoin={round ? 'round' : 'miter'}
-          opacity={opacity}
-        >
-          {contents}
-        </g>
+        {defs}
+        {useGradient ? gradientRect : drawing}
       </StyledChart>
     );
   },

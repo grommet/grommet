@@ -1,15 +1,34 @@
+# dependencies
+node_modules
+
+#IDEA
 .idea/**
-node_modules/**
-dist/**
-storybook-static/**
-.eslintcache
-coverage
 .vscode
-npm-debug.log
+
+# testing
+coverage
+
+#lock files
 package-lock.json
-yarn-error.log
-.DS_Store
-.tmp/
+
+# production
+dist
+storybook-static
+
+#logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+report*
+
+#licenses 
 grommet-*-licenses.json
 grommet-*-src-with-dependecies.tgz
-.cache/
+
+# misc
+.cache
+.env
+.tmp
+.eslintcache
+.DS_Store
+

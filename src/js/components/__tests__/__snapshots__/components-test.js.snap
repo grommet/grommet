@@ -557,6 +557,13 @@ boolean",
         "name": "fill",
       },
       Object {
+        "defaultValue": true,
+        "description": "When interactive via 'onClick', whether it should receive a focus
+        outline.",
+        "format": "boolean",
+        "name": "focusIndicator",
+      },
+      Object {
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.",
@@ -1571,7 +1578,12 @@ string",
       },
       Object {
         "defaultValue": "accent-1",
-        "description": "A color identifier to use for the graphic color.",
+        "description": "A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change.",
         "format": "string
 {
   color: string,
@@ -1580,7 +1592,11 @@ string",
     medium
     strong
     boolean
-}",
+}
+[{
+  color: string,
+  value: number
+}]",
         "name": "color",
       },
       Object {
@@ -1595,6 +1611,13 @@ large
 xlarge
 string",
         "name": "gap",
+      },
+      Object {
+        "description": "A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.",
+        "format": "string",
+        "name": "id",
       },
       Object {
         "description": "Called when the user clicks on it.
@@ -2053,6 +2076,7 @@ string",
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
   },
+  "Footer": [Function],
   "Form": [Function],
   "FormContext": Object {
     "$$typeof": Symbol(react.context),
@@ -2225,6 +2249,7 @@ function",
   },
   "Grid": [Function],
   "Grommet": [Function],
+  "Header": [Function],
   "Heading": [Function],
   "Image": Object {
     "availableAt": Array [
@@ -2644,6 +2669,7 @@ function",
     "usage": "import { List } from 'grommet';
 <List data={[...]} />",
   },
+  "Main": [Function],
   "Markdown": [Function],
   "MaskedInput": Object {
     "availableAt": Array [

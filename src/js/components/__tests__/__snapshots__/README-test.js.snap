@@ -999,6 +999,15 @@ vertical
 boolean
 \`\`\`
 
+**focusIndicator**
+
+When interactive via 'onClick', whether it should receive a focus
+        outline. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
+
 **gap**
 
 The amount of spacing between child elements. This
@@ -2963,7 +2972,12 @@ The limits for the values, specified as a two dimensional array.
 
 **color**
 
-A color identifier to use for the graphic color. Defaults to \`accent-1\`.
+A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change. Defaults to \`accent-1\`.
 
 \`\`\`
 string
@@ -2975,6 +2989,10 @@ string
     strong
     boolean
 }
+[{
+  color: string,
+  value: number
+}]
 \`\`\`
 
 **gap**
@@ -2990,6 +3008,16 @@ small
 medium
 large
 xlarge
+string
+\`\`\`
+
+**id**
+
+A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.
+
+\`\`\`
 string
 \`\`\`
 
@@ -3121,6 +3149,16 @@ Required. Array of value objects describing the data.
   
 ## Theme
   
+**chart.color**
+
+Color of the Chart. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+accent-1
+\`\`\`
+
 **chart.extend**
 
 Any additional style for the Chart. Expects \`string | (props) => {}\`.
@@ -3133,12 +3171,16 @@ undefined
 
 **global.colors**
 
-color options used for Chart fill area. Expects \`object\`.
+Color options. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-accent-1
+{
+      \\"accent-1\\": \\"#6FFFB0\\",
+      \\"graph-0\\": \\"accent-1\\",
+      ...
+    }
 \`\`\`
 
 **global.edgeSize**
@@ -3163,12 +3205,16 @@ Defaults to
 
 **global.opacity**
 
-The opacity of the Chart stroke. Expects \`string\`.
+The opacity of the Chart stroke. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-undefined
+{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }
 \`\`\`
 
 **global.size**
@@ -4646,6 +4692,41 @@ svg
 \`\`\`
 ## Theme
   
+**diagram.extend**
+
+Any additional style for Diagram. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**diagram.line.color**
+
+The color of the connection line. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+accent-1
+\`\`\`
+
+**global.colors**
+
+Color options. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      \\"accent-1\\": \\"#6FFFB0\\",
+      \\"graph-0\\": \\"accent-1\\",
+      \\"graph-1\\": \\"neutral-1\\",
+      ...
+    }
+\`\`\`
+
 **global.edgeSize**
 
 The possible sizes for the connections thickness and offset. Expects \`object\`.
@@ -4664,26 +4745,6 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
-\`\`\`
-
-**diagram.extend**
-
-Any additional style for Diagram. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**diagram.line.color**
-
-The color of the connection line. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-accent-1
 \`\`\`
 ",
   "Distribution": "## Distribution
@@ -5284,6 +5345,20 @@ boolean
 \`\`\`
 button
 \`\`\`",
+  "Footer": "## Footer
+Footer for a document or section
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Footer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=footer&module=%2Fsrc%2FFooter.js)
+## Usage
+
+\`\`\`javascript
+import { Footer } from 'grommet';
+<Footer />
+\`\`\`
+
+## Properties
+
+  ",
   "Form": "## Form
 A form that manages state for its fields.
 
@@ -6215,6 +6290,20 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "Header": "## Header
+Is a Box container for introductory content
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Header&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=header&module=%2Fsrc%2FHeader.js)
+## Usage
+
+\`\`\`javascript
+import { Header } from 'grommet';
+<Header />
+\`\`\`
+
+## Properties
+
+  ",
   "Heading": "## Heading
 Heading text structured in levels.
 
@@ -7616,6 +7705,20 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "Main": "## Main
+main content of a document.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Main&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=main&module=%2Fsrc%2FMain.js)
+## Usage
+
+\`\`\`javascript
+import { Main } from 'grommet';
+<Main />
+\`\`\`
+
+## Properties
+
+  ",
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
@@ -8262,6 +8365,15 @@ string
 }
 \`\`\`
 
+**max**
+
+The maximum value for the Meter.
+
+\`\`\`
+number
+string
+\`\`\`
+
 **round**
 
 Whether to round the line ends
@@ -8331,6 +8443,20 @@ Array of value objects describing the data.
   
 ## Theme
   
+**global.colors**
+
+Color options. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      \\"accent-1\\": \\"#6FFFB0\\",
+      \\"graph-0\\": \\"accent-1\\",
+      ...
+    }
+\`\`\`
+
 **global.edgeSize**
 
 The border-radius of the styled Meter. thickness, height and 

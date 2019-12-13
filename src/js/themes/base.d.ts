@@ -3,7 +3,8 @@ import {
   BorderType,
   ColorType,  
   DeepReadonly, 
-  GapType, 
+  GapType,
+  GraphColorsType,
   MarginType,
   OpacityType,
   PadType,
@@ -57,6 +58,12 @@ type Colors = typeof colors & {
   'status-ok'?: ColorType;
   'status-unknown'?: ColorType;
   'status-disabled'?: ColorType;
+  'graph-0'?: ColorType;
+  'graph-1'?: ColorType;
+  'graph-2'?: ColorType;
+  'graph-3'?: ColorType;
+  'graph-4'?: ColorType;
+  'graph-5'?: ColorType;
   [x: string]: ColorType;
 };
 
@@ -186,6 +193,9 @@ export interface ThemeType {
       maxWidth?: string;
       size?: string;
     };
+    graph?: {
+      colors?: GraphColorsType;
+    },
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -312,6 +322,7 @@ export interface ThemeType {
     };
   };
   chart?: {
+    color?: ColorType;
     extend?: ExtendType;
   }
   checkBox?: {
@@ -450,7 +461,7 @@ export interface ThemeType {
   diagram?: {
     extend?: ExtendType;
     line?: {
-      color: 'accent-1';
+      color?: ColorType;
     };
   };
   drop?: {
@@ -672,6 +683,7 @@ export interface ThemeType {
   };
   meter?: {
     color?: ColorType,
+    colors?: GraphColorsType,
     extend?: ExtendType,
   },
   paragraph?: {

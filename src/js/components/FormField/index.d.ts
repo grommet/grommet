@@ -8,6 +8,7 @@ export interface FormFieldProps {
   label?: string | React.ReactNode;
   margin?: MarginType;
   name?: string;
+  options?: string[];
   pad?: boolean;
   // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
   placeholder?: PlaceHolderType

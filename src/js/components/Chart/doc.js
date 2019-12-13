@@ -26,8 +26,21 @@ export const doc = Chart => {
           PropTypes.bool,
         ]),
       }),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          color: PropTypes.string,
+          value: PropTypes.number,
+        }),
+      ),
     ])
-      .description('A color identifier to use for the graphic color.')
+      .description(
+        `A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change.`,
+      )
       .defaultValue('accent-1'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
@@ -42,6 +55,9 @@ export const doc = Chart => {
       PropTypes.string,
     ]).description(`The amount of spacing between data points. This
       is only used when the size specifies width as 'auto'.`),
+    id: PropTypes.string.description(`A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.`),
     onClick: PropTypes.func.description(`Called when the user clicks on it.
       This is only available when the type is line or area.`),
     onHover: PropTypes.func.description(`Called with a boolean argument
@@ -160,15 +176,24 @@ const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`,
 };
 
 export const themeDoc = {
+  'chart.color': {
+    description: 'Color of the Chart.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'accent-1',
+  },
   'chart.extend': {
     description: 'Any additional style for the Chart.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'global.colors': {
-    description: 'color options used for Chart fill area.',
+    description: 'Color options.',
     type: 'object',
-    defaultValue: 'accent-1',
+    defaultValue: `{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }`,
   },
   'global.edgeSize': {
     description: 'The possible sizes for the thickness in the Chart.',
@@ -187,8 +212,12 @@ export const themeDoc = {
   },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',
-    type: 'string',
-    defaultValue: undefined,
+    type: 'object',
+    defaultValue: `{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }`,
   },
   'global.size': {
     description: 'The possible sizes for Chart width and height.',
