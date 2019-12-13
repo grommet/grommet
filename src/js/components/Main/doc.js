@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Main => {
   const DocumentedMain = describe(Main)
     .availableAt(getAvailableAtBadge('Main'))
-    .description('main content of a document.')
+    .description('is a Box container for main content of a document.')
     .usage(
       `import { Main } from 'grommet';
 <Main />`,
