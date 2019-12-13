@@ -21,8 +21,9 @@ const MeterInTable = () => (
       <Box border pad={{ top: 'xsmall' }}>
         <Table caption="Meter Inside Table">
           <TableBody>
-            {values.map(val => (
-              <TableRow>
+            {values.map((val, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <TableRow key={index}>
                 <TableCell>
                   <Meter
                     type="bar"
