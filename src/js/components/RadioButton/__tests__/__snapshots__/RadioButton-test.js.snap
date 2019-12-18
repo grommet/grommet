@@ -69,6 +69,9 @@ exports[`RadioButton basic 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -209,6 +212,9 @@ exports[`RadioButton checked 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -338,6 +344,9 @@ exports[`RadioButton children 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -504,6 +513,9 @@ exports[`RadioButton disabled 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   opacity: 0.5;
   cursor: default;
 }
@@ -673,6 +685,9 @@ exports[`RadioButton label 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 

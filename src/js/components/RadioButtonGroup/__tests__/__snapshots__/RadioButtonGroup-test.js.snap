@@ -67,6 +67,9 @@ exports[`RadioButtonGroup children 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -286,6 +289,9 @@ exports[`RadioButtonGroup object options 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -466,6 +472,9 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -490,6 +499,9 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   opacity: 0.5;
   cursor: default;
 }
@@ -692,6 +704,9 @@ exports[`RadioButtonGroup object options just value 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -924,6 +939,9 @@ exports[`RadioButtonGroup string options 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
