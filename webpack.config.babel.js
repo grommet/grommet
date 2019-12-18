@@ -23,6 +23,7 @@ export default {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
+    'styled-components': 'styled',
   },
   resolve: {
     extensions: ['.js', '.json'],
