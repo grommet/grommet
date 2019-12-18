@@ -40,7 +40,7 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, _defaultProps.defaultProp
 var StyledCheckBoxContainer = _styledComponents["default"].label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:center;user-select:none;", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", " ", " ", ""], function (props) {
   return props.disabled && disabledStyle;
 }, function (props) {
   return !props.disabled && 'cursor: pointer;';
