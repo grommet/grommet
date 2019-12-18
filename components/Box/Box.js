@@ -107,6 +107,20 @@ var Box = (0, _react.forwardRef)(function (_ref, ref) {
     });
   }
 
+  if (background || theme.darkChanged) {
+    var dark = (0, _utils.backgroundIsDark)(background, theme);
+    var darkChanged = dark !== undefined && dark !== theme.dark;
+
+    if (darkChanged || theme.darkChanged) {
+      dark = dark === undefined ? theme.dark : dark;
+      contents = _react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+        value: _extends({}, theme, {
+          dark: dark
+        })
+      }, contents);
+    }
+  }
+
   var content = _react["default"].createElement(_StyledBox.StyledBox, _extends({
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
@@ -128,24 +142,6 @@ var Box = (0, _react.forwardRef)(function (_ref, ref) {
     content = _react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: onClick
     }, content);
-  } // When a Box changes the darkness, it sets darkChanged so that StyledBox
-  // can know what the underlying darkness is when deciding which elevation
-  // to show.
-
-
-  if (background || theme.darkChanged) {
-    var dark = (0, _utils.backgroundIsDark)(background, theme);
-    var darkChanged = dark !== undefined && dark !== theme.dark;
-
-    if (darkChanged || theme.darkChanged) {
-      dark = dark === undefined ? theme.dark : dark;
-      content = _react["default"].createElement(_styledComponents.ThemeContext.Provider, {
-        value: _extends({}, theme, {
-          dark: dark,
-          darkChanged: darkChanged
-        })
-      }, content);
-    }
   }
 
   return content;

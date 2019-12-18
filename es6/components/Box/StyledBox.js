@@ -56,7 +56,7 @@ var directionStyle = function directionStyle(direction, theme) {
 };
 
 var elevationStyle = css(["box-shadow:", ";"], function (props) {
-  return props.theme.global.elevation[props.theme.dark && !props.theme.darkChanged || !props.theme.dark && props.theme.darkChanged ? 'dark' : 'light'][props.elevationProp];
+  return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.elevationProp];
 });
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
 
