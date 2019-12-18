@@ -318,6 +318,24 @@ exports[`RadioButton children 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   background: #6FFFB0;
   color: #444444;
   min-width: 0;
@@ -370,6 +388,12 @@ exports[`RadioButton children 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -410,7 +434,7 @@ exports[`RadioButton children 1`] = `
         value="2"
       />
       <div
-        className="c4"
+        className="c5"
       />
     </div>
   </label>
