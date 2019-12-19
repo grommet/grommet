@@ -141,6 +141,32 @@ export const edgeStyle = (
         : ''};
     `);
   }
+  if (data.start) {
+    result.push(css`
+      ${kind}-inline-start: ${theme.global.edgeSize[data.start] || data.start};
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
+        ${kind}-inline-start: ${breakpoint.edgeSize[data.start] || data.start};
+      `,
+          )
+        : ''};
+    `);
+  }
+  if (data.end) {
+    result.push(css`
+      ${kind}-inline-end: ${theme.global.edgeSize[data.end] || data.end};
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
+        ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
+      `,
+          )
+        : ''};
+    `);
+  }
   return result;
 };
 

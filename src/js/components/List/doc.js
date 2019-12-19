@@ -3,7 +3,16 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
-const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
+const sides = [
+  'horizontal',
+  'vertical',
+  'top',
+  'bottom',
+  'left',
+  'right',
+  'start',
+  'end',
+];
 
 const padShapeSides = {};
 sides.forEach(side => {

@@ -35,6 +35,18 @@ export const borderStyle = (data, responsive, theme) => {
         ),
       );
     }
+  } else if (side === 'end' || side === 'start') {
+    styles.push(css`border-inline-${side}: ${value};`);
+    if (responsiveValue) {
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
+        border-inline-${side}: ${responsiveValue};
+      `,
+        ),
+      );
+    }
   } else if (side === 'vertical') {
     styles.push(css`
       border-left: ${value};
