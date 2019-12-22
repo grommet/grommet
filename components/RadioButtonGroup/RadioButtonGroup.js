@@ -33,12 +33,12 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
   var options = (0, _react.useMemo)(function () {
     return optionsProp.map(function (o) {
       return typeof o === 'string' ? {
-        id: o,
+        id: rest.id ? rest.id + "-" + o : o,
         label: o,
         value: o
       } : o;
     });
-  }, [optionsProp]);
+  }, [optionsProp, rest.id]);
 
   var _useState = (0, _react.useState)(valueProp),
       value = _useState[0],

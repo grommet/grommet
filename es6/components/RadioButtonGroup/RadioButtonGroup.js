@@ -20,12 +20,12 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
   var options = useMemo(function () {
     return optionsProp.map(function (o) {
       return typeof o === 'string' ? {
-        id: o,
+        id: rest.id ? rest.id + "-" + o : o,
         label: o,
         value: o
       } : o;
     });
-  }, [optionsProp]);
+  }, [optionsProp, rest.id]);
 
   var _useState = useState(valueProp),
       value = _useState[0],
