@@ -1,6 +1,6 @@
 {
-  "name": "grommet",
-  "version": "2.11.1",
+  "name": "mnet-ui-base",
+  "version": "0.0.1",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -9,19 +9,12 @@
     "./es6/contexts/ThemeContext/ThemeContext.js"
   ],
   "description": "focus on the essential experience",
-  "authors": [
-    "Alan Souza",
-    "Bryan Jacquot",
-    "Chris Carlozzi",
-    "Eric Soderberg",
-    "Shimrit Yacobi"
-  ],
-  "homepage": "http://grommet.io",
-  "bugs": "https://github.com/grommet/grommet/issues",
+  "homepage": "https://mnet-ui-base.netlify.com/",
+  "bugs": "https://github.com/sabarnix/mnet-ui-base/issues",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/grommet/grommet.git"
+    "url": "https://github.com/sabarnix/mnet-ui-base.git"
   },
   "engine-strict": true,
   "engines": {
