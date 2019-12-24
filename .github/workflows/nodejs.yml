@@ -41,7 +41,7 @@ jobs:
           ls -al
           find . \! -name '.git' -delete
           ls -al
-          cp -r ../dist/ .
+          cp -r ../../dist/ .
           ls -al
           git status
           git config --local user.email "actions@github.com"
