@@ -38,7 +38,7 @@ jobs:
           cd "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           git checkout release
           git rm -rf "$GITHUB_WORKSPACE/.temp/mnet-ui-base/**/*"
-          cp -ar "$GITHUB_WORKSPACE/dist" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
+          cp -ar "$GITHUB_WORKSPACE/dist/" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"        
           git add .
