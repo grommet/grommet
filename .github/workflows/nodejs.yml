@@ -27,10 +27,10 @@ jobs:
         uses: Borales/actions-yarn@v2.1.0
         with:
           cmd: build
-      - name: Test
-        uses: Borales/actions-yarn@v2.1.0
-        with:
-          cmd: test
+#       - name: Test
+#         uses: Borales/actions-yarn@v2.1.0
+#         with:
+#           cmd: test
       - name: Release
         run: |
           mkdir -p "$GITHUB_WORKSPACE/.temp/mnet-ui-base"        
@@ -42,6 +42,8 @@ jobs:
           find . \! -name '.git' -delete
           ls -al
           cp -r "$GITHUB_WORKSPACE/dist/" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
+          ls -al
+          git status
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"        
           git add .
