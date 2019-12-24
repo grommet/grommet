@@ -35,30 +35,6 @@ exports[`SkipLink basic 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
   class="c0"
 >
@@ -92,12 +68,12 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
+      class="StyledAnchor-sc-1meb4kf-0 bMYEeO SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="main"
       tabindex="-1"
     />
@@ -110,7 +86,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
+      class="StyledAnchor-sc-1meb4kf-0 bMYEeO SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="footer"
       tabindex="-1"
     />
@@ -124,20 +100,17 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
-      data-g-tabindex="-1"
+      class="StyledAnchor-sc-1meb4kf-0 bMYEeO SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="main"
       tabindex="-1"
     />
     Main Content
     <input
-      data-g-tabindex="none"
-      tabindex="-1"
       type="text"
       value="main content"
     />
@@ -145,14 +118,11 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
-      data-g-tabindex="-1"
+      class="StyledAnchor-sc-1meb4kf-0 bMYEeO SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="footer"
       tabindex="-1"
     />
     <input
-      data-g-tabindex="none"
-      tabindex="-1"
       type="text"
       value="footer"
     />

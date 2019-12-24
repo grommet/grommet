@@ -66,9 +66,9 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
     <input
       autocomplete="off"
       class="c2"
-      data-testid="test-input"
-      id="item"
-      name="item"
+      data-testid="test-global-hover-theme"
+      id="global-hover-theme"
+      name="global-hover-theme"
       placeholder="!"
       value=""
     />
@@ -133,10 +133,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
     padding-top: 3px;
     padding-bottom: 3px;
   }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
 }
 
 <button
@@ -261,9 +257,9 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   <input
     autocomplete="off"
     class="c1"
-    data-testid="test-input"
-    id="item"
-    name="item"
+    data-testid="test-event-target-select-by-keyboard"
+    id="input-id"
+    name="input-name"
     placeholder="!"
     value=""
   />
@@ -323,9 +319,9 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   <input
     autocomplete="off"
     class="c1"
-    data-testid="test-input"
-    id="item"
-    name="item"
+    data-testid="test-event-target-select-by-mouse"
+    id="input-id"
+    name="input-name"
     placeholder="!"
     value=""
   />
@@ -443,8 +439,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -478,8 +474,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
-  id="masked-input-drop__item"
+  id="masked-input-drop__input-id"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
@@ -520,20 +515,89 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 </div>
 `;
 
-exports[`MaskedInput event target props are available option via mouse 3`] = `""`;
+exports[`MaskedInput event target props are available option via mouse 3`] = `
+".glTYPu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+@media only screen and (max-width:768px) {
+  .jHsVdi {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .jHsVdi {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+.GOEwZ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .GOEwZ {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}"
+`;
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+  class="StyledMaskedInput__StyledMaskedInputContainer-aqxhco-1 fMAgQp"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 eNpkOj"
-    data-testid="test-input"
-    id="item"
-    name="item"
+    class="StyledMaskedInput-aqxhco-0 fXSexu"
+    data-testid="test-event-target-select-by-mouse"
+    id="input-id"
+    name="input-name"
     placeholder="!"
-    value="aa!"
+    tabindex="-1"
+    value=""
   />
 </div>
 `;
@@ -708,8 +772,8 @@ exports[`MaskedInput mask 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -743,7 +807,6 @@ exports[`MaskedInput mask 2`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -785,7 +848,75 @@ exports[`MaskedInput mask 2`] = `
 </div>
 `;
 
-exports[`MaskedInput mask 3`] = `""`;
+exports[`MaskedInput mask 3`] = `
+".glTYPu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+@media only screen and (max-width:768px) {
+  .jHsVdi {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .jHsVdi {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+.GOEwZ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .GOEwZ {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}"
+`;
 
 exports[`MaskedInput next and previous without options 1`] = `
 .c1 {
@@ -848,11 +979,11 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+  class="StyledMaskedInput__StyledMaskedInputContainer-aqxhco-1 fMAgQp"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 cwMWid"
+    class="StyledMaskedInput-aqxhco-0 bWrgOF"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1094,8 +1225,8 @@ exports[`MaskedInput option via mouse 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1129,7 +1260,6 @@ exports[`MaskedInput option via mouse 2`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1171,20 +1301,89 @@ exports[`MaskedInput option via mouse 2`] = `
 </div>
 `;
 
-exports[`MaskedInput option via mouse 3`] = `""`;
+exports[`MaskedInput option via mouse 3`] = `
+".glTYPu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+@media only screen and (max-width:768px) {
+  .jHsVdi {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .jHsVdi {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+.GOEwZ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .GOEwZ {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}"
+`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+  class="StyledMaskedInput__StyledMaskedInputContainer-aqxhco-1 fMAgQp"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 eNpkOj"
+    class="StyledMaskedInput-aqxhco-0 fXSexu"
     data-testid="test-input"
     id="item"
     name="item"
     placeholder="!"
-    value="aa!"
+    tabindex="-1"
+    value=""
   />
 </div>
 `;

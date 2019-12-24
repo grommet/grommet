@@ -23,7 +23,6 @@
   "scripts": {
     "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
     "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
-    "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "test": "npm run generate-readme && jest --runInBand",

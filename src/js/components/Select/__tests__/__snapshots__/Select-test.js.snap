@@ -292,21 +292,9 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
 }
 
 <button
@@ -536,7 +524,6 @@ exports[`Select basic 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -792,22 +779,22 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 fDsgSi"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kDANyu"
+    class="StyledBox-sc-1etxkdl-0 kXvGJR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fBosDE"
+      class="StyledBox-sc-1etxkdl-0 jRWbFR"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-ilbntv-1 jIAIZE"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -818,12 +805,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bmLwcd"
+      class="StyledBox-sc-1etxkdl-0 hqQWgU"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -968,8 +955,8 @@ exports[`Select complex options and children 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -984,10 +971,6 @@ exports[`Select complex options and children 3`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1011,7 +994,6 @@ exports[`Select complex options and children 3`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1063,9 +1045,69 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:768px) {
-  .bmLwcd {
+  .hqQWgU {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+.glTYPu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+@media only screen and (max-width:768px) {
+  .cWLJoU {
+    padding: 6px;
+  }
+}
+
+.GOEwZ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .GOEwZ {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
 }"
 `;
@@ -1265,6 +1307,7 @@ exports[`Select deselect an option 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__input"
+          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -1524,23 +1567,23 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 ghPEWB Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-1hmw3c5-0 dynHcg Select__StyledSelectDropButton-f4amc3-1 fDsgSi"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kDANyu"
+    class="StyledBox-sc-1etxkdl-0 kXvGJR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fBosDE"
+      class="StyledBox-sc-1etxkdl-0 jRWbFR"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-ilbntv-1 jIAIZE"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1551,12 +1594,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bmLwcd"
+      class="StyledBox-sc-1etxkdl-0 hqQWgU"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1602,25 +1645,6 @@ exports[`Select empty results search 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding: 6px;
 }
 
 .c7 {
@@ -1680,6 +1704,25 @@ exports[`Select empty results search 1`] = `
   padding: 12px;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 6px;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -1723,8 +1766,8 @@ exports[`Select empty results search 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1787,18 +1830,14 @@ exports[`Select empty results search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
+  .c11 {
+    padding: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
     padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
   }
 }
 
@@ -1823,7 +1862,6 @@ exports[`Select empty results search 1`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2033,8 +2071,8 @@ exports[`Select large drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2049,10 +2087,6 @@ exports[`Select large drop container height 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
@@ -2082,7 +2116,6 @@ exports[`Select large drop container height 1`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2300,8 +2333,8 @@ exports[`Select medium drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2316,10 +2349,6 @@ exports[`Select medium drop container height 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
@@ -2349,7 +2378,6 @@ exports[`Select medium drop container height 1`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2852,6 +2880,7 @@ exports[`Select multiple 1`] = `
           autoComplete="off"
           className="c5 c6"
           id="test-select__input"
+          multiple={true}
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
@@ -3084,6 +3113,7 @@ exports[`Select multiple values 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__input"
+          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -3116,23 +3146,24 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 fDsgSi"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kDANyu"
+    class="StyledBox-sc-1etxkdl-0 kXvGJR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fBosDE"
+      class="StyledBox-sc-1etxkdl-0 jRWbFR"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-ilbntv-1 jIAIZE"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
+          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -3142,12 +3173,12 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bmLwcd"
+      class="StyledBox-sc-1etxkdl-0 hqQWgU"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3318,8 +3349,8 @@ exports[`Select multiple values 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3339,10 +3370,6 @@ exports[`Select multiple values 3`] = `
 .c9 {
   background: #7D4CDB;
   color: #FFFFFF;
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
@@ -3372,7 +3399,6 @@ exports[`Select multiple values 3`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -3436,9 +3462,75 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:768px) {
-  .bmLwcd {
+  .hqQWgU {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+.glTYPu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+@media only screen and (max-width:768px) {
+  .cWLJoU {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .dgYATf {
+    padding: 3px;
+  }
+}
+
+.GOEwZ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .GOEwZ {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
 }"
 `;
@@ -3670,22 +3762,22 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 fDsgSi"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kDANyu"
+    class="StyledBox-sc-1etxkdl-0 kXvGJR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fBosDE"
+      class="StyledBox-sc-1etxkdl-0 jRWbFR"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-ilbntv-1 jIAIZE"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3696,12 +3788,12 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bmLwcd"
+      class="StyledBox-sc-1etxkdl-0 hqQWgU"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3872,8 +3964,8 @@ exports[`Select opens 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3888,10 +3980,6 @@ exports[`Select opens 3`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
@@ -3921,7 +4009,6 @@ exports[`Select opens 3`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -3985,33 +4072,93 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:768px) {
-  .bmLwcd {
+  .hqQWgU {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+.glTYPu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+@media only screen and (max-width:768px) {
+  .cWLJoU {
+    padding: 6px;
+  }
+}
+
+.GOEwZ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .GOEwZ {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
 }"
 `;
 
 exports[`Select opens 5`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 fkRApQ SelectContainer__OptionsBox-sc-1wi0ul8-0 cNACBt"
+  class="StyledBox-sc-1etxkdl-0 iFUECt SelectContainer__OptionsBox-sc-64fnsh-0 gLkHaZ"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hTZIev"
+    class="StyledBox-sc-1etxkdl-0 dcDnjs"
   >
     <button
-      class="StyledButton-sc-323bzc-0 iElqND"
+      class="StyledButton-sc-1hmw3c5-0 eiCgMk"
       role="menuitem"
       tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bcEMiq SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+        class="StyledBox-sc-1etxkdl-0 cWLJoU SelectContainer__OptionBox-sc-64fnsh-1 gYOyZh"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bilRua"
+          class="StyledText-sc-3e83s1-0 hHNWhR"
         >
           one
         </span>
@@ -4019,19 +4166,19 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 hTZIev"
+    class="StyledBox-sc-1etxkdl-0 dcDnjs"
   >
     <button
-      class="StyledButton-sc-323bzc-0 iElqND"
+      class="StyledButton-sc-1hmw3c5-0 eiCgMk"
       role="menuitem"
       tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bcEMiq SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+        class="StyledBox-sc-1etxkdl-0 cWLJoU SelectContainer__OptionBox-sc-64fnsh-1 gYOyZh"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bilRua"
+          class="StyledText-sc-3e83s1-0 hHNWhR"
         >
           two
         </span>
@@ -4039,7 +4186,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 fmwxyt"
+    class="StyledBox-sc-1etxkdl-0 jBQShp"
   />
 </div>
 `;
@@ -4253,7 +4400,6 @@ exports[`Select renders custom icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -4491,7 +4637,6 @@ exports[`Select renders default icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -5388,7 +5533,6 @@ exports[`Select renders without icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -5653,25 +5797,6 @@ exports[`Select search 2`] = `
   flex-direction: column;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding: 6px;
-}
-
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5748,6 +5873,25 @@ exports[`Select search 2`] = `
   flex: 0 0 auto;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 6px;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -5795,8 +5939,8 @@ exports[`Select search 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -5859,18 +6003,14 @@ exports[`Select search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
+  .c11 {
+    padding: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
     padding: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
   }
 }
 
@@ -5895,7 +6035,6 @@ exports[`Select search 2`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -5973,9 +6112,75 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:768px) {
-  .bmLwcd {
+  .hqQWgU {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+.glTYPu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+@media only screen and (max-width:768px) {
+  .cWLJoU {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .dgYATf {
+    padding: 3px;
+  }
+}
+
+.GOEwZ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .GOEwZ {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
 }"
 `;
@@ -6783,6 +6988,7 @@ exports[`Select select another option 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__input"
+          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -7209,8 +7415,8 @@ exports[`Select small drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -7225,10 +7431,6 @@ exports[`Select small drop container height 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
@@ -7258,7 +7460,6 @@ exports[`Select small drop container height 1`] = `
 
 <div
   class="c0 c1"
-  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
