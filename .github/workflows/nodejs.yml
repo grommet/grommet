@@ -39,7 +39,7 @@ jobs:
           git checkout release
           pwd
           ls -al
-          find ./parent -mindepth 1 -name .git -prune -o -exec rm -rf {} \;
+          find . -mindepth 1 -name .git -prune -o -exec rm -rf {} \;
           ls -al
           cp -r ../../dist/* .
           ls -al
