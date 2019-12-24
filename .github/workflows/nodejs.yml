@@ -37,7 +37,7 @@ jobs:
           git clone "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           cd "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           git checkout release
-          cp -r "$GITHUB_WORKSPACE/.temp/dist/*" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
+          cp -r "$GITHUB_WORKSPACE/dist/*" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           mv -r .git ../
           rm -rf *
           mv -r ../.git ./
