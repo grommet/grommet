@@ -39,9 +39,9 @@ jobs:
           git checkout release
           pwd
           ls -al
-          find . \! -path '.git/**/*' -delete
+          find ./parent -mindepth 1 -name .git -prune -o -exec rm -rf {} \;
           ls -al
-          cp -r ../../dist/ .
+          cp -r ../../dist/* .
           ls -al
           ls -al "$GITHUB_WORKSPACE/dist"
           git status .
