@@ -39,12 +39,12 @@ jobs:
           git checkout release
           pwd
           ls -al
-          find . \! -name '.git' -delete
+          find . \! -path '.git/**/*' -delete
           ls -al
-          cp -r ../../dist/ .
+          cp -r ../../dist/dist/ .
           ls -al
-          ls -al "$GITHUB_WORKSPACE"
-          git status
+          ls -al "$GITHUB_WORKSPACE/dist"
+          git status .
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"        
           git add .
