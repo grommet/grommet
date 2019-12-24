@@ -41,7 +41,7 @@ jobs:
           ls -al
           find . \! -path '.git/**/*' -delete
           ls -al
-          cp -r ../../dist/dist/ .
+          cp -r ../../dist/ .
           ls -al
           ls -al "$GITHUB_WORKSPACE/dist"
           git status .
