@@ -37,10 +37,11 @@ jobs:
           git clone "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           cd "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           git checkout release
+          pwd
           ls -al
           find . \! -name '.git' -delete
           ls -al
-          cp "$GITHUB_WORKSPACE/dist/" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
+          cp -r "$GITHUB_WORKSPACE/dist/" "$GITHUB_WORKSPACE/.temp/mnet-ui-base"
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"        
           git add .
