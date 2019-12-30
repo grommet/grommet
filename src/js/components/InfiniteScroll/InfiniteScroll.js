@@ -113,6 +113,9 @@ const InfiniteScroll = ({
         ),
       );
 
+      // Do not update the next if both are same
+      if (nextBeginPage === nextEndPage) return;
+
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
       if (nextEndPage !== endPage) setEndPage(nextEndPage);
     };
