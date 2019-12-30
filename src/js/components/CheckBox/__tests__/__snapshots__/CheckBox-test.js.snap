@@ -85,6 +85,9 @@ exports[`CheckBox checked renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -271,6 +274,9 @@ exports[`CheckBox disabled renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   opacity: 0.5;
   cursor: default;
 }
@@ -491,6 +497,9 @@ exports[`CheckBox indeterminate renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -676,6 +685,9 @@ exports[`CheckBox label renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -841,6 +853,9 @@ exports[`CheckBox renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -998,6 +1013,9 @@ exports[`CheckBox reverse renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -1139,6 +1157,9 @@ exports[`CheckBox toggle renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
