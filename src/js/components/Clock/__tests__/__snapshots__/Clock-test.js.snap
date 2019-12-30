@@ -158,21 +158,21 @@ exports[`Clock run 1`] = `
 
 .c4 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -391,7 +391,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-sc-1qbr2eo-2 wQLuI"
+      class="StyledClock__StyledSecond-sc-1qbr2eo-2 gZEONi"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(204deg); transform-origin: 48px 48px;"
@@ -401,7 +401,7 @@ exports[`Clock run 2`] = `
       y2="9"
     />
     <line
-      class="StyledClock__StyledMinute-sc-1qbr2eo-1 fmMQAi"
+      class="StyledClock__StyledMinute-sc-1qbr2eo-1 bXcpcd"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(138deg); transform-origin: 48px 48px;"
@@ -411,7 +411,7 @@ exports[`Clock run 2`] = `
       y2="12"
     />
     <line
-      class="StyledClock__StyledHour-sc-1qbr2eo-0 gcQdOU"
+      class="StyledClock__StyledHour-sc-1qbr2eo-0 cYccIh"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
@@ -430,7 +430,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-sc-1qbr2eo-2 wQLuI"
+      class="StyledClock__StyledSecond-sc-1qbr2eo-2 gZEONi"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(204deg); transform-origin: 48px 48px;"
@@ -440,7 +440,7 @@ exports[`Clock run 2`] = `
       y2="9"
     />
     <line
-      class="StyledClock__StyledMinute-sc-1qbr2eo-1 fmMQAi"
+      class="StyledClock__StyledMinute-sc-1qbr2eo-1 bXcpcd"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(138deg); transform-origin: 48px 48px;"
@@ -450,7 +450,7 @@ exports[`Clock run 2`] = `
       y2="12"
     />
     <line
-      class="StyledClock__StyledHour-sc-1qbr2eo-0 gcQdOU"
+      class="StyledClock__StyledHour-sc-1qbr2eo-0 cYccIh"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
@@ -813,7 +813,7 @@ exports[`Clock type analog precision hours size large 1`] = `
 
 .c2 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -867,7 +867,7 @@ exports[`Clock type analog precision hours size medium 1`] = `
 
 .c2 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -921,7 +921,7 @@ exports[`Clock type analog precision hours size small 1`] = `
 
 .c2 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -975,7 +975,7 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 
 .c2 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1029,7 +1029,7 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 
 .c1 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1078,14 +1078,14 @@ exports[`Clock type analog precision minutes size large 1`] = `
 
 .c3 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1154,14 +1154,14 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 
 .c3 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1230,14 +1230,14 @@ exports[`Clock type analog precision minutes size small 1`] = `
 
 .c3 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1306,14 +1306,14 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
 
 .c3 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1382,14 +1382,14 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
 
 .c2 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1453,21 +1453,21 @@ exports[`Clock type analog precision seconds size large 1`] = `
 
 .c4 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1551,21 +1551,21 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 
 .c4 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1649,21 +1649,21 @@ exports[`Clock type analog precision seconds size small 1`] = `
 
 .c4 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1747,21 +1747,21 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 
 .c4 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1845,21 +1845,21 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 
 .c3 {
   stroke-width: 8px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
-  stroke: #777777;
+  stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
   stroke-width: 3px;
-  stroke: #6FFFB0;
+  stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }

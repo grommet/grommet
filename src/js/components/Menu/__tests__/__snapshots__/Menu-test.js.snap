@@ -111,8 +111,8 @@ exports[`Menu close by clicking outside 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -253,8 +253,8 @@ exports[`Menu close by clicking outside 2`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {
@@ -670,8 +670,8 @@ exports[`Menu close on esc 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -812,8 +812,8 @@ exports[`Menu close on tab 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -954,8 +954,8 @@ exports[`Menu custom a11yTitle 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -1097,8 +1097,8 @@ exports[`Menu custom message 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -1244,8 +1244,8 @@ exports[`Menu disabled 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -1389,8 +1389,8 @@ exports[`Menu gap between icon and label 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -1532,8 +1532,8 @@ exports[`Menu justify content 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -2005,8 +2005,8 @@ exports[`Menu navigate through suggestions and select 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -2147,8 +2147,8 @@ exports[`Menu open and close on click 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -2304,7 +2304,7 @@ exports[`Menu open and close on click 2`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 cNAKzl"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2327,8 +2327,8 @@ exports[`Menu open and close on click 3`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {
@@ -2758,8 +2758,8 @@ exports[`Menu reverse icon and label 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -2901,8 +2901,8 @@ exports[`Menu select an item 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -3043,8 +3043,8 @@ exports[`Menu tab through menu until it closes 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -3185,8 +3185,8 @@ exports[`Menu with dropAlign renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c5 g {
@@ -3327,8 +3327,8 @@ exports[`Menu with dropAlign renders 2`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {

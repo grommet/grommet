@@ -118,7 +118,7 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 
 .c0:hover {
   background-color: lightgreen;
-  color: #7D4CDB;
+  color: #EB5B5B;
 }
 
 @media only screen and (max-width:768px) {
@@ -983,7 +983,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-aqxhco-0 bWrgOF"
+    class="StyledMaskedInput-aqxhco-0 cEzwmq"
     data-testid="test-input"
     id="item"
     name="item"

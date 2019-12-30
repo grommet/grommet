@@ -8,8 +8,8 @@ exports[`Video autoPlay renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #fbfbfb;
+  stroke: #fbfbfb;
 }
 
 .c6 g {
@@ -47,7 +47,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(49,51,64,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -379,7 +379,7 @@ exports[`Video autoPlay renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#777777"
+                    stroke="#65707d"
                     strokeLinecap="square"
                     strokeWidth={12}
                   />
@@ -454,8 +454,8 @@ exports[`Video controls renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #fbfbfb;
+  stroke: #fbfbfb;
 }
 
 .c6 g {
@@ -527,7 +527,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(49,51,64,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -892,7 +892,7 @@ exports[`Video controls renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#777777"
+                    stroke="#65707d"
                     strokeLinecap="square"
                     strokeWidth={12}
                   />
@@ -1041,7 +1041,7 @@ exports[`Video controls renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#F2F2F2"
+                    stroke="#f6f6f8"
                     strokeLinecap="square"
                     strokeOpacity="0.4"
                     strokeWidth={12}
@@ -1117,8 +1117,8 @@ exports[`Video fit renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #fbfbfb;
+  stroke: #fbfbfb;
 }
 
 .c6 g {
@@ -1156,7 +1156,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(49,51,64,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1506,7 +1506,7 @@ exports[`Video fit renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#777777"
+                    stroke="#65707d"
                     strokeLinecap="square"
                     strokeWidth={12}
                   />
@@ -1658,7 +1658,7 @@ exports[`Video fit renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#777777"
+                    stroke="#65707d"
                     strokeLinecap="square"
                     strokeWidth={12}
                   />
@@ -1733,8 +1733,8 @@ exports[`Video loop renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #fbfbfb;
+  stroke: #fbfbfb;
 }
 
 .c6 g {
@@ -1772,7 +1772,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(49,51,64,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2104,7 +2104,7 @@ exports[`Video loop renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#777777"
+                    stroke="#65707d"
                     strokeLinecap="square"
                     strokeWidth={12}
                   />
@@ -2179,8 +2179,8 @@ exports[`Video mute renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #fbfbfb;
+  stroke: #fbfbfb;
 }
 
 .c6 g {
@@ -2218,7 +2218,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(49,51,64,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2550,7 +2550,7 @@ exports[`Video mute renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#777777"
+                    stroke="#65707d"
                     strokeLinecap="square"
                     strokeWidth={12}
                   />
@@ -2625,8 +2625,8 @@ exports[`Video renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #fbfbfb;
+  stroke: #fbfbfb;
 }
 
 .c6 g {
@@ -2664,7 +2664,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(49,51,64,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2996,7 +2996,7 @@ exports[`Video renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#777777"
+                    stroke="#65707d"
                     strokeLinecap="square"
                     strokeWidth={12}
                   />

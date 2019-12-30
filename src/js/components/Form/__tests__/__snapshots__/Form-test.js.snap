@@ -21,343 +21,6 @@ exports[`Form empty 1`] = `
 </div>
 `;
 
-exports[`Form errors 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-bottom: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  border-bottom: solid 1px #FF4040;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #FF4040;
-}
-
-.c5 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
-  border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c5::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c5:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c4 {
-  position: relative;
-  width: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    border-bottom: solid 1px #FF4040;
-  }
-}
-
-<div
-  className="c0"
->
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
-    <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
-    >
-      <div
-        className="c2"
-      >
-        <div
-          className="c3"
-        >
-          <div
-            className="c4"
-          >
-            <input
-              aria-invalid={true}
-              autoComplete="off"
-              className="c5"
-              name="test"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              value=""
-            />
-          </div>
-        </div>
-      </div>
-      <span
-        className="c6"
-      >
-        missing
-      </span>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`Form infos 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-bottom: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #666666;
-}
-
-.c5 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
-  border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c5::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c5:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c4 {
-  position: relative;
-  width: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-<div
-  className="c0"
->
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
-    <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
-    >
-      <div
-        className="c2"
-      >
-        <div
-          className="c3"
-        >
-          <div
-            className="c4"
-          >
-            <input
-              autoComplete="off"
-              className="c5"
-              name="test"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              value=""
-            />
-          </div>
-        </div>
-      </div>
-      <span
-        className="c6"
-      >
-        missing
-      </span>
-    </div>
-  </form>
-</div>
-`;
-
 exports[`Form regexp validation 1`] = `
 .c0 {
   margin-left: 12px;
@@ -366,19 +29,7 @@ exports[`Form regexp validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
+  color: #e35e59;
 }
 
 <span
@@ -396,19 +47,7 @@ exports[`Form required validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
+  color: #e35e59;
 }
 
 <span
@@ -461,22 +100,7 @@ exports[`Form update 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -488,15 +112,15 @@ exports[`Form update 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 4.800000000000001px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -505,11 +129,11 @@ exports[`Form update 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -527,28 +151,28 @@ exports[`Form update 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -578,17 +202,13 @@ exports[`Form update 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test"
-              placeholder="test input"
-              value=""
-            />
-          </div>
+            name="test"
+            placeholder="test input"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -601,121 +221,24 @@ exports[`Form update 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test2"
-              placeholder="test-2 input"
-              value=""
-            />
-          </div>
+            name="test2"
+            placeholder="test-2 input"
+            value=""
+          />
         </div>
       </div>
     </div>
     <button
-      class="c6"
+      class="c5"
       type="submit"
     >
       Submit
     </button>
   </form>
 </div>
-`;
-
-exports[`Form validate 1`] = `
-.c0 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #FF4040;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<span
-  class="c0"
->
-  simple string
-</span>
-`;
-
-exports[`Form validate 2`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<span
-  class="c0"
->
-   ReactNode 
-</span>
-`;
-
-exports[`Form validate 3`] = `
-<span
-  class="StyledText-sc-1sadyjn-0 keDfiS"
->
-  status error
-</span>
-`;
-
-exports[`Form validate 4`] = `
-.c0 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #666666;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<span
-  class="c0"
->
-  status info
-</span>
 `;
 
 exports[`Form with field 1`] = `
@@ -761,22 +284,7 @@ exports[`Form with field 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -794,28 +302,28 @@ exports[`Form with field 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -841,8 +349,6 @@ exports[`Form with field 1`] = `
   >
     <div
       className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
     >
       <div
         className="c2"
@@ -850,20 +356,16 @@ exports[`Form with field 1`] = `
         <div
           className="c3"
         >
-          <div
+          <input
+            autoComplete="off"
             className="c4"
-          >
-            <input
-              autoComplete="off"
-              className="c5"
-              name="test"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              value=""
-            />
-          </div>
+            name="test"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            value=""
+          />
         </div>
       </div>
     </div>

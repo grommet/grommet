@@ -737,8 +737,8 @@ exports[`Box background 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #7D4CDB;
-  color: #f8f8f8;
+  background: #EB5B5B;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -754,8 +754,8 @@ exports[`Box background 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #6FFFB0;
-  color: #444444;
+  background: #20314f;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -771,8 +771,8 @@ exports[`Box background 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #00873D;
-  color: #f8f8f8;
+  background: #519bff;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -788,7 +788,7 @@ exports[`Box background 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #F8F8F8;
+  background: #fbfbfb;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -805,7 +805,7 @@ exports[`Box background 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #333333;
+  background: #313340;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -822,8 +822,8 @@ exports[`Box background 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #FF4040;
-  color: #f8f8f8;
+  background: #e35e59;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1025,8 +1025,8 @@ exports[`Box background 1`] = `
   background-position: center center;
   background-size: cover;
   color: inherit;
-  background-color: rgba(111,255,176,1);
-  color: #444444;
+  background-color: rgba(32,49,79,1);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1583,7 +1583,7 @@ exports[`Box border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 1px #6FFFB0;
+  border: solid 1px #20314f;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1711,8 +1711,8 @@ exports[`Box border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-top: dotted 4px #6FFFB0;
-  border-left: dashed 12px #FD6FFF;
+  border-top: dotted 4px #20314f;
+  border-left: dashed 12px #519bff;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1797,7 +1797,7 @@ exports[`Box border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c8 {
-    border: solid 1px #6FFFB0;
+    border: solid 1px #20314f;
   }
 }
 
@@ -1845,13 +1845,13 @@ exports[`Box border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c16 {
-    border-top: dotted 4px #6FFFB0;
+    border-top: dotted 4px #20314f;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c16 {
-    border-left: dashed 6px #FD6FFF;
+    border-left: dashed 6px #519bff;
   }
 }
 
@@ -2220,7 +2220,7 @@ exports[`Box elevation 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #333333;
+  background: #313340;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;

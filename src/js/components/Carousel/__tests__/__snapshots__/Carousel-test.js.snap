@@ -42,8 +42,8 @@ exports[`Carousel basic 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c13 g {
@@ -465,8 +465,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c13 g {
@@ -888,8 +888,8 @@ exports[`Carousel navigate 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c13 g {
@@ -1341,7 +1341,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dSllCE"
+                class="StyledIcon-ofa7kd-0 cNAKzl"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1456,7 +1456,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dSllCE"
+                class="StyledIcon-ofa7kd-0 cNAKzl"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1551,8 +1551,8 @@ exports[`Carousel play 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c13 g {
@@ -2002,7 +2002,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dSllCE"
+                class="StyledIcon-ofa7kd-0 cNAKzl"
                 viewBox="0 0 24 24"
               >
                 <path

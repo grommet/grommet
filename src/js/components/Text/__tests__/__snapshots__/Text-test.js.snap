@@ -41,7 +41,7 @@ exports[`renders color 1`] = `
 .c1 {
   font-size: 18px;
   line-height: 24px;
-  color: #FF4040;
+  color: #e35e59;
 }
 
 <div

@@ -301,8 +301,8 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #6FFFB0;
-  color: #444444;
+  background: #20314f;
+  color: #f8f8f8;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
@@ -317,8 +317,8 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #6FFFB0;
-  color: #444444;
+  background: #20314f;
+  color: #f8f8f8;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -332,8 +332,8 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #6FFFB0;
-  color: #444444;
+  background: #20314f;
+  color: #f8f8f8;
   border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
@@ -348,7 +348,7 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #FD6FFF;
+  background: #519bff;
   color: #444444;
   padding-left: 12px;
   padding-right: 12px;
@@ -363,7 +363,7 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #81FCED;
+  background: #4DFFEA;
   color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -1017,7 +1017,7 @@ exports[`DataTable border 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-top: solid 2px #6FFFB0;
+  border-top: solid 2px #20314f;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -4850,8 +4850,8 @@ exports[`DataTable rowProps 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #6FFFB0;
-  color: #444444;
+  background: #20314f;
+  color: #f8f8f8;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding: 48px;
 }

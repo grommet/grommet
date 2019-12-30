@@ -105,7 +105,7 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -113,7 +113,7 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -121,7 +121,7 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -238,7 +238,7 @@ exports[`Diagram basic 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -355,7 +355,7 @@ exports[`Diagram color 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#7D4CDB"
+            stroke="#EB5B5B"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -472,7 +472,7 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 6,6 Q 6,6 6,6 T 6,6"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -480,7 +480,7 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 12,12 Q 12,12 12,12 T 12,12"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -488,7 +488,7 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 24,24 Q 24,24 24,24 T 24,24"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -605,7 +605,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -613,7 +613,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="3"
@@ -621,7 +621,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="6"
@@ -629,7 +629,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="12"
@@ -637,7 +637,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="24"
@@ -645,7 +645,7 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="5"
@@ -762,7 +762,7 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -770,7 +770,7 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
@@ -778,7 +778,7 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0 L 0,0 L 0,0"
             fill="none"
-            stroke="#6FFFB0"
+            stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"

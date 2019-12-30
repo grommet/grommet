@@ -9,8 +9,8 @@ exports[`default theme is used 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #7D4CDB;
-  color: #f8f8f8;
+  background: #EB5B5B;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -111,8 +111,8 @@ exports[`uses Grommet theme instead of default 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #7D4CDB;
-  color: #f8f8f8;
+  background: #EB5B5B;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;

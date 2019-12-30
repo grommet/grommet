@@ -8,8 +8,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {
@@ -282,7 +282,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 
 .c0:hover {
   background-color: lightgreen;
-  color: #7D4CDB;
+  color: #EB5B5B;
 }
 
 .c2 {
@@ -323,8 +323,8 @@ exports[`Select basic 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -560,8 +560,8 @@ exports[`Select complex options and children 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -810,7 +810,7 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 cNAKzl"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1120,8 +1120,8 @@ exports[`Select deselect an option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -1345,8 +1345,8 @@ exports[`Select disabled 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -1599,7 +1599,7 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 cNAKzl"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2447,8 +2447,8 @@ exports[`Select modifies select control style on open 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {
@@ -2687,8 +2687,8 @@ exports[`Select multiple 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -2926,8 +2926,8 @@ exports[`Select multiple values 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -3178,7 +3178,7 @@ exports[`Select multiple values 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 cNAKzl"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3368,7 +3368,7 @@ exports[`Select multiple values 3`] = `
 }
 
 .c9 {
-  background: #7D4CDB;
+  background: #EB5B5B;
   color: #FFFFFF;
 }
 
@@ -3543,8 +3543,8 @@ exports[`Select opens 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -3793,7 +3793,7 @@ exports[`Select opens 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 cNAKzl"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -4199,8 +4199,8 @@ exports[`Select renders custom icon 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -4436,8 +4436,8 @@ exports[`Select renders default icon 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -4674,8 +4674,8 @@ exports[`Select renders styled select options backwards compatible with legacy
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {
@@ -4915,8 +4915,8 @@ exports[`Select renders styled select options combining select.options.box &&
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {
@@ -5154,8 +5154,8 @@ exports[`Select renders styled select options using select.options.container 1`]
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c9 g {
@@ -5548,8 +5548,8 @@ exports[`Select search 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -6193,8 +6193,8 @@ exports[`Select select an option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -6417,8 +6417,8 @@ exports[`Select select an option with complex options 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c4 g {
@@ -6577,8 +6577,8 @@ exports[`Select select an option with enter 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -6801,8 +6801,8 @@ exports[`Select select another option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {
@@ -7026,8 +7026,8 @@ exports[`Select size 1`] = `
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
+  fill: #EB5B5B;
+  stroke: #EB5B5B;
 }
 
 .c8 g {

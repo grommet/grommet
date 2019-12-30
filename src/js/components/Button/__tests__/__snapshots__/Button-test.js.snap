@@ -13,8 +13,8 @@ exports[`Button as 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -28,7 +28,7 @@ exports[`Button as 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c0 {
@@ -68,8 +68,8 @@ exports[`Button basic 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -83,7 +83,7 @@ exports[`Button basic 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c0 {
@@ -126,8 +126,8 @@ exports[`Button children function 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -141,7 +141,7 @@ exports[`Button children function 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c2 {
@@ -193,8 +193,8 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #6FFFB0;
-  border-radius: 18px;
+  border: 2px solid #20314f;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -208,7 +208,7 @@ exports[`Button color 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #6FFFB0;
+  box-shadow: 0px 0px 0px 2px #20314f;
 }
 
 .c2 {
@@ -223,15 +223,15 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #6FFFB0;
-  border-radius: 18px;
+  border: 2px solid #20314f;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #6FFFB0;
-  color: #444444;
-  border-radius: 18px;
+  background: #20314f;
+  color: #f8f8f8;
+  border-radius: 4.800000000000001px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -241,7 +241,7 @@ exports[`Button color 1`] = `
 }
 
 .c2:hover {
-  box-shadow: 0px 0px 0px 2px #6FFFB0;
+  box-shadow: 0px 0px 0px 2px #20314f;
 }
 
 .c3 {
@@ -257,14 +257,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #111111;
-  border-radius: 18px;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
   background: #111111;
   color: #f8f8f8;
-  border-radius: 18px;
+  border-radius: 4.800000000000001px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -290,14 +290,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #123;
-  border-radius: 18px;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
   background: #123;
   color: #f8f8f8;
-  border-radius: 18px;
+  border-radius: 4.800000000000001px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -383,8 +383,8 @@ exports[`Button disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -425,6 +425,36 @@ exports[`Button disabled 1`] = `
 `;
 
 exports[`Button fill 1`] = `
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -455,8 +485,8 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -476,37 +506,7 @@ exports[`Button fill 1`] = `
 }
 
 .c2:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c3 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c3:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c4 {
@@ -521,8 +521,8 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -537,7 +537,7 @@ exports[`Button fill 1`] = `
 }
 
 .c4:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c5 {
@@ -552,8 +552,8 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -568,7 +568,7 @@ exports[`Button fill 1`] = `
 }
 
 .c5:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c0 {
@@ -641,15 +641,15 @@ exports[`Button focus 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  outline-color: #6FFFB0;
-  border-color: #6FFFB0;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  outline-color: #519bff;
+  border-color: #519bff;
+  box-shadow: 0 0 2px 2px #519bff;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -665,7 +665,7 @@ exports[`Button focus 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #6FFFB0 solid 2px;
+  outline: #519bff solid 2px;
 }
 
 .c1::-moz-focus-inner {
@@ -714,8 +714,8 @@ exports[`Button hoverIndicator as object with color 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(125,76,219,1);
-  color: #FFFFFF;
+  background-color: rgba(235,91,91,1);
+  color: #000000;
 }
 
 .c0 {
@@ -867,7 +867,7 @@ exports[`Button hoverIndicator color 1`] = `
 }
 
 .c1:hover {
-  background: #777777;
+  background: #65707d;
   color: #FFFFFF;
 }
 
@@ -911,8 +911,8 @@ exports[`Button href 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -926,7 +926,7 @@ exports[`Button href 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c0 {
@@ -996,8 +996,8 @@ exports[`Button icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -1011,7 +1011,7 @@ exports[`Button icon label 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c0 {
@@ -1062,15 +1062,15 @@ exports[`Button primary 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 4.800000000000001px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1080,7 +1080,7 @@ exports[`Button primary 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c0 {
@@ -1153,8 +1153,8 @@ exports[`Button reverse icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
+  border: 2px solid #EB5B5B;
+  border-radius: 4.800000000000001px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -1168,7 +1168,7 @@ exports[`Button reverse icon label 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  box-shadow: 0px 0px 0px 2px #EB5B5B;
 }
 
 .c0 {
@@ -1201,613 +1201,6 @@ exports[`Button reverse icon label 1`] = `
         className="c3"
       />
       <svg />
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Button size 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c11 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c11 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c11 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 20px;
-  font-size: 14px;
-  line-height: 20px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c2 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c2:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c3 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 24px;
-  color: #444444;
-  padding: 8px 32px;
-  font-size: 22px;
-  line-height: 28px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c3:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c4 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 20px;
-  font-size: 14px;
-  line-height: 20px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c4:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c5:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c6 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 24px;
-  color: #444444;
-  padding: 8px 32px;
-  font-size: 22px;
-  line-height: 28px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c6:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  className="c0"
->
-  <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Small
-  </button>
-  <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Medium
-  </button>
-  <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Default
-  </button>
-  <button
-    className="c3"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Large
-  </button>
-  <button
-    className="c4"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Small
-  </button>
-  <button
-    className="c5"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Medium
-  </button>
-  <button
-    className="c5"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Default
-  </button>
-  <button
-    className="c6"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    Large
-  </button>
-  <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <svg
-      aria-label="Add"
-      className="c8"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M12,22 L12,2 M2,12 L22,12"
-        fill="none"
-        stroke="#000"
-        strokeWidth="2"
-      />
-    </svg>
-  </button>
-  <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <svg
-      aria-label="Add"
-      className="c8"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M12,22 L12,2 M2,12 L22,12"
-        fill="none"
-        stroke="#000"
-        strokeWidth="2"
-      />
-    </svg>
-  </button>
-  <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <svg
-      aria-label="Add"
-      className="c8"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M12,22 L12,2 M2,12 L22,12"
-        fill="none"
-        stroke="#000"
-        strokeWidth="2"
-      />
-    </svg>
-  </button>
-  <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <svg
-      aria-label="Add"
-      className="c8"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M12,22 L12,2 M2,12 L22,12"
-        fill="none"
-        stroke="#000"
-        strokeWidth="2"
-      />
-    </svg>
-  </button>
-  <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <div
-      className="c9"
-    >
-      Small
-      <div
-        className="c10"
-      />
-      <svg
-        aria-label="Next"
-        className="c11"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="7 2 17 12 7 22"
-          stroke="#000"
-          strokeWidth="2"
-        />
-      </svg>
-    </div>
-  </button>
-  <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <div
-      className="c9"
-    >
-      Medium
-      <div
-        className="c10"
-      />
-      <svg
-        aria-label="Next"
-        className="c11"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="7 2 17 12 7 22"
-          stroke="#000"
-          strokeWidth="2"
-        />
-      </svg>
-    </div>
-  </button>
-  <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <div
-      className="c9"
-    >
-      Default
-      <div
-        className="c10"
-      />
-      <svg
-        aria-label="Next"
-        className="c11"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="7 2 17 12 7 22"
-          stroke="#000"
-          strokeWidth="2"
-        />
-      </svg>
-    </div>
-  </button>
-  <button
-    className="c3"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-    type="button"
-  >
-    <div
-      className="c9"
-    >
-      Large
-      <div
-        className="c10"
-      />
-      <svg
-        aria-label="Next"
-        className="c11"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="7 2 17 12 7 22"
-          stroke="#000"
-          strokeWidth="2"
-        />
-      </svg>
     </div>
   </button>
 </div>

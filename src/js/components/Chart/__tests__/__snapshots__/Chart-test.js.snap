@@ -59,7 +59,7 @@ exports[`Chart cap renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={24}
@@ -85,7 +85,7 @@ exports[`Chart cap renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={24}
@@ -107,8 +107,8 @@ exports[`Chart cap renders 1`] = `
     width={384}
   >
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#20314f"
+      stroke="#20314f"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={24}
@@ -128,7 +128,7 @@ exports[`Chart cap renders 1`] = `
     width={384}
   >
     <g
-      fill="#6FFFB0"
+      fill="#20314f"
       stroke="none"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -191,7 +191,7 @@ exports[`Chart color renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#7D4CDB"
+      stroke="#EB5B5B"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -218,7 +218,7 @@ exports[`Chart color renders 1`] = `
     <g
       fill="none"
       opacity={0.8}
-      stroke="#7D4CDB"
+      stroke="#EB5B5B"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -256,7 +256,7 @@ exports[`Chart color renders 1`] = `
         />
         <stop
           offset={1}
-          stopColor="#7D4CDB"
+          stopColor="#EB5B5B"
         />
       </linearGradient>
       <mask
@@ -342,7 +342,7 @@ exports[`Chart gap renders 1`] = `
     >
       <g
         fill="none"
-        stroke="#6FFFB0"
+        stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         strokeWidth={24}
@@ -368,7 +368,7 @@ exports[`Chart gap renders 1`] = `
     >
       <g
         fill="none"
-        stroke="#6FFFB0"
+        stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         strokeWidth={24}
@@ -394,7 +394,7 @@ exports[`Chart gap renders 1`] = `
     >
       <g
         fill="none"
-        stroke="#6FFFB0"
+        stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         strokeWidth={24}
@@ -444,7 +444,7 @@ exports[`Chart renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -509,7 +509,7 @@ exports[`Chart size renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -535,7 +535,7 @@ exports[`Chart size renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -561,7 +561,7 @@ exports[`Chart size renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -587,7 +587,7 @@ exports[`Chart size renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -613,7 +613,7 @@ exports[`Chart size renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -642,7 +642,7 @@ exports[`Chart size renders 1`] = `
     >
       <g
         fill="none"
-        stroke="#6FFFB0"
+        stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         strokeWidth={24}
@@ -668,7 +668,7 @@ exports[`Chart size renders 1`] = `
     >
       <g
         fill="none"
-        stroke="#6FFFB0"
+        stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         strokeWidth={24}
@@ -718,7 +718,7 @@ exports[`Chart thickness renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={6}
@@ -744,7 +744,7 @@ exports[`Chart thickness renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={12}
@@ -770,7 +770,7 @@ exports[`Chart thickness renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -796,7 +796,7 @@ exports[`Chart thickness renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={48}
@@ -822,7 +822,7 @@ exports[`Chart thickness renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={96}
@@ -871,7 +871,7 @@ exports[`Chart type renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -897,7 +897,7 @@ exports[`Chart type renders 1`] = `
   >
     <g
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -919,8 +919,8 @@ exports[`Chart type renders 1`] = `
     width={384}
   >
     <g
-      fill="#6FFFB0"
-      stroke="#6FFFB0"
+      fill="#20314f"
+      stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -940,7 +940,7 @@ exports[`Chart type renders 1`] = `
     width={384}
   >
     <g
-      fill="#6FFFB0"
+      fill="#20314f"
       stroke="none"
       strokeLinecap="butt"
       strokeLinejoin="miter"
