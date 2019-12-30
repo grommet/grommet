@@ -5,6 +5,13 @@ import { Anchor, Box, Grommet, Header, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Avatar } from '../../Header/stories/Simple';
 
+const items = [
+  { label: 'HTML', href: '#' },
+  { label: 'JS', href: '#' },
+  { label: 'CSS', href: '#' },
+  { label: 'REACT', href: '#' },
+];
+
 const OnHeader = () => (
   <Grommet theme={grommet}>
     <Header background="dark-1" pad="medium">
@@ -14,15 +21,11 @@ const OnHeader = () => (
           ShimiSun
         </Anchor>
       </Box>
-      <Nav
-        direction="row"
-        items={[
-          { label: 'HTML', href: '#' },
-          { label: 'JS', href: '#' },
-          { label: 'CSS', href: '#' },
-          { label: 'REACT', href: '#' },
-        ]}
-      />
+      <Nav direction="row">
+        {items.map(item => (
+          <Anchor href={item.href} label={item.label} key={item.label} />
+        ))}
+      </Nav>
     </Header>
   </Grommet>
 );

@@ -11,12 +11,4 @@ import { Nav } from 'grommet';
 
 ## Properties
 
-**items**
-
-Navigation items to be placed inside the Nav.
-The object values are 'label' for the Anchor label and 'href' for its link.
-
-```
-[object]
-```
   
