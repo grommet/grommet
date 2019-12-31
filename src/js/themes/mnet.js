@@ -11,18 +11,7 @@ export const mnet = deepFreeze({
       },
     },
     font: {
-      family: `
-         Roboto,
-         Oxygen,
-         Ubuntu,
-         Cantarell,
-         "Fira Sans",
-         "Droid Sans",
-         "Helvetica Neue",
-         Arial, sans-serif,
-         "Apple Color Emoji",
-         "Segoe UI Emoji",
-         "Segoe UI Symbol"`,
+      family: 'Open Sans',
     },
   },
   button: {
