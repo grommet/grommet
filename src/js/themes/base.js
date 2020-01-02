@@ -20,7 +20,7 @@ import { base as iconBase } from 'grommet-icons/themes/base';
 import { deepFreeze, deepMerge } from '../utils/object';
 import { normalizeColor } from '../utils/colors';
 
-const brandColor = '#EB5B5B';
+const brandColor = '#E15151';
 const accentColors = ['#20314f', '#519bff', '#4DFFEA', '#A4FF4D'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
@@ -72,7 +72,7 @@ const colors = {
   },
   brand: brandColor,
   control: {
-    dark: 'accent-1',
+    dark: 'brand',
     light: 'brand',
   },
   focus: focusColor,
@@ -81,7 +81,7 @@ const colors = {
   'graph-2': 'neutral-2',
   'graph-3': 'neutral-3',
   'graph-4': 'neutral-4',
-  placeholder: '#AAAAAA',
+  placeholder: '#e0e4ee',
   selected: 'brand',
   text: {
     dark: '#f8f8f8',
@@ -314,7 +314,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       textDecoration: 'none',
       fontWeight: 600,
       color: {
-        dark: 'accent-1',
+        dark: 'brand',
         light: 'brand',
       },
       hover: {
@@ -811,7 +811,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         side: 'bottom',
         size: 'small',
         color: {
-          dark: 'accent-1',
+          dark: 'brand',
           light: 'brand',
         },
         active: {

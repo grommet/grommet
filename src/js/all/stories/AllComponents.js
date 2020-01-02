@@ -33,15 +33,9 @@ import {
   TextInput,
   Video,
 } from 'grommet';
-import { grommet, dark } from 'grommet/themes';
+import { mnet, dark } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
-import { hpe as hpeV0 } from 'grommet-theme-hpe-v0';
-import { aruba } from 'grommet-theme-aruba';
-import { hp } from 'grommet-theme-hp';
-import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -67,22 +61,16 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 
 const themes = {
   dark,
-  grommet,
-  hpe,
-  hpeV0,
-  aruba,
-  hp,
-  dxc,
-  v1,
+  mnet,
 };
 
 const Components = () => {
-  const [baseSize, setBaseSize] = useState(24);
+  const [baseSize, setBaseSize] = useState(16);
   const [checkBox, setCheckBox] = useState(true);
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
   const [themeMode, setThemeMode] = useState();
-  const [themeName, setThemeName] = useState('grommet');
+  const [themeName, setThemeName] = useState('mnet');
   const [background, setBackground] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -281,7 +269,7 @@ const Components = () => {
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Grommet theme={grommet} style={{ flex: '0 0 auto' }}>
+      <Grommet theme={mnet} style={{ flex: '0 0 auto' }}>
         <Box
           direction="row-responsive"
           gap="medium"
@@ -293,16 +281,7 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={[
-                'grommet',
-                'dark',
-                'hpe',
-                'hpeV0',
-                'aruba',
-                'hp',
-                'dxc',
-                'v1',
-              ]}
+              options={['mnet', 'dark']}
               value={themeName}
               onChange={event => setThemeName(event.option)}
             />
