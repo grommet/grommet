@@ -55,7 +55,9 @@ function (_Component) {
   var _proto = LayerContainer.prototype;
 
   _proto.componentDidMount = function componentDidMount() {
-    var position = this.props.position;
+    var _this$props = this.props,
+        position = _this$props.position,
+        modal = _this$props.modal;
 
     if (position !== 'hidden') {
       this.makeLayerVisible(); // Once layer is open we make sure it has focus so that you
@@ -74,7 +76,7 @@ function (_Component) {
         element = element.parentElement;
       }
 
-      if (!element && this.anchorRef.current) {
+      if (modal && !element && this.anchorRef.current) {
         this.anchorRef.current.focus();
       }
     }
@@ -89,17 +91,17 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    var _this$props = this.props,
-        children = _this$props.children,
-        id = _this$props.id,
-        modal = _this$props.modal,
-        onClickOutside = _this$props.onClickOutside,
-        onEsc = _this$props.onEsc,
-        plain = _this$props.plain,
-        position = _this$props.position,
-        responsive = _this$props.responsive,
-        propsTheme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "id", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "theme"]);
+    var _this$props2 = this.props,
+        children = _this$props2.children,
+        id = _this$props2.id,
+        modal = _this$props2.modal,
+        onClickOutside = _this$props2.onClickOutside,
+        onEsc = _this$props2.onEsc,
+        plain = _this$props2.plain,
+        position = _this$props2.position,
+        responsive = _this$props2.responsive,
+        propsTheme = _this$props2.theme,
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["children", "id", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "theme"]);
 
     var theme = this.context || propsTheme;
     var content = React.createElement(StyledContainer, _extends({
