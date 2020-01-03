@@ -112,7 +112,9 @@ class Calendar extends Component {
     return null;
   }
 
-  state = {};
+  state = {
+    focusOnCalendar: false,
+  };
 
   dayRefs = {};
 
@@ -188,6 +190,7 @@ class Calendar extends Component {
   onFocus = day => () => {
     const { bounds } = this.props;
     const { reference } = this.state;
+    this.setState({ focusOnCalendar: true });
     if (betweenDates(day, bounds)) {
       this.setState({ focused: day }, () => {
         if (day.getMonth() !== reference.getMonth()) {
@@ -308,7 +311,16 @@ class Calendar extends Component {
       theme,
       ...rest
     } = this.props;
-    const { date, dates, focused, start, reference, end, slide } = this.state;
+    const {
+      date,
+      dates,
+      focused,
+      start,
+      reference,
+      end,
+      slide,
+      focusOnCalendar,
+    } = this.state;
 
     // We have to deal with reference being the end of a month with more
     // days than the month we are changing to. So, we always set reference
@@ -363,7 +375,10 @@ class Calendar extends Component {
               disabled={dayDisabled}
               onClick={this.onClickDay(dateString)}
               onFocus={this.onFocus(day)}
-              onBlur={() => this.setState({ focused: false })}
+              onBlur={() =>
+                this.setState({ focused: false, focusOnCalendar: false })
+              }
+              tabIndex={focusOnCalendar ? -1 : 0}
             >
               <StyledDay
                 inRange={inRange}
@@ -393,8 +408,14 @@ class Calendar extends Component {
             event.preventDefault();
             this.setFocus(addDays(focused, 7));
           }}
-          onLeft={() => focused && this.setFocus(addDays(focused, -1))}
-          onRight={() => focused && this.setFocus(addDays(focused, 1))}
+          onLeft={event => {
+            event.preventDefault();
+            this.setFocus(addDays(focused, -1));
+          }}
+          onRight={event => {
+            event.preventDefault();
+            this.setFocus(addDays(focused, 1));
+          }}
         >
           <Box>
             {header
