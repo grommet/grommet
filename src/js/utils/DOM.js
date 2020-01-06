@@ -13,8 +13,12 @@ export const filterByFocusable = elements =>
     if (currentTag === 'svg' || currentTag === 'div') {
       return (
         isValidTag &&
-        element.hasAttribute('tabindex') &&
-        element.getAttribute('tabindex') !== '-1'
+        ((element.hasAttribute('tabindex') &&
+          element.getAttribute('tabindex') !== '-1') ||
+          // If element was previously focusable, we want to be able
+          // to access it in makeNodeFocusable
+          (element.hasAttribute('data-g-tabindex') &&
+            element.getAttribute('data-g-tabindex') === '0'))
       );
     }
     return isValidTag;
