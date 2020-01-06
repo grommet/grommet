@@ -1,19 +1,13 @@
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
-import { buildState } from './buildState';
+import { buildFooterValues, buildGroups, buildGroupState, filterAndSortData, initializeFilters, normalizePrimaryProperty } from './buildState';
 import { StyledDataTable } from './StyledDataTable';
 var contexts = ['header', 'body', 'footer'];
 
@@ -29,101 +23,110 @@ var normalizeProp = function normalizeProp(prop, context) {
   return undefined;
 };
 
-var DataTable =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(DataTable, _Component);
+var DataTable = function DataTable(_ref) {
+  var background = _ref.background,
+      border = _ref.border,
+      _ref$columns = _ref.columns,
+      columns = _ref$columns === void 0 ? [] : _ref$columns,
+      _ref$data = _ref.data,
+      data = _ref$data === void 0 ? [] : _ref$data,
+      groupBy = _ref.groupBy,
+      onClickRow = _ref.onClickRow,
+      onMore = _ref.onMore,
+      onSearch = _ref.onSearch,
+      replace = _ref.replace,
+      pad = _ref.pad,
+      primaryKey = _ref.primaryKey,
+      resizeable = _ref.resizeable,
+      rowProps = _ref.rowProps,
+      size = _ref.size,
+      sortable = _ref.sortable,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? 50 : _ref$step,
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "groupBy", "onClickRow", "onMore", "onSearch", "replace", "pad", "primaryKey", "resizeable", "rowProps", "size", "sortable", "step"]);
 
-  function DataTable() {
-    var _this;
+  // property name of the primary property
+  var primaryProperty = useMemo(function () {
+    return normalizePrimaryProperty(columns, primaryKey);
+  }, [columns, primaryKey]); // whether or not we should show a footer
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  var showFooter = useMemo(function () {
+    return columns.filter(function (c) {
+      return c.footer;
+    }).length > 0;
+  }, [columns]); // what column we are actively capturing filter input on
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+  var _useState = useState(),
+      filtering = _useState[0],
+      setFiltering = _useState[1]; // the currently active filters
 
-    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_this), "onFiltering", function (property) {
-      _this.setState({
-        filtering: property
+  var _useState2 = useState(initializeFilters(columns)),
+      filters = _useState2[0],
+      setFilters = _useState2[1]; // which column we are sorting on, with direction
+
+
+  var _useState3 = useState({}),
+      sort = _useState3[0],
+      setSort = _useState3[1]; // the data filtered and sorted, if needed
+
+
+  var adjustedData = useMemo(function () {
+    return filterAndSortData(data, filters, onSearch, sort);
+  }, [data, filters, onSearch, sort]); // the values to put in the footer cells
+
+  var footerValues = useMemo(function () {
+    return buildFooterValues(columns, adjustedData);
+  }, [adjustedData, columns]); // if groupBy, an array with one item per unique groupBy key value
+
+  var groups = useMemo(function () {
+    return buildGroups(columns, adjustedData, groupBy);
+  }, [adjustedData, columns, groupBy]); // an object indicating which group values are expanded
+
+  var _useState4 = useState(buildGroupState(groups, groupBy)),
+      groupState = _useState4[0],
+      setGroupState = _useState4[1]; // any customized column widths
+
+
+  var _useState5 = useState({}),
+      widths = _useState5[0],
+      setWidths = _useState5[1]; // remember that we are filtering on this property
+
+
+  var onFiltering = function onFiltering(property) {
+    return setFiltering(property);
+  }; // remember the search text we should filter this property by
+
+
+  var onFilter = function onFilter(property, value) {
+    var nextFilters = _extends({}, filters);
+
+    nextFilters[property] = value;
+    setFilters(nextFilters); // Let caller know about search, if interested
+
+    if (onSearch) onSearch(nextFilters);
+  }; // toggle the sort direction on this property
+
+
+  var onSort = function onSort(property) {
+    return function () {
+      var ascending = sort && property === sort.property ? !sort.ascending : true;
+      setSort({
+        property: property,
+        ascending: ascending
       });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onFilter", function (property, value) {
-      /* eslint-disable-next-line react/prop-types */
-      var onSearch = _this.props.onSearch;
-      var filters = _this.state.filters;
-
-      var nextFilters = _extends({}, filters);
-
-      nextFilters[property] = value;
-
-      _this.setState({
-        filters: nextFilters
-      }); // Let caller know about search, if interested
+    };
+  }; // toggle whether the group is expanded
 
 
-      if (onSearch) {
-        onSearch(nextFilters);
-      }
-    });
+  var onToggleGroup = function onToggleGroup(groupValue) {
+    return function () {
+      var nextGroupState = _extends({}, groupState);
 
-    _defineProperty(_assertThisInitialized(_this), "onSort", function (property) {
-      return function () {
-        var sort = _this.state.sort;
-        var ascending = sort && property === sort.property ? !sort.ascending : true;
-
-        _this.setState({
-          sort: {
-            property: property,
-            ascending: ascending
-          }
-        });
-      };
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onToggleGroup", function (groupValue) {
-      return function () {
-        var groupState = _this.state.groupState;
-        var groupBy = _this.props.groupBy;
-
-        var nextGroupState = _extends({}, groupState);
-
-        nextGroupState[groupValue] = _extends({}, nextGroupState[groupValue], {
-          expanded: !nextGroupState[groupValue].expanded
-        });
-
-        _this.setState({
-          groupState: nextGroupState
-        });
-
-        if (groupBy.onExpand) {
-          var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
-            return nextGroupState[k].expanded;
-          });
-          groupBy.onExpand(expandedKeys);
-        }
-      };
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onToggleGroups", function () {
-      var groupState = _this.state.groupState;
-      var groupBy = _this.props.groupBy;
-      var expanded = Object.keys(groupState).filter(function (k) {
-        return !groupState[k].expanded;
-      }).length === 0;
-      var nextGroupState = {};
-      Object.keys(groupState).forEach(function (k) {
-        nextGroupState[k] = _extends({}, groupState[k], {
-          expanded: !expanded
-        });
+      nextGroupState[groupValue] = _extends({}, nextGroupState[groupValue], {
+        expanded: !nextGroupState[groupValue].expanded
       });
-
-      _this.setState({
-        groupState: nextGroupState
-      });
+      setGroupState(nextGroupState);
 
       if (groupBy.onExpand) {
         var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
@@ -131,127 +134,96 @@ function (_Component) {
         });
         groupBy.onExpand(expandedKeys);
       }
+    };
+  }; // toggle whether all groups are expanded
+
+
+  var onToggleGroups = function onToggleGroups() {
+    var expanded = Object.keys(groupState).filter(function (k) {
+      return !groupState[k].expanded;
+    }).length === 0;
+    var nextGroupState = {};
+    Object.keys(groupState).forEach(function (k) {
+      nextGroupState[k] = _extends({}, groupState[k], {
+        expanded: !expanded
+      });
     });
+    setGroupState(nextGroupState);
 
-    _defineProperty(_assertThisInitialized(_this), "onResize", function (property) {
-      return function (width) {
-        var widths = _this.state.widths;
+    if (groupBy.onExpand) {
+      var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
+        return nextGroupState[k].expanded;
+      });
+      groupBy.onExpand(expandedKeys);
+    }
+  }; // remember the width this property's column should be
 
-        var nextWidths = _extends({}, widths || {});
 
-        nextWidths[property] = width;
+  var onResize = function onResize(property) {
+    return function (width) {
+      var nextWidths = _extends({}, widths);
 
-        _this.setState({
-          widths: nextWidths
-        });
-      };
-    });
+      nextWidths[property] = width;
+      setWidths(nextWidths);
+    };
+  };
 
-    return _this;
+  if (size && resizeable) {
+    console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  DataTable.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    return buildState(nextProps, prevState);
-  };
-
-  var _proto = DataTable.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        background = _this$props.background,
-        border = _this$props.border,
-        columns = _this$props.columns,
-        propsData = _this$props.data,
-        groupBy = _this$props.groupBy,
-        onMore = _this$props.onMore,
-        replace = _this$props.replace,
-        pad = _this$props.pad,
-        resizeable = _this$props.resizeable,
-        rowProps = _this$props.rowProps,
-        size = _this$props.size,
-        sortable = _this$props.sortable,
-        step = _this$props.step,
-        onClickRow = _this$props.onClickRow,
-        onSearch = _this$props.onSearch,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["background", "border", "columns", "data", "groupBy", "onMore", "replace", "pad", "resizeable", "rowProps", "size", "sortable", "step", "onClickRow", "onSearch"]);
-
-    var _this$state = this.state,
-        data = _this$state.data,
-        filtering = _this$state.filtering,
-        filters = _this$state.filters,
-        footerValues = _this$state.footerValues,
-        groups = _this$state.groups,
-        groupState = _this$state.groupState,
-        primaryProperty = _this$state.primaryProperty,
-        showFooter = _this$state.showFooter,
-        sort = _this$state.sort,
-        widths = _this$state.widths;
-
-    if (size && resizeable) {
-      console.warn('DataTable cannot combine "size" and "resizeble".');
-    }
-
-    return React.createElement(StyledDataTable, rest, React.createElement(Header, {
-      background: normalizeProp(background, 'header'),
-      border: normalizeProp(border, 'header'),
-      columns: columns,
-      filtering: filtering,
-      filters: filters,
-      groups: groups,
-      groupState: groupState,
-      pad: normalizeProp(pad, 'header'),
-      size: size,
-      sort: sort,
-      widths: widths,
-      onFiltering: this.onFiltering,
-      onFilter: this.onFilter,
-      onResize: resizeable ? this.onResize : undefined,
-      onSort: sortable ? this.onSort : undefined,
-      onToggle: this.onToggleGroups
-    }), groups ? React.createElement(GroupedBody, {
-      background: normalizeProp(background, 'body'),
-      border: normalizeProp(border, 'body'),
-      columns: columns,
-      groupBy: groupBy.property ? groupBy.property : groupBy,
-      groups: groups,
-      groupState: groupState,
-      pad: normalizeProp(pad, 'body'),
-      primaryProperty: primaryProperty,
-      onToggle: this.onToggleGroup,
-      size: size
-    }) : React.createElement(Body, {
-      background: normalizeProp(background, 'body'),
-      border: normalizeProp(border, 'body'),
-      columns: columns,
-      data: data,
-      onMore: onMore,
-      replace: replace,
-      onClickRow: onClickRow,
-      pad: normalizeProp(pad, 'body'),
-      primaryProperty: primaryProperty,
-      rowProps: rowProps,
-      size: size,
-      step: step
-    }), showFooter && React.createElement(Footer, {
-      background: normalizeProp(background, 'footer'),
-      border: normalizeProp(border, 'footer'),
-      columns: columns,
-      footerValues: footerValues,
-      groups: groups,
-      pad: normalizeProp(pad, 'footer'),
-      primaryProperty: primaryProperty,
-      size: size
-    }));
-  };
-
-  return DataTable;
-}(Component);
-
-_defineProperty(DataTable, "defaultProps", {
-  columns: [],
-  data: [],
-  step: 50
-});
+  return React.createElement(StyledDataTable, rest, React.createElement(Header, {
+    background: normalizeProp(background, 'header'),
+    border: normalizeProp(border, 'header'),
+    columns: columns,
+    filtering: filtering,
+    filters: filters,
+    groups: groups,
+    groupState: groupState,
+    pad: normalizeProp(pad, 'header'),
+    size: size,
+    sort: sort,
+    widths: widths,
+    onFiltering: onFiltering,
+    onFilter: onFilter,
+    onResize: resizeable ? onResize : undefined,
+    onSort: sortable ? onSort : undefined,
+    onToggle: onToggleGroups
+  }), groups ? React.createElement(GroupedBody, {
+    background: normalizeProp(background, 'body'),
+    border: normalizeProp(border, 'body'),
+    columns: columns,
+    groupBy: groupBy.property ? groupBy.property : groupBy,
+    groups: groups,
+    groupState: groupState,
+    pad: normalizeProp(pad, 'body'),
+    primaryProperty: primaryProperty,
+    onToggle: onToggleGroup,
+    size: size
+  }) : React.createElement(Body, {
+    background: normalizeProp(background, 'body'),
+    border: normalizeProp(border, 'body'),
+    columns: columns,
+    data: adjustedData,
+    onMore: onMore,
+    replace: replace,
+    onClickRow: onClickRow,
+    pad: normalizeProp(pad, 'body'),
+    primaryProperty: primaryProperty,
+    rowProps: rowProps,
+    size: size,
+    step: step
+  }), showFooter && React.createElement(Footer, {
+    background: normalizeProp(background, 'footer'),
+    border: normalizeProp(border, 'footer'),
+    columns: columns,
+    footerValues: footerValues,
+    groups: groups,
+    pad: normalizeProp(pad, 'footer'),
+    primaryProperty: primaryProperty,
+    size: size
+  }));
+};
 
 var DataTableDoc;
 

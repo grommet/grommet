@@ -1,5 +1,6 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
+// This file contains helper functions for DataTable, to keep the component
+// files simpler.
+// get the value for the property in the datum object
 export var datumValue = function datumValue(datum, property) {
   var parts = property.split('.');
 
@@ -12,7 +13,75 @@ export var datumValue = function datumValue(datum, property) {
   }
 
   return datumValue(datum[parts[0]], parts.slice(1).join('.'));
-};
+}; // get the primary property name
+
+export var normalizePrimaryProperty = function normalizePrimaryProperty(columns, primaryKey) {
+  var result;
+  columns.forEach(function (column) {
+    // remember the first key property
+    if (column.primary && !result) {
+      result = column.property;
+    }
+  });
+
+  if (!result && columns.length > 0) {
+    result = primaryKey || columns[0].property;
+  }
+
+  return result;
+}; // initialize filters with empty strings
+
+export var initializeFilters = function initializeFilters(columns) {
+  var result = {};
+  columns.forEach(function (column) {
+    if (column.search) {
+      result[column.property] = '';
+    }
+  });
+  return result;
+}; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
+
+var escapeRegExp = function escapeRegExp(input) {
+  return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}; // filter data based on filters then sort
+
+
+export var filterAndSortData = function filterAndSortData(data, filters, onSearch, sort) {
+  var result = data;
+
+  if (!onSearch) {
+    var regexps = {};
+    Object.keys(filters).filter(function (n) {
+      return filters[n];
+    }).forEach(function (n) {
+      regexps[n] = new RegExp(escapeRegExp(filters[n]), 'i');
+    });
+
+    if (Object.keys(regexps).length > 0) {
+      result = data.filter(function (datum) {
+        return !Object.keys(regexps).some(function (property) {
+          return !regexps[property].test(datumValue(datum, property));
+        });
+      });
+    }
+  }
+
+  if (sort) {
+    var property = sort.property,
+        ascending = sort.ascending;
+    result = result === data ? [].concat(data) : result; // don't sort caller's data
+
+    var before = ascending ? 1 : -1;
+    var after = ascending ? -1 : 1;
+    result.sort(function (d1, d2) {
+      if (d1[property] > d2[property]) return before;
+      if (d1[property] < d2[property]) return after;
+      return 0;
+    });
+  }
+
+  return result;
+}; // aggregate reducers
 
 var sumReducer = function sumReducer(accumulated, next) {
   return accumulated + next;
@@ -30,7 +99,7 @@ var reducers = {
   max: maxReducer,
   min: minReducer,
   sum: sumReducer
-};
+}; // aggregate a single column
 
 var aggregateColumn = function aggregateColumn(column, data) {
   var value;
@@ -47,140 +116,41 @@ var aggregateColumn = function aggregateColumn(column, data) {
   }
 
   return value;
-};
-
-var findPrimary = function findPrimary(nextProps, prevState, nextState) {
-  var columns = nextProps.columns,
-      primaryKey = nextProps.primaryKey;
-  var primaryProperty;
-  columns.forEach(function (column) {
-    // remember the first key property
-    if (column.primary && !primaryProperty) {
-      primaryProperty = column.property;
-    }
-  });
-
-  if (!primaryProperty && columns.length > 0) {
-    primaryProperty = primaryKey || columns[0].property;
-  }
-
-  return _extends({}, nextState, {
-    primaryProperty: primaryProperty
-  });
-}; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
+}; // aggregate all columns that can
 
 
-var escapeRegExp = function escapeRegExp(input) {
-  return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-};
-
-var filter = function filter(nextProps, prevState, nextState) {
-  var columns = nextProps.columns,
-      onSearch = nextProps.onSearch;
-  var data = nextState.data,
-      filters = nextState.filters;
-  var nextFilters;
-  var regexps;
-  columns.forEach(function (column) {
-    if (column.search) {
-      if (!nextFilters) {
-        nextFilters = {};
-        regexps = {};
-      }
-
-      nextFilters[column.property] = filters ? filters[column.property] || '' : ''; // don't do filtering if the caller has supplied onSearch
-
-      if (nextFilters[column.property] && column.search && !onSearch) {
-        regexps[column.property] = new RegExp(escapeRegExp(nextFilters[column.property]), 'i');
-      }
-    }
-  });
-  var nextData = data;
-
-  if (nextFilters) {
-    nextData = data.filter(function (datum) {
-      return !Object.keys(regexps).some(function (property) {
-        return !regexps[property].test(datumValue(datum, property));
-      });
-    });
-  }
-
-  return _extends({}, nextState, {
-    filters: nextFilters,
-    data: nextData
-  });
-};
-
-var aggregate = function aggregate(nextProps, prevState, nextState) {
-  var columns = nextProps.columns;
-  var data = nextState.data;
-  var aggregateValues = {};
+var aggregate = function aggregate(columns, data) {
+  var result = {};
   columns.forEach(function (column) {
     if (column.aggregate) {
-      aggregateValues[column.property] = aggregateColumn(column, data);
+      result[column.property] = aggregateColumn(column, data);
     }
   });
-  return _extends({}, nextState, {
-    aggregateValues: aggregateValues
-  });
-};
+  return result;
+}; // build the values for the footer cells
 
-var buildFooterValues = function buildFooterValues(nextProps, prevState, nextState) {
-  var columns = nextProps.columns;
-  var aggregateValues = nextState.aggregateValues;
-  var showFooter;
-  var footerValues = {};
+
+export var buildFooterValues = function buildFooterValues(columns, data) {
+  var aggregateValues = aggregate(columns, data);
+  var result = {};
   columns.forEach(function (column) {
     if (column.footer) {
-      showFooter = true;
-
       if (typeof column.footer === 'string') {
-        footerValues[column.property] = column.footer;
+        result[column.property] = column.footer;
       } else if (column.footer.aggregate) {
-        footerValues[column.property] = aggregateValues[column.property];
+        result[column.property] = aggregateValues[column.property];
       }
     }
   });
-  return _extends({}, nextState, {
-    footerValues: footerValues,
-    showFooter: showFooter
-  });
-};
+  return result;
+}; // looks at the groupBy property of each data object and returns an
+// array with one item for each unique value of that property.
 
-var sortData = function sortData(nextProps, prevState, nextState) {
-  var sort = prevState.sort;
-  var data = nextState.data;
-  var nextData = data;
-
-  if (sort) {
-    var property = sort.property,
-        ascending = sort.ascending;
-    nextData = [].concat(data);
-    var before = ascending ? 1 : -1;
-    var after = ascending ? -1 : 1;
-    nextData.sort(function (d1, d2) {
-      if (d1[property] > d2[property]) return before;
-      if (d1[property] < d2[property]) return after;
-      return 0;
-    });
-  }
-
-  return _extends({}, nextState, {
-    data: nextData
-  });
-};
-
-var groupData = function groupData(nextProps, prevState, nextState) {
-  var columns = nextProps.columns,
-      groupBy = nextProps.groupBy;
-  var data = nextState.data;
-  var groups;
-  var groupState;
-  var expandedState;
+export var buildGroups = function buildGroups(columns, data, groupBy) {
+  var result;
 
   if (groupBy) {
-    groups = [];
-    groupState = {};
+    result = [];
     var groupMap = {};
     data.forEach(function (datum) {
       var groupByProperty = groupBy.property ? groupBy.property : groupBy;
@@ -193,56 +163,45 @@ var groupData = function groupData(nextProps, prevState, nextState) {
           key: groupValue
         };
         group.datum[groupByProperty] = groupValue;
-        groups.push(group);
-
-        if (groupBy.expand) {
-          expandedState = groupBy.expand.some(function (key) {
-            return key === groupValue;
-          });
-        } else {
-          expandedState = prevState.groupState && prevState.groupState[groupValue] ? prevState.groupState[groupValue].expanded : false;
-        }
-
-        groupState[groupValue] = {
-          expanded: expandedState
-        };
+        result.push(group);
         groupMap[groupValue] = group;
       }
 
       groupMap[groupValue].data.push(datum);
-    }); // calculate any aggregates
+    }); // include any aggregate column values across the data for each group
 
     columns.forEach(function (column) {
       if (column.aggregate) {
-        groups.forEach(function (group) {
-          group.datum[column.property] = aggregateColumn(column, group.data); // eslint-disable-line
+        result.forEach(function (group) {
+          var datum = group.datum;
+          datum[column.property] = aggregateColumn(column, group.data);
         });
       }
     });
   }
 
-  return _extends({}, nextState, {
-    groups: groups,
-    groupState: groupState
-  });
-};
+  return result;
+}; // build group expanded state, expanding any in groupBy.expand
 
-export var buildState = function buildState(nextProps, prevState) {
-  var data = nextProps.data;
-  var filters = prevState.filters,
-      sort = prevState.sort,
-      widths = prevState.widths;
-  var nextState = {
-    data: data,
-    filters: filters,
-    sort: sort,
-    widths: widths
-  };
-  nextState = findPrimary(nextProps, prevState, nextState);
-  nextState = filter(nextProps, prevState, nextState);
-  nextState = aggregate(nextProps, prevState, nextState);
-  nextState = buildFooterValues(nextProps, prevState, nextState);
-  nextState = sortData(nextProps, prevState, nextState);
-  nextState = groupData(nextProps, prevState, nextState);
-  return nextState;
+export var buildGroupState = function buildGroupState(groups, groupBy) {
+  var result = {};
+
+  if (groups) {
+    groups.forEach(function (_ref) {
+      var key = _ref.key;
+      result[key] = {
+        expanded: false
+      };
+    });
+  }
+
+  if (groupBy && groupBy.expand) {
+    groupBy.expand.forEach(function (value) {
+      result[value] = {
+        expanded: true
+      };
+    });
+  }
+
+  return result;
 };
