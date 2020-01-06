@@ -18,7 +18,7 @@ export const filterByFocusable = elements =>
           // If element was previously focusable, we want to be able
           // to access it in makeNodeFocusable
           (element.hasAttribute('data-g-tabindex') &&
-            element.getAttribute('data-g-tabindex') === '0'))
+            element.getAttribute('data-g-tabindex') >= 0))
       );
     }
     return isValidTag;
