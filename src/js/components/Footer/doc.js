@@ -7,7 +7,7 @@ export const doc = Footer => {
     .availableAt(getAvailableAtBadge('Footer'))
     .description('Footer for a document or section')
     .usage(
-      `import { Footer } from 'grommet';
+      `import { Footer } from 'mnet-ui-base';
 <Footer />`,
     );
 

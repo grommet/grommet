@@ -3,12 +3,10 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render } from '@testing-library/react';
 
-import { hpe as hpeTheme } from 'grommet-theme-hpe';
-
-import { Grommet } from '..';
+import { MnetUIBase } from '..';
 import { Heading } from '../../Heading';
 import { AnnounceContext, ResponsiveContext } from '../../../contexts';
-import { grommet } from '../../../themes/grommet';
+import { mnet } from '../../../themes/mnet';
 
 const TestAnnouncer = ({ announce }) => {
   React.useEffect(() => announce('hello', 'assertive'));
@@ -38,48 +36,45 @@ const customBreakpointsTheme = {
 
 const SSRTester = ({ ua }) => {
   return (
-    <Grommet theme={customBreakpointsTheme} userAgent={ua}>
+    <MnetUIBase theme={customBreakpointsTheme} userAgent={ua}>
       <ResponsiveContext.Consumer>
         {size => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
       </ResponsiveContext.Consumer>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 
-describe('Grommet', () => {
+describe('MnetUIBase', () => {
   afterEach(cleanup);
 
   test('basic', () => {
-    const component = renderer.create(<Grommet />);
+    const component = renderer.create(<MnetUIBase />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('grommet theme', () => {
-    const component = renderer.create(<Grommet theme={grommet} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
-  test('hpe theme', () => {
-    const component = renderer.create(
-      <Grommet theme={hpeTheme}>Grommet App</Grommet>,
-    );
+  test('mnet theme', () => {
+    const component = renderer.create(<MnetUIBase theme={mnet} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('themeMode', () => {
     const component = renderer.create(
-      <Grommet theme={grommet} themeMode="dark" />,
+      <MnetUIBase theme={mnet} themeMode="dark" />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('cssVars', () => {
-    const component = renderer.create(<Grommet cssVars>Grommet App</Grommet>);
+    const component = renderer.create(
+      <MnetUIBase cssVars>MnetUIBase App</MnetUIBase>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('full', () => {
-    const component = renderer.create(<Grommet full>Grommet App</Grommet>);
+    const component = renderer.create(
+      <MnetUIBase full>MnetUIBase App</MnetUIBase>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
@@ -94,11 +89,11 @@ describe('Grommet', () => {
 
   test('announce', done => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <AnnounceContext.Consumer>
           {announce => <TestAnnouncer announce={announce} />}
         </AnnounceContext.Consumer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

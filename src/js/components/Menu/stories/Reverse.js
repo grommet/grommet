@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Menu } from 'grommet';
+import { MnetUIBase, Box, Menu } from 'mnet-ui-base';
 import { Power, User } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Reverse = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Menu
         dropProps={{ align: { top: 'bottom', left: 'left' } }}
@@ -18,7 +18,7 @@ const Reverse = () => (
         ]}
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Menu', module).add('Reverse', () => <Reverse />);

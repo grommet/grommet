@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
 import {
-  Grommet,
+  MnetUIBase,
   Accordion,
   AccordionPanel,
   Anchor,
@@ -33,9 +33,9 @@ import {
   TextArea,
   TextInput,
   Video,
-} from 'grommet';
-import { dark, generate, grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+} from 'mnet-ui-base';
+import { dark, generate, mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
@@ -56,7 +56,7 @@ const Node = ({ id, ...rest }) => (
 
 const themes = {
   dark,
-  grommet,
+  mnet,
   hpe,
   aruba,
   hp,
@@ -71,7 +71,7 @@ const Components = () => {
   const [checkBox, setCheckBox] = useState(true);
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
-  const [themeName] = useState('grommet');
+  const [themeName] = useState('mnet');
   const [background] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
   const [value, setValue] = useState('');
@@ -307,7 +307,7 @@ const Components = () => {
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Grommet theme={grommet} style={{ flex: '0 0 auto' }}>
+      <MnetUIBase theme={mnet} style={{ flex: '0 0 auto' }}>
         <Box
           direction="row-responsive"
           gap="medium"
@@ -319,7 +319,7 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={['grommet', 'dark', 'hpe', 'aruba', 'hp', 'dxc', 'v1']}
+              options={['mnet', 'dark', 'hpe', 'aruba', 'hp', 'dxc', 'v1']}
               value={themeName}
               // onChange={event => setThemeName(event.option)}
             />
@@ -345,8 +345,8 @@ const Components = () => {
           </Box>
           <Text size="small">{`${baseSize}px base spacing`}</Text>
         </Box>
-      </Grommet>
-      <Grommet theme={theme} style={{ flex: '1 1' }}>
+      </MnetUIBase>
+      <MnetUIBase theme={theme} style={{ flex: '1 1' }}>
         <Box
           fill
           pad="medium"
@@ -364,7 +364,7 @@ const Components = () => {
             </Box>
           )}
         </Box>
-      </Grommet>
+      </MnetUIBase>
     </div>
   );
 };

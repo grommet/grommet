@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Search } from 'grommet-icons';
-import { Box, Image, Grommet, Text, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, Image, MnetUIBase, Text, TextInput } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
-const myCustomTheme = deepMerge(grommet, {
+const myCustomTheme = deepMerge(mnet, {
   global: {
     drop: {
       background: '#444444',
@@ -14,7 +14,7 @@ const myCustomTheme = deepMerge(grommet, {
       extend: `
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
-  
+
           overflow: hidden;
         `,
     },
@@ -131,7 +131,7 @@ const CustomSuggestionsTextInput = () => {
   };
 
   return (
-    <Grommet theme={myCustomTheme} full>
+    <MnetUIBase theme={myCustomTheme} full>
       <Box background="dark-1" fill align="center" pad={{ top: 'large' }}>
         <Box
           ref={boxRef}
@@ -169,7 +169,7 @@ const CustomSuggestionsTextInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

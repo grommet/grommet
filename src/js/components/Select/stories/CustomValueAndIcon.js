@@ -3,15 +3,15 @@ import { storiesOf } from '@storybook/react';
 
 import { CaretDown } from 'grommet-icons';
 
-import { Box, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, Select } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const CustomSelect = ({ ...rest }) => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
 
   return (
-    <Grommet full theme={grommet}>
+    <MnetUIBase full theme={mnet}>
       <Box fill align="center" justify="start" pad="large">
         <Select
           id="select"
@@ -40,7 +40,7 @@ const CustomSelect = ({ ...rest }) => {
           {...rest}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

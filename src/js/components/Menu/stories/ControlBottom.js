@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Menu } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const ControlBottom = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box height="medium" justify="center" align="center" pad="large">
       <Menu
         dropProps={{ align: { bottom: 'bottom', left: 'left' } }}
@@ -17,7 +17,7 @@ const ControlBottom = () => (
         ]}
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Menu', module).add('Bottom Control Button', () => <ControlBottom />);

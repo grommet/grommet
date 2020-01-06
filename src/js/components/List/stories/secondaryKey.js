@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, List } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { data } from './data';
 
 const SecondaryKeyList = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <List
         data={data.slice(0, 10)}
@@ -15,7 +15,7 @@ const SecondaryKeyList = () => (
         secondaryKey="location"
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('List', module).add('secondaryKey', () => <SecondaryKeyList />);

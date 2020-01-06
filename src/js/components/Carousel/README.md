@@ -7,7 +7,7 @@ A carousel that cycles through children. Child components
 ## Usage
 
 ```javascript
-import { Carousel } from 'grommet';
+import { Carousel } from 'mnet-ui-base';
 <Carousel />
 ```
 

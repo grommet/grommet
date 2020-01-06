@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Paragraph } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Paragraph } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small'];
 
@@ -12,7 +12,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 `;
 
 const All = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     {sizes.map(size => (
       <Paragraph key={size} size={size}>
         {`Paragraph ${size}`}
@@ -24,7 +24,7 @@ const All = () => (
       This is a full-width paragraph, using the &quot;fill&quot; property:{' '}
       {paragraphFiller}
     </Paragraph>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Paragraph', module).add('All', () => <All />);

@@ -5,9 +5,9 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Markdown => {
   const DocumentedMarkdown = describe(Markdown)
     .availableAt(getAvailableAtBadge('Markdown'))
-    .description('Markdown formatting using Grommet components.')
+    .description('Markdown formatting using MnetUIBase components.')
     .usage(
-      `import { Markdown } from 'grommet';
+      `import { Markdown } from 'mnet-ui-base';
       <Markdown>{content}</Markdown>`,
     )
     .intrinsicElement('div');

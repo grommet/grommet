@@ -7,7 +7,7 @@ A container that lays out its contents in one direction. Box
 ## Usage
 
 ```javascript
-import { Box } from 'grommet';
+import { Box } from 'mnet-ui-base';
 <Box />
 ```
 

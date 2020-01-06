@@ -1,26 +1,26 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Stack } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleStack = () => (
-  <Grommet>
+  <MnetUIBase>
     <Stack anchor="center">
       <Box pad="large" background="neutral-1" />
       <Box pad="small" background="accent-1" />
     </Stack>
-  </Grommet>
+  </MnetUIBase>
 );
 
 const FillStack = () => (
-  <Grommet theme={grommet} full>
+  <MnetUIBase theme={mnet} full>
     <Stack fill>
       <Box background="brand" fill>
         Test
       </Box>
     </Stack>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Stack', module)

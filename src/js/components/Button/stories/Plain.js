@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Add } from 'grommet-icons';
 
-import { Box, Button, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, MnetUIBase, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const PlainButton = props => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
         <Box pad="small" direction="row" align="center" gap="small">
@@ -15,7 +15,7 @@ const PlainButton = props => (
         </Box>
       </Button>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Button', module)

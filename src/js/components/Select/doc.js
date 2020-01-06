@@ -7,7 +7,7 @@ export const doc = Select => {
     .availableAt(getAvailableAtBadge('Select'))
     .description('A control to select a value, with optional search.')
     .usage(
-      `import { Select } from 'grommet';
+      `import { Select } from 'mnet-ui-base';
 <Select />`,
     );
   // We don't include svg due to a collision on the values property

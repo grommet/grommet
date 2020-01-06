@@ -2,10 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { mnet, Box, Button, MnetUIBase } from 'mnet-ui-base';
 
 const BasicButtons = props => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="medium">
       <Button label="Default" onClick={() => {}} {...props} />
     </Box>
@@ -18,7 +18,7 @@ const BasicButtons = props => (
     <Box align="center" pad="medium">
       <Button primary label="Primary" onClick={() => {}} {...props} />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

@@ -1,16 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box, MnetUIBase } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Default = () => {
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Anchor href="#">Link</Anchor>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

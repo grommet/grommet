@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, FormField, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, FormField, TextInput } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 import { allSuggestions } from './data';
 
 const FormFieldTextInput = props => {
@@ -29,7 +29,7 @@ const FormFieldTextInput = props => {
   const onSelect = event => setState({ ...state, value: event.suggestion });
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <FormField label="Label" htmlFor="text-input" {...props}>
           <TextInput
@@ -42,7 +42,7 @@ const FormFieldTextInput = props => {
           />
         </FormField>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import 'jest-styled-components';
 
-import { grommet, defaultProps, extendDefaultTheme, Box, Grommet } from '..';
+import { mnet, defaultProps, extendDefaultTheme, Box, MnetUIBase } from '..';
 
 const CustomBox = styled.div`
   background: ${props => props.theme.global.colors.brand};
@@ -38,12 +38,12 @@ test('extends default theme twice', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('uses Grommet theme instead of default', () => {
+test('uses mnet theme instead of default', () => {
   extendDefaultTheme({ global: { colors: { brand: 'red' } } });
   const component = renderer.create(
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box background="brand" />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

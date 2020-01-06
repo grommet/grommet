@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
-import { Grommet, Box, Carousel } from 'grommet';
+import { MnetUIBase, Box, Carousel } from 'mnet-ui-base';
 
 const customTheme = {
   carousel: {
@@ -21,7 +21,7 @@ const customTheme = {
 };
 
 const CustomCarousel = ({ controls, ...rest }) => (
-  <Grommet theme={customTheme}>
+  <MnetUIBase theme={customTheme}>
     <Box align="center" pad="large">
       <Carousel controls={controls} {...rest}>
         <Box pad="xlarge" background="accent-1">
@@ -35,7 +35,7 @@ const CustomCarousel = ({ controls, ...rest }) => (
         </Box>
       </Carousel>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Carousel', module).add('Custom Controls', () => <CustomCarousel />);

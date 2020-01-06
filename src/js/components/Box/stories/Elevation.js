@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Text } from 'grommet';
-import { grommet } from '../../../themes';
+import { MnetUIBase, Box, Text } from 'mnet-ui-base';
+import { mnet } from '../../../themes';
 
 const ElevationBox = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box pad="small" align="start">
       <Box pad="medium" background="dark-1" elevation="medium" gap="medium">
         <Text>dark on white</Text>
@@ -25,7 +25,7 @@ const ElevationBox = () => (
         </Box>
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Box', module).add('Elevation', () => <ElevationBox />);

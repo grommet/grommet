@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBox, MnetUIBase, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const CheckBoxInsideButton = () => {
   const [checked, setChecked] = useState(false);
@@ -9,7 +9,7 @@ const CheckBoxInsideButton = () => {
   const onCheckboxChange = () => {};
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Button hoverIndicator="background" onClick={onButtonClick}>
           <CheckBox
@@ -20,7 +20,7 @@ const CheckBoxInsideButton = () => {
           />
         </Button>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -4,7 +4,7 @@ export const doc = TableHeader => {
   const DocumentedTableHeader = describe(TableHeader)
     .description('The header of a table.')
     .usage(
-      `import { TableHeader } from 'grommet';
+      `import { TableHeader } from 'mnet-ui-base';
 <TableHeader />`,
     )
     .intrinsicElement('thead');

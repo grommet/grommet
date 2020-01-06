@@ -5,7 +5,7 @@ import { getByTestId, queryByTestId } from '@testing-library/dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Box, Layer } from '../..';
+import { MnetUIBase, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 const SimpleLayer = () => {
@@ -55,10 +55,10 @@ const TargetLayer = props => {
     );
   }
   return (
-    <Grommet>
+    <MnetUIBase>
       <div ref={setTarget} />
       {layer}
-    </Grommet>
+    </MnetUIBase>
   );
 };
 
@@ -70,11 +70,11 @@ describe('Layer', () => {
     position =>
       test(`position ${position}`, () => {
         render(
-          <Grommet>
+          <MnetUIBase>
             <Layer id="position-test" position={position}>
               This is a layer
             </Layer>
-          </Grommet>,
+          </MnetUIBase>,
         );
         expectPortal('position-test').toMatchSnapshot();
       }),
@@ -83,11 +83,11 @@ describe('Layer', () => {
   [true, false, 'horizontal', 'vertical'].forEach(full =>
     test(`full ${full}`, () => {
       render(
-        <Grommet>
+        <MnetUIBase>
           <Layer id="full-test" full={full}>
             This is a layer
           </Layer>
-        </Grommet>,
+        </MnetUIBase>,
       );
       expectPortal('full-test').toMatchSnapshot();
     }),
@@ -96,11 +96,11 @@ describe('Layer', () => {
   ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin =>
     test(`margin ${margin}`, () => {
       render(
-        <Grommet>
+        <MnetUIBase>
           <Layer id="margin-test" margin={margin}>
             This is a layer
           </Layer>
-        </Grommet>,
+        </MnetUIBase>,
       );
       expectPortal('margin-test').toMatchSnapshot();
     }),
@@ -108,69 +108,69 @@ describe('Layer', () => {
 
   test(`custom margin`, () => {
     render(
-      <Grommet>
+      <MnetUIBase>
         <Layer
           id="margin-test"
           margin={{ top: '50px', bottom: '40px', left: '30px', right: '20px' }}
         >
           This is a layer
         </Layer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expectPortal('margin-test').toMatchSnapshot();
   });
 
   test('hidden', () => {
     const { rerender } = render(
-      <Grommet>
+      <MnetUIBase>
         <Layer id="hidden-test" position="hidden">
           This is a layer
         </Layer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expectPortal('hidden-test').toMatchSnapshot();
 
     rerender(
-      <Grommet>
+      <MnetUIBase>
         <Layer id="hidden-test" position="center">
           This is a layer
         </Layer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expectPortal('hidden-test').toMatchSnapshot();
   });
 
   test('plain', () => {
     render(
-      <Grommet>
+      <MnetUIBase>
         <Layer id="plain-test" plain>
           This is a plain layer
         </Layer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expectPortal('plain-test').toMatchSnapshot();
   });
 
   test('non-modal', () => {
     render(
-      <Grommet>
+      <MnetUIBase>
         <Layer id="non-modal-test" modal={false}>
           This is a non-modal layer
         </Layer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
   test('dark context', () => {
     render(
-      <Grommet>
+      <MnetUIBase>
         <Box background="dark-1">
           <Layer id="non-modal-test" modal={false}>
             This is a non-modal layer
           </Layer>
         </Box>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expectPortal('non-modal-test').toMatchSnapshot();
   });
@@ -178,11 +178,11 @@ describe('Layer', () => {
   ['slide', 'fadeIn', false, true].forEach(animation =>
     test(`animation ${animation}`, () => {
       render(
-        <Grommet>
+        <MnetUIBase>
           <Layer id="animation-test" animation={animation}>
             This is a layer
           </Layer>
-        </Grommet>,
+        </MnetUIBase>,
       );
       expectPortal('animation-test').toMatchSnapshot();
     }),
@@ -191,11 +191,11 @@ describe('Layer', () => {
   test('invokes onEsc', () => {
     const onEsc = jest.fn();
     render(
-      <Grommet>
+      <MnetUIBase>
         <LayerContainer onEsc={onEsc}>
           <input data-testid="test-input" />
         </LayerContainer>
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     const inputNode = getByTestId(document, 'test-input');
@@ -206,14 +206,14 @@ describe('Layer', () => {
   test('is accessible', done => {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
-      <Grommet>
+      <MnetUIBase>
         <FakeLayer dataTestid="test-layer-node">
           <div data-testid="test-body-node">
             <input />
             <input tabIndex="10" />
           </div>
         </FakeLayer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     /* eslint-enable jsx-a11y/tabindex-no-positive */
 
@@ -236,12 +236,12 @@ describe('Layer', () => {
   test('focus on layer', () => {
     /* eslint-disable jsx-a11y/no-autofocus */
     render(
-      <Grommet>
+      <MnetUIBase>
         <Layer data-testid="focus-layer-test">
           <input />
         </Layer>
         <input autoFocus />
-      </Grommet>,
+      </MnetUIBase>,
     );
     /* eslint-disable jsx-a11y/no-autofocus */
 
@@ -253,12 +253,12 @@ describe('Layer', () => {
   test('not steal focus from an autofocus focusable element', () => {
     /* eslint-disable jsx-a11y/no-autofocus */
     render(
-      <Grommet>
+      <MnetUIBase>
         <Layer data-testid="focus-layer-input-test">
           <input autoFocus data-testid="focus-input" />
           <button type="button">Button</button>
         </Layer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     /* eslint-disable jsx-a11y/no-autofocus */
     const layerNode = getByTestId(document, 'focus-layer-input-test');
@@ -269,17 +269,17 @@ describe('Layer', () => {
 
   test('target', () => {
     render(
-      <Grommet>
+      <MnetUIBase>
         <TargetLayer id="target-test">This layer has a target</TargetLayer>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expectPortal('target-test').toMatchSnapshot();
   });
   test('unmounts from dom', () => {
     render(
-      <Grommet>
+      <MnetUIBase>
         <SimpleLayer />
-      </Grommet>,
+      </MnetUIBase>,
     );
     setTimeout(() => {
       expect(queryByTestId(document, 'test-dom-removal')).toBeNull();

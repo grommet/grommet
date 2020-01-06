@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Select, Button } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, Select, Button } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const optionList = [
   'One',
@@ -29,7 +29,7 @@ const UnSelect = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box
         pad="medium"
         direction="row"
@@ -49,9 +49,9 @@ const UnSelect = () => {
           disabled={!value}
           plain
           label="Clear All"
-        />    
+        />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -1683,7 +1683,7 @@ exports[`DataTable click 1`] = `
 
 exports[`DataTable click 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <table
     class="StyledTable-sc-1iut3o1-6 gCsqvv StyledDataTable-ng31qc-0 lnDqFo"
@@ -2369,7 +2369,7 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <table
     class="StyledTable-sc-1iut3o1-6 gCsqvv StyledDataTable-ng31qc-0 lnDqFo"
@@ -3277,7 +3277,7 @@ exports[`DataTable groupBy property 1`] = `
 
 exports[`DataTable groupBy property 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <table
     class="StyledTable-sc-1iut3o1-6 gCsqvv StyledDataTable-ng31qc-0 lnDqFo"
@@ -5300,7 +5300,7 @@ exports[`DataTable search 1`] = `
 
 exports[`DataTable search 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <table
     class="StyledTable-sc-1iut3o1-6 gCsqvv StyledDataTable-ng31qc-0 lnDqFo"
@@ -5778,7 +5778,7 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <table
     class="StyledTable-sc-1iut3o1-6 gCsqvv StyledDataTable-ng31qc-0 lnDqFo"

@@ -9,7 +9,7 @@ You can provide a single function child that will be called with
 ## Usage
 
 ```javascript
-import { Button } from 'grommet';
+import { Button } from 'mnet-ui-base';
 <Button primary label='Label' />
 ```
 

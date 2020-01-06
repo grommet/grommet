@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grommet custom theme 1`] = `
+exports[`MnetUIBase custom theme 1`] = `
 .c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -8,8 +8,8 @@ exports[`Grommet custom theme 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c4 g {
@@ -65,40 +65,6 @@ exports[`Grommet custom theme 1`] = `
 .c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c10 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #20314f;
-  stroke: #20314f;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -165,7 +131,7 @@ exports[`Grommet custom theme 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #EB5B5B;
+  color: #E15151;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -191,23 +157,6 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  line-height: inherit;
-  color: #20314f;
-  font-weight: 600;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.c9:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -295,7 +244,7 @@ exports[`Grommet custom theme 1`] = `
     className="c8"
   >
     <a
-      className="c9"
+      className="c2"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -309,7 +258,7 @@ exports[`Grommet custom theme 1`] = `
       >
         <svg
           aria-label="Add"
-          className="c10"
+          className="c4"
           viewBox="0 0 24 24"
         >
           <path
@@ -360,7 +309,7 @@ exports[`Grommet custom theme 1`] = `
 </div>
 `;
 
-exports[`Grommet dark theme 1`] = `
+exports[`MnetUIBase dark theme 1`] = `
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -984,7 +933,7 @@ exports[`Grommet dark theme 1`] = `
 </div>
 `;
 
-exports[`Grommet default theme 1`] = `
+exports[`MnetUIBase default theme 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1044,8 +993,8 @@ exports[`Grommet default theme 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #EB5B5B;
-  color: #444444;
+  background: #E15151;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1569,611 +1518,6 @@ exports[`Grommet default theme 1`] = `
   </div>
   <div
     className="c20"
-  >
-    <span
-      className="c2"
-    >
-      status-unknown
-    </span>
-  </div>
-  <div
-    className="c22"
-  >
-    <span
-      className="c2"
-    >
-      status-warning
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Grommet hpe theme 1`] = `
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #313340;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #4b4d59;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #65707d;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #8691a8;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #999999;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #fbfbfb;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #f6f6f8;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #f5f6f8;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #e1e3ef;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #dfdfdf;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #DADADA;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #CCCCCC;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #2AD2C9;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #614767;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #ff8d6d;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #01a982;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #425563;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #5F7A76;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #80746E;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #F04953;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #FFD144;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <span
-      className="c2"
-    >
-      accent-1
-    </span>
-  </div>
-  <div
-    className="c3"
-  >
-    <span
-      className="c2"
-    >
-      accent-2
-    </span>
-  </div>
-  <div
-    className="c4"
-  >
-    <span
-      className="c2"
-    >
-      accent-3
-    </span>
-  </div>
-  <div
-    className="c5"
-  >
-    <span
-      className="c2"
-    >
-      brand
-    </span>
-  </div>
-  <div
-    className="c6"
-  >
-    <span
-      className="c2"
-    >
-      dark-1
-    </span>
-  </div>
-  <div
-    className="c7"
-  >
-    <span
-      className="c2"
-    >
-      dark-2
-    </span>
-  </div>
-  <div
-    className="c8"
-  >
-    <span
-      className="c2"
-    >
-      dark-3
-    </span>
-  </div>
-  <div
-    className="c9"
-  >
-    <span
-      className="c2"
-    >
-      dark-4
-    </span>
-  </div>
-  <div
-    className="c10"
-  >
-    <span
-      className="c2"
-    >
-      dark-5
-    </span>
-  </div>
-  <div
-    className="c10"
-  >
-    <span
-      className="c2"
-    >
-      dark-6
-    </span>
-  </div>
-  <div
-    className="c1"
-  >
-    <span
-      className="c2"
-    >
-      focus
-    </span>
-  </div>
-  <div
-    className="c11"
-  >
-    <span
-      className="c2"
-    >
-      light-1
-    </span>
-  </div>
-  <div
-    className="c12"
-  >
-    <span
-      className="c2"
-    >
-      light-2
-    </span>
-  </div>
-  <div
-    className="c13"
-  >
-    <span
-      className="c2"
-    >
-      light-3
-    </span>
-  </div>
-  <div
-    className="c14"
-  >
-    <span
-      className="c2"
-    >
-      light-4
-    </span>
-  </div>
-  <div
-    className="c15"
-  >
-    <span
-      className="c2"
-    >
-      light-5
-    </span>
-  </div>
-  <div
-    className="c16"
-  >
-    <span
-      className="c2"
-    >
-      light-6
-    </span>
-  </div>
-  <div
-    className="c17"
-  >
-    <span
-      className="c2"
-    >
-      neutral-1
-    </span>
-  </div>
-  <div
-    className="c18"
-  >
-    <span
-      className="c2"
-    >
-      neutral-2
-    </span>
-  </div>
-  <div
-    className="c19"
-  >
-    <span
-      className="c2"
-    >
-      neutral-3
-    </span>
-  </div>
-  <div
-    className="c20"
-  >
-    <span
-      className="c2"
-    >
-      status-critical
-    </span>
-  </div>
-  <div
-    className="c21"
-  >
-    <span
-      className="c2"
-    >
-      status-disabled
-    </span>
-  </div>
-  <div
-    className="c5"
-  >
-    <span
-      className="c2"
-    >
-      status-ok
-    </span>
-  </div>
-  <div
-    className="c21"
   >
     <span
       className="c2"

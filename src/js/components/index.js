@@ -18,7 +18,7 @@ export * from './Footer';
 export * from './Form';
 export * from './FormField';
 export * from './Grid';
-export * from './Grommet';
+export * from './MnetUIBase';
 export * from './Header';
 export * from './Heading';
 export * from './Image';

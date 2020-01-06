@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 import { findAllByType } from '../../../utils';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Anchor } from '..';
 
 describe('Anchor', () => {
@@ -13,9 +13,9 @@ describe('Anchor', () => {
 
   test('renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -23,9 +23,9 @@ describe('Anchor', () => {
 
   test('renders with children', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor href="#">children</Anchor>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -34,11 +34,11 @@ describe('Anchor', () => {
   test('warns about invalid label render', () => {
     const warnSpy = jest.spyOn(console, 'warn');
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor href="#" label="Test">
           invalid
         </Anchor>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -53,11 +53,11 @@ describe('Anchor', () => {
   test('warns about invalid icon render', () => {
     const warnSpy = jest.spyOn(console, 'warn');
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor href="#" icon={<svg />}>
           invalid
         </Anchor>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -71,9 +71,9 @@ describe('Anchor', () => {
 
   test('primary renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor href="#" primary label="Test" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -81,9 +81,9 @@ describe('Anchor', () => {
 
   test('focus renders', () => {
     const { container, getByText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Anchor href="#" label="Test" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     fireEvent.focus(getByText('Test'));
     expect(container.firstChild).toMatchSnapshot();
@@ -91,9 +91,9 @@ describe('Anchor', () => {
 
   test('disabled renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor disabled />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -101,9 +101,9 @@ describe('Anchor', () => {
 
   test('icon label renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor icon={<svg />} label="Test" onClick={() => {}} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -111,9 +111,9 @@ describe('Anchor', () => {
 
   test('reverse icon label renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor reverse icon={<svg />} label="Test" onClick={() => {}} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -122,9 +122,9 @@ describe('Anchor', () => {
   test('is clickable', () => {
     const onClick = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor href="#" label="Test" onClick={onClick} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 
@@ -135,9 +135,9 @@ describe('Anchor', () => {
 
   test('renders tag', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Anchor href="#" label="Test" as="span" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

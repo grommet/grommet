@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render } from '@testing-library/react';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Clock } from '..';
 
 const DURATION = 'PT18H23M34S';
@@ -16,34 +16,34 @@ describe('Clock', () => {
 
   test('time', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Clock run={false} type="digital" time={DURATION} />
         <Clock run={false} type="digital" time={TIME} />
         <Clock run={false} type="digital" time={TIME2} />
         <Clock run={false} type="digital" time={DATE} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('hourLimit', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Clock run={false} type="digital" time={DURATION} hourLimit={12} />
         <Clock run={false} type="digital" time={DURATION} hourLimit={24} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('run', done => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Clock type="analog" run="forward" time={DURATION} />
         <Clock type="analog" run="backward" time={DURATION} />
         <Clock type="digital" run="forward" time={DURATION} />
         <Clock type="digital" run="backward" time={DURATION} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -59,7 +59,7 @@ describe('Clock', () => {
       ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(size =>
         test(`type ${type} precision ${precision} size ${size}`, () => {
           const component = renderer.create(
-            <Grommet>
+            <MnetUIBase>
               <Clock
                 run={false}
                 type={type}
@@ -67,7 +67,7 @@ describe('Clock', () => {
                 size={size}
                 time={DURATION}
               />
-            </Grommet>,
+            </MnetUIBase>,
           );
           expect(component.toJSON()).toMatchSnapshot();
         }),

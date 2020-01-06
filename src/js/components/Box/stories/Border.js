@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Text } from 'grommet';
-import { grommet } from '../../../themes';
+import { MnetUIBase, Box, Text } from 'mnet-ui-base';
+import { mnet } from '../../../themes';
 
 const BorderBox = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box pad="small" gap="small" align="start">
       <Box pad="small" border>
         true
@@ -76,7 +76,7 @@ const BorderBox = () => (
         ))}
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Box', module).add('Border', () => <BorderBox />);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Heading, Paragraph, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Heading, Paragraph, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const paragraphFiller = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -12,7 +12,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 const Medium = () => {
   const margin = undefined;
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box pad="medium">
         <div>
           <Heading margin={margin}>Heading 1 - Medium</Heading>
@@ -47,12 +47,12 @@ const Medium = () => {
           </Paragraph>
         </div>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 
 const Small = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={MnetUIBase}>
     <Box pad="medium">
       <div>
         <Heading size="small">Heading 1 - Small</Heading>
@@ -87,11 +87,11 @@ const Small = () => (
         </Paragraph>
       </div>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 const Large = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box pad="medium">
       <div>
         <Heading size="large">Heading 1 - Large</Heading>
@@ -126,7 +126,7 @@ const Large = () => (
         </Paragraph>
       </div>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Typography', module)

@@ -7,14 +7,14 @@ import {
   Box,
   Button,
   FormField,
-  Grommet,
+  MnetUIBase,
   Heading,
   Layer,
   Select,
   TextArea,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const FormLayer = () => {
   const [open, setOpen] = React.useState(false);
@@ -25,7 +25,7 @@ const FormLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <Grommet theme={grommet} full>
+    <MnetUIBase theme={mnet} full>
       <Box fill align="center" justify="center">
         <Button icon={<Add />} label="Add" onClick={onOpen} />
         {open && (
@@ -87,7 +87,7 @@ const FormLayer = () => {
           </Layer>
         )}
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -7,7 +7,7 @@ export const doc = Header => {
     .availableAt(getAvailableAtBadge('Header'))
     .description('Is a Box container for introductory content')
     .usage(
-      `import { Header } from 'grommet';
+      `import { Header } from 'mnet-ui-base';
 <Header />`,
     );
 

@@ -3,8 +3,16 @@ import { storiesOf } from '@storybook/react';
 
 import { Trash } from 'grommet-icons';
 
-import { Box, Button, Grommet, Heading, Layer, Select, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import {
+  Box,
+  Button,
+  MnetUIBase,
+  Heading,
+  Layer,
+  Select,
+  Text,
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const CenterLayer = () => {
   const [open, setOpen] = React.useState();
@@ -19,7 +27,7 @@ const CenterLayer = () => {
   const onClose2 = () => setOpen2(undefined);
 
   return (
-    <Grommet theme={grommet} full>
+    <MnetUIBase theme={mnet} full>
       <Box fill align="center" justify="center">
         <Button
           icon={<Trash />}
@@ -82,7 +90,7 @@ const CenterLayer = () => {
           </Box>
         </Layer>
       )}
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

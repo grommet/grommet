@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Text } from 'grommet';
-import { grommet } from '../../../themes';
+import { MnetUIBase, Box, Text } from 'mnet-ui-base';
+import { mnet } from '../../../themes';
 
 const FixedSizesBox = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box pad="small" gap="small">
       <Box
         width="small"
@@ -44,7 +44,7 @@ const FixedSizesBox = () => (
         Large
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Box', module).add('Fixed sizes', () => <FixedSizesBox />);

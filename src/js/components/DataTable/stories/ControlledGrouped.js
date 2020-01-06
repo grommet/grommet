@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, DataTable } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { columns, DATA } from './data';
 
@@ -17,7 +17,7 @@ const ControlledGroupedDataTable = () => {
   const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <DataTable
         columns={groupColumns}
         data={DATA}
@@ -28,7 +28,7 @@ const ControlledGroupedDataTable = () => {
         }}
         sortable
       />
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

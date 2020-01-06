@@ -9,7 +9,7 @@ Proportionally sized grid of boxes. The proportions are approximate. The
 ## Usage
 
 ```javascript
-import { Distribution } from 'grommet';
+import { Distribution } from 'mnet-ui-base';
 <Distribution />
 ```
 

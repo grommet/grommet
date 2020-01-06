@@ -5,7 +5,7 @@ A control to select a value, with optional search.
 ## Usage
 
 ```javascript
-import { Select } from 'grommet';
+import { Select } from 'mnet-ui-base';
 <Select />
 ```
 

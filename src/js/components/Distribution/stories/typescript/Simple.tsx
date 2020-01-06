@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Grommet, Box, Distribution, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Distribution, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleDistribution = () => (
-  <Grommet theme={grommet} full>
+  <MnetUIBase theme={mnet} full>
     <Distribution
       fill
       values={[
@@ -23,9 +23,11 @@ const SimpleDistribution = () => (
         </Box>
       )}
     </Distribution>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Distribution', module).add('Simple', () => <SimpleDistribution />);
+  storiesOf('TypeScript/Distribution', module).add('Simple', () => (
+    <SimpleDistribution />
+  ));
 }

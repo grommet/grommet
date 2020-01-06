@@ -4,7 +4,7 @@ export const doc = Keyboard => {
   const DocumentedKeyboard = describe(Keyboard)
     .description('A handler of keyboard key presses.')
     .usage(
-      `import { Keyboard } from 'grommet';
+      `import { Keyboard } from 'mnet-ui-base';
 <Keyboard onUp={() => {}} />`,
     );
 

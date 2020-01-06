@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Accordion, AccordionPanel, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Accordion, AccordionPanel, Box, MnetUIBase } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleAccordion = ({ animate = false, multiple = false, ...rest }) => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box {...rest}>
       <Accordion animate={animate} multiple={multiple}>
         <AccordionPanel label="Panel 1">
@@ -28,7 +28,7 @@ const SimpleAccordion = ({ animate = false, multiple = false, ...rest }) => (
         </AccordionPanel>
       </Accordion>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

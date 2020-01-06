@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Meter, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Meter, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const LabelledMeter = () => {
   const meterValue = 30;
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Stack anchor="center">
           <Meter
@@ -26,7 +26,7 @@ const LabelledMeter = () => {
           </Box>
         </Stack>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, RangeInput } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, MnetUIBase, RangeInput } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 import { Volume } from 'grommet-icons';
 
@@ -29,7 +29,7 @@ const CustomRangeInput = () => {
   const onChange = event => setValue(event.target.value);
 
   return (
-    <Grommet theme={customThemeRangeInput}>
+    <MnetUIBase theme={customThemeRangeInput}>
       <Box direction="row" align="center" pad="large" gap="small">
         <Volume color="neutral-2" />
         <Box align="center" width="small">
@@ -42,7 +42,7 @@ const CustomRangeInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

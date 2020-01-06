@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { normalizeColor, deepMerge } from 'grommet/utils';
+import { Box, MnetUIBase, CheckBox } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { normalizeColor, deepMerge } from 'mnet-ui-base/utils';
 
 import { FormCheckmark } from 'grommet-icons';
 
@@ -49,7 +49,7 @@ const ThemedCheckBox = props => {
   const [checked, setChecked] = useState(false);
 
   return (
-    <Grommet theme={deepMerge(grommet, customCheckBoxTheme)}>
+    <MnetUIBase theme={deepMerge(mnet, customCheckBoxTheme)}>
       <Box align="center" pad="large">
         <CheckBox
           {...props}
@@ -58,7 +58,7 @@ const ThemedCheckBox = props => {
           onChange={event => setChecked(event.target.checked)}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -40,7 +40,7 @@ export const doc = List => {
     .availableAt(getAvailableAtBadge('List'))
     .description('An ordered list of items.')
     .usage(
-      `import { List } from 'grommet';
+      `import { List } from 'mnet-ui-base';
 <List data={[...]} />`,
     )
     .intrinsicElement('ol');

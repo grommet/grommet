@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, Layer } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, MnetUIBase, Layer } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const FullLayer = () => {
   const [showLayer, setShowLayer] = React.useState(false);
 
   return (
-    <Grommet theme={grommet} full>
+    <MnetUIBase theme={mnet} full>
       <Box pad="small" fill background="dark-3" align="center" justify="center">
         <Button
           primary
@@ -28,7 +28,7 @@ const FullLayer = () => {
           </Layer>
         )}
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

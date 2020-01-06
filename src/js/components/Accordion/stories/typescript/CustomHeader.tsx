@@ -6,11 +6,11 @@ import {
   Accordion,
   AccordionPanel,
   Box,
-  Grommet,
+  MnetUIBase,
   Text,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const renderPanelHeader = (title: string, active: boolean) => (
   <Box direction="row" align="center" pad="medium" gap="small">
@@ -25,7 +25,7 @@ const CustomHeaderAccordion = () => {
   const [activeIndex, setActiveIndex] = useState([0]);
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Accordion
         activeIndex={activeIndex}
         onActive={newActiveIndex => setActiveIndex(newActiveIndex)}
@@ -53,7 +53,7 @@ const CustomHeaderAccordion = () => {
           </Box>
         </AccordionPanel>
       </Accordion>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

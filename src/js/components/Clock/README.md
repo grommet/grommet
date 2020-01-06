@@ -5,7 +5,7 @@ A clock with timezone awareness.
 ## Usage
 
 ```javascript
-import { Clock } from 'grommet';
+import { Clock } from 'mnet-ui-base';
 <Clock />
 ```
 

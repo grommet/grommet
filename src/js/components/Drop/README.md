@@ -5,7 +5,8 @@ A container that is overlaid next to a target.
 ## Usage
 
 ```javascript
-import { Drop } from 'grommet';
+import { Drop } from 'mnet-ui-base';
+      
 <Drop target={reference}>...</Drop>
 ```
 
@@ -13,8 +14,8 @@ import { Drop } from 'grommet';
 
 **align**
 
-How to align the drop with respect to the target element. Not 
-        specifying a vertical or horizontal alignment will cause it to be 
+How to align the drop with respect to the target element. Not
+        specifying a vertical or horizontal alignment will cause it to be
         aligned in the center. Defaults to `{
   "top": "top",
   "left": "left"
@@ -106,7 +107,7 @@ boolean
 
 **target**
 
-Required. Target where the drop will be aligned to. This should be a React 
+Required. Target where the drop will be aligned to. This should be a React
       reference.
 
 ```

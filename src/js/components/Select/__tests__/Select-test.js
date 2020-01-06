@@ -6,7 +6,7 @@ import { cleanup, render, fireEvent } from '@testing-library/react';
 import { CaretDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../..';
+import { MnetUIBase } from '../..';
 import { Select } from '..';
 
 describe('Select', () => {
@@ -399,14 +399,14 @@ describe('Select', () => {
     };
 
     const { container } = render(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <Select
           data-testid="test-select-style-open"
           id="test-open-id"
           options={['morning', 'afternoon', 'evening']}
           placeholder="Select..."
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -439,14 +439,14 @@ describe('Select', () => {
     };
 
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <Select
           data-testid="test-select-style-options-1"
           id="test-options-style-id"
           options={['morning', 'afternoon', 'evening']}
           placeholder="Select..."
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -471,14 +471,14 @@ describe('Select', () => {
     };
 
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <Select
           data-testid="test-select-style-options-2"
           id="test-options-style-id"
           options={['morning', 'afternoon', 'evening']}
           placeholder="Select..."
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -491,8 +491,8 @@ describe('Select', () => {
     expect(style.background).toBe('lightgreen');
   });
 
-  test(`renders styled select options combining select.options.box && 
-  select.options.container; 
+  test(`renders styled select options combining select.options.box &&
+  select.options.container;
   select.options.container prioritized if conflict`, () => {
     const customTheme = {
       select: {
@@ -513,14 +513,14 @@ describe('Select', () => {
     };
 
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <Select
           data-testid="test-select-style-options-3"
           id="test-options-style-id"
           options={['morning', 'afternoon', 'evening']}
           placeholder="Select..."
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -554,14 +554,14 @@ describe('Select', () => {
       },
     };
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <Select
           data-testid="applies-custom-hover-style"
           id="applies-custom-hover-style-id"
           options={['morning', 'afternoon', 'evening']}
           placeholder="Select..."
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     expect(container.firstChild).toMatchSnapshot();

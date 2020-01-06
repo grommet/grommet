@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Image } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Image } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Opacity = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box gap="small" direction="row">
       <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
       <Image opacity="strong" src="//v2.grommet.io/assets/IMG_4245.jpg" />
@@ -21,7 +21,7 @@ const Opacity = () => (
     <Box gap="small" direction="row">
       <Image opacity="0.6" src="//v2.grommet.io/assets/IMG_4245.jpg" />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Image', module).add('Opacity', () => <Opacity />);

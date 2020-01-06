@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Select, Button } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, Select, Button } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleSelect = ({ theme, ...rest }) => {
   const options = ['one', 'two'];
@@ -10,7 +10,7 @@ const SimpleSelect = ({ theme, ...rest }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Grommet full theme={theme || grommet}>
+    <MnetUIBase full theme={theme || mnet}>
       <Box fill align="center" justify="start" pad="large" gap="small">
         <Button onClick={() => setOpen(!open)} label="Control the select" />
         <Select
@@ -24,7 +24,7 @@ const SimpleSelect = ({ theme, ...rest }) => {
           {...rest}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

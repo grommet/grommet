@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Grommet, Box, Meter, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Meter, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const MultipleValues = () => {
   const total = 100;
@@ -11,7 +11,7 @@ const MultipleValues = () => {
   const [label, setLabel] = useState();
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Stack anchor="center">
           <Meter
@@ -48,7 +48,7 @@ const MultipleValues = () => {
           </Box>
         </Stack>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

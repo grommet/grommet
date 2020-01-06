@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
-import { Box, Button, Calendar, Grommet, Text } from '../..';
+import { Box, Button, Calendar, MnetUIBase, Text } from '../..';
 
 const DATE = '2018-01-15T00:00:00-08:00';
 const DATES = [
@@ -15,9 +15,9 @@ describe('Calendar', () => {
   test('date', () => {
     // need to set the date to avoid snapshot drift over time
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Calendar date={DATE} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -25,9 +25,9 @@ describe('Calendar', () => {
 
   test('dates', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Calendar dates={DATES} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -35,9 +35,9 @@ describe('Calendar', () => {
 
   test('daysOfWeek', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Calendar daysOfWeek dates={DATES} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -45,11 +45,11 @@ describe('Calendar', () => {
 
   test('size', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Calendar size="small" date={DATE} />
         <Calendar size="medium" date={DATE} />
         <Calendar size="large" date={DATE} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -57,10 +57,10 @@ describe('Calendar', () => {
 
   test('firstDayOfWeek', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Calendar firstDayOfWeek={0} date={DATE} />
         <Calendar firstDayOfWeek={1} date={DATE} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -68,9 +68,9 @@ describe('Calendar', () => {
 
   test('reference', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Calendar reference={DATE} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -78,7 +78,7 @@ describe('Calendar', () => {
 
   test('header', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Calendar
           date={DATE}
           onSelect={() => {}}
@@ -114,7 +114,7 @@ describe('Calendar', () => {
             </Box>
           )}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

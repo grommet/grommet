@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { grommet, Box, FormField, TextArea, Grommet } from 'grommet';
-import { deepMerge } from 'grommet/utils';
-import { ThemeType } from 'grommet/themes';
+import { mnet, Box, FormField, TextArea, MnetUIBase } from 'mnet-ui-base';
+import { deepMerge } from 'mnet-ui-base/utils';
+import { ThemeType } from 'mnet-ui-base/themes';
 
 const customFormFieldTheme: ThemeType = {
   global: {
@@ -28,13 +28,13 @@ const customFormFieldTheme: ThemeType = {
 };
 
 const CustomFormField = () => (
-  <Grommet theme={deepMerge(grommet, customFormFieldTheme)}>
+  <MnetUIBase theme={deepMerge(mnet, customFormFieldTheme)}>
     <Box align="center" pad="large">
       <FormField label="Label" htmlFor="text-area">
         <TextArea id="text-area" placeholder="placeholder" />
       </FormField>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

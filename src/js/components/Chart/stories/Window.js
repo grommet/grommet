@@ -1,8 +1,15 @@
 import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import {
+  MnetUIBase,
+  Box,
+  Chart,
+  RangeSelector,
+  Stack,
+  Text,
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { calcs } from '../calcs';
 import { generateData } from './data';
@@ -63,9 +70,9 @@ const WindowChart = ({ data, max }) => {
   );
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box pad="large">
-        {/* className="chromatic-ignore" is used for the story testing. 
+        {/* className="chromatic-ignore" is used for the story testing.
             grommet doesn't reccomend the usage of className */}
         <Box direction="row" justify="between" className="chromatic-ignore">
           {innerAxis[0].reverse().map(t => (
@@ -145,7 +152,7 @@ const WindowChart = ({ data, max }) => {
           />
         </Stack>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

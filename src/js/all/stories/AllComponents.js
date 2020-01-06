@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
-  Grommet,
+  MnetUIBase,
   Accordion,
   AccordionPanel,
   Anchor,
@@ -32,10 +32,10 @@ import {
   TextArea,
   TextInput,
   Video,
-} from 'grommet';
-import { mnet, dark } from 'grommet/themes';
-import { generate } from 'grommet/themes/base';
-import { deepMerge } from 'grommet/utils';
+} from 'mnet-ui-base';
+import { mnet, dark } from 'mnet-ui-base/themes';
+import { generate } from 'mnet-ui-base/themes/base';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -269,7 +269,7 @@ const Components = () => {
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Grommet theme={mnet} style={{ flex: '0 0 auto' }}>
+      <MnetUIBase theme={mnet} style={{ flex: '0 0 auto' }}>
         <Box
           direction="row-responsive"
           gap="medium"
@@ -318,8 +318,8 @@ const Components = () => {
           </Box>
           <Text size="small">{`${baseSize}px base spacing`}</Text>
         </Box>
-      </Grommet>
-      <Grommet theme={theme} themeMode={themeMode} style={{ flex: '1 1' }}>
+      </MnetUIBase>
+      <MnetUIBase theme={theme} themeMode={themeMode} style={{ flex: '1 1' }}>
         <Box
           fill
           pad="medium"
@@ -336,7 +336,7 @@ const Components = () => {
             </Box>
           )}
         </Box>
-      </Grommet>
+      </MnetUIBase>
     </div>
   );
 };

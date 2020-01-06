@@ -5,7 +5,7 @@ exports[`SkipLink basic 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #EB5B5B;
+  color: #E15151;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -68,12 +68,12 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hYnGNJ SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="main"
       tabindex="-1"
     />
@@ -86,7 +86,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hYnGNJ SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="footer"
       tabindex="-1"
     />
@@ -100,12 +100,12 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hYnGNJ SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="main"
       tabindex="-1"
     />
@@ -118,7 +118,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hYnGNJ SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
       id="footer"
       tabindex="-1"
     />

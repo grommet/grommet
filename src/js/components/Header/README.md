@@ -5,7 +5,7 @@ Is a Box container for introductory content
 ## Usage
 
 ```javascript
-import { Header } from 'grommet';
+import { Header } from 'mnet-ui-base';
 <Header />
 ```
 

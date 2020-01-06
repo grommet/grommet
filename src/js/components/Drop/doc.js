@@ -18,7 +18,8 @@ export const doc = Drop => {
     .availableAt(getAvailableAtBadge('Drop'))
     .description('A container that is overlaid next to a target.')
     .usage(
-      "import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>",
+      `import { Drop } from 'mnet-ui-base';
+      \n<Drop target={reference}>...</Drop>`,
     )
     .intrinsicElement('div');
 
@@ -30,8 +31,8 @@ export const doc = Drop => {
       left: PropTypes.oneOf(['left', 'right']),
     })
       .description(
-        `How to align the drop with respect to the target element. Not 
-        specifying a vertical or horizontal alignment will cause it to be 
+        `How to align the drop with respect to the target element. Not
+        specifying a vertical or horizontal alignment will cause it to be
         aligned in the center.`,
       )
       .defaultValue({
@@ -62,7 +63,7 @@ export const doc = Drop => {
       )
       .defaultValue(true),
     target: PropTypes.object.description(
-      `Target where the drop will be aligned to. This should be a React 
+      `Target where the drop will be aligned to. This should be a React
       reference.`,
     ).isRequired,
     elevation: PropTypes.oneOfType([

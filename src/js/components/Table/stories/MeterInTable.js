@@ -4,20 +4,20 @@ import { storiesOf } from '@storybook/react';
 
 import {
   Box,
-  Grommet,
+  MnetUIBase,
   Meter,
   Table,
   TableBody,
   TableCell,
   TableRow,
   Text,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const values = [20, 40, 60, 80, 100];
 
 const MeterInTable = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Box border pad={{ top: 'xsmall' }}>
         <Table caption="Meter Inside Table">
@@ -43,7 +43,7 @@ const MeterInTable = () => (
         </Table>
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Table', module).add('Meter Inside Table', () => <MeterInTable />);

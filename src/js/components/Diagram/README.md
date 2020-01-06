@@ -7,7 +7,7 @@ Graphical connection lines. Diagram is meant to be used with Stack.
 ## Usage
 
 ```javascript
-import { Diagram } from 'grommet';
+import { Diagram } from 'mnet-ui-base';
 <Diagram />
 ```
 

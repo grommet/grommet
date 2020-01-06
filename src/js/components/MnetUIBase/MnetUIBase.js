@@ -10,14 +10,14 @@ import {
   normalizeColor,
 } from '../../utils';
 import { base as baseTheme } from '../../themes';
-import { StyledGrommet } from './StyledGrommet';
+import { StyledMnetUIBase } from './StyledMnetUIBase';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `;
 
-class Grommet extends Component {
-  static displayName = 'Grommet';
+class MnetUIBase extends Component {
+  static displayName = 'MnetUIBase';
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const {
@@ -129,9 +129,9 @@ class Grommet extends Component {
     return (
       <ThemeContext.Provider value={theme}>
         <ResponsiveContext.Provider value={responsive}>
-          <StyledGrommet full={full} {...rest}>
+          <StyledMnetUIBase full={full} {...rest}>
             {children}
-          </StyledGrommet>
+          </StyledMnetUIBase>
           {full && <FullGlobalStyle />}
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
@@ -139,11 +139,11 @@ class Grommet extends Component {
   }
 }
 
-let GrommetDoc;
+let MnetUIBaseDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
-  GrommetDoc = require('./doc').doc(Grommet);
+  MnetUIBaseDoc = require('./doc').doc(MnetUIBase);
 }
-const GrommetWrapper = GrommetDoc || Grommet;
+const MnetUIBaseWrapper = MnetUIBaseDoc || MnetUIBase;
 
-export { GrommetWrapper as Grommet };
+export { MnetUIBaseWrapper as MnetUIBase };

@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { InfiniteScroll } from '..';
 
 describe('InfiniteScroll', () => {
@@ -11,41 +11,41 @@ describe('InfiniteScroll', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <InfiniteScroll />
         <InfiniteScroll items={items}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('step', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <InfiniteScroll items={items} step={2}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('show', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <InfiniteScroll items={items} step={2} show={3}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renderMarker', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <InfiniteScroll
           items={items}
           step={2}
@@ -53,18 +53,18 @@ describe('InfiniteScroll', () => {
         >
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('replace', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <InfiniteScroll items={items} step={2} replace>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

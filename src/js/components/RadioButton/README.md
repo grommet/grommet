@@ -8,7 +8,7 @@ RadioButton should typically not be used directly.
 ## Usage
 
 ```javascript
-import { RadioButton } from 'grommet';
+import { RadioButton } from 'mnet-ui-base';
 <RadioButton />
 ```
 

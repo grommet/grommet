@@ -2,7 +2,7 @@ import * as React from "react";
 import { ThemeType } from "../../themes";
 import { BackgroundType } from '../../utils';
 
-export interface GrommetProps {
+export interface MnetUIBaseProps {
   background?: BackgroundType;
   cssVars?: boolean;
   dir?: "rtl";
@@ -13,6 +13,6 @@ export interface GrommetProps {
   userAgent?: string;
 }
 
-declare const Grommet: React.ComponentClass<GrommetProps & JSX.IntrinsicElements['div']>;
+declare const MnetUIBase: React.ComponentClass<MnetUIBaseProps & JSX.IntrinsicElements['div']>;
 
-export { Grommet };
+export { MnetUIBase };

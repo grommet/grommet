@@ -12,7 +12,7 @@ import { getByText, screen } from '@testing-library/dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Keyboard } from '../../Keyboard';
 import { MaskedInput } from '..';
 
@@ -134,11 +134,11 @@ describe('MaskedInput', () => {
   test('Escape events should propagage if there is no drop', () => {
     const callback = jest.fn();
     const { getByTestId } = render(
-      <Grommet>
+      <MnetUIBase>
         <Keyboard onEsc={callback}>
           <MaskedInput data-testid="test-input" id="item" name="item" />
         </Keyboard>
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     fireEvent.change(getByTestId('test-input'), {
@@ -300,7 +300,7 @@ describe('MaskedInput', () => {
 
     const onChange = jest.fn(event => event.target.value);
     const { getByTestId, container } = render(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <MaskedInput
           data-testid="test-input"
           plain
@@ -318,7 +318,7 @@ describe('MaskedInput', () => {
           value=""
           onChange={onChange}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));

@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Menu, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Menu, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 import { FormDown } from 'grommet-icons';
 
 const CustomMenu = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box
       align="center"
       pad="large"
@@ -35,7 +35,7 @@ const CustomMenu = () => (
         }}
       </Menu>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Menu', module).add('Custom', () => <CustomMenu />);

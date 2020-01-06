@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, DataTable } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { columns, DATA } from './data';
 
 const ClickableDataTable = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       {/* eslint-disable no-alert */}
       <DataTable
@@ -17,7 +17,7 @@ const ClickableDataTable = () => (
         onClickRow={event => alert(JSON.stringify(event.datum, null, 2))}
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('DataTable', module).add('Clickable', () => <ClickableDataTable />);

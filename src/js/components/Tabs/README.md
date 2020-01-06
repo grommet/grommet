@@ -5,7 +5,7 @@ A container with controls to show one Tab at a time.
 ## Usage
 
 ```javascript
-import { Tabs, Tab } from 'grommet';
+import { Tabs, Tab } from 'mnet-ui-base';
 <Tabs>
   <Tab title='Tab 1'>...</Tab>
   <Tab title='Tab 2'>...</Tab>

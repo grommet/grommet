@@ -7,7 +7,7 @@ A calendar of days displayed by month.
 ## Usage
 
 ```javascript
-import { Calendar } from 'grommet';
+import { Calendar } from 'mnet-ui-base';
 <Calendar />
 ```
 

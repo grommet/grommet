@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, TextInput, Grommet } from 'grommet';
+import { mnet, Box, FormField, TextInput, MnetUIBase } from 'mnet-ui-base';
 
 const FormFieldHelpError = props => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <FormField
         label="Label"
@@ -21,7 +21,7 @@ const FormFieldHelpError = props => (
         />
       </FormField>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Form', module).add('Help and Error', () => <FormFieldHelpError />);

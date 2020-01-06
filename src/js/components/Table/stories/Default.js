@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import {
   Box,
-  Grommet,
+  MnetUIBase,
   Table,
   TableBody,
   TableCell,
@@ -11,12 +11,12 @@ import {
   TableHeader,
   TableRow,
   Text,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 import { data, columns } from './data';
 
 const DefaultTable = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Table caption="Default Table">
         <TableHeader>
@@ -50,7 +50,7 @@ const DefaultTable = () => (
         </TableFooter>
       </Table>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Table', module).add('Default', () => <DefaultTable />);

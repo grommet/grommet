@@ -28,7 +28,7 @@ const parseTime = (time, hourLimit) => {
         result.minutes = parseFloat(match[2]) || 0;
         result.seconds = parseFloat(match[3]) || 0;
       } else {
-        console.error(`Grommet Clock cannot parse '${time}'`);
+        console.error(`MnetUIBase Clock cannot parse '${time}'`);
       }
     }
   } else {

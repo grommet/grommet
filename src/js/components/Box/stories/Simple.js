@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car } from 'grommet-icons';
 
-import { Grommet, Anchor, Box, Button, Text } from 'grommet';
-import { grommet } from '../../../themes';
+import { MnetUIBase, Anchor, Box, Button, Text } from 'mnet-ui-base';
+import { mnet } from '../../../themes';
 
 const SimpleBox = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box
       direction="row-responsive"
       justify="center"
@@ -34,7 +34,7 @@ const SimpleBox = () => (
         <Button label="Button" onClick={() => {}} />
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Box', module).add('Simple', () => <SimpleBox />);

@@ -13,8 +13,8 @@ exports[`DropButton close by clicking outside 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -28,7 +28,7 @@ exports[`DropButton close by clicking outside 1`] = `
 }
 
 .c0:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 <button
@@ -76,8 +76,8 @@ exports[`DropButton closed 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -91,7 +91,7 @@ exports[`DropButton closed 1`] = `
 }
 
 .c0:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 <button
@@ -121,8 +121,8 @@ exports[`DropButton disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -160,8 +160,8 @@ exports[`DropButton open and close 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -175,7 +175,7 @@ exports[`DropButton open and close 1`] = `
 }
 
 .c0:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 <button
@@ -223,8 +223,8 @@ exports[`DropButton opened 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -238,7 +238,7 @@ exports[`DropButton opened 1`] = `
 }
 
 .c0:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 <button
@@ -268,8 +268,8 @@ exports[`DropButton opened ref 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -283,7 +283,7 @@ exports[`DropButton opened ref 1`] = `
 }
 
 .c0:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 <button

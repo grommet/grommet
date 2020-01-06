@@ -5,7 +5,7 @@ Heading text structured in levels.
 ## Usage
 
 ```javascript
-import { Heading } from 'grommet';
+import { Heading } from 'mnet-ui-base';
 <Heading />
 ```
 

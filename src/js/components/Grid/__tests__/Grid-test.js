@@ -3,15 +3,15 @@ import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Grid } from '..';
 
 describe('Grid', () => {
   test('renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -19,9 +19,9 @@ describe('Grid', () => {
 
   test('a11yTitle renders', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Grid a11yTitle="My Grid" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const gridWithLabel = getByLabelText('My Grid');
     expect(gridWithLabel).toBeTruthy();
@@ -30,10 +30,10 @@ describe('Grid', () => {
 
   test('rows renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid rows={['small', 'large', 'medium']} />
         <Grid rows="small" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -41,14 +41,14 @@ describe('Grid', () => {
 
   test('columns renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid columns={['1/2', '2/4']} />
         <Grid columns={['1/3', '2/3']} />
         <Grid columns={['1/4', '3/4']} />
         <Grid columns="small" />
         <Grid columns={{ count: 'fit', size: 'small' }} />
         <Grid columns={{ count: 'fill', size: ['small', 'medium'] }} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -56,7 +56,7 @@ describe('Grid', () => {
 
   test('areas renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid
           rows={['xxsmall', 'medium', 'xsmall']}
           columns={['3/4', '1/4']}
@@ -67,7 +67,7 @@ describe('Grid', () => {
             { name: 'footer', start: [2, 0], end: [2, 1] },
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -75,7 +75,7 @@ describe('Grid', () => {
 
   test('areas renders when given an array of string arrays', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid
           rows={['xxsmall', 'medium', 'xsmall']}
           columns={['3/4', '1/4']}
@@ -85,7 +85,7 @@ describe('Grid', () => {
             ['footer', 'footer'],
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -93,12 +93,12 @@ describe('Grid', () => {
 
   test('justify renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid justify="start" />
         <Grid justify="center" />
         <Grid justify="end" />
         <Grid justify="stretch" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -106,12 +106,12 @@ describe('Grid', () => {
 
   test('align renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid align="start" />
         <Grid align="center" />
         <Grid align="end" />
         <Grid align="stretch" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -119,14 +119,14 @@ describe('Grid', () => {
 
   test('justifyContent renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid justifyContent="start" />
         <Grid justifyContent="center" />
         <Grid justifyContent="between" />
         <Grid justifyContent="around" />
         <Grid justifyContent="end" />
         <Grid justifyContent="stretch" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -134,14 +134,14 @@ describe('Grid', () => {
 
   test('alignContent renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid alignContent="start" />
         <Grid alignContent="center" />
         <Grid alignContent="between" />
         <Grid alignContent="around" />
         <Grid alignContent="end" />
         <Grid alignContent="stretch" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -149,7 +149,7 @@ describe('Grid', () => {
 
   test('gap renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid gap="small" />
         <Grid gap="medium" />
         <Grid gap="large" />
@@ -160,7 +160,7 @@ describe('Grid', () => {
         <Grid gap={{ column: 'medium' }} />
         <Grid gap={{ column: 'large' }} />
         <Grid gap={{ row: 'small', column: 'medium' }} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -168,12 +168,12 @@ describe('Grid', () => {
 
   test('fill renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid fill />
         <Grid fill={false} />
         <Grid fill="horizontal" />
         <Grid fill="vertical" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -181,9 +181,9 @@ describe('Grid', () => {
 
   test('as renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid as="article" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -191,21 +191,21 @@ describe('Grid', () => {
 
   test('proxies tag', () => {
     const tagComponent = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid tag="article" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const asComponent = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid as="article" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
   });
 
   test('pad', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Grid pad="small" />
         <Grid pad="medium" />
         <Grid pad="large" />
@@ -217,7 +217,7 @@ describe('Grid', () => {
         <Grid pad={{ start: 'small' }} />
         <Grid pad={{ end: 'small' }} />
         <Grid pad={{ top: 'small' }} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

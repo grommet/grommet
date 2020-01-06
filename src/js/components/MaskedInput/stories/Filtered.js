@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, MaskedInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, MaskedInput } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const data = {
   Cummings: [
@@ -35,7 +35,7 @@ const FilteredMaskedInput = () => {
   });
 
   return (
-    <Grommet full theme={grommet}>
+    <MnetUIBase full theme={mnet}>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <MaskedInput
@@ -56,7 +56,7 @@ const FilteredMaskedInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

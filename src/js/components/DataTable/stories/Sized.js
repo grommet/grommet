@@ -1,17 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, DataTable } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { columns, data } from './data';
 
 const SizedDataTable = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <DataTable columns={columns} data={data} size="medium" />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('DataTable', module).add('Sized', () => <SizedDataTable />);

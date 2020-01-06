@@ -5,7 +5,7 @@ A slider control to input a value within a fixed range.
 ## Usage
 
 ```javascript
-import { RangeInput } from 'grommet';
+import { RangeInput } from 'mnet-ui-base';
 <RangeInput />
 ```
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   const [range, setRange] = useState([12, 16]);
@@ -11,7 +11,7 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   };
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Stack>
           <Box
@@ -42,7 +42,7 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
           />
         </Stack>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

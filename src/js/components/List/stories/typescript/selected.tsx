@@ -2,51 +2,53 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
-
+import { MnetUIBase, Box, List } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 export const locations = [
-    'Boise',
-    'Fort Collins',
-    'Los Gatos',
-    'Palo Alto',
-    'San Francisco',
-  ];
-  
-  export const data = [];
-  
-  for (let i = 0; i < 40; i += 1) {
-    data.push({
-      entry: `entry-${i + 1}`,
-      location: locations[i % locations.length],
-      date: `2018-07-${(i % 30) + 1}`,
-      percent: (i % 11) * 10,
-      paid: ((i + 1) * 17) % 1000,
-    });
-  }
-  
+  'Boise',
+  'Fort Collins',
+  'Los Gatos',
+  'Palo Alto',
+  'San Francisco',
+];
+
+export const data = [];
+
+for (let i = 0; i < 40; i += 1) {
+  data.push({
+    entry: `entry-${i + 1}`,
+    location: locations[i % locations.length],
+    date: `2018-07-${(i % 30) + 1}`,
+    percent: (i % 11) * 10,
+    paid: ((i + 1) * 17) % 1000,
+  });
+}
 
 const SelectedItem = () => {
   const [selected, setSelected] = React.useState();
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large" gap="large">
         <List
           data={data.slice(0, 10)}
           itemProps={
-            selected >= 0 ? { [selected]: { background: 'accent-1' } } : undefined
+            selected >= 0
+              ? { [selected]: { background: 'accent-1' } }
+              : undefined
           }
           onClickItem={event =>
             setSelected(selected === event.index ? undefined : event.index)
           }
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 
 if (!isChromatic()) {
-    storiesOf('TypeScript/List', module).add('selectedItem', () => <SelectedItem />);
-  }
+  storiesOf('TypeScript/List', module).add('selectedItem', () => (
+    <SelectedItem />
+  ));
+}

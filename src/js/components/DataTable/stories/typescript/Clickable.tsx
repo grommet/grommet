@@ -2,13 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Grommet, Box, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, DataTable } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { columns, DATA } from '../data';
 
 const ClickableDataTable = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       {/* eslint-disable no-alert */}
       <DataTable
@@ -18,7 +18,7 @@ const ClickableDataTable = () => (
         onClickRow={event => console.log(event.datum)}
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

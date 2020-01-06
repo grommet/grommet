@@ -13,12 +13,12 @@ import {
   Accordion,
   AccordionPanel,
   Box,
-  Grommet,
+  MnetUIBase,
   Heading,
   Text,
   ThemeContext,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const richAccordionTheme = {
   accordion: {
@@ -69,7 +69,7 @@ const spinning = (
   >
     <path
       opacity=".25"
-      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 
+      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28
       A12 12 0 0 1 16 4"
     />
     <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z">
@@ -95,7 +95,7 @@ const RichAccordion = () => {
   const [highlightLoaded, setHighlightLoaded] = React.useState(false);
 
   return (
-    <Grommet full theme={grommet}>
+    <MnetUIBase full theme={mnet}>
       <Box fill direction="row">
         <Box basis="medium" border="all">
           <Box
@@ -235,7 +235,7 @@ const RichAccordion = () => {
           </ThemeContext.Extend>
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

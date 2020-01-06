@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Grommet, Anchor, Box } from 'grommet';
+import { mnet, MnetUIBase, Anchor, Box } from 'mnet-ui-base';
 import { Add } from 'grommet-icons';
 
 const customTheme = {
@@ -13,42 +13,43 @@ const customTheme = {
 };
 
 const Themed = () => (
-  <Grommet theme={customTheme}>
+  <MnetUIBase theme={customTheme}>
     <Box pad="medium">
       <Anchor icon={<Add />} label="Add" color="custom" />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 const Plain = () => (
   <>
-    <Grommet plain>
+    <MnetUIBase plain>
       <Box pad="medium">
-        <p>Plain Grommet</p>
+        <p>Plain MnetUIBase</p>
       </Box>
-    </Grommet>
-    <Grommet>
+    </MnetUIBase>
+    <MnetUIBase>
       <Box pad="medium">
-        <p>Not plain Grommet</p>
+        <p>Not plain MnetUIBase</p>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   </>
 );
 
-const GrommetVars = () => (
-  <Grommet theme={grommet} cssVars>
+const MnetUIBaseVars = () => (
+  <MnetUIBase theme={mnet} cssVars>
     <Box pad="medium" background="var(--accent-2)" gap="medium">
       <Box>
-        Checkout Grommet variables, you can find them in the StyledGrommet DOM.
+        Checkout MnetUIBase variables, you can find them in the StyledMnetUIBase
+        DOM.
       </Box>
       <Box with>
         For example, the background color in this Box is using var(--accent-2)
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
-storiesOf('Grommet', module)
+storiesOf('MnetUIBase', module)
   .add('Plain', () => <Plain />)
   .add('Theme', () => <Themed />)
-  .add('Vars', () => <GrommetVars />);
+  .add('Vars', () => <MnetUIBaseVars />);

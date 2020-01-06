@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Grommet, Box } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const BackgroundBox = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box pad="small" gap="small" align="start">
       <Box
         pad="small"
@@ -41,7 +41,7 @@ const BackgroundBox = () => (
         image + color
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

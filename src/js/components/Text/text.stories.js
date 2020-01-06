@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Text, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, Text, Heading } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const sizes = [
   'xxlarge',
@@ -17,24 +17,24 @@ const sizes = [
 const wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 
 const All = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     {sizes.map(size => (
       <Box key={size} margin="small">
         <Text size={size}>{`Text ${size}`}</Text>
       </Box>
     ))}
-  </Grommet>
+  </MnetUIBase>
 );
 
 const Color = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Text color="accent-1">Colored Text</Text>
-  </Grommet>
+  </MnetUIBase>
 );
 
 /* eslint-disable max-len */
 const WordBreak = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     {wordBreakValues.map(value => (
       <Box key={value} margin="small" width="medium">
         <Heading level={4}>{`word-break: ${value};`}</Heading>
@@ -45,7 +45,7 @@ const WordBreak = () => (
         </Text>
       </Box>
     ))}
-  </Grommet>
+  </MnetUIBase>
 );
 /* eslint-enable max-len */
 

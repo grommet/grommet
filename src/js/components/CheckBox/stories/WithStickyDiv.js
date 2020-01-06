@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, CheckBox, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox, MnetUIBase } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const boxStyle = {
   position: 'relative',
@@ -29,7 +29,7 @@ const CheckBoxWithStickyDiv = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box pad="large" align="center">
         <Box height="120px" width="120px" overflow="auto" style={boxStyle}>
           <Box background={titleBoxBackground} style={titleBoxStyle}>
@@ -45,7 +45,7 @@ const CheckBoxWithStickyDiv = () => {
           ))}
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

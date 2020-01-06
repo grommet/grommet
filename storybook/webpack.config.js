@@ -32,7 +32,7 @@ module.exports = async ({ config }) => {
   });
 
   // eslint-disable-next-line no-param-reassign
-  config.resolve.alias.grommet = path.resolve(__dirname, '../src/js');
+  config.resolve.alias['mnet-ui-base'] = path.resolve(__dirname, '../src/js');
 
   return config;
 };

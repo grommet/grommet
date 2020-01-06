@@ -134,15 +134,15 @@ exports[`renders 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4::-moz-focus-inner {

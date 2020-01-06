@@ -4,7 +4,7 @@ The footer of a table.
 ## Usage
 
 ```javascript
-import { TableFooter } from 'grommet';
+import { TableFooter } from 'mnet-ui-base';
 <TableFooter />
 ```
 

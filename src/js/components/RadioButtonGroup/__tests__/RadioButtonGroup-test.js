@@ -2,16 +2,16 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Box } from '../../Box';
 import { RadioButtonGroup } from '..';
 
 describe('RadioButtonGroup', () => {
   test('default', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RadioButtonGroup name="test" options={[]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -19,9 +19,9 @@ describe('RadioButtonGroup', () => {
 
   test('string options', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RadioButtonGroup name="test" options={['one', 'two']} value="one" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -29,13 +29,13 @@ describe('RadioButtonGroup', () => {
 
   test('object options just value', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RadioButtonGroup
           name="test"
           options={[{ value: 'one' }, { value: 'two' }]}
           value="two"
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('RadioButtonGroup', () => {
 
   test('object options', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RadioButtonGroup
           name="test"
           options={[
@@ -51,7 +51,7 @@ describe('RadioButtonGroup', () => {
             { id: 'twO', label: 'Two', value: 'two' },
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -59,12 +59,12 @@ describe('RadioButtonGroup', () => {
 
   test('object options disabled', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RadioButtonGroup
           name="test"
           options={[{ value: 'one', disabled: true }, { value: 'two' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -75,11 +75,11 @@ describe('RadioButtonGroup', () => {
       <Box pad="small" background={checked ? 'accent-1' : 'control'} />
     );
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RadioButtonGroup name="test" options={['one', 'two']} value="one">
           {child}
         </RadioButtonGroup>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

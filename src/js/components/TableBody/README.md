@@ -4,7 +4,7 @@ The body of a table.
 ## Usage
 
 ```javascript
-import { TableBody } from 'grommet';
+import { TableBody } from 'mnet-ui-base';
 <TableBody />
 ```
 

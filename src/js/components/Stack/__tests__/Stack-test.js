@@ -2,16 +2,16 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Stack } from '..';
 
 const CONTENTS = [<div key={1}>first</div>, <div key={2}>second</div>];
 
 test('renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Stack>{CONTENTS}</Stack>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -19,11 +19,11 @@ test('renders', () => {
 
 test('guidingChild renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Stack guidingChild="first">{CONTENTS}</Stack>
       <Stack guidingChild="last">{CONTENTS}</Stack>
       <Stack guidingChild={0}>{CONTENTS}</Stack>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -31,7 +31,7 @@ test('guidingChild renders', () => {
 
 test('anchor renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Stack anchor="center">{CONTENTS}</Stack>
       <Stack anchor="top">{CONTENTS}</Stack>
       <Stack anchor="left">{CONTENTS}</Stack>
@@ -41,7 +41,7 @@ test('anchor renders', () => {
       <Stack anchor="bottom-left">{CONTENTS}</Stack>
       <Stack anchor="top-right">{CONTENTS}</Stack>
       <Stack anchor="bottom-right">{CONTENTS}</Stack>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -49,10 +49,10 @@ test('anchor renders', () => {
 
 test('fill renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Stack fill>{CONTENTS}</Stack>
       <Stack fill={false}>{CONTENTS}</Stack>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -60,11 +60,11 @@ test('fill renders', () => {
 
 test('interactiveChild renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Stack interactiveChild="first">{CONTENTS}</Stack>
       <Stack interactiveChild="last">{CONTENTS}</Stack>
       <Stack interactiveChild={0}>{CONTENTS}</Stack>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

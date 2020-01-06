@@ -14,7 +14,7 @@ import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
 
-const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
+const MnetUIBaseMarkdown = ({ components, options, theme, ...rest }) => {
   const heading = [1, 2, 3, 4].reduce((obj, level) => {
     const result = { ...obj };
     result[`h${level}`] = {
@@ -45,11 +45,11 @@ const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
   return <Markdown options={{ ...options, overrides }} {...rest} />;
 };
 
-let GrommetMarkdownDoc;
+let MnetUIBaseMarkdownDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
-  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown);
+  MnetUIBaseMarkdownDoc = require('./doc').doc(MnetUIBaseMarkdown);
 }
-const GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
+const MnetUIBaseMarkdownWrapper = MnetUIBaseMarkdownDoc || MnetUIBaseMarkdown;
 
-export { GrommetMarkdownWrapper as Markdown };
+export { MnetUIBaseMarkdownWrapper as Markdown };

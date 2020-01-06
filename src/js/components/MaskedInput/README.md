@@ -5,7 +5,7 @@ An input field with formalized syntax.
 ## Usage
 
 ```javascript
-import { MaskedInput } from 'grommet';
+import { MaskedInput } from 'mnet-ui-base';
 <MaskedInput id='item' name='item' />
 ```
 

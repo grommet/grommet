@@ -5,7 +5,7 @@ A map of the world, or a continent.
 ## Usage
 
 ```javascript
-import { WorldMap } from 'grommet';
+import { WorldMap } from 'mnet-ui-base';
 <WorldMap />
 ```
 

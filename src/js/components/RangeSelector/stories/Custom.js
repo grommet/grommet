@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { MnetUIBase, Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
-const customThemeRangeSelector = deepMerge(grommet, {
+const customThemeRangeSelector = deepMerge(mnet, {
   global: {
     borderSize: {
       small: '6px',
@@ -38,7 +38,7 @@ const CustomRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   };
 
   return (
-    <Grommet theme={customThemeRangeSelector}>
+    <MnetUIBase theme={customThemeRangeSelector}>
       <Box align="center" pad="large">
         <Stack>
           <Box
@@ -70,7 +70,7 @@ const CustomRangeSelector = ({ direction = 'horizontal', ...rest }) => {
           />
         </Stack>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

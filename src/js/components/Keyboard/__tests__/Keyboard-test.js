@@ -3,18 +3,18 @@ import { create } from 'react-test-renderer';
 import 'jest-styled-components';
 import { render, fireEvent } from '@testing-library/react';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Keyboard } from '..';
 
 describe('Keyboard', () => {
   test('onDown', () => {
     const onDown = jest.fn();
     const component = create(
-      <Grommet>
+      <MnetUIBase>
         <Keyboard onDown={onDown}>
           <span>hi</span>
         </Keyboard>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -34,11 +34,11 @@ describe('Keyboard', () => {
     const onDown = jest.fn();
     const onKeyDown = jest.fn();
     const component = create(
-      <Grommet>
+      <MnetUIBase>
         <Keyboard onDown={onDown} onKeyDown={onKeyDown}>
           <span>hi</span>
         </Keyboard>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

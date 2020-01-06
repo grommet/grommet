@@ -1,15 +1,15 @@
 import React, { useReducer, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
+import { Box, Diagram, MnetUIBase, mnet, Stack, Text } from 'mnet-ui-base';
 import { Diamond } from 'grommet-icons';
-import { deepMerge } from 'grommet/utils';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 import { data } from './data';
 
-const customTheme = deepMerge(grommet, {
+const customTheme = deepMerge(mnet, {
   diagram: {
-    extend: `@keyframes 
+    extend: `@keyframes
   example {
     to {
       stroke-dashoffset: 0;
@@ -87,7 +87,7 @@ const Animated = () => {
   }
 
   return (
-    <Grommet theme={customTheme}>
+    <MnetUIBase theme={customTheme}>
       <Box align="center">
         <Box pad="large">
           <Stack>
@@ -111,7 +111,7 @@ const Animated = () => {
           </Stack>
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

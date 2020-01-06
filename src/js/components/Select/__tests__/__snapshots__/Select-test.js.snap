@@ -8,8 +8,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c9 g {
@@ -139,15 +139,15 @@ exports[`Select applies custom global.hover theme to options 1`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-focus-inner {
@@ -282,7 +282,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 
 .c0:hover {
   background-color: lightgreen;
-  color: #EB5B5B;
+  color: #E15151;
 }
 
 .c2 {
@@ -323,8 +323,8 @@ exports[`Select basic 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -454,15 +454,15 @@ exports[`Select basic 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -560,8 +560,8 @@ exports[`Select complex options and children 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -691,15 +691,15 @@ exports[`Select complex options and children 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -794,7 +794,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -810,7 +810,7 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 cNAKzl"
+        class="StyledIcon-ofa7kd-0 eCEOyf"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1120,8 +1120,8 @@ exports[`Select deselect an option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -1251,15 +1251,15 @@ exports[`Select deselect an option 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -1345,8 +1345,8 @@ exports[`Select disabled 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -1478,15 +1478,15 @@ exports[`Select disabled 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -1583,7 +1583,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1599,7 +1599,7 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 cNAKzl"
+        class="StyledIcon-ofa7kd-0 eCEOyf"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1796,15 +1796,15 @@ exports[`Select empty results search 1`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-focus-inner {
@@ -2447,8 +2447,8 @@ exports[`Select modifies select control style on open 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c9 g {
@@ -2578,15 +2578,15 @@ exports[`Select modifies select control style on open 1`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-focus-inner {
@@ -2687,8 +2687,8 @@ exports[`Select multiple 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -2818,15 +2818,15 @@ exports[`Select multiple 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -2926,8 +2926,8 @@ exports[`Select multiple values 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -3057,15 +3057,15 @@ exports[`Select multiple values 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -3161,7 +3161,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -3178,7 +3178,7 @@ exports[`Select multiple values 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 cNAKzl"
+        class="StyledIcon-ofa7kd-0 eCEOyf"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3368,7 +3368,7 @@ exports[`Select multiple values 3`] = `
 }
 
 .c9 {
-  background: #EB5B5B;
+  background: #E15151;
   color: #FFFFFF;
 }
 
@@ -3543,8 +3543,8 @@ exports[`Select opens 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -3674,15 +3674,15 @@ exports[`Select opens 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -3777,7 +3777,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 jamzor Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3793,7 +3793,7 @@ exports[`Select opens 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 cNAKzl"
+        class="StyledIcon-ofa7kd-0 eCEOyf"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -4199,8 +4199,8 @@ exports[`Select renders custom icon 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -4330,15 +4330,15 @@ exports[`Select renders custom icon 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -4436,8 +4436,8 @@ exports[`Select renders default icon 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -4567,15 +4567,15 @@ exports[`Select renders default icon 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -4674,8 +4674,8 @@ exports[`Select renders styled select options backwards compatible with legacy
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c9 g {
@@ -4805,15 +4805,15 @@ exports[`Select renders styled select options backwards compatible with legacy
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-focus-inner {
@@ -4905,8 +4905,8 @@ exports[`Select renders styled select options backwards compatible with legacy
 </div>
 `;
 
-exports[`Select renders styled select options combining select.options.box && 
-  select.options.container; 
+exports[`Select renders styled select options combining select.options.box &&
+  select.options.container;
   select.options.container prioritized if conflict 1`] = `
 .c9 {
   display: inline-block;
@@ -4915,8 +4915,8 @@ exports[`Select renders styled select options combining select.options.box &&
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c9 g {
@@ -5046,15 +5046,15 @@ exports[`Select renders styled select options combining select.options.box &&
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-focus-inner {
@@ -5154,8 +5154,8 @@ exports[`Select renders styled select options using select.options.container 1`]
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c9 g {
@@ -5285,15 +5285,15 @@ exports[`Select renders styled select options using select.options.container 1`]
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-focus-inner {
@@ -5470,15 +5470,15 @@ exports[`Select renders without icon 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -5548,8 +5548,8 @@ exports[`Select search 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -5679,15 +5679,15 @@ exports[`Select search 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -5969,15 +5969,15 @@ exports[`Select search 2`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c6::-moz-focus-inner {
@@ -6193,8 +6193,8 @@ exports[`Select select an option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -6324,15 +6324,15 @@ exports[`Select select an option 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -6417,8 +6417,8 @@ exports[`Select select an option with complex options 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c4 g {
@@ -6577,8 +6577,8 @@ exports[`Select select an option with enter 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -6708,15 +6708,15 @@ exports[`Select select an option with enter 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -6801,8 +6801,8 @@ exports[`Select select another option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -6932,15 +6932,15 @@ exports[`Select select another option 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {
@@ -7026,8 +7026,8 @@ exports[`Select size 1`] = `
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c8 g {
@@ -7159,15 +7159,15 @@ exports[`Select size 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c5::-moz-focus-inner {

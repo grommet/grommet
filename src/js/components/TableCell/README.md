@@ -4,7 +4,7 @@ A cell of data in a table.
 ## Usage
 
 ```javascript
-import { TableCell } from 'grommet';
+import { TableCell } from 'mnet-ui-base';
 <TableCell />
 ```
 

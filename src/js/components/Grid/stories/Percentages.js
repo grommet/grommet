@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Grid } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Grid } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Percentages = () => (
-  <Grommet theme={grommet} full>
+  <MnetUIBase theme={mnet} full>
     <Grid
       fill
       areas={[
@@ -19,7 +19,7 @@ const Percentages = () => (
       <Box gridArea="nav" background="brand" />
       <Box gridArea="main" background="brand" />
     </Grid>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Grid', module).add('Percentages', () => <Percentages />);

@@ -3,42 +3,42 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react';
 
-import { Grommet, Tab, Tabs } from '../..';
+import { MnetUIBase, Tab, Tabs } from '../..';
 
 describe('Tabs', () => {
   test('no Tab', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Tabs>
           <Tab />
         </Tabs>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('Tab', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Tabs>
           <Tab title="Tab 1">Tab body 1</Tab>
           {undefined}
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('complex title', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Tabs>
           <Tab title={<div>Tab 1</div>}>Tab body 1</Tab>
           {undefined}
           <Tab title={<div>Tab 2</div>}>Tab body 2</Tab>
         </Tabs>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -46,12 +46,12 @@ describe('Tabs', () => {
   test('change to second tab', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Tabs onActive={onActive}>
           <Tab title="Tab 1">Tab body 1</Tab>
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -63,7 +63,7 @@ describe('Tabs', () => {
 
   test('set on hover', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Tabs>
           {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
           <Tab title="Tab 1" onMouseOver={() => {}} onMouseOut={() => {}}>
@@ -71,7 +71,7 @@ describe('Tabs', () => {
           </Tab>
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

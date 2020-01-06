@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, List } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { data } from './data';
 
@@ -10,7 +10,7 @@ const SelectionList = () => {
   const [selected, setSelected] = React.useState();
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large" gap="large">
         <List
           data={data.slice(0, 10)}
@@ -22,7 +22,7 @@ const SelectionList = () => {
           }
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { grommet } from 'grommet/themes';
-import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
+import { mnet } from 'mnet-ui-base/themes';
+import { AnnounceContext, Box, MnetUIBase, Heading, Text } from 'mnet-ui-base';
 
 const Announcer = ({ announce, message, mode, role }) => {
   React.useEffect(() => {
@@ -31,21 +31,21 @@ Announcer.defaultProps = {
 };
 
 const AnnounceContextComponent = props => (
-  <Grommet theme={grommet} full>
+  <MnetUIBase theme={mnet} full>
     <Box justify="center" align="center" background="brand" fill>
       <Heading>Welcome to announcement section</Heading>
       <AnnounceContext.Consumer>
         {announce => <Announcer announce={announce} {...props} />}
       </AnnounceContext.Consumer>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('AnnounceContext', module)
   .add('Polite', () => <AnnounceContextComponent />)
   .add('Assertive', () => (
     <AnnounceContextComponent
-      message="Turn on Accessibility feature to listen to this announcement. 
+      message="Turn on Accessibility feature to listen to this announcement.
       This will soon disappear"
       mode="assertive"
       role="alert"

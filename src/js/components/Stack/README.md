@@ -9,7 +9,7 @@ A container that stacks contents on top of each other. One child is
 ## Usage
 
 ```javascript
-import { Stack } from 'grommet';
+import { Stack } from 'mnet-ui-base';
 <Stack />
 ```
 

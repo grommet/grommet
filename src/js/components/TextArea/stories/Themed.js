@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, TextArea } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { MnetUIBase, Box, TextArea } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
-const customTheme = deepMerge(grommet, {
+const customTheme = deepMerge(mnet, {
   textArea: {
     extend: () => `
       font-size: 40px;
@@ -20,7 +20,7 @@ const ThemedTextArea = () => {
   const onChange = event => setValue(event.target.value);
 
   return (
-    <Grommet theme={customTheme}>
+    <MnetUIBase theme={customTheme}>
       <Box
         width="large"
         height="medium"
@@ -28,7 +28,7 @@ const ThemedTextArea = () => {
       >
         <TextArea value={value} onChange={onChange} fill />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

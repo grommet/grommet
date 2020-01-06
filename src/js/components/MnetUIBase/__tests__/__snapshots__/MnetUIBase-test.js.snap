@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grommet announce 1`] = `
+exports[`MnetUIBase announce 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -20,7 +20,7 @@ exports[`Grommet announce 1`] = `
 </div>
 `;
 
-exports[`Grommet announce 2`] = `
+exports[`MnetUIBase announce 2`] = `
 <div
   aria-live="assertive"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
@@ -29,14 +29,14 @@ exports[`Grommet announce 2`] = `
 </div>
 `;
 
-exports[`Grommet announce 3`] = `
+exports[`MnetUIBase announce 3`] = `
 <div
   aria-live="assertive"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 />
 `;
 
-exports[`Grommet basic 1`] = `
+exports[`MnetUIBase basic 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -52,7 +52,7 @@ exports[`Grommet basic 1`] = `
 />
 `;
 
-exports[`Grommet cssVars 1`] = `
+exports[`MnetUIBase cssVars 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -63,9 +63,9 @@ exports[`Grommet cssVars 1`] = `
   -webkit-font-smoothing: antialiased;
   --active: rgba(221,221,221,0.5);
   --black: #000000;
-  --brand: #EB5B5B;
+  --brand: #E15151;
   --focus: #519bff;
-  --placeholder: #AAAAAA;
+  --placeholder: #e0e4ee;
   --selected: brand;
   --white: #FFFFFF;
   --accent-1: #20314f;
@@ -99,11 +99,11 @@ exports[`Grommet cssVars 1`] = `
 <div
   className="c0"
 >
-  Grommet App
+  MnetUIBase App
 </div>
 `;
 
-exports[`Grommet full 1`] = `
+exports[`MnetUIBase full 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -120,13 +120,13 @@ exports[`Grommet full 1`] = `
 <div
   className="c0"
 >
-  Grommet App
+  MnetUIBase App
 </div>
 `;
 
-exports[`Grommet grommet theme 1`] = `
+exports[`MnetUIBase mnet theme 1`] = `
 .c0 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Open Sans',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
   background: #ffffff;
@@ -143,26 +143,7 @@ exports[`Grommet grommet theme 1`] = `
 />
 `;
 
-exports[`Grommet hpe theme 1`] = `
-.c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  className="c0"
->
-  Grommet App
-</div>
-`;
-
-exports[`Grommet ssr rendering Mozilla/5.0 (X11; Linux x 1`] = `
+exports[`MnetUIBase ssr rendering Mozilla/5.0 (X11; Linux x 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -199,7 +180,7 @@ exports[`Grommet ssr rendering Mozilla/5.0 (X11; Linux x 1`] = `
 </div>
 `;
 
-exports[`Grommet ssr rendering Mozilla/5.0 (iPad; CPU OS 1`] = `
+exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPad; CPU OS 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -236,7 +217,7 @@ exports[`Grommet ssr rendering Mozilla/5.0 (iPad; CPU OS 1`] = `
 </div>
 `;
 
-exports[`Grommet ssr rendering Mozilla/5.0 (iPhone; CPU  1`] = `
+exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPhone; CPU  1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -273,12 +254,12 @@ exports[`Grommet ssr rendering Mozilla/5.0 (iPhone; CPU  1`] = `
 </div>
 `;
 
-exports[`Grommet themeMode 1`] = `
+exports[`MnetUIBase themeMode 1`] = `
 .c0 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Open Sans',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
-  background: #000000;
+  background: #1f2024;
   color: #f8f8f8;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

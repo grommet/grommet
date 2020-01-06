@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const RANGE_MIN = 0;
 const RANGE_MAX = 100;
@@ -36,11 +36,11 @@ function Thin({ initialRange = [0, 100], label }) {
 
 function App() {
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box pad="small">
         <Thin label="My Range Selector" />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 }
 

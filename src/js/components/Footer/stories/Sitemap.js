@@ -1,8 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet as GrommetIcon } from 'grommet-icons';
-import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
+import { MnetUIBase as MnetUIBaseIcon } from 'grommet-icons';
+import {
+  Anchor,
+  Box,
+  Footer,
+  MnetUIBase,
+  Main,
+  Text,
+  mnet,
+} from 'mnet-ui-base';
 import { threeColumns as data } from './data';
 
 const FooterAnchor = ({ ...rest }) => (
@@ -26,7 +34,7 @@ const FooterContent = () => {
 
 const Sitemap = () => {
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Main
         background="light-4"
         elevation="large"
@@ -42,7 +50,7 @@ const Sitemap = () => {
       <Footer background="dark-1" pad="large">
         <Box direction="row-responsive" gap="xsmall">
           <Box align="center" gap="small">
-            <GrommetIcon color="brand" size="large" />
+            <MnetUIBaseIcon color="brand" size="large" />
             <Text alignSelf="center" color="brand" weight="bold">
               grommet.io
             </Text>
@@ -50,7 +58,7 @@ const Sitemap = () => {
         </Box>
         <FooterContent />
       </Footer>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

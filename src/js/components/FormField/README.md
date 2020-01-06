@@ -7,7 +7,7 @@ A single field in a form. FormField wraps an input component with
 ## Usage
 
 ```javascript
-import { FormField } from 'grommet';
+import { FormField } from 'mnet-ui-base';
 <FormField />
 ```
 
@@ -15,8 +15,8 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+The component to insert in the FormField. MnetUIBase will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { RangeSelector } from '..';
 
 describe('RangeSelector', () => {
@@ -11,9 +11,9 @@ describe('RangeSelector', () => {
 
   test('basic', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector values={[20, 30]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -21,9 +21,9 @@ describe('RangeSelector', () => {
 
   test('color', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector color="accent-1" values={[20, 30]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -31,10 +31,10 @@ describe('RangeSelector', () => {
 
   test('direction', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector direction="horizontal" values={[20, 30]} />
         <RangeSelector direction="vertical" values={[20, 30]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -42,10 +42,10 @@ describe('RangeSelector', () => {
 
   test('invert', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector invert values={[20, 30]} />
         <RangeSelector invert={false} values={[20, 30]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -53,9 +53,9 @@ describe('RangeSelector', () => {
 
   test('max', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector max={50} values={[20, 30]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -63,9 +63,9 @@ describe('RangeSelector', () => {
 
   test('min', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector min={10} values={[20, 30]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -73,11 +73,11 @@ describe('RangeSelector', () => {
 
   test('opacity', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         {['weak', 'medium', 'strong'].map(opacity => (
           <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
         ))}
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -85,11 +85,11 @@ describe('RangeSelector', () => {
 
   test('round', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
           <RangeSelector key={round} round={round} values={[20, 30]} />
         ))}
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -97,7 +97,7 @@ describe('RangeSelector', () => {
 
   test('size', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         {[
           'xxsmall',
           'xsmall',
@@ -109,7 +109,7 @@ describe('RangeSelector', () => {
         ].map(size => (
           <RangeSelector key={size} size={size} values={[20, 30]} />
         ))}
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -122,9 +122,9 @@ describe('RangeSelector', () => {
     };
     const onChange = jest.fn(nextValues => setValues(nextValues));
     const { container, getByLabelText } = render(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector values={[0, 100]} step={3} onChange={onChange} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -147,9 +147,9 @@ describe('RangeSelector', () => {
   test('handle keyboard', () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector values={[20, 30]} onChange={onChange} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -171,9 +171,9 @@ describe('RangeSelector', () => {
   test('handle mouse', () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
-      <Grommet>
+      <MnetUIBase>
         <RangeSelector values={[20, 30]} onChange={onChange} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

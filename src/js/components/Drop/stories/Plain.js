@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Drop, MnetUIBase } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const PlainDrop = () => {
   const targetRef = useRef();
@@ -10,7 +10,7 @@ const PlainDrop = () => {
   const [, setShowDrop] = useState(false);
   useEffect(() => setShowDrop(true), []);
   return (
-    <Grommet theme={grommet} full>
+    <MnetUIBase theme={mnet} full>
       <Box background="brand" fill align="center" justify="center">
         <Box
           background="dark-3"
@@ -31,7 +31,7 @@ const PlainDrop = () => {
           </Drop>
         )}
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

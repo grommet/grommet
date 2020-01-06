@@ -5,7 +5,7 @@ Footer for a document or section
 ## Usage
 
 ```javascript
-import { Footer } from 'grommet';
+import { Footer } from 'mnet-ui-base';
 <Footer />
 ```
 

@@ -10,7 +10,7 @@ to create fallback rendering for older browsers, like ie11.
 ## Usage
 
 ```javascript
-import { Grid } from 'grommet';
+import { Grid } from 'mnet-ui-base';
 <Grid />
 ```
 

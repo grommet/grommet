@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, DataTable, CheckBox } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { columns, DATA } from './data';
 
@@ -27,7 +27,7 @@ const ControlledDataTable = () => {
     setChecked(event.target.checked ? DATA.map(datum => datum.name) : []);
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="medium">
         <DataTable
           columns={[
@@ -58,7 +58,7 @@ const ControlledDataTable = () => {
           size="medium"
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

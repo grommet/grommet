@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, RadioButton } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { MnetUIBase, Box, Button, RadioButton } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
-const theme = deepMerge(grommet, {
+const theme = deepMerge(mnet, {
   radioButton: {
     gap: 'xsmall',
     size: '18px',
@@ -29,7 +29,7 @@ const ThemeRadioButton = () => {
   const [selected, setSelected] = React.useState();
 
   return (
-    <Grommet theme={theme}>
+    <MnetUIBase theme={theme}>
       <Box align="center" pad="large" gap="large">
         <RadioButton
           label="option 1"
@@ -41,7 +41,7 @@ const ThemeRadioButton = () => {
 
         <Button label="clear" onClick={() => setSelected(undefined)} />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

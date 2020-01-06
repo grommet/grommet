@@ -5,7 +5,7 @@ A graphical meter.
 ## Usage
 
 ```javascript
-import { Meter } from 'grommet';
+import { Meter } from 'mnet-ui-base';
 <Meter />
 ```
 

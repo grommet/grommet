@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, Select, Grommet } from 'grommet';
+import { mnet, Box, FormField, Select, MnetUIBase } from 'mnet-ui-base';
 import { allOptions } from './data';
 
 const FormFieldSelect = props => {
   const [value, setValue] = useState('');
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <FormField label="Label" htmlFor="select" {...props}>
           <Select
@@ -20,7 +20,7 @@ const FormFieldSelect = props => {
           />
         </FormField>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

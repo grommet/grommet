@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, TextArea } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, TextArea } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleTextArea = props => {
   const [value, setValue] = React.useState('');
@@ -10,11 +10,11 @@ const SimpleTextArea = props => {
   const onChange = event => setValue(event.target.value);
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <TextArea value={value} onChange={onChange} {...props} />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

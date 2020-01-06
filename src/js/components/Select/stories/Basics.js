@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, MnetUIBase, Select } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 const colors = {
   selected: 'neutral-3',
 };
 
-const customRoundedTheme = deepMerge(grommet, {
+const customRoundedTheme = deepMerge(mnet, {
   global: {
     colors,
     control: {
@@ -46,7 +46,7 @@ const SimpleSelect = ({ theme, ...rest }) => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
   return (
-    <Grommet full theme={theme || grommet}>
+    <MnetUIBase full theme={theme || mnet}>
       <Box fill align="center" justify="start" pad="large">
         <Select
           id="select"
@@ -58,7 +58,7 @@ const SimpleSelect = ({ theme, ...rest }) => {
           {...rest}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, RadioButton } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, RadioButton } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const DisabledRadioButton = () => {
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large" gap="large">
         <RadioButton
           label="option 1"
@@ -16,7 +16,7 @@ const DisabledRadioButton = () => {
           disabled
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

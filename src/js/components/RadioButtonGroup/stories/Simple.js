@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, RadioButtonGroup } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, RadioButtonGroup } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleRadioButtonGroup = ({ value: initialValue, ...props }) => {
   const [value, setValue] = useState(initialValue);
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <RadioButtonGroup
           name="radio"
@@ -22,7 +22,7 @@ const SimpleRadioButtonGroup = ({ value: initialValue, ...props }) => {
           {...props}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

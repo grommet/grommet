@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, Chart, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Button, Chart, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 import { Next, Previous } from 'grommet-icons';
 
 import { calcs } from '../calcs';
@@ -54,7 +54,7 @@ const ZoomChart = ({ data, max }) => {
   }
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box pad="large" direction="row" gap="medium">
         <Button
           hoverIndicator
@@ -104,7 +104,7 @@ const ZoomChart = ({ data, max }) => {
             </Box>
           </Stack>
           <Box direction="row" justify="between">
-            {/* className="chromatic-ignore" is used for the story testing. 
+            {/* className="chromatic-ignore" is used for the story testing.
                 grommet doesn't recommend the usage of className */}
             {axis[0].map(t => (
               <Text key={t} className="chromatic-ignore">
@@ -119,7 +119,7 @@ const ZoomChart = ({ data, max }) => {
           onClick={() => setReference(nextReference)}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

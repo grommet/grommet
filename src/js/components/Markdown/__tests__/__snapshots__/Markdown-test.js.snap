@@ -64,7 +64,7 @@ exports[`Markdown renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #EB5B5B;
+  color: #E15151;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;

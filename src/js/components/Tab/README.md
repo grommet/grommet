@@ -4,7 +4,7 @@ One tab within Tabs.
 ## Usage
 
 ```javascript
-import { Tab } from 'grommet';
+import { Tab } from 'mnet-ui-base';
 <Tab />
 ```
 

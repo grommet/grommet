@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, Form, TextArea, Grommet } from 'grommet';
+import { mnet, Box, FormField, Form, TextArea, MnetUIBase } from 'mnet-ui-base';
 
 const FormFieldTextArea = props => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Form>
         <FormField
@@ -16,7 +16,7 @@ const FormFieldTextArea = props => (
         />
       </Form>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Form', module).add('TextArea', () => <FormFieldTextArea />);

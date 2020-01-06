@@ -5,7 +5,7 @@ An image.
 ## Usage
 
 ```javascript
-import { Image } from 'grommet';
+import { Image } from 'mnet-ui-base';
 <Image/>
 ```
 

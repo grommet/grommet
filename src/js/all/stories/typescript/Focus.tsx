@@ -2,20 +2,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { deepMerge } from 'grommet/utils';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 import {
-  grommet,
+  mnet,
   Anchor,
   Box,
   Button,
-  Grommet,
+  MnetUIBase,
   Menu,
   Text,
   TextInput,
-} from 'grommet';
+} from 'mnet-ui-base';
 
-const customFocus = deepMerge(grommet, {
+const customFocus = deepMerge(mnet, {
   global: {
     colors: {
       focus: 'neutral-3',
@@ -24,7 +24,7 @@ const customFocus = deepMerge(grommet, {
 });
 
 const CustomFocusFC = () => (
-  <Grommet theme={customFocus}>
+  <MnetUIBase theme={customFocus}>
     <Box pad="small" gap="medium" width="medium">
       <Text>
         Focus on the input components and notice the custom focus color
@@ -37,7 +37,7 @@ const CustomFocusFC = () => (
       />
       <Button label="Button" onClick={() => {}} />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

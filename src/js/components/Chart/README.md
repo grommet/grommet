@@ -5,7 +5,7 @@ A graphical chart.
 ## Usage
 
 ```javascript
-import { Chart } from 'grommet';
+import { Chart } from 'mnet-ui-base';
 <Chart />
 ```
 

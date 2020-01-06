@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 import { findAllByType } from '../../../utils';
 
-import { Grommet, RoutedButton } from '../..';
+import { MnetUIBase, RoutedButton } from '../..';
 
 class FakeRouter extends Component {
   static propTypes = {
@@ -41,11 +41,11 @@ describe('RoutedButton', () => {
   const replace = jest.fn();
   test('renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -55,11 +55,11 @@ describe('RoutedButton', () => {
     const preventDefault = jest.fn();
     const onClick = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     const anchor = findAllByType(tree, 'a');
@@ -72,11 +72,11 @@ describe('RoutedButton', () => {
   test('RoutedButton skips onClick if right clicked', () => {
     const onClick = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 
@@ -93,11 +93,11 @@ describe('RoutedButton', () => {
   test('RoutedButton calls router context push', () => {
     const preventDefault = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 
@@ -112,11 +112,11 @@ describe('RoutedButton', () => {
   test('RoutedButton calls router context replace', () => {
     const preventDefault = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" method="replace" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 

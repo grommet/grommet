@@ -2,35 +2,35 @@ import React from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Distribution } from '..';
 
 describe('Distribution', () => {
   test('renders', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Distribution values={[]} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('values renders', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Distribution
           values={[{ value: 20 }, { value: 3 }, { value: 2 }, { value: 1 }]}
         >
           {value => <span>{value.value}</span>}
         </Distribution>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('gap renders', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         {['xsmall', 'small', 'medium', 'large'].map(gap => (
           <Distribution
             key={gap}
@@ -40,7 +40,7 @@ describe('Distribution', () => {
             {value => <span>{value.value}</span>}
           </Distribution>
         ))}
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

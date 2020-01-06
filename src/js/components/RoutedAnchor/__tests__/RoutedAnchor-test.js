@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 import { findAllByType } from '../../../utils';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { RoutedAnchor } from '..';
 
 class FakeRouter extends Component {
@@ -42,11 +42,11 @@ describe('RoutedAnchor', () => {
   const push = jest.fn();
   test('renders', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter push={push} replace={replace}>
           <RoutedAnchor label="Test" path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -56,11 +56,11 @@ describe('RoutedAnchor', () => {
     const preventDefault = jest.fn();
     const onClick = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter push={push} replace={replace}>
           <RoutedAnchor label="Test" onClick={onClick} path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 
@@ -74,11 +74,11 @@ describe('RoutedAnchor', () => {
   test('skips onClick if right clicked', () => {
     const onClick = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter push={push} replace={replace}>
           <RoutedAnchor label="Test" onClick={onClick} path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 
@@ -95,11 +95,11 @@ describe('RoutedAnchor', () => {
   test('calls router context push', () => {
     const preventDefault = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter push={push} replace={replace}>
           <RoutedAnchor label="Test" path="/" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 
@@ -114,11 +114,11 @@ describe('RoutedAnchor', () => {
   test('calls router context replace', () => {
     const preventDefault = jest.fn();
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FakeRouter replace={replace} push={push}>
           <RoutedAnchor label="Test" path="/" method="replace" />
         </FakeRouter>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
 

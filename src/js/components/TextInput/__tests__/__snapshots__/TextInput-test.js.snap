@@ -23,15 +23,15 @@ exports[`TextInput basic 1`] = `
 }
 
 .c1::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1::-moz-focus-inner {
@@ -89,15 +89,15 @@ exports[`TextInput close suggestion drop 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-focus-inner {
@@ -405,14 +405,14 @@ exports[`TextInput close suggestion drop 3`] = `
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-ilbntv-1 jIAIZE"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 fcHDFG"
+      class="StyledTextInput-ilbntv-0 gzRCAZ"
       data-testid="test-input"
       id="item"
       name="item"
@@ -455,15 +455,15 @@ exports[`TextInput complex suggestions 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-focus-inner {
@@ -760,15 +760,15 @@ exports[`TextInput disabled 1`] = `
 }
 
 .c1::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1::-moz-focus-inner {
@@ -827,15 +827,15 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-focus-inner {
@@ -868,14 +868,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-ilbntv-1 jIAIZE"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 fcHDFG"
+      class="StyledTextInput-ilbntv-0 gzRCAZ"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1498,15 +1498,15 @@ exports[`TextInput select a suggestion 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-focus-inner {
@@ -1573,15 +1573,15 @@ exports[`TextInput select suggestion 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c2::-moz-focus-inner {
@@ -1889,14 +1889,14 @@ exports[`TextInput select suggestion 3`] = `
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-ilbntv-1 jIAIZE"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 kksDXv"
+      class="StyledTextInput-ilbntv-0 kGfdwz"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2210,15 +2210,15 @@ exports[`TextInput suggestions 1`] = `
 }
 
 .c1::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c1::-moz-focus-inner {

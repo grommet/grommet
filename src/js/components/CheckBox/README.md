@@ -5,7 +5,7 @@ A checkbox toggle control.
 ## Usage
 
 ```javascript
-import { CheckBox } from 'grommet';
+import { CheckBox } from 'mnet-ui-base';
 <CheckBox />
 ```
 

@@ -7,7 +7,7 @@ export const doc = Accordion => {
     .availableAt(getAvailableAtBadge('Accordion'))
     .description('An accordion containing collapsible panels.')
     .usage(
-      `import { Accordion, AccordionPanel } from 'grommet';
+      `import { Accordion, AccordionPanel } from 'mnet-ui-base';
 <Accordion>
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
   <AccordionPanel label='Panel 2'>...</AccordionPanel>

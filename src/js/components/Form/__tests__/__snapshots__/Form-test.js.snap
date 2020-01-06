@@ -112,15 +112,15 @@ exports[`Form update 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #FFFFFF;
-  color: #444444;
-  border-radius: 4.800000000000001px;
+  background: #E15151;
+  color: #f8f8f8;
+  border-radius: 6px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -130,7 +130,7 @@ exports[`Form update 1`] = `
 }
 
 .c5:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c4 {
@@ -156,15 +156,15 @@ exports[`Form update 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4::-moz-focus-inner {
@@ -307,15 +307,15 @@ exports[`Form with field 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4::-moz-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #e0e4ee;
 }
 
 .c4::-moz-focus-inner {

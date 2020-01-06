@@ -13,7 +13,7 @@ export const doc = Layer => {
       control for the user to close the layer.`,
     )
     .usage(
-      `import { Layer } from 'grommet';
+      `import { Layer } from 'mnet-ui-base';
 <Layer />`,
     )
     .intrinsicElement('div');

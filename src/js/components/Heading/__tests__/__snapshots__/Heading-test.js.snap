@@ -16,7 +16,7 @@ exports[`Heading color renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  color: #EB5B5B;
+  color: #E15151;
 }
 
 @media only screen and (max-width:768px) {

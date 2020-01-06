@@ -5,7 +5,7 @@ A form that manages state for its fields.
 ## Usage
 
 ```javascript
-import { Form } from 'grommet';
+import { Form } from 'mnet-ui-base';
 <Form />
 ```
 

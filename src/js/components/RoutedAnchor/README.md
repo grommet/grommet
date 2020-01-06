@@ -5,7 +5,7 @@ An Anchor with support for React Router.
 ## Usage
 
 ```javascript
-import { RoutedAnchor } from 'grommet';
+import { RoutedAnchor } from 'mnet-ui-base';
 <RoutedAnchor primary path='/documentation' />
 ```
 

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import 'jest-styled-components';
 import { cleanup, render } from '@testing-library/react';
 
-import { Grommet, Box, Diagram, Stack } from '../..';
+import { MnetUIBase, Box, Diagram, Stack } from '../..';
 
 const Context = ({ children }) => (
-  <Grommet>
+  <MnetUIBase>
     <Stack>
       <Box direction="row">
         <Box id="1" pad="medium" />
@@ -14,7 +14,7 @@ const Context = ({ children }) => (
       </Box>
       {children}
     </Stack>
-  </Grommet>
+  </MnetUIBase>
 );
 
 Context.propTypes = {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Chart, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { calcs } from '../calcs';
 
@@ -45,7 +45,7 @@ const RichChart = () => {
     overflow: true,
   };
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Box
           direction="row"
@@ -95,7 +95,7 @@ const RichChart = () => {
           />
         </Stack>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

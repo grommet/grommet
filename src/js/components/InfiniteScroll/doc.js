@@ -7,7 +7,7 @@ export const doc = InfiniteScroll => {
     .availableAt(getAvailableAtBadge('InfiniteScroll'))
     .description('A container that lazily renders items.')
     .usage(
-      `import { InfiniteScroll } from 'grommet';
+      `import { InfiniteScroll } from 'mnet-ui-base';
 <InfiniteScroll />`,
     );
 

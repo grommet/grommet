@@ -4,8 +4,7 @@ import { storiesOf } from '@storybook/react';
 import {
   Box,
   Heading,
-  grommet,
-  Grommet,
+  MnetUIBase,
   InfiniteScroll,
   Table,
   TableRow,
@@ -13,7 +12,8 @@ import {
   TableCell,
   TableHeader,
   Text,
-} from 'grommet';
+  mnet,
+} from 'mnet-ui-base';
 
 const InfiniteScrollInTable = () => {
   const step = 25;
@@ -29,7 +29,7 @@ const InfiniteScrollInTable = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box pad="small" basis="small">
         <Heading level={3}>
           <Box gap="small">
@@ -80,7 +80,7 @@ const InfiniteScrollInTable = () => {
           </TableBody>
         </Table>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

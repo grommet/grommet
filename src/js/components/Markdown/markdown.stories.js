@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
-import { Box, Grommet, Markdown } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, Markdown } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const CONTENT = `
   # Out of Breath
@@ -14,7 +14,7 @@ const CONTENT = `
   [reference](#)
 
 \`\`\`
-import { Grommet } from 'grommet';
+import { MnetUIBase } from 'mnet-ui-base';
 \`\`\`
 
   > i carry your heart with me
@@ -28,11 +28,11 @@ import { Grommet } from 'grommet';
 `;
 
 const SimpleMarkdown = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Markdown>{CONTENT}</Markdown>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 const StyledPre = styled.pre`
@@ -40,11 +40,11 @@ const StyledPre = styled.pre`
 `;
 
 const ComponentOverrideMarkdown = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Markdown components={{ pre: StyledPre }}>{CONTENT}</Markdown>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Markdown', module)

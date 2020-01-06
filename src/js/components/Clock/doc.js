@@ -7,7 +7,7 @@ export const doc = Clock => {
     .availableAt(getAvailableAtBadge('Clock'))
     .description('A clock with timezone awareness.')
     .usage(
-      `import { Clock } from 'grommet';
+      `import { Clock } from 'mnet-ui-base';
 <Clock />`,
     )
     .intrinsicElement(['div', 'svg']);

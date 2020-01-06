@@ -5,7 +5,7 @@ Arbitrary text.
 ## Usage
 
 ```javascript
-import { Text } from 'grommet';
+import { Text } from 'mnet-ui-base';
 <Text />
 ```
 

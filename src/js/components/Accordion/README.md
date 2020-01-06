@@ -5,7 +5,7 @@ An accordion containing collapsible panels.
 ## Usage
 
 ```javascript
-import { Accordion, AccordionPanel } from 'grommet';
+import { Accordion, AccordionPanel } from 'mnet-ui-base';
 <Accordion>
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
   <AccordionPanel label='Panel 2'>...</AccordionPanel>

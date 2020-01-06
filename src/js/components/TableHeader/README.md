@@ -4,7 +4,7 @@ The header of a table.
 ## Usage
 
 ```javascript
-import { TableHeader } from 'grommet';
+import { TableHeader } from 'mnet-ui-base';
 <TableHeader />
 ```
 

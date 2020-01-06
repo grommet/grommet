@@ -1,18 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box, MnetUIBase } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Disabled = () => {
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Box margin="small">
           <Anchor disabled label="Disabled Anchor" />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

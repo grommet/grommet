@@ -5,7 +5,7 @@ A control to input a range of values.
 ## Usage
 
 ```javascript
-import { RangeSelector } from 'grommet';
+import { RangeSelector } from 'mnet-ui-base';
 <RangeSelector />
 ```
 

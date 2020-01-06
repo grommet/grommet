@@ -7,7 +7,7 @@ export const doc = CheckBox => {
     .availableAt(getAvailableAtBadge('CheckBox'))
     .description('A checkbox toggle control.')
     .usage(
-      `import { CheckBox } from 'grommet';
+      `import { CheckBox } from 'mnet-ui-base';
 <CheckBox />`,
     )
     .intrinsicElement('input');

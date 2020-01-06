@@ -13,8 +13,8 @@ exports[`Button as 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -28,7 +28,7 @@ exports[`Button as 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c0 {
@@ -68,8 +68,8 @@ exports[`Button basic 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -83,7 +83,7 @@ exports[`Button basic 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c0 {
@@ -126,8 +126,8 @@ exports[`Button children function 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -141,7 +141,7 @@ exports[`Button children function 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c2 {
@@ -194,7 +194,7 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #20314f;
-  border-radius: 4.800000000000001px;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -224,14 +224,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #20314f;
-  border-radius: 4.800000000000001px;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
   background: #20314f;
   color: #f8f8f8;
-  border-radius: 4.800000000000001px;
+  border-radius: 6px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -257,14 +257,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #111111;
-  border-radius: 4.800000000000001px;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
   background: #111111;
   color: #f8f8f8;
-  border-radius: 4.800000000000001px;
+  border-radius: 6px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -290,14 +290,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #123;
-  border-radius: 4.800000000000001px;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
   background: #123;
   color: #f8f8f8;
-  border-radius: 4.800000000000001px;
+  border-radius: 6px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -383,8 +383,8 @@ exports[`Button disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -437,8 +437,8 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -452,7 +452,7 @@ exports[`Button fill 1`] = `
 }
 
 .c3:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c1 {
@@ -485,8 +485,8 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -506,7 +506,7 @@ exports[`Button fill 1`] = `
 }
 
 .c2:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c4 {
@@ -521,8 +521,8 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -537,7 +537,7 @@ exports[`Button fill 1`] = `
 }
 
 .c4:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c5 {
@@ -552,8 +552,8 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -568,7 +568,7 @@ exports[`Button fill 1`] = `
 }
 
 .c5:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c0 {
@@ -641,8 +641,8 @@ exports[`Button focus 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -714,8 +714,8 @@ exports[`Button hoverIndicator as object with color 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(235,91,91,1);
-  color: #000000;
+  background-color: rgba(225,81,81,1);
+  color: #FFFFFF;
 }
 
 .c0 {
@@ -911,8 +911,8 @@ exports[`Button href 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -926,7 +926,7 @@ exports[`Button href 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c0 {
@@ -996,8 +996,8 @@ exports[`Button icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -1011,7 +1011,7 @@ exports[`Button icon label 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c0 {
@@ -1062,15 +1062,15 @@ exports[`Button primary 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #FFFFFF;
-  color: #444444;
-  border-radius: 4.800000000000001px;
+  background: #E15151;
+  color: #f8f8f8;
+  border-radius: 6px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1080,7 +1080,7 @@ exports[`Button primary 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c0 {
@@ -1153,8 +1153,8 @@ exports[`Button reverse icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #EB5B5B;
-  border-radius: 4.800000000000001px;
+  border: 2px solid #E15151;
+  border-radius: 6px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
@@ -1168,7 +1168,7 @@ exports[`Button reverse icon label 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #EB5B5B;
+  box-shadow: 0px 0px 0px 2px #E15151;
 }
 
 .c0 {

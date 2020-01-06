@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, CheckBox, Grommet } from 'grommet';
+import { mnet, Box, FormField, CheckBox, MnetUIBase } from 'mnet-ui-base';
 
 const FormFieldToggle = props => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <FormField label="Label" htmlFor="check-box" {...props}>
         <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
@@ -12,7 +12,7 @@ const FormFieldToggle = props => (
         </Box>
       </FormField>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Form', module).add('Toggle', () => <FormFieldToggle />);

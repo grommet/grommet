@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Accordion, AccordionPanel, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Accordion, AccordionPanel, Box, MnetUIBase } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleAccordion = props => {
   const { animate, multiple, ...rest } = props;
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box {...rest}>
         <Accordion animate={animate} multiple={multiple}>
           <AccordionPanel label="Panel 1">
@@ -29,7 +29,7 @@ const SimpleAccordion = props => {
           </AccordionPanel>
         </Accordion>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -11,7 +11,7 @@ export const doc = FormField => {
       control like TextInput, TextArea, Select, etc.`,
     )
     .usage(
-      `import { FormField } from 'grommet';
+      `import { FormField } from 'mnet-ui-base';
 <FormField />`,
     )
     .intrinsicElement('div');
@@ -21,8 +21,8 @@ export const doc = FormField => {
       PropTypes.func,
       PropTypes.object,
     ]).description(
-      `The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+      `The component to insert in the FormField. MnetUIBase will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value

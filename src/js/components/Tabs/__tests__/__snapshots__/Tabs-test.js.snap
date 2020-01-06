@@ -74,7 +74,7 @@ exports[`Tabs Tab 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px #EB5B5B;
+  border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -110,7 +110,7 @@ exports[`Tabs Tab 1`] = `
 .c8 {
   font-size: 18px;
   line-height: 24px;
-  color: #EB5B5B;
+  color: #E15151;
 }
 
 .c0 {
@@ -180,7 +180,7 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 2px #EB5B5B;
+    border-bottom: solid 2px #E15151;
   }
 }
 
@@ -330,7 +330,7 @@ exports[`Tabs change to second tab 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px #EB5B5B;
+  border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -366,7 +366,7 @@ exports[`Tabs change to second tab 1`] = `
 .c8 {
   font-size: 18px;
   line-height: 24px;
-  color: #EB5B5B;
+  color: #E15151;
 }
 
 .c0 {
@@ -436,7 +436,7 @@ exports[`Tabs change to second tab 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 2px #EB5B5B;
+    border-bottom: solid 2px #E15151;
   }
 }
 
@@ -504,7 +504,7 @@ exports[`Tabs change to second tab 1`] = `
 
 exports[`Tabs change to second tab 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -521,10 +521,10 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bpHZTE StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 ceEUdX StyledTab-kic4tf-0 jGMnvI"
         >
           <span
-            class="StyledText-sc-3e83s1-0 fgkWBq"
+            class="StyledText-sc-3e83s1-0 jwJOlR"
           >
             Tab 1
           </span>
@@ -633,7 +633,7 @@ exports[`Tabs complex title 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px #EB5B5B;
+  border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -727,7 +727,7 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:768px) {
   .c6 {
-    border-bottom: solid 2px #EB5B5B;
+    border-bottom: solid 2px #E15151;
   }
 }
 
@@ -1040,7 +1040,7 @@ exports[`Tabs set on hover 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px #EB5B5B;
+  border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1076,7 +1076,7 @@ exports[`Tabs set on hover 1`] = `
 .c8 {
   font-size: 18px;
   line-height: 24px;
-  color: #EB5B5B;
+  color: #E15151;
 }
 
 .c0 {
@@ -1146,7 +1146,7 @@ exports[`Tabs set on hover 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 2px #EB5B5B;
+    border-bottom: solid 2px #E15151;
   }
 }
 
@@ -1214,7 +1214,7 @@ exports[`Tabs set on hover 1`] = `
 
 exports[`Tabs set on hover 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1248,10 +1248,10 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bpHZTE StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 ceEUdX StyledTab-kic4tf-0 jGMnvI"
         >
           <span
-            class="StyledText-sc-3e83s1-0 fgkWBq"
+            class="StyledText-sc-3e83s1-0 jwJOlR"
           >
             Tab 2
           </span>
@@ -1271,7 +1271,7 @@ exports[`Tabs set on hover 2`] = `
 
 exports[`Tabs set on hover 3`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1328,7 +1328,7 @@ exports[`Tabs set on hover 3`] = `
 
 exports[`Tabs set on hover 4`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1385,7 +1385,7 @@ exports[`Tabs set on hover 4`] = `
 
 exports[`Tabs set on hover 5`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1419,10 +1419,10 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bpHZTE StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 ceEUdX StyledTab-kic4tf-0 jGMnvI"
         >
           <span
-            class="StyledText-sc-3e83s1-0 fgkWBq"
+            class="StyledText-sc-3e83s1-0 jwJOlR"
           >
             Tab 2
           </span>

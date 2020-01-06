@@ -1,7 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, Form, Text, Button, Grommet } from 'grommet';
+import {
+  mnet,
+  Box,
+  FormField,
+  Form,
+  Text,
+  Button,
+  MnetUIBase,
+} from 'mnet-ui-base';
 
 const FormFieldLabel = props => {
   const { required, label, ...rest } = props;
@@ -24,7 +32,7 @@ const FormFieldLabel = props => {
 };
 
 const LabelFormField = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Form>
         <FormFieldLabel name="firstName" label="FirstName" required />
@@ -36,7 +44,7 @@ const LabelFormField = () => (
         </Text>
       </Form>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Form', module).add('Required Label', () => <LabelFormField />);

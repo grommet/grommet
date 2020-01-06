@@ -5,7 +5,7 @@ An ordered list of items.
 ## Usage
 
 ```javascript
-import { List } from 'grommet';
+import { List } from 'mnet-ui-base';
 <List data={[...]} />
 ```
 

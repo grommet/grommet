@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, WorldMap } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, WorldMap } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleWorldMap = () => {
   const [places, setPlaces] = React.useState();
@@ -12,11 +12,11 @@ const SimpleWorldMap = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <WorldMap onSelectPlace={onSelectPlace} places={places} />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

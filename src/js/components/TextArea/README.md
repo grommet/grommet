@@ -5,7 +5,7 @@ A control to input multiple lines of text.
 ## Usage
 
 ```javascript
-import { TextArea } from 'grommet';
+import { TextArea } from 'mnet-ui-base';
 <TextArea id='item' name='item' />
 ```
 

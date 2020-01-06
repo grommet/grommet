@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Box } from '../../Box';
 import { Chart, calcs } from '..';
 
@@ -13,9 +13,9 @@ const VALUES = [
 
 test('Chart renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Chart values={VALUES} />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -23,12 +23,12 @@ test('Chart renders', () => {
 
 test('Chart type renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Chart type="bar" values={VALUES} />
       <Chart type="line" values={VALUES} />
       <Chart type="area" values={VALUES} />
       <Chart type="point" values={VALUES} />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -36,7 +36,7 @@ test('Chart type renders', () => {
 
 test('Chart size renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Chart size="xsmall" values={VALUES} />
       <Chart size="small" values={VALUES} />
       <Chart size="medium" values={VALUES} />
@@ -46,7 +46,7 @@ test('Chart size renders', () => {
         <Chart size={{ width: 'full' }} values={VALUES} />
         <Chart size={{ width: 'auto' }} values={VALUES} />
       </Box>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -54,13 +54,13 @@ test('Chart size renders', () => {
 
 test('Chart thickness renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Chart thickness="xsmall" values={VALUES} />
       <Chart thickness="small" values={VALUES} />
       <Chart thickness="medium" values={VALUES} />
       <Chart thickness="large" values={VALUES} />
       <Chart thickness="xlarge" values={VALUES} />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -68,12 +68,12 @@ test('Chart thickness renders', () => {
 
 test('Chart cap renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Chart round values={VALUES} />
       <Chart type="line" round values={VALUES} />
       <Chart type="area" round values={VALUES} />
       <Chart type="point" round values={VALUES} />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -81,13 +81,13 @@ test('Chart cap renders', () => {
 
 test('Chart gap renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Box width="large">
         <Chart size={{ width: 'auto' }} gap="small" values={VALUES} />
         <Chart size={{ width: 'auto' }} gap="medium" values={VALUES} />
         <Chart size={{ width: 'auto' }} gap="large" values={VALUES} />
       </Box>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -95,7 +95,7 @@ test('Chart gap renders', () => {
 
 test('Chart color renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Chart color="brand" values={VALUES} />
       <Chart color={{ color: 'brand', opacity: 'strong' }} values={VALUES} />
       <Chart
@@ -105,7 +105,7 @@ test('Chart color renders', () => {
         ]}
         values={VALUES}
       />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

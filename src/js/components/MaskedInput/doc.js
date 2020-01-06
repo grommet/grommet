@@ -7,7 +7,7 @@ export const doc = MaskedInput => {
     .availableAt(getAvailableAtBadge('MaskedInput'))
     .description('An input field with formalized syntax.')
     .usage(
-      `import { MaskedInput } from 'grommet';
+      `import { MaskedInput } from 'mnet-ui-base';
 <MaskedInput id='item' name='item' />`,
     )
     .intrinsicElement('input');

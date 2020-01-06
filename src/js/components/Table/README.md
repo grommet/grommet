@@ -5,7 +5,7 @@ A table of data organized in cells.
 ## Usage
 
 ```javascript
-import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';
+import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'mnet-ui-base';
 <Table />
 ```
 

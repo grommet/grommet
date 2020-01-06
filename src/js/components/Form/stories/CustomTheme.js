@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'grommet/utils';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 import {
-  grommet,
+  mnet,
   Box,
   Button,
   CheckBox,
@@ -15,8 +15,8 @@ import {
   Select,
   TextArea,
   TextInput,
-  Grommet,
-} from 'grommet';
+  MnetUIBase,
+} from 'mnet-ui-base';
 
 const customFormFieldTheme = {
   global: {
@@ -58,7 +58,7 @@ const customFormFieldTheme = {
 };
 
 const CustomFormField = () => (
-  <Grommet full theme={deepMerge(grommet, customFormFieldTheme)}>
+  <MnetUIBase full theme={deepMerge(mnet, customFormFieldTheme)}>
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
@@ -103,7 +103,7 @@ const CustomFormField = () => (
         </Form>
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Form', module).add('Custom Theme', () => <CustomFormField />);

@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Grid } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Grid } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const NColumnGrid = () => (
-  <Grommet theme={grommet} full>
+  <MnetUIBase theme={mnet} full>
     <Grid
       columns={{
         count: 6,
@@ -20,7 +20,7 @@ const NColumnGrid = () => (
       <Box background="brand">Item 5</Box>
       <Box background="brand">Item 6</Box>
     </Grid>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Grid', module).add('N-column layout', () => <NColumnGrid />);

@@ -11,7 +11,7 @@ import { getByText, screen } from '@testing-library/dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
 
@@ -63,14 +63,14 @@ describe('TextInput', () => {
 
   test('complex suggestions', done => {
     const { getByTestId, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <TextInput
           data-testid="test-input"
           id="item"
           name="item"
           suggestions={[{ label: 'test', value: 'test' }, { value: 'test1' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -91,14 +91,14 @@ describe('TextInput', () => {
 
   test('close suggestion drop', done => {
     const { getByTestId, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <TextInput
           data-testid="test-input"
           id="item"
           name="item"
           suggestions={['test', 'test1']}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -123,11 +123,11 @@ describe('TextInput', () => {
   test('let escape events propagage if there are no suggestions', done => {
     const callback = jest.fn();
     const { getByTestId } = render(
-      <Grommet>
+      <MnetUIBase>
         <Keyboard onEsc={callback}>
           <TextInput data-testid="test-input" id="item" name="item" />
         </Keyboard>
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
@@ -145,7 +145,7 @@ describe('TextInput', () => {
   test('select suggestion', done => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <TextInput
           data-testid="test-input"
           plain
@@ -155,7 +155,7 @@ describe('TextInput', () => {
           suggestions={['test', 'test1']}
           onSelect={onSelect}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -177,7 +177,7 @@ describe('TextInput', () => {
   test('select a suggestion', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <TextInput
           data-testid="test-input"
           id="item"
@@ -185,7 +185,7 @@ describe('TextInput', () => {
           suggestions={['test', { value: 'test1' }]}
           onSelect={onSelect}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -206,14 +206,14 @@ describe('TextInput', () => {
   test('handles next and previous without suggestion', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <TextInput
           data-testid="test-input"
           id="item"
           name="item"
           onSelect={onSelect}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

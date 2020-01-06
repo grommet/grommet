@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, List, Menu } from 'grommet';
+import { MnetUIBase, Box, List, Menu } from 'mnet-ui-base';
 import { More } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { data } from './data';
 
 const ActionList = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box pad="large">
       <List
         data={data.slice(0, 10)}
@@ -18,7 +18,7 @@ const ActionList = () => (
         )}
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('List', module).add('action', () => <ActionList />);

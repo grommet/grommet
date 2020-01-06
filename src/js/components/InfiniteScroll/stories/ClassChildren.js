@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, InfiniteScroll, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { allItems } from './Basics';
 
@@ -19,13 +19,13 @@ class MyItem extends Component {
 }
 
 const ClassChildrenInfiniteScroll = props => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box>
       <InfiniteScroll items={allItems} {...props}>
         {item => <MyItem key={item} item={item} />}
       </InfiniteScroll>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('InfiniteScroll', module).add('Class Children', () => (

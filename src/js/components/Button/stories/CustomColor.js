@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Grommet, Box, Button } from 'grommet';
+import { mnet, MnetUIBase, Box, Button } from 'mnet-ui-base';
 import { deepMerge } from '../../../utils';
 
-const customButtonColor = deepMerge(grommet, {
+const customButtonColor = deepMerge(mnet, {
   button: {
     color: {
       light: 'white',
@@ -14,7 +14,7 @@ const customButtonColor = deepMerge(grommet, {
 });
 
 const Colored = props => (
-  <Grommet theme={customButtonColor}>
+  <MnetUIBase theme={customButtonColor}>
     <Box align="center" pad="large" gap="small">
       <Button primary label="Submit" onClick={() => {}} />
       <Button
@@ -45,14 +45,9 @@ const Colored = props => (
         onClick={() => {}}
         {...props}
       />
-      <Button
-        plain
-        label="plain inherit"
-        onClick={() => {}}
-        {...props}
-      />
+      <Button plain label="plain inherit" onClick={() => {}} {...props} />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Button', module).add('Colored', () => <Colored />);

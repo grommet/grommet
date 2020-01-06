@@ -1,19 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { deepMerge } from 'grommet/utils';
-import { grommet } from 'grommet/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
+import { mnet } from 'mnet-ui-base/themes';
 
 import {
   Box,
   Grid,
   Paragraph,
-  Grommet,
+  MnetUIBase,
   Heading,
   ResponsiveContext,
-} from 'grommet';
+} from 'mnet-ui-base';
 
-const customBreakpoints = deepMerge(grommet, {
+const customBreakpoints = deepMerge(mnet, {
   global: {
     breakpoints: {
       xsmall: {
@@ -40,7 +40,7 @@ const ResponsiveGrid = ({ children, areas, ...props }) => {
 };
 
 const ResponsiveGridExample = () => (
-  <Grommet theme={customBreakpoints} full>
+  <MnetUIBase theme={customBreakpoints} full>
     <ResponsiveGrid
       columns={['25%', '25%', '25%', '25%']}
       rows={['3em', '3em', '3em']}
@@ -80,12 +80,12 @@ const ResponsiveGridExample = () => (
       Below a certain threshold, Columns 1 &amp; 2 switch to 50% and Column 3
       moves down to a new spot in the grid.
     </Paragraph>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('ResponsiveContext', module)
   .add('Custom Breakpoints', () => (
-    <Grommet theme={customBreakpoints} full>
+    <MnetUIBase theme={customBreakpoints} full>
       <ResponsiveContext.Consumer>
         {size => (
           <Box fill background="brand">
@@ -93,6 +93,6 @@ storiesOf('ResponsiveContext', module)
           </Box>
         )}
       </ResponsiveContext.Consumer>
-    </Grommet>
+    </MnetUIBase>
   ))
   .add('Responsive Grid', () => <ResponsiveGridExample />);

@@ -15,9 +15,9 @@
     "strict": false,
     "baseUrl": "./",
     "paths": {
-      "grommet": ["src/js"],
-      "grommet/themes": ["src/js/themes"],
-      "grommet/utils": ["src/js/utils"]
+      "mnet-ui-base": ["src/js"],
+      "mnet-ui-base/themes": ["src/js/themes"],
+      "mnet-ui-base/utils": ["src/js/utils"]
     },
     "typeRoots": ["./node_modules/@types/", "./src/@types/"]
   },

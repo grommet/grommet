@@ -2,13 +2,21 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
-  Grommet as GrommetIcon,
+  MnetUIBase as MnetUIBaseIcon,
   FacebookOption,
   Instagram,
   Twitter,
 } from 'grommet-icons';
 
-import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
+import {
+  Anchor,
+  Box,
+  Footer,
+  MnetUIBase,
+  Main,
+  Text,
+  mnet,
+} from 'mnet-ui-base';
 
 const Media = () => (
   <Box direction="row" gap="xxsmall" justify="center">
@@ -31,7 +39,7 @@ const Media = () => (
 );
 
 const Social = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Main background="light-2" elevation="large" pad="medium" gap="large">
       <Text margin="small" size="xsmall">
         Main Content
@@ -40,9 +48,9 @@ const Social = () => (
     </Main>
     <Footer background="light-4" pad="small">
       <Box align="center" direction="row" gap="xsmall">
-        <GrommetIcon color="brand" size="medium" />
+        <MnetUIBaseIcon color="brand" size="medium" />
         <Text alignSelf="center" color="brand" size="small">
-          Grommet
+          MnetUIBase
         </Text>
       </Box>
       <Media />
@@ -50,7 +58,7 @@ const Social = () => (
         ©Copyright
       </Text>
     </Footer>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Footer', module).add('Social', () => <Social />);

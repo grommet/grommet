@@ -5,7 +5,7 @@ A paragraph of text.
 ## Usage
 
 ```javascript
-import { Paragraph } from 'grommet';
+import { Paragraph } from 'mnet-ui-base';
 <Paragraph />
 ```
 

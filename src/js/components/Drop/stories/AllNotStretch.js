@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Drop, Grommet, Text, ThemeContext } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Drop, MnetUIBase, Text, ThemeContext } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const OneDrop = ({ align, target }) => (
   <Drop align={align} target={target} stretch={false}>
@@ -55,7 +55,7 @@ Set.propTypes = {
 };
 
 const AllDrops = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <ThemeContext.Extend
       value={{
         global: {
@@ -157,7 +157,7 @@ const AllDrops = () => (
         <Set label="(center vertical and horizontal)" aligns={[{}]} />
       </Box>
     </ThemeContext.Extend>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Drop', module).add('All not stretch', () => <AllDrops />);

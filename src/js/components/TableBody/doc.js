@@ -4,7 +4,7 @@ export const doc = TableBody => {
   const DocumentedTableBody = describe(TableBody)
     .description('The body of a table.')
     .usage(
-      `import { TableBody } from 'grommet';
+      `import { TableBody } from 'mnet-ui-base';
 <TableBody />`,
     )
     .intrinsicElement('tbody');

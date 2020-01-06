@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Hide, View } from 'grommet-icons';
 
-import { Box, Grommet, TextInput, Button } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, MnetUIBase, TextInput, Button } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 const SimpleTextInput = () => {
   const [value, setValue] = React.useState('');
@@ -12,13 +12,13 @@ const SimpleTextInput = () => {
   const onChange = event => setValue(event.target.value);
 
   return (
-    <Grommet full theme={grommet}>
+    <MnetUIBase full theme={mnet}>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <TextInput value={value} onChange={onChange} />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 
@@ -61,7 +61,7 @@ const SuggestionsTextInput = () => {
   const onSelect = event => setValue(event.suggestion);
 
   return (
-    <Grommet full theme={grommet}>
+    <MnetUIBase full theme={mnet}>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <TextInput
@@ -73,18 +73,18 @@ const SuggestionsTextInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 
-const customTheme = deepMerge(grommet, {
+const customTheme = deepMerge(mnet, {
   textInput: {
     extend: () => `
       font-size: 20px;
       background: #c9c19f;
       width: 300px;
       margin: 0 auto;
-      
+
       &:focus {
         box-shadow: none;
         border-color: initial;
@@ -127,7 +127,7 @@ const ThemedTextInput = () => {
   const onSelect = event => setValue(event.suggestion);
 
   return (
-    <Grommet full theme={customTheme}>
+    <MnetUIBase full theme={customTheme}>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <TextInput
@@ -141,7 +141,7 @@ const ThemedTextInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

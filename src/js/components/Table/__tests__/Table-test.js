@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import {
-  Grommet,
+  MnetUIBase,
   Table,
   TableHeader,
   TableFooter,
@@ -14,9 +14,9 @@ import {
 
 test('Table renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -24,9 +24,9 @@ test('Table renders', () => {
 
 test('Table caption renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table caption="Caption" />
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -34,11 +34,11 @@ test('Table caption renders', () => {
 
 test('TableHeader renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableHeader />
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -46,11 +46,11 @@ test('TableHeader renders', () => {
 
 test('TableFooter renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableFooter />
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -58,11 +58,11 @@ test('TableFooter renders', () => {
 
 test('TableBody renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableBody />
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -70,13 +70,13 @@ test('TableBody renders', () => {
 
 test('TableRow renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableBody>
           <TableRow />
         </TableBody>
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -84,7 +84,7 @@ test('TableRow renders', () => {
 
 test('TableCell renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableHeader>
           <TableRow>
@@ -102,7 +102,7 @@ test('TableCell renders', () => {
           </TableRow>
         </TableFooter>
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -110,7 +110,7 @@ test('TableCell renders', () => {
 
 test('TableCell scope renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableHeader>
           <TableRow>
@@ -123,7 +123,7 @@ test('TableCell scope renders', () => {
           </TableRow>
         </TableBody>
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -131,7 +131,7 @@ test('TableCell scope renders', () => {
 
 test('TableCell size renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableBody>
           <TableRow>
@@ -169,7 +169,7 @@ test('TableCell size renders', () => {
           </TableRow>
         </TableBody>
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -177,7 +177,7 @@ test('TableCell size renders', () => {
 
 test('TableCell verticalAlign renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableHeader>
           <TableRow>
@@ -187,7 +187,7 @@ test('TableCell verticalAlign renders', () => {
           </TableRow>
         </TableHeader>
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -195,7 +195,7 @@ test('TableCell verticalAlign renders', () => {
 
 test('TableCell plain renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Table>
         <TableHeader>
           <TableRow>
@@ -203,7 +203,7 @@ test('TableCell plain renders', () => {
           </TableRow>
         </TableHeader>
       </Table>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

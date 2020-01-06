@@ -9,11 +9,11 @@ const fullStyle = css`
   overflow: auto;
 `;
 
-const StyledGrommet = styled.div`
+const StyledMnetUIBase = styled.div`
   ${props => !props.plain && baseStyle}
   ${props => props.full && fullStyle}
-  ${props => props.theme.global.font.face}
-  ${props => props.theme.grommet.extend}
+  ${props => props.theme.global.fonyarface}
+  ${props => props.theme.mnet.extend}
   ${props =>
     props.cssVars &&
     Object.keys(props.theme.global.colors)
@@ -22,7 +22,7 @@ const StyledGrommet = styled.div`
       .join('\n')}
 `;
 
-StyledGrommet.defaultProps = {};
-Object.setPrototypeOf(StyledGrommet.defaultProps, defaultProps);
+StyledMnetUIBase.defaultProps = {};
+Object.setPrototypeOf(StyledMnetUIBase.defaultProps, defaultProps);
 
-export { StyledGrommet };
+export { StyledMnetUIBase };

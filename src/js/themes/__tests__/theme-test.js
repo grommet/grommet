@@ -2,10 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { hpe } from 'grommet-theme-hpe';
 import { Add } from 'grommet-icons';
 
-import { Grommet, Anchor, Box, Text } from '../../components';
+import { MnetUIBase, Anchor, Box, Text } from '../../components';
 import { dark } from '..';
 
 const colors = [
@@ -44,16 +43,16 @@ const customTheme = {
   },
 };
 
-describe('Grommet', () => {
+describe('MnetUIBase', () => {
   test('default theme', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         {colors.map(color => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -61,27 +60,13 @@ describe('Grommet', () => {
 
   test('dark theme', () => {
     const component = renderer.create(
-      <Grommet theme={dark}>
+      <MnetUIBase theme={dark}>
         {colors.map(color => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  test('hpe theme', () => {
-    const component = renderer.create(
-      <Grommet theme={hpe}>
-        {colors.map(color => (
-          <Box key={color} background={color}>
-            <Text>{color}</Text>
-          </Box>
-        ))}
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -89,7 +74,7 @@ describe('Grommet', () => {
 
   test('custom theme', () => {
     const component = renderer.create(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <Box>
           <Anchor icon={<Add />} label="Add" />
           <Anchor icon={<Add />} label="Add" color="custom" />
@@ -98,7 +83,7 @@ describe('Grommet', () => {
           <Anchor icon={<Add />} label="Add" />
           <Anchor icon={<Add />} label="Add" color="custom" />
         </Box>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

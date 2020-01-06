@@ -2,15 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Box, Grommet, Clock } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, Clock } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const AnalogClock = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" justify="start" pad="large">
       <Clock type="analog" />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

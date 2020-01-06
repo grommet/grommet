@@ -355,7 +355,7 @@ exports[`Diagram color 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            stroke="#EB5B5B"
+            stroke="#E15151"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"

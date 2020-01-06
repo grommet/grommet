@@ -6,7 +6,7 @@ import { getByText as getByTextDOM } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Menu } from '../..';
+import { MnetUIBase, Menu } from '../..';
 
 describe('Menu', () => {
   beforeEach(createPortal);
@@ -15,40 +15,40 @@ describe('Menu', () => {
 
   test('basic', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           icon={<svg />}
           label="Test Menu"
           id="test-menu"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('custom message', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           label="Test Menu"
           messages={{ openMenu: 'Abrir Menu' }}
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('custom a11yTitle', () => {
     const { container, getByLabelText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           a11yTitle="My Menu"
           label="Test Menu"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const menuWithLabel = getByLabelText('My Menu');
     expect(menuWithLabel).toBeTruthy();
@@ -57,7 +57,7 @@ describe('Menu', () => {
 
   test('justify content', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         {['start', 'center', 'end', 'between', 'around', 'stretch'].map(
           justifyContent => (
             <Menu
@@ -69,7 +69,7 @@ describe('Menu', () => {
             />
           ),
         )}
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -77,7 +77,7 @@ describe('Menu', () => {
   test('gap between icon and label', () => {
     window.scrollTo = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           open
           label="actions"
@@ -86,7 +86,7 @@ describe('Menu', () => {
             { label: 'Item 2' },
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     const firstItem = getByText('Item 1');
@@ -100,7 +100,7 @@ describe('Menu', () => {
   test('open and close on click', () => {
     window.scrollTo = jest.fn();
     const { getByLabelText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           label="Test"
@@ -110,7 +110,7 @@ describe('Menu', () => {
             { label: 'Item 3', href: '/test' },
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -126,13 +126,13 @@ describe('Menu', () => {
 
   test('close by clicking outside', done => {
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -153,13 +153,13 @@ describe('Menu', () => {
   test('select an item', () => {
     const onClick = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           label="Test"
           items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -174,13 +174,13 @@ describe('Menu', () => {
   test('navigate through suggestions and select', () => {
     const onClick = jest.fn();
     const { getByLabelText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2', onClick }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -215,13 +215,13 @@ describe('Menu', () => {
 
   test('tab through menu until it closes', () => {
     const { getByLabelText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -254,13 +254,13 @@ describe('Menu', () => {
 
   test('close on esc', () => {
     const { getByLabelText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -280,13 +280,13 @@ describe('Menu', () => {
 
   test('close on tab', () => {
     const { getByLabelText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -306,14 +306,14 @@ describe('Menu', () => {
 
   test('with dropAlign renders', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           dropAlign={{ top: 'top', right: 'right' }}
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -328,7 +328,7 @@ describe('Menu', () => {
 
   test('disabled', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           id="test-menu"
           disabled
@@ -339,7 +339,7 @@ describe('Menu', () => {
             { label: 'Item 3', href: '/test' },
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
       {
         attachTo: document.body.firstChild,
       },
@@ -356,7 +356,7 @@ describe('Menu', () => {
   test('reverse icon and label', () => {
     window.scrollTo = jest.fn();
     const { container, getByText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Menu
           open
           label="Test Menu"
@@ -365,7 +365,7 @@ describe('Menu', () => {
             { label: 'Item 2' },
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     // Label should come before icon

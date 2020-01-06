@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { mnet, Box, Button, MnetUIBase } from 'mnet-ui-base';
 
 const FillButtons = props => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box pad="medium" justify="center" direction="row">
       <Box justify="center" align="center" pad="medium" gap="medium">
         <Box
@@ -79,7 +79,7 @@ const FillButtons = props => (
         />
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Button', module).add('Fill', () => <FillButtons />);

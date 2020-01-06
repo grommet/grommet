@@ -11,7 +11,7 @@ export const doc = Calendar => {
       individual dates.`,
     )
     .usage(
-      `import { Calendar } from 'grommet';
+      `import { Calendar } from 'mnet-ui-base';
 <Calendar />`,
     )
     .intrinsicElement('div');

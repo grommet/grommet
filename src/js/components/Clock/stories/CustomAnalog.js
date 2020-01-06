@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Clock } from 'grommet';
+import { Box, MnetUIBase, Clock } from 'mnet-ui-base';
 
 const analogClockTheme = {
   clock: {
@@ -30,11 +30,11 @@ const analogClockTheme = {
 };
 
 const CustomAnalog = () => (
-  <Grommet theme={analogClockTheme}>
+  <MnetUIBase theme={analogClockTheme}>
     <Box align="center" justify="start" pad="large">
       <Clock type="analog" />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Clock', module).add('Custom Analog', () => <CustomAnalog />, {

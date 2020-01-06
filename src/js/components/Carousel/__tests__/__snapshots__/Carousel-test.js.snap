@@ -42,8 +42,8 @@ exports[`Carousel basic 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c13 g {
@@ -465,8 +465,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c13 g {
@@ -888,8 +888,8 @@ exports[`Carousel navigate 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c13 g {
@@ -1249,7 +1249,7 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledStack-gusj5d-0 eKKwAQ"
@@ -1341,7 +1341,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 cNAKzl"
+                class="StyledIcon-ofa7kd-0 eCEOyf"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1380,7 +1380,7 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledStack-gusj5d-0 eKKwAQ"
@@ -1456,7 +1456,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 cNAKzl"
+                class="StyledIcon-ofa7kd-0 eCEOyf"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1551,8 +1551,8 @@ exports[`Carousel play 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
-  stroke: #EB5B5B;
+  fill: #E15151;
+  stroke: #E15151;
 }
 
 .c13 g {
@@ -1911,7 +1911,7 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-1rvbxuz-0 eKCBdL"
+  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
 >
   <div
     class="StyledStack-gusj5d-0 eKKwAQ"
@@ -2002,7 +2002,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 cNAKzl"
+                class="StyledIcon-ofa7kd-0 eCEOyf"
                 viewBox="0 0 24 24"
               >
                 <path

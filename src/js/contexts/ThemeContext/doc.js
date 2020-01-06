@@ -7,7 +7,7 @@ export const doc = ThemeContext => {
     .availableAt(getAvailableAtBadge('ThemeContext'))
     .description('A means of tweaking the theme for contained components.')
     .usage(
-      "import { ThemeContext } from 'grommet';\n" +
+      "import { ThemeContext } from 'mnet-ui-base';\n" +
         '<ThemeContext.Extend value={value} />',
     );
 

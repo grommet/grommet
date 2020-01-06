@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
 
-import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
+import { Box, Button, CheckBox, MnetUIBase, Select, Text } from 'mnet-ui-base';
 
 import { theme as customSearchTheme } from './theme';
 import { SearchInputContext } from './components/SearchInputContext';
@@ -152,7 +152,7 @@ const CustomSearchSelect = () => {
   };
 
   return (
-    <Grommet full theme={customSearchTheme}>
+    <MnetUIBase full theme={customSearchTheme}>
       <Box fill align="center" justify="center" width="medium">
         <SearchInputContext.Provider value={{ searching }}>
           <Select
@@ -199,7 +199,7 @@ const CustomSearchSelect = () => {
           </Select>
         </SearchInputContext.Provider>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

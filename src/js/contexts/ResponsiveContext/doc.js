@@ -10,7 +10,7 @@ export const doc = ResponsiveContext => {
       screen resolution.`,
     )
     .usage(
-      `import { ResponsiveContext } from 'grommet'
+      `import { ResponsiveContext } from 'mnet-ui-base'
        const Example = () => {
          const size = React.useContext(ResponsiveContext);
          return (

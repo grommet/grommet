@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Calendar, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Calendar, MnetUIBase, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { FormPreviousLink, FormNextLink } from 'grommet-icons';
 
@@ -14,7 +14,7 @@ const CustomHeaderCalendar = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <Calendar
           date={date}
@@ -52,7 +52,7 @@ const CustomHeaderCalendar = () => {
           )}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

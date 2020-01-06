@@ -12,7 +12,7 @@ export const doc = Distribution => {
       manner that makes them more visually easy to scan. For example,
       two values of 48 and 52 will actually each get 50% of the area.`,
     )
-    .usage("import { Distribution } from 'grommet';\n<Distribution />")
+    .usage("import { Distribution } from 'mnet-ui-base';\n<Distribution />")
     .intrinsicElement('div');
 
   DocumentedDistribution.propTypes = {

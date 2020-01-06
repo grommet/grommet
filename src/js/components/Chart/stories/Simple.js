@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Chart } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const BarChart = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Chart
         type="bar"
@@ -16,30 +16,30 @@ const BarChart = () => (
         ]}
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 const LineChart = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Chart type="line" values={[20, 30, 15]} />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 const AreaChart = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Chart
         type="area"
         values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 const PointChart = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box align="center" pad="large">
       <Chart
         type="point"
@@ -59,7 +59,7 @@ const PointChart = () => (
         round
       />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Chart', module)

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Form } from '..';
 import { FormField } from '../../FormField';
 import { Button } from '../../Button';
@@ -14,9 +14,9 @@ describe('Form', () => {
 
   test('empty', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Form />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -24,11 +24,11 @@ describe('Form', () => {
 
   test('with field', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Form>
           <FormField name="test" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -67,7 +67,7 @@ describe('Form', () => {
 
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Form onSubmit={onSubmit}>
           <FormField
             name="test"
@@ -82,7 +82,7 @@ describe('Form', () => {
           />
           <Button type="submit" primary label="Submit" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.change(getByPlaceholderText('test input'), {
@@ -121,7 +121,7 @@ describe('Form', () => {
   test('regexp validation', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, queryByText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Form onSubmit={onSubmit}>
           <FormField
             name="test"
@@ -131,7 +131,7 @@ describe('Form', () => {
           />
           <Button type="submit" primary label="Submit" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     fireEvent.change(getByPlaceholderText('test input'), {
@@ -208,12 +208,12 @@ describe('Form', () => {
   test('required validation', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, queryByText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Form onSubmit={onSubmit}>
           <FormField name="test" required placeholder="test input" />
           <Button type="submit" primary label="Submit" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     fireEvent.click(getByText('Submit'));
@@ -227,12 +227,12 @@ describe('Form', () => {
   test('reset clears form', () => {
     const onReset = jest.fn();
     const { getByPlaceholderText, getByText, queryByText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Form onReset={onReset}>
           <FormField name="test" required placeholder="test input" />
           <Button type="reset" primary label="Reset" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'Input has changed' },
@@ -244,8 +244,8 @@ describe('Form', () => {
   test('initial values', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
-      <Grommet>
-        {/* this test continues running forever if the whole event passed to 
+      <MnetUIBase>
+        {/* this test continues running forever if the whole event passed to
             onSubmit */}
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <FormField
@@ -257,7 +257,7 @@ describe('Form', () => {
           <FormField name="test2" value="Initial value2" />
           <Button type="submit" primary label="Submit" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
     fireEvent.click(getByText('Submit'));
     expect(queryByText('required')).toBeNull();

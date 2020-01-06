@@ -2,13 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { MnetUIBase, Box, List } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 import { locations } from '../data';
 
-const theme = deepMerge(grommet, {
+const theme = deepMerge(mnet, {
   list: {
     item: {
       pad: { horizontal: 'large', vertical: 'xsmall' },
@@ -19,11 +19,11 @@ const theme = deepMerge(grommet, {
 });
 
 const ThemedList = () => (
-  <Grommet theme={theme}>
+  <MnetUIBase theme={theme}>
     <Box align="center" pad="large">
       <List data={locations} />
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 if (!isChromatic()) {

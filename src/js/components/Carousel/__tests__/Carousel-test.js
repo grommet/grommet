@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Carousel } from '..';
 import { Image } from '../../Image';
 
@@ -12,12 +12,12 @@ describe('Carousel', () => {
 
   test('basic', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Carousel>
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -25,12 +25,12 @@ describe('Carousel', () => {
 
   test('basic with `initialChild: 1`', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Carousel initialChild={1}>
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -38,12 +38,12 @@ describe('Carousel', () => {
 
   test('navigate', () => {
     const { getByTestId, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Carousel data-testid="test-carousel">
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -64,12 +64,12 @@ describe('Carousel', () => {
 
   test('play', done => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Carousel play={1000}>
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

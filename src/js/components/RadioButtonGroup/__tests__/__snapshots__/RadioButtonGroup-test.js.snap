@@ -34,8 +34,8 @@ exports[`RadioButtonGroup children 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #EB5B5B;
-  color: #444444;
+  background: #E15151;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -639,7 +639,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px #EB5B5B;
+  border: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -728,12 +728,12 @@ exports[`RadioButtonGroup object options just value 1`] = `
   box-sizing: border-box;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
+  fill: #E15151;
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    border: solid 2px #EB5B5B;
+    border: solid 2px #E15151;
   }
 }
 
@@ -874,7 +874,7 @@ exports[`RadioButtonGroup string options 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px #EB5B5B;
+  border: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -963,7 +963,7 @@ exports[`RadioButtonGroup string options 1`] = `
   box-sizing: border-box;
   width: 24px;
   height: 24px;
-  fill: #EB5B5B;
+  fill: #E15151;
 }
 
 @media only screen and (max-width:768px) {
@@ -974,7 +974,7 @@ exports[`RadioButtonGroup string options 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px #EB5B5B;
+    border: solid 2px #E15151;
   }
 }
 

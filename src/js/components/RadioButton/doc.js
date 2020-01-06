@@ -11,7 +11,7 @@ export const doc = RadioButton => {
       Instead, use RadioButtonGroup.`,
     )
     .usage(
-      `import { RadioButton } from 'grommet';
+      `import { RadioButton } from 'mnet-ui-base';
 <RadioButton />`,
     )
     .intrinsicElement('input');

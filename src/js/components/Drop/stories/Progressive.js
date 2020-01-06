@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Drop, MnetUIBase } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const ProgressiveDrop = () => {
   const boxRef = useRef();
@@ -25,7 +25,7 @@ const ProgressiveDrop = () => {
   };
 
   return (
-    <Grommet theme={grommet} full>
+    <MnetUIBase theme={mnet} full>
       <Box fill align="center" justify="center">
         <Button ref={boxRef} primary label="Click me" onClick={onOpenDrop} />
         {openDrop && (
@@ -64,7 +64,7 @@ const ProgressiveDrop = () => {
           </Drop>
         )}
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

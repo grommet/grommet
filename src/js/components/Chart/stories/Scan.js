@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart, Keyboard, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, Chart, Keyboard, Stack, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { calcs } from '../calcs';
 import { generateData } from './data';
@@ -19,7 +19,7 @@ const ScanChart = props => {
   );
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Keyboard
         onLeft={() => setActive(Math.max(0, active - 1))}
         onRight={() => setActive(Math.min(data.length - 1, active + 1))}
@@ -88,7 +88,7 @@ const ScanChart = props => {
                           background="dark-3"
                         >
                           <Text size="large">{data[active].value}</Text>
-                          {/* className="chromatic-ignore" is used for this 
+                          {/* className="chromatic-ignore" is used for this
                             component testing. grommet doesn't reccomend the
                             usage of className */}
                           <Text className="chromatic-ignore" size="small">
@@ -118,7 +118,7 @@ const ScanChart = props => {
           </Box>
         </Box>
       </Keyboard>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

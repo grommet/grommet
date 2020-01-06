@@ -18,7 +18,7 @@ export * from './components/Footer';
 export * from './components/Form';
 export * from './components/FormField';
 export * from './components/Grid';
-export * from './components/Grommet';
+export * from './components/MnetUIBase';
 export * from './components/Header';
 export * from './components/Heading';
 export * from './components/Image';

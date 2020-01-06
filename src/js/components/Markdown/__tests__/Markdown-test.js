@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Markdown } from '..';
 
 const CONTENT = `
@@ -30,9 +30,9 @@ Markdown | Less | Pretty
 
 test('Markdown renders', () => {
   const component = renderer.create(
-    <Grommet>
+    <MnetUIBase>
       <Markdown>{CONTENT}</Markdown>
-    </Grommet>,
+    </MnetUIBase>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

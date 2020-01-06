@@ -4,7 +4,7 @@ import { cleanup, fireEvent, render } from '@testing-library/react';
 
 import { expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../../Grommet';
+import { MnetUIBase } from '../../MnetUIBase';
 import { Drop } from '..';
 
 const customTheme = {
@@ -43,10 +43,10 @@ class TestInput extends Component {
       );
     }
     return (
-      <Grommet theme={theme}>
+      <MnetUIBase theme={theme}>
         <input ref={this.inputRef} {...inputProps} />
         {drop}
-      </Grommet>
+      </MnetUIBase>
     );
   }
 }

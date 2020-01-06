@@ -17,7 +17,7 @@ base so we can style it. You can either set the icon and/or label properties
 or just use children.`,
     )
     .usage(
-      "import { Anchor } from 'grommet';\n" +
+      "import { Anchor } from 'mnet-ui-base';\n" +
         "<Anchor href={location} label='Label' />",
     )
     .intrinsicElement('a');

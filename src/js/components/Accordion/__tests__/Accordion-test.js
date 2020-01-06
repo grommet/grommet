@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import { Accordion, AccordionPanel, Box, Grommet } from '../..';
+import { Accordion, AccordionPanel, Box, MnetUIBase } from '../..';
 
 const customTheme = {
   accordion: {
@@ -16,16 +16,16 @@ describe('Accordion', () => {
 
   test('no AccordionPanel', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Accordion />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('AccordionPanel', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Accordion>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
@@ -33,14 +33,14 @@ describe('Accordion', () => {
             <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
           )}
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('complex title', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Box background="dark-1">
           <Accordion>
             <AccordionPanel label={<div>Panel 1 complex</div>}>
@@ -52,14 +52,14 @@ describe('Accordion', () => {
             </AccordionPanel>
           </Accordion>
         </Box>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('complex header', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Accordion activeIndex={1} animate={false}>
           <AccordionPanel header={<div>Panel 1 header</div>}>
             Panel body 1
@@ -69,7 +69,7 @@ describe('Accordion', () => {
             Panel body 2
           </AccordionPanel>
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -77,12 +77,12 @@ describe('Accordion', () => {
   test('change to second Panel', done => {
     const onActive = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Accordion onActive={onActive}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -100,12 +100,12 @@ describe('Accordion', () => {
 
   test('change to second Panel without onActive', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Accordion animate={false}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -117,12 +117,12 @@ describe('Accordion', () => {
   test('multiple panels', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Accordion animate={false} multiple onActive={onActive}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -149,11 +149,11 @@ describe('Accordion', () => {
 
   test('custom accordion', () => {
     const component = renderer.create(
-      <Grommet theme={customTheme}>
+      <MnetUIBase theme={customTheme}>
         <Accordion>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -161,12 +161,12 @@ describe('Accordion', () => {
   test('change active index', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Accordion animate={false} activeIndex={1} onActive={onActive}>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -177,7 +177,7 @@ describe('Accordion', () => {
 
   test('set on hover', () => {
     const { getByText, container } = render(
-      <Grommet>
+      <MnetUIBase>
         <Accordion>
           <AccordionPanel
             label="Panel 1"
@@ -198,7 +198,7 @@ describe('Accordion', () => {
             Panel body 2
           </AccordionPanel>
         </Accordion>
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

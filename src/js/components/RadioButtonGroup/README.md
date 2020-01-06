@@ -5,7 +5,7 @@ A group of radio buttons.
 ## Usage
 
 ```javascript
-import { RadioButtonGroup } from 'grommet';
+import { RadioButtonGroup } from 'mnet-ui-base';
 <RadioButtonGroup />
 ```
 

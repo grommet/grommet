@@ -7,7 +7,7 @@ An overlay. Layer is typically modal and anchored to an edge, corner, or
 ## Usage
 
 ```javascript
-import { Layer } from 'grommet';
+import { Layer } from 'mnet-ui-base';
 <Layer />
 ```
 

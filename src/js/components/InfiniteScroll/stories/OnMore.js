@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Box, InfiniteScroll, Text } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 import { allItems } from './Basics';
 
@@ -16,7 +16,7 @@ const OnMoreInfiniteScroll = ({ props }) => {
   };
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box>
         <InfiniteScroll items={items} onMore={onMore} {...props}>
           {item => (
@@ -31,7 +31,7 @@ const OnMoreInfiniteScroll = ({ props }) => {
           )}
         </InfiniteScroll>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

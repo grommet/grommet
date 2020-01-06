@@ -7,7 +7,7 @@ export const doc = Tabs => {
     .availableAt(getAvailableAtBadge('Tabs'))
     .description('A container with controls to show one Tab at a time.')
     .usage(
-      `import { Tabs, Tab } from 'grommet';
+      `import { Tabs, Tab } from 'mnet-ui-base';
 <Tabs>
   <Tab title='Tab 1'>...</Tab>
   <Tab title='Tab 2'>...</Tab>
