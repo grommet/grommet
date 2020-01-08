@@ -15,7 +15,7 @@ export interface CalendarProps {
   firstDayOfWeek?: 0 | 1;
   header?: ((...args: any[]) => any);
   locale?: string;
-  onReference?: ((...args: any[]) => any);
+  onReference?: ((reference: string) => void);
   onSelect?: ((select: string[]) => any);
   range?: boolean;
   reference?: string;
