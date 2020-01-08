@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { sizeStyle } from 'grommet-styles';
+import { sizeStyle } from '../../utils';
 
 export const StyledContainer = styled.div`
   /* IE11 hack to get drop contents to not overflow */

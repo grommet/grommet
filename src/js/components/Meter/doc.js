@@ -70,6 +70,15 @@ export const doc = Meter => {
 };
 
 export const themeDoc = {
+  'global.colors': {
+    description: 'Color options.',
+    type: 'object',
+    defaultValue: `{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }`,
+  },
   'global.edgeSize': {
     description: `The border-radius of the styled Meter. thickness, height and 
     width of the Bar Meter, height of the Circle Meter.`,
@@ -85,10 +94,6 @@ export const themeDoc = {
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }`,
-  },
-  'global.graph.colors': {
-    description: 'The colors to use when not specified via values.',
-    type: '[string] or { dark: [string], light: [string] }',
   },
   'global.opacity.medium': {
     description: 'The opacity value used on the Meter color.',

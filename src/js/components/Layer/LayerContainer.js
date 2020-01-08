@@ -34,7 +34,7 @@ class LayerContainer extends Component {
   layerRef = React.createRef();
 
   componentDidMount() {
-    const { position } = this.props;
+    const { position, modal } = this.props;
     if (position !== 'hidden') {
       this.makeLayerVisible();
       // Once layer is open we make sure it has focus so that you
@@ -49,7 +49,7 @@ class LayerContainer extends Component {
         }
         element = element.parentElement;
       }
-      if (!element && this.anchorRef.current) {
+      if (modal && !element && this.anchorRef.current) {
         this.anchorRef.current.focus();
       }
     }
@@ -129,7 +129,7 @@ class LayerContainer extends Component {
 
     if (theme.layer.background) {
       const dark = backgroundIsDark(theme.layer.background, theme);
-      if (dark !== theme.dark) {
+      if (dark !== undefined && dark !== theme.dark) {
         content = (
           <ThemeContext.Provider value={{ ...theme, dark }}>
             {content}

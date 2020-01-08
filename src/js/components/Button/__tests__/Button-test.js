@@ -168,34 +168,10 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('hoverIndicator as object', () => {
-    const component = renderer.create(
-      <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ background: true }}>
-          hoverIndicator
-        </Button>
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   test('hoverIndicator as object with color', () => {
     const component = renderer.create(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ background: 'brand' }}>
-          hoverIndicator
-        </Button>
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  test('hoverIndicator as object with colorIndex', () => {
-    const component = renderer.create(
-      <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ background: 'accent-1' }}>
+        <Button onClick={() => {}} hoverIndicator={{ color: 'brand' }}>
           hoverIndicator
         </Button>
       </Grommet>,
@@ -205,33 +181,9 @@ describe('Button', () => {
   });
 
   test('hoverIndicator as object with invalid color', () => {
-    let component = renderer.create(
-      <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ background: 'accent' }}>
-          hoverIndicator
-        </Button>
-      </Grommet>,
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component = renderer.create(
-      <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ background: 'invalid' }}>
-          hoverIndicator
-        </Button>
-      </Grommet>,
-    );
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  test('hoverIndicator as object with invalid colorIndex', () => {
     const component = renderer.create(
       <Grommet>
-        <Button
-          onClick={() => {}}
-          hoverIndicator={{ background: 'accent-100' }}
-        >
+        <Button onClick={() => {}} hoverIndicator={{ color: 'invalid' }}>
           hoverIndicator
         </Button>
       </Grommet>,

@@ -98,6 +98,19 @@ const Box = forwardRef(
       });
     }
 
+    if (background || theme.darkChanged) {
+      let dark = backgroundIsDark(background, theme);
+      const darkChanged = dark !== undefined && dark !== theme.dark;
+      if (darkChanged || theme.darkChanged) {
+        dark = dark === undefined ? theme.dark : dark;
+        contents = (
+          <ThemeContext.Provider value={{ ...theme, dark }}>
+            {contents}
+          </ThemeContext.Provider>
+        );
+      }
+    }
+
     let content = (
       <StyledBox
         as={!as && tag ? tag : as}
@@ -123,22 +136,6 @@ const Box = forwardRef(
 
     if (onClick) {
       content = <Keyboard onEnter={onClick}>{content}</Keyboard>;
-    }
-
-    // When a Box changes the darkness, it sets darkChanged so that StyledBox
-    // can know what the underlying darkness is when deciding which elevation
-    // to show.
-    if (background || theme.darkChanged) {
-      let dark = backgroundIsDark(background, theme);
-      const darkChanged = dark !== undefined && dark !== theme.dark;
-      if (darkChanged || theme.darkChanged) {
-        dark = dark === undefined ? theme.dark : dark;
-        content = (
-          <ThemeContext.Provider value={{ ...theme, dark, darkChanged }}>
-            {content}
-          </ThemeContext.Provider>
-        );
-      }
     }
 
     return content;

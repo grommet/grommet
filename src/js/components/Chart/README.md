@@ -297,6 +297,16 @@ Required. Array of value objects describing the data.
   
 ## Theme
   
+**chart.color**
+
+Color of the Chart. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+accent-1
+```
+
 **chart.extend**
 
 Any additional style for the Chart. Expects `string | (props) => {}`.
@@ -309,12 +319,16 @@ undefined
 
 **global.colors**
 
-color options used for Chart fill area. Expects `object`.
+Color options. Expects `object`.
 
 Defaults to
 
 ```
-accent-1
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }
 ```
 
 **global.edgeSize**
@@ -337,24 +351,18 @@ Defaults to
     }
 ```
 
-**global.graph.colors**
-
-The color to use when not specified via color. Expects `[string] or { dark: [string], light: [string] }`.
-
-Defaults to
-
-```
-undefined
-```
-
 **global.opacity**
 
-The opacity of the Chart stroke. Expects `string`.
+The opacity of the Chart stroke. Expects `object`.
 
 Defaults to
 
 ```
-undefined
+{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }
 ```
 
 **global.size**

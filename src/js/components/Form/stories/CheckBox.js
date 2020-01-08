@@ -15,4 +15,4 @@ const FormFieldCheckBox = props => (
   </Grommet>
 );
 
-storiesOf('FormField', module).add('CheckBox', () => <FormFieldCheckBox />);
+storiesOf('Form', module).add('CheckBox', () => <FormFieldCheckBox />);
