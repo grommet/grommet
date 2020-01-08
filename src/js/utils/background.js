@@ -117,8 +117,12 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
       return css`
         background: ${backgroundColor};
         color: ${normalizeColor(
-          textColor[colorIsDark(backgroundColor) ? 'dark' : 'light'] ||
-            textColor,
+          textColor[
+            colorIsDark(backgroundColor) ||
+            (colorIsDark(backgroundColor) === undefined && theme.dark)
+              ? 'dark'
+              : 'light'
+          ] || textColor,
           theme,
         )};
       `;
