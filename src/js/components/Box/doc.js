@@ -168,10 +168,11 @@ export const doc = Box => {
         'horizontal',
         'vertical',
         'all',
+        'between',
       ]),
       BORDER_SHAPE,
       PropTypes.arrayOf(BORDER_SHAPE),
-    ]).description('Include a border.'),
+    ]).description('Include a border. You must have "gap" to use "between"'),
     direction: PropTypes.oneOf([
       'row',
       'column',

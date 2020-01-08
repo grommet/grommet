@@ -438,7 +438,7 @@ string",
         "name": "basis",
       },
       Object {
-        "description": "Include a border.",
+        "description": "Include a border. You must have \\"gap\\" to use \\"between\\"",
         "format": "boolean
 top
 left
@@ -447,6 +447,7 @@ right
 horizontal
 vertical
 all
+between
 {
   color: 
     string

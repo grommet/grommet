@@ -35,7 +35,7 @@ declare const removeUndefined: <T extends object>(obj: T) => NonUndefinedProps<T
 export {isObject, deepFreeze, deepMerge, removeUndefined};
 
 // Extracting types for common properties among components
-type BoxSideType = "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all";
+type BoxSideType = "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | "between";
 type BoxSizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 type BoxStyleType = "solid" | "dashed" | "dotted" | "double" | "groove" | "ridge" | "inset" | "outset" | "hidden";
 

@@ -268,7 +268,7 @@ string
 
 **border**
 
-Include a border.
+Include a border. You must have "gap" to use "between"
 
 ```
 boolean
@@ -279,6 +279,7 @@ right
 horizontal
 vertical
 all
+between
 {
   color: 
     string
