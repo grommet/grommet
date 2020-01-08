@@ -74,14 +74,14 @@ const defaultStyle = css`
   `};
 `;
 
-const boxBorderTheme = {
-  box: {
-    extend: props => (props.searching ? searchingStyle : defaultStyle),
-  },
-};
-
 export const SearchBorderBox = ({ children, searching, ...rest }) => {
   const [focus, setFocus] = useState(false);
+
+  const boxBorderTheme = {
+    box: {
+      extend: searching ? searchingStyle : defaultStyle,
+    },
+  };
 
   return (
     <ThemeContext.Extend value={boxBorderTheme}>

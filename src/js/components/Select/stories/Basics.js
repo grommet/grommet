@@ -85,4 +85,4 @@ for (let i = 1; i <= 200; i += 1) {
 
 storiesOf('Select', module)
   .add('Simple', () => <SimpleSelect />)
-  .add('Custom', () => <SimpleSelect open theme={customRoundedTheme} />);
+  .add('Custom Theme', () => <SimpleSelect open theme={customRoundedTheme} />);

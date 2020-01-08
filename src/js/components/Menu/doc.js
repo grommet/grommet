@@ -83,7 +83,10 @@ The object values can be any Button prop, for example: label and onClick.`,
       closeMenu: PropTypes.string,
       openMenu: PropTypes.string,
     })
-      .description('Custom messages. Used for accessibility by screen readers.')
+      .description(
+        `Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided.`,
+      )
       .defaultValue({ openMenu: 'Open Menu', closeMenu: 'Close Menu' }),
     open: PropTypes.bool
       .description('Whether the state of the component should be open')

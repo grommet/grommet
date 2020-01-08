@@ -68,6 +68,41 @@ svg
 ```
 ## Theme
   
+**diagram.extend**
+
+Any additional style for Diagram. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**diagram.line.color**
+
+The color of the connection line. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+accent-1
+```
+
+**global.colors**
+
+Color options. Expects `object`.
+
+Defaults to
+
+```
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      "graph-1": "neutral-1",
+      ...
+    }
+```
+
 **global.edgeSize**
 
 The possible sizes for the connections thickness and offset. Expects `object`.
@@ -86,24 +121,4 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
-```
-
-**diagram.extend**
-
-Any additional style for Diagram. Expects `string | (props) => {}`.
-
-Defaults to
-
-```
-undefined
-```
-
-**diagram.line.color**
-
-The color of the connection line. Expects `string`.
-
-Defaults to
-
-```
-accent-1
 ```

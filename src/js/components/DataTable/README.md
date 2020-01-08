@@ -13,7 +13,8 @@ import { DataTable } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -110,7 +111,8 @@ string
 **background**
 
 Cell background. You can set the background per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'.
+      object with keys for 'heading', 'body', and/or 'footer'. If you pass
+      an array, rows will cycle between the array values.
 
 ```
 string
@@ -276,7 +278,7 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to `[]`.
+      'primaryKey' isn't specified either, then the first column will be used.
 
 ```
 [{
@@ -310,7 +312,7 @@ A description of the data. The order controls the column order.
 
 **data**
 
-Array of data objects. Defaults to `[]`.
+Array of data objects.
 
 ```
 [{

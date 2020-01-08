@@ -1,12 +1,15 @@
 import { 
   BackgroundType, 
+  BorderType,
   ColorType,  
   DeepReadonly, 
-  GapType, 
+  GapType,
+  GraphColorsType,
   MarginType,
   OpacityType,
-  PadType, 
+  PadType,
 } from '../utils'
+import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
 
 export declare const base: DeepReadonly<ThemeType>;
@@ -40,7 +43,7 @@ type Colors = typeof colors & {
   'dark-1'?: ColorType;
   'dark-2'?: ColorType;
   'dark-3'?: ColorType;
-  'dark-4'?: string;
+  'dark-4'?: ColorType;
   'dark-5'?: ColorType;
   'dark-6'?: ColorType;
   'light-1'?: ColorType;
@@ -55,6 +58,12 @@ type Colors = typeof colors & {
   'status-ok'?: ColorType;
   'status-unknown'?: ColorType;
   'status-disabled'?: ColorType;
+  'graph-0'?: ColorType;
+  'graph-1'?: ColorType;
+  'graph-2'?: ColorType;
+  'graph-3'?: ColorType;
+  'graph-4'?: ColorType;
+  'graph-5'?: ColorType;
   [x: string]: ColorType;
 };
 
@@ -184,6 +193,9 @@ export interface ThemeType {
       maxWidth?: string;
       size?: string;
     };
+    graph?: {
+      colors?: GraphColorsType;
+    },
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -310,6 +322,7 @@ export interface ThemeType {
     };
   };
   chart?: {
+    color?: ColorType;
     extend?: ExtendType;
   }
   checkBox?: {
@@ -448,7 +461,7 @@ export interface ThemeType {
   diagram?: {
     extend?: ExtendType;
     line?: {
-      color: 'accent-1';
+      color?: ColorType;
     };
   };
   drop?: {
@@ -456,14 +469,7 @@ export interface ThemeType {
     maxHeight?: string, 
   };
   formField?: {
-    border?: {
-      color?: ColorType;
-      error?: {
-        color?: ColorType;
-      };
-      position?: string;
-      side?: string;
-    };
+    border?: BorderType;
     content?: {
       pad?: PadType;
     };
@@ -475,9 +481,7 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
-    label?: {
-      margin?: MarginType;
-    };
+    label?: TextProps;
     margin?: MarginType;
   };
   grommet?: {
@@ -654,6 +658,19 @@ export interface ThemeType {
     responsiveBreakpoint?: string;
     zIndex?: string;
   };
+  list?: {
+    item?: {
+      background?: BackgroundType;
+      border?: string | {
+        side?: string,
+        color?: ColorType,
+        size?: string,
+      };
+      pad?: PadType;
+      extend?: ExtendType;
+    },
+    extend?: ExtendType;
+  };
   maskedInput?: {
     extend?: ExtendType;
   };
@@ -666,6 +683,7 @@ export interface ThemeType {
   };
   meter?: {
     color?: ColorType,
+    colors?: GraphColorsType,
     extend?: ExtendType,
   },
   paragraph?: {

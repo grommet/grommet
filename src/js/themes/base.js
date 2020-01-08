@@ -62,6 +62,10 @@ const colors = {
     light: 'brand',
   },
   focus: focusColor,
+  // "graph-0": 'accent-1',
+  // "graph-1": 'neutral-1',
+  // "graph-2": 'accent-2',
+  // "graph-3": 'neutral-2',
   placeholder: '#AAAAAA',
   selected: 'brand',
   text: {
@@ -358,6 +362,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     chart: {
+      color: 'accent-1',
       // extend: undefined,
     },
     checkBox: {
@@ -626,6 +631,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '10',
     },
+    list: {
+      item: {
+        // background: undefined,
+        border: 'horizontal',
+        pad: { horizontal: 'medium', vertical: 'small' },
+        // extend: undefined,
+      },
+      // extend: undefined,
+    },
     maskedInput: {
       // extend: undefined,
     },
@@ -638,6 +652,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     meter: {
       color: 'accent-1',
+      // colors: [],
       // extend: undefined,
     },
     paragraph: {
@@ -787,7 +802,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'bottom',
-        verticalAlign: 'bottom',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },
@@ -808,7 +823,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'top',
-        verticalAlign: 'top',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },

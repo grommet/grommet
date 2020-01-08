@@ -43,13 +43,11 @@ exports[`Calendar date 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -60,7 +58,6 @@ exports[`Calendar date 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -74,7 +71,6 @@ exports[`Calendar date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -85,7 +81,6 @@ exports[`Calendar date 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -106,7 +101,6 @@ exports[`Calendar date 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -119,7 +113,6 @@ exports[`Calendar date 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -162,7 +155,6 @@ exports[`Calendar date 1`] = `
 
 .c13:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -274,51 +266,9 @@ exports[`Calendar date 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
   }
 }
 
@@ -1333,13 +1283,11 @@ exports[`Calendar dates 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -1350,7 +1298,6 @@ exports[`Calendar dates 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1364,7 +1311,6 @@ exports[`Calendar dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -1375,7 +1321,6 @@ exports[`Calendar dates 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1396,7 +1341,6 @@ exports[`Calendar dates 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1409,7 +1353,6 @@ exports[`Calendar dates 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -1452,7 +1395,6 @@ exports[`Calendar dates 1`] = `
 
 .c13:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -1564,51 +1506,9 @@ exports[`Calendar dates 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
   }
 }
 
@@ -2623,13 +2523,11 @@ exports[`Calendar daysOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -2640,7 +2538,6 @@ exports[`Calendar daysOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2654,7 +2551,6 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -2665,7 +2561,6 @@ exports[`Calendar daysOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2686,7 +2581,6 @@ exports[`Calendar daysOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2699,7 +2593,6 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -2742,7 +2635,6 @@ exports[`Calendar daysOfWeek 1`] = `
 
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -2854,51 +2746,9 @@ exports[`Calendar daysOfWeek 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
   }
 }
 
@@ -3980,13 +3830,11 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -3997,7 +3845,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4011,7 +3858,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -4022,7 +3868,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4043,7 +3888,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4056,7 +3900,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -4099,7 +3942,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
 
 .c13:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -4211,51 +4053,9 @@ exports[`Calendar firstDayOfWeek 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
   }
 }
 
@@ -6218,13 +6018,11 @@ exports[`Calendar header 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -6235,7 +6033,6 @@ exports[`Calendar header 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6249,7 +6046,6 @@ exports[`Calendar header 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -6392,30 +6188,6 @@ exports[`Calendar header 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -7453,13 +7225,11 @@ exports[`Calendar reference 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -7470,7 +7240,6 @@ exports[`Calendar reference 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -7484,7 +7253,6 @@ exports[`Calendar reference 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c4 {
@@ -7495,7 +7263,6 @@ exports[`Calendar reference 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7516,7 +7283,6 @@ exports[`Calendar reference 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -7529,7 +7295,6 @@ exports[`Calendar reference 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c7 {
@@ -7572,7 +7337,6 @@ exports[`Calendar reference 1`] = `
 
 .c13:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -7664,51 +7428,9 @@ exports[`Calendar reference 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
   }
 }
 
@@ -8757,13 +8479,11 @@ exports[`Calendar size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c3 {
@@ -8774,7 +8494,6 @@ exports[`Calendar size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8788,7 +8507,6 @@ exports[`Calendar size 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c18 {
@@ -8799,7 +8517,6 @@ exports[`Calendar size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8820,7 +8537,6 @@ exports[`Calendar size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8833,7 +8549,6 @@ exports[`Calendar size 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c4 {
@@ -8844,7 +8559,6 @@ exports[`Calendar size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8865,7 +8579,6 @@ exports[`Calendar size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8918,7 +8631,6 @@ exports[`Calendar size 1`] = `
 
 .c13:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -9178,36 +8890,6 @@ exports[`Calendar size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c18 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c18 {
     padding-left: 6px;
     padding-right: 6px;
@@ -9215,33 +8897,9 @@ exports[`Calendar size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 3px;
     padding-right: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c25 {
-    margin: 0px;
   }
 }
 

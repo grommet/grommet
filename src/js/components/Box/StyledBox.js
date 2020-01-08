@@ -7,7 +7,9 @@ import {
   borderStyle,
   breakpointStyle,
   edgeStyle,
+  focusStyle,
   genericStyles,
+  getHoverIndicatorStyle,
   overflowStyle,
 } from '../../utils';
 
@@ -87,12 +89,9 @@ const directionStyle = (direction, theme) => {
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[
-      (props.theme.dark && !props.theme.darkChanged) ||
-      (!props.theme.dark && props.theme.darkChanged)
-        ? 'dark'
-        : 'light'
-    ][props.elevationProp]};
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      props.elevationProp
+    ]};
 `;
 
 const FLEX_MAP = {
@@ -467,6 +466,16 @@ const animationStyle = css`
   `};
 `;
 
+const interactiveStyle = css`
+  cursor: pointer;
+
+  &:hover {
+    ${props =>
+      props.hoverIndicator &&
+      getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+  }
+`;
+
 const getSize = (props, size) => props.theme.global.size[size] || size;
 
 const heightObjectStyle = css`
@@ -548,6 +557,12 @@ const StyledBox = styled.div`
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
+  ${props => props.onClick && interactiveStyle}
+  ${props =>
+    props.onClick &&
+    props.focus &&
+    props.focusIndicator !== false &&
+    focusStyle}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
