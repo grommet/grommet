@@ -113,13 +113,13 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
       `;
     }
     const backgroundColor = normalizeColor(background, theme);
+    const backgroundDark = colorIsDark(backgroundColor);
     if (backgroundColor) {
       return css`
         background: ${backgroundColor};
         color: ${normalizeColor(
           textColor[
-            colorIsDark(backgroundColor) ||
-            (colorIsDark(backgroundColor) === undefined && theme.dark)
+            backgroundDark || (backgroundDark === undefined && theme.dark)
               ? 'dark'
               : 'light'
           ] || textColor,
