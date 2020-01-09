@@ -45,7 +45,19 @@ var BackgroundBox = function BackgroundBox() {
       color: 'accent-2',
       image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
     }
-  }, "image + color")));
+  }, "image + color"), _react["default"].createElement(_grommet.Box, {
+    background: "dark-1",
+    pad: "medium"
+  }, _react["default"].createElement(_grommet.Box, {
+    background: "#FFFFFF08",
+    pad: "small"
+  }, "low opacity on dark background")), _react["default"].createElement(_grommet.Box, {
+    background: "light-5",
+    pad: "medium"
+  }, _react["default"].createElement(_grommet.Box, {
+    background: "#11111108",
+    pad: "small"
+  }, "low opacity on light background"))));
 };
 
 (0, _react2.storiesOf)('Box', module).add('Background', function () {

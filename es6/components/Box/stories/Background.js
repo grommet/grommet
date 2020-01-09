@@ -38,7 +38,19 @@ var BackgroundBox = function BackgroundBox() {
       color: 'accent-2',
       image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
     }
-  }, "image + color")));
+  }, "image + color"), React.createElement(Box, {
+    background: "dark-1",
+    pad: "medium"
+  }, React.createElement(Box, {
+    background: "#FFFFFF08",
+    pad: "small"
+  }, "low opacity on dark background")), React.createElement(Box, {
+    background: "light-5",
+    pad: "medium"
+  }, React.createElement(Box, {
+    background: "#11111108",
+    pad: "small"
+  }, "low opacity on light background"))));
 };
 
 storiesOf('Box', module).add('Background', function () {
