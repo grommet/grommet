@@ -5,14 +5,14 @@ import { create } from '@storybook/theming';
 export default create({
   base: 'light',
 
-  colorSecondary: '#7D4CDB',
+  colorSecondary: '#E15151',
 
   appBg: '#F8F8F8',
   appBorderColor: '#EDEDED',
   appBorderRadius: 6,
 
   barTextColor: '#999999',
-  barSelectedColor: '#7D4CDB',
+  barSelectedColor: '#E15151',
   barBg: '#F2F2F2',
 
   inputBg: 'white',
@@ -20,6 +20,6 @@ export default create({
   inputTextColor: '#333333',
   inputBorderRadius: 4,
 
-  brandImage: '/grommet-logo.svg',
-  brandUrl: 'https://v2.grommet.io/',
+  brandImage: 'https://mnet-ui-base.netlify.com/img/logos/mnetb.svg',
+  brandUrl: 'https://mnet-ui-base.netlify.com/',
 });

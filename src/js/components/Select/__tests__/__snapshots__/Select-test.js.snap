@@ -8,8 +8,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c9 g {
@@ -47,6 +47,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -128,7 +130,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -323,8 +325,8 @@ exports[`Select basic 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -362,6 +364,8 @@ exports[`Select basic 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -443,7 +447,7 @@ exports[`Select basic 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -560,8 +564,8 @@ exports[`Select complex options and children 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -599,6 +603,8 @@ exports[`Select complex options and children 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -680,7 +686,7 @@ exports[`Select complex options and children 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -784,7 +790,7 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-1etxkdl-0 kXvGJR"
+    class="StyledBox-sc-1etxkdl-0 ljSTkN"
   >
     <div
       class="StyledBox-sc-1etxkdl-0 jRWbFR"
@@ -794,7 +800,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 eXSTAQ Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -810,7 +816,7 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 eCEOyf"
+        class="StyledIcon-ofa7kd-0 fAQkVd"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1120,8 +1126,8 @@ exports[`Select deselect an option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -1159,6 +1165,8 @@ exports[`Select deselect an option 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1240,7 +1248,7 @@ exports[`Select deselect an option 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -1345,8 +1353,8 @@ exports[`Select disabled 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -1384,6 +1392,8 @@ exports[`Select disabled 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1467,7 +1477,7 @@ exports[`Select disabled 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -1573,7 +1583,7 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-1etxkdl-0 kXvGJR"
+    class="StyledBox-sc-1etxkdl-0 ljSTkN"
   >
     <div
       class="StyledBox-sc-1etxkdl-0 jRWbFR"
@@ -1583,7 +1593,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 eXSTAQ Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1599,7 +1609,7 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 eCEOyf"
+        class="StyledIcon-ofa7kd-0 fAQkVd"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2447,8 +2457,8 @@ exports[`Select modifies select control style on open 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c9 g {
@@ -2486,6 +2496,8 @@ exports[`Select modifies select control style on open 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2567,7 +2579,7 @@ exports[`Select modifies select control style on open 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -2687,8 +2699,8 @@ exports[`Select multiple 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -2726,6 +2738,8 @@ exports[`Select multiple 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2807,7 +2821,7 @@ exports[`Select multiple 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -2926,8 +2940,8 @@ exports[`Select multiple values 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -2965,6 +2979,8 @@ exports[`Select multiple values 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3046,7 +3062,7 @@ exports[`Select multiple values 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -3151,7 +3167,7 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-1etxkdl-0 kXvGJR"
+    class="StyledBox-sc-1etxkdl-0 ljSTkN"
   >
     <div
       class="StyledBox-sc-1etxkdl-0 jRWbFR"
@@ -3161,7 +3177,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 eXSTAQ Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -3178,7 +3194,7 @@ exports[`Select multiple values 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 eCEOyf"
+        class="StyledIcon-ofa7kd-0 fAQkVd"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3368,7 +3384,7 @@ exports[`Select multiple values 3`] = `
 }
 
 .c9 {
-  background: #E15151;
+  background: #4b4d59;
   color: #FFFFFF;
 }
 
@@ -3543,8 +3559,8 @@ exports[`Select opens 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -3582,6 +3598,8 @@ exports[`Select opens 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3663,7 +3681,7 @@ exports[`Select opens 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -3767,7 +3785,7 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-1etxkdl-0 kXvGJR"
+    class="StyledBox-sc-1etxkdl-0 ljSTkN"
   >
     <div
       class="StyledBox-sc-1etxkdl-0 jRWbFR"
@@ -3777,7 +3795,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 cAWwaX Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 eXSTAQ Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3793,7 +3811,7 @@ exports[`Select opens 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 eCEOyf"
+        class="StyledIcon-ofa7kd-0 fAQkVd"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -4199,8 +4217,8 @@ exports[`Select renders custom icon 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -4238,6 +4256,8 @@ exports[`Select renders custom icon 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4319,7 +4339,7 @@ exports[`Select renders custom icon 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -4436,8 +4456,8 @@ exports[`Select renders default icon 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -4475,6 +4495,8 @@ exports[`Select renders default icon 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4556,7 +4578,7 @@ exports[`Select renders default icon 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -4674,8 +4696,8 @@ exports[`Select renders styled select options backwards compatible with legacy
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c9 g {
@@ -4713,6 +4735,8 @@ exports[`Select renders styled select options backwards compatible with legacy
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4794,7 +4818,7 @@ exports[`Select renders styled select options backwards compatible with legacy
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -4915,8 +4939,8 @@ exports[`Select renders styled select options combining select.options.box &&
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c9 g {
@@ -4954,6 +4978,8 @@ exports[`Select renders styled select options combining select.options.box &&
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5035,7 +5061,7 @@ exports[`Select renders styled select options combining select.options.box &&
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -5154,8 +5180,8 @@ exports[`Select renders styled select options using select.options.container 1`]
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c9 g {
@@ -5193,6 +5219,8 @@ exports[`Select renders styled select options using select.options.container 1`]
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5274,7 +5302,7 @@ exports[`Select renders styled select options using select.options.container 1`]
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -5398,6 +5426,8 @@ exports[`Select renders without icon 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5459,7 +5489,7 @@ exports[`Select renders without icon 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -5548,8 +5578,8 @@ exports[`Select search 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -5587,6 +5617,8 @@ exports[`Select search 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5668,7 +5700,7 @@ exports[`Select search 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -6193,8 +6225,8 @@ exports[`Select select an option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -6232,6 +6264,8 @@ exports[`Select select an option 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6313,7 +6347,7 @@ exports[`Select select an option 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -6417,8 +6451,8 @@ exports[`Select select an option with complex options 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c4 g {
@@ -6456,6 +6490,8 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6577,8 +6613,8 @@ exports[`Select select an option with enter 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -6616,6 +6652,8 @@ exports[`Select select an option with enter 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6697,7 +6735,7 @@ exports[`Select select an option with enter 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -6801,8 +6839,8 @@ exports[`Select select another option 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -6840,6 +6878,8 @@ exports[`Select select another option 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -6921,7 +6961,7 @@ exports[`Select select another option 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   border: none;
@@ -7026,8 +7066,8 @@ exports[`Select size 1`] = `
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
-  fill: #E15151;
-  stroke: #E15151;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 .c8 g {
@@ -7065,6 +7105,8 @@ exports[`Select size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #4b4d59;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -7146,7 +7188,7 @@ exports[`Select size 1`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   width: 100%;
   font-size: 22px;

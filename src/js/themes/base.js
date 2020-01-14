@@ -82,7 +82,7 @@ const colors = {
   'graph-3': 'neutral-3',
   'graph-4': 'neutral-4',
   placeholder: '#e0e4ee',
-  selected: 'brand',
+  selected: 'dark-2',
   text: {
     dark: '#f8f8f8',
     light: '#444444',
@@ -777,6 +777,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     select: {
       // background: undefined,
+      background: 'dark-2',
       container: {
         // extend: undefined,
       },
@@ -785,7 +786,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // open: undefined,
       },
       icons: {
-        // color: { dark: undefined, light: undefined },
+        color: 'white',
         margin: { horizontal: 'small' },
         down: FormDown,
       },
