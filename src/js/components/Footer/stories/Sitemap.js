@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase as MnetUIBaseIcon } from 'grommet-icons';
+import { Grommet as MnetUIBaseIcon } from 'grommet-icons';
 import {
   Anchor,
   Box,
