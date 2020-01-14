@@ -36,4 +36,4 @@ const SidebarNav = () => {
   );
 };
 
-storiesOf('Nav', module).add('Custom child', () => <SidebarNav />);
+storiesOf('Nav', module).add('Sidebar', () => <SidebarNav />);
