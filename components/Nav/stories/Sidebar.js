@@ -34,7 +34,7 @@ var SidebarButton = function SidebarButton(_ref) {
   });
 };
 
-var SidebarButtons = function SidebarButtons() {
+var SidebarNav = function SidebarNav() {
   var _useState = (0, _react.useState)(),
       active = _useState[0],
       setActive = _useState[1];
@@ -45,7 +45,7 @@ var SidebarButtons = function SidebarButtons() {
   }, _react["default"].createElement(_grommet.Box, {
     fill: true,
     direction: "row"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Nav, {
     background: "neutral-1"
   }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
     return _react["default"].createElement(SidebarButton, {
@@ -59,6 +59,6 @@ var SidebarButtons = function SidebarButtons() {
   }))));
 };
 
-(0, _react2.storiesOf)('Button', module).add('Sidebar', function () {
-  return _react["default"].createElement(SidebarButtons, null);
+(0, _react2.storiesOf)('Nav', module).add('Sidebar', function () {
+  return _react["default"].createElement(SidebarNav, null);
 });

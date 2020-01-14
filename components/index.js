@@ -240,6 +240,13 @@ Object.keys(_Paragraph).forEach(function (key) {
   exports[key] = _Paragraph[key];
 });
 
+var _Nav = require("./Nav");
+
+Object.keys(_Nav).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _Nav[key];
+});
+
 var _RadioButton = require("./RadioButton");
 
 Object.keys(_RadioButton).forEach(function (key) {

@@ -32,6 +32,7 @@ export * from './MaskedInput';
 export * from './Menu';
 export * from './Meter';
 export * from './Paragraph';
+export * from './Nav';
 export * from './RadioButton';
 export * from './RadioButtonGroup';
 export * from './RangeInput';

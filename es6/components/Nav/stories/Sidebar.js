@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, Button, Grommet, Text } from 'grommet';
+import { grommet, Box, Button, Grommet, Nav, Text } from 'grommet';
 
 var SidebarButton = function SidebarButton(_ref) {
   var label = _ref.label,
@@ -26,7 +26,7 @@ var SidebarButton = function SidebarButton(_ref) {
   });
 };
 
-var SidebarButtons = function SidebarButtons() {
+var SidebarNav = function SidebarNav() {
   var _useState = useState(),
       active = _useState[0],
       setActive = _useState[1];
@@ -37,7 +37,7 @@ var SidebarButtons = function SidebarButtons() {
   }, React.createElement(Box, {
     fill: true,
     direction: "row"
-  }, React.createElement(Box, {
+  }, React.createElement(Nav, {
     background: "neutral-1"
   }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
     return React.createElement(SidebarButton, {
@@ -51,6 +51,6 @@ var SidebarButtons = function SidebarButtons() {
   }))));
 };
 
-storiesOf('Button', module).add('Sidebar', function () {
-  return React.createElement(SidebarButtons, null);
+storiesOf('Nav', module).add('Sidebar', function () {
+  return React.createElement(SidebarNav, null);
 });
