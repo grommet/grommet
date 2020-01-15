@@ -5334,25 +5334,59 @@ exports[`DataTable search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
   padding-left: 12px;
   padding-right: 12px;
 }
 
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  position: relative;
+  width: 100%;
 }
 
 @media only screen and (max-width:768px) {
@@ -5365,89 +5399,17 @@ exports[`DataTable search 2`] = `
 <div
               class="c0"
             >
-              <span
+              <div
                 class="c1"
               >
-                [
-              </span>
-            </div>
-            .c1 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
-}
-
-.c1 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c1 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c1 *[stroke*="#"],
-.c1 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c1 *[fill-rule],
-.c1 *[FILL-RULE],
-.c1 *[fill*="#"],
-.c1 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c0:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-<button
-              aria-label="focus-search-a"
-              class="c0"
-              type="button"
-            >
-              <svg
-                aria-label="FormSearch"
-                class="c1"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M13.8,13.8 L18,18 L13.8,13.8 Z M10.5,15 C12.9852814,15 15,12.9852814 15,10.5 C15,8.01471863 12.9852814,6 10.5,6 C8.01471863,6 6,8.01471863 6,10.5 C6,12.9852814 8.01471863,15 10.5,15 Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
+                <input
+                  autocomplete="off"
+                  class="c2"
+                  name="search-a"
+                  value="["
                 />
-              </svg>
-            </button>
+              </div>
+            </div>
           </div>
         </th>
       </tr>
