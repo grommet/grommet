@@ -999,6 +999,15 @@ vertical
 boolean
 \`\`\`
 
+**focusIndicator**
+
+When interactive via 'onClick', whether it should receive a focus
+        outline. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
+
 **gap**
 
 The amount of spacing between child elements. This
@@ -3140,6 +3149,16 @@ Required. Array of value objects describing the data.
   
 ## Theme
   
+**chart.color**
+
+Color of the Chart. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+accent-1
+\`\`\`
+
 **chart.extend**
 
 Any additional style for the Chart. Expects \`string | (props) => {}\`.
@@ -3152,12 +3171,16 @@ undefined
 
 **global.colors**
 
-color options used for Chart fill area. Expects \`object\`.
+Color options. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-accent-1
+{
+      \\"accent-1\\": \\"#6FFFB0\\",
+      \\"graph-0\\": \\"accent-1\\",
+      ...
+    }
 \`\`\`
 
 **global.edgeSize**
@@ -3180,24 +3203,18 @@ Defaults to
     }
 \`\`\`
 
-**global.graph.colors**
-
-The color to use when not specified via color. Expects \`[string] or { dark: [string], light: [string] }\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
 **global.opacity**
 
-The opacity of the Chart stroke. Expects \`string\`.
+The opacity of the Chart stroke. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-undefined
+{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }
 \`\`\`
 
 **global.size**
@@ -4192,7 +4209,7 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to \`[]\`.
+      'primaryKey' isn't specified either, then the first column will be used.
 
 \`\`\`
 [{
@@ -4226,7 +4243,7 @@ A description of the data. The order controls the column order.
 
 **data**
 
-Array of data objects. Defaults to \`[]\`.
+Array of data objects.
 
 \`\`\`
 [{
@@ -4675,6 +4692,41 @@ svg
 \`\`\`
 ## Theme
   
+**diagram.extend**
+
+Any additional style for Diagram. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**diagram.line.color**
+
+The color of the connection line. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+accent-1
+\`\`\`
+
+**global.colors**
+
+Color options. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      \\"accent-1\\": \\"#6FFFB0\\",
+      \\"graph-0\\": \\"accent-1\\",
+      \\"graph-1\\": \\"neutral-1\\",
+      ...
+    }
+\`\`\`
+
 **global.edgeSize**
 
 The possible sizes for the connections thickness and offset. Expects \`object\`.
@@ -4693,37 +4745,6 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
-\`\`\`
-
-**global.graph.colors**
-
-The colors to use when not specified via connections or via
-    theme.diagram.line.color. Expects \`[string] or { dark: [string], light: [string] }\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**diagram.extend**
-
-Any additional style for Diagram. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**diagram.line.color**
-
-The color of the connection line. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-accent-1
 \`\`\`
 ",
   "Distribution": "## Distribution
@@ -8422,6 +8443,20 @@ Array of value objects describing the data.
   
 ## Theme
   
+**global.colors**
+
+Color options. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      \\"accent-1\\": \\"#6FFFB0\\",
+      \\"graph-0\\": \\"accent-1\\",
+      ...
+    }
+\`\`\`
+
 **global.edgeSize**
 
 The border-radius of the styled Meter. thickness, height and 
@@ -8441,16 +8476,6 @@ Defaults to
         xlarge: '96px',
         responsiveBreakpoint: 'small',
     }
-\`\`\`
-
-**global.graph.colors**
-
-The colors to use when not specified via values. Expects \`[string] or { dark: [string], light: [string] }\`.
-
-Defaults to
-
-\`\`\`
-undefined
 \`\`\`
 
 **global.opacity.medium**
@@ -8502,6 +8527,20 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "Nav": "## Nav
+Is a Box container for navigation links
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Nav&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=nav&module=%2Fsrc%2FNav.js)
+## Usage
+
+\`\`\`javascript
+import { Nav } from 'grommet';
+<Nav />
+\`\`\`
+
+## Properties
+
+  ",
   "Paragraph": "## Paragraph
 A paragraph of text.
 

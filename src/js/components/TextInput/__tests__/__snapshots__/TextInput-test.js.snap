@@ -227,7 +227,6 @@ exports[`TextInput close suggestion drop 2`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -574,7 +573,6 @@ exports[`TextInput complex suggestions 2`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -986,7 +984,6 @@ exports[`TextInput large drop height 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -1280,7 +1277,6 @@ exports[`TextInput medium drop height 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -1715,7 +1711,6 @@ exports[`TextInput select suggestion 2`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -2010,7 +2005,6 @@ exports[`TextInput small drop height 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -2350,7 +2344,6 @@ exports[`TextInput suggestions 2`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 

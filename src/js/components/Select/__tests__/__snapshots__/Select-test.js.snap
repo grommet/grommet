@@ -277,13 +277,11 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   padding: 0;
   text-align: inherit;
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
 .c0:hover {
   background-color: lightgreen;
-  color: #444444;
   color: #7D4CDB;
 }
 
@@ -936,7 +934,6 @@ exports[`Select complex options and children 3`] = `
 
 .c7:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -2047,7 +2044,6 @@ exports[`Select large drop container height 1`] = `
 
 .c7:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -2310,7 +2306,6 @@ exports[`Select medium drop container height 1`] = `
 
 .c7:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -3327,7 +3322,6 @@ exports[`Select multiple values 3`] = `
 
 .c7:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -3375,7 +3369,6 @@ exports[`Select multiple values 3`] = `
 
 .c9 {
   background: #7D4CDB;
-  color: #f8f8f8;
   color: #FFFFFF;
 }
 
@@ -3944,7 +3937,6 @@ exports[`Select opens 3`] = `
 
 .c7:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -4157,7 +4149,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 eCBRSq"
   >
     <button
-      class="StyledButton-sc-323bzc-0 lnKzGb"
+      class="StyledButton-sc-323bzc-0 hybzZB"
       role="menuitem"
       tabindex="-1"
       type="button"
@@ -4177,7 +4169,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 eCBRSq"
   >
     <button
-      class="StyledButton-sc-323bzc-0 lnKzGb"
+      class="StyledButton-sc-323bzc-0 hybzZB"
       role="menuitem"
       tabindex="-1"
       type="button"
@@ -5920,7 +5912,6 @@ exports[`Select search 2`] = `
 
 .c10:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -7397,7 +7388,6 @@ exports[`Select small drop container height 1`] = `
 
 .c7:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 

@@ -30,10 +30,10 @@ export const defaultColor = (index, theme, valuesLength) => {
       theme.meter.colors[theme.dark ? 'dark' : 'light'] || theme.meter.colors;
     return colors[index % colors.length];
   }
-  if (theme.global.graph && theme.global.graph.colors) {
-    const colors =
-      theme.global.graph.colors[theme.dark ? 'dark' : 'light'] ||
-      theme.global.graph.colors;
+  const colors = Object.keys(theme.global.colors).filter(n =>
+    n.match(/^graph-[0-9]$/),
+  );
+  if (colors.length > 0) {
     return colors[index % colors.length];
   }
   // Deprecate using "neutral-*" color names. Remove eventually.

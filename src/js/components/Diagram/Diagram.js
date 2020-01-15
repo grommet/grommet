@@ -198,10 +198,10 @@ const Diagram = ({ connections, theme, ...rest }) => {
             : 1;
           let colorName =
             color || (theme.diagram.line && theme.diagram.line.color);
-          if (!colorName && theme.global.graph && theme.global.graph.colors) {
-            const colors =
-              theme.global.graph.colors[theme.dark ? 'dark' : 'light']
-              || theme.global.graph.colors;
+          if (!colorName) {
+            const colors = Object.keys(theme.global.colors).filter(n =>
+              n.match(/^graph-[0-9]$/),
+            );
             colorName = colors[index % colors.length];
           }
 
