@@ -207,7 +207,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       control: {
         border: {
           width: '1px',
-          radius: '4px',
+          radius: '0px',
           color: 'border',
         },
         disabled: {
@@ -573,6 +573,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         position: 'inner',
         side: 'bottom',
+        size: '0',
       },
       content: {
         pad: 'small',

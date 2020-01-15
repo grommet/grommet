@@ -31,7 +31,12 @@ const FormFieldTextInput = props => {
   return (
     <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
-        <FormField label="Label" htmlFor="text-input" {...props}>
+        <FormField
+          direction="row"
+          label="Label"
+          htmlFor="text-input"
+          {...props}
+        >
           <TextInput
             id="text-input"
             placeholder="placeholder"
