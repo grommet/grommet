@@ -29,105 +29,57 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var Searcher =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Searcher, _Component);
-
-  function Searcher() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+var Searcher = function Searcher(_ref) {
+  var filtering = _ref.filtering,
+      filters = _ref.filters,
+      onFilter = _ref.onFilter,
+      onFiltering = _ref.onFiltering,
+      property = _ref.property,
+      theme = _ref.theme;
+  var inputRef = (0, _react.useRef)();
+  var needsFocus = filtering === property;
+  (0, _react.useEffect)(function () {
+    if (inputRef && needsFocus) {
+      inputRef.current.focus();
     }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "inputRef", _react["default"].createRef());
-
-    return _this;
-  }
-
-  var _proto = Searcher.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    this.focusInputIfNeeded();
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate() {
-    this.focusInputIfNeeded();
-  };
-
-  _proto.focusInputIfNeeded = function focusInputIfNeeded() {
-    /* eslint-disable-next-line react/prop-types */
-    var _this$props = this.props,
-        filtering = _this$props.filtering,
-        property = _this$props.property;
-
-    if (this.inputRef.current && filtering === property) {
-      this.inputRef.current.focus();
+  }, [needsFocus, inputRef]);
+  return filtering === property ? _react["default"].createElement(_Keyboard.Keyboard, {
+    onEsc: function onEsc() {
+      return onFiltering(undefined);
     }
-  };
-
-  _proto.render = function render() {
-    var _this$props2 = this.props,
-        filtering = _this$props2.filtering,
-        filters = _this$props2.filters,
-        onFilter = _this$props2.onFilter,
-        onFiltering = _this$props2.onFiltering,
-        property = _this$props2.property,
-        theme = _this$props2.theme;
-
-    if (filtering === property) {
-      return _react["default"].createElement(_Keyboard.Keyboard, {
-        onEsc: function onEsc() {
-          return onFiltering(undefined);
-        }
-      }, _react["default"].createElement(_Box.Box, {
-        flex: true,
-        pad: {
-          horizontal: 'small'
-        }
-      }, _react["default"].createElement(_TextInput.TextInput, {
-        name: "search-" + property,
-        ref: this.inputRef,
-        value: filters[property],
-        onChange: function onChange(event) {
-          return onFilter(property, event.target.value);
-        },
-        onBlur: function onBlur() {
-          return onFiltering(undefined);
-        }
-      })));
+  }, _react["default"].createElement(_Box.Box, {
+    flex: true,
+    pad: {
+      horizontal: 'small'
     }
-
-    return _react["default"].createElement(_react["default"].Fragment, null, filters[property] ? _react["default"].createElement(_Box.Box, {
-      flex: false,
-      pad: {
-        horizontal: 'small'
-      },
-      direction: "row",
-      align: "center"
-    }, _react["default"].createElement(_Text.Text, null, filters[property])) : null, _react["default"].createElement(_Button.Button, {
-      a11yTitle: "focus-search-" + property,
-      icon: _react["default"].createElement(_FormSearch.FormSearch, {
-        color: (0, _utils.normalizeColor)(filtering === property ? 'brand' : 'border', theme)
-      }),
-      hoverIndicator: true,
-      onClick: function onClick() {
-        return onFiltering(filtering === property ? undefined : property);
-      }
-    }));
-  };
-
-  return Searcher;
-}(_react.Component);
+  }, _react["default"].createElement(_TextInput.TextInput, {
+    name: "search-" + property,
+    ref: inputRef,
+    value: filters[property],
+    onChange: function onChange(event) {
+      return onFilter(property, event.target.value);
+    },
+    onBlur: function onBlur() {
+      return onFiltering(undefined);
+    }
+  }))) : _react["default"].createElement(_react["default"].Fragment, null, filters[property] ? _react["default"].createElement(_Box.Box, {
+    flex: false,
+    pad: {
+      horizontal: 'small'
+    },
+    direction: "row",
+    align: "center"
+  }, _react["default"].createElement(_Text.Text, null, filters[property])) : null, _react["default"].createElement(_Button.Button, {
+    a11yTitle: "focus-search-" + property,
+    icon: _react["default"].createElement(_FormSearch.FormSearch, {
+      color: (0, _utils.normalizeColor)(filtering === property ? 'brand' : 'border', theme)
+    }),
+    hoverIndicator: true,
+    onClick: function onClick() {
+      return onFiltering(filtering === property ? undefined : property);
+    }
+  }));
+};
 
 Searcher.defaultProps = {};
 Object.setPrototypeOf(Searcher.defaultProps, _defaultProps.defaultProps);
