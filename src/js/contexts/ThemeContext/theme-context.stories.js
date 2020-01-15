@@ -13,8 +13,8 @@ const CustomDefaultProps = () => (
       {theme => (
         <div style={{ backgroundColor: theme.global.colors['neutral-3'] }}>
           <p style={{ color: theme.global.colors['light-1'] }}>
-            {' '}
-            This is not a grommet component
+            This component is leveraging the grommet theme capabilities although
+            it is not a grommet component
           </p>
         </div>
       )}
@@ -22,4 +22,6 @@ const CustomDefaultProps = () => (
   </Grommet>
 );
 
-storiesOf('Theme', module).add('Theme Context', () => <CustomDefaultProps />);
+storiesOf('Theme', module).add('External Components', () => (
+  <CustomDefaultProps />
+));
