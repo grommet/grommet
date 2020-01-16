@@ -356,7 +356,7 @@ class TextInput extends Component {
     delete rest.onSuggestionsClose;
     const { showDrop, isInputEmpty } = this.state;
     const showStyledPlaceholder =
-      placeholder && typeof placeholder !== 'string' && !value && isInputEmpty;
+      placeholder && typeof placeholder !== 'string' && isInputEmpty;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
     delete rest.onSelect;
