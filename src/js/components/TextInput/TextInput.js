@@ -379,7 +379,6 @@ class TextInput extends Component {
       );
     }
     return (
-      // { render placeHoldr && <Styled...}
       <StyledTextInputContainer plain={plain}>
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
