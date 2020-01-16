@@ -84,7 +84,8 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       activeSuggestionIndex: -1,
-      showDrop: false
+      showDrop: false,
+      isInputEmpty: true
     });
 
     _defineProperty(_assertThisInitialized(_this), "inputRef", _react["default"].createRef());
@@ -293,6 +294,10 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
       var onChange = _this.props.onChange;
 
+      _this.setState({
+        isInputEmpty: !event.target.value
+      });
+
       _this.resetSuggestions();
 
       if (onChange) {
@@ -413,7 +418,10 @@ function (_Component) {
 
     delete rest.onSuggestionsOpen;
     delete rest.onSuggestionsClose;
-    var showDrop = this.state.showDrop; // needed so that styled components does not invoke
+    var _this$state4 = this.state,
+        showDrop = _this$state4.showDrop,
+        isInputEmpty = _this$state4.isInputEmpty;
+    var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && isInputEmpty && !value; // needed so that styled components does not invoke
     // onSelect when text input is clicked
 
     delete rest.onSelect;
@@ -443,7 +451,7 @@ function (_Component) {
 
     return _react["default"].createElement(_StyledTextInput.StyledTextInputContainer, {
       plain: plain
-    }, placeholder && typeof placeholder !== 'string' && !value ? _react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder) : null, _react["default"].createElement(_Keyboard.Keyboard, {
+    }, showStyledPlaceholder && _react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), _react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: this.onSuggestionSelect,
       onEsc: this.onEsc,
       onTab: this.onTab,
