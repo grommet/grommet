@@ -269,11 +269,7 @@ class TextInput extends Component {
 
   onChange = event => {
     const { onChange } = this.props;
-    if (event.target.value.length > 0) {
-      this.setState({ isInputEmpty: false });
-    } else {
-      this.setState({ isInputEmpty: true });
-    }
+    this.setState({ isInputEmpty: !Boolean(event.target.value) });
     this.resetSuggestions();
     if (onChange) {
       onChange(event);
