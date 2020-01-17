@@ -3,8 +3,7 @@ import {
   BorderType,
   ColorType,  
   DeepReadonly, 
-  GapType,
-  GraphColorsType,
+  GapType, 
   MarginType,
   OpacityType,
   PadType,
@@ -58,12 +57,6 @@ type Colors = typeof colors & {
   'status-ok'?: ColorType;
   'status-unknown'?: ColorType;
   'status-disabled'?: ColorType;
-  'graph-0'?: ColorType;
-  'graph-1'?: ColorType;
-  'graph-2'?: ColorType;
-  'graph-3'?: ColorType;
-  'graph-4'?: ColorType;
-  'graph-5'?: ColorType;
   [x: string]: ColorType;
 };
 
@@ -193,9 +186,6 @@ export interface ThemeType {
       maxWidth?: string;
       size?: string;
     };
-    graph?: {
-      colors?: GraphColorsType;
-    },
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -223,7 +213,7 @@ export interface ThemeType {
       xlarge?: string;
       xxlarge?: string;
       full?: string;
-      [x: string]: string;
+      [x: string]: string | undefined;
     };
   };
   accordion?: {
@@ -322,7 +312,6 @@ export interface ThemeType {
     };
   };
   chart?: {
-    color?: ColorType;
     extend?: ExtendType;
   }
   checkBox?: {
@@ -461,7 +450,7 @@ export interface ThemeType {
   diagram?: {
     extend?: ExtendType;
     line?: {
-      color?: ColorType;
+      color: 'accent-1';
     };
   };
   drop?: {
@@ -640,7 +629,7 @@ export interface ThemeType {
       medium?: string;
       large?: string;
       xlarge?: string;
-      [x: string]: string,
+      [x: string]: string | undefined,
     };
   };
   layer?: {
@@ -683,7 +672,6 @@ export interface ThemeType {
   };
   meter?: {
     color?: ColorType,
-    colors?: GraphColorsType,
     extend?: ExtendType,
   },
   paragraph?: {
