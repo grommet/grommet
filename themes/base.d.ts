@@ -223,7 +223,7 @@ export interface ThemeType {
       xlarge?: string;
       xxlarge?: string;
       full?: string;
-      [x: string]: string;
+      [x: string]: string | undefined;
     };
   };
   accordion?: {
@@ -640,7 +640,7 @@ export interface ThemeType {
       medium?: string;
       large?: string;
       xlarge?: string;
-      [x: string]: string,
+      [x: string]: string | undefined,
     };
   };
   layer?: {
