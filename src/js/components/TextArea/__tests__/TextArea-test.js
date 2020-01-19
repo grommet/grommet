@@ -1,11 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { TextArea } from '..';
-
-jest.mock('react-dom');
 
 describe('TextArea', () => {
   test('basic', () => {
@@ -89,6 +88,34 @@ describe('TextArea', () => {
       );
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
+    });
+  });
+
+  describe('Event tests', () => {
+    afterEach(cleanup);
+
+    test('onKeyDown', () => {
+      const callback = jest.fn();
+      const component = render(
+        <Grommet>
+          <TextArea
+            id="item"
+            name="item"
+            placeholder="item"
+            onKeyDown={callback}
+          />
+        </Grommet>,
+      );
+
+      const textArea = component.getByPlaceholderText('item');
+
+      fireEvent.keyDown(textArea, {
+        key: 'Backspace',
+        keyCode: 8,
+        which: 8,
+      });
+
+      expect(callback).toHaveBeenCalled();
     });
   });
 });

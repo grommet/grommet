@@ -15,7 +15,7 @@ const TextArea = ({ fill, forwardRef, ...rest }) => {
   };
 
   return (
-    <Keyboard onEsc={onEsc}>
+    <Keyboard onEsc={onEsc} onKeyDown={rest.onKeyDown}>
       <StyledTextArea ref={forwardRef} fillArg={fill} {...rest} />
     </Keyboard>
   );
