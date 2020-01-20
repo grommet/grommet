@@ -93,9 +93,19 @@ describe('TextArea', () => {
 
   describe('Event tests', () => {
     afterEach(cleanup);
+    const keyEvent = {
+      key: 'Backspace',
+      keyCode: 8,
+      which: 8,
+    };
 
-    test('onKeyDown', () => {
-      const callback = jest.fn();
+    test(`onKeyDown`, () => {
+      let capturedEvent = null;
+      const callback = event => {
+        const { key, keyCode, which } = event;
+        capturedEvent = { key, keyCode, which };
+      };
+
       const component = render(
         <Grommet>
           <TextArea
@@ -109,13 +119,34 @@ describe('TextArea', () => {
 
       const textArea = component.getByPlaceholderText('item');
 
-      fireEvent.keyDown(textArea, {
-        key: 'Backspace',
-        keyCode: 8,
-        which: 8,
-      });
+      fireEvent.keyDown(textArea, keyEvent);
 
-      expect(callback).toHaveBeenCalled();
+      expect(capturedEvent).toEqual(expect.objectContaining(keyEvent));
+    });
+
+    test(`onKeyUp`, () => {
+      let capturedEvent = null;
+      const callback = event => {
+        const { key, keyCode, which } = event;
+        capturedEvent = { key, keyCode, which };
+      };
+
+      const component = render(
+        <Grommet>
+          <TextArea
+            id="item"
+            name="item"
+            placeholder="item"
+            onKeyUp={callback}
+          />
+        </Grommet>,
+      );
+
+      const textArea = component.getByPlaceholderText('item');
+
+      fireEvent.keyUp(textArea, keyEvent);
+
+      expect(capturedEvent).toEqual(expect.objectContaining(keyEvent));
     });
   });
 });
