@@ -107,6 +107,7 @@ const StyledButton = styled.button`
   ${props => !props.disabled && props.active && activeStyle}
   ${props =>
     props.disabled &&
+    props.theme.button &&
     disabledStyle(
       props.theme.button.disabled && props.theme.button.disabled.opacity,
     )}
@@ -136,7 +137,7 @@ ${props =>
   `
 padding: ${props.theme.global.edgeSize.small};
 `}
-  ${props => props.theme.button.extend}
+  ${props => props.theme.button && props.theme.button.extend}
 `;
 
 StyledButton.defaultProps = {};
