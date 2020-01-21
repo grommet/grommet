@@ -38,6 +38,7 @@ describe('Form', () => {
       .fn()
       .mockReturnValueOnce('too short')
       .mockReturnValueOnce(undefined);
+    const validate2 = jest.fn().mockReturnValue(undefined);
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, container } = render(
       <Grommet>
@@ -48,7 +49,11 @@ describe('Form', () => {
             validate={validate}
             placeholder="test input"
           />
-          <FormField name="test2" placeholder="test-2 input" />
+          <FormField
+            name="test2"
+            placeholder="test-2 input"
+            validate={[validate2]}
+          />
           <Button type="submit" primary label="Submit" />
         </Form>
       </Grommet>,
@@ -59,6 +64,7 @@ describe('Form', () => {
     });
     fireEvent.click(getByText('Submit'));
     expect(validate).toBeCalledWith('v', { test: 'v' });
+    expect(validate2).toBeCalledWith(undefined, { test: 'v' });
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'value' },
     });
@@ -67,6 +73,10 @@ describe('Form', () => {
     });
     fireEvent.click(getByText('Submit'));
     expect(validate).toBeCalledWith('value', {
+      test: 'value',
+      test2: 'value-2',
+    });
+    expect(validate2).toBeCalledWith('value-2', {
       test: 'value',
       test2: 'value-2',
     });
