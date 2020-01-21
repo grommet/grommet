@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box } from 'grommet';
+import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
 var BorderBox = function BorderBox() {
@@ -80,6 +80,16 @@ var BorderBox = function BorderBox() {
         style: type
       }
     }, type);
+  })), React.createElement(Box, {
+    direction: "row-responsive",
+    gap: "large",
+    align: "center"
+  }, ['column', 'row'].map(function (direction) {
+    return React.createElement(Box, {
+      direction: direction,
+      gap: "medium",
+      border: "between"
+    }, React.createElement(Text, null, "between"), React.createElement(Text, null, direction));
   }))));
 };
 

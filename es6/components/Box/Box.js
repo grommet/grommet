@@ -11,6 +11,7 @@ import { StyledBox, StyledBoxGap } from './StyledBox';
 var Box = forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       background = _ref.background,
+      border = _ref.border,
       children = _ref.children,
       _ref$direction = _ref.direction,
       direction = _ref$direction === void 0 ? 'column' : _ref$direction,
@@ -29,7 +30,7 @@ var Box = forwardRef(function (_ref, ref) {
       width = _ref.width,
       height = _ref.height,
       tabIndex = _ref.tabIndex,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "background", "children", "direction", "elevation", "fill", "gap", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var focusable = useMemo(function () {
@@ -66,6 +67,11 @@ var Box = forwardRef(function (_ref, ref) {
     if (focusable) return 0;
     return undefined;
   }, [focusable, tabIndex]);
+
+  if ((border === 'between' || border && border.side === 'between') && !gap) {
+    console.warn('Box must have a gap to use border between');
+  }
+
   var contents = children;
 
   if (gap) {
@@ -81,7 +87,8 @@ var Box = forwardRef(function (_ref, ref) {
             key: "gap-" + index,
             gap: gap,
             directionProp: direction,
-            responsive: responsive
+            responsive: responsive,
+            border: border
           }));
         }
       }
@@ -108,6 +115,7 @@ var Box = forwardRef(function (_ref, ref) {
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
     background: background,
+    border: border,
     ref: ref,
     directionProp: direction,
     elevationProp: elevation,

@@ -20,7 +20,7 @@ var borderStyle = function borderStyle(data, responsive, theme) {
   var responsiveValue = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && style + " " + (breakpoint.borderSize[borderSize] || borderSize) + " " + color;
 
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-    styles.push((0, _styledComponents.css)(["border-", ":", ";"], side, value));
+    styles.push("border-" + side + ": " + value + ";");
 
     if (responsiveValue) {
       styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n        border-" + side + ": " + responsiveValue + ";\n      "));
@@ -37,6 +37,7 @@ var borderStyle = function borderStyle(data, responsive, theme) {
     if (responsiveValue) {
       styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n        border-top: " + responsiveValue + ";\n        border-bottom: " + responsiveValue + ";\n      "));
     }
+  } else if (side === 'between') {// no-op
   } else {
     styles.push((0, _styledComponents.css)(["border:", ";"], value));
 

@@ -15,6 +15,8 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var ALIGN_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -434,22 +436,45 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 
 exports.StyledBox = StyledBox;
 
-var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
+var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
   var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
   var responsiveSize = breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
+  var hasBetweenBorder = border === 'between' || border && border.side === 'between';
   var styles = [];
 
   if (directionProp === 'column') {
-    styles.push((0, _styledComponents.css)(["height:", ";"], theme.global.edgeSize[gap] || gap));
+    var height = theme.global.edgeSize[gap] || gap;
+    styles.push((0, _styledComponents.css)(["height:", ";"], height));
 
     if (responsiveSize) {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "height: " + responsiveSize + ";"));
     }
+
+    if (hasBetweenBorder) {
+      var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
+        side: 'top'
+      });
+      var borderSize = border.size || 'xsmall';
+      var borderHeight = theme.global.borderSize[borderSize] || borderSize;
+      styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;width:100%;top:", "px;", "}"], (0, _utils.parseMetricToNum)(height) / 2 - (0, _utils.parseMetricToNum)(borderHeight) / 2, (0, _utils.borderStyle)(adjustedBorder, responsive, theme)));
+    }
   } else {
-    styles.push("width: " + (theme.global.edgeSize[gap] || gap) + ";");
+    var width = theme.global.edgeSize[gap] || gap;
+    styles.push("width: " + width + ";");
 
     if (responsive && directionProp === 'row-responsive') {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        width: auto;\n        height: " + responsiveSize + ";\n      "));
+    }
+
+    if (hasBetweenBorder) {
+      var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
+        side: 'left'
+      });
+
+      var _borderSize = border.size || 'xsmall';
+
+      var borderWidth = theme.global.borderSize[_borderSize] || _borderSize;
+      styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;height:100%;left:", "px;", "}"], (0, _utils.parseMetricToNum)(width) / 2 - (0, _utils.parseMetricToNum)(borderWidth) / 2, (0, _utils.borderStyle)(_adjustedBorder, responsive, theme)));
     }
   }
 
@@ -463,7 +488,7 @@ var StyledBoxGap = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;", ";"], function (props) {
-  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.theme);
+  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
 });
 
 exports.StyledBoxGap = StyledBoxGap;

@@ -1,8 +1,10 @@
 var _FLEX_MAP;
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import styled, { css, keyframes } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle } from '../../utils';
+import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum } from '../../utils';
 var ALIGN_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -420,22 +422,45 @@ var StyledBox = styled.div.withConfig({
   return props.theme.box && props.theme.box.extend;
 });
 
-var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
+var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
   var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
   var responsiveSize = breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
+  var hasBetweenBorder = border === 'between' || border && border.side === 'between';
   var styles = [];
 
   if (directionProp === 'column') {
-    styles.push(css(["height:", ";"], theme.global.edgeSize[gap] || gap));
+    var height = theme.global.edgeSize[gap] || gap;
+    styles.push(css(["height:", ";"], height));
 
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, "height: " + responsiveSize + ";"));
     }
+
+    if (hasBetweenBorder) {
+      var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
+        side: 'top'
+      });
+      var borderSize = border.size || 'xsmall';
+      var borderHeight = theme.global.borderSize[borderSize] || borderSize;
+      styles.push(css(["position:relative;&:after{content:'';position:absolute;width:100%;top:", "px;", "}"], parseMetricToNum(height) / 2 - parseMetricToNum(borderHeight) / 2, borderStyle(adjustedBorder, responsive, theme)));
+    }
   } else {
-    styles.push("width: " + (theme.global.edgeSize[gap] || gap) + ";");
+    var width = theme.global.edgeSize[gap] || gap;
+    styles.push("width: " + width + ";");
 
     if (responsive && directionProp === 'row-responsive') {
       styles.push(breakpointStyle(breakpoint, "\n        width: auto;\n        height: " + responsiveSize + ";\n      "));
+    }
+
+    if (hasBetweenBorder) {
+      var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
+        side: 'left'
+      });
+
+      var _borderSize = border.size || 'xsmall';
+
+      var borderWidth = theme.global.borderSize[_borderSize] || _borderSize;
+      styles.push(css(["position:relative;&:after{content:'';position:absolute;height:100%;left:", "px;", "}"], parseMetricToNum(width) / 2 - parseMetricToNum(borderWidth) / 2, borderStyle(_adjustedBorder, responsive, theme)));
     }
   }
 
@@ -448,7 +473,7 @@ var StyledBoxGap = styled.div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;", ";"], function (props) {
-  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.theme);
+  return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
 });
 StyledBoxGap.defaultProps = {};
 Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);

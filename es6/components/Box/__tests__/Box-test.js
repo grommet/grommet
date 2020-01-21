@@ -477,7 +477,10 @@ describe('Box', function () {
         size: 'large',
         style: 'dashed'
       }]
-    })));
+    }), React.createElement(Box, {
+      border: "between",
+      gap: "small"
+    }, React.createElement(Box, null, "one"), React.createElement(Box, null, "two"))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
