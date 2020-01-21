@@ -1695,7 +1695,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <span
@@ -2381,7 +2381,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fPACPW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJDxHk"
         >
           <button
             aria-label="expand"
@@ -2407,7 +2407,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <span
@@ -2417,7 +2417,7 @@ exports[`DataTable groupBy 2`] = `
           </span>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <span
@@ -3289,7 +3289,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fPACPW"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iJDxHk"
         >
           <button
             aria-label="expand"
@@ -3315,7 +3315,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <span
@@ -3325,7 +3325,7 @@ exports[`DataTable groupBy property 2`] = `
           </span>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <span
@@ -5312,7 +5312,7 @@ exports[`DataTable search 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <div
@@ -5752,7 +5752,7 @@ exports[`DataTable sort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX StyledDataTable__StyledDataTableRow-xrlyjm-1 jriIGV"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <button
@@ -5827,7 +5827,7 @@ exports[`DataTable sort 2`] = `
           </button>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dSWIQX"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eRArxB"
           scope="col"
         >
           <button

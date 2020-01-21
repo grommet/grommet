@@ -14,7 +14,7 @@ export interface FormFieldProps {
   placeholder?: PlaceHolderType
   required?: boolean;
   component?: any;
-  validate?: {regexp?: object,message?: string} | ((...args: any[]) => any);
+  validate?: {regexp?: object,message?: string|React.ReactNode} | ((...args: any[]) => any) | ({regexp?: object,message?: string|React.ReactNode} | ((...args: any[]) => any))[];
 }
 
 declare const FormField: React.ComponentClass<FormFieldProps & Omit<JSX.IntrinsicElements['input'], 'placeholder'>>;
