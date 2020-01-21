@@ -63,7 +63,7 @@ var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "m9hood-0"
 })(["", ""], function (props) {
-  return props.theme.formField.extend;
+  return props.theme.formField && props.theme.formField.extend;
 });
 
 var FormFieldContent =
