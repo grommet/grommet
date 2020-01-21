@@ -25,9 +25,12 @@ var Example = function Example() {
     label: "Name",
     name: "name",
     required: true,
-    validate: {
+    validate: [{
       regexp: /^[a-z]/i
-    }
+    }, function (name) {
+      if (name && name.length === 1) return 'must be >1 character';
+      return undefined;
+    }]
   }), React.createElement(FormField, {
     label: "Email",
     name: "email",

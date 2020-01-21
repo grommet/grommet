@@ -46,7 +46,12 @@ var validateField = function validateField(required, validate, messages) {
     if (required && (value === undefined || value === '')) {
       error = messages.required;
     } else if (validate) {
-      if (typeof validate === 'function') {
+      if (Array.isArray(validate)) {
+        validate.some(function (oneValidate) {
+          error = validateField(false, oneValidate, messages)(value, data);
+          return !!error;
+        });
+      } else if (typeof validate === 'function') {
         error = validate(value, data);
       } else if (validate.regexp) {
         if (!validate.regexp.test(value)) {

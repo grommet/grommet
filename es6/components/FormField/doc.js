@@ -16,7 +16,11 @@ export var doc = function doc(FormField) {
       regexp: PropTypes.object,
       // regular expression
       message: PropTypes.string
-    }), PropTypes.func]).description("Validation rule when used within a grommet Form. Provide a regular\n      expression or a function. If a\n      function is provided, it will be called with two arguments, the value\n      for this field and the entire value object. This permits validation to\n      encompass multiple fields. The function should return a string message\n      describing the validation issue, if any.")
+    }), PropTypes.func, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({
+      regexp: PropTypes.object,
+      // regular expression
+      message: PropTypes.string
+    }), PropTypes.func]))]).description("Validation rule when used within a grommet Form. Provide an object\n      with a regular expression, a function, or an array of these. If a\n      function is provided, it will be called with two arguments, the value\n      for this field and the entire value object. This permits validation to\n      encompass multiple fields. The function should return a string message\n      describing the validation issue, if any.")
   };
   return DocumentedFormField;
 };

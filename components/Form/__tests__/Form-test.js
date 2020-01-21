@@ -36,6 +36,7 @@ describe('Form', function () {
   });
   test('update', function () {
     var validate = jest.fn().mockReturnValueOnce('too short').mockReturnValueOnce(undefined);
+    var validate2 = jest.fn().mockReturnValue(undefined);
     var onSubmit = jest.fn();
 
     var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
@@ -47,7 +48,8 @@ describe('Form', function () {
       placeholder: "test input"
     }), _react["default"].createElement(_FormField.FormField, {
       name: "test2",
-      placeholder: "test-2 input"
+      placeholder: "test-2 input",
+      validate: [validate2]
     }), _react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
@@ -70,6 +72,9 @@ describe('Form', function () {
     expect(validate).toBeCalledWith('v', {
       test: 'v'
     });
+    expect(validate2).toBeCalledWith(undefined, {
+      test: 'v'
+    });
 
     _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
@@ -86,6 +91,10 @@ describe('Form', function () {
     _react2.fireEvent.click(getByText('Submit'));
 
     expect(validate).toBeCalledWith('value', {
+      test: 'value',
+      test2: 'value-2'
+    });
+    expect(validate2).toBeCalledWith('value-2', {
       test: 'value',
       test2: 'value-2'
     });

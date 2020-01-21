@@ -23,7 +23,11 @@ var doc = function doc(FormField) {
       regexp: _reactDesc.PropTypes.object,
       // regular expression
       message: _reactDesc.PropTypes.string
-    }), _reactDesc.PropTypes.func]).description("Validation rule when used within a grommet Form. Provide a regular\n      expression or a function. If a\n      function is provided, it will be called with two arguments, the value\n      for this field and the entire value object. This permits validation to\n      encompass multiple fields. The function should return a string message\n      describing the validation issue, if any.")
+    }), _reactDesc.PropTypes.func, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
+      regexp: _reactDesc.PropTypes.object,
+      // regular expression
+      message: _reactDesc.PropTypes.string
+    }), _reactDesc.PropTypes.func]))]).description("Validation rule when used within a grommet Form. Provide an object\n      with a regular expression, a function, or an array of these. If a\n      function is provided, it will be called with two arguments, the value\n      for this field and the entire value object. This permits validation to\n      encompass multiple fields. The function should return a string message\n      describing the validation issue, if any.")
   };
   return DocumentedFormField;
 };
