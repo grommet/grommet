@@ -438,7 +438,8 @@ string",
         "name": "basis",
       },
       Object {
-        "description": "Include a border. You must have \\"gap\\" to use \\"between\\"",
+        "description": "Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.",
         "format": "boolean
 top
 left
@@ -462,7 +463,8 @@ between
     right
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -495,7 +497,8 @@ between
     right
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
