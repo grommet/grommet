@@ -169,6 +169,14 @@ Validation rule when used within a grommet Form. Provide a regular
   message: string
 }
 function
+[
+  {
+    regexp: object,
+    validate: function,
+    message: string
+  }
+  function
+]
 ```
   
 ## Intrinsic element

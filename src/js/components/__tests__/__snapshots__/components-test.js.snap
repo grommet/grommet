@@ -2240,7 +2240,15 @@ string",
   regexp: object,
   message: string
 }
-function",
+function
+[
+  {
+    regexp: object,
+    validate: function,
+    message: string
+  }
+  function
+]",
         "name": "validate",
       },
     ],

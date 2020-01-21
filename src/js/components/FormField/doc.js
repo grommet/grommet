@@ -55,6 +55,16 @@ export const doc = FormField => {
         message: PropTypes.string,
       }),
       PropTypes.func,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.shape({
+            regexp: PropTypes.object, // regular expression
+            validate: PropTypes.func,
+            message: PropTypes.string,
+          }),
+          PropTypes.func,
+        ]),
+      ),
     ]).description(
       `Validation rule when used within a grommet Form. Provide a regular
       expression or a function. If a
