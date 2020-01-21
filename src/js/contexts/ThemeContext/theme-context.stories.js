@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
 import { Box, Text, ThemeContext, Grommet } from 'grommet';
 
-const CustomDefaultProps = () => (
+const ExternalComponentWithTheme = () => (
   <Grommet theme={grommet}>
     <Box background="neutral-3">
       <Text color="light-1">This is a grommet component</Text>
@@ -23,5 +23,5 @@ const CustomDefaultProps = () => (
 );
 
 storiesOf('Theme', module).add('External Components', () => (
-  <CustomDefaultProps />
+  <ExternalComponentWithTheme />
 ));
