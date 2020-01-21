@@ -1461,6 +1461,21 @@ exports[`Box border 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1720,6 +1735,22 @@ exports[`Box border 1`] = `
   flex-direction: column;
 }
 
+.c18 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 12px;
+  position: relative;
+}
+
+.c18:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 5.5px;
+  border-top: solid 1px rgba(0,0,0,0.33);
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -1824,6 +1855,18 @@ exports[`Box border 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c18 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18:after {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
 <div
   className="c0"
 >
@@ -1881,6 +1924,23 @@ exports[`Box border 1`] = `
   <div
     className="c16"
   />
+  <div
+    className="c17"
+  >
+    <div
+      className="c17"
+    >
+      one
+    </div>
+    <div
+      className="c18"
+    />
+    <div
+      className="c17"
+    >
+      two
+    </div>
+  </div>
 </div>
 `;
 
