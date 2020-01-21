@@ -30,7 +30,7 @@ const validateField = (required, validate, messages) => (value, data) => {
 };
 
 const FormFieldBox = styled(Box)`
-  ${props => props.theme.formField.extend}
+  ${props => props.theme.formField && props.theme.formField.extend}
 `;
 
 class FormFieldContent extends Component {
