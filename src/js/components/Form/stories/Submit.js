@@ -27,7 +27,13 @@ const Example = () => (
             label="Name"
             name="name"
             required
-            validate={{ regexp: /^[a-z]/i }}
+            validate={[
+              { regexp: /^[a-z]/i },
+              name => {
+                if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+            ]}
           />
           <FormField label="Email" name="email" type="email" required />
           <FormField
