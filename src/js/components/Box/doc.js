@@ -175,7 +175,7 @@ export const doc = Box => {
       PropTypes.arrayOf(BORDER_SHAPE),
     ]).description(
       `Include a border. 'between' will place a border in the gap between
-      child elements. You must have a 'gap' to use 'between'.`
+      child elements. You must have a 'gap' to use 'between'.`,
     ),
     direction: PropTypes.oneOf([
       'row',
