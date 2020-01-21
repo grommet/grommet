@@ -11,6 +11,7 @@ import {
   genericStyles,
   getHoverIndicatorStyle,
   overflowStyle,
+  parseMetricToNum,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -89,12 +90,9 @@ const directionStyle = (direction, theme) => {
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[
-      (props.theme.dark && !props.theme.darkChanged) ||
-      (!props.theme.dark && props.theme.darkChanged)
-        ? 'dark'
-        : 'light'
-    ][props.elevationProp]};
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      props.elevationProp
+    ]};
 `;
 
 const FLEX_MAP = {
@@ -569,24 +567,45 @@ const StyledBox = styled.div`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyle = (directionProp, gap, responsive, theme) => {
+const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
   const responsiveSize =
     breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
+  const hasBetweenBorder =
+    border === 'between' || (border && border.side === 'between');
   const styles = [];
   if (directionProp === 'column') {
+    const height = theme.global.edgeSize[gap] || gap;
     styles.push(
       css`
-        height: ${theme.global.edgeSize[gap] || gap};
+        height: ${height};
       `,
     );
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
+    if (hasBetweenBorder) {
+      const adjustedBorder =
+        typeof border === 'string' ? 'top' : { ...border, side: 'top' };
+      const borderSize = border.size || 'xsmall';
+      const borderHeight = theme.global.borderSize[borderSize] || borderSize;
+      styles.push(css`
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          top: ${parseMetricToNum(height) / 2 -
+            parseMetricToNum(borderHeight) / 2}px;
+          ${borderStyle(adjustedBorder, responsive, theme)}
+        }
+      `);
+    }
   } else {
-    styles.push(`width: ${theme.global.edgeSize[gap] || gap};`);
+    const width = theme.global.edgeSize[gap] || gap;
+    styles.push(`width: ${width};`);
     if (responsive && directionProp === 'row-responsive') {
       styles.push(
         breakpointStyle(
@@ -597,6 +616,23 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
       `,
         ),
       );
+    }
+    if (hasBetweenBorder) {
+      const adjustedBorder =
+        typeof border === 'string' ? 'left' : { ...border, side: 'left' };
+      const borderSize = border.size || 'xsmall';
+      const borderWidth = theme.global.borderSize[borderSize] || borderSize;
+      styles.push(css`
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          left: ${parseMetricToNum(width) / 2 -
+            parseMetricToNum(borderWidth) / 2}px;
+          ${borderStyle(adjustedBorder, responsive, theme)}
+        }
+      `);
     }
   }
   return styles;
@@ -609,7 +645,13 @@ const StyledBoxGap = styled.div`
   flex: 0 0 auto;
   ${props =>
     props.gap &&
-    gapStyle(props.directionProp, props.gap, props.responsive, props.theme)};
+    gapStyle(
+      props.directionProp,
+      props.gap,
+      props.responsive,
+      props.border,
+      props.theme,
+    )};
 `;
 
 StyledBoxGap.defaultProps = {};

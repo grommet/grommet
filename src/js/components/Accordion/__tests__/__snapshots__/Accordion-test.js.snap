@@ -690,7 +690,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       />
     </div>
     <div
@@ -735,7 +735,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         Panel body 2
       </div>
@@ -1116,7 +1116,7 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -1202,7 +1202,7 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="false"
@@ -1569,7 +1569,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       />
     </div>
     <div
@@ -1648,7 +1648,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         Panel body 2
       </div>
@@ -2735,7 +2735,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       />
     </div>
     <div
@@ -2814,7 +2814,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         Panel body 2
       </div>
@@ -2907,7 +2907,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         Panel body 1
       </div>
@@ -2954,7 +2954,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         Panel body 2
       </div>
@@ -3013,7 +3013,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         Panel body 1
       </div>
@@ -3093,7 +3093,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       />
     </div>
   </div>
@@ -3183,7 +3183,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       />
     </div>
     <div
@@ -3227,7 +3227,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       />
     </div>
   </div>
@@ -3642,7 +3642,7 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -3693,7 +3693,7 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -3756,7 +3756,7 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -3807,7 +3807,7 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -3870,7 +3870,7 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -3921,7 +3921,7 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -3984,7 +3984,7 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"
@@ -4035,7 +4035,7 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 gwljPq"
+        class="StyledBox-sc-13pk1d4-0 hAqtex"
       >
         <div
           aria-hidden="true"

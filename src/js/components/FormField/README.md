@@ -156,8 +156,8 @@ boolean
 
 **validate**
 
-Validation rule when used within a grommet Form. Provide a regular
-      expression or a function. If a
+Validation rule when used within a grommet Form. Provide an object
+      with a regular expression, a function, or an array of these. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -169,6 +169,13 @@ Validation rule when used within a grommet Form. Provide a regular
   message: string
 }
 function
+[
+  {
+    regexp: object,
+    message: string
+  }
+  function
+]
 ```
   
 ## Intrinsic element

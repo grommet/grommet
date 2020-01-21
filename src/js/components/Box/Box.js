@@ -18,6 +18,7 @@ const Box = forwardRef(
     {
       a11yTitle,
       background,
+      border,
       children,
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
@@ -74,6 +75,13 @@ const Box = forwardRef(
       return undefined;
     }, [focusable, tabIndex]);
 
+    if (
+      (border === 'between' || (border && border.side === 'between')) &&
+      !gap
+    ) {
+      console.warn('Box must have a gap to use border between');
+    }
+
     let contents = children;
     if (gap) {
       contents = [];
@@ -90,6 +98,7 @@ const Box = forwardRef(
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
+                border={border}
               />,
             );
           }
@@ -98,11 +107,25 @@ const Box = forwardRef(
       });
     }
 
+    if (background || theme.darkChanged) {
+      let dark = backgroundIsDark(background, theme);
+      const darkChanged = dark !== undefined && dark !== theme.dark;
+      if (darkChanged || theme.darkChanged) {
+        dark = dark === undefined ? theme.dark : dark;
+        contents = (
+          <ThemeContext.Provider value={{ ...theme, dark }}>
+            {contents}
+          </ThemeContext.Provider>
+        );
+      }
+    }
+
     let content = (
       <StyledBox
         as={!as && tag ? tag : as}
         aria-label={a11yTitle}
         background={background}
+        border={border}
         ref={ref}
         directionProp={direction}
         elevationProp={elevation}
@@ -123,22 +146,6 @@ const Box = forwardRef(
 
     if (onClick) {
       content = <Keyboard onEnter={onClick}>{content}</Keyboard>;
-    }
-
-    // When a Box changes the darkness, it sets darkChanged so that StyledBox
-    // can know what the underlying darkness is when deciding which elevation
-    // to show.
-    if (background || theme.darkChanged) {
-      let dark = backgroundIsDark(background, theme);
-      const darkChanged = dark !== undefined && dark !== theme.dark;
-      if (darkChanged || theme.darkChanged) {
-        dark = dark === undefined ? theme.dark : dark;
-        content = (
-          <ThemeContext.Provider value={{ ...theme, dark, darkChanged }}>
-            {content}
-          </ThemeContext.Provider>
-        );
-      }
     }
 
     return content;
