@@ -21,9 +21,11 @@ const RadioButtonGroup = forwardRef(
     const options = useMemo(
       () =>
         optionsProp.map(o =>
-          typeof o === 'string' ? { id: o, label: o, value: o } : o,
+          typeof o === 'string'
+            ? { id: rest.id ? `${rest.id}-${o}` : o, label: o, value: o }
+            : o,
         ),
-      [optionsProp],
+      [optionsProp, rest.id],
     );
     const [value, setValue] = useState(valueProp);
     useEffect(() => setValue(valueProp), [valueProp]);

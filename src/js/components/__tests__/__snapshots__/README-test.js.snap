@@ -4209,7 +4209,7 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to \`[]\`.
+      'primaryKey' isn't specified either, then the first column will be used.
 
 \`\`\`
 [{
@@ -4243,7 +4243,7 @@ A description of the data. The order controls the column order.
 
 **data**
 
-Array of data objects. Defaults to \`[]\`.
+Array of data objects.
 
 \`\`\`
 [{
@@ -8527,6 +8527,20 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "Nav": "## Nav
+Is a Box container for navigation links
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Nav&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=nav&module=%2Fsrc%2FNav.js)
+## Usage
+
+\`\`\`javascript
+import { Nav } from 'grommet';
+<Nav />
+\`\`\`
+
+## Properties
+
+  ",
   "Paragraph": "## Paragraph
 A paragraph of text.
 

@@ -72,6 +72,7 @@ class TextInput extends Component {
   state = {
     activeSuggestionIndex: -1,
     showDrop: false,
+    isInputEmpty: true,
   };
 
   inputRef = React.createRef();
@@ -268,6 +269,7 @@ class TextInput extends Component {
 
   onChange = event => {
     const { onChange } = this.props;
+    this.setState({ isInputEmpty: !event.target.value });
     this.resetSuggestions();
     if (onChange) {
       onChange(event);
@@ -348,7 +350,9 @@ class TextInput extends Component {
     delete rest.onChange; // se we can manage in this.onChange()
     delete rest.onSuggestionsOpen;
     delete rest.onSuggestionsClose;
-    const { showDrop } = this.state;
+    const { showDrop, isInputEmpty } = this.state;
+    const showStyledPlaceholder =
+      placeholder && typeof placeholder !== 'string' && isInputEmpty && !value;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
     delete rest.onSelect;
@@ -372,9 +376,9 @@ class TextInput extends Component {
     }
     return (
       <StyledTextInputContainer plain={plain}>
-        {placeholder && typeof placeholder !== 'string' && !value ? (
+        {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
-        ) : null}
+        )}
         <Keyboard
           onEnter={this.onSuggestionSelect}
           onEsc={this.onEsc}
