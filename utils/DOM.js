@@ -1,27 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.findVisibleParent = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.copyAttribute = exports.setTabIndex = exports.setFocusWithoutScroll = exports.getNewContainer = exports.getBodyChildElements = exports.getFirstFocusableDescendant = exports.findScrollParents = exports.filterByFocusable = void 0;
-
-var filterByFocusable = function filterByFocusable(elements) {
-  return Array.prototype.filter.call(elements || [], function (element) {
-    var currentTag = element.tagName.toLowerCase();
-    var validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
-    var isValidTag = currentTag.match(validTags) && element.focus;
-
-    if (currentTag === 'a') {
-      return isValidTag && element.childNodes.length > 0 && element.getAttribute('href');
-    }
-
-    if (currentTag === 'svg' || currentTag === 'div') {
-      return isValidTag && element.hasAttribute('tabindex') && element.getAttribute('tabindex') !== '-1';
-    }
-
-    return isValidTag;
-  });
-};
-
-exports.filterByFocusable = filterByFocusable;
+exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.findVisibleParent = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.setFocusWithoutScroll = exports.getNewContainer = exports.getBodyChildElements = exports.getFirstFocusableDescendant = exports.findScrollParents = void 0;
 
 var findScrollParents = function findScrollParents(element, horizontal) {
   var result = [];
@@ -105,67 +85,56 @@ var setFocusWithoutScroll = function setFocusWithoutScroll(element) {
 };
 
 exports.setFocusWithoutScroll = setFocusWithoutScroll;
-
-var setTabIndex = function setTabIndex(tabIndex) {
-  return function (element) {
-    element.setAttribute('tabindex', tabIndex);
-  };
-};
-
-exports.setTabIndex = setTabIndex;
-
-var copyAttribute = function copyAttribute(source) {
-  return function (target) {
-    return function (element) {
-      element.setAttribute(target, element.getAttribute(source));
-    };
-  };
-};
-
-exports.copyAttribute = copyAttribute;
-
-var deleteAttribute = function deleteAttribute(attribute) {
-  return function (element) {
-    return element.removeAttribute(attribute);
-  };
-};
-
-var unsetTabIndex = setTabIndex(-1);
-var saveTabIndex = copyAttribute('tabindex')('data-g-tabindex');
-var restoreTabIndex = copyAttribute('data-g-tabindex')('tabindex');
-var deleteTabIndex = deleteAttribute('tabindex');
-var deleteTabIndexCopy = deleteAttribute('data-g-tabindex');
+var TABINDEX = 'tabindex';
+var TABINDEX_STATE = 'data-g-tabindex';
 
 var makeNodeFocusable = function makeNodeFocusable(node) {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', false); // allow children to receive focus again
 
-    filterByFocusable(node.getElementsByTagName('*')).forEach(function (child) {
-      if (child.hasAttribute('data-g-tabindex')) {
-        restoreTabIndex(child);
-      } else {
-        deleteTabIndex(child);
+    var elements = node.getElementsByTagName('*'); // only reset elements we've changed in makeNodeUnfocusable()
+
+    Array.prototype.filter.call(elements || [], function (element) {
+      return element.hasAttribute(TABINDEX_STATE);
+    }).forEach(function (element) {
+      var prior = element.getAttribute(TABINDEX_STATE);
+
+      if (prior >= 0) {
+        element.setAttribute(TABINDEX, element.getAttribute(TABINDEX_STATE));
+      } else if (prior === 'none') {
+        element.removeAttribute(TABINDEX);
       }
 
-      deleteTabIndexCopy(child);
+      element.removeAttribute(TABINDEX_STATE);
     });
   }
 };
 
 exports.makeNodeFocusable = makeNodeFocusable;
+var autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
 
 var makeNodeUnfocusable = function makeNodeUnfocusable(node) {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', true); // prevent children to receive focus
 
-    filterByFocusable(node.getElementsByTagName('*')).forEach(function (child) {
-      if (child.hasAttribute('tabindex')) {
-        saveTabIndex(child);
-      }
+    var elements = node.getElementsByTagName('*'); // first, save off the tabindex of any element with one
 
-      unsetTabIndex(child);
+    Array.prototype.filter.call(elements || [], function (element) {
+      return element.getAttribute(TABINDEX) !== null;
+    }).forEach(function (element) {
+      element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
+      element.setAttribute(TABINDEX, -1);
+    }); // then, if any element is inherently focusable and not handled above,
+    // give it a tabindex of -1 so it can't receive focus
+
+    Array.prototype.filter.call(elements || [], function (element) {
+      var currentTag = element.tagName.toLowerCase();
+      return currentTag.match(autoFocusingTags) && element.focus && element.getAttribute(TABINDEX_STATE) === null;
+    }).forEach(function (element) {
+      element.setAttribute(TABINDEX_STATE, 'none');
+      element.setAttribute(TABINDEX, -1);
     });
   }
 };

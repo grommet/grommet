@@ -42,7 +42,7 @@ var FakeLayer = function FakeLayer(_ref) {
     })));
   }
 
-  return _react["default"].createElement(_.Grommet, null, layer, children);
+  return _react["default"].createElement(_.Box, null, layer, children);
 };
 
 describe('Layer', function () {

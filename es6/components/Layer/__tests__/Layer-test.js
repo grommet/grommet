@@ -31,7 +31,7 @@ var FakeLayer = function FakeLayer(_ref) {
     })));
   }
 
-  return React.createElement(Grommet, null, layer, children);
+  return React.createElement(Box, null, layer, children);
 };
 
 describe('Layer', function () {
