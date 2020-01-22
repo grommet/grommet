@@ -72,7 +72,7 @@ const Animated = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      toogleDraw(undefined);
+      toogleDraw();
     }, 2000);
     return () => clearInterval(timer);
   }, [toogleDraw]);
