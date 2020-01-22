@@ -1,25 +1,3 @@
-export const filterByFocusable = elements =>
-  Array.prototype.filter.call(elements || [], element => {
-    const currentTag = element.tagName.toLowerCase();
-    const validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
-    const isValidTag = currentTag.match(validTags) && element.focus;
-    if (currentTag === 'a') {
-      return (
-        isValidTag &&
-        element.childNodes.length > 0 &&
-        element.getAttribute('href')
-      );
-    }
-    if (currentTag === 'svg' || currentTag === 'div') {
-      return (
-        isValidTag &&
-        element.hasAttribute('tabindex') &&
-        element.getAttribute('tabindex') !== '-1'
-      );
-    }
-    return isValidTag;
-  });
-
 export const findScrollParents = (element, horizontal) => {
   const result = [];
   if (element) {
@@ -85,50 +63,60 @@ export const setFocusWithoutScroll = element => {
   window.scrollTo(x, y);
 };
 
-export const setTabIndex = tabIndex => element => {
-  element.setAttribute('tabindex', tabIndex);
-};
-
-export const copyAttribute = source => target => element => {
-  element.setAttribute(target, element.getAttribute(source));
-};
-
-const deleteAttribute = attribute => element =>
-  element.removeAttribute(attribute);
-
-const unsetTabIndex = setTabIndex(-1);
-const saveTabIndex = copyAttribute('tabindex')('data-g-tabindex');
-const restoreTabIndex = copyAttribute('data-g-tabindex')('tabindex');
-const deleteTabIndex = deleteAttribute('tabindex');
-const deleteTabIndexCopy = deleteAttribute('data-g-tabindex');
+const TABINDEX = 'tabindex';
+const TABINDEX_STATE = 'data-g-tabindex';
 
 export const makeNodeFocusable = node => {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', false);
     // allow children to receive focus again
-    filterByFocusable(node.getElementsByTagName('*')).forEach(child => {
-      if (child.hasAttribute('data-g-tabindex')) {
-        restoreTabIndex(child);
-      } else {
-        deleteTabIndex(child);
-      }
-      deleteTabIndexCopy(child);
-    });
+    const elements = node.getElementsByTagName('*');
+    // only reset elements we've changed in makeNodeUnfocusable()
+    Array.prototype.filter
+      .call(elements || [], element => element.hasAttribute(TABINDEX_STATE))
+      .forEach(element => {
+        const prior = element.getAttribute(TABINDEX_STATE);
+        if (prior >= 0) {
+          element.setAttribute(TABINDEX, element.getAttribute(TABINDEX_STATE));
+        } else if (prior === 'none') {
+          element.removeAttribute(TABINDEX);
+        }
+        element.removeAttribute(TABINDEX_STATE);
+      });
   }
 };
+
+const autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
 
 export const makeNodeUnfocusable = node => {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', true);
     // prevent children to receive focus
-    filterByFocusable(node.getElementsByTagName('*')).forEach(child => {
-      if (child.hasAttribute('tabindex')) {
-        saveTabIndex(child);
-      }
-      unsetTabIndex(child);
-    });
+    const elements = node.getElementsByTagName('*');
+    // first, save off the tabindex of any element with one
+    Array.prototype.filter
+      .call(elements || [], element => element.getAttribute(TABINDEX) !== null)
+      .forEach(element => {
+        element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
+        element.setAttribute(TABINDEX, -1);
+      });
+    // then, if any element is inherently focusable and not handled above,
+    // give it a tabindex of -1 so it can't receive focus
+    Array.prototype.filter
+      .call(elements || [], element => {
+        const currentTag = element.tagName.toLowerCase();
+        return (
+          currentTag.match(autoFocusingTags) &&
+          element.focus &&
+          element.getAttribute(TABINDEX_STATE) === null
+        );
+      })
+      .forEach(element => {
+        element.setAttribute(TABINDEX_STATE, 'none');
+        element.setAttribute(TABINDEX, -1);
+      });
   }
 };
 

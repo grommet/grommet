@@ -5428,6 +5428,15 @@ Function that will be called when the form is reset. The
 function
 \`\`\`
 
+**validate**
+
+When to perform validation Defaults to \`submit\`.
+
+\`\`\`
+blur
+submit
+\`\`\`
+
 **value**
 
 An object representing all of the data in the form. Defaults to \`{}\`.

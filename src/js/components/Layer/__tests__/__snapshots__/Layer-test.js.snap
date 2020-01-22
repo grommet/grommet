@@ -1524,7 +1524,9 @@ exports[`Layer is accessible 3`] = `
   data-testid="test-body-node"
 >
   <input />
-  <input />
+  <input
+    tabindex="10"
+  />
 </div>
 `;
 
