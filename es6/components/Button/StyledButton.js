@@ -59,7 +59,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return !props.disabled && props.active && activeStyle;
 }, function (props) {
-  return props.disabled && disabledStyle(props.theme.button.disabled && props.theme.button.disabled.opacity);
+  return props.disabled && props.theme.button && disabledStyle(props.theme.button.disabled && props.theme.button.disabled.opacity);
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && focusStyle;
 }, function (props) {
@@ -71,7 +71,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.pad && props.hasIcon && !props.hasLabel && "\npadding: " + props.theme.global.edgeSize.small + ";\n";
 }, function (props) {
-  return props.theme.button.extend;
+  return props.theme.button && props.theme.button.extend;
 });
 StyledButton.defaultProps = {};
 Object.setPrototypeOf(StyledButton.defaultProps, defaultProps);

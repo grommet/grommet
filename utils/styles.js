@@ -125,7 +125,7 @@ var genericStyles = (0, _styledComponents.css)(["", " ", " ", ""], function (pro
 }, function (props) {
   return props.gridArea && "grid-area: " + props.gridArea + ";";
 }, function (props) {
-  return props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
+  return props.margin && props.theme.global && edgeStyle('margin', props.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 });
 exports.genericStyles = genericStyles;
 

@@ -103,7 +103,7 @@ export var genericStyles = css(["", " ", " ", ""], function (props) {
 }, function (props) {
   return props.gridArea && "grid-area: " + props.gridArea + ";";
 }, function (props) {
-  return props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
+  return props.margin && props.theme.global && edgeStyle('margin', props.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 });
 export var disabledStyle = function disabledStyle(componentStyle) {
   return css(["opacity:", ";cursor:default;"], function (props) {

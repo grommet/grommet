@@ -70,7 +70,7 @@ var StyledButton = _styledComponents["default"].button.withConfig({
 }, function (props) {
   return !props.disabled && props.active && _utils.activeStyle;
 }, function (props) {
-  return props.disabled && (0, _utils.disabledStyle)(props.theme.button.disabled && props.theme.button.disabled.opacity);
+  return props.disabled && props.theme.button && (0, _utils.disabledStyle)(props.theme.button.disabled && props.theme.button.disabled.opacity);
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && _utils.focusStyle;
 }, function (props) {
@@ -82,7 +82,7 @@ var StyledButton = _styledComponents["default"].button.withConfig({
 }, function (props) {
   return props.pad && props.hasIcon && !props.hasLabel && "\npadding: " + props.theme.global.edgeSize.small + ";\n";
 }, function (props) {
-  return props.theme.button.extend;
+  return props.theme.button && props.theme.button.extend;
 });
 
 exports.StyledButton = StyledButton;
