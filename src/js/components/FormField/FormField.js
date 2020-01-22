@@ -50,7 +50,7 @@ class FormFieldContent extends Component {
     }
   }
 
-  renderChildren = (value, update) => {
+  renderChildren = (value, invalid, update) => {
     const {
       name,
       checked,
@@ -72,6 +72,7 @@ class FormFieldContent extends Component {
             update(name, event.target.checked);
             if (onChange) onChange(event);
           }}
+          aria-invalid={invalid || undefined}
           {...rest}
         />
       );
@@ -86,6 +87,7 @@ class FormFieldContent extends Component {
         }}
         plain
         focusIndicator={false}
+        aria-invalid={invalid || undefined}
         {...rest}
       />
     );
@@ -130,7 +132,8 @@ class FormFieldContent extends Component {
       } = context;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
-      contents = children || this.renderChildren(value, update);
+      contents =
+        children || this.renderChildren(value, !!normalizedError, update);
       if (onContextBlur) {
         onFieldBlur = () => onContextBlur(name);
       }
