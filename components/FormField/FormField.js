@@ -85,7 +85,7 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "renderChildren", function (value, update) {
+    _defineProperty(_assertThisInitialized(_this), "renderChildren", function (value, invalid, update) {
       var _this$props = _this.props,
           name = _this$props.name,
           checked = _this$props.checked,
@@ -105,7 +105,8 @@ function (_Component) {
           onChange: function onChange(event) {
             update(name, event.target.checked);
             if (_onChange) _onChange(event);
-          }
+          },
+          "aria-invalid": invalid || undefined
         }, rest));
       }
 
@@ -117,7 +118,8 @@ function (_Component) {
           if (_onChange) _onChange(event);
         },
         plain: true,
-        focusIndicator: false
+        focusIndicator: false,
+        "aria-invalid": invalid || undefined
       }, rest));
     });
 
@@ -175,7 +177,7 @@ function (_Component) {
           messages = context.messages;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
-      contents = children || this.renderChildren(value, update);
+      contents = children || this.renderChildren(value, !!normalizedError, update);
 
       if (onContextBlur) {
         onFieldBlur = function onFieldBlur() {
