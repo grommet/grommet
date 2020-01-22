@@ -148,16 +148,24 @@ function (_Component) {
     var border = formField.border;
     var normalizedError = error;
     var contents = children;
+    var onFieldBlur;
 
     if (context) {
       var addValidation = context.addValidation,
           errors = context.errors,
+          onContextBlur = context.onBlur,
           value = context.value,
           update = context.update,
           messages = context.messages;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
       contents = children || this.renderChildren(value, update);
+
+      if (onContextBlur) {
+        onFieldBlur = function onFieldBlur() {
+          return onContextBlur(name);
+        };
+      }
     }
 
     if (pad) {
@@ -231,7 +239,8 @@ function (_Component) {
         color: borderColor
       }) : undefined,
       margin: abut ? abutMargin : margin || _extends({}, formField.margin),
-      style: outerStyle
+      style: outerStyle,
+      onBlur: onFieldBlur
     }, label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
       as: "label",
       htmlFor: htmlFor

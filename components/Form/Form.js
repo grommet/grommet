@@ -145,6 +145,30 @@ function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "onBlur", function (name) {
+      var validate = _this.props.validate;
+
+      if (validate === 'blur' && _this.validations[name]) {
+        var _this$state2 = _this.state,
+            errors = _this$state2.errors,
+            value = _this$state2.value;
+
+        var nextErrors = _extends({}, errors);
+
+        var error = _this.validations[name](value[name], value);
+
+        if (error) {
+          nextErrors[name] = error;
+        } else {
+          delete nextErrors[name];
+        }
+
+        _this.setState({
+          errors: nextErrors
+        });
+      }
+    });
+
     _defineProperty(_assertThisInitialized(_this), "update", function (name, data, error) {
       _this.setState(updateReducer(name, data, error, _this.validations), function () {
         var onChange = _this.props.onChange;
@@ -192,22 +216,24 @@ function (_Component) {
   _proto.render = function render() {
     var _this$props2 = this.props,
         children = _this$props2.children,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["children"]);
+        validate = _this$props2.validate,
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["children", "validate"]);
 
     delete rest.messages;
     delete rest.theme;
     delete rest.value;
-    var _this$state2 = this.state,
-        errors = _this$state2.errors,
-        touched = _this$state2.touched,
-        value = _this$state2.value,
-        messages = _this$state2.messages;
+    var _this$state3 = this.state,
+        errors = _this$state3.errors,
+        touched = _this$state3.touched,
+        value = _this$state3.value,
+        messages = _this$state3.messages;
     return _react["default"].createElement("form", _extends({}, rest, {
       onReset: this.onReset,
       onSubmit: this.onSubmit
     }), _react["default"].createElement(_FormContext.FormContext.Provider, {
       value: {
         addValidation: this.addValidation,
+        onBlur: validate === 'blur' ? this.onBlur : undefined,
         errors: errors,
         messages: messages,
         touched: touched,
@@ -222,6 +248,7 @@ function (_Component) {
 
 _defineProperty(Form, "defaultProps", {
   messages: defaultMessages,
+  validate: 'submit',
   value: {}
 });
 
