@@ -76,6 +76,7 @@ describe('TextInput', function () {
         container = _render4.container;
 
     expect(container.firstChild).toMatchSnapshot();
+    fireEvent.focus(getByTestId('test-input'));
     fireEvent.change(getByTestId('test-input'), {
       target: {
         value: ' '
@@ -102,6 +103,7 @@ describe('TextInput', function () {
         container = _render5.container;
 
     expect(container.firstChild).toMatchSnapshot();
+    fireEvent.focus(getByTestId('test-input'));
     fireEvent.change(getByTestId('test-input'), {
       target: {
         value: ' '
@@ -164,6 +166,7 @@ describe('TextInput', function () {
         container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot();
+    fireEvent.focus(getByTestId('test-input'));
     fireEvent.change(getByTestId('test-input'), {
       target: {
         value: ' '
