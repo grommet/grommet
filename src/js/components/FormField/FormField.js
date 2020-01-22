@@ -18,7 +18,12 @@ const validateField = (required, validate, messages) => (value, data) => {
   if (required && (value === undefined || value === '')) {
     error = messages.required;
   } else if (validate) {
-    if (typeof validate === 'function') {
+    if (Array.isArray(validate)) {
+      validate.some(oneValidate => {
+        error = validateField(false, oneValidate, messages)(value, data);
+        return !!error;
+      });
+    } else if (typeof validate === 'function') {
       error = validate(value, data);
     } else if (validate.regexp) {
       if (!validate.regexp.test(value)) {
@@ -112,12 +117,23 @@ class FormFieldContent extends Component {
 
     let normalizedError = error;
     let contents = children;
+    let onFieldBlur;
 
     if (context) {
-      const { addValidation, errors, value, update, messages } = context;
+      const {
+        addValidation,
+        errors,
+        onBlur: onContextBlur,
+        value,
+        update,
+        messages,
+      } = context;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
       contents = children || this.renderChildren(value, update);
+      if (onContextBlur) {
+        onFieldBlur = () => onContextBlur(name);
+      }
     }
 
     if (pad) {
@@ -205,6 +221,7 @@ class FormFieldContent extends Component {
         }
         margin={abut ? abutMargin : margin || { ...formField.margin }}
         style={outerStyle}
+        onBlur={onFieldBlur}
       >
         {(label && component !== CheckBox) || help ? (
           <>

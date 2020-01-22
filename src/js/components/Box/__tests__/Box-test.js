@@ -364,6 +364,10 @@ describe('Box', () => {
             { side: 'left', color: 'accent-2', size: 'large', style: 'dashed' },
           ]}
         />
+        <Box border="between" gap="small">
+          <Box>one</Box>
+          <Box>two</Box>
+        </Box>
       </Grommet>,
     );
     const tree = component.toJSON();

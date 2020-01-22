@@ -438,7 +438,8 @@ string",
         "name": "basis",
       },
       Object {
-        "description": "Include a border.",
+        "description": "Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.",
         "format": "boolean
 top
 left
@@ -447,6 +448,7 @@ right
 horizontal
 vertical
 all
+between
 {
   color: 
     string
@@ -461,7 +463,8 @@ all
     right
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -494,7 +497,8 @@ all
     right
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -2230,8 +2234,8 @@ string",
         "name": "required",
       },
       Object {
-        "description": "Validation rule when used within a grommet Form. Provide a regular
-      expression or a function. If a
+        "description": "Validation rule when used within a grommet Form. Provide an object
+      with a regular expression, a function, or an array of these. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -2240,7 +2244,14 @@ string",
   regexp: object,
   message: string
 }
-function",
+function
+[
+  {
+    regexp: object,
+    message: string
+  }
+  function
+]",
         "name": "validate",
       },
     ],
