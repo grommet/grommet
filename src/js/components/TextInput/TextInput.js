@@ -1,6 +1,12 @@
-import React, { Component, isValidElement } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, {
+  forwardRef,
+  isValidElement,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -9,7 +15,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { withAnnounce, withFocus, withForwardRef } from '../hocs';
+import { AnnounceContext } from '../../contexts';
 import { sizeStyle } from '../../utils';
 
 import {
@@ -19,14 +25,14 @@ import {
   StyledSuggestions,
 } from './StyledTextInput';
 
-function renderLabel(suggestion) {
+const renderLabel = suggestion => {
   if (suggestion && typeof suggestion === 'object') {
     return suggestion.label || suggestion.value;
   }
   return suggestion;
-}
+};
 
-function stringLabel(suggestion) {
+const stringLabel = suggestion => {
   if (suggestion && typeof suggestion === 'object') {
     if (suggestion.label && typeof suggestion.label === 'string') {
       return suggestion.label;
@@ -34,7 +40,7 @@ function stringLabel(suggestion) {
     return suggestion.value;
   }
   return suggestion;
-}
+};
 
 const ContainerBox = styled(Box)`
   ${props =>
@@ -48,379 +54,273 @@ const ContainerBox = styled(Box)`
   }
 `;
 
-class TextInput extends Component {
-  static defaultProps = {
-    dropAlign: { top: 'bottom', left: 'left' },
-    messages: {
-      enterSelect: '(Press Enter to Select)',
-      suggestionsCount: 'suggestions available',
-      suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-      suggestionIsOpen:
-        'Suggestions drop is open, continue to use arrow keys to navigate',
-    },
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { suggestions } = nextProps;
-    const { showDrop } = prevState;
-    if (showDrop && (!suggestions || !suggestions.length)) {
-      return { showDrop: false };
-    }
-    return null;
-  }
-
-  state = {
-    activeSuggestionIndex: -1,
-    showDrop: false,
-    isInputEmpty: true,
-  };
-
-  inputRef = React.createRef();
-
-  componentDidUpdate(prevProps, prevState) {
-    const { onSuggestionsOpen, onSuggestionsClose, suggestions } = this.props;
-    const { showDrop } = this.state;
-    if (showDrop !== prevState.showDrop) {
-      if (showDrop && onSuggestionsOpen) {
-        onSuggestionsOpen();
-      } else if (onSuggestionsClose) {
-        onSuggestionsClose();
-      }
-    }
-
-    if (
-      !showDrop &&
-      suggestions &&
-      (!prevProps.suggestions || !prevProps.suggestions.length)
-    ) {
-      this.resetSuggestions();
-    }
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.resetTimer);
-  }
-
-  announce = (message, mode) => {
-    const { announce, suggestions } = this.props;
-    if (suggestions && suggestions.length > 0) {
-      announce(message, mode);
-    }
-  };
-
-  announceSuggestionsCount = () => {
-    const {
-      suggestions,
-      messages: { suggestionsCount },
-    } = this.props;
-    this.announce(`${suggestions.length} ${suggestionsCount}`);
-  };
-
-  announceSuggestionsExist = () => {
-    const {
-      messages: { suggestionsExist },
-    } = this.props;
-    this.announce(suggestionsExist);
-  };
-
-  announceSuggestionsIsOpen = () => {
-    const {
-      messages: { suggestionIsOpen },
-    } = this.props;
-    this.announce(suggestionIsOpen);
-  };
-
-  announceSuggestion = index => {
-    const {
-      suggestions,
-      messages: { enterSelect },
-    } = this.props;
-    if (suggestions && suggestions.length > 0) {
-      const labelMessage = stringLabel(suggestions[index]);
-      this.announce(`${labelMessage} ${enterSelect}`);
-    }
-  };
-
-  resetSuggestions = () => {
-    // delay this to avoid re-render interupting event delivery
-    // https://github.com/grommet/grommet/issues/2154
-    // 10ms was chosen empirically based on ie11 using TextInput
-    // with and without a FormField.
-    clearTimeout(this.resetTimer);
-    this.resetTimer = setTimeout(() => {
-      const { suggestions } = this.props;
-      if (suggestions && suggestions.length) {
-        this.setState(
-          {
-            activeSuggestionIndex: -1,
-            showDrop: true,
-            selectedSuggestionIndex: -1,
-          },
-          this.announceSuggestionsCount,
-        );
-      }
-    }, 10);
-  };
-
-  getSelectedSuggestionIndex = () => {
-    const { suggestions, value } = this.props;
-    const suggestionValues = suggestions.map(suggestion => {
-      if (typeof suggestion === 'object') {
-        return suggestion.value;
-      }
-      return suggestion;
-    });
-    return suggestionValues.indexOf(value);
-  };
-
-  onShowSuggestions = () => {
-    // Get values of suggestions, so we can highlight selected suggestion
-    const selectedSuggestionIndex = this.getSelectedSuggestionIndex();
-
-    this.setState(
-      {
-        showDrop: true,
-        activeSuggestionIndex: -1,
-        selectedSuggestionIndex,
-      },
-      this.announceSuggestionsIsOpen,
-    );
-  };
-
-  onNextSuggestion = event => {
-    const { suggestions } = this.props;
-    const { activeSuggestionIndex, showDrop } = this.state;
-    if (suggestions && suggestions.length > 0) {
-      if (!showDrop) {
-        this.onShowSuggestions();
-      } else {
-        event.preventDefault();
-        const index = Math.min(
-          activeSuggestionIndex + 1,
-          suggestions.length - 1,
-        );
-        this.setState({ activeSuggestionIndex: index }, () =>
-          this.announceSuggestion(index),
-        );
-      }
-    }
-  };
-
-  onPreviousSuggestion = event => {
-    const { suggestions } = this.props;
-    const { activeSuggestionIndex, showDrop } = this.state;
-    if (suggestions && suggestions.length > 0 && showDrop) {
-      event.preventDefault();
-      const index = Math.max(activeSuggestionIndex - 1, 0);
-      this.setState({ activeSuggestionIndex: index }, () =>
-        this.announceSuggestion(index),
-      );
-    }
-  };
-
-  onClickSuggestion = (suggestion, event) => {
-    const { forwardRef, onSelect } = this.props;
-    this.setState({ showDrop: false, activeSuggestionIndex: -1 });
-    if (onSelect) {
-      // TODO: needed for backwards compatibility sake
-      /* eslint-disable no-param-reassign */
-      event.suggestion = suggestion;
-      event.target = (forwardRef || this.inputRef).current;
-      /* eslint-enable no-param-reassign */
-      onSelect(event);
-    }
-  };
-
-  onSuggestionSelect = event => {
-    const { forwardRef, onSelect, suggestions } = this.props;
-    const { activeSuggestionIndex } = this.state;
-    this.setState({ showDrop: false, activeSuggestionIndex: -1 });
-    if (activeSuggestionIndex >= 0) {
-      event.preventDefault(); // prevent submitting forms
-      // TODO: needed for backwards compatibility sake
-      /* eslint-disable no-param-reassign */
-      event.suggestion = suggestions[activeSuggestionIndex];
-      event.target = (forwardRef || this.inputRef).current;
-      /* eslint-enable no-param-reassign */
-      if (onSelect) {
-        onSelect(event);
-      }
-    }
-  };
-
-  onFocus = event => {
-    const { onFocus, suggestions } = this.props;
-    if (suggestions && suggestions.length > 0) {
-      this.announceSuggestionsExist();
-    }
-    this.resetSuggestions();
-    if (onFocus) {
-      onFocus(event);
-    }
-  };
-
-  onBlur = event => {
-    const { onBlur } = this.props;
-    clearTimeout(this.resetTimer);
-    if (onBlur) {
-      onBlur(event);
-    }
-  };
-
-  onChange = event => {
-    const { onChange } = this.props;
-    this.setState({ isInputEmpty: !event.target.value });
-    this.resetSuggestions();
-    if (onChange) {
-      onChange(event);
-    }
-  };
-
-  onEsc = event => {
-    const { showDrop } = this.state;
-    if (showDrop) {
-      // we have to stop both synthetic events and native events
-      // drop and layer should not close by pressing esc on this input
-      event.stopPropagation();
-      event.nativeEvent.stopImmediatePropagation();
-      this.setState({ showDrop: false });
-    }
-  };
-
-  onTab = () => {
-    this.setState({ showDrop: false });
-  };
-
-  renderSuggestions = () => {
-    const { suggestions, theme } = this.props;
-    const { activeSuggestionIndex, selectedSuggestionIndex } = this.state;
-
-    return (
-      <StyledSuggestions>
-        <InfiniteScroll items={suggestions} step={theme.select.step}>
-          {(suggestion, index) => {
-            const plain =
-              typeof suggestion === 'object' &&
-              typeof isValidElement(suggestion.label);
-            return (
-              <li key={`${stringLabel(suggestion)}-${index}`}>
-                <Button
-                  active={
-                    activeSuggestionIndex === index ||
-                    selectedSuggestionIndex === index
-                  }
-                  fill
-                  hoverIndicator="background"
-                  onClick={event => {
-                    this.onClickSuggestion(suggestion, event);
-                  }}
-                >
-                  {plain ? (
-                    renderLabel(suggestion)
-                  ) : (
-                    <Box align="start" pad="small">
-                      {renderLabel(suggestion)}
-                    </Box>
-                  )}
-                </Button>
-              </li>
-            );
-          }}
-        </InfiniteScroll>
-      </StyledSuggestions>
-    );
-  };
-
-  render() {
-    const {
+const TextInput = forwardRef(
+  (
+    {
       defaultValue,
-      dropAlign,
+      dropAlign = { top: 'bottom', left: 'left' },
       dropHeight,
       dropTarget,
       dropProps,
-      forwardRef,
       id,
+      messages = {
+        enterSelect: '(Press Enter to Select)',
+        suggestionsCount: 'suggestions available',
+        suggestionsExist:
+          'This input has suggestions use arrow keys to navigate',
+        suggestionIsOpen:
+          'Suggestions drop is open, continue to use arrow keys to navigate',
+      },
+      onBlur,
+      onChange,
+      onFocus,
+      onKeyDown,
+      onSelect,
+      onSuggestionsClose,
+      onSuggestionsOpen,
       placeholder,
       plain,
-      theme,
+      suggestions,
       value,
-      onKeyDown,
       ...rest
-    } = this.props;
-    delete rest.onChange; // se we can manage in this.onChange()
-    delete rest.onSuggestionsOpen;
-    delete rest.onSuggestionsClose;
-    const { showDrop, isInputEmpty } = this.state;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
+    const inputRef = useRef();
+    const dropRef = useRef();
+    const [empty, setEmpty] = useState(true);
+    const [focus, setFocus] = useState();
+    const [showDrop, setShowDrop] = useState();
+
+    // if we have no suggestions, close drop if it's open
+    useEffect(() => {
+      if (showDrop && (!suggestions || !suggestions.length)) {
+        setShowDrop(false);
+        if (onSuggestionsClose) onSuggestionsClose();
+      }
+    }, [onSuggestionsClose, showDrop, suggestions]);
+
+    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
+
+    // reset activeSuggestionIndex when the drop is closed
+    useEffect(() => {
+      if (activeSuggestionIndex !== -1 && !showDrop) {
+        setActiveSuggestionIndex(-1);
+      }
+    }, [activeSuggestionIndex, showDrop]);
+    // announce active suggestion
+    useEffect(() => {
+      if (activeSuggestionIndex >= 0) {
+        const label = stringLabel(suggestions[activeSuggestionIndex]);
+        announce(`${label} ${messages.enterSelect}`);
+      }
+    }, [activeSuggestionIndex, announce, messages, suggestions]);
+
+    const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
+
+    // set selectedSuggestionIndex based on value and current suggestions
+    useEffect(() => {
+      if (suggestions) {
+        const suggestionValues = suggestions.map(suggestion =>
+          typeof suggestion === 'object' ? suggestion.value : suggestion,
+        );
+        setSelectedSuggestionIndex(suggestionValues.indexOf(value));
+      } else setSelectedSuggestionIndex(-1);
+    }, [suggestions, value]);
+
+    const openDrop = () => {
+      setShowDrop(true);
+      announce(messages.suggestionIsOpen);
+      announce(`${suggestions.length} ${messages.suggestionsCount}`);
+      if (onSuggestionsOpen) onSuggestionsOpen();
+    };
+
+    const closeDrop = () => {
+      setShowDrop(false);
+      if (messages.onSuggestionsClose) onSuggestionsClose();
+    };
+
     const showStyledPlaceholder =
-      placeholder && typeof placeholder !== 'string' && isInputEmpty && !value;
-    // needed so that styled components does not invoke
-    // onSelect when text input is clicked
-    delete rest.onSelect;
+      placeholder && typeof placeholder !== 'string' && empty && !value;
+
     let drop;
     if (showDrop) {
       drop = (
         <Drop
+          ref={dropRef}
           id={id ? `text-input-drop__${id}` : undefined}
           align={dropAlign}
           responsive={false}
-          target={dropTarget || (forwardRef || this.inputRef).current}
-          onClickOutside={() => this.setState({ showDrop: false })}
-          onEsc={() => this.setState({ showDrop: false })}
+          target={dropTarget || (ref || inputRef).current}
+          onClickOutside={closeDrop}
+          onEsc={closeDrop}
           {...dropProps}
         >
           <ContainerBox overflow="auto" dropHeight={dropHeight}>
-            {this.renderSuggestions()}
+            <StyledSuggestions>
+              <InfiniteScroll items={suggestions} step={theme.select.step}>
+                {(suggestion, index) => {
+                  const plainLabel =
+                    typeof suggestion === 'object' &&
+                    typeof isValidElement(suggestion.label);
+                  return (
+                    <li key={`${stringLabel(suggestion)}-${index}`}>
+                      <Button
+                        active={
+                          activeSuggestionIndex === index ||
+                          selectedSuggestionIndex === index
+                        }
+                        fill
+                        hoverIndicator="background"
+                        onClick={event => {
+                          // we stole the focus, give it back
+                          inputRef.current.focus();
+                          closeDrop();
+                          if (onSelect) {
+                            event.persist();
+                            const adjustedEvent = event;
+                            adjustedEvent.suggestion = suggestion;
+                            adjustedEvent.target = (ref || inputRef).current;
+                            onSelect(adjustedEvent);
+                          }
+                        }}
+                      >
+                        {plainLabel ? (
+                          renderLabel(suggestion)
+                        ) : (
+                          <Box align="start" pad="small">
+                            {renderLabel(suggestion)}
+                          </Box>
+                        )}
+                      </Button>
+                    </li>
+                  );
+                }}
+              </InfiniteScroll>
+            </StyledSuggestions>
           </ContainerBox>
         </Drop>
       );
     }
+
     return (
       <StyledTextInputContainer plain={plain}>
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
         <Keyboard
-          onEnter={this.onSuggestionSelect}
-          onEsc={this.onEsc}
-          onTab={this.onTab}
-          onUp={this.onPreviousSuggestion}
-          onDown={this.onNextSuggestion}
+          onEnter={event => {
+            closeDrop();
+            if (activeSuggestionIndex >= 0 && onSelect) {
+              // prevent submitting forms when choosing a suggestion
+              event.preventDefault();
+              event.persist();
+              const adjustedEvent = event;
+              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
+              adjustedEvent.target = (ref || inputRef).current;
+              onSelect(adjustedEvent);
+            }
+          }}
+          onEsc={
+            showDrop
+              ? event => {
+                  closeDrop();
+                  // we have to stop both synthetic events and native events
+                  // drop and layer should not close by pressing esc on this input
+                  event.stopPropagation();
+                  event.nativeEvent.stopImmediatePropagation();
+                }
+              : undefined
+          }
+          onTab={showDrop ? closeDrop : undefined}
+          onUp={
+            showDrop &&
+            suggestions &&
+            suggestions.length > 0 &&
+            activeSuggestionIndex
+              ? event => {
+                  event.preventDefault();
+                  const index = Math.max(activeSuggestionIndex - 1, 0);
+                  setActiveSuggestionIndex(index);
+                }
+              : undefined
+          }
+          onDown={
+            suggestions && suggestions.length > 0
+              ? event => {
+                  if (!showDrop) {
+                    openDrop();
+                  } else {
+                    event.preventDefault();
+                    const index = Math.min(
+                      activeSuggestionIndex + 1,
+                      suggestions.length - 1,
+                    );
+                    setActiveSuggestionIndex(index);
+                  }
+                }
+              : undefined
+          }
           onKeyDown={onKeyDown}
         >
           <StyledTextInput
             id={id}
-            ref={forwardRef || this.inputRef}
+            ref={ref || inputRef}
             autoComplete="off"
             plain={plain}
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
+            focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onChange}
+            onFocus={event => {
+              setFocus(true);
+              if (suggestions && suggestions.length > 0) {
+                announce(messages.suggestionsExist);
+              }
+              setShowDrop(true);
+              if (onFocus) {
+                onFocus(event);
+              }
+            }}
+            onBlur={event => {
+              setFocus(false);
+              // This will be called when the user clicks on a suggestion,
+              // check for that and don't remove the drop in that case.
+              // Drop will already have removed itself if the user has focused
+              // outside of the Drop.
+              if (!dropRef.current) {
+                closeDrop();
+                if (onBlur) {
+                  onBlur(event);
+                }
+              }
+            }}
+            onChange={event => {
+              setEmpty(!event.target.value);
+              if (onChange) {
+                onChange(event);
+              }
+            }}
           />
         </Keyboard>
         {drop}
       </StyledTextInputContainer>
     );
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(TextInput.defaultProps, defaultProps);
+TextInput.displayName = 'TextInput';
 
 let TextInputDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   TextInputDoc = require('./doc').doc(TextInput);
 }
-const TextInputWrapper = compose(
-  withFocus({ focusWithMouse: true }),
-  withTheme,
-  withAnnounce,
-  withForwardRef,
-)(TextInputDoc || TextInput);
+const TextInputWrapper = TextInputDoc || TextInput;
 
 export { TextInputWrapper as TextInput };
