@@ -87,7 +87,6 @@ const RangeSelector = forwardRef(
           }
         }
         if (nextValues) {
-          setLastChange(changing);
           setMoveValue(value);
           onChange(nextValues);
         }
