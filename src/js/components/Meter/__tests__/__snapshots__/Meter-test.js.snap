@@ -332,16 +332,6 @@ exports[`Meter round 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.c2 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
-  transition: stroke 0.3s,stroke-width 0.3s;
-}
-
 .c1 {
   max-width: 100%;
   overflow: hidden;
@@ -349,6 +339,16 @@ exports[`Meter round 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+.c2 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c2 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }

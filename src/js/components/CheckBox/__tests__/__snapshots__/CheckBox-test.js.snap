@@ -618,6 +618,30 @@ exports[`CheckBox label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -643,30 +667,6 @@ exports[`CheckBox label renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c1 {
@@ -717,14 +717,14 @@ exports[`CheckBox label renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+  .c2 {
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
+  .c5 {
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -946,6 +946,30 @@ exports[`CheckBox reverse renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-left: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -971,30 +995,6 @@ exports[`CheckBox reverse renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c1 {
@@ -1045,14 +1045,14 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
+  .c2 {
+    margin-left: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-left: 6px;
+  .c5 {
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 

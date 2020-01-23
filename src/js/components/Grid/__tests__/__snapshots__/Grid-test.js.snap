@@ -311,16 +311,16 @@ exports[`Grid fill renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: grid;
-  box-sizing: border-box;
-}
-
 .c1 {
   display: grid;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
 }
 
 .c3 {
