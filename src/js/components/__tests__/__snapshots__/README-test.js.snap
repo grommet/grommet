@@ -9296,10 +9296,7 @@ number
 
 **messages**
 
-Custom messages used by screen readers for accessibility. Defaults to \`{
-  \\"lower\\": \\"Lower Bounds\\",
-  \\"upper\\": \\"Upper Bounds\\"
-}\`.
+Custom messages used by screen readers for accessibility.
 
 \`\`\`
 {
@@ -9376,7 +9373,7 @@ number
 
 **values**
 
-Required. The current values. Defaults to \`[]\`.
+Required. The current values.
 
 \`\`\`
 [number]
