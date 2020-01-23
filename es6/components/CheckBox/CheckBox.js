@@ -2,13 +2,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useEffect } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
 import { StyledCheckBox, StyledCheckBoxBox, StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxToggle, StyledCheckBoxKnob } from './StyledCheckBox';
 import { normalizeColor } from '../../utils';
 
@@ -20,23 +18,32 @@ var stopLabelClick = function stopLabelClick(event) {
   }
 };
 
-var CheckBox = function CheckBox(_ref) {
+var CheckBox = forwardRef(function (_ref, ref) {
   var _ref2;
 
   var checked = _ref.checked,
       disabled = _ref.disabled,
-      focus = _ref.focus,
-      forwardRef = _ref.forwardRef,
+      focusProp = _ref.focus,
       id = _ref.id,
       label = _ref.label,
       name = _ref.name,
+      _onBlur = _ref.onBlur,
       onChange = _ref.onChange,
+      _onFocus = _ref.onFocus,
       reverse = _ref.reverse,
-      theme = _ref.theme,
       toggle = _ref.toggle,
       indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "reverse", "theme", "toggle", "indeterminate"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "reverse", "toggle", "indeterminate"]);
 
+  var theme = useContext(ThemeContext) || defaultProps.theme;
+
+  var _useState = useState(focusProp),
+      focus = _useState[0],
+      setFocus = _useState[1];
+
+  useEffect(function () {
+    return setFocus(focusProp);
+  }, [focusProp]);
   useEffect(function () {
     if (checked && indeterminate) {
       console.warn('Checkbox cannot be "checked" and "indeterminate" at the same time.');
@@ -112,7 +119,7 @@ var CheckBox = function CheckBox(_ref) {
     justify: "center",
     margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)
   }, themeableProps), React.createElement(StyledCheckBoxInput, _extends({}, rest, {
-    ref: forwardRef,
+    ref: ref,
     type: "checkbox"
   }, removeUndefined({
     id: id,
@@ -120,7 +127,16 @@ var CheckBox = function CheckBox(_ref) {
     checked: checked,
     disabled: disabled,
     onChange: onChange
-  }), themeableProps)), visual, hidden);
+  }), themeableProps, {
+    onFocus: function onFocus(event) {
+      setFocus(true);
+      if (_onFocus) _onFocus(event);
+    },
+    onBlur: function onBlur(event) {
+      setFocus(false);
+      if (_onBlur) _onBlur(event);
+    }
+  })), visual, hidden);
   var normalizedLabel = typeof label === 'string' ? React.createElement("span", null, label) : label;
   var first = reverse ? normalizedLabel : checkBoxNode;
   var second = reverse ? checkBoxNode : normalizedLabel;
@@ -133,10 +149,8 @@ var CheckBox = function CheckBox(_ref) {
     checked: checked,
     onClick: stopLabelClick
   }, themeableProps), first, second);
-};
-
-CheckBox.defaultProps = {};
-Object.setPrototypeOf(CheckBox.defaultProps, defaultProps);
+});
+CheckBox.displayName = 'CheckBox';
 var CheckBoxDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -144,5 +158,5 @@ if (process.env.NODE_ENV !== 'production') {
   CheckBoxDoc = require('./doc').doc(CheckBox);
 }
 
-var CheckBoxWrapper = compose(withFocus(), withTheme, withForwardRef)(CheckBoxDoc || CheckBox);
+var CheckBoxWrapper = CheckBoxDoc || CheckBox;
 export { CheckBoxWrapper as CheckBox };
