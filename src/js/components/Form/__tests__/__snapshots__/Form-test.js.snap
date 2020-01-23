@@ -32,6 +32,18 @@ exports[`Form regexp validation 1`] = `
   color: #FF4040;
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <span
   class="c0"
 >
@@ -48,6 +60,18 @@ exports[`Form required validation 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #FF4040;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 <span
