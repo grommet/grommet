@@ -18,7 +18,12 @@ const validateField = (required, validate, messages) => (value, data) => {
   if (required && (value === undefined || value === '')) {
     error = messages.required;
   } else if (validate) {
-    if (typeof validate === 'function') {
+    if (Array.isArray(validate)) {
+      validate.some(oneValidate => {
+        error = validateField(false, oneValidate, messages)(value, data);
+        return !!error;
+      });
+    } else if (typeof validate === 'function') {
       error = validate(value, data);
     } else if (validate.regexp) {
       if (!validate.regexp.test(value)) {
@@ -30,7 +35,7 @@ const validateField = (required, validate, messages) => (value, data) => {
 };
 
 const FormFieldBox = styled(Box)`
-  ${props => props.theme.formField.extend}
+  ${props => props.theme.formField && props.theme.formField.extend}
 `;
 
 class FormFieldContent extends Component {
@@ -45,7 +50,7 @@ class FormFieldContent extends Component {
     }
   }
 
-  renderChildren = (value, update) => {
+  renderChildren = (value, invalid, update) => {
     const {
       name,
       checked,
@@ -67,6 +72,7 @@ class FormFieldContent extends Component {
             update(name, event.target.checked);
             if (onChange) onChange(event);
           }}
+          aria-invalid={invalid || undefined}
           {...rest}
         />
       );
@@ -81,6 +87,7 @@ class FormFieldContent extends Component {
         }}
         plain
         focusIndicator={false}
+        aria-invalid={invalid || undefined}
         {...rest}
       />
     );
@@ -112,12 +119,24 @@ class FormFieldContent extends Component {
 
     let normalizedError = error;
     let contents = children;
+    let onFieldBlur;
 
     if (context) {
-      const { addValidation, errors, value, update, messages } = context;
+      const {
+        addValidation,
+        errors,
+        onBlur: onContextBlur,
+        value,
+        update,
+        messages,
+      } = context;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
-      contents = children || this.renderChildren(value, update);
+      contents =
+        children || this.renderChildren(value, !!normalizedError, update);
+      if (onContextBlur) {
+        onFieldBlur = () => onContextBlur(name);
+      }
     }
 
     if (pad) {
@@ -205,6 +224,7 @@ class FormFieldContent extends Component {
         }
         margin={abut ? abutMargin : margin || { ...formField.margin }}
         style={outerStyle}
+        onBlur={onFieldBlur}
       >
         {(label && component !== CheckBox) || help ? (
           <>

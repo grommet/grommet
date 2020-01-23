@@ -47,6 +47,7 @@ const BORDER_SHAPE = PropTypes.shape({
     'horizontal',
     'vertical',
     'all',
+    'between',
   ]),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
@@ -172,10 +173,14 @@ export const doc = Box => {
         'horizontal',
         'vertical',
         'all',
+        'between',
       ]),
       BORDER_SHAPE,
       PropTypes.arrayOf(BORDER_SHAPE),
-    ]).description('Include a border.'),
+    ]).description(
+      `Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.`,
+    ),
     direction: PropTypes.oneOf([
       'row',
       'column',

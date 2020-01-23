@@ -284,7 +284,8 @@ string
 
 **border**
 
-Include a border.
+Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.
 
 ```
 boolean
@@ -297,6 +298,7 @@ end
 horizontal
 vertical
 all
+between
 {
   color: 
     string
@@ -313,7 +315,8 @@ all
     end
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -348,7 +351,8 @@ all
     end
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small

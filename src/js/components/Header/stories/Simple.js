@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet, Header } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const Avatar = ({ name, ...rest }) => (
+export const Avatar = ({ ...rest }) => (
   <Box
     height="xxsmall"
     width="xxsmall"

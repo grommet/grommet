@@ -24,7 +24,7 @@ export const borderStyle = (data, responsive, theme) => {
     side === 'left' ||
     side === 'right'
   ) {
-    styles.push(css`border-${side}: ${value};`);
+    styles.push(`border-${side}: ${value};`);
     if (responsiveValue) {
       styles.push(
         breakpointStyle(
@@ -79,6 +79,8 @@ export const borderStyle = (data, responsive, theme) => {
         ),
       );
     }
+  } else if (side === 'between') {
+    // no-op
   } else {
     styles.push(
       css`

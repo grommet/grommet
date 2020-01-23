@@ -917,7 +917,8 @@ string
 
 **border**
 
-Include a border.
+Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.
 
 \`\`\`
 boolean
@@ -930,6 +931,7 @@ end
 horizontal
 vertical
 all
+between
 {
   color: 
     string
@@ -946,7 +948,8 @@ all
     end
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -981,7 +984,8 @@ all
     end
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -4375,7 +4379,7 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to \`[]\`.
+      'primaryKey' isn't specified either, then the first column will be used.
 
 \`\`\`
 [{
@@ -4409,7 +4413,7 @@ A description of the data. The order controls the column order.
 
 **data**
 
-Array of data objects. Defaults to \`[]\`.
+Array of data objects.
 
 \`\`\`
 [{
@@ -5622,6 +5626,15 @@ Function that will be called when the form is reset. The
 function
 \`\`\`
 
+**validate**
+
+When to perform validation Defaults to \`submit\`.
+
+\`\`\`
+blur
+submit
+\`\`\`
+
 **value**
 
 An object representing all of the data in the form. Defaults to \`{}\`.
@@ -5811,8 +5824,8 @@ boolean
 
 **validate**
 
-Validation rule when used within a grommet Form. Provide a regular
-      expression or a function. If a
+Validation rule when used within a grommet Form. Provide an object
+      with a regular expression, a function, or an array of these. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -5824,6 +5837,13 @@ Validation rule when used within a grommet Form. Provide a regular
   message: string
 }
 function
+[
+  {
+    regexp: object,
+    message: string
+  }
+  function
+]
 \`\`\`
   
 ## Intrinsic element
@@ -8871,6 +8891,20 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "Nav": "## Nav
+Is a Box container for navigation links
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Nav&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=nav&module=%2Fsrc%2FNav.js)
+## Usage
+
+\`\`\`javascript
+import { Nav } from 'grommet';
+<Nav />
+\`\`\`
+
+## Properties
+
+  ",
   "Paragraph": "## Paragraph
 A paragraph of text.
 

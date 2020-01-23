@@ -25,10 +25,10 @@ const FakeLayer = ({ children, dataTestid }) => {
     );
   }
   return (
-    <Grommet>
+    <Box>
       {layer}
       {children}
-    </Grommet>
+    </Box>
   );
 };
 

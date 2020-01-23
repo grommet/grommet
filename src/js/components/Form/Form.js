@@ -33,6 +33,7 @@ const defaultMessages = {
 class Form extends Component {
   static defaultProps = {
     messages: defaultMessages,
+    validate: 'submit',
     value: {},
   };
 
@@ -110,6 +111,21 @@ class Form extends Component {
     });
   };
 
+  onBlur = name => {
+    const { validate } = this.props;
+    if (validate === 'blur' && this.validations[name]) {
+      const { errors, value } = this.state;
+      const nextErrors = { ...errors };
+      const error = this.validations[name](value[name], value);
+      if (error) {
+        nextErrors[name] = error;
+      } else {
+        delete nextErrors[name];
+      }
+      this.setState({ errors: nextErrors });
+    }
+  };
+
   update = (name, data, error) => {
     this.setState(updateReducer(name, data, error, this.validations), () => {
       const { onChange } = this.props;
@@ -125,7 +141,7 @@ class Form extends Component {
   };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, validate, ...rest } = this.props;
     delete rest.messages;
     delete rest.theme;
     delete rest.value;
@@ -135,6 +151,7 @@ class Form extends Component {
         <FormContext.Provider
           value={{
             addValidation: this.addValidation,
+            onBlur: validate === 'blur' ? this.onBlur : undefined,
             errors,
             messages,
             touched,

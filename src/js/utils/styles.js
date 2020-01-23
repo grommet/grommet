@@ -277,6 +277,7 @@ export const genericStyles = css`
   ${props => props.gridArea && `grid-area: ${props.gridArea};`}
   ${props =>
     props.margin &&
+    props.theme.global &&
     edgeStyle(
       'margin',
       props.margin,
