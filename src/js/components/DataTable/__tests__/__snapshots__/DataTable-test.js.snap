@@ -5358,9 +5358,29 @@ exports[`DataTable search 2`] = `
   color: inherit;
   font-weight: 600;
   margin: 0;
+  outline-color: #6FFFB0;
+  border-color: #6FFFB0;
+  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline-color: #6FFFB0;
+  border-color: #6FFFB0;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
+  outline: #6FFFB0 solid 2px;
+}
+
+.c2::-moz-focus-inner {
+  border: 0;
 }
 
 .c2::-webkit-search-decoration {
@@ -5384,6 +5404,20 @@ exports[`DataTable search 2`] = `
   outline: none;
 }
 
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
+  outline: #6FFFB0 solid 2px;
+}
+
+.c2::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   position: relative;
   width: 100%;
@@ -5397,6 +5431,14 @@ exports[`DataTable search 2`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -5449,6 +5491,14 @@ exports[`DataTable search 2`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
