@@ -3,6 +3,7 @@ import { ThemeType } from "../../themes";
 
 export interface GrommetProps {
   cssVars?: boolean;
+  dir?: "rtl";
   full?: boolean;
   plain?: boolean;
   theme?: ThemeType;

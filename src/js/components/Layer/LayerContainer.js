@@ -91,7 +91,7 @@ class LayerContainer extends Component {
         plain={plain}
         responsive={responsive}
         ref={this.containerRef}
-        direction={theme.direction}
+        dir={theme.dir}
       >
         {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
@@ -111,7 +111,7 @@ class LayerContainer extends Component {
           responsive={responsive}
           tabIndex="-1"
           ref={this.layerRef}
-          direction={theme.direction}
+          dir={theme.dir}
         >
           <StyledOverlay
             plain={plain}
