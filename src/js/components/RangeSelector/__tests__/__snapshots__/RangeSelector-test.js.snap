@@ -885,6 +885,23 @@ exports[`RangeSelector handle keyboard 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  cursor: pointer;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -988,23 +1005,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: 100%;
-  cursor: pointer;
 }
 
 .c2 {
@@ -1078,6 +1078,23 @@ exports[`RangeSelector handle mouse 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  cursor: pointer;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1181,23 +1198,6 @@ exports[`RangeSelector handle mouse 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: 100%;
-  cursor: pointer;
 }
 
 .c2 {
@@ -1287,7 +1287,7 @@ exports[`RangeSelector invert 1`] = `
   height: 100%;
 }
 
-.c7 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1295,6 +1295,9 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  background-color: rgba(218,218,218,0.4);
+  color: #444444;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1373,6 +1376,22 @@ exports[`RangeSelector invert 1`] = `
   border-radius: 100%;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1382,25 +1401,6 @@ exports[`RangeSelector invert 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: rgba(218,218,218,0.4);
   color: #444444;
   color: #444444;
   min-width: 0;
@@ -2179,6 +2179,24 @@ exports[`RangeSelector opacity 1`] = `
   border-radius: 100%;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(125,76,219,0.1);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2189,24 +2207,6 @@ exports[`RangeSelector opacity 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: rgba(125,76,219,0.1);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2539,6 +2539,23 @@ exports[`RangeSelector round 1`] = `
   height: 100%;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 6px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2607,23 +2624,6 @@ exports[`RangeSelector round 1`] = `
   height: 12px;
   width: 12px;
   border-radius: 100%;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  border-radius: 6px;
 }
 
 .c7 {
@@ -4067,6 +4067,23 @@ exports[`RangeSelector step renders correct values 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  cursor: pointer;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4170,23 +4187,6 @@ exports[`RangeSelector step renders correct values 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: 100%;
-  cursor: pointer;
 }
 
 .c2 {

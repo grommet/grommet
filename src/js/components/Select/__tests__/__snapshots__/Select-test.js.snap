@@ -292,9 +292,21 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
 }
 
 <button
@@ -779,22 +791,22 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jfbKsv Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL"
+  class="StyledButton-sc-323bzc-0 isyWsQ Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cGyFlY"
+    class="StyledBox-sc-13pk1d4-0 irpgsf"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gbHXHp"
+      class="StyledBox-sc-13pk1d4-0 eWOzIB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 duvNfq Select__SelectTextInput-sc-17idtfo-0 lmyIUy"
+          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -805,12 +817,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 lgSzcm"
+      class="StyledBox-sc-13pk1d4-0 gAZLwk"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 ixFkTg"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -955,8 +967,8 @@ exports[`Select complex options and children 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -971,6 +983,10 @@ exports[`Select complex options and children 3`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -1045,69 +1061,9 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:768px) {
-  .lgSzcm {
+  .gAZLwk {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-.jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }"
 `;
@@ -1567,23 +1523,23 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 chnll Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL"
+  class="StyledButton-sc-323bzc-0 djNbdM Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cGyFlY"
+    class="StyledBox-sc-13pk1d4-0 irpgsf"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gbHXHp"
+      class="StyledBox-sc-13pk1d4-0 eWOzIB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 duvNfq Select__SelectTextInput-sc-17idtfo-0 lmyIUy"
+          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1594,12 +1550,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 lgSzcm"
+      class="StyledBox-sc-13pk1d4-0 gAZLwk"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 ixFkTg"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1645,6 +1601,25 @@ exports[`Select empty results search 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 6px;
 }
 
 .c7 {
@@ -1704,25 +1679,6 @@ exports[`Select empty results search 1`] = `
   padding: 12px;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding: 6px;
-}
-
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -1766,8 +1722,8 @@ exports[`Select empty results search 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1830,14 +1786,18 @@ exports[`Select empty results search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
-  }
+
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
     padding: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 6px;
   }
 }
 
@@ -2071,8 +2031,8 @@ exports[`Select large drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2087,6 +2047,10 @@ exports[`Select large drop container height 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -2333,8 +2297,8 @@ exports[`Select medium drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2349,6 +2313,10 @@ exports[`Select medium drop container height 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -3146,22 +3114,22 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jfbKsv Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL"
+  class="StyledButton-sc-323bzc-0 isyWsQ Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cGyFlY"
+    class="StyledBox-sc-13pk1d4-0 irpgsf"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gbHXHp"
+      class="StyledBox-sc-13pk1d4-0 eWOzIB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 duvNfq Select__SelectTextInput-sc-17idtfo-0 lmyIUy"
+          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -3173,12 +3141,12 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 lgSzcm"
+      class="StyledBox-sc-13pk1d4-0 gAZLwk"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 ixFkTg"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3349,8 +3317,8 @@ exports[`Select multiple values 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3370,6 +3338,10 @@ exports[`Select multiple values 3`] = `
 .c9 {
   background: #7D4CDB;
   color: #FFFFFF;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -3462,75 +3434,9 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:768px) {
-  .lgSzcm {
+  .gAZLwk {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-.jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .bVmdog {
-    padding: 3px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }"
 `;
@@ -3762,22 +3668,22 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jfbKsv Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL"
+  class="StyledButton-sc-323bzc-0 isyWsQ Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 cGyFlY"
+    class="StyledBox-sc-13pk1d4-0 irpgsf"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gbHXHp"
+      class="StyledBox-sc-13pk1d4-0 eWOzIB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 duvNfq Select__SelectTextInput-sc-17idtfo-0 lmyIUy"
+          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3788,12 +3694,12 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 lgSzcm"
+      class="StyledBox-sc-13pk1d4-0 gAZLwk"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 ixFkTg"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3964,8 +3870,8 @@ exports[`Select opens 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3980,6 +3886,10 @@ exports[`Select opens 3`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -4072,93 +3982,33 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:768px) {
-  .lgSzcm {
+  .gAZLwk {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-.jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }"
 `;
 
 exports[`Select opens 5`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 vSijk SelectContainer__OptionsBox-sc-1wi0ul8-0 eBHXEP"
+  class="StyledBox-sc-13pk1d4-0 jYKEGf SelectContainer__OptionsBox-sc-1wi0ul8-0 fXWCoS"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 eCBRSq"
+    class="StyledBox-sc-13pk1d4-0 eBHJVM"
   >
     <button
-      class="StyledButton-sc-323bzc-0 hybzZB"
+      class="StyledButton-sc-323bzc-0 gMwkLi"
       role="menuitem"
       tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jaMGoX SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr"
+        class="StyledBox-sc-13pk1d4-0 gUBOHT SelectContainer__OptionBox-sc-1wi0ul8-1 eWPMqr"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 cVkhuq"
+          class="StyledText-sc-1sadyjn-0 icByvP"
         >
           one
         </span>
@@ -4166,19 +4016,19 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 eCBRSq"
+    class="StyledBox-sc-13pk1d4-0 eBHJVM"
   >
     <button
-      class="StyledButton-sc-323bzc-0 hybzZB"
+      class="StyledButton-sc-323bzc-0 gMwkLi"
       role="menuitem"
       tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jaMGoX SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr"
+        class="StyledBox-sc-13pk1d4-0 gUBOHT SelectContainer__OptionBox-sc-1wi0ul8-1 eWPMqr"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 cVkhuq"
+          class="StyledText-sc-1sadyjn-0 icByvP"
         >
           two
         </span>
@@ -4186,7 +4036,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 dsVlPf"
+    class="StyledBox-sc-13pk1d4-0 ePyJRC"
   />
 </div>
 `;
@@ -5797,6 +5647,25 @@ exports[`Select search 2`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 6px;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5873,25 +5742,6 @@ exports[`Select search 2`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding: 6px;
-}
-
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -5939,8 +5789,8 @@ exports[`Select search 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -6003,14 +5853,18 @@ exports[`Select search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
-    padding: 6px;
-  }
+
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
     padding: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 6px;
   }
 }
 
@@ -6112,75 +5966,9 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:768px) {
-  .lgSzcm {
+  .gAZLwk {
     margin-left: 6px;
     margin-right: 6px;
-  }
-}
-
-.jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .bVmdog {
-    padding: 3px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }"
 `;
@@ -7415,8 +7203,8 @@ exports[`Select small drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -7431,6 +7219,10 @@ exports[`Select small drop container height 1`] = `
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
