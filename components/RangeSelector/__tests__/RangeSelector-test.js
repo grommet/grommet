@@ -131,30 +131,31 @@ describe('RangeSelector', function () {
         getByLabelText = _render.getByLabelText;
 
     expect(container.firstChild).toMatchSnapshot();
-    var map = {};
-    window.addEventListener = jest.fn(function (event, cb) {
-      map[event] = cb;
-    });
     var lowerControl = getByLabelText('Lower Bounds');
 
-    _react2.fireEvent.mouseDown(lowerControl);
+    _react2.fireEvent.mouseDown(lowerControl); // fireEvent.mouseDown(lowerControl);
 
-    _react2.fireEvent.mouseDown(lowerControl);
 
-    map.mousemove({
+    _react2.fireEvent.mouseMove(document, {
       clientX: 31,
       clientY: 20
     });
+
+    _react2.fireEvent.mouseUp(document);
+
     expect(onChange).toBeCalled();
     expect(values).toStrictEqual([33, 100]);
     var upperControl = getByLabelText('Upper Bounds');
 
     _react2.fireEvent.mouseDown(upperControl);
 
-    map.mousemove({
+    _react2.fireEvent.mouseMove(document, {
       clientX: 80,
       clientY: 15
     });
+
+    _react2.fireEvent.mouseUp(document);
+
     expect(onChange).toBeCalled();
     expect(values).toStrictEqual([0, 81]);
   });
@@ -218,29 +219,29 @@ describe('RangeSelector', function () {
     });
 
     expect(onChange).toBeCalled();
-    var map = {};
-    window.addEventListener = jest.fn(function (event, cb) {
-      map[event] = cb;
-    });
     var lowerControl = getByLabelText('Lower Bounds');
 
     _react2.fireEvent.mouseDown(lowerControl);
 
-    map.mousemove({
+    _react2.fireEvent.mouseMove(document, {
       clientX: 0,
       clientY: 0
     });
+
+    _react2.fireEvent.mouseUp(document);
+
     expect(onChange).toBeCalled();
-    map.mouseup();
     var upperControl = getByLabelText('Upper Bounds');
 
     _react2.fireEvent.mouseDown(upperControl);
 
-    map.mousemove({
+    _react2.fireEvent.mouseMove(document, {
       clientX: 0,
       clientY: 0
     });
+
+    _react2.fireEvent.mouseUp(document);
+
     expect(onChange).toBeCalled();
-    map.mouseup();
   });
 });

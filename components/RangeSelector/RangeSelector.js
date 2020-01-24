@@ -5,19 +5,13 @@ exports.RangeSelector = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _contexts = require("../../contexts");
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _Box = require("../Box");
 
-var _hocs = require("../hocs");
-
 var _EdgeControl = require("./EdgeControl");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _utils = require("../../utils");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -27,140 +21,86 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var Container = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "siof5p-0"
 })(["user-select:none;"]);
+var RangeSelector = (0, _react.forwardRef)(function (_ref, ref) {
+  var color = _ref.color,
+      _ref$direction = _ref.direction,
+      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
+      invert = _ref.invert,
+      _ref$max = _ref.max,
+      max = _ref$max === void 0 ? 100 : _ref$max,
+      _ref$messages = _ref.messages,
+      messages = _ref$messages === void 0 ? {
+    lower: 'Lower Bounds',
+    upper: 'Upper Bounds'
+  } : _ref$messages,
+      _ref$min = _ref.min,
+      min = _ref$min === void 0 ? 0 : _ref$min,
+      onChange = _ref.onChange,
+      _ref$opacity = _ref.opacity,
+      opacity = _ref$opacity === void 0 ? 'medium' : _ref$opacity,
+      round = _ref.round,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'medium' : _ref$size,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? 1 : _ref$step,
+      _ref$values = _ref.values,
+      values = _ref$values === void 0 ? [] : _ref$values,
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"]);
 
-var RangeSelector =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(RangeSelector, _Component);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
 
-  function RangeSelector() {
-    var _this;
+  var _useState = (0, _react.useState)(),
+      changing = _useState[0],
+      setChanging = _useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var _useState2 = (0, _react.useState)(),
+      lastChange = _useState2[0],
+      setLastChange = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(),
+      moveValue = _useState3[0],
+      setMoveValue = _useState3[1];
+
+  var containerRef = (0, _react.useRef)();
+  var valueForMouseCoord = (0, _react.useCallback)(function (event) {
+    var rect = containerRef.current.getBoundingClientRect();
+    var value;
+
+    if (direction === 'vertical') {
+      // there is no x and y in unit testing
+      var y = event.clientY - (rect.top || 0); // test resilience
+
+      var scaleY = rect.height / (max - min + 1) || 1; // test resilience
+
+      value = Math.floor(y / scaleY) + min;
+    } else {
+      var x = event.clientX - (rect.left || 0); // test resilience
+
+      var scaleX = rect.width / (max - min + 1) || 1; // test resilience
+
+      value = Math.floor(x / scaleX) + min;
+    } // align with closest step within [min, max]
+
+
+    var result = Math.ceil(value / step) * step;
+
+    if (result < min) {
+      return min;
     }
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+    if (result > max) {
+      return max;
+    }
 
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "containerRef", _react["default"].createRef());
-
-    _defineProperty(_assertThisInitialized(_this), "valueForMouseCoord", function (event) {
-      var _this$props = _this.props,
-          direction = _this$props.direction,
-          max = _this$props.max,
-          min = _this$props.min,
-          step = _this$props.step;
-
-      var rect = _this.containerRef.current.getBoundingClientRect();
-
-      var value;
-
-      if (direction === 'vertical') {
-        // there is no x and y in unit testing
-        var y = event.clientY - (rect.top || 0); // unit test resilience
-
-        var scaleY = rect.height / (max - min + 1) || 1; // unit test resilience
-
-        value = Math.floor(y / scaleY) + min;
-      } else {
-        var x = event.clientX - (rect.left || 0); // unit test resilience
-
-        var scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
-
-        value = Math.floor(x / scaleX) + min;
-      } // align with closest step within [min, max]
-
-
-      var result = Math.ceil(value / step) * step;
-
-      if (result < min) {
-        return min;
-      }
-
-      if (result > max) {
-        return max;
-      }
-
-      return result;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onClick", function (event) {
-      var _this$props2 = _this.props,
-          onChange = _this$props2.onChange,
-          values = _this$props2.values;
-      var lastChange = _this.state.lastChange;
-
-      var value = _this.valueForMouseCoord(event);
-
-      if (value <= values[0] || value < values[1] && lastChange === 'lower') {
-        _this.setState({
-          lastChange: 'lower'
-        }, function () {
-          return onChange([value, values[1]]);
-        });
-      } else if (value >= values[1] || value > values[0] && lastChange === 'upper') {
-        _this.setState({
-          lastChange: 'upper'
-        }, function () {
-          return onChange([values[0], value]);
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "lowerMouseDown", function () {
-      _this.setState({
-        changing: 'lower'
-      });
-
-      window.addEventListener('mousemove', _this.mouseMove);
-      window.addEventListener('mouseup', _this.mouseUp);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "upperMouseDown", function () {
-      _this.setState({
-        changing: 'upper'
-      });
-
-      window.addEventListener('mousemove', _this.mouseMove);
-      window.addEventListener('mouseup', _this.mouseUp);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "selectionMouseDown", function (event) {
-      var moveValue = _this.valueForMouseCoord(event);
-
-      _this.setState({
-        changing: 'selection',
-        moveValue: moveValue
-      });
-
-      window.addEventListener('mousemove', _this.mouseMove);
-      window.addEventListener('mouseup', _this.mouseUp);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "mouseMove", function (event) {
-      var _this$props3 = _this.props,
-          max = _this$props3.max,
-          min = _this$props3.min,
-          onChange = _this$props3.onChange,
-          values = _this$props3.values;
-      var _this$state = _this.state,
-          changing = _this$state.changing,
-          moveValue = _this$state.moveValue;
-
-      var value = _this.valueForMouseCoord(event);
-
+    return result;
+  }, [direction, max, min, step]);
+  (0, _react.useEffect)(function () {
+    var mouseMove = function mouseMove(event) {
+      var value = valueForMouseCoord(event);
       var nextValues;
 
       if (changing === 'lower' && value <= values[1] && value !== moveValue) {
@@ -176,157 +116,134 @@ function (_Component) {
       }
 
       if (nextValues) {
-        _this.setState({
-          lastChange: changing,
-          moveValue: value
-        }, function () {
-          onChange(nextValues);
-        });
+        setMoveValue(value);
+        onChange(nextValues);
       }
-    });
+    };
 
-    _defineProperty(_assertThisInitialized(_this), "mouseUp", function () {
-      _this.setState({
-        changing: undefined
-      });
+    var mouseUp = function mouseUp() {
+      return setChanging(undefined);
+    };
 
-      window.removeEventListener('mousemove', _this.mouseMove);
-      window.removeEventListener('mouseup', _this.mouseUp);
-    });
+    if (changing) {
+      window.addEventListener('mousemove', mouseMove);
+      window.addEventListener('mouseup', mouseUp);
+      return function () {
+        window.removeEventListener('mousemove', mouseMove);
+        window.removeEventListener('mouseup', mouseUp);
+      };
+    }
 
-    return _this;
-  }
+    return undefined;
+  }, [changing, max, min, moveValue, onChange, valueForMouseCoord, values]);
+  var onClick = (0, _react.useCallback)(function (event) {
+    var value = valueForMouseCoord(event);
 
-  var _proto = RangeSelector.prototype;
+    if (value <= values[0] || value < values[1] && lastChange === 'lower') {
+      setLastChange('lower');
+      onChange([value, values[1]]);
+    } else if (value >= values[1] || value > values[0] && lastChange === 'upper') {
+      setLastChange('upper');
+      onChange([values[0], value]);
+    }
+  }, [lastChange, onChange, valueForMouseCoord, values]);
+  var lower = values[0],
+      upper = values[1]; // It needs to be true when vertical, due to how browsers manage height
+  // const fill = direction === 'vertical' ? true : 'horizontal';
 
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    window.removeEventListener('mousemove', this.mouseMove);
-    window.removeEventListener('mouseup', this.mouseUp);
+  var thickness = size === 'full' ? undefined : (0, _utils.parseMetricToNum)(theme.global.edgeSize[size] || size) + "px";
+  var layoutProps = {
+    fill: direction,
+    round: round
   };
-
-  _proto.render = function render() {
-    var _this$props4 = this.props,
-        color = _this$props4.color,
-        direction = _this$props4.direction,
-        forwardRef = _this$props4.forwardRef,
-        invert = _this$props4.invert,
-        max = _this$props4.max,
-        messages = _this$props4.messages,
-        min = _this$props4.min,
-        onChange = _this$props4.onChange,
-        opacity = _this$props4.opacity,
-        round = _this$props4.round,
-        size = _this$props4.size,
-        step = _this$props4.step,
-        values = _this$props4.values,
-        propsTheme = _this$props4.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values", "theme"]);
-
-    var theme = this.context || propsTheme;
-    var _this$state2 = this.state,
-        nextLower = _this$state2.nextLower,
-        nextUpper = _this$state2.nextUpper;
-    var lower = nextLower !== undefined ? nextLower : values[0];
-    var upper = nextUpper !== undefined ? nextUpper : values[1]; // It needs to be true when vertical, due to how browsers manage height
-
-    var fill = direction === 'vertical' ? true : 'vertical';
-    return _react["default"].createElement(Container, _extends({
-      ref: this.containerRef,
-      direction: direction === 'vertical' ? 'column' : 'row',
-      fill: fill
-    }, rest, {
-      tabIndex: "-1",
-      onClick: onChange ? this.onClick : undefined
-    }), _react["default"].createElement(_Box.Box, {
-      style: {
-        flex: lower - min + " 0 0"
-      },
-      background: invert ? // preserve existing dark, instead of using darknes
-      // of this color
-      {
-        color: color || theme.rangeSelector.background.invert.color,
-        opacity: opacity,
-        dark: theme.dark
-      } : undefined,
-      fill: fill,
-      round: round
-    }), _react["default"].createElement(_EdgeControl.EdgeControl, {
-      a11yTitle: messages.lower,
-      tabIndex: 0,
-      ref: forwardRef,
-      color: color,
-      direction: direction,
-      edge: "lower",
-      onMouseDown: onChange ? this.lowerMouseDown : undefined,
-      onDecrease: onChange && lower - step >= min ? function () {
-        return onChange([lower - step, upper]);
-      } : undefined,
-      onIncrease: onChange && lower + step <= upper ? function () {
-        return onChange([lower + step, upper]);
-      } : undefined
-    }), _react["default"].createElement(_Box.Box, {
-      style: {
-        flex: upper - lower + 1 + " 0 0",
-        cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize'
-      },
-      background: invert ? undefined : // preserve existing dark, instead of using darknes of
-      // this color
-      {
-        color: color || 'control',
-        opacity: opacity,
-        dark: theme.dark
-      },
-      fill: fill,
-      round: round,
-      onMouseDown: onChange ? this.selectionMouseDown : undefined
-    }), _react["default"].createElement(_EdgeControl.EdgeControl, {
-      a11yTitle: messages.upper,
-      tabIndex: 0,
-      color: color,
-      direction: direction,
-      edge: "upper",
-      onMouseDown: onChange ? this.upperMouseDown : undefined,
-      onDecrease: onChange && upper - step >= lower ? function () {
-        return onChange([lower, upper - step]);
-      } : undefined,
-      onIncrease: onChange && upper + step <= max ? function () {
-        return onChange([lower, upper + step]);
-      } : undefined
-    }), _react["default"].createElement(_Box.Box, {
-      style: {
-        flex: max - upper + " 0 0"
-      },
-      background: invert ? // preserve existing dark, instead of using darknes of this
-      // color
-      {
-        color: color || theme.rangeSelector.background.invert.color,
-        opacity: opacity,
-        dark: theme.dark
-      } : undefined,
-      fill: fill,
-      round: round
-    }));
-  };
-
-  return RangeSelector;
-}(_react.Component);
-
-_defineProperty(RangeSelector, "contextType", _contexts.ThemeContext);
-
-_defineProperty(RangeSelector, "defaultProps", {
-  direction: 'horizontal',
-  max: 100,
-  messages: {
-    lower: 'Lower Bounds',
-    upper: 'Upper Bounds'
-  },
-  min: 0,
-  opacity: 'medium',
-  size: 'medium',
-  step: 1,
-  values: []
+  if (direction === 'vertical') layoutProps.width = thickness;else layoutProps.height = thickness;
+  if (size === 'full') layoutProps.alignSelf = 'stretch';
+  return _react["default"].createElement(Container, _extends({
+    ref: containerRef,
+    direction: direction === 'vertical' ? 'column' : 'row',
+    align: "center",
+    fill: true
+  }, rest, {
+    tabIndex: "-1",
+    onClick: onChange ? onClick : undefined
+  }), _react["default"].createElement(_Box.Box, _extends({
+    style: {
+      flex: lower - min + " 0 0"
+    },
+    background: invert ? // preserve existing dark, instead of using darknes
+    // of this color
+    {
+      color: color || theme.rangeSelector.background.invert.color,
+      opacity: opacity,
+      dark: theme.dark
+    } : undefined
+  }, layoutProps)), _react["default"].createElement(_EdgeControl.EdgeControl, {
+    a11yTitle: messages.lower,
+    tabIndex: 0,
+    ref: ref,
+    color: color,
+    direction: direction,
+    thickness: thickness,
+    edge: "lower",
+    onMouseDown: onChange ? function () {
+      return setChanging('lower');
+    } : undefined,
+    onDecrease: onChange && lower - step >= min ? function () {
+      return onChange([lower - step, upper]);
+    } : undefined,
+    onIncrease: onChange && lower + step <= upper ? function () {
+      return onChange([lower + step, upper]);
+    } : undefined
+  }), _react["default"].createElement(_Box.Box, _extends({
+    style: {
+      flex: upper - lower + 1 + " 0 0",
+      cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize'
+    },
+    background: invert ? undefined : // preserve existing dark, instead of using darknes of
+    // this color
+    {
+      color: color || 'control',
+      opacity: opacity,
+      dark: theme.dark
+    }
+  }, layoutProps, {
+    onMouseDown: onChange ? function (event) {
+      var nextMoveValue = valueForMouseCoord(event);
+      setChanging('selection');
+      setMoveValue(nextMoveValue);
+    } : undefined
+  })), _react["default"].createElement(_EdgeControl.EdgeControl, {
+    a11yTitle: messages.upper,
+    tabIndex: 0,
+    color: color,
+    direction: direction,
+    thickness: thickness,
+    edge: "upper",
+    onMouseDown: onChange ? function () {
+      return setChanging('upper');
+    } : undefined,
+    onDecrease: onChange && upper - step >= lower ? function () {
+      return onChange([lower, upper - step]);
+    } : undefined,
+    onIncrease: onChange && upper + step <= max ? function () {
+      return onChange([lower, upper + step]);
+    } : undefined
+  }), _react["default"].createElement(_Box.Box, _extends({
+    style: {
+      flex: max - upper + " 0 0"
+    },
+    background: invert ? // preserve existing dark, instead of using darknes of this
+    // color
+    {
+      color: color || theme.rangeSelector.background.invert.color,
+      opacity: opacity,
+      dark: theme.dark
+    } : undefined
+  }, layoutProps, {
+    round: round
+  })));
 });
-
+RangeSelector.displayName = 'RangeSelector';
 var RangeSelectorDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -334,5 +251,5 @@ if (process.env.NODE_ENV !== 'production') {
   RangeSelectorDoc = require('./doc').doc(RangeSelector);
 }
 
-var RangeSelectorWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(RangeSelectorDoc || RangeSelector);
+var RangeSelectorWrapper = RangeSelectorDoc || RangeSelector;
 exports.RangeSelector = RangeSelectorWrapper;

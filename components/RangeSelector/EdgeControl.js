@@ -46,7 +46,8 @@ var EdgeControl = function EdgeControl(_ref) {
       onDecrease = _ref.onDecrease,
       onIncrease = _ref.onIncrease,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "edge", "forwardRef", "onDecrease", "onIncrease", "theme"]);
+      thickness = _ref.thickness,
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "edge", "forwardRef", "onDecrease", "onIncrease", "theme", "thickness"]);
 
   var _useState = (0, _react.useState)(false),
       focused = _useState[0],
@@ -69,9 +70,10 @@ var EdgeControl = function EdgeControl(_ref) {
 
   if (type === 'bar') {
     node = _react["default"].createElement(_Box.Box, {
-      flex: true,
+      flex: !thickness,
       justifySelf: "stretch",
-      width: size + "px",
+      width: direction === 'vertical' ? thickness : size + "px",
+      height: direction === 'vertical' ? size + "px" : thickness,
       background: (0, _utils.normalizeColor)(color || 'control', theme),
       border: focused ? {
         color: (0, _utils.normalizeColor)('focus', theme)
@@ -98,7 +100,8 @@ var EdgeControl = function EdgeControl(_ref) {
     },
     overflow: "visible",
     align: "center",
-    justify: "center"
+    justify: "center",
+    alignSelf: "stretch"
   }, _react["default"].createElement(_Box.Box, _extends({
     ref: forwardRef,
     direction: boxDirection,
