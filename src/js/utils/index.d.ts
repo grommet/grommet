@@ -35,9 +35,11 @@ declare const removeUndefined: <T extends object>(obj: T) => NonUndefinedProps<T
 export {isObject, deepFreeze, deepMerge, removeUndefined};
 
 // Extracting types for common properties among components
-type BoxSideType = "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | "between";
+type BoxSideType = "top" | "left" | "bottom" | "right" | "start" | "end" | "horizontal" | "vertical" | "all" | "between";
 type BoxSizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 type BoxStyleType = "solid" | "dashed" | "dotted" | "double" | "groove" | "ridge" | "inset" | "outset" | "hidden";
+type EdgeSizeType = "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge";
+type EdgeType = "none" | EdgeSizeType | {bottom?: EdgeSizeType | string,end?: EdgeSizeType | string,horizontal?: EdgeSizeType | string,left?: EdgeSizeType | string,right?: EdgeSizeType | string,start?: EdgeSizeType | string,top?: EdgeSizeType | string,vertical?: EdgeSizeType | string} | string
 
 export type A11yTitleType = string;
 export type AlignContentType = "start" | "center" | "end" | "between" | "around" | "stretch";
@@ -49,13 +51,13 @@ export type BorderType = boolean | BoxSideType | {color?: ColorType, side?: BoxS
 export type ColorType = string | {dark?: string,light?: string} | undefined;
 export type ElevationType = "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 export type FillType = "horizontal" | "vertical" | boolean;
-export type GapType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+export type GapType = "none" | EdgeSizeType | string;
 export type GraphColorsType = string[] | {dark?: string[],light?: string[]};
 export type GridAreaType = string;
 export type JustifyContentType = "start" | "center" | "end" | "between" | "around" | "stretch";
 export type KeyboardType = ((event: React.KeyboardEvent<HTMLElement>) => void);
-export type MarginType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+export type MarginType = EdgeType;
 export type OpacityType = "weak" | "medium" | "strong" | string | true | false | number;
-export type PadType = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+export type PadType = EdgeType;
 export type PlaceHolderType = string | JSX.Element | React.ReactNode;
 export type TextAlignType = "start" | "center" | "end";

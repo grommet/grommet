@@ -64,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -81,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -138,6 +154,8 @@ top
 bottom
 left
 right
+start
+end
 {
   color: 
     string
@@ -151,7 +169,9 @@ right
     top
     bottom
     left
-    right,
+    right
+    start
+    end,
   size: 
     xxsmall
     xsmall
@@ -278,6 +298,20 @@ string
     large
     xlarge,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  end: 
     xxsmall
     xsmall
     small
