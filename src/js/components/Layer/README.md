@@ -66,6 +66,13 @@ large
     medium
     large
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -81,6 +88,13 @@ large
     large
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -149,9 +163,11 @@ bottom
 bottom-left
 bottom-right
 center
+end
 hidden
 left
 right
+start
 top
 top-left
 top-right

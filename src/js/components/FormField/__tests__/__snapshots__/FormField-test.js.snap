@@ -615,7 +615,7 @@ exports[`renders help 1`] = `
 }
 
 .c2 {
-  margin-left: 12px;
+  margin-inline-start: 12px;
   font-size: 18px;
   line-height: 24px;
   color: #777777;
