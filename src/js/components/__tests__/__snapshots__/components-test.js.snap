@@ -2720,7 +2720,6 @@ function",
         "name": "onBlur",
       },
       Object {
-        "defaultValue": Array [],
         "description": "Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
       as the user types characters one by one.",
