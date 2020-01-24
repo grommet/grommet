@@ -2,27 +2,24 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
+import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
-import { Box } from '../Box';
-import { withForwardRef } from '../hocs';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonBox } from './StyledRadioButton';
-
-var RadioButton = function RadioButton(_ref) {
+var RadioButton = forwardRef(function (_ref, ref) {
   var checked = _ref.checked,
       children = _ref.children,
       disabled = _ref.disabled,
       focus = _ref.focus,
-      forwardRef = _ref.forwardRef,
       id = _ref.id,
       label = _ref.label,
       name = _ref.name,
       onChange = _ref.onChange,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "disabled", "focus", "id", "label", "name", "onChange"]);
+
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(),
       hover = _useState[0],
@@ -59,7 +56,7 @@ var RadioButton = function RadioButton(_ref) {
       right: theme.radioButton.gap || 'small'
     } : undefined
   }, React.createElement(StyledRadioButtonInput, _extends({}, rest, {
-    ref: forwardRef,
+    ref: ref,
     type: "radio"
   }, removeUndefined({
     id: id,
@@ -92,10 +89,8 @@ var RadioButton = function RadioButton(_ref) {
     cy: 12,
     r: 6
   }))))), normalizedLabel);
-};
-
-RadioButton.defaultProps = {};
-Object.setPrototypeOf(RadioButton.defaultProps, defaultProps);
+});
+RadioButton.displayName = 'RadioButton';
 var RadioButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -103,5 +98,5 @@ if (process.env.NODE_ENV !== 'production') {
   RadioButtonDoc = require('./doc').doc(RadioButton);
 }
 
-var RadioButtonWrapper = compose(withTheme, withForwardRef)(RadioButtonDoc || RadioButton);
+var RadioButtonWrapper = RadioButtonDoc || RadioButton;
 export { RadioButtonWrapper as RadioButton };
