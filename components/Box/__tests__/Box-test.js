@@ -316,6 +316,14 @@ describe('Box', function () {
       }
     }), _react["default"].createElement(_.Box, {
       margin: {
+        start: 'small'
+      }
+    }), _react["default"].createElement(_.Box, {
+      margin: {
+        end: 'small'
+      }
+    }), _react["default"].createElement(_.Box, {
+      margin: {
         top: 'small'
       }
     })));
@@ -349,6 +357,14 @@ describe('Box', function () {
     }), _react["default"].createElement(_.Box, {
       pad: {
         right: 'small'
+      }
+    }), _react["default"].createElement(_.Box, {
+      pad: {
+        start: 'small'
+      }
+    }), _react["default"].createElement(_.Box, {
+      pad: {
+        end: 'small'
       }
     }), _react["default"].createElement(_.Box, {
       pad: {

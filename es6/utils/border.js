@@ -17,6 +17,12 @@ export var borderStyle = function borderStyle(data, responsive, theme) {
     if (responsiveValue) {
       styles.push(breakpointStyle(breakpoint, "\n        border-" + side + ": " + responsiveValue + ";\n      "));
     }
+  } else if (side === 'end' || side === 'start') {
+    styles.push(css(["border-inline-", ":", ";"], side, value));
+
+    if (responsiveValue) {
+      styles.push(breakpointStyle(breakpoint, "\n        border-inline-" + side + ": " + responsiveValue + ";\n      "));
+    }
   } else if (side === 'vertical') {
     styles.push(css(["border-left:", ";border-right:", ";"], value, value));
 

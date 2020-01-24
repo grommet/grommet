@@ -63,6 +63,14 @@ var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint,
     result.push((0, _styledComponents.css)(["", "-right:", ";", ";"], kind, theme.global.edgeSize[data.right] || data.right, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + "-right: " + (breakpoint.edgeSize[data.right] || data.right) + ";\n      ") : ''));
   }
 
+  if (data.start) {
+    result.push((0, _styledComponents.css)(["", "-inline-start:", ";", ";"], kind, theme.global.edgeSize[data.start] || data.start, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + "-inline-start: " + (breakpoint.edgeSize[data.start] || data.start) + ";\n      ") : ''));
+  }
+
+  if (data.end) {
+    result.push((0, _styledComponents.css)(["", "-inline-end:", ";", ";"], kind, theme.global.edgeSize[data.end] || data.end, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + "-inline-end: " + (breakpoint.edgeSize[data.end] || data.end) + ";\n      ") : ''));
+  }
+
   return result;
 }; // focus also supports clickable elements inside svg
 

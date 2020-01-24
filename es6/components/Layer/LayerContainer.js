@@ -9,9 +9,8 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { createRef, Component } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { backgroundIsDark } from '../../utils';
@@ -110,7 +109,8 @@ function (_Component) {
       position: position,
       plain: plain,
       responsive: responsive,
-      ref: this.containerRef
+      ref: this.containerRef,
+      dir: theme.dir
     }), React.createElement(HiddenAnchor, {
       ref: this.anchorRef,
       tabIndex: "-1",
@@ -124,7 +124,8 @@ function (_Component) {
         position: position,
         responsive: responsive,
         tabIndex: "-1",
-        ref: this.layerRef
+        ref: this.layerRef,
+        dir: theme.dir
       }, React.createElement(StyledOverlay, {
         plain: plain,
         onMouseDown: onClickOutside,

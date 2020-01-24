@@ -37,7 +37,7 @@ var FakeLayer = function FakeLayer(_ref) {
 describe('Layer', function () {
   beforeEach(createPortal);
   afterEach(cleanup);
-  ['top', 'bottom', 'left', 'right', 'center'].forEach(function (position) {
+  ['top', 'bottom', 'left', 'right', 'start', 'end', 'center'].forEach(function (position) {
     return test("position " + position, function () {
       render(React.createElement(Grommet, null, React.createElement(Layer, {
         id: "position-test",

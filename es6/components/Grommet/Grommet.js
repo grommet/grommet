@@ -61,7 +61,8 @@ function (_Component) {
   }
 
   Grommet.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var _nextProps$theme = nextProps.theme,
+    var dir = nextProps.dir,
+        _nextProps$theme = nextProps.theme,
         theme = _nextProps$theme === void 0 ? {} : _nextProps$theme,
         themeMode = nextProps.themeMode;
     var stateTheme = prevState.theme,
@@ -79,6 +80,10 @@ function (_Component) {
         nextTheme.dark = color ? colorIsDark(color) : false;
       } else if (nextTheme.dark === undefined) {
         nextTheme.dark = background && colorIsDark(background) || false;
+      }
+
+      if (dir) {
+        nextTheme.dir = dir;
       }
 
       return {

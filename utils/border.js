@@ -25,6 +25,12 @@ var borderStyle = function borderStyle(data, responsive, theme) {
     if (responsiveValue) {
       styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n        border-" + side + ": " + responsiveValue + ";\n      "));
     }
+  } else if (side === 'end' || side === 'start') {
+    styles.push((0, _styledComponents.css)(["border-inline-", ":", ";"], side, value));
+
+    if (responsiveValue) {
+      styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n        border-inline-" + side + ": " + responsiveValue + ";\n      "));
+    }
   } else if (side === 'vertical') {
     styles.push((0, _styledComponents.css)(["border-left:", ";border-right:", ";"], value, value));
 

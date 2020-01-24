@@ -569,7 +569,7 @@ var generate = function generate(baseSpacing, scale) {
       resize: {
         border: {
           color: 'border',
-          side: 'right'
+          side: 'end'
         }
       }
     },
@@ -618,7 +618,7 @@ var generate = function generate(baseSpacing, scale) {
           light: 'dark-3'
         },
         margin: {
-          left: 'small'
+          start: 'small'
         }
       },
       label: {

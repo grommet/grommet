@@ -5,11 +5,9 @@ exports.LayerContainer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _defaultProps = require("../../default-props");
-
-var _contexts = require("../../contexts");
 
 var _FocusedContainer = require("../FocusedContainer");
 
@@ -18,8 +16,6 @@ var _Keyboard = require("../Keyboard");
 var _utils = require("../../utils");
 
 var _StyledLayer = require("./StyledLayer");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -130,7 +126,8 @@ function (_Component) {
       position: position,
       plain: plain,
       responsive: responsive,
-      ref: this.containerRef
+      ref: this.containerRef,
+      dir: theme.dir
     }), _react["default"].createElement(HiddenAnchor, {
       ref: this.anchorRef,
       tabIndex: "-1",
@@ -144,7 +141,8 @@ function (_Component) {
         position: position,
         responsive: responsive,
         tabIndex: "-1",
-        ref: this.layerRef
+        ref: this.layerRef,
+        dir: theme.dir
       }, _react["default"].createElement(_StyledLayer.StyledOverlay, {
         plain: plain,
         onMouseDown: onClickOutside,
@@ -163,7 +161,7 @@ function (_Component) {
       var dark = (0, _utils.backgroundIsDark)(theme.layer.background, theme);
 
       if (dark !== undefined && dark !== theme.dark) {
-        content = _react["default"].createElement(_contexts.ThemeContext.Provider, {
+        content = _react["default"].createElement(_styledComponents.ThemeContext.Provider, {
           value: _extends({}, theme, {
             dark: dark
           })
@@ -186,7 +184,7 @@ function (_Component) {
 
 exports.LayerContainer = LayerContainer;
 
-_defineProperty(LayerContainer, "contextType", _contexts.ThemeContext);
+_defineProperty(LayerContainer, "contextType", _styledComponents.ThemeContext);
 
 _defineProperty(LayerContainer, "defaultProps", {
   full: false,
