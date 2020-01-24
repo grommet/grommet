@@ -1,10 +1,16 @@
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 import React from 'react';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { getByText } from '@testing-library/dom';
+import { cleanup, fireEvent, render, waitForElement } from '@testing-library/react';
+import { getByText, screen } from '@testing-library/dom';
+import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { Keyboard } from '../../Keyboard';
-import { createPortal, expectPortal } from '../../../utils/portal';
 import { MaskedInput } from '..';
 describe('MaskedInput', function () {
   beforeEach(createPortal);
@@ -17,155 +23,201 @@ describe('MaskedInput', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('mask', function (done) {
-    var onChange = jest.fn();
-    var onFocus = jest.fn();
+  test('mask',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee() {
+    var onChange, onFocus, _render2, getByTestId, container;
 
-    var _render2 = render(React.createElement(MaskedInput, {
-      "data-testid": "test-input",
-      id: "item",
-      name: "item",
-      mask: [{
-        length: [1, 2],
-        options: ['aa', 'bb'],
-        regexp: /^[ab][ab]$|^[ab]$/
-      }, {
-        fixed: '!'
-      }, {
-        length: 1,
-        regexp: /^[ab]$/
-      }],
-      value: "bb!ax",
-      onChange: onChange,
-      onFocus: onFocus
-    })),
-        getByTestId = _render2.getByTestId,
-        container = _render2.container;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            onChange = jest.fn();
+            onFocus = jest.fn();
+            _render2 = render(React.createElement(MaskedInput, {
+              "data-testid": "test-input",
+              id: "item",
+              name: "item",
+              mask: [{
+                length: [1, 2],
+                options: ['aa', 'bb'],
+                regexp: /^[ab][ab]$|^[ab]$/
+              }, {
+                fixed: '!'
+              }, {
+                length: 1,
+                regexp: /^[ab]$/
+              }],
+              value: "bb!ax",
+              onChange: onChange,
+              onFocus: onFocus
+            })), getByTestId = _render2.getByTestId, container = _render2.container;
+            expect(container.firstChild).toMatchSnapshot();
+            fireEvent.focus(getByTestId('test-input'));
+            _context.next = 7;
+            return waitForElement(function () {
+              return screen.getByText('aa');
+            });
 
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.focus(getByTestId('test-input'));
-    setTimeout(function () {
-      expectPortal('masked-input-drop__item').toMatchSnapshot();
-      expect(onChange).not.toBeCalled();
-      expect(onFocus).toBeCalled();
-      done();
-    }, 300);
-  });
-  test('option via mouse', function (done) {
-    var onChange = jest.fn(function (event) {
-      return event.target.value;
-    });
+          case 7:
+            expectPortal('masked-input-drop__item').toMatchSnapshot();
+            expect(onChange).not.toBeCalled();
+            expect(onFocus).toBeCalled();
 
-    var _render3 = render(React.createElement(MaskedInput, {
-      "data-testid": "test-input",
-      plain: true,
-      size: "large",
-      id: "item",
-      name: "item",
-      mask: [{
-        length: [1, 2],
-        options: ['aa', 'bb'],
-        regexp: /^[ab][ab]$|^[ab]$/
-      }, {
-        fixed: '!'
-      }],
-      value: "",
-      onChange: onChange
-    })),
-        getByTestId = _render3.getByTestId,
-        container = _render3.container;
+          case 10:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  })));
+  test('option via mouse',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee2() {
+    var onChange, _render3, getByTestId, container, option;
 
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.focus(getByTestId('test-input'));
-    setTimeout(function () {
-      expectPortal('masked-input-drop__item').toMatchSnapshot();
-      fireEvent.click(getByText(document, 'aa'));
-      expect(container.firstChild).toMatchSnapshot();
-      expect(onChange).toHaveBeenCalled();
-      expect(onChange).toHaveReturnedWith('aa!');
-      done();
-    }, 500);
-  });
-  test('option via keyboard', function (done) {
-    var onChange = jest.fn(function (event) {
-      return event.target.value;
-    });
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            onChange = jest.fn(function (event) {
+              return event.target.value;
+            });
+            _render3 = render(React.createElement(MaskedInput, {
+              "data-testid": "test-input",
+              plain: true,
+              size: "large",
+              id: "item",
+              name: "item",
+              mask: [{
+                length: [1, 2],
+                options: ['aa', 'bb'],
+                regexp: /^[ab][ab]$|^[ab]$/
+              }, {
+                fixed: '!'
+              }],
+              value: "",
+              onChange: onChange
+            })), getByTestId = _render3.getByTestId, container = _render3.container;
+            expect(container.firstChild).toMatchSnapshot();
+            fireEvent.focus(getByTestId('test-input'));
+            _context2.next = 6;
+            return waitForElement(function () {
+              return getByText(document, 'aa');
+            });
 
-    var _render4 = render(React.createElement(MaskedInput, {
-      "data-testid": "test-input",
-      id: "item",
-      name: "item",
-      mask: [{
-        length: [1, 2],
-        options: ['aa', 'bb'],
-        regexp: /^[ab][ab]$|^[ab]$/
-      }, {
-        fixed: '!'
-      }],
-      value: "",
-      onChange: onChange
-    })),
-        getByTestId = _render4.getByTestId,
-        container = _render4.container;
+          case 6:
+            option = _context2.sent;
+            expectPortal('masked-input-drop__item').toMatchSnapshot();
+            fireEvent.click(option);
+            expect(container.firstChild).toMatchSnapshot();
+            expect(onChange).toHaveBeenCalled();
+            expect(onChange).toHaveReturnedWith('aa!');
 
-    expect(container.firstChild).toMatchSnapshot();
-    var input = getByTestId('test-input');
-    fireEvent.focus(input);
-    setTimeout(function () {
-      // pressing enter here nothing will happen
-      fireEvent.keyDown(input, {
-        keyCode: 13
-      }); // enter
+          case 12:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  })));
+  test('option via keyboard',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee3() {
+    var onChange, _render4, getByTestId, container, input;
 
-      fireEvent.keyDown(input, {
-        keyCode: 40
-      }); // down
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            onChange = jest.fn(function (event) {
+              return event.target.value;
+            });
+            _render4 = render(React.createElement(MaskedInput, {
+              "data-testid": "test-input",
+              id: "item",
+              name: "item",
+              mask: [{
+                length: [1, 2],
+                options: ['aa', 'bb'],
+                regexp: /^[ab][ab]$|^[ab]$/
+              }, {
+                fixed: '!'
+              }],
+              value: "",
+              onChange: onChange
+            })), getByTestId = _render4.getByTestId, container = _render4.container;
+            expect(container.firstChild).toMatchSnapshot();
+            input = getByTestId('test-input');
+            fireEvent.focus(input);
+            _context3.next = 7;
+            return waitForElement(function () {
+              return screen.getByText('aa');
+            });
 
-      fireEvent.keyDown(input, {
-        keyCode: 40
-      }); // down
+          case 7:
+            // pressing enter here nothing will happen
+            fireEvent.keyDown(input, {
+              keyCode: 13
+            }); // enter
 
-      fireEvent.keyDown(input, {
-        keyCode: 38
-      }); // up
+            fireEvent.keyDown(input, {
+              keyCode: 40
+            }); // down
 
-      fireEvent.keyDown(input, {
-        keyCode: 13
-      }); // enter
+            fireEvent.keyDown(input, {
+              keyCode: 40
+            }); // down
 
-      expect(onChange).toHaveBeenCalled();
-      expect(onChange).toHaveReturnedWith('aa!');
-      done();
-    }, 300);
-  });
-  test('Escape events should propagage if there is no drop', function (done) {
+            fireEvent.keyDown(input, {
+              keyCode: 38
+            }); // up
+
+            fireEvent.keyDown(input, {
+              keyCode: 13
+            }); // enter
+
+            expect(onChange).toHaveBeenCalled();
+            expect(onChange).toHaveReturnedWith('aa!');
+
+          case 14:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  })));
+  test('Escape events should propagage if there is no drop', function () {
     var callback = jest.fn();
 
     var _render5 = render(React.createElement(Grommet, null, React.createElement(Keyboard, {
       onEsc: callback
     }, React.createElement(MaskedInput, {
-      "data-testid": "test-masked-input",
+      "data-testid": "test-input",
       id: "item",
       name: "item"
     })))),
         getByTestId = _render5.getByTestId;
 
-    fireEvent.change(getByTestId('test-masked-input'), {
+    fireEvent.change(getByTestId('test-input'), {
       target: {
         value: ' '
       }
     });
-    setTimeout(function () {
-      fireEvent.keyDown(getByTestId('test-masked-input'), {
-        key: 'Esc',
-        keyCode: 27,
-        which: 27
-      });
-      expect(callback).toBeCalled();
-      done();
-    }, 50);
+    fireEvent.keyDown(getByTestId('test-input'), {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27
+    });
+    expect(callback).toBeCalled();
   });
-  test('next and previous without options', function (done) {
+  test('next and previous without options', function () {
     var onChange = jest.fn();
 
     var _render6 = render(React.createElement(MaskedInput, {
@@ -187,193 +239,238 @@ describe('MaskedInput', function () {
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input');
     fireEvent.focus(input);
-    setTimeout(function () {
-      fireEvent.keyDown(input, {
-        keyCode: 40
-      });
-      fireEvent.keyDown(input, {
-        keyCode: 40
-      });
-      fireEvent.keyDown(input, {
-        keyCode: 38
-      });
-      fireEvent.keyDown(input, {
-        keyCode: 13
-      }); // enter
-
-      expect(onChange).not.toBeCalled();
-      expect(container.firstChild).toMatchSnapshot();
-      done();
-    }, 300);
-  });
-  test('event target props are available option via mouse', function (done) {
-    var onChangeMock = jest.fn(function (event) {
-      var _event$target = event.target,
-          value = _event$target.value,
-          id = _event$target.id,
-          name = _event$target.name;
-      return {
-        target: {
-          id: id,
-          value: value,
-          name: name
-        }
-      };
+    fireEvent.keyDown(input, {
+      keyCode: 40
     });
-
-    var _render7 = render(React.createElement(MaskedInput, {
-      "data-testid": "test-event-target-select-by-mouse",
-      plain: true,
-      size: "large",
-      id: "input-id",
-      name: "input-name",
-      mask: [{
-        length: [1, 2],
-        options: ['aa', 'bb'],
-        regexp: /^[ab][ab]$|^[ab]$/
-      }, {
-        fixed: '!'
-      }],
-      value: "",
-      onChange: onChangeMock
-    })),
-        getByTestId = _render7.getByTestId,
-        container = _render7.container;
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.focus(getByTestId('test-event-target-select-by-mouse'));
-    setTimeout(function () {
-      expectPortal('masked-input-drop__input-id').toMatchSnapshot();
-      fireEvent.click(getByText(document, 'aa'));
-      expect(container.firstChild).toMatchSnapshot();
-      expect(onChangeMock).toHaveBeenCalled();
-      expect(onChangeMock).toHaveReturnedWith(expect.objectContaining({
-        target: expect.objectContaining({
-          id: 'input-id',
-          name: 'input-name',
-          value: 'aa!'
-        })
-      }));
-      done();
-    }, 500);
-  });
-  test('event target props are available option via keyboard', function (done) {
-    var onChangeMock = jest.fn(function (event) {
-      var _event$target2 = event.target,
-          value = _event$target2.value,
-          id = _event$target2.id,
-          name = _event$target2.name;
-      return {
-        target: {
-          id: id,
-          value: value,
-          name: name
-        }
-      };
+    fireEvent.keyDown(input, {
+      keyCode: 40
     });
+    fireEvent.keyDown(input, {
+      keyCode: 38
+    });
+    fireEvent.keyDown(input, {
+      keyCode: 13
+    }); // enter
 
-    var _render8 = render(React.createElement(MaskedInput, {
-      "data-testid": "test-event-target-select-by-keyboard",
-      id: "input-id",
-      name: "input-name",
-      size: "medium",
-      mask: [{
-        length: [1, 2],
-        options: ['aa', 'bb'],
-        regexp: /^[ab][ab]$|^[ab]$/
-      }, {
-        fixed: '!'
-      }],
-      value: "",
-      onChange: onChangeMock
-    })),
-        getByTestId = _render8.getByTestId,
-        container = _render8.container;
-
+    expect(onChange).not.toBeCalled();
     expect(container.firstChild).toMatchSnapshot();
-    var input = getByTestId('test-event-target-select-by-keyboard');
-    fireEvent.focus(input);
-    setTimeout(function () {
-      // pressing enter here nothing will happen
-      fireEvent.keyDown(input, {
-        keyCode: 13
-      }); // enter
-
-      expect(onChangeMock).not.toBeCalled();
-      fireEvent.keyDown(input, {
-        keyCode: 40
-      }); // down
-
-      fireEvent.keyDown(input, {
-        keyCode: 40
-      }); // down
-
-      fireEvent.keyDown(input, {
-        keyCode: 38
-      }); // up
-
-      fireEvent.keyDown(input, {
-        keyCode: 13
-      }); // enter
-
-      expect(onChangeMock).toBeCalled();
-      expect(onChangeMock).toBeCalledTimes(1);
-      expect(onChangeMock).toHaveReturnedWith(expect.objectContaining({
-        target: expect.objectContaining({
-          id: 'input-id',
-          name: 'input-name',
-          value: 'aa!'
-        })
-      }));
-      done();
-    }, 300);
   });
-  test('applies custom global.hover theme to options', function (done) {
-    var customTheme = {
-      global: {
-        hover: {
-          background: {
-            color: 'lightgreen'
-          },
-          color: {
-            dark: 'lightgrey',
-            light: 'brand'
-          }
+  test('event target props are available option via mouse',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee4() {
+    var onChangeMock, _render7, getByTestId, container;
+
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            onChangeMock = jest.fn(function (event) {
+              var _event$target = event.target,
+                  value = _event$target.value,
+                  id = _event$target.id,
+                  name = _event$target.name;
+              return {
+                target: {
+                  id: id,
+                  value: value,
+                  name: name
+                }
+              };
+            });
+            _render7 = render(React.createElement(MaskedInput, {
+              "data-testid": "test-input",
+              plain: true,
+              size: "large",
+              id: "item",
+              name: "item",
+              mask: [{
+                length: [1, 2],
+                options: ['aa', 'bb'],
+                regexp: /^[ab][ab]$|^[ab]$/
+              }, {
+                fixed: '!'
+              }],
+              value: "",
+              onChange: onChangeMock
+            })), getByTestId = _render7.getByTestId, container = _render7.container;
+            expect(container.firstChild).toMatchSnapshot();
+            fireEvent.focus(getByTestId('test-input'));
+            _context4.next = 6;
+            return waitForElement(function () {
+              return screen.getByText('aa');
+            });
+
+          case 6:
+            expectPortal('masked-input-drop__item').toMatchSnapshot();
+            fireEvent.click(getByText(document, 'aa'));
+            expect(container.firstChild).toMatchSnapshot();
+            expect(onChangeMock).toHaveBeenCalled();
+            expect(onChangeMock).toHaveReturnedWith(expect.objectContaining({
+              target: expect.objectContaining({
+                id: 'item',
+                name: 'item',
+                value: 'aa!'
+              })
+            }));
+
+          case 11:
+          case "end":
+            return _context4.stop();
         }
       }
-    };
-    var onChange = jest.fn(function (event) {
-      return event.target.value;
-    });
+    }, _callee4);
+  })));
+  test('event target props are available option via keyboard',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee5() {
+    var onChangeMock, _render8, getByTestId, container, input;
 
-    var _render9 = render(React.createElement(Grommet, {
-      theme: customTheme
-    }, React.createElement(MaskedInput, {
-      "data-testid": "test-global-hover-theme",
-      plain: true,
-      size: "large",
-      id: "global-hover-theme",
-      name: "global-hover-theme",
-      mask: [{
-        length: [1, 2],
-        options: ['aa', 'bb', 'cc'],
-        regexp: /^[ab][ab]$|^[ab]$/
-      }, {
-        fixed: '!'
-      }],
-      value: "",
-      onChange: onChange
-    }))),
-        getByTestId = _render9.getByTestId,
-        container = _render9.container;
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            onChangeMock = jest.fn(function (event) {
+              var _event$target2 = event.target,
+                  value = _event$target2.value,
+                  id = _event$target2.id,
+                  name = _event$target2.name;
+              return {
+                target: {
+                  id: id,
+                  value: value,
+                  name: name
+                }
+              };
+            });
+            _render8 = render(React.createElement(MaskedInput, {
+              "data-testid": "test-input",
+              id: "item",
+              name: "item",
+              size: "medium",
+              mask: [{
+                length: [1, 2],
+                options: ['aa', 'bb'],
+                regexp: /^[ab][ab]$|^[ab]$/
+              }, {
+                fixed: '!'
+              }],
+              value: "",
+              onChange: onChangeMock
+            })), getByTestId = _render8.getByTestId, container = _render8.container;
+            expect(container.firstChild).toMatchSnapshot();
+            input = getByTestId('test-input');
+            fireEvent.focus(input);
+            _context5.next = 7;
+            return waitForElement(function () {
+              return screen.getByText('aa');
+            });
 
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.focus(getByTestId('test-global-hover-theme'));
-    setTimeout(function () {
-      var optionButton = getByText(document, 'bb').closest('button');
-      fireEvent.mouseOver(optionButton);
-      expect(optionButton).toMatchSnapshot();
-      done();
-    }, 500);
-  });
+          case 7:
+            // pressing enter here nothing will happen
+            fireEvent.keyDown(input, {
+              keyCode: 13
+            }); // enter
+
+            expect(onChangeMock).not.toBeCalled();
+            fireEvent.keyDown(input, {
+              keyCode: 40
+            }); // down
+
+            fireEvent.keyDown(input, {
+              keyCode: 40
+            }); // down
+
+            fireEvent.keyDown(input, {
+              keyCode: 38
+            }); // up
+
+            fireEvent.keyDown(input, {
+              keyCode: 13
+            }); // enter
+
+            expect(onChangeMock).toBeCalled();
+            expect(onChangeMock).toBeCalledTimes(1);
+            expect(onChangeMock).toHaveReturnedWith(expect.objectContaining({
+              target: expect.objectContaining({
+                id: 'item',
+                name: 'item',
+                value: 'aa!'
+              })
+            }));
+
+          case 16:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  })));
+  test('applies custom global.hover theme to options',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee6() {
+    var customTheme, onChange, _render9, getByTestId, container, optionButton;
+
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            customTheme = {
+              global: {
+                hover: {
+                  background: {
+                    color: 'lightgreen'
+                  },
+                  color: {
+                    dark: 'lightgrey',
+                    light: 'brand'
+                  }
+                }
+              }
+            };
+            onChange = jest.fn(function (event) {
+              return event.target.value;
+            });
+            _render9 = render(React.createElement(Grommet, {
+              theme: customTheme
+            }, React.createElement(MaskedInput, {
+              "data-testid": "test-input",
+              plain: true,
+              size: "large",
+              id: "item",
+              name: "item",
+              mask: [{
+                length: [1, 2],
+                options: ['aa', 'bb', 'cc'],
+                regexp: /^[ab][ab]$|^[ab]$/
+              }, {
+                fixed: '!'
+              }],
+              value: "",
+              onChange: onChange
+            }))), getByTestId = _render9.getByTestId, container = _render9.container;
+            expect(container.firstChild).toMatchSnapshot();
+            fireEvent.focus(getByTestId('test-input'));
+            _context6.next = 7;
+            return waitForElement(function () {
+              return screen.getByText('aa');
+            });
+
+          case 7:
+            optionButton = getByText(document, 'bb').closest('button');
+            fireEvent.mouseOver(optionButton);
+            expect(optionButton).toMatchSnapshot();
+
+          case 10:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  })));
 });
