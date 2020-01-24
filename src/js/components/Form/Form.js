@@ -146,7 +146,7 @@ const Form = forwardRef(
             errors,
             get: name => value[name],
             messages,
-            set: (name, nextValue) => this.update(name, nextValue),
+            set: (name, nextValue) => update(name, nextValue),
             touched,
             update,
             value,
