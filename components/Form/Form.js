@@ -5,100 +5,127 @@ exports.Form = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _defaultProps = require("../../default-props");
-
 var _FormContext = require("./FormContext");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var updateReducer = function updateReducer(name, data, error, validations) {
-  return function (state) {
-    var errors = state.errors,
-        touched = state.touched,
-        value = state.value;
-
-    var nextValue = _extends({}, value);
-
-    nextValue[name] = data;
-
-    var nextTouched = _extends({}, touched);
-
-    nextTouched[name] = true;
-
-    var nextErrors = _extends({}, errors);
-
-    if (errors[name]) {
-      var nextError = error || validations[name] && validations[name](data, nextValue);
-
-      if (nextError) {
-        nextErrors[name] = nextError;
-      } else {
-        delete nextErrors[name];
-      }
-    }
-
-    return {
-      value: nextValue,
-      errors: nextErrors,
-      touched: nextTouched
-    };
-  };
-};
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var defaultMessages = {
   invalid: 'invalid',
   required: 'required'
 };
+var defaultValue = {};
+var defaultErrors = {};
+var Form = (0, _react.forwardRef)(function (_ref, ref) {
+  var children = _ref.children,
+      _ref$errors = _ref.errors,
+      errorsProp = _ref$errors === void 0 ? defaultErrors : _ref$errors,
+      _ref$messages = _ref.messages,
+      messagesProp = _ref$messages === void 0 ? defaultMessages : _ref$messages,
+      onChange = _ref.onChange,
+      _onReset = _ref.onReset,
+      _onSubmit = _ref.onSubmit,
+      _ref$validate = _ref.validate,
+      validate = _ref$validate === void 0 ? 'submit' : _ref$validate,
+      _ref$value = _ref.value,
+      valueProp = _ref$value === void 0 ? defaultValue : _ref$value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "errors", "messages", "onChange", "onReset", "onSubmit", "validate", "value"]);
 
-var Form =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Form, _Component);
+  var _useState = (0, _react.useState)(valueProp),
+      value = _useState[0],
+      setValue = _useState[1];
 
-  function Form() {
-    var _this;
+  (0, _react.useEffect)(function () {
+    if (valueProp !== defaultValue) setValue(valueProp);
+  }, [valueProp]);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  var _useState2 = (0, _react.useState)(messagesProp),
+      messages = _useState2[0],
+      setMessages = _useState2[1];
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+  (0, _react.useEffect)(function () {
+    return setMessages(messagesProp);
+  }, [messagesProp]);
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      errors: {},
-      value: {},
-      touched: {}
+  var _useState3 = (0, _react.useState)(errorsProp || {}),
+      errors = _useState3[0],
+      setErrors = _useState3[1];
+
+  (0, _react.useEffect)(function () {
+    return setErrors(errorsProp || {});
+  }, [errorsProp]);
+
+  var _useState4 = (0, _react.useState)({}),
+      touched = _useState4[0],
+      setTouched = _useState4[1];
+
+  var validations = (0, _react.useRef)({});
+  (0, _react.useEffect)(function () {
+    if (onChange) onChange(value);
+  }, [onChange, value]);
+  (0, _react.useEffect)(function () {}, [value, errors]);
+  var update = (0, _react.useCallback)(function (name, data, error) {
+    setValue(function (prevValue) {
+      var nextValue = _extends({}, prevValue);
+
+      nextValue[name] = data;
+      setErrors(function (prevErrors) {
+        var nextErrors = _extends({}, prevErrors);
+
+        if (prevErrors[name]) {
+          var nextError = error || validations.current[name] && validations.current[name](data, nextValue);
+
+          if (nextError) {
+            nextErrors[name] = nextError;
+          } else {
+            delete nextErrors[name];
+          }
+        }
+
+        return nextErrors;
+      });
+      return nextValue;
     });
+    setTouched(function (prevTouched) {
+      var nextTouched = _extends({}, prevTouched);
 
-    _defineProperty(_assertThisInitialized(_this), "validations", {});
+      nextTouched[name] = true;
+      return nextTouched;
+    });
+  }, []);
+  return _react["default"].createElement("form", _extends({
+    ref: ref
+  }, rest, {
+    onReset: function onReset(event) {
+      setValue(defaultValue);
+      setErrors({});
+      setTouched({});
 
-    _defineProperty(_assertThisInitialized(_this), "onSubmit", function (event) {
-      var onSubmit = _this.props.onSubmit;
-      var _this$state = _this.state,
-          errors = _this$state.errors,
-          value = _this$state.value; // Don't submit the form via browser form action. We don't want it
+      if (_onReset) {
+        event.persist(); // extract from React's synthetic event pool
+
+        var adjustedEvent = event;
+        adjustedEvent.value = defaultValue;
+
+        _onReset(adjustedEvent);
+      }
+    },
+    onSubmit: function onSubmit(event) {
+      // Don't submit the form via browser form action. We don't want it
       // if the validation fails. And, we assume a javascript action handler
       // otherwise.
-
       event.preventDefault();
 
       var nextErrors = _extends({}, errors);
 
-      Object.keys(_this.validations).forEach(function (name) {
-        var validate = _this.validations[name];
-        var error = validate && validate(value[name], value);
+      Object.keys(validations.current).forEach(function (name) {
+        var validation = validations.current[name];
+        var error = validation && validation(value[name], value);
 
         if (error) {
           nextErrors[name] = error;
@@ -107,152 +134,48 @@ function (_Component) {
         }
       });
 
-      if (Object.keys(nextErrors).length === 0 && onSubmit) {
+      if (Object.keys(nextErrors).length === 0 && _onSubmit) {
         event.persist(); // extract from React's synthetic event pool
 
         var adjustedEvent = event;
         adjustedEvent.value = value;
-        onSubmit(adjustedEvent);
+
+        _onSubmit(adjustedEvent);
       } else {
-        _this.setState({
-          errors: nextErrors
-        });
+        setErrors(nextErrors);
       }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onReset", function (event) {
-      var _this$props = _this.props,
-          onChange = _this$props.onChange,
-          onReset = _this$props.onReset;
-      var value = {};
-
-      _this.setState({
-        errors: {},
-        value: value,
-        touched: {}
-      }, function () {
-        if (onReset) {
-          event.persist(); // extract from React's synthetic event pool
-
-          var adjustedEvent = event;
-          adjustedEvent.value = value;
-          onReset(adjustedEvent);
-        }
-
-        if (onChange) {
-          onChange(value);
-        }
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onBlur", function (name) {
-      var validate = _this.props.validate;
-
-      if (validate === 'blur' && _this.validations[name]) {
-        var _this$state2 = _this.state,
-            errors = _this$state2.errors,
-            value = _this$state2.value;
-
-        var nextErrors = _extends({}, errors);
-
-        var error = _this.validations[name](value[name], value);
-
-        if (error) {
-          nextErrors[name] = error;
-        } else {
-          delete nextErrors[name];
-        }
-
-        _this.setState({
-          errors: nextErrors
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "update", function (name, data, error) {
-      _this.setState(updateReducer(name, data, error, _this.validations), function () {
-        var onChange = _this.props.onChange;
-        var value = _this.state.value;
-
-        if (onChange) {
-          onChange(value);
-        }
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "addValidation", function (name, validate) {
-      _this.validations[name] = validate;
-    });
-
-    return _this;
-  }
-
-  Form.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var value = nextProps.value,
-        errors = nextProps.errors,
-        messages = nextProps.messages;
-    var stateValue = prevState.value,
-        stateErrors = prevState.errors,
-        priorValue = prevState.priorValue,
-        priorErrors = prevState.priorErrors,
-        priorMessages = prevState.priorMessages;
-
-    if (!priorValue || value !== priorValue || errors !== priorErrors || messages !== priorMessages) {
-      return {
-        value: value !== priorValue ? value : stateValue,
-        priorValue: value,
-        errors: (errors !== priorErrors ? errors : stateErrors) || {},
-        priorErrors: errors,
-        messages: _extends({}, defaultMessages, {}, messages),
-        priorMessages: messages
-      };
     }
+  }), _react["default"].createElement(_FormContext.FormContext.Provider, {
+    value: {
+      addValidation: function addValidation(name, validation) {
+        validations.current[name] = validation;
+      },
+      onBlur: validate === 'blur' ? function (name) {
+        if (validations.current[name]) {
+          setErrors(function (prevErrors) {
+            var nextErrors = _extends({}, prevErrors);
 
-    return null;
-  };
+            var error = validations.current[name](value[name], value);
 
-  var _proto = Form.prototype;
+            if (error) {
+              nextErrors[name] = error;
+            } else {
+              delete nextErrors[name];
+            }
 
-  _proto.render = function render() {
-    var _this$props2 = this.props,
-        children = _this$props2.children,
-        validate = _this$props2.validate,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["children", "validate"]);
-
-    delete rest.messages;
-    delete rest.theme;
-    delete rest.value;
-    var _this$state3 = this.state,
-        errors = _this$state3.errors,
-        touched = _this$state3.touched,
-        value = _this$state3.value,
-        messages = _this$state3.messages;
-    return _react["default"].createElement("form", _extends({}, rest, {
-      onReset: this.onReset,
-      onSubmit: this.onSubmit
-    }), _react["default"].createElement(_FormContext.FormContext.Provider, {
-      value: {
-        addValidation: this.addValidation,
-        onBlur: validate === 'blur' ? this.onBlur : undefined,
-        errors: errors,
-        messages: messages,
-        touched: touched,
-        update: this.update,
-        value: value
-      }
-    }, children));
-  };
-
-  return Form;
-}(_react.Component);
-
-_defineProperty(Form, "defaultProps", {
-  messages: defaultMessages,
-  validate: 'submit',
-  value: {}
+            return nextErrors;
+          });
+        }
+      } : undefined,
+      errors: errors,
+      messages: messages,
+      touched: touched,
+      update: update,
+      value: value
+    }
+  }, children));
 });
-
-Object.setPrototypeOf(Form.defaultProps, _defaultProps.defaultProps);
+Form.displayName = 'Form';
 var FormDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -261,4 +184,3 @@ if (process.env.NODE_ENV !== 'production') {
 
 var FormWrapper = FormDoc || Form;
 exports.Form = FormWrapper;
-FormWrapper.displayName = 'Form';
