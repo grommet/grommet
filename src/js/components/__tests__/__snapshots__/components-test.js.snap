@@ -2081,7 +2081,81 @@ string",
 <DropButton dropContent={...} />",
   },
   "Footer": [Function],
-  "Form": [Function],
+  "Form": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js",
+      },
+    ],
+    "description": "A form that manages state for its fields.",
+    "intrinsicElement": "form",
+    "name": "Form",
+    "properties": Array [
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing any errors in the data. They keys should
+        match the keys in the value object.",
+        "format": "{
+
+}",
+        "name": "errors",
+      },
+      Object {
+        "defaultValue": Object {
+          "invalid": "invalid",
+          "required": "required",
+        },
+        "description": "Custom validation messages.",
+        "format": "{
+  invalid: string,
+  required: string
+}",
+        "name": "messages",
+      },
+      Object {
+        "description": "Function that will be called when any fields are updated.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Function that will be called when the form is submitted. The
+      single argument is an event containing the latest value object
+      via \`event.value\`.",
+        "format": "function",
+        "name": "onSubmit",
+      },
+      Object {
+        "description": "Function that will be called when the form is reset. The
+      single argument is the event provided by react.",
+        "format": "function",
+        "name": "onReset",
+      },
+      Object {
+        "defaultValue": "submit",
+        "description": "When to perform validation",
+        "format": "blur
+submit",
+        "name": "validate",
+      },
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing all of the data in the form.",
+        "format": "{
+
+}",
+        "name": "value",
+      },
+    ],
+    "usage": "import { Form } from 'grommet';
+<Form />",
+  },
   "FormContext": Object {
     "$$typeof": Symbol(react.context),
     "Consumer": Object {
