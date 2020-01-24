@@ -1,22 +1,34 @@
-import React from 'react';
-import { compose } from 'recompose';
-
-import { withFocus, withForwardRef } from '../hocs';
+import React, { forwardRef, useState } from 'react';
 
 import { StyledRangeInput } from './StyledRangeInput';
 
-const RangeInput = ({ forwardRef, ...rest }) => (
-  <StyledRangeInput {...rest} ref={forwardRef} type="range" />
-);
+const RangeInput = forwardRef(({ onFocus, onBlur, ...rest }, ref) => {
+  const [focus, setFocus] = useState();
+  return (
+    <StyledRangeInput
+      ref={ref}
+      focus={focus}
+      {...rest}
+      onFocus={event => {
+        setFocus(true);
+        if (onFocus) onFocus(event);
+      }}
+      onBlur={event => {
+        setFocus(false);
+        if (onBlur) onBlur(event);
+      }}
+      type="range"
+    />
+  );
+});
+
+RangeInput.displayName = 'RangeInput';
 
 let RangeInputDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   RangeInputDoc = require('./doc').doc(RangeInput);
 }
-const RangeInputWrapper = compose(
-  withFocus(),
-  withForwardRef,
-)(RangeInputDoc || RangeInput);
+const RangeInputWrapper = RangeInputDoc || RangeInput;
 
 export { RangeInputWrapper as RangeInput };
