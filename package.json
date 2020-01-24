@@ -93,6 +93,7 @@
     "bundlesize": "^0.18.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
+    "core-js": "^3.6.4",
     "cross-env": "^5.1.6",
     "del": "^5.1.0",
     "eslint": "^6.2.2",
