@@ -8,7 +8,7 @@ import {
   Grommet,
   Form,
   FormField,
-  // MaskedInput,
+  MaskedInput,
   RadioButtonGroup,
   RangeInput,
   Select,
@@ -28,7 +28,7 @@ const Example = () => (
           <FormField label="Name" name="name" required>
             <TextInput name="name" />
           </FormField>
-          {/* <FormField label="Email" name="email" required>
+          <FormField label="Email" name="email" required>
             <MaskedInput
               name="email"
               mask={[
@@ -39,7 +39,7 @@ const Example = () => (
                 { regexp: /^[\w]+$/, placeholder: 'com' },
               ]}
             />
-          </FormField> */}
+          </FormField>
           <FormField name="subscribe" pad>
             <CheckBox name="subscribe" label="Subscribe?" />
           </FormField>

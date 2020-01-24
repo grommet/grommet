@@ -12,6 +12,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 
 import {
@@ -118,25 +119,38 @@ const MaskedInput = forwardRef(
       focus: focusProp,
       id,
       mask = defaultMask,
+      name,
       onBlur,
       onChange,
       onFocus,
       onKeyDown,
       placeholder,
       plain,
-      value,
+      value: valueProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const inputRef = useRef();
-    const dropRef = useRef();
-    const [valueParts, setValueParts] = useState(parseValue(mask, value));
+    const formContext = useContext(FormContext);
 
+    const [value, setValue] = useState(
+      valueProp !== undefined
+        ? valueProp
+        : (formContext && name && formContext.get(name)) || '',
+    );
+    useEffect(() => setValue(valueProp), [valueProp]);
+    useEffect(() => {
+      if (formContext && name) setValue(formContext.get(name) || '');
+    }, [formContext, name]);
+
+    const [valueParts, setValueParts] = useState(parseValue(mask, value));
     useEffect(() => {
       setValueParts(parseValue(mask, value));
     }, [mask, value]);
+
+    const inputRef = useRef();
+    const dropRef = useRef();
 
     const [focus, setFocus] = useState(focusProp);
     const [activeMaskIndex, setActiveMaskIndex] = useState();
@@ -173,7 +187,7 @@ const MaskedInput = forwardRef(
       return undefined;
     }, [activeMaskIndex, focus, mask, ref, valueParts]);
 
-    const setValue = useCallback(
+    const setInputValue = useCallback(
       nextValue => {
         // Calling set value function directly on input because React library
         // overrides setter `event.target.value =` and loses original event
@@ -197,10 +211,11 @@ const MaskedInput = forwardRef(
         // Align with the mask.
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
-        if (value !== nextValue) setValue(nextValue);
+        if (value !== nextValue) setInputValue(nextValue);
+        if (formContext && name) formContext.set(name, event.target.value);
         if (onChange) onChange(event);
       },
-      [mask, onChange, setValue, value],
+      [formContext, mask, name, onChange, setInputValue, value],
     );
 
     const onOption = useCallback(
@@ -218,11 +233,11 @@ const MaskedInput = forwardRef(
           index += 1;
         }
         const nextValue = nextValueParts.map(part => part.part).join('');
-        setValue(nextValue);
+        setInputValue(nextValue);
         // restore focus to input
         (ref || inputRef).current.focus();
       },
-      [activeMaskIndex, mask, ref, setValue, valueParts],
+      [activeMaskIndex, mask, ref, setInputValue, valueParts],
     );
 
     const onNextOption = useCallback(
@@ -292,8 +307,9 @@ const MaskedInput = forwardRef(
           onKeyDown={onKeyDown}
         >
           <StyledMaskedInput
-            id={id}
             ref={ref || inputRef}
+            id={id}
+            name={name}
             autoComplete="off"
             plain={plain}
             placeholder={placeholder || renderPlaceholder()}
