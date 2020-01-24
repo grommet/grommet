@@ -3520,10 +3520,6 @@ vertical",
         "name": "max",
       },
       Object {
-        "defaultValue": Object {
-          "lower": "Lower Bounds",
-          "upper": "Upper Bounds",
-        },
         "description": "Custom messages used by screen readers for accessibility.",
         "format": "{
   lower: string,
@@ -3584,7 +3580,6 @@ string",
         "name": "step",
       },
       Object {
-        "defaultValue": Array [],
         "description": "The current values.",
         "format": "[number]",
         "name": "values",
