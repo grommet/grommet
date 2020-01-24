@@ -42,6 +42,8 @@ const BORDER_SHAPE = PropTypes.shape({
     'left',
     'bottom',
     'right',
+    'start',
+    'end',
     'horizontal',
     'vertical',
     'all',
@@ -166,6 +168,8 @@ export const doc = Box => {
         'left',
         'bottom',
         'right',
+        'start',
+        'end',
         'horizontal',
         'vertical',
         'all',
@@ -298,6 +302,10 @@ export const doc = Box => {
           PropTypes.oneOf(PAD_SIZES),
           PropTypes.string,
         ]),
+        end: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
         horizontal: PropTypes.oneOfType([
           PropTypes.oneOf(PAD_SIZES),
           PropTypes.string,
@@ -307,6 +315,10 @@ export const doc = Box => {
           PropTypes.string,
         ]),
         right: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        start: PropTypes.oneOfType([
           PropTypes.oneOf(PAD_SIZES),
           PropTypes.string,
         ]),

@@ -11,6 +11,14 @@ import { Grommet } from 'grommet';
 
 ## Properties
 
+**dir**
+
+Layout direction for right to left contexts
+
+```
+rtl
+```
+
 **full**
 
 Whether to take the whole viewport.

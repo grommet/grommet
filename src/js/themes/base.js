@@ -490,7 +490,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       resize: {
         border: {
           color: 'border',
-          side: 'right',
+          side: 'end',
         },
       },
     },
@@ -536,7 +536,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           light: 'dark-3',
         },
         margin: {
-          left: 'small',
+          start: 'small',
         },
       },
       label: {

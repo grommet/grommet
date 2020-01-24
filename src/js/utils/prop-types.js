@@ -37,6 +37,7 @@ export const marginProp = PropTypes.oneOfType([
       PropTypes.oneOf(MARGIN_SIZES),
       PropTypes.string,
     ]),
+    end: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
     horizontal: PropTypes.oneOfType([
       PropTypes.oneOf(MARGIN_SIZES),
       PropTypes.string,
@@ -46,6 +47,10 @@ export const marginProp = PropTypes.oneOfType([
       PropTypes.string,
     ]),
     right: PropTypes.oneOfType([
+      PropTypes.oneOf(MARGIN_SIZES),
+      PropTypes.string,
+    ]),
+    start: PropTypes.oneOfType([
       PropTypes.oneOf(MARGIN_SIZES),
       PropTypes.string,
     ]),
