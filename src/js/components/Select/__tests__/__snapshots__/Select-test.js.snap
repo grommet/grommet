@@ -536,6 +536,7 @@ exports[`Select basic 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -4487,6 +4488,7 @@ exports[`Select renders default icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -5383,6 +5385,7 @@ exports[`Select renders without icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
