@@ -4,12 +4,17 @@ import { storiesOf } from '@storybook/react';
 import { Gremlin, IceCream } from 'grommet-icons';
 import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
 
+import { DiagramConnectionAnchor, DiagramConnectionType } from '../../index';
+
+const anchor: DiagramConnectionAnchor = 'horizontal';
+const type: DiagramConnectionType = 'curved';
+
 const connection = {
   id: 'shimi',
-  anchor: 'horizontal',
+  anchor,
   color: 'accent-1',
   thickness: 'xsmall',
-  type: 'curved',
+  type,
   toTarget: 'yummy',
   fromTarget: 'gremlin',
   round: true,
