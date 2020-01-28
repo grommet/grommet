@@ -123,7 +123,21 @@ class FormFieldContent extends Component {
     const { border } = formField;
 
     let normalizedError = error;
-    let contents = children;
+    let contents =
+      (border &&
+        children &&
+        Children.map(children, child => {
+          if (child) {
+            return cloneElement(child, {
+              plain: true,
+              focusIndicator: false,
+              onBlur,
+              onFocus,
+            });
+          }
+          return child;
+        })) ||
+      children;
     let onFieldBlur;
 
     if (context) {
@@ -138,7 +152,7 @@ class FormFieldContent extends Component {
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
       contents =
-        children || this.renderChildren(value, !!normalizedError, update);
+        contents || this.renderChildren(value, !!normalizedError, update);
       if (onContextBlur) {
         onFieldBlur = () => onContextBlur(name);
       }
@@ -161,19 +175,6 @@ class FormFieldContent extends Component {
     let outerStyle = style;
 
     if (border) {
-      const normalizedChildren = children
-        ? Children.map(children, child => {
-            if (child) {
-              return cloneElement(child, {
-                plain: true,
-                focusIndicator: false,
-                onBlur,
-                onFocus,
-              });
-            }
-            return child;
-          })
-        : contents;
       contents = (
         <Box
           ref={ref => {
@@ -189,7 +190,7 @@ class FormFieldContent extends Component {
               : undefined
           }
         >
-          {normalizedChildren}
+          {contents}
         </Box>
       );
 

@@ -146,7 +146,9 @@ const Form = forwardRef(
                   }
                 : undefined,
             errors,
+            get: name => value[name],
             messages,
+            set: (name, nextValue) => update(name, nextValue),
             touched,
             update,
             value,

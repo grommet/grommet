@@ -4,6 +4,7 @@ import { ThemeContext } from 'styled-components';
 import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { FormContext } from '../Form/FormContext';
 
 import {
   StyledCheckBox,
@@ -28,7 +29,7 @@ const stopLabelClick = event => {
 const CheckBox = forwardRef(
   (
     {
-      checked,
+      checked: checkedProp,
       disabled,
       focus: focusProp,
       id,
@@ -45,8 +46,21 @@ const CheckBox = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const formContext = useContext(FormContext);
+
+    const [checked, setChecked] = useState(
+      checkedProp !== undefined
+        ? checkedProp
+        : (formContext && name && formContext.get(name)) || '',
+    );
+    useEffect(() => setChecked(checkedProp), [checkedProp]);
+    useEffect(() => {
+      if (formContext && name) setChecked(formContext.get(name) || '');
+    }, [formContext, name]);
+
     const [focus, setFocus] = useState(focusProp);
     useEffect(() => setFocus(focusProp), [focusProp]);
+
     useEffect(() => {
       if (checked && indeterminate) {
         console.warn(
@@ -152,7 +166,6 @@ const CheckBox = forwardRef(
             name,
             checked,
             disabled,
-            onChange,
           })}
           {...themeableProps}
           onFocus={event => {
@@ -162,6 +175,12 @@ const CheckBox = forwardRef(
           onBlur={event => {
             setFocus(false);
             if (onBlur) onBlur(event);
+          }}
+          onChange={event => {
+            if (formContext && name) {
+              formContext.set(name, event.target.checked);
+            }
+            if (onChange) onChange(event);
           }}
         />
         {visual}
