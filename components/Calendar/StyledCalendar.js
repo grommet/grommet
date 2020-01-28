@@ -34,8 +34,10 @@ Object.setPrototypeOf(StyledCalendar.defaultProps, _defaultProps.defaultProps);
 var StyledWeeksContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
   componentId: "sc-1y4xhmp-1"
-})(["overflow:hidden;", ";"], function (props) {
+})(["overflow:hidden;", ";outline:none;", ";"], function (props) {
   return "height: " + (0, _utils.parseMetricToNum)(props.theme.calendar[props.sizeProp].daySize) * 6 + "px;";
+}, function (props) {
+  return props.focus && !props.plain && _utils.focusStyle;
 });
 
 exports.StyledWeeksContainer = StyledWeeksContainer;

@@ -55,7 +55,7 @@ export var sameDayOrBefore = function sameDayOrBefore(date1, date2) {
 };
 export var daysApart = function daysApart(date1, date2) {
   return Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
-}; // betweenDates takes and array of two elements and checks if the
+}; // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
 
@@ -79,7 +79,7 @@ export var betweenDates = function betweenDates(date, dates) {
   }
 
   return result;
-}; // withinDates takes and array of string dates or 2 element arrays and
+}; // withinDates takes an array of string dates or 2 element arrays and
 // checks whether the supplied date matches any string or is between
 // any dates in arrays.
 // returns 2 if exact match, 1 if between, undefined otherwise
@@ -102,64 +102,6 @@ export var withinDates = function withinDates(date, dates) {
       });
     } else if (sameDay(date, new Date(dates))) {
       result = 2;
-    }
-  }
-
-  return result;
-};
-export var updateDateRange = function updateDateRange(selectedDate, _ref) {
-  var date = _ref.date,
-      dates = _ref.dates,
-      previousSelectedDate = _ref.previousSelectedDate;
-  var result = {
-    previousSelectedDate: selectedDate
-  };
-
-  if (!dates) {
-    if (!date) {
-      result.date = selectedDate;
-    } else {
-      var priorDate = new Date(date);
-      var nextDate = new Date(selectedDate);
-
-      if (priorDate.getTime() < nextDate.getTime()) {
-        result.date = undefined;
-        result.dates = [[date, selectedDate]];
-      } else if (priorDate.getTime() > nextDate.getTime()) {
-        result.date = undefined;
-        result.dates = [[selectedDate, date]];
-      } else {
-        result.date = undefined;
-      }
-    }
-  } else {
-    var priorDates = dates[0].map(function (d) {
-      return new Date(d);
-    });
-    var previousDate = new Date(previousSelectedDate);
-
-    var _nextDate = new Date(selectedDate);
-
-    if (_nextDate.getTime() === priorDates[0].getTime()) {
-      result.dates = undefined;
-      var _dates$ = dates[0];
-      result.date = _dates$[1];
-    } else if (_nextDate.getTime() === priorDates[1].getTime()) {
-      result.dates = undefined;
-      var _dates$2 = dates[0];
-      result.date = _dates$2[0];
-    } else if (_nextDate.getTime() < previousDate.getTime()) {
-      if (_nextDate.getTime() < priorDates[0].getTime()) {
-        result.dates = [[selectedDate, dates[0][1]]];
-      } else if (_nextDate.getTime() > priorDates[0].getTime()) {
-        result.dates = [[dates[0][0], selectedDate]];
-      }
-    } else if (_nextDate.getTime() > previousDate.getTime()) {
-      if (_nextDate.getTime() > priorDates[1].getTime()) {
-        result.dates = [[dates[0][0], selectedDate]];
-      } else if (_nextDate.getTime() < priorDates[1].getTime()) {
-        result.dates = [[selectedDate, dates[0][1]]];
-      }
     }
   }
 
