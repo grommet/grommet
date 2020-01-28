@@ -16,7 +16,7 @@ import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { AnnounceContext } from '../../contexts';
-import { sizeStyle } from '../../utils';
+import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
 
 import {
   StyledTextInput,
@@ -90,6 +90,8 @@ const TextInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const inputRef = useRef();
     const dropRef = useRef();
+    const suggestionsRef = useRef();
+    const suggestionRefs = {};
     const [empty, setEmpty] = useState(true);
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
@@ -142,66 +144,134 @@ const TextInput = forwardRef(
       if (messages.onSuggestionsClose) onSuggestionsClose();
     };
 
+    const onNextSuggestion = event => {
+      event.preventDefault();
+      const nextActiveIndex = Math.min(
+        activeSuggestionIndex + 1,
+        suggestions.length - 1,
+      );
+      const buttonNode = suggestionRefs[nextActiveIndex];
+      const optionsNode = suggestionsRef.current;
+
+      setActiveSuggestionIndex(nextActiveIndex);
+
+      if (
+        buttonNode &&
+        isNodeAfterScroll(buttonNode, optionsNode) &&
+        optionsNode.scrollTo
+      ) {
+        optionsNode.scrollTo(
+          0,
+          buttonNode.offsetTop -
+            (optionsNode.getBoundingClientRect().height -
+              buttonNode.getBoundingClientRect().height),
+        );
+      }
+    };
+
+    const onPreviousSuggestion = event => {
+      event.preventDefault();
+      const nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
+      const buttonNode = suggestionRefs[nextActiveIndex];
+      const optionsNode = suggestionsRef.current;
+
+      setActiveSuggestionIndex(nextActiveIndex);
+
+      if (
+        buttonNode &&
+        isNodeBeforeScroll(buttonNode, optionsNode) &&
+        optionsNode.scrollTo
+      ) {
+        optionsNode.scrollTo(0, buttonNode.offsetTop);
+      }
+    };
+
     const showStyledPlaceholder =
       placeholder && typeof placeholder !== 'string' && empty && !value;
 
     let drop;
     if (showDrop) {
       drop = (
-        <Drop
-          ref={dropRef}
-          id={id ? `text-input-drop__${id}` : undefined}
-          align={dropAlign}
-          responsive={false}
-          target={dropTarget || (ref || inputRef).current}
-          onClickOutside={closeDrop}
-          onEsc={closeDrop}
-          {...dropProps}
+        // keyboard access needed here in case user clicks
+        // and drags on scroll bar and focus shifts to drop
+        <Keyboard
+          onDown={event => onNextSuggestion(event)}
+          onUp={event => onPreviousSuggestion(event)}
+          onEnter={event => {
+            // we stole the focus, give it back
+            inputRef.current.focus();
+            closeDrop();
+            if (onSelect) {
+              const adjustedEvent = event;
+              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
+              onSelect(adjustedEvent);
+            }
+          }}
         >
-          <ContainerBox overflow="auto" dropHeight={dropHeight}>
-            <StyledSuggestions>
-              <InfiniteScroll items={suggestions} step={theme.select.step}>
-                {(suggestion, index) => {
-                  const plainLabel =
-                    typeof suggestion === 'object' &&
-                    typeof isValidElement(suggestion.label);
-                  return (
-                    <li key={`${stringLabel(suggestion)}-${index}`}>
-                      <Button
-                        active={
-                          activeSuggestionIndex === index ||
-                          selectedSuggestionIndex === index
-                        }
-                        fill
-                        hoverIndicator="background"
-                        onClick={event => {
-                          // we stole the focus, give it back
-                          inputRef.current.focus();
-                          closeDrop();
-                          if (onSelect) {
-                            event.persist();
-                            const adjustedEvent = event;
-                            adjustedEvent.suggestion = suggestion;
-                            adjustedEvent.target = (ref || inputRef).current;
-                            onSelect(adjustedEvent);
+          <Drop
+            ref={dropRef}
+            id={id ? `text-input-drop__${id}` : undefined}
+            align={dropAlign}
+            responsive={false}
+            target={dropTarget || (ref || inputRef).current}
+            onClickOutside={closeDrop}
+            onEsc={closeDrop}
+            {...dropProps}
+          >
+            <ContainerBox
+              ref={suggestionsRef}
+              overflow="auto"
+              dropHeight={dropHeight}
+            >
+              <StyledSuggestions>
+                <InfiniteScroll items={suggestions} step={theme.select.step}>
+                  {(suggestion, index) => {
+                    const plainLabel =
+                      typeof suggestion === 'object' &&
+                      typeof isValidElement(suggestion.label);
+                    return (
+                      <li key={`${stringLabel(suggestion)}-${index}`}>
+                        <Button
+                          active={
+                            activeSuggestionIndex === index ||
+                            selectedSuggestionIndex === index
                           }
-                        }}
-                      >
-                        {plainLabel ? (
-                          renderLabel(suggestion)
-                        ) : (
-                          <Box align="start" pad="small">
-                            {renderLabel(suggestion)}
-                          </Box>
-                        )}
-                      </Button>
-                    </li>
-                  );
-                }}
-              </InfiniteScroll>
-            </StyledSuggestions>
-          </ContainerBox>
-        </Drop>
+                          ref={r => {
+                            suggestionRefs[index] = r;
+                          }}
+                          fill
+                          hoverIndicator="background"
+                          onClick={event => {
+                            // we stole the focus, give it back
+                            inputRef.current.focus();
+                            closeDrop();
+                            if (onSelect) {
+                              event.persist();
+                              const adjustedEvent = event;
+                              adjustedEvent.suggestion = suggestion;
+                              adjustedEvent.target = (ref || inputRef).current;
+                              onSelect(adjustedEvent);
+                            }
+                          }}
+                          onMouseOver={() => setActiveSuggestionIndex(index)}
+                          onFocus={() => setActiveSuggestionIndex(index)}
+                        >
+                          {plainLabel ? (
+                            renderLabel(suggestion)
+                          ) : (
+                            <Box align="start" pad="small">
+                              {renderLabel(suggestion)}
+                            </Box>
+                          )}
+                        </Button>
+                      </li>
+                    );
+                  }}
+                </InfiniteScroll>
+              </StyledSuggestions>
+            </ContainerBox>
+          </Drop>
+        </Keyboard>
       );
     }
 
@@ -242,9 +312,7 @@ const TextInput = forwardRef(
             suggestions.length > 0 &&
             activeSuggestionIndex
               ? event => {
-                  event.preventDefault();
-                  const index = Math.max(activeSuggestionIndex - 1, 0);
-                  setActiveSuggestionIndex(index);
+                  onPreviousSuggestion(event);
                 }
               : undefined
           }
@@ -254,12 +322,7 @@ const TextInput = forwardRef(
                   if (!showDrop) {
                     openDrop();
                   } else {
-                    event.preventDefault();
-                    const index = Math.min(
-                      activeSuggestionIndex + 1,
-                      suggestions.length - 1,
-                    );
-                    setActiveSuggestionIndex(index);
+                    onNextSuggestion(event);
                   }
                 }
               : undefined
