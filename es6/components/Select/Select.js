@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { isValidElement, useState, useRef, useEffect } from 'react';
+import React, { isValidElement, useContext, useState, useRef, useEffect } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 import { controlBorderStyle, normalizeColor } from '../../utils';
@@ -10,6 +10,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
+import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 import { withForwardRef } from '../hocs';
 import { SelectContainer } from './SelectContainer';
@@ -46,6 +47,7 @@ var Select = function Select(props) {
       labelKey = props.labelKey,
       margin = props.margin,
       messages = props.messages,
+      name = props.name,
       onChange = props.onChange,
       onClose = props.onClose,
       onMore = props.onMore,
@@ -57,15 +59,27 @@ var Select = function Select(props) {
       selected = props.selected,
       size = props.size,
       theme = props.theme,
-      value = props.value,
+      valueProp = props.value,
       valueLabel = props.valueLabel,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "onChange", "onClose", "onMore", "onOpen", "open", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "name", "onChange", "onClose", "onMore", "onOpen", "open", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
 
   var inputRef = useRef();
+  var formContext = useContext(FormContext);
 
-  var _useState = useState(propOpen),
-      open = _useState[0],
-      setOpen = _useState[1];
+  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  useEffect(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  useEffect(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
+
+  var _useState2 = useState(propOpen),
+      open = _useState2[0],
+      setOpen = _useState2[1];
 
   useEffect(function () {
     setOpen(propOpen);
@@ -91,6 +105,8 @@ var Select = function Select(props) {
     if (closeOnChange) {
       onRequestClose();
     }
+
+    if (formContext && name) formContext.set(name, event.value);
 
     if (onChange) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -205,6 +221,7 @@ var Select = function Select(props) {
   }, selectValue || React.createElement(SelectTextInput, _extends({
     a11yTitle: a11yTitle && "" + a11yTitle + (typeof value === 'string' ? ", " + value : ''),
     id: id ? id + "__input" : undefined,
+    name: name,
     ref: inputRef
   }, rest, {
     tabIndex: "-1",

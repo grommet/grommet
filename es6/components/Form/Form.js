@@ -157,7 +157,13 @@ var Form = forwardRef(function (_ref, ref) {
         }
       } : undefined,
       errors: errors,
+      get: function get(name) {
+        return value[name];
+      },
       messages: messages,
+      set: function set(name, nextValue) {
+        return update(name, nextValue);
+      },
       touched: touched,
       update: update,
       value: value

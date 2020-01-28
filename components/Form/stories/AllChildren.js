@@ -4,43 +4,16 @@ var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
-var _utils = require("grommet/utils");
-
 var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var customFormFieldTheme = {
-  global: {
-    font: {
-      size: '16px'
-    },
-    input: {
-      weight: 400
-    }
-  },
-  formField: {
-    label: {
-      color: 'dark-3',
-      size: 'small',
-      margin: {
-        vertical: 'none',
-        bottom: 'small',
-        horizontal: 'none'
-      },
-      weight: 600
-    },
-    border: false,
-    margin: {
-      bottom: 'small'
-    }
-  }
-};
-
-var CustomFormField = function CustomFormField() {
+var Example = function Example() {
   return _react["default"].createElement(_grommet.Grommet, {
     full: true,
-    theme: (0, _utils.deepMerge)(_grommet.grommet, customFormFieldTheme)
+    theme: _themes.grommet
   }, _react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
@@ -62,12 +35,34 @@ var CustomFormField = function CustomFormField() {
   }, _react["default"].createElement(_grommet.TextInput, {
     name: "name"
   })), _react["default"].createElement(_grommet.FormField, {
-    name: "subscribe"
+    label: "Email",
+    name: "email",
+    required: true
+  }, _react["default"].createElement(_grommet.MaskedInput, {
+    name: "email",
+    mask: [{
+      regexp: /^[\w\-_.]+$/,
+      placeholder: 'example'
+    }, {
+      fixed: '@'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'my'
+    }, {
+      fixed: '.'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'com'
+    }]
+  })), _react["default"].createElement(_grommet.FormField, {
+    name: "subscribe",
+    pad: true
   }, _react["default"].createElement(_grommet.CheckBox, {
     name: "subscribe",
     label: "Subscribe?"
   })), _react["default"].createElement(_grommet.FormField, {
-    name: "ampm"
+    name: "ampm",
+    pad: true
   }, _react["default"].createElement(_grommet.RadioButtonGroup, {
     name: "ampm",
     options: ['morning', 'evening']
@@ -84,7 +79,8 @@ var CustomFormField = function CustomFormField() {
     name: "comments"
   })), _react["default"].createElement(_grommet.FormField, {
     label: "Age",
-    name: "age"
+    name: "age",
+    pad: true
   }, _react["default"].createElement(_grommet.RangeInput, {
     name: "age",
     min: 15,
@@ -107,6 +103,6 @@ var CustomFormField = function CustomFormField() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Custom Theme', function () {
-  return _react["default"].createElement(CustomFormField, null);
+(0, _react2.storiesOf)('Form', module).add('All children', function () {
+  return _react["default"].createElement(Example, null);
 });

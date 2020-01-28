@@ -42,9 +42,11 @@ var Example = function Example() {
   }), _react["default"].createElement(_grommet.FormField, {
     label: "Email",
     name: "email",
-    type: "email",
     required: true
-  }), _react["default"].createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.TextInput, {
+    name: "email",
+    type: "email"
+  })), _react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {

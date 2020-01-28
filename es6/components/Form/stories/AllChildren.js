@@ -1,38 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'grommet/utils';
-import { grommet, Box, Button, CheckBox, Form, FormField, RadioButtonGroup, RangeInput, Select, TextArea, TextInput, Grommet } from 'grommet';
-var customFormFieldTheme = {
-  global: {
-    font: {
-      size: '16px'
-    },
-    input: {
-      weight: 400
-    }
-  },
-  formField: {
-    label: {
-      color: 'dark-3',
-      size: 'small',
-      margin: {
-        vertical: 'none',
-        bottom: 'small',
-        horizontal: 'none'
-      },
-      weight: 600
-    },
-    border: false,
-    margin: {
-      bottom: 'small'
-    }
-  }
-};
+import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
 
-var CustomFormField = function CustomFormField() {
+var Example = function Example() {
   return React.createElement(Grommet, {
     full: true,
-    theme: deepMerge(grommet, customFormFieldTheme)
+    theme: grommet
   }, React.createElement(Box, {
     fill: true,
     align: "center",
@@ -54,12 +28,34 @@ var CustomFormField = function CustomFormField() {
   }, React.createElement(TextInput, {
     name: "name"
   })), React.createElement(FormField, {
-    name: "subscribe"
+    label: "Email",
+    name: "email",
+    required: true
+  }, React.createElement(MaskedInput, {
+    name: "email",
+    mask: [{
+      regexp: /^[\w\-_.]+$/,
+      placeholder: 'example'
+    }, {
+      fixed: '@'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'my'
+    }, {
+      fixed: '.'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'com'
+    }]
+  })), React.createElement(FormField, {
+    name: "subscribe",
+    pad: true
   }, React.createElement(CheckBox, {
     name: "subscribe",
     label: "Subscribe?"
   })), React.createElement(FormField, {
-    name: "ampm"
+    name: "ampm",
+    pad: true
   }, React.createElement(RadioButtonGroup, {
     name: "ampm",
     options: ['morning', 'evening']
@@ -76,7 +72,8 @@ var CustomFormField = function CustomFormField() {
     name: "comments"
   })), React.createElement(FormField, {
     label: "Age",
-    name: "age"
+    name: "age",
+    pad: true
   }, React.createElement(RangeInput, {
     name: "age",
     min: 15,
@@ -99,6 +96,6 @@ var CustomFormField = function CustomFormField() {
   }))))));
 };
 
-storiesOf('Form', module).add('Custom Theme', function () {
-  return React.createElement(CustomFormField, null);
+storiesOf('Form', module).add('All children', function () {
+  return React.createElement(Example, null);
 });

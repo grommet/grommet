@@ -5,6 +5,8 @@ exports.TextArea = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _FormContext = require("../Form/FormContext");
+
 var _Keyboard = require("../Keyboard");
 
 var _StyledTextArea = require("./StyledTextArea");
@@ -19,13 +21,29 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var TextArea = (0, _react.forwardRef)(function (_ref, ref) {
   var fill = _ref.fill,
+      name = _ref.name,
       _onBlur = _ref.onBlur,
+      _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
-      rest = _objectWithoutPropertiesLoose(_ref, ["fill", "onBlur", "onFocus"]);
+      valueProp = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["fill", "name", "onBlur", "onChange", "onFocus", "value"]);
 
-  var _useState = (0, _react.useState)(),
-      focus = _useState[0],
-      setFocus = _useState[1];
+  var formContext = (0, _react.useContext)(_FormContext.FormContext);
+
+  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  (0, _react.useEffect)(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  (0, _react.useEffect)(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
+
+  var _useState2 = (0, _react.useState)(),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
 
   return _react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: function onEsc(event) {
@@ -36,8 +54,10 @@ var TextArea = (0, _react.forwardRef)(function (_ref, ref) {
     }
   }, _react["default"].createElement(_StyledTextArea.StyledTextArea, _extends({
     ref: ref,
+    name: name,
     fillArg: fill,
-    focus: focus
+    focus: focus,
+    value: value
   }, rest, {
     onFocus: function onFocus(event) {
       setFocus(true);
@@ -46,6 +66,15 @@ var TextArea = (0, _react.forwardRef)(function (_ref, ref) {
     onBlur: function onBlur(event) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
+    },
+    onChange: function onChange(event) {
+      if (formContext && name) {
+        formContext.set(name, event.target.value);
+      }
+
+      if (_onChange) {
+        _onChange(event);
+      }
     }
   })));
 });

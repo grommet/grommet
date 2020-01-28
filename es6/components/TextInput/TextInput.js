@@ -10,6 +10,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
+import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
 import { sizeStyle } from '../../utils';
 import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions } from './StyledTextInput';
@@ -58,6 +59,7 @@ var TextInput = forwardRef(function (_ref, ref) {
     suggestionsExist: 'This input has suggestions use arrow keys to navigate',
     suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate'
   } : _ref$messages,
+      name = _ref.name,
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
@@ -68,17 +70,25 @@ var TextInput = forwardRef(function (_ref, ref) {
       placeholder = _ref.placeholder,
       plain = _ref.plain,
       suggestions = _ref.suggestions,
-      value = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "id", "messages", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "suggestions", "value"]);
+      valueProp = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "suggestions", "value"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var announce = useContext(AnnounceContext);
+  var formContext = useContext(FormContext);
   var inputRef = useRef();
   var dropRef = useRef();
 
-  var _useState = useState(true),
-      empty = _useState[0],
-      setEmpty = _useState[1];
+  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  useEffect(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  useEffect(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
 
   var _useState2 = useState(),
       focus = _useState2[0],
@@ -140,7 +150,7 @@ var TextInput = forwardRef(function (_ref, ref) {
     if (messages.onSuggestionsClose) onSuggestionsClose();
   };
 
-  var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && empty && !value;
+  var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && !value;
   var drop;
 
   if (showDrop) {
@@ -177,6 +187,10 @@ var TextInput = forwardRef(function (_ref, ref) {
             adjustedEvent.suggestion = suggestion;
             adjustedEvent.target = (ref || inputRef).current;
             onSelect(adjustedEvent);
+          }
+
+          if (formContext) {
+            formContext.update(name, suggestion);
           }
         }
       }, plainLabel ? renderLabel(suggestion) : React.createElement(Box, {
@@ -227,8 +241,9 @@ var TextInput = forwardRef(function (_ref, ref) {
     } : undefined,
     onKeyDown: onKeyDown
   }, React.createElement(StyledTextInput, _extends({
-    id: id,
     ref: ref || inputRef,
+    id: id,
+    name: name,
     autoComplete: "off",
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
@@ -264,11 +279,11 @@ var TextInput = forwardRef(function (_ref, ref) {
       }
     },
     onChange: function onChange(event) {
-      setEmpty(!event.target.value);
-
-      if (_onChange) {
-        _onChange(event);
+      if (formContext && name) {
+        formContext.set(name, event.target.value);
       }
+
+      if (_onChange) _onChange(event);
     }
   }))), drop);
 });

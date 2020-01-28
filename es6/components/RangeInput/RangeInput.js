@@ -2,20 +2,39 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 var RangeInput = forwardRef(function (_ref, ref) {
-  var _onFocus = _ref.onFocus,
+  var name = _ref.name,
+      _onChange = _ref.onChange,
+      _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
-      rest = _objectWithoutPropertiesLoose(_ref, ["onFocus", "onBlur"]);
+      valueProp = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["name", "onChange", "onFocus", "onBlur", "value"]);
 
-  var _useState = useState(),
-      focus = _useState[0],
-      setFocus = _useState[1];
+  var formContext = useContext(FormContext);
+
+  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  useEffect(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  useEffect(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
+
+  var _useState2 = useState(),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
 
   return React.createElement(StyledRangeInput, _extends({
     ref: ref,
-    focus: focus
+    name: name,
+    focus: focus,
+    value: value
   }, rest, {
     onFocus: function onFocus(event) {
       setFocus(true);
@@ -24,6 +43,13 @@ var RangeInput = forwardRef(function (_ref, ref) {
     onBlur: function onBlur(event) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
+    },
+    onChange: function onChange(event) {
+      if (formContext && name) {
+        formContext.set(name, event.target.value);
+      }
+
+      if (_onChange) _onChange(event);
     },
     type: "range"
   }));

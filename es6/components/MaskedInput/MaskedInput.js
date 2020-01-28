@@ -8,6 +8,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { StyledMaskedInput, StyledMaskedInputContainer } from './StyledMaskedInput';
 
@@ -110,42 +111,55 @@ var MaskedInput = forwardRef(function (_ref, ref) {
       id = _ref.id,
       _ref$mask = _ref.mask,
       mask = _ref$mask === void 0 ? defaultMask : _ref$mask,
+      name = _ref.name,
       _onBlur = _ref.onBlur,
       onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       placeholder = _ref.placeholder,
       plain = _ref.plain,
-      value = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["focus", "id", "mask", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "value"]);
+      valueProp = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["focus", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "value"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  var inputRef = useRef();
-  var dropRef = useRef();
+  var formContext = useContext(FormContext);
 
-  var _useState = useState(parseValue(mask, value)),
-      valueParts = _useState[0],
-      setValueParts = _useState[1];
+  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  useEffect(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  useEffect(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
+
+  var _useState2 = useState(parseValue(mask, value)),
+      valueParts = _useState2[0],
+      setValueParts = _useState2[1];
 
   useEffect(function () {
     setValueParts(parseValue(mask, value));
   }, [mask, value]);
+  var inputRef = useRef();
+  var dropRef = useRef();
 
-  var _useState2 = useState(focusProp),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
-
-  var _useState3 = useState(),
-      activeMaskIndex = _useState3[0],
-      setActiveMaskIndex = _useState3[1];
+  var _useState3 = useState(focusProp),
+      focus = _useState3[0],
+      setFocus = _useState3[1];
 
   var _useState4 = useState(),
-      activeOptionIndex = _useState4[0],
-      setActiveOptionIndex = _useState4[1];
+      activeMaskIndex = _useState4[0],
+      setActiveMaskIndex = _useState4[1];
 
   var _useState5 = useState(),
-      showDrop = _useState5[0],
-      setShowDrop = _useState5[1];
+      activeOptionIndex = _useState5[0],
+      setActiveOptionIndex = _useState5[1];
+
+  var _useState6 = useState(),
+      showDrop = _useState6[0],
+      setShowDrop = _useState6[1];
 
   useEffect(function () {
     if (focus) {
@@ -184,7 +198,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
 
     return undefined;
   }, [activeMaskIndex, focus, mask, ref, valueParts]);
-  var setValue = useCallback(function (nextValue) {
+  var setInputValue = useCallback(function (nextValue) {
     // Calling set value function directly on input because React library
     // overrides setter `event.target.value =` and loses original event
     // target fidelity.
@@ -204,9 +218,10 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     var nextValue = nextValueParts.map(function (part) {
       return part.part;
     }).join('');
-    if (value !== nextValue) setValue(nextValue);
+    if (value !== nextValue) setInputValue(nextValue);
+    if (formContext && name) formContext.set(name, event.target.value);
     if (onChange) onChange(event);
-  }, [mask, onChange, setValue, value]);
+  }, [formContext, mask, name, onChange, setInputValue, value]);
   var onOption = useCallback(function (option) {
     return function () {
       var nextValueParts = [].concat(valueParts);
@@ -226,11 +241,11 @@ var MaskedInput = forwardRef(function (_ref, ref) {
       var nextValue = nextValueParts.map(function (part) {
         return part.part;
       }).join('');
-      setValue(nextValue); // restore focus to input
+      setInputValue(nextValue); // restore focus to input
 
       (ref || inputRef).current.focus();
     };
-  }, [activeMaskIndex, mask, ref, setValue, valueParts]);
+  }, [activeMaskIndex, mask, ref, setInputValue, valueParts]);
   var onNextOption = useCallback(function (event) {
     var item = mask[activeMaskIndex];
 
@@ -286,8 +301,9 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     onEnter: onSelectOption,
     onKeyDown: onKeyDown
   }, React.createElement(StyledMaskedInput, _extends({
-    id: id,
     ref: ref || inputRef,
+    id: id,
+    name: name,
     autoComplete: "off",
     plain: plain,
     placeholder: placeholder || renderPlaceholder(),

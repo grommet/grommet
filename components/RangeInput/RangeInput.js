@@ -5,6 +5,8 @@ exports.RangeInput = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _FormContext = require("../Form/FormContext");
+
 var _StyledRangeInput = require("./StyledRangeInput");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -16,17 +18,35 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var RangeInput = (0, _react.forwardRef)(function (_ref, ref) {
-  var _onFocus = _ref.onFocus,
+  var name = _ref.name,
+      _onChange = _ref.onChange,
+      _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
-      rest = _objectWithoutPropertiesLoose(_ref, ["onFocus", "onBlur"]);
+      valueProp = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["name", "onChange", "onFocus", "onBlur", "value"]);
 
-  var _useState = (0, _react.useState)(),
-      focus = _useState[0],
-      setFocus = _useState[1];
+  var formContext = (0, _react.useContext)(_FormContext.FormContext);
+
+  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  (0, _react.useEffect)(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  (0, _react.useEffect)(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
+
+  var _useState2 = (0, _react.useState)(),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
 
   return _react["default"].createElement(_StyledRangeInput.StyledRangeInput, _extends({
     ref: ref,
-    focus: focus
+    name: name,
+    focus: focus,
+    value: value
   }, rest, {
     onFocus: function onFocus(event) {
       setFocus(true);
@@ -35,6 +55,13 @@ var RangeInput = (0, _react.forwardRef)(function (_ref, ref) {
     onBlur: function onBlur(event) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
+    },
+    onChange: function onChange(event) {
+      if (formContext && name) {
+        formContext.set(name, event.target.value);
+      }
+
+      if (_onChange) _onChange(event);
     },
     type: "range"
   }));

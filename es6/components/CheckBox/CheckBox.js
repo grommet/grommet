@@ -7,6 +7,7 @@ import { ThemeContext } from 'styled-components';
 import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { FormContext } from '../Form/FormContext';
 import { StyledCheckBox, StyledCheckBoxBox, StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxToggle, StyledCheckBoxKnob } from './StyledCheckBox';
 import { normalizeColor } from '../../utils';
 
@@ -21,14 +22,14 @@ var stopLabelClick = function stopLabelClick(event) {
 var CheckBox = forwardRef(function (_ref, ref) {
   var _ref2;
 
-  var checked = _ref.checked,
+  var checkedProp = _ref.checked,
       disabled = _ref.disabled,
       focusProp = _ref.focus,
       id = _ref.id,
       label = _ref.label,
       name = _ref.name,
       _onBlur = _ref.onBlur,
-      onChange = _ref.onChange,
+      _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       reverse = _ref.reverse,
       toggle = _ref.toggle,
@@ -36,10 +37,22 @@ var CheckBox = forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["checked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "reverse", "toggle", "indeterminate"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  var formContext = useContext(FormContext);
 
-  var _useState = useState(focusProp),
-      focus = _useState[0],
-      setFocus = _useState[1];
+  var _useState = useState(checkedProp !== undefined ? checkedProp : formContext && name && formContext.get(name) || ''),
+      checked = _useState[0],
+      setChecked = _useState[1];
+
+  useEffect(function () {
+    return setChecked(checkedProp);
+  }, [checkedProp]);
+  useEffect(function () {
+    if (formContext && name) setChecked(formContext.get(name) || '');
+  }, [formContext, name]);
+
+  var _useState2 = useState(focusProp),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
 
   useEffect(function () {
     return setFocus(focusProp);
@@ -125,8 +138,7 @@ var CheckBox = forwardRef(function (_ref, ref) {
     id: id,
     name: name,
     checked: checked,
-    disabled: disabled,
-    onChange: onChange
+    disabled: disabled
   }), themeableProps, {
     onFocus: function onFocus(event) {
       setFocus(true);
@@ -135,6 +147,13 @@ var CheckBox = forwardRef(function (_ref, ref) {
     onBlur: function onBlur(event) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
+    },
+    onChange: function onChange(event) {
+      if (formContext && name) {
+        formContext.set(name, event.target.checked);
+      }
+
+      if (_onChange) _onChange(event);
     }
   })), visual, hidden);
   var normalizedLabel = typeof label === 'string' ? React.createElement("span", null, label) : label;

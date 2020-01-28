@@ -19,6 +19,8 @@ var _InfiniteScroll = require("../InfiniteScroll");
 
 var _Keyboard = require("../Keyboard");
 
+var _FormContext = require("../Form/FormContext");
+
 var _contexts = require("../../contexts");
 
 var _utils = require("../../utils");
@@ -77,6 +79,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
     suggestionsExist: 'This input has suggestions use arrow keys to navigate',
     suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate'
   } : _ref$messages,
+      name = _ref.name,
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
@@ -87,18 +90,26 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       placeholder = _ref.placeholder,
       plain = _ref.plain,
       suggestions = _ref.suggestions,
-      value = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "id", "messages", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "suggestions", "value"]);
+      valueProp = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "suggestions", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var announce = (0, _react.useContext)(_contexts.AnnounceContext);
+  var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var inputRef = (0, _react.useRef)();
   var dropRef = (0, _react.useRef)();
 
-  var _useState = (0, _react.useState)(true),
-      empty = _useState[0],
-      setEmpty = _useState[1];
+  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  (0, _react.useEffect)(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  (0, _react.useEffect)(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
 
   var _useState2 = (0, _react.useState)(),
       focus = _useState2[0],
@@ -160,7 +171,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
     if (messages.onSuggestionsClose) onSuggestionsClose();
   };
 
-  var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && empty && !value;
+  var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && !value;
   var drop;
 
   if (showDrop) {
@@ -197,6 +208,10 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
             adjustedEvent.suggestion = suggestion;
             adjustedEvent.target = (ref || inputRef).current;
             onSelect(adjustedEvent);
+          }
+
+          if (formContext) {
+            formContext.update(name, suggestion);
           }
         }
       }, plainLabel ? renderLabel(suggestion) : _react["default"].createElement(_Box.Box, {
@@ -247,8 +262,9 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
     } : undefined,
     onKeyDown: onKeyDown
   }, _react["default"].createElement(_StyledTextInput.StyledTextInput, _extends({
-    id: id,
     ref: ref || inputRef,
+    id: id,
+    name: name,
     autoComplete: "off",
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
@@ -284,11 +300,11 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       }
     },
     onChange: function onChange(event) {
-      setEmpty(!event.target.value);
-
-      if (_onChange) {
-        _onChange(event);
+      if (formContext && name) {
+        formContext.set(name, event.target.value);
       }
+
+      if (_onChange) _onChange(event);
     }
   }))), drop);
 });

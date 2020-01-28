@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, Grommet, Form, FormField } from 'grommet';
+import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
@@ -35,9 +35,11 @@ var Example = function Example() {
   }), React.createElement(FormField, {
     label: "Email",
     name: "email",
-    type: "email",
     required: true
-  }), React.createElement(Box, {
+  }, React.createElement(TextInput, {
+    name: "email",
+    type: "email"
+  })), React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {

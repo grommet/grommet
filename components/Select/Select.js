@@ -19,6 +19,8 @@ var _DropButton = require("../DropButton");
 
 var _Keyboard = require("../Keyboard");
 
+var _FormContext = require("../Form/FormContext");
+
 var _TextInput = require("../TextInput");
 
 var _hocs = require("../hocs");
@@ -66,6 +68,7 @@ var Select = function Select(props) {
       labelKey = props.labelKey,
       margin = props.margin,
       messages = props.messages,
+      name = props.name,
       onChange = props.onChange,
       onClose = props.onClose,
       onMore = props.onMore,
@@ -77,15 +80,27 @@ var Select = function Select(props) {
       selected = props.selected,
       size = props.size,
       theme = props.theme,
-      value = props.value,
+      valueProp = props.value,
       valueLabel = props.valueLabel,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "onChange", "onClose", "onMore", "onOpen", "open", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "name", "onChange", "onClose", "onMore", "onOpen", "open", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
 
   var inputRef = (0, _react.useRef)();
+  var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _useState = (0, _react.useState)(propOpen),
-      open = _useState[0],
-      setOpen = _useState[1];
+  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  (0, _react.useEffect)(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  (0, _react.useEffect)(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
+
+  var _useState2 = (0, _react.useState)(propOpen),
+      open = _useState2[0],
+      setOpen = _useState2[1];
 
   (0, _react.useEffect)(function () {
     setOpen(propOpen);
@@ -111,6 +126,8 @@ var Select = function Select(props) {
     if (closeOnChange) {
       onRequestClose();
     }
+
+    if (formContext && name) formContext.set(name, event.value);
 
     if (onChange) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -225,6 +242,7 @@ var Select = function Select(props) {
   }, selectValue || _react["default"].createElement(SelectTextInput, _extends({
     a11yTitle: a11yTitle && "" + a11yTitle + (typeof value === 'string' ? ", " + value : ''),
     id: id ? id + "__input" : undefined,
+    name: name,
     ref: inputRef
   }, rest, {
     tabIndex: "-1",

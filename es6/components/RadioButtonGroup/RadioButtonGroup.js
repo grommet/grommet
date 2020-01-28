@@ -2,8 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '../Box';
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { RadioButton } from '../RadioButton';
 var RadioButtonGroup = forwardRef(function (_ref, ref) {
@@ -11,12 +12,13 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
       _ref$gap = _ref.gap,
       gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       name = _ref.name,
-      onChange = _ref.onChange,
+      _onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "gap", "name", "onChange", "options", "value"]);
 
-  // normalize options to always use an object
+  var formContext = useContext(FormContext); // normalize options to always use an object
+
   var options = useMemo(function () {
     return optionsProp.map(function (o) {
       return typeof o === 'string' ? {
@@ -27,13 +29,16 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
     });
   }, [optionsProp, rest.id]);
 
-  var _useState = useState(valueProp),
+  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
       value = _useState[0],
       setValue = _useState[1];
 
   useEffect(function () {
     return setValue(valueProp);
   }, [valueProp]);
+  useEffect(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
 
   var _useState2 = useState(),
       focus = _useState2[0],
@@ -61,9 +66,10 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
       var nextIndex = valueIndex + 1;
       var nextValue = options[nextIndex].value;
       setValue(nextValue);
+      if (formContext && name) formContext.set(name, nextValue);
 
-      if (onChange) {
-        onChange({
+      if (_onChange) {
+        _onChange({
           target: {
             value: nextValue
           }
@@ -77,9 +83,10 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
       var nextIndex = valueIndex - 1;
       var nextValue = options[nextIndex].value;
       setValue(nextValue);
+      if (formContext && name) formContext.set(name, nextValue);
 
-      if (onChange) {
-        onChange({
+      if (_onChange) {
+        _onChange({
           target: {
             value: nextValue
           }
@@ -127,9 +134,15 @@ var RadioButtonGroup = forwardRef(function (_ref, ref) {
       focus: focus && (optionValue === value || value === undefined && !index),
       id: id,
       value: optionValue,
-      onChange: onChange,
       onFocus: onFocus,
-      onBlur: onBlur
+      onBlur: onBlur,
+      onChange: function onChange(event) {
+        if (formContext && name) {
+          formContext.set(name, event.target.value);
+        }
+
+        if (_onChange) _onChange(event);
+      }
     }, children ? function (state) {
       return children(optionsProp[index], state);
     } : null);

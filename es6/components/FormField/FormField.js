@@ -149,7 +149,18 @@ function (_Component) {
     var formField = theme.formField;
     var border = formField.border;
     var normalizedError = error;
-    var contents = children;
+    var contents = border && children && Children.map(children, function (child) {
+      if (child) {
+        return cloneElement(child, {
+          plain: true,
+          focusIndicator: false,
+          onBlur: onBlur,
+          onFocus: onFocus
+        });
+      }
+
+      return child;
+    }) || children;
     var onFieldBlur;
 
     if (context) {
@@ -161,7 +172,7 @@ function (_Component) {
           messages = context.messages;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
-      contents = children || this.renderChildren(value, !!normalizedError, update);
+      contents = contents || this.renderChildren(value, !!normalizedError, update);
 
       if (onContextBlur) {
         onFieldBlur = function onFieldBlur() {
@@ -189,18 +200,6 @@ function (_Component) {
     var outerStyle = style;
 
     if (border) {
-      var normalizedChildren = children ? Children.map(children, function (child) {
-        if (child) {
-          return cloneElement(child, {
-            plain: true,
-            focusIndicator: false,
-            onBlur: onBlur,
-            onFocus: onFocus
-          });
-        }
-
-        return child;
-      }) : contents;
       contents = React.createElement(Box, {
         ref: function ref(_ref) {
           _this2.childContainerRef = _ref;
@@ -209,7 +208,7 @@ function (_Component) {
           side: border.side || 'bottom',
           color: borderColor
         }) : undefined
-      }, normalizedChildren);
+      }, contents);
       abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side);
 
       if (abut) {
