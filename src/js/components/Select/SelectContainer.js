@@ -353,6 +353,7 @@ class SelectContainer extends Component {
   };
 
   renderClear = () => {
+    console.log('in here');
     const { renderClearValue, clearValueLabel, theme } = this.props;
     if (renderClearValue) {
       return renderClearValue({ onClear: this.clearSelection });
@@ -426,7 +427,7 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          {value && clearValuePosition === 'top' && this.renderClear()}
+          {value && clearValuePosition === 'top' ? this.renderClear() : null}
           <OptionsBox
             flex="shrink"
             role="menubar"
@@ -497,7 +498,7 @@ class SelectContainer extends Component {
               </SelectOption>
             )}
           </OptionsBox>
-          {value && clearValuePosition === 'bottom' && this.renderClear()}
+          {value && clearValuePosition === 'bottom' ? this.renderClear() : null}
         </StyledContainer>
       </Keyboard>
     );
