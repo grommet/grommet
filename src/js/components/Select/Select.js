@@ -255,6 +255,7 @@ Select.defaultProps = {
   closeOnChange: true,
   dropAlign: { top: 'bottom', left: 'left' },
   messages: { multiple: 'multiple' },
+  clearValueLabel: 'Clear selection',
   ...defaultProps,
 };
 
