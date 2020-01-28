@@ -46,7 +46,12 @@ class FormFieldContent extends Component {
       context.value[name] === undefined &&
       (value !== undefined || checked !== undefined)
     ) {
-      context.update(name, value !== undefined ? value : checked);
+      context.update(
+        name,
+        value !== undefined ? value : checked,
+        undefined,
+        true,
+      );
     }
   }
 
