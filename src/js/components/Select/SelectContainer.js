@@ -13,6 +13,7 @@ import {
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
@@ -166,6 +167,15 @@ class SelectContainer extends Component {
         selected: nextSelected,
       });
     }
+  };
+
+  clearSelection = () => {
+    const { onChange } = this.props;
+    onChange({
+      option: '',
+      value: '',
+      selected: undefined,
+    });
   };
 
   // We use the state keyboardNavigating to prevent mouse over interaction
@@ -342,9 +352,34 @@ class SelectContainer extends Component {
     return result;
   };
 
+  renderClear = () => {
+    const { renderClearValue, clearValueLabel, theme } = this.props;
+    if (renderClearValue) {
+      return renderClearValue({ onClear: this.clearSelection });
+    }
+    return (
+      <Box flex={false}>
+        <Button
+          tabIndex="-1"
+          hoverIndicator="background"
+          onClick={this.clearSelection}
+        >
+          <Box
+            background="light-4"
+            {...theme.select.options.box}
+            {...theme.select.options.container}
+          >
+            <Text {...theme.select.options.text}>{clearValueLabel}</Text>
+          </Box>
+        </Button>
+      </Box>
+    );
+  };
+
   render() {
     const {
       children,
+      clearValuePosition,
       dropHeight,
       emptySearchMessage,
       id,
@@ -355,6 +390,7 @@ class SelectContainer extends Component {
       searchPlaceholder,
       theme,
       replace,
+      value,
     } = this.props;
     const { activeIndex, search } = this.state;
 
@@ -390,6 +426,7 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
+          {value && clearValuePosition === 'top' && this.renderClear()}
           <OptionsBox
             flex="shrink"
             role="menubar"
@@ -460,6 +497,7 @@ class SelectContainer extends Component {
               </SelectOption>
             )}
           </OptionsBox>
+          {value && clearValuePosition === 'bottom' && this.renderClear()}
         </StyledContainer>
       </Keyboard>
     );

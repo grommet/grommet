@@ -26,6 +26,13 @@ export const doc = Select => {
     closeOnChange: PropTypes.bool
       .description('Wether to close the drop when a selection is made.')
       .defaultValue(true),
+    clearValueLabel: PropTypes.string
+      .description('Label for the clear selection item')
+      .defaultValue('Clear selection'),
+    clearValuePosition: PropTypes.oneOf(['bottom', 'top']).description(
+      `Add a clear value item add the top or at the bottom of the container.
+      By default no unselect option is present.`,
+    ),
     disabled: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.arrayOf(
@@ -145,6 +152,11 @@ export const doc = Select => {
     ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       'Whether this is a plain Select input with no border or padding.',
+    ),
+    renderClearValue: PropTypes.func.description(
+      `Render function to customize clear value item.
+      It receives as a parameter the callback to call
+      when clicking on the item`,
     ),
     replace: PropTypes.bool
       .description(

@@ -145,6 +145,24 @@ Wether to close the drop when a selection is made. Defaults to `true`.
 boolean
 ```
 
+**clearValueLabel**
+
+Label for the clear selection item Defaults to `Clear selection`.
+
+```
+string
+```
+
+**clearValuePosition**
+
+Add a clear value item add the top or at the bottom of the container.
+      By default no unselect option is present.
+
+```
+bottom
+top
+```
+
 **disabled**
 
 Whether the entire select or individual options should be disabled.
@@ -372,6 +390,16 @@ Whether this is a plain Select input with no border or padding.
 
 ```
 boolean
+```
+
+**renderClearValue**
+
+Render function to customize clear value item.
+      It receives as a parameter the callback to call
+      when clicking on the item
+
+```
+function
 ```
 
 **replace**
