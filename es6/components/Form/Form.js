@@ -58,7 +58,7 @@ var Form = forwardRef(function (_ref, ref) {
     if (onChange) onChange(value);
   }, [onChange, value]);
   useEffect(function () {}, [value, errors]);
-  var update = useCallback(function (name, data, error) {
+  var update = useCallback(function (name, data, error, initial) {
     setValue(function (prevValue) {
       var nextValue = _extends({}, prevValue);
 
@@ -80,7 +80,7 @@ var Form = forwardRef(function (_ref, ref) {
       });
       return nextValue;
     });
-    setTouched(function (prevTouched) {
+    if (!initial) setTouched(function (prevTouched) {
       var nextTouched = _extends({}, prevTouched);
 
       nextTouched[name] = true;
@@ -128,6 +128,7 @@ var Form = forwardRef(function (_ref, ref) {
 
         var adjustedEvent = event;
         adjustedEvent.value = value;
+        adjustedEvent.touched = touched;
 
         _onSubmit(adjustedEvent);
       } else {

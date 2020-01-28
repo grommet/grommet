@@ -19,7 +19,7 @@ var doc = function doc(Form) {
       required: 'required'
     }),
     onChange: _reactDesc.PropTypes.func.description('Function that will be called when any fields are updated.'),
-    onSubmit: _reactDesc.PropTypes.func.description("Function that will be called when the form is submitted. The\n      single argument is an event containing the latest value object\n      via `event.value`."),
+    onSubmit: _reactDesc.PropTypes.func.description("Function that will be called when the form is submitted. The\n      single argument is an event containing the latest value object\n      via `event.value` and an object indicating which fields were\n      touched via `event.touched`."),
     onReset: _reactDesc.PropTypes.func.description("Function that will be called when the form is reset. The\n      single argument is the event provided by react."),
     validate: _reactDesc.PropTypes.oneOf(['blur', 'submit']).description('When to perform validation').defaultValue('submit'),
     value: _reactDesc.PropTypes.shape({}).description('An object representing all of the data in the form.').defaultValue({})

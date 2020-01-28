@@ -120,7 +120,7 @@ function (_Component) {
         value = _this$props2.value;
 
     if (context && context.value[name] === undefined && (value !== undefined || checked !== undefined)) {
-      context.update(name, value !== undefined ? value : checked);
+      context.update(name, value !== undefined ? value : checked, undefined, true);
     }
   };
 

@@ -81,6 +81,10 @@ describe('Form', function () {
       value: {
         test: 'value',
         test2: 'value-2'
+      },
+      touched: {
+        test: true,
+        test2: true
       }
     }));
   });
@@ -178,9 +182,11 @@ describe('Form', function () {
 
     var _render5 = render(React.createElement(Grommet, null, React.createElement(Form, {
       onSubmit: function onSubmit(_ref) {
-        var value = _ref.value;
+        var value = _ref.value,
+            touched = _ref.touched;
         return _onSubmit({
-          value: value
+          value: value,
+          touched: touched
         });
       }
     }, React.createElement(FormField, {
@@ -205,7 +211,8 @@ describe('Form', function () {
       value: {
         test: 'Initial value',
         test2: 'Initial value2'
-      }
+      },
+      touched: {}
     }));
   });
 });

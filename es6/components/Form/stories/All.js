@@ -18,8 +18,9 @@ var Example = function Example() {
       return console.log(event);
     },
     onSubmit: function onSubmit(_ref) {
-      var value = _ref.value;
-      return console.log('Submit', value);
+      var value = _ref.value,
+          touched = _ref.touched;
+      return console.log('Submit', value, touched);
     }
   }, React.createElement(FormField, {
     label: "Name",
