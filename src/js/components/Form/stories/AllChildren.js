@@ -1,45 +1,24 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'grommet/utils';
 
 import {
-  grommet,
   Box,
   Button,
   CheckBox,
+  Grommet,
   Form,
   FormField,
+  MaskedInput,
   RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
   TextInput,
-  Grommet,
 } from 'grommet';
+import { grommet } from 'grommet/themes';
 
-const customFormFieldTheme = {
-  global: {
-    font: {
-      size: '16px',
-    },
-    input: {
-      weight: 400,
-    },
-  },
-  formField: {
-    label: {
-      color: 'dark-3',
-      size: 'small',
-      margin: { vertical: 'none', bottom: 'small', horizontal: 'none' },
-      weight: 600,
-    },
-    border: false,
-    margin: { bottom: 'small' },
-  },
-};
-
-const CustomFormField = () => (
-  <Grommet full theme={deepMerge(grommet, customFormFieldTheme)}>
+const Example = () => (
+  <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
@@ -49,7 +28,7 @@ const CustomFormField = () => (
           <FormField label="Name" name="name" required>
             <TextInput name="name" />
           </FormField>
-          {/* <FormField label="Email" name="email" required>
+          <FormField label="Email" name="email" required>
             <MaskedInput
               name="email"
               mask={[
@@ -60,11 +39,11 @@ const CustomFormField = () => (
                 { regexp: /^[\w]+$/, placeholder: 'com' },
               ]}
             />
-          </FormField> */}
-          <FormField name="subscribe">
+          </FormField>
+          <FormField name="subscribe" pad>
             <CheckBox name="subscribe" label="Subscribe?" />
           </FormField>
-          <FormField name="ampm">
+          <FormField name="ampm" pad>
             <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
           </FormField>
           <FormField label="Size" name="size">
@@ -73,7 +52,7 @@ const CustomFormField = () => (
           <FormField label="Comments" name="comments">
             <TextArea name="comments" />
           </FormField>
-          <FormField label="Age" name="age">
+          <FormField label="Age" name="age" pad>
             <RangeInput name="age" min={15} max={75} />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
@@ -87,4 +66,4 @@ const CustomFormField = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Custom Theme', () => <CustomFormField />);
+storiesOf('Form', module).add('All children', () => <Example />);

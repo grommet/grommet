@@ -1,4 +1,10 @@
-import React, { isValidElement, useState, useRef, useEffect } from 'react';
+import React, {
+  isValidElement,
+  useContext,
+  useState,
+  useRef,
+  useEffect,
+} from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -8,6 +14,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
+import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 import { withForwardRef } from '../hocs';
 
@@ -46,6 +53,7 @@ const Select = props => {
     labelKey,
     margin,
     messages,
+    name,
     onChange,
     onClose,
     onMore,
@@ -57,11 +65,23 @@ const Select = props => {
     selected,
     size,
     theme,
-    value,
+    value: valueProp,
     valueLabel,
     ...rest
   } = props;
   const inputRef = useRef();
+  const formContext = useContext(FormContext);
+
+  const [value, setValue] = useState(
+    valueProp !== undefined
+      ? valueProp
+      : (formContext && name && formContext.get(name)) || '',
+  );
+  useEffect(() => setValue(valueProp), [valueProp]);
+  useEffect(() => {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]);
+
   const [open, setOpen] = useState(propOpen);
   useEffect(() => {
     setOpen(propOpen);
@@ -85,6 +105,7 @@ const Select = props => {
     if (closeOnChange) {
       onRequestClose();
     }
+    if (formContext && name) formContext.set(name, event.value);
     if (onChange) {
       onChange({ ...event, target: inputRef.current }, ...args);
     }
@@ -197,6 +218,7 @@ const Select = props => {
                   `${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`
                 }
                 id={id ? `${id}__input` : undefined}
+                name={name}
                 ref={inputRef}
                 {...rest}
                 tabIndex="-1"
@@ -241,9 +263,6 @@ if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   SelectDoc = require('./doc').doc(Select);
 }
-const SelectWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(SelectDoc || Select);
+const SelectWrapper = compose(withTheme, withForwardRef)(SelectDoc || Select);
 
 export { SelectWrapper as Select };

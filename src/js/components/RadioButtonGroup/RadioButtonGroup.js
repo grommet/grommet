@@ -1,6 +1,14 @@
-import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 import { Box } from '../Box';
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { RadioButton } from '../RadioButton';
 
@@ -17,6 +25,8 @@ const RadioButtonGroup = forwardRef(
     },
     ref,
   ) => {
+    const formContext = useContext(FormContext);
+
     // normalize options to always use an object
     const options = useMemo(
       () =>
@@ -27,8 +37,17 @@ const RadioButtonGroup = forwardRef(
         ),
       [optionsProp, rest.id],
     );
-    const [value, setValue] = useState(valueProp);
+
+    const [value, setValue] = useState(
+      valueProp !== undefined
+        ? valueProp
+        : (formContext && name && formContext.get(name)) || '',
+    );
     useEffect(() => setValue(valueProp), [valueProp]);
+    useEffect(() => {
+      if (formContext && name) setValue(formContext.get(name) || '');
+    }, [formContext, name]);
+
     const [focus, setFocus] = useState();
 
     const optionRefs = useRef([]);
@@ -54,6 +73,7 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex + 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
+        if (formContext && name) formContext.set(name, nextValue);
         if (onChange) {
           onChange({ target: { value: nextValue } });
         }
@@ -65,6 +85,7 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex - 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
+        if (formContext && name) formContext.set(name, nextValue);
         if (onChange) {
           onChange({ target: { value: nextValue } });
         }
@@ -105,9 +126,14 @@ const RadioButtonGroup = forwardRef(
               }
               id={id}
               value={optionValue}
-              onChange={onChange}
               onFocus={onFocus}
               onBlur={onBlur}
+              onChange={event => {
+                if (formContext && name) {
+                  formContext.set(name, event.target.value);
+                }
+                if (onChange) onChange(event);
+              }}
             >
               {children ? state => children(optionsProp[index], state) : null}
             </RadioButton>
