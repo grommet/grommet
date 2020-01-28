@@ -47,7 +47,7 @@ const Form = forwardRef(
 
     useEffect(() => {}, [value, errors]);
 
-    const update = useCallback((name, data, error) => {
+    const update = useCallback((name, data, error, initial) => {
       setValue(prevValue => {
         const nextValue = { ...prevValue };
         nextValue[name] = data;
@@ -71,11 +71,12 @@ const Form = forwardRef(
         return nextValue;
       });
 
-      setTouched(prevTouched => {
-        const nextTouched = { ...prevTouched };
-        nextTouched[name] = true;
-        return nextTouched;
-      });
+      if (!initial)
+        setTouched(prevTouched => {
+          const nextTouched = { ...prevTouched };
+          nextTouched[name] = true;
+          return nextTouched;
+        });
     }, []);
 
     return (
@@ -112,6 +113,7 @@ const Form = forwardRef(
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
             adjustedEvent.value = value;
+            adjustedEvent.touched = touched;
             onSubmit(adjustedEvent);
           } else {
             setErrors(nextErrors);
@@ -144,7 +146,9 @@ const Form = forwardRef(
                   }
                 : undefined,
             errors,
+            get: name => value[name],
             messages,
+            set: (name, nextValue) => update(name, nextValue),
             touched,
             update,
             value,
