@@ -81,7 +81,10 @@ describe('Form', () => {
       test2: 'value-2',
     });
     expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({ value: { test: 'value', test2: 'value-2' } }),
+      expect.objectContaining({
+        value: { test: 'value', test2: 'value-2' },
+        touched: { test: true, test2: true },
+      }),
     );
   });
 
@@ -156,7 +159,7 @@ describe('Form', () => {
       <Grommet>
         {/* this test continues running forever if the whole event passed to 
             onSubmit */}
-        <Form onSubmit={({ value }) => onSubmit({ value })}>
+        <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <FormField
             name="test"
             required
@@ -173,6 +176,7 @@ describe('Form', () => {
     expect(onSubmit).toBeCalledWith(
       expect.objectContaining({
         value: { test: 'Initial value', test2: 'Initial value2' },
+        touched: {},
       }),
     );
   });

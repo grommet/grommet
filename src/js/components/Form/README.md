@@ -48,7 +48,8 @@ function
 
 Function that will be called when the form is submitted. The
       single argument is an event containing the latest value object
-      via `event.value`.
+      via `event.value` and an object indicating which fields were
+      touched via `event.touched`.
 
 ```
 function
