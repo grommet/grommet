@@ -18,7 +18,6 @@ var ActionList = function ActionList() {
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react["default"].createElement(_grommet.Box, {
-    align: "center",
     pad: "large"
   }, _react["default"].createElement(_grommet.List, {
     data: _data.data.slice(0, 10),

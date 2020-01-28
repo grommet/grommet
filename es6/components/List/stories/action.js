@@ -9,7 +9,6 @@ var ActionList = function ActionList() {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
-    align: "center",
     pad: "large"
   }, React.createElement(List, {
     data: data.slice(0, 10),
