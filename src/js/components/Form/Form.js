@@ -54,17 +54,19 @@ const Form = forwardRef(
 
         setErrors(prevErrors => {
           const nextErrors = { ...prevErrors };
-          if (prevErrors[name]) {
+          // re-run any validations that have errors, in case the validation
+          // is checking across fields
+          Object.keys(prevErrors).forEach(errName => {
             const nextError =
-              error ||
-              (validations.current[name] &&
-                validations.current[name](data, nextValue));
+              (errName === name && error) ||
+              (validations.current[errName] &&
+                validations.current[errName](data, nextValue));
             if (nextError) {
-              nextErrors[name] = nextError;
+              nextErrors[errName] = nextError;
             } else {
-              delete nextErrors[name];
+              delete nextErrors[errName];
             }
-          }
+          });
           return nextErrors;
         });
 
