@@ -248,8 +248,8 @@ exports[`TextInput close suggestion drop 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -294,7 +294,7 @@ exports[`TextInput close suggestion drop 2`] = `
 <div
   class="c0 c1"
   id="text-input-drop__item"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -335,84 +335,18 @@ exports[`TextInput close suggestion drop 2`] = `
 </div>
 `;
 
-exports[`TextInput close suggestion drop 3`] = `
-".jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iDRrKN {
-    width: 100%;
-  }
-}"
-`;
+exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+  class="StyledGrommet-sc-19lkkz7-0 iIYNgU"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 lbPDFy"
+      class="StyledTextInput-sc-1x30a0s-0 hFGLv"
       data-testid="test-input"
       id="item"
       name="item"
@@ -594,8 +528,8 @@ exports[`TextInput complex suggestions 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -634,7 +568,7 @@ exports[`TextInput complex suggestions 2`] = `
 <div
   class="c0 c1"
   id="text-input-drop__item"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -667,73 +601,7 @@ exports[`TextInput complex suggestions 2`] = `
 </div>
 `;
 
-exports[`TextInput complex suggestions 3`] = `
-".jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iDRrKN {
-    width: 100%;
-  }
-}"
-`;
+exports[`TextInput complex suggestions 3`] = `""`;
 
 exports[`TextInput disabled 1`] = `
 .c1 {
@@ -868,14 +736,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+  class="StyledGrommet-sc-19lkkz7-0 iIYNgU"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kvYrcH"
+      class="StyledTextInput-sc-1x30a0s-0 lecVSr"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1005,8 +873,8 @@ exports[`TextInput large drop height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1092,91 +960,7 @@ exports[`TextInput large drop height 1`] = `
 </div>
 `;
 
-exports[`TextInput large drop height 2`] = `
-".jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iDRrKN {
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bGLcHc {
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .enqQLE {
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lgPExt {
-    width: 100%;
-  }
-}"
-`;
+exports[`TextInput large drop height 2`] = `""`;
 
 exports[`TextInput medium drop height 1`] = `
 .c0 {
@@ -1298,8 +1082,8 @@ exports[`TextInput medium drop height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1385,85 +1169,7 @@ exports[`TextInput medium drop height 1`] = `
 </div>
 `;
 
-exports[`TextInput medium drop height 2`] = `
-".jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iDRrKN {
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bGLcHc {
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .enqQLE {
-    width: 100%;
-  }
-}"
-`;
+exports[`TextInput medium drop height 2`] = `""`;
 
 exports[`TextInput select a suggestion 1`] = `
 .c0 {
@@ -1732,8 +1438,8 @@ exports[`TextInput select suggestion 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1778,7 +1484,7 @@ exports[`TextInput select suggestion 2`] = `
 <div
   class="c0 c1"
   id="text-input-drop__item"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -1819,84 +1525,18 @@ exports[`TextInput select suggestion 2`] = `
 </div>
 `;
 
-exports[`TextInput select suggestion 3`] = `
-".jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iDRrKN {
-    width: 100%;
-  }
-}"
-`;
+exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+  class="StyledGrommet-sc-19lkkz7-0 iIYNgU"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kYQCpm"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 dAMXNk"
+      class="StyledTextInput-sc-1x30a0s-0 cAUatn"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2026,8 +1666,8 @@ exports[`TextInput small drop height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2113,79 +1753,7 @@ exports[`TextInput small drop height 1`] = `
 </div>
 `;
 
-exports[`TextInput small drop height 2`] = `
-".jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iDRrKN {
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bGLcHc {
-    width: 100%;
-  }
-}"
-`;
+exports[`TextInput small drop height 2`] = `""`;
 
 exports[`TextInput suggestions 1`] = `
 .c1 {
@@ -2365,8 +1933,8 @@ exports[`TextInput suggestions 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: gDOjLh 0.1s forwards;
+  animation: gDOjLh 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2411,7 +1979,7 @@ exports[`TextInput suggestions 2`] = `
 <div
   class="c0 c1"
   id="text-input-drop__item"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -2452,70 +2020,4 @@ exports[`TextInput suggestions 2`] = `
 </div>
 `;
 
-exports[`TextInput suggestions 3`] = `
-".jqIewH {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .jaMGoX {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iDRrKN {
-    width: 100%;
-  }
-}"
-`;
+exports[`TextInput suggestions 3`] = `""`;

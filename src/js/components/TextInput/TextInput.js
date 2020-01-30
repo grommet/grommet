@@ -15,6 +15,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
+import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
 import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
 
@@ -71,6 +72,7 @@ const TextInput = forwardRef(
         suggestionIsOpen:
           'Suggestions drop is open, continue to use arrow keys to navigate',
       },
+      name,
       onBlur,
       onChange,
       onFocus,
@@ -81,18 +83,29 @@ const TextInput = forwardRef(
       placeholder,
       plain,
       suggestions,
-      value,
+      value: valueProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
+    const formContext = useContext(FormContext);
     const inputRef = useRef();
     const dropRef = useRef();
     const suggestionsRef = useRef();
     const suggestionRefs = {};
-    const [empty, setEmpty] = useState(true);
+
+    const [value, setValue] = useState(
+      valueProp !== undefined
+        ? valueProp
+        : (formContext && name && formContext.get(name)) || '',
+    );
+    useEffect(() => setValue(valueProp), [valueProp]);
+    useEffect(() => {
+      if (formContext && name) setValue(formContext.get(name) || '');
+    }, [formContext, name]);
+
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
 
@@ -187,7 +200,7 @@ const TextInput = forwardRef(
     };
 
     const showStyledPlaceholder =
-      placeholder && typeof placeholder !== 'string' && empty && !value;
+      placeholder && typeof placeholder !== 'string' && !value;
 
     let drop;
     if (showDrop) {
@@ -205,6 +218,9 @@ const TextInput = forwardRef(
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
               onSelect(adjustedEvent);
+            }
+            if (formContext) {
+              formContext.update(name, suggestions[activeSuggestionIndex]);
             }
           }}
         >
@@ -251,6 +267,9 @@ const TextInput = forwardRef(
                               adjustedEvent.suggestion = suggestion;
                               adjustedEvent.target = (ref || inputRef).current;
                               onSelect(adjustedEvent);
+                            }
+                            if (formContext) {
+                              formContext.update(name, suggestion);
                             }
                           }}
                           onMouseOver={() => setActiveSuggestionIndex(index)}
@@ -330,8 +349,9 @@ const TextInput = forwardRef(
           onKeyDown={onKeyDown}
         >
           <StyledTextInput
-            id={id}
             ref={ref || inputRef}
+            id={id}
+            name={name}
             autoComplete="off"
             plain={plain}
             placeholder={
@@ -365,10 +385,10 @@ const TextInput = forwardRef(
               }
             }}
             onChange={event => {
-              setEmpty(!event.target.value);
-              if (onChange) {
-                onChange(event);
+              if (formContext && name) {
+                formContext.set(name, event.target.value);
               }
+              if (onChange) onChange(event);
             }}
           />
         </Keyboard>

@@ -21,7 +21,9 @@ const Example = () => (
       <Box width="medium">
         <Form
           onReset={event => console.log(event)}
-          onSubmit={({ value }) => console.log('Submit', value)}
+          onSubmit={({ value, touched }) =>
+            console.log('Submit', value, touched)
+          }
         >
           <FormField
             label="Name"

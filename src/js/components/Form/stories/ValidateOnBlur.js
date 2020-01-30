@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, Form, FormField } from 'grommet';
+import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Example = () => (
@@ -25,7 +25,11 @@ const Example = () => (
               },
             ]}
           />
-          <FormField label="Email" name="email" type="email" required />
+
+          <FormField label="Email" name="email" required>
+            <TextInput name="email" type="email" />
+          </FormField>
+
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />

@@ -9,7 +9,7 @@ import { data } from './data';
 
 const ActionList = () => (
   <Grommet theme={grommet}>
-    <Box align="center" pad="large">
+    <Box pad="large">
       <List
         data={data.slice(0, 10)}
         pad={{ left: 'small', right: 'none' }}

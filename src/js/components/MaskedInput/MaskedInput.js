@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { withFocus, withForwardRef } from '../hocs';
 
 import {
   StyledMaskedInput,
@@ -105,270 +111,245 @@ const parseValue = (mask, value) => {
   return valueParts;
 };
 
-class MaskedInput extends Component {
-  static contextType = ThemeContext;
+const defaultMask = [];
 
-  static defaultProps = {
-    mask: [],
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { mask, value } = nextProps;
-    const { priorMask, priorValue } = prevState;
-    if (priorMask !== mask || priorValue !== value) {
-      const valueParts = parseValue(mask, value);
-      return { priorMask: mask, priorValue: value, valueParts };
-    }
-    return null;
-  }
-
-  state = {};
-
-  inputRef = React.createRef();
-
-  dropRef = React.createRef();
-
-  componentDidUpdate() {
-    const { focus } = this.props;
-    if (focus) {
-      this.locateCaret();
-    }
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.caretTimeout);
-    clearTimeout(this.blurTimeout);
-  }
-
-  locateCaret = () => {
-    // leave time for caret to be placed after receiving focus
-    clearTimeout(this.caretTimeout);
-    this.caretTimeout = setTimeout(() => {
-      const { mask } = this.props;
-      const { activeMaskIndex, valueParts } = this.state;
-      if (this.inputRef.current) {
-        // determine which mask element the caret is at
-        const caretIndex = this.inputRef.current.selectionStart;
-        let maskIndex;
-        valueParts.some((part, index) => {
-          if (part.beginIndex <= caretIndex && part.endIndex >= caretIndex) {
-            maskIndex = index;
-            return true;
-          }
-          return false;
-        });
-        if (maskIndex === undefined && valueParts.length < mask.length) {
-          maskIndex = valueParts.length; // first unused one
-        }
-        if (maskIndex && mask[maskIndex].fixed) {
-          maskIndex -= 1; // fixed mask parts are never "active"
-        }
-        if (maskIndex !== activeMaskIndex) {
-          // eslint-disable-next-line react/no-did-update-set-state
-          this.setState({
-            activeMaskIndex: maskIndex,
-            activeOptionIndex: -1,
-            showDrop: maskIndex >= 0 && mask[maskIndex].options && true,
-          });
-        }
-      }
-    }, 10); // 10ms empirically chosen
-  };
-
-  onFocus = event => {
-    const { onFocus } = this.props;
-    this.locateCaret();
-    if (onFocus) {
-      onFocus(event);
-    }
-  };
-
-  onBlur = event => {
-    // delay so we don't remove the drop before Button events can be processed
-    const { onBlur } = this.props;
-    clearTimeout(this.blurTimeout);
-    this.blurTimeout = setTimeout(() => {
-      const { showDrop } = this.state;
-      if (
-        showDrop &&
-        this.dropRef.current &&
-        document.activeElement !== this.inputRef.current &&
-        !this.dropRef.current.parentNode.contains(document.activeElement)
-      ) {
-        this.setState({ activeMaskIndex: undefined, showDrop: false });
-      }
-    }, 10); // 10ms empirically chosen
-    if (onBlur) {
-      onBlur(event);
-    }
-  };
-
-  setValue = nextValue => {
-    // Calling set value function directly on input because React library
-    // overrides setter `event.target.value =` and loses original event
-    // target fidelity.
-    // https://stackoverflow.com/a/46012210 &&
-    // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
-    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-      window.HTMLInputElement.prototype,
-      'value',
-    ).set;
-    nativeInputValueSetter.call(this.inputRef.current, nextValue);
-    const event = new Event('input', { bubbles: true });
-    this.inputRef.current.dispatchEvent(event);
-  };
-
-  // This could be due to a paste or as the user is typing.
-  onChange = event => {
-    const { onChange, mask } = this.props;
-    const {
-      target: { value },
-    } = event;
-    // Align with the mask.
-    const valueParts = parseValue(mask, value);
-    const nextValue = valueParts.map(part => part.part).join('');
-    if (value === nextValue) {
-      if (onChange) {
-        onChange(event);
-      }
-    } else {
-      this.setValue(nextValue);
-    }
-  };
-
-  onOption = option => () => {
-    const { mask } = this.props;
-    const { activeMaskIndex, valueParts } = this.state;
-    const nextValueParts = [...valueParts];
-    nextValueParts[activeMaskIndex] = { part: option };
-    // add any fixed parts that follow
-    let index = activeMaskIndex + 1;
-    while (index < mask.length && !nextValueParts[index] && mask[index].fixed) {
-      nextValueParts[index] = { part: mask[index].fixed };
-      index += 1;
-    }
-    const nextValue = nextValueParts.map(part => part.part).join('');
-    this.setValue(nextValue);
-    // restore focus to input
-    this.inputRef.current.focus();
-  };
-
-  onNextOption = event => {
-    const { mask } = this.props;
-    const { activeMaskIndex, activeOptionIndex } = this.state;
-    const item = mask[activeMaskIndex];
-    if (item && item.options) {
-      event.preventDefault();
-      const index = Math.min(activeOptionIndex + 1, item.options.length - 1);
-      this.setState({ activeOptionIndex: index });
-    }
-  };
-
-  onPreviousOption = event => {
-    const { mask } = this.props;
-    const { activeMaskIndex, activeOptionIndex } = this.state;
-    if (activeMaskIndex >= 0 && mask[activeMaskIndex].options) {
-      event.preventDefault();
-      const index = Math.max(activeOptionIndex - 1, 0);
-      this.setState({ activeOptionIndex: index });
-    }
-  };
-
-  onSelectOption = event => {
-    const { mask } = this.props;
-    const { activeMaskIndex, activeOptionIndex } = this.state;
-    if (activeMaskIndex >= 0 && activeOptionIndex >= 0) {
-      event.preventDefault();
-      const option = mask[activeMaskIndex].options[activeOptionIndex];
-      this.onOption(option)();
-    }
-  };
-
-  onEsc = event => {
-    const { showDrop } = this.state;
-    if (showDrop) {
-      // we have to stop both synthetic events and native events
-      // drop and layer should not close by pressing esc on this input
-      event.stopPropagation();
-      event.nativeEvent.stopImmediatePropagation();
-      this.setState({ showDrop: false });
-    }
-  };
-
-  renderPlaceholder = () => {
-    const { mask } = this.props;
-    return mask.map(item => item.placeholder || item.fixed).join('');
-  };
-
-  render() {
-    const {
-      defaultValue,
-      forwardRef,
+const MaskedInput = forwardRef(
+  (
+    {
+      focus: focusProp,
       id,
+      mask = defaultMask,
+      name,
+      onBlur,
+      onChange,
+      onFocus,
+      onKeyDown,
       placeholder,
       plain,
-      mask,
-      value,
-      onChange,
-      onKeyDown,
-      theme: propsTheme,
+      value: valueProp,
       ...rest
-    } = this.props;
-    const theme = this.context || propsTheme;
-    const { activeMaskIndex, activeOptionIndex, showDrop } = this.state;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const formContext = useContext(FormContext);
+
+    const [value, setValue] = useState(
+      valueProp !== undefined
+        ? valueProp
+        : (formContext && name && formContext.get(name)) || '',
+    );
+    useEffect(() => setValue(valueProp), [valueProp]);
+    useEffect(() => {
+      if (formContext && name) setValue(formContext.get(name) || '');
+    }, [formContext, name]);
+
+    const [valueParts, setValueParts] = useState(parseValue(mask, value));
+    useEffect(() => {
+      setValueParts(parseValue(mask, value));
+    }, [mask, value]);
+
+    const inputRef = useRef();
+    const dropRef = useRef();
+
+    const [focus, setFocus] = useState(focusProp);
+    const [activeMaskIndex, setActiveMaskIndex] = useState();
+    const [activeOptionIndex, setActiveOptionIndex] = useState();
+    const [showDrop, setShowDrop] = useState();
+
+    useEffect(() => {
+      if (focus) {
+        const timer = setTimeout(() => {
+          // determine which mask element the caret is at
+          const caretIndex = (ref || inputRef).current.selectionStart;
+          let maskIndex;
+          valueParts.some((part, index) => {
+            if (part.beginIndex <= caretIndex && part.endIndex >= caretIndex) {
+              maskIndex = index;
+              return true;
+            }
+            return false;
+          });
+          if (maskIndex === undefined && valueParts.length < mask.length) {
+            maskIndex = valueParts.length; // first unused one
+          }
+          if (maskIndex && mask[maskIndex].fixed) {
+            maskIndex -= 1; // fixed mask parts are never "active"
+          }
+          if (maskIndex !== activeMaskIndex) {
+            setActiveMaskIndex(maskIndex);
+            setActiveOptionIndex(-1);
+            setShowDrop(maskIndex >= 0 && mask[maskIndex].options && true);
+          }
+        }, 10); // 10ms empirically chosen
+        return () => clearTimeout(timer);
+      }
+      return undefined;
+    }, [activeMaskIndex, focus, mask, ref, valueParts]);
+
+    const setInputValue = useCallback(
+      nextValue => {
+        // Calling set value function directly on input because React library
+        // overrides setter `event.target.value =` and loses original event
+        // target fidelity.
+        // https://stackoverflow.com/a/46012210 &&
+        // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+          window.HTMLInputElement.prototype,
+          'value',
+        ).set;
+        nativeInputValueSetter.call((ref || inputRef).current, nextValue);
+        const event = new Event('input', { bubbles: true });
+        (ref || inputRef).current.dispatchEvent(event);
+      },
+      [ref],
+    );
+
+    // This could be due to a paste or as the user is typing.
+    const onChangeInput = useCallback(
+      event => {
+        // Align with the mask.
+        const nextValueParts = parseValue(mask, event.target.value);
+        const nextValue = nextValueParts.map(part => part.part).join('');
+        if (value !== nextValue) setInputValue(nextValue);
+        if (formContext && name) formContext.set(name, event.target.value);
+        if (onChange) onChange(event);
+      },
+      [formContext, mask, name, onChange, setInputValue, value],
+    );
+
+    const onOption = useCallback(
+      option => () => {
+        const nextValueParts = [...valueParts];
+        nextValueParts[activeMaskIndex] = { part: option };
+        // add any fixed parts that follow
+        let index = activeMaskIndex + 1;
+        while (
+          index < mask.length &&
+          !nextValueParts[index] &&
+          mask[index].fixed
+        ) {
+          nextValueParts[index] = { part: mask[index].fixed };
+          index += 1;
+        }
+        const nextValue = nextValueParts.map(part => part.part).join('');
+        setInputValue(nextValue);
+        // restore focus to input
+        (ref || inputRef).current.focus();
+      },
+      [activeMaskIndex, mask, ref, setInputValue, valueParts],
+    );
+
+    const onNextOption = useCallback(
+      event => {
+        const item = mask[activeMaskIndex];
+        if (item && item.options) {
+          event.preventDefault();
+          const index = Math.min(
+            activeOptionIndex + 1,
+            item.options.length - 1,
+          );
+          setActiveOptionIndex(index);
+        }
+      },
+      [activeMaskIndex, activeOptionIndex, mask],
+    );
+
+    const onPreviousOption = useCallback(
+      event => {
+        if (activeMaskIndex >= 0 && mask[activeMaskIndex].options) {
+          event.preventDefault();
+          const index = Math.max(activeOptionIndex - 1, 0);
+          setActiveOptionIndex(index);
+        }
+      },
+      [activeMaskIndex, activeOptionIndex, mask],
+    );
+
+    const onSelectOption = useCallback(
+      event => {
+        if (activeMaskIndex >= 0 && activeOptionIndex >= 0) {
+          event.preventDefault();
+          const option = mask[activeMaskIndex].options[activeOptionIndex];
+          onOption(option)();
+        }
+      },
+      [activeMaskIndex, activeOptionIndex, mask, onOption],
+    );
+
+    const onEsc = useCallback(
+      event => {
+        if (showDrop) {
+          // we have to stop both synthetic events and native events
+          // drop and layer should not close by pressing esc on this input
+          event.stopPropagation();
+          event.nativeEvent.stopImmediatePropagation();
+          setShowDrop(false);
+        }
+      },
+      [showDrop],
+    );
+
+    const renderPlaceholder = () => {
+      return mask.map(item => item.placeholder || item.fixed).join('');
+    };
 
     return (
       <StyledMaskedInputContainer plain={plain}>
         <Keyboard
-          onEsc={this.onEsc}
-          onTab={this.onTab}
-          onLeft={this.locateCaret}
-          onRight={this.locateCaret}
-          onUp={this.onPreviousOption}
-          onDown={this.onNextOption}
-          onEnter={this.onSelectOption}
+          onEsc={onEsc}
+          onTab={showDrop ? () => setShowDrop(false) : undefined}
+          onLeft={undefined}
+          onRight={undefined}
+          onUp={onPreviousOption}
+          onDown={showDrop ? onNextOption : () => setShowDrop(true)}
+          onEnter={onSelectOption}
           onKeyDown={onKeyDown}
         >
           <StyledMaskedInput
+            ref={ref || inputRef}
             id={id}
-            ref={node => {
-              this.inputRef.current = node;
-              if (forwardRef) {
-                if (typeof forwardRef === 'object') {
-                  forwardRef.current = node;
-                } else {
-                  forwardRef(node);
-                }
-              }
-            }}
+            name={name}
             autoComplete="off"
             plain={plain}
-            placeholder={placeholder || this.renderPlaceholder()}
+            placeholder={placeholder || renderPlaceholder()}
+            focus={focus}
             {...rest}
-            defaultValue={defaultValue}
             value={value}
             theme={theme}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onChange}
+            onFocus={event => {
+              setFocus(true);
+              setShowDrop(true);
+              if (onFocus) onFocus(event);
+            }}
+            onBlur={event => {
+              setFocus(false);
+              // This will be called when the user clicks on a suggestion,
+              // check for that and don't remove the drop in that case.
+              // Drop will already have removed itself if the user has focused
+              // outside of the Drop.
+              if (!dropRef.current) setShowDrop(false);
+              if (onBlur) onBlur(event);
+            }}
+            onChange={onChangeInput}
           />
         </Keyboard>
-        {showDrop && (
+        {showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && (
           <Drop
             id={id ? `masked-input-drop__${id}` : undefined}
             align={{ top: 'bottom', left: 'left' }}
             responsive={false}
-            target={this.inputRef.current}
+            target={(ref || inputRef).current}
+            onClickOutside={() => setShowDrop(false)}
+            onEsc={() => setShowDrop(false)}
           >
-            <Box ref={this.dropRef}>
+            <Box ref={dropRef}>
               {mask[activeMaskIndex].options.map((option, index) => (
                 <Box key={option} flex={false}>
                   <Button
                     tabIndex="-1"
-                    onClick={this.onOption(option)}
-                    onMouseOver={() =>
-                      this.setState({ activeOptionIndex: index })
-                    }
+                    onClick={onOption(option)}
+                    onMouseOver={() => setActiveOptionIndex(index)}
                     onFocus={() => {}}
                     active={index === activeOptionIndex}
                     hoverIndicator="background"
@@ -384,19 +365,16 @@ class MaskedInput extends Component {
         )}
       </StyledMaskedInputContainer>
     );
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(MaskedInput.defaultProps, defaultProps);
+MaskedInput.displayName = 'MaskedInput';
 
 let MaskedInputDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   MaskedInputDoc = require('./doc').doc(MaskedInput);
 }
-const MaskedInputWrapper = compose(
-  withFocus({ focusWithMouse: true }),
-  withForwardRef,
-)(MaskedInputDoc || MaskedInput);
+const MaskedInputWrapper = MaskedInputDoc || MaskedInput;
 
 export { MaskedInputWrapper as MaskedInput };
