@@ -204,10 +204,12 @@ function (_Component) {
         elements: nextElements
       }, function () {
         if (onChange) {
+          var e2 = _this2.state.elements;
+
           if (elements.duration) {
-            onChange("P" + elements.hours + "H" + elements.minutes + "M" + elements.seconds + "S");
+            onChange("P" + e2.hours + "H" + e2.minutes + "M" + e2.seconds + "S");
           } else {
-            onChange("T" + elements.hours + ":" + elements.minutes + ":" + elements.seconds);
+            onChange("T" + e2.hours + ":" + e2.minutes + ":" + e2.seconds);
           }
         }
       });
