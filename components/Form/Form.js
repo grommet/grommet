@@ -75,18 +75,19 @@ var Form = (0, _react.forwardRef)(function (_ref, ref) {
 
       nextValue[name] = data;
       setErrors(function (prevErrors) {
-        var nextErrors = _extends({}, prevErrors);
+        var nextErrors = _extends({}, prevErrors); // re-run any validations that have errors, in case the validation
+        // is checking across fields
 
-        if (prevErrors[name]) {
-          var nextError = error || validations.current[name] && validations.current[name](data, nextValue);
+
+        Object.keys(prevErrors).forEach(function (errName) {
+          var nextError = errName === name && error || validations.current[errName] && validations.current[errName](data, nextValue);
 
           if (nextError) {
-            nextErrors[name] = nextError;
+            nextErrors[errName] = nextError;
           } else {
-            delete nextErrors[name];
+            delete nextErrors[errName];
           }
-        }
-
+        });
         return nextErrors;
       });
       return nextValue;
