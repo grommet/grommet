@@ -1,161 +1,156 @@
-import React, { Component } from 'react';
-import { defaultProps } from '../../default-props';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { FormContext } from './FormContext';
-
-const updateReducer = (name, data, error, validations) => state => {
-  const { errors, touched, value } = state;
-  const nextValue = { ...value };
-  nextValue[name] = data;
-  const nextTouched = { ...touched };
-  nextTouched[name] = true;
-  const nextErrors = { ...errors };
-  if (errors[name]) {
-    const nextError =
-      error || (validations[name] && validations[name](data, nextValue));
-    if (nextError) {
-      nextErrors[name] = nextError;
-    } else {
-      delete nextErrors[name];
-    }
-  }
-  return {
-    value: nextValue,
-    errors: nextErrors,
-    touched: nextTouched,
-  };
-};
 
 const defaultMessages = {
   invalid: 'invalid',
   required: 'required',
 };
+const defaultValue = {};
+const defaultErrors = {};
 
-class Form extends Component {
-  static defaultProps = {
-    messages: defaultMessages,
-    validate: 'submit',
-    value: {},
-  };
+const Form = forwardRef(
+  (
+    {
+      children,
+      errors: errorsProp = defaultErrors,
+      messages: messagesProp = defaultMessages,
+      onChange,
+      onReset,
+      onSubmit,
+      validate = 'submit',
+      value: valueProp = defaultValue,
+      ...rest
+    },
+    ref,
+  ) => {
+    const [value, setValue] = useState(valueProp);
+    useEffect(() => {
+      if (valueProp !== defaultValue) setValue(valueProp);
+    }, [valueProp]);
+    const [messages, setMessages] = useState(messagesProp);
+    useEffect(() => setMessages(messagesProp), [messagesProp]);
+    const [errors, setErrors] = useState(errorsProp || {});
+    useEffect(() => setErrors(errorsProp || {}), [errorsProp]);
+    const [touched, setTouched] = useState({});
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { value, errors, messages } = nextProps;
-    const {
-      value: stateValue,
-      errors: stateErrors,
-      priorValue,
-      priorErrors,
-      priorMessages,
-    } = prevState;
-    if (
-      !priorValue ||
-      value !== priorValue ||
-      errors !== priorErrors ||
-      messages !== priorMessages
-    ) {
-      return {
-        value: value !== priorValue ? value : stateValue,
-        priorValue: value,
-        errors: (errors !== priorErrors ? errors : stateErrors) || {},
-        priorErrors: errors,
-        messages: { ...defaultMessages, ...messages },
-        priorMessages: messages,
-      };
-    }
-    return null;
-  }
+    const validations = useRef({});
 
-  state = { errors: {}, value: {}, touched: {} };
+    useEffect(() => {
+      if (onChange) onChange(value);
+    }, [onChange, value]);
 
-  validations = {};
+    useEffect(() => {}, [value, errors]);
 
-  onSubmit = event => {
-    const { onSubmit } = this.props;
-    const { errors, value } = this.state;
-    // Don't submit the form via browser form action. We don't want it
-    // if the validation fails. And, we assume a javascript action handler
-    // otherwise.
-    event.preventDefault();
-    const nextErrors = { ...errors };
-    Object.keys(this.validations).forEach(name => {
-      const validate = this.validations[name];
-      const error = validate && validate(value[name], value);
-      if (error) {
-        nextErrors[name] = error;
-      } else {
-        delete nextErrors[name];
-      }
-    });
-    if (Object.keys(nextErrors).length === 0 && onSubmit) {
-      event.persist(); // extract from React's synthetic event pool
-      const adjustedEvent = event;
-      adjustedEvent.value = value;
-      onSubmit(adjustedEvent);
-    } else {
-      this.setState({ errors: nextErrors });
-    }
-  };
+    const update = useCallback((name, data, error, initial) => {
+      setValue(prevValue => {
+        const nextValue = { ...prevValue };
+        nextValue[name] = data;
 
-  onReset = event => {
-    const { onChange, onReset } = this.props;
-    const value = {};
-    this.setState({ errors: {}, value, touched: {} }, () => {
-      if (onReset) {
-        event.persist(); // extract from React's synthetic event pool
-        const adjustedEvent = event;
-        adjustedEvent.value = value;
-        onReset(adjustedEvent);
-      }
-      if (onChange) {
-        onChange(value);
-      }
-    });
-  };
+        setErrors(prevErrors => {
+          const nextErrors = { ...prevErrors };
+          if (prevErrors[name]) {
+            const nextError =
+              error ||
+              (validations.current[name] &&
+                validations.current[name](data, nextValue));
+            if (nextError) {
+              nextErrors[name] = nextError;
+            } else {
+              delete nextErrors[name];
+            }
+          }
+          return nextErrors;
+        });
 
-  onBlur = name => {
-    const { validate } = this.props;
-    if (validate === 'blur' && this.validations[name]) {
-      const { errors, value } = this.state;
-      const nextErrors = { ...errors };
-      const error = this.validations[name](value[name], value);
-      if (error) {
-        nextErrors[name] = error;
-      } else {
-        delete nextErrors[name];
-      }
-      this.setState({ errors: nextErrors });
-    }
-  };
+        return nextValue;
+      });
 
-  update = (name, data, error) => {
-    this.setState(updateReducer(name, data, error, this.validations), () => {
-      const { onChange } = this.props;
-      const { value } = this.state;
-      if (onChange) {
-        onChange(value);
-      }
-    });
-  };
+      if (!initial)
+        setTouched(prevTouched => {
+          const nextTouched = { ...prevTouched };
+          nextTouched[name] = true;
+          return nextTouched;
+        });
+    }, []);
 
-  addValidation = (name, validate) => {
-    this.validations[name] = validate;
-  };
-
-  render() {
-    const { children, validate, ...rest } = this.props;
-    delete rest.messages;
-    delete rest.theme;
-    delete rest.value;
-    const { errors, touched, value, messages } = this.state;
     return (
-      <form {...rest} onReset={this.onReset} onSubmit={this.onSubmit}>
+      <form
+        ref={ref}
+        {...rest}
+        onReset={event => {
+          setValue(defaultValue);
+          setErrors({});
+          setTouched({});
+          if (onReset) {
+            event.persist(); // extract from React's synthetic event pool
+            const adjustedEvent = event;
+            adjustedEvent.value = defaultValue;
+            onReset(adjustedEvent);
+          }
+        }}
+        onSubmit={event => {
+          // Don't submit the form via browser form action. We don't want it
+          // if the validation fails. And, we assume a javascript action handler
+          // otherwise.
+          event.preventDefault();
+          const nextErrors = { ...errors };
+          Object.keys(validations.current).forEach(name => {
+            const validation = validations.current[name];
+            const error = validation && validation(value[name], value);
+            if (error) {
+              nextErrors[name] = error;
+            } else {
+              delete nextErrors[name];
+            }
+          });
+          if (Object.keys(nextErrors).length === 0 && onSubmit) {
+            event.persist(); // extract from React's synthetic event pool
+            const adjustedEvent = event;
+            adjustedEvent.value = value;
+            adjustedEvent.touched = touched;
+            onSubmit(adjustedEvent);
+          } else {
+            setErrors(nextErrors);
+          }
+        }}
+      >
         <FormContext.Provider
           value={{
-            addValidation: this.addValidation,
-            onBlur: validate === 'blur' ? this.onBlur : undefined,
+            addValidation: (name, validation) => {
+              validations.current[name] = validation;
+            },
+            onBlur:
+              validate === 'blur'
+                ? name => {
+                    if (validations.current[name]) {
+                      setErrors(prevErrors => {
+                        const nextErrors = { ...prevErrors };
+                        const error = validations.current[name](
+                          value[name],
+                          value,
+                        );
+                        if (error) {
+                          nextErrors[name] = error;
+                        } else {
+                          delete nextErrors[name];
+                        }
+                        return nextErrors;
+                      });
+                    }
+                  }
+                : undefined,
             errors,
+            get: name => value[name],
             messages,
+            set: (name, nextValue) => update(name, nextValue),
             touched,
-            update: this.update,
+            update,
             value,
           }}
         >
@@ -163,10 +158,10 @@ class Form extends Component {
         </FormContext.Provider>
       </form>
     );
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(Form.defaultProps, defaultProps);
+Form.displayName = 'Form';
 
 let FormDoc;
 if (process.env.NODE_ENV !== 'production') {
@@ -174,6 +169,5 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const FormWrapper = FormDoc || Form;
-FormWrapper.displayName = 'Form';
 
 export { FormWrapper as Form };

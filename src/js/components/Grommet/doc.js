@@ -13,6 +13,9 @@ export const doc = Grommet => {
     .intrinsicElement('div');
 
   DocumentedGrommet.propTypes = {
+    dir: PropTypes.oneOf(['rtl']).description(
+      'Layout direction for right to left contexts',
+    ),
     full: PropTypes.bool
       .description('Whether to take the whole viewport.')
       .defaultValue(false),
