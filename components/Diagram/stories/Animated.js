@@ -24,9 +24,13 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   }
 });
 
-var connection = function connection(fromTarget, toTarget, _temp) {
-  var _ref = _temp === void 0 ? {} : _temp,
-      rest = _extends({}, _ref);
+var connection = function connection(fromTarget, toTarget, _ref) {
+  if (_ref === void 0) {
+    _ref = {};
+  }
+
+  var _ref2 = _ref,
+      rest = _extends({}, _ref2);
 
   return _extends({
     fromTarget: fromTarget,
@@ -39,14 +43,14 @@ var connection = function connection(fromTarget, toTarget, _temp) {
   }, rest);
 };
 
-var DiamondContainer = function DiamondContainer(_ref2) {
-  var carat = _ref2.carat,
-      color = _ref2.color,
-      cut = _ref2.cut,
-      align = _ref2.align,
-      id = _ref2.id,
-      name = _ref2.name,
-      textSize = _ref2.textSize;
+var DiamondContainer = function DiamondContainer(_ref3) {
+  var carat = _ref3.carat,
+      color = _ref3.color,
+      cut = _ref3.cut,
+      align = _ref3.align,
+      id = _ref3.id,
+      name = _ref3.name,
+      textSize = _ref3.textSize;
   return _react["default"].createElement(_grommet.Box, {
     align: align || 'center',
     alignSelf: "center",
@@ -71,9 +75,9 @@ var DiamondContainer = function DiamondContainer(_ref2) {
   }, " Cut: ", cut, " ")));
 };
 
-var Container = function Container(_ref3) {
-  var node = _ref3.node,
-      index = _ref3.index;
+var Container = function Container(_ref4) {
+  var node = _ref4.node,
+      index = _ref4.index;
   return _react["default"].createElement(DiamondContainer, {
     carat: node.carat,
     color: node.color,

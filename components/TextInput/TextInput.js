@@ -199,7 +199,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
         hoverIndicator: "background",
         onClick: function onClick(event) {
           // we stole the focus, give it back
-          inputRef.current.focus();
+          (ref || inputRef).current.focus();
           closeDrop();
 
           if (onSelect) {

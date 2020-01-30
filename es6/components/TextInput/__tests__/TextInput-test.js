@@ -1,7 +1,12 @@
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { getByText } from '@testing-library/dom';
+import 'regenerator-runtime/runtime';
+import { cleanup, fireEvent, render, waitForElement } from '@testing-library/react';
+import { getByText, screen } from '@testing-library/dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '..';
@@ -273,4 +278,90 @@ describe('TextInput', function () {
       }, 50);
     });
   });
+  test('should return focus to input on select',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee() {
+    var onSelect, _render11, getByPlaceholderText, input, selection;
+
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            onSelect = jest.fn();
+            _render11 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
+              "data-testid": "test-input-focus",
+              id: "input-focus",
+              name: "input-focus",
+              placeholder: "Type to search...",
+              suggestions: ['option0', 'option1', 'option2'],
+              onSelect: onSelect
+            }))), getByPlaceholderText = _render11.getByPlaceholderText;
+            input = getByPlaceholderText('Type to search...');
+            expect(document.activeElement).not.toEqual(input);
+            fireEvent.focus(input);
+            expect(document.activeElement).not.toEqual(input);
+            _context.next = 8;
+            return waitForElement(function () {
+              return screen.getByText('option1');
+            });
+
+          case 8:
+            selection = _context.sent;
+            fireEvent.click(selection);
+            expect(document.activeElement).toEqual(input);
+
+          case 11:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  })));
+  test('should return focus to ref on select',
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee2() {
+    var inputRef, onSelect, _render12, getByPlaceholderText, input, selection;
+
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            inputRef = {
+              current: {}
+            };
+            onSelect = jest.fn();
+            _render12 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
+              "data-testid": "test-input-focus",
+              id: "input-focus",
+              name: "input-focus",
+              placeholder: "Type to search...",
+              suggestions: ['option0', 'option1', 'option2'],
+              onSelect: onSelect,
+              ref: inputRef
+            }))), getByPlaceholderText = _render12.getByPlaceholderText;
+            input = getByPlaceholderText('Type to search...');
+            expect(document.activeElement).not.toEqual(input);
+            fireEvent.focus(input);
+            expect(document.activeElement).not.toEqual(input);
+            _context2.next = 9;
+            return waitForElement(function () {
+              return screen.getByText('option2');
+            });
+
+          case 9:
+            selection = _context2.sent;
+            fireEvent.click(selection);
+            expect(document.activeElement).toEqual(input);
+
+          case 12:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  })));
 });

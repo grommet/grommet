@@ -44,10 +44,14 @@ var Node = function Node(_ref) {
   }, rest));
 };
 
-var connection = function connection(fromTarget, toTarget, _temp) {
-  var _ref2 = _temp === void 0 ? {} : _temp,
-      color = _ref2.color,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["color"]);
+var connection = function connection(fromTarget, toTarget, _ref2) {
+  if (_ref2 === void 0) {
+    _ref2 = {};
+  }
+
+  var _ref3 = _ref2,
+      color = _ref3.color,
+      rest = _objectWithoutPropertiesLoose(_ref3, ["color"]);
 
   return _extends({
     fromTarget: fromTarget,
