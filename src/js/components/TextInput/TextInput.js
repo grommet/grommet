@@ -189,7 +189,7 @@ const TextInput = forwardRef(
                         hoverIndicator="background"
                         onClick={event => {
                           // we stole the focus, give it back
-                          inputRef.current.focus();
+                          (ref || inputRef).current.focus();
                           closeDrop();
                           if (onSelect) {
                             event.persist();
