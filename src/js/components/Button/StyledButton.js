@@ -96,7 +96,9 @@ const StyledButton = styled.button`
   background: transparent;
   overflow: visible;
   text-transform: none;
-
+  &:focus {
+     // button focus styles here
+  }
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}

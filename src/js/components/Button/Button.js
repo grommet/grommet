@@ -18,18 +18,17 @@ const Button = forwardRef(
   (
     {
       a11yTitle,
-      color, // munged to avoid styled-components putting it in the DOM
+      color,
       children,
       disabled,
       icon,
-      focusIndicator = true,
+      focusIndicator = false,
       gap = 'small',
       fill, // munged to avoid styled-components putting it in the DOM
       href,
       label,
       onBlur,
       onClick,
-      onFocus,
       onMouseOut,
       onMouseOver,
       plain,
@@ -66,20 +65,6 @@ const Button = forwardRef(
     };
 
     const [hover, setHover] = useState(false);
-
-    const onMouseOverButton = event => {
-      setHover(true);
-      if (onMouseOver) {
-        onMouseOver(event);
-      }
-    };
-
-    const onMouseOutButton = event => {
-      setHover(false);
-      if (onMouseOut) {
-        onMouseOut(event);
-      }
-    };
 
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
@@ -118,20 +103,9 @@ const Button = forwardRef(
         gap={gap}
         hasLabel={!!label}
         fillContainer={fill}
-        focus={focus}
         focusIndicator={focusIndicator}
         href={href}
         onClick={onClick}
-        onFocus={event => {
-          setFocus(true);
-          if (onFocus) onFocus(event);
-        }}
-        onBlur={event => {
-          setFocus(false);
-          if (onBlur) onBlur(event);
-        }}
-        onMouseOver={onMouseOverButton}
-        onMouseOut={onMouseOutButton}
         pad={!plain}
         plain={
           typeof plain !== 'undefined'
