@@ -55,7 +55,7 @@ class FormFieldContent extends Component {
     }
   }
 
-  renderChildren = (value, invalid, update) => {
+  renderInput = (value, invalid, update) => {
     const {
       name,
       checked,
@@ -104,6 +104,7 @@ class FormFieldContent extends Component {
       className,
       component,
       context,
+      disabled,
       error,
       focus,
       help,
@@ -151,16 +152,21 @@ class FormFieldContent extends Component {
       } = context;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
-      contents =
-        contents || this.renderChildren(value, !!normalizedError, update);
+      contents = contents || this.renderInput(value, !!normalizedError, update);
       if (onContextBlur) {
         onFieldBlur = () => onContextBlur(name);
       }
     }
 
-    if (pad) {
-      contents = <Box {...formField.content}>{contents}</Box>;
+    const contentProps = pad ? { ...formField.content } : {};
+    if (border.position === 'inner') {
+      if (normalizedError && formField.error) {
+        contentProps.background = formField.error.background;
+      } else if (disabled && formField.disabled) {
+        contentProps.background = formField.disabled.background;
+      }
     }
+    contents = <Box {...contentProps}>{contents}</Box>;
 
     let borderColor;
     if (focus && !normalizedError) {
@@ -194,9 +200,18 @@ class FormFieldContent extends Component {
         </Box>
       );
 
+      const mergedMargin = margin || formField.margin;
       abut =
         border.position === 'outer' &&
-        (border.side === 'all' || border.side === 'horizontal' || !border.side);
+        (border.side === 'all' ||
+          border.side === 'horizontal' ||
+          !border.side) &&
+        !(
+          mergedMargin &&
+          ((typeof mergedMargin === 'string' && mergedMargin !== 'none') ||
+            (mergedMargin.bottom && mergedMargin.bottom !== 'none') ||
+            (mergedMargin.horizontal && mergedMargin.horizontal !== 'none'))
+        );
       if (abut) {
         // marginBottom is set to overlap adjacent fields
         abutMargin = { bottom: '-1px' };
@@ -220,6 +235,15 @@ class FormFieldContent extends Component {
       }
     }
 
+    let outerBackground;
+    if (border.position === 'outer') {
+      if (normalizedError && formField.error) {
+        outerBackground = formField.error.background;
+      } else if (disabled && formField.disabled) {
+        outerBackground = formField.disabled.background;
+      }
+    }
+
     return (
       <FormFieldBox
         className={className}
@@ -228,6 +252,7 @@ class FormFieldContent extends Component {
             ? { ...border, color: borderColor }
             : undefined
         }
+        background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formField.margin }}
         style={outerStyle}
         onBlur={onFieldBlur}

@@ -517,10 +517,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         side: 'bottom',
       },
       content: {
-        pad: {
-          horizontal: 'small',
-          bottom: 'small',
-        },
+        pad: 'small',
+      },
+      disabled: {
+        // background: undefined,
       },
       error: {
         color: {
@@ -528,6 +528,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           light: 'status-critical',
         },
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        // background: undefined,
       },
       // extend: undefined,
       help: {

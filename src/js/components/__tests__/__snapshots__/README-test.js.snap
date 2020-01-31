@@ -5680,6 +5680,14 @@ function
 object
 \`\`\`
 
+**disabled**
+
+Whether the field should look disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
 **error**
 
 Any error text describing issues with the field
@@ -5901,7 +5909,47 @@ The pad of the FormField content. Expects \`object\`.
 Defaults to
 
 \`\`\`
-{ horizontal: 'small', bottom: 'small' }
+small
+\`\`\`
+
+**formField.disabled.background.color**
+
+The color of the FormField background when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.disabled.background.opacity**
+
+The opacity of the FormField background when it is disabled. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.background.color**
+
+The color of the FormField background when there is an error. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.background.opacity**
+
+The opacity of the FormField background when there is an error. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.error.color**

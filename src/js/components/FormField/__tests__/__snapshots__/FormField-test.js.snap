@@ -43,6 +43,21 @@ exports[`forces empty margin 1`] = `
   flex-direction: column;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -63,7 +78,11 @@ exports[`forces empty margin 1`] = `
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c3"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -111,7 +130,22 @@ exports[`renders 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -129,28 +163,28 @@ exports[`renders 1`] = `
   border: none;
 }
 
-.c4::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c4:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
@@ -175,7 +209,11 @@ exports[`renders 1`] = `
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c3"
+      />
+    </div>
   </div>
   <div
     className="c1 "
@@ -186,14 +224,18 @@ exports[`renders 1`] = `
       <div
         className="c3"
       >
-        <input
-          autoComplete="off"
+        <div
           className="c4"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-        />
+        >
+          <input
+            autoComplete="off"
+            className="c5"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -219,7 +261,7 @@ exports[`renders abut correctly 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: -12px;
+  margin-bottom: 12px;
   border: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -245,7 +287,7 @@ exports[`renders abut correctly 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    margin-bottom: -12px;
+    margin-bottom: 6px;
   }
 }
 
@@ -260,16 +302,14 @@ exports[`renders abut correctly 1`] = `
 >
   <div
     className="c1 "
-    style={
-      Object {
-        "position": undefined,
-        "zIndex": undefined,
-      }
-    }
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c2"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -334,16 +374,14 @@ exports[`renders abut with forced margin 1`] = `
 >
   <div
     className="c1 "
-    style={
-      Object {
-        "position": undefined,
-        "zIndex": undefined,
-      }
-    }
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c2"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -391,6 +429,21 @@ exports[`renders custom formfield 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   font-size: 40px;
 }
@@ -415,7 +468,11 @@ exports[`renders custom formfield 1`] = `
   >
     <div
       className="c3"
-    />
+    >
+      <div
+        className="c4"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -463,6 +520,21 @@ exports[`renders custom margin 1`] = `
   flex-direction: column;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 12px;
@@ -483,7 +555,11 @@ exports[`renders custom margin 1`] = `
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c3"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -532,6 +608,21 @@ exports[`renders error 1`] = `
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -561,9 +652,13 @@ exports[`renders error 1`] = `
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c3"
+      />
+    </div>
     <span
-      className="c3"
+      className="c4"
     >
       test error
     </span>
@@ -614,6 +709,21 @@ exports[`renders help 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   margin-inline-start: 12px;
   font-size: 18px;
@@ -646,7 +756,11 @@ exports[`renders help 1`] = `
     </span>
     <div
       className="c3"
-    />
+    >
+      <div
+        className="c4"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -694,6 +808,21 @@ exports[`renders htmlFor 1`] = `
   flex-direction: column;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin-bottom: 6px;
@@ -714,7 +843,11 @@ exports[`renders htmlFor 1`] = `
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c3"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -762,6 +895,21 @@ exports[`renders label 1`] = `
   flex-direction: column;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   margin-left: 12px;
   margin-right: 12px;
@@ -796,7 +944,11 @@ exports[`renders label 1`] = `
     </label>
     <div
       className="c3"
-    />
+    >
+      <div
+        className="c4"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -857,9 +1009,7 @@ exports[`renders pad 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-bottom: 12px;
+  padding: 12px;
 }
 
 @media only screen and (max-width:768px) {
@@ -876,14 +1026,7 @@ exports[`renders pad 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-bottom: 6px;
+    padding: 6px;
   }
 }
 

@@ -28,6 +28,9 @@ export const doc = FormField => {
       of name, value, onChange (event => {}), while event has either event.value
       or event.target.value.`,
     ),
+    disabled: PropTypes.bool.description(
+      'Whether the field should look disabled.',
+    ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any error text describing issues with the field',
     ),
@@ -101,7 +104,29 @@ export const themeDoc = {
   'formField.content.pad': {
     description: 'The pad of the FormField content.',
     type: 'object',
-    defaultValue: "{ horizontal: 'small', bottom: 'small' }",
+    defaultValue: 'small',
+  },
+  'formField.disabled.background.color': {
+    description: 'The color of the FormField background when it is disabled.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined,
+  },
+  'formField.disabled.background.opacity': {
+    description: 'The opacity of the FormField background when it is disabled.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'formField.error.background.color': {
+    description:
+      'The color of the FormField background when there is an error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined,
+  },
+  'formField.error.background.opacity': {
+    description:
+      'The opacity of the FormField background when there is an error.',
+    type: 'string',
+    defaultValue: undefined,
   },
   'formField.error.color': {
     description: 'The color of the FormField error.',
