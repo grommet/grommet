@@ -112,7 +112,7 @@ const RadioButtonGroup = forwardRef(
         <Box ref={ref} gap={gap} {...rest}>
           {options.map(
             (
-              { disabled, id, label, value: optionValue, ...radioButtonProps },
+              { disabled, id, label, value: optionValue, ...optionRest },
               index,
             ) => (
               <RadioButton
@@ -138,7 +138,7 @@ const RadioButtonGroup = forwardRef(
                   }
                   if (onChange) onChange(event);
                 }}
-                {...radioButtonProps}
+                {...optionRest}
               >
                 {children ? state => children(optionsProp[index], state) : null}
               </RadioButton>
