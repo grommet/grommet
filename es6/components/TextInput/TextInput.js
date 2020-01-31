@@ -12,7 +12,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
-import { sizeStyle } from '../../utils';
+import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
 import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions } from './StyledTextInput';
 
 var renderLabel = function renderLabel(suggestion) {
@@ -78,6 +78,8 @@ var TextInput = forwardRef(function (_ref, ref) {
   var formContext = useContext(FormContext);
   var inputRef = useRef();
   var dropRef = useRef();
+  var suggestionsRef = useRef();
+  var suggestionRefs = {};
 
   var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
       value = _useState[0],
@@ -136,7 +138,20 @@ var TextInput = forwardRef(function (_ref, ref) {
       });
       setSelectedSuggestionIndex(suggestionValues.indexOf(value));
     } else setSelectedSuggestionIndex(-1);
-  }, [suggestions, value]);
+  }, [suggestions, value]); // make sure activeSuggestion remains visible in scroll
+
+  useEffect(function () {
+    var buttonNode = suggestionRefs[activeSuggestionIndex];
+    var optionsNode = suggestionsRef.current;
+
+    if (buttonNode && isNodeAfterScroll(buttonNode, optionsNode) && optionsNode.scrollTo) {
+      optionsNode.scrollTo(0, buttonNode.offsetTop - (optionsNode.getBoundingClientRect().height - buttonNode.getBoundingClientRect().height));
+    }
+
+    if (buttonNode && isNodeBeforeScroll(buttonNode, optionsNode) && optionsNode.scrollTo) {
+      optionsNode.scrollTo(0, buttonNode.offsetTop);
+    }
+  }, [activeSuggestionIndex, suggestionRefs]);
 
   var openDrop = function openDrop() {
     setShowDrop(true);
@@ -150,11 +165,47 @@ var TextInput = forwardRef(function (_ref, ref) {
     if (messages.onSuggestionsClose) onSuggestionsClose();
   };
 
+  var onNextSuggestion = function onNextSuggestion(event) {
+    event.preventDefault();
+    var nextActiveIndex = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
+    setActiveSuggestionIndex(nextActiveIndex);
+  };
+
+  var onPreviousSuggestion = function onPreviousSuggestion(event) {
+    event.preventDefault();
+    var nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
+    setActiveSuggestionIndex(nextActiveIndex);
+  };
+
   var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && !value;
   var drop;
 
   if (showDrop) {
-    drop = React.createElement(Drop, _extends({
+    drop = // keyboard access needed here in case user clicks
+    // and drags on scroll bar and focus shifts to drop
+    React.createElement(Keyboard, {
+      onDown: function onDown(event) {
+        return onNextSuggestion(event);
+      },
+      onUp: function onUp(event) {
+        return onPreviousSuggestion(event);
+      },
+      onEnter: function onEnter(event) {
+        // we stole the focus, give it back
+        (ref || inputRef).current.focus();
+        closeDrop();
+
+        if (onSelect) {
+          var adjustedEvent = event;
+          adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
+          onSelect(adjustedEvent);
+        }
+
+        if (formContext) {
+          formContext.update(name, suggestions[activeSuggestionIndex]);
+        }
+      }
+    }, React.createElement(Drop, _extends({
       ref: dropRef,
       id: id ? "text-input-drop__" + id : undefined,
       align: dropAlign,
@@ -163,6 +214,7 @@ var TextInput = forwardRef(function (_ref, ref) {
       onClickOutside: closeDrop,
       onEsc: closeDrop
     }, dropProps), React.createElement(ContainerBox, {
+      ref: suggestionsRef,
       overflow: "auto",
       dropHeight: dropHeight
     }, React.createElement(StyledSuggestions, null, React.createElement(InfiniteScroll, {
@@ -174,6 +226,9 @@ var TextInput = forwardRef(function (_ref, ref) {
         key: stringLabel(suggestion) + "-" + index
       }, React.createElement(Button, {
         active: activeSuggestionIndex === index || selectedSuggestionIndex === index,
+        ref: function ref(r) {
+          suggestionRefs[index] = r;
+        },
         fill: true,
         hoverIndicator: "background",
         onClick: function onClick(event) {
@@ -192,12 +247,18 @@ var TextInput = forwardRef(function (_ref, ref) {
           if (formContext) {
             formContext.update(name, suggestion);
           }
+        },
+        onMouseOver: function onMouseOver() {
+          return setActiveSuggestionIndex(index);
+        },
+        onFocus: function onFocus() {
+          return setActiveSuggestionIndex(index);
         }
       }, plainLabel ? renderLabel(suggestion) : React.createElement(Box, {
         align: "start",
         pad: "small"
       }, renderLabel(suggestion))));
-    }))));
+    })))));
   }
 
   return React.createElement(StyledTextInputContainer, {
@@ -226,17 +287,13 @@ var TextInput = forwardRef(function (_ref, ref) {
     } : undefined,
     onTab: showDrop ? closeDrop : undefined,
     onUp: showDrop && suggestions && suggestions.length > 0 && activeSuggestionIndex ? function (event) {
-      event.preventDefault();
-      var index = Math.max(activeSuggestionIndex - 1, 0);
-      setActiveSuggestionIndex(index);
+      onPreviousSuggestion(event);
     } : undefined,
     onDown: suggestions && suggestions.length > 0 ? function (event) {
       if (!showDrop) {
         openDrop();
       } else {
-        event.preventDefault();
-        var index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
-        setActiveSuggestionIndex(index);
+        onNextSuggestion(event);
       }
     } : undefined,
     onKeyDown: onKeyDown
