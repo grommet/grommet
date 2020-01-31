@@ -113,7 +113,7 @@ export const themeDoc = {
   },
   'formField.disabled.background.opacity': {
     description: 'The opacity of the FormField background when it is disabled.',
-    type: 'string',
+    type: 'string | boolean | number',
     defaultValue: undefined,
   },
   'formField.error.background.color': {
@@ -125,7 +125,7 @@ export const themeDoc = {
   'formField.error.background.opacity': {
     description:
       'The opacity of the FormField background when there is an error.',
-    type: 'string',
+    type: 'string | boolean | number',
     defaultValue: undefined,
   },
   'formField.error.color': {

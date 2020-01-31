@@ -473,7 +473,11 @@ export interface ThemeType {
     content?: {
       pad?: PadType;
     };
+    disabled?: {
+      background?: BackgroundType;
+    },
     error?: {
+      background?: BackgroundType;
       color?: ColorType;
       margin?: MarginType;
     };

@@ -271,7 +271,7 @@ undefined
 
 **formField.disabled.background.opacity**
 
-The opacity of the FormField background when it is disabled. Expects `string`.
+The opacity of the FormField background when it is disabled. Expects `string | boolean | number`.
 
 Defaults to
 
@@ -291,7 +291,7 @@ undefined
 
 **formField.error.background.opacity**
 
-The opacity of the FormField background when there is an error. Expects `string`.
+The opacity of the FormField background when there is an error. Expects `string | boolean | number`.
 
 Defaults to
 
