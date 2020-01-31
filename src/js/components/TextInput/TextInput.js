@@ -125,6 +125,7 @@ const TextInput = forwardRef(
         setActiveSuggestionIndex(-1);
       }
     }, [activeSuggestionIndex, showDrop]);
+
     // announce active suggestion
     useEffect(() => {
       if (activeSuggestionIndex >= 0) {
@@ -145,6 +146,31 @@ const TextInput = forwardRef(
       } else setSelectedSuggestionIndex(-1);
     }, [suggestions, value]);
 
+    // make sure activeSuggestion remains visible in scroll
+    useEffect(() => {
+      const buttonNode = suggestionRefs[activeSuggestionIndex];
+      const optionsNode = suggestionsRef.current;
+      if (
+        buttonNode &&
+        isNodeAfterScroll(buttonNode, optionsNode) &&
+        optionsNode.scrollTo
+      ) {
+        optionsNode.scrollTo(
+          0,
+          buttonNode.offsetTop -
+            (optionsNode.getBoundingClientRect().height -
+              buttonNode.getBoundingClientRect().height),
+        );
+      }
+      if (
+        buttonNode &&
+        isNodeBeforeScroll(buttonNode, optionsNode) &&
+        optionsNode.scrollTo
+      ) {
+        optionsNode.scrollTo(0, buttonNode.offsetTop);
+      }
+    }, [activeSuggestionIndex, suggestionRefs]);
+
     const openDrop = () => {
       setShowDrop(true);
       announce(messages.suggestionIsOpen);
@@ -163,40 +189,13 @@ const TextInput = forwardRef(
         activeSuggestionIndex + 1,
         suggestions.length - 1,
       );
-      const buttonNode = suggestionRefs[nextActiveIndex];
-      const optionsNode = suggestionsRef.current;
-
       setActiveSuggestionIndex(nextActiveIndex);
-
-      if (
-        buttonNode &&
-        isNodeAfterScroll(buttonNode, optionsNode) &&
-        optionsNode.scrollTo
-      ) {
-        optionsNode.scrollTo(
-          0,
-          buttonNode.offsetTop -
-            (optionsNode.getBoundingClientRect().height -
-              buttonNode.getBoundingClientRect().height),
-        );
-      }
     };
 
     const onPreviousSuggestion = event => {
       event.preventDefault();
       const nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
-      const buttonNode = suggestionRefs[nextActiveIndex];
-      const optionsNode = suggestionsRef.current;
-
       setActiveSuggestionIndex(nextActiveIndex);
-
-      if (
-        buttonNode &&
-        isNodeBeforeScroll(buttonNode, optionsNode) &&
-        optionsNode.scrollTo
-      ) {
-        optionsNode.scrollTo(0, buttonNode.offsetTop);
-      }
     };
 
     const showStyledPlaceholder =
