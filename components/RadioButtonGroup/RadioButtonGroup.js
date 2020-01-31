@@ -137,8 +137,10 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
     var disabled = _ref2.disabled,
         id = _ref2.id,
         label = _ref2.label,
-        optionValue = _ref2.value;
-    return _react["default"].createElement(_RadioButton.RadioButton, {
+        optionValue = _ref2.value,
+        optionRest = _objectWithoutPropertiesLoose(_ref2, ["disabled", "id", "label", "value"]);
+
+    return _react["default"].createElement(_RadioButton.RadioButton, _extends({
       ref: function ref(aRef) {
         optionRefs.current[index] = aRef;
       },
@@ -159,7 +161,7 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
 
         if (_onChange) _onChange(event);
       }
-    }, children ? function (state) {
+    }, optionRest), children ? function (state) {
       return children(optionsProp[index], state);
     } : null);
   })));
