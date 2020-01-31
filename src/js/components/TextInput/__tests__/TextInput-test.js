@@ -1,7 +1,13 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { getByText } from '@testing-library/dom';
+import 'regenerator-runtime/runtime';
+import {
+  cleanup,
+  fireEvent,
+  render,
+  waitForElement,
+} from '@testing-library/react';
+import { getByText, screen } from '@testing-library/dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -238,5 +244,61 @@ describe('TextInput', () => {
         done();
       }, 50);
     });
+  });
+
+  test('should return focus to input on select', async () => {
+    const onSelect = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input-focus"
+          id="input-focus"
+          name="input-focus"
+          placeholder="Type to search..."
+          suggestions={['option0', 'option1', 'option2']}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Type to search...');
+
+    expect(document.activeElement).not.toEqual(input);
+    fireEvent.focus(input);
+    expect(document.activeElement).not.toEqual(input);
+
+    const selection = await waitForElement(() => screen.getByText('option1'));
+
+    fireEvent.click(selection);
+    expect(document.activeElement).toEqual(input);
+  });
+
+  test('should return focus to ref on select', async () => {
+    const inputRef = { current: {} };
+    const onSelect = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input-focus"
+          id="input-focus"
+          name="input-focus"
+          placeholder="Type to search..."
+          suggestions={['option0', 'option1', 'option2']}
+          onSelect={onSelect}
+          ref={inputRef}
+        />
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Type to search...');
+
+    expect(document.activeElement).not.toEqual(input);
+    fireEvent.focus(input);
+    expect(document.activeElement).not.toEqual(input);
+
+    const selection = await waitForElement(() => screen.getByText('option2'));
+
+    fireEvent.click(selection);
+    expect(document.activeElement).toEqual(input);
   });
 });

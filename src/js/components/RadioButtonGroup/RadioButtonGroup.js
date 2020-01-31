@@ -110,34 +110,40 @@ const RadioButtonGroup = forwardRef(
         onRight={focus ? onNext : undefined}
       >
         <Box ref={ref} gap={gap} {...rest}>
-          {options.map(({ disabled, id, label, value: optionValue }, index) => (
-            <RadioButton
-              ref={aRef => {
-                optionRefs.current[index] = aRef;
-              }}
-              key={optionValue}
-              name={name}
-              label={!children ? label : undefined}
-              disabled={disabled}
-              checked={optionValue === value}
-              focus={
-                focus &&
-                (optionValue === value || (value === undefined && !index))
-              }
-              id={id}
-              value={optionValue}
-              onFocus={onFocus}
-              onBlur={onBlur}
-              onChange={event => {
-                if (formContext && name) {
-                  formContext.set(name, event.target.value);
+          {options.map(
+            (
+              { disabled, id, label, value: optionValue, ...optionRest },
+              index,
+            ) => (
+              <RadioButton
+                ref={aRef => {
+                  optionRefs.current[index] = aRef;
+                }}
+                key={optionValue}
+                name={name}
+                label={!children ? label : undefined}
+                disabled={disabled}
+                checked={optionValue === value}
+                focus={
+                  focus &&
+                  (optionValue === value || (value === undefined && !index))
                 }
-                if (onChange) onChange(event);
-              }}
-            >
-              {children ? state => children(optionsProp[index], state) : null}
-            </RadioButton>
-          ))}
+                id={id}
+                value={optionValue}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                onChange={event => {
+                  if (formContext && name) {
+                    formContext.set(name, event.target.value);
+                  }
+                  if (onChange) onChange(event);
+                }}
+                {...optionRest}
+              >
+                {children ? state => children(optionsProp[index], state) : null}
+              </RadioButton>
+            ),
+          )}
         </Box>
       </Keyboard>
     );
