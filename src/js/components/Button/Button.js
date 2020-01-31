@@ -3,7 +3,6 @@ import React, {
   Children,
   forwardRef,
   useContext,
-  useState,
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
@@ -41,7 +40,6 @@ const Button = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [focus, setFocus] = useState();
 
     if ((icon || label) && children) {
       console.warn(
@@ -64,8 +62,6 @@ const Button = forwardRef(
       return colorIsDark(backgroundColor, theme);
     };
 
-    const [hover, setHover] = useState(false);
-
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
     if (primary && icon && !icon.props.color) {
@@ -87,7 +83,7 @@ const Button = forwardRef(
         </Box>
       );
     } else if (typeof children === 'function') {
-      contents = children({ hover, focus });
+      contents = children({ });
     } else {
       contents = first || second || children;
     }
