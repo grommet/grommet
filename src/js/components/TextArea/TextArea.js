@@ -17,6 +17,7 @@ const TextArea = forwardRef(
         ? valueProp
         : (formContext && name && formContext.get(name)) || '',
     );
+    // updating here causes the cursor bug
     useEffect(() => setValue(valueProp), [valueProp]);
     useEffect(() => {
       if (formContext && name) setValue(formContext.get(name) || '');
@@ -49,9 +50,11 @@ const TextArea = forwardRef(
           }}
           onChange={event => {
             if (formContext && name) {
+              // should use setValue() here
               formContext.set(name, event.target.value);
             }
             if (onChange) {
+              // should use setValue() here
               onChange(event);
             }
           }}
