@@ -3,7 +3,6 @@ import React, {
   forwardRef,
   useContext,
   useEffect,
-  useState,
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
@@ -25,16 +24,13 @@ const Anchor = forwardRef(
       href,
       icon,
       label,
-      onBlur,
       onClick,
-      onFocus,
       reverse,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [focus, setFocus] = useState();
 
     useEffect(() => {
       if ((icon || label) && children) {
@@ -62,19 +58,10 @@ const Anchor = forwardRef(
         colorProp={color}
         disabled={disabled}
         hasIcon={!!icon}
-        focus={focus}
         hasLabel={label}
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
-        onFocus={event => {
-          setFocus(true);
-          if (onFocus) onFocus(event);
-        }}
-        onBlur={event => {
-          setFocus(false);
-          if (onBlur) onBlur(event);
-        }}
       >
         {first && second ? (
           <Box

@@ -49,6 +49,9 @@ const StyledAnchor = styled.a`
         `font-weight: ${props.theme.anchor.hover.fontWeight};`}
       ${props.theme.anchor.hover.extend}
     }
+    &:focus {
+      ...focusStyle,
+    }
   `}
   ${props =>
     props.hasIcon &&
@@ -57,7 +60,6 @@ const StyledAnchor = styled.a`
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${props => props.disabled && disabledStyle}
-  ${props => props.focus && focusStyle}
   ${props => props.theme.anchor.extend}
 `;
 
