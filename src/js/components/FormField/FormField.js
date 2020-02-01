@@ -158,7 +158,8 @@ class FormFieldContent extends Component {
       }
     }
 
-    const contentProps = pad ? { ...formField.content } : {};
+    const contentProps =
+      pad || border.position === 'outer' ? { ...formField.content } : {};
     if (border.position === 'inner') {
       if (normalizedError && formField.error) {
         contentProps.background = formField.error.background;
