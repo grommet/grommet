@@ -15,17 +15,29 @@ var customFormFieldTheme = {
     label: {
       color: 'dark-3',
       size: 'small',
-      margin: {
-        vertical: 'none',
-        bottom: 'small',
-        horizontal: 'none'
-      },
+      margin: 'xsmall',
       weight: 600
     },
-    border: false,
-    margin: {
-      bottom: 'small'
-    }
+    border: {
+      position: 'outer',
+      side: 'all'
+    },
+    disabled: {
+      background: {
+        color: 'status-disabled',
+        opacity: true
+      }
+    },
+    content: {
+      pad: 'small'
+    },
+    error: {
+      background: {
+        color: 'status-critical',
+        opacity: 'weak'
+      }
+    },
+    margin: 'none'
   }
 };
 
@@ -71,9 +83,11 @@ var CustomFormField = function CustomFormField() {
     options: ['small', 'medium', 'large']
   })), React.createElement(FormField, {
     label: "Comments",
-    name: "comments"
+    name: "comments",
+    disabled: true
   }, React.createElement(TextArea, {
-    name: "comments"
+    name: "comments",
+    disabled: true
   })), React.createElement(FormField, {
     label: "Age",
     name: "age"

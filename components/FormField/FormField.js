@@ -85,7 +85,7 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "renderChildren", function (value, invalid, update) {
+    _defineProperty(_assertThisInitialized(_this), "renderInput", function (value, invalid, update) {
       var _this$props = _this.props,
           name = _this$props.name,
           checked = _this$props.checked,
@@ -148,6 +148,7 @@ function (_Component) {
         className = _this$props3.className,
         component = _this$props3.component,
         context = _this$props3.context,
+        disabled = _this$props3.disabled,
         error = _this$props3.error,
         focus = _this$props3.focus,
         help = _this$props3.help,
@@ -188,7 +189,7 @@ function (_Component) {
           messages = context.messages;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
-      contents = contents || this.renderChildren(value, !!normalizedError, update);
+      contents = contents || this.renderInput(value, !!normalizedError, update);
 
       if (onContextBlur) {
         onFieldBlur = function onFieldBlur() {
@@ -197,10 +198,17 @@ function (_Component) {
       }
     }
 
-    if (pad) {
-      contents = _react["default"].createElement(_Box.Box, formField.content, contents);
+    var contentProps = pad || border.position === 'outer' ? _extends({}, formField.content) : {};
+
+    if (border.position === 'inner') {
+      if (normalizedError && formField.error) {
+        contentProps.background = formField.error.background;
+      } else if (disabled && formField.disabled) {
+        contentProps.background = formField.disabled.background;
+      }
     }
 
+    contents = _react["default"].createElement(_Box.Box, contentProps, contents);
     var borderColor;
 
     if (focus && !normalizedError) {
@@ -225,7 +233,8 @@ function (_Component) {
           color: borderColor
         }) : undefined
       }, contents);
-      abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side);
+      var mergedMargin = margin || formField.margin;
+      abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
 
       if (abut) {
         // marginBottom is set to overlap adjacent fields
@@ -250,11 +259,22 @@ function (_Component) {
       }
     }
 
+    var outerBackground;
+
+    if (border.position === 'outer') {
+      if (normalizedError && formField.error) {
+        outerBackground = formField.error.background;
+      } else if (disabled && formField.disabled) {
+        outerBackground = formField.disabled.background;
+      }
+    }
+
     return _react["default"].createElement(FormFieldBox, {
       className: className,
       border: border && border.position === 'outer' ? _extends({}, border, {
         color: borderColor
       }) : undefined,
+      background: outerBackground,
       margin: abut ? abutMargin : margin || _extends({}, formField.margin),
       style: outerStyle,
       onBlur: onFieldBlur

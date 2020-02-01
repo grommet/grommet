@@ -571,10 +571,9 @@ export var generate = function generate(baseSpacing, scale) {
         side: 'bottom'
       },
       content: {
-        pad: {
-          horizontal: 'small',
-          bottom: 'small'
-        }
+        pad: 'small'
+      },
+      disabled: {// background: undefined,
       },
       error: {
         color: {
@@ -584,7 +583,8 @@ export var generate = function generate(baseSpacing, scale) {
         margin: {
           vertical: 'xsmall',
           horizontal: 'small'
-        }
+        } // background: undefined,
+
       },
       // extend: undefined,
       help: {

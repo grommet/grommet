@@ -2,6 +2,7 @@ import * as React from "react";
 import { Omit, PlaceHolderType, MarginType } from "../../utils";
 
 export interface FormFieldProps {
+  disabled?: boolean;
   error?: string | React.ReactNode;
   help?: string | React.ReactNode;
   htmlFor?: string;

@@ -124,7 +124,22 @@ exports[`Form update 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -153,11 +168,11 @@ exports[`Form update 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c5:hover {
+.c6:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c4 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -175,28 +190,28 @@ exports[`Form update 1`] = `
   border: none;
 }
 
-.c4::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c4:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
@@ -226,13 +241,17 @@ exports[`Form update 1`] = `
         <div
           class="c3"
         >
-          <input
-            autocomplete="off"
+          <div
             class="c4"
-            name="test"
-            placeholder="test input"
-            value=""
-          />
+          >
+            <input
+              autocomplete="off"
+              class="c5"
+              name="test"
+              placeholder="test input"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -245,18 +264,22 @@ exports[`Form update 1`] = `
         <div
           class="c3"
         >
-          <input
-            autocomplete="off"
+          <div
             class="c4"
-            name="test2"
-            placeholder="test-2 input"
-            value=""
-          />
+          >
+            <input
+              autocomplete="off"
+              class="c5"
+              name="test2"
+              placeholder="test-2 input"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>
     <button
-      class="c5"
+      class="c6"
       type="submit"
     >
       Submit
@@ -308,7 +331,22 @@ exports[`Form with field 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -326,28 +364,28 @@ exports[`Form with field 1`] = `
   border: none;
 }
 
-.c4::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c4:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
@@ -380,16 +418,20 @@ exports[`Form with field 1`] = `
         <div
           className="c3"
         >
-          <input
-            autoComplete="off"
+          <div
             className="c4"
-            name="test"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            value=""
-          />
+          >
+            <input
+              autoComplete="off"
+              className="c5"
+              name="test"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>

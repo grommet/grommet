@@ -4,6 +4,7 @@ export var doc = function doc(FormField) {
   var DocumentedFormField = describe(FormField).availableAt(getAvailableAtBadge('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {
     component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the \n      form values when this field changes. Any additional properties \n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
+    disabled: PropTypes.bool.description('Whether the field should look disabled.'),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Any error text describing issues with the field'),
     help: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Any help text describing how the field works'),
     htmlFor: PropTypes.string.description('The id of the input element contained in this field'),
@@ -48,7 +49,27 @@ export var themeDoc = {
   'formField.content.pad': {
     description: 'The pad of the FormField content.',
     type: 'object',
-    defaultValue: "{ horizontal: 'small', bottom: 'small' }"
+    defaultValue: 'small'
+  },
+  'formField.disabled.background.color': {
+    description: 'The color of the FormField background when it is disabled.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined
+  },
+  'formField.disabled.background.opacity': {
+    description: 'The opacity of the FormField background when it is disabled.',
+    type: 'string | boolean | number',
+    defaultValue: undefined
+  },
+  'formField.error.background.color': {
+    description: 'The color of the FormField background when there is an error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined
+  },
+  'formField.error.background.opacity': {
+    description: 'The opacity of the FormField background when there is an error.',
+    type: 'string | boolean | number',
+    defaultValue: undefined
   },
   'formField.error.color': {
     description: 'The color of the FormField error.',
