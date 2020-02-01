@@ -30,11 +30,29 @@ const customFormFieldTheme = {
     label: {
       color: 'dark-3',
       size: 'small',
-      margin: { vertical: 'none', bottom: 'small', horizontal: 'none' },
+      margin: 'xsmall',
       weight: 600,
     },
-    border: false,
-    margin: { bottom: 'small' },
+    border: {
+      position: 'outer',
+      side: 'all',
+    },
+    disabled: {
+      background: {
+        color: 'status-disabled',
+        opacity: true,
+      },
+    },
+    content: {
+      pad: 'small',
+    },
+    error: {
+      background: {
+        color: 'status-critical',
+        opacity: 'weak',
+      },
+    },
+    margin: 'none',
   },
 };
 
@@ -70,8 +88,8 @@ const CustomFormField = () => (
           <FormField label="Size" name="size">
             <Select name="size" options={['small', 'medium', 'large']} />
           </FormField>
-          <FormField label="Comments" name="comments">
-            <TextArea name="comments" />
+          <FormField label="Comments" name="comments" disabled>
+            <TextArea name="comments" disabled />
           </FormField>
           <FormField label="Age" name="age">
             <RangeInput name="age" min={15} max={75} />
