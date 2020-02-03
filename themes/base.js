@@ -59,6 +59,18 @@ var lightColors = ['#F8F8F8', '#F2F2F2', '#EDEDED', '#DADADA', '#DADADA', '#DADA
 var focusColor = accentColors[0];
 var colors = {
   active: (0, _polished.rgba)(221, 221, 221, 0.5),
+  'background-back': {
+    dark: '#33333308',
+    light: '#EDEDED'
+  },
+  'background-front': {
+    dark: '#444444',
+    light: '#FFFFFF'
+  },
+  'background-contrast': {
+    dark: '#33333308',
+    light: '#FFFFFF08'
+  },
   black: '#000000',
   border: {
     dark: (0, _polished.rgba)(255, 255, 255, 0.33),
