@@ -84,4 +84,28 @@ describe('RadioButtonGroup', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('adding additional props', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RadioButtonGroup
+          name="test"
+          options={[
+            {
+              id: 'ONE',
+              value: '1',
+              'data-testid': 'testid-1',
+            },
+            {
+              id: 'TWO',
+              value: '2',
+              'data-testid': 'testid-2',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

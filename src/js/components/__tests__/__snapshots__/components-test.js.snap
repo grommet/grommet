@@ -2340,6 +2340,11 @@ object",
         "name": "component",
       },
       Object {
+        "description": "Whether the field should look disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
         "description": "Any error text describing issues with the field",
         "format": "string
 node",
