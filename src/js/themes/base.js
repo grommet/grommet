@@ -63,6 +63,7 @@ const colors = {
     dark: '#33333308',
     light: '#FFFFFF08',
   },
+  'active-background': 'background-contrast',
   black: '#000000',
   border: {
     dark: rgba(255, 255, 255, 0.33),
@@ -80,6 +81,7 @@ const colors = {
   // "graph-3": 'neutral-2',
   placeholder: '#AAAAAA',
   selected: 'brand',
+  'selected-background': 'brand',
   text: {
     dark: '#f8f8f8',
     light: '#444444',
