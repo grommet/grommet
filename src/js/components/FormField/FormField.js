@@ -17,7 +17,7 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
 const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
-const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup'];
+const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
 
 const validateField = (required, validate, messages) => (value, data) => {
   let error;
