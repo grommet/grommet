@@ -40,10 +40,10 @@ const Example = () => (
               ]}
             />
           </FormField>
-          <FormField name="subscribe" pad>
+          <FormField name="subscribe">
             <CheckBox name="subscribe" label="Subscribe?" />
           </FormField>
-          <FormField name="ampm" pad>
+          <FormField name="ampm">
             <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
           </FormField>
           <FormField label="Size" name="size">
