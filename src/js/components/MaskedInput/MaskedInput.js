@@ -315,7 +315,7 @@ const MaskedInput = forwardRef(
             placeholder={placeholder || renderPlaceholder()}
             focus={focus}
             {...rest}
-            value={value}
+            value={value || ''}
             theme={theme}
             onFocus={event => {
               setFocus(true);
