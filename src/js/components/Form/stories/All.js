@@ -44,16 +44,10 @@ const Example = () => (
             required
             validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
           />
-          <FormField
-            name="subscribe"
-            component={CheckBox}
-            pad
-            label="Subscribe?"
-          />
+          <FormField name="subscribe" component={CheckBox} label="Subscribe?" />
           <FormField
             name="ampm"
             component={RadioButtonGroup}
-            pad
             options={['morning', 'evening']}
           />
           <FormField

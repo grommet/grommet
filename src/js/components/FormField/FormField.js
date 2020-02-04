@@ -1,17 +1,23 @@
-// eslint-disable-next-line max-len
-/* eslint-disable react/no-multi-comp, react/prefer-stateless-function, max-classes-per-file */
-import React, { Children, cloneElement, Component } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, {
+  Children,
+  cloneElement,
+  forwardRef,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import { parseMetricToNum } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
+import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { withFocus } from '../hocs';
 import { FormContext } from '../Form/FormContext';
+
+const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
+const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup'];
 
 const validateField = (required, validate, messages) => (value, data) => {
   let error;
@@ -38,128 +44,133 @@ const FormFieldBox = styled(Box)`
   ${props => props.theme.formField && props.theme.formField.extend}
 `;
 
-class FormFieldContent extends Component {
-  componentDidMount() {
-    const { checked, context, name, value } = this.props;
-    if (
-      context &&
-      context.value[name] === undefined &&
-      (value !== undefined || checked !== undefined)
-    ) {
-      context.update(
-        name,
-        value !== undefined ? value : checked,
-        undefined,
-        true,
-      );
-    }
-  }
-
-  renderInput = (value, invalid, update) => {
-    const {
-      name,
+const FormField = forwardRef(
+  (
+    {
       checked,
-      component,
-      required,
-      value: valueProp,
-      onChange,
-      ...rest
-    } = this.props;
-
-    delete rest.className;
-    const Input = component || TextInput;
-    if (Input === CheckBox) {
-      return (
-        <Input
-          name={name}
-          checked={value[name] !== undefined ? value[name] : checked || false}
-          onChange={event => {
-            update(name, event.target.checked);
-            if (onChange) onChange(event);
-          }}
-          aria-invalid={invalid || undefined}
-          {...rest}
-        />
-      );
-    }
-    return (
-      <Input
-        name={name}
-        value={value[name] !== undefined ? value[name] : valueProp || ''}
-        onChange={event => {
-          update(name, event.value || event.target.value || '');
-          if (onChange) onChange(event);
-        }}
-        plain
-        focusIndicator={false}
-        aria-invalid={invalid || undefined}
-        {...rest}
-      />
-    );
-  };
-
-  render() {
-    const {
       children,
       className,
       component,
-      context,
       disabled,
       error,
       focus,
       help,
       htmlFor,
       label,
+      margin,
       name,
       pad,
       required,
       style,
-      theme,
       validate,
-      onBlur,
-      onFocus,
-      margin,
-    } = this.props;
+      value: valueProp,
+      ...rest
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext);
+    const context = useContext(FormContext);
+    const [value, setValue] = useState(valueProp);
+    useEffect(() => setValue(valueProp), [valueProp]);
+
+    useEffect(() => {
+      if (
+        context &&
+        context.value[name] === undefined &&
+        (value !== undefined || checked !== undefined)
+      ) {
+        context.update(
+          name,
+          value !== undefined ? value : checked,
+          undefined,
+          true,
+        );
+      }
+    });
+
+    const renderInput = (formValue, invalid) => {
+      const Input = component || TextInput;
+      if (Input === CheckBox) {
+        return (
+          <Input
+            name={name}
+            label={label}
+            checked={
+              formValue[name] !== undefined ? formValue[name] : checked || false
+            }
+            aria-invalid={invalid || undefined}
+            {...rest}
+          />
+        );
+      }
+      return (
+        <Input
+          name={name}
+          value={
+            formValue[name] !== undefined ? formValue[name] : valueProp || ''
+          }
+          plain
+          focusIndicator={false}
+          aria-invalid={invalid || undefined}
+          {...rest}
+        />
+      );
+    };
+
     const { formField } = theme;
     const { border } = formField;
 
     let normalizedError = error;
+    // This is here for backwards compatibility. In case the child is a grommet
+    // input component, set plain and focusIndicator props, if they aren't
+    // already set.
+    let wantContentPad =
+      component && (component === CheckBox || component === RadioButtonGroup);
     let contents =
       (border &&
         children &&
         Children.map(children, child => {
-          if (child) {
+          if (
+            child &&
+            child.type &&
+            grommetInputPadNames.indexOf(child.type.displayName) !== -1
+          ) {
+            wantContentPad = true;
+          }
+          if (
+            child &&
+            child.type &&
+            grommetInputNames.indexOf(child.type.displayName) !== -1 &&
+            child.props.plain === undefined &&
+            child.props.focusIndicator === undefined
+          ) {
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,
-              onBlur,
-              onFocus,
             });
           }
           return child;
         })) ||
       children;
-    let onFieldBlur;
 
+    let onFieldBlur;
     if (context) {
       const {
         addValidation,
         errors,
         onBlur: onContextBlur,
-        value,
-        update,
+        value: formValue,
         messages,
       } = context;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
-      contents = contents || this.renderInput(value, !!normalizedError, update);
+      contents = contents || renderInput(formValue, !!normalizedError);
       if (onContextBlur) {
         onFieldBlur = () => onContextBlur(name);
       }
     }
 
-    const contentProps =
-      pad || border.position === 'outer' ? { ...formField.content } : {};
+    const contentProps = pad || wantContentPad ? { ...formField.content } : {};
     if (border.position === 'inner') {
       if (normalizedError && formField.error) {
         contentProps.background = formField.error.background;
@@ -184,9 +195,6 @@ class FormFieldContent extends Component {
     if (border) {
       contents = (
         <Box
-          ref={ref => {
-            this.childContainerRef = ref;
-          }}
           border={
             border.position === 'inner'
               ? {
@@ -247,6 +255,7 @@ class FormFieldContent extends Component {
 
     return (
       <FormFieldBox
+        ref={ref}
         className={className}
         border={
           border && border.position === 'outer'
@@ -288,32 +297,16 @@ class FormFieldContent extends Component {
         )}
       </FormFieldBox>
     );
-  }
-}
+  },
+);
 
-// Can't be a functional component because styled-components withTheme() needs
-// to attach a ref.
-class FormField extends Component {
-  render() {
-    return (
-      <FormContext.Consumer>
-        {context => <FormFieldContent context={context} {...this.props} />}
-      </FormContext.Consumer>
-    );
-  }
-}
-
-FormField.defaultProps = {};
-Object.setPrototypeOf(FormField.defaultProps, defaultProps);
+FormField.displayName = 'FormField';
 
 let FormFieldDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   FormFieldDoc = require('./doc').doc(FormField);
 }
-const FormFieldWrapper = compose(
-  withFocus({ focusWithMouse: true }),
-  withTheme,
-)(FormFieldDoc || FormField);
+const FormFieldWrapper = FormFieldDoc || FormField;
 
 export { FormFieldWrapper as FormField };

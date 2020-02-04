@@ -286,22 +286,6 @@ exports[`renders abut correctly 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     margin-bottom: 6px;
@@ -311,12 +295,6 @@ exports[`renders abut correctly 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 6px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 6px;
   }
 }
 
@@ -330,7 +308,7 @@ exports[`renders abut correctly 1`] = `
       className="c2"
     >
       <div
-        className="c3"
+        className="c2"
       />
     </div>
   </div>
@@ -380,22 +358,6 @@ exports[`renders abut with forced margin 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 12px;
@@ -405,12 +367,6 @@ exports[`renders abut with forced margin 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 6px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 6px;
   }
 }
 
@@ -424,7 +380,7 @@ exports[`renders abut with forced margin 1`] = `
       className="c2"
     >
       <div
-        className="c3"
+        className="c2"
       />
     </div>
   </div>
