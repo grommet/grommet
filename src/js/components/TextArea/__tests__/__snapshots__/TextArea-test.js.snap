@@ -60,6 +60,7 @@ exports[`TextArea basic 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -130,6 +131,7 @@ exports[`TextArea disabled 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -195,6 +197,7 @@ exports[`TextArea fill 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -259,6 +262,7 @@ exports[`TextArea focusIndicator 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -324,6 +328,7 @@ exports[`TextArea placeholder 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     placeholder="placeholder"
+    value=""
   />
 </div>
 `;
@@ -391,6 +396,7 @@ exports[`TextArea plain 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -456,6 +462,7 @@ exports[`TextArea resize false 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -521,6 +528,7 @@ exports[`TextArea resize horizontal 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -586,6 +594,7 @@ exports[`TextArea resize true 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -651,6 +660,7 @@ exports[`TextArea resize vertical 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
+    value=""
   />
 </div>
 `;
@@ -718,6 +728,7 @@ exports[`TextArea size large 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     size="large"
+    value=""
   />
 </div>
 `;
@@ -785,6 +796,7 @@ exports[`TextArea size medium 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     size="medium"
+    value=""
   />
 </div>
 `;
@@ -852,6 +864,7 @@ exports[`TextArea size small 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     size="small"
+    value=""
   />
 </div>
 `;
