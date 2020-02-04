@@ -309,7 +309,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     placeholder: placeholder || renderPlaceholder(),
     focus: focus
   }, rest, {
-    value: value,
+    value: value || '',
     theme: theme,
     onFocus: function onFocus(event) {
       setFocus(true);

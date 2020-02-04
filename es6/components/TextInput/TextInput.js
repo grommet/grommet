@@ -307,7 +307,7 @@ var TextInput = forwardRef(function (_ref, ref) {
     focus: focus
   }, rest, {
     defaultValue: renderLabel(defaultValue),
-    value: renderLabel(value),
+    value: renderLabel(value) || '',
     onFocus: function onFocus(event) {
       setFocus(true);
 
