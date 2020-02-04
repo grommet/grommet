@@ -105,6 +105,11 @@ const TextInput = forwardRef(
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
 
+    useEffect(() => setValue(valueProp), [valueProp]);
+    useEffect(() => {
+      if (formContext && name) setValue(formContext.get(name) || '');
+    }, [formContext, name]);
+
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
       if (showDrop && (!suggestions || !suggestions.length)) {

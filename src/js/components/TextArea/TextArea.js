@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useState, useEffect } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
@@ -17,6 +17,11 @@ const TextArea = forwardRef(
         ? valueProp
         : (formContext && name && formContext.get(name)) || '',
     );
+
+    useEffect(() => setValue(valueProp), [valueProp]);
+    useEffect(() => {
+      if (formContext && name) setValue(formContext.get(name) || '');
+    }, [formContext, name]);
 
     const [focus, setFocus] = useState();
     return (
