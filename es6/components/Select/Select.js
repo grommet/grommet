@@ -2,9 +2,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { isValidElement, useContext, useState, useRef, useEffect } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, { forwardRef, isValidElement, useContext, useState, useRef, useEffect } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { controlBorderStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -12,7 +11,6 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
-import { withForwardRef } from '../hocs';
 import { SelectContainer } from './SelectContainer';
 var SelectTextInput = styled(TextInput).withConfig({
   displayName: "Select__SelectTextInput",
@@ -30,39 +28,54 @@ var StyledSelectDropButton = styled(DropButton).withConfig({
 });
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
+var Select = forwardRef(function (_ref, ref) {
+  var a11yTitle = _ref.a11yTitle,
+      alignSelf = _ref.alignSelf,
+      children = _ref.children,
+      _ref$closeOnChange = _ref.closeOnChange,
+      closeOnChange = _ref$closeOnChange === void 0 ? true : _ref$closeOnChange,
+      disabled = _ref.disabled,
+      disabledKey = _ref.disabledKey,
+      _ref$dropAlign = _ref.dropAlign,
+      dropAlign = _ref$dropAlign === void 0 ? {
+    top: 'bottom',
+    left: 'left'
+  } : _ref$dropAlign,
+      dropHeight = _ref.dropHeight,
+      dropProps = _ref.dropProps,
+      dropTarget = _ref.dropTarget,
+      emptySearchMessage = _ref.emptySearchMessage,
+      gridArea = _ref.gridArea,
+      id = _ref.id,
+      icon = _ref.icon,
+      labelKey = _ref.labelKey,
+      margin = _ref.margin,
+      _ref$messages = _ref.messages,
+      messages = _ref$messages === void 0 ? {
+    multiple: 'multiple'
+  } : _ref$messages,
+      multiple = _ref.multiple,
+      name = _ref.name,
+      onChange = _ref.onChange,
+      onClose = _ref.onClose,
+      onKeyDown = _ref.onKeyDown,
+      onMore = _ref.onMore,
+      onOpen = _ref.onOpen,
+      onSearch = _ref.onSearch,
+      propOpen = _ref.open,
+      options = _ref.options,
+      placeholder = _ref.placeholder,
+      plain = _ref.plain,
+      replace = _ref.replace,
+      searchPlaceholder = _ref.searchPlaceholder,
+      selected = _ref.selected,
+      size = _ref.size,
+      valueProp = _ref.value,
+      valueKey = _ref.valueKey,
+      valueLabel = _ref.valueLabel,
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
 
-var Select = function Select(props) {
-  var a11yTitle = props.a11yTitle,
-      alignSelf = props.alignSelf,
-      children = props.children,
-      closeOnChange = props.closeOnChange,
-      disabled = props.disabled,
-      dropAlign = props.dropAlign,
-      dropProps = props.dropProps,
-      dropTarget = props.dropTarget,
-      forwardRef = props.forwardRef,
-      gridArea = props.gridArea,
-      id = props.id,
-      icon = props.icon,
-      labelKey = props.labelKey,
-      margin = props.margin,
-      messages = props.messages,
-      name = props.name,
-      onChange = props.onChange,
-      onClose = props.onClose,
-      onMore = props.onMore,
-      onOpen = props.onOpen,
-      propOpen = props.open,
-      options = props.options,
-      placeholder = props.placeholder,
-      plain = props.plain,
-      selected = props.selected,
-      size = props.size,
-      theme = props.theme,
-      valueProp = props.value,
-      valueLabel = props.valueLabel,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "name", "onChange", "onClose", "onMore", "onOpen", "open", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
-
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
   var formContext = useContext(FormContext);
 
@@ -187,12 +200,11 @@ var Select = function Select(props) {
 
 
   var iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
-  delete rest.onSearch;
   return React.createElement(Keyboard, {
     onDown: onRequestOpen,
     onUp: onRequestOpen
   }, React.createElement(StyledSelectDropButton, {
-    ref: forwardRef,
+    ref: ref,
     id: id,
     disabled: disabled === true || undefined,
     dropAlign: dropAlign,
@@ -203,12 +215,29 @@ var Select = function Select(props) {
     margin: margin,
     onOpen: onRequestOpen,
     onClose: onRequestClose,
-    dropContent: React.createElement(SelectContainer, _extends({}, props, {
+    dropContent: React.createElement(SelectContainer, {
+      disabled: disabled,
+      disabledKey: disabledKey,
+      dropHeight: dropHeight,
+      emptySearchMessage: emptySearchMessage,
+      id: id,
+      labelKey: labelKey,
+      multiple: multiple,
+      name: name,
       onChange: onSelectChange,
-      onMore: onMore
-    })),
+      onKeyDown: onKeyDown,
+      onMore: onMore,
+      onSearch: onSearch,
+      options: options,
+      replace: replace,
+      searchPlaceholder: searchPlaceholder,
+      selected: selected,
+      value: value,
+      valueKey: valueKey
+    }, children),
     plain: plain,
-    dropProps: _extends({}, dropProps)
+    dropProps: dropProps,
+    theme: theme
   }, React.createElement(Box, {
     align: "center",
     direction: "row",
@@ -231,6 +260,7 @@ var Select = function Select(props) {
     readOnly: true,
     value: inputValue,
     size: size,
+    theme: theme,
     onClick: disabled === true ? undefined : onRequestOpen
   }))), SelectIcon && React.createElement(Box, {
     margin: theme.select.icons.margin,
@@ -242,18 +272,9 @@ var Select = function Select(props) {
     color: iconColor,
     size: size
   })))));
-};
-
-Select.defaultProps = _extends({
-  closeOnChange: true,
-  dropAlign: {
-    top: 'bottom',
-    left: 'left'
-  },
-  messages: {
-    multiple: 'multiple'
-  }
-}, defaultProps);
+});
+Select.defaultProps = _extends({}, defaultProps);
+Select.displayName = 'Select';
 var SelectDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -261,5 +282,5 @@ if (process.env.NODE_ENV !== 'production') {
   SelectDoc = require('./doc').doc(Select);
 }
 
-var SelectWrapper = compose(withTheme, withForwardRef)(SelectDoc || Select);
+var SelectWrapper = SelectDoc || Select;
 export { SelectWrapper as Select };
