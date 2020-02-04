@@ -9,6 +9,7 @@ import {
   CheckBox,
   Form,
   FormField,
+  MaskedInput,
   RadioButtonGroup,
   RangeInput,
   Select,
@@ -67,7 +68,7 @@ const CustomFormField = () => (
           <FormField label="Name" name="name" required>
             <TextInput name="name" />
           </FormField>
-          {/* <FormField label="Email" name="email" required>
+          <FormField label="Email" name="email" required>
             <MaskedInput
               name="email"
               mask={[
@@ -78,7 +79,7 @@ const CustomFormField = () => (
                 { regexp: /^[\w]+$/, placeholder: 'com' },
               ]}
             />
-          </FormField> */}
+          </FormField>
           <FormField name="subscribe">
             <CheckBox name="subscribe" label="Subscribe?" />
           </FormField>
