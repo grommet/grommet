@@ -330,6 +330,11 @@ exports[`renders abut correctly 1`] = `
     >
       <div
         className="c3"
+        disabled={
+          Object {
+            "background": "status-disabled",
+          }
+        }
       />
     </div>
   </div>
@@ -424,6 +429,11 @@ exports[`renders abut with forced margin 1`] = `
     >
       <div
         className="c3"
+        disabled={
+          Object {
+            "background": "status-disabled",
+          }
+        }
       />
     </div>
   </div>
@@ -1085,6 +1095,11 @@ exports[`renders pad 1`] = `
     >
       <div
         className="c3"
+        disabled={
+          Object {
+            "background": "status-disabled",
+          }
+        }
       />
     </div>
   </div>

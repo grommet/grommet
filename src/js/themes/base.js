@@ -532,6 +532,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       content: {
         pad: 'small',
+        disabled: {
+          background: 'status-disabled',
+        },
       },
       disabled: {
         // background: undefined,
