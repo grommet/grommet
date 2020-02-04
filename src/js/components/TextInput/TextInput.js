@@ -383,11 +383,11 @@ const TextInput = forwardRef(
               const nextValue = event.target.value;
               if (formContext && name) {
                 formContext.set(name, nextValue);
-                setValue(nextValue);
               }
               if (onChange) {
-                setValue(nextValue);
+                onChange(event);
               }
+              setValue(nextValue);
             }}
           />
         </Keyboard>

@@ -49,6 +49,7 @@ describe('TextInput', () => {
 
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
+      expect(onChange).toBeCalled();
       expect(onFocus).toBeCalled();
 
       fireEvent(
