@@ -4251,6 +4251,7 @@ exports[`Select renders custom icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
