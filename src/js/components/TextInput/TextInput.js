@@ -101,11 +101,6 @@ const TextInput = forwardRef(
         ? valueProp
         : (formContext && name && formContext.get(name)) || '',
     );
-    // updating here causes the cursor bug
-    useEffect(() => setValue(valueProp), [valueProp]);
-    useEffect(() => {
-      if (formContext && name) setValue(formContext.get(name) || '');
-    }, [formContext, name]);
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
@@ -385,12 +380,14 @@ const TextInput = forwardRef(
               }
             }}
             onChange={event => {
+              const nextValue = event.target.value;
               if (formContext && name) {
-                // should use setValue() here
-                formContext.set(name, event.target.value);
+                formContext.set(name, nextValue);
+                setValue(nextValue);
               }
-              // should use setValue() here
-              if (onChange) onChange(event);
+              if (onChange) {
+                setValue(nextValue);
+              }
             }}
           />
         </Keyboard>
