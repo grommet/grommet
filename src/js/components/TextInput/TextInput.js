@@ -359,7 +359,7 @@ const TextInput = forwardRef(
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
-            value={renderLabel(value)}
+            value={renderLabel(value) || ''}
             onFocus={event => {
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
