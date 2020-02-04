@@ -155,6 +155,6 @@ export const themeDoc = {
   'checkBox.toggle.size': {
     description: 'The width size of the toggle.',
     type: 'string',
-    defaultValue: '42px',
+    defaultValue: '48px',
   },
 };
