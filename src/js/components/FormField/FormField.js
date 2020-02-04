@@ -53,12 +53,13 @@ const FormField = forwardRef(
       component,
       disabled,
       error,
-      focus,
       help,
       htmlFor,
       label,
       margin,
       name,
+      onBlur,
+      onFocus,
       pad,
       required,
       style,
@@ -87,6 +88,8 @@ const FormField = forwardRef(
         );
       }
     });
+
+    const [focus, setFocus] = useState();
 
     const renderInput = (formValue, invalid) => {
       const Input = component || TextInput;
@@ -265,7 +268,15 @@ const FormField = forwardRef(
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formField.margin }}
         style={outerStyle}
-        onBlur={onFieldBlur}
+        onFocus={event => {
+          setFocus(true);
+          if (onFocus) onFocus(event);
+        }}
+        onBlur={event => {
+          setFocus(false);
+          if (onFieldBlur) onFieldBlur(event);
+          if (onBlur) onBlur(event);
+        }}
       >
         {(label && component !== CheckBox) || help ? (
           <>

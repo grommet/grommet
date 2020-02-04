@@ -49,6 +49,7 @@ const Select = forwardRef(
       dropProps,
       dropTarget,
       emptySearchMessage,
+      focusIndicator,
       gridArea,
       id,
       icon,
@@ -198,6 +199,7 @@ const Select = forwardRef(
           dropTarget={dropTarget}
           open={open}
           alignSelf={alignSelf}
+          focusIndicator={focusIndicator}
           gridArea={gridArea}
           margin={margin}
           onOpen={onRequestOpen}
