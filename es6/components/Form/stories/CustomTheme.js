@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { deepMerge } from 'grommet/utils';
-import { grommet, Box, Button, CheckBox, Form, FormField, RadioButtonGroup, RangeInput, Select, TextArea, TextInput, Grommet } from 'grommet';
+import { grommet, Box, Button, CheckBox, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput, Grommet } from 'grommet';
 var customFormFieldTheme = {
   global: {
     font: {
@@ -65,6 +65,26 @@ var CustomFormField = function CustomFormField() {
     required: true
   }, React.createElement(TextInput, {
     name: "name"
+  })), React.createElement(FormField, {
+    label: "Email",
+    name: "email",
+    required: true
+  }, React.createElement(MaskedInput, {
+    name: "email",
+    mask: [{
+      regexp: /^[\w\-_.]+$/,
+      placeholder: 'example'
+    }, {
+      fixed: '@'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'my'
+    }, {
+      fixed: '.'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'com'
+    }]
   })), React.createElement(FormField, {
     name: "subscribe"
   }, React.createElement(CheckBox, {

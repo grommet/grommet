@@ -64,6 +64,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
       dropProps = _ref.dropProps,
       dropTarget = _ref.dropTarget,
       emptySearchMessage = _ref.emptySearchMessage,
+      focusIndicator = _ref.focusIndicator,
       gridArea = _ref.gridArea,
       id = _ref.id,
       icon = _ref.icon,
@@ -92,7 +93,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
       valueProp = _ref.value,
       valueKey = _ref.valueKey,
       valueLabel = _ref.valueLabel,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -231,6 +232,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
     dropTarget: dropTarget,
     open: open,
     alignSelf: alignSelf,
+    focusIndicator: focusIndicator,
     gridArea: gridArea,
     margin: margin,
     onOpen: onRequestOpen,

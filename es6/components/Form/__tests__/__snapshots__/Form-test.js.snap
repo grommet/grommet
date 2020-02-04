@@ -411,6 +411,8 @@ exports[`Form with field 1`] = `
   >
     <div
       className="c1 "
+      onBlur={[Function]}
+      onFocus={[Function]}
     >
       <div
         className="c2"

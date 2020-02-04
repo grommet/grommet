@@ -74,6 +74,26 @@ var CustomFormField = function CustomFormField() {
   }, _react["default"].createElement(_grommet.TextInput, {
     name: "name"
   })), _react["default"].createElement(_grommet.FormField, {
+    label: "Email",
+    name: "email",
+    required: true
+  }, _react["default"].createElement(_grommet.MaskedInput, {
+    name: "email",
+    mask: [{
+      regexp: /^[\w\-_.]+$/,
+      placeholder: 'example'
+    }, {
+      fixed: '@'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'my'
+    }, {
+      fixed: '.'
+    }, {
+      regexp: /^[\w]+$/,
+      placeholder: 'com'
+    }]
+  })), _react["default"].createElement(_grommet.FormField, {
     name: "subscribe"
   }, _react["default"].createElement(_grommet.CheckBox, {
     name: "subscribe",

@@ -55,12 +55,10 @@ var Example = function Example() {
   }), _react["default"].createElement(_grommet.FormField, {
     name: "subscribe",
     component: _grommet.CheckBox,
-    pad: true,
     label: "Subscribe?"
   }), _react["default"].createElement(_grommet.FormField, {
     name: "ampm",
     component: _grommet.RadioButtonGroup,
-    pad: true,
     options: ['morning', 'evening']
   }), _react["default"].createElement(_grommet.FormField, {
     label: "Size",

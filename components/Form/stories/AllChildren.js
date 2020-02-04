@@ -55,14 +55,12 @@ var Example = function Example() {
       placeholder: 'com'
     }]
   })), _react["default"].createElement(_grommet.FormField, {
-    name: "subscribe",
-    pad: true
+    name: "subscribe"
   }, _react["default"].createElement(_grommet.CheckBox, {
     name: "subscribe",
     label: "Subscribe?"
   })), _react["default"].createElement(_grommet.FormField, {
-    name: "ampm",
-    pad: true
+    name: "ampm"
   }, _react["default"].createElement(_grommet.RadioButtonGroup, {
     name: "ampm",
     options: ['morning', 'evening']

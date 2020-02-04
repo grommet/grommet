@@ -48,12 +48,10 @@ var Example = function Example() {
   }), React.createElement(FormField, {
     name: "subscribe",
     component: CheckBox,
-    pad: true,
     label: "Subscribe?"
   }), React.createElement(FormField, {
     name: "ampm",
     component: RadioButtonGroup,
-    pad: true,
     options: ['morning', 'evening']
   }), React.createElement(FormField, {
     label: "Size",
