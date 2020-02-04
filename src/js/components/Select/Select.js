@@ -256,6 +256,7 @@ const Select = forwardRef(
                   readOnly
                   value={inputValue}
                   size={size}
+                  theme={theme}
                   onClick={disabled === true ? undefined : onRequestOpen}
                 />
               )}
