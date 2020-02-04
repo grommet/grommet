@@ -36,6 +36,9 @@ type Colors = typeof colors & {
   'accent-2'?: ColorType;
   'accent-3'?: ColorType;
   'accent-4'?: ColorType;
+  'background-back'?: ColorType;
+  'background-contrast'?: ColorType;
+  'background-front'?: ColorType;
   'neutral-1'?: ColorType;
   'neutral-2'?: ColorType;
   'neutral-3'?: ColorType;

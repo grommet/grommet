@@ -51,6 +51,19 @@ const focusColor = accentColors[0];
 
 const colors = {
   active: rgba(221, 221, 221, 0.5),
+  'background-back': {
+    dark: '#33333308',
+    light: '#EDEDED',
+  },
+  'background-front': {
+    dark: '#444444',
+    light: '#FFFFFF',
+  },
+  'background-contrast': {
+    dark: '#33333308',
+    light: '#FFFFFF08',
+  },
+  'active-background': 'background-contrast',
   black: '#000000',
   border: {
     dark: rgba(255, 255, 255, 0.33),
@@ -68,6 +81,7 @@ const colors = {
   // "graph-3": 'neutral-2',
   placeholder: '#AAAAAA',
   selected: 'brand',
+  'selected-background': 'brand',
   text: {
     dark: '#f8f8f8',
     light: '#444444',
