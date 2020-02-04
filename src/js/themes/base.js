@@ -548,7 +548,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: 'small',
       },
       disabled: {
-        background: 'status-disabled',
+        background: {
+          color: 'status-disabled',
+          opacity: 'medium',
+        },
       },
       error: {
         color: {
