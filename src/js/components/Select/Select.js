@@ -113,13 +113,15 @@ const Select = forwardRef(
     };
 
     const onSelectChange = (event, ...args) => {
+      const nextValue = event.value;
       if (closeOnChange) {
         onRequestClose();
       }
-      if (formContext && name) formContext.set(name, event.value);
+      if (formContext && name) formContext.set(name, nextValue);
       if (onChange) {
         onChange({ ...event, target: inputRef.current }, ...args);
       }
+      setValue(nextValue);
     };
 
     let SelectIcon;
