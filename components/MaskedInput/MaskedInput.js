@@ -142,20 +142,13 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
-      value = _useState[0],
-      setValue = _useState[1];
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+      value = _formContext$useFormC[0],
+      setValue = _formContext$useFormC[1];
 
-  (0, _react.useEffect)(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  (0, _react.useEffect)(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]);
-
-  var _useState2 = (0, _react.useState)(parseValue(mask, value)),
-      valueParts = _useState2[0],
-      setValueParts = _useState2[1];
+  var _useState = (0, _react.useState)(parseValue(mask, value)),
+      valueParts = _useState[0],
+      setValueParts = _useState[1];
 
   (0, _react.useEffect)(function () {
     setValueParts(parseValue(mask, value));
@@ -163,21 +156,21 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
   var inputRef = (0, _react.useRef)();
   var dropRef = (0, _react.useRef)();
 
-  var _useState3 = (0, _react.useState)(focusProp),
-      focus = _useState3[0],
-      setFocus = _useState3[1];
+  var _useState2 = (0, _react.useState)(focusProp),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(),
+      activeMaskIndex = _useState3[0],
+      setActiveMaskIndex = _useState3[1];
 
   var _useState4 = (0, _react.useState)(),
-      activeMaskIndex = _useState4[0],
-      setActiveMaskIndex = _useState4[1];
+      activeOptionIndex = _useState4[0],
+      setActiveOptionIndex = _useState4[1];
 
   var _useState5 = (0, _react.useState)(),
-      activeOptionIndex = _useState5[0],
-      setActiveOptionIndex = _useState5[1];
-
-  var _useState6 = (0, _react.useState)(),
-      showDrop = _useState6[0],
-      setShowDrop = _useState6[1];
+      showDrop = _useState5[0],
+      setShowDrop = _useState5[1];
 
   (0, _react.useEffect)(function () {
     if (focus) {
@@ -237,10 +230,9 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
       return part.part;
     }).join('');
     if (value !== nextValue) setInputValue(nextValue);
-    if (formContext && name) formContext.set(name, event.target.value);
     if (onChange) onChange(event);
     setValue(nextValue);
-  }, [formContext, mask, name, onChange, setInputValue, value]);
+  }, [mask, onChange, setInputValue, setValue, value]);
   var onOption = (0, _react.useCallback)(function (option) {
     return function () {
       var nextValueParts = [].concat(valueParts);

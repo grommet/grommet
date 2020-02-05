@@ -124,20 +124,13 @@ var MaskedInput = forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
-      value = _useState[0],
-      setValue = _useState[1];
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+      value = _formContext$useFormC[0],
+      setValue = _formContext$useFormC[1];
 
-  useEffect(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  useEffect(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]);
-
-  var _useState2 = useState(parseValue(mask, value)),
-      valueParts = _useState2[0],
-      setValueParts = _useState2[1];
+  var _useState = useState(parseValue(mask, value)),
+      valueParts = _useState[0],
+      setValueParts = _useState[1];
 
   useEffect(function () {
     setValueParts(parseValue(mask, value));
@@ -145,21 +138,21 @@ var MaskedInput = forwardRef(function (_ref, ref) {
   var inputRef = useRef();
   var dropRef = useRef();
 
-  var _useState3 = useState(focusProp),
-      focus = _useState3[0],
-      setFocus = _useState3[1];
+  var _useState2 = useState(focusProp),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
+
+  var _useState3 = useState(),
+      activeMaskIndex = _useState3[0],
+      setActiveMaskIndex = _useState3[1];
 
   var _useState4 = useState(),
-      activeMaskIndex = _useState4[0],
-      setActiveMaskIndex = _useState4[1];
+      activeOptionIndex = _useState4[0],
+      setActiveOptionIndex = _useState4[1];
 
   var _useState5 = useState(),
-      activeOptionIndex = _useState5[0],
-      setActiveOptionIndex = _useState5[1];
-
-  var _useState6 = useState(),
-      showDrop = _useState6[0],
-      setShowDrop = _useState6[1];
+      showDrop = _useState5[0],
+      setShowDrop = _useState5[1];
 
   useEffect(function () {
     if (focus) {
@@ -219,10 +212,9 @@ var MaskedInput = forwardRef(function (_ref, ref) {
       return part.part;
     }).join('');
     if (value !== nextValue) setInputValue(nextValue);
-    if (formContext && name) formContext.set(name, event.target.value);
     if (onChange) onChange(event);
     setValue(nextValue);
-  }, [formContext, mask, name, onChange, setInputValue, value]);
+  }, [mask, onChange, setInputValue, setValue, value]);
   var onOption = useCallback(function (option) {
     return function () {
       var nextValueParts = [].concat(valueParts);

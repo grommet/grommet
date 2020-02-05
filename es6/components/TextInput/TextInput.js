@@ -81,24 +81,18 @@ var TextInput = forwardRef(function (_ref, ref) {
   var suggestionsRef = useRef();
   var suggestionRefs = {};
 
-  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
-      value = _useState[0],
-      setValue = _useState[1];
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+      value = _formContext$useFormC[0],
+      setValue = _formContext$useFormC[1];
+
+  var _useState = useState(),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   var _useState2 = useState(),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
+      showDrop = _useState2[0],
+      setShowDrop = _useState2[1]; // if we have no suggestions, close drop if it's open
 
-  var _useState3 = useState(),
-      showDrop = _useState3[0],
-      setShowDrop = _useState3[1];
-
-  useEffect(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  useEffect(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]); // if we have no suggestions, close drop if it's open
 
   useEffect(function () {
     if (showDrop && (!suggestions || !suggestions.length)) {
@@ -107,9 +101,9 @@ var TextInput = forwardRef(function (_ref, ref) {
     }
   }, [onSuggestionsClose, showDrop, suggestions]);
 
-  var _useState4 = useState(-1),
-      activeSuggestionIndex = _useState4[0],
-      setActiveSuggestionIndex = _useState4[1]; // reset activeSuggestionIndex when the drop is closed
+  var _useState3 = useState(-1),
+      activeSuggestionIndex = _useState3[0],
+      setActiveSuggestionIndex = _useState3[1]; // reset activeSuggestionIndex when the drop is closed
 
 
   useEffect(function () {
@@ -125,9 +119,9 @@ var TextInput = forwardRef(function (_ref, ref) {
     }
   }, [activeSuggestionIndex, announce, messages, suggestions]);
 
-  var _useState5 = useState(-1),
-      selectedSuggestionIndex = _useState5[0],
-      setSelectedSuggestionIndex = _useState5[1]; // set selectedSuggestionIndex based on value and current suggestions
+  var _useState4 = useState(-1),
+      selectedSuggestionIndex = _useState4[0],
+      setSelectedSuggestionIndex = _useState4[1]; // set selectedSuggestionIndex based on value and current suggestions
 
 
   useEffect(function () {
@@ -200,9 +194,7 @@ var TextInput = forwardRef(function (_ref, ref) {
           onSelect(adjustedEvent);
         }
 
-        if (formContext) {
-          formContext.update(name, suggestions[activeSuggestionIndex]);
-        }
+        setValue(suggestions[activeSuggestionIndex]);
       }
     }, React.createElement(Drop, _extends({
       ref: dropRef,
@@ -243,9 +235,7 @@ var TextInput = forwardRef(function (_ref, ref) {
             onSelect(adjustedEvent);
           }
 
-          if (formContext) {
-            formContext.update(name, suggestion);
-          }
+          setValue(suggestion);
         },
         onMouseOver: function onMouseOver() {
           return setActiveSuggestionIndex(index);
@@ -335,17 +325,8 @@ var TextInput = forwardRef(function (_ref, ref) {
       }
     },
     onChange: function onChange(event) {
-      var nextValue = event.target.value;
-
-      if (formContext && name) {
-        formContext.set(name, nextValue);
-      }
-
-      if (_onChange) {
-        _onChange(event);
-      }
-
-      setValue(nextValue);
+      setValue(event.target.value);
+      if (_onChange) _onChange(event);
     }
   }))), drop);
 });

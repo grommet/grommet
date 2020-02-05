@@ -39,20 +39,13 @@ var CheckBox = forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _useState = useState(checkedProp !== undefined ? checkedProp : formContext && name && formContext.get(name) || ''),
-      checked = _useState[0],
-      setChecked = _useState[1];
+  var _formContext$useFormC = formContext.useFormContext(name, checkedProp),
+      checked = _formContext$useFormC[0],
+      setChecked = _formContext$useFormC[1];
 
-  useEffect(function () {
-    return setChecked(checkedProp);
-  }, [checkedProp]);
-  useEffect(function () {
-    if (formContext && name) setChecked(formContext.get(name) || '');
-  }, [formContext, name]);
-
-  var _useState2 = useState(focusProp),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
+  var _useState = useState(focusProp),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   useEffect(function () {
     return setFocus(focusProp);
@@ -149,10 +142,7 @@ var CheckBox = forwardRef(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: function onChange(event) {
-      if (formContext && name) {
-        formContext.set(name, event.target.checked);
-      }
-
+      setChecked(event.target.checked);
       if (_onChange) _onChange(event);
     }
   })), visual, hidden);

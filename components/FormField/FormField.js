@@ -95,7 +95,7 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
     return setValue(valueProp);
   }, [valueProp]);
   (0, _react.useEffect)(function () {
-    if (context && context.value[name] === undefined && (value !== undefined || checked !== undefined)) {
+    if (context && context.value && context.value[name] === undefined && (value !== undefined || checked !== undefined)) {
       context.update(name, value !== undefined ? value : checked, undefined, true);
     }
   });
@@ -148,7 +148,7 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
   }) || children;
   var onFieldBlur;
 
-  if (context) {
+  if (context && context.addValidation) {
     var addValidation = context.addValidation,
         errors = context.errors,
         onContextBlur = context.onBlur,

@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 var RangeInput = forwardRef(function (_ref, ref) {
@@ -15,20 +15,13 @@ var RangeInput = forwardRef(function (_ref, ref) {
 
   var formContext = useContext(FormContext);
 
-  var _useState = useState(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
-      value = _useState[0],
-      setValue = _useState[1];
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+      value = _formContext$useFormC[0],
+      setValue = _formContext$useFormC[1];
 
-  useEffect(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  useEffect(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]);
-
-  var _useState2 = useState(),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
+  var _useState = useState(),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   return React.createElement(StyledRangeInput, _extends({
     ref: ref,
@@ -45,14 +38,8 @@ var RangeInput = forwardRef(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: function onChange(event) {
-      var nextValue = event.target.value;
-
-      if (formContext && name) {
-        formContext.set(name, nextValue);
-      }
-
+      setValue(event.target.value);
       if (_onChange) _onChange(event);
-      setValue(nextValue);
     },
     type: "range"
   }));

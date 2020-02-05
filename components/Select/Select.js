@@ -100,20 +100,13 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
   var inputRef = (0, _react.useRef)();
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
-      value = _useState[0],
-      setValue = _useState[1];
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+      value = _formContext$useFormC[0],
+      setValue = _formContext$useFormC[1];
 
-  (0, _react.useEffect)(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  (0, _react.useEffect)(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]);
-
-  var _useState2 = (0, _react.useState)(propOpen),
-      open = _useState2[0],
-      setOpen = _useState2[1];
+  var _useState = (0, _react.useState)(propOpen),
+      open = _useState[0],
+      setOpen = _useState[1];
 
   (0, _react.useEffect)(function () {
     setOpen(propOpen);
@@ -136,13 +129,11 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
   };
 
   var onSelectChange = function onSelectChange(event) {
-    var nextValue = event.value;
-
     if (closeOnChange) {
       onRequestClose();
     }
 
-    if (formContext && name) formContext.set(name, nextValue);
+    setValue(event.value);
 
     if (onChange) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -153,8 +144,6 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
         target: inputRef.current
       })].concat(args));
     }
-
-    setValue(nextValue);
   };
 
   var SelectIcon;

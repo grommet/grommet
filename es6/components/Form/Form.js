@@ -88,6 +88,28 @@ var Form = forwardRef(function (_ref, ref) {
       return nextTouched;
     });
   }, []);
+
+  var useFormContext = function useFormContext(name, dataProp) {
+    var valueData = name && value[name] !== undefined ? value[name] : '';
+
+    var _useState5 = useState(dataProp !== undefined ? dataProp : valueData),
+        data = _useState5[0],
+        setData = _useState5[1]; // use dataProp passed in, allowing for it to change
+
+
+    useEffect(function () {
+      if (dataProp !== undefined) setData(dataProp);
+    }, [dataProp]); // update when the form value changes
+
+    useEffect(function () {
+      if (name && valueData !== data) setData(valueData);
+    }, [data, name, valueData]);
+    return [data, function (nextData) {
+      if (name) update(name, nextData);
+      setData(nextData);
+    }];
+  };
+
   return React.createElement("form", _extends({
     ref: ref
   }, rest, {
@@ -168,6 +190,7 @@ var Form = forwardRef(function (_ref, ref) {
       },
       touched: touched,
       update: update,
+      useFormContext: useFormContext,
       value: value
     }
   }, children));

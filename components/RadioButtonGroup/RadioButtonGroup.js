@@ -43,20 +43,13 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
     });
   }, [optionsProp, rest.id]);
 
-  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : formContext && name && formContext.get(name) || ''),
-      value = _useState[0],
-      setValue = _useState[1];
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+      value = _formContext$useFormC[0],
+      setValue = _formContext$useFormC[1];
 
-  (0, _react.useEffect)(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  (0, _react.useEffect)(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]);
-
-  var _useState2 = (0, _react.useState)(),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
+  var _useState = (0, _react.useState)(),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   var optionRefs = (0, _react.useRef)([]);
 
@@ -82,15 +75,11 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
       var nextIndex = valueIndex + 1;
       var nextValue = options[nextIndex].value;
       setValue(nextValue);
-      if (formContext && name) formContext.set(name, nextValue);
-
-      if (_onChange) {
-        _onChange({
-          target: {
-            value: nextValue
-          }
-        });
-      }
+      if (_onChange) _onChange({
+        target: {
+          value: nextValue
+        }
+      });
     }
   };
 
@@ -99,15 +88,11 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
       var nextIndex = valueIndex - 1;
       var nextValue = options[nextIndex].value;
       setValue(nextValue);
-      if (formContext && name) formContext.set(name, nextValue);
-
-      if (_onChange) {
-        _onChange({
-          target: {
-            value: nextValue
-          }
-        });
-      }
+      if (_onChange) _onChange({
+        target: {
+          value: nextValue
+        }
+      });
     }
   };
 
@@ -155,10 +140,7 @@ var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
       onFocus: onFocus,
       onBlur: onBlur,
       onChange: function onChange(event) {
-        if (formContext && name) {
-          formContext.set(name, event.target.value);
-        }
-
+        setValue(event.target.value);
         if (_onChange) _onChange(event);
       }
     }, optionRest), children ? function (state) {
