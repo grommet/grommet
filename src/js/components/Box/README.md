@@ -284,9 +284,8 @@ string
 
 **border**
 
-Include a border. 'between' will place a border in the gap between child
-      elements. You must have a 'gap' to use 'between'. 'border' is a boolean
-      value and when set to true will apply borders to all sides.
+Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.
 
 ```
 boolean
