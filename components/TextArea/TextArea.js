@@ -68,13 +68,17 @@ var TextArea = (0, _react.forwardRef)(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: function onChange(event) {
+      var nextValue = event.target.value;
+
       if (formContext && name) {
-        formContext.set(name, event.target.value);
+        formContext.set(name, nextValue);
       }
 
       if (_onChange) {
         _onChange(event);
       }
+
+      setValue(nextValue);
     }
   })));
 });

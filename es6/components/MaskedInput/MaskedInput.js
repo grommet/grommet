@@ -221,6 +221,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     if (value !== nextValue) setInputValue(nextValue);
     if (formContext && name) formContext.set(name, event.target.value);
     if (onChange) onChange(event);
+    setValue(nextValue);
   }, [formContext, mask, name, onChange, setInputValue, value]);
   var onOption = useCallback(function (option) {
     return function () {

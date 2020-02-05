@@ -85,21 +85,20 @@ var TextInput = forwardRef(function (_ref, ref) {
       value = _useState[0],
       setValue = _useState[1];
 
-  useEffect(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  useEffect(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]);
-
   var _useState2 = useState(),
       focus = _useState2[0],
       setFocus = _useState2[1];
 
   var _useState3 = useState(),
       showDrop = _useState3[0],
-      setShowDrop = _useState3[1]; // if we have no suggestions, close drop if it's open
+      setShowDrop = _useState3[1];
 
+  useEffect(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  useEffect(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]); // if we have no suggestions, close drop if it's open
 
   useEffect(function () {
     if (showDrop && (!suggestions || !suggestions.length)) {
@@ -336,11 +335,17 @@ var TextInput = forwardRef(function (_ref, ref) {
       }
     },
     onChange: function onChange(event) {
+      var nextValue = event.target.value;
+
       if (formContext && name) {
-        formContext.set(name, event.target.value);
+        formContext.set(name, nextValue);
       }
 
-      if (_onChange) _onChange(event);
+      if (_onChange) {
+        _onChange(event);
+      }
+
+      setValue(nextValue);
     }
   }))), drop);
 });

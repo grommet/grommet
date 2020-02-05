@@ -106,21 +106,20 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       value = _useState[0],
       setValue = _useState[1];
 
-  (0, _react.useEffect)(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  (0, _react.useEffect)(function () {
-    if (formContext && name) setValue(formContext.get(name) || '');
-  }, [formContext, name]);
-
   var _useState2 = (0, _react.useState)(),
       focus = _useState2[0],
       setFocus = _useState2[1];
 
   var _useState3 = (0, _react.useState)(),
       showDrop = _useState3[0],
-      setShowDrop = _useState3[1]; // if we have no suggestions, close drop if it's open
+      setShowDrop = _useState3[1];
 
+  (0, _react.useEffect)(function () {
+    return setValue(valueProp);
+  }, [valueProp]);
+  (0, _react.useEffect)(function () {
+    if (formContext && name) setValue(formContext.get(name) || '');
+  }, [formContext, name]); // if we have no suggestions, close drop if it's open
 
   (0, _react.useEffect)(function () {
     if (showDrop && (!suggestions || !suggestions.length)) {
@@ -357,11 +356,17 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       }
     },
     onChange: function onChange(event) {
+      var nextValue = event.target.value;
+
       if (formContext && name) {
-        formContext.set(name, event.target.value);
+        formContext.set(name, nextValue);
       }
 
-      if (_onChange) _onChange(event);
+      if (_onChange) {
+        _onChange(event);
+      }
+
+      setValue(nextValue);
     }
   }))), drop);
 });

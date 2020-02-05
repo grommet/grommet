@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useState, useEffect } from 'react';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { StyledTextArea } from './StyledTextArea';
@@ -55,13 +55,17 @@ var TextArea = forwardRef(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: function onChange(event) {
+      var nextValue = event.target.value;
+
       if (formContext && name) {
-        formContext.set(name, event.target.value);
+        formContext.set(name, nextValue);
       }
 
       if (_onChange) {
         _onChange(event);
       }
+
+      setValue(nextValue);
     }
   })));
 });
