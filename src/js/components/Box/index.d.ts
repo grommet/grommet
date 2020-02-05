@@ -14,6 +14,7 @@ import {
   PadType,
   PolymorphicType,
   ColorType, 
+  RoundType,
 } from "../../utils";
 
 export interface BoxProps {
@@ -40,7 +41,7 @@ export interface BoxProps {
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;
   pad?: PadType;
   responsive?: boolean;
-  round?: boolean | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string | {corner?: "top" | "left" | "bottom" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string};
+  round?: RoundType;
   tag?: PolymorphicType;
   as?: PolymorphicType;
   width?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string | {max?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string,min?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string};

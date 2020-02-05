@@ -379,6 +379,16 @@ Defaults to
 { bottom: 'small' }
 ```
 
+**formField.round**
+
+The rounding of the FormField. Expects `boolean | string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.borderSize**
 
 The possible border sizes for FormField. Expects `object`.

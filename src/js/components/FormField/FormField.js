@@ -208,6 +208,7 @@ const FormField = forwardRef(
                 }
               : undefined
           }
+          round={border.position === 'inner' ? formField.round : undefined}
         >
           {contents}
         </Box>
@@ -268,6 +269,7 @@ const FormField = forwardRef(
         }
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formField.margin }}
+        round={border.position === 'outer' ? formField.round : undefined}
         style={outerStyle}
         onFocus={event => {
           setFocus(true);

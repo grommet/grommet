@@ -575,6 +575,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { vertical: 'xsmall', horizontal: 'small' },
       },
       margin: { bottom: 'small' },
+      // round: undefined,
     },
     grommet: {
       // extend: undefined
