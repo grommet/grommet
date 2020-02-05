@@ -40,11 +40,8 @@ const TextArea = forwardRef(
             if (onBlur) onBlur(event);
           }}
           onChange={event => {
-            const nextValue = event.target.value;
-            if (onChange) {
-              onChange(event);
-            }
-            setValue(nextValue);
+            setValue(event.target.value);
+            if (onChange) onChange(event);
           }}
         />
       </Keyboard>

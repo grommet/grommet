@@ -108,10 +108,10 @@ const Select = forwardRef(
       if (closeOnChange) {
         onRequestClose();
       }
+      setValue(event.value);
       if (onChange) {
         onChange({ ...event, target: inputRef.current }, ...args);
       }
-      setValue(event.value);
     };
 
     let SelectIcon;

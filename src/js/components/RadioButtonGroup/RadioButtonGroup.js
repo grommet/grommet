@@ -65,9 +65,7 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex + 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
-        if (onChange) {
-          onChange({ target: { value: nextValue } });
-        }
+        if (onChange) onChange({ target: { value: nextValue } });
       }
     };
 
@@ -76,9 +74,7 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex - 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
-        if (onChange) {
-          onChange({ target: { value: nextValue } });
-        }
+        if (onChange) onChange({ target: { value: nextValue } });
       }
     };
 

@@ -26,8 +26,8 @@ const RangeInput = forwardRef(
           if (onBlur) onBlur(event);
         }}
         onChange={event => {
-          if (onChange) onChange(event);
           setValue(event.target.value);
+          if (onChange) onChange(event);
         }}
         type="range"
       />
