@@ -48,15 +48,7 @@ const CheckBox = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [checked, setChecked] = useState(
-      checkedProp !== undefined
-        ? checkedProp
-        : (formContext && name && formContext.get(name)) || '',
-    );
-    useEffect(() => setChecked(checkedProp), [checkedProp]);
-    useEffect(() => {
-      if (formContext && name) setChecked(formContext.get(name) || '');
-    }, [formContext, name]);
+    const [checked, setChecked] = formContext.useFormContext(name, checkedProp);
 
     const [focus, setFocus] = useState(focusProp);
     useEffect(() => setFocus(focusProp), [focusProp]);
@@ -177,9 +169,7 @@ const CheckBox = forwardRef(
             if (onBlur) onBlur(event);
           }}
           onChange={event => {
-            if (formContext && name) {
-              formContext.set(name, event.target.checked);
-            }
+            setChecked(event.target.checked);
             if (onChange) onChange(event);
           }}
         />

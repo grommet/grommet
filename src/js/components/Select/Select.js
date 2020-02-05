@@ -83,15 +83,7 @@ const Select = forwardRef(
     const inputRef = useRef();
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = useState(
-      valueProp !== undefined
-        ? valueProp
-        : (formContext && name && formContext.get(name)) || '',
-    );
-    useEffect(() => setValue(valueProp), [valueProp]);
-    useEffect(() => {
-      if (formContext && name) setValue(formContext.get(name) || '');
-    }, [formContext, name]);
+    const [value, setValue] = formContext.useFormContext(name, valueProp);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => {
@@ -113,15 +105,13 @@ const Select = forwardRef(
     };
 
     const onSelectChange = (event, ...args) => {
-      const nextValue = event.value;
       if (closeOnChange) {
         onRequestClose();
       }
-      if (formContext && name) formContext.set(name, nextValue);
+      setValue(event.value);
       if (onChange) {
         onChange({ ...event, target: inputRef.current }, ...args);
       }
-      setValue(nextValue);
     };
 
     let SelectIcon;
