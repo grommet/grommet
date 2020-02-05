@@ -487,7 +487,7 @@ exports[`Menu close by clicking outside 2`] = `
 <div
   class="c0 c1"
   id="test-menu__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -2483,7 +2483,7 @@ exports[`Menu open and close on click 3`] = `
 <div
   class="c0 c1"
   id="test-menu__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
