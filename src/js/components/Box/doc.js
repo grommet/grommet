@@ -164,6 +164,7 @@ export const doc = Box => {
     border: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf([
+        'border',
         'top',
         'left',
         'bottom',
@@ -179,7 +180,8 @@ export const doc = Box => {
       PropTypes.arrayOf(BORDER_SHAPE),
     ]).description(
       `Include a border. 'between' will place a border in the gap between
-      child elements. You must have a 'gap' to use 'between'.`,
+      child elements. You must have a 'gap' to use 'between'. 'border' is
+      a boolean value and when set to true will apply borders to all sides.`,
     ),
     direction: PropTypes.oneOf([
       'row',

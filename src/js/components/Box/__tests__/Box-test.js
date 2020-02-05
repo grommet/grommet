@@ -345,6 +345,7 @@ describe('Box', () => {
   test('border', () => {
     const component = renderer.create(
       <Grommet>
+        <Box border />
         <Box border="all" />
         <Box border="horizontal" />
         <Box border="vertical" />
