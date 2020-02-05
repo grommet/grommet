@@ -15,6 +15,7 @@ const CustomMenu = () => (
     >
       <Menu
         plain
+        icon={false}
         items={[
           { label: 'Launch', onClick: () => {} },
           { label: 'Abort', onClick: () => {} },
