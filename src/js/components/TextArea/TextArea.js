@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useState, useEffect } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
@@ -17,6 +17,7 @@ const TextArea = forwardRef(
         ? valueProp
         : (formContext && name && formContext.get(name)) || '',
     );
+
     useEffect(() => setValue(valueProp), [valueProp]);
     useEffect(() => {
       if (formContext && name) setValue(formContext.get(name) || '');
@@ -48,12 +49,14 @@ const TextArea = forwardRef(
             if (onBlur) onBlur(event);
           }}
           onChange={event => {
+            const nextValue = event.target.value;
             if (formContext && name) {
-              formContext.set(name, event.target.value);
+              formContext.set(name, nextValue);
             }
             if (onChange) {
               onChange(event);
             }
+            setValue(nextValue);
           }}
         />
       </Keyboard>

@@ -214,6 +214,7 @@ const MaskedInput = forwardRef(
         if (value !== nextValue) setInputValue(nextValue);
         if (formContext && name) formContext.set(name, event.target.value);
         if (onChange) onChange(event);
+        setValue(nextValue);
       },
       [formContext, mask, name, onChange, setInputValue, value],
     );

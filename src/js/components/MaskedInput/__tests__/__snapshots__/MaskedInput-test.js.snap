@@ -532,7 +532,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
     id="item"
     name="item"
     placeholder="!"
-    value=""
+    value="aa!"
   />
 </div>
 `;
@@ -1181,7 +1181,7 @@ exports[`MaskedInput option via mouse 4`] = `
     id="item"
     name="item"
     placeholder="!"
-    value=""
+    value="aa!"
   />
 </div>
 `;
