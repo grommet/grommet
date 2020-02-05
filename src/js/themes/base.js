@@ -63,6 +63,8 @@ const colors = {
     dark: '#33333308',
     light: '#FFFFFF08',
   },
+  'active-background': 'background-contrast',
+  'active-text': 'text-strong',
   black: '#000000',
   border: {
     dark: rgba(255, 255, 255, 0.33),
@@ -84,10 +86,24 @@ const colors = {
     dark: '#f8f8f8',
     light: '#444444',
   },
+  'text-strong': {
+    dark: '#FFFFFF',
+    light: '#000000',
+  },
+  'text-weak': {
+    dark: '#CCCCCC',
+    light: '#555555',
+  },
+  'text-xweak': {
+    dark: '#BBBBBB',
+    light: '#666666',
+  },
   icon: {
     dark: '#f8f8f8',
     light: '#666666',
   },
+  'selected-background': 'brand',
+  'selected-text': 'text-strong',
   white: '#FFFFFF',
 };
 
@@ -532,7 +548,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: 'small',
       },
       disabled: {
-        // background: undefined,
+        background: {
+          color: 'status-disabled',
+          opacity: 'medium',
+        },
       },
       error: {
         color: {

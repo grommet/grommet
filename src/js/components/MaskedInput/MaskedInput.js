@@ -214,6 +214,7 @@ const MaskedInput = forwardRef(
         if (value !== nextValue) setInputValue(nextValue);
         if (formContext && name) formContext.set(name, event.target.value);
         if (onChange) onChange(event);
+        setValue(nextValue);
       },
       [formContext, mask, name, onChange, setInputValue, value],
     );
@@ -315,7 +316,7 @@ const MaskedInput = forwardRef(
             placeholder={placeholder || renderPlaceholder()}
             focus={focus}
             {...rest}
-            value={value}
+            value={value || ''}
             theme={theme}
             onFocus={event => {
               setFocus(true);

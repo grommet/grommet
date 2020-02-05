@@ -101,13 +101,14 @@ const TextInput = forwardRef(
         ? valueProp
         : (formContext && name && formContext.get(name)) || '',
     );
+
+    const [focus, setFocus] = useState();
+    const [showDrop, setShowDrop] = useState();
+
     useEffect(() => setValue(valueProp), [valueProp]);
     useEffect(() => {
       if (formContext && name) setValue(formContext.get(name) || '');
     }, [formContext, name]);
-
-    const [focus, setFocus] = useState();
-    const [showDrop, setShowDrop] = useState();
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
@@ -359,7 +360,7 @@ const TextInput = forwardRef(
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
-            value={renderLabel(value)}
+            value={renderLabel(value) || ''}
             onFocus={event => {
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
@@ -384,10 +385,14 @@ const TextInput = forwardRef(
               }
             }}
             onChange={event => {
+              const nextValue = event.target.value;
               if (formContext && name) {
-                formContext.set(name, event.target.value);
+                formContext.set(name, nextValue);
               }
-              if (onChange) onChange(event);
+              if (onChange) {
+                onChange(event);
+              }
+              setValue(nextValue);
             }}
           />
         </Keyboard>
