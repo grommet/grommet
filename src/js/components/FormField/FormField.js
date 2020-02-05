@@ -77,6 +77,7 @@ const FormField = forwardRef(
     useEffect(() => {
       if (
         context &&
+        context.value &&
         context.value[name] === undefined &&
         (value !== undefined || checked !== undefined)
       ) {
@@ -157,7 +158,7 @@ const FormField = forwardRef(
       children;
 
     let onFieldBlur;
-    if (context) {
+    if (context && context.addValidation) {
       const {
         addValidation,
         errors,
