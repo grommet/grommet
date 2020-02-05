@@ -195,7 +195,8 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
       border: border.position === 'inner' ? _extends({}, border, {
         side: border.side || 'bottom',
         color: borderColor
-      }) : undefined
+      }) : undefined,
+      round: border.position === 'inner' ? formField.round : undefined
     }, contents);
     var mergedMargin = margin || formField.margin;
     abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
@@ -241,6 +242,7 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
     }) : undefined,
     background: outerBackground,
     margin: abut ? abutMargin : margin || _extends({}, formField.margin),
+    round: border.position === 'outer' ? formField.round : undefined,
     style: outerStyle,
     onFocus: function onFocus(event) {
       setFocus(true);

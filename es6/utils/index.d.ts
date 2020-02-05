@@ -60,4 +60,5 @@ export type MarginType = EdgeType;
 export type OpacityType = "weak" | "medium" | "strong" | string | true | false | number;
 export type PadType = EdgeType;
 export type PlaceHolderType = string | JSX.Element | React.ReactNode;
+export type RoundType = boolean | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string | {corner?: "top" | "left" | "bottom" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string};
 export type TextAlignType = "start" | "center" | "end";
