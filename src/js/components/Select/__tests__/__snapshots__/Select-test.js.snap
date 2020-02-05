@@ -1012,7 +1012,7 @@ exports[`Select complex options and children 3`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -1823,7 +1823,7 @@ exports[`Select empty results search 1`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -2081,7 +2081,7 @@ exports[`Select large drop container height 1`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -2347,7 +2347,7 @@ exports[`Select medium drop container height 1`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -3369,7 +3369,7 @@ exports[`Select multiple values 3`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -3917,7 +3917,7 @@ exports[`Select opens 3`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -5890,7 +5890,7 @@ exports[`Select search 2`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div
@@ -7252,7 +7252,7 @@ exports[`Select small drop container height 1`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   <div

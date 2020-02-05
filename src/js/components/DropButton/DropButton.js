@@ -1,98 +1,78 @@
-import React, { createRef, Component } from 'react';
-import { compose } from 'recompose';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { Button } from '../Button';
 import { Drop } from '../Drop';
-import { withForwardRef } from '../hocs';
 import { setFocusWithoutScroll } from '../../utils';
 
-class DropButton extends Component {
-  static defaultProps = {
-    a11yTitle: 'Open Drop',
-    dropAlign: { top: 'top', left: 'left' },
-  };
-
-  buttonRef = createRef();
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: props.open || false,
-    };
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { show } = prevState;
-    const { open } = nextProps;
-    if (open !== undefined && open !== show) {
-      return { show: open };
-    }
-    return null;
-  }
-
-  componentDidMount() {
-    const { open } = this.props;
-    if (open) {
-      this.forceUpdate();
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { forwardRef } = this.props;
-    const { show } = this.state;
-    if (!show && prevState.show) {
-      // focus on the button if the drop is closed
-      setFocusWithoutScroll((forwardRef || this.buttonRef).current);
-    }
-  }
-
-  onDropClose = () => {
-    const { onClose } = this.props;
-    this.setState({ show: false }, () => {
-      if (onClose) {
-        onClose();
-      }
-    });
-  };
-
-  onToggle = event => {
-    const { onClick, onClose, onOpen } = this.props;
-    const { show } = this.state;
-    this.setState({ show: !show }, () =>
-      show ? onClose && onClose() : onOpen && onOpen(),
-    );
-    if (onClick) {
-      onClick(event);
-    }
-  };
-
-  render() {
-    const {
+const DropButton = forwardRef(
+  (
+    {
+      a11yTitle = 'Open Drop',
       disabled,
-      dropAlign,
+      dropAlign = { top: 'top', left: 'left' },
       dropProps,
-      forwardRef,
       dropContent,
       dropTarget,
       id,
       open,
+      onClick,
+      onClose,
+      onOpen,
       ...rest
-    } = this.props;
-    const { show } = this.state;
+    },
+    ref,
+  ) => {
+    const [closed, setClosed] = useState();
+    const [show, setShow] = useState(open);
+    useEffect(() => {
+      if (open !== undefined && open !== show) {
+        setShow(open);
+        if (!open) setClosed(true);
+      }
+    }, [open, show]);
 
-    delete rest.onClose;
-    delete rest.onOpen;
+    const buttonRef = useRef();
+
+    // show the drop initially if open and refs are ready
+    useEffect(() => {
+      if (closed === undefined && open && (ref || buttonRef).current) {
+        setClosed(false);
+      }
+    }, [closed, open, ref, buttonRef]);
+
+    useEffect(() => {
+      // focus on the button if the drop is closed
+      if (closed) {
+        setFocusWithoutScroll((ref || buttonRef).current);
+        setClosed(false);
+      }
+    }, [closed, ref]);
+
+    const onDropClose = () => {
+      setShow(false);
+      if (onClose) onClose();
+      setClosed(true);
+    };
+
+    const onToggle = event => {
+      setShow(!show);
+      if (show) {
+        if (onClose) onClose();
+        setClosed(true);
+      } else if (onOpen) onOpen();
+      if (onClick) onClick(event);
+    };
 
     let drop;
-    if (show && (forwardRef || this.buttonRef).current) {
+    if (show && (ref || buttonRef).current) {
       drop = (
         <Drop
           id={id ? `${id}__drop` : undefined}
           restrictFocus
           align={dropAlign}
-          target={dropTarget || (forwardRef || this.buttonRef).current}
-          onClickOutside={this.onDropClose}
-          onEsc={this.onDropClose}
+          target={dropTarget || (ref || buttonRef).current}
+          onClickOutside={onDropClose}
+          onEsc={onDropClose}
           {...dropProps}
         >
           {dropContent}
@@ -104,22 +84,25 @@ class DropButton extends Component {
       <>
         <Button
           id={id}
-          ref={forwardRef || this.buttonRef}
+          ref={ref || buttonRef}
+          a11yTitle={a11yTitle}
           disabled={disabled}
           {...rest}
-          onClick={this.onToggle}
+          onClick={onToggle}
         />
         {drop}
       </>
     );
-  }
-}
+  },
+);
+
+DropButton.displayName = 'DropButton';
 
 let DropButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   DropButtonDoc = require('./doc').doc(DropButton);
 }
-const DropButtonWrapper = compose(withForwardRef)(DropButtonDoc || DropButton);
+const DropButtonWrapper = DropButtonDoc || DropButton;
 
 export { DropButtonWrapper as DropButton };
