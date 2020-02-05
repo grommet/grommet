@@ -169,6 +169,11 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: "{ bottom: 'small' }",
   },
+  'formField.round': {
+    description: 'The rounding of the FormField.',
+    type: 'boolean | string | object',
+    defaultValue: 'undefined',
+  },
   'global.borderSize': {
     description: 'The possible border sizes for FormField.',
     type: 'object',

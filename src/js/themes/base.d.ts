@@ -7,6 +7,7 @@ import {
   GraphColorsType,
   MarginType,
   OpacityType,
+  RoundType,
   PadType,
 } from '../utils'
 import { TextProps } from '../components/Text';
@@ -490,6 +491,7 @@ export interface ThemeType {
     };
     label?: TextProps;
     margin?: MarginType;
+    round?: RoundType;
   };
   grommet?: {
     extend?: ExtendType;
