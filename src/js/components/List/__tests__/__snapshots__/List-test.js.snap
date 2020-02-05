@@ -1695,29 +1695,29 @@ exports[`List onClickItem 1`] = `
 
 exports[`List onClickItem 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iIYNgU"
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 LMkYC"
+    class="List__StyledList-sc-130gdqg-0 eAXxwz"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 jNwitb List__StyledItem-sc-130gdqg-1 geVOgf"
+      class="StyledBox-sc-13pk1d4-0 iQXWyC List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fpDZmB List__StyledItem-sc-130gdqg-1 geVOgf"
+      class="StyledBox-sc-13pk1d4-0 lchcXI List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eBHJVM"
+      class="StyledBox-sc-13pk1d4-0 hTZIev"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ePyJRC"
+        class="StyledBox-sc-13pk1d4-0 fmwxyt"
       />
     </li>
   </ul>
