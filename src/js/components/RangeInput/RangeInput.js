@@ -34,10 +34,12 @@ const RangeInput = forwardRef(
           if (onBlur) onBlur(event);
         }}
         onChange={event => {
+          const nextValue = event.target.value;
           if (formContext && name) {
-            formContext.set(name, event.target.value);
+            formContext.set(name, nextValue);
           }
           if (onChange) onChange(event);
+          setValue(nextValue);
         }}
         type="range"
       />
