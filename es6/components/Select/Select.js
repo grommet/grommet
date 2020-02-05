@@ -116,11 +116,13 @@ var Select = forwardRef(function (_ref, ref) {
   };
 
   var onSelectChange = function onSelectChange(event) {
+    var nextValue = event.value;
+
     if (closeOnChange) {
       onRequestClose();
     }
 
-    if (formContext && name) formContext.set(name, event.value);
+    if (formContext && name) formContext.set(name, nextValue);
 
     if (onChange) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -131,6 +133,8 @@ var Select = forwardRef(function (_ref, ref) {
         target: inputRef.current
       })].concat(args));
     }
+
+    setValue(nextValue);
   };
 
   var SelectIcon;
