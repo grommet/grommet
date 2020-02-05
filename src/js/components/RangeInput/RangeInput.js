@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
@@ -7,15 +7,7 @@ const RangeInput = forwardRef(
   ({ name, onChange, onFocus, onBlur, value: valueProp, ...rest }, ref) => {
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = useState(
-      valueProp !== undefined
-        ? valueProp
-        : (formContext && name && formContext.get(name)) || '',
-    );
-    useEffect(() => setValue(valueProp), [valueProp]);
-    useEffect(() => {
-      if (formContext && name) setValue(formContext.get(name) || '');
-    }, [formContext, name]);
+    const [value, setValue] = formContext.useFormContext(name, valueProp);
 
     const [focus, setFocus] = useState();
     return (
@@ -34,10 +26,8 @@ const RangeInput = forwardRef(
           if (onBlur) onBlur(event);
         }}
         onChange={event => {
-          if (formContext && name) {
-            formContext.set(name, event.target.value);
-          }
           if (onChange) onChange(event);
+          setValue(event.target.value);
         }}
         type="range"
       />

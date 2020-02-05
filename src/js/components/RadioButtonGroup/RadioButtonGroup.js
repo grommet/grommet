@@ -38,15 +38,7 @@ const RadioButtonGroup = forwardRef(
       [optionsProp, rest.id],
     );
 
-    const [value, setValue] = useState(
-      valueProp !== undefined
-        ? valueProp
-        : (formContext && name && formContext.get(name)) || '',
-    );
-    useEffect(() => setValue(valueProp), [valueProp]);
-    useEffect(() => {
-      if (formContext && name) setValue(formContext.get(name) || '');
-    }, [formContext, name]);
+    const [value, setValue] = formContext.useFormContext(name, valueProp);
 
     const [focus, setFocus] = useState();
 
@@ -73,7 +65,6 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex + 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
-        if (formContext && name) formContext.set(name, nextValue);
         if (onChange) {
           onChange({ target: { value: nextValue } });
         }
@@ -85,7 +76,6 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex - 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
-        if (formContext && name) formContext.set(name, nextValue);
         if (onChange) {
           onChange({ target: { value: nextValue } });
         }
@@ -133,9 +123,7 @@ const RadioButtonGroup = forwardRef(
                 onFocus={onFocus}
                 onBlur={onBlur}
                 onChange={event => {
-                  if (formContext && name) {
-                    formContext.set(name, event.target.value);
-                  }
+                  setValue(event.target.value);
                   if (onChange) onChange(event);
                 }}
                 {...optionRest}

@@ -96,19 +96,10 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     const suggestionRefs = {};
 
-    const [value, setValue] = useState(
-      valueProp !== undefined
-        ? valueProp
-        : (formContext && name && formContext.get(name)) || '',
-    );
+    const [value, setValue] = formContext.useFormContext(name, valueProp);
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
-
-    useEffect(() => setValue(valueProp), [valueProp]);
-    useEffect(() => {
-      if (formContext && name) setValue(formContext.get(name) || '');
-    }, [formContext, name]);
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
@@ -219,9 +210,7 @@ const TextInput = forwardRef(
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
               onSelect(adjustedEvent);
             }
-            if (formContext) {
-              formContext.update(name, suggestions[activeSuggestionIndex]);
-            }
+            setValue(suggestions[activeSuggestionIndex]);
           }}
         >
           <Drop
@@ -268,9 +257,7 @@ const TextInput = forwardRef(
                               adjustedEvent.target = (ref || inputRef).current;
                               onSelect(adjustedEvent);
                             }
-                            if (formContext) {
-                              formContext.update(name, suggestion);
-                            }
+                            setValue(suggestion);
                           }}
                           onMouseOver={() => setActiveSuggestionIndex(index)}
                           onFocus={() => setActiveSuggestionIndex(index)}
@@ -386,9 +373,6 @@ const TextInput = forwardRef(
             }}
             onChange={event => {
               const nextValue = event.target.value;
-              if (formContext && name) {
-                formContext.set(name, nextValue);
-              }
               if (onChange) {
                 onChange(event);
               }
