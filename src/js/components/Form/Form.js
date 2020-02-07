@@ -81,6 +81,29 @@ const Form = forwardRef(
         });
     }, []);
 
+    const useFormContext = (name, dataProp) => {
+      const valueData = name && value[name] !== undefined ? value[name] : '';
+      const [data, setData] = useState(
+        dataProp !== undefined ? dataProp : valueData,
+      );
+      // use dataProp passed in, allowing for it to change
+      useEffect(() => {
+        if (dataProp !== undefined) setData(dataProp);
+      }, [dataProp]);
+      // update when the form value changes
+      useEffect(() => {
+        if (name && valueData !== data) setData(valueData);
+      }, [data, name, valueData]);
+
+      return [
+        data,
+        nextData => {
+          if (name) update(name, nextData);
+          setData(nextData);
+        },
+      ];
+    };
+
     return (
       <form
         ref={ref}
@@ -153,6 +176,7 @@ const Form = forwardRef(
             set: (name, nextValue) => update(name, nextValue),
             touched,
             update,
+            useFormContext,
             value,
           }}
         >

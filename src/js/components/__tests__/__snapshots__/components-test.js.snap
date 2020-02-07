@@ -2046,7 +2046,6 @@ vertical",
     "name": "DropButton",
     "properties": Array [
       Object {
-        "defaultValue": "Open Drop",
         "description": "Custom label to be used by screen readers. When provided, an aria-label will
    be added to the element.",
         "format": "string",
@@ -2305,8 +2304,12 @@ submit",
     "_calculateChangedBits": null,
     "_currentRenderer": null,
     "_currentRenderer2": null,
-    "_currentValue": undefined,
-    "_currentValue2": undefined,
+    "_currentValue": Object {
+      "useFormContext": [Function],
+    },
+    "_currentValue2": Object {
+      "useFormContext": [Function],
+    },
     "_threadCount": 0,
   },
   "FormField": Object {

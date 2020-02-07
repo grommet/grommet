@@ -77,6 +77,7 @@ const FormField = forwardRef(
     useEffect(() => {
       if (
         context &&
+        context.value &&
         context.value[name] === undefined &&
         (value !== undefined || checked !== undefined)
       ) {
@@ -157,7 +158,7 @@ const FormField = forwardRef(
       children;
 
     let onFieldBlur;
-    if (context) {
+    if (context && context.addValidation) {
       const {
         addValidation,
         errors,
@@ -207,6 +208,7 @@ const FormField = forwardRef(
                 }
               : undefined
           }
+          round={border.position === 'inner' ? formField.round : undefined}
         >
           {contents}
         </Box>
@@ -267,6 +269,7 @@ const FormField = forwardRef(
         }
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formField.margin }}
+        round={border.position === 'outer' ? formField.round : undefined}
         style={outerStyle}
         onFocus={event => {
           setFocus(true);

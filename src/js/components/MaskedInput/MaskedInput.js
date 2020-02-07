@@ -134,15 +134,7 @@ const MaskedInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = useState(
-      valueProp !== undefined
-        ? valueProp
-        : (formContext && name && formContext.get(name)) || '',
-    );
-    useEffect(() => setValue(valueProp), [valueProp]);
-    useEffect(() => {
-      if (formContext && name) setValue(formContext.get(name) || '');
-    }, [formContext, name]);
+    const [value, setValue] = formContext.useFormContext(name, valueProp);
 
     const [valueParts, setValueParts] = useState(parseValue(mask, value));
     useEffect(() => {
@@ -212,11 +204,10 @@ const MaskedInput = forwardRef(
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
         if (value !== nextValue) setInputValue(nextValue);
-        if (formContext && name) formContext.set(name, event.target.value);
         if (onChange) onChange(event);
         setValue(nextValue);
       },
-      [formContext, mask, name, onChange, setInputValue, value],
+      [mask, onChange, setInputValue, setValue, value],
     );
 
     const onOption = useCallback(
