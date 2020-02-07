@@ -443,8 +443,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -523,11 +523,11 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 iWmsNO"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 gFvqdW"
+    class="StyledMaskedInput-sc-99vkfa-0 eNpkOj"
     data-testid="test-input"
     id="item"
     name="item"
@@ -707,8 +707,8 @@ exports[`MaskedInput mask 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -846,11 +846,11 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 iWmsNO"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 iiDsSS"
+    class="StyledMaskedInput-sc-99vkfa-0 cwMWid"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1092,8 +1092,8 @@ exports[`MaskedInput option via mouse 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1172,11 +1172,11 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 iWmsNO"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 gFvqdW"
+    class="StyledMaskedInput-sc-99vkfa-0 eNpkOj"
     data-testid="test-input"
     id="item"
     name="item"

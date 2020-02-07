@@ -36,7 +36,8 @@ import {
 import { grommet, dark } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
+import { hpe } from 'grommet-theme-hpe-new';
+import { hpe as   hpeOld } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
@@ -68,6 +69,7 @@ const themes = {
   dark,
   grommet,
   hpe,
+  hpeOld,
   aruba,
   hp,
   dxc,
@@ -291,7 +293,16 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={['grommet', 'dark', 'hpe', 'aruba', 'hp', 'dxc', 'v1']}
+              options={[
+                'grommet',
+                'dark',
+                'hpe',
+                'hpeOld',
+                'aruba',
+                'hp',
+                'dxc',
+                'v1',
+              ]}
               value={themeName}
               onChange={event => setThemeName(event.option)}
             />
