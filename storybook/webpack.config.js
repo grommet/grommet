@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = async ({ config }) => {
   config.module.rules.push({
-    test: /\.stories\.js$|\/stories\/.*\.js$/,
+    test: /\.stories\.js$|(\/|\\)stories(\/|\\).*\.js$/,
     loaders: [
       {
         loader: require.resolve('@storybook/addon-storysource/loader'),
@@ -17,7 +17,7 @@ module.exports = async ({ config }) => {
   });
 
   config.module.rules.push({
-    test: /stories\/.*\.(ts|tsx)$/,
+    test: /stories(\\|\/).*\.(ts|tsx)$/,
     loaders: [
       {
         loader: require.resolve('awesome-typescript-loader'),
