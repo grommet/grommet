@@ -19,14 +19,25 @@ class Grommet extends Component {
   static displayName = 'Grommet';
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { dir, theme = {}, themeMode } = nextProps;
+    const {
+      background: backgroundProp,
+      dir,
+      theme = {},
+      themeMode,
+    } = nextProps;
     const { theme: stateTheme, themeProp, themeModeProp } = prevState;
 
     const nextTheme = deepMerge(baseTheme, theme);
     if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
       const {
-        colors: { background },
+        colors: { background: themeBackground },
       } = nextTheme.global;
+
+      const background =
+        nextTheme.global.colors[backgroundProp] ||
+        backgroundProp ||
+        themeBackground;
+
       // Determine whether to start in dark or light mode.
       if (typeof background === 'object') {
         // background is an object, use themeMode, theme default
@@ -39,6 +50,7 @@ class Grommet extends Component {
       } else if (nextTheme.dark === undefined) {
         nextTheme.dark = (background && colorIsDark(background)) || false;
       }
+      nextTheme.baseBackground = background;
       if (dir) {
         nextTheme.dir = dir;
       }

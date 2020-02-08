@@ -10,9 +10,13 @@ export const baseStyle = css`
   font-weight: ${props => props.theme.global.font.weight};
   ${props =>
     !props.plain &&
-    props.theme.global.colors.background &&
+    props.theme.baseBackground &&
     css`
-      background: ${normalizeColor('background', props.theme, true)};
+      background: ${normalizeColor(
+        props.theme.baseBackground,
+        props.theme,
+        true,
+      )};
       color: ${normalizeColor('text', props.theme, true)};
     `} box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
