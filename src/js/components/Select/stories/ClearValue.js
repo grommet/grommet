@@ -45,8 +45,10 @@ const UnSelect = () => {
           onChange={({ option }) => setValue(option)}
           placeholder="Select multiple options"
           multiple
-          clearValuePosition="bottom"
-          clearValueLabel="Unselect"
+          clear={{
+            position: 'bottom',
+            label: 'Unselect',
+          }}
         />
         <Select
           options={optionList}
@@ -54,23 +56,25 @@ const UnSelect = () => {
           onChange={({ option }) => setValue(option)}
           placeholder="Select multiple options"
           multiple
-          clearValuePosition="top"
-          renderClearValue={({ onClear }) => (
-            <Box flex={false}>
-              <Button hoverIndicator="background" onClick={onClear}>
-                <Box
-                  direction="row"
-                  background="dark-2"
-                  alignItems="center"
-                  gap="small"
-                  pad="small"
-                >
-                  <Clear />
-                  <Text>Clear items</Text>
-                </Box>
-              </Button>
-            </Box>
-          )}
+          clear={{
+            position: 'top',
+            renderValue: ({ onClear }) => (
+              <Box flex={false}>
+                <Button hoverIndicator="background" onClick={onClear}>
+                  <Box
+                    direction="row"
+                    background="dark-2"
+                    alignItems="center"
+                    gap="small"
+                    pad="small"
+                  >
+                    <Clear />
+                    <Text>Clear items</Text>
+                  </Box>
+                </Button>
+              </Box>
+            ),
+          }}
         />
       </Box>
       <Box

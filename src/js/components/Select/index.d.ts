@@ -8,8 +8,7 @@ export interface SelectProps {
   gridArea?: GridAreaType;
   children?: ((...args: any[]) => any);
   closeOnChange?: boolean;
-  clearValueLabel?: string;
-  clearValuePosition?: "top" | "bottom";
+  clear?: boolean | { position?: "top" | "bottom", label?: string, renderValue?: ((param: {onClear: () => void }) => React.ReactNode)};
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
   dropAlign?: { top?: "top" | "bottom", bottom?: "top" | "bottom", right?: "left" | "right", left?: "left" | "right" };
@@ -34,7 +33,6 @@ export interface SelectProps {
   placeholder?: PlaceHolderType;
   plain?: boolean;
   replace?: boolean;
-  renderClearValue?: ((param: {onClear: () => void }) => React.ReactNode);
   searchPlaceholder?: string;
   selected?: number | number[];
   size?: "small" | "medium" | "large" | "xlarge" | string;

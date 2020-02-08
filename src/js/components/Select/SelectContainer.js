@@ -353,10 +353,10 @@ class SelectContainer extends Component {
   };
 
   renderClear = () => {
-    console.log('in here');
-    const { renderClearValue, clearValueLabel, theme } = this.props;
-    if (renderClearValue) {
-      return renderClearValue({ onClear: this.clearSelection });
+    const { clear, theme } = this.props;
+    const { renderValue, label } = clear;
+    if (renderValue) {
+      return renderValue({ onClear: this.clearSelection });
     }
     return (
       <Box flex={false}>
@@ -370,7 +370,7 @@ class SelectContainer extends Component {
             {...theme.select.options.box}
             {...theme.select.options.container}
           >
-            <Text {...theme.select.options.text}>{clearValueLabel}</Text>
+            <Text {...theme.select.options.text}>{label}</Text>
           </Box>
         </Button>
       </Box>
@@ -380,7 +380,7 @@ class SelectContainer extends Component {
   render() {
     const {
       children,
-      clearValuePosition,
+      clear,
       dropHeight,
       emptySearchMessage,
       id,
@@ -395,6 +395,7 @@ class SelectContainer extends Component {
     } = this.props;
     const { activeIndex, search } = this.state;
 
+    const clearPosition = clear === true ? 'top' : clear && clear.position;
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
     const selectOptionsStyle = {
@@ -427,7 +428,7 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          {value && clearValuePosition === 'top' ? this.renderClear() : null}
+          {value && clearPosition === 'top' ? this.renderClear() : null}
           <OptionsBox
             flex="shrink"
             role="menubar"
@@ -498,7 +499,7 @@ class SelectContainer extends Component {
               </SelectOption>
             )}
           </OptionsBox>
-          {value && clearValuePosition === 'bottom' ? this.renderClear() : null}
+          {value && clearPosition === 'bottom' ? this.renderClear() : null}
         </StyledContainer>
       </Keyboard>
     );

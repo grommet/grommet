@@ -145,22 +145,21 @@ Wether to close the drop when a selection is made. Defaults to `true`.
 boolean
 ```
 
-**clearValueLabel**
+**clear**
 
-Label for the clear selection item Defaults to `Clear selection`.
+Optionally displays a select item to Clear Selection. It can appear above or below the other Select options. 
+
+Setting prop `clear={true}` will assume all defaults. To customize, set `clear` as an object with the following attributes:
+
+`label`: string. Defaults to "Clear selection"
+`position`: "top" | "bottom". Defaults to "top".
+`renderValue`: function. Custom Render function to customize clear value item.
+      It receives as a parameter the callback to call
+      when clicking on the item
 
 ```
-string
-```
-
-**clearValuePosition**
-
-Add a clear value item add the top or at the bottom of the container.
-      By default no unselect option is present.
-
-```
-bottom
-top
+boolean
+object
 ```
 
 **disabled**
@@ -390,16 +389,6 @@ Whether this is a plain Select input with no border or padding.
 
 ```
 boolean
-```
-
-**renderClearValue**
-
-Render function to customize clear value item.
-      It receives as a parameter the callback to call
-      when clicking on the item
-
-```
-function
 ```
 
 **replace**
