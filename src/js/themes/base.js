@@ -328,6 +328,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     button: {
+      size: {
+        small: {
+          ...fontSizing(-1),
+          border: {
+            radius: `${baseSpacing * 0.7}px`,
+          },
+        },
+        medium: {
+          ...fontSizing(0), // 18px
+          border: {
+            radius: `${baseSpacing * 0.75}px`,
+          },
+        },
+        large: {
+          ...fontSizing(1), // 22px
+          border: {
+            radius: `${baseSpacing * 0.8}px`,
+          },
+        },
+      },
       border: {
         // color: { dark: undefined, light: undefined }
         width: `${borderWidth}px`,

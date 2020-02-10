@@ -11,13 +11,20 @@ import {
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
+const radiusStyle = props => {
+  if (props.size) {
+    return props.theme.button.size[props.size].border.radius;
+  }
+  return props.theme.button.border.radius;
+};
+
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
       props.colorValue || props.theme.button.border.color || 'control',
       props.theme,
     )};
-  border-radius: ${props.theme.button.border.radius};
+  border-radius: ${radiusStyle(props)};
   color: ${normalizeColor(props.theme.button.color || 'text', props.theme)};
   padding: ${props.theme.button.padding.vertical}
     ${props.theme.button.padding.horizontal};
@@ -34,8 +41,23 @@ const primaryStyle = props => css`
     props.theme,
     props.theme.button.color,
   )}
-  border-radius: ${props.theme.button.border.radius};
+  border-radius: ${radiusStyle(props)};
 `;
+
+const sizeStyle = props => {
+  const size = props.size || 'medium';
+  const data = props.theme.button.size[size];
+  if (data) {
+    return css`
+      font-size: ${data.size};
+      line-height: ${data.height};
+    `;
+  }
+  return css`
+    font-size: ${size};
+    line-height: normal;
+  `;
+};
 
 function getHoverColor(props) {
   if (props.colorValue) {
@@ -130,13 +152,14 @@ const StyledButton = styled.button`
     `
     line-height: 0;
   `}
-${props =>
-  props.pad &&
-  props.hasIcon &&
-  !props.hasLabel &&
-  `
-padding: ${props.theme.global.edgeSize.small};
-`}
+  ${props =>
+    props.pad &&
+    props.hasIcon &&
+    !props.hasLabel &&
+    `
+  padding: ${props.theme.global.edgeSize.small};
+  `}
+  ${props => props.size && sizeStyle(props)}
   ${props => props.theme.button && props.theme.button.extend}
 `;
 

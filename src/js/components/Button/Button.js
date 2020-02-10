@@ -35,6 +35,7 @@ const Button = forwardRef(
       plain,
       primary,
       reverse,
+      size,
       type = 'button',
       as,
       ...rest
@@ -139,6 +140,7 @@ const Button = forwardRef(
             : Children.count(children) > 0 || (icon && !label)
         }
         primary={primary}
+        size={size}
         type={!href ? type : undefined}
       >
         {contents}
