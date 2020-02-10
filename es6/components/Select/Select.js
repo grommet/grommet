@@ -81,8 +81,7 @@ var Select = forwardRef(function (_ref, ref) {
   var formContext = useContext(FormContext);
 
   var _formContext$useFormC = formContext.useFormContext(name, valueProp),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+      value = _formContext$useFormC[0];
 
   var _useState = useState(propOpen),
       open = _useState[0],
@@ -109,21 +108,15 @@ var Select = forwardRef(function (_ref, ref) {
   };
 
   var onSelectChange = function onSelectChange(event) {
-    if (closeOnChange) {
-      onRequestClose();
+    if (closeOnChange) onRequestClose();
+
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
     }
 
-    setValue(event.value);
-
-    if (onChange) {
-      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
-      }
-
-      onChange.apply(void 0, [_extends({}, event, {
-        target: inputRef.current
-      })].concat(args));
-    }
+    if (onChange) onChange.apply(void 0, [_extends({}, event, {
+      target: inputRef.current
+    })].concat(args));
   };
 
   var SelectIcon;
