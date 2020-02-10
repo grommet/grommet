@@ -92,7 +92,12 @@ function (_Component) {
       setTimeout(function () {
         // we add the id and query here so the unit tests work
         var clone = document.getElementById('layerClone');
-        if (clone) document.body.removeChild(clone);
+
+        if (clone) {
+          document.body.removeChild(clone);
+
+          _this2.layerContainer.remove();
+        }
       }, _StyledLayer.animationDuration);
     }
   };
