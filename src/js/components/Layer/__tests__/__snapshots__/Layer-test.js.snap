@@ -64,8 +64,8 @@ exports[`Layer animation fadeIn 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: kFJubZ 0.2s ease-in-out forwards;
-  animation: kFJubZ 0.2s ease-in-out forwards;
+  -webkit-animation: RcxFP 0.2s ease-in-out forwards;
+  animation: RcxFP 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -133,7 +133,7 @@ exports[`Layer animation fadeIn 1`] = `
 `;
 
 exports[`Layer animation fadeIn 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -156,7 +156,7 @@ exports[`Layer animation fadeIn 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -165,13 +165,13 @@ exports[`Layer animation fadeIn 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -322,7 +322,7 @@ exports[`Layer animation false 1`] = `
 `;
 
 exports[`Layer animation false 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -345,7 +345,7 @@ exports[`Layer animation false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -354,13 +354,13 @@ exports[`Layer animation false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -444,8 +444,8 @@ exports[`Layer animation slide 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -513,7 +513,7 @@ exports[`Layer animation slide 1`] = `
 `;
 
 exports[`Layer animation slide 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -536,7 +536,7 @@ exports[`Layer animation slide 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -545,13 +545,13 @@ exports[`Layer animation slide 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -635,8 +635,8 @@ exports[`Layer animation true 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -704,7 +704,7 @@ exports[`Layer animation true 1`] = `
 `;
 
 exports[`Layer animation true 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -727,7 +727,7 @@ exports[`Layer animation true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -736,13 +736,13 @@ exports[`Layer animation true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -826,8 +826,8 @@ exports[`Layer custom margin 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -895,7 +895,7 @@ exports[`Layer custom margin 1`] = `
 `;
 
 exports[`Layer custom margin 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -918,7 +918,7 @@ exports[`Layer custom margin 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -927,13 +927,13 @@ exports[`Layer custom margin 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -984,8 +984,8 @@ exports[`Layer dark context 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -1030,7 +1030,7 @@ exports[`Layer dark context 1`] = `
 
 exports[`Layer dark context 2`] = `
 "@media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1039,13 +1039,13 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1096,8 +1096,8 @@ exports[`Layer focus on layer 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -1212,8 +1212,8 @@ exports[`Layer full false 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1281,7 +1281,7 @@ exports[`Layer full false 1`] = `
 `;
 
 exports[`Layer full false 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1304,7 +1304,7 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1313,13 +1313,13 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1404,8 +1404,8 @@ exports[`Layer full horizontal 1`] = `
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-animation: jWqWTq 0.2s ease-in-out forwards;
-  animation: jWqWTq 0.2s ease-in-out forwards;
+  -webkit-animation: fEUQAU 0.2s ease-in-out forwards;
+  animation: fEUQAU 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1473,7 +1473,7 @@ exports[`Layer full horizontal 1`] = `
 `;
 
 exports[`Layer full horizontal 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1496,7 +1496,7 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1505,13 +1505,13 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1594,8 +1594,8 @@ exports[`Layer full true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
-  -webkit-animation: djUqwJ 0.2s ease-in-out forwards;
-  animation: djUqwJ 0.2s ease-in-out forwards;
+  -webkit-animation: gVgDGd 0.2s ease-in-out forwards;
+  animation: gVgDGd 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1663,7 +1663,7 @@ exports[`Layer full true 1`] = `
 `;
 
 exports[`Layer full true 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1686,7 +1686,7 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1695,13 +1695,13 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1786,8 +1786,8 @@ exports[`Layer full vertical 1`] = `
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-animation: gLVMkp 0.2s ease-in-out forwards;
-  animation: gLVMkp 0.2s ease-in-out forwards;
+  -webkit-animation: bgBtCZ 0.2s ease-in-out forwards;
+  animation: bgBtCZ 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1855,7 +1855,7 @@ exports[`Layer full vertical 1`] = `
 `;
 
 exports[`Layer full vertical 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1878,7 +1878,7 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1887,13 +1887,13 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2028,7 +2028,7 @@ exports[`Layer hidden 1`] = `
 
 exports[`Layer hidden 2`] = `
 "@media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2037,13 +2037,13 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2065,20 +2065,20 @@ exports[`Layer hidden 2`] = `
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 bCUvIO"
+  class="StyledLayer-rmtehz-0 hQMGgF"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-rmtehz-1 GMfAw"
+    class="StyledLayer__StyledOverlay-rmtehz-1 bnUvKb"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 ERoyF"
+    class="StyledLayer__StyledContainer-rmtehz-2 ceYBBX"
     id="hidden-test"
   >
     <a
       aria-hidden="true"
-      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 ieWZoz"
+      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 jJnknU"
       tabindex="-1"
     />
     This is a layer
@@ -2087,7 +2087,7 @@ exports[`Layer hidden 3`] = `
 `;
 
 exports[`Layer hidden 4`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2110,7 +2110,7 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2119,13 +2119,13 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2266,8 +2266,8 @@ exports[`Layer margin large 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2335,7 +2335,7 @@ exports[`Layer margin large 1`] = `
 `;
 
 exports[`Layer margin large 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2358,7 +2358,7 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2367,13 +2367,13 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2457,8 +2457,8 @@ exports[`Layer margin medium 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2526,7 +2526,7 @@ exports[`Layer margin medium 1`] = `
 `;
 
 exports[`Layer margin medium 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2549,7 +2549,7 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2558,13 +2558,13 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2648,8 +2648,8 @@ exports[`Layer margin none 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2717,7 +2717,7 @@ exports[`Layer margin none 1`] = `
 `;
 
 exports[`Layer margin none 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2740,7 +2740,7 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2749,13 +2749,13 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2839,8 +2839,8 @@ exports[`Layer margin small 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2908,7 +2908,7 @@ exports[`Layer margin small 1`] = `
 `;
 
 exports[`Layer margin small 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2931,7 +2931,7 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2940,13 +2940,13 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3030,8 +3030,8 @@ exports[`Layer margin xsmall 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -3099,7 +3099,7 @@ exports[`Layer margin xsmall 1`] = `
 `;
 
 exports[`Layer margin xsmall 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3122,7 +3122,7 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -3131,13 +3131,13 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3188,8 +3188,8 @@ exports[`Layer non-modal 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -3234,7 +3234,7 @@ exports[`Layer non-modal 1`] = `
 
 exports[`Layer non-modal 2`] = `
 "@media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -3243,13 +3243,13 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3300,8 +3300,8 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -3419,8 +3419,8 @@ exports[`Layer plain 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -3488,7 +3488,7 @@ exports[`Layer plain 1`] = `
 `;
 
 exports[`Layer plain 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3511,7 +3511,7 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -3520,13 +3520,13 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3610,8 +3610,8 @@ exports[`Layer position bottom 1`] = `
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  -webkit-animation: jYuahG 0.2s ease-in-out forwards;
-  animation: jYuahG 0.2s ease-in-out forwards;
+  -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
+  animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -3679,7 +3679,7 @@ exports[`Layer position bottom 1`] = `
 `;
 
 exports[`Layer position bottom 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3702,7 +3702,7 @@ exports[`Layer position bottom 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -3711,13 +3711,13 @@ exports[`Layer position bottom 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3801,8 +3801,8 @@ exports[`Layer position center 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -3870,7 +3870,7 @@ exports[`Layer position center 1`] = `
 `;
 
 exports[`Layer position center 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3893,7 +3893,7 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -3902,13 +3902,13 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3992,8 +3992,8 @@ exports[`Layer position end 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: ezCvHO 0.2s ease-in-out forwards;
-  animation: ezCvHO 0.2s ease-in-out forwards;
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
+  animation: drjPPC 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -4061,7 +4061,7 @@ exports[`Layer position end 1`] = `
 `;
 
 exports[`Layer position end 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4084,7 +4084,7 @@ exports[`Layer position end 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -4093,13 +4093,13 @@ exports[`Layer position end 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4183,8 +4183,8 @@ exports[`Layer position left 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: fAItmz 0.2s ease-in-out forwards;
-  animation: fAItmz 0.2s ease-in-out forwards;
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
+  animation: kPYden 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -4252,7 +4252,7 @@ exports[`Layer position left 1`] = `
 `;
 
 exports[`Layer position left 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4275,7 +4275,7 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -4284,13 +4284,13 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4374,8 +4374,8 @@ exports[`Layer position right 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: ezCvHO 0.2s ease-in-out forwards;
-  animation: ezCvHO 0.2s ease-in-out forwards;
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
+  animation: drjPPC 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -4443,7 +4443,7 @@ exports[`Layer position right 1`] = `
 `;
 
 exports[`Layer position right 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4466,7 +4466,7 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -4475,13 +4475,13 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4565,8 +4565,8 @@ exports[`Layer position start 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: fAItmz 0.2s ease-in-out forwards;
-  animation: fAItmz 0.2s ease-in-out forwards;
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
+  animation: kPYden 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -4634,7 +4634,7 @@ exports[`Layer position start 1`] = `
 `;
 
 exports[`Layer position start 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4657,7 +4657,7 @@ exports[`Layer position start 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -4666,13 +4666,13 @@ exports[`Layer position start 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4756,8 +4756,8 @@ exports[`Layer position top 1`] = `
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  -webkit-animation: kEjHXv 0.2s ease-in-out forwards;
-  animation: kEjHXv 0.2s ease-in-out forwards;
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -4825,7 +4825,7 @@ exports[`Layer position top 1`] = `
 `;
 
 exports[`Layer position top 2`] = `
-".bCUvIO {
+".hQMGgF {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4848,7 +4848,7 @@ exports[`Layer position top 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bCUvIO {
+  .hQMGgF {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -4857,13 +4857,13 @@ exports[`Layer position top 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .GMfAw {
+  .bnUvKb {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hKnnhj {
+  .egKDUR {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4914,8 +4914,8 @@ exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bvTjoL 0.2s ease-in-out forwards;
-  animation: bvTjoL 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
