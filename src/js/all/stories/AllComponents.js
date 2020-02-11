@@ -36,8 +36,8 @@ import {
 import { grommet, dark } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe-new';
-import { hpe as   hpeOld } from 'grommet-theme-hpe';
+import { hpe } from 'grommet-theme-hpe';
+import { hpe as hpeV0 } from 'grommet-theme-hpe-v0';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
@@ -69,7 +69,7 @@ const themes = {
   dark,
   grommet,
   hpe,
-  hpeOld,
+  hpeV0,
   aruba,
   hp,
   dxc,
@@ -297,7 +297,7 @@ const Components = () => {
                 'grommet',
                 'dark',
                 'hpe',
-                'hpeOld',
+                'hpeV0',
                 'aruba',
                 'hp',
                 'dxc',
