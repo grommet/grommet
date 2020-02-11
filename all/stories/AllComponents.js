@@ -14,6 +14,8 @@ var _utils = require("grommet/utils");
 
 var _grommetThemeHpe = require("grommet-theme-hpe");
 
+var _grommetThemeHpeV = require("grommet-theme-hpe-v0");
+
 var _grommetThemeAruba = require("grommet-theme-aruba");
 
 var _grommetThemeHp = require("grommet-theme-hp");
@@ -67,6 +69,7 @@ var themes = {
   dark: _themes.dark,
   grommet: _themes.grommet,
   hpe: _grommetThemeHpe.hpe,
+  hpeV0: _grommetThemeHpeV.hpe,
   aruba: _grommetThemeAruba.aruba,
   hp: _grommetThemeHp.hp,
   dxc: _grommetThemeDxc.dxc,
@@ -357,7 +360,7 @@ var Components = function Components() {
   }, _react["default"].createElement(_grommet.Select, {
     plain: true,
     size: "small",
-    options: ['grommet', 'dark', 'hpe', 'aruba', 'hp', 'dxc', 'v1'],
+    options: ['grommet', 'dark', 'hpe', 'hpeV0', 'aruba', 'hp', 'dxc', 'v1'],
     value: themeName,
     onChange: function onChange(event) {
       return setThemeName(event.option);

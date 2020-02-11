@@ -792,22 +792,22 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 isyWsQ Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
+  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 irpgsf"
+    class="StyledBox-sc-13pk1d4-0 kDANyu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eWOzIB"
+      class="StyledBox-sc-13pk1d4-0 fBosDE"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
+          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -818,12 +818,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gAZLwk"
+      class="StyledBox-sc-13pk1d4-0 bmLwcd"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 ixFkTg"
+        class="StyledIcon-ofa7kd-0 kbXEEj"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -968,8 +968,8 @@ exports[`Select complex options and children 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -1062,7 +1062,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:768px) {
-  .gAZLwk {
+  .bmLwcd {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1523,23 +1523,23 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 djNbdM Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
+  class="StyledButton-sc-323bzc-0 ghPEWB Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 irpgsf"
+    class="StyledBox-sc-13pk1d4-0 kDANyu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eWOzIB"
+      class="StyledBox-sc-13pk1d4-0 fBosDE"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
+          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1550,12 +1550,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gAZLwk"
+      class="StyledBox-sc-13pk1d4-0 bmLwcd"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 ixFkTg"
+        class="StyledIcon-ofa7kd-0 kbXEEj"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1722,8 +1722,8 @@ exports[`Select empty results search 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2031,8 +2031,8 @@ exports[`Select large drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2297,8 +2297,8 @@ exports[`Select medium drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3112,22 +3112,22 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 isyWsQ Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
+  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 irpgsf"
+    class="StyledBox-sc-13pk1d4-0 kDANyu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eWOzIB"
+      class="StyledBox-sc-13pk1d4-0 fBosDE"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
+          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3138,12 +3138,12 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gAZLwk"
+      class="StyledBox-sc-13pk1d4-0 bmLwcd"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 ixFkTg"
+        class="StyledIcon-ofa7kd-0 kbXEEj"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3314,8 +3314,8 @@ exports[`Select multiple values 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3431,7 +3431,7 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:768px) {
-  .gAZLwk {
+  .bmLwcd {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3665,22 +3665,22 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 isyWsQ Select__StyledSelectDropButton-sc-17idtfo-1 hmFhRQ"
+  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 irpgsf"
+    class="StyledBox-sc-13pk1d4-0 kDANyu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eWOzIB"
+      class="StyledBox-sc-13pk1d4-0 fBosDE"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gdNcSy"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bSeDom Select__SelectTextInput-sc-17idtfo-0 kHWrcG"
+          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3691,12 +3691,12 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gAZLwk"
+      class="StyledBox-sc-13pk1d4-0 bmLwcd"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 ixFkTg"
+        class="StyledIcon-ofa7kd-0 kbXEEj"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3867,8 +3867,8 @@ exports[`Select opens 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3979,7 +3979,7 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:768px) {
-  .gAZLwk {
+  .bmLwcd {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3988,24 +3988,24 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 jYKEGf SelectContainer__OptionsBox-sc-1wi0ul8-0 fXWCoS"
+  class="StyledBox-sc-13pk1d4-0 fkRApQ SelectContainer__OptionsBox-sc-1wi0ul8-0 cNACBt"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 eBHJVM"
+    class="StyledBox-sc-13pk1d4-0 hTZIev"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gMwkLi"
+      class="StyledButton-sc-323bzc-0 iElqND"
       role="menuitem"
       tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gUBOHT SelectContainer__OptionBox-sc-1wi0ul8-1 eWPMqr"
+        class="StyledBox-sc-13pk1d4-0 bcEMiq SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 icByvP"
+          class="StyledText-sc-1sadyjn-0 bilRua"
         >
           one
         </span>
@@ -4013,19 +4013,19 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 eBHJVM"
+    class="StyledBox-sc-13pk1d4-0 hTZIev"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gMwkLi"
+      class="StyledButton-sc-323bzc-0 iElqND"
       role="menuitem"
       tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gUBOHT SelectContainer__OptionBox-sc-1wi0ul8-1 eWPMqr"
+        class="StyledBox-sc-13pk1d4-0 bcEMiq SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 icByvP"
+          class="StyledText-sc-1sadyjn-0 bilRua"
         >
           two
         </span>
@@ -4033,7 +4033,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 ePyJRC"
+    class="StyledBox-sc-13pk1d4-0 fmwxyt"
   />
 </div>
 `;
@@ -5789,8 +5789,8 @@ exports[`Select search 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -5966,7 +5966,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:768px) {
-  .gAZLwk {
+  .bmLwcd {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -7202,8 +7202,8 @@ exports[`Select small drop container height 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }

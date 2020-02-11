@@ -396,8 +396,8 @@ exports[`Box animation 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 0;
-  -webkit-animation: hebreF 1s 0s forwards;
-  animation: hebreF 1s 0s forwards;
+  -webkit-animation: hAsUlT 1s 0s forwards;
+  animation: hAsUlT 1s 0s forwards;
 }
 
 .c2 {
@@ -414,8 +414,8 @@ exports[`Box animation 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: ePcMHR 1s 0s forwards;
-  animation: ePcMHR 1s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c3 {
@@ -434,8 +434,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
-  -webkit-animation: hTPaEJ 0.1s 0s alternate infinite;
-  animation: hTPaEJ 0.1s 0s alternate infinite;
+  -webkit-animation: WIyiL 0.1s 0s alternate infinite;
+  animation: WIyiL 0.1s 0s alternate infinite;
 }
 
 .c4 {
@@ -454,8 +454,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-animation: ctAmfy 1s 0s alternate infinite;
-  animation: ctAmfy 1s 0s alternate infinite;
+  -webkit-animation: dXQBHi 1s 0s alternate infinite;
+  animation: dXQBHi 1s 0s alternate infinite;
 }
 
 .c5 {
@@ -474,8 +474,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
-  -webkit-animation: gFdjZg 1s 0s forwards;
-  animation: gFdjZg 1s 0s forwards;
+  -webkit-animation: tHuyy 1s 0s forwards;
+  animation: tHuyy 1s 0s forwards;
 }
 
 .c6 {
@@ -494,8 +494,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(-10%);
   -ms-transform: translateY(-10%);
   transform: translateY(-10%);
-  -webkit-animation: bqjsLB 1s 0s forwards;
-  animation: bqjsLB 1s 0s forwards;
+  -webkit-animation: gsfyXb 1s 0s forwards;
+  animation: gsfyXb 1s 0s forwards;
 }
 
 .c7 {
@@ -514,8 +514,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateX(10%);
   -ms-transform: translateX(10%);
   transform: translateX(10%);
-  -webkit-animation: lgbEcj 1s 0s forwards;
-  animation: lgbEcj 1s 0s forwards;
+  -webkit-animation: cQvIhn 1s 0s forwards;
+  animation: cQvIhn 1s 0s forwards;
 }
 
 .c8 {
@@ -534,8 +534,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateX(-10%);
   -ms-transform: translateX(-10%);
   transform: translateX(-10%);
-  -webkit-animation: dDMlww 1s 0s forwards;
-  animation: dDMlww 1s 0s forwards;
+  -webkit-animation: kQBwsm 1s 0s forwards;
+  animation: kQBwsm 1s 0s forwards;
 }
 
 .c9 {
@@ -554,8 +554,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
-  -webkit-animation: jRhXKz 1s 0s forwards;
-  animation: jRhXKz 1s 0s forwards;
+  -webkit-animation: KrtCj 1s 0s forwards;
+  animation: KrtCj 1s 0s forwards;
 }
 
 .c10 {
@@ -574,8 +574,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
-  -webkit-animation: mUcOX 1s 0s forwards;
-  animation: mUcOX 1s 0s forwards;
+  -webkit-animation: ggdLLn 1s 0s forwards;
+  animation: ggdLLn 1s 0s forwards;
 }
 
 .c11 {
@@ -595,8 +595,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
-  -webkit-animation: hebreF 1s 0s forwards,gFdjZg 1s 0s forwards;
-  animation: hebreF 1s 0s forwards,gFdjZg 1s 0s forwards;
+  -webkit-animation: hAsUlT 1s 0s forwards,tHuyy 1s 0s forwards;
+  animation: hAsUlT 1s 0s forwards,tHuyy 1s 0s forwards;
 }
 
 .c12 {
@@ -613,8 +613,8 @@ exports[`Box animation 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 0;
-  -webkit-animation: hebreF 1s 0.5s forwards;
-  animation: hebreF 1s 0.5s forwards;
+  -webkit-animation: hAsUlT 1s 0.5s forwards;
+  animation: hAsUlT 1s 0.5s forwards;
 }
 
 .c13 {
@@ -634,8 +634,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
-  -webkit-animation: hebreF 1s 0.5s forwards,gFdjZg 1s 0.5s forwards;
-  animation: hebreF 1s 0.5s forwards,gFdjZg 1s 0.5s forwards;
+  -webkit-animation: hAsUlT 1s 0.5s forwards,tHuyy 1s 0.5s forwards;
+  animation: hAsUlT 1s 0.5s forwards,tHuyy 1s 0.5s forwards;
 }
 
 <div

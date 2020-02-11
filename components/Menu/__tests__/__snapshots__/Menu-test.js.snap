@@ -443,8 +443,8 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -566,7 +566,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width:768px) {
-  .bXiiuN {
+  .hYQclW {
     padding: 6px;
   }
 }"
@@ -2205,28 +2205,28 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iIYNgU"
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 isyWsQ"
+    class="StyledButton-sc-323bzc-0 dnCEuz"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bXiiuN"
+      class="StyledBox-sc-13pk1d4-0 hYQclW"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 kDSWqh"
+        class="StyledText-sc-1sadyjn-0 hUokoe"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lmeDVn"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUZSMI"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 ixFkTg"
+        class="StyledIcon-ofa7kd-0 kbXEEj"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2439,8 +2439,8 @@ exports[`Menu open and close on click 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -2576,7 +2576,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:768px) {
-  .bXiiuN {
+  .hYQclW {
     padding: 6px;
   }
 }"
@@ -3361,8 +3361,8 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-animation: gDOjLh 0.1s forwards;
-  animation: gDOjLh 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
@@ -3484,7 +3484,7 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:768px) {
-  .bXiiuN {
+  .hYQclW {
     padding: 6px;
   }
 }"

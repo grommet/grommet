@@ -152,6 +152,8 @@ exports[`Grommet hpe theme 1`] = `
   font-family: 'Metric',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
+  background: #FFFFFF;
+  color: #333333;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
