@@ -76,10 +76,10 @@ const colors = {
     light: 'brand',
   },
   focus: focusColor,
-  // "graph-0": 'accent-1',
-  // "graph-1": 'neutral-1',
-  // "graph-2": 'accent-2',
-  // "graph-3": 'neutral-2',
+  'graph-0': 'accent-1',
+  'graph-1': 'neutral-1',
+  'graph-2': 'accent-2',
+  'graph-3': 'neutral-2',
   placeholder: '#AAAAAA',
   selected: 'brand',
   text: {
@@ -390,7 +390,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     chart: {
-      color: 'accent-1',
+      color: 'graph-0',
       // extend: undefined,
     },
     checkBox: {
@@ -525,7 +525,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     diagram: {
       // extend: undefined,
       line: {
-        color: 'accent-1',
+        color: 'graph-0',
       },
     },
     // drop: {
@@ -684,8 +684,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     meter: {
-      color: 'accent-1',
-      // colors: [],
+      color: 'graph-0',
+      // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
     paragraph: {

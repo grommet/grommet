@@ -326,7 +326,6 @@ const Chart = React.forwardRef(
     if (!useGradient) {
       if (color && color.color) colorName = color.color;
       else if (color) colorName = color;
-      else if (theme.global.colors['graph-0']) colorName = 'graph-0';
       else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
     }
     const opacity =
