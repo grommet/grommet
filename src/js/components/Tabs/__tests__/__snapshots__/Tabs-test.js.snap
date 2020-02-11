@@ -99,6 +99,8 @@ exports[`Tabs Tab 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -355,6 +357,8 @@ exports[`Tabs change to second tab 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -516,7 +520,7 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -533,7 +537,7 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -658,6 +662,8 @@ exports[`Tabs complex title 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -877,6 +883,8 @@ exports[`Tabs no Tab 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1065,6 +1073,8 @@ exports[`Tabs set on hover 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -1226,7 +1236,7 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -1243,7 +1253,7 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -1283,7 +1293,7 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -1300,7 +1310,7 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -1340,7 +1350,7 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -1357,7 +1367,7 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -1397,7 +1407,7 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >
@@ -1414,7 +1424,7 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 iAEZMy"
         role="tab"
         type="button"
       >

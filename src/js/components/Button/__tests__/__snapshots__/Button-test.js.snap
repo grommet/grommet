@@ -227,11 +227,11 @@ exports[`Button color 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
   background: #6FFFB0;
   color: #444444;
   border-radius: 18px;
+  font-size: 18px;
+  line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -260,11 +260,11 @@ exports[`Button color 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
   background: #111111;
   color: #f8f8f8;
   border-radius: 18px;
+  font-size: 18px;
+  line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -293,11 +293,11 @@ exports[`Button color 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
   background: #123;
   color: #f8f8f8;
   border-radius: 18px;
+  font-size: 18px;
+  line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -387,10 +387,10 @@ exports[`Button disabled 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
   opacity: 0.3;
   cursor: default;
+  font-size: 18px;
+  line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -441,6 +441,8 @@ exports[`Button fill 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c2 {
@@ -711,6 +713,8 @@ exports[`Button hoverIndicator as object with color 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -762,6 +766,8 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -813,6 +819,8 @@ exports[`Button hoverIndicator background 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -864,6 +872,8 @@ exports[`Button hoverIndicator color 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -1066,11 +1076,11 @@ exports[`Button primary 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
+  font-size: 18px;
+  line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1223,6 +1233,8 @@ exports[`Button warns about invalid icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -1271,6 +1283,8 @@ exports[`Button warns about invalid label 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {

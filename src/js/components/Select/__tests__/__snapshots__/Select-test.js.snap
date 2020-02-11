@@ -114,6 +114,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -278,6 +280,8 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   text-align: inherit;
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0:hover {
@@ -441,6 +445,8 @@ exports[`Select basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -679,6 +685,8 @@ exports[`Select complex options and children 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -792,7 +800,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 iAEZMy Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -943,6 +951,8 @@ exports[`Select complex options and children 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c7:hover {
@@ -1183,6 +1193,8 @@ exports[`Select deselect an option 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -1409,6 +1421,8 @@ exports[`Select disabled 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -1523,7 +1537,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 ghPEWB Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 ckFHEk Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   disabled=""
   id="test-select"
   type="button"
@@ -1697,6 +1711,8 @@ exports[`Select empty results search 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c12 {
@@ -2000,6 +2016,8 @@ exports[`Select large drop container height 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c7:hover {
@@ -2266,6 +2284,8 @@ exports[`Select medium drop container height 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c7:hover {
@@ -2521,6 +2541,8 @@ exports[`Select modifies select control style on open 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -2761,6 +2783,8 @@ exports[`Select multiple 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -2999,6 +3023,8 @@ exports[`Select multiple values 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -3112,7 +3138,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 iAEZMy Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -3283,6 +3309,8 @@ exports[`Select multiple values 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c7:hover {
@@ -3552,6 +3580,8 @@ exports[`Select opens 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -3665,7 +3695,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 iAEZMy Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -3836,6 +3866,8 @@ exports[`Select opens 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c7:hover {
@@ -3996,7 +4028,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hTZIev"
   >
     <button
-      class="StyledButton-sc-323bzc-0 iElqND"
+      class="StyledButton-sc-323bzc-0 frNRxK"
       role="menuitem"
       tabindex="-1"
       type="button"
@@ -4016,7 +4048,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hTZIev"
   >
     <button
-      class="StyledButton-sc-323bzc-0 iElqND"
+      class="StyledButton-sc-323bzc-0 frNRxK"
       role="menuitem"
       tabindex="-1"
       type="button"
@@ -4152,6 +4184,8 @@ exports[`Select renders custom icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -4390,6 +4424,8 @@ exports[`Select renders default icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -4629,6 +4665,8 @@ exports[`Select renders styled select options backwards compatible with legacy
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -4870,6 +4908,8 @@ exports[`Select renders styled select options combining select.options.box &&
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -5109,6 +5149,8 @@ exports[`Select renders styled select options using select.options.container 1`]
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -5294,6 +5336,8 @@ exports[`Select renders without icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -5504,6 +5548,8 @@ exports[`Select search 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -5758,6 +5804,8 @@ exports[`Select search 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c10:hover {
@@ -6087,6 +6135,8 @@ exports[`Select select an option 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -6311,6 +6361,8 @@ exports[`Select select an option with complex options 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 @media only screen and (max-width:768px) {
@@ -6471,6 +6523,8 @@ exports[`Select select an option with enter 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -6695,6 +6749,8 @@ exports[`Select select another option 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -6919,6 +6975,8 @@ exports[`Select size 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -7171,6 +7229,8 @@ exports[`Select small drop container height 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c7:hover {

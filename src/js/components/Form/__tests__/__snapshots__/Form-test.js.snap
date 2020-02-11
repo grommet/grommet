@@ -155,11 +155,11 @@ exports[`Form update 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
+  font-size: 18px;
+  line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;

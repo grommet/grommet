@@ -2111,6 +2111,8 @@ exports[`DataTable groupBy 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
   width: 100%;
   height: 100%;
   max-width: none;
@@ -2385,7 +2387,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 ddqpxJ"
             type="button"
           >
             <div
@@ -2439,7 +2441,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 ddqpxJ"
             type="button"
           >
             <div
@@ -2482,7 +2484,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 ddqpxJ"
             type="button"
           >
             <div
@@ -2603,6 +2605,8 @@ exports[`DataTable groupBy expand 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
   width: 100%;
   height: 100%;
   max-width: none;
@@ -3019,6 +3023,8 @@ exports[`DataTable groupBy property 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
   width: 100%;
   height: 100%;
   max-width: none;
@@ -3293,7 +3299,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 ddqpxJ"
             type="button"
           >
             <div
@@ -3347,7 +3353,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 ddqpxJ"
             type="button"
           >
             <div
@@ -3390,7 +3396,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 ddqpxJ"
             type="button"
           >
             <div
@@ -5119,6 +5125,8 @@ exports[`DataTable search 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -5597,6 +5605,8 @@ exports[`DataTable sort 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  font-size: 18px;
+  line-height: 24px;
   height: 100%;
 }
 
@@ -5818,7 +5828,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 dxLQAc"
             type="button"
           >
             <div
@@ -5901,7 +5911,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 dxLQAc"
             type="button"
           >
             <div

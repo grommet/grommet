@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Grommet } from 'grommet';
-import { Next } from 'grommet-icons';
+import { Next, Add } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
 const SizedButton = () => (
@@ -25,6 +25,11 @@ const SizedButton = () => (
         <Button size="medium" label="Medium" icon={<Next />} reverse />
         <Button label="Default" icon={<Next />} reverse />
         <Button size="large" label="Large" icon={<Next />} reverse />
+      </Box>
+      <Box align="start" pad="large" gap="large">
+        <Button icon={<Add />} primary />
+        <Button icon={<Add />} primary />
+        <Button icon={<Add />} plain={false} />
       </Box>
     </Box>
   </Grommet>

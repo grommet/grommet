@@ -18,6 +18,15 @@ const radiusStyle = props => {
   return props.theme.button.border.radius;
 };
 
+const fontStyle = props => {
+  const size = props.size || 'medium';
+  const data = props.theme.text[size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
+
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
@@ -28,8 +37,6 @@ const basicStyle = props => css`
   color: ${normalizeColor(props.theme.button.color || 'text', props.theme)};
   padding: ${props.theme.button.padding.vertical}
     ${props.theme.button.padding.horizontal};
-  font-size: ${props.theme.text.medium.size};
-  line-height: ${props.theme.text.medium.height};
 `;
 
 const primaryStyle = props => css`
@@ -43,21 +50,6 @@ const primaryStyle = props => css`
   )}
   border-radius: ${radiusStyle(props)};
 `;
-
-const sizeStyle = props => {
-  const size = props.size || 'medium';
-  const data = props.theme.button.size[size];
-  if (data) {
-    return css`
-      font-size: ${data.size};
-      line-height: ${data.height};
-    `;
-  }
-  return css`
-    font-size: ${size};
-    line-height: normal;
-  `;
-};
 
 function getHoverColor(props) {
   if (props.colorValue) {
@@ -133,6 +125,7 @@ const StyledButton = styled.button`
     disabledStyle(
       props.theme.button.disabled && props.theme.button.disabled.opacity,
     )}
+  ${props => fontStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>
@@ -159,7 +152,6 @@ const StyledButton = styled.button`
     `
   padding: ${props.theme.global.edgeSize.small};
   `}
-  ${props => props.size && sizeStyle(props)}
   ${props => props.theme.button && props.theme.button.extend}
 `;
 
