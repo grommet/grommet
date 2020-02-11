@@ -60,7 +60,10 @@ class Layer extends Component {
       setTimeout(() => {
         // we add the id and query here so the unit tests work
         const clone = document.getElementById('layerClone');
-        if (clone) document.body.removeChild(clone);
+        if (clone) {
+          document.body.removeChild(clone);
+          this.layerContainer.remove();
+        }
       }, animationDuration);
     }
   }
