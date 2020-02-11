@@ -12,7 +12,7 @@ import {
 import { defaultProps } from '../../default-props';
 
 const radiusStyle = props => {
-  if (props.size) {
+  if (props.size && props.theme.button.size) {
     return props.theme.button.size[props.size].border.radius;
   }
   return props.theme.button.border.radius;
