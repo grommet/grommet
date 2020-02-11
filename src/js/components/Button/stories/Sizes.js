@@ -27,9 +27,10 @@ const SizedButton = () => (
         <Button size="large" label="Large" icon={<Next />} reverse />
       </Box>
       <Box align="start" pad="large" gap="large">
+        <Button size="small" icon={<Add />} primary />
+        <Button size="medium" icon={<Add />} primary />
         <Button icon={<Add />} primary />
-        <Button icon={<Add />} primary />
-        <Button icon={<Add />} plain={false} />
+        <Button size="large" icon={<Add />} primary />
       </Box>
     </Box>
   </Grommet>
