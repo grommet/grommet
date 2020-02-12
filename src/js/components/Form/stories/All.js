@@ -36,7 +36,7 @@ const Example = () => (
                 return undefined;
               },
               name => {
-                if (name && name.length === 2)
+                if (name && name.length <= 2)
                   return { message: "that's short", status: 'info' };
                 return undefined;
               },
