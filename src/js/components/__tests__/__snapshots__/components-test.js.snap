@@ -3401,6 +3401,12 @@ with the same name so form submissions work.",
         "name": "children",
       },
       Object {
+        "defaultValue": false,
+        "description": "Disables all options.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
         "description": "The DOM name attribute value to use for the underlying <input/> 
       elements.",
         "format": "string",
