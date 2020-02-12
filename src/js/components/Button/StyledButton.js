@@ -27,6 +27,20 @@ const fontStyle = props => {
   `;
 };
 
+const padStyle = props => {
+  if (props.size && props.theme.button.size) {
+    console.log('pad', props.theme.button.size[props.size].pad);
+    return css`
+      ${props.theme.button.size[props.size].pad.vertical}
+      ${props.theme.button.size[props.size].pad.horizontal}
+    `;
+  }
+  return css`
+    ${props.theme.button.padding.vertical}
+    ${props.theme.button.padding.horizontal}
+  `;
+};
+
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
@@ -35,8 +49,7 @@ const basicStyle = props => css`
     )};
   border-radius: ${radiusStyle(props)};
   color: ${normalizeColor(props.theme.button.color || 'text', props.theme)};
-  padding: ${props.theme.button.padding.vertical}
-    ${props.theme.button.padding.horizontal};
+  padding: ${padStyle(props)};
 `;
 
 const primaryStyle = props => css`
