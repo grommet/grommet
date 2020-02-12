@@ -554,22 +554,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       error: {
-        color: {
-          dark: 'status-critical',
-          light: 'status-critical',
-        },
+        color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
         // background: undefined,
       },
       // extend: undefined,
       help: {
-        color: {
-          dark: 'dark-3',
-          light: 'dark-3',
-        },
+        color: 'dark-3',
         margin: {
           start: 'small',
         },
+      },
+      info: {
+        color: 'text-xweak',
+        margin: { vertical: 'xsmall', horizontal: 'small' },
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },

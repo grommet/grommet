@@ -13,12 +13,37 @@ const defaultMessages = {
 };
 const defaultValue = {};
 const defaultErrors = {};
+const defaultInfos = {};
+
+const updateErrors = (nextErrors, name, error) => {
+  /* eslint-disable no-param-reassign */
+  if (
+    (typeof error === 'object' && error.status === 'error') ||
+    typeof error === 'string'
+  ) {
+    nextErrors[name] = typeof error === 'object' ? error.message : error;
+  } else {
+    delete nextErrors[name];
+  }
+  /* eslint-enable no-param-reassign */
+};
+
+const updateInfos = (nextInfos, name, error) => {
+  /* eslint-disable no-param-reassign */
+  if (typeof error === 'object' && error.status === 'info') {
+    nextInfos[name] = error.message;
+  } else {
+    delete nextInfos[name];
+  }
+  /* eslint-enable no-param-reassign */
+};
 
 const Form = forwardRef(
   (
     {
       children,
       errors: errorsProp = defaultErrors,
+      infos: infosProp = defaultInfos,
       messages: messagesProp = defaultMessages,
       onChange,
       onReset,
@@ -37,6 +62,8 @@ const Form = forwardRef(
     useEffect(() => setMessages(messagesProp), [messagesProp]);
     const [errors, setErrors] = useState(errorsProp || {});
     useEffect(() => setErrors(errorsProp || {}), [errorsProp]);
+    const [infos, setInfos] = useState(infosProp || {});
+    useEffect(() => setInfos(infosProp || {}), [infosProp]);
     const [touched, setTouched] = useState({});
 
     const validations = useRef({});
@@ -45,29 +72,36 @@ const Form = forwardRef(
       if (onChange) onChange(value);
     }, [onChange, value]);
 
-    useEffect(() => {}, [value, errors]);
+    useEffect(() => {}, [value, errors, infos]);
 
-    const update = useCallback((name, data, error, initial) => {
+    const update = useCallback((name, data, initial) => {
       setValue(prevValue => {
         const nextValue = { ...prevValue };
         nextValue[name] = data;
 
+        // re-run any validations, in case the validation
+        // is checking across fields
         setErrors(prevErrors => {
           const nextErrors = { ...prevErrors };
-          // re-run any validations that have errors, in case the validation
-          // is checking across fields
           Object.keys(prevErrors).forEach(errName => {
-            const nextError =
-              (errName === name && error) ||
-              (validations.current[errName] &&
-                validations.current[errName](data, nextValue));
-            if (nextError) {
-              nextErrors[errName] = nextError;
-            } else {
-              delete nextErrors[errName];
+            if (validations.current[errName]) {
+              const nextError = validations.current[errName](data, nextValue);
+              updateErrors(nextErrors, errName, nextError);
             }
           });
           return nextErrors;
+        });
+        setInfos(prevInfos => {
+          const nextInfos = { ...prevInfos };
+          // re-run any validations that have infos, in case the validation
+          // is checking across fields
+          Object.keys(nextInfos).forEach(infoName => {
+            if (validations.current[infoName]) {
+              const nextInfo = validations.current[infoName](data, nextValue);
+              updateInfos(nextInfos, infoName, nextInfo);
+            }
+          });
+          return nextInfos;
         });
 
         return nextValue;
@@ -125,23 +159,20 @@ const Form = forwardRef(
           // otherwise.
           event.preventDefault();
           const nextErrors = { ...errors };
+          const nextInfos = { ...infos };
           Object.keys(validations.current).forEach(name => {
-            const validation = validations.current[name];
-            const error = validation && validation(value[name], value);
-            if (error) {
-              nextErrors[name] = error;
-            } else {
-              delete nextErrors[name];
-            }
+            const nextError = validations.current[name](value[name], value);
+            updateErrors(nextErrors, name, nextError);
+            updateInfos(nextInfos, name, nextError);
           });
+          setErrors(nextErrors);
+          setInfos(nextInfos);
           if (Object.keys(nextErrors).length === 0 && onSubmit) {
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
             adjustedEvent.value = value;
             adjustedEvent.touched = touched;
             onSubmit(adjustedEvent);
-          } else {
-            setErrors(nextErrors);
           }
         }}
       >
@@ -154,24 +185,26 @@ const Form = forwardRef(
               validate === 'blur'
                 ? name => {
                     if (validations.current[name]) {
+                      const error = validations.current[name](
+                        value[name],
+                        value,
+                      );
                       setErrors(prevErrors => {
                         const nextErrors = { ...prevErrors };
-                        const error = validations.current[name](
-                          value[name],
-                          value,
-                        );
-                        if (error) {
-                          nextErrors[name] = error;
-                        } else {
-                          delete nextErrors[name];
-                        }
+                        updateErrors(nextErrors, name, error);
                         return nextErrors;
+                      });
+                      setInfos(prevInfos => {
+                        const nextInfos = { ...prevInfos };
+                        updateInfos(nextInfos, name, error);
+                        return nextInfos;
                       });
                     }
                   }
                 : undefined,
             errors,
             get: name => value[name],
+            infos,
             messages,
             set: (name, nextValue) => update(name, nextValue),
             touched,
