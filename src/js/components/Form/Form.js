@@ -16,6 +16,8 @@ const defaultErrors = {};
 const defaultInfos = {};
 
 const updateErrors = (nextErrors, name, error) => {
+  // we disable no-param-reassing so we can use this as a utility function
+  // to update nextErrors, to avoid code duplication
   /* eslint-disable no-param-reassign */
   if (
     (typeof error === 'object' && error.status === 'error') ||
