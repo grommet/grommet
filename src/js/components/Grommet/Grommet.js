@@ -3,10 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import {
-  colorIsDark,
+  backgroundIsDark,
   deepMerge,
   getBreakpoint,
   getDeviceBreakpoint,
+  normalizeColor,
 } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
@@ -33,24 +34,14 @@ class Grommet extends Component {
         colors: { background: themeBackground },
       } = nextTheme.global;
 
-      const background =
-        nextTheme.global.colors[backgroundProp] ||
-        backgroundProp ||
-        themeBackground;
+      nextTheme.dark = (themeMode || theme.defaultMode) === 'dark';
+      const color = normalizeColor(
+        backgroundProp || themeBackground,
+        nextTheme,
+      );
+      nextTheme.dark = backgroundIsDark(color, nextTheme);
+      nextTheme.baseBackground = backgroundProp || themeBackground;
 
-      // Determine whether to start in dark or light mode.
-      if (typeof background === 'object') {
-        // background is an object, use themeMode, theme default
-        // or first key
-        const color =
-          background[
-            themeMode || nextTheme.defaultMode || Object.keys(background)[0]
-          ];
-        nextTheme.dark = color ? colorIsDark(color) : false;
-      } else if (nextTheme.dark === undefined) {
-        nextTheme.dark = (background && colorIsDark(background)) || false;
-      }
-      nextTheme.baseBackground = background;
       if (dir) {
         nextTheme.dir = dir;
       }

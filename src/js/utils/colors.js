@@ -1,4 +1,4 @@
-export const normalizeColor = (color, theme, required) => {
+export const normalizeColor = (color, theme) => {
   const colorSpec =
     theme.global && theme.global.colors[color] !== undefined
       ? theme.global.colors[color]
@@ -16,22 +16,8 @@ export const normalizeColor = (color, theme, required) => {
   if (result && theme.global && theme.global.colors[result] !== undefined) {
     result = normalizeColor(result, theme);
   }
-  // Need to add a check for when the color is not part of the theme and might
-  // not be a valid CSS background, and if so the function
-  // should return 'inherit'
-  //
-  // EXAMPLE:
-  // let valid;
-  // if (required && result && theme.global &&
-  // theme.global.colors[result] === undefined) {
-  //    valid = isValidCSS(result)
-  // }
-  // return required && !valid ? 'inherit' : result;
 
-  // Placeholder until above validation is written
-  const valid = true;
-
-  return required && !valid ? 'inherit' : result;
+  return result;
 };
 
 const parseHexToRGB = color =>
