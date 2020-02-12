@@ -28,6 +28,9 @@ export const doc = Button => {
     active: PropTypes.bool
       .description('Whether the button is active.')
       .defaultValue(false),
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
+      `The DOM tag or react component to use for the element.`,
+    ),
     color: colorPropType.description(
       'Fill color for primary, label color for plain, border color otherwise.',
     ),
@@ -46,21 +49,6 @@ export const doc = Button => {
     focusIndicator: PropTypes.bool
       .description("Whether when 'plain' it should receive a focus outline.")
       .defaultValue(true),
-    hoverIndicator: hoverIndicatorPropType
-      .description(
-        `The hover indicator to apply when the user is mousing over the
-button. An object can be also be specified for color index support:
-{background: 'neutral-2'}. This prop is meant to be used only
-with plain Buttons.`,
-      )
-      .defaultValue(false),
-    href: PropTypes.string.description(
-      'If specified, the button will behave like an anchor tag.',
-    ),
-    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description(
-      `Specifies where to display the URL defined in the href property.`,
-    ),
-    icon: PropTypes.element.description('Icon element to place in the button.'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',
@@ -77,40 +65,56 @@ with plain Buttons.`,
         `The amount of spacing between icon and label in the button.`,
       )
       .defaultValue('small'),
+    hoverIndicator: hoverIndicatorPropType
+      .description(
+        `The hover indicator to apply when the user is mousing over the
+button. An object can be also be specified for color index support:
+{background: 'neutral-2'}. This prop is meant to be used only
+with plain Buttons.`,
+      )
+      .defaultValue(false),
+    href: PropTypes.string.description(
+      'If specified, the button will behave like an anchor tag.',
+    ),
+    icon: PropTypes.element.description('Icon element to place in the button.'),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
-causes the Button to be disabled.`,
+        causes the Button to be disabled.`,
     ),
     plain: PropTypes.bool
       .description(
         `Whether this is a plain button with no border or pad.
-Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as 
-well.`,
+          Non plain button will show both pad and border.
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well.`,
       )
       .defaultValue(false),
     primary: PropTypes.bool
       .description(
         `Whether this is a primary button. There should be at most one per page
-         or screen.`,
+            or screen.`,
       )
       .defaultValue(false),
     reverse: PropTypes.bool
       .description(
         `Whether an icon and label should be reversed so that the icon is at the
-end of the anchor.`,
+              end of the anchor.`,
       )
       .defaultValue(false),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+      `The possible sizes of the Button that will impact the overall Button 
+      padding, border radius, text size, line height and icon size.`,
+    ),
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description(
+      `Specifies where to display the URL defined in the href property.`,
+    ),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
         `The type of button. Set the type to submit for the default button on 
-        forms.`,
+                forms.`,
       )
       .defaultValue('button'),
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
-      `The DOM tag or react component to use for the element.`,
-    ),
   };
 
   return DocumentedButton;
@@ -190,10 +194,6 @@ export const themeDoc = {
     description: `The color of the text label.`,
     type: 'string | { dark: string, light: string }',
   },
-  'button.primary.color': {
-    description: `The color of the background for primary buttons.`,
-    type: 'string | { dark: string, light: string }',
-  },
   'button.disabled.opacity': {
     description: 'The opacity when the button is disabled.',
     type: 'number',
@@ -208,6 +208,18 @@ export const themeDoc = {
     description: 'The vertical padding.',
     type: 'string',
     defaultValue: '4px',
+  },
+  'button.primary.color': {
+    description: `The color of the background for primary buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.size.medium.border.radius': {
+    description: 'The corner radius.',
+    type: 'string',
+  },
+  'button.size.medium.pad': {
+    description: 'The pad',
+    type: 'string',
   },
   'button.extend': {
     description: 'Any additional style for the Button.',

@@ -136,6 +136,15 @@ Whether the button is active.
 boolean
 ```
 
+**as**
+
+The DOM tag or react component to use for the element.
+
+```
+string
+function
+```
+
 **color**
 
 Fill color for primary, label color for plain, border color otherwise.
@@ -173,6 +182,21 @@ Whether when 'plain' it should receive a focus outline. Defaults to `true`.
 
 ```
 boolean
+```
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to `small`.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **hoverIndicator**
@@ -220,38 +244,12 @@ If specified, the button will behave like an anchor tag.
 string
 ```
 
-**target**
-
-Specifies where to display the URL defined in the href property.
-
-```
-_self
-_blank
-_parent
-_top
-```
-
 **icon**
 
 Icon element to place in the button.
 
 ```
 element
-```
-
-**gap**
-
-The amount of spacing between icon and label in the button. Defaults to `small`.
-
-```
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string
 ```
 
 **label**
@@ -265,7 +263,7 @@ node
 **onClick**
 
 Click handler. Not setting this property and not specifying a href
-causes the Button to be disabled.
+        causes the Button to be disabled.
 
 ```
 function
@@ -274,9 +272,9 @@ function
 **plain**
 
 Whether this is a plain button with no border or pad.
-Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as 
-well.
+          Non plain button will show both pad and border.
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well.
 
 ```
 boolean
@@ -285,7 +283,7 @@ boolean
 **primary**
 
 Whether this is a primary button. There should be at most one per page
-         or screen.
+            or screen.
 
 ```
 boolean
@@ -294,30 +292,44 @@ boolean
 **reverse**
 
 Whether an icon and label should be reversed so that the icon is at the
-end of the anchor.
+              end of the anchor.
 
 ```
 boolean
 ```
 
+**size**
+
+The possible sizes of the Button that will impact the overall Button 
+      padding, border radius, text size, line height and icon size.
+
+```
+small
+medium
+large
+xlarge
+```
+
+**target**
+
+Specifies where to display the URL defined in the href property.
+
+```
+_self
+_blank
+_parent
+_top
+```
+
 **type**
 
 The type of button. Set the type to submit for the default button on 
-        forms. Defaults to `button`.
+                forms. Defaults to `button`.
 
 ```
 button
 reset
 submit
-```
-
-**as**
-
-The DOM tag or react component to use for the element.
-
-```
-string
-function
 ```
   
 ## Intrinsic element
@@ -477,16 +489,6 @@ Defaults to
 undefined
 ```
 
-**button.primary.color**
-
-The color of the background for primary buttons. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-undefined
-```
-
 **button.disabled.opacity**
 
 The opacity when the button is disabled. Expects `number`.
@@ -515,6 +517,36 @@ Defaults to
 
 ```
 4px
+```
+
+**button.primary.color**
+
+The color of the background for primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.size.medium.border.radius**
+
+The corner radius. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.size.medium.pad**
+
+The pad Expects `string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **button.extend**
