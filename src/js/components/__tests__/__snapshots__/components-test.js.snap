@@ -2241,6 +2241,15 @@ string",
         "name": "errors",
       },
       Object {
+        "defaultValue": Object {},
+        "description": "An object representing any information details in the data.
+        They keys should match the keys in the value object.",
+        "format": "{
+
+}",
+        "name": "infos",
+      },
+      Object {
         "defaultValue": Object {
           "invalid": "invalid",
           "required": "required",

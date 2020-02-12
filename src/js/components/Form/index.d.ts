@@ -2,6 +2,7 @@ import * as React from "react";
 
 export interface FormProps {
   errors?: {};
+  infos?: {};
   messages?: {invalid?: string,required?: string};
   onChange?: ((event: React.ChangeEvent) => void);
   onSubmit?: ((event: React.FormEvent) => void);
