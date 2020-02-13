@@ -33,6 +33,30 @@ describe('Form', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('errors', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Form errors={{ test: 'missing' }}>
+          <FormField name="test" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('infos', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Form infos={{ test: 'missing' }}>
+          <FormField name="test" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('update', () => {
     const validate = jest
       .fn()
