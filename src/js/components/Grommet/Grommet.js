@@ -34,11 +34,15 @@ class Grommet extends Component {
         colors: { background: themeBackground },
       } = nextTheme.global;
 
+      // get initial value for dark so we can normalize background color
       nextTheme.dark = (themeMode || theme.defaultMode) === 'dark';
       const color = normalizeColor(
         backgroundProp || themeBackground,
         nextTheme,
       );
+
+      // after normalizing, we want to check again if the background color
+      // is dark in case it differs from the previous assignment
       nextTheme.dark = backgroundIsDark(color, nextTheme);
       nextTheme.baseBackground = backgroundProp || themeBackground;
 
