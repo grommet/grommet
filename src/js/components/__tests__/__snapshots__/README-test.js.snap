@@ -3161,8 +3161,8 @@ string
 
 **onClick**
 
-Called when the user clicks on it.
-      This is only available when the type is line or area.
+Called when the user clicks on the
+     visualization. values[].onClick should be used for types bar and point.
 
 \`\`\`
 function

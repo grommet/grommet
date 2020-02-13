@@ -175,11 +175,15 @@ const Chart = React.forwardRef(
               onMouseLeave: () => valueOnHover(false),
             };
           }
+          let clickProps;
+          if (onClick) {
+            clickProps = { onClick };
+          }
 
           return (
             <g key={key} fill="none">
               <title>{label}</title>
-              <path d={d} {...hoverProps} {...valueRest} />
+              <path d={d} {...hoverProps} {...clickProps} {...valueRest} />
             </g>
           );
         }
@@ -263,6 +267,10 @@ const Chart = React.forwardRef(
             onMouseLeave: () => valueOnHover(false),
           };
         }
+        let clickProps;
+        if (onClick) {
+          clickProps = { onClick };
+        }
 
         const center = value.length === 2 ? value[1] : value[2];
         let shape;
@@ -275,6 +283,7 @@ const Chart = React.forwardRef(
               cy={cy}
               r={strokeWidth / 2}
               {...hoverProps}
+              {...clickProps}
               {...valueRest}
             />
           );
@@ -289,6 +298,7 @@ const Chart = React.forwardRef(
               width={strokeWidth}
               height={strokeWidth}
               {...hoverProps}
+              {...clickProps}
               {...valueRest}
             />
           );
