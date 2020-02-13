@@ -22,6 +22,17 @@ An object representing any errors in the data. They keys should
 }
 ```
 
+**infos**
+
+An object representing any information details in the data.
+        They keys should match the keys in the value object. Defaults to `{}`.
+
+```
+{
+
+}
+```
+
 **messages**
 
 Custom validation messages. Defaults to `{

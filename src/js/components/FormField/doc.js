@@ -32,13 +32,16 @@ export const doc = FormField => {
       'Whether the field should look disabled.',
     ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
-      'Any error text describing issues with the field',
+      "Any error text describing issues with the field's value",
     ),
     help: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any help text describing how the field works',
     ),
     htmlFor: PropTypes.string.description(
       'The id of the input element contained in this field',
+    ),
+    info: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
+      "Any informational text regarding the field's value",
     ),
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'A short label describing the field',
@@ -56,6 +59,7 @@ export const doc = FormField => {
       PropTypes.shape({
         regexp: PropTypes.object, // regular expression
         message: PropTypes.string,
+        status: PropTypes.oneOf(['error', 'info']),
       }),
       PropTypes.func,
       PropTypes.arrayOf(
@@ -63,6 +67,7 @@ export const doc = FormField => {
           PropTypes.shape({
             regexp: PropTypes.object, // regular expression
             message: PropTypes.string,
+            status: PropTypes.oneOf(['error', 'info']),
           }),
           PropTypes.func,
         ]),
@@ -73,7 +78,8 @@ export const doc = FormField => {
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
-      describing the validation issue, if any.`,
+      describing the validation issue, if any, or an object with 'message'
+      and 'status' properties.`,
     ),
   };
 
@@ -131,7 +137,7 @@ export const themeDoc = {
   'formField.error.color': {
     description: 'The color of the FormField error.',
     type: "string | {'dark': string, 'light': string}",
-    defaultValue: "{ dark: 'status-critical', light: 'status-critical' }",
+    defaultValue: 'status-critical',
   },
   'formField.error.margin': {
     description: 'The margin used for the FormField error.',
@@ -152,6 +158,16 @@ export const themeDoc = {
     description: 'The margin for the FormField help.',
     type: 'string | object',
     defaultValue: "{ left: 'small' }",
+  },
+  'formField.info.color': {
+    description: 'The color of the FormField info.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: 'text-xweak',
+  },
+  'formField.info.margin': {
+    description: 'The margin used for the FormField info.',
+    type: 'string | object',
+    defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }",
   },
   'formField.label': {
     description:
