@@ -1,41 +1,40 @@
-import React, { createRef, Component } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class SimpleDrop extends Component {
-  targetRef = createRef();
+const SimpleDrop = () => {
+  const targetRef = useRef();
 
-  componentDidMount() {
-    this.forceUpdate();
-  }
+  const [, setShowDrop] = useState(false);
+  useEffect(() => {
+    setShowDrop(true);
+  }, []);
 
-  render() {
-    return (
-      <Grommet theme={grommet} full>
-        <Box fill align="center" justify="center">
-          <Box
-            background="dark-3"
-            pad="medium"
-            align="center"
-            justify="start"
-            ref={this.targetRef}
-          >
-            Target
-          </Box>
-          {this.targetRef.current && (
-            <Drop
-              align={{ top: 'bottom', left: 'left' }}
-              target={this.targetRef.current}
-            >
-              <Box pad="large">Drop Contents</Box>
-            </Drop>
-          )}
+  return (
+    <Grommet theme={grommet} full>
+      <Box fill align="center" justify="center">
+        <Box
+          background="dark-3"
+          pad="medium"
+          align="center"
+          justify="start"
+          ref={targetRef}
+        >
+          Target
         </Box>
-      </Grommet>
-    );
-  }
-}
+        {targetRef.current && (
+          <Drop
+            align={{ top: 'bottom', left: 'left' }}
+            target={targetRef.current}
+          >
+            <Box pad="large">Drop Contents</Box>
+          </Drop>
+        )}
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('Drop', module).add('Simple', () => <SimpleDrop />);
