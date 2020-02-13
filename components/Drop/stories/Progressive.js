@@ -12,120 +12,79 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+var ProgressiveDrop = function ProgressiveDrop() {
+  var boxRef = (0, _react.useRef)();
+  var innerBoxRef = (0, _react.useRef)();
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+  var _useState = (0, _react.useState)(false),
+      openDrop = _useState[0],
+      setOpenDrop = _useState[1];
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  var _useState2 = (0, _react.useState)(false),
+      openInnerDrop = _useState2[0],
+      setOpenInnerDrop = _useState2[1];
 
-var ProgressiveDrop =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(ProgressiveDrop, _Component);
+  var _useState3 = (0, _react.useState)(false),
+      interactedWithInnerButton = _useState3[0],
+      setInteractedWithInnerButton = _useState3[1];
 
-  function ProgressiveDrop() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "boxRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "innerBoxRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      openDrop: false,
-      openInnerDrop: false,
-      interactedWithInnerButton: false
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onCloseDrop", function () {
-      return _this.setState({
-        openDrop: false,
-        openInnerDrop: false
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onOpenDrop", function () {
-      return _this.setState({
-        openDrop: true,
-        openInnerDrop: false
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = ProgressiveDrop.prototype;
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$state = this.state,
-        openDrop = _this$state.openDrop,
-        openInnerDrop = _this$state.openInnerDrop,
-        interactedWithInnerButton = _this$state.interactedWithInnerButton;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet,
-      full: true
-    }, _react["default"].createElement(_grommet.Box, {
-      fill: true,
-      align: "center",
-      justify: "center"
-    }, _react["default"].createElement(_grommet.Button, {
-      ref: this.boxRef,
-      primary: true,
-      label: "Click me",
-      onClick: this.onOpenDrop
-    }), openDrop && _react["default"].createElement(_grommet.Drop, {
-      target: this.boxRef.current,
-      onClickOutside: this.onCloseDrop,
-      onEsc: this.onCloseDrop
-    }, _react["default"].createElement(_grommet.Box, {
-      pad: "large",
-      ref: this.innerBoxRef
-    }, _react["default"].createElement(_grommet.Button, {
-      primary: true,
-      label: "Click me again",
-      onClick: function onClick() {
-        return _this2.setState({
-          openInnerDrop: true
-        });
-      }
-    })), openInnerDrop && _react["default"].createElement(_grommet.Drop, {
-      target: this.innerBoxRef.current,
-      onClickOutside: function onClickOutside() {
-        return _this2.setState({
-          openInnerDrop: false
-        });
-      },
-      onEsc: function onEsc() {
-        return _this2.setState({
-          openInnerDrop: false
-        });
-      },
-      align: {
-        top: 'bottom',
-        right: 'right'
-      }
-    }, _react["default"].createElement(_grommet.Box, {
-      pad: "large"
-    }, _react["default"].createElement(_grommet.Button, {
-      primary: true,
-      label: interactedWithInnerButton ? 'Good job!' : 'You can interact with me',
-      onClick: function onClick() {
-        return _this2.setState({
-          interactedWithInnerButton: true
-        });
-      }
-    }))))));
+  var onCloseDrop = function onCloseDrop() {
+    setOpenDrop(false);
+    setOpenInnerDrop(false);
   };
 
-  return ProgressiveDrop;
-}(_react.Component);
+  var onOpenDrop = function onOpenDrop() {
+    setOpenDrop(true);
+    setOpenInnerDrop(false);
+  };
+
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet,
+    full: true
+  }, _react["default"].createElement(_grommet.Box, {
+    fill: true,
+    align: "center",
+    justify: "center"
+  }, _react["default"].createElement(_grommet.Button, {
+    ref: boxRef,
+    primary: true,
+    label: "Click me",
+    onClick: onOpenDrop
+  }), openDrop && _react["default"].createElement(_grommet.Drop, {
+    target: boxRef.current,
+    onClickOutside: onCloseDrop,
+    onEsc: onCloseDrop
+  }, _react["default"].createElement(_grommet.Box, {
+    pad: "large",
+    ref: innerBoxRef
+  }, _react["default"].createElement(_grommet.Button, {
+    primary: true,
+    label: "Click me again",
+    onClick: function onClick() {
+      return setOpenInnerDrop(true);
+    }
+  })), openInnerDrop && _react["default"].createElement(_grommet.Drop, {
+    target: innerBoxRef.current,
+    onClickOutside: function onClickOutside() {
+      return setOpenInnerDrop(false);
+    },
+    onEsc: function onEsc() {
+      return setOpenInnerDrop(false);
+    },
+    align: {
+      top: 'bottom',
+      right: 'right'
+    }
+  }, _react["default"].createElement(_grommet.Box, {
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Button, {
+    primary: true,
+    label: interactedWithInnerButton ? 'Good job!' : 'You can interact with me',
+    onClick: function onClick() {
+      return setInteractedWithInnerButton(true);
+    }
+  }))))));
+};
 
 (0, _react2.storiesOf)('Drop', module).add('Progressive', function () {
   return _react["default"].createElement(ProgressiveDrop, null);

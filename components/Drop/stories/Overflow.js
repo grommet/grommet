@@ -12,115 +12,78 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+var OverflowDrop = function OverflowDrop() {
+  var targetRef = (0, _react.useRef)();
+  var inputRef = (0, _react.useRef)();
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+  var _useState = (0, _react.useState)(undefined),
+      date = _useState[0],
+      setDate = _useState[1];
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  var _useState2 = (0, _react.useState)(false),
+      showCalendar = _useState2[0],
+      setShowCalendar = _useState2[1];
 
-var OverflowDrop =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(OverflowDrop, _Component);
+  var onSelect = function onSelect(nextDate) {
+    setDate(nextDate !== date ? nextDate : undefined);
+    setShowCalendar(false);
+  };
 
-  function OverflowDrop() {
-    var _this;
+  var _useState3 = (0, _react.useState)(false),
+      setShowDrop = _useState3[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  (0, _react.useEffect)(function () {
+    return setShowDrop(true);
+  }, []);
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet,
+    full: true
+  }, _react["default"].createElement(_grommet.Box, {
+    fill: true,
+    align: "center",
+    justify: "center"
+  }, _react["default"].createElement(_grommet.Box, {
+    background: "dark-3",
+    pad: "medium",
+    align: "center",
+    justify: "start",
+    ref: targetRef
+  }, "Target"), targetRef.current && _react["default"].createElement(_grommet.Drop, {
+    overflow: "unset",
+    align: {
+      top: 'bottom',
+      left: 'left'
+    },
+    target: targetRef.current,
+    onClose: function onClose() {
+      return setShowCalendar(false);
     }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "targetRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "inputRef", (0, _react.createRef)());
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      date: undefined,
-      showCalendar: false
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSelect", function (nextDate) {
-      var date = _this.state.date;
-
-      _this.setState({
-        date: nextDate !== date ? nextDate : undefined,
-        showCalendar: false
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = OverflowDrop.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    this.forceUpdate();
-  };
-
-  _proto.render = function render() {
-    var _this2 = this;
-
-    var _this$state = this.state,
-        date = _this$state.date,
-        showCalendar = _this$state.showCalendar;
-    return _react["default"].createElement(_grommet.Grommet, {
-      theme: _themes.grommet,
-      full: true
-    }, _react["default"].createElement(_grommet.Box, {
-      fill: true,
-      align: "center",
-      justify: "center"
-    }, _react["default"].createElement(_grommet.Box, {
-      background: "dark-3",
-      pad: "medium",
-      align: "center",
-      justify: "start",
-      ref: this.targetRef
-    }, "Target"), this.targetRef.current && _react["default"].createElement(_grommet.Drop, {
-      overflow: "unset",
-      align: {
-        top: 'bottom',
-        left: 'left'
-      },
-      target: this.targetRef.current,
-      onClose: function onClose() {
-        return _this2.setState({
-          showCalendar: false
-        });
-      }
-    }, _react["default"].createElement(_grommet.Box, {
-      height: "small"
-    }, _react["default"].createElement(_grommet.Heading, {
-      level: 4
-    }, "Select Start Date"), _react["default"].createElement("div", {
-      style: {
-        position: 'relative'
-      }
-    }, _react["default"].createElement(_grommet.TextInput, {
-      ref: this.inputRef,
-      value: date || '',
-      placeholder: "Focus on me",
-      onFocus: function onFocus() {
-        return _this2.setState({
-          showCalendar: true
-        });
-      }
-    }), showCalendar && _react["default"].createElement("div", {
-      style: {
-        position: 'absolute',
-        background: '#eee'
-      }
-    }, _react["default"].createElement(_grommet.Calendar, {
-      date: date,
-      onSelect: this.onSelect,
-      size: "small"
-    })))))));
-  };
-
-  return OverflowDrop;
-}(_react.Component);
+  }, _react["default"].createElement(_grommet.Box, {
+    height: "small"
+  }, _react["default"].createElement(_grommet.Heading, {
+    level: 4
+  }, "Select Start Date"), _react["default"].createElement("div", {
+    style: {
+      position: 'relative'
+    }
+  }, _react["default"].createElement(_grommet.TextInput, {
+    ref: inputRef,
+    value: date || '',
+    placeholder: "Focus on me",
+    onFocus: function onFocus() {
+      return setShowCalendar(true);
+    }
+  }), showCalendar && _react["default"].createElement("div", {
+    style: {
+      position: 'absolute',
+      background: '#eee'
+    }
+  }, _react["default"].createElement(_grommet.Calendar, {
+    date: date,
+    onSelect: onSelect,
+    size: "small"
+  })))))));
+};
 
 (0, _react2.storiesOf)('Drop', module).add('Overflow', function () {
   return _react["default"].createElement(OverflowDrop, null);
