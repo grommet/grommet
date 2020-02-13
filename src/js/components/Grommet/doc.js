@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
+import { BACKGROUND_DOC } from '../Box/doc';
 
 export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
@@ -13,32 +14,7 @@ export const doc = Grommet => {
     .intrinsicElement('div');
 
   DocumentedGrommet.propTypes = {
-    background: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        color: PropTypes.string,
-        dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-        image: PropTypes.string,
-        position: PropTypes.string,
-        opacity: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.bool,
-          PropTypes.number,
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
-        ]),
-        repeat: PropTypes.oneOfType([
-          PropTypes.oneOf(['no-repeat', 'repeat']),
-          PropTypes.string,
-        ]),
-        size: PropTypes.oneOfType([
-          PropTypes.oneOf(['cover', 'contain']),
-          PropTypes.string,
-        ]),
-        light: PropTypes.string,
-      }),
-    ]).description(`Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.`),
+    background: BACKGROUND_DOC,
     dir: PropTypes.oneOf(['rtl']).description(
       'Layout direction for right to left contexts',
     ),

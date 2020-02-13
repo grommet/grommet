@@ -29,6 +29,31 @@ const ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
+const BACKGROUND_SHAPE = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({
+    color: PropTypes.string,
+    dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    image: PropTypes.string,
+    position: PropTypes.string,
+    opacity: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+      PropTypes.number,
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+    ]),
+    repeat: PropTypes.oneOfType([
+      PropTypes.oneOf(['no-repeat', 'repeat']),
+      PropTypes.string,
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['cover', 'contain']),
+      PropTypes.string,
+    ]),
+    light: PropTypes.string,
+  }),
+]);
+
 const BORDER_SHAPE = PropTypes.shape({
   color: PropTypes.oneOfType([
     PropTypes.string,
@@ -76,6 +101,10 @@ const overflowPropType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
+export const BACKGROUND_DOC = BACKGROUND_SHAPE.description(`Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.`);
+
 export const doc = Box => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box'))
@@ -115,32 +144,7 @@ export const doc = Box => {
     ]).description(`Animation effect(s) to use. 'duration' and 'delay' should
         be in milliseconds. 'jiggle' and 'pulse' types are intended for
         small elements, like icons.`),
-    background: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        color: PropTypes.string,
-        dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-        image: PropTypes.string,
-        position: PropTypes.string,
-        opacity: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.bool,
-          PropTypes.number,
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
-        ]),
-        repeat: PropTypes.oneOfType([
-          PropTypes.oneOf(['no-repeat', 'repeat']),
-          PropTypes.string,
-        ]),
-        size: PropTypes.oneOfType([
-          PropTypes.oneOf(['cover', 'contain']),
-          PropTypes.string,
-        ]),
-        light: PropTypes.string,
-      }),
-    ]).description(`Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.`),
+    background: BACKGROUND_DOC,
     basis: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',

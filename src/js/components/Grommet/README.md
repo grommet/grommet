@@ -13,9 +13,9 @@ import { Grommet } from 'grommet';
 
 **background**
 
-Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
 
 ```
 string
