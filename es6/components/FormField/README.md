@@ -37,7 +37,7 @@ boolean
 
 **error**
 
-Any error text describing issues with the field
+Any error text describing issues with the field's value
 
 ```
 string
@@ -59,6 +59,15 @@ The id of the input element contained in this field
 
 ```
 string
+```
+
+**info**
+
+Any informational text regarding the field's value
+
+```
+string
+node
 ```
 
 **label**
@@ -185,18 +194,25 @@ Validation rule when used within a grommet Form. Provide an object
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
-      describing the validation issue, if any.
+      describing the validation issue, if any, or an object with 'message'
+      and 'status' properties.
 
 ```
 {
   regexp: object,
-  message: string
+  message: string,
+  status: 
+    error
+    info
 }
 function
 [
   {
     regexp: object,
-    message: string
+    message: string,
+    status: 
+      error
+      info
   }
   function
 ]
@@ -306,7 +322,7 @@ The color of the FormField error. Expects `string | {'dark': string, 'light': st
 Defaults to
 
 ```
-{ dark: 'status-critical', light: 'status-critical' }
+status-critical
 ```
 
 **formField.error.margin**
@@ -347,6 +363,26 @@ Defaults to
 
 ```
 { left: 'small' }
+```
+
+**formField.info.color**
+
+The color of the FormField info. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+text-xweak
+```
+
+**formField.info.margin**
+
+The margin used for the FormField info. Expects `string | object`.
+
+Defaults to
+
+```
+{ vertical: 'xsmall', horizontal: 'small' }
 ```
 
 **formField.label**

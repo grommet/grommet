@@ -31,6 +31,13 @@ var validateField = function validateField(required, validate, messages) {
       } else if (validate.regexp) {
         if (!validate.regexp.test(value)) {
           error = validate.message || messages.invalid;
+
+          if (validate.status) {
+            error = {
+              message: error,
+              status: validate.status
+            };
+          }
         }
       }
     }
@@ -54,6 +61,7 @@ var FormField = forwardRef(function (_ref, ref) {
       error = _ref.error,
       help = _ref.help,
       htmlFor = _ref.htmlFor,
+      info = _ref.info,
       label = _ref.label,
       margin = _ref.margin,
       name = _ref.name,
@@ -64,7 +72,7 @@ var FormField = forwardRef(function (_ref, ref) {
       style = _ref.style,
       validate = _ref.validate,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "className", "component", "disabled", "error", "help", "htmlFor", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate", "value"]);
 
   var theme = useContext(ThemeContext);
   var context = useContext(FormContext);
@@ -78,7 +86,7 @@ var FormField = forwardRef(function (_ref, ref) {
   }, [valueProp]);
   useEffect(function () {
     if (context && context.value && context.value[name] === undefined && (value !== undefined || checked !== undefined)) {
-      context.update(name, value !== undefined ? value : checked, undefined, true);
+      context.update(name, value !== undefined ? value : checked, true);
     }
   });
 
@@ -108,8 +116,7 @@ var FormField = forwardRef(function (_ref, ref) {
   };
 
   var formField = theme.formField;
-  var border = formField.border;
-  var normalizedError = error; // This is here for backwards compatibility. In case the child is a grommet
+  var border = formField.border; // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
 
@@ -128,16 +135,20 @@ var FormField = forwardRef(function (_ref, ref) {
 
     return child;
   }) || children;
+  var normalizedError = error;
+  var normalizedInfo = info;
   var onFieldBlur;
 
   if (context && context.addValidation) {
     var addValidation = context.addValidation,
         errors = context.errors,
+        infos = context.infos,
         onContextBlur = context.onBlur,
         formValue = context.value,
         messages = context.messages;
     addValidation(name, validateField(required, validate, messages));
     normalizedError = error || errors[name];
+    normalizedInfo = info || infos[name];
     contents = contents || renderInput(formValue, !!normalizedError);
 
     if (onContextBlur) {
@@ -238,11 +249,7 @@ var FormField = forwardRef(function (_ref, ref) {
   }, label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, formField.label), label), help && React.createElement(Text, _extends({}, formField.help, {
-    color: formField.help.color[theme.dark ? 'dark' : 'light']
-  }), help)) : undefined, contents, normalizedError && React.createElement(Text, _extends({}, formField.error, {
-    color: formField.error.color[theme.dark ? 'dark' : 'light']
-  }), normalizedError));
+  }, formField.label), label), help && React.createElement(Text, formField.help, help)) : undefined, contents, normalizedError && React.createElement(Text, formField.error, normalizedError), normalizedInfo && React.createElement(Text, formField.info, normalizedInfo));
 });
 FormField.displayName = 'FormField';
 var FormFieldDoc;

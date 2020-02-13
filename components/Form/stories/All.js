@@ -38,6 +38,12 @@ var Example = function Example() {
     }, function (name) {
       if (name && name.length === 1) return 'must be >1 character';
       return undefined;
+    }, function (name) {
+      if (name && name.length <= 2) return {
+        message: "that's short",
+        status: 'info'
+      };
+      return undefined;
     }]
   }), _react["default"].createElement(_grommet.FormField, {
     label: "Email",

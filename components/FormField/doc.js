@@ -12,9 +12,10 @@ var doc = function doc(FormField) {
   DocumentedFormField.propTypes = {
     component: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the \n      form values when this field changes. Any additional properties \n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
     disabled: _reactDesc.PropTypes.bool.description('Whether the field should look disabled.'),
-    error: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('Any error text describing issues with the field'),
+    error: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description("Any error text describing issues with the field's value"),
     help: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('Any help text describing how the field works'),
     htmlFor: _reactDesc.PropTypes.string.description('The id of the input element contained in this field'),
+    info: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description("Any informational text regarding the field's value"),
     label: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('A short label describing the field'),
     name: _reactDesc.PropTypes.string.description("The name of the value data when in a Form and the name of\n      the input field."),
     margin: _utils.marginProp,
@@ -23,12 +24,14 @@ var doc = function doc(FormField) {
     validate: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
       regexp: _reactDesc.PropTypes.object,
       // regular expression
-      message: _reactDesc.PropTypes.string
+      message: _reactDesc.PropTypes.string,
+      status: _reactDesc.PropTypes.oneOf(['error', 'info'])
     }), _reactDesc.PropTypes.func, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
       regexp: _reactDesc.PropTypes.object,
       // regular expression
-      message: _reactDesc.PropTypes.string
-    }), _reactDesc.PropTypes.func]))]).description("Validation rule when used within a grommet Form. Provide an object\n      with a regular expression, a function, or an array of these. If a\n      function is provided, it will be called with two arguments, the value\n      for this field and the entire value object. This permits validation to\n      encompass multiple fields. The function should return a string message\n      describing the validation issue, if any.")
+      message: _reactDesc.PropTypes.string,
+      status: _reactDesc.PropTypes.oneOf(['error', 'info'])
+    }), _reactDesc.PropTypes.func]))]).description("Validation rule when used within a grommet Form. Provide an object\n      with a regular expression, a function, or an array of these. If a\n      function is provided, it will be called with two arguments, the value\n      for this field and the entire value object. This permits validation to\n      encompass multiple fields. The function should return a string message\n      describing the validation issue, if any, or an object with 'message'\n      and 'status' properties.")
   };
   return DocumentedFormField;
 };
@@ -83,7 +86,7 @@ var themeDoc = {
   'formField.error.color': {
     description: 'The color of the FormField error.',
     type: "string | {'dark': string, 'light': string}",
-    defaultValue: "{ dark: 'status-critical', light: 'status-critical' }"
+    defaultValue: 'status-critical'
   },
   'formField.error.margin': {
     description: 'The margin used for the FormField error.',
@@ -104,6 +107,16 @@ var themeDoc = {
     description: 'The margin for the FormField help.',
     type: 'string | object',
     defaultValue: "{ left: 'small' }"
+  },
+  'formField.info.color': {
+    description: 'The color of the FormField info.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: 'text-xweak'
+  },
+  'formField.info.margin': {
+    description: 'The margin used for the FormField info.',
+    type: 'string | object',
+    defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }"
   },
   'formField.label': {
     description: 'Any props of Text that will be applied on the FormField label.',

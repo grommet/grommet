@@ -4,6 +4,7 @@ export var doc = function doc(Form) {
   var DocumentedForm = describe(Form).availableAt(getAvailableAtBadge('Form')).description('A form that manages state for its fields.').usage("import { Form } from 'grommet';\n<Form />").intrinsicElement('form');
   DocumentedForm.propTypes = {
     errors: PropTypes.shape({}).description("An object representing any errors in the data. They keys should\n        match the keys in the value object.").defaultValue({}),
+    infos: PropTypes.shape({}).description("An object representing any information details in the data.\n        They keys should match the keys in the value object.").defaultValue({}),
     messages: PropTypes.shape({
       invalid: PropTypes.string,
       required: PropTypes.string

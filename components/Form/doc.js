@@ -11,6 +11,7 @@ var doc = function doc(Form) {
   var DocumentedForm = (0, _reactDesc.describe)(Form).availableAt((0, _utils.getAvailableAtBadge)('Form')).description('A form that manages state for its fields.').usage("import { Form } from 'grommet';\n<Form />").intrinsicElement('form');
   DocumentedForm.propTypes = {
     errors: _reactDesc.PropTypes.shape({}).description("An object representing any errors in the data. They keys should\n        match the keys in the value object.").defaultValue({}),
+    infos: _reactDesc.PropTypes.shape({}).description("An object representing any information details in the data.\n        They keys should match the keys in the value object.").defaultValue({}),
     messages: _reactDesc.PropTypes.shape({
       invalid: _reactDesc.PropTypes.string,
       required: _reactDesc.PropTypes.string

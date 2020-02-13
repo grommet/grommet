@@ -20,6 +20,28 @@ describe('Form', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('errors', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Form, {
+      errors: {
+        test: 'missing'
+      }
+    }, React.createElement(FormField, {
+      name: "test"
+    }))));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('infos', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Form, {
+      infos: {
+        test: 'missing'
+      }
+    }, React.createElement(FormField, {
+      name: "test"
+    }))));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('update', function () {
     var validate = jest.fn().mockReturnValueOnce('too short').mockReturnValueOnce(undefined);
     var validate2 = jest.fn().mockReturnValue(undefined);

@@ -608,10 +608,7 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       error: {
-        color: {
-          dark: 'status-critical',
-          light: 'status-critical'
-        },
+        color: 'status-critical',
         margin: {
           vertical: 'xsmall',
           horizontal: 'small'
@@ -620,12 +617,16 @@ export var generate = function generate(baseSpacing, scale) {
       },
       // extend: undefined,
       help: {
-        color: {
-          dark: 'dark-3',
-          light: 'dark-3'
-        },
+        color: 'dark-3',
         margin: {
           start: 'small'
+        }
+      },
+      info: {
+        color: 'text-xweak',
+        margin: {
+          vertical: 'xsmall',
+          horizontal: 'small'
         }
       },
       label: {

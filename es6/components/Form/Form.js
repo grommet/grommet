@@ -10,10 +10,39 @@ var defaultMessages = {
 };
 var defaultValue = {};
 var defaultErrors = {};
+var defaultInfos = {};
+
+var updateErrors = function updateErrors(nextErrors, name, error) {
+  // we disable no-param-reassing so we can use this as a utility function
+  // to update nextErrors, to avoid code duplication
+
+  /* eslint-disable no-param-reassign */
+  if (typeof error === 'object' && error.status === 'error' || typeof error === 'string') {
+    nextErrors[name] = typeof error === 'object' ? error.message : error;
+  } else {
+    delete nextErrors[name];
+  }
+  /* eslint-enable no-param-reassign */
+
+};
+
+var updateInfos = function updateInfos(nextInfos, name, error) {
+  /* eslint-disable no-param-reassign */
+  if (typeof error === 'object' && error.status === 'info') {
+    nextInfos[name] = error.message;
+  } else {
+    delete nextInfos[name];
+  }
+  /* eslint-enable no-param-reassign */
+
+};
+
 var Form = forwardRef(function (_ref, ref) {
   var children = _ref.children,
       _ref$errors = _ref.errors,
       errorsProp = _ref$errors === void 0 ? defaultErrors : _ref$errors,
+      _ref$infos = _ref.infos,
+      infosProp = _ref$infos === void 0 ? defaultInfos : _ref$infos,
       _ref$messages = _ref.messages,
       messagesProp = _ref$messages === void 0 ? defaultMessages : _ref$messages,
       onChange = _ref.onChange,
@@ -23,7 +52,7 @@ var Form = forwardRef(function (_ref, ref) {
       validate = _ref$validate === void 0 ? 'submit' : _ref$validate,
       _ref$value = _ref.value,
       valueProp = _ref$value === void 0 ? defaultValue : _ref$value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "errors", "messages", "onChange", "onReset", "onSubmit", "validate", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "validate", "value"]);
 
   var _useState = useState(valueProp),
       value = _useState[0],
@@ -49,35 +78,53 @@ var Form = forwardRef(function (_ref, ref) {
     return setErrors(errorsProp || {});
   }, [errorsProp]);
 
-  var _useState4 = useState({}),
-      touched = _useState4[0],
-      setTouched = _useState4[1];
+  var _useState4 = useState(infosProp || {}),
+      infos = _useState4[0],
+      setInfos = _useState4[1];
+
+  useEffect(function () {
+    return setInfos(infosProp || {});
+  }, [infosProp]);
+
+  var _useState5 = useState({}),
+      touched = _useState5[0],
+      setTouched = _useState5[1];
 
   var validations = useRef({});
   useEffect(function () {
     if (onChange) onChange(value);
   }, [onChange, value]);
-  useEffect(function () {}, [value, errors]);
-  var update = useCallback(function (name, data, error, initial) {
+  useEffect(function () {}, [value, errors, infos]);
+  var update = useCallback(function (name, data, initial) {
     setValue(function (prevValue) {
       var nextValue = _extends({}, prevValue);
 
-      nextValue[name] = data;
-      setErrors(function (prevErrors) {
-        var nextErrors = _extends({}, prevErrors); // re-run any validations that have errors, in case the validation
-        // is checking across fields
+      nextValue[name] = data; // re-run any validations, in case the validation
+      // is checking across fields
 
+      setErrors(function (prevErrors) {
+        var nextErrors = _extends({}, prevErrors);
 
         Object.keys(prevErrors).forEach(function (errName) {
-          var nextError = errName === name && error || validations.current[errName] && validations.current[errName](data, nextValue);
-
-          if (nextError) {
-            nextErrors[errName] = nextError;
-          } else {
-            delete nextErrors[errName];
+          if (validations.current[errName]) {
+            var nextError = validations.current[errName](data, nextValue);
+            updateErrors(nextErrors, errName, nextError);
           }
         });
         return nextErrors;
+      });
+      setInfos(function (prevInfos) {
+        var nextInfos = _extends({}, prevInfos); // re-run any validations that have infos, in case the validation
+        // is checking across fields
+
+
+        Object.keys(nextInfos).forEach(function (infoName) {
+          if (validations.current[infoName]) {
+            var nextInfo = validations.current[infoName](data, nextValue);
+            updateInfos(nextInfos, infoName, nextInfo);
+          }
+        });
+        return nextInfos;
       });
       return nextValue;
     });
@@ -92,9 +139,9 @@ var Form = forwardRef(function (_ref, ref) {
   var useFormContext = function useFormContext(name, dataProp) {
     var valueData = name && value[name] !== undefined ? value[name] : '';
 
-    var _useState5 = useState(dataProp !== undefined ? dataProp : valueData),
-        data = _useState5[0],
-        setData = _useState5[1]; // use dataProp passed in, allowing for it to change
+    var _useState6 = useState(dataProp !== undefined ? dataProp : valueData),
+        data = _useState6[0],
+        setData = _useState6[1]; // use dataProp passed in, allowing for it to change
 
 
     useEffect(function () {
@@ -135,16 +182,15 @@ var Form = forwardRef(function (_ref, ref) {
 
       var nextErrors = _extends({}, errors);
 
-      Object.keys(validations.current).forEach(function (name) {
-        var validation = validations.current[name];
-        var error = validation && validation(value[name], value);
+      var nextInfos = _extends({}, infos);
 
-        if (error) {
-          nextErrors[name] = error;
-        } else {
-          delete nextErrors[name];
-        }
+      Object.keys(validations.current).forEach(function (name) {
+        var nextError = validations.current[name](value[name], value);
+        updateErrors(nextErrors, name, nextError);
+        updateInfos(nextInfos, name, nextError);
       });
+      setErrors(nextErrors);
+      setInfos(nextInfos);
 
       if (Object.keys(nextErrors).length === 0 && _onSubmit) {
         event.persist(); // extract from React's synthetic event pool
@@ -154,8 +200,6 @@ var Form = forwardRef(function (_ref, ref) {
         adjustedEvent.touched = touched;
 
         _onSubmit(adjustedEvent);
-      } else {
-        setErrors(nextErrors);
       }
     }
   }), React.createElement(FormContext.Provider, {
@@ -165,18 +209,18 @@ var Form = forwardRef(function (_ref, ref) {
       },
       onBlur: validate === 'blur' ? function (name) {
         if (validations.current[name]) {
+          var error = validations.current[name](value[name], value);
           setErrors(function (prevErrors) {
             var nextErrors = _extends({}, prevErrors);
 
-            var error = validations.current[name](value[name], value);
-
-            if (error) {
-              nextErrors[name] = error;
-            } else {
-              delete nextErrors[name];
-            }
-
+            updateErrors(nextErrors, name, error);
             return nextErrors;
+          });
+          setInfos(function (prevInfos) {
+            var nextInfos = _extends({}, prevInfos);
+
+            updateInfos(nextInfos, name, error);
+            return nextInfos;
           });
         }
       } : undefined,
@@ -184,6 +228,7 @@ var Form = forwardRef(function (_ref, ref) {
       get: function get(name) {
         return value[name];
       },
+      infos: infos,
       messages: messages,
       set: function set(name, nextValue) {
         return update(name, nextValue);
