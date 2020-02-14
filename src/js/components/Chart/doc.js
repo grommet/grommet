@@ -59,7 +59,8 @@ export const doc = Chart => {
       is required if more than one Chart is shown and they use color
       gradients.`),
     onClick: PropTypes.func.description(`Called when the user clicks on the
-     visualization. values[].onClick should be used for types bar and point.`),
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.`),
     onHover: PropTypes.func.description(`Called with a boolean argument
       indicating when the user hovers onto or away from it.
       This is only available when the type is line or area.`),
