@@ -728,8 +728,8 @@ string",
       Object {
         "defaultValue": "none",
         "description": "The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box",
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box",
         "format": "none
 xxsmall
 xsmall
