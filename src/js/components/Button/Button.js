@@ -84,12 +84,10 @@ const Button = forwardRef(
 
     let buttonIcon = icon;
 
-    if (icon && size) buttonIcon = cloneElement(buttonIcon, { size: 'medium' });
     // only change color if user did not specify the color themselves...
     if (primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(icon, {
         color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
-        size: 'medium',
       });
     }
 

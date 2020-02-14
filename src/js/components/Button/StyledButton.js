@@ -12,7 +12,15 @@ import {
 import { defaultProps } from '../../default-props';
 
 const radiusStyle = props => {
-  if (props.size && props.theme.button.size) {
+  // border.radius shouldn't impact an only-icon rendering.
+  const isIconOnly = props.hasIcon && !props.hasLabel;
+
+  if (
+    !isIconOnly &&
+    props.size &&
+    props.theme.button.size &&
+    props.theme.button.size[props.size]
+  ) {
     return props.theme.button.size[props.size].border.radius;
   }
   return props.theme.button.border.radius;
@@ -28,7 +36,11 @@ const fontStyle = props => {
 };
 
 const padStyle = props => {
-  if (props.size && props.theme.button.size) {
+  if (
+    props.size &&
+    props.theme.button.size &&
+    props.theme.button.size[props.size]
+  ) {
     console.log('pad', props.theme.button.size[props.size].pad);
     return css`
       ${props.theme.button.size[props.size].pad.vertical}
@@ -163,7 +175,7 @@ const StyledButton = styled.button`
     props.hasIcon &&
     !props.hasLabel &&
     `
-  padding: ${props.theme.global.edgeSize.small};
+    padding: ${props.theme.global.edgeSize.small};
   `}
   ${props => props.theme.button && props.theme.button.extend}
 `;

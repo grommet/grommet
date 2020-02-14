@@ -331,11 +331,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       size: {
         small: {
           border: {
-            radius: `${baseSpacing * 0.7}px`,
+            radius: `${baseSpacing * 0.75}px`,
           },
           pad: {
-            vertical: '4px',
-            horizontal: `${baseSpacing - borderWidth}px`,
+            vertical: `${baseSpacing / 4 - borderWidth}px`,
+            horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
           },
         },
         medium: {
@@ -343,17 +343,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             radius: `${baseSpacing * 0.75}px`,
           },
           pad: {
-            vertical: `${baseSpacing / 4 - borderWidth}px`,
-            horizontal: `${baseSpacing - borderWidth}px`,
+            vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
+            horizontal: `${baseSpacing - borderWidth}px`, // 22px
           },
         },
         large: {
           border: {
-            radius: `${baseSpacing * 0.8}px`,
+            radius: `${baseSpacing}px`, // 24px
           },
           pad: {
-            vertical: '8px',
-            horizontal: `${baseSpacing - borderWidth}px`,
+            vertical: `${baseSpacing / 4 + borderWidth}px`, // 8px
+            horizontal: `${baseSpacing + borderWidth * 4}px`, // 32px,
           },
         },
       },
