@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
-// import { Add, Next } from 'grommet-icons';
+import { Add, Next } from 'grommet-icons';
 
 import { findAllByType } from '../../../utils';
 import { Grommet, Button, Text } from '../..';
@@ -222,22 +222,22 @@ describe('Button', () => {
   test('size', () => {
     const component = renderer.create(
       <Grommet>
-        {/* <Button size="small" label="Small" />
-        <Button size="medium" label="Medium" /> */}
+        <Button size="small" label="Small" />
+        <Button size="medium" label="Medium" />
         <Button label="Default" />
-        {/* <Button size="large" label="Large" />
+        <Button size="large" label="Large" />
         <Button primary size="small" label="Small" />
         <Button primary size="medium" label="Medium" />
         <Button primary label="Default" />
-        <Button primary size="large" label="Large" /> */}
-        {/* <Button size="small" icon={<Add />} primary />
+        <Button primary size="large" label="Large" />
+        <Button size="small" icon={<Add />} primary />
         <Button size="medium" icon={<Add />} primary />
         <Button icon={<Add />} primary />
         <Button size="large" icon={<Add />} primary />
         <Button size="small" label="Small" icon={<Next />} reverse />
         <Button size="medium" label="Medium" icon={<Next />} reverse />
         <Button label="Default" icon={<Next />} reverse />
-        <Button size="large" label="Large" icon={<Next />} reverse /> */}
+        <Button size="large" label="Large" icon={<Next />} reverse />
       </Grommet>,
     );
 

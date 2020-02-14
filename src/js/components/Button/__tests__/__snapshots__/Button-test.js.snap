@@ -1217,7 +1217,135 @@ exports[`Button reverse icon label 1`] = `
 `;
 
 exports[`Button size 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
 .c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 20px;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1243,8 +1371,212 @@ exports[`Button size 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1:hover {
+.c2:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 24px;
+  color: #444444;
+  padding: 8px 32px;
+  font-size: 22px;
+  line-height: 28px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 20px;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c4:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 24px;
+  color: #444444;
+  padding: 8px 32px;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 24px;
+  font-size: 22px;
+  line-height: 28px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 20px;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  font-size: 18px;
+  line-height: 24px;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  font-size: 22px;
+  line-height: 28px;
+  line-height: 0;
+  padding: 12px;
 }
 
 .c0 {
@@ -1266,9 +1598,291 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
+    size="small"
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className="c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="medium"
+    type="button"
+  >
+    Medium
+  </button>
+  <button
+    className="c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Default
+  </button>
+  <button
+    className="c3"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="large"
+    type="button"
+  >
+    Large
+  </button>
+  <button
+    className="c4"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="small"
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className="c5"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="medium"
+    type="button"
+  >
+    Medium
+  </button>
+  <button
+    className="c5"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Default
+  </button>
+  <button
+    className="c6"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="large"
+    type="button"
+  >
+    Large
+  </button>
+  <button
+    className="c7"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="small"
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c8"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c9"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="medium"
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c8"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c9"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c8"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c10"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="large"
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c8"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="small"
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Small
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    className="c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="medium"
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Medium
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    className="c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Default
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    className="c3"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    size="large"
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Large
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
   </button>
 </div>
 `;
