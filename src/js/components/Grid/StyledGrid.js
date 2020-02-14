@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const fillStyle = fill => {
@@ -221,6 +221,15 @@ const StyledGrid = styled.div.attrs(props => ({
   ${props => props.gap && gapStyle(props)}
   ${props => props.justify && justifyStyle}
   ${props => props.justifyContent && justifyContentStyle}
+  ${props =>
+    props.pad &&
+    edgeStyle(
+      'padding',
+      props.pad,
+      props.responsive,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )}
   ${props => props.rowsProp && rowsStyle(props)}
   ${props => props.theme.grid && props.theme.grid.extend}
 `;

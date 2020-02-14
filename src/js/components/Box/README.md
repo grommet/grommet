@@ -570,8 +570,8 @@ string
 **pad**
 
 The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box Defaults to `none`.
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box Defaults to `none`.
 
 ```
 none
