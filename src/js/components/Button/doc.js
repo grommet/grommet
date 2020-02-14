@@ -102,9 +102,10 @@ with plain Buttons.`,
               end of the anchor.`,
       )
       .defaultValue(false),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
-      `The possible sizes of the Button that will impact the overall Button 
-      padding, border radius, text size, line height and icon size.`,
+    size: PropTypes.oneOf(['small', 'medium', 'large']).description(
+      `The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
+      'size' will not impact any icon related sizing.`,
     ),
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description(
       `Specifies where to display the URL defined in the href property.`,
@@ -213,13 +214,50 @@ export const themeDoc = {
     description: `The color of the background for primary buttons.`,
     type: 'string | { dark: string, light: string }',
   },
-  'button.size.medium.border.radius': {
-    description: 'The corner radius.',
+  'button.size.small.border.radius': {
+    description: 'The border corner radius.',
     type: 'string',
+    defaultValue: '18px',
   },
-  'button.size.medium.pad': {
+  'button.size.small.pad.horizontal': {
     description: 'The pad',
     type: 'string',
+    defaultValue: '20px',
+  },
+  'button.size.small.pad.vertical': {
+    description: 'The pad',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'button.size.medium.border.radius': {
+    description: 'The border corner radius.',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'button.size.medium.pad.horizontal': {
+    description: 'The pad',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'button.size.medium.pad.vertical': {
+    description: 'The pad',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'button.size.large.border.radius': {
+    description: 'The border corner radius.',
+    type: 'string',
+    defaultValue: '24px',
+  },
+  'button.size.large.pad.horizontal': {
+    description: 'The pad',
+    type: 'string',
+    defaultValue: '32px',
+  },
+  'button.size.large.pad.vertical': {
+    description: 'The pad',
+    type: 'string',
+    defaultValue: '8px',
   },
   'button.extend': {
     description: 'Any additional style for the Button.',

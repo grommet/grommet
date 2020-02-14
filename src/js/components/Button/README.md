@@ -300,14 +300,14 @@ boolean
 
 **size**
 
-The possible sizes of the Button that will impact the overall Button 
-      padding, border radius, text size, line height and icon size.
+The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
+      'size' will not impact any icon related sizing.
 
 ```
 small
 medium
 large
-xlarge
 ```
 
 **target**
@@ -529,24 +529,94 @@ Defaults to
 undefined
 ```
 
-**button.size.medium.border.radius**
+**button.size.small.border.radius**
 
-The corner radius. Expects `string`.
+The border corner radius. Expects `string`.
 
 Defaults to
 
 ```
-undefined
+18px
 ```
 
-**button.size.medium.pad**
+**button.size.small.pad.horizontal**
 
 The pad Expects `string`.
 
 Defaults to
 
 ```
-undefined
+20px
+```
+
+**button.size.small.pad.vertical**
+
+The pad Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**button.size.medium.border.radius**
+
+The border corner radius. Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**button.size.medium.pad.horizontal**
+
+The pad Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**button.size.medium.pad.vertical**
+
+The pad Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**button.size.large.border.radius**
+
+The border corner radius. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**button.size.large.pad.horizontal**
+
+The pad Expects `string`.
+
+Defaults to
+
+```
+32px
+```
+
+**button.size.large.pad.vertical**
+
+The pad Expects `string`.
+
+Defaults to
+
+```
+8px
 ```
 
 **button.extend**

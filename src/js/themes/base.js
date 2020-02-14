@@ -334,13 +334,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             radius: `${baseSpacing * 0.75}px`,
           },
           pad: {
-            vertical: `${baseSpacing / 4 - borderWidth}px`,
+            vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
           },
         },
         medium: {
           border: {
-            radius: `${baseSpacing * 0.75}px`,
+            radius: `${baseSpacing * 0.75}px`, // 18px
           },
           pad: {
             vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px

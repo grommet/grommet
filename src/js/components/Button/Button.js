@@ -83,7 +83,6 @@ const Button = forwardRef(
     };
 
     let buttonIcon = icon;
-
     // only change color if user did not specify the color themselves...
     if (primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(icon, {
