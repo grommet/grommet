@@ -34,6 +34,9 @@ const validateField = (required, validate, messages) => (value, data) => {
     } else if (validate.regexp) {
       if (!validate.regexp.test(value)) {
         error = validate.message || messages.invalid;
+        if (validate.status) {
+          error = { message: error, status: validate.status };
+        }
       }
     }
   }
@@ -55,6 +58,7 @@ const FormField = forwardRef(
       error,
       help,
       htmlFor,
+      info,
       label,
       margin,
       name,
@@ -81,12 +85,7 @@ const FormField = forwardRef(
         context.value[name] === undefined &&
         (value !== undefined || checked !== undefined)
       ) {
-        context.update(
-          name,
-          value !== undefined ? value : checked,
-          undefined,
-          true,
-        );
+        context.update(name, value !== undefined ? value : checked, true);
       }
     });
 
@@ -124,7 +123,6 @@ const FormField = forwardRef(
     const { formField } = theme;
     const { border } = formField;
 
-    let normalizedError = error;
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
@@ -157,17 +155,21 @@ const FormField = forwardRef(
         })) ||
       children;
 
+    let normalizedError = error;
+    let normalizedInfo = info;
     let onFieldBlur;
     if (context && context.addValidation) {
       const {
         addValidation,
         errors,
+        infos,
         onBlur: onContextBlur,
         value: formValue,
         messages,
       } = context;
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
+      normalizedInfo = info || infos[name];
       contents = contents || renderInput(formValue, !!normalizedError);
       if (onContextBlur) {
         onFieldBlur = () => onContextBlur(name);
@@ -288,27 +290,14 @@ const FormField = forwardRef(
                 {label}
               </Text>
             )}
-            {help && (
-              <Text
-                {...formField.help}
-                color={formField.help.color[theme.dark ? 'dark' : 'light']}
-              >
-                {help}
-              </Text>
-            )}
+            {help && <Text {...formField.help}>{help}</Text>}
           </>
         ) : (
           undefined
         )}
         {contents}
-        {normalizedError && (
-          <Text
-            {...formField.error}
-            color={formField.error.color[theme.dark ? 'dark' : 'light']}
-          >
-            {normalizedError}
-          </Text>
-        )}
+        {normalizedError && <Text {...formField.error}>{normalizedError}</Text>}
+        {normalizedInfo && <Text {...formField.info}>{normalizedInfo}</Text>}
       </FormFieldBox>
     );
   },

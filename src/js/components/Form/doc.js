@@ -19,6 +19,12 @@ export const doc = Form => {
         match the keys in the value object.`,
       )
       .defaultValue({}),
+    infos: PropTypes.shape({})
+      .description(
+        `An object representing any information details in the data.
+        They keys should match the keys in the value object.`,
+      )
+      .defaultValue({}),
     messages: PropTypes.shape({
       invalid: PropTypes.string,
       required: PropTypes.string,

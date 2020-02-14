@@ -4,10 +4,10 @@ import {
   getAvailableAtBadge,
   genericProps,
   hoverIndicatorPropType,
+  padPropType,
   themeDocUtils,
 } from '../../utils';
 
-const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
@@ -295,50 +295,7 @@ export const doc = Box => {
       the DOM for accessibility.`,
     ),
     overflow: overflowPropType.description('box overflow.'),
-    pad: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', ...PAD_SIZES]),
-      PropTypes.shape({
-        bottom: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        end: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        horizontal: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        left: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        right: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        start: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        top: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        vertical: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-      }),
-      PropTypes.string,
-    ])
-      .description(
-        `The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box`,
-      )
-      .defaultValue('none'),
+    pad: padPropType,
     responsive: PropTypes.bool
       .description(
         `Whether margin, pad, and border
