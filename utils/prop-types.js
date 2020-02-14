@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.hoverIndicatorPropType = exports.genericProps = exports.marginProp = exports.colorPropType = exports.backgroundPropType = exports.a11yTitlePropType = void 0;
+exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.colorPropType = exports.backgroundPropType = exports.a11yTitlePropType = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -36,6 +36,20 @@ var marginProp = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['no
 }), _reactDesc.PropTypes.string]).description("The amount of margin around the component. An object can\n    be specified to distinguish horizontal margin, vertical margin, and\n    margin on a particular side.");
 
 exports.marginProp = marginProp;
+var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+
+var padPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(PAD_SIZES)), _reactDesc.PropTypes.shape({
+  bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
+  end: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
+  horizontal: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
+  left: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
+  right: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
+  start: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
+  top: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
+  vertical: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string])
+}), _reactDesc.PropTypes.string]).description("The amount of padding around the box contents. An\n    object can be specified to distinguish horizontal padding, vertical\n    padding, and padding on a particular side of the box").defaultValue('none');
+
+exports.padPropType = padPropType;
 var genericProps = {
   a11yTitle: a11yTitlePropType,
   alignSelf: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align along the cross axis when contained in\n      a Box or along the column axis when contained in a Grid."),

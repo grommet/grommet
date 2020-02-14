@@ -194,7 +194,7 @@ var StyledGrid = _styledComponents["default"].div.attrs(function (props) {
 }).withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
-})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.fillContainer && fillStyle(props.fillContainer);
 }, function (props) {
   return props.align && alignStyle;
@@ -210,6 +210,8 @@ var StyledGrid = _styledComponents["default"].div.attrs(function (props) {
   return props.justify && justifyStyle;
 }, function (props) {
   return props.justifyContent && justifyContentStyle;
+}, function (props) {
+  return props.pad && (0, _utils.edgeStyle)('padding', props.pad, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.rowsProp && rowsStyle(props);
 }, function (props) {

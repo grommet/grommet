@@ -19,6 +19,17 @@ export var marginProp = PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(MAR
   top: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
   vertical: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string])
 }), PropTypes.string]).description("The amount of margin around the component. An object can\n    be specified to distinguish horizontal margin, vertical margin, and\n    margin on a particular side.");
+var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+export var padPropType = PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(PAD_SIZES)), PropTypes.shape({
+  bottom: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
+  end: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
+  horizontal: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
+  left: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
+  right: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
+  start: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
+  top: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
+  vertical: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string])
+}), PropTypes.string]).description("The amount of padding around the box contents. An\n    object can be specified to distinguish horizontal padding, vertical\n    padding, and padding on a particular side of the box").defaultValue('none');
 export var genericProps = {
   a11yTitle: a11yTitlePropType,
   alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align along the cross axis when contained in\n      a Box or along the column axis when contained in a Grid."),

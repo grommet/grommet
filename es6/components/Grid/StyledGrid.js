@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { genericStyles } from '../../utils';
+import { edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var fillStyle = function fillStyle(fill) {
@@ -183,7 +183,7 @@ var StyledGrid = styled.div.attrs(function (props) {
 }).withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
-})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.fillContainer && fillStyle(props.fillContainer);
 }, function (props) {
   return props.align && alignStyle;
@@ -199,6 +199,8 @@ var StyledGrid = styled.div.attrs(function (props) {
   return props.justify && justifyStyle;
 }, function (props) {
   return props.justifyContent && justifyContentStyle;
+}, function (props) {
+  return props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.rowsProp && rowsStyle(props);
 }, function (props) {
