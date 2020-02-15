@@ -173,12 +173,20 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
           };
         }
 
+        var clickProps;
+
+        if (onClick) {
+          clickProps = {
+            onClick: onClick
+          };
+        }
+
         return _react["default"].createElement("g", {
           key: key,
           fill: "none"
         }, _react["default"].createElement("title", null, label), _react["default"].createElement("path", _extends({
           d: d
-        }, hoverProps, valueRest)));
+        }, hoverProps, clickProps, valueRest)));
       }
 
       return undefined;
@@ -283,6 +291,14 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
         };
       }
 
+      var clickProps;
+
+      if (onClick) {
+        clickProps = {
+          onClick: onClick
+        };
+      }
+
       var center = value.length === 2 ? value[1] : value[2];
       var shape;
 
@@ -293,7 +309,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
           cx: cx,
           cy: cy,
           r: strokeWidth / 2
-        }, hoverProps, valueRest));
+        }, hoverProps, clickProps, valueRest));
       } else {
         var x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
         var y = size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
@@ -302,7 +318,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
           y: y,
           width: strokeWidth,
           height: strokeWidth
-        }, hoverProps, valueRest));
+        }, hoverProps, clickProps, valueRest));
       }
 
       return _react["default"].createElement("g", {
