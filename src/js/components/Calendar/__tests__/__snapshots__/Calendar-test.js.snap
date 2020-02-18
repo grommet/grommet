@@ -131,8 +131,6 @@ exports[`Calendar date 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -153,8 +151,6 @@ exports[`Calendar date 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5 {
@@ -1416,8 +1412,6 @@ exports[`Calendar dates 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -1438,8 +1432,6 @@ exports[`Calendar dates 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5 {
@@ -2701,8 +2693,6 @@ exports[`Calendar daysOfWeek 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -2723,8 +2713,6 @@ exports[`Calendar daysOfWeek 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5 {
@@ -4053,8 +4041,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -4075,8 +4061,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5 {
@@ -6313,8 +6297,6 @@ exports[`Calendar header 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c11 {
@@ -6335,8 +6317,6 @@ exports[`Calendar header 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c1 {
@@ -7624,8 +7604,6 @@ exports[`Calendar reference 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -7646,8 +7624,6 @@ exports[`Calendar reference 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5 {
@@ -8963,8 +8939,6 @@ exports[`Calendar size 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -8985,8 +8959,6 @@ exports[`Calendar size 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5 {

@@ -157,8 +157,6 @@ exports[`Video autoPlay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -184,8 +182,6 @@ exports[`Video autoPlay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c9 {
@@ -664,8 +660,6 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -691,8 +685,6 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c9 {
@@ -1274,8 +1266,6 @@ exports[`Video fit renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -1301,8 +1291,6 @@ exports[`Video fit renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c9 {
@@ -1894,8 +1882,6 @@ exports[`Video loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -1921,8 +1907,6 @@ exports[`Video loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c9 {
@@ -2344,8 +2328,6 @@ exports[`Video mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -2371,8 +2353,6 @@ exports[`Video mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c9 {
@@ -2794,8 +2774,6 @@ exports[`Video renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
   line-height: 0;
   padding: 12px;
 }
@@ -2821,8 +2799,6 @@ exports[`Video renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c9 {

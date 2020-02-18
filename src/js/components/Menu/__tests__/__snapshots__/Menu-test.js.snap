@@ -48,8 +48,6 @@ exports[`Menu basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -187,8 +185,6 @@ exports[`Menu close by clicking outside 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -417,8 +413,6 @@ exports[`Menu close by clicking outside 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5:hover {
@@ -660,8 +654,6 @@ exports[`Menu close on esc 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -804,8 +796,6 @@ exports[`Menu close on tab 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -948,8 +938,6 @@ exports[`Menu custom a11yTitle 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -1093,8 +1081,6 @@ exports[`Menu custom message 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -1244,8 +1230,6 @@ exports[`Menu disabled 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -1389,8 +1373,6 @@ exports[`Menu gap between icon and label 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -1662,8 +1644,6 @@ exports[`Menu justify content 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2021,8 +2001,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2165,8 +2143,6 @@ exports[`Menu open and close on click 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2233,7 +2209,7 @@ exports[`Menu open and close on click 2`] = `
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 iAEZMy"
+    class="StyledButton-sc-323bzc-0 dnCEuz"
     id="test-menu"
     type="button"
   >
@@ -2433,8 +2409,6 @@ exports[`Menu open and close on click 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5:hover {
@@ -2690,8 +2664,6 @@ exports[`Menu reverse icon and label 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2847,8 +2819,6 @@ exports[`Menu select an item 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2991,8 +2961,6 @@ exports[`Menu tab through menu until it closes 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -3135,8 +3103,6 @@ exports[`Menu with dropAlign renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -3365,8 +3331,6 @@ exports[`Menu with dropAlign renders 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5:hover {

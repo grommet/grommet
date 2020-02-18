@@ -61,6 +61,7 @@ const basicStyle = props => css`
   border-radius: ${radiusStyle(props)};
   color: ${normalizeColor(props.theme.button.color || 'text', props.theme)};
   padding: ${padStyle(props)};
+  ${fontStyle(props)}
 `;
 
 const primaryStyle = props => css`
@@ -149,7 +150,6 @@ const StyledButton = styled.button`
     disabledStyle(
       props.theme.button.disabled && props.theme.button.disabled.opacity,
     )}
-  ${props => fontStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>
