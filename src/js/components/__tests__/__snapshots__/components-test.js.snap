@@ -1432,6 +1432,7 @@ string",
     "usage": "import { Calendar } from 'grommet';
 <Calendar />",
   },
+  "Card": [Function],
   "Carousel": Object {
     "availableAt": Array [
       Object {

@@ -4,6 +4,7 @@ export * from './components/Anchor';
 export * from './components/Box';
 export * from './components/Button';
 export * from './components/Calendar';
+export * from './components/Card';
 export * from './components/Carousel';
 export * from './components/Chart';
 export * from './components/CheckBox';
