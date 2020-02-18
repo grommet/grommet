@@ -1,10 +1,17 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  backgroundPropType,
-  genericProps,
-  getAvailableAtBadge,
-} from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
+
+const backgroundPropType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({
+    color: PropTypes.string,
+    opacity: PropTypes.oneOfType([
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+      PropTypes.bool,
+    ]),
+  }),
+]).description('Background color');
 
 export const doc = Meter => {
   const DocumentedMeter = describe(Meter)

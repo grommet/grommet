@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Grommet, Box } from 'grommet';
+import { grommet, Grommet, Box, Text } from 'grommet';
 import { hpe } from 'grommet-theme-hpe';
 
 const Background = () => {
@@ -12,31 +12,33 @@ const Background = () => {
     <Box gap="medium">
       <Grommet>
         <Box pad="medium">
-          <p>Grommet with no theme or background prop</p>
+          <Text>Grommet with no theme or background prop</Text>
         </Box>
       </Grommet>
       <Grommet theme={hpe} themeMode="dark">
         <Box pad="medium">
-          <p>Grommet with theme & themeMode but no background prop</p>
+          <Text>Grommet with theme & themeMode but no background prop</Text>
         </Box>
       </Grommet>
       <Grommet theme={hpe} themeMode="light" background={themeColor}>
         <Box pad="medium">
-          <p>
+          <Text>
             Grommet with background as theme color of &apos;{themeColor}&apos;
-          </p>
+          </Text>
         </Box>
       </Grommet>
       <Grommet theme={grommet} background={hexValue}>
         <Box pad="medium">
-          <p>Grommet with background as HEX value of &apos;{hexValue}&apos;</p>
+          <Text>
+            Grommet with background as HEX value of &apos;{hexValue}&apos;
+          </Text>
         </Box>
       </Grommet>
       <Grommet theme={grommet} background={cssColor}>
         <Box pad="medium">
-          <p>
+          <Text>
             Grommet with background as CSS color name of &apos;{cssColor}&apos;
-          </p>
+          </Text>
         </Box>
       </Grommet>
       <Grommet
@@ -48,7 +50,9 @@ const Background = () => {
         }}
       >
         <Box pad="medium">
-          <p>Grommet with background as object containing color and image</p>
+          <Text>
+            Grommet with background as object containing color and image
+          </Text>
         </Box>
       </Grommet>
     </Box>

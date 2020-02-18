@@ -41,8 +41,17 @@ class Grommet extends Component {
         nextTheme,
       );
 
-      // after normalizing, we want to check again if the background color
-      // is dark in case it differs from the previous assignment
+      // After normalizing, we set nextTheme.dark once more.
+      // It is necessary that we set it twice. We have to handle two cases:
+      // 1. Caller passes in a color object or a color name that resolves an
+      //    object. In this case, we want to set dark as line 38 shows. The
+      //    second set, in line 46, is a no-op.
+      // 2. Caller passes a specific color value or a color name that resolves
+      //    to a specific color value. In this case, we want dark to be set
+      //    based on that color, which line 46 will do.
+      // The double set of nextTheme.dark allows us to handle both cases here
+      // without having to duplicate color object + name + dark mode detection
+      // code here that is already in normalizeColor and backgroundIsDark.
       nextTheme.dark = backgroundIsDark(color, nextTheme);
       nextTheme.baseBackground = backgroundProp || themeBackground;
 

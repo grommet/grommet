@@ -1,7 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
-import { BACKGROUND_DOC } from '../Box/doc';
+import { BACKGROUND_DOC, getAvailableAtBadge } from '../../utils';
 
 export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
