@@ -1,13 +1,16 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { backgroundPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Meter) {
   var DocumentedMeter = describe(Meter).availableAt(getAvailableAtBadge('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
   DocumentedMeter.propTypes = _extends({}, genericProps, {
-    background: backgroundPropType.defaultValue({
+    background: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+      color: PropTypes.string,
+      opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool])
+    })]).description('Background color').defaultValue({
       color: 'light-2',
       opacity: 'medium'
     }),

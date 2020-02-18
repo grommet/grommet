@@ -104,6 +104,14 @@ describe('Grommet', function () {
 
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('background', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+      full: true,
+      background: "blue"
+    }, "Grommet App"));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('announce', function (done) {
     var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
       return _react["default"].createElement(TestAnnouncer, {

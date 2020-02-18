@@ -1,9 +1,15 @@
 import { PropTypes } from 'react-desc';
 export var a11yTitlePropType = PropTypes.string.description("Custom label to be used by screen readers. When provided, an aria-label will\n   be added to the element.");
-export var backgroundPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+export var backgroundDoc = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   color: PropTypes.string,
-  opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool])
-})]).description('Background color');
+  dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  image: PropTypes.string,
+  position: PropTypes.string,
+  opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number, PropTypes.oneOf(['weak', 'medium', 'strong'])]),
+  repeat: PropTypes.oneOfType([PropTypes.oneOf(['no-repeat', 'repeat']), PropTypes.string]),
+  size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string]),
+  light: PropTypes.string
+})]).description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
 export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   dark: PropTypes.string,
   light: PropTypes.string

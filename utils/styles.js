@@ -1,9 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.evalStyle = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
+
+var _background = require("./background");
 
 var _colors = require("./colors");
 
@@ -18,7 +20,7 @@ var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";lin
 }, function (props) {
   return props.theme.global.font.weight;
 }, function (props) {
-  return !props.plain && props.theme.global.colors.background && (0, _styledComponents.css)(["background:", ";color:", ";"], (0, _colors.normalizeColor)('background', props.theme, true), (0, _colors.normalizeColor)('text', props.theme, true));
+  return !props.plain && (0, _background.backgroundStyle)(props.theme.baseBackground, props.theme);
 });
 exports.baseStyle = baseStyle;
 var controlBorderStyle = (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";"], function (props) {
@@ -107,21 +109,8 @@ exports.overflowStyle = overflowStyle;
 var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
   return props.theme.global.colors.placeholder;
 });
-var placeholderStyle = (0, _styledComponents.css)(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor); // evalStyle() converts a styled-components item into a string
-
+var placeholderStyle = (0, _styledComponents.css)(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
 exports.placeholderStyle = placeholderStyle;
-
-var evalStyle = function evalStyle(arg, theme) {
-  if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
-    return arg[0]({
-      theme: theme
-    });
-  }
-
-  return arg;
-};
-
-exports.evalStyle = evalStyle;
 var ALIGN_SELF_MAP = {
   center: 'center',
   end: 'flex-end',

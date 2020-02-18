@@ -84,6 +84,13 @@ describe('Grommet', function () {
     }, "Grommet App"));
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('background', function () {
+    var component = renderer.create(React.createElement(Grommet, {
+      full: true,
+      background: "blue"
+    }, "Grommet App"));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('announce', function (done) {
     var _render = render(React.createElement(Grommet, null, React.createElement(AnnounceContext.Consumer, null, function (announce) {
       return React.createElement(TestAnnouncer, {

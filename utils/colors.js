@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.getRGBA = exports.colorIsDark = exports.normalizeColor = void 0;
 
-var normalizeColor = function normalizeColor(color, theme, required) {
+var normalizeColor = function normalizeColor(color, theme) {
   var colorSpec = theme.global && theme.global.colors[color] !== undefined ? theme.global.colors[color] : color; // If the color has a light or dark object, use that
 
   var result = colorSpec;
@@ -21,7 +21,7 @@ var normalizeColor = function normalizeColor(color, theme, required) {
     result = normalizeColor(result, theme);
   }
 
-  return required && result === color ? 'inherit' : result;
+  return result;
 };
 
 exports.normalizeColor = normalizeColor;

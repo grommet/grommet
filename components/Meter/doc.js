@@ -14,7 +14,10 @@ var doc = function doc(Meter) {
   // .intrinsicElement('svg');
 
   DocumentedMeter.propTypes = _extends({}, _utils.genericProps, {
-    background: _utils.backgroundPropType.defaultValue({
+    background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+      color: _reactDesc.PropTypes.string,
+      opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.bool])
+    })]).description('Background color').defaultValue({
       color: 'light-2',
       opacity: 'medium'
     }),

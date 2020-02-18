@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 export var baseStyle = css(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
@@ -10,7 +11,7 @@ export var baseStyle = css(["font-family:", ";font-size:", ";line-height:", ";fo
 }, function (props) {
   return props.theme.global.font.weight;
 }, function (props) {
-  return !props.plain && props.theme.global.colors.background && css(["background:", ";color:", ";"], normalizeColor('background', props.theme, true), normalizeColor('text', props.theme, true));
+  return !props.plain && backgroundStyle(props.theme.baseBackground, props.theme);
 });
 export var controlBorderStyle = css(["border:", " solid ", ";border-radius:", ";"], function (props) {
   return props.theme.global.control.border.width;
@@ -89,17 +90,7 @@ export var overflowStyle = function overflowStyle(overflowProp) {
 var placeholderColor = css(["color:", ";"], function (props) {
   return props.theme.global.colors.placeholder;
 });
-export var placeholderStyle = css(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor); // evalStyle() converts a styled-components item into a string
-
-export var evalStyle = function evalStyle(arg, theme) {
-  if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
-    return arg[0]({
-      theme: theme
-    });
-  }
-
-  return arg;
-};
+export var placeholderStyle = css(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
 var ALIGN_SELF_MAP = {
   center: 'center',
   end: 'flex-end',

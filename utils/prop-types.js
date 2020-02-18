@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.colorPropType = exports.backgroundPropType = exports.a11yTitlePropType = void 0;
+exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.colorPropType = exports.backgroundDoc = exports.a11yTitlePropType = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -9,12 +9,18 @@ var a11yTitlePropType = _reactDesc.PropTypes.string.description("Custom label to
 
 exports.a11yTitlePropType = a11yTitlePropType;
 
-var backgroundPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+var backgroundDoc = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
   color: _reactDesc.PropTypes.string,
-  opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.bool])
-})]).description('Background color');
+  dark: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string]),
+  image: _reactDesc.PropTypes.string,
+  position: _reactDesc.PropTypes.string,
+  opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.bool, _reactDesc.PropTypes.number, _reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong'])]),
+  repeat: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['no-repeat', 'repeat']), _reactDesc.PropTypes.string]),
+  size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['cover', 'contain']), _reactDesc.PropTypes.string]),
+  light: _reactDesc.PropTypes.string
+})]).description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
 
-exports.backgroundPropType = backgroundPropType;
+exports.backgroundDoc = backgroundDoc;
 
 var colorPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
   dark: _reactDesc.PropTypes.string,

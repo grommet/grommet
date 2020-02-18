@@ -76,7 +76,8 @@ function (_Component) {
   }
 
   Grommet.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var dir = nextProps.dir,
+    var backgroundProp = nextProps.background,
+        dir = nextProps.dir,
         _nextProps$theme = nextProps.theme,
         theme = _nextProps$theme === void 0 ? {} : _nextProps$theme,
         themeMode = nextProps.themeMode;
@@ -86,16 +87,23 @@ function (_Component) {
     var nextTheme = (0, _utils.deepMerge)(_themes.base, theme);
 
     if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
-      var background = nextTheme.global.colors.background; // Determine whether to start in dark or light mode.
+      var themeBackground = nextTheme.global.colors.background; // get initial value for dark so we can normalize background color
 
-      if (typeof background === 'object') {
-        // background is an object, use themeMode, theme default
-        // or first key
-        var color = background[themeMode || nextTheme.defaultMode || Object.keys(background)[0]];
-        nextTheme.dark = color ? (0, _utils.colorIsDark)(color) : false;
-      } else if (nextTheme.dark === undefined) {
-        nextTheme.dark = background && (0, _utils.colorIsDark)(background) || false;
-      }
+      nextTheme.dark = (themeMode || theme.defaultMode) === 'dark';
+      var color = (0, _utils.normalizeColor)(backgroundProp || themeBackground, nextTheme); // After normalizing, we set nextTheme.dark once more.
+      // It is necessary that we set it twice. We have to handle two cases:
+      // 1. Caller passes in a color object or a color name that resolves an
+      //    object. In this case, we want to set dark as line 38 shows. The
+      //    second set, in line 46, is a no-op.
+      // 2. Caller passes a specific color value or a color name that resolves
+      //    to a specific color value. In this case, we want dark to be set
+      //    based on that color, which line 46 will do.
+      // The double set of nextTheme.dark allows us to handle both cases here
+      // without having to duplicate color object + name + dark mode detection
+      // code here that is already in normalizeColor and backgroundIsDark.
+
+      nextTheme.dark = (0, _utils.backgroundIsDark)(color, nextTheme);
+      nextTheme.baseBackground = backgroundProp || themeBackground;
 
       if (dir) {
         nextTheme.dir = dir;
