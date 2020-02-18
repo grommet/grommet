@@ -4,27 +4,6 @@ import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 import { Volume } from "grommet-icons/es6/icons/Volume";
-
-var SimpleRangeInput = function SimpleRangeInput() {
-  var _React$useState = React.useState(5),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
-  var onChange = function onChange(event) {
-    return setValue(event.target.value);
-  };
-
-  return React.createElement(Grommet, {
-    theme: grommet
-  }, React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, React.createElement(RangeInput, {
-    value: value,
-    onChange: onChange
-  })));
-};
-
 var customThemeRangeInput = deepMerge(grommet, {
   global: {
     spacing: '12px'
@@ -44,9 +23,9 @@ var customThemeRangeInput = deepMerge(grommet, {
 });
 
 var CustomRangeInput = function CustomRangeInput() {
-  var _React$useState2 = React.useState(0.4),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
+  var _React$useState = React.useState(0.4),
+      value = _React$useState[0],
+      setValue = _React$useState[1];
 
   var onChange = function onChange(event) {
     return setValue(event.target.value);
@@ -73,8 +52,6 @@ var CustomRangeInput = function CustomRangeInput() {
   }))));
 };
 
-storiesOf('RangeInput', module).add('Simple', function () {
-  return React.createElement(SimpleRangeInput, null);
-}).add('Custom', function () {
+storiesOf('RangeInput', module).add('Custom', function () {
   return React.createElement(CustomRangeInput, null);
 });

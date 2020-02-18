@@ -14,26 +14,6 @@ var _grommetIcons = require("grommet-icons");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var SimpleRangeInput = function SimpleRangeInput() {
-  var _React$useState = _react["default"].useState(5),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
-  var onChange = function onChange(event) {
-    return setValue(event.target.value);
-  };
-
-  return _react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, _react["default"].createElement(_grommet.RangeInput, {
-    value: value,
-    onChange: onChange
-  })));
-};
-
 var customThemeRangeInput = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
     spacing: '12px'
@@ -53,9 +33,9 @@ var customThemeRangeInput = (0, _utils.deepMerge)(_themes.grommet, {
 });
 
 var CustomRangeInput = function CustomRangeInput() {
-  var _React$useState2 = _react["default"].useState(0.4),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
+  var _React$useState = _react["default"].useState(0.4),
+      value = _React$useState[0],
+      setValue = _React$useState[1];
 
   var onChange = function onChange(event) {
     return setValue(event.target.value);
@@ -82,8 +62,6 @@ var CustomRangeInput = function CustomRangeInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('RangeInput', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleRangeInput, null);
-}).add('Custom', function () {
+(0, _react2.storiesOf)('RangeInput', module).add('Custom', function () {
   return _react["default"].createElement(CustomRangeInput, null);
 });
