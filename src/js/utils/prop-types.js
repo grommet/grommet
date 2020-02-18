@@ -5,7 +5,7 @@ export const a11yTitlePropType = PropTypes.string.description(
    be added to the element.`,
 );
 
-const backgroundPropType = PropTypes.oneOfType([
+export const backgroundDoc = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({
     color: PropTypes.string,
@@ -28,9 +28,7 @@ const backgroundPropType = PropTypes.oneOfType([
     ]),
     light: PropTypes.string,
   }),
-]);
-
-export const BACKGROUND_DOC = backgroundPropType.description(`Either a color 
+]).description(`Either a color 
 identifier to use for the background color. For example: 'neutral-1'. Or, a 
 'url()' for an image. Dark is not needed if color is provided.`);
 

@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import {
-  BACKGROUND_DOC,
+  backgroundDoc,
   getAvailableAtBadge,
   genericProps,
   hoverIndicatorPropType,
@@ -116,7 +116,7 @@ export const doc = Box => {
     ]).description(`Animation effect(s) to use. 'duration' and 'delay' should
         be in milliseconds. 'jiggle' and 'pulse' types are intended for
         small elements, like icons.`),
-    background: BACKGROUND_DOC,
+    background: backgroundDoc,
     basis: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',
