@@ -53,6 +53,6 @@ var IndeterminateCheckBox = function IndeterminateCheckBox() {
   }))));
 };
 
-storiesOf('CheckBox', module).add('Interminate', function () {
+storiesOf('CheckBox', module).add('Indeterminate', function () {
   return React.createElement(IndeterminateCheckBox, null);
 });
