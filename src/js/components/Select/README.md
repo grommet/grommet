@@ -147,19 +147,18 @@ boolean
 
 **clear**
 
-Optionally displays a select item to Clear Selection. It can appear above or below the other Select options. 
-
-Setting prop `clear={true}` will assume all defaults. To customize, set `clear` as an object with the following attributes:
-
-`label`: string. Defaults to "Clear selection"
-`position`: "top" | "bottom". Defaults to "top".
-`renderValue`: function. Custom Render function to customize clear value item.
-      It receives as a parameter the callback to call
-      when clicking on the item
+Whether to provide button to clear selection.
 
 ```
 boolean
-object
+{
+  position: 
+    top
+    bottom,
+  label: string,
+  renderValue: function
+}
+
 ```
 
 **disabled**
@@ -281,7 +280,9 @@ function
 
 **messages**
 
-Custom messages.
+Custom messages.  Defaults to `{
+ "multiple": "multiple"
+}`.
 
 ```
 {

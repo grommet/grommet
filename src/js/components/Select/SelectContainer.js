@@ -370,7 +370,9 @@ class SelectContainer extends Component {
             {...theme.select.options.box}
             {...theme.select.options.container}
           >
-            <Text {...theme.select.options.text}>{label}</Text>
+            <Text {...theme.select.options.text}>
+              {label || 'Clear selection'}
+            </Text>
           </Box>
         </Button>
       </Box>
@@ -395,7 +397,7 @@ class SelectContainer extends Component {
     } = this.props;
     const { activeIndex, search } = this.state;
 
-    const clearPosition = clear === true ? 'top' : clear && clear.position;
+    const clearPosition = (clear && clear.position) || 'top';
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
     const selectOptionsStyle = {
@@ -428,7 +430,9 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          {value && clearPosition === 'top' ? this.renderClear() : null}
+          {value && clear && clearPosition === 'top'
+            ? this.renderClear()
+            : null}
           <OptionsBox
             flex="shrink"
             role="menubar"
@@ -499,7 +503,9 @@ class SelectContainer extends Component {
               </SelectOption>
             )}
           </OptionsBox>
-          {value && clearPosition === 'bottom' ? this.renderClear() : null}
+          {value && clear && clearPosition === 'bottom'
+            ? this.renderClear()
+            : null}
         </StyledContainer>
       </Keyboard>
     );

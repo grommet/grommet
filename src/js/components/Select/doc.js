@@ -29,20 +29,20 @@ export const doc = Select => {
     clear: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
-        position: PropTypes.oneOf(['top', 'bottom'])
-          .description(
+        position: PropTypes.oneOf(['top', 'bottom']).description(
             `Add a clear value item add the top or at the bottom of the
             container. By default no unselect option is present.`,
-          ),
+        ),
         label: PropTypes.string
           .description('Label for the clear selection item')
           .defaultValue('Clear selection'),
         renderValue: PropTypes.func.description(
           `Render function to customize clear value item.
           It receives as a parameter the callback to call
-          when clicking on the item`),
+          when clicking on the item`
+        ),
       }),
-    ]),
+    ]).description(`Whether to provide button to clear selection.`),
     disabled: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.arrayOf(

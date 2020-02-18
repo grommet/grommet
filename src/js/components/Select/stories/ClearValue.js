@@ -22,10 +22,6 @@ const optionList = [
 const UnSelect = () => {
   const [value, setValue] = useState('');
 
-  const onChange = e => {
-    setValue(e.value);
-  };
-
   const onClickClearOptions = () => {
     setValue('');
   };
@@ -39,43 +35,60 @@ const UnSelect = () => {
         justify="center"
         gap="small"
       >
-        <Select
-          options={optionList}
-          value={value}
-          onChange={({ option }) => setValue(option)}
-          placeholder="Select multiple options"
-          multiple
-          clear={{
-            position: 'bottom',
-            label: 'Unselect',
-          }}
-        />
-        <Select
-          options={optionList}
-          value={value}
-          onChange={({ option }) => setValue(option)}
-          placeholder="Select multiple options"
-          multiple
-          clear={{
-            position: 'top',
-            renderValue: ({ onClear }) => (
-              <Box flex={false}>
-                <Button hoverIndicator="background" onClick={onClear}>
-                  <Box
-                    direction="row"
-                    background="dark-2"
-                    alignItems="center"
-                    gap="small"
-                    pad="small"
-                  >
-                    <Clear />
-                    <Text>Clear items</Text>
-                  </Box>
-                </Button>
-              </Box>
-            ),
-          }}
-        />
+        <Box>
+          <Text>Select with default clear selection</Text>
+          <Select
+            options={optionList}
+            value={value}
+            onChange={({ option }) => setValue(option)}
+            placeholder="Select a value"
+            clear
+            multiple
+          />
+        </Box>
+        <Box>
+          <Text>Select with custom location and label</Text>
+          <Select
+            options={optionList}
+            value={value}
+            onChange={({ option }) => setValue(option)}
+            placeholder="Select a value"
+            multiple
+            clear={{
+              position: 'bottom',
+              label: 'Unselect',
+            }}
+          />
+        </Box>
+        <Box>
+          <Text>Select with custom select render</Text>
+          <Select
+            options={optionList}
+            value={value}
+            onChange={({ option }) => setValue(option)}
+            placeholder="Select multiple options"
+            multiple
+            clear={{
+              position: 'top',
+              renderValue: ({ onClear }) => (
+                <Box flex={false}>
+                  <Button hoverIndicator="background" onClick={onClear}>
+                    <Box
+                      direction="row"
+                      background="dark-2"
+                      alignItems="center"
+                      gap="small"
+                      pad="small"
+                    >
+                      <Clear />
+                      <Text>Clear items</Text>
+                    </Box>
+                  </Button>
+                </Box>
+              ),
+            }}
+          />
+        </Box>
       </Box>
       <Box
         pad="medium"
@@ -84,13 +97,6 @@ const UnSelect = () => {
         justify="center"
         gap="small"
       >
-        <Select
-          options={optionList}
-          onChange={e => onChange(e)}
-          value={value}
-          placeholder="Select multiple options"
-          multiple
-        />
         <Button
           onClick={onClickClearOptions}
           disabled={!value}
