@@ -419,9 +419,9 @@ zoomOut
         "name": "animation",
       },
       Object {
-        "description": "Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.",
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
         "format": "string
 {
   color: string,
@@ -1751,8 +1751,9 @@ string",
         "name": "id",
       },
       Object {
-        "description": "Called when the user clicks on it.
-      This is only available when the type is line or area.",
+        "description": "Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.",
         "format": "function",
         "name": "onClick",
       },

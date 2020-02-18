@@ -132,7 +132,6 @@ exports[`RangeSelector basic 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -374,7 +373,6 @@ exports[`RangeSelector color 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(111,255,176,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -618,7 +616,6 @@ exports[`RangeSelector direction 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -728,7 +725,6 @@ exports[`RangeSelector direction 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1061,7 +1057,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1264,7 +1259,6 @@ exports[`RangeSelector handle mouse 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1376,7 +1370,6 @@ exports[`RangeSelector invert 1`] = `
   max-width: 100%;
   background-color: rgba(218,218,218,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1485,7 +1478,6 @@ exports[`RangeSelector invert 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1817,7 +1809,6 @@ exports[`RangeSelector max 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2060,7 +2051,6 @@ exports[`RangeSelector min 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2302,7 +2292,6 @@ exports[`RangeSelector opacity 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.1);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2321,7 +2310,6 @@ exports[`RangeSelector opacity 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2342,7 +2330,6 @@ exports[`RangeSelector opacity 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.8);
   color: #f8f8f8;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2762,7 +2749,6 @@ exports[`RangeSelector round 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2800,7 +2786,6 @@ exports[`RangeSelector round 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2840,7 +2825,6 @@ exports[`RangeSelector round 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2879,7 +2863,6 @@ exports[`RangeSelector round 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2917,7 +2900,6 @@ exports[`RangeSelector round 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3562,7 +3544,6 @@ exports[`RangeSelector size 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3598,7 +3579,6 @@ exports[`RangeSelector size 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3636,7 +3616,6 @@ exports[`RangeSelector size 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3672,7 +3651,6 @@ exports[`RangeSelector size 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3710,7 +3688,6 @@ exports[`RangeSelector size 1`] = `
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3746,7 +3723,6 @@ exports[`RangeSelector size 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3788,7 +3764,6 @@ exports[`RangeSelector size 1`] = `
   -ms-flex-item-align: stretch;
   align-self: stretch;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -4559,7 +4534,6 @@ exports[`RangeSelector step renders correct values 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(125,76,219,0.4);
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;

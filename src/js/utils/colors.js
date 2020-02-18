@@ -1,4 +1,4 @@
-export const normalizeColor = (color, theme, required) => {
+export const normalizeColor = (color, theme) => {
   const colorSpec =
     theme.global && theme.global.colors[color] !== undefined
       ? theme.global.colors[color]
@@ -16,7 +16,8 @@ export const normalizeColor = (color, theme, required) => {
   if (result && theme.global && theme.global.colors[result] !== undefined) {
     result = normalizeColor(result, theme);
   }
-  return required && result === color ? 'inherit' : result;
+
+  return result;
 };
 
 const parseHexToRGB = color =>

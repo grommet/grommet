@@ -36,6 +36,29 @@ exports[`Grommet announce 3`] = `
 />
 `;
 
+exports[`Grommet background 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  background: blue;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+<div
+  className="c0"
+>
+  Grommet App
+</div>
+`;
+
 exports[`Grommet basic 1`] = `
 .c0 {
   font-size: 18px;

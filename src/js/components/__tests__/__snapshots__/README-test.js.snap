@@ -860,9 +860,9 @@ zoomOut
 
 **background**
 
-Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
 
 \`\`\`
 string
@@ -3263,8 +3263,9 @@ string
 
 **onClick**
 
-Called when the user clicks on it.
-      This is only available when the type is line or area.
+Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.
 
 \`\`\`
 function
@@ -6751,6 +6752,40 @@ import { Grommet } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
 
 **dir**
 

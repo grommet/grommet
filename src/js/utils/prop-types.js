@@ -5,16 +5,32 @@ export const a11yTitlePropType = PropTypes.string.description(
    be added to the element.`,
 );
 
-export const backgroundPropType = PropTypes.oneOfType([
+export const backgroundDoc = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({
     color: PropTypes.string,
+    dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    image: PropTypes.string,
+    position: PropTypes.string,
     opacity: PropTypes.oneOfType([
-      PropTypes.oneOf(['weak', 'medium', 'strong']),
+      PropTypes.string,
       PropTypes.bool,
+      PropTypes.number,
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
     ]),
+    repeat: PropTypes.oneOfType([
+      PropTypes.oneOf(['no-repeat', 'repeat']),
+      PropTypes.string,
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['cover', 'contain']),
+      PropTypes.string,
+    ]),
+    light: PropTypes.string,
   }),
-]).description('Background color');
+]).description(`Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.`);
 
 export const colorPropType = PropTypes.oneOfType([
   PropTypes.string,
