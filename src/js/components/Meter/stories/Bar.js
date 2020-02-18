@@ -10,7 +10,7 @@ const BarMeter = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <Meter type="bar" background="light-1" values={[{ value }]} />
+        <Meter type="bar" background="light-2" values={[{ value }]} />
       </Box>
     </Grommet>
   );
