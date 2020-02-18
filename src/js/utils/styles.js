@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-
+import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
@@ -9,12 +9,8 @@ export const baseStyle = css`
   line-height: ${props => props.theme.global.font.height};
   font-weight: ${props => props.theme.global.font.weight};
   ${props =>
-    !props.plain &&
-    props.theme.global.colors.background &&
-    css`
-      background: ${normalizeColor('background', props.theme, true)};
-      color: ${normalizeColor('text', props.theme, true)};
-    `} box-sizing: border-box;
+    !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
+  box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -255,14 +251,6 @@ export const placeholderStyle = css`
     ${placeholderColor};
   }
 `;
-
-// evalStyle() converts a styled-components item into a string
-export const evalStyle = (arg, theme) => {
-  if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
-    return arg[0]({ theme });
-  }
-  return arg;
-};
 
 const ALIGN_SELF_MAP = {
   center: 'center',
