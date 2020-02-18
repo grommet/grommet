@@ -7,20 +7,6 @@ import { deepMerge } from 'grommet/utils';
 
 import { Volume } from 'grommet-icons';
 
-const SimpleRangeInput = () => {
-  const [value, setValue] = React.useState(5);
-
-  const onChange = event => setValue(event.target.value);
-
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <RangeInput value={value} onChange={onChange} />
-      </Box>
-    </Grommet>
-  );
-};
-
 const customThemeRangeInput = deepMerge(grommet, {
   global: {
     spacing: '12px',
@@ -60,6 +46,4 @@ const CustomRangeInput = () => {
   );
 };
 
-storiesOf('RangeInput', module)
-  .add('Simple', () => <SimpleRangeInput />)
-  .add('Custom', () => <CustomRangeInput />);
+storiesOf('RangeInput', module).add('Custom', () => <CustomRangeInput />);
