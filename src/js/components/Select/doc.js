@@ -30,7 +30,7 @@ export const doc = Select => {
       PropTypes.bool,
       PropTypes.shape({
         position: PropTypes.oneOf(['top', 'bottom']).description(
-            `Add a clear value item add the top or at the bottom of the
+            `Add a clear value to the top or at the bottom of the
             container. By default no unselect option is present.`,
         ),
         label: PropTypes.string

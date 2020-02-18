@@ -35,8 +35,8 @@ const UnSelect = () => {
         justify="center"
         gap="small"
       >
-        <Box>
-          <Text>Select with default clear selection</Text>
+        <Box gap="small">
+          <Text>Default</Text>
           <Select
             options={optionList}
             value={value}
@@ -46,8 +46,8 @@ const UnSelect = () => {
             multiple
           />
         </Box>
-        <Box>
-          <Text>Select with custom location and label</Text>
+        <Box gap="small">
+          <Text>Position Bottom</Text>
           <Select
             options={optionList}
             value={value}
@@ -60,8 +60,8 @@ const UnSelect = () => {
             }}
           />
         </Box>
-        <Box>
-          <Text>Select with custom select render</Text>
+        <Box gap="small">
+          <Text>renderValue Function</Text>
           <Select
             options={optionList}
             value={value}
@@ -75,7 +75,7 @@ const UnSelect = () => {
                   <Button hoverIndicator="background" onClick={onClear}>
                     <Box
                       direction="row"
-                      background="dark-2"
+                      background="background-front"
                       alignItems="center"
                       gap="small"
                       pad="small"
@@ -108,4 +108,4 @@ const UnSelect = () => {
   );
 };
 
-storiesOf('Select', module).add('Clear selection', () => <UnSelect />);
+storiesOf('Select', module).add('Clear Selection', () => <UnSelect />);

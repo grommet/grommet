@@ -362,7 +362,7 @@ class SelectContainer extends Component {
       <Box flex={false}>
         <Button
           tabIndex="-1"
-          hoverIndicator="background"
+          hoverIndicator="background-contrast"
           onClick={this.clearSelection}
         >
           <Box
