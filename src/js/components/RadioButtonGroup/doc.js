@@ -21,6 +21,9 @@ export const doc = RadioButtonGroup => {
       \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
       `,
     ),
+    disabled: PropTypes.bool
+      .description(`Disables all options.`)
+      .defaultValue(false),
     name: PropTypes.string.description(
       `The DOM name attribute value to use for the underlying <input/> 
       elements.`,
