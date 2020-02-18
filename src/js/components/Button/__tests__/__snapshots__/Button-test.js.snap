@@ -1598,7 +1598,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="small"
     type="button"
   >
     Small
@@ -1609,7 +1608,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="medium"
     type="button"
   >
     Medium
@@ -1630,7 +1628,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="large"
     type="button"
   >
     Large
@@ -1641,7 +1638,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="small"
     type="button"
   >
     Small
@@ -1652,7 +1648,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="medium"
     type="button"
   >
     Medium
@@ -1673,7 +1668,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="large"
     type="button"
   >
     Large
@@ -1684,7 +1678,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="small"
     type="button"
   >
     <svg
@@ -1706,7 +1699,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="medium"
     type="button"
   >
     <svg
@@ -1749,7 +1741,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="large"
     type="button"
   >
     <svg
@@ -1771,7 +1762,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="small"
     type="button"
   >
     <div
@@ -1801,7 +1791,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="medium"
     type="button"
   >
     <div
@@ -1860,7 +1849,6 @@ exports[`Button size 1`] = `
     onFocus={[Function]}
     onMouseOut={[Function]}
     onMouseOver={[Function]}
-    size="large"
     type="button"
   >
     <div

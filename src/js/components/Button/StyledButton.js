@@ -14,20 +14,21 @@ import { defaultProps } from '../../default-props';
 const radiusStyle = props => {
   // border.radius shouldn't impact an only-icon rendering.
   const isIconOnly = props.hasIcon && !props.hasLabel;
+  const size = props.sizeProp;
 
   if (
     !isIconOnly &&
-    props.size &&
+    size &&
     props.theme.button.size &&
-    props.theme.button.size[props.size]
+    props.theme.button.size[size]
   ) {
-    return props.theme.button.size[props.size].border.radius;
+    return props.theme.button.size[size].border.radius;
   }
   return props.theme.button.border.radius;
 };
 
 const fontStyle = props => {
-  const size = props.size || 'medium';
+  const size = props.sizeProp || 'medium';
   const data = props.theme.text[size];
   return css`
     font-size: ${data.size};
@@ -36,15 +37,13 @@ const fontStyle = props => {
 };
 
 const padStyle = props => {
-  if (
-    props.size &&
-    props.theme.button.size &&
-    props.theme.button.size[props.size]
-  ) {
-    console.log('pad', props.theme.button.size[props.size].pad);
+  const size = props.sizeProp;
+
+  if (size && props.theme.button.size && props.theme.button.size[size]) {
+    console.log('pad', props.theme.button.size[size].pad);
     return css`
-      ${props.theme.button.size[props.size].pad.vertical}
-      ${props.theme.button.size[props.size].pad.horizontal}
+      ${props.theme.button.size[size].pad.vertical}
+      ${props.theme.button.size[size].pad.horizontal}
     `;
   }
   return css`
