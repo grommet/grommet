@@ -490,10 +490,10 @@ exports[`Form update 1`] = `
   text-transform: none;
   border: 2px solid #7D4CDB;
   border-radius: 18px;
-  font-size: 18px;
-  line-height: 24px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;

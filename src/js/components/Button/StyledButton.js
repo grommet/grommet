@@ -40,7 +40,6 @@ const padStyle = props => {
   const size = props.sizeProp;
 
   if (size && props.theme.button.size && props.theme.button.size[size]) {
-    console.log('pad', props.theme.button.size[size].pad);
     return css`
       ${props.theme.button.size[size].pad.vertical}
       ${props.theme.button.size[size].pad.horizontal}
