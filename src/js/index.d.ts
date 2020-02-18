@@ -55,6 +55,7 @@ export * from './components/Tabs';
 export * from './components/Text';
 export * from './components/TextArea';
 export * from './components/TextInput';
+export * from './components/Tree';
 export * from './components/Video';
 export * from './components/WorldMap';
 export * from './contexts/AnnounceContext';
