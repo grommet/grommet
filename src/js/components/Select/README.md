@@ -158,7 +158,6 @@ boolean
   label: string,
   renderValue: function
 }
-
 ```
 
 **disabled**
@@ -280,8 +279,8 @@ function
 
 **messages**
 
-Custom messages.  Defaults to `{
- "multiple": "multiple"
+Custom messages. Defaults to `{
+  "multiple": "multiple"
 }`.
 
 ```

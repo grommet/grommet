@@ -39,7 +39,7 @@ export const doc = Select => {
         renderValue: PropTypes.func.description(
           `Render function to customize clear value item.
           It receives as a parameter the callback to call
-          when clicking on the item`
+          when clicking on the item`,
         ),
       }),
     ]).description(`Whether to provide button to clear selection.`),

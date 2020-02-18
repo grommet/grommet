@@ -3942,17 +3942,16 @@ string",
         "name": "closeOnChange",
       },
       Object {
-        "defaultValue": "Clear selection",
-        "description": "Label for the clear selection item",
-        "format": "string",
-        "name": "clearValueLabel",
-      },
-      Object {
-        "description": "Add a clear value item add the top or at the bottom of the container.
-      By default no unselect option is present.",
-        "format": "bottom
-top",
-        "name": "clearValuePosition",
+        "description": "Whether to provide button to clear selection.",
+        "format": "boolean
+{
+  position: 
+    top
+    bottom,
+  label: string,
+  renderValue: function
+}",
+        "name": "clear",
       },
       Object {
         "defaultValue": false,
@@ -4047,6 +4046,9 @@ function",
         "name": "labelKey",
       },
       Object {
+        "defaultValue": Object {
+          "multiple": "multiple",
+        },
         "description": "Custom messages.",
         "format": "{
   multiple: string
@@ -4122,13 +4124,6 @@ node",
         "description": "Whether this is a plain Select input with no border or padding.",
         "format": "boolean",
         "name": "plain",
-      },
-      Object {
-        "description": "Render function to customize clear value item.
-      It receives as a parameter the callback to call
-      when clicking on the item",
-        "format": "function",
-        "name": "renderClearValue",
       },
       Object {
         "defaultValue": true,
