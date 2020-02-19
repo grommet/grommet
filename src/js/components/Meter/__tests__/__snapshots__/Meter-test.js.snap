@@ -271,42 +271,42 @@ exports[`Meter many values 1`] = `
     <path
       d="M 288,12 L 336,12"
       fill="none"
-      stroke="#00873D"
+      stroke="#00739D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
     <path
       d="M 240,12 L 288,12"
       fill="none"
-      stroke="#FD6FFF"
+      stroke="#3D138D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
     <path
       d="M 192,12 L 240,12"
       fill="none"
-      stroke="#3D138D"
+      stroke="#00873D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
     <path
       d="M 144,12 L 192,12"
       fill="none"
-      stroke="#6FFFB0"
+      stroke="#A2423D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
     <path
       d="M 96,12 L 144,12"
       fill="none"
-      stroke="#00873D"
+      stroke="#6FFFB0"
       strokeLinecap="butt"
       strokeWidth={24}
     />
     <path
       d="M 48,12 L 96,12"
       fill="none"
-      stroke="#FD6FFF"
+      stroke="#00739D"
       strokeLinecap="butt"
       strokeWidth={24}
     />

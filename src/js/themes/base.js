@@ -77,9 +77,10 @@ const colors = {
   },
   focus: focusColor,
   'graph-0': 'accent-1',
-  'graph-1': 'neutral-1',
-  'graph-2': 'accent-2',
-  'graph-3': 'neutral-2',
+  'graph-1': 'neutral-3',
+  'graph-2': 'neutral-2',
+  'graph-3': 'neutral-1',
+  'graph-4': 'neutral-4',
   placeholder: '#AAAAAA',
   selected: 'brand',
   text: {
