@@ -576,7 +576,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const hasBetweenBorder =
     border === 'between' || (border && border.side === 'between');
   const styles = [];
-  if (directionProp === 'column' || 'column-reverse') {
+  if (directionProp === 'column-reverse' || directionProp === 'column' ) {
     const height = theme.global.edgeSize[gap] || gap;
     styles.push(
       css`
