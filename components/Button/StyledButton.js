@@ -13,12 +13,40 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+var radiusStyle = function radiusStyle(props) {
+  // border.radius shouldn't impact an only-icon rendering.
+  var isIconOnly = props.hasIcon && !props.hasLabel;
+  var size = props.sizeProp;
+
+  if (!isIconOnly && size && props.theme.button.size && props.theme.button.size[size]) {
+    return props.theme.button.size[size].border.radius;
+  }
+
+  return props.theme.button.border.radius;
+};
+
+var fontStyle = function fontStyle(props) {
+  var size = props.sizeProp || 'medium';
+  var data = props.theme.text[size];
+  return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
+};
+
+var padStyle = function padStyle(props) {
+  var size = props.sizeProp;
+
+  if (size && props.theme.button.size && props.theme.button.size[size]) {
+    return (0, _styledComponents.css)(["", " ", ""], props.theme.button.size[size].pad.vertical, props.theme.button.size[size].pad.horizontal);
+  }
+
+  return (0, _styledComponents.css)(["", " ", ""], props.theme.button.padding.vertical, props.theme.button.padding.horizontal);
+};
+
 var basicStyle = function basicStyle(props) {
-  return (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";color:", ";padding:", " ", ";font-size:", ";line-height:", ";"], props.theme.button.border.width, (0, _utils.normalizeColor)(props.colorValue || props.theme.button.border.color || 'control', props.theme), props.theme.button.border.radius, (0, _utils.normalizeColor)(props.theme.button.color || 'text', props.theme), props.theme.button.padding.vertical, props.theme.button.padding.horizontal, props.theme.text.medium.size, props.theme.text.medium.height);
+  return (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";color:", ";padding:", ";", ""], props.theme.button.border.width, (0, _utils.normalizeColor)(props.colorValue || props.theme.button.border.color || 'control', props.theme), radiusStyle(props), (0, _utils.normalizeColor)(props.theme.button.color || 'text', props.theme), padStyle(props), fontStyle(props));
 };
 
 var primaryStyle = function primaryStyle(props) {
-  return (0, _styledComponents.css)(["", " border-radius:", ";"], (0, _utils.backgroundStyle)((0, _utils.normalizeColor)(props.colorValue || props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), props.theme.button.border.radius);
+  return (0, _styledComponents.css)(["", " border-radius:", ";"], (0, _utils.backgroundStyle)((0, _utils.normalizeColor)(props.colorValue || props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props));
 };
 
 function getHoverColor(props) {
@@ -80,7 +108,7 @@ var StyledButton = _styledComponents["default"].button.withConfig({
 }, function (props) {
   return props.hasIcon && !props.hasLabel && "\n    line-height: 0;\n  ";
 }, function (props) {
-  return props.pad && props.hasIcon && !props.hasLabel && "\npadding: " + props.theme.global.edgeSize.small + ";\n";
+  return props.pad && props.hasIcon && !props.hasLabel && "\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
 }, function (props) {
   return props.theme.button && props.theme.button.extend;
 });

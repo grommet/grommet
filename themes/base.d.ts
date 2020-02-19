@@ -277,6 +277,35 @@ export interface ThemeType {
     primary?: {
       color?: ColorType;
     }
+    size?: {
+      small?: {
+        border?: {
+          radius?: string,
+        }
+        pad?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+      },
+      medium?: { 
+        border?: {
+          radius?: string,
+        }
+        pad?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+      }
+      large?: {
+        border?: {
+          radius?: string,
+        }
+        pad?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+      }
+    },
   };
   calendar?: {
     small?: {

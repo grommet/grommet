@@ -29,10 +29,11 @@ var Button = forwardRef(function (_ref, ref) {
       plain = _ref.plain,
       primary = _ref.primary,
       reverse = _ref.reverse,
+      size = _ref.size,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'button' : _ref$type,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "type", "as"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "size", "type", "as"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -125,6 +126,7 @@ var Button = forwardRef(function (_ref, ref) {
     pad: !plain,
     plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
     primary: primary,
+    sizeProp: size,
     type: !href ? type : undefined
   }), contents);
 });

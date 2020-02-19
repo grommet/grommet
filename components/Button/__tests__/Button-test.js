@@ -8,6 +8,8 @@ var _react2 = require("@testing-library/react");
 
 require("jest-styled-components");
 
+var _grommetIcons = require("grommet-icons");
+
 var _utils = require("../../../utils");
 
 var _ = require("../..");
@@ -213,6 +215,72 @@ describe('Button', function () {
     var button = (0, _utils.findAllByType)(tree, 'button');
     button[0].props.onClick();
     expect(onClick).toBeCalled();
+  });
+  test('size', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
+      size: "small",
+      label: "Small"
+    }), _react["default"].createElement(_.Button, {
+      size: "medium",
+      label: "Medium"
+    }), _react["default"].createElement(_.Button, {
+      label: "Default"
+    }), _react["default"].createElement(_.Button, {
+      size: "large",
+      label: "Large"
+    }), _react["default"].createElement(_.Button, {
+      primary: true,
+      size: "small",
+      label: "Small"
+    }), _react["default"].createElement(_.Button, {
+      primary: true,
+      size: "medium",
+      label: "Medium"
+    }), _react["default"].createElement(_.Button, {
+      primary: true,
+      label: "Default"
+    }), _react["default"].createElement(_.Button, {
+      primary: true,
+      size: "large",
+      label: "Large"
+    }), _react["default"].createElement(_.Button, {
+      size: "small",
+      icon: _react["default"].createElement(_grommetIcons.Add, null),
+      primary: true
+    }), _react["default"].createElement(_.Button, {
+      size: "medium",
+      icon: _react["default"].createElement(_grommetIcons.Add, null),
+      primary: true
+    }), _react["default"].createElement(_.Button, {
+      icon: _react["default"].createElement(_grommetIcons.Add, null),
+      primary: true
+    }), _react["default"].createElement(_.Button, {
+      size: "large",
+      icon: _react["default"].createElement(_grommetIcons.Add, null),
+      primary: true
+    }), _react["default"].createElement(_.Button, {
+      size: "small",
+      label: "Small",
+      icon: _react["default"].createElement(_grommetIcons.Next, null),
+      reverse: true
+    }), _react["default"].createElement(_.Button, {
+      size: "medium",
+      label: "Medium",
+      icon: _react["default"].createElement(_grommetIcons.Next, null),
+      reverse: true
+    }), _react["default"].createElement(_.Button, {
+      label: "Default",
+      icon: _react["default"].createElement(_grommetIcons.Next, null),
+      reverse: true
+    }), _react["default"].createElement(_.Button, {
+      size: "large",
+      label: "Large",
+      icon: _react["default"].createElement(_grommetIcons.Next, null),
+      reverse: true
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
   test('as', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {

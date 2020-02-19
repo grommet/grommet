@@ -1029,6 +1029,12 @@ string",
         "name": "active",
       },
       Object {
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
+        "name": "as",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -1057,6 +1063,19 @@ boolean",
         "description": "Whether when 'plain' it should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
+      },
+      Object {
+        "defaultValue": "small",
+        "description": "The amount of spacing between icon and label in the button.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "defaultValue": false,
@@ -1099,30 +1118,9 @@ background
         "name": "href",
       },
       Object {
-        "description": "Specifies where to display the URL defined in the href property.",
-        "format": "_self
-_blank
-_parent
-_top",
-        "name": "target",
-      },
-      Object {
         "description": "Icon element to place in the button.",
         "format": "element",
         "name": "icon",
-      },
-      Object {
-        "defaultValue": "small",
-        "description": "The amount of spacing between icon and label in the button.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "gap",
       },
       Object {
         "description": "Label text to place in the button.",
@@ -1131,47 +1129,58 @@ string",
       },
       Object {
         "description": "Click handler. Not setting this property and not specifying a href
-causes the Button to be disabled.",
+        causes the Button to be disabled.",
         "format": "function",
         "name": "onClick",
       },
       Object {
         "defaultValue": false,
         "description": "Whether this is a plain button with no border or pad.
-Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as 
-well.",
+          Non plain button will show both pad and border.
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well.",
         "format": "boolean",
         "name": "plain",
       },
       Object {
         "defaultValue": false,
         "description": "Whether this is a primary button. There should be at most one per page
-         or screen.",
+            or screen.",
         "format": "boolean",
         "name": "primary",
       },
       Object {
         "defaultValue": false,
         "description": "Whether an icon and label should be reversed so that the icon is at the
-end of the anchor.",
+              end of the anchor.",
         "format": "boolean",
         "name": "reverse",
       },
       Object {
+        "description": "The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
+      'size' will not impact any icon related sizing.",
+        "format": "small
+medium
+large",
+        "name": "size",
+      },
+      Object {
+        "description": "Specifies where to display the URL defined in the href property.",
+        "format": "_self
+_blank
+_parent
+_top",
+        "name": "target",
+      },
+      Object {
         "defaultValue": "button",
         "description": "The type of button. Set the type to submit for the default button on 
-        forms.",
+                forms.",
         "format": "button
 reset
 submit",
         "name": "type",
-      },
-      Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
       },
     ],
     "usage": "import { Button } from 'grommet';

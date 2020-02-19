@@ -2,12 +2,40 @@ import styled, { css } from 'styled-components';
 import { activeStyle, backgroundStyle, disabledStyle, focusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
+var radiusStyle = function radiusStyle(props) {
+  // border.radius shouldn't impact an only-icon rendering.
+  var isIconOnly = props.hasIcon && !props.hasLabel;
+  var size = props.sizeProp;
+
+  if (!isIconOnly && size && props.theme.button.size && props.theme.button.size[size]) {
+    return props.theme.button.size[size].border.radius;
+  }
+
+  return props.theme.button.border.radius;
+};
+
+var fontStyle = function fontStyle(props) {
+  var size = props.sizeProp || 'medium';
+  var data = props.theme.text[size];
+  return css(["font-size:", ";line-height:", ";"], data.size, data.height);
+};
+
+var padStyle = function padStyle(props) {
+  var size = props.sizeProp;
+
+  if (size && props.theme.button.size && props.theme.button.size[size]) {
+    return css(["", " ", ""], props.theme.button.size[size].pad.vertical, props.theme.button.size[size].pad.horizontal);
+  }
+
+  return css(["", " ", ""], props.theme.button.padding.vertical, props.theme.button.padding.horizontal);
+};
+
 var basicStyle = function basicStyle(props) {
-  return css(["border:", " solid ", ";border-radius:", ";color:", ";padding:", " ", ";font-size:", ";line-height:", ";"], props.theme.button.border.width, normalizeColor(props.colorValue || props.theme.button.border.color || 'control', props.theme), props.theme.button.border.radius, normalizeColor(props.theme.button.color || 'text', props.theme), props.theme.button.padding.vertical, props.theme.button.padding.horizontal, props.theme.text.medium.size, props.theme.text.medium.height);
+  return css(["border:", " solid ", ";border-radius:", ";color:", ";padding:", ";", ""], props.theme.button.border.width, normalizeColor(props.colorValue || props.theme.button.border.color || 'control', props.theme), radiusStyle(props), normalizeColor(props.theme.button.color || 'text', props.theme), padStyle(props), fontStyle(props));
 };
 
 var primaryStyle = function primaryStyle(props) {
-  return css(["", " border-radius:", ";"], backgroundStyle(normalizeColor(props.colorValue || props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), props.theme.button.border.radius);
+  return css(["", " border-radius:", ";"], backgroundStyle(normalizeColor(props.colorValue || props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props));
 };
 
 function getHoverColor(props) {
@@ -69,7 +97,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.hasIcon && !props.hasLabel && "\n    line-height: 0;\n  ";
 }, function (props) {
-  return props.pad && props.hasIcon && !props.hasLabel && "\npadding: " + props.theme.global.edgeSize.small + ";\n";
+  return props.pad && props.hasIcon && !props.hasLabel && "\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
 }, function (props) {
   return props.theme.button && props.theme.button.extend;
 });
