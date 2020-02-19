@@ -227,9 +227,9 @@ zoomOut
 
 **background**
 
-Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
 
 ```
 string
@@ -570,8 +570,8 @@ string
 **pad**
 
 The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box Defaults to `none`.
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box Defaults to `none`.
 
 ```
 none

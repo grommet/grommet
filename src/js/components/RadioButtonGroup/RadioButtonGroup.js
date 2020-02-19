@@ -16,6 +16,7 @@ const RadioButtonGroup = forwardRef(
   (
     {
       children,
+      disabled,
       gap = 'small',
       name,
       onChange,
@@ -32,10 +33,15 @@ const RadioButtonGroup = forwardRef(
       () =>
         optionsProp.map(o =>
           typeof o === 'string'
-            ? { id: rest.id ? `${rest.id}-${o}` : o, label: o, value: o }
-            : o,
+            ? {
+                disabled,
+                id: rest.id ? `${rest.id}-${o}` : o,
+                label: o,
+                value: o,
+              }
+            : { disabled, ...o },
         ),
-      [optionsProp, rest.id],
+      [disabled, optionsProp, rest.id],
     );
 
     const [value, setValue] = formContext.useFormContext(name, valueProp);
@@ -98,7 +104,13 @@ const RadioButtonGroup = forwardRef(
         <Box ref={ref} gap={gap} {...rest}>
           {options.map(
             (
-              { disabled, id, label, value: optionValue, ...optionRest },
+              {
+                disabled: optionDisabled,
+                id,
+                label,
+                value: optionValue,
+                ...optionRest
+              },
               index,
             ) => (
               <RadioButton
@@ -108,7 +120,7 @@ const RadioButtonGroup = forwardRef(
                 key={optionValue}
                 name={name}
                 label={!children ? label : undefined}
-                disabled={disabled}
+                disabled={optionDisabled}
                 checked={optionValue === value}
                 focus={
                   focus &&

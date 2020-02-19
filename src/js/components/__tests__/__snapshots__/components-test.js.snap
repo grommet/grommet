@@ -419,9 +419,9 @@ zoomOut
         "name": "animation",
       },
       Object {
-        "description": "Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.",
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
         "format": "string
 {
   color: string,
@@ -728,8 +728,8 @@ string",
       Object {
         "defaultValue": "none",
         "description": "The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box",
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box",
         "format": "none
 xxsmall
 xsmall
@@ -1029,6 +1029,12 @@ string",
         "name": "active",
       },
       Object {
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
+        "name": "as",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -1057,6 +1063,19 @@ boolean",
         "description": "Whether when 'plain' it should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
+      },
+      Object {
+        "defaultValue": "small",
+        "description": "The amount of spacing between icon and label in the button.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "defaultValue": false,
@@ -1099,30 +1118,9 @@ background
         "name": "href",
       },
       Object {
-        "description": "Specifies where to display the URL defined in the href property.",
-        "format": "_self
-_blank
-_parent
-_top",
-        "name": "target",
-      },
-      Object {
         "description": "Icon element to place in the button.",
         "format": "element",
         "name": "icon",
-      },
-      Object {
-        "defaultValue": "small",
-        "description": "The amount of spacing between icon and label in the button.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "gap",
       },
       Object {
         "description": "Label text to place in the button.",
@@ -1131,47 +1129,58 @@ string",
       },
       Object {
         "description": "Click handler. Not setting this property and not specifying a href
-causes the Button to be disabled.",
+        causes the Button to be disabled.",
         "format": "function",
         "name": "onClick",
       },
       Object {
         "defaultValue": false,
         "description": "Whether this is a plain button with no border or pad.
-Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as 
-well.",
+          Non plain button will show both pad and border.
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well.",
         "format": "boolean",
         "name": "plain",
       },
       Object {
         "defaultValue": false,
         "description": "Whether this is a primary button. There should be at most one per page
-         or screen.",
+            or screen.",
         "format": "boolean",
         "name": "primary",
       },
       Object {
         "defaultValue": false,
         "description": "Whether an icon and label should be reversed so that the icon is at the
-end of the anchor.",
+              end of the anchor.",
         "format": "boolean",
         "name": "reverse",
       },
       Object {
+        "description": "The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
+      'size' will not impact any icon related sizing.",
+        "format": "small
+medium
+large",
+        "name": "size",
+      },
+      Object {
+        "description": "Specifies where to display the URL defined in the href property.",
+        "format": "_self
+_blank
+_parent
+_top",
+        "name": "target",
+      },
+      Object {
         "defaultValue": "button",
         "description": "The type of button. Set the type to submit for the default button on 
-        forms.",
+                forms.",
         "format": "button
 reset
 submit",
         "name": "type",
-      },
-      Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
       },
     ],
     "usage": "import { Button } from 'grommet';
@@ -1742,8 +1751,9 @@ string",
         "name": "id",
       },
       Object {
-        "description": "Called when the user clicks on it.
-      This is only available when the type is line or area.",
+        "description": "Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.",
         "format": "function",
         "name": "onClick",
       },
@@ -2241,6 +2251,15 @@ string",
         "name": "errors",
       },
       Object {
+        "defaultValue": Object {},
+        "description": "An object representing any information details in the data.
+        They keys should match the keys in the value object.",
+        "format": "{
+
+}",
+        "name": "infos",
+      },
+      Object {
         "defaultValue": Object {
           "invalid": "invalid",
           "required": "required",
@@ -2348,7 +2367,7 @@ object",
         "name": "disabled",
       },
       Object {
-        "description": "Any error text describing issues with the field",
+        "description": "Any error text describing issues with the field's value",
         "format": "string
 node",
         "name": "error",
@@ -2363,6 +2382,12 @@ node",
         "description": "The id of the input element contained in this field",
         "format": "string",
         "name": "htmlFor",
+      },
+      Object {
+        "description": "Any informational text regarding the field's value",
+        "format": "string
+node",
+        "name": "info",
       },
       Object {
         "description": "A short label describing the field",
@@ -2472,16 +2497,23 @@ string",
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
-      describing the validation issue, if any.",
+      describing the validation issue, if any, or an object with 'message'
+      and 'status' properties.",
         "format": "{
   regexp: object,
-  message: string
+  message: string,
+  status: 
+    error
+    info
 }
 function
 [
   {
     regexp: object,
-    message: string
+    message: string,
+    status: 
+      error
+      info
   }
   function
 ]",
@@ -3386,6 +3418,12 @@ with the same name so form submissions work.",
       ",
         "format": "function",
         "name": "children",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Disables all options.",
+        "format": "boolean",
+        "name": "disabled",
       },
       Object {
         "description": "The DOM name attribute value to use for the underlying <input/> 
