@@ -528,10 +528,12 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
   <input
     autocomplete="off"
     class="StyledMaskedInput-sc-99vkfa-0 eNpkOj"
+    data-g-tabindex="none"
     data-testid="test-input"
     id="item"
     name="item"
     placeholder="!"
+    tabindex="-1"
     value="aa!"
   />
 </div>
@@ -1177,10 +1179,12 @@ exports[`MaskedInput option via mouse 4`] = `
   <input
     autocomplete="off"
     class="StyledMaskedInput-sc-99vkfa-0 eNpkOj"
+    data-g-tabindex="none"
     data-testid="test-input"
     id="item"
     name="item"
     placeholder="!"
+    tabindex="-1"
     value="aa!"
   />
 </div>

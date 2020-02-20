@@ -3323,6 +3323,72 @@ string",
   },
   "Meter": [Function],
   "Nav": [Function],
+  "NumberInput": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=NumberInput&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=numberinput&module=%2Fsrc%2FNumberInput.js",
+      },
+    ],
+    "description": "A control to input a nnumbers",
+    "intrinsicElement": "input",
+    "name": "NumberInput",
+    "properties": Array [
+      Object {
+        "description": "The id attribute of the input.",
+        "format": "string",
+        "name": "id",
+      },
+      Object {
+        "description": "Whether the plain text input should receive a focus outline.",
+        "format": "boolean",
+        "name": "focusIndicator",
+      },
+      Object {
+        "description": "The name attribute of the input.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Function that will be called when the user types in the input.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Placeholder to use when no value is provided.",
+        "format": "node",
+        "name": "placeholder",
+      },
+      Object {
+        "description": "Whether this is a plain input with no border or padding.
+Only use this when the containing context provides sufficient affordance",
+        "format": "boolean",
+        "name": "plain",
+      },
+      Object {
+        "description": "The size of the NumberInput.",
+        "format": "small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "description": "What number to put in the input.",
+        "format": "number",
+        "name": "value",
+      },
+    ],
+    "usage": "import { NumberInput } from 'grommet';
+      <NumberInput id='item' name='item' />",
+  },
   "Paragraph": [Function],
   "RadioButton": Object {
     "availableAt": Array [
