@@ -28,8 +28,11 @@ var updateErrors = function updateErrors(nextErrors, name, error) {
   // to update nextErrors, to avoid code duplication
 
   /* eslint-disable no-param-reassign */
-  if (typeof error === 'object' && error.status === 'error' || typeof error === 'string') {
-    nextErrors[name] = typeof error === 'object' ? error.message : error;
+  var hasStatusError = typeof error === 'object' && error.status === 'error'; // typeof error === 'object' is implied for both cases of error with
+  // a status message and for an error object that is a react node
+
+  if (typeof error === 'object' && !error.status || hasStatusError || typeof error === 'string') {
+    nextErrors[name] = hasStatusError ? error.message : error;
   } else {
     delete nextErrors[name];
   }

@@ -625,6 +625,99 @@ exports[`Form update 1`] = `
 </div>
 `;
 
+exports[`Form validate 1`] = `
+.c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FF4040;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+<span
+  class="c0"
+>
+  simple string
+</span>
+`;
+
+exports[`Form validate 2`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+<span
+  class="c0"
+>
+   ReactNode 
+</span>
+`;
+
+exports[`Form validate 3`] = `
+<span
+  class="StyledText-sc-1sadyjn-0 keDfiS"
+>
+  status error
+</span>
+`;
+
+exports[`Form validate 4`] = `
+.c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #666666;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+<span
+  class="c0"
+>
+  status info
+</span>
+`;
+
 exports[`Form with field 1`] = `
 .c0 {
   font-size: 18px;
