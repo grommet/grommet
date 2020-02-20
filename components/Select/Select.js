@@ -101,8 +101,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
   var _formContext$useFormC = formContext.useFormContext(name, valueProp),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+      value = _formContext$useFormC[0];
 
   var _useState = (0, _react.useState)(propOpen),
       open = _useState[0],
@@ -130,7 +129,6 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
 
   var onSelectChange = function onSelectChange(event) {
     if (closeOnChange) onRequestClose();
-    setValue(event.value);
 
     for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
