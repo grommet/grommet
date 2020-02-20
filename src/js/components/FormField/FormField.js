@@ -158,6 +158,8 @@ const FormField = forwardRef(
     let normalizedError = error;
     let normalizedInfo = info;
     let onFieldBlur;
+    // put rest on container, unless we use renderInput()
+    let containerRest = rest;
     if (context && context.addValidation) {
       const {
         addValidation,
@@ -170,6 +172,7 @@ const FormField = forwardRef(
       addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
       normalizedInfo = info || infos[name];
+      if (!contents) containerRest = {};
       contents = contents || renderInput(formValue, !!normalizedError);
       if (onContextBlur) {
         onFieldBlur = () => onContextBlur(name);
@@ -282,6 +285,7 @@ const FormField = forwardRef(
           if (onFieldBlur) onFieldBlur(event);
           if (onBlur) onBlur(event);
         }}
+        {...containerRest}
       >
         {(label && component !== CheckBox) || help ? (
           <>
