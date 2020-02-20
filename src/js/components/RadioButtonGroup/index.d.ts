@@ -6,7 +6,7 @@ export interface RadioButtonGroupProps {
   name: string;
   onChange?: ((event: React.ChangeEvent<HTMLInputElement>) => void);
   options: (string | { disabled?: boolean, id?: string, label?: (string | React.ReactNode), value: string})[];
-  value?: string;
+  value?: string | object;
 }
 
 declare const RadioButtonGroup: React.ComponentClass<RadioButtonGroupProps & BoxProps>;

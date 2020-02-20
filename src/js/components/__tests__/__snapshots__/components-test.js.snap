@@ -3454,7 +3454,8 @@ with the same name so form submissions work.",
       },
       Object {
         "description": "Currently selected option value.",
-        "format": "string",
+        "format": "string
+object",
         "name": "value",
       },
     ],
