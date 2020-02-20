@@ -41,7 +41,7 @@ var connection = function connection(fromTarget, toTarget, _ref2) {
   return _extends({
     fromTarget: fromTarget,
     toTarget: toTarget,
-    color: color || 'accent-1',
+    color: color || 'graph-0',
     thickness: 'xsmall',
     round: true,
     type: 'rectilinear'
@@ -223,7 +223,7 @@ var Components = function Components() {
       color: 'light-3'
     }, {
       value: 30,
-      color: 'accent-1'
+      color: 'graph-0'
     }, {
       value: 20,
       color: 'light-4'
