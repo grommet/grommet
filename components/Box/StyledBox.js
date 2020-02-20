@@ -442,7 +442,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
   var hasBetweenBorder = border === 'between' || border && border.side === 'between';
   var styles = [];
 
-  if (directionProp === 'column') {
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
     var height = theme.global.edgeSize[gap] || gap;
     styles.push((0, _styledComponents.css)(["height:", ";"], height));
 
