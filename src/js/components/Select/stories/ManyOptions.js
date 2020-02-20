@@ -16,7 +16,7 @@ class Option extends PureComponent {
   }
 }
 
-const dummyOptions = Array(2000)
+const dummyOptions = Array(90)
   .fill()
   .map((_, i) => `option ${i}`)
   .sort((a, b) =>

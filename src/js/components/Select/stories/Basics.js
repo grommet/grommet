@@ -45,7 +45,7 @@ const customRoundedTheme = deepMerge(grommet, {
 const SimpleSelect = ({ theme, ...rest }) => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
-
+  console.log(value);
   return (
     <Grommet full theme={theme || grommet}>
       <Box fill align="center" justify="start" pad="large">
