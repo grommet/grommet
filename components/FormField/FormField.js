@@ -155,7 +155,9 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
   }) || children;
   var normalizedError = error;
   var normalizedInfo = info;
-  var onFieldBlur;
+  var onFieldBlur; // put rest on container, unless we use renderInput()
+
+  var containerRest = rest;
 
   if (context && context.addValidation) {
     var addValidation = context.addValidation,
@@ -167,6 +169,7 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
     addValidation(name, validateField(required, validate, messages));
     normalizedError = error || errors[name];
     normalizedInfo = info || infos[name];
+    if (!contents) containerRest = {};
     contents = contents || renderInput(formValue, !!normalizedError);
 
     if (onContextBlur) {
@@ -245,7 +248,7 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
     }
   }
 
-  return _react["default"].createElement(FormFieldBox, {
+  return _react["default"].createElement(FormFieldBox, _extends({
     ref: ref,
     className: className,
     border: border && border.position === 'outer' ? _extends({}, border, {
@@ -264,7 +267,7 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
       if (onFieldBlur) onFieldBlur(event);
       if (_onBlur) _onBlur(event);
     }
-  }, label && component !== _CheckBox.CheckBox || help ? _react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && _react["default"].createElement(_Text.Text, _extends({
+  }, containerRest), label && component !== _CheckBox.CheckBox || help ? _react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && _react["default"].createElement(_Text.Text, _extends({
     as: "label",
     htmlFor: htmlFor
   }, formField.label), label), help && _react["default"].createElement(_Text.Text, formField.help, help)) : undefined, contents, normalizedError && _react["default"].createElement(_Text.Text, formField.error, normalizedError), normalizedInfo && _react["default"].createElement(_Text.Text, formField.info, normalizedInfo));

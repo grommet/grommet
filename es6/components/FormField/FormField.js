@@ -137,7 +137,9 @@ var FormField = forwardRef(function (_ref, ref) {
   }) || children;
   var normalizedError = error;
   var normalizedInfo = info;
-  var onFieldBlur;
+  var onFieldBlur; // put rest on container, unless we use renderInput()
+
+  var containerRest = rest;
 
   if (context && context.addValidation) {
     var addValidation = context.addValidation,
@@ -149,6 +151,7 @@ var FormField = forwardRef(function (_ref, ref) {
     addValidation(name, validateField(required, validate, messages));
     normalizedError = error || errors[name];
     normalizedInfo = info || infos[name];
+    if (!contents) containerRest = {};
     contents = contents || renderInput(formValue, !!normalizedError);
 
     if (onContextBlur) {
@@ -227,7 +230,7 @@ var FormField = forwardRef(function (_ref, ref) {
     }
   }
 
-  return React.createElement(FormFieldBox, {
+  return React.createElement(FormFieldBox, _extends({
     ref: ref,
     className: className,
     border: border && border.position === 'outer' ? _extends({}, border, {
@@ -246,7 +249,7 @@ var FormField = forwardRef(function (_ref, ref) {
       if (onFieldBlur) onFieldBlur(event);
       if (_onBlur) _onBlur(event);
     }
-  }, label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
+  }, containerRest), label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
   }, formField.label), label), help && React.createElement(Text, formField.help, help)) : undefined, contents, normalizedError && React.createElement(Text, formField.error, normalizedError), normalizedInfo && React.createElement(Text, formField.info, normalizedInfo));
