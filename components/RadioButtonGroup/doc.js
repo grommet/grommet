@@ -20,7 +20,7 @@ var doc = function doc(RadioButtonGroup) {
       label: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.element]),
       value: _reactDesc.PropTypes.string.isRequired
     }))]).description("Options can be either a string or an object.").isRequired,
-    value: _reactDesc.PropTypes.string.description("Currently selected option value.")
+    value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.object]).description("Currently selected option value.")
   };
   return DocumentedRadioButtonGroup;
 };

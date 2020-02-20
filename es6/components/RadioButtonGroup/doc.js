@@ -13,7 +13,7 @@ export var doc = function doc(RadioButtonGroup) {
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
       value: PropTypes.string.isRequired
     }))]).description("Options can be either a string or an object.").isRequired,
-    value: PropTypes.string.description("Currently selected option value.")
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).description("Currently selected option value.")
   };
   return DocumentedRadioButtonGroup;
 };
