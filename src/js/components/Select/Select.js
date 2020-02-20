@@ -83,7 +83,7 @@ const Select = forwardRef(
     const inputRef = useRef();
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    const [value] = formContext.useFormContext(name, valueProp);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => {
@@ -106,7 +106,6 @@ const Select = forwardRef(
 
     const onSelectChange = (event, ...args) => {
       if (closeOnChange) onRequestClose();
-      setValue(event.value);
       if (onChange) onChange({ ...event, target: inputRef.current }, ...args);
     };
 
