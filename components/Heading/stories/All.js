@@ -10,8 +10,6 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-var _utils = require("grommet/utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var H = function H(_ref) {
@@ -60,50 +58,6 @@ var All = function All() {
   })));
 };
 
-var Color = function Color() {
-  return _react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Heading, {
-    color: "accent-1"
-  }, "Colored Heading"));
-};
-
-var customlevel = (0, _utils.deepMerge)(_themes.grommet, {
-  heading: {
-    level: {
-      5: {
-        small: {
-          size: '12px',
-          height: '16px'
-        },
-        medium: {
-          size: '14px',
-          height: '18px'
-        },
-        large: {
-          size: '16px',
-          height: '20px'
-        }
-      }
-    },
-    extend: function extend(props) {
-      return "color: " + props.theme.global.colors.brand;
-    }
-  }
-});
-
-var CustomHeading = function CustomHeading() {
-  return _react["default"].createElement(_grommet.Grommet, {
-    theme: customlevel
-  }, _react["default"].createElement(_grommet.Heading, {
-    level: 5
-  }, "Heading level 5"));
-};
-
 (0, _react2.storiesOf)('Heading', module).add('All', function () {
   return _react["default"].createElement(All, null);
-}).add('Color', function () {
-  return _react["default"].createElement(Color, null);
-}).add('Custom', function () {
-  return _react["default"].createElement(CustomHeading, null);
 });
