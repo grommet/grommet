@@ -17,7 +17,12 @@ const FullLayer = () => {
           onClick={() => setShowLayer(true)}
         />
         {showLayer && (
-          <Layer full animation="fadeIn">
+          <Layer
+            full
+            animation="fadeIn"
+            onEsc={() => setShowLayer(false)}
+            modal={false}
+          >
             <Box fill background="light-4" align="center" justify="center">
               <Button
                 primary
