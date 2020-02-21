@@ -19,7 +19,7 @@ const optionList = [
   'Ten',
 ];
 
-const UnSelect = () => {
+const ClearSelection = () => {
   const [value, setValue] = useState('');
 
   const onClickClearOptions = () => {
@@ -43,7 +43,6 @@ const UnSelect = () => {
             onChange={({ option }) => setValue(option)}
             placeholder="Select a value"
             clear
-            multiple
           />
         </Box>
         <Box gap="small">
@@ -53,7 +52,6 @@ const UnSelect = () => {
             value={value}
             onChange={({ option }) => setValue(option)}
             placeholder="Select a value"
-            multiple
             clear={{
               position: 'bottom',
               label: 'Unselect',
@@ -66,8 +64,7 @@ const UnSelect = () => {
             options={optionList}
             value={value}
             onChange={({ option }) => setValue(option)}
-            placeholder="Select multiple options"
-            multiple
+            placeholder="Select a value"
             clear={{
               position: 'top',
               renderValue: ({ onClear }) => (
@@ -75,13 +72,13 @@ const UnSelect = () => {
                   <Button hoverIndicator="background" onClick={onClear}>
                     <Box
                       direction="row"
-                      background="background-front"
+                      background="background-contrast"
                       alignItems="center"
                       gap="small"
                       pad="small"
                     >
                       <Clear />
-                      <Text>Clear items</Text>
+                      <Text>Clear item</Text>
                     </Box>
                   </Button>
                 </Box>
@@ -108,4 +105,4 @@ const UnSelect = () => {
   );
 };
 
-storiesOf('Select', module).add('Clear Selection', () => <UnSelect />);
+storiesOf('Select', module).add('Clear Selection', () => <ClearSelection />);

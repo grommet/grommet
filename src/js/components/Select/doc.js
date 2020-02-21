@@ -29,10 +29,12 @@ export const doc = Select => {
     clear: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
-        position: PropTypes.oneOf(['top', 'bottom']).description(
+        position: PropTypes.oneOf(['top', 'bottom'])
+          .description(
             `Add a clear value to the top or at the bottom of the
-            container. By default no unselect option is present.`,
-        ),
+            container. By default no clear option is present.`,
+          )
+          .defaultValue('top'),
         label: PropTypes.string
           .description('Label for the clear selection item')
           .defaultValue('Clear selection'),
