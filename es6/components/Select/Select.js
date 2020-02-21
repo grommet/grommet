@@ -81,7 +81,8 @@ var Select = forwardRef(function (_ref, ref) {
   var formContext = useContext(FormContext);
 
   var _formContext$useFormC = formContext.useFormContext(name, valueProp),
-      value = _formContext$useFormC[0];
+      value = _formContext$useFormC[0],
+      setValue = _formContext$useFormC[1];
 
   var _useState = useState(propOpen),
       open = _useState[0],
@@ -109,6 +110,7 @@ var Select = forwardRef(function (_ref, ref) {
 
   var onSelectChange = function onSelectChange(event) {
     if (closeOnChange) onRequestClose();
+    setValue(event.value);
 
     for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
