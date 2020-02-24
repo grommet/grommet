@@ -198,6 +198,12 @@ describe('Meter', function () {
         opacity: 'medium'
       },
       values: VALUES
+    }), _react["default"].createElement(_.Meter, {
+      background: {
+        color: 'light-3',
+        opacity: '0.2'
+      },
+      values: VALUES
     })));
 
     var tree = component.toJSON();

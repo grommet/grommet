@@ -9,7 +9,7 @@ export var doc = function doc(Meter) {
   DocumentedMeter.propTypes = _extends({}, genericProps, {
     background: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
       color: PropTypes.string,
-      opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool])
+      opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.number, PropTypes.bool])
     })]).description('Background color').defaultValue({
       color: 'light-2',
       opacity: 'medium'

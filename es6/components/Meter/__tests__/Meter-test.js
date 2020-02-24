@@ -182,6 +182,12 @@ describe('Meter', function () {
         opacity: 'medium'
       },
       values: VALUES
+    }), React.createElement(Meter, {
+      background: {
+        color: 'light-3',
+        opacity: '0.2'
+      },
+      values: VALUES
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();

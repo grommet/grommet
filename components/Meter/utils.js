@@ -13,7 +13,7 @@ var strokeProps = function strokeProps(color, theme) {
       result.stroke = (0, _utils.normalizeColor)(color.color, theme);
 
       if (color.opacity) {
-        result.strokeOpacity = "" + (color.opacity === true ? theme.global.opacity.medium : theme.global.opacity[color.opacity]);
+        result.strokeOpacity = "" + (color.opacity === true ? theme.global.opacity.medium : theme.global.opacity[color.opacity] || color.opacity);
       }
     } else {
       result.stroke = (0, _utils.normalizeColor)(color, theme);
