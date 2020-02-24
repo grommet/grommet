@@ -5,8 +5,8 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark,
