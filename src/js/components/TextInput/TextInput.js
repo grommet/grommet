@@ -352,24 +352,13 @@ const TextInput = forwardRef(
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
                 announce(messages.suggestionsExist);
+                setShowDrop(true);
               }
-              setShowDrop(true);
-              if (onFocus) {
-                onFocus(event);
-              }
+              if (onFocus) onFocus(event);
             }}
             onBlur={event => {
               setFocus(false);
-              // This will be called when the user clicks on a suggestion,
-              // check for that and don't remove the drop in that case.
-              // Drop will already have removed itself if the user has focused
-              // outside of the Drop.
-              if (!dropRef.current) {
-                closeDrop();
-                if (onBlur) {
-                  onBlur(event);
-                }
-              }
+              if (onBlur) onBlur(event);
             }}
             onChange={event => {
               setValue(event.target.value);
