@@ -124,6 +124,31 @@ exports[`Meter background 1`] = `
       strokeWidth={24}
     />
   </svg>
+  <svg
+    className="c1"
+    height={24}
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width={384}
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#EDEDED"
+      strokeLinecap="square"
+      strokeOpacity="0.2"
+      strokeWidth={24}
+    />
+    <path
+      d="M 0,12 L 76.8,12"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+  </svg>
 </div>
 `;
 
