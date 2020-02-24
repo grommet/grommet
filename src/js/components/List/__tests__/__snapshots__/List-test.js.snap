@@ -1612,7 +1612,6 @@ exports[`List margin object 1`] = `
 
 .c1 {
   list-style: none;
-  margin: 0;
   padding: 0;
   margin-left: 48px;
   margin-right: 48px;
@@ -1783,7 +1782,6 @@ exports[`List margin string 1`] = `
 
 .c1 {
   list-style: none;
-  margin: 0;
   padding: 0;
   margin: 48px;
 }
@@ -2039,7 +2037,7 @@ exports[`List onClickItem 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 jcfPgy"
+    class="List__StyledList-sc-130gdqg-0 ckPrwz"
     tabindex="0"
   >
     <li

@@ -11,7 +11,7 @@ import { withFocus, withForwardRef } from '../hocs';
 
 const StyledList = styled.ul`
   list-style: none;
-  margin: 0;
+  ${props => !props.margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
   ${props => props.focus && focusStyle}
