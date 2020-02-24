@@ -57,6 +57,7 @@ exports[`Drop align left left 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
@@ -154,6 +155,7 @@ exports[`Drop align left right top bottom 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -275,6 +277,7 @@ exports[`Drop align right left top top 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -372,6 +375,7 @@ exports[`Drop align right right 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -469,6 +473,7 @@ exports[`Drop align right right bottom top 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
@@ -566,6 +571,7 @@ exports[`Drop align right right bottom top 3`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
@@ -663,6 +669,7 @@ exports[`Drop basic 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -784,6 +791,7 @@ exports[`Drop close 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -905,6 +913,7 @@ exports[`Drop default elevation renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -1026,6 +1035,7 @@ exports[`Drop invalid align 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1147,6 +1157,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1268,6 +1279,7 @@ exports[`Drop no stretch 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1386,6 +1398,7 @@ exports[`Drop plain renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -1466,6 +1479,7 @@ exports[`Drop props elevation renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -1570,6 +1584,7 @@ exports[`Drop resize 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -1691,6 +1706,7 @@ exports[`Drop restrict focus 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -1702,6 +1718,7 @@ exports[`Drop restrict focus 1`] = `
 exports[`Drop restrict focus 2`] = `
 <div
   class="StyledBox-sc-13pk1d4-0 fUuNUq StyledDrop-sc-16s5rx8-0 exrnbV"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -1831,6 +1848,7 @@ exports[`Drop theme elevation renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"

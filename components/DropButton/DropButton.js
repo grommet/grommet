@@ -9,8 +9,6 @@ var _Button = require("../Button");
 
 var _Drop = require("../Drop");
 
-var _utils = require("../../utils");
-
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -39,72 +37,55 @@ var DropButton = (0, _react.forwardRef)(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "disabled", "dropAlign", "dropProps", "dropContent", "dropTarget", "id", "open", "onClick", "onClose", "onOpen"]);
 
   var _useState = (0, _react.useState)(),
-      closed = _useState[0],
-      setClosed = _useState[1];
-
-  var _useState2 = (0, _react.useState)(open),
-      show = _useState2[0],
-      setShow = _useState2[1];
+      show = _useState[0],
+      setShow = _useState[1];
 
   (0, _react.useEffect)(function () {
     if (open !== undefined && open !== show) {
       setShow(open);
-      if (!open) setClosed(true);
     }
   }, [open, show]);
-  var buttonRef = (0, _react.useRef)(); // show the drop initially if open and refs are ready
+  var buttonRef = (0, _react.useRef)();
+  var onDropClose = (0, _react.useCallback)(function (event) {
+    // if the user has clicked on our Button, don't do anything here,
+    // handle that in onClickInternal() below.
+    var node = event.target;
 
-  (0, _react.useEffect)(function () {
-    if (closed === undefined && open && (ref || buttonRef).current) {
-      setClosed(false);
+    while (node !== document && node !== (ref || buttonRef).current) {
+      node = node.parentNode;
     }
-  }, [closed, open, ref, buttonRef]);
-  (0, _react.useEffect)(function () {
-    // focus on the button if the drop is closed
-    if (closed) {
-      (0, _utils.setFocusWithoutScroll)((ref || buttonRef).current);
-      setClosed(false);
+
+    if (node !== (ref || buttonRef).current) {
+      setShow(false);
+      if (onClose) onClose(event);
     }
-  }, [closed, ref]);
-
-  var onDropClose = function onDropClose() {
-    setShow(false);
-    if (onClose) onClose();
-    setClosed(true);
-  };
-
-  var onToggle = function onToggle(event) {
-    setShow(!show);
-
-    if (show) {
-      if (onClose) onClose();
-      setClosed(true);
-    } else if (onOpen) onOpen();
+  }, [onClose, ref]);
+  var onClickInternal = (0, _react.useCallback)(function (event) {
+    if (!show) {
+      setShow(true);
+      if (onOpen) onOpen(event);
+    } else {
+      setShow(false);
+      if (onClose) onClose(event);
+    }
 
     if (onClick) onClick(event);
-  };
-
-  var drop;
-
-  if (show && (ref || buttonRef).current) {
-    drop = _react["default"].createElement(_Drop.Drop, _extends({
-      id: id ? id + "__drop" : undefined,
-      restrictFocus: true,
-      align: dropAlign,
-      target: dropTarget || (ref || buttonRef).current,
-      onClickOutside: onDropClose,
-      onEsc: onDropClose
-    }, dropProps), dropContent);
-  }
-
+  }, [onClick, onClose, onOpen, show]);
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_Button.Button, _extends({
     id: id,
     ref: ref || buttonRef,
     a11yTitle: a11yTitle,
     disabled: disabled
   }, rest, {
-    onClick: onToggle
-  })), drop);
+    onClick: onClickInternal
+  })), show && (ref || buttonRef).current && _react["default"].createElement(_Drop.Drop, _extends({
+    id: id ? id + "__drop" : undefined,
+    restrictFocus: true,
+    align: dropAlign,
+    target: dropTarget || (ref || buttonRef).current,
+    onClickOutside: onDropClose,
+    onEsc: onDropClose
+  }, dropProps), dropContent));
 });
 DropButton.displayName = 'DropButton';
 var DropButtonDoc;

@@ -5434,14 +5434,6 @@ exports[`DataTable search 2`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
               class="c0"
             >
@@ -5491,14 +5483,6 @@ exports[`DataTable search 2`] = `
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
