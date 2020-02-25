@@ -209,6 +209,7 @@ const InfiniteScroll = ({
   });
 
   if (endPage < lastPage || replace || onMore) {
+    // The height being calculated here seems to cause the issue
     let marker = (
       <Box
         key="below"
