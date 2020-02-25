@@ -144,6 +144,8 @@ class Carousel extends Component {
     const previousIconDisabled = activeIndex <= 0;
 
     return (
+      // The controls rest on top of the children,
+      // making it not possible to click carousel card elements.
       <Keyboard onLeft={onLeft} onRight={onRight}>
         <Stack guidingChild={activeIndex} fill={fill} {...rest}>
           {wrappedChildren}
