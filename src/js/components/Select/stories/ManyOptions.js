@@ -23,42 +23,38 @@ const dummyOptions = Array(2000)
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
   );
 
+const dummyOptions2 = Array(81)
+  .fill()
+  .map((_, i) => `option ${i}`)
+  .sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
+  );
+
 const ManyOptions = () => {
-  const [selected, setSelected] = React.useState([]);
-  const [options, setOptions] = React.useState(dummyOptions);
+  const [selected] = React.useState([]);
+  const [options] = React.useState(dummyOptions);
+  const [options2] = React.useState(dummyOptions2);
 
   return (
     <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
+      <Box fill align="center" justify="start" pad="large" direction="row">
         <Select
           multiple
           closeOnChange={false}
           placeholder="select an option..."
-          selected={selected}
           options={options}
           dropHeight="medium"
-          onClose={() =>
-            setOptions(
-              options.sort((p1, p2) => {
-                const p1Exists = selected.includes(p1);
-                const p2Exists = selected.includes(p2);
-
-                if (!p1Exists && p2Exists) {
-                  return 1;
-                }
-                if (p1Exists && !p2Exists) {
-                  return -1;
-                }
-                return p1.localeCompare(p2, undefined, {
-                  numeric: true,
-                  sensitivity: 'base',
-                });
-              }),
-            )
-          }
-          onChange={({ selected: nextSelected }) => {
-            setSelected(nextSelected);
-          }}
+        >
+          {(option, index) => (
+            <Option value={option} selected={selected.indexOf(index) !== -1} />
+          )}
+        </Select>
+        <Select
+          multiple
+          closeOnChange={false}
+          placeholder="select an option..."
+          options={options2}
+          dropHeight="medium"
         >
           {(option, index) => (
             <Option value={option} selected={selected.indexOf(index) !== -1} />

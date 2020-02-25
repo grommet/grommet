@@ -109,12 +109,16 @@ const InfiniteScroll = ({
           (!replace && endPage) || 0,
           multiColumn
             ? Math.ceil(((top + height + offset) * width) / pageArea)
-            : Math.floor((top + height + offset) / pageHeight),
+            : Math.ceil((top + height + offset) / pageHeight),
         ),
       );
-
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
-      if (nextEndPage !== endPage) setEndPage(nextEndPage);
+      if (nextEndPage !== endPage) {
+        console.log('TOP', top);
+        console.log('MATH', top - offset);
+        console.log('MATH AGAIN', (top - offset) / pageHeight);
+        setEndPage(nextEndPage);
+      }
     };
 
     if (pageHeight && belowMarkerRef.current) {
@@ -209,7 +213,9 @@ const InfiniteScroll = ({
   });
 
   if (endPage < lastPage || replace || onMore) {
-    // The height being calculated here seems to cause the issue
+    // The height being calculated here seems to cause the
+    // issue at certain option lengths.
+    // endPage is always less than lastPage at certain lengths.
     let marker = (
       <Box
         key="below"
