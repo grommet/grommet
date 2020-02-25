@@ -33,7 +33,11 @@ class LayerContainer extends Component {
   layerRef = React.createRef();
 
   componentDidMount() {
-    const { position, modal } = this.props;
+    const { position, modal, onClickOutside } = this.props;
+
+    if (onClickOutside) {
+      document.addEventListener('mousedown', this.handleClick);
+    }
     if (position !== 'hidden') {
       this.makeLayerVisible();
       // Once layer is open we make sure it has focus so that you
@@ -60,6 +64,23 @@ class LayerContainer extends Component {
       this.makeLayerVisible();
     }
   }
+
+  componentWillUnmount() {
+    const { onClickOutside } = this.props;
+    if (onClickOutside) {
+      document.removeEventListener('mousedown', this.handleClick);
+    }
+  }
+
+  handleClick = event => {
+    if (this.containerRef.current.contains(event.target)) {
+      return;
+    }
+    const { onClickOutside } = this.props;
+    if (onClickOutside) {
+      onClickOutside();
+    }
+  };
 
   makeLayerVisible = () => {
     const node = this.layerRef.current || this.containerRef.current;
@@ -113,11 +134,7 @@ class LayerContainer extends Component {
           ref={this.layerRef}
           dir={theme.dir}
         >
-          <StyledOverlay
-            plain={plain}
-            onMouseDown={onClickOutside}
-            responsive={responsive}
-          />
+          <StyledOverlay plain={plain} responsive={responsive} />
           {content}
         </StyledLayer>
       );
@@ -125,7 +142,11 @@ class LayerContainer extends Component {
     }
 
     if (onEsc) {
-      content = <Keyboard onEsc={onEsc}>{content}</Keyboard>;
+      content = (
+        <Keyboard target="document" onEsc={onEsc}>
+          {content}
+        </Keyboard>
+      );
     }
 
     if (theme.layer.background) {
