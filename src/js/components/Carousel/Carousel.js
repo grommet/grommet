@@ -27,6 +27,9 @@ class Carousel extends Component {
 
   componentDidUpdate(prevProps) {
     const { play } = this.props;
+    if (typeof window !== 'undefined') {
+      this.handleActive();
+    }
     if (play && (!prevProps.play || play !== prevProps.play)) {
       this.play();
     } else if (!play && prevProps.play) {
@@ -37,6 +40,20 @@ class Carousel extends Component {
   componentWillUnmount() {
     clearInterval(this.timer);
   }
+
+  handleActive = () => {
+    const { activeIndex, priorActiveIndex } = this.state;
+    const activeCard = document.getElementById(`active${activeIndex}`);
+    if (activeCard) {
+      const activeParent = activeCard.parentElement;
+      activeParent.style.zIndex = 10;
+    }
+    if (priorActiveIndex) {
+      const prevCard = document.getElementById(`active${priorActiveIndex}`)
+        .parentElement;
+      prevCard.style.zIndex = 0;
+    }
+  };
 
   play = () => {
     const { play } = this.props;
@@ -96,6 +113,11 @@ class Carousel extends Component {
       theme,
     );
 
+    const NextIcon = theme.carousel.icons.next;
+    const PreviousIcon = theme.carousel.icons.previous;
+    const nextIconDisabled = activeIndex >= lastIndex;
+    const previousIconDisabled = activeIndex <= 0;
+
     const selectors = [];
     const wrappedChildren = Children.map(children, (child, index) => {
       selectors.push(
@@ -130,34 +152,11 @@ class Carousel extends Component {
       }
 
       return (
-        <Box fill={fill} overflow="hidden">
-          <Box fill={fill} animation={animation}>
-            {child}
-          </Box>
-        </Box>
-      );
-    });
-
-    const NextIcon = theme.carousel.icons.next;
-    const PreviousIcon = theme.carousel.icons.previous;
-    const nextIconDisabled = activeIndex >= lastIndex;
-    const previousIconDisabled = activeIndex <= 0;
-
-    return (
-      // The controls rest on top of the children,
-      // making it not possible to click carousel card elements.
-      <Keyboard onLeft={onLeft} onRight={onRight}>
-        <Stack guidingChild={activeIndex} fill={fill} {...rest}>
-          {wrappedChildren}
-          <Box
-            tabIndex="0"
-            focus={focus}
-            fill
-            direction="row"
-            justify="between"
-          >
+        <Box fill={fill} overflow="hidden" id={`active${index}`}>
+          <Box focus={focus} fill direction="row" justify="between">
             {showArrows && (
               <Button
+                alignSelf="center"
                 fill="vertical"
                 icon={
                   <PreviousIcon
@@ -175,15 +174,12 @@ class Carousel extends Component {
                 hoverIndicator
               />
             )}
-            {showSelectors && (
-              <Box justify="end" fill={!showArrows && 'horizontal'}>
-                <Box direction="row" justify="center">
-                  {selectors}
-                </Box>
-              </Box>
-            )}
+            <Box fill={fill} animation={animation}>
+              {child}
+            </Box>
             {showArrows && (
               <Button
+                alignSelf="center"
                 fill="vertical"
                 icon={
                   <NextIcon
@@ -202,6 +198,23 @@ class Carousel extends Component {
               />
             )}
           </Box>
+          {showSelectors && (
+            <Box justify="end" fill={!showArrows && 'horizontal'}>
+              <Box direction="row" justify="center">
+                {selectors}
+              </Box>
+            </Box>
+          )}
+        </Box>
+      );
+    });
+
+    return (
+      // The controls rest on top of the children,
+      // making it not possible to click carousel card elements.
+      <Keyboard onLeft={onLeft} onRight={onRight}>
+        <Stack guidingChild={activeIndex} fill={fill} {...rest}>
+          {wrappedChildren}
         </Stack>
       </Keyboard>
     );
@@ -225,3 +238,19 @@ const CarouselWrapper = compose(
 )(CarouselDoc || Carousel);
 
 export { CarouselWrapper as Carousel };
+
+/*           <Box
+            tabIndex="0"
+            focus={focus}
+            fill
+            direction="row"
+            justify="between"
+          >
+            {showSelectors && (
+              <Box justify="end" fill={!showArrows && 'horizontal'}>
+                <Box direction="row" justify="center">
+                  {selectors}
+                </Box>
+              </Box>
+            )}
+          </Box> */
