@@ -9,12 +9,14 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle } from '../../utils';
+import { focusStyle, genericStyles } from '../../utils';
 import { withFocus, withForwardRef } from '../hocs';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;margin:0;padding:0;", ""], function (props) {
+})(["list-style:none;", " padding:0;", " ", ""], function (props) {
+  return !props.margin && 'margin: 0;';
+}, genericStyles, function (props) {
   return props.focus && focusStyle;
 });
 var StyledItem = styled(Box).withConfig({

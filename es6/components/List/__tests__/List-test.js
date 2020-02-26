@@ -133,19 +133,19 @@ describe('List', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('pad string', function () {
+  test('margin string', function () {
     var _render12 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
-      pad: "large"
+      margin: "large"
     }))),
         container = _render12.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('pad object', function () {
+  test('margin object', function () {
     var _render13 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: ['one', 'two'],
-      pad: {
+      margin: {
         horizontal: 'large'
       }
     }))),
@@ -153,8 +153,28 @@ describe('List', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('primaryKey', function () {
+  test('pad string', function () {
     var _render14 = render(React.createElement(Grommet, null, React.createElement(List, {
+      data: ['one', 'two'],
+      pad: "large"
+    }))),
+        container = _render14.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('pad object', function () {
+    var _render15 = render(React.createElement(Grommet, null, React.createElement(List, {
+      data: ['one', 'two'],
+      pad: {
+        horizontal: 'large'
+      }
+    }))),
+        container = _render15.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('primaryKey', function () {
+    var _render16 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: [{
         a: 'one',
         b: 1
@@ -164,12 +184,12 @@ describe('List', function () {
       }],
       primaryKey: "a"
     }))),
-        container = _render14.container;
+        container = _render16.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
   test('secondaryKey', function () {
-    var _render15 = render(React.createElement(Grommet, null, React.createElement(List, {
+    var _render17 = render(React.createElement(Grommet, null, React.createElement(List, {
       data: [{
         a: 'one',
         b: 1
@@ -180,7 +200,7 @@ describe('List', function () {
       primaryKey: "a",
       secondaryKey: "b"
     }))),
-        container = _render15.container;
+        container = _render17.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });

@@ -34,7 +34,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var StyledList = _styledComponents["default"].ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;margin:0;padding:0;", ""], function (props) {
+})(["list-style:none;", " padding:0;", " ", ""], function (props) {
+  return !props.margin && 'margin: 0;';
+}, _utils.genericStyles, function (props) {
   return props.focus && _utils.focusStyle;
 });
 
