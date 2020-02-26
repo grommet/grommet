@@ -37,6 +37,7 @@ import { grommet, dark } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
+import { hpe as hpeV0 } from 'grommet-theme-hpe-v0';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
@@ -57,7 +58,7 @@ const Node = ({ id, ...rest }) => (
 const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   fromTarget,
   toTarget,
-  color: color || 'accent-1',
+  color: color || 'graph-0',
   thickness: 'xsmall',
   round: true,
   type: 'rectilinear',
@@ -68,6 +69,7 @@ const themes = {
   dark,
   grommet,
   hpe,
+  hpeV0,
   aruba,
   hp,
   dxc,
@@ -185,7 +187,7 @@ const Components = () => {
         basis="small"
         values={[
           { value: 50, color: 'light-3' },
-          { value: 30, color: 'accent-1' },
+          { value: 30, color: 'graph-0' },
           { value: 20, color: 'light-4' },
           { value: 10, color: 'light-3' },
           { value: 5, color: 'light-4' },
@@ -291,7 +293,16 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={['grommet', 'dark', 'hpe', 'aruba', 'hp', 'dxc', 'v1']}
+              options={[
+                'grommet',
+                'dark',
+                'hpe',
+                'hpeV0',
+                'aruba',
+                'hp',
+                'dxc',
+                'v1',
+              ]}
               value={themeName}
               onChange={event => setThemeName(event.option)}
             />

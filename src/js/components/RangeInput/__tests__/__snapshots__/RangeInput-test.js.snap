@@ -129,6 +129,7 @@ exports[`RangeInput renders 1`] = `
   <input
     className="c1"
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     type="range"
     value="50"

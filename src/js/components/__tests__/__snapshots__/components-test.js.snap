@@ -81,6 +81,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -98,6 +106,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -251,6 +267,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -268,6 +292,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -387,9 +419,9 @@ zoomOut
         "name": "animation",
       },
       Object {
-        "description": "Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.",
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
         "format": "string
 {
   color: string,
@@ -438,15 +470,19 @@ string",
         "name": "basis",
       },
       Object {
-        "description": "Include a border.",
+        "description": "Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.",
         "format": "boolean
 top
 left
 bottom
 right
+start
+end
 horizontal
 vertical
 all
+between
 {
   color: 
     string
@@ -459,9 +495,12 @@ all
     left
     bottom
     right
+    start
+    end
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -492,9 +531,12 @@ all
     left
     bottom
     right
+    start
+    end
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -686,8 +728,8 @@ string",
       Object {
         "defaultValue": "none",
         "description": "The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box",
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box",
         "format": "none
 xxsmall
 xsmall
@@ -697,6 +739,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -721,6 +771,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -904,6 +962,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -921,6 +987,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -955,6 +1029,12 @@ string",
         "name": "active",
       },
       Object {
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
+        "name": "as",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -983,6 +1063,19 @@ boolean",
         "description": "Whether when 'plain' it should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
+      },
+      Object {
+        "defaultValue": "small",
+        "description": "The amount of spacing between icon and label in the button.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "defaultValue": false,
@@ -1025,30 +1118,9 @@ background
         "name": "href",
       },
       Object {
-        "description": "Specifies where to display the URL defined in the href property.",
-        "format": "_self
-_blank
-_parent
-_top",
-        "name": "target",
-      },
-      Object {
         "description": "Icon element to place in the button.",
         "format": "element",
         "name": "icon",
-      },
-      Object {
-        "defaultValue": "small",
-        "description": "The amount of spacing between icon and label in the button.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "gap",
       },
       Object {
         "description": "Label text to place in the button.",
@@ -1057,47 +1129,58 @@ string",
       },
       Object {
         "description": "Click handler. Not setting this property and not specifying a href
-causes the Button to be disabled.",
+        causes the Button to be disabled.",
         "format": "function",
         "name": "onClick",
       },
       Object {
         "defaultValue": false,
         "description": "Whether this is a plain button with no border or pad.
-Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as 
-well.",
+          Non plain button will show both pad and border.
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well.",
         "format": "boolean",
         "name": "plain",
       },
       Object {
         "defaultValue": false,
         "description": "Whether this is a primary button. There should be at most one per page
-         or screen.",
+            or screen.",
         "format": "boolean",
         "name": "primary",
       },
       Object {
         "defaultValue": false,
         "description": "Whether an icon and label should be reversed so that the icon is at the
-end of the anchor.",
+              end of the anchor.",
         "format": "boolean",
         "name": "reverse",
       },
       Object {
+        "description": "The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
+      'size' will not impact any icon related sizing.",
+        "format": "small
+medium
+large",
+        "name": "size",
+      },
+      Object {
+        "description": "Specifies where to display the URL defined in the href property.",
+        "format": "_self
+_blank
+_parent
+_top",
+        "name": "target",
+      },
+      Object {
         "defaultValue": "button",
         "description": "The type of button. Set the type to submit for the default button on 
-        forms.",
+                forms.",
         "format": "button
 reset
 submit",
         "name": "type",
-      },
-      Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
       },
     ],
     "usage": "import { Button } from 'grommet';
@@ -1163,6 +1246,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1180,6 +1271,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1393,6 +1492,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1410,6 +1517,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1525,6 +1640,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1542,6 +1665,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1620,8 +1751,9 @@ string",
         "name": "id",
       },
       Object {
-        "description": "Called when the user clicks on it.
-      This is only available when the type is line or area.",
+        "description": "Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.",
         "format": "function",
         "name": "onClick",
       },
@@ -1901,7 +2033,128 @@ vertical",
 <Diagram />",
   },
   "Distribution": [Function],
-  "Drop": [Function],
+  "Drop": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js",
+      },
+    ],
+    "description": "A container that is overlaid next to a target.",
+    "intrinsicElement": "div",
+    "name": "Drop",
+    "properties": Array [
+      Object {
+        "defaultValue": Object {
+          "left": "left",
+          "top": "top",
+        },
+        "description": "How to align the drop with respect to the target element. Not 
+        specifying a vertical or horizontal alignment will cause it to be 
+        aligned in the center.",
+        "format": "{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}",
+        "name": "align",
+      },
+      Object {
+        "description": "Function that will be invoked when the user clicks outside the drop.",
+        "format": "function",
+        "name": "onClickOutside",
+      },
+      Object {
+        "description": "Function that will be called when the user presses the escape key inside
+       the drop.",
+        "format": "function",
+        "name": "onEsc",
+      },
+      Object {
+        "defaultValue": "auto",
+        "description": "How to control the overflow inside the drop.",
+        "format": "auto
+hidden
+scroll
+visible
+{
+  horizontal: 
+    auto
+    hidden
+    scroll
+    visible,
+  vertical: 
+    auto
+    hidden
+    scroll
+    visible
+}
+string",
+        "name": "overflow",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to dynamically re-place when resized.",
+        "format": "boolean",
+        "name": "responsive",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the drop should control focus.",
+        "format": "boolean",
+        "name": "restrictFocus",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether the drop element should be stretched to at least match the
+      width of the target element. The default is true because
+      that is what most uses of Drop want, like Select and Menu.",
+        "format": "boolean",
+        "name": "stretch",
+      },
+      Object {
+        "description": "Target where the drop will be aligned to. This should be a React 
+      reference.",
+        "format": "object",
+        "name": "target",
+        "required": true,
+      },
+      Object {
+        "description": "Elevated height of the target, indicated via a drop shadow.",
+        "format": "none
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "elevation",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the drop element should have no background nor shadow",
+        "format": "boolean",
+        "name": "plain",
+      },
+    ],
+    "usage": "import { Drop } from 'grommet';
+<Drop target={reference}>...</Drop>",
+  },
   "DropButton": Object {
     "availableAt": Array [
       Object {
@@ -1924,7 +2177,6 @@ vertical",
     "name": "DropButton",
     "properties": Array [
       Object {
-        "defaultValue": "Open Drop",
         "description": "Custom label to be used by screen readers. When provided, an aria-label will
    be added to the element.",
         "format": "string",
@@ -1965,6 +2217,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1982,6 +2242,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2077,7 +2345,91 @@ string",
 <DropButton dropContent={...} />",
   },
   "Footer": [Function],
-  "Form": [Function],
+  "Form": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js",
+      },
+    ],
+    "description": "A form that manages state for its fields.",
+    "intrinsicElement": "form",
+    "name": "Form",
+    "properties": Array [
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing any errors in the data. They keys should
+        match the keys in the value object.",
+        "format": "{
+
+}",
+        "name": "errors",
+      },
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing any information details in the data.
+        They keys should match the keys in the value object.",
+        "format": "{
+
+}",
+        "name": "infos",
+      },
+      Object {
+        "defaultValue": Object {
+          "invalid": "invalid",
+          "required": "required",
+        },
+        "description": "Custom validation messages.",
+        "format": "{
+  invalid: string,
+  required: string
+}",
+        "name": "messages",
+      },
+      Object {
+        "description": "Function that will be called when any fields are updated.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Function that will be called when the form is submitted. The
+      single argument is an event containing the latest value object
+      via \`event.value\` and an object indicating which fields were
+      touched via \`event.touched\`.",
+        "format": "function",
+        "name": "onSubmit",
+      },
+      Object {
+        "description": "Function that will be called when the form is reset. The
+      single argument is the event provided by react.",
+        "format": "function",
+        "name": "onReset",
+      },
+      Object {
+        "defaultValue": "submit",
+        "description": "When to perform validation",
+        "format": "blur
+submit",
+        "name": "validate",
+      },
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing all of the data in the form.",
+        "format": "{
+
+}",
+        "name": "value",
+      },
+    ],
+    "usage": "import { Form } from 'grommet';
+<Form />",
+  },
   "FormContext": Object {
     "$$typeof": Symbol(react.context),
     "Consumer": Object {
@@ -2092,8 +2444,12 @@ string",
     "_calculateChangedBits": null,
     "_currentRenderer": null,
     "_currentRenderer2": null,
-    "_currentValue": undefined,
-    "_currentValue2": undefined,
+    "_currentValue": Object {
+      "useFormContext": [Function],
+    },
+    "_currentValue2": Object {
+      "useFormContext": [Function],
+    },
     "_threadCount": 0,
   },
   "FormField": Object {
@@ -2127,7 +2483,12 @@ object",
         "name": "component",
       },
       Object {
-        "description": "Any error text describing issues with the field",
+        "description": "Whether the field should look disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "Any error text describing issues with the field's value",
         "format": "string
 node",
         "name": "error",
@@ -2142,6 +2503,12 @@ node",
         "description": "The id of the input element contained in this field",
         "format": "string",
         "name": "htmlFor",
+      },
+      Object {
+        "description": "Any informational text regarding the field's value",
+        "format": "string
+node",
+        "name": "info",
       },
       Object {
         "description": "A short label describing the field",
@@ -2175,6 +2542,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2192,6 +2567,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2230,17 +2613,31 @@ string",
         "name": "required",
       },
       Object {
-        "description": "Validation rule when used within a grommet Form. Provide a regular
-      expression or a function. If a
+        "description": "Validation rule when used within a grommet Form. Provide an object
+      with a regular expression, a function, or an array of these. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
-      describing the validation issue, if any.",
+      describing the validation issue, if any, or an object with 'message'
+      and 'status' properties.",
         "format": "{
   regexp: object,
-  message: string
+  message: string,
+  status: 
+    error
+    info
 }
-function",
+function
+[
+  {
+    regexp: object,
+    message: string,
+    status: 
+      error
+      info
+  }
+  function
+]",
         "name": "validate",
       },
     ],
@@ -2309,6 +2706,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2326,6 +2731,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2444,6 +2857,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2461,6 +2882,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2510,6 +2939,8 @@ top
 bottom
 left
 right
+start
+end
 {
   color: 
     string
@@ -2523,7 +2954,9 @@ right
     top
     bottom
     left
-    right,
+    right
+    start
+    end,
   size: 
     xxsmall
     xsmall
@@ -2637,6 +3070,20 @@ string
     small
     medium
     large
+    xlarge,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
     xlarge
 }",
         "name": "pad",
@@ -2709,7 +3156,6 @@ function",
         "name": "onBlur",
       },
       Object {
-        "defaultValue": Array [],
         "description": "Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
       as the user types characters one by one.",
@@ -2812,6 +3258,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2829,6 +3283,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2981,6 +3443,7 @@ string",
 <Menu />",
   },
   "Meter": [Function],
+  "Nav": [Function],
   "Paragraph": [Function],
   "RadioButton": Object {
     "availableAt": Array [
@@ -3078,6 +3541,12 @@ with the same name so form submissions work.",
         "name": "children",
       },
       Object {
+        "defaultValue": false,
+        "description": "Disables all options.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
         "description": "The DOM name attribute value to use for the underlying <input/> 
       elements.",
         "format": "string",
@@ -3106,7 +3575,8 @@ with the same name so form submissions work.",
       },
       Object {
         "description": "Currently selected option value.",
-        "format": "string",
+        "format": "string
+object",
         "name": "value",
       },
     ],
@@ -3219,10 +3689,6 @@ vertical",
         "name": "max",
       },
       Object {
-        "defaultValue": Object {
-          "lower": "Lower Bounds",
-          "upper": "Upper Bounds",
-        },
         "description": "Custom messages used by screen readers for accessibility.",
         "format": "{
   lower: string,
@@ -3283,7 +3749,6 @@ string",
         "name": "step",
       },
       Object {
-        "defaultValue": Array [],
         "description": "The current values.",
         "format": "[number]",
         "name": "values",
@@ -3352,6 +3817,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -3369,6 +3842,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -3505,9 +3986,6 @@ function",
         "name": "labelKey",
       },
       Object {
-        "defaultValue": Object {
-          "multiple": "multiple",
-        },
         "description": "Custom messages.",
         "format": "{
   multiple: string
@@ -3792,6 +4270,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -3809,6 +4295,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -4182,6 +4676,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -4199,6 +4701,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -4317,6 +4827,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -4334,6 +4852,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small

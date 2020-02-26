@@ -50,6 +50,10 @@ export const doc = Layer => {
           PropTypes.oneOf(PAD_SIZES),
           PropTypes.string,
         ]),
+        end: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
         horizontal: PropTypes.oneOfType([
           PropTypes.oneOf(PAD_SIZES),
           PropTypes.string,
@@ -59,6 +63,10 @@ export const doc = Layer => {
           PropTypes.string,
         ]),
         right: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        start: PropTypes.oneOfType([
           PropTypes.oneOf(PAD_SIZES),
           PropTypes.string,
         ]),
@@ -101,9 +109,11 @@ particular side of the layer`,
       'bottom-left',
       'bottom-right',
       'center',
+      'end',
       'hidden',
       'left',
       'right',
+      'start',
       'top',
       'top-left',
       'top-right',

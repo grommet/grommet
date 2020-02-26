@@ -25,10 +25,10 @@ const FakeLayer = ({ children, dataTestid }) => {
     );
   }
   return (
-    <Grommet>
+    <Box>
       {layer}
       {children}
-    </Grommet>
+    </Box>
   );
 };
 
@@ -36,17 +36,18 @@ describe('Layer', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
 
-  ['top', 'bottom', 'left', 'right', 'center'].forEach(position =>
-    test(`position ${position}`, () => {
-      render(
-        <Grommet>
-          <Layer id="position-test" position={position}>
-            This is a layer
-          </Layer>
-        </Grommet>,
-      );
-      expectPortal('position-test').toMatchSnapshot();
-    }),
+  ['top', 'bottom', 'left', 'right', 'start', 'end', 'center'].forEach(
+    position =>
+      test(`position ${position}`, () => {
+        render(
+          <Grommet>
+            <Layer id="position-test" position={position}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('position-test').toMatchSnapshot();
+      }),
   );
 
   [true, false, 'horizontal', 'vertical'].forEach(full =>

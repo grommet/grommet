@@ -36,6 +36,29 @@ exports[`Grommet announce 3`] = `
 />
 `;
 
+exports[`Grommet background 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  background: blue;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+<div
+  className="c0"
+>
+  Grommet App
+</div>
+`;
+
 exports[`Grommet basic 1`] = `
 .c0 {
   font-size: 18px;
@@ -62,11 +85,20 @@ exports[`Grommet cssVars 1`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   --active: rgba(221,221,221,0.5);
+  --active-background: background-contrast;
+  --active-text: text-strong;
   --black: #000000;
   --brand: #7D4CDB;
   --focus: #6FFFB0;
+  --graph-0: accent-1;
+  --graph-1: neutral-1;
+  --graph-2: neutral-2;
+  --graph-3: neutral-3;
+  --graph-4: neutral-4;
   --placeholder: #AAAAAA;
   --selected: brand;
+  --selected-background: brand;
+  --selected-text: text-strong;
   --white: #FFFFFF;
   --accent-1: #6FFFB0;
   --accent-2: #FD6FFF;
@@ -148,6 +180,8 @@ exports[`Grommet hpe theme 1`] = `
   font-family: 'Metric',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
+  background: #FFFFFF;
+  color: #333333;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
