@@ -1,9 +1,15 @@
-import React, { forwardRef, useContext, useRef, useEffect } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { backgroundIsDark } from '../../utils';
+import { backgroundIsDark, findVisibleParent } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
@@ -27,11 +33,13 @@ const LayerContainer = forwardRef(
       plain,
       position = 'center',
       responsive = true,
+      target: layerTarget,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext);
+    const [targetBounds, setTargetBounds] = useState();
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
@@ -65,12 +73,32 @@ const LayerContainer = forwardRef(
       }
     }, [position, ref]);
 
+    useEffect(() => {
+      if (layerTarget) {
+        const updateBounds = () => {
+          const rect = findVisibleParent(layerTarget).getBoundingClientRect();
+          setTargetBounds({
+            left: rect.left,
+            right: rect.right,
+            top: rect.top,
+            bottom: rect.bottom,
+          });
+        };
+
+        updateBounds();
+        window.addEventListener('resize', updateBounds);
+        return () => window.removeEventListener('resize', updateBounds);
+      }
+      return undefined;
+    }, [layerTarget]);
+
     let content = (
       <StyledContainer
         ref={ref || containerRef}
         id={id}
         full={full}
         margin={margin}
+        modal={modal}
         {...rest}
         position={position}
         plain={plain}
@@ -91,6 +119,7 @@ const LayerContainer = forwardRef(
         <StyledLayer
           ref={layerRef}
           id={id}
+          targetBounds={targetBounds}
           plain={plain}
           position={position}
           responsive={responsive}
