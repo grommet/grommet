@@ -173,11 +173,6 @@ exports[`renders size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 12px;
   line-height: 18px;
@@ -186,6 +181,11 @@ exports[`renders size 1`] = `
 .c2 {
   font-size: 14px;
   line-height: 20px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c4 {

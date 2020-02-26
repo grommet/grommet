@@ -7,6 +7,7 @@ import {
   GraphColorsType,
   MarginType,
   OpacityType,
+  RoundType,
   PadType,
 } from '../utils'
 import { TextProps } from '../components/Text';
@@ -36,6 +37,9 @@ type Colors = typeof colors & {
   'accent-2'?: ColorType;
   'accent-3'?: ColorType;
   'accent-4'?: ColorType;
+  'background-back'?: ColorType;
+  'background-contrast'?: ColorType;
+  'background-front'?: ColorType;
   'neutral-1'?: ColorType;
   'neutral-2'?: ColorType;
   'neutral-3'?: ColorType;
@@ -223,7 +227,7 @@ export interface ThemeType {
       xlarge?: string;
       xxlarge?: string;
       full?: string;
-      [x: string]: string;
+      [x: string]: string | undefined;
     };
   };
   accordion?: {
@@ -273,6 +277,35 @@ export interface ThemeType {
     primary?: {
       color?: ColorType;
     }
+    size?: {
+      small?: {
+        border?: {
+          radius?: string,
+        }
+        pad?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+      },
+      medium?: { 
+        border?: {
+          radius?: string,
+        }
+        pad?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+      }
+      large?: {
+        border?: {
+          radius?: string,
+        }
+        pad?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+      }
+    },
   };
   calendar?: {
     small?: {
@@ -473,7 +506,11 @@ export interface ThemeType {
     content?: {
       pad?: PadType;
     };
+    disabled?: {
+      background?: BackgroundType;
+    },
     error?: {
+      background?: BackgroundType;
       color?: ColorType;
       margin?: MarginType;
     };
@@ -483,6 +520,7 @@ export interface ThemeType {
     };
     label?: TextProps;
     margin?: MarginType;
+    round?: RoundType;
   };
   grommet?: {
     extend?: ExtendType;
@@ -640,7 +678,7 @@ export interface ThemeType {
       medium?: string;
       large?: string;
       xlarge?: string;
-      [x: string]: string,
+      [x: string]: string | undefined,
     };
   };
   layer?: {

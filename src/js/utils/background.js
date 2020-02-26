@@ -1,7 +1,14 @@
 import { css } from 'styled-components';
 
 import { colorIsDark, getRGBA, normalizeColor } from './colors';
-import { evalStyle } from './styles';
+
+// evalStyle() converts a styled-components item into a string
+const evalStyle = (arg, theme) => {
+  if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
+    return arg[0]({ theme });
+  }
+  return arg;
+};
 
 export const normalizeBackground = (background, theme) => {
   // If the background has a light or dark object, use that
@@ -50,6 +57,11 @@ export const backgroundIsDark = (backgroundArg, theme) => {
 };
 
 export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
+  // for Grommet component, if the background isn't defined, don't set it
+  if (backgroundArg === undefined) {
+    return undefined;
+  }
+
   // If the background has a light or dark object, use that
   const background = normalizeBackground(backgroundArg, theme);
   const textColor = textColorArg || theme.global.colors.text;
@@ -114,11 +126,15 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
     }
     const backgroundColor = normalizeColor(background, theme);
     if (backgroundColor) {
+      const backgroundDark = colorIsDark(backgroundColor);
       return css`
         background: ${backgroundColor};
         color: ${normalizeColor(
-          textColor[colorIsDark(backgroundColor) ? 'dark' : 'light'] ||
-            textColor,
+          textColor[
+            backgroundDark || (backgroundDark === undefined && theme.dark)
+              ? 'dark'
+              : 'light'
+          ] || textColor,
           theme,
         )};
       `;

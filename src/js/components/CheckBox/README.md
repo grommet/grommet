@@ -292,5 +292,5 @@ The width size of the toggle. Expects `string`.
 Defaults to
 
 ```
-42px
+48px
 ```

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, Button, Grommet, Text } from 'grommet';
+import { grommet, Box, Button, Grommet, Nav, Text } from 'grommet';
 
 const SidebarButton = ({ label, ...rest }) => (
   <Button plain {...rest}>
@@ -16,12 +16,12 @@ const SidebarButton = ({ label, ...rest }) => (
   </Button>
 );
 
-const SidebarButtons = () => {
+const SidebarNav = () => {
   const [active, setActive] = useState();
   return (
     <Grommet full theme={grommet}>
       <Box fill direction="row">
-        <Box background="neutral-1">
+        <Nav background="neutral-1">
           {['Dashboard', 'Devices', 'Settings'].map(label => (
             <SidebarButton
               key={label}
@@ -30,10 +30,10 @@ const SidebarButtons = () => {
               onClick={() => setActive(label)}
             />
           ))}
-        </Box>
+        </Nav>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Button', module).add('Sidebar', () => <SidebarButtons />);
+storiesOf('Nav', module).add('Sidebar', () => <SidebarNav />);

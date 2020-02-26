@@ -1,25 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 import { Volume } from 'grommet-icons';
-
-const SimpleRangeInput = () => {
-  const [value, setValue] = React.useState(5);
-
-  const onChange = event => setValue(event.target.value);
-
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <RangeInput value={value} onChange={onChange} />
-      </Box>
-    </Grommet>
-  );
-};
 
 const customThemeRangeInput = deepMerge(grommet, {
   global: {
@@ -60,6 +47,8 @@ const CustomRangeInput = () => {
   );
 };
 
-storiesOf('RangeInput', module)
-  .add('Simple', () => <SimpleRangeInput />)
-  .add('Custom', () => <CustomRangeInput />);
+if (!isChromatic()) {
+  storiesOf('TypeScript/RangeInput', module).add('Custom', () => (
+    <CustomRangeInput />
+  ));
+}

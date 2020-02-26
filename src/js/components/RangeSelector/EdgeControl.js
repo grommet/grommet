@@ -29,6 +29,7 @@ const EdgeControl = ({
   onDecrease,
   onIncrease,
   theme,
+  thickness,
   ...rest
 }) => {
   const [focused, setFocused] = useState(false);
@@ -49,9 +50,10 @@ const EdgeControl = ({
   if (type === 'bar') {
     node = (
       <Box
-        flex
+        flex={!thickness}
         justifySelf="stretch"
-        width={`${size}px`}
+        width={direction === 'vertical' ? thickness : `${size}px`}
+        height={direction === 'vertical' ? `${size}px` : thickness}
         background={normalizeColor(color || 'control', theme)}
         border={focused ? { color: normalizeColor('focus', theme) } : undefined}
       />
@@ -77,6 +79,7 @@ const EdgeControl = ({
         overflow="visible"
         align="center"
         justify="center"
+        alignSelf="stretch"
       >
         <Box
           ref={forwardRef}
@@ -106,9 +109,6 @@ const EdgeControl = ({
 EdgeControl.defaultProps = {};
 Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 
-const EdgeControlWrapper = compose(
-  withForwardRef,
-  withTheme,
-)(EdgeControl);
+const EdgeControlWrapper = compose(withForwardRef, withTheme)(EdgeControl);
 
 export { EdgeControlWrapper as EdgeControl };
