@@ -32,6 +32,24 @@ const FakeLayer = ({ children, dataTestid }) => {
   );
 };
 
+const TargetLayer = props => {
+  const ref = React.useRef();
+  let layer;
+  if (ref.current) {
+    layer = (
+      <Layer {...props} target={ref.current}>
+        this is a test layer
+      </Layer>
+    );
+  }
+  return (
+    <Grommet>
+      <div ref={ref} />
+      {layer}
+    </Grommet>
+  );
+}
+
 describe('Layer', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
@@ -235,5 +253,16 @@ describe('Layer', () => {
     const inputNode = getByTestId(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement).toBe(inputNode);
+  });
+
+  test('target', () => {
+    render(
+      <Grommet>
+        <TargetLayer id="target-test">
+          This layer has a target
+        </TargetLayer>
+      </Grommet>,
+    );
+    expectPortal('target-test').toMatchSnapshot();
   });
 });

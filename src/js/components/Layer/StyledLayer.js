@@ -16,8 +16,6 @@ const desktopLayerStyle = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 `;
 
 const responsiveLayerStyle = `
@@ -39,7 +37,19 @@ const StyledLayer = styled.div`
     if (props.position === 'hidden') {
       return hiddenPositionStyle;
     }
-    const styles = [desktopLayerStyle];
+    const styles = [];
+    if (props.targetBounds) {
+      const { left, right, top, bottom } = props.targetBounds;
+      styles.push(`
+        position: fixed;
+        left: ${left}px;
+        right: ${window.innerWidth - right}px;
+        top: ${top}px;
+        bottom: ${window.innerHeight - bottom}px;
+      `);
+    } else {
+      styles.push(desktopLayerStyle);
+    }
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
