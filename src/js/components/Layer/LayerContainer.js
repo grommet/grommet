@@ -37,7 +37,6 @@ const LayerContainer = forwardRef(
     const layerRef = useRef();
 
     useEffect(() => {
-      console.log('hej');
       const handleClick = event => {
         if (containerRef.current.contains(event.target)) {
           return;
