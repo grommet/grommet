@@ -9,7 +9,7 @@ export const strokeProps = (color, theme) => {
         result.strokeOpacity = `${
           color.opacity === true
             ? theme.global.opacity.medium
-            : theme.global.opacity[color.opacity]
+            : theme.global.opacity[color.opacity] || color.opacity
         }`;
       }
     } else {
