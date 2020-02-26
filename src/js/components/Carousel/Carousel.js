@@ -1,16 +1,19 @@
-import React, { Children, useState, useEffect, useRef } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, {
+  Children,
+  useContext,
+  useEffect,
+  useState,
+  useRef,
+} from 'react';
 
 import { normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { ThemeContext } from '../../contexts';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-import { withFocus } from '../hocs';
 
 const Carousel = ({
   initialChild,
@@ -18,10 +21,13 @@ const Carousel = ({
   children,
   controls,
   fill,
-  focus,
-  theme,
+  onFocus,
+  onBlur,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [focus, setFocus] = useState();
+
   const timerRef = useRef();
 
   const [indexes, setIndexes] = useState({
@@ -141,7 +147,21 @@ const Carousel = ({
     <Keyboard onLeft={onLeft} onRight={onRight}>
       <Stack guidingChild={activeIndex} fill={fill} {...rest}>
         {wrappedChildren}
-        <Box tabIndex="0" focus={focus} fill direction="row" justify="between">
+        <Box
+          tabIndex="0"
+          focus={focus}
+          onFocus={event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          fill
+          direction="row"
+          justify="between"
+        >
           {showArrows && (
             <Button
               fill="vertical"
@@ -204,9 +224,6 @@ if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   CarouselDoc = require('./doc').doc(Carousel);
 }
-const CarouselWrapper = compose(
-  withFocus(),
-  withTheme,
-)(CarouselDoc || Carousel);
+const CarouselWrapper = CarouselDoc || Carousel;
 
 export { CarouselWrapper as Carousel };

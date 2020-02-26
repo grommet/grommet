@@ -276,8 +276,6 @@ exports[`Carousel basic 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
@@ -317,6 +315,8 @@ exports[`Carousel basic 1`] = `
     >
       <div
         className="c7"
+        onBlur={[Function]}
+        onFocus={[Function]}
         tabIndex="0"
       >
         <button
@@ -700,8 +700,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
@@ -741,6 +739,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
     >
       <div
         className="c7"
+        onBlur={[Function]}
+        onFocus={[Function]}
         tabIndex="0"
       >
         <button
