@@ -39,7 +39,7 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext);
-    const [targetBounds, setTargetBounds] = useState({});
+    const [targetBounds, setTargetBounds] = useState();
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
@@ -75,7 +75,6 @@ const LayerContainer = forwardRef(
 
     useEffect(() => {
       if (layerTarget) {
-
         const updateBounds = () => {
           const rect = findVisibleParent(layerTarget).getBoundingClientRect();
           setTargetBounds({
@@ -99,6 +98,7 @@ const LayerContainer = forwardRef(
         id={id}
         full={full}
         margin={margin}
+        modal={modal}
         {...rest}
         position={position}
         plain={plain}

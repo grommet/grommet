@@ -1,11 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, Grid, Grommet, Layer } from 'grommet';
+import { Box, Button, Grid, Grommet, Layer, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
+
+const positions = ['center', 'start', 'end', 'top', 'bottom'];
 
 const TargetLayer = () => {
   const [open, setOpen] = React.useState();
   const [gutter, setGutter] = React.useState('small');
+  const [position, setPosition] = React.useState('start');
   React.useEffect(() => {
     window.dispatchEvent(new Event('resize'));
     return undefined;
@@ -16,16 +19,32 @@ const TargetLayer = () => {
 
   return (
     <Grommet theme={grommet} full>
-      <Grid fill columns={[gutter, 'flex', gutter]}>
-        <Box background="brand" />
-        <Box ref={ref} fill align="center" justify="center">
+      <Grid
+        fill
+        columns={[gutter, 'flex', gutter]}
+        rows={[gutter, 'flex', gutter]}
+        areas={[{ name: 'main', start: [1, 1], end: [1, 1] }]}
+      >
+        <Box
+          ref={ref}
+          gridArea="main"
+          fill
+          align="center"
+          justify="center"
+          gap="medium"
+          background="brand"
+        >
+          <Select
+            options={positions}
+            value={position}
+            onChange={({ option }) => setPosition(option)}
+          />
           <Button label="Open" onClick={onOpen} />
         </Box>
-        <Box background="brand" />
       </Grid>
       {open && (
         <Layer
-          position="start"
+          position={position}
           target={ref.current}
           modal
           onClickOutside={onClose}
@@ -33,8 +52,8 @@ const TargetLayer = () => {
         >
           <Box pad="medium" gap="small" width="medium">
             <Button
-              label="Toggle"
-              onClick={() => setGutter(gutter === 'small' ? 'medium' : 'small')}
+              label="Toggle gutter size"
+              onClick={() => setGutter(gutter === 'small' ? 'xsmall' : 'small')}
             />
             <Button label="Close" onClick={onClose} />
           </Box>

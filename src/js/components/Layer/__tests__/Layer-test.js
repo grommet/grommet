@@ -33,22 +33,22 @@ const FakeLayer = ({ children, dataTestid }) => {
 };
 
 const TargetLayer = props => {
-  const ref = React.useRef();
+  const [target, setTarget] = React.useState();
   let layer;
-  if (ref.current) {
+  if (target) {
     layer = (
-      <Layer {...props} target={ref.current}>
+      <Layer {...props} target={target}>
         this is a test layer
       </Layer>
     );
   }
   return (
     <Grommet>
-      <div ref={ref} />
+      <div ref={setTarget} />
       {layer}
     </Grommet>
   );
-}
+};
 
 describe('Layer', () => {
   beforeEach(createPortal);
@@ -258,9 +258,7 @@ describe('Layer', () => {
   test('target', () => {
     render(
       <Grommet>
-        <TargetLayer id="target-test">
-          This layer has a target
-        </TargetLayer>
+        <TargetLayer id="target-test">This layer has a target</TargetLayer>
       </Grommet>,
     );
     expectPortal('target-test').toMatchSnapshot();

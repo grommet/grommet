@@ -42,9 +42,9 @@ const StyledLayer = styled.div`
       const { left, right, top, bottom } = props.targetBounds;
       styles.push(`
         position: fixed;
+        top: ${top}px;
         left: ${left}px;
         right: ${window.innerWidth - right}px;
-        top: ${top}px;
         bottom: ${window.innerHeight - bottom}px;
       `);
     } else {
