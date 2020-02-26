@@ -92,7 +92,6 @@ exports[`Layer animation fadeIn 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -171,8 +170,7 @@ exports[`Layer animation fadeIn 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -281,7 +279,6 @@ exports[`Layer animation false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -360,8 +357,7 @@ exports[`Layer animation false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -472,7 +468,6 @@ exports[`Layer animation slide 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -551,8 +546,7 @@ exports[`Layer animation slide 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -663,7 +657,6 @@ exports[`Layer animation true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -742,8 +735,7 @@ exports[`Layer animation true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -854,7 +846,6 @@ exports[`Layer custom margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -933,8 +924,7 @@ exports[`Layer custom margin 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -997,7 +987,6 @@ exports[`Layer dark context 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1045,8 +1034,7 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1117,7 +1105,6 @@ exports[`Layer focus on layer 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1240,7 +1227,6 @@ exports[`Layer full false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1319,8 +1305,7 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1432,7 +1417,6 @@ exports[`Layer full horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1511,8 +1495,7 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1622,7 +1605,6 @@ exports[`Layer full true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1701,8 +1683,7 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1814,7 +1795,6 @@ exports[`Layer full vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1893,8 +1873,7 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -1986,7 +1965,6 @@ exports[`Layer hidden 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2043,8 +2021,7 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2073,7 +2050,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 bnUvKb"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 ceYBBX"
+    class="StyledLayer__StyledContainer-rmtehz-2 lexBQz"
     id="hidden-test"
   >
     <a
@@ -2125,8 +2102,7 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2294,7 +2270,6 @@ exports[`Layer margin large 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2373,8 +2348,7 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2485,7 +2459,6 @@ exports[`Layer margin medium 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2564,8 +2537,7 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2676,7 +2648,6 @@ exports[`Layer margin none 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2755,8 +2726,7 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2867,7 +2837,6 @@ exports[`Layer margin small 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -2946,8 +2915,7 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3058,7 +3026,6 @@ exports[`Layer margin xsmall 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3137,8 +3104,7 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3201,7 +3167,6 @@ exports[`Layer non-modal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3249,8 +3214,7 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3321,7 +3285,6 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3447,7 +3410,6 @@ exports[`Layer plain 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3526,8 +3488,7 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3638,7 +3599,6 @@ exports[`Layer position bottom 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3717,8 +3677,7 @@ exports[`Layer position bottom 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3829,7 +3788,6 @@ exports[`Layer position center 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -3908,8 +3866,7 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4020,7 +3977,6 @@ exports[`Layer position end 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4099,8 +4055,7 @@ exports[`Layer position end 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4211,7 +4166,6 @@ exports[`Layer position left 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4290,8 +4244,7 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4402,7 +4355,6 @@ exports[`Layer position right 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4481,8 +4433,7 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4593,7 +4544,6 @@ exports[`Layer position start 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4672,8 +4622,7 @@ exports[`Layer position start 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4784,7 +4733,6 @@ exports[`Layer position top 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4863,8 +4811,7 @@ exports[`Layer position top 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .egKDUR {
-    position: relative;
+  .hhTQuV {
     max-height: none;
     max-width: none;
     border-radius: 0;
@@ -4935,7 +4882,6 @@ exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;

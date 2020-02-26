@@ -627,7 +627,6 @@ const desktopContainerStyle = css`
 `;
 
 const responsiveContainerStyle = css`
-  position: relative;
   max-height: none;
   max-width: none;
   border-radius: 0;
