@@ -1,7 +1,5 @@
-import React, { createRef, Component } from 'react';
+import React, { forwardRef, useContext, useRef, useEffect } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -16,107 +14,92 @@ const HiddenAnchor = styled.a`
   position: absolute;
 `;
 
-class LayerContainer extends Component {
-  static contextType = ThemeContext;
-
-  static defaultProps = {
-    full: false,
-    margin: 'none',
-    modal: true,
-    position: 'center',
-  };
-
-  anchorRef = createRef();
-
-  containerRef = React.createRef();
-
-  layerRef = React.createRef();
-
-  componentDidMount() {
-    const { position, modal, onClickOutside } = this.props;
-
-    if (onClickOutside) {
-      document.addEventListener('mousedown', this.handleClick);
-    }
-    if (position !== 'hidden') {
-      this.makeLayerVisible();
-      // Once layer is open we make sure it has focus so that you
-      // can start tabbing inside the layer. If the caller put focus
-      // on an element already, we honor that. Otherwise, we put
-      // the focus in the hidden anchor.
-      let element = document.activeElement;
-      while (element) {
-        if (element === this.containerRef.current) {
-          // already have focus inside the container
-          break;
-        }
-        element = element.parentElement;
-      }
-      if (modal && !element && this.anchorRef.current) {
-        this.anchorRef.current.focus();
-      }
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    const { position } = this.props;
-    if (prevProps.position !== position && position !== 'hidden') {
-      this.makeLayerVisible();
-    }
-  }
-
-  componentWillUnmount() {
-    const { onClickOutside } = this.props;
-    if (onClickOutside) {
-      document.removeEventListener('mousedown', this.handleClick);
-    }
-  }
-
-  handleClick = event => {
-    if (this.containerRef.current.contains(event.target)) {
-      return;
-    }
-    const { onClickOutside } = this.props;
-    if (onClickOutside) {
-      onClickOutside();
-    }
-  };
-
-  makeLayerVisible = () => {
-    const node = this.layerRef.current || this.containerRef.current;
-    if (node && node.scrollIntoView) {
-      node.scrollIntoView();
-    }
-  };
-
-  render() {
-    const {
+const LayerContainer = forwardRef(
+  (
+    {
       children,
+      full = false,
       id,
-      modal,
+      margin = 'none',
+      modal = true,
       onClickOutside,
       onEsc,
       plain,
-      position,
-      responsive,
-      theme: propsTheme,
+      position = 'center',
+      responsive = true,
       ...rest
-    } = this.props;
-    const theme = this.context || propsTheme;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext);
+    const anchorRef = useRef();
+    const containerRef = useRef();
+    const layerRef = useRef();
+
+    useEffect(() => {
+      console.log('hej');
+      const handleClick = event => {
+        if (containerRef.current.contains(event.target)) {
+          return;
+        }
+        if (onClickOutside) {
+          onClickOutside();
+        }
+      };
+      if (onClickOutside) {
+        document.addEventListener('mousedown', handleClick);
+      }
+      return () => {
+        if (onClickOutside) {
+          document.removeEventListener('mousedown', handleClick);
+        }
+      };
+    }, [onClickOutside]);
+
+    useEffect(() => {
+      if (position !== 'hidden') {
+        const node = layerRef.current || containerRef.current || ref.current;
+        if (node && node.scrollIntoView) node.scrollIntoView();
+        // Once layer is open we make sure it has focus so that you
+        // can start tabbing inside the layer. If the caller put focus
+        // on an element already, we honor that. Otherwise, we put
+        // the focus in the hidden anchor.
+        let element = document.activeElement;
+        while (element) {
+          if (element === containerRef.current) {
+            // already have focus inside the container
+            break;
+          }
+          element = element.parentElement;
+        }
+        if (modal && !element && anchorRef.current) {
+          anchorRef.current.focus();
+        }
+      }
+    }, [modal, position, ref]);
+
+    useEffect(() => {
+      if (position !== 'hidden') {
+        const node = layerRef.current || containerRef.current || ref.current;
+        if (node && node.scrollIntoView) node.scrollIntoView();
+      }
+    }, [position, ref]);
 
     let content = (
       <StyledContainer
+        ref={ref || containerRef}
         id={id}
+        full={full}
+        margin={margin}
         {...rest}
         position={position}
         plain={plain}
         responsive={responsive}
-        ref={this.containerRef}
         dir={theme.dir}
       >
         {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
-        <HiddenAnchor ref={this.anchorRef} tabIndex="-1" aria-hidden="true" />
+        <HiddenAnchor ref={anchorRef} tabIndex="-1" aria-hidden="true" />
         {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         {/* eslint-enable max-len */}
         {children}
@@ -126,19 +109,18 @@ class LayerContainer extends Component {
     if (modal) {
       content = (
         <StyledLayer
+          ref={layerRef}
           id={id}
           plain={plain}
           position={position}
           responsive={responsive}
           tabIndex="-1"
-          ref={this.layerRef}
           dir={theme.dir}
         >
           <StyledOverlay plain={plain} responsive={responsive} />
           {content}
         </StyledLayer>
       );
-      /* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
     }
 
     if (onEsc) {
@@ -167,10 +149,9 @@ class LayerContainer extends Component {
         </FocusedContainer>
       );
     }
-    return content;
-  }
-}
 
-Object.setPrototypeOf(LayerContainer.defaultProps, defaultProps);
+    return content;
+  },
+);
 
 export { LayerContainer };
