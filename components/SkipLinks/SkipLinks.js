@@ -39,7 +39,7 @@ var SkipLinks = function SkipLinks(_ref) {
     setTimeout(function () {
       var layerNode = layerRef.current;
 
-      if (layerNode && layerNode.layerContainer.contains && !layerNode.layerContainer.contains(document.activeElement)) {
+      if (layerNode && layerNode.layerContainer && layerNode.layerContainer.contains && !layerNode.layerContainer.contains(document.activeElement)) {
         removeLayer();
       }
     }, 0);

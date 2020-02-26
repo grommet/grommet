@@ -166,19 +166,6 @@ describe('Layer', function () {
       done();
     }, 300);
   });
-  test('should be null prior to mounting, displayed after mount', function () {
-    var ref = React.createRef();
-    render(React.createElement(Grommet, null, React.createElement(Layer, {
-      "data-testid": "test-layer-container",
-      ref: ref
-    }, "Layer container is available")));
-    ref.current.setState({
-      islayerContainerAvailable: false
-    });
-    expect(queryByTestId(document, 'test-layer-container')).toBeNull();
-    ref.current.componentDidMount();
-    expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
-  });
   test('focus on layer', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
     render(React.createElement(Grommet, null, React.createElement(Layer, {

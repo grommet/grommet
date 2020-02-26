@@ -181,20 +181,6 @@ describe('Layer', function () {
       done();
     }, 300);
   });
-  test('should be null prior to mounting, displayed after mount', function () {
-    var ref = _react["default"].createRef();
-
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
-      "data-testid": "test-layer-container",
-      ref: ref
-    }, "Layer container is available")));
-    ref.current.setState({
-      islayerContainerAvailable: false
-    });
-    expect((0, _dom.queryByTestId)(document, 'test-layer-container')).toBeNull();
-    ref.current.componentDidMount();
-    expect((0, _dom.queryByTestId)(document, 'test-layer-container')).toMatchSnapshot();
-  });
   test('focus on layer', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
     (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
