@@ -48,6 +48,6 @@ const IndeterminateCheckBox = () => {
   );
 };
 
-storiesOf('CheckBox', module).add('Interminate', () => (
+storiesOf('CheckBox', module).add('Indeterminate', () => (
   <IndeterminateCheckBox />
 ));

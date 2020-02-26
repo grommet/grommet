@@ -18,7 +18,7 @@ import { DropButton } from 'grommet';
 **a11yTitle**
 
 Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element. Defaults to `Open Drop`.
+   be added to the element.
 
 ```
 string
@@ -68,6 +68,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -85,6 +93,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small

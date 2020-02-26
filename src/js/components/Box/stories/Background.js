@@ -39,6 +39,16 @@ const BackgroundBox = () => (
       >
         image + color
       </Box>
+      <Box background="dark-1" pad="medium">
+        <Box background="#FFFFFF08" pad="small">
+          low opacity on dark background
+        </Box>
+      </Box>
+      <Box background="light-5" pad="medium">
+        <Box background="#11111108" pad="small">
+          low opacity on light background
+        </Box>
+      </Box>
     </Box>
   </Grommet>
 );

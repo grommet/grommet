@@ -1,8 +1,7 @@
 import React, { createRef, Component } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { ThemeContext } from '../../contexts';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -34,7 +33,7 @@ class LayerContainer extends Component {
   layerRef = React.createRef();
 
   componentDidMount() {
-    const { position } = this.props;
+    const { position, modal } = this.props;
     if (position !== 'hidden') {
       this.makeLayerVisible();
       // Once layer is open we make sure it has focus so that you
@@ -49,7 +48,7 @@ class LayerContainer extends Component {
         }
         element = element.parentElement;
       }
-      if (!element && this.anchorRef.current) {
+      if (modal && !element && this.anchorRef.current) {
         this.anchorRef.current.focus();
       }
     }
@@ -92,6 +91,7 @@ class LayerContainer extends Component {
         plain={plain}
         responsive={responsive}
         ref={this.containerRef}
+        dir={theme.dir}
       >
         {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
@@ -111,6 +111,7 @@ class LayerContainer extends Component {
           responsive={responsive}
           tabIndex="-1"
           ref={this.layerRef}
+          dir={theme.dir}
         >
           <StyledOverlay
             plain={plain}

@@ -22,6 +22,17 @@ An object representing any errors in the data. They keys should
 }
 ```
 
+**infos**
+
+An object representing any information details in the data.
+        They keys should match the keys in the value object. Defaults to `{}`.
+
+```
+{
+
+}
+```
+
 **messages**
 
 Custom validation messages. Defaults to `{
@@ -48,7 +59,8 @@ function
 
 Function that will be called when the form is submitted. The
       single argument is an event containing the latest value object
-      via `event.value`.
+      via `event.value` and an object indicating which fields were
+      touched via `event.touched`.
 
 ```
 function
@@ -61,6 +73,15 @@ Function that will be called when the form is reset. The
 
 ```
 function
+```
+
+**validate**
+
+When to perform validation Defaults to `submit`.
+
+```
+blur
+submit
 ```
 
 **value**

@@ -64,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -81,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -278,7 +294,7 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to `[]`.
+      'primaryKey' isn't specified either, then the first column will be used.
 
 ```
 [{
@@ -312,7 +328,7 @@ A description of the data. The order controls the column order.
 
 **data**
 
-Array of data objects. Defaults to `[]`.
+Array of data objects.
 
 ```
 [{

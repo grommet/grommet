@@ -3,16 +3,21 @@ import * as React from "react";
 import { 
   ColorType 
 } from "../../utils";
+
+export type DiagramConnectionAnchor = "center" | "vertical" | "horizontal";
+export type DiagramConnectionType = "direct" | "curved" | "rectilinear";
+
 export interface DiagramProps {
   connections: {
-    anchor?: "center" | "vertical" | "horizontal", 
+    anchor?: DiagramConnectionAnchor, 
     color?: ColorType,
     fromTarget: string | object,
     label?: string,
     offset?: "xsmall" | "small" | "medium" | "large" | string,
     thickness?: "hair" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | string,
     toTarget: string | object,
-    type?: "direct" | "curved" | "rectilinear"}[];
+    type?: DiagramConnectionType
+  }[];
 }
 
 declare const Diagram: React.FC<DiagramProps & JSX.IntrinsicElements['svg']>;

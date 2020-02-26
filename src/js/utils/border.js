@@ -24,13 +24,25 @@ export const borderStyle = (data, responsive, theme) => {
     side === 'left' ||
     side === 'right'
   ) {
-    styles.push(css`border-${side}: ${value};`);
+    styles.push(`border-${side}: ${value};`);
     if (responsiveValue) {
       styles.push(
         breakpointStyle(
           breakpoint,
           `
         border-${side}: ${responsiveValue};
+      `,
+        ),
+      );
+    }
+  } else if (side === 'end' || side === 'start') {
+    styles.push(css`border-inline-${side}: ${value};`);
+    if (responsiveValue) {
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
+        border-inline-${side}: ${responsiveValue};
       `,
         ),
       );
@@ -67,6 +79,8 @@ export const borderStyle = (data, responsive, theme) => {
         ),
       );
     }
+  } else if (side === 'between') {
+    // no-op
   } else {
     styles.push(
       css`

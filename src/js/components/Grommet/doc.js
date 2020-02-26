@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { backgroundDoc, getAvailableAtBadge } from '../../utils';
 
 export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
@@ -13,6 +13,10 @@ export const doc = Grommet => {
     .intrinsicElement('div');
 
   DocumentedGrommet.propTypes = {
+    background: backgroundDoc,
+    dir: PropTypes.oneOf(['rtl']).description(
+      'Layout direction for right to left contexts',
+    ),
     full: PropTypes.bool
       .description('Whether to take the whole viewport.')
       .defaultValue(false),
