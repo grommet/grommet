@@ -3,12 +3,12 @@ import { storiesOf } from '@storybook/react';
 import { Box, Button, Grid, Grommet, Layer, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const positions = ['center', 'start', 'end', 'top', 'bottom'];
+const positions = ['left', 'right', 'top', 'bottom', 'center'];
 
 const TargetLayer = () => {
   const [open, setOpen] = React.useState();
   const [gutter, setGutter] = React.useState('small');
-  const [position, setPosition] = React.useState('start');
+  const [position, setPosition] = React.useState(positions[0]);
   React.useEffect(() => {
     window.dispatchEvent(new Event('resize'));
     return undefined;
