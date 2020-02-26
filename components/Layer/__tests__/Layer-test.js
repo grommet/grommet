@@ -16,6 +16,8 @@ var _LayerContainer = require("../LayerContainer");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var FakeLayer = function FakeLayer(_ref) {
   var children = _ref.children,
       dataTestid = _ref.dataTestid;
@@ -43,6 +45,24 @@ var FakeLayer = function FakeLayer(_ref) {
   }
 
   return _react["default"].createElement(_.Box, null, layer, children);
+};
+
+var TargetLayer = function TargetLayer(props) {
+  var _React$useState2 = _react["default"].useState(),
+      target = _React$useState2[0],
+      setTarget = _React$useState2[1];
+
+  var layer;
+
+  if (target) {
+    layer = _react["default"].createElement(_.Layer, _extends({}, props, {
+      target: target
+    }), "this is a test layer");
+  }
+
+  return _react["default"].createElement(_.Grommet, null, _react["default"].createElement("div", {
+    ref: setTarget
+  }), layer);
 };
 
 describe('Layer', function () {
@@ -210,5 +230,11 @@ describe('Layer', function () {
     var inputNode = (0, _dom.getByTestId)(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement).toBe(inputNode);
+  });
+  test('target', function () {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(TargetLayer, {
+      id: "target-test"
+    }, "This layer has a target")));
+    (0, _portal.expectPortal)('target-test').toMatchSnapshot();
   });
 });

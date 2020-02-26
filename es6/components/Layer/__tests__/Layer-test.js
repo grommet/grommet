@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import React from 'react';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
@@ -32,6 +34,24 @@ var FakeLayer = function FakeLayer(_ref) {
   }
 
   return React.createElement(Box, null, layer, children);
+};
+
+var TargetLayer = function TargetLayer(props) {
+  var _React$useState2 = React.useState(),
+      target = _React$useState2[0],
+      setTarget = _React$useState2[1];
+
+  var layer;
+
+  if (target) {
+    layer = React.createElement(Layer, _extends({}, props, {
+      target: target
+    }), "this is a test layer");
+  }
+
+  return React.createElement(Grommet, null, React.createElement("div", {
+    ref: setTarget
+  }), layer);
 };
 
 describe('Layer', function () {
@@ -195,5 +215,11 @@ describe('Layer', function () {
     var inputNode = getByTestId(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement).toBe(inputNode);
+  });
+  test('target', function () {
+    render(React.createElement(Grommet, null, React.createElement(TargetLayer, {
+      id: "target-test"
+    }, "This layer has a target")));
+    expectPortal('target-test').toMatchSnapshot();
   });
 });

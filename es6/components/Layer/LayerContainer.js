@@ -2,11 +2,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useRef, useEffect } from 'react';
+import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { backgroundIsDark } from '../../utils';
+import { backgroundIsDark, findVisibleParent } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig({
   displayName: "LayerContainer__HiddenAnchor",
@@ -28,9 +28,15 @@ var LayerContainer = forwardRef(function (_ref, ref) {
       position = _ref$position === void 0 ? 'center' : _ref$position,
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive"]);
+      layerTarget = _ref.target,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
   var theme = useContext(ThemeContext);
+
+  var _useState = useState(),
+      targetBounds = _useState[0],
+      setTargetBounds = _useState[1];
+
   var anchorRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
@@ -64,11 +70,33 @@ var LayerContainer = forwardRef(function (_ref, ref) {
       if (node && node.scrollIntoView) node.scrollIntoView();
     }
   }, [position, ref]);
+  useEffect(function () {
+    if (layerTarget) {
+      var updateBounds = function updateBounds() {
+        var rect = findVisibleParent(layerTarget).getBoundingClientRect();
+        setTargetBounds({
+          left: rect.left,
+          right: rect.right,
+          top: rect.top,
+          bottom: rect.bottom
+        });
+      };
+
+      updateBounds();
+      window.addEventListener('resize', updateBounds);
+      return function () {
+        return window.removeEventListener('resize', updateBounds);
+      };
+    }
+
+    return undefined;
+  }, [layerTarget]);
   var content = React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
     id: id,
     full: full,
-    margin: margin
+    margin: margin,
+    modal: modal
   }, rest, {
     position: position,
     plain: plain,
@@ -84,6 +112,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
     content = React.createElement(StyledLayer, {
       ref: layerRef,
       id: id,
+      targetBounds: targetBounds,
       plain: plain,
       position: position,
       responsive: responsive,

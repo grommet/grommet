@@ -14,7 +14,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
-var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  width: 100vw;\n  height: 100vh;\n";
+var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
 var responsiveLayerStyle = "\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
 
 var StyledLayer = _styledComponents["default"].div.withConfig({
@@ -27,7 +27,18 @@ var StyledLayer = _styledComponents["default"].div.withConfig({
     return hiddenPositionStyle;
   }
 
-  var styles = [desktopLayerStyle];
+  var styles = [];
+
+  if (props.targetBounds) {
+    var _props$targetBounds = props.targetBounds,
+        left = _props$targetBounds.left,
+        right = _props$targetBounds.right,
+        top = _props$targetBounds.top,
+        bottom = _props$targetBounds.bottom;
+    styles.push("\n        position: fixed;\n        top: " + top + "px;\n        left: " + left + "px;\n        right: " + (window.innerWidth - right) + "px;\n        bottom: " + (window.innerHeight - bottom) + "px;\n      ");
+  } else {
+    styles.push(desktopLayerStyle);
+  }
 
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];

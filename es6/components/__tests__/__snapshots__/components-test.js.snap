@@ -2962,6 +2962,12 @@ top-right",
         "format": "boolean",
         "name": "responsive",
       },
+      Object {
+        "description": "Target where the layer will be aligned to. This should be a React 
+      reference.",
+        "format": "object",
+        "name": "target",
+      },
     ],
     "usage": "import { Layer } from 'grommet';
 <Layer />",

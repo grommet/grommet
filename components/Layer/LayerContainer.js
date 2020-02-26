@@ -44,9 +44,15 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
       position = _ref$position === void 0 ? 'center' : _ref$position,
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive"]);
+      layerTarget = _ref.target,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+
+  var _useState = (0, _react.useState)(),
+      targetBounds = _useState[0],
+      setTargetBounds = _useState[1];
+
   var anchorRef = (0, _react.useRef)();
   var containerRef = (0, _react.useRef)();
   var layerRef = (0, _react.useRef)();
@@ -80,12 +86,34 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
       if (node && node.scrollIntoView) node.scrollIntoView();
     }
   }, [position, ref]);
+  (0, _react.useEffect)(function () {
+    if (layerTarget) {
+      var updateBounds = function updateBounds() {
+        var rect = (0, _utils.findVisibleParent)(layerTarget).getBoundingClientRect();
+        setTargetBounds({
+          left: rect.left,
+          right: rect.right,
+          top: rect.top,
+          bottom: rect.bottom
+        });
+      };
+
+      updateBounds();
+      window.addEventListener('resize', updateBounds);
+      return function () {
+        return window.removeEventListener('resize', updateBounds);
+      };
+    }
+
+    return undefined;
+  }, [layerTarget]);
 
   var content = _react["default"].createElement(_StyledLayer.StyledContainer, _extends({
     ref: ref || containerRef,
     id: id,
     full: full,
-    margin: margin
+    margin: margin,
+    modal: modal
   }, rest, {
     position: position,
     plain: plain,
@@ -101,6 +129,7 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
     content = _react["default"].createElement(_StyledLayer.StyledLayer, {
       ref: layerRef,
       id: id,
+      targetBounds: targetBounds,
       plain: plain,
       position: position,
       responsive: responsive,
