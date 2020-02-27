@@ -22,11 +22,21 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var Layer = (0, _react.forwardRef)(function (props, ref) {
   var animate = props.animate,
       animation = props.animation;
-  var originalFocusedElement = (0, _react.useMemo)(function () {
-    return document ? document.activeElement : undefined;
+
+  var _useState = (0, _react.useState)(),
+      originalFocusedElement = _useState[0],
+      setOriginalFocusedElement = _useState[1];
+
+  (0, _react.useEffect)(function () {
+    return setOriginalFocusedElement(document.activeElement);
   }, []);
-  var layerContainer = (0, _react.useMemo)(function () {
-    return (0, _utils.getNewContainer)();
+
+  var _useState2 = (0, _react.useState)(),
+      layerContainer = _useState2[0],
+      setLayerContainer = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    return setLayerContainer((0, _utils.getNewContainer)());
   }, []); // just a few things to clean up when the Layer is unmounted
 
   (0, _react.useEffect)(function () {
@@ -44,31 +54,33 @@ var Layer = (0, _react.forwardRef)(function (props, ref) {
         }
       }
 
-      var activeAnimation = animation !== undefined ? animation : animate;
+      if (layerContainer) {
+        var activeAnimation = animation !== undefined ? animation : animate;
 
-      if (activeAnimation !== false) {
-        // undefined uses 'slide' as the default
-        // animate out and remove later
-        var layerClone = layerContainer.cloneNode(true);
-        layerClone.id = 'layerClone';
-        document.body.appendChild(layerClone);
-        var clonedContainer = layerClone.querySelector('[class*="StyledLayer__StyledContainer"]');
+        if (activeAnimation !== false) {
+          // undefined uses 'slide' as the default
+          // animate out and remove later
+          var layerClone = layerContainer.cloneNode(true);
+          layerClone.id = 'layerClone';
+          document.body.appendChild(layerClone);
+          var clonedContainer = layerClone.querySelector('[class*="StyledLayer__StyledContainer"]');
 
-        if (clonedContainer && clonedContainer.style) {
-          clonedContainer.style.animationDirection = 'reverse';
-        }
-
-        setTimeout(function () {
-          // we add the id and query here so the unit tests work
-          var clone = document.getElementById('layerClone');
-
-          if (clone) {
-            document.body.removeChild(clone);
-            layerContainer.remove();
+          if (clonedContainer && clonedContainer.style) {
+            clonedContainer.style.animationDirection = 'reverse';
           }
-        }, _StyledLayer.animationDuration);
-      } else {
-        document.body.removeChild(layerContainer);
+
+          setTimeout(function () {
+            // we add the id and query here so the unit tests work
+            var clone = document.getElementById('layerClone');
+
+            if (clone) {
+              document.body.removeChild(clone);
+              layerContainer.remove();
+            }
+          }, _StyledLayer.animationDuration);
+        } else {
+          document.body.removeChild(layerContainer);
+        }
       }
     };
   }, [animate, animation, layerContainer, originalFocusedElement]);

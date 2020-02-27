@@ -24,11 +24,20 @@ var Drop = (0, _react.forwardRef)(function (_ref, ref) {
       dropTarget = _ref.target,
       rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target"]);
 
-  var originalFocusedElement = (0, _react.useMemo)(function () {
-    return document.activeElement;
+  var _useState = (0, _react.useState)(),
+      originalFocusedElement = _useState[0],
+      setOriginalFocusedElement = _useState[1];
+
+  (0, _react.useEffect)(function () {
+    return setOriginalFocusedElement(document.activeElement);
   }, []);
-  var dropContainer = (0, _react.useMemo)(function () {
-    return (0, _utils.getNewContainer)();
+
+  var _useState2 = (0, _react.useState)(),
+      dropContainer = _useState2[0],
+      setDropContainer = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    return setDropContainer((0, _utils.getNewContainer)());
   }, []); // just a few things to clean up when the Drop is unmounted
 
   (0, _react.useEffect)(function () {
@@ -42,17 +51,16 @@ var Drop = (0, _react.forwardRef)(function (_ref, ref) {
         }
       }
 
-      document.body.removeChild(dropContainer);
+      if (dropContainer) {
+        document.body.removeChild(dropContainer);
+      }
     };
   }, [dropContainer, originalFocusedElement, restrictFocus]);
-  var portal = (0, _react.useMemo)(function () {
-    return (0, _reactDom.createPortal)(_react["default"].createElement(_DropContainer.DropContainer, _extends({
-      ref: ref,
-      dropTarget: dropTarget,
-      restrictFocus: restrictFocus
-    }, rest)), dropContainer);
-  }, [dropContainer, dropTarget, ref, restrictFocus, rest]);
-  return portal;
+  return dropContainer ? (0, _reactDom.createPortal)(_react["default"].createElement(_DropContainer.DropContainer, _extends({
+    ref: ref,
+    dropTarget: dropTarget,
+    restrictFocus: restrictFocus
+  }, rest)), dropContainer) : null;
 });
 Drop.displayName = 'Drop';
 var DropDoc;
