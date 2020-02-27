@@ -23,7 +23,7 @@ var Layer = (0, _react.forwardRef)(function (props, ref) {
   var animate = props.animate,
       animation = props.animation;
   var originalFocusedElement = (0, _react.useMemo)(function () {
-    return document.activeElement;
+    return document ? document.activeElement : undefined;
   }, []);
   var layerContainer = (0, _react.useMemo)(function () {
     return (0, _utils.getNewContainer)();

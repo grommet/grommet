@@ -9,7 +9,7 @@ var Layer = forwardRef(function (props, ref) {
   var animate = props.animate,
       animation = props.animation;
   var originalFocusedElement = useMemo(function () {
-    return document.activeElement;
+    return document ? document.activeElement : undefined;
   }, []);
   var layerContainer = useMemo(function () {
     return getNewContainer();
