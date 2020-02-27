@@ -20,7 +20,9 @@ var customBreakpoints = deepMerge(grommet, {
       medium: {
         value: 900
       },
-      large: 3000
+      large: {
+        value: 3000
+      }
     }
   }
 }); // columns, rows and areas are for Grid with a known number of contents / boxes.
