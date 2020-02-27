@@ -18,13 +18,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+var SimpleLayer = function SimpleLayer() {
+  var _React$useState = _react["default"].useState(true),
+      showLayer = _React$useState[0],
+      setShowLayer = _React$useState[1];
+
+  _react["default"].useEffect(function () {
+    return setShowLayer(false);
+  }, []);
+
+  var layer;
+
+  if (showLayer) {
+    layer = _react["default"].createElement(_.Layer, {
+      "data-testid": "test-dom-removal"
+    }, "This is a test");
+  }
+
+  return _react["default"].createElement(_.Box, null, layer);
+};
+
 var FakeLayer = function FakeLayer(_ref) {
   var children = _ref.children,
       dataTestid = _ref.dataTestid;
 
-  var _React$useState = _react["default"].useState(false),
-      showLayer = _React$useState[0],
-      setShowLayer = _React$useState[1];
+  var _React$useState2 = _react["default"].useState(false),
+      showLayer = _React$useState2[0],
+      setShowLayer = _React$useState2[1];
 
   _react["default"].useEffect(function () {
     return setShowLayer(true);
@@ -48,9 +68,9 @@ var FakeLayer = function FakeLayer(_ref) {
 };
 
 var TargetLayer = function TargetLayer(props) {
-  var _React$useState2 = _react["default"].useState(),
-      target = _React$useState2[0],
-      setTarget = _React$useState2[1];
+  var _React$useState3 = _react["default"].useState(),
+      target = _React$useState3[0],
+      setTarget = _React$useState3[1];
 
   var layer;
 
@@ -236,5 +256,11 @@ describe('Layer', function () {
       id: "target-test"
     }, "This layer has a target")));
     (0, _portal.expectPortal)('target-test').toMatchSnapshot();
+  });
+  test('unmounts from dom', function () {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(SimpleLayer, null)));
+    setTimeout(function () {
+      expect((0, _dom.queryByTestId)(document, 'test-dom-removal')).toBeNull();
+    }, 1000);
   });
 });
