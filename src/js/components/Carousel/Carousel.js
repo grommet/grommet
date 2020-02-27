@@ -218,6 +218,7 @@ Carousel.defaultProps = {
   controls: true,
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
+Carousel.displayName = 'Carousel';
 
 let CarouselDoc;
 if (process.env.NODE_ENV !== 'production') {
