@@ -8,6 +8,18 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
+const SimpleLayer = () => {
+  const [showLayer, setShowLayer] = React.useState(true);
+
+  React.useEffect(() => setShowLayer(false), []);
+
+  let layer;
+  if (showLayer) {
+    layer = <Layer data-testid="test-dom-removal">This is a test</Layer>;
+  }
+  return <Box>{layer}</Box>;
+};
+
 const FakeLayer = ({ children, dataTestid }) => {
   const [showLayer, setShowLayer] = React.useState(false);
 
@@ -262,5 +274,15 @@ describe('Layer', () => {
       </Grommet>,
     );
     expectPortal('target-test').toMatchSnapshot();
+  });
+  test('unmounts from dom', () => {
+    render(
+      <Grommet>
+        <SimpleLayer />
+      </Grommet>,
+    );
+    setTimeout(() => {
+      expect(queryByTestId(document, 'test-dom-removal')).toBeNull();
+    }, 1000);
   });
 });
