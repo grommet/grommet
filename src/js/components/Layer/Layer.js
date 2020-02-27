@@ -8,7 +8,10 @@ import { animationDuration } from './StyledLayer';
 
 const Layer = forwardRef((props, ref) => {
   const { animate, animation } = props;
-  const originalFocusedElement = useMemo(() => document.activeElement, []);
+  const originalFocusedElement = useMemo(
+    () => (document ? document.activeElement : undefined),
+    [],
+  );
   const layerContainer = useMemo(() => getNewContainer(), []);
 
   // just a few things to clean up when the Layer is unmounted
