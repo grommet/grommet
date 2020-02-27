@@ -62,3 +62,35 @@ export type PadType = EdgeType;
 export type PlaceHolderType = string | JSX.Element | React.ReactNode;
 export type RoundType = boolean | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string | {corner?: "top" | "left" | "bottom" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string};
 export type TextAlignType = "start" | "center" | "end";
+
+declare const breakpointEdgeSize: {
+  none?: string;
+  hair?: string;
+  xxsmall?: string;
+  xsmall?: string;
+  small?: string;
+  medium?: string;
+  large?: string;
+  xlarge?: string;
+};
+export type BreakpointEdgeSize = typeof breakpointEdgeSize;
+
+declare const breakpointBorderSize: {
+    xsmall?: string;
+    small?: string;
+    medium?: string;
+    large?: string;
+    xlarge?: string;
+}
+export type BreakpointBorderSize = typeof breakpointBorderSize;
+
+declare const breakpointSize: {          
+  xxsmall?: string;
+  xsmall?: string;
+  small?: string;
+  medium?: string;
+  large?: string;
+  xlarge?: string;
+  full?: string;
+};
+export type BreakpointSize = typeof breakpointSize;
