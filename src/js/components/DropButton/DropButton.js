@@ -1,8 +1,13 @@
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import { Button } from '../Button';
 import { Drop } from '../Drop';
-import { setFocusWithoutScroll } from '../../utils';
 
 const DropButton = forwardRef(
   (
@@ -22,63 +27,44 @@ const DropButton = forwardRef(
     },
     ref,
   ) => {
-    const [closed, setClosed] = useState();
-    const [show, setShow] = useState(open);
+    const [show, setShow] = useState();
     useEffect(() => {
       if (open !== undefined && open !== show) {
         setShow(open);
-        if (!open) setClosed(true);
       }
     }, [open, show]);
 
     const buttonRef = useRef();
 
-    // show the drop initially if open and refs are ready
-    useEffect(() => {
-      if (closed === undefined && open && (ref || buttonRef).current) {
-        setClosed(false);
-      }
-    }, [closed, open, ref, buttonRef]);
+    const onDropClose = useCallback(
+      event => {
+        // if the user has clicked on our Button, don't do anything here,
+        // handle that in onClickInternal() below.
+        let node = event.target;
+        while (node !== document && node !== (ref || buttonRef).current) {
+          node = node.parentNode;
+        }
+        if (node !== (ref || buttonRef).current) {
+          setShow(false);
+          if (onClose) onClose(event);
+        }
+      },
+      [onClose, ref],
+    );
 
-    useEffect(() => {
-      // focus on the button if the drop is closed
-      if (closed) {
-        setFocusWithoutScroll((ref || buttonRef).current);
-        setClosed(false);
-      }
-    }, [closed, ref]);
-
-    const onDropClose = () => {
-      setShow(false);
-      if (onClose) onClose();
-      setClosed(true);
-    };
-
-    const onToggle = event => {
-      setShow(!show);
-      if (show) {
-        if (onClose) onClose();
-        setClosed(true);
-      } else if (onOpen) onOpen();
-      if (onClick) onClick(event);
-    };
-
-    let drop;
-    if (show && (ref || buttonRef).current) {
-      drop = (
-        <Drop
-          id={id ? `${id}__drop` : undefined}
-          restrictFocus
-          align={dropAlign}
-          target={dropTarget || (ref || buttonRef).current}
-          onClickOutside={onDropClose}
-          onEsc={onDropClose}
-          {...dropProps}
-        >
-          {dropContent}
-        </Drop>
-      );
-    }
+    const onClickInternal = useCallback(
+      event => {
+        if (!show) {
+          setShow(true);
+          if (onOpen) onOpen(event);
+        } else {
+          setShow(false);
+          if (onClose) onClose(event);
+        }
+        if (onClick) onClick(event);
+      },
+      [onClick, onClose, onOpen, show],
+    );
 
     return (
       <>
@@ -88,9 +74,21 @@ const DropButton = forwardRef(
           a11yTitle={a11yTitle}
           disabled={disabled}
           {...rest}
-          onClick={onToggle}
+          onClick={onClickInternal}
         />
-        {drop}
+        {show && (ref || buttonRef).current && (
+          <Drop
+            id={id ? `${id}__drop` : undefined}
+            restrictFocus
+            align={dropAlign}
+            target={dropTarget || (ref || buttonRef).current}
+            onClickOutside={onDropClose}
+            onEsc={onDropClose}
+            {...dropProps}
+          >
+            {dropContent}
+          </Drop>
+        )}
       </>
     );
   },

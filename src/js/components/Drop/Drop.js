@@ -1,50 +1,60 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
 import { DropContainer } from './DropContainer';
 
-class Drop extends Component {
-  static defaultProps = {
-    align: {
-      top: 'top',
-      left: 'left',
-    },
-    plain: false,
-  };
-
-  originalFocusedElement = document.activeElement;
-
-  dropContainer = getNewContainer();
-
-  componentWillUnmount() {
-    const { restrictFocus } = this.props;
-    if (restrictFocus && this.originalFocusedElement) {
-      if (this.originalFocusedElement.focus) {
-        setFocusWithoutScroll(this.originalFocusedElement);
-      } else if (
-        this.originalFocusedElement.parentNode &&
-        this.originalFocusedElement.parentNode.focus
-      ) {
-        // required for IE11 and Edge
-        setFocusWithoutScroll(this.originalFocusedElement.parentNode);
-      }
-    }
-    document.body.removeChild(this.dropContainer);
-  }
-
-  render() {
-    const {
+const Drop = forwardRef(
+  (
+    {
+      restrictFocus,
       target: dropTarget, // avoid DOM leakage
       ...rest
-    } = this.props;
-    return createPortal(
-      <DropContainer dropTarget={dropTarget} {...rest} />,
-      this.dropContainer,
+    },
+    ref,
+  ) => {
+    const originalFocusedElement = useMemo(() => document.activeElement, []);
+    const dropContainer = useMemo(() => getNewContainer(), []);
+
+    // just a few things to clean up when the Drop is unmounted
+    useEffect(
+      () => () => {
+        if (restrictFocus && originalFocusedElement) {
+          if (originalFocusedElement.focus) {
+            setFocusWithoutScroll(originalFocusedElement);
+          } else if (
+            originalFocusedElement.parentNode &&
+            originalFocusedElement.parentNode.focus
+          ) {
+            // required for IE11 and Edge
+            setFocusWithoutScroll(originalFocusedElement.parentNode);
+          }
+        }
+        document.body.removeChild(dropContainer);
+      },
+      [dropContainer, originalFocusedElement, restrictFocus],
     );
-  }
-}
+
+    const portal = useMemo(
+      () =>
+        createPortal(
+          <DropContainer
+            ref={ref}
+            dropTarget={dropTarget}
+            restrictFocus={restrictFocus}
+            {...rest}
+          />,
+          dropContainer,
+        ),
+      [dropContainer, dropTarget, ref, restrictFocus, rest],
+    );
+
+    return portal;
+  },
+);
+
+Drop.displayName = 'Drop';
 
 let DropDoc;
 if (process.env.NODE_ENV !== 'production') {

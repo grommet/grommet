@@ -478,8 +478,9 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="masked-input-drop__item"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -742,8 +743,9 @@ exports[`MaskedInput mask 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="masked-input-drop__item"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -1127,8 +1129,9 @@ exports[`MaskedInput option via mouse 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="masked-input-drop__item"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
