@@ -16,8 +16,6 @@ const desktopLayerStyle = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 `;
 
 const responsiveLayerStyle = `
@@ -39,7 +37,19 @@ const StyledLayer = styled.div`
     if (props.position === 'hidden') {
       return hiddenPositionStyle;
     }
-    const styles = [desktopLayerStyle];
+    const styles = [];
+    if (props.targetBounds) {
+      const { left, right, top, bottom } = props.targetBounds;
+      styles.push(`
+        position: fixed;
+        top: ${top}px;
+        left: ${left}px;
+        right: ${window.innerWidth - right}px;
+        bottom: ${window.innerHeight - bottom}px;
+      `);
+    } else {
+      styles.push(desktopLayerStyle);
+    }
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
@@ -96,8 +106,10 @@ const MARGINS = (margin, theme, position = undefined) => {
     bottom: getMargin(margin, theme, 'bottom'),
     'bottom-left': getMargin(margin, theme, 'bottom-left'),
     'bottom-right': getMargin(margin, theme, 'bottom-right'),
+    end: getMargin(margin, theme, 'end'),
     left: getMargin(margin, theme, 'left'),
     right: getMargin(margin, theme, 'right'),
+    start: getMargin(margin, theme, 'start'),
     top: getMargin(margin, theme, 'top'),
     'top-right': getMargin(margin, theme, 'top-right'),
     'top-left': getMargin(margin, theme, 'top-left'),
@@ -178,6 +190,42 @@ const KEYFRAMES = {
     `,
   },
   right: {
+    vertical: keyframes`
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    `,
+    horizontal: keyframes`
+      0% { transform: translate(100%, -50%); }
+      100% { transform: translate(0, -50%); }
+    `,
+    true: keyframes`
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    `,
+    false: keyframes`
+      0% { transform: translate(100%, -50%); }
+      100% { transform: translate(0, -50%); }
+    `,
+  },
+  start: {
+    vertical: keyframes`
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    `,
+    horizontal: keyframes`
+      0% { transform: translate(-100%, -50%); }
+      100% { transform: translate(0, -50%); }
+    `,
+    true: keyframes`
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    `,
+    false: keyframes`
+      0% { transform: translate(-100%, -50%); }
+      100% { transform: translate(0, -50%); }
+    `,
+  },
+  end: {
     vertical: keyframes`
       0% { transform: translateX(100%); }
       100% { transform: translateX(0); }
@@ -374,6 +422,68 @@ const POSITIONS = {
       top: 50%;
       transform: translate(0, -50%);
       ${props => getAnimationStyle(props, 'right', 'false')}
+    `,
+  },
+
+  start: {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      inset-inline-start: ${margin.start};
+      transform: translateX(0);
+      ${props => getAnimationStyle(props, 'start', 'vertical')}
+    `,
+    horizontal: margin => css`
+      inset-inline-start: ${margin.start};
+      inset-inline-end: ${margin.end};
+      top: 50%;
+      transform: translate(0, -50%);
+      ${props => getAnimationStyle(props, 'start', 'horizontal')}
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      inset-inline-start: ${margin.start};
+      inset-inline-end: ${margin.end};
+      transform: translateX(0);
+      ${props => getAnimationStyle(props, 'start', 'true')}
+    `,
+    false: margin => css`
+      inset-inline-start: ${margin.start};
+      top: 50%;
+      transform: translate(0, -50%);
+      ${props => getAnimationStyle(props, 'start', 'false')}
+    `,
+  },
+
+  end: {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      inset-inline-end: ${margin.end};
+      transform: translateX(0);
+      ${props => getAnimationStyle(props, 'end', 'vertical')}
+    `,
+    horizontal: margin => css`
+      inset-inline-start: ${margin.start};
+      inset-inline-end: ${margin.end};
+      top: 50%;
+      transform: translate(0, -50%);
+      ${props => getAnimationStyle(props, 'end', 'horizontal')}
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      inset-inline-start: ${margin.start};
+      inset-inline-end: ${margin.end};
+      transform: translateX(0);
+      ${props => getAnimationStyle(props, 'end', 'true')}
+    `,
+    false: margin => css`
+      inset-inline-end: ${margin.end};
+      top: 50%;
+      transform: translate(0, -50%);
+      ${props => getAnimationStyle(props, 'end', 'false')}
     `,
   },
 

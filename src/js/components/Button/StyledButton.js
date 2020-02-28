@@ -11,18 +11,56 @@ import {
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
+const radiusStyle = props => {
+  // border.radius shouldn't impact an only-icon rendering.
+  const isIconOnly = props.hasIcon && !props.hasLabel;
+  const size = props.sizeProp;
+
+  if (
+    !isIconOnly &&
+    size &&
+    props.theme.button.size &&
+    props.theme.button.size[size]
+  ) {
+    return props.theme.button.size[size].border.radius;
+  }
+  return props.theme.button.border.radius;
+};
+
+const fontStyle = props => {
+  const size = props.sizeProp || 'medium';
+  const data = props.theme.text[size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
+
+const padStyle = props => {
+  const size = props.sizeProp;
+
+  if (size && props.theme.button.size && props.theme.button.size[size]) {
+    return css`
+      ${props.theme.button.size[size].pad.vertical}
+      ${props.theme.button.size[size].pad.horizontal}
+    `;
+  }
+  return css`
+    ${props.theme.button.padding.vertical}
+    ${props.theme.button.padding.horizontal}
+  `;
+};
+
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
       props.colorValue || props.theme.button.border.color || 'control',
       props.theme,
     )};
-  border-radius: ${props.theme.button.border.radius};
+  border-radius: ${radiusStyle(props)};
   color: ${normalizeColor(props.theme.button.color || 'text', props.theme)};
-  padding: ${props.theme.button.padding.vertical}
-    ${props.theme.button.padding.horizontal};
-  font-size: ${props.theme.text.medium.size};
-  line-height: ${props.theme.text.medium.height};
+  padding: ${padStyle(props)};
+  ${fontStyle(props)}
 `;
 
 const primaryStyle = props => css`
@@ -34,7 +72,7 @@ const primaryStyle = props => css`
     props.theme,
     props.theme.button.color,
   )}
-  border-radius: ${props.theme.button.border.radius};
+  border-radius: ${radiusStyle(props)};
 `;
 
 function getHoverColor(props) {
@@ -107,6 +145,7 @@ const StyledButton = styled.button`
   ${props => !props.disabled && props.active && activeStyle}
   ${props =>
     props.disabled &&
+    props.theme.button &&
     disabledStyle(
       props.theme.button.disabled && props.theme.button.disabled.opacity,
     )}
@@ -129,14 +168,14 @@ const StyledButton = styled.button`
     `
     line-height: 0;
   `}
-${props =>
-  props.pad &&
-  props.hasIcon &&
-  !props.hasLabel &&
-  `
-padding: ${props.theme.global.edgeSize.small};
-`}
-  ${props => props.theme.button.extend}
+  ${props =>
+    props.pad &&
+    props.hasIcon &&
+    !props.hasLabel &&
+    `
+    padding: ${props.theme.global.edgeSize.small};
+  `}
+  ${props => props.theme.button && props.theme.button.extend}
 `;
 
 StyledButton.defaultProps = {};

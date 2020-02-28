@@ -18,6 +18,7 @@ const Box = forwardRef(
     {
       a11yTitle,
       background,
+      border,
       children,
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
@@ -74,6 +75,13 @@ const Box = forwardRef(
       return undefined;
     }, [focusable, tabIndex]);
 
+    if (
+      (border === 'between' || (border && border.side === 'between')) &&
+      !gap
+    ) {
+      console.warn('Box must have a gap to use border between');
+    }
+
     let contents = children;
     if (gap) {
       contents = [];
@@ -90,6 +98,7 @@ const Box = forwardRef(
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
+                border={border}
               />,
             );
           }
@@ -116,6 +125,7 @@ const Box = forwardRef(
         as={!as && tag ? tag : as}
         aria-label={a11yTitle}
         background={background}
+        border={border}
         ref={ref}
         directionProp={direction}
         elevationProp={elevation}

@@ -1,6 +1,14 @@
-import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 import { Box } from '../Box';
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { RadioButton } from '../RadioButton';
 
@@ -8,6 +16,7 @@ const RadioButtonGroup = forwardRef(
   (
     {
       children,
+      disabled,
       gap = 'small',
       name,
       onChange,
@@ -17,18 +26,26 @@ const RadioButtonGroup = forwardRef(
     },
     ref,
   ) => {
+    const formContext = useContext(FormContext);
+
     // normalize options to always use an object
     const options = useMemo(
       () =>
         optionsProp.map(o =>
           typeof o === 'string'
-            ? { id: rest.id ? `${rest.id}-${o}` : o, label: o, value: o }
-            : o,
+            ? {
+                disabled,
+                id: rest.id ? `${rest.id}-${o}` : o,
+                label: o,
+                value: o,
+              }
+            : { disabled, ...o },
         ),
-      [optionsProp, rest.id],
+      [disabled, optionsProp, rest.id],
     );
-    const [value, setValue] = useState(valueProp);
-    useEffect(() => setValue(valueProp), [valueProp]);
+
+    const [value, setValue] = formContext.useFormContext(name, valueProp);
+
     const [focus, setFocus] = useState();
 
     const optionRefs = useRef([]);
@@ -54,9 +71,7 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex + 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
-        if (onChange) {
-          onChange({ target: { value: nextValue } });
-        }
+        if (onChange) onChange({ target: { value: nextValue } });
       }
     };
 
@@ -65,9 +80,7 @@ const RadioButtonGroup = forwardRef(
         const nextIndex = valueIndex - 1;
         const nextValue = options[nextIndex].value;
         setValue(nextValue);
-        if (onChange) {
-          onChange({ target: { value: nextValue } });
-        }
+        if (onChange) onChange({ target: { value: nextValue } });
       }
     };
 
@@ -89,29 +102,44 @@ const RadioButtonGroup = forwardRef(
         onRight={focus ? onNext : undefined}
       >
         <Box ref={ref} gap={gap} {...rest}>
-          {options.map(({ disabled, id, label, value: optionValue }, index) => (
-            <RadioButton
-              ref={aRef => {
-                optionRefs.current[index] = aRef;
-              }}
-              key={optionValue}
-              name={name}
-              label={!children ? label : undefined}
-              disabled={disabled}
-              checked={optionValue === value}
-              focus={
-                focus &&
-                (optionValue === value || (value === undefined && !index))
-              }
-              id={id}
-              value={optionValue}
-              onChange={onChange}
-              onFocus={onFocus}
-              onBlur={onBlur}
-            >
-              {children ? state => children(optionsProp[index], state) : null}
-            </RadioButton>
-          ))}
+          {options.map(
+            (
+              {
+                disabled: optionDisabled,
+                id,
+                label,
+                value: optionValue,
+                ...optionRest
+              },
+              index,
+            ) => (
+              <RadioButton
+                ref={aRef => {
+                  optionRefs.current[index] = aRef;
+                }}
+                key={optionValue}
+                name={name}
+                label={!children ? label : undefined}
+                disabled={optionDisabled}
+                checked={optionValue === value}
+                focus={
+                  focus &&
+                  (optionValue === value || (value === undefined && !index))
+                }
+                id={id}
+                value={optionValue}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                onChange={event => {
+                  setValue(event.target.value);
+                  if (onChange) onChange(event);
+                }}
+                {...optionRest}
+              >
+                {children ? state => children(optionsProp[index], state) : null}
+              </RadioButton>
+            ),
+          )}
         </Box>
       </Keyboard>
     );

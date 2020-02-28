@@ -3,10 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import {
-  colorIsDark,
+  backgroundIsDark,
   deepMerge,
   getBreakpoint,
   getDeviceBreakpoint,
+  normalizeColor,
 } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
@@ -19,25 +20,43 @@ class Grommet extends Component {
   static displayName = 'Grommet';
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { theme = {}, themeMode } = nextProps;
+    const {
+      background: backgroundProp,
+      dir,
+      theme = {},
+      themeMode,
+    } = nextProps;
     const { theme: stateTheme, themeProp, themeModeProp } = prevState;
 
     const nextTheme = deepMerge(baseTheme, theme);
     if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
       const {
-        colors: { background },
+        colors: { background: themeBackground },
       } = nextTheme.global;
-      // Determine whether to start in dark or light mode.
-      if (typeof background === 'object') {
-        // background is an object, use themeMode, theme default
-        // or first key
-        const color =
-          background[
-            themeMode || nextTheme.defaultMode || Object.keys(background)[0]
-          ];
-        nextTheme.dark = color ? colorIsDark(color) : false;
-      } else if (nextTheme.dark === undefined) {
-        nextTheme.dark = (background && colorIsDark(background)) || false;
+
+      // get initial value for dark so we can normalize background color
+      nextTheme.dark = (themeMode || theme.defaultMode) === 'dark';
+      const color = normalizeColor(
+        backgroundProp || themeBackground,
+        nextTheme,
+      );
+
+      // After normalizing, we set nextTheme.dark once more.
+      // It is necessary that we set it twice. We have to handle two cases:
+      // 1. Caller passes in a color object or a color name that resolves an
+      //    object. In this case, we want to set dark as line 38 shows. The
+      //    second set, in line 46, is a no-op.
+      // 2. Caller passes a specific color value or a color name that resolves
+      //    to a specific color value. In this case, we want dark to be set
+      //    based on that color, which line 46 will do.
+      // The double set of nextTheme.dark allows us to handle both cases here
+      // without having to duplicate color object + name + dark mode detection
+      // code here that is already in normalizeColor and backgroundIsDark.
+      nextTheme.dark = backgroundIsDark(color, nextTheme);
+      nextTheme.baseBackground = backgroundProp || themeBackground;
+
+      if (dir) {
+        nextTheme.dir = dir;
       }
       return {
         theme: nextTheme,

@@ -128,14 +128,17 @@ describe('Select', () => {
         onChange={onChange}
       />,
     );
+    const select = getByPlaceholderText('test select');
     expect(container.firstChild).toMatchSnapshot();
-
     fireEvent.click(getByPlaceholderText('test select'));
 
     // pressing enter here nothing will happen
     fireEvent.click(
       document.getElementById('test-select__drop').querySelector('button'),
     );
+
+    // checks it select has a value assigned to it after option is selected
+    expect(select.value).toEqual('one');
     expect(onChange).toBeCalled();
     expect(window.scrollTo).toBeCalled();
   });
@@ -394,6 +397,7 @@ describe('Select', () => {
         container: {},
       },
     };
+
     const { container } = render(
       <Grommet theme={customTheme}>
         <Select
@@ -406,15 +410,20 @@ describe('Select', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+
     const selectButton = container.querySelector('Button');
+    let style;
 
-    expect(selectButton).toHaveStyleRule('background', 'purple');
+    style = window.getComputedStyle(selectButton);
+    expect(style.background).toBe('purple');
 
     fireEvent.click(selectButton);
-    expect(selectButton).toHaveStyleRule('background', 'lightgrey');
+    style = window.getComputedStyle(selectButton);
+    expect(style.background).toBe('lightgrey');
 
     fireEvent.click(selectButton);
-    expect(selectButton).toHaveStyleRule('background', 'purple');
+    style = window.getComputedStyle(selectButton);
+    expect(style.background).toBe('purple');
   });
 
   test(`renders styled select options backwards compatible with legacy
@@ -428,6 +437,7 @@ describe('Select', () => {
         },
       },
     };
+
     const { getByPlaceholderText, getByText, container } = render(
       <Grommet theme={customTheme}>
         <Select
@@ -443,8 +453,10 @@ describe('Select', () => {
 
     const selectButton = getByPlaceholderText('Select...');
     fireEvent.click(selectButton);
+
     const optionButton = getByText('morning').closest('button');
-    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightblue');
+    const style = window.getComputedStyle(optionButton.firstChild);
+    expect(style.background).toBe('lightblue');
   });
 
   test('renders styled select options using select.options.container', () => {
@@ -457,6 +469,7 @@ describe('Select', () => {
         },
       },
     };
+
     const { getByPlaceholderText, getByText, container } = render(
       <Grommet theme={customTheme}>
         <Select
@@ -474,7 +487,8 @@ describe('Select', () => {
     fireEvent.click(selectButton);
 
     const optionButton = getByText('morning').closest('button');
-    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
+    const style = window.getComputedStyle(optionButton.firstChild);
+    expect(style.background).toBe('lightgreen');
   });
 
   test(`renders styled select options combining select.options.box && 
@@ -510,19 +524,19 @@ describe('Select', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+
     const selectButton = getByPlaceholderText('Select...');
     fireEvent.click(selectButton);
 
+    let style;
     const optionButton = getByText('morning').closest('button');
-    expect(optionButton.firstChild).not.toHaveStyleRule(
-      'background',
-      'lightblue',
-    );
-    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
-    expect(optionButton.firstChild).toHaveStyleRule(
-      'border-bottom',
-      'solid 2px blue',
-    );
+
+    style = window.getComputedStyle(optionButton.firstChild);
+    expect(style.background).not.toBe('lightblue');
+
+    style = window.getComputedStyle(optionButton.firstChild);
+    expect(style.background).toBe('lightgreen');
+    expect(style.borderBottom).toBe('2px solid blue');
   });
 
   test('applies custom global.hover theme to options', () => {

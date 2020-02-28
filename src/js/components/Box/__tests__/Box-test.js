@@ -275,6 +275,8 @@ describe('Box', () => {
         <Box margin={{ bottom: 'small' }} />
         <Box margin={{ left: 'small' }} />
         <Box margin={{ right: 'small' }} />
+        <Box margin={{ start: 'small' }} />
+        <Box margin={{ end: 'small' }} />
         <Box margin={{ top: 'small' }} />
       </Grommet>,
     );
@@ -293,6 +295,8 @@ describe('Box', () => {
         <Box pad={{ bottom: 'small' }} />
         <Box pad={{ left: 'small' }} />
         <Box pad={{ right: 'small' }} />
+        <Box pad={{ start: 'small' }} />
+        <Box pad={{ end: 'small' }} />
         <Box pad={{ top: 'small' }} />
       </Grommet>,
     );
@@ -364,6 +368,10 @@ describe('Box', () => {
             { side: 'left', color: 'accent-2', size: 'large', style: 'dashed' },
           ]}
         />
+        <Box border="between" gap="small">
+          <Box>one</Box>
+          <Box>two</Box>
+        </Box>
       </Grommet>,
     );
     const tree = component.toJSON();

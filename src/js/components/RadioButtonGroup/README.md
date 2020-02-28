@@ -24,6 +24,14 @@ Function that will be called to render the visual representation.
 function
 ```
 
+**disabled**
+
+Disables all options.
+
+```
+boolean
+```
+
 **name**
 
 Required. The DOM name attribute value to use for the underlying <input/> 
@@ -64,6 +72,7 @@ Currently selected option value.
 
 ```
 string
+object
 ```
   
 ## Intrinsic element

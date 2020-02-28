@@ -31,10 +31,12 @@ export interface ButtonProps {
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
+  size?: "small" | "medium" | "large";
   type?: "button" | "reset" | "submit";
   as?: PolymorphicType;
 }
 
 declare const Button: React.FC<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
+export type ButtonType = ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>
 
 export { Button };
