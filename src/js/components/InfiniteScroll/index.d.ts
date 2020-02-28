@@ -1,10 +1,10 @@
 import * as React from "react";
 
 export interface InfiniteScrollProps {
-  children?: ((...args: any[]) => any);
-  items?: any[];
-  onMore?: ((...args: any[]) => any);
-  renderMarker?: ((...args: any[]) => any);
+  children?: ((...args: [string, number] ) => React.ElementType);
+  items?: string[];
+  onMore?: (() => void);
+  renderMarker?: ((...args: React.ElementType[]) => React.ElementType);
   replace?: boolean;
   scrollableAncestor?: React.ReactNode | "window";
   show?: number;
