@@ -14,7 +14,7 @@ exports[`TextInput basic 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
 }
 
@@ -80,7 +80,7 @@ exports[`TextInput close suggestion drop 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
 }
 
@@ -412,7 +412,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 gzRCAZ"
+      class="StyledTextInput-ilbntv-0 lcLZmS"
       data-testid="test-input"
       id="item"
       name="item"
@@ -446,7 +446,7 @@ exports[`TextInput complex suggestions 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
 }
 
@@ -749,7 +749,7 @@ exports[`TextInput disabled 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
   opacity: 0.3;
   cursor: default;
@@ -818,7 +818,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
 }
 
@@ -875,7 +875,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 gzRCAZ"
+      class="StyledTextInput-ilbntv-0 lcLZmS"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1489,7 +1489,7 @@ exports[`TextInput select a suggestion 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
 }
 
@@ -1561,11 +1561,10 @@ exports[`TextInput select suggestion 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
   font-size: 22px;
   line-height: 28px;
-  border: none;
 }
 
 .c2::-webkit-search-decoration {
@@ -1896,7 +1895,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 kGfdwz"
+      class="StyledTextInput-ilbntv-0 funDBl"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2201,7 +2200,7 @@ exports[`TextInput suggestions 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
 }
 

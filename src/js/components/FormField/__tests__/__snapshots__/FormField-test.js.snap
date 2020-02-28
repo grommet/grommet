@@ -19,7 +19,7 @@ exports[`forces empty margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -45,7 +45,7 @@ exports[`forces empty margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
@@ -103,7 +103,7 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -124,9 +124,8 @@ exports[`renders 1`] = `
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+  border-radius: 0px;
   width: 100%;
-  border: none;
 }
 
 .c4::-webkit-search-decoration {
@@ -163,7 +162,7 @@ exports[`renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
@@ -383,7 +382,7 @@ exports[`renders custom formfield 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -403,7 +402,7 @@ exports[`renders custom formfield 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
@@ -439,7 +438,7 @@ exports[`renders custom margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -465,7 +464,7 @@ exports[`renders custom margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
@@ -523,7 +522,7 @@ exports[`renders error 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px #e35e59;
+  border-bottom: solid 0 #e35e59;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -549,7 +548,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px #e35e59;
+    border-bottom: solid 0 #e35e59;
   }
 }
 
@@ -606,7 +605,7 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -629,7 +628,7 @@ exports[`renders help 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
@@ -686,7 +685,7 @@ exports[`renders htmlFor 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -702,7 +701,7 @@ exports[`renders htmlFor 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
@@ -754,7 +753,7 @@ exports[`renders label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -779,7 +778,7 @@ exports[`renders label 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
@@ -836,7 +835,7 @@ exports[`renders pad 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 0 rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -870,7 +869,7 @@ exports[`renders pad 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
