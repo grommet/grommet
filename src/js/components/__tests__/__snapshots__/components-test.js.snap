@@ -1811,6 +1811,7 @@ vertical",
     "usage": "import { Collapsible } from 'grommet';
 <Collapsible open>test</Collapsible>",
   },
+  "DataChart": [Function],
   "DataTable": [Function],
   "Diagram": Object {
     "availableAt": Array [
