@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export interface MaskedInputProps {
+  decorator?: JSX.Element,
   id?: string;
   mask?: Array<{
     length?: number | number[];

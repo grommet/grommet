@@ -11,6 +11,14 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
+**decorator**
+
+Could be an icon or perhaps a Text containing units.
+
+```
+element
+```
+
 **dropAlign**
 
 How to align the drop. Defaults to `{

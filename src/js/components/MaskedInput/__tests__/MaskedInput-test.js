@@ -9,11 +9,13 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { Keyboard } from '../../Keyboard';
+import { Text } from '../../Text';
 import { MaskedInput } from '..';
 
 describe('MaskedInput', () => {
@@ -22,6 +24,20 @@ describe('MaskedInput', () => {
 
   test('basic', () => {
     const { container } = render(<MaskedInput name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('decorator icon', () => {
+    const { container } = render(
+      <MaskedInput decorator={<Search />} name="item" />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('decorator text', () => {
+    const { container } = render(
+      <MaskedInput decorator={<Text>iops</Text>} name="item" />,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 

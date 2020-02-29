@@ -3159,6 +3159,11 @@ function",
     "name": "MaskedInput",
     "properties": Array [
       Object {
+        "description": "Could be an icon or perhaps a Text containing units.",
+        "format": "element",
+        "name": "decorator",
+      },
+      Object {
         "description": "The id attribute of the input.",
         "format": "string",
         "name": "id",
@@ -4502,6 +4507,11 @@ string",
     "intrinsicElement": "input",
     "name": "TextInput",
     "properties": Array [
+      Object {
+        "description": "Could be an icon or perhaps a Text containing units.",
+        "format": "element",
+        "name": "decorator",
+      },
       Object {
         "defaultValue": Object {
           "left": "left",

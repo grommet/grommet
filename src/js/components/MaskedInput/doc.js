@@ -13,6 +13,9 @@ export const doc = MaskedInput => {
     .intrinsicElement('input');
 
   DocumentedMaskedInput.propTypes = {
+    decorator: PropTypes.element.description(
+      `Could be an icon or perhaps a Text containing units.`,
+    ),
     id: PropTypes.string.description('The id attribute of the input.'),
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description(

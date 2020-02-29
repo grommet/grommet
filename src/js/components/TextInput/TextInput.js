@@ -23,6 +23,7 @@ import {
   StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
+  StyledDecorator,
   StyledSuggestions,
 } from './StyledTextInput';
 
@@ -58,6 +59,7 @@ const ContainerBox = styled(Box)`
 const TextInput = forwardRef(
   (
     {
+      decorator,
       defaultValue,
       dropAlign = { top: 'bottom', left: 'left' },
       dropHeight,
@@ -286,6 +288,9 @@ const TextInput = forwardRef(
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
+        {decorator && (
+          <StyledDecorator theme={theme}>{decorator}</StyledDecorator>
+        )}
         <Keyboard
           onEnter={event => {
             closeDrop();
@@ -344,6 +349,7 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
+            decorator={decorator}
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}

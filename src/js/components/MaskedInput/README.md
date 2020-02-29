@@ -11,6 +11,14 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**decorator**
+
+Could be an icon or perhaps a Text containing units.
+
+```
+element
+```
+
 **id**
 
 The id attribute of the input.

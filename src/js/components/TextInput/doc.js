@@ -15,6 +15,9 @@ export const doc = TextInput => {
     .intrinsicElement('input');
 
   DocumentedTextInput.propTypes = {
+    decorator: PropTypes.element.description(
+      `Could be an icon or perhaps a Text containing units.`,
+    ),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),

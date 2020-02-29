@@ -8,10 +8,12 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
+import { Text } from '../../Text';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
 
@@ -26,6 +28,20 @@ describe('TextInput', () => {
 
   test('disabled', () => {
     const { container } = render(<TextInput disabled name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('decorator icon', () => {
+    const { container } = render(
+      <TextInput decorator={<Search />} name="item" />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('decorator text', () => {
+    const { container } = render(
+      <TextInput decorator={<Text>iops</Text>} name="item" />,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 

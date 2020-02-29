@@ -3,6 +3,7 @@ import { Omit, PlaceHolderType, } from "../../utils";
 import { DropProps } from "../Drop";
 
 export interface TextInputProps {
+  decorator?: JSX.Element,
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
