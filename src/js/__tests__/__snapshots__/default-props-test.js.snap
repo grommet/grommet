@@ -122,8 +122,8 @@ exports[`uses mnet theme instead of default 1`] = `
 
 .c0 {
   font-family: 'Open Sans',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   background: #ffffff;
   color: #444444;
   box-sizing: border-box;

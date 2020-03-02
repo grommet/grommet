@@ -14,8 +14,8 @@ exports[`Keyboard change onKeyDown 2`] = `
 
 exports[`Keyboard onDown 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -36,8 +36,8 @@ exports[`Keyboard onDown 1`] = `
 
 exports[`Keyboard onKeyDown 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

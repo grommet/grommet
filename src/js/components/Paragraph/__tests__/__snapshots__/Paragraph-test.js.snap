@@ -2,8 +2,8 @@
 
 exports[`Paragraph margin renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,45 +12,45 @@ exports[`Paragraph margin renders 1`] = `
 }
 
 .c1 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  margin: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 .c2 {
-  margin: 24px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  margin: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 .c3 {
-  margin: 48px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  margin: 32px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 .c5 {
-  margin-bottom: 12px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 .c6 {
-  margin-top: 12px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 <div
@@ -79,8 +79,8 @@ exports[`Paragraph margin renders 1`] = `
 
 exports[`Paragraph renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -89,9 +89,9 @@ exports[`Paragraph renders 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 <div
@@ -105,8 +105,8 @@ exports[`Paragraph renders 1`] = `
 
 exports[`Paragraph size renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -114,39 +114,39 @@ exports[`Paragraph size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
-  font-size: 14px;
-  line-height: 20px;
-  max-width: 336px;
+.c2 {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+.c1 {
+  font-size: 9.333333333333334px;
+  line-height: 13.333333333333334px;
+  max-width: 149.33333333333334px;
 }
 
 .c3 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
+  max-width: 234.66666666666666px;
 }
 
 .c4 {
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
 }
 
 .c5 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   max-width: none;
 }
 
@@ -184,8 +184,8 @@ exports[`Paragraph size renders 1`] = `
 
 exports[`Paragraph textAlign renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -194,23 +194,23 @@ exports[`Paragraph textAlign renders 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
   text-align: left;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
   text-align: center;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
   text-align: right;
 }
 

@@ -113,8 +113,8 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c17 {
@@ -138,7 +138,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5 {
@@ -158,7 +158,7 @@ exports[`Video autoPlay renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5:hover {
@@ -203,18 +203,18 @@ exports[`Video autoPlay renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -275,16 +275,16 @@ exports[`Video autoPlay renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c17 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -371,17 +371,17 @@ exports[`Video autoPlay renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#65707d"
                     strokeLinecap="square"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>
@@ -593,8 +593,8 @@ exports[`Video controls renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c17 {
@@ -618,7 +618,7 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c20 {
@@ -661,7 +661,7 @@ exports[`Video controls renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5:hover {
@@ -706,18 +706,18 @@ exports[`Video controls renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -788,16 +788,16 @@ exports[`Video controls renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c17 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -884,17 +884,17 @@ exports[`Video controls renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#65707d"
                     strokeLinecap="square"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>
@@ -1033,18 +1033,18 @@ exports[`Video controls renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#f6f6f8"
                     strokeLinecap="square"
                     strokeOpacity="0.4"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>
@@ -1222,8 +1222,8 @@ exports[`Video fit renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c17 {
@@ -1247,7 +1247,7 @@ exports[`Video fit renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5 {
@@ -1267,7 +1267,7 @@ exports[`Video fit renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5:hover {
@@ -1312,18 +1312,18 @@ exports[`Video fit renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1402,16 +1402,16 @@ exports[`Video fit renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c17 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -1498,17 +1498,17 @@ exports[`Video fit renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#65707d"
                     strokeLinecap="square"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>
@@ -1650,17 +1650,17 @@ exports[`Video fit renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#65707d"
                     strokeLinecap="square"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>
@@ -1838,8 +1838,8 @@ exports[`Video loop renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c17 {
@@ -1863,7 +1863,7 @@ exports[`Video loop renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5 {
@@ -1883,7 +1883,7 @@ exports[`Video loop renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5:hover {
@@ -1928,18 +1928,18 @@ exports[`Video loop renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2000,16 +2000,16 @@ exports[`Video loop renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c17 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2096,17 +2096,17 @@ exports[`Video loop renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#65707d"
                     strokeLinecap="square"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>
@@ -2284,8 +2284,8 @@ exports[`Video mute renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c17 {
@@ -2309,7 +2309,7 @@ exports[`Video mute renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5 {
@@ -2329,7 +2329,7 @@ exports[`Video mute renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5:hover {
@@ -2374,18 +2374,18 @@ exports[`Video mute renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2446,16 +2446,16 @@ exports[`Video mute renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c17 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2542,17 +2542,17 @@ exports[`Video mute renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#65707d"
                     strokeLinecap="square"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>
@@ -2730,8 +2730,8 @@ exports[`Video renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c17 {
@@ -2755,7 +2755,7 @@ exports[`Video renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5 {
@@ -2775,7 +2775,7 @@ exports[`Video renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c5:hover {
@@ -2820,18 +2820,18 @@ exports[`Video renders 1`] = `
 
 .c15 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c18 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2892,16 +2892,16 @@ exports[`Video renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c17 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2988,17 +2988,17 @@ exports[`Video renders 1`] = `
                 <svg
                   aria-label="Video progress"
                   className="c11"
-                  height={12}
+                  height={8}
                   preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
+                  viewBox="0 0 288 8"
                   width="100%"
                 >
                   <path
-                    d="M 0,6 L 288,6"
+                    d="M 0,4 L 288,4"
                     fill="none"
                     stroke="#65707d"
                     strokeLinecap="square"
-                    strokeWidth={12}
+                    strokeWidth={8}
                   />
                 </svg>
               </div>

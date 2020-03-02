@@ -2,8 +2,8 @@
 
 exports[`Clock hourLimit 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -16,7 +16,7 @@ exports[`Clock hourLimit 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.375;
 }
 
@@ -147,8 +147,8 @@ exports[`Clock hourLimit 1`] = `
 
 exports[`Clock run 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -157,29 +157,29 @@ exports[`Clock run 1`] = `
 }
 
 .c4 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
-  stroke-width: 4px;
+  stroke-width: 2.6666666666666665px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
-  stroke-width: 3px;
+  stroke-width: 2px;
   stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
-  width: 96px;
-  height: 96px;
+  width: 64px;
+  height: 64px;
 }
 
 .c6 {
@@ -187,7 +187,7 @@ exports[`Clock run 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.375;
 }
 
@@ -211,80 +211,80 @@ exports[`Clock run 1`] = `
 >
   <svg
     class="c1"
-    height="96"
+    height="64"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
-    viewBox="0 0 96 96"
-    width="96"
+    viewBox="0 0 64 64"
+    width="64"
   >
     <line
       class="c2"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="9"
+      style="transform: rotate(204deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="6"
     />
     <line
       class="c3"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(138deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="12"
+      style="transform: rotate(138deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="8"
     />
     <line
       class="c4"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="24"
+      style="transform: rotate(191.5deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="16"
     />
   </svg>
   <svg
     class="c1"
-    height="96"
+    height="64"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
-    viewBox="0 0 96 96"
-    width="96"
+    viewBox="0 0 64 64"
+    width="64"
   >
     <line
       class="c2"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="9"
+      style="transform: rotate(204deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="6"
     />
     <line
       class="c3"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(138deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="12"
+      style="transform: rotate(138deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="8"
     />
     <line
       class="c4"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="24"
+      style="transform: rotate(191.5deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="16"
     />
   </svg>
   <div
@@ -380,126 +380,126 @@ exports[`Clock run 1`] = `
 
 exports[`Clock run 2`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <svg
-    class="StyledClock__StyledAnalog-sc-1qbr2eo-3 kSeTBv"
-    height="96"
+    class="StyledClock__StyledAnalog-sc-1qbr2eo-3 kOmDPx"
+    height="64"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
-    viewBox="0 0 96 96"
-    width="96"
+    viewBox="0 0 64 64"
+    width="64"
   >
     <line
-      class="StyledClock__StyledSecond-sc-1qbr2eo-2 gZEONi"
+      class="StyledClock__StyledSecond-sc-1qbr2eo-2 eQGdRK"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="9"
+      style="transform: rotate(204deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="6"
     />
     <line
-      class="StyledClock__StyledMinute-sc-1qbr2eo-1 bXcpcd"
+      class="StyledClock__StyledMinute-sc-1qbr2eo-1 jjnKhU"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(138deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="12"
+      style="transform: rotate(138deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="8"
     />
     <line
-      class="StyledClock__StyledHour-sc-1qbr2eo-0 cYccIh"
+      class="StyledClock__StyledHour-sc-1qbr2eo-0 lbieWg"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="24"
+      style="transform: rotate(191.5deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="16"
     />
   </svg>
   <svg
-    class="StyledClock__StyledAnalog-sc-1qbr2eo-3 kSeTBv"
-    height="96"
+    class="StyledClock__StyledAnalog-sc-1qbr2eo-3 kOmDPx"
+    height="64"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
-    viewBox="0 0 96 96"
-    width="96"
+    viewBox="0 0 64 64"
+    width="64"
   >
     <line
-      class="StyledClock__StyledSecond-sc-1qbr2eo-2 gZEONi"
+      class="StyledClock__StyledSecond-sc-1qbr2eo-2 eQGdRK"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="9"
+      style="transform: rotate(204deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="6"
     />
     <line
-      class="StyledClock__StyledMinute-sc-1qbr2eo-1 bXcpcd"
+      class="StyledClock__StyledMinute-sc-1qbr2eo-1 jjnKhU"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(138deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="12"
+      style="transform: rotate(138deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="8"
     />
     <line
-      class="StyledClock__StyledHour-sc-1qbr2eo-0 cYccIh"
+      class="StyledClock__StyledHour-sc-1qbr2eo-0 lbieWg"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
-      x1="48"
-      x2="48"
-      y1="48"
-      y2="24"
+      style="transform: rotate(191.5deg); transform-origin: 32px 32px;"
+      x1="32"
+      x2="32"
+      y1="32"
+      y2="16"
     />
   </svg>
   <div
     class="StyledBox-sc-1etxkdl-0 dsJHEs"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       4
     </div>
@@ -508,42 +508,42 @@ exports[`Clock run 2`] = `
     class="StyledBox-sc-1etxkdl-0 dsJHEs"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 cNAilP"
+      class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 bBokJH"
     >
       4
     </div>
@@ -553,8 +553,8 @@ exports[`Clock run 2`] = `
 
 exports[`Clock time 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -567,7 +567,7 @@ exports[`Clock time 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.375;
 }
 
@@ -802,8 +802,8 @@ exports[`Clock time 1`] = `
 
 exports[`Clock type analog precision hours size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -812,15 +812,15 @@ exports[`Clock type analog precision hours size large 1`] = `
 }
 
 .c2 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
-  width: 144px;
-  height: 144px;
+  width: 96px;
+  height: 96px;
 }
 
 <div
@@ -828,12 +828,12 @@ exports[`Clock type analog precision hours size large 1`] = `
 >
   <svg
     className="c1"
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="large"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c2"
@@ -842,13 +842,13 @@ exports[`Clock type analog precision hours size large 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -856,8 +856,8 @@ exports[`Clock type analog precision hours size large 1`] = `
 
 exports[`Clock type analog precision hours size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -866,15 +866,15 @@ exports[`Clock type analog precision hours size medium 1`] = `
 }
 
 .c2 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
-  width: 96px;
-  height: 96px;
+  width: 64px;
+  height: 64px;
 }
 
 <div
@@ -882,12 +882,12 @@ exports[`Clock type analog precision hours size medium 1`] = `
 >
   <svg
     className="c1"
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="medium"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c2"
@@ -896,13 +896,13 @@ exports[`Clock type analog precision hours size medium 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -910,8 +910,8 @@ exports[`Clock type analog precision hours size medium 1`] = `
 
 exports[`Clock type analog precision hours size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -920,15 +920,15 @@ exports[`Clock type analog precision hours size small 1`] = `
 }
 
 .c2 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
 }
 
 <div
@@ -936,12 +936,12 @@ exports[`Clock type analog precision hours size small 1`] = `
 >
   <svg
     className="c1"
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="small"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c2"
@@ -950,13 +950,13 @@ exports[`Clock type analog precision hours size small 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -964,8 +964,8 @@ exports[`Clock type analog precision hours size small 1`] = `
 
 exports[`Clock type analog precision hours size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -974,15 +974,15 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 }
 
 .c2 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
-  width: 216px;
-  height: 216px;
+  width: 144px;
+  height: 144px;
 }
 
 <div
@@ -990,12 +990,12 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 >
   <svg
     className="c1"
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="xlarge"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c2"
@@ -1004,13 +1004,13 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -1018,8 +1018,8 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 
 exports[`Clock type analog precision hours size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1028,7 +1028,7 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 }
 
 .c1 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
@@ -1039,12 +1039,12 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 >
   <svg
     className=""
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="xsmall"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c1"
@@ -1053,13 +1053,13 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -1067,8 +1067,8 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 
 exports[`Clock type analog precision minutes size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1077,22 +1077,22 @@ exports[`Clock type analog precision minutes size large 1`] = `
 }
 
 .c3 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
-  stroke-width: 4px;
+  stroke-width: 2.6666666666666665px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
-  width: 144px;
-  height: 144px;
+  width: 96px;
+  height: 96px;
 }
 
 <div
@@ -1100,12 +1100,12 @@ exports[`Clock type analog precision minutes size large 1`] = `
 >
   <svg
     className="c1"
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="large"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c2"
@@ -1114,13 +1114,13 @@ exports[`Clock type analog precision minutes size large 1`] = `
       style={
         Object {
           "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
     />
     <line
       className="c3"
@@ -1129,13 +1129,13 @@ exports[`Clock type analog precision minutes size large 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -1143,8 +1143,8 @@ exports[`Clock type analog precision minutes size large 1`] = `
 
 exports[`Clock type analog precision minutes size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1153,15 +1153,321 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 }
 
 .c3 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
-  stroke-width: 4px;
+  stroke-width: 2.6666666666666665px;
   stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c1 {
+  width: 64px;
+  height: 64px;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={64}
+    preserveAspectRatio="xMidYMid meet"
+    size="medium"
+    version="1.1"
+    viewBox="0 0 64 64"
+    width={64}
+  >
+    <line
+      className="c2"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(138deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
+    />
+    <line
+      className="c3"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(191.5deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Clock type analog precision minutes size small 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  stroke-width: 5.333333333333333px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c2 {
+  stroke-width: 2.6666666666666665px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c1 {
+  width: 48px;
+  height: 48px;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={64}
+    preserveAspectRatio="xMidYMid meet"
+    size="small"
+    version="1.1"
+    viewBox="0 0 64 64"
+    width={64}
+  >
+    <line
+      className="c2"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(138deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
+    />
+    <line
+      className="c3"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(191.5deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Clock type analog precision minutes size xlarge 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  stroke-width: 5.333333333333333px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c2 {
+  stroke-width: 2.6666666666666665px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c1 {
+  width: 144px;
+  height: 144px;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={64}
+    preserveAspectRatio="xMidYMid meet"
+    size="xlarge"
+    version="1.1"
+    viewBox="0 0 64 64"
+    width={64}
+  >
+    <line
+      className="c2"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(138deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
+    />
+    <line
+      className="c3"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(191.5deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Clock type analog precision minutes size xsmall 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  stroke-width: 5.333333333333333px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c1 {
+  stroke-width: 2.6666666666666665px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className=""
+    height={64}
+    preserveAspectRatio="xMidYMid meet"
+    size="xsmall"
+    version="1.1"
+    viewBox="0 0 64 64"
+    width={64}
+  >
+    <line
+      className="c1"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(138deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
+    />
+    <line
+      className="c2"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(191.5deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Clock type analog precision seconds size large 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  stroke-width: 5.333333333333333px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c3 {
+  stroke-width: 2.6666666666666665px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c2 {
+  stroke-width: 2px;
+  stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1176,12 +1482,12 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 >
   <svg
     className="c1"
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
-    size="medium"
+    size="large"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c2"
@@ -1189,14 +1495,14 @@ exports[`Clock type analog precision minutes size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
+          "transform": "rotate(204deg)",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={6}
     />
     <line
       className="c3"
@@ -1204,246 +1510,38 @@ exports[`Clock type analog precision minutes size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
-    />
-  </svg>
-</div>
-`;
-
-exports[`Clock type analog precision minutes size small 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c3 {
-  stroke-width: 8px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c2 {
-  stroke-width: 4px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c1 {
-  width: 72px;
-  height: 72px;
-}
-
-<div
-  className="c0"
->
-  <svg
-    className="c1"
-    height={96}
-    preserveAspectRatio="xMidYMid meet"
-    size="small"
-    version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
-  >
-    <line
-      className="c2"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
           "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
     />
     <line
-      className="c3"
+      className="c4"
       stroke="#000000"
       strokeLinecap="round"
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
 `;
 
-exports[`Clock type analog precision minutes size xlarge 1`] = `
+exports[`Clock type analog precision seconds size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c3 {
-  stroke-width: 8px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c2 {
-  stroke-width: 4px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c1 {
-  width: 216px;
-  height: 216px;
-}
-
-<div
-  className="c0"
->
-  <svg
-    className="c1"
-    height={96}
-    preserveAspectRatio="xMidYMid meet"
-    size="xlarge"
-    version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
-  >
-    <line
-      className="c2"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
-    />
-    <line
-      className="c3"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
-    />
-  </svg>
-</div>
-`;
-
-exports[`Clock type analog precision minutes size xsmall 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  stroke-width: 8px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c1 {
-  stroke-width: 4px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-<div
-  className="c0"
->
-  <svg
-    className=""
-    height={96}
-    preserveAspectRatio="xMidYMid meet"
-    size="xsmall"
-    version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
-  >
-    <line
-      className="c1"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
-    />
-    <line
-      className="c2"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
-    />
-  </svg>
-</div>
-`;
-
-exports[`Clock type analog precision seconds size large 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1452,21 +1550,217 @@ exports[`Clock type analog precision seconds size large 1`] = `
 }
 
 .c4 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
-  stroke-width: 4px;
+  stroke-width: 2.6666666666666665px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
-  stroke-width: 3px;
+  stroke-width: 2px;
+  stroke: #20314f;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c1 {
+  width: 64px;
+  height: 64px;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={64}
+    preserveAspectRatio="xMidYMid meet"
+    size="medium"
+    version="1.1"
+    viewBox="0 0 64 64"
+    width={64}
+  >
+    <line
+      className="c2"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(204deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={6}
+    />
+    <line
+      className="c3"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(138deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
+    />
+    <line
+      className="c4"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(191.5deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Clock type analog precision seconds size small 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  stroke-width: 5.333333333333333px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c3 {
+  stroke-width: 2.6666666666666665px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c2 {
+  stroke-width: 2px;
+  stroke: #20314f;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c1 {
+  width: 48px;
+  height: 48px;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={64}
+    preserveAspectRatio="xMidYMid meet"
+    size="small"
+    version="1.1"
+    viewBox="0 0 64 64"
+    width={64}
+  >
+    <line
+      className="c2"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(204deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={6}
+    />
+    <line
+      className="c3"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(138deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
+    />
+    <line
+      className="c4"
+      stroke="#000000"
+      strokeLinecap="round"
+      style={
+        Object {
+          "transform": "rotate(191.5deg)",
+          "transformOrigin": "32px 32px",
+        }
+      }
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Clock type analog precision seconds size xlarge 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  stroke-width: 5.333333333333333px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c3 {
+  stroke-width: 2.6666666666666665px;
+  stroke: #65707d;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c2 {
+  stroke-width: 2px;
   stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
@@ -1482,306 +1776,12 @@ exports[`Clock type analog precision seconds size large 1`] = `
 >
   <svg
     className="c1"
-    height={96}
-    preserveAspectRatio="xMidYMid meet"
-    size="large"
-    version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
-  >
-    <line
-      className="c2"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
-    />
-    <line
-      className="c3"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
-    />
-    <line
-      className="c4"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
-    />
-  </svg>
-</div>
-`;
-
-exports[`Clock type analog precision seconds size medium 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  stroke-width: 8px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c3 {
-  stroke-width: 4px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c2 {
-  stroke-width: 3px;
-  stroke: #20314f;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c1 {
-  width: 96px;
-  height: 96px;
-}
-
-<div
-  className="c0"
->
-  <svg
-    className="c1"
-    height={96}
-    preserveAspectRatio="xMidYMid meet"
-    size="medium"
-    version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
-  >
-    <line
-      className="c2"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
-    />
-    <line
-      className="c3"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
-    />
-    <line
-      className="c4"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
-    />
-  </svg>
-</div>
-`;
-
-exports[`Clock type analog precision seconds size small 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  stroke-width: 8px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c3 {
-  stroke-width: 4px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c2 {
-  stroke-width: 3px;
-  stroke: #20314f;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c1 {
-  width: 72px;
-  height: 72px;
-}
-
-<div
-  className="c0"
->
-  <svg
-    className="c1"
-    height={96}
-    preserveAspectRatio="xMidYMid meet"
-    size="small"
-    version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
-  >
-    <line
-      className="c2"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
-    />
-    <line
-      className="c3"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
-    />
-    <line
-      className="c4"
-      stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
-    />
-  </svg>
-</div>
-`;
-
-exports[`Clock type analog precision seconds size xlarge 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  stroke-width: 8px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c3 {
-  stroke-width: 4px;
-  stroke: #65707d;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c2 {
-  stroke-width: 3px;
-  stroke: #20314f;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c1 {
-  width: 216px;
-  height: 216px;
-}
-
-<div
-  className="c0"
->
-  <svg
-    className="c1"
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="xlarge"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c2"
@@ -1790,13 +1790,13 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
       style={
         Object {
           "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={6}
     />
     <line
       className="c3"
@@ -1805,13 +1805,13 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
       style={
         Object {
           "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
     />
     <line
       className="c4"
@@ -1820,13 +1820,13 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -1834,8 +1834,8 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 
 exports[`Clock type analog precision seconds size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1844,21 +1844,21 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 }
 
 .c3 {
-  stroke-width: 8px;
+  stroke-width: 5.333333333333333px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
-  stroke-width: 4px;
+  stroke-width: 2.6666666666666665px;
   stroke: #65707d;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c1 {
-  stroke-width: 3px;
+  stroke-width: 2px;
   stroke: #20314f;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
@@ -1869,12 +1869,12 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 >
   <svg
     className=""
-    height={96}
+    height={64}
     preserveAspectRatio="xMidYMid meet"
     size="xsmall"
     version="1.1"
-    viewBox="0 0 96 96"
-    width={96}
+    viewBox="0 0 64 64"
+    width={64}
   >
     <line
       className="c1"
@@ -1883,13 +1883,13 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
       style={
         Object {
           "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={6}
     />
     <line
       className="c2"
@@ -1898,13 +1898,13 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
       style={
         Object {
           "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={8}
     />
     <line
       className="c3"
@@ -1913,13 +1913,13 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
       style={
         Object {
           "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
+          "transformOrigin": "32px 32px",
         }
       }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      x1={32}
+      x2={32}
+      y1={32}
+      y2={16}
     />
   </svg>
 </div>
@@ -1927,8 +1927,8 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 
 exports[`Clock type digital precision hours size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1941,7 +1941,7 @@ exports[`Clock type digital precision hours size large 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 22px;
+  font-size: 14.666666666666666px;
   line-height: 1.167;
 }
 
@@ -1984,8 +1984,8 @@ exports[`Clock type digital precision hours size large 1`] = `
 
 exports[`Clock type digital precision hours size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1998,7 +1998,7 @@ exports[`Clock type digital precision hours size medium 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.375;
 }
 
@@ -2041,8 +2041,8 @@ exports[`Clock type digital precision hours size medium 1`] = `
 
 exports[`Clock type digital precision hours size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2055,7 +2055,7 @@ exports[`Clock type digital precision hours size small 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 9.333333333333334px;
   line-height: 1.43;
 }
 
@@ -2098,8 +2098,8 @@ exports[`Clock type digital precision hours size small 1`] = `
 
 exports[`Clock type digital precision hours size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2112,7 +2112,7 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 26px;
+  font-size: 17.333333333333332px;
   line-height: 1.1875;
 }
 
@@ -2155,8 +2155,8 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
 
 exports[`Clock type digital precision hours size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2169,7 +2169,7 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 10px;
+  font-size: 6.666666666666667px;
   line-height: 1.5;
 }
 
@@ -2212,8 +2212,8 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
 
 exports[`Clock type digital precision minutes size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2226,7 +2226,7 @@ exports[`Clock type digital precision minutes size large 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 22px;
+  font-size: 14.666666666666666px;
   line-height: 1.167;
 }
 
@@ -2287,8 +2287,8 @@ exports[`Clock type digital precision minutes size large 1`] = `
 
 exports[`Clock type digital precision minutes size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2301,7 +2301,7 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.375;
 }
 
@@ -2362,8 +2362,8 @@ exports[`Clock type digital precision minutes size medium 1`] = `
 
 exports[`Clock type digital precision minutes size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2376,7 +2376,7 @@ exports[`Clock type digital precision minutes size small 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 9.333333333333334px;
   line-height: 1.43;
 }
 
@@ -2437,8 +2437,8 @@ exports[`Clock type digital precision minutes size small 1`] = `
 
 exports[`Clock type digital precision minutes size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2451,7 +2451,7 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 26px;
+  font-size: 17.333333333333332px;
   line-height: 1.1875;
 }
 
@@ -2512,8 +2512,8 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
 
 exports[`Clock type digital precision minutes size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2526,7 +2526,7 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 10px;
+  font-size: 6.666666666666667px;
   line-height: 1.5;
 }
 
@@ -2587,8 +2587,8 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
 
 exports[`Clock type digital precision seconds size large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2601,7 +2601,7 @@ exports[`Clock type digital precision seconds size large 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 22px;
+  font-size: 14.666666666666666px;
   line-height: 1.167;
 }
 
@@ -2680,8 +2680,8 @@ exports[`Clock type digital precision seconds size large 1`] = `
 
 exports[`Clock type digital precision seconds size medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2694,7 +2694,7 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.375;
 }
 
@@ -2773,8 +2773,8 @@ exports[`Clock type digital precision seconds size medium 1`] = `
 
 exports[`Clock type digital precision seconds size small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2787,7 +2787,7 @@ exports[`Clock type digital precision seconds size small 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 9.333333333333334px;
   line-height: 1.43;
 }
 
@@ -2866,8 +2866,8 @@ exports[`Clock type digital precision seconds size small 1`] = `
 
 exports[`Clock type digital precision seconds size xlarge 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2880,7 +2880,7 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 26px;
+  font-size: 17.333333333333332px;
   line-height: 1.1875;
 }
 
@@ -2959,8 +2959,8 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
 
 exports[`Clock type digital precision seconds size xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2973,7 +2973,7 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 10px;
+  font-size: 6.666666666666667px;
   line-height: 1.5;
 }
 

@@ -2,8 +2,8 @@
 
 exports[`MaskedInput applies custom global.hover theme to options 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -17,17 +17,17 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
   width: 100%;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
   border: none;
 }
 
@@ -90,10 +90,10 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c0 {
@@ -121,17 +121,17 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   color: #E15151;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
@@ -155,11 +155,11 @@ exports[`MaskedInput basic 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
@@ -212,17 +212,17 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
   width: 100%;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c1::-webkit-search-decoration {
@@ -273,17 +273,17 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
   width: 100%;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
   border: none;
 }
 
@@ -392,10 +392,10 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c4 {
@@ -422,8 +422,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -445,17 +445,17 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
@@ -533,23 +533,23 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-@media only screen and (max-width:768px) {
-  .jHsVdi {
-    padding-left: 6px;
-    padding-right: 6px;
+@media only screen and (max-width:512px) {
+  .egolyw {
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .jHsVdi {
-    padding-top: 3px;
-    padding-bottom: 3px;
+@media only screen and (max-width:512px) {
+  .egolyw {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
-.GOEwZ {
-  font-size: 18px;
-  line-height: 24px;
+.iHfJbP {
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -572,7 +572,7 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .GOEwZ {
+  .iHfJbP {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -591,7 +591,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-aqxhco-0 eHmUit"
+    class="StyledMaskedInput-aqxhco-0 klbeGo"
     data-testid="test-event-target-select-by-mouse"
     id="input-id"
     name="input-name"
@@ -609,11 +609,11 @@ exports[`MaskedInput mask 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
@@ -725,10 +725,10 @@ exports[`MaskedInput mask 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c4 {
@@ -755,8 +755,8 @@ exports[`MaskedInput mask 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -778,17 +778,17 @@ exports[`MaskedInput mask 2`] = `
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
@@ -866,23 +866,23 @@ exports[`MaskedInput mask 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-@media only screen and (max-width:768px) {
-  .jHsVdi {
-    padding-left: 6px;
-    padding-right: 6px;
+@media only screen and (max-width:512px) {
+  .egolyw {
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .jHsVdi {
-    padding-top: 3px;
-    padding-bottom: 3px;
+@media only screen and (max-width:512px) {
+  .egolyw {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
-.GOEwZ {
-  font-size: 18px;
-  line-height: 24px;
+.iHfJbP {
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -905,7 +905,7 @@ exports[`MaskedInput mask 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .GOEwZ {
+  .iHfJbP {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -925,11 +925,11 @@ exports[`MaskedInput next and previous without options 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
@@ -983,7 +983,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-aqxhco-0 cXZJKm"
+    class="StyledMaskedInput-aqxhco-0 dygvPy"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1000,11 +1000,11 @@ exports[`MaskedInput option via keyboard 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
@@ -1059,17 +1059,17 @@ exports[`MaskedInput option via mouse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
   width: 100%;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
   border: none;
 }
 
@@ -1178,10 +1178,10 @@ exports[`MaskedInput option via mouse 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c4 {
@@ -1208,8 +1208,8 @@ exports[`MaskedInput option via mouse 2`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1231,17 +1231,17 @@ exports[`MaskedInput option via mouse 2`] = `
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
@@ -1319,23 +1319,23 @@ exports[`MaskedInput option via mouse 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-@media only screen and (max-width:768px) {
-  .jHsVdi {
-    padding-left: 6px;
-    padding-right: 6px;
+@media only screen and (max-width:512px) {
+  .egolyw {
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .jHsVdi {
-    padding-top: 3px;
-    padding-bottom: 3px;
+@media only screen and (max-width:512px) {
+  .egolyw {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
-.GOEwZ {
-  font-size: 18px;
-  line-height: 24px;
+.iHfJbP {
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1358,7 +1358,7 @@ exports[`MaskedInput option via mouse 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .GOEwZ {
+  .iHfJbP {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1377,7 +1377,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-aqxhco-0 eHmUit"
+    class="StyledMaskedInput-aqxhco-0 klbeGo"
     data-testid="test-input"
     id="item"
     name="item"

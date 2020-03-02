@@ -49,17 +49,17 @@ exports[`Tabs Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #000000;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c7 {
@@ -70,17 +70,17 @@ exports[`Tabs Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c3 {
@@ -102,20 +102,20 @@ exports[`Tabs Tab 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   color: #444444;
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   color: #E15151;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -124,10 +124,10 @@ exports[`Tabs Tab 1`] = `
 }
 
 .c5 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .c5:hover {
@@ -138,55 +138,55 @@ exports[`Tabs Tab 1`] = `
   min-height: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
     border-bottom: solid 2px #E15151;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
@@ -305,17 +305,17 @@ exports[`Tabs change to second tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #000000;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c7 {
@@ -326,17 +326,17 @@ exports[`Tabs change to second tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c3 {
@@ -358,20 +358,20 @@ exports[`Tabs change to second tab 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   color: #444444;
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   color: #E15151;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -380,10 +380,10 @@ exports[`Tabs change to second tab 1`] = `
 }
 
 .c5 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .c5:hover {
@@ -394,55 +394,55 @@ exports[`Tabs change to second tab 1`] = `
   min-height: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
     border-bottom: solid 2px #E15151;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
@@ -504,7 +504,7 @@ exports[`Tabs change to second tab 1`] = `
 
 exports[`Tabs change to second tab 2`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -521,10 +521,10 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 ceEUdX StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 kCPDHQ StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 jwJOlR"
+            class="StyledText-sc-3e83s1-0 cjAkco"
           >
             Tab 1
           </span>
@@ -538,10 +538,10 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bvrgEH StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 hyuhhE StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 rwRzo"
+            class="StyledText-sc-3e83s1-0 dSdJjA"
           >
             Tab 2
           </span>
@@ -608,17 +608,17 @@ exports[`Tabs complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #000000;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c6 {
@@ -629,17 +629,17 @@ exports[`Tabs complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c3 {
@@ -661,8 +661,8 @@ exports[`Tabs complex title 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -671,10 +671,10 @@ exports[`Tabs complex title 1`] = `
 }
 
 .c5 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .c5:hover {
@@ -685,55 +685,55 @@ exports[`Tabs complex title 1`] = `
   min-height: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
     border-bottom: solid 2px #E15151;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
@@ -848,17 +848,17 @@ exports[`Tabs no Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #000000;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c3 {
@@ -880,8 +880,8 @@ exports[`Tabs no Tab 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -890,10 +890,10 @@ exports[`Tabs no Tab 1`] = `
 }
 
 .c5 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .c5:hover {
@@ -904,29 +904,29 @@ exports[`Tabs no Tab 1`] = `
   min-height: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
@@ -1015,17 +1015,17 @@ exports[`Tabs set on hover 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #000000;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c7 {
@@ -1036,17 +1036,17 @@ exports[`Tabs set on hover 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border-bottom: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .c3 {
@@ -1068,20 +1068,20 @@ exports[`Tabs set on hover 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   color: #444444;
 }
 
 .c8 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   color: #E15151;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1090,10 +1090,10 @@ exports[`Tabs set on hover 1`] = `
 }
 
 .c5 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .c5:hover {
@@ -1104,55 +1104,55 @@ exports[`Tabs set on hover 1`] = `
   min-height: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     border-bottom: solid 2px #000000;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
     border-bottom: solid 2px #E15151;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
   }
 }
 
@@ -1214,7 +1214,7 @@ exports[`Tabs set on hover 1`] = `
 
 exports[`Tabs set on hover 2`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1231,10 +1231,10 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bvrgEH StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 hyuhhE StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 rwRzo"
+            class="StyledText-sc-3e83s1-0 dSdJjA"
           >
             Tab 1
           </span>
@@ -1248,10 +1248,10 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 ceEUdX StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 kCPDHQ StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 jwJOlR"
+            class="StyledText-sc-3e83s1-0 cjAkco"
           >
             Tab 2
           </span>
@@ -1271,7 +1271,7 @@ exports[`Tabs set on hover 2`] = `
 
 exports[`Tabs set on hover 3`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1288,10 +1288,10 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bvrgEH StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 hyuhhE StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 rwRzo"
+            class="StyledText-sc-3e83s1-0 dSdJjA"
           >
             Tab 1
           </span>
@@ -1305,10 +1305,10 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bvrgEH StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 hyuhhE StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 ivpTOB"
+            class="StyledText-sc-3e83s1-0 kLnLtv"
           >
             Tab 2
           </span>
@@ -1328,7 +1328,7 @@ exports[`Tabs set on hover 3`] = `
 
 exports[`Tabs set on hover 4`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1345,10 +1345,10 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bvrgEH StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 hyuhhE StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 rwRzo"
+            class="StyledText-sc-3e83s1-0 dSdJjA"
           >
             Tab 1
           </span>
@@ -1362,10 +1362,10 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bvrgEH StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 hyuhhE StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 ivpTOB"
+            class="StyledText-sc-3e83s1-0 kLnLtv"
           >
             Tab 2
           </span>
@@ -1385,7 +1385,7 @@ exports[`Tabs set on hover 4`] = `
 
 exports[`Tabs set on hover 5`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledBox-sc-1etxkdl-0 gfVwpM StyledTabs-shzzml-2 cTKQnT"
@@ -1402,10 +1402,10 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 bvrgEH StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 hyuhhE StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 rwRzo"
+            class="StyledText-sc-3e83s1-0 dSdJjA"
           >
             Tab 1
           </span>
@@ -1419,10 +1419,10 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-1etxkdl-0 ceEUdX StyledTab-kic4tf-0 jGMnvI"
+          class="StyledBox-sc-1etxkdl-0 kCPDHQ StyledTab-kic4tf-0 gAWxSW"
         >
           <span
-            class="StyledText-sc-3e83s1-0 jwJOlR"
+            class="StyledText-sc-3e83s1-0 cjAkco"
           >
             Tab 2
           </span>

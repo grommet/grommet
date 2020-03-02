@@ -70,8 +70,8 @@ exports[`Carousel basic 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -226,7 +226,7 @@ exports[`Carousel basic 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c14 {
@@ -493,8 +493,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -649,7 +649,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c8 {
@@ -916,8 +916,8 @@ exports[`Carousel navigate 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1072,7 +1072,7 @@ exports[`Carousel navigate 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c14 {
@@ -1249,7 +1249,7 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledStack-gusj5d-0 eKKwAQ"
@@ -1319,7 +1319,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-1etxkdl-0 Rrgek"
           >
             <button
-              class="StyledButton-sc-1hmw3c5-0 jZRnET"
+              class="StyledButton-sc-1hmw3c5-0 dsywyz"
               type="button"
             >
               <svg
@@ -1336,7 +1336,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-1hmw3c5-0 jZRnET"
+              class="StyledButton-sc-1hmw3c5-0 dsywyz"
               type="button"
             >
               <svg
@@ -1380,7 +1380,7 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledStack-gusj5d-0 eKKwAQ"
@@ -1451,7 +1451,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-1etxkdl-0 Rrgek"
           >
             <button
-              class="StyledButton-sc-1hmw3c5-0 jZRnET"
+              class="StyledButton-sc-1hmw3c5-0 dsywyz"
               type="button"
             >
               <svg
@@ -1468,7 +1468,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-1hmw3c5-0 jZRnET"
+              class="StyledButton-sc-1hmw3c5-0 dsywyz"
               type="button"
             >
               <svg
@@ -1579,8 +1579,8 @@ exports[`Carousel play 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1735,7 +1735,7 @@ exports[`Carousel play 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c14 {
@@ -1911,7 +1911,7 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <div
     class="StyledStack-gusj5d-0 eKKwAQ"
@@ -1980,7 +1980,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-1etxkdl-0 Rrgek"
           >
             <button
-              class="StyledButton-sc-1hmw3c5-0 jZRnET"
+              class="StyledButton-sc-1hmw3c5-0 dsywyz"
               type="button"
             >
               <svg
@@ -1997,7 +1997,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-1hmw3c5-0 jZRnET"
+              class="StyledButton-sc-1hmw3c5-0 dsywyz"
               type="button"
             >
               <svg

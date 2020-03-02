@@ -275,7 +275,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       input: {
         padding: `${baseSpacing / 2}px`,
-        weight: 600,
+        weight: 400,
+        boxShadow: 'inset 1px 1px 1px 0 rgba(216,218,229,.68)',
+        borderRadius: '3px',
       },
       opacity: {
         strong: 0.8,
@@ -946,4 +948,4 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   return deepFreeze(result);
 };
 
-export const base = generate(24);
+export const base = generate(16);

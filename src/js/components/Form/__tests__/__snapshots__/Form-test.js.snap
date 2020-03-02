@@ -2,8 +2,8 @@
 
 exports[`Form empty 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -23,12 +23,12 @@ exports[`Form empty 1`] = `
 
 exports[`Form regexp validation 1`] = `
 .c0 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 16px;
   color: #e35e59;
 }
 
@@ -41,12 +41,12 @@ exports[`Form regexp validation 1`] = `
 
 exports[`Form required validation 1`] = `
 .c0 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 16px;
   color: #e35e59;
 }
 
@@ -59,8 +59,8 @@ exports[`Form required validation 1`] = `
 
 exports[`Form update 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -76,7 +76,7 @@ exports[`Form update 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -113,14 +113,14 @@ exports[`Form update 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   background: #E15151;
   color: #f8f8f8;
-  border-radius: 6px;
+  border-radius: 4px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -139,11 +139,11 @@ exports[`Form update 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
@@ -176,13 +176,13 @@ exports[`Form update 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
@@ -242,8 +242,8 @@ exports[`Form update 1`] = `
 
 exports[`Form with field 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -259,7 +259,7 @@ exports[`Form with field 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -289,11 +289,11 @@ exports[`Form with field 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
@@ -326,13 +326,13 @@ exports[`Form with field 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }

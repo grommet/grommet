@@ -14,11 +14,11 @@ exports[`Button as 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -32,8 +32,8 @@ exports[`Button as 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -69,11 +69,11 @@ exports[`Button basic 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -87,8 +87,8 @@ exports[`Button basic 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -127,11 +127,11 @@ exports[`Button children function 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -145,13 +145,13 @@ exports[`Button children function 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -194,11 +194,11 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #20314f;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -224,14 +224,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #20314f;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   background: #20314f;
   color: #f8f8f8;
-  border-radius: 6px;
+  border-radius: 4px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -257,14 +257,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #111111;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   background: #111111;
   color: #f8f8f8;
-  border-radius: 6px;
+  border-radius: 4px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -290,14 +290,14 @@ exports[`Button color 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #123;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   background: #123;
   color: #f8f8f8;
-  border-radius: 6px;
+  border-radius: 4px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -311,8 +311,8 @@ exports[`Button color 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -384,11 +384,11 @@ exports[`Button disabled 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   opacity: 0.3;
   cursor: default;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -400,8 +400,8 @@ exports[`Button disabled 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -438,11 +438,11 @@ exports[`Button fill 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -486,11 +486,11 @@ exports[`Button fill 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -522,11 +522,11 @@ exports[`Button fill 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -553,11 +553,11 @@ exports[`Button fill 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -572,8 +572,8 @@ exports[`Button fill 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -642,11 +642,11 @@ exports[`Button focus 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   outline-color: #519bff;
   border-color: #519bff;
   box-shadow: 0 0 2px 2px #519bff;
@@ -673,8 +673,8 @@ exports[`Button focus 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -719,8 +719,8 @@ exports[`Button hoverIndicator as object with color 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -770,8 +770,8 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -821,8 +821,8 @@ exports[`Button hoverIndicator background 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -872,8 +872,8 @@ exports[`Button hoverIndicator color 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -912,11 +912,11 @@ exports[`Button href 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -930,8 +930,8 @@ exports[`Button href 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -981,7 +981,7 @@ exports[`Button icon label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -997,11 +997,11 @@ exports[`Button icon label 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1015,8 +1015,8 @@ exports[`Button icon label 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1063,14 +1063,14 @@ exports[`Button primary 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   background: #E15151;
   color: #f8f8f8;
-  border-radius: 6px;
+  border-radius: 4px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1084,8 +1084,8 @@ exports[`Button primary 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1138,7 +1138,7 @@ exports[`Button reverse icon label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -1154,11 +1154,11 @@ exports[`Button reverse icon label 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1172,8 +1172,8 @@ exports[`Button reverse icon label 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1224,12 +1224,12 @@ exports[`Button warns about invalid icon 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1274,8 +1274,8 @@ exports[`Button warns about invalid label 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

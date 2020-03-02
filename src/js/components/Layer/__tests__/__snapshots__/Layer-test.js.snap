@@ -2,8 +2,8 @@
 
 exports[`Layer animation fadeIn 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -35,8 +35,8 @@ exports[`Layer animation fadeIn 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -49,7 +49,7 @@ exports[`Layer animation fadeIn 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -75,7 +75,7 @@ exports[`Layer animation fadeIn 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -84,13 +84,13 @@ exports[`Layer animation fadeIn 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -136,8 +136,8 @@ exports[`Layer animation fadeIn 2`] = `""`;
 
 exports[`Layer animation false 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -169,8 +169,8 @@ exports[`Layer animation false 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -183,7 +183,7 @@ exports[`Layer animation false 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -207,7 +207,7 @@ exports[`Layer animation false 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -216,13 +216,13 @@ exports[`Layer animation false 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -268,8 +268,8 @@ exports[`Layer animation false 2`] = `""`;
 
 exports[`Layer animation slide 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -301,8 +301,8 @@ exports[`Layer animation slide 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -315,7 +315,7 @@ exports[`Layer animation slide 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -341,7 +341,7 @@ exports[`Layer animation slide 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -350,13 +350,13 @@ exports[`Layer animation slide 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -402,8 +402,8 @@ exports[`Layer animation slide 2`] = `""`;
 
 exports[`Layer animation true 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -435,8 +435,8 @@ exports[`Layer animation true 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -449,7 +449,7 @@ exports[`Layer animation true 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -475,7 +475,7 @@ exports[`Layer animation true 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -484,13 +484,13 @@ exports[`Layer animation true 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -536,8 +536,8 @@ exports[`Layer animation true 2`] = `""`;
 
 exports[`Layer custom margin 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -569,8 +569,8 @@ exports[`Layer custom margin 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -583,7 +583,7 @@ exports[`Layer custom margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -609,7 +609,7 @@ exports[`Layer custom margin 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -618,13 +618,13 @@ exports[`Layer custom margin 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -670,8 +670,8 @@ exports[`Layer custom margin 2`] = `""`;
 
 exports[`Layer dark context 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -684,7 +684,7 @@ exports[`Layer dark context 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -710,7 +710,7 @@ exports[`Layer dark context 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: relative;
     max-height: none;
@@ -747,8 +747,8 @@ exports[`Layer dark context 2`] = `""`;
 
 exports[`Layer focus on layer 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -761,7 +761,7 @@ exports[`Layer focus on layer 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -787,7 +787,7 @@ exports[`Layer focus on layer 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: relative;
     max-height: none;
@@ -822,8 +822,8 @@ exports[`Layer focus on layer 1`] = `
 
 exports[`Layer full false 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -855,8 +855,8 @@ exports[`Layer full false 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -869,7 +869,7 @@ exports[`Layer full false 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -895,7 +895,7 @@ exports[`Layer full false 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -904,13 +904,13 @@ exports[`Layer full false 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -956,8 +956,8 @@ exports[`Layer full false 2`] = `""`;
 
 exports[`Layer full horizontal 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -989,8 +989,8 @@ exports[`Layer full horizontal 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1003,7 +1003,7 @@ exports[`Layer full horizontal 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1030,7 +1030,7 @@ exports[`Layer full horizontal 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1039,13 +1039,13 @@ exports[`Layer full horizontal 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1091,8 +1091,8 @@ exports[`Layer full horizontal 2`] = `""`;
 
 exports[`Layer full true 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1124,8 +1124,8 @@ exports[`Layer full true 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1138,7 +1138,7 @@ exports[`Layer full true 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1163,7 +1163,7 @@ exports[`Layer full true 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1172,13 +1172,13 @@ exports[`Layer full true 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1224,8 +1224,8 @@ exports[`Layer full true 2`] = `""`;
 
 exports[`Layer full vertical 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1257,8 +1257,8 @@ exports[`Layer full vertical 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1271,7 +1271,7 @@ exports[`Layer full vertical 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1298,7 +1298,7 @@ exports[`Layer full vertical 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1307,13 +1307,13 @@ exports[`Layer full vertical 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1359,8 +1359,8 @@ exports[`Layer full vertical 2`] = `""`;
 
 exports[`Layer hidden 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1389,8 +1389,8 @@ exports[`Layer hidden 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1403,7 +1403,7 @@ exports[`Layer hidden 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1422,13 +1422,13 @@ exports[`Layer hidden 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1474,15 +1474,15 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-d9d34e-0 kwDRin"
+  class="StyledLayer-d9d34e-0 bFvFXg"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-d9d34e-1 fTHENQ"
+    class="StyledLayer__StyledOverlay-d9d34e-1 eCcZDi"
   />
   <div
-    class="StyledLayer__StyledContainer-d9d34e-2 icDWgf"
+    class="StyledLayer__StyledContainer-d9d34e-2 erhsRp"
     id="hidden-test"
   >
     <a
@@ -1530,8 +1530,8 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer margin large 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1563,8 +1563,8 @@ exports[`Layer margin large 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1577,15 +1577,15 @@ exports[`Layer margin large 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
   z-index: 15;
   position: fixed;
-  max-height: calc(100% - 48px - 48px);
-  max-width: calc(100% - 48px - 48px);
+  max-height: calc(100% - 32px - 32px);
+  max-width: calc(100% - 32px - 32px);
   border-radius: 4px;
   top: 50%;
   left: 50%;
@@ -1603,7 +1603,7 @@ exports[`Layer margin large 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1612,13 +1612,13 @@ exports[`Layer margin large 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1664,8 +1664,8 @@ exports[`Layer margin large 2`] = `""`;
 
 exports[`Layer margin medium 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1697,8 +1697,8 @@ exports[`Layer margin medium 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1711,15 +1711,15 @@ exports[`Layer margin medium 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
   z-index: 15;
   position: fixed;
-  max-height: calc(100% - 24px - 24px);
-  max-width: calc(100% - 24px - 24px);
+  max-height: calc(100% - 16px - 16px);
+  max-width: calc(100% - 16px - 16px);
   border-radius: 4px;
   top: 50%;
   left: 50%;
@@ -1737,7 +1737,7 @@ exports[`Layer margin medium 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1746,13 +1746,13 @@ exports[`Layer margin medium 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1798,8 +1798,8 @@ exports[`Layer margin medium 2`] = `""`;
 
 exports[`Layer margin none 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1831,8 +1831,8 @@ exports[`Layer margin none 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1845,7 +1845,7 @@ exports[`Layer margin none 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -1871,7 +1871,7 @@ exports[`Layer margin none 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1880,13 +1880,13 @@ exports[`Layer margin none 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1932,8 +1932,8 @@ exports[`Layer margin none 2`] = `""`;
 
 exports[`Layer margin small 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1965,8 +1965,8 @@ exports[`Layer margin small 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1979,15 +1979,15 @@ exports[`Layer margin small 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
   z-index: 15;
   position: fixed;
-  max-height: calc(100% - 12px - 12px);
-  max-width: calc(100% - 12px - 12px);
+  max-height: calc(100% - 8px - 8px);
+  max-width: calc(100% - 8px - 8px);
   border-radius: 4px;
   top: 50%;
   left: 50%;
@@ -2005,7 +2005,7 @@ exports[`Layer margin small 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2014,13 +2014,13 @@ exports[`Layer margin small 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -2066,8 +2066,8 @@ exports[`Layer margin small 2`] = `""`;
 
 exports[`Layer margin xsmall 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2099,8 +2099,8 @@ exports[`Layer margin xsmall 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2113,15 +2113,15 @@ exports[`Layer margin xsmall 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
   z-index: 15;
   position: fixed;
-  max-height: calc(100% - 6px - 6px);
-  max-width: calc(100% - 6px - 6px);
+  max-height: calc(100% - 4px - 4px);
+  max-width: calc(100% - 4px - 4px);
   border-radius: 4px;
   top: 50%;
   left: 50%;
@@ -2139,7 +2139,7 @@ exports[`Layer margin xsmall 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2148,13 +2148,13 @@ exports[`Layer margin xsmall 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -2200,8 +2200,8 @@ exports[`Layer margin xsmall 2`] = `""`;
 
 exports[`Layer non-modal 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2214,7 +2214,7 @@ exports[`Layer non-modal 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2240,7 +2240,7 @@ exports[`Layer non-modal 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: relative;
     max-height: none;
@@ -2277,8 +2277,8 @@ exports[`Layer non-modal 2`] = `""`;
 
 exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2291,7 +2291,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2317,7 +2317,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: relative;
     max-height: none;
@@ -2359,8 +2359,8 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 
 exports[`Layer plain 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2390,8 +2390,8 @@ exports[`Layer plain 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2404,7 +2404,7 @@ exports[`Layer plain 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   outline: none;
   pointer-events: all;
   z-index: 15;
@@ -2428,7 +2428,7 @@ exports[`Layer plain 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2437,13 +2437,13 @@ exports[`Layer plain 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -2489,8 +2489,8 @@ exports[`Layer plain 2`] = `""`;
 
 exports[`Layer position bottom 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2522,8 +2522,8 @@ exports[`Layer position bottom 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2536,7 +2536,7 @@ exports[`Layer position bottom 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2562,7 +2562,7 @@ exports[`Layer position bottom 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2571,13 +2571,13 @@ exports[`Layer position bottom 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -2623,8 +2623,8 @@ exports[`Layer position bottom 2`] = `""`;
 
 exports[`Layer position center 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2656,8 +2656,8 @@ exports[`Layer position center 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2670,7 +2670,7 @@ exports[`Layer position center 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2696,7 +2696,7 @@ exports[`Layer position center 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2705,13 +2705,13 @@ exports[`Layer position center 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -2757,8 +2757,8 @@ exports[`Layer position center 2`] = `""`;
 
 exports[`Layer position left 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2790,8 +2790,8 @@ exports[`Layer position left 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2804,7 +2804,7 @@ exports[`Layer position left 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2830,7 +2830,7 @@ exports[`Layer position left 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2839,13 +2839,13 @@ exports[`Layer position left 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -2891,8 +2891,8 @@ exports[`Layer position left 2`] = `""`;
 
 exports[`Layer position right 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2924,8 +2924,8 @@ exports[`Layer position right 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2938,7 +2938,7 @@ exports[`Layer position right 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -2964,7 +2964,7 @@ exports[`Layer position right 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2973,13 +2973,13 @@ exports[`Layer position right 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -3025,8 +3025,8 @@ exports[`Layer position right 2`] = `""`;
 
 exports[`Layer position top 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3058,8 +3058,8 @@ exports[`Layer position top 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3072,7 +3072,7 @@ exports[`Layer position top 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3098,7 +3098,7 @@ exports[`Layer position top 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -3107,13 +3107,13 @@ exports[`Layer position top 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -3159,8 +3159,8 @@ exports[`Layer position top 2`] = `""`;
 
 exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3173,7 +3173,7 @@ exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 48px;
+  min-height: 32px;
   background: #FFFFFF;
   color: #444444;
   outline: none;
@@ -3199,7 +3199,7 @@ exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c0 {
     position: relative;
     max-height: none;

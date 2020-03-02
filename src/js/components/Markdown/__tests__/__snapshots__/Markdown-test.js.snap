@@ -2,8 +2,8 @@
 
 exports[`Markdown renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,37 +12,37 @@ exports[`Markdown renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c3 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
   font-weight: 600;
 }
 
 .c4 {
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c5 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
   font-weight: 600;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 .c10 {
@@ -85,10 +85,10 @@ exports[`Markdown renders 1`] = `
   height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c11 {
@@ -98,10 +98,10 @@ exports[`Markdown renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c8 {
@@ -114,35 +114,35 @@ exports[`Markdown renders 1`] = `
   width: inherit;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    font-size: 26px;
-    line-height: 32px;
-    max-width: 624px;
+    font-size: 17.333333333333332px;
+    line-height: 21.333333333333332px;
+    max-width: 277.3333333333333px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 

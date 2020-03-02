@@ -2,8 +2,8 @@
 
 exports[`forces empty margin 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -43,13 +43,13 @@ exports[`forces empty margin 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
     margin: 0px;
   }
@@ -70,8 +70,8 @@ exports[`forces empty margin 1`] = `
 
 exports[`renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -87,7 +87,7 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -117,11 +117,11 @@ exports[`renders 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
+  padding: 7px;
   outline: none;
   background: transparent;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 0px;
@@ -154,13 +154,13 @@ exports[`renders 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
@@ -201,8 +201,8 @@ exports[`renders 1`] = `
 
 exports[`renders abut correctly 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -218,8 +218,8 @@ exports[`renders abut correctly 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: -12px;
-  border: solid 12px rgba(0,0,0,0.33);
+  margin-bottom: -8px;
+  border: solid 8px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -242,15 +242,15 @@ exports[`renders abut correctly 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: -12px;
+    margin-bottom: -8px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    border: solid 6px rgba(0,0,0,0.33);
+    border: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -275,8 +275,8 @@ exports[`renders abut correctly 1`] = `
 
 exports[`renders abut with forced margin 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -307,8 +307,8 @@ exports[`renders abut with forced margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 24px;
-  border: solid 12px rgba(0,0,0,0.33);
+  margin: 16px;
+  border: solid 8px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -316,15 +316,15 @@ exports[`renders abut with forced margin 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin: 12px;
+    margin: 8px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    border: solid 6px rgba(0,0,0,0.33);
+    border: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -349,8 +349,8 @@ exports[`renders abut with forced margin 1`] = `
 
 exports[`renders custom formfield 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -366,7 +366,7 @@ exports[`renders custom formfield 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -394,13 +394,13 @@ exports[`renders custom formfield 1`] = `
   font-size: 40px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
@@ -421,8 +421,8 @@ exports[`renders custom formfield 1`] = `
 
 exports[`renders custom margin 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -454,7 +454,7 @@ exports[`renders custom margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin: 24px;
+  margin: 16px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -462,15 +462,15 @@ exports[`renders custom margin 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin: 12px;
+    margin: 8px;
   }
 }
 
@@ -489,8 +489,8 @@ exports[`renders custom margin 1`] = `
 
 exports[`renders error 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -506,7 +506,7 @@ exports[`renders error 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -531,22 +531,22 @@ exports[`renders error 1`] = `
 }
 
 .c3 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 16px;
   color: #e35e59;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 #e35e59;
   }
@@ -572,8 +572,8 @@ exports[`renders error 1`] = `
 
 exports[`renders help 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -589,7 +589,7 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -614,19 +614,19 @@ exports[`renders help 1`] = `
 }
 
 .c2 {
-  margin-left: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-left: 8px;
+  font-size: 12px;
+  line-height: 16px;
   color: #65707d;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
@@ -652,8 +652,8 @@ exports[`renders help 1`] = `
 
 exports[`renders htmlFor 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -669,7 +669,7 @@ exports[`renders htmlFor 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -693,13 +693,13 @@ exports[`renders htmlFor 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
@@ -720,8 +720,8 @@ exports[`renders htmlFor 1`] = `
 
 exports[`renders label 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -737,7 +737,7 @@ exports[`renders label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -762,21 +762,21 @@ exports[`renders label 1`] = `
 }
 
 .c2 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
@@ -802,8 +802,8 @@ exports[`renders label 1`] = `
 
 exports[`renders pad 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -819,7 +819,7 @@ exports[`renders pad 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -856,33 +856,33 @@ exports[`renders pad 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-bottom: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
     border-bottom: solid 0 rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
 }
 

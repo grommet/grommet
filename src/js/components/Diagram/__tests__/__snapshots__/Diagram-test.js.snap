@@ -29,7 +29,7 @@ exports[`Diagram anchor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
 }
 
 .c1 {
@@ -56,8 +56,8 @@ exports[`Diagram anchor 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -65,9 +65,9 @@ exports[`Diagram anchor 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding: 12px;
+    padding: 8px;
   }
 }
 
@@ -162,7 +162,7 @@ exports[`Diagram basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
 }
 
 .c1 {
@@ -189,8 +189,8 @@ exports[`Diagram basic 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -198,9 +198,9 @@ exports[`Diagram basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding: 12px;
+    padding: 8px;
   }
 }
 
@@ -279,7 +279,7 @@ exports[`Diagram color 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
 }
 
 .c1 {
@@ -306,8 +306,8 @@ exports[`Diagram color 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -315,9 +315,9 @@ exports[`Diagram color 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding: 12px;
+    padding: 8px;
   }
 }
 
@@ -396,7 +396,7 @@ exports[`Diagram offset 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
 }
 
 .c1 {
@@ -423,8 +423,8 @@ exports[`Diagram offset 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -432,9 +432,9 @@ exports[`Diagram offset 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding: 12px;
+    padding: 8px;
   }
 }
 
@@ -470,7 +470,7 @@ exports[`Diagram offset 1`] = `
       >
         <g>
           <path
-            d="M 6,6 Q 6,6 6,6 T 6,6"
+            d="M 4,4 Q 4,4 4,4 T 4,4"
             fill="none"
             stroke="#20314f"
             stroke-linecap="butt"
@@ -478,7 +478,7 @@ exports[`Diagram offset 1`] = `
             stroke-width="1"
           />
           <path
-            d="M 12,12 Q 12,12 12,12 T 12,12"
+            d="M 8,8 Q 8,8 8,8 T 8,8"
             fill="none"
             stroke="#20314f"
             stroke-linecap="butt"
@@ -486,7 +486,7 @@ exports[`Diagram offset 1`] = `
             stroke-width="1"
           />
           <path
-            d="M 24,24 Q 24,24 24,24 T 24,24"
+            d="M 16,16 Q 16,16 16,16 T 16,16"
             fill="none"
             stroke="#20314f"
             stroke-linecap="butt"
@@ -529,7 +529,7 @@ exports[`Diagram thickness 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
 }
 
 .c1 {
@@ -556,8 +556,8 @@ exports[`Diagram thickness 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -565,9 +565,9 @@ exports[`Diagram thickness 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding: 12px;
+    padding: 8px;
   }
 }
 
@@ -616,7 +616,7 @@ exports[`Diagram thickness 1`] = `
             stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
-            stroke-width="3"
+            stroke-width="2"
           />
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
@@ -624,7 +624,7 @@ exports[`Diagram thickness 1`] = `
             stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
-            stroke-width="6"
+            stroke-width="4"
           />
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
@@ -632,7 +632,7 @@ exports[`Diagram thickness 1`] = `
             stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
-            stroke-width="12"
+            stroke-width="8"
           />
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
@@ -640,7 +640,7 @@ exports[`Diagram thickness 1`] = `
             stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
-            stroke-width="24"
+            stroke-width="16"
           />
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
@@ -686,7 +686,7 @@ exports[`Diagram type 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
 }
 
 .c1 {
@@ -713,8 +713,8 @@ exports[`Diagram type 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -722,9 +722,9 @@ exports[`Diagram type 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding: 12px;
+    padding: 8px;
   }
 }
 

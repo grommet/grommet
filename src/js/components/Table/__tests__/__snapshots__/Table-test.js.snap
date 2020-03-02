@@ -2,7 +2,7 @@
 
 exports[`Table caption renders 1`] = `
 .c2 {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .c1 {
@@ -12,8 +12,8 @@ exports[`Table caption renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -50,8 +50,8 @@ exports[`Table renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -82,8 +82,8 @@ exports[`TableBody renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -119,10 +119,10 @@ exports[`TableCell plain renders 1`] = `
   height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c2 {
@@ -136,8 +136,8 @@ exports[`TableCell plain renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -181,10 +181,10 @@ exports[`TableCell renders 1`] = `
   height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c4 {
@@ -194,10 +194,10 @@ exports[`TableCell renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c5 {
@@ -208,10 +208,10 @@ exports[`TableCell renders 1`] = `
   height: 100%;
   text-align: start;
   border-top: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c2 {
@@ -225,8 +225,8 @@ exports[`TableCell renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -292,10 +292,10 @@ exports[`TableCell scope renders 1`] = `
   height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c4 {
@@ -305,10 +305,10 @@ exports[`TableCell scope renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c2 {
@@ -322,8 +322,8 @@ exports[`TableCell scope renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -378,14 +378,14 @@ exports[`TableCell size renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-  width: 96px;
-  max-width: 96px;
+  width: 64px;
+  max-width: 64px;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c4 {
@@ -394,14 +394,14 @@ exports[`TableCell size renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-  width: 192px;
-  max-width: 192px;
+  width: 128px;
+  max-width: 128px;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c5 {
@@ -410,14 +410,14 @@ exports[`TableCell size renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-  width: 384px;
-  max-width: 384px;
+  width: 256px;
+  max-width: 256px;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c6 {
@@ -426,14 +426,14 @@ exports[`TableCell size renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-  width: 768px;
-  max-width: 768px;
+  width: 512px;
+  max-width: 512px;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c7 {
@@ -446,10 +446,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 50%;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c8 {
@@ -462,10 +462,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 33.33%;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c9 {
@@ -478,10 +478,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 66.66%;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c10 {
@@ -494,10 +494,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 25%;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c11 {
@@ -510,10 +510,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 75%;
   overflow: hidden;
   text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c2 {
@@ -527,8 +527,8 @@ exports[`TableCell size renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -646,10 +646,10 @@ exports[`TableCell verticalAlign renders 1`] = `
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c4 {
@@ -661,10 +661,10 @@ exports[`TableCell verticalAlign renders 1`] = `
   vertical-align: middle;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c5 {
@@ -676,10 +676,10 @@ exports[`TableCell verticalAlign renders 1`] = `
   vertical-align: bottom;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .c2 {
@@ -693,8 +693,8 @@ exports[`TableCell verticalAlign renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -743,8 +743,8 @@ exports[`TableFooter renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -779,8 +779,8 @@ exports[`TableHeader renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -819,8 +819,8 @@ exports[`TableRow renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

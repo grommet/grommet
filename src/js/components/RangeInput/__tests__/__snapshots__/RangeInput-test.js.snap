@@ -2,8 +2,8 @@
 
 exports[`RangeInput renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -16,7 +16,7 @@ exports[`RangeInput renders 1`] = `
   position: relative;
   -webkit-appearance: none;
   border-color: transparent;
-  height: 24px;
+  height: 16px;
   width: 100%;
   padding: 0px;
   cursor: pointer;
@@ -43,12 +43,12 @@ exports[`RangeInput renders 1`] = `
 }
 
 .c1::-webkit-slider-thumb {
-  margin-top: -10px;
+  margin-top: -6px;
   box-sizing: border-box;
   position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
+  border-radius: 16px;
+  height: 16px;
+  width: 16px;
   overflow: visible;
   background: #E15151;
   -webkit-appearance: none;
@@ -69,31 +69,31 @@ exports[`RangeInput renders 1`] = `
 .c1::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
+  border-radius: 16px;
+  height: 16px;
+  width: 16px;
   overflow: visible;
   background: #E15151;
   -webkit-appearance: none;
   cursor: pointer;
   margin-top: 0px;
-  height: 24px;
-  width: 24px;
+  height: 16px;
+  width: 16px;
 }
 
 .c1::-ms-thumb {
   box-sizing: border-box;
   position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
+  border-radius: 16px;
+  height: 16px;
+  width: 16px;
   overflow: visible;
   background: #E15151;
   -webkit-appearance: none;
   cursor: pointer;
   margin-top: 0px;
-  height: 24px;
-  width: 24px;
+  height: 16px;
+  width: 16px;
 }
 
 .c1:hover::-moz-range-thumb {

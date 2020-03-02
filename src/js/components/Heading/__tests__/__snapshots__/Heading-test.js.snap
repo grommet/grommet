@@ -2,8 +2,8 @@
 
 exports[`Heading color renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,18 +12,18 @@ exports[`Heading color renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
   color: #E15151;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -38,8 +38,8 @@ exports[`Heading color renders 1`] = `
 
 exports[`Heading level renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -48,62 +48,62 @@ exports[`Heading level renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c2 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
   font-weight: 600;
 }
 
 .c3 {
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
   font-weight: 600;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    font-size: 26px;
-    line-height: 32px;
-    max-width: 624px;
+    font-size: 17.333333333333332px;
+    line-height: 21.333333333333332px;
+    max-width: 277.3333333333333px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -139,8 +139,8 @@ exports[`Heading level renders 1`] = `
 
 exports[`Heading margin renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -149,178 +149,178 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c1 {
-  margin: 12px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  margin: 8px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c2 {
-  margin: 24px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  margin: 16px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c3 {
-  margin: 48px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  margin: 32px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c4 {
   margin: 0px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c5 {
-  margin-bottom: 12px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  margin-bottom: 8px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c6 {
-  margin-top: 12px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  margin-top: 8px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c7 {
   margin-bottom: 0px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c8 {
   margin-top: 0px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    margin: 6px;
+    margin: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    margin: 12px;
+    margin: 8px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    margin: 24px;
+    margin: 16px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    margin-top: 6px;
+    margin-top: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
     margin-bottom: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c8 {
     margin-top: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c8 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -356,8 +356,8 @@ exports[`Heading margin renders 1`] = `
 
 exports[`Heading renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -366,17 +366,17 @@ exports[`Heading renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -391,8 +391,8 @@ exports[`Heading renders 1`] = `
 
 exports[`Heading size renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -400,175 +400,175 @@ exports[`Heading size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
-  font-weight: 600;
-}
-
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
-.c3 {
-  font-size: 82px;
-  line-height: 88px;
-  max-width: 1968px;
-  font-weight: 600;
-}
-
-.c4 {
-  font-size: 114px;
-  line-height: 120px;
-  max-width: 2736px;
-  font-weight: 600;
-}
-
-.c5 {
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-}
-
-.c6 {
-  font-size: 66px;
-  line-height: 72px;
-  max-width: 1584px;
-  font-weight: 600;
-}
-
-.c7 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+.c1 {
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
   font-weight: 600;
 }
 
 .c8 {
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-}
-
-.c9 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
-  font-weight: 600;
-}
-
-.c10 {
-  font-size: 42px;
-  line-height: 48px;
-  max-width: 1008px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c11 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
+  font-weight: 600;
+}
+
+.c3 {
+  font-size: 54.666666666666664px;
+  line-height: 58.666666666666664px;
+  max-width: 874.6666666666666px;
+  font-weight: 600;
+}
+
+.c4 {
+  font-size: 76px;
+  line-height: 80px;
+  max-width: 1216px;
+  font-weight: 600;
+}
+
+.c5 {
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
+  font-weight: 600;
+}
+
+.c6 {
+  font-size: 44px;
+  line-height: 48px;
+  max-width: 704px;
+  font-weight: 600;
+}
+
+.c7 {
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
+  max-width: 234.66666666666666px;
+  font-weight: 600;
+}
+
+.c9 {
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
+  font-weight: 600;
+}
+
+.c10 {
+  font-size: 28px;
+  line-height: 32px;
+  max-width: 448px;
   font-weight: 600;
 }
 
 .c12 {
   font-size: 77px;
   line-height: normal;
-  max-width: 1200px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    font-size: 26px;
-    line-height: 32px;
-    max-width: 624px;
-  }
-}
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c3 {
-    font-size: 50px;
-    line-height: 56px;
-    max-width: 1200px;
+@media only screen and (max-width:512px) {
+  .c1 {
+    font-size: 17.333333333333332px;
+    line-height: 21.333333333333332px;
+    max-width: 277.3333333333333px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c4 {
-    font-size: 66px;
-    line-height: 72px;
-    max-width: 1584px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    font-size: 42px;
-    line-height: 48px;
-    max-width: 1008px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c8 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c9 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c11 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c3 {
+    font-size: 33.33333333333333px;
+    line-height: 37.33333333333333px;
+    max-width: 533.3333333333333px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c4 {
+    font-size: 44px;
+    line-height: 48px;
+    max-width: 704px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c5 {
+    font-size: 14.666666666666666px;
+    line-height: 18.666666666666668px;
+    max-width: 234.66666666666666px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c6 {
+    font-size: 28px;
+    line-height: 32px;
+    max-width: 448px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c7 {
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c9 {
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c10 {
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -648,8 +648,8 @@ exports[`Heading size renders 1`] = `
 
 exports[`Heading textAlign renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -658,50 +658,50 @@ exports[`Heading textAlign renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
   text-align: left;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
   text-align: center;
 }
 
 .c3 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
   text-align: right;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -722,8 +722,8 @@ exports[`Heading textAlign renders 1`] = `
 
 exports[`Heading truncate renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -732,35 +732,35 @@ exports[`Heading truncate renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -782,8 +782,8 @@ exports[`Heading truncate renders 1`] = `
 
 exports[`Theme based font family renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -793,65 +793,65 @@ exports[`Theme based font family renders 1`] = `
 
 .c1 {
   font-family: Arial;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c2 {
   font-family: Roboto;
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
   font-weight: 600;
 }
 
 .c3 {
   font-family: Ubuntu;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c4 {
   font-family: Fira Sans;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
   font-weight: 600;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    font-size: 26px;
-    line-height: 32px;
-    max-width: 624px;
+    font-size: 17.333333333333332px;
+    line-height: 21.333333333333332px;
+    max-width: 277.3333333333333px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -875,8 +875,8 @@ exports[`Theme based font family renders 1`] = `
 
 exports[`Theme based font weight renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -884,63 +884,63 @@ exports[`Theme based font weight renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
+  font-weight: 600;
+}
+
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 700;
 }
 
 .c2 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
   font-weight: 400;
 }
 
 .c3 {
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 200;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    font-size: 26px;
-    line-height: 32px;
-    max-width: 624px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    font-size: 17.333333333333332px;
+    line-height: 21.333333333333332px;
+    max-width: 277.3333333333333px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c3 {
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -964,8 +964,8 @@ exports[`Theme based font weight renders 1`] = `
 
 exports[`responsive renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -974,24 +974,24 @@ exports[`responsive renders 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 .c2 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 

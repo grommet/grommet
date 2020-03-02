@@ -89,8 +89,8 @@ exports[`Calendar date 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c6 {
@@ -132,7 +132,7 @@ exports[`Calendar date 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c13 {
@@ -160,21 +160,21 @@ exports[`Calendar date 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c1 {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.45;
-  width: 384px;
+  width: 256px;
 }
 
 .c9 {
   overflow: hidden;
-  height: 329.1428571428571px;
+  height: 219.42857142857142px;
 }
 
 .c10 {
@@ -213,8 +213,8 @@ exports[`Calendar date 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   opacity: 0.5;
 }
 
@@ -231,8 +231,8 @@ exports[`Calendar date 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
 }
 
 .c16 {
@@ -248,16 +248,16 @@ exports[`Calendar date 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -265,24 +265,24 @@ exports[`Calendar date 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -1329,8 +1329,8 @@ exports[`Calendar dates 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c6 {
@@ -1372,7 +1372,7 @@ exports[`Calendar dates 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c13 {
@@ -1400,21 +1400,21 @@ exports[`Calendar dates 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c1 {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.45;
-  width: 384px;
+  width: 256px;
 }
 
 .c9 {
   overflow: hidden;
-  height: 329.1428571428571px;
+  height: 219.42857142857142px;
 }
 
 .c10 {
@@ -1453,8 +1453,8 @@ exports[`Calendar dates 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   opacity: 0.5;
 }
 
@@ -1471,8 +1471,8 @@ exports[`Calendar dates 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
 }
 
 .c16 {
@@ -1488,16 +1488,16 @@ exports[`Calendar dates 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1505,24 +1505,24 @@ exports[`Calendar dates 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -2569,8 +2569,8 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c6 {
@@ -2612,7 +2612,7 @@ exports[`Calendar daysOfWeek 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c14 {
@@ -2640,21 +2640,21 @@ exports[`Calendar daysOfWeek 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c1 {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.45;
-  width: 384px;
+  width: 256px;
 }
 
 .c12 {
   overflow: hidden;
-  height: 329.1428571428571px;
+  height: 219.42857142857142px;
 }
 
 .c13 {
@@ -2693,8 +2693,8 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   opacity: 0.5;
 }
 
@@ -2711,8 +2711,8 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
 }
 
 .c16 {
@@ -2728,16 +2728,16 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2745,24 +2745,24 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -3876,8 +3876,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c6 {
@@ -3919,7 +3919,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c13 {
@@ -3947,21 +3947,21 @@ exports[`Calendar firstDayOfWeek 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c1 {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.45;
-  width: 384px;
+  width: 256px;
 }
 
 .c9 {
   overflow: hidden;
-  height: 329.1428571428571px;
+  height: 219.42857142857142px;
 }
 
 .c10 {
@@ -4000,8 +4000,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   opacity: 0.5;
 }
 
@@ -4018,8 +4018,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
 }
 
 .c16 {
@@ -4035,16 +4035,16 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4052,24 +4052,24 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -6087,14 +6087,14 @@ exports[`Calendar header 1`] = `
 }
 
 .c1 {
-  font-size: 14px;
+  font-size: 9.333333333333334px;
   line-height: 1.375;
-  width: 192px;
+  width: 128px;
 }
 
 .c7 {
   overflow: hidden;
-  height: 164.57142857142856px;
+  height: 109.71428571428571px;
 }
 
 .c8 {
@@ -6133,8 +6133,8 @@ exports[`Calendar header 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 27.428571428571427px;
-  height: 27.428571428571427px;
+  width: 18.285714285714285px;
+  height: 18.285714285714285px;
   opacity: 0.5;
 }
 
@@ -6151,8 +6151,8 @@ exports[`Calendar header 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 27.428571428571427px;
-  height: 27.428571428571427px;
+  width: 18.285714285714285px;
+  height: 18.285714285714285px;
 }
 
 .c14 {
@@ -6168,21 +6168,21 @@ exports[`Calendar header 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 27.428571428571427px;
-  height: 27.428571428571427px;
+  width: 18.285714285714285px;
+  height: 18.285714285714285px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
 }
 
 .c6 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 9.333333333333334px;
+  line-height: 13.333333333333334px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7271,8 +7271,8 @@ exports[`Calendar reference 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c6 {
@@ -7314,7 +7314,7 @@ exports[`Calendar reference 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c13 {
@@ -7342,21 +7342,21 @@ exports[`Calendar reference 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c1 {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.45;
-  width: 384px;
+  width: 256px;
 }
 
 .c9 {
   overflow: hidden;
-  height: 329.1428571428571px;
+  height: 219.42857142857142px;
 }
 
 .c10 {
@@ -7395,8 +7395,8 @@ exports[`Calendar reference 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   opacity: 0.5;
 }
 
@@ -7413,13 +7413,13 @@ exports[`Calendar reference 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7427,24 +7427,24 @@ exports[`Calendar reference 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
@@ -8525,8 +8525,8 @@ exports[`Calendar size 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c6 {
@@ -8567,8 +8567,8 @@ exports[`Calendar size 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c25 {
@@ -8587,8 +8587,8 @@ exports[`Calendar size 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c7 {
@@ -8608,7 +8608,7 @@ exports[`Calendar size 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c13 {
@@ -8636,59 +8636,59 @@ exports[`Calendar size 1`] = `
 
 .c19 {
   margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
   font-weight: 600;
 }
 
 .c5 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
   font-weight: 600;
 }
 
 .c26 {
   margin: 0px;
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
+  max-width: 362.66666666666663px;
   font-weight: 600;
 }
 
 .c17 {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.45;
-  width: 384px;
+  width: 256px;
 }
 
 .c1 {
-  font-size: 14px;
+  font-size: 9.333333333333334px;
   line-height: 1.375;
-  width: 192px;
+  width: 128px;
 }
 
 .c24 {
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1.11;
-  width: 768px;
+  width: 512px;
 }
 
 .c20 {
   overflow: hidden;
-  height: 329.1428571428571px;
+  height: 219.42857142857142px;
 }
 
 .c9 {
   overflow: hidden;
-  height: 164.57142857142856px;
+  height: 109.71428571428571px;
 }
 
 .c28 {
   overflow: hidden;
-  height: 658.2857142857142px;
+  height: 438.85714285714283px;
 }
 
 .c10 {
@@ -8727,8 +8727,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   opacity: 0.5;
 }
 
@@ -8745,8 +8745,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
 }
 
 .c23 {
@@ -8762,8 +8762,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
+  width: 36.57142857142857px;
+  height: 36.57142857142857px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
@@ -8782,8 +8782,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 27.428571428571427px;
-  height: 27.428571428571427px;
+  width: 18.285714285714285px;
+  height: 18.285714285714285px;
   opacity: 0.5;
 }
 
@@ -8800,8 +8800,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 27.428571428571427px;
-  height: 27.428571428571427px;
+  width: 18.285714285714285px;
+  height: 18.285714285714285px;
 }
 
 .c16 {
@@ -8817,8 +8817,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 27.428571428571427px;
-  height: 27.428571428571427px;
+  width: 18.285714285714285px;
+  height: 18.285714285714285px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
@@ -8837,8 +8837,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 109.71428571428571px;
-  height: 109.71428571428571px;
+  width: 73.14285714285714px;
+  height: 73.14285714285714px;
   opacity: 0.5;
 }
 
@@ -8855,8 +8855,8 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 109.71428571428571px;
-  height: 109.71428571428571px;
+  width: 73.14285714285714px;
+  height: 73.14285714285714px;
 }
 
 .c31 {
@@ -8872,16 +8872,16 @@ exports[`Calendar size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 109.71428571428571px;
-  height: 109.71428571428571px;
+  width: 73.14285714285714px;
+  height: 73.14285714285714px;
   background: #E15151;
   color: #f8f8f8;
   font-weight: bold;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -8889,66 +8889,66 @@ exports[`Calendar size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c18 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c25 {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c19 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c19 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c26 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c26 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
   }
 }
 

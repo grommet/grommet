@@ -14,11 +14,11 @@ exports[`RoutedButton renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #E15151;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -32,8 +32,8 @@ exports[`RoutedButton renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

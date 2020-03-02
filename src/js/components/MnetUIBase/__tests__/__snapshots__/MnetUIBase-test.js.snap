@@ -2,8 +2,8 @@
 
 exports[`MnetUIBase announce 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -38,8 +38,8 @@ exports[`MnetUIBase announce 3`] = `
 
 exports[`MnetUIBase basic 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -54,8 +54,8 @@ exports[`MnetUIBase basic 1`] = `
 
 exports[`MnetUIBase cssVars 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -105,8 +105,8 @@ exports[`MnetUIBase cssVars 1`] = `
 
 exports[`MnetUIBase full 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -127,8 +127,8 @@ exports[`MnetUIBase full 1`] = `
 exports[`MnetUIBase mnet theme 1`] = `
 .c0 {
   font-family: 'Open Sans',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   background: #ffffff;
   color: #444444;
   box-sizing: border-box;
@@ -145,8 +145,8 @@ exports[`MnetUIBase mnet theme 1`] = `
 
 exports[`MnetUIBase ssr rendering Mozilla/5.0 (X11; Linux x 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -155,17 +155,17 @@ exports[`MnetUIBase ssr rendering Mozilla/5.0 (X11; Linux x 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 @media only screen and (max-width:600px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -182,8 +182,8 @@ exports[`MnetUIBase ssr rendering Mozilla/5.0 (X11; Linux x 1`] = `
 
 exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPad; CPU OS 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -192,17 +192,17 @@ exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPad; CPU OS 1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 @media only screen and (max-width:600px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -219,8 +219,8 @@ exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPad; CPU OS 1`] = `
 
 exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPhone; CPU  1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -229,17 +229,17 @@ exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPhone; CPU  1`] = `
 }
 
 .c1 {
-  font-size: 50px;
-  line-height: 56px;
-  max-width: 1200px;
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
 @media only screen and (max-width:600px) {
   .c1 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -257,8 +257,8 @@ exports[`MnetUIBase ssr rendering Mozilla/5.0 (iPhone; CPU  1`] = `
 exports[`MnetUIBase themeMode 1`] = `
 .c0 {
   font-family: 'Open Sans',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   background: #1f2024;
   color: #f8f8f8;
   box-sizing: border-box;

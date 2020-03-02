@@ -124,7 +124,7 @@ exports[`MnetUIBase custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c2 {
@@ -162,8 +162,8 @@ exports[`MnetUIBase custom theme 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -685,14 +685,14 @@ exports[`MnetUIBase dark theme 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
   font-family: Arial;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   background: #111111;
   color: #eeeeee;
   box-sizing: border-box;
@@ -1292,13 +1292,13 @@ exports[`MnetUIBase default theme 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

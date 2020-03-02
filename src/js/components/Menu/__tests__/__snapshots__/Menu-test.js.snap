@@ -22,14 +22,14 @@ exports[`Menu basic 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -51,13 +51,13 @@ exports[`Menu basic 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -65,9 +65,9 @@ exports[`Menu basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -159,14 +159,14 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -188,13 +188,13 @@ exports[`Menu close by clicking outside 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -202,9 +202,9 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -301,7 +301,7 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c0 {
@@ -387,14 +387,14 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c5 {
@@ -421,13 +421,13 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 .c7 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -453,15 +453,15 @@ exports[`Menu close by clicking outside 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c11 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -565,39 +565,39 @@ exports[`Menu close by clicking outside 2`] = `
 `;
 
 exports[`Menu close by clicking outside 3`] = `
-"@media only screen and (max-width:768px) {
-  .iBAtlm {
-    padding: 6px;
+"@media only screen and (max-width:512px) {
+  .bUXuBS {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .WFuxt {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .hYWuzg {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .eJowqz {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .ggdDGZ {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .cDKxsd {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .eVAAPX {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .dChJFM {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .jTmken {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .gttDnp {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .eyQHsP {
+    padding: 4px;
   }
 }
 
@@ -618,15 +618,15 @@ exports[`Menu close by clicking outside 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-@media only screen and (max-width:768px) {
-  .hPQuOK {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .jJwBZU {
+    padding: 4px;
   }
 }
 
-.GOEwZ {
-  font-size: 18px;
-  line-height: 24px;
+.iHfJbP {
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -649,7 +649,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .GOEwZ {
+  .iHfJbP {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -718,14 +718,14 @@ exports[`Menu close on esc 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -747,13 +747,13 @@ exports[`Menu close on esc 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -761,9 +761,9 @@ exports[`Menu close on esc 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -860,14 +860,14 @@ exports[`Menu close on tab 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -889,13 +889,13 @@ exports[`Menu close on tab 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -903,9 +903,9 @@ exports[`Menu close on tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -1002,14 +1002,14 @@ exports[`Menu custom a11yTitle 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -1031,13 +1031,13 @@ exports[`Menu custom a11yTitle 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1045,9 +1045,9 @@ exports[`Menu custom a11yTitle 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -1145,14 +1145,14 @@ exports[`Menu custom message 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -1174,13 +1174,13 @@ exports[`Menu custom message 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1188,9 +1188,9 @@ exports[`Menu custom message 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -1292,14 +1292,14 @@ exports[`Menu disabled 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -1323,13 +1323,13 @@ exports[`Menu disabled 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1337,9 +1337,9 @@ exports[`Menu disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -1437,14 +1437,14 @@ exports[`Menu gap between icon and label 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -1466,13 +1466,13 @@ exports[`Menu gap between icon and label 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1480,9 +1480,9 @@ exports[`Menu gap between icon and label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -1580,7 +1580,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c6 {
@@ -1604,7 +1604,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c7 {
@@ -1628,7 +1628,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c8 {
@@ -1652,7 +1652,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c9 {
@@ -1676,7 +1676,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c10 {
@@ -1696,14 +1696,14 @@ exports[`Menu justify content 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -1725,13 +1725,13 @@ exports[`Menu justify content 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1739,39 +1739,39 @@ exports[`Menu justify content 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c8 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c9 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c10 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2053,14 +2053,14 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -2082,13 +2082,13 @@ exports[`Menu navigate through suggestions and select 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2096,9 +2096,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2195,14 +2195,14 @@ exports[`Menu open and close on click 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -2224,13 +2224,13 @@ exports[`Menu open and close on click 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2238,9 +2238,9 @@ exports[`Menu open and close on click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2283,7 +2283,7 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 cLFevK"
+  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
 >
   <button
     aria-label="Open Menu"
@@ -2292,15 +2292,15 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-1etxkdl-0 iBAtlm"
+      class="StyledBox-sc-1etxkdl-0 bUXuBS"
     >
       <span
-        class="StyledText-sc-3e83s1-0 glCdoa"
+        class="StyledText-sc-3e83s1-0 bsNPum"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-1etxkdl-1 hkymms"
+        class="StyledBox__StyledBoxGap-sc-1etxkdl-1 tACrE"
       />
       <svg
         aria-label="FormDown"
@@ -2375,7 +2375,7 @@ exports[`Menu open and close on click 3`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c0 {
@@ -2461,14 +2461,14 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c5 {
@@ -2495,13 +2495,13 @@ exports[`Menu open and close on click 3`] = `
 }
 
 .c7 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2527,15 +2527,15 @@ exports[`Menu open and close on click 3`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c11 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2653,39 +2653,39 @@ exports[`Menu open and close on click 3`] = `
 `;
 
 exports[`Menu open and close on click 4`] = `
-"@media only screen and (max-width:768px) {
-  .iBAtlm {
-    padding: 6px;
+"@media only screen and (max-width:512px) {
+  .bUXuBS {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .WFuxt {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .hYWuzg {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .eJowqz {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .ggdDGZ {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .cDKxsd {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .eVAAPX {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .dChJFM {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .jTmken {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .gttDnp {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .eyQHsP {
+    padding: 4px;
   }
 }
 
@@ -2706,15 +2706,15 @@ exports[`Menu open and close on click 4`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-@media only screen and (max-width:768px) {
-  .hPQuOK {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .jJwBZU {
+    padding: 4px;
   }
 }
 
-.GOEwZ {
-  font-size: 18px;
-  line-height: 24px;
+.iHfJbP {
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2737,7 +2737,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .GOEwZ {
+  .iHfJbP {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2806,14 +2806,14 @@ exports[`Menu reverse icon and label 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -2835,13 +2835,13 @@ exports[`Menu reverse icon and label 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2849,9 +2849,9 @@ exports[`Menu reverse icon and label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -2949,14 +2949,14 @@ exports[`Menu select an item 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -2978,13 +2978,13 @@ exports[`Menu select an item 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2992,9 +2992,9 @@ exports[`Menu select an item 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -3091,14 +3091,14 @@ exports[`Menu tab through menu until it closes 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -3120,13 +3120,13 @@ exports[`Menu tab through menu until it closes 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3134,9 +3134,9 @@ exports[`Menu tab through menu until it closes 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -3233,14 +3233,14 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c1 {
@@ -3262,13 +3262,13 @@ exports[`Menu with dropAlign renders 1`] = `
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3276,9 +3276,9 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -3375,7 +3375,7 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c0 {
@@ -3461,14 +3461,14 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 12px;
+  padding: 8px;
 }
 
 .c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 12px;
+  width: 8px;
 }
 
 .c5 {
@@ -3495,13 +3495,13 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 .c7 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3527,15 +3527,15 @@ exports[`Menu with dropAlign renders 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c11 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -3639,39 +3639,39 @@ exports[`Menu with dropAlign renders 2`] = `
 `;
 
 exports[`Menu with dropAlign renders 3`] = `
-"@media only screen and (max-width:768px) {
-  .iBAtlm {
-    padding: 6px;
+"@media only screen and (max-width:512px) {
+  .bUXuBS {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .WFuxt {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .hYWuzg {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .eJowqz {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .ggdDGZ {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .cDKxsd {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .eVAAPX {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .dChJFM {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .jTmken {
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
-  .gttDnp {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .eyQHsP {
+    padding: 4px;
   }
 }
 
@@ -3692,14 +3692,14 @@ exports[`Menu with dropAlign renders 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-@media only screen and (max-width:768px) {
-  .hPQuOK {
-    padding: 6px;
+@media only screen and (max-width:512px) {
+  .jJwBZU {
+    padding: 4px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .GOEwZ {
+  .iHfJbP {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3711,9 +3711,9 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.fFVSjK {
-  font-size: 18px;
-  line-height: 24px;
+.cqHSxd {
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3736,7 +3736,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fFVSjK {
+  .cqHSxd {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

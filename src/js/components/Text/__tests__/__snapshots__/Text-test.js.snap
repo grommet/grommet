@@ -2,8 +2,8 @@
 
 exports[`renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,8 +12,8 @@ exports[`renders 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 <div
@@ -29,8 +29,8 @@ exports[`renders 1`] = `
 
 exports[`renders color 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -39,8 +39,8 @@ exports[`renders color 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   color: #e35e59;
 }
 
@@ -55,8 +55,8 @@ exports[`renders color 1`] = `
 
 exports[`renders margin 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -65,65 +65,65 @@ exports[`renders margin 1`] = `
 }
 
 .c1 {
-  margin: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin: 8px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c2 {
-  margin: 24px;
-  font-size: 18px;
-  line-height: 24px;
+  margin: 16px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c3 {
-  margin: 48px;
-  font-size: 18px;
-  line-height: 24px;
+  margin: 32px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c4 {
   margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c5 {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c6 {
-  margin-left: 12px;
-  margin-right: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c7 {
-  margin-bottom: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c8 {
-  margin-top: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c9 {
-  margin-left: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-left: 8px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c10 {
-  margin-right: 12px;
-  font-size: 18px;
-  line-height: 24px;
+  margin-right: 8px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 <div
@@ -164,8 +164,8 @@ exports[`renders margin 1`] = `
 
 exports[`renders size 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -173,34 +173,34 @@ exports[`renders size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c3 {
   font-size: 12px;
-  line-height: 18px;
+  line-height: 16px;
+}
+
+.c1 {
+  font-size: 8px;
+  line-height: 12px;
 }
 
 .c2 {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 9.333333333333334px;
+  line-height: 13.333333333333334px;
 }
 
 .c4 {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
 }
 
 .c5 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
 }
 
 .c6 {
-  font-size: 34px;
-  line-height: 40px;
+  font-size: 22.666666666666664px;
+  line-height: 26.666666666666664px;
 }
 
 <div
@@ -235,8 +235,8 @@ exports[`renders size 1`] = `
 
 exports[`renders tag 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -245,8 +245,8 @@ exports[`renders tag 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 <div
@@ -260,8 +260,8 @@ exports[`renders tag 1`] = `
 
 exports[`renders textAlign 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -270,20 +270,20 @@ exports[`renders textAlign 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   text-align: left;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   text-align: center;
 }
 
 .c3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   text-align: right;
 }
 
@@ -304,8 +304,8 @@ exports[`renders textAlign 1`] = `
 
 exports[`renders truncate 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -314,13 +314,13 @@ exports[`renders truncate 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -344,8 +344,8 @@ exports[`renders truncate 1`] = `
 
 exports[`renders weight 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -354,14 +354,14 @@ exports[`renders weight 1`] = `
 }
 
 .c1 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   font-weight: normal;
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   font-weight: bold;
 }
 
