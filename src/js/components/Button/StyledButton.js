@@ -31,7 +31,7 @@ const fontStyle = props => {
   const size = props.sizeProp || 'medium';
   const data = props.theme.text[size];
   return css`
-    font-size: 14px;
+    font-size: ${data.size};
     line-height: ${data.height};
   `;
 };

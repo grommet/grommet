@@ -1229,7 +1229,7 @@ exports[`Menu disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
+  opacity: 0.6;
   cursor: default;
 }
 

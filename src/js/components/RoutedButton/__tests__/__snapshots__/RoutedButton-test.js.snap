@@ -17,7 +17,7 @@ exports[`RoutedButton renders 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;

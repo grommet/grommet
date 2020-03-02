@@ -93,7 +93,7 @@ exports[`TextArea disabled 1`] = `
   border: none;
   width: 100%;
   -webkit-appearance: none;
-  opacity: 0.3;
+  opacity: 0.6;
   cursor: default;
 }
 

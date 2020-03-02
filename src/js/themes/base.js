@@ -211,7 +211,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'border',
         },
         disabled: {
-          opacity: 0.3,
+          opacity: 0.6,
         },
       },
       // The time to wait after the user stopped typing, measured in ms.
