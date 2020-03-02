@@ -17,7 +17,7 @@ exports[`Button as 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -72,7 +72,7 @@ exports[`Button basic 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -130,7 +130,7 @@ exports[`Button children function 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -197,7 +197,7 @@ exports[`Button color 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -227,7 +227,7 @@ exports[`Button color 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   background: #6FFFB0;
   color: #444444;
@@ -260,7 +260,7 @@ exports[`Button color 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   background: #111111;
   color: #f8f8f8;
@@ -293,7 +293,7 @@ exports[`Button color 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   background: #123;
   color: #f8f8f8;
@@ -387,7 +387,7 @@ exports[`Button disabled 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   opacity: 0.3;
   cursor: default;
@@ -459,7 +459,7 @@ exports[`Button fill 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -495,7 +495,7 @@ exports[`Button fill 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -525,7 +525,7 @@ exports[`Button fill 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -556,7 +556,7 @@ exports[`Button fill 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -645,7 +645,7 @@ exports[`Button focus 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   outline-color: #6FFFB0;
   border-color: #6FFFB0;
@@ -915,7 +915,7 @@ exports[`Button href 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -1000,7 +1000,7 @@ exports[`Button icon label 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -1066,7 +1066,7 @@ exports[`Button primary 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   background: #7D4CDB;
   color: #f8f8f8;
@@ -1157,7 +1157,7 @@ exports[`Button reverse icon label 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -1351,7 +1351,7 @@ exports[`Button size 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -1381,7 +1381,7 @@ exports[`Button size 1`] = `
   border-radius: 24px;
   color: #444444;
   padding: 8px 32px;
-  font-size: 22px;
+  font-size: 14px;
   line-height: 28px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -1444,7 +1444,7 @@ exports[`Button size 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   background: #7D4CDB;
   color: #f8f8f8;
@@ -1477,7 +1477,7 @@ exports[`Button size 1`] = `
   border-radius: 24px;
   color: #444444;
   padding: 8px 32px;
-  font-size: 22px;
+  font-size: 14px;
   line-height: 28px;
   background: #7D4CDB;
   color: #f8f8f8;

@@ -17,7 +17,7 @@ exports[`DropButton close by clicking outside 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -71,7 +71,7 @@ exports[`DropButton closed 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -116,7 +116,7 @@ exports[`DropButton disabled 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   opacity: 0.3;
   cursor: default;
@@ -155,7 +155,7 @@ exports[`DropButton open and close 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -209,7 +209,7 @@ exports[`DropButton opened 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
@@ -254,7 +254,7 @@ exports[`DropButton opened ref 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
