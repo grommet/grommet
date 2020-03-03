@@ -586,6 +586,7 @@ exports[`Form update 1`] = `
               class="c5"
               name="test"
               placeholder="test input"
+              required=""
               value=""
             />
           </div>
