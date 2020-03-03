@@ -120,6 +120,8 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
         name: name,
         label: label,
         checked: formValue[name] !== undefined ? formValue[name] : checked || false,
+        disabled: disabled,
+        required: required,
         "aria-invalid": invalid || undefined
       }, rest));
     }
@@ -127,6 +129,8 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
     return _react["default"].createElement(Input, _extends({
       name: name,
       value: formValue[name] !== undefined ? formValue[name] : valueProp || '',
+      disabled: disabled,
+      required: required,
       plain: true,
       focusIndicator: false,
       "aria-invalid": invalid || undefined

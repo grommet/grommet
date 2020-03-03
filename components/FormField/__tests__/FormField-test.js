@@ -10,6 +10,8 @@ require("jest-styled-components");
 
 var _Grommet = require("../../Grommet");
 
+var _Form = require("../../Form");
+
 var _ = require("..");
 
 var _TextInput = require("../../TextInput");
@@ -152,6 +154,26 @@ describe('FormField', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(CustomFormField, {
       htmlFor: "test-id"
     })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('disabled', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+      disabled: true
+    }), " ", _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+      disabled: true
+    }))));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('required', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+      required: true
+    }), " ", _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+      required: true
+    }))));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();

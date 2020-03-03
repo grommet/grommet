@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import styled from 'styled-components';
 import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
+import { Form } from '../../Form';
 import { FormField } from '..';
 import { TextInput } from '../../TextInput';
 var CustomFormField = styled(FormField).withConfig({
@@ -130,6 +131,24 @@ describe('FormField', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(CustomFormField, {
       htmlFor: "test-id"
     })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('disabled', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+      disabled: true
+    }), " ", React.createElement(Form, null, React.createElement(FormField, {
+      disabled: true
+    }))));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('required', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+      required: true
+    }), " ", React.createElement(Form, null, React.createElement(FormField, {
+      required: true
+    }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
