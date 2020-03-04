@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { MnetUIBase, Heading } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Color = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Heading color="accent-1">Colored Heading</Heading>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Heading', module).add('Color', () => <Color />);

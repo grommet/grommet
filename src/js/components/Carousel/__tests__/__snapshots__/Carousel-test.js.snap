@@ -226,7 +226,7 @@ exports[`Carousel basic 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c14 {
@@ -276,8 +276,6 @@ exports[`Carousel basic 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
@@ -317,12 +315,15 @@ exports[`Carousel basic 1`] = `
     >
       <div
         className="c7"
+        onBlur={[Function]}
+        onFocus={[Function]}
         tabIndex="0"
       >
         <button
           className="c8"
           disabled={true}
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
@@ -649,7 +650,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c8 {
@@ -699,8 +700,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
@@ -740,6 +739,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
     >
       <div
         className="c7"
+        onBlur={[Function]}
+        onFocus={[Function]}
         tabIndex="0"
       >
         <button
@@ -822,6 +823,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
           className="c14"
           disabled={true}
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
@@ -1072,7 +1074,7 @@ exports[`Carousel navigate 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c14 {
@@ -1319,7 +1321,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-1etxkdl-0 Rrgek"
           >
             <button
-              class="StyledButton-sc-1hmw3c5-0 dsywyz"
+              class="StyledButton-sc-1hmw3c5-0 jBSOZm"
               type="button"
             >
               <svg
@@ -1336,7 +1338,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-1hmw3c5-0 dsywyz"
+              class="StyledButton-sc-1hmw3c5-0 jBSOZm"
               type="button"
             >
               <svg
@@ -1451,7 +1453,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-1etxkdl-0 Rrgek"
           >
             <button
-              class="StyledButton-sc-1hmw3c5-0 dsywyz"
+              class="StyledButton-sc-1hmw3c5-0 jBSOZm"
               type="button"
             >
               <svg
@@ -1468,7 +1470,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-1hmw3c5-0 dsywyz"
+              class="StyledButton-sc-1hmw3c5-0 jBSOZm"
               type="button"
             >
               <svg
@@ -1735,7 +1737,7 @@ exports[`Carousel play 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c14 {
@@ -1980,7 +1982,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-1etxkdl-0 Rrgek"
           >
             <button
-              class="StyledButton-sc-1hmw3c5-0 dsywyz"
+              class="StyledButton-sc-1hmw3c5-0 jBSOZm"
               type="button"
             >
               <svg
@@ -1997,7 +1999,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-1hmw3c5-0 dsywyz"
+              class="StyledButton-sc-1hmw3c5-0 jBSOZm"
               type="button"
             >
               <svg

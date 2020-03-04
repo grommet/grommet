@@ -221,7 +221,7 @@ describe('Button', () => {
 
   test('size', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Button size="small" label="Small" />
         <Button size="medium" label="Medium" />
         <Button label="Default" />
@@ -238,7 +238,7 @@ describe('Button', () => {
         <Button size="medium" label="Medium" icon={<Next />} reverse />
         <Button label="Default" icon={<Next />} reverse />
         <Button size="large" label="Large" icon={<Next />} reverse />
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     const tree = component.toJSON();

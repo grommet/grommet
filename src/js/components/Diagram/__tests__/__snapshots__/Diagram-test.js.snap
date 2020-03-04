@@ -29,7 +29,7 @@ exports[`Diagram anchor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
 }
 
 .c1 {
@@ -162,7 +162,7 @@ exports[`Diagram basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
 }
 
 .c1 {
@@ -279,7 +279,7 @@ exports[`Diagram color 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
 }
 
 .c1 {
@@ -396,7 +396,7 @@ exports[`Diagram offset 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
 }
 
 .c1 {
@@ -470,6 +470,14 @@ exports[`Diagram offset 1`] = `
       >
         <g>
           <path
+            d="M 2,2 Q 2,2 2,2 T 2,2"
+            fill="none"
+            stroke="#20314f"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
             d="M 4,4 Q 4,4 4,4 T 4,4"
             fill="none"
             stroke="#20314f"
@@ -479,14 +487,6 @@ exports[`Diagram offset 1`] = `
           />
           <path
             d="M 8,8 Q 8,8 8,8 T 8,8"
-            fill="none"
-            stroke="#20314f"
-            stroke-linecap="butt"
-            stroke-linejoin="miter"
-            stroke-width="1"
-          />
-          <path
-            d="M 16,16 Q 16,16 16,16 T 16,16"
             fill="none"
             stroke="#20314f"
             stroke-linecap="butt"
@@ -529,7 +529,7 @@ exports[`Diagram thickness 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
 }
 
 .c1 {
@@ -616,6 +616,14 @@ exports[`Diagram thickness 1`] = `
             stroke="#20314f"
             stroke-linecap="butt"
             stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#20314f"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
             stroke-width="2"
           />
           <path
@@ -633,14 +641,6 @@ exports[`Diagram thickness 1`] = `
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="8"
-          />
-          <path
-            d="M 0,0 Q 0,0 0,0 T 0,0"
-            fill="none"
-            stroke="#20314f"
-            stroke-linecap="butt"
-            stroke-linejoin="miter"
-            stroke-width="16"
           />
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
@@ -686,7 +686,7 @@ exports[`Diagram type 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
 }
 
 .c1 {

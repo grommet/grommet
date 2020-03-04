@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet, Header, Nav } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box, MnetUIBase, Header, Nav } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 import { Avatar } from '../../Header/stories/Simple';
 
 const items = [
@@ -13,7 +13,7 @@ const items = [
 ];
 
 const OnHeader = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Header background="dark-1" pad="medium">
       <Box direction="row" align="center" gap="small">
         <Avatar />
@@ -27,7 +27,7 @@ const OnHeader = () => (
         ))}
       </Nav>
     </Header>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Nav', module).add('On Header', () => <OnHeader />);

@@ -149,7 +149,7 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c1 {
-  margin: 8px;
+  margin: 4px;
   font-size: 33.33333333333333px;
   line-height: 37.33333333333333px;
   max-width: 533.3333333333333px;
@@ -157,7 +157,7 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c2 {
-  margin: 16px;
+  margin: 8px;
   font-size: 33.33333333333333px;
   line-height: 37.33333333333333px;
   max-width: 533.3333333333333px;
@@ -165,7 +165,7 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c3 {
-  margin: 32px;
+  margin: 16px;
   font-size: 33.33333333333333px;
   line-height: 37.33333333333333px;
   max-width: 533.3333333333333px;
@@ -181,7 +181,7 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c5 {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-size: 33.33333333333333px;
   line-height: 37.33333333333333px;
   max-width: 533.3333333333333px;
@@ -189,7 +189,7 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c6 {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 33.33333333333333px;
   line-height: 37.33333333333333px;
   max-width: 533.3333333333333px;

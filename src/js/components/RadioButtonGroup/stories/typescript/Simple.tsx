@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { RadioButtonGroup } from 'grommet';
+import { RadioButtonGroup } from 'mnet-ui-base';
 
 export const App = () => {
   const postMethods = [

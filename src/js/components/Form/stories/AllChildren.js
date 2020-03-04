@@ -5,7 +5,7 @@ import {
   Box,
   Button,
   CheckBox,
-  Grommet,
+  MnetUIBase,
   Form,
   FormField,
   MaskedInput,
@@ -14,11 +14,11 @@ import {
   Select,
   TextArea,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Example = () => (
-  <Grommet full theme={grommet}>
+  <MnetUIBase full theme={mnet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
@@ -63,7 +63,7 @@ const Example = () => (
         </Form>
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Form', module).add('All children', () => <Example />);

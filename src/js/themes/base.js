@@ -47,7 +47,7 @@ const lightColors = [
   '#dfdfdf',
   '#DADADA',
 ];
-const focusColor = accentColors[1];
+const focusColor = '#B1C2FE';
 
 const colors = {
   active: rgba(221, 221, 221, 0.5),
@@ -68,7 +68,7 @@ const colors = {
   black: '#000000',
   border: {
     dark: rgba(255, 255, 255, 0.33),
-    light: rgba(0, 0, 0, 0.33),
+    light: rgba(205, 211, 227, 1),
   },
   brand: brandColor,
   control: {
@@ -134,7 +134,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     maxWidth: `${baseSpacing * (baseFontSize + factor * fontScale)}px`,
   });
 
-  const borderWidth = 2;
+  const borderWidth = 1;
 
   const result = deepMerge(iconBase, {
     global: {
@@ -207,7 +207,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       control: {
         border: {
           width: '1px',
-          radius: '0px',
+          radius: '4px',
           color: 'border',
         },
         disabled: {
@@ -227,12 +227,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       edgeSize: {
         none: '0px',
         hair: '1px', // for Chart
-        xxsmall: `${baseSpacing / 8}px`, // 3
-        xsmall: `${baseSpacing / 4}px`, // 6
-        small: `${baseSpacing / 2}px`, // 12
-        medium: `${baseSpacing}px`, // 24
-        large: `${baseSpacing * 2}px`, // 48
-        xlarge: `${baseSpacing * 4}px`, // 96
+        xxsmall: `${baseSpacing / 16}px`, // 3
+        xsmall: `${baseSpacing / 8}px`, // 6
+        small: `${baseSpacing / 4}px`, // 12
+        medium: `${baseSpacing / 2}px`, // 24
+        large: `${baseSpacing}px`, // 48
+        xlarge: `${baseSpacing}px`, // 96
         responsiveBreakpoint: 'small',
       },
       elevation: {
@@ -276,8 +276,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       input: {
         padding: `${baseSpacing / 2}px`,
         weight: 400,
-        boxShadow: 'inset 1px 1px 1px 0 rgba(216,218,229,.68)',
-        borderRadius: '3px',
       },
       opacity: {
         strong: 0.8,
@@ -574,8 +572,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         position: 'inner',
-        side: 'bottom',
-        size: '0',
+        side: 'all',
+        size: 'xsmall',
       },
       content: {
         pad: 'small',

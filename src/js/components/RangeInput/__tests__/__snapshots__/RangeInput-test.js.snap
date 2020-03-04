@@ -39,7 +39,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(205,211,227,0.2);
 }
 
 .c1::-webkit-slider-thumb {
@@ -63,7 +63,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(205,211,227,0.2);
 }
 
 .c1::-moz-range-thumb {
@@ -108,18 +108,18 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(205,211,227,0.2);
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: rgba(205,211,227,0.2);
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: rgba(205,211,227,0.2);
   border-color: transparent;
 }
 

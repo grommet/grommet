@@ -65,19 +65,19 @@ exports[`renders margin 1`] = `
 }
 
 .c1 {
-  margin: 8px;
+  margin: 4px;
   font-size: 12px;
   line-height: 16px;
 }
 
 .c2 {
-  margin: 16px;
+  margin: 8px;
   font-size: 12px;
   line-height: 16px;
 }
 
 .c3 {
-  margin: 32px;
+  margin: 16px;
   font-size: 12px;
   line-height: 16px;
 }
@@ -89,39 +89,39 @@ exports[`renders margin 1`] = `
 }
 
 .c5 {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 16px;
 }
 
 .c6 {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   font-size: 12px;
   line-height: 16px;
 }
 
 .c7 {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 16px;
 }
 
 .c8 {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 12px;
   line-height: 16px;
 }
 
 .c9 {
-  margin-left: 8px;
+  margin-left: 4px;
   font-size: 12px;
   line-height: 16px;
 }
 
 .c10 {
-  margin-right: 8px;
+  margin-right: 4px;
   font-size: 12px;
   line-height: 16px;
 }

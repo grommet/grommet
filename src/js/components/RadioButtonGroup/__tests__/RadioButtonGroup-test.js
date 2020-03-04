@@ -87,7 +87,7 @@ describe('RadioButtonGroup', () => {
 
   test('adding additional props', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <RadioButtonGroup
           name="test"
           options={[
@@ -103,7 +103,7 @@ describe('RadioButtonGroup', () => {
             },
           ]}
         />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

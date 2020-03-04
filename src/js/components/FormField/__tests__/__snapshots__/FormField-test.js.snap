@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`forces empty margin 1`] = `
+exports[`FormField abut 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -19,7 +19,425 @@ exports[`forces empty margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-bottom: 4px;
+  border: solid 8px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    border: solid 4px #cdd3e3;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormField abut with margin 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 8px;
+  border: solid 8px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin: 8px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    border: solid 4px #cdd3e3;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormField custom formfield 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  font-size: 40px;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c3 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormField default 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 7px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  font-weight: 400;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c5:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <input
+            autoComplete="off"
+            className="c5"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormField empty margin 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -45,7 +463,7 @@ exports[`forces empty margin 1`] = `
 
 @media only screen and (max-width:512px) {
   .c2 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
+    border: solid 1px #cdd3e3;
   }
 }
 
@@ -60,15 +478,21 @@ exports[`forces empty margin 1`] = `
 >
   <div
     className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c3"
+      />
+    </div>
   </div>
 </div>
 `;
 
-exports[`renders 1`] = `
+exports[`FormField error 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -87,7 +511,22 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -103,7 +542,7 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
+  border: solid 1px #e35e59;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -112,429 +551,10 @@ exports[`renders 1`] = `
 }
 
 .c4 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font-weight: 400;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
-  width: 100%;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #e0e4ee;
-}
-
-.c4::-moz-placeholder {
-  color: #e0e4ee;
-}
-
-.c4:-ms-input-placeholder {
-  color: #e0e4ee;
-}
-
-.c4::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c3 {
-  position: relative;
-  width: 100%;
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin-bottom: 4px;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c2 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1 "
-  >
-    <div
-      className="c2"
-    />
-  </div>
-  <div
-    className="c1 "
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <input
-          autoComplete="off"
-          className="c4"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-        />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders abut correctly 1`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 16px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-bottom: -8px;
-  border: solid 8px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin-bottom: -8px;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    border: solid 4px rgba(0,0,0,0.33);
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1 "
-    style={
-      Object {
-        "position": undefined,
-        "zIndex": undefined,
-      }
-    }
-  >
-    <div
-      className="c2"
-    />
-  </div>
-</div>
-`;
-
-exports[`renders abut with forced margin 1`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 16px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 16px;
-  border: solid 8px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin: 8px;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    border: solid 4px rgba(0,0,0,0.33);
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1 "
-    style={
-      Object {
-        "position": undefined,
-        "zIndex": undefined,
-      }
-    }
-  >
-    <div
-      className="c2"
-    />
-  </div>
-</div>
-`;
-
-exports[`renders custom formfield 1`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 16px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-bottom: 8px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  font-size: 40px;
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin-bottom: 4px;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c3 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1 c2"
-  >
-    <div
-      className="c3"
-    />
-  </div>
-</div>
-`;
-
-exports[`renders custom margin 1`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 16px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 16px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media only screen and (max-width:512px) {
-  .c2 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin: 8px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1 "
-  >
-    <div
-      className="c2"
-    />
-  </div>
-</div>
-`;
-
-exports[`renders error 1`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 16px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-bottom: 8px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  border-bottom: solid 0 #e35e59;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   font-size: 12px;
   line-height: 16px;
   color: #e35e59;
@@ -548,7 +568,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:512px) {
   .c2 {
-    border-bottom: solid 0 #e35e59;
+    border: solid 1px #e35e59;
   }
 }
 
@@ -557,12 +577,18 @@ exports[`renders error 1`] = `
 >
   <div
     className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
   >
     <div
       className="c2"
-    />
+    >
+      <div
+        className="c3"
+      />
+    </div>
     <span
-      className="c3"
+      className="c4"
     >
       test error
     </span>
@@ -570,7 +596,7 @@ exports[`renders error 1`] = `
 </div>
 `;
 
-exports[`renders help 1`] = `
+exports[`FormField help 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -589,7 +615,7 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -605,7 +631,22 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -614,7 +655,7 @@ exports[`renders help 1`] = `
 }
 
 .c2 {
-  margin-left: 8px;
+  margin-inline-start: 4px;
   font-size: 12px;
   line-height: 16px;
   color: #65707d;
@@ -628,7 +669,7 @@ exports[`renders help 1`] = `
 
 @media only screen and (max-width:512px) {
   .c3 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
+    border: solid 1px #cdd3e3;
   }
 }
 
@@ -637,6 +678,8 @@ exports[`renders help 1`] = `
 >
   <div
     className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
   >
     <span
       className="c2"
@@ -645,12 +688,16 @@ exports[`renders help 1`] = `
     </span>
     <div
       className="c3"
-    />
+    >
+      <div
+        className="c4"
+      />
+    </div>
   </div>
 </div>
 `;
 
-exports[`renders htmlFor 1`] = `
+exports[`FormField htmlFor 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -669,7 +716,7 @@ exports[`renders htmlFor 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -685,59 +732,7 @@ exports[`renders htmlFor 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin-bottom: 4px;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c2 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1 "
-  >
-    <div
-      className="c2"
-    />
-  </div>
-</div>
-`;
-
-exports[`renders label 1`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 16px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-bottom: 8px;
+  border: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -753,7 +748,64 @@ exports[`renders label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormField info 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-bottom: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -762,10 +814,145 @@ exports[`renders label 1`] = `
 }
 
 .c2 {
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-top: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #666666;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      />
+    </div>
+    <span
+      className="c4"
+    >
+      test info
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FormField label 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   font-size: 12px;
   line-height: 16px;
 }
@@ -778,7 +965,7 @@ exports[`renders label 1`] = `
 
 @media only screen and (max-width:512px) {
   .c3 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
+    border: solid 1px #cdd3e3;
   }
 }
 
@@ -787,6 +974,8 @@ exports[`renders label 1`] = `
 >
   <div
     className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
   >
     <label
       className="c2"
@@ -795,12 +984,16 @@ exports[`renders label 1`] = `
     </label>
     <div
       className="c3"
-    />
+    >
+      <div
+        className="c4"
+      />
+    </div>
   </div>
 </div>
 `;
 
-exports[`renders pad 1`] = `
+exports[`FormField margin 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -811,22 +1004,6 @@ exports[`renders pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-bottom: 8px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -835,7 +1012,7 @@ exports[`renders pad 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 0 rgba(0,0,0,0.33);
+  border: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -856,9 +1033,112 @@ exports[`renders pad 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-bottom: 8px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 8px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin: 8px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormField pad 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -869,20 +1149,13 @@ exports[`renders pad 1`] = `
 
 @media only screen and (max-width:512px) {
   .c2 {
-    border-bottom: solid 0 rgba(0,0,0,0.33);
+    border: solid 1px #cdd3e3;
   }
 }
 
 @media only screen and (max-width:512px) {
   .c3 {
-    padding-left: 4px;
-    padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c3 {
-    padding-bottom: 4px;
+    padding: 4px;
   }
 }
 
@@ -891,6 +1164,8 @@ exports[`renders pad 1`] = `
 >
   <div
     className="c1 "
+    onBlur={[Function]}
+    onFocus={[Function]}
   >
     <div
       className="c2"

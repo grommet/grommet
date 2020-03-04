@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Grommet, Box, Text } from 'grommet';
+import { mnet, MnetUIBase, Box, Text } from 'mnet-ui-base';
 import { hpe } from 'grommet-theme-hpe';
 
 const Background = () => {
@@ -10,39 +10,41 @@ const Background = () => {
   const cssColor = 'gold';
   return (
     <Box gap="medium">
-      <Grommet>
+      <MnetUIBase>
         <Box pad="medium">
-          <Text>Grommet with no theme or background prop</Text>
+          <Text>MnetUIBase with no theme or background prop</Text>
         </Box>
-      </Grommet>
-      <Grommet theme={hpe} themeMode="dark">
+      </MnetUIBase>
+      <MnetUIBase theme={hpe} themeMode="dark">
         <Box pad="medium">
-          <Text>Grommet with theme & themeMode but no background prop</Text>
+          <Text>MnetUIBase with theme & themeMode but no background prop</Text>
         </Box>
-      </Grommet>
-      <Grommet theme={hpe} themeMode="light" background={themeColor}>
-        <Box pad="medium">
-          <Text>
-            Grommet with background as theme color of &apos;{themeColor}&apos;
-          </Text>
-        </Box>
-      </Grommet>
-      <Grommet theme={grommet} background={hexValue}>
+      </MnetUIBase>
+      <MnetUIBase theme={hpe} themeMode="light" background={themeColor}>
         <Box pad="medium">
           <Text>
-            Grommet with background as HEX value of &apos;{hexValue}&apos;
+            MnetUIBase with background as theme color of &apos;{themeColor}
+            &apos;
           </Text>
         </Box>
-      </Grommet>
-      <Grommet theme={grommet} background={cssColor}>
+      </MnetUIBase>
+      <MnetUIBase theme={mnet} background={hexValue}>
         <Box pad="medium">
           <Text>
-            Grommet with background as CSS color name of &apos;{cssColor}&apos;
+            MnetUIBase with background as HEX value of &apos;{hexValue}&apos;
           </Text>
         </Box>
-      </Grommet>
-      <Grommet
-        theme={grommet}
+      </MnetUIBase>
+      <MnetUIBase theme={mnet} background={cssColor}>
+        <Box pad="medium">
+          <Text>
+            MnetUIBase with background as CSS color name of &apos;{cssColor}
+            &apos;
+          </Text>
+        </Box>
+      </MnetUIBase>
+      <MnetUIBase
+        theme={mnet}
         background={{
           color: 'pink',
           image:
@@ -51,12 +53,12 @@ const Background = () => {
       >
         <Box pad="medium">
           <Text>
-            Grommet with background as object containing color and image
+            MnetUIBase with background as object containing color and image
           </Text>
         </Box>
-      </Grommet>
+      </MnetUIBase>
     </Box>
   );
 };
 
-storiesOf('Grommet', module).add('Background', () => <Background />);
+storiesOf('MnetUIBase', module).add('Background', () => <Background />);

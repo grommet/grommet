@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Form, TextInput, Text } from 'grommet';
+import { Box, Form, TextInput, Text } from 'mnet-ui-base';
 
 const StyledPlaceholder = () => {
   return (

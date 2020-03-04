@@ -13,10 +13,10 @@ exports[`Button as 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -68,10 +68,10 @@ exports[`Button basic 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -126,10 +126,10 @@ exports[`Button children function 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -193,10 +193,10 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #20314f;
-  border-radius: 4px;
+  border: 1px solid #20314f;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -223,15 +223,15 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #20314f;
-  border-radius: 4px;
+  border: 1px solid #20314f;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   background: #20314f;
   color: #f8f8f8;
-  border-radius: 4px;
+  border-radius: 3.2px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -256,15 +256,15 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #111111;
-  border-radius: 4px;
+  border: 1px solid #111111;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   background: #111111;
   color: #f8f8f8;
-  border-radius: 4px;
+  border-radius: 3.2px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -289,15 +289,15 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #123;
-  border-radius: 4px;
+  border: 1px solid #123;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   background: #123;
   color: #f8f8f8;
-  border-radius: 4px;
+  border-radius: 3.2px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -383,10 +383,10 @@ exports[`Button disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   opacity: 0.3;
@@ -437,10 +437,10 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -485,10 +485,10 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -521,10 +521,10 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -552,10 +552,10 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -641,15 +641,14 @@ exports[`Button focus 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
-  outline-color: #519bff;
-  border-color: #519bff;
-  box-shadow: 0 0 2px 2px #519bff;
+  outline-color: #B1C2FE;
+  border-color: #B1C2FE;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -665,7 +664,7 @@ exports[`Button focus 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #519bff solid 2px;
+  outline: #B1C2FE solid 1px;
 }
 
 .c1::-moz-focus-inner {
@@ -911,10 +910,10 @@ exports[`Button href 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -981,7 +980,7 @@ exports[`Button icon label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -996,10 +995,10 @@ exports[`Button icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -1062,15 +1061,15 @@ exports[`Button primary 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
-  background: #E15151;
-  color: #f8f8f8;
-  border-radius: 4px;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 3.2px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
   transition-property: color, background-color, border-color, box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1138,7 +1137,7 @@ exports[`Button reverse icon label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -1153,10 +1152,10 @@ exports[`Button reverse icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;
@@ -1206,6 +1205,676 @@ exports[`Button reverse icon label 1`] = `
 </div>
 `;
 
+exports[`Button size 1`] = `
+.c10 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #444444;
+  stroke: #444444;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 4px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 3px 15px;
+  font-size: 12px;
+  line-height: 16px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 3px 15px;
+  font-size: 12px;
+  line-height: 16px;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 3.2px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c7:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 12px;
+  color: #444444;
+  padding: 3px 14px;
+  font-size: 9.333333333333334px;
+  line-height: 13.333333333333334px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 12px;
+  color: #444444;
+  padding: 3px 15px;
+  font-size: 12px;
+  line-height: 16px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c2:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 16px;
+  color: #444444;
+  padding: 5px 20px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c4:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 12px;
+  color: #444444;
+  padding: 3px 14px;
+  font-size: 9.333333333333334px;
+  line-height: 13.333333333333334px;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 12px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 12px;
+  color: #444444;
+  padding: 3px 15px;
+  font-size: 12px;
+  line-height: 16px;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 12px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 1px solid #E15151;
+  border-radius: 16px;
+  color: #444444;
+  padding: 5px 20px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 16px;
+  -webkit-transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c8:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background: #FFFFFF;
+  color: #444444;
+  border-radius: 3.2px;
+  line-height: 0;
+  padding: 4px;
+}
+
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <button
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className="c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Medium
+  </button>
+  <button
+    className="c3"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Default
+  </button>
+  <button
+    className="c4"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Large
+  </button>
+  <button
+    className="c5"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className="c6"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Medium
+  </button>
+  <button
+    className="c7"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Default
+  </button>
+  <button
+    className="c8"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Large
+  </button>
+  <button
+    className="c9"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c10"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c9"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c10"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c9"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c10"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c9"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-label="Add"
+      className="c10"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+  <button
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Small
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    className="c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Medium
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    className="c3"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Default
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    className="c4"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c11"
+    >
+      Large
+      <div
+        className="c12"
+      />
+      <svg
+        aria-label="Next"
+        className="c13"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
 exports[`Button warns about invalid icon 1`] = `
 .c1 {
   display: inline-block;
@@ -1224,7 +1893,7 @@ exports[`Button warns about invalid icon 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c0 {

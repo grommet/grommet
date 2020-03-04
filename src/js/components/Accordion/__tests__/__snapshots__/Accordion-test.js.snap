@@ -104,8 +104,8 @@ exports[`Accordion AccordionPanel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .c7 {
@@ -121,8 +121,8 @@ exports[`Accordion AccordionPanel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c9 {
@@ -133,7 +133,7 @@ exports[`Accordion AccordionPanel 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -198,7 +198,7 @@ exports[`Accordion AccordionPanel 1`] = `
 
 @media only screen and (max-width:512px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -439,8 +439,8 @@ exports[`Accordion change active index 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .c7 {
@@ -456,8 +456,8 @@ exports[`Accordion change active index 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c9 {
@@ -468,7 +468,7 @@ exports[`Accordion change active index 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -527,7 +527,7 @@ exports[`Accordion change active index 1`] = `
 
 @media only screen and (max-width:512px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -663,7 +663,7 @@ exports[`Accordion change active index 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -672,7 +672,7 @@ exports[`Accordion change active index 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -690,7 +690,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       />
     </div>
     <div
@@ -707,7 +707,7 @@ exports[`Accordion change active index 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -716,7 +716,7 @@ exports[`Accordion change active index 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormUp"
@@ -735,7 +735,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         Panel body 2
       </div>
@@ -848,8 +848,8 @@ exports[`Accordion change to second Panel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .c7 {
@@ -865,8 +865,8 @@ exports[`Accordion change to second Panel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c9 {
@@ -877,7 +877,7 @@ exports[`Accordion change to second Panel 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -942,7 +942,7 @@ exports[`Accordion change to second Panel 1`] = `
 
 @media only screen and (max-width:512px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -1089,7 +1089,7 @@ exports[`Accordion change to second Panel 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -1098,7 +1098,7 @@ exports[`Accordion change to second Panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -1116,7 +1116,7 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -1140,7 +1140,7 @@ exports[`Accordion change to second Panel 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -1149,7 +1149,7 @@ exports[`Accordion change to second Panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             .c0 {
   display: inline-block;
@@ -1202,7 +1202,7 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="false"
@@ -1321,8 +1321,8 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .c7 {
@@ -1338,8 +1338,8 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c9 {
@@ -1350,7 +1350,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1409,7 +1409,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 
 @media only screen and (max-width:512px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -1542,7 +1542,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -1551,7 +1551,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -1569,7 +1569,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       />
     </div>
     <div
@@ -1586,7 +1586,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -1595,7 +1595,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             .c0 {
   display: inline-block;
@@ -1648,7 +1648,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         Panel body 2
       </div>
@@ -1699,7 +1699,7 @@ exports[`Accordion complex header 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1737,7 +1737,7 @@ exports[`Accordion complex header 1`] = `
 
 @media only screen and (max-width:512px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -1904,8 +1904,8 @@ exports[`Accordion complex title 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c1 {
@@ -2209,8 +2209,8 @@ exports[`Accordion custom accordion 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .c7 {
@@ -2226,8 +2226,8 @@ exports[`Accordion custom accordion 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c9 {
@@ -2238,7 +2238,7 @@ exports[`Accordion custom accordion 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2303,7 +2303,7 @@ exports[`Accordion custom accordion 1`] = `
 
 @media only screen and (max-width:512px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -2487,8 +2487,8 @@ exports[`Accordion multiple panels 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .c7 {
@@ -2504,8 +2504,8 @@ exports[`Accordion multiple panels 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c9 {
@@ -2516,7 +2516,7 @@ exports[`Accordion multiple panels 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2575,7 +2575,7 @@ exports[`Accordion multiple panels 1`] = `
 
 @media only screen and (max-width:512px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -2708,7 +2708,7 @@ exports[`Accordion multiple panels 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -2717,7 +2717,7 @@ exports[`Accordion multiple panels 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -2735,7 +2735,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       />
     </div>
     <div
@@ -2752,7 +2752,7 @@ exports[`Accordion multiple panels 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -2761,7 +2761,7 @@ exports[`Accordion multiple panels 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             .c0 {
   display: inline-block;
@@ -2814,7 +2814,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         Panel body 2
       </div>
@@ -2845,7 +2845,7 @@ exports[`Accordion multiple panels 3`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -2854,7 +2854,7 @@ exports[`Accordion multiple panels 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             .c0 {
   display: inline-block;
@@ -2907,7 +2907,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         Panel body 1
       </div>
@@ -2926,7 +2926,7 @@ exports[`Accordion multiple panels 3`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -2935,7 +2935,7 @@ exports[`Accordion multiple panels 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormUp"
@@ -2954,7 +2954,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         Panel body 2
       </div>
@@ -2985,7 +2985,7 @@ exports[`Accordion multiple panels 4`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -2994,7 +2994,7 @@ exports[`Accordion multiple panels 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormUp"
@@ -3013,7 +3013,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         Panel body 1
       </div>
@@ -3032,7 +3032,7 @@ exports[`Accordion multiple panels 4`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -3041,7 +3041,7 @@ exports[`Accordion multiple panels 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             .c0 {
   display: inline-block;
@@ -3093,7 +3093,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       />
     </div>
   </div>
@@ -3122,7 +3122,7 @@ exports[`Accordion multiple panels 5`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -3131,7 +3131,7 @@ exports[`Accordion multiple panels 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             .c0 {
   display: inline-block;
@@ -3183,7 +3183,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       />
     </div>
     <div
@@ -3200,7 +3200,7 @@ exports[`Accordion multiple panels 5`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -3209,7 +3209,7 @@ exports[`Accordion multiple panels 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3227,7 +3227,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       />
     </div>
   </div>
@@ -3374,8 +3374,8 @@ exports[`Accordion set on hover 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .c7 {
@@ -3391,8 +3391,8 @@ exports[`Accordion set on hover 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .c9 {
@@ -3403,7 +3403,7 @@ exports[`Accordion set on hover 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3468,7 +3468,7 @@ exports[`Accordion set on hover 1`] = `
 
 @media only screen and (max-width:512px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px #cdd3e3;
   }
 }
 
@@ -3615,7 +3615,7 @@ exports[`Accordion set on hover 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 lhAIGE"
@@ -3624,7 +3624,7 @@ exports[`Accordion set on hover 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3642,7 +3642,7 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -3666,7 +3666,7 @@ exports[`Accordion set on hover 2`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -3675,7 +3675,7 @@ exports[`Accordion set on hover 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3693,7 +3693,7 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -3729,7 +3729,7 @@ exports[`Accordion set on hover 3`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 lhAIGE"
@@ -3738,7 +3738,7 @@ exports[`Accordion set on hover 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3756,7 +3756,7 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -3780,7 +3780,7 @@ exports[`Accordion set on hover 3`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 lhAIGE"
@@ -3789,7 +3789,7 @@ exports[`Accordion set on hover 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3807,7 +3807,7 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -3843,7 +3843,7 @@ exports[`Accordion set on hover 4`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -3852,7 +3852,7 @@ exports[`Accordion set on hover 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3870,7 +3870,7 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -3894,7 +3894,7 @@ exports[`Accordion set on hover 4`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 lhAIGE"
@@ -3903,7 +3903,7 @@ exports[`Accordion set on hover 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3921,7 +3921,7 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -3957,7 +3957,7 @@ exports[`Accordion set on hover 5`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -3966,7 +3966,7 @@ exports[`Accordion set on hover 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -3984,7 +3984,7 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"
@@ -4008,7 +4008,7 @@ exports[`Accordion set on hover 5`] = `
           class="StyledBox-sc-1etxkdl-0 kXvGJR"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 hqUAwv"
+            class="StyledBox-sc-1etxkdl-0 SicqX"
           >
             <h4
               class="StyledHeading-yyceb6-0 dSSMYD"
@@ -4017,7 +4017,7 @@ exports[`Accordion set on hover 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-1etxkdl-0 khrTyH"
+            class="StyledBox-sc-1etxkdl-0 ftlZCj"
           >
             <svg
               aria-label="FormDown"
@@ -4035,7 +4035,7 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-1etxkdl-0 hRwHgn"
+        class="StyledBox-sc-1etxkdl-0 ibgwrU"
       >
         <div
           aria-hidden="true"

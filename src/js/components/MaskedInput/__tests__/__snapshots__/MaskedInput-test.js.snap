@@ -21,10 +21,11 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
@@ -66,9 +67,9 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
     <input
       autocomplete="off"
       class="c2"
-      data-testid="test-global-hover-theme"
-      id="global-hover-theme"
-      name="global-hover-theme"
+      data-testid="test-input"
+      id="item"
+      name="item"
       placeholder="!"
       value=""
     />
@@ -90,10 +91,10 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c0 {
@@ -159,10 +160,11 @@ exports[`MaskedInput basic 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -216,10 +218,11 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 12px;
   line-height: 16px;
@@ -257,9 +260,9 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   <input
     autocomplete="off"
     class="c1"
-    data-testid="test-event-target-select-by-keyboard"
-    id="input-id"
-    name="input-name"
+    data-testid="test-input"
+    id="item"
+    name="item"
     placeholder="!"
     value=""
   />
@@ -277,10 +280,11 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
@@ -319,9 +323,9 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   <input
     autocomplete="off"
     class="c1"
-    data-testid="test-event-target-select-by-mouse"
-    id="input-id"
-    name="input-name"
+    data-testid="test-input"
+    id="item"
+    name="item"
     placeholder="!"
     value=""
   />
@@ -392,10 +396,10 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c4 {
@@ -474,7 +478,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 
 <div
   class="c0 c1"
-  id="masked-input-drop__input-id"
+  data-g-portal-id="0"
+  id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
@@ -534,14 +539,14 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .egolyw {
+  .bRyeYW {
     padding-left: 4px;
     padding-right: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .egolyw {
+  .bRyeYW {
     padding-top: 2px;
     padding-bottom: 2px;
   }
@@ -591,13 +596,14 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-aqxhco-0 klbeGo"
-    data-testid="test-event-target-select-by-mouse"
-    id="input-id"
-    name="input-name"
+    class="StyledMaskedInput-aqxhco-0 dwgBWD"
+    data-g-tabindex="none"
+    data-testid="test-input"
+    id="item"
+    name="item"
     placeholder="!"
     tabindex="-1"
-    value=""
+    value="aa!"
   />
 </div>
 `;
@@ -613,10 +619,11 @@ exports[`MaskedInput mask 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -725,10 +732,10 @@ exports[`MaskedInput mask 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c4 {
@@ -807,6 +814,7 @@ exports[`MaskedInput mask 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -867,14 +875,14 @@ exports[`MaskedInput mask 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .egolyw {
+  .bRyeYW {
     padding-left: 4px;
     padding-right: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .egolyw {
+  .bRyeYW {
     padding-top: 2px;
     padding-bottom: 2px;
   }
@@ -929,10 +937,11 @@ exports[`MaskedInput next and previous without options 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -983,7 +992,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-aqxhco-0 dygvPy"
+    class="StyledMaskedInput-aqxhco-0 dochVC"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1004,10 +1013,11 @@ exports[`MaskedInput option via keyboard 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -1063,10 +1073,11 @@ exports[`MaskedInput option via mouse 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
@@ -1178,10 +1189,10 @@ exports[`MaskedInput option via mouse 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c4 {
@@ -1260,6 +1271,7 @@ exports[`MaskedInput option via mouse 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1320,14 +1332,14 @@ exports[`MaskedInput option via mouse 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .egolyw {
+  .bRyeYW {
     padding-left: 4px;
     padding-right: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .egolyw {
+  .bRyeYW {
     padding-top: 2px;
     padding-bottom: 2px;
   }
@@ -1377,13 +1389,14 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-aqxhco-0 klbeGo"
+    class="StyledMaskedInput-aqxhco-0 dwgBWD"
+    data-g-tabindex="none"
     data-testid="test-input"
     id="item"
     name="item"
     placeholder="!"
     tabindex="-1"
-    value=""
+    value="aa!"
   />
 </div>
 `;

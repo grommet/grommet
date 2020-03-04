@@ -88,8 +88,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -128,11 +128,14 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c6::-webkit-search-decoration {
@@ -176,8 +179,8 @@ exports[`Select applies custom global.hover theme to options 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -258,7 +261,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c0 {
@@ -404,8 +407,8 @@ exports[`Select basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -444,11 +447,14 @@ exports[`Select basic 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -482,8 +488,8 @@ exports[`Select basic 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -526,6 +532,7 @@ exports[`Select basic 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -642,8 +649,8 @@ exports[`Select complex options and children 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -682,11 +689,14 @@ exports[`Select complex options and children 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -720,8 +730,8 @@ exports[`Select complex options and children 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -782,7 +792,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 jZJziX"
+  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 bLQAsS"
   id="test-select"
   type="button"
 >
@@ -797,7 +807,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 kyjAzk Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 etWNln Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -808,7 +818,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-1etxkdl-0 fTnDhv"
+      class="StyledBox-sc-1etxkdl-0 hLNrzj"
       style="min-width: auto;"
     >
       <svg
@@ -997,6 +1007,7 @@ exports[`Select complex options and children 3`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1048,7 +1059,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:512px) {
-  .fTnDhv {
+  .hLNrzj {
     margin-left: 4px;
     margin-right: 4px;
   }
@@ -1072,7 +1083,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -1203,8 +1214,8 @@ exports[`Select deselect an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1243,11 +1254,14 @@ exports[`Select deselect an option 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -1281,8 +1295,8 @@ exports[`Select deselect an option 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -1311,7 +1325,6 @@ exports[`Select deselect an option 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__input"
-          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -1429,8 +1442,8 @@ exports[`Select disabled 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1471,11 +1484,14 @@ exports[`Select disabled 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -1509,8 +1525,8 @@ exports[`Select disabled 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -1572,7 +1588,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-1hmw3c5-0 dynHcg Select__StyledSelectDropButton-f4amc3-1 jZJziX"
+  class="StyledButton-sc-1hmw3c5-0 dynHcg Select__StyledSelectDropButton-f4amc3-1 bLQAsS"
   disabled=""
   id="test-select"
   type="button"
@@ -1588,7 +1604,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 kyjAzk Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 etWNln Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1599,7 +1615,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-1etxkdl-0 fTnDhv"
+      class="StyledBox-sc-1etxkdl-0 hLNrzj"
       style="min-width: auto;"
     >
       <svg
@@ -1706,7 +1722,7 @@ exports[`Select empty results search 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
@@ -1725,7 +1741,7 @@ exports[`Select empty results search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 4px;
+  padding: 2px;
 }
 
 .c10 {
@@ -1787,10 +1803,11 @@ exports[`Select empty results search 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 9.333333333333334px;
   line-height: 13.333333333333334px;
@@ -1867,6 +1884,7 @@ exports[`Select empty results search 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2007,7 +2025,7 @@ exports[`Select large drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c10 {
@@ -2121,6 +2139,7 @@ exports[`Select large drop container height 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2269,7 +2288,7 @@ exports[`Select medium drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c10 {
@@ -2383,6 +2402,7 @@ exports[`Select medium drop container height 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2532,8 +2552,8 @@ exports[`Select modifies select control style on open 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2572,11 +2592,14 @@ exports[`Select modifies select control style on open 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c6::-webkit-search-decoration {
@@ -2620,8 +2643,8 @@ exports[`Select modifies select control style on open 1`] = `
 }
 
 .c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   background: purple;
 }
 
@@ -2773,8 +2796,8 @@ exports[`Select multiple 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2813,11 +2836,14 @@ exports[`Select multiple 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -2851,8 +2877,8 @@ exports[`Select multiple 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -2887,7 +2913,6 @@ exports[`Select multiple 1`] = `
           autoComplete="off"
           className="c5 c6"
           id="test-select__input"
-          multiple={true}
           onBlur={[Function]}
           onChange={[Function]}
           onClick={[Function]}
@@ -3013,8 +3038,8 @@ exports[`Select multiple values 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3053,11 +3078,14 @@ exports[`Select multiple values 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -3091,8 +3119,8 @@ exports[`Select multiple values 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -3121,7 +3149,6 @@ exports[`Select multiple values 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__input"
-          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -3154,7 +3181,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 jZJziX"
+  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 bLQAsS"
   id="test-select"
   type="button"
 >
@@ -3169,9 +3196,8 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 kyjAzk Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 etWNln Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
-          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -3181,7 +3207,7 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-1etxkdl-0 fTnDhv"
+      class="StyledBox-sc-1etxkdl-0 hLNrzj"
       style="min-width: auto;"
     >
       <svg
@@ -3288,7 +3314,7 @@ exports[`Select multiple values 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c11 {
@@ -3407,6 +3433,7 @@ exports[`Select multiple values 3`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -3470,7 +3497,7 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:512px) {
-  .fTnDhv {
+  .hLNrzj {
     margin-left: 4px;
     margin-right: 4px;
   }
@@ -3494,13 +3521,13 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eDiAAR {
+  .cXwyLR {
     padding: 2px;
   }
 }
@@ -3631,8 +3658,8 @@ exports[`Select opens 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3671,11 +3698,14 @@ exports[`Select opens 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -3709,8 +3739,8 @@ exports[`Select opens 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -3771,7 +3801,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 jZJziX"
+  class="StyledButton-sc-1hmw3c5-0 eRFoFn Select__StyledSelectDropButton-f4amc3-1 bLQAsS"
   id="test-select"
   type="button"
 >
@@ -3786,7 +3816,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-ilbntv-0 kyjAzk Select__SelectTextInput-f4amc3-0 koclcd"
+          class="StyledTextInput-ilbntv-0 etWNln Select__SelectTextInput-f4amc3-0 koclcd"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3797,7 +3827,7 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-1etxkdl-0 fTnDhv"
+      class="StyledBox-sc-1etxkdl-0 hLNrzj"
       style="min-width: auto;"
     >
       <svg
@@ -3904,7 +3934,7 @@ exports[`Select opens 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c10 {
@@ -4018,6 +4048,7 @@ exports[`Select opens 3`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -4081,7 +4112,7 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:512px) {
-  .fTnDhv {
+  .hLNrzj {
     margin-left: 4px;
     margin-right: 4px;
   }
@@ -4105,7 +4136,7 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -4164,7 +4195,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-sc-1etxkdl-0 fRLWfo SelectContainer__OptionBox-sc-64fnsh-1 gYOyZh"
+        class="StyledBox-sc-1etxkdl-0 idoCJE SelectContainer__OptionBox-sc-64fnsh-1 gYOyZh"
       >
         <span
           class="StyledText-sc-3e83s1-0 gXwPHj"
@@ -4184,7 +4215,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-sc-1etxkdl-0 fRLWfo SelectContainer__OptionBox-sc-64fnsh-1 gYOyZh"
+        class="StyledBox-sc-1etxkdl-0 idoCJE SelectContainer__OptionBox-sc-64fnsh-1 gYOyZh"
       >
         <span
           class="StyledText-sc-3e83s1-0 gXwPHj"
@@ -4288,8 +4319,8 @@ exports[`Select renders custom icon 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4328,11 +4359,14 @@ exports[`Select renders custom icon 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -4366,8 +4400,8 @@ exports[`Select renders custom icon 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -4410,6 +4444,7 @@ exports[`Select renders custom icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -4526,8 +4561,8 @@ exports[`Select renders default icon 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4566,11 +4601,14 @@ exports[`Select renders default icon 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -4604,8 +4642,8 @@ exports[`Select renders default icon 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -4648,6 +4686,7 @@ exports[`Select renders default icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -4765,8 +4804,8 @@ exports[`Select renders styled select options backwards compatible with legacy
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4805,11 +4844,14 @@ exports[`Select renders styled select options backwards compatible with legacy
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c6::-webkit-search-decoration {
@@ -4853,8 +4895,8 @@ exports[`Select renders styled select options backwards compatible with legacy
 }
 
 .c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -5007,8 +5049,8 @@ exports[`Select renders styled select options combining select.options.box &&
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5047,11 +5089,14 @@ exports[`Select renders styled select options combining select.options.box &&
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c6::-webkit-search-decoration {
@@ -5095,8 +5140,8 @@ exports[`Select renders styled select options combining select.options.box &&
 }
 
 .c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -5247,8 +5292,8 @@ exports[`Select renders styled select options using select.options.container 1`]
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5287,11 +5332,14 @@ exports[`Select renders styled select options using select.options.container 1`]
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c6::-webkit-search-decoration {
@@ -5335,8 +5383,8 @@ exports[`Select renders styled select options using select.options.container 1`]
 }
 
 .c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -5473,11 +5521,14 @@ exports[`Select renders without icon 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -5511,8 +5562,8 @@ exports[`Select renders without icon 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 <button
@@ -5548,6 +5599,7 @@ exports[`Select renders without icon 1`] = `
           readOnly={true}
           tabIndex="-1"
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -5643,8 +5695,8 @@ exports[`Select search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5683,11 +5735,14 @@ exports[`Select search 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -5721,8 +5776,8 @@ exports[`Select search 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -5867,7 +5922,7 @@ exports[`Select search 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c13 {
@@ -5905,7 +5960,7 @@ exports[`Select search 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 4px;
+  padding: 2px;
 }
 
 .c10 {
@@ -5971,10 +6026,11 @@ exports[`Select search 2`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 9.333333333333334px;
   line-height: 13.333333333333334px;
@@ -6051,6 +6107,7 @@ exports[`Select search 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -6128,7 +6185,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:512px) {
-  .fTnDhv {
+  .hLNrzj {
     margin-left: 4px;
     margin-right: 4px;
   }
@@ -6152,13 +6209,13 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eDiAAR {
+  .cXwyLR {
     padding: 2px;
   }
 }
@@ -6289,8 +6346,8 @@ exports[`Select select an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6329,11 +6386,14 @@ exports[`Select select an option 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -6367,8 +6427,8 @@ exports[`Select select an option 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -6514,8 +6574,8 @@ exports[`Select select an option with complex options 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6676,8 +6736,8 @@ exports[`Select select an option with enter 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6716,11 +6776,14 @@ exports[`Select select an option with enter 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -6754,8 +6817,8 @@ exports[`Select select an option with enter 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -6901,8 +6964,8 @@ exports[`Select select another option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6941,11 +7004,14 @@ exports[`Select select another option 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -6979,8 +7045,8 @@ exports[`Select select another option 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -7009,7 +7075,6 @@ exports[`Select select another option 1`] = `
           autocomplete="off"
           class="c5 c6"
           id="test-select__input"
-          multiple=""
           placeholder="test select"
           readonly=""
           tabindex="-1"
@@ -7127,8 +7192,8 @@ exports[`Select size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7167,13 +7232,16 @@ exports[`Select size 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 rgba(255,255,255,0.33);
   font-weight: 400;
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 0px;
+  border-radius: 4px;
   width: 100%;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
+  border: none;
+  box-shadow: none;
 }
 
 .c5::-webkit-search-decoration {
@@ -7207,8 +7275,8 @@ exports[`Select size 1`] = `
 }
 
 .c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -7368,7 +7436,7 @@ exports[`Select small drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c10 {
@@ -7482,6 +7550,7 @@ exports[`Select small drop container height 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"

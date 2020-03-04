@@ -140,18 +140,18 @@ describe('List', () => {
 
   test('margin string', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <List data={['one', 'two']} margin="large" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('margin object', () => {
     const { container } = render(
-      <Grommet>
+      <MnetUIBase>
         <List data={['one', 'two']} margin={{ horizontal: 'large' }} />
-      </Grommet>,
+      </MnetUIBase>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

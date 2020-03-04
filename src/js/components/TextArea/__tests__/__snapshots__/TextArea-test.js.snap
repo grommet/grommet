@@ -21,10 +21,11 @@ exports[`TextArea basic 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -85,10 +86,11 @@ exports[`TextArea disabled 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   border: none;
   width: 100%;
@@ -155,10 +157,11 @@ exports[`TextArea fill 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   height: 100%;
 }
@@ -220,10 +223,11 @@ exports[`TextArea focusIndicator 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -284,10 +288,11 @@ exports[`TextArea placeholder 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -349,10 +354,11 @@ exports[`TextArea plain 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   border: none;
   width: 100%;
@@ -416,10 +422,11 @@ exports[`TextArea resize false 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   resize: none;
 }
@@ -481,10 +488,11 @@ exports[`TextArea resize horizontal 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   resize: horizontal;
 }
@@ -546,10 +554,11 @@ exports[`TextArea resize true 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   resize: both;
 }
@@ -611,10 +620,11 @@ exports[`TextArea resize vertical 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   resize: vertical;
 }
@@ -676,10 +686,11 @@ exports[`TextArea size large 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
@@ -743,10 +754,11 @@ exports[`TextArea size medium 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 12px;
   line-height: 16px;
@@ -810,10 +822,11 @@ exports[`TextArea size small 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 9.333333333333334px;
   line-height: 13.333333333333334px;

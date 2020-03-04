@@ -7,7 +7,7 @@ import { deepMerge } from 'mnet-ui-base/utils';
 
 import { Volume } from 'grommet-icons';
 
-const customThemeRangeInput = deepMerge(grommet, {
+const customThemeRangeInput = deepMerge(mnet, {
   global: {
     spacing: '12px',
   },

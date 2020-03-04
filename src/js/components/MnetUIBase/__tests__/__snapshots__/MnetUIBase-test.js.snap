@@ -36,6 +36,29 @@ exports[`MnetUIBase announce 3`] = `
 />
 `;
 
+exports[`MnetUIBase background 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  background: blue;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+<div
+  className="c0"
+>
+  MnetUIBase App
+</div>
+`;
+
 exports[`MnetUIBase basic 1`] = `
 .c0 {
   font-size: 12px;
@@ -62,11 +85,20 @@ exports[`MnetUIBase cssVars 1`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   --active: rgba(221,221,221,0.5);
+  --active-background: background-contrast;
+  --active-text: text-strong;
   --black: #000000;
   --brand: #E15151;
-  --focus: #519bff;
+  --focus: #B1C2FE;
+  --graph-0: accent-1;
+  --graph-1: neutral-1;
+  --graph-2: neutral-2;
+  --graph-3: neutral-3;
+  --graph-4: neutral-4;
   --placeholder: #e0e4ee;
   --selected: dark-2;
+  --selected-background: brand;
+  --selected-text: text-strong;
   --white: #FFFFFF;
   --accent-1: #20314f;
   --accent-2: #519bff;

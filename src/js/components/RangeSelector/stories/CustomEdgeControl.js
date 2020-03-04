@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Gremlin, Grommet as MnetUIBaseIcon } from 'grommet-icons';
+import { Gremlin, MnetUIBase as MnetUIBaseIcon } from 'grommet-icons';
 import { MnetUIBase, Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
 import { mnet } from 'mnet-ui-base/themes';
 import { deepMerge } from 'mnet-ui-base/utils';

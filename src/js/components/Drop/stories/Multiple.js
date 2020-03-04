@@ -6,11 +6,11 @@ import {
   Button,
   Drop,
   DropButton,
-  Grommet,
+  MnetUIBase,
   Layer,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const MultipleDrop = () => {
   const [showDrop, setShowDrop] = useState(false);
@@ -18,7 +18,7 @@ const MultipleDrop = () => {
   const targetRef = useRef();
 
   return (
-    <Grommet theme={grommet} full>
+    <MnetUIBase theme={mnet} full>
       <Box fill align="center" justify="center">
         <DropButton
           label="drop button"
@@ -66,7 +66,7 @@ const MultipleDrop = () => {
           </Layer>
         )}
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

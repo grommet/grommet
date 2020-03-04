@@ -57,9 +57,9 @@ describe('FormField', () => {
 
   test('info', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <FormField info="test info" />
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet } from 'grommet/themes';
-import { Box, Text, ThemeContext, Grommet } from 'grommet';
+import { mnet } from 'mnet-ui-base/themes';
+import { Box, Text, ThemeContext, MnetUIBase } from 'mnet-ui-base';
 
 const ExternalComponentWithTheme = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box background="neutral-3">
       <Text color="light-1">This is a grommet component</Text>
     </Box>
@@ -19,7 +19,7 @@ const ExternalComponentWithTheme = () => (
         </div>
       )}
     </ThemeContext.Consumer>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Theme', module).add('External Components', () => (

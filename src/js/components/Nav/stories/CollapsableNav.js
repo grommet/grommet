@@ -4,16 +4,16 @@ import { storiesOf } from '@storybook/react';
 import {
   Anchor,
   Box,
-  Grommet,
+  MnetUIBase,
   Header,
   Nav,
   Menu,
   ResponsiveContext,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const CollapsableNav = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Header background="dark-1" pad="medium">
       <Box direction="row" align="center" gap="small">
         Resize the page to collapse the Nav into a Menu
@@ -39,7 +39,7 @@ const CollapsableNav = () => (
         }
       </ResponsiveContext.Consumer>
     </Header>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('ResponsiveContext', module).add('Collapsable Nav', () => (

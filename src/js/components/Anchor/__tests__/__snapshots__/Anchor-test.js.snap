@@ -60,9 +60,8 @@ exports[`Anchor focus renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  outline-color: #519bff;
-  border-color: #519bff;
-  box-shadow: 0 0 2px 2px #519bff;
+  outline-color: #B1C2FE;
+  border-color: #B1C2FE;
 }
 
 .c1:hover {
@@ -77,7 +76,7 @@ exports[`Anchor focus renders 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #519bff solid 2px;
+  outline: #B1C2FE solid 1px;
 }
 
 .c1::-moz-focus-inner {
@@ -130,7 +129,7 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -378,7 +377,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -448,7 +447,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c1:hover {

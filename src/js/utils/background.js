@@ -57,7 +57,7 @@ export const backgroundIsDark = (backgroundArg, theme) => {
 };
 
 export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
-  // for Grommet component, if the background isn't defined, don't set it
+  // for MnetUIBase component, if the background isn't defined, don't set it
   if (backgroundArg === undefined) {
     return undefined;
   }

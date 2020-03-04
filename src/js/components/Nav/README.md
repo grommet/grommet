@@ -5,7 +5,7 @@ Is a Box container for navigation links
 ## Usage
 
 ```javascript
-import { Nav } from 'grommet';
+import { Nav } from 'mnet-ui-base';
 <Nav />
 ```
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
-  Grommet as MnetUIBaseIcon,
+  MnetUIBase as MnetUIBaseIcon,
   FacebookOption,
   Instagram,
   Twitter,

@@ -18,7 +18,8 @@ const sizeStyle = props => {
 };
 
 const plainStyle = css`
-  // border: none;
+  border: none;
+  box-shadow: none;
 `;
 
 const StyledTextInput = styled.input`

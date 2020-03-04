@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet, Main, Nav } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Anchor, Box, MnetUIBase, Main, Nav } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
 
 const navItems = [
   { label: 'HTML', href: '#' },
@@ -12,7 +12,7 @@ const navItems = [
   { label: 'REACT', href: '#' },
 ];
 
-const customTheme = deepMerge(grommet, {
+const customTheme = deepMerge(mnet, {
   anchor: {
     textDecoration: 'none',
     fontWeight: 500,
@@ -28,7 +28,7 @@ const customTheme = deepMerge(grommet, {
 });
 
 const CustomAnchor = () => (
-  <Grommet full theme={customTheme}>
+  <MnetUIBase full theme={customTheme}>
     <Box background="dark-1" pad="large" fill>
       <Box direction="row" pad={{ vertical: 'medium' }}>
         <Nav width="small" margin={{ right: 'large' }}>
@@ -39,7 +39,7 @@ const CustomAnchor = () => (
         <Main>Place main content here</Main>
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Nav', module).add('Custom Anchor', () => <CustomAnchor />);

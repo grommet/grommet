@@ -36,11 +36,6 @@ import {
 } from 'mnet-ui-base';
 import { dark, generate, mnet } from 'mnet-ui-base/themes';
 import { deepMerge } from 'mnet-ui-base/utils';
-import { hpe } from 'grommet-theme-hpe';
-import { aruba } from 'grommet-theme-aruba';
-import { hp } from 'grommet-theme-hp';
-import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -57,11 +52,6 @@ const Node = ({ id, ...rest }) => (
 const themes = {
   dark,
   mnet,
-  hpe,
-  aruba,
-  hp,
-  dxc,
-  v1,
 };
 
 const daysInMonth = (month: number) => new Date(2019, month, 0).getDate();

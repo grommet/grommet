@@ -23,6 +23,6 @@
 
 <!--- Include as many relevant details about the environment you experienced the bug in -->
 
-- Grommet version:
+- MnetUIBase version:
 - Browser Name and version:
 - Operating System and version (desktop or mobile):

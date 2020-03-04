@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
-import { Box, Text, ThemeContext, Grommet, Select } from 'grommet';
+import { mnet } from 'mnet-ui-base/themes';
+import { deepMerge } from 'mnet-ui-base/utils';
+import { Box, Text, ThemeContext, MnetUIBase, Select } from 'mnet-ui-base';
 
-const customTheme = deepMerge(grommet, {
+const customTheme = deepMerge(mnet, {
   global: {
     focus: {
       border: {
@@ -21,12 +21,12 @@ const GlobalThemeWithThemeContext = () => {
   const [valueBlue, setValueBlue] = useState('');
 
   return (
-    <Grommet theme={customTheme}>
+    <MnetUIBase theme={customTheme}>
       <Box align="center" pad="large" direction="column" gap="large">
         <Box>
           <Text margin="medium">
             The focus color of this select component is being altered by the
-            custom theme that is passed into the Grommet component.
+            custom theme that is passed into the MnetUIBase component.
           </Text>
           <Select
             alignSelf="center"
@@ -62,7 +62,7 @@ const GlobalThemeWithThemeContext = () => {
           </ThemeContext.Extend>
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

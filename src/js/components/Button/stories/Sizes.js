@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet } from 'grommet';
+import { Box, Button, MnetUIBase } from 'mnet-ui-base';
 import { Next, Add } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SizedButton = () => (
-  <Grommet theme={grommet}>
+  <MnetUIBase theme={mnet}>
     <Box direction="row">
       <Box align="start" pad="large" gap="large">
         <Button size="small" label="Small" />
@@ -33,7 +33,7 @@ const SizedButton = () => (
         <Button size="large" icon={<Add />} primary />
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Button', module).add('Sizes', () => <SizedButton active />);

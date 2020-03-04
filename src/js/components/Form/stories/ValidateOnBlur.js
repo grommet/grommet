@@ -1,11 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import {
+  Box,
+  Button,
+  MnetUIBase,
+  Form,
+  FormField,
+  TextInput,
+} from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Example = () => (
-  <Grommet full theme={grommet}>
+  <MnetUIBase full theme={mnet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
@@ -38,7 +45,7 @@ const Example = () => (
         </Form>
       </Box>
     </Box>
-  </Grommet>
+  </MnetUIBase>
 );
 
 storiesOf('Form', module).add('Validate on blur', () => <Example />);

@@ -177,15 +177,12 @@ export const focusStyle = css`
   > rect {
     outline: ${props =>
         normalizeColor(props.theme.global.focus.border.color, props.theme)}
-      solid 2px;
+      solid 1px;
   }
   outline-color: ${props =>
     normalizeColor(props.theme.global.focus.border.color, props.theme)};
   border-color: ${props =>
     normalizeColor(props.theme.global.focus.border.color, props.theme)};
-  box-shadow: 0 0 2px 2px
-    ${props =>
-      normalizeColor(props.theme.global.focus.border.color, props.theme)};
 
   ::-moz-focus-inner {
     border: 0;
@@ -204,6 +201,8 @@ export const inputStyle = css`
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0
+    ${props => normalizeColor(props.theme.global.colors.border, props.theme)};
   ${props =>
     props.theme.global.input.weight &&
     css`

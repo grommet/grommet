@@ -54,7 +54,7 @@ exports[`Chart cap renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -62,7 +62,7 @@ exports[`Chart cap renders 1`] = `
       stroke="#20314f"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -80,7 +80,7 @@ exports[`Chart cap renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -88,7 +88,7 @@ exports[`Chart cap renders 1`] = `
       stroke="#20314f"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -103,7 +103,7 @@ exports[`Chart cap renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -111,7 +111,7 @@ exports[`Chart cap renders 1`] = `
       stroke="#20314f"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g>
         <path
@@ -124,7 +124,7 @@ exports[`Chart cap renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -142,7 +142,7 @@ exports[`Chart cap renders 1`] = `
         <circle
           cx={256}
           cy={0}
-          r={8}
+          r={4}
         />
       </g>
       <g
@@ -154,7 +154,7 @@ exports[`Chart cap renders 1`] = `
         <circle
           cx={0}
           cy={128}
-          r={8}
+          r={4}
         />
       </g>
     </g>
@@ -186,7 +186,7 @@ exports[`Chart color renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -194,7 +194,7 @@ exports[`Chart color renders 1`] = `
       stroke="#E15151"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -212,7 +212,7 @@ exports[`Chart color renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -221,7 +221,7 @@ exports[`Chart color renders 1`] = `
       stroke="#E15151"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -239,7 +239,7 @@ exports[`Chart color renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <defs>
@@ -252,7 +252,7 @@ exports[`Chart color renders 1`] = `
       >
         <stop
           offset={0}
-          stopColor="rgba(0,0,0,0.33)"
+          stopColor="#cdd3e3"
         />
         <stop
           offset={1}
@@ -267,7 +267,7 @@ exports[`Chart color renders 1`] = `
           stroke="#ffffff"
           strokeLinecap="butt"
           strokeLinejoin="miter"
-          strokeWidth={16}
+          strokeWidth={8}
         >
           <g
             fill="none"
@@ -284,11 +284,11 @@ exports[`Chart color renders 1`] = `
     </defs>
     <rect
       fill="url(#undefined-gradient)"
-      height={144}
+      height={136}
       mask="url(#undefined-mask)"
-      width={272}
-      x={-8}
-      y={-8}
+      width={264}
+      x={-4}
+      y={-4}
     />
   </svg>
 </div>
@@ -337,15 +337,15 @@ exports[`Chart gap renders 1`] = `
       className="c2"
       height={128}
       preserveAspectRatio="none"
-      viewBox="-8 -8 56 144"
-      width={40}
+      viewBox="-4 -4 28 136"
+      width={20}
     >
       <g
         fill="none"
         stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
-        strokeWidth={16}
+        strokeWidth={8}
       >
         <g
           fill="none"
@@ -354,7 +354,7 @@ exports[`Chart gap renders 1`] = `
             sixty
           </title>
           <path
-            d="M 40,128 L 40,0"
+            d="M 20,128 L 20,0"
           />
         </g>
       </g>
@@ -363,15 +363,15 @@ exports[`Chart gap renders 1`] = `
       className="c2"
       height={128}
       preserveAspectRatio="none"
-      viewBox="-8 -8 64 144"
-      width={48}
+      viewBox="-4 -4 32 136"
+      width={24}
     >
       <g
         fill="none"
         stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
-        strokeWidth={16}
+        strokeWidth={8}
       >
         <g
           fill="none"
@@ -380,7 +380,7 @@ exports[`Chart gap renders 1`] = `
             sixty
           </title>
           <path
-            d="M 48,128 L 48,0"
+            d="M 24,128 L 24,0"
           />
         </g>
       </g>
@@ -389,15 +389,15 @@ exports[`Chart gap renders 1`] = `
       className="c2"
       height={128}
       preserveAspectRatio="none"
-      viewBox="-8 -8 80 144"
-      width={64}
+      viewBox="-4 -4 40 136"
+      width={32}
     >
       <g
         fill="none"
         stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
-        strokeWidth={16}
+        strokeWidth={8}
       >
         <g
           fill="none"
@@ -406,7 +406,7 @@ exports[`Chart gap renders 1`] = `
             sixty
           </title>
           <path
-            d="M 64,128 L 64,0"
+            d="M 32,128 L 32,0"
           />
         </g>
       </g>
@@ -439,7 +439,7 @@ exports[`Chart renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -447,7 +447,7 @@ exports[`Chart renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -504,7 +504,7 @@ exports[`Chart size renders 1`] = `
     className="c1"
     height={64}
     preserveAspectRatio="none"
-    viewBox="-8 -8 80 80"
+    viewBox="-4 -4 72 72"
     width={64}
   >
     <g
@@ -512,7 +512,7 @@ exports[`Chart size renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -530,7 +530,7 @@ exports[`Chart size renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 144 144"
+    viewBox="-4 -4 136 136"
     width={128}
   >
     <g
@@ -538,7 +538,7 @@ exports[`Chart size renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -556,7 +556,7 @@ exports[`Chart size renders 1`] = `
     className="c1"
     height={256}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 272"
+    viewBox="-4 -4 264 264"
     width={256}
   >
     <g
@@ -564,7 +564,7 @@ exports[`Chart size renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -582,7 +582,7 @@ exports[`Chart size renders 1`] = `
     className="c1"
     height={512}
     preserveAspectRatio="none"
-    viewBox="-8 -8 528 528"
+    viewBox="-4 -4 520 520"
     width={512}
   >
     <g
@@ -590,7 +590,7 @@ exports[`Chart size renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -608,7 +608,7 @@ exports[`Chart size renders 1`] = `
     className="c1"
     height={768}
     preserveAspectRatio="none"
-    viewBox="-8 -8 784 784"
+    viewBox="-4 -4 776 776"
     width={768}
   >
     <g
@@ -616,7 +616,7 @@ exports[`Chart size renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -637,7 +637,7 @@ exports[`Chart size renders 1`] = `
       className="c1"
       height={128}
       preserveAspectRatio="none"
-      viewBox="-8 -8 16 144"
+      viewBox="-4 -4 8 136"
       width={0}
     >
       <g
@@ -645,7 +645,7 @@ exports[`Chart size renders 1`] = `
         stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
-        strokeWidth={16}
+        strokeWidth={8}
       >
         <g
           fill="none"
@@ -663,15 +663,15 @@ exports[`Chart size renders 1`] = `
       className="c1"
       height={128}
       preserveAspectRatio="none"
-      viewBox="-8 -8 64 144"
-      width={48}
+      viewBox="-4 -4 32 136"
+      width={24}
     >
       <g
         fill="none"
         stroke="#20314f"
         strokeLinecap="butt"
         strokeLinejoin="miter"
-        strokeWidth={16}
+        strokeWidth={8}
       >
         <g
           fill="none"
@@ -680,7 +680,7 @@ exports[`Chart size renders 1`] = `
             sixty
           </title>
           <path
-            d="M 48,128 L 48,0"
+            d="M 24,128 L 24,0"
           />
         </g>
       </g>
@@ -709,6 +709,32 @@ exports[`Chart thickness renders 1`] = `
 <div
   className="c0"
 >
+  <svg
+    className="c1"
+    height={128}
+    preserveAspectRatio="none"
+    viewBox="-1 -1 258 130"
+    width={256}
+  >
+    <g
+      fill="none"
+      stroke="#20314f"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={2}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 256,128 L 256,0"
+        />
+      </g>
+    </g>
+  </svg>
   <svg
     className="c1"
     height={128}
@@ -791,7 +817,7 @@ exports[`Chart thickness renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-16 -16 288 160"
+    viewBox="-8 -8 272 144"
     width={256}
   >
     <g
@@ -799,33 +825,7 @@ exports[`Chart thickness renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={32}
-    >
-      <g
-        fill="none"
-      >
-        <title>
-          sixty
-        </title>
-        <path
-          d="M 256,128 L 256,0"
-        />
-      </g>
-    </g>
-  </svg>
-  <svg
-    className="c1"
-    height={128}
-    preserveAspectRatio="none"
-    viewBox="-32 -32 320 192"
-    width={256}
-  >
-    <g
-      fill="none"
-      stroke="#20314f"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={64}
+      strokeWidth={16}
     >
       <g
         fill="none"
@@ -866,7 +866,7 @@ exports[`Chart type renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -874,7 +874,7 @@ exports[`Chart type renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -892,7 +892,7 @@ exports[`Chart type renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -900,7 +900,7 @@ exports[`Chart type renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g
         fill="none"
@@ -915,7 +915,7 @@ exports[`Chart type renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -923,7 +923,7 @@ exports[`Chart type renders 1`] = `
       stroke="#20314f"
       strokeLinecap="butt"
       strokeLinejoin="miter"
-      strokeWidth={16}
+      strokeWidth={8}
     >
       <g>
         <path
@@ -936,7 +936,7 @@ exports[`Chart type renders 1`] = `
     className="c1"
     height={128}
     preserveAspectRatio="none"
-    viewBox="-8 -8 272 144"
+    viewBox="-4 -4 264 136"
     width={256}
   >
     <g
@@ -952,10 +952,10 @@ exports[`Chart type renders 1`] = `
           sixty
         </title>
         <rect
-          height={16}
-          width={16}
-          x={248}
-          y={-8}
+          height={8}
+          width={8}
+          x={252}
+          y={-4}
         />
       </g>
       <g
@@ -965,10 +965,10 @@ exports[`Chart type renders 1`] = `
           zero
         </title>
         <rect
-          height={16}
-          width={16}
-          x={-8}
-          y={120}
+          height={8}
+          width={8}
+          x={-4}
+          y={124}
         />
       </g>
     </g>

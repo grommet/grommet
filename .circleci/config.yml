@@ -82,7 +82,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           command: |
-            git config --global user.name "Grommet Community Bot"
+            git config --global user.name "MnetUIBase Community Bot"
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
   publish:

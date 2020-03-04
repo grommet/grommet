@@ -97,56 +97,56 @@ exports[`Distribution gap renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 4px;
+  width: 2px;
 }
 
 .c5 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 4px;
+  height: 2px;
 }
 
 .c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 8px;
+  height: 4px;
 }
 
 .c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 16px;
+  width: 8px;
 }
 
 .c10 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 16px;
+  height: 8px;
 }
 
 .c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 32px;
+  width: 16px;
 }
 
 .c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 32px;
+  height: 16px;
 }
 
 @media only screen and (max-width:512px) {
@@ -495,14 +495,14 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 4px;
+  width: 2px;
 }
 
 .c6 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 4px;
+  height: 2px;
 }
 
 @media only screen and (max-width:512px) {

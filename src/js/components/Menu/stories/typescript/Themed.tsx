@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Grommet, Box, Menu, ThemeType } from 'grommet';
+import { MnetUIBase, Box, Menu, ThemeType } from 'mnet-ui-base';
 import { Next } from 'grommet-icons';
 
 const customBreakpoints: ThemeType = {
@@ -61,7 +61,7 @@ const customBreakpoints: ThemeType = {
 };
 const App = () => {
   return (
-    <Grommet theme={customBreakpoints}>
+    <MnetUIBase theme={customBreakpoints}>
       <Box align="center" pad="large">
         <Menu
           dropProps={{ align: { top: 'bottom', left: 'left' } }}
@@ -74,7 +74,7 @@ const App = () => {
           ]}
         />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -106,11 +106,14 @@ exports[`SkipLink basic 3`] = `
     <a
       aria-hidden="true"
       class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      data-g-tabindex="-1"
       id="main"
       tabindex="-1"
     />
     Main Content
     <input
+      data-g-tabindex="none"
+      tabindex="-1"
       type="text"
       value="main content"
     />
@@ -119,10 +122,13 @@ exports[`SkipLink basic 3`] = `
     <a
       aria-hidden="true"
       class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      data-g-tabindex="-1"
       id="footer"
       tabindex="-1"
     />
     <input
+      data-g-tabindex="none"
+      tabindex="-1"
       type="text"
       value="footer"
     />

@@ -22,14 +22,14 @@ exports[`Menu basic 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -159,14 +159,14 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -301,7 +301,7 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c0 {
@@ -387,14 +387,14 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c5 {
@@ -486,6 +486,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -566,37 +567,37 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width:512px) {
-  .bUXuBS {
+  .iQLiur {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .hYWuzg {
+  .hprPsG {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .ggdDGZ {
+  .egHhxZ {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eVAAPX {
+  .diltfb {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .jTmken {
+  .errQzl {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eyQHsP {
+  .hQqXNG {
     padding: 4px;
   }
 }
@@ -619,7 +620,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .jJwBZU {
+  .cMOYtH {
     padding: 4px;
   }
 }
@@ -718,14 +719,14 @@ exports[`Menu close on esc 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -860,14 +861,14 @@ exports[`Menu close on tab 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -1002,14 +1003,14 @@ exports[`Menu custom a11yTitle 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -1145,14 +1146,14 @@ exports[`Menu custom message 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -1292,14 +1293,14 @@ exports[`Menu disabled 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -1437,14 +1438,14 @@ exports[`Menu gap between icon and label 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -1580,7 +1581,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c6 {
@@ -1604,7 +1605,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c7 {
@@ -1628,7 +1629,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c8 {
@@ -1652,7 +1653,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c9 {
@@ -1676,7 +1677,7 @@ exports[`Menu justify content 1`] = `
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c10 {
@@ -1696,14 +1697,14 @@ exports[`Menu justify content 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -2053,14 +2054,14 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -2195,14 +2196,14 @@ exports[`Menu open and close on click 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -2292,7 +2293,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-1etxkdl-0 bUXuBS"
+      class="StyledBox-sc-1etxkdl-0 iQLiur"
     >
       <span
         class="StyledText-sc-3e83s1-0 bsNPum"
@@ -2300,7 +2301,7 @@ exports[`Menu open and close on click 2`] = `
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-1etxkdl-1 tACrE"
+        class="StyledBox__StyledBoxGap-sc-1etxkdl-1 VNJWf"
       />
       <svg
         aria-label="FormDown"
@@ -2375,7 +2376,7 @@ exports[`Menu open and close on click 3`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c0 {
@@ -2461,14 +2462,14 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c5 {
@@ -2560,6 +2561,7 @@ exports[`Menu open and close on click 3`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2654,37 +2656,37 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:512px) {
-  .bUXuBS {
+  .iQLiur {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .hYWuzg {
+  .hprPsG {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .ggdDGZ {
+  .egHhxZ {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eVAAPX {
+  .diltfb {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .jTmken {
+  .errQzl {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eyQHsP {
+  .hQqXNG {
     padding: 4px;
   }
 }
@@ -2707,7 +2709,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .jJwBZU {
+  .cMOYtH {
     padding: 4px;
   }
 }
@@ -2806,14 +2808,14 @@ exports[`Menu reverse icon and label 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -2949,14 +2951,14 @@ exports[`Menu select an item 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -3091,14 +3093,14 @@ exports[`Menu tab through menu until it closes 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -3233,14 +3235,14 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c1 {
@@ -3375,7 +3377,7 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c0 {
@@ -3461,14 +3463,14 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 8px;
+  width: 4px;
 }
 
 .c5 {
@@ -3560,6 +3562,7 @@ exports[`Menu with dropAlign renders 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -3640,37 +3643,37 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:512px) {
-  .bUXuBS {
+  .iQLiur {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .hYWuzg {
+  .hprPsG {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .ggdDGZ {
+  .egHhxZ {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eVAAPX {
+  .diltfb {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .jTmken {
+  .errQzl {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .eyQHsP {
+  .hQqXNG {
     padding: 4px;
   }
 }
@@ -3693,7 +3696,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .jJwBZU {
+  .cMOYtH {
     padding: 4px;
   }
 }

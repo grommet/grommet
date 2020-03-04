@@ -63,7 +63,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -71,7 +71,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -79,7 +79,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -87,7 +87,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -95,7 +95,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -103,7 +103,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -111,7 +111,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -119,7 +119,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -133,7 +133,7 @@ string
 
 **activeIndex**
 
-Active panel index. If specified, Accordion will be a controlled
+Active panel index. If specified, Accordion will be a controlled 
 component. This means that future panel changes will not work unless you
 subscribe to onActive function and update activeIndex accordingly.
 
@@ -186,7 +186,7 @@ Custom messages for Tabs. Used for accessibility by screen readers. Defaults to 
   tabContents: string
 }
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -214,14 +214,14 @@ If specified, the entire panel header will be managed by the caller.
 \`\`\`
 node
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **accordion.heading.level**
 
 The heading level used for the accordion. Expects \`number\`.
@@ -343,7 +343,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -351,7 +351,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -359,7 +359,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -367,7 +367,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -375,7 +375,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -383,7 +383,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -391,7 +391,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -399,7 +399,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -497,14 +497,14 @@ The DOM tag or react component to use for the element.
 string
 function
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 a
 \`\`\`
 ## Theme
-
+  
 **anchor.color**
 
 The color of the label text and icon strokes. Expects \`string | { dark: string, light: string }\`.
@@ -527,7 +527,7 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label.
+The text decoration of the label. 
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -549,7 +549,7 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering.
+The text decoration of the label when hovering. 
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -691,7 +691,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -699,7 +699,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -707,7 +707,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -715,7 +715,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -723,7 +723,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -731,7 +731,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -739,7 +739,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -747,7 +747,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -803,7 +803,7 @@ slideRight
 zoomIn
 zoomOut
 {
-  type:
+  type: 
     fadeIn
     fadeOut
     jiggle
@@ -816,7 +816,7 @@ zoomOut
     zoomOut,
   delay: number,
   duration: number,
-  size:
+  size: 
     xsmall
     small
     medium
@@ -835,7 +835,7 @@ zoomOut
   zoomIn
   zoomOut
   {
-    type:
+    type: 
       fadeIn
       fadeOut
       jiggle
@@ -848,7 +848,7 @@ zoomOut
       zoomOut,
     delay: number,
     duration: number,
-    size:
+    size: 
       xsmall
       small
       medium
@@ -860,31 +860,31 @@ zoomOut
 
 **background**
 
-Either a color
-identifier to use for the background color. For example: 'neutral-1'. Or, a
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
 'url()' for an image. Dark is not needed if color is provided.
 
 \`\`\`
 string
 {
   color: string,
-  dark:
+  dark: 
     boolean
     string,
   image: string,
   position: string,
-  opacity:
+  opacity: 
     string
     boolean
     number
     weak
     medium
     strong,
-  repeat:
+  repeat: 
     no-repeat
     repeat
     string,
-  size:
+  size: 
     cover
     contain
     string,
@@ -933,13 +933,13 @@ vertical
 all
 between
 {
-  color:
+  color: 
     string
     {
       dark: string,
       light: string
     },
-  side:
+  side: 
     top
     left
     bottom
@@ -950,14 +950,14 @@ between
     vertical
     all
     between,
-  size:
+  size: 
     xsmall
     small
     medium
     large
     xlarge
     string,
-  style:
+  style: 
     solid
     dashed
     dotted
@@ -969,13 +969,13 @@ between
     hidden
 }
 [{
-  color:
+  color: 
     string
     {
       dark: string,
       light: string
     },
-  side:
+  side: 
     top
     left
     bottom
@@ -986,14 +986,14 @@ between
     vertical
     all
     between,
-  size:
+  size: 
     xsmall
     small
     medium
     large
     xlarge
     string,
-  style:
+  style: 
     solid
     dashed
     dotted
@@ -1097,7 +1097,7 @@ xlarge
 xxlarge
 string
 {
-  min:
+  min: 
     xxsmall
     xsmall
     small
@@ -1106,7 +1106,7 @@ string
     xlarge
     xxlarge
     string,
-  max:
+  max: 
     xxsmall
     xsmall
     small
@@ -1129,24 +1129,24 @@ string
 background
 {
   color: string,
-  dark:
+  dark: 
     boolean
     string,
   image: string,
   light: string,
   position: string,
-  opacity:
+  opacity: 
     string
     boolean
     number
     weak
     medium
     strong,
-  repeat:
+  repeat: 
     no-repeat
     repeat
     string,
-  size:
+  size: 
     cover
     contain
     string
@@ -1186,12 +1186,12 @@ hidden
 scroll
 visible
 {
-  horizontal:
+  horizontal: 
     auto
     hidden
     scroll
     visible,
-  vertical:
+  vertical: 
     auto
     hidden
     scroll
@@ -1215,7 +1215,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -1223,7 +1223,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -1231,7 +1231,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -1239,7 +1239,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -1247,7 +1247,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -1255,7 +1255,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -1263,7 +1263,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -1271,7 +1271,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -1306,7 +1306,7 @@ xlarge
 full
 string
 {
-  corner:
+  corner: 
     top
     left
     bottom
@@ -1315,7 +1315,7 @@ string
     top-right
     bottom-left
     bottom-right,
-  size:
+  size: 
     xsmall
     small
     medium
@@ -1358,7 +1358,7 @@ xlarge
 xxlarge
 string
 {
-  min:
+  min: 
     xxsmall
     xsmall
     small
@@ -1367,7 +1367,7 @@ string
     xlarge
     xxlarge
     string,
-  max:
+  max: 
     xxsmall
     xsmall
     small
@@ -1387,14 +1387,14 @@ Whether children can wrap if they can't all fit.
 boolean
 reverse
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **global.animation**
 
 The animation configuration for the Box. Expects \`object\`.
@@ -1534,7 +1534,7 @@ undefined
 
 **box.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border,
+The actual breakpoint to trigger changes in the border, 
     direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
@@ -1567,7 +1567,7 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin,
+The possible breakpoints that could affect border, direction, gap, margin, 
     pad, and round. Expects \`object\`.
 
 Defaults to
@@ -1672,7 +1672,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -1680,7 +1680,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -1688,7 +1688,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -1696,7 +1696,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -1704,7 +1704,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -1712,7 +1712,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -1720,7 +1720,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -1728,7 +1728,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -1779,7 +1779,7 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and/or
+Whether the button expands to fill all of the available width and/or 
         height.
 
 \`\`\`
@@ -1824,24 +1824,24 @@ string
 background
 {
   color: string,
-  dark:
+  dark: 
     boolean
     string,
   image: string,
   light: string,
   position: string,
-  opacity:
+  opacity: 
     string
     boolean
     number
     weak
     medium
     strong,
-  repeat:
+  repeat: 
     no-repeat
     repeat
     string,
-  size:
+  size: 
     cover
     contain
     string
@@ -1885,7 +1885,7 @@ function
 
 Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
-          The plain button has no border and unless the icon prop exist it has
+          The plain button has no border and unless the icon prop exist it has 
           no pad as well.
 
 \`\`\`
@@ -1912,8 +1912,8 @@ boolean
 
 **size**
 
-The possible sizes of Button, that impacts the overall Button
-      padding, border radius, text size and line height.
+The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
       'size' will not impact any icon related sizing.
 
 \`\`\`
@@ -1935,7 +1935,7 @@ _top
 
 **type**
 
-The type of button. Set the type to submit for the default button on
+The type of button. Set the type to submit for the default button on 
                 forms. Defaults to \`button\`.
 
 \`\`\`
@@ -1943,14 +1943,14 @@ button
 reset
 submit
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 button
 \`\`\`
 ## Theme
-
+  
 **global.active.background.color**
 
 The background color when using active prop. Expects \`string | { dark: string, light: string }\`.
@@ -2321,7 +2321,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -2329,7 +2329,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -2337,7 +2337,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -2345,7 +2345,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -2353,7 +2353,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -2361,7 +2361,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -2369,7 +2369,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -2377,7 +2377,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -2471,10 +2471,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
-\`bounds\`, if the current date is within that range. You can then use that
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
+\`bounds\`, if the current date is within that range. You can then use that 
 to disable the previous and next buttons.
 
 
@@ -2548,14 +2548,14 @@ medium
 large
 string
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **calendar.day.extend**
 
 Any additional style for the day of Calendar. Expects \`string | (props) => {}\`.
@@ -2868,7 +2868,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -2876,7 +2876,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -2884,7 +2884,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -2892,7 +2892,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -2900,7 +2900,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -2908,7 +2908,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -2916,7 +2916,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -2924,7 +2924,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -2973,14 +2973,14 @@ boolean
 arrows
 selectors
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **carousel.icons.next**
 
 The icon to use for the next image navigation control. Expects \`element\`.
@@ -3013,7 +3013,7 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control.
+The icon to use on the middle navigation control. 
       One icon per carousel image. Expects \`element\`.
 
 Defaults to
@@ -3132,7 +3132,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -3140,7 +3140,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -3148,7 +3148,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -3156,7 +3156,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -3164,7 +3164,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -3172,7 +3172,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -3180,7 +3180,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -3188,7 +3188,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -3223,7 +3223,7 @@ A color identifier to use for the graphic color. If an
 string
 {
   color: string,
-  opacity:
+  opacity: 
     weak
     medium
     strong
@@ -3316,7 +3316,7 @@ large
 xlarge
 full
 {
-  height:
+  height: 
     xxsmall
     xsmall
     small
@@ -3325,7 +3325,7 @@ full
     xlarge
     full
     string,
-  width:
+  width: 
     xxsmall
     xsmall
     small
@@ -3381,15 +3381,15 @@ Required. Array of value objects describing the data.
     label: string,
     onClick: function,
     onHover: function,
-    value:
+    value: 
       number
       [number]
   }
 ]
 \`\`\`
-
+  
 ## Theme
-
+  
 **chart.color**
 
 Color of the Chart. Expects \`string | {dark: string, light: string}\`.
@@ -3525,7 +3525,7 @@ node
 
 **name**
 
-The DOM name attribute value to use for the underlying <input/>
+The DOM name attribute value to use for the underlying <input/> 
       element.
 
 \`\`\`
@@ -3566,14 +3566,14 @@ NOTE: This can only be used with non-toggle components
 \`\`\`
 boolean
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 input
 \`\`\`
 ## Theme
-
+  
 **checkBox.border.color**
 
 The border color when unchecked. Expects \`string | { 'dark': string, 'light': string }\`.
@@ -3832,7 +3832,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -3840,7 +3840,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -3848,7 +3848,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -3856,7 +3856,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -3864,7 +3864,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -3872,7 +3872,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -3880,7 +3880,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -3888,7 +3888,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -3972,14 +3972,14 @@ What type of visualization to show. Defaults to \`analog\`.
 analog
 digital
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div,svg
 \`\`\`
 ## Theme
-
+  
 **clock.analog.extend**
 
 Any additional style for Clock. Expects \`string | (props) => {}\`.
@@ -4148,14 +4148,14 @@ Direction to animate the collapsible content. Defaults to \`vertical\`.
 horizontal
 vertical
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **collapsible.minSpeed**
 
 The minimum speed of Collapsible animation in milliseconds. Expects \`number\`.
@@ -4244,7 +4244,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -4252,7 +4252,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -4260,7 +4260,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -4268,7 +4268,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -4276,7 +4276,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -4284,7 +4284,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -4292,7 +4292,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -4300,7 +4300,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -4322,13 +4322,13 @@ Cell background. You can set the background per context by passing an
 string
 [string]
 {
-  header:
+  header: 
     string
     [string],
-  body:
+  body: 
     string
     [string],
-  footer:
+  footer: 
     string
     [string]
 }
@@ -4348,20 +4348,20 @@ bottom
 left
 right
 {
-  color:
+  color: 
     string
     {
       dark: string,
       light: string
     },
-  side:
+  side: 
     horizontal
     vertical
     top
     bottom
     left
     right,
-  size:
+  size: 
     xxsmall
     xsmall
     small
@@ -4371,7 +4371,7 @@ right
     string
 }
 {
-  header:
+  header: 
     boolean
     horizontal
     vertical
@@ -4380,20 +4380,20 @@ right
     left
     right
     {
-      color:
+      color: 
         string
         {
           dark: string,
           light: string
         },
-      side:
+      side: 
         horizontal
         vertical
         top
         bottom
         left
         right,
-      size:
+      size: 
         xxsmall
         xsmall
         small
@@ -4402,7 +4402,7 @@ right
         xlarge
         string
     },
-  body:
+  body: 
     boolean
     horizontal
     vertical
@@ -4411,20 +4411,20 @@ right
     left
     right
     {
-      color:
+      color: 
         string
         {
           dark: string,
           light: string
         },
-      side:
+      side: 
         horizontal
         vertical
         top
         bottom
         left
         right,
-      size:
+      size: 
         xxsmall
         xsmall
         small
@@ -4433,7 +4433,7 @@ right
         xlarge
         string
     },
-  footer:
+  footer: 
     boolean
     horizontal
     vertical
@@ -4442,20 +4442,20 @@ right
     left
     right
     {
-      color:
+      color: 
         string
         {
           dark: string,
           light: string
         },
-      side:
+      side: 
         horizontal
         vertical
         top
         bottom
         left
         right,
-      size:
+      size: 
         xxsmall
         xsmall
         small
@@ -4486,21 +4486,21 @@ A description of the data. The order controls the column order.
 
 \`\`\`
 [{
-  align:
+  align: 
     center
     start
     end,
-  aggregate:
+  aggregate: 
     avg
     max
     min
     sum,
-  footer:
+  footer: 
     node
     {
       aggregate: boolean
     },
-  header:
+  header: 
     string
     node
     {
@@ -4527,7 +4527,7 @@ Array of data objects.
 **groupBy**
 
 Property to group data by. If object is specified
-      'property' is used to group data by, 'expand' accepts array of
+      'property' is used to group data by, 'expand' accepts array of 
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
        an array of keys of expanded groups.
@@ -4549,7 +4549,7 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or
+      browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.
 
 \`\`\`
@@ -4604,42 +4604,42 @@ large
 xlarge
 string
 {
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  top:
+  top: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  left:
+  left: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -4717,14 +4717,14 @@ How many items to render at a time. Defaults to \`50\`.
 \`\`\`
 number
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 table
 \`\`\`
 ## Theme
-
+  
 **global.hover.background**
 
 The background style when hovering over an interactive row. Expects \`string | { color: string, opacity: string }\`.
@@ -4920,27 +4920,27 @@ Required. Array of objects describing the connections.
 
 \`\`\`
 [{
-  anchor:
+  anchor: 
     center
     vertical
     horizontal,
-  color:
+  color: 
     string
     {
       dark: string,
       light: string
     },
-  fromTarget:
+  fromTarget: 
     string
     object,
   label: string,
-  offset:
+  offset: 
     xsmall
     small
     medium
     large
     string,
-  thickness:
+  thickness: 
     hair
     xxsmall
     xsmall
@@ -4948,23 +4948,23 @@ Required. Array of objects describing the connections.
     medium
     large
     string,
-  toTarget:
+  toTarget: 
     string
     object,
-  type:
+  type: 
     direct
     curved
     rectilinear
 }]
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 svg
 \`\`\`
 ## Theme
-
+  
 **diagram.extend**
 
 Any additional style for Diagram. Expects \`string | (props) => {}\`.
@@ -5082,7 +5082,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -5090,7 +5090,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -5098,7 +5098,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -5106,7 +5106,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -5114,7 +5114,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -5122,7 +5122,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -5130,7 +5130,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -5138,7 +5138,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -5188,7 +5188,7 @@ function
 
 **fill**
 
-Whether the distribution expands to fill all of the available width
+Whether the distribution expands to fill all of the available width 
         and height.
 
 \`\`\`
@@ -5222,7 +5222,7 @@ Required. Array of objects containing a value. The array should already be
   value: number
 }]
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -5236,7 +5236,7 @@ A container that is overlaid next to a target.
 
 \`\`\`javascript
 import { Drop } from 'mnet-ui-base';
-
+      
 <Drop target={reference}>...</Drop>
 \`\`\`
 
@@ -5253,16 +5253,16 @@ How to align the drop with respect to the target element. Not
 
 \`\`\`
 {
-  top:
+  top: 
     top
     bottom,
-  bottom:
+  bottom: 
     top
     bottom,
-  right:
+  right: 
     left
     right,
-  left:
+  left: 
     left
     right
 }
@@ -5295,12 +5295,12 @@ hidden
 scroll
 visible
 {
-  horizontal:
+  horizontal: 
     auto
     hidden
     scroll
     visible,
-  vertical:
+  vertical: 
     auto
     hidden
     scroll
@@ -5365,14 +5365,14 @@ Whether the drop element should have no background nor shadow
 \`\`\`
 boolean
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **drop.maxHeight**
 
 The max height of the Drop container Expects \`string\`.
@@ -5436,9 +5436,9 @@ Defaults to
   "DropButton": "## DropButton
 A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus
-      so that the contents behind it are not focusable. All properties and
+      so that the contents behind it are not focusable. All properties and 
       theme properties of Button or Drop can be passed through.
-
+      
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
 ## Usage
@@ -5495,7 +5495,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -5503,7 +5503,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -5511,7 +5511,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -5519,7 +5519,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -5527,7 +5527,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -5535,7 +5535,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -5543,7 +5543,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -5551,7 +5551,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -5580,16 +5580,16 @@ How to align the drop with respect to the button. Defaults to \`{
 
 \`\`\`
 {
-  top:
+  top: 
     top
     bottom,
-  bottom:
+  bottom: 
     top
     bottom,
-  right:
+  right: 
     left
     right,
-  left:
+  left: 
     left
     right
 }
@@ -5645,7 +5645,7 @@ Whether the drop should be open or not. Setting this property does not
 \`\`\`
 boolean
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -5760,7 +5760,7 @@ An object representing all of the data in the form. Defaults to \`{}\`.
 
 }
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -5871,7 +5871,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -5879,7 +5879,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -5887,7 +5887,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -5895,7 +5895,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -5903,7 +5903,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -5911,7 +5911,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -5919,7 +5919,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -5927,7 +5927,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -5969,7 +5969,7 @@ Validation rule when used within a grommet Form. Provide an object
 {
   regexp: object,
   message: string,
-  status:
+  status: 
     error
     info
 }
@@ -5978,21 +5978,21 @@ function
   {
     regexp: object,
     message: string,
-    status:
+    status: 
       error
       info
   }
   function
 ]
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **formField.border.color**
 
 The border color. Expects \`string | { 'dark': string, 'light': string }\`.
@@ -6272,7 +6272,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -6280,7 +6280,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -6288,7 +6288,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -6296,7 +6296,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -6304,7 +6304,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -6312,7 +6312,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -6320,7 +6320,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -6328,7 +6328,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -6431,11 +6431,11 @@ medium
 large
 xlarge
 {
-  count:
+  count: 
     fit
     fill
     number,
-  size:
+  size: 
     xsmall
     small
     medium
@@ -6483,7 +6483,7 @@ large
 xlarge
 none
 {
-  row:
+  row: 
     xxsmall
     xsmall
     small
@@ -6492,7 +6492,7 @@ none
     xlarge
     none
     string,
-  column:
+  column: 
     xxsmall
     xsmall
     small
@@ -6545,7 +6545,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -6553,7 +6553,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -6561,7 +6561,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -6569,7 +6569,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -6577,7 +6577,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -6585,7 +6585,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -6593,7 +6593,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -6601,7 +6601,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -6682,14 +6682,14 @@ The DOM tag or react component to use for the element. Defaults to \`div\`.
 string
 function
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **global.size**
 
 The possible sizes for row and column. Expects \`object\`.
@@ -6739,140 +6739,6 @@ Defaults to
       responsiveBreakpoint: 'small',
     },
   }
-\`\`\`
-",
-  "Grommet": "## Grommet
-The top level Grommet container.
-
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grommet&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grommet&module=%2Fsrc%2FGrommet.js)
-## Usage
-
-\`\`\`javascript
-import { Grommet } from 'grommet';
-<Grommet>...</Grommet>
-\`\`\`
-
-## Properties
-
-**background**
-
-Either a color
-identifier to use for the background color. For example: 'neutral-1'. Or, a
-'url()' for an image. Dark is not needed if color is provided.
-
-\`\`\`
-string
-{
-  color: string,
-  dark:
-    boolean
-    string,
-  image: string,
-  position: string,
-  opacity:
-    string
-    boolean
-    number
-    weak
-    medium
-    strong,
-  repeat:
-    no-repeat
-    repeat
-    string,
-  size:
-    cover
-    contain
-    string,
-  light: string
-}
-\`\`\`
-
-**dir**
-
-Layout direction for right to left contexts
-
-\`\`\`
-rtl
-\`\`\`
-
-**full**
-
-Whether to take the whole viewport.
-
-\`\`\`
-boolean
-\`\`\`
-
-**plain**
-
-Whether or not Grommet should apply a global font-family, font-size,
-        and line-height.
-
-\`\`\`
-boolean
-\`\`\`
-
-**cssVars**
-
-Whether to expose the css variables.
-
-\`\`\`
-boolean
-\`\`\`
-
-**theme**
-
-Custom styles for Grommet app component.
-
-\`\`\`
-object
-\`\`\`
-
-**themeMode**
-
-Dark vs. light theme variation. Default is unspecified and left to
-      theme.
-
-\`\`\`
-dark
-light
-\`\`\`
-
-**userAgent**
-
-User agent used to detect the device width for setting the initial
-      breakpoint.
-
-\`\`\`
-string
-\`\`\`
-
-## Intrinsic element
-
-\`\`\`
-div
-\`\`\`
-## Theme
-
-**grommet.extend**
-
-Any additional style for Grommet. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**global.font.face**
-
-Custom font face declaration Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
 \`\`\`
 ",
   "Header": "## Header
@@ -6947,7 +6813,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -6955,7 +6821,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -6963,7 +6829,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -6971,7 +6837,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -6979,7 +6845,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -6987,7 +6853,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -6995,7 +6861,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -7003,7 +6869,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -7090,14 +6956,14 @@ is too long to all fit.
 \`\`\`
 boolean
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 h1,h2,h3,h4
 \`\`\`
 ## Theme
-
+  
 **global.breakpoints**
 
 The possible breakpoints that could affect font-size and max-width Expects \`object\`.
@@ -7176,8 +7042,8 @@ undefined
 
 **heading.level**
 
-The level that impacts line-height, max-width, font size,
-weight and family of the Heading. Heading level is automatically adjusted at
+The level that impacts line-height, max-width, font size, 
+weight and family of the Heading. Heading level is automatically adjusted at 
 different screen sizes. These screen sizes are derived from breakpoints. Expects \`object\`.
 
 Defaults to
@@ -7220,7 +7086,7 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout.
+The breakpoint to trigger changes in the Heading layout. 
 The actual values will be derived from global.breakpoints. Expects \`string\`.
 
 Defaults to
@@ -7287,7 +7153,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -7295,7 +7161,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -7303,7 +7169,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -7311,7 +7177,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -7319,7 +7185,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -7327,7 +7193,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -7335,7 +7201,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -7343,7 +7209,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -7366,7 +7232,7 @@ contain
 
 **fallback**
 
-Specifies the URL of the fallback image used when
+Specifies the URL of the fallback image used when 
       src is failing to load
 
 \`\`\`
@@ -7392,14 +7258,14 @@ Whether the image expands to fill all of the available width and height
 \`\`\`
 boolean
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 img
 \`\`\`
 ## Theme
-
+  
 **global.opacity.medium**
 
 The value used when opacity is set to true. Expects \`number\`.
@@ -7672,7 +7538,7 @@ boolean
 
 **full**
 
-Whether the width and/or height should fill the current viewport
+Whether the width and/or height should fill the current viewport 
         size.
 
 \`\`\`
@@ -7695,56 +7561,56 @@ small
 medium
 large
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
     medium
     large
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
     medium
     large
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
     medium
     large
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
     medium
     large
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
     medium
     large
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
     medium
     large
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
     medium
     large
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -7757,7 +7623,7 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath
+Whether there should be an overlay preventing interaction underneath 
         the layer. Defaults to \`true\`.
 
 \`\`\`
@@ -7766,7 +7632,7 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks
+Function that will be invoked on modal layers when the user clicks 
       outside the layer.
 
 \`\`\`
@@ -7819,20 +7685,20 @@ boolean
 
 **target**
 
-Target where the layer will be aligned to. This should be a React
+Target where the layer will be aligned to. This should be a React 
       reference.
 
 \`\`\`
 object
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **global.size.xxsmall**
 
 The minimal height of the Layer. Expects \`string\`.
@@ -7885,7 +7751,7 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border,
+The actual breakpoint to trigger changes in the border, 
 direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
@@ -7906,7 +7772,7 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin,
+The possible breakpoints that could affect border, direction, gap, margin, 
     pad, and round. Expects \`object\`.
 
 Defaults to
@@ -8007,7 +7873,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -8015,7 +7881,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -8023,7 +7889,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -8031,7 +7897,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -8039,7 +7905,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -8047,7 +7913,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -8055,7 +7921,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -8063,7 +7929,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -8108,13 +7974,13 @@ right
 start
 end
 {
-  color:
+  color: 
     string
     {
       dark: string,
       light: string
     },
-  side:
+  side: 
     horizontal
     vertical
     top
@@ -8123,7 +7989,7 @@ end
     right
     start
     end,
-  size:
+  size: 
     xxsmall
     xsmall
     small
@@ -8155,7 +8021,7 @@ Function that will be called when each data item is rendered.
       should return a react element.
       For example:
       \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-
+      
 
 \`\`\`
 function
@@ -8213,56 +8079,56 @@ large
 xlarge
 string
 {
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  top:
+  top: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  left:
+  left: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  right:
+  right: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  start:
+  start: 
     xxsmall
     xsmall
     small
     medium
     large
     xlarge,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -8303,14 +8169,14 @@ How many items to render at a time. Defaults to \`50\`.
 \`\`\`
 number
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 ol
 \`\`\`
 ## Theme
-
+  
 **global.hover.background**
 
 The background style when hovering over an interactive item. Expects \`string | { color: string, opacity: string }\`.
@@ -8419,7 +8285,7 @@ Custom components and props to override html elements such as 'img'
 
 }
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -8478,7 +8344,7 @@ Describes the structure of the mask. If a regexp is provided, it should
 
 \`\`\`
 [{
-  length:
+  length: 
     number
     [number],
   fixed: string,
@@ -8486,7 +8352,7 @@ Describes the structure of the mask. If a regexp is provided, it should
   string
   number
 ],
-  regexp:
+  regexp: 
     {
 
     }
@@ -8514,14 +8380,14 @@ What text to put in the input. The caller should ensure that it
 string
 number
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 input
 \`\`\`
 ## Theme
-
+  
 **global.hover.background**
 
 The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
@@ -8666,7 +8532,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -8674,7 +8540,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -8682,7 +8548,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -8690,7 +8556,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -8698,7 +8564,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -8706,7 +8572,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -8714,7 +8580,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -8722,7 +8588,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -8756,16 +8622,16 @@ one of top or bottom should be specified. Defaults to \`{
 
 \`\`\`
 {
-  top:
+  top: 
     top
     bottom,
-  bottom:
+  bottom: 
     top
     bottom,
-  left:
+  left: 
     right
     left,
-  right:
+  right: 
     right
     left
 }
@@ -8779,7 +8645,7 @@ Background color when drop is active
 string
 {
   color: string,
-  opacity:
+  opacity: 
     boolean
     number
     weak
@@ -8800,7 +8666,7 @@ object
 
 **dropProps**
 
-Any valid Drop prop.
+Any valid Drop prop. Defaults to \`{}\`.
 
 \`\`\`
 object
@@ -8831,7 +8697,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -8848,7 +8714,7 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. 
       These values will be overridden if an a11yTitle is provided. Defaults to \`{
   \\"openMenu\\": \\"Open Menu\\",
   \\"closeMenu\\": \\"Close Menu\\"
@@ -8880,14 +8746,14 @@ large
 xlarge
 string
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 button
 \`\`\`
 ## Theme
-
+  
 **global.colors.control**
 
 The color to use for the icon. Expects \`string | { dark: string, light: string }\`.
@@ -8986,7 +8852,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -8994,7 +8860,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -9002,7 +8868,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -9010,7 +8876,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -9018,7 +8884,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -9026,7 +8892,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -9034,7 +8900,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -9042,7 +8908,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -9065,7 +8931,7 @@ Background color Defaults to \`{
 string
 {
   color: string,
-  opacity:
+  opacity: 
     weak
     medium
     strong
@@ -9149,9 +9015,9 @@ Array of value objects describing the data.
   value: number
 }]
 \`\`\`
-
+  
 ## Theme
-
+  
 **global.colors**
 
 Color options. Expects \`object\`.
@@ -9168,7 +9034,7 @@ Defaults to
 
 **global.edgeSize**
 
-The border-radius of the styled Meter. thickness, height and
+The border-radius of the styled Meter. thickness, height and 
     width of the Bar Meter, height of the Circle Meter. Expects \`object\`.
 
 Defaults to
@@ -9249,6 +9115,48 @@ import { MnetUIBase } from 'mnet-ui-base';
 
 ## Properties
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
+**dir**
+
+Layout direction for right to left contexts
+
+\`\`\`
+rtl
+\`\`\`
+
 **full**
 
 Whether to take the whole viewport.
@@ -9300,14 +9208,14 @@ User agent used to detect the device width for setting the initial
 \`\`\`
 string
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **grommet.extend**
 
 Any additional style for MnetUIBase. Expects \`string | (props) => {}\`.
@@ -9335,7 +9243,7 @@ Is a Box container for navigation links
 ## Usage
 
 \`\`\`javascript
-import { Nav } from 'grommet';
+import { Nav } from 'mnet-ui-base';
 <Nav />
 \`\`\`
 
@@ -9400,7 +9308,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -9408,7 +9316,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -9416,7 +9324,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -9424,7 +9332,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -9432,7 +9340,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -9440,7 +9348,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -9448,7 +9356,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -9456,7 +9364,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -9518,14 +9426,14 @@ start
 center
 end
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 p
 \`\`\`
 ## Theme
-
+  
 **paragraph**
 
 The possible sizes of the paragraph in terms of its max-width,
@@ -9636,7 +9544,7 @@ Function that will be called to render the visual representation.
       should return a react element.
       For example:
       \`children={({ checked }) => <Box ...>{...}</Box>}\`
-
+      
 
 \`\`\`
 function
@@ -9685,14 +9593,14 @@ Function that will be called when the user clicks the radio button. It
 \`\`\`
 function
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 input
 \`\`\`
 ## Theme
-
+  
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
@@ -9823,7 +9731,7 @@ Function that will be called to render the visual representation.
       should return a react element.
       For example:
       \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
-
+      
 
 \`\`\`
 function
@@ -9839,7 +9747,7 @@ boolean
 
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/>
+Required. The DOM name attribute value to use for the underlying <input/> 
       elements.
 
 \`\`\`
@@ -9864,7 +9772,7 @@ Required. Options can be either a string or an object.
 [{
   disabled: boolean,
   id: string,
-  label:
+  label: 
     string
     element,
   value: string
@@ -9879,7 +9787,7 @@ Currently selected option value.
 string
 object
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -9958,14 +9866,14 @@ The current value.
 number
 string
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 input
 \`\`\`
 ## Theme
-
+  
 **global.focus.border.color**
 
 The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
@@ -10184,14 +10092,14 @@ Required. The current values.
 \`\`\`
 [number]
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **global.borderSize**
 
 The size of the border. Expects \`string\`.
@@ -10301,14 +10209,14 @@ string
 
 **method**
 
-Indicates whether the browser history should be appended to or
+Indicates whether the browser history should be appended to or 
       replaced. Defaults to \`push\`.
 
 \`\`\`
 push
 replace
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -10337,14 +10245,14 @@ string
 
 **method**
 
-Indicates whether the browser history should be appended to or
+Indicates whether the browser history should be appended to or 
       replaced. Defaults to \`push\`.
 
 \`\`\`
 push
 replace
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -10408,7 +10316,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -10416,7 +10324,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -10424,7 +10332,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -10432,7 +10340,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -10440,7 +10348,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -10448,7 +10356,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -10456,7 +10364,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -10464,7 +10372,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -10536,16 +10444,16 @@ How to align the drop. Defaults to \`{
 
 \`\`\`
 {
-  top:
+  top: 
     top
     bottom,
-  bottom:
+  bottom: 
     top
     bottom,
-  right:
+  right: 
     left
     right,
-  left:
+  left: 
     left
     right
 }
@@ -10731,7 +10639,7 @@ boolean
 
 **searchPlaceholder**
 
-Placeholder text to use in the search box when the search input is
+Placeholder text to use in the search box when the search input is 
       empty.
 
 \`\`\`
@@ -10807,9 +10715,9 @@ Empty option message to display when no matching results were found Defaults to 
 \`\`\`
 string
 \`\`\`
-
+  
 ## Theme
-
+  
 **global.hover.background**
 
 The background style when hovering. Expects \`string | { color: string, opacity: string }\`.
@@ -10872,7 +10780,7 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control open state of the Select
+Any additional style for the control open state of the Select 
 component. Expects \`object\`.
 
 Defaults to
@@ -10964,7 +10872,7 @@ node
 
 **messages**
 
-Custom messages for SkipLinks. Used for accessibility by screen
+Custom messages for SkipLinks. Used for accessibility by screen 
 readers. Defaults to \`{
   \\"skipTo\\": \\"Skip To\\"
 }\`.
@@ -11037,7 +10945,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -11045,7 +10953,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -11053,7 +10961,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -11061,7 +10969,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -11069,7 +10977,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -11077,7 +10985,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -11085,7 +10993,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -11093,7 +11001,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -11152,14 +11060,14 @@ number
 first
 last
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **stack.extend**
 
 Any additional style for the control of the Stack component. Expects \`string | (props) => {}\`.
@@ -11197,14 +11105,14 @@ The title of the tab.
 \`\`\`
 node
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 button
 \`\`\`
 ## Theme
-
+  
 **tab.active**
 
 styles for the active tab. Expects \`object\`.
@@ -11373,7 +11281,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -11381,7 +11289,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -11389,7 +11297,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -11397,7 +11305,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -11405,7 +11313,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -11413,7 +11321,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -11421,7 +11329,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -11429,7 +11337,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -11448,14 +11356,14 @@ One line description.
 \`\`\`
 string
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 table
 \`\`\`
 ## Theme
-
+  
 **global.edgeSize.responsiveBreakpoint**
 
 The actual breakpoint to trigger changes in Table. Expects \`string\`.
@@ -11507,7 +11415,7 @@ import { TableBody } from 'mnet-ui-base';
 
 ## Properties
 
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -11574,14 +11482,14 @@ top
 middle
 bottom
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 td
 \`\`\`
 ## Theme
-
+  
 **table.body.align**
 
 How to align the body inside the Table. Expects \`string\`.
@@ -11764,7 +11672,7 @@ import { TableFooter } from 'mnet-ui-base';
 
 ## Properties
 
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -11782,7 +11690,7 @@ import { TableHeader } from 'mnet-ui-base';
 
 ## Properties
 
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -11800,7 +11708,7 @@ import { TableRow } from 'mnet-ui-base';
 
 ## Properties
 
-
+  
 ## Intrinsic element
 
 \`\`\`
@@ -11867,7 +11775,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -11875,7 +11783,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -11883,7 +11791,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -11891,7 +11799,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -11899,7 +11807,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -11907,7 +11815,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -11915,7 +11823,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -11923,7 +11831,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -11993,14 +11901,14 @@ currently active tab changes.
 \`\`\`
 function
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 div
 \`\`\`
 ## Theme
-
+  
 **global.borderSize**
 
 The size of the border. Expects \`string\`.
@@ -12155,7 +12063,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -12163,7 +12071,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -12171,7 +12079,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -12179,7 +12087,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -12187,7 +12095,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -12195,7 +12103,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -12203,7 +12111,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -12211,7 +12119,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -12237,8 +12145,8 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag.
-But, it can be adjusted via this size property. The tag should be set for
+The font size and line height are primarily driven by the chosen tag. 
+But, it can be adjusted via this size property. The tag should be set for 
 semantic correctness and accessibility. This size property allows for stylistic
 adjustments. Defaults to \`medium\`.
 
@@ -12311,14 +12219,14 @@ break-all
 keep-all
 break-word
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 span
 \`\`\`
 ## Theme
-
+  
 **global.colors.text**
 
 The text color used for Text. Expects \`object | { dark: string, light: string }\`.
@@ -12331,7 +12239,7 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and
+The possible sizes of the text in terms of its font-size and 
 line-height. Expects \`object\`.
 
 Defaults to
@@ -12496,14 +12404,14 @@ large
 xlarge
 string
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 textarea
 \`\`\`
 ## Theme
-
+  
 **global.colors.border**
 
 The color of the border. Expects \`string | { dark: string, light: string }\`.
@@ -12636,16 +12544,16 @@ How to align the drop. Defaults to \`{
 
 \`\`\`
 {
-  top:
+  top: 
     top
     bottom,
-  bottom:
+  bottom: 
     top
     bottom,
-  right:
+  right: 
     left
     right,
-  left:
+  left: 
     left
     right
 }
@@ -12700,7 +12608,7 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen
+Custom messages for TextInput. Used for accessibility by screen 
         readers. Defaults to \`{
   \\"enterSelect\\": \\"(Press Enter to Select)\\",
   \\"suggestionsCount\\": \\"suggestions available\\",
@@ -12810,14 +12718,14 @@ What text to put in the input.
 string
 number
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 input
 \`\`\`
 ## Theme
-
+  
 **global.colors.border**
 
 The color of the border. Expects \`object\`.
@@ -12870,7 +12778,7 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and
+The possible sizes of the text in terms of its font-size and 
     line-height. Expects \`object\`.
 
 Defaults to
@@ -13062,7 +12970,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -13070,7 +12978,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -13078,7 +12986,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -13086,7 +12994,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -13094,7 +13002,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -13102,7 +13010,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -13110,7 +13018,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -13118,7 +13026,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -13172,14 +13080,14 @@ Enables video muting. This option is best used with the autoPlay flag.
 \`\`\`
 boolean
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 video
 \`\`\`
 ## Theme
-
+  
 **global.edgeSize.responsiveBreakpoint**
 
 The actual breakpoint to trigger changes in the video component layout. Expects \`string\`.
@@ -13288,7 +13196,7 @@ medium
 large
 xlarge
 {
-  bottom:
+  bottom: 
     xxsmall
     xsmall
     small
@@ -13296,7 +13204,7 @@ xlarge
     large
     xlarge
     string,
-  end:
+  end: 
     xxsmall
     xsmall
     small
@@ -13304,7 +13212,7 @@ xlarge
     large
     xlarge
     string,
-  horizontal:
+  horizontal: 
     xxsmall
     xsmall
     small
@@ -13312,7 +13220,7 @@ xlarge
     large
     xlarge
     string,
-  left:
+  left: 
     xxsmall
     xsmall
     small
@@ -13320,7 +13228,7 @@ xlarge
     large
     xlarge
     string,
-  right:
+  right: 
     xxsmall
     xsmall
     small
@@ -13328,7 +13236,7 @@ xlarge
     large
     xlarge
     string,
-  start:
+  start: 
     xxsmall
     xsmall
     small
@@ -13336,7 +13244,7 @@ xlarge
     large
     xlarge
     string,
-  top:
+  top: 
     xxsmall
     xsmall
     small
@@ -13344,7 +13252,7 @@ xlarge
     large
     xlarge
     string,
-  vertical:
+  vertical: 
     xxsmall
     xsmall
     small
@@ -13374,13 +13282,13 @@ Continent details.
 
 \`\`\`
 [{
-  color:
+  color: 
     string
     {
       dark: string,
       light: string
     },
-  name:
+  name: 
     Africa
     Asia
     Australia
@@ -13417,7 +13325,7 @@ Place details.
 
 \`\`\`
 [{
-  color:
+  color: 
     string
     {
       dark: string,
@@ -13441,14 +13349,14 @@ string
   light: string
 }
 \`\`\`
-
+  
 ## Intrinsic element
 
 \`\`\`
 svg
 \`\`\`
 ## Theme
-
+  
 **worldMap.color**
 
 The color for each individual dot when a color is not passed as a prop Expects \`string\`.
@@ -13493,7 +13401,7 @@ light-4
 
 **worldMap.place.active**
 
-The size of a visual dot for an individual place in the map
+The size of a visual dot for an individual place in the map 
 when it is being hovered. Expects \`string\`.
 
 Defaults to
@@ -13504,7 +13412,7 @@ Defaults to
 
 **worldMap.place.base**
 
-The size of the visual dot representing an individual place
+The size of the visual dot representing an individual place 
 in the map when it is not being hovered. Expects \`string\`.
 
 Defaults to

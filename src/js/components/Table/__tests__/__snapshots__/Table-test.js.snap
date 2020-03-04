@@ -2,7 +2,7 @@
 
 exports[`Table caption renders 1`] = `
 .c2 {
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .c1 {
@@ -118,11 +118,11 @@ exports[`TableCell plain renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c2 {
@@ -180,11 +180,11 @@ exports[`TableCell renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c4 {
@@ -194,10 +194,10 @@ exports[`TableCell renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c5 {
@@ -207,11 +207,11 @@ exports[`TableCell renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-top: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c2 {
@@ -291,11 +291,11 @@ exports[`TableCell scope renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c4 {
@@ -305,10 +305,10 @@ exports[`TableCell scope renders 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c2 {
@@ -382,10 +382,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 64px;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c4 {
@@ -398,10 +398,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 128px;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c5 {
@@ -414,10 +414,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 256px;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c6 {
@@ -430,10 +430,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 512px;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c7 {
@@ -446,10 +446,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 50%;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c8 {
@@ -462,10 +462,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 33.33%;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c9 {
@@ -478,10 +478,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 66.66%;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c10 {
@@ -494,10 +494,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 25%;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c11 {
@@ -510,10 +510,10 @@ exports[`TableCell size renders 1`] = `
   max-width: 75%;
   overflow: hidden;
   text-align: start;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c2 {
@@ -645,11 +645,11 @@ exports[`TableCell verticalAlign renders 1`] = `
   height: 100%;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c4 {
@@ -660,11 +660,11 @@ exports[`TableCell verticalAlign renders 1`] = `
   height: 100%;
   vertical-align: middle;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c5 {
@@ -675,11 +675,11 @@ exports[`TableCell verticalAlign renders 1`] = `
   height: 100%;
   vertical-align: bottom;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c2 {

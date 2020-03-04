@@ -7,7 +7,7 @@ export const doc = Nav => {
     .availableAt(getAvailableAtBadge('Nav'))
     .description('Is a Box container for navigation links')
     .usage(
-      `import { Nav } from 'grommet';
+      `import { Nav } from 'mnet-ui-base';
 <Nav />`,
     );
 

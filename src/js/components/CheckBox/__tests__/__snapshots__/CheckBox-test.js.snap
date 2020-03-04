@@ -138,6 +138,7 @@ exports[`CheckBox checked renders 1`] = `
         checked={true}
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -333,6 +334,7 @@ exports[`CheckBox disabled renders 1`] = `
         className="c4"
         disabled={true}
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -358,6 +360,7 @@ exports[`CheckBox disabled renders 1`] = `
         className="c4"
         disabled={true}
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -457,7 +460,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-right: 8px;
+  margin-right: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -553,6 +556,7 @@ exports[`CheckBox indeterminate renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -582,6 +586,7 @@ exports[`CheckBox indeterminate renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -653,7 +658,7 @@ exports[`CheckBox label renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-right: 8px;
+  margin-right: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -741,6 +746,7 @@ exports[`CheckBox label renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -762,6 +768,7 @@ exports[`CheckBox label renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -903,6 +910,7 @@ exports[`CheckBox renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -924,6 +932,7 @@ exports[`CheckBox renders 1`] = `
         id="test id"
         name="test name"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -981,7 +990,7 @@ exports[`CheckBox reverse renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-left: 8px;
+  margin-left: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1072,6 +1081,7 @@ exports[`CheckBox reverse renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -1125,7 +1135,7 @@ exports[`CheckBox toggle renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-right: 8px;
+  margin-right: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1233,6 +1243,7 @@ exports[`CheckBox toggle renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -1258,6 +1269,7 @@ exports[`CheckBox toggle renders 1`] = `
         checked={true}
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
@@ -1282,6 +1294,7 @@ exports[`CheckBox toggle renders 1`] = `
       <input
         className="c4"
         onBlur={[Function]}
+        onChange={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />

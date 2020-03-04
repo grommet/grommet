@@ -13,10 +13,10 @@ exports[`RoutedButton renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #E15151;
-  border-radius: 4px;
+  border: 1px solid #E15151;
+  border-radius: 3.2px;
   color: #444444;
-  padding: 2px 14px;
+  padding: 3px 15px;
   font-size: 12px;
   line-height: 16px;
   -webkit-transition-property: color, background-color, border-color, box-shadow;

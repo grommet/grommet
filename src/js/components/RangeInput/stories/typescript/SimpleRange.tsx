@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Box, Grommet, RangeInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, RangeInput } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleRangeInput = () => {
   const [value, setValue] = React.useState(5);
@@ -11,11 +11,11 @@ const SimpleRangeInput = () => {
   const onChange = event => setValue(event.target.value);
 
   return (
-    <Grommet theme={grommet}>
+    <MnetUIBase theme={mnet}>
       <Box align="center" pad="large">
         <RangeInput value={value} onChange={onChange} />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

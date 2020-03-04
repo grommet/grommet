@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, MaskedInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, MnetUIBase, MaskedInput } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 
 const daysInMonth = month => new Date(2019, month, 0).getDate();
 
@@ -9,7 +9,7 @@ const DateRangeMaskedInput = () => {
   const [value, setValue] = React.useState('');
 
   return (
-    <Grommet full theme={grommet}>
+    <MnetUIBase full theme={mnet}>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <MaskedInput
@@ -71,7 +71,7 @@ const DateRangeMaskedInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

@@ -11,10 +11,11 @@ exports[`TextInput basic 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -77,10 +78,11 @@ exports[`TextInput close suggestion drop 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -179,7 +181,7 @@ exports[`TextInput close suggestion drop 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c7 {
@@ -293,6 +295,7 @@ exports[`TextInput close suggestion drop 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -354,7 +357,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -412,11 +415,11 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 hvDRKc"
+      class="StyledTextInput-ilbntv-0 ejGDFh"
       data-testid="test-input"
       id="item"
       name="item"
-      value=""
+      value=" "
     />
   </div>
 </div>
@@ -443,10 +446,11 @@ exports[`TextInput complex suggestions 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -633,6 +637,7 @@ exports[`TextInput complex suggestions 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -686,7 +691,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -746,10 +751,11 @@ exports[`TextInput disabled 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   opacity: 0.3;
   cursor: default;
@@ -815,10 +821,11 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -875,7 +882,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 hvDRKc"
+      class="StyledTextInput-ilbntv-0 bOJdpn"
       data-testid="test-input"
       id="item"
       name="item"
@@ -936,7 +943,7 @@ exports[`TextInput large drop height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c7 {
@@ -1050,6 +1057,7 @@ exports[`TextInput large drop height 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1111,7 +1119,7 @@ exports[`TextInput large drop height 2`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -1229,7 +1237,7 @@ exports[`TextInput medium drop height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c7 {
@@ -1343,6 +1351,7 @@ exports[`TextInput medium drop height 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1404,7 +1413,7 @@ exports[`TextInput medium drop height 2`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -1486,10 +1495,11 @@ exports[`TextInput select a suggestion 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -1558,13 +1568,16 @@ exports[`TextInput select suggestion 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
+  border: none;
+  box-shadow: none;
 }
 
 .c2::-webkit-search-decoration {
@@ -1662,7 +1675,7 @@ exports[`TextInput select suggestion 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c7 {
@@ -1776,6 +1789,7 @@ exports[`TextInput select suggestion 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1837,7 +1851,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -1895,11 +1909,11 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 jQKLoo"
+      class="StyledTextInput-ilbntv-0 gpypmo"
       data-testid="test-input"
       id="item"
       name="item"
-      value=""
+      value="test1"
     />
   </div>
 </div>
@@ -1956,7 +1970,7 @@ exports[`TextInput small drop height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c7 {
@@ -2070,6 +2084,7 @@ exports[`TextInput small drop height 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2131,7 +2146,7 @@ exports[`TextInput small drop height 2`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }
@@ -2197,10 +2212,11 @@ exports[`TextInput suggestions 1`] = `
   outline: none;
   background: transparent;
   color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
   font-weight: 400;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 0px;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -2295,7 +2311,7 @@ exports[`TextInput suggestions 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 8px;
+  padding: 4px;
 }
 
 .c7 {
@@ -2409,6 +2425,7 @@ exports[`TextInput suggestions 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2470,7 +2487,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .fRLWfo {
+  .idoCJE {
     padding: 4px;
   }
 }

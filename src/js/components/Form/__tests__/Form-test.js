@@ -36,11 +36,11 @@ describe('Form', () => {
 
   test('errors', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Form errors={{ test: 'missing' }}>
           <FormField name="test" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -48,11 +48,11 @@ describe('Form', () => {
 
   test('infos', () => {
     const component = renderer.create(
-      <Grommet>
+      <MnetUIBase>
         <Form infos={{ test: 'missing' }}>
           <FormField name="test" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -150,7 +150,7 @@ describe('Form', () => {
   test('validate', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText } = render(
-      <Grommet>
+      <MnetUIBase>
         <Form onSubmit={onSubmit}>
           <FormField
             name="test"
@@ -177,7 +177,7 @@ describe('Form', () => {
           />
           <Button type="submit" primary label="Submit" />
         </Form>
-      </Grommet>,
+      </MnetUIBase>,
     );
 
     fireEvent.change(getByPlaceholderText('test input'), {
