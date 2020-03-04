@@ -128,7 +128,7 @@ describe('Meter', () => {
           values={VALUES}
         />
         <Meter
-          background={{ color: 'light-3', opacity: '0.2' }}
+          background={{ color: 'light-3', opacity: 0.2 }}
           values={VALUES}
         />
       </Grommet>,
