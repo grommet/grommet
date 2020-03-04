@@ -71,6 +71,11 @@ const Example = () => (
             min={15}
             max={75}
           />
+          <FormField
+            label="Custom"
+            name="custom"
+            component={props => <input {...props} />}
+          />
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />
