@@ -78,6 +78,12 @@ var Example = function Example() {
     pad: true,
     min: 15,
     max: 75
+  }), React.createElement(FormField, {
+    label: "Custom",
+    name: "custom",
+    component: function component(props) {
+      return React.createElement("input", props);
+    }
   }), React.createElement(Box, {
     direction: "row",
     justify: "between",

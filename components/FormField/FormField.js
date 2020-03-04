@@ -32,6 +32,10 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 var grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
 
+var isGrommetInput = function isGrommetInput(comp) {
+  return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
+};
+
 var validateField = function validateField(required, validate, messages) {
   return function (value, data) {
     var error;
@@ -121,7 +125,6 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
         label: label,
         checked: formValue[name] !== undefined ? formValue[name] : checked || false,
         disabled: disabled,
-        required: required,
         "aria-invalid": invalid || undefined
       }, rest));
     }
@@ -130,11 +133,20 @@ var FormField = (0, _react.forwardRef)(function (_ref, ref) {
       name: name,
       value: formValue[name] !== undefined ? formValue[name] : valueProp || '',
       disabled: disabled,
-      required: required,
       plain: true,
       focusIndicator: false,
       "aria-invalid": invalid || undefined
-    }, rest));
+    }, rest, {
+      onChange: // Grommet input components already check for FormContext
+      // and, using their `name`, end up calling the context.update()
+      // already. For custom components, we expect they will call
+      // this onChange() and we'll call context.update() here, primarily
+      // for backwards compatibility.
+      isGrommetInput(component) ? rest.onChange : function (event) {
+        context.update(name, event.target.value);
+        if (rest.onChange) rest.onChange(event);
+      }
+    }));
   };
 
   var formField = theme.formField;

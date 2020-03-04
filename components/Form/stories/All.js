@@ -85,6 +85,12 @@ var Example = function Example() {
     pad: true,
     min: 15,
     max: 75
+  }), _react["default"].createElement(_grommet.FormField, {
+    label: "Custom",
+    name: "custom",
+    component: function component(props) {
+      return _react["default"].createElement("input", props);
+    }
   }), _react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
