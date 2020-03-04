@@ -22,12 +22,12 @@ const StyledDataTable = () => (
         border={{ body: 'bottom' }}
         rowProps={{ Eric: { background: 'accent-2', pad: 'large' } }}
       />
-      <Box margin={{ top: 'medium' }} align="center">
-        <Anchor
-          href="https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js"
-          label="Data used for storybook example"
-        />
-      </Box>
+      <Anchor
+        margin={{ top: 'medium' }}
+        alignSelf="center"
+        href="https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js"
+        label="Data used for storybook example"
+      />
     </Box>
   </Grommet>
 );

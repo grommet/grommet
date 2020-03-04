@@ -57,12 +57,12 @@ const ControlledDataTable = () => {
           sortable
           size="medium"
         />
-        <Box margin={{ top: 'medium' }} align="center">
-          <Anchor
-            href="https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js"
-            label="Data used for storybook example"
-          />
-        </Box>
+        <Anchor
+          margin={{ top: 'medium' }}
+          alignSelf="center"
+          href="https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js"
+          label="Data used for storybook example"
+        />
       </Box>
     </Grommet>
   );
