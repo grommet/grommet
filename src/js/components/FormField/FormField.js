@@ -54,18 +54,18 @@ const FormField = forwardRef(
       children,
       className,
       component,
-      disabled,
+      disabled, // pass through in renderInput()
       error,
       help,
       htmlFor,
       info,
       label,
       margin,
-      name,
+      name, // pass through in renderInput()
       onBlur,
       onFocus,
       pad,
-      required,
+      required, // pass through in renderInput()
       style,
       validate,
       value: valueProp,
@@ -101,6 +101,8 @@ const FormField = forwardRef(
             checked={
               formValue[name] !== undefined ? formValue[name] : checked || false
             }
+            disabled={disabled}
+            required={required}
             aria-invalid={invalid || undefined}
             {...rest}
           />
@@ -112,6 +114,8 @@ const FormField = forwardRef(
           value={
             formValue[name] !== undefined ? formValue[name] : valueProp || ''
           }
+          disabled={disabled}
+          required={required}
           plain
           focusIndicator={false}
           aria-invalid={invalid || undefined}
