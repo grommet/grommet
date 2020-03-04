@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable, CheckBox } from 'grommet';
+import { Grommet, Box, DataTable, CheckBox, Anchor } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { columns, DATA } from './data';
@@ -57,6 +57,12 @@ const ControlledDataTable = () => {
           sortable
           size="medium"
         />
+        <Box margin={{ top: 'medium' }} align="center">
+          <Anchor
+            href="https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js"
+            label="Data used for storybook example"
+          />
+        </Box>
       </Box>
     </Grommet>
   );
