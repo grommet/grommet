@@ -201,7 +201,7 @@ describe('Meter', function () {
     }), _react["default"].createElement(_.Meter, {
       background: {
         color: 'light-3',
-        opacity: '0.2'
+        opacity: 0.2
       },
       values: VALUES
     })));
