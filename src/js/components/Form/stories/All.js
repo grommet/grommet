@@ -21,6 +21,7 @@ const Example = () => (
       <Box width="medium">
         <Form
           onReset={event => console.log(event)}
+          onChange={value => console.log('!!! Change', value)}
           onSubmit={({ value, touched }) =>
             console.log('Submit', value, touched)
           }
@@ -70,6 +71,11 @@ const Example = () => (
             pad
             min={15}
             max={75}
+          />
+          <FormField
+            label="Custom"
+            name="custom"
+            component={props => <input {...props} />}
           />
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />

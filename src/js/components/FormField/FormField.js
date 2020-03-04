@@ -19,6 +19,11 @@ import { FormContext } from '../Form/FormContext';
 const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
 
+const isGrommetInput = comp =>
+  comp &&
+  (grommetInputNames.indexOf(comp.displayName) !== -1 ||
+    grommetInputPadNames.indexOf(comp.displayName) !== -1);
+
 const validateField = (required, validate, messages) => (value, data) => {
   let error;
   if (required && (value === undefined || value === '')) {
@@ -65,7 +70,7 @@ const FormField = forwardRef(
       onBlur,
       onFocus,
       pad,
-      required, // pass through in renderInput()
+      required,
       style,
       validate,
       value: valueProp,
@@ -102,7 +107,6 @@ const FormField = forwardRef(
               formValue[name] !== undefined ? formValue[name] : checked || false
             }
             disabled={disabled}
-            required={required}
             aria-invalid={invalid || undefined}
             {...rest}
           />
@@ -115,11 +119,23 @@ const FormField = forwardRef(
             formValue[name] !== undefined ? formValue[name] : valueProp || ''
           }
           disabled={disabled}
-          required={required}
           plain
           focusIndicator={false}
           aria-invalid={invalid || undefined}
           {...rest}
+          onChange={
+            // Grommet input components already check for FormContext
+            // and, using their `name`, end up calling the context.update()
+            // already. For custom components, we expect they will call
+            // this onChange() and we'll call context.update() here, primarily
+            // for backwards compatibility.
+            isGrommetInput(component)
+              ? rest.onChange
+              : event => {
+                  context.update(name, event.target.value);
+                  if (rest.onChange) rest.onChange(event);
+                }
+          }
         />
       );
     };
