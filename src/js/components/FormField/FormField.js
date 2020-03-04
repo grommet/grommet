@@ -70,7 +70,7 @@ const FormField = forwardRef(
       onBlur,
       onFocus,
       pad,
-      required,
+      required, // pass through in renderInput()
       style,
       validate,
       value: valueProp,
