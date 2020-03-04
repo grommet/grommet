@@ -1,6 +1,9 @@
 import { 
   BackgroundType, 
   BorderType,
+  BreakpointBorderSize,
+  BreakpointEdgeSize,
+  BreakpointSize,
   ColorType,  
   DeepReadonly, 
   GapType,
@@ -96,38 +99,27 @@ export interface ThemeType {
     breakpoints?: {
       small?: {
         value?: number;
-        borderSize?: {
-          xsmall?: string;
-          small?: string;
-          medium?: string;
-          large?: string;
-          xlarge?: string;
-        };
-        edgeSize?: {
-          none?: string;
-          hair?: string;
-          xxsmall?: string;
-          xsmall?: string;
-          small?: string;
-          medium?: string;
-          large?: string;
-          xlarge?: string;
-        };
-        size?: {
-          xxsmall?: string;
-          xsmall?: string;
-          small?: string;
-          medium?: string;
-          large?: string;
-          xlarge?: string;
-          full?: string;
-        };
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
       };
       medium?: {
         value?: number;
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
       };
       large?: {
         value?: number;
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
+      };
+      [x: string]: {    
+        value?: number;
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
       };
     };
     deviceBreakpoints?: {

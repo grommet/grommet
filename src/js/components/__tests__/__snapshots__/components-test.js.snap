@@ -1432,157 +1432,7 @@ string",
     "usage": "import { Calendar } from 'grommet';
 <Calendar />",
   },
-  "Carousel": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Carousel&full=0&addons=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=carousel&module=%2Fsrc%2FCarousel.js",
-      },
-    ],
-    "description": "A carousel that cycles through children. Child components
-      would typically be Images. It is the caller's responsibility to ensure
-      that all children are the same size.",
-    "intrinsicElement": "div",
-    "name": "Carousel",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Whether to expand to fill
-      all of the available width and height in the parent container.",
-        "format": "boolean",
-        "name": "fill",
-      },
-      Object {
-        "description": "If specified, the number of
-      milliseconds between automatically transitioning to the next child. It
-      will loop through all children indefinitely.",
-        "format": "number",
-        "name": "play",
-      },
-      Object {
-        "description": "If specified, the index of
-      the first element to be shown. Defaults to 0.",
-        "format": "number",
-        "name": "initialChild",
-      },
-      Object {
-        "defaultValue": true,
-        "description": "Whether to show carousel controls and which type of controls.",
-        "format": "boolean
-arrows
-selectors",
-        "name": "controls",
-      },
-    ],
-    "usage": "import { Carousel } from 'grommet';
-<Carousel />",
-  },
+  "Carousel": [Function],
   "Chart": Object {
     "availableAt": Array [
       Object {
@@ -2798,7 +2648,180 @@ boolean",
   },
   "InfiniteScroll": [Function],
   "Keyboard": [Function],
-  "Layer": [Function],
+  "Layer": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js",
+      },
+    ],
+    "description": "An overlay. Layer is typically modal and anchored to an edge, corner, or
+      center of the window. It is the caller's responsibility to provide a
+      control for the user to close the layer.",
+    "intrinsicElement": "div",
+    "name": "Layer",
+    "properties": Array [
+      Object {
+        "defaultValue": true,
+        "description": "Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'.",
+        "format": "boolean",
+        "name": "animate",
+      },
+      Object {
+        "defaultValue": "slide",
+        "description": "Animation transition of the Layer content when it opens and closes.",
+        "format": "slide
+fadeIn
+none
+boolean",
+        "name": "animation",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the width and/or height should fill the current viewport 
+        size.",
+        "format": "boolean
+vertical
+horizontal",
+        "name": "full",
+      },
+      Object {
+        "description": "The amount of margin around the Layer. An object can be specified to
+distinguish horizontal margin, vertical margin, and margin on a
+particular side of the layer",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether there should be an overlay preventing interaction underneath 
+        the layer.",
+        "format": "boolean",
+        "name": "modal",
+      },
+      Object {
+        "description": "Function that will be invoked on modal layers when the user clicks 
+      outside the layer.",
+        "format": "function",
+        "name": "onClickOutside",
+      },
+      Object {
+        "description": "Function that will be called when the user presses the escape key inside
+       the layer.",
+        "format": "function",
+        "name": "onEsc",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether this is a plain Layer with no background color or border.",
+        "format": "boolean",
+        "name": "plain",
+      },
+      Object {
+        "defaultValue": "center",
+        "description": "Position of the layer content.",
+        "format": "bottom
+bottom-left
+bottom-right
+center
+end
+hidden
+left
+right
+start
+top
+top-left
+top-right",
+        "name": "position",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether the layer should take full width and height on mobile",
+        "format": "boolean",
+        "name": "responsive",
+      },
+      Object {
+        "description": "Target where the layer will be aligned to. This should be a React 
+      reference.",
+        "format": "object",
+        "name": "target",
+      },
+    ],
+    "usage": "import { Layer } from 'grommet';
+<Layer />",
+  },
   "List": Object {
     "availableAt": Array [
       Object {

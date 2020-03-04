@@ -20,7 +20,9 @@ const customBreakpoints = deepMerge(grommet, {
       medium: {
         value: 900,
       },
-      large: 3000,
+      large: {
+        value: 3000,
+      },
     },
   },
 });

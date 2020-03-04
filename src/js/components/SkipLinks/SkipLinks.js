@@ -23,6 +23,7 @@ const SkipLinks = ({ children, id, messages }) => {
       const layerNode = layerRef.current;
       if (
         layerNode &&
+        layerNode.layerContainer &&
         layerNode.layerContainer.contains &&
         !layerNode.layerContainer.contains(document.activeElement)
       ) {

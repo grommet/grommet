@@ -125,6 +125,10 @@ particular side of the layer`,
         'Whether the layer should take full width and height on mobile',
       )
       .defaultValue(true),
+    target: PropTypes.object.description(
+      `Target where the layer will be aligned to. This should be a React 
+      reference.`,
+    ),
   };
 
   return DocumentedLayer;
