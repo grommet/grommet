@@ -37,7 +37,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
       step = _ref$step === void 0 ? 50 : _ref$step;
   // the last page we have items for
   var lastPage = useMemo(function () {
-    return Math.ceil(items.length / step);
+    return Math.floor(items.length / step);
   }, [items.length, step]); // the first page we are displaying
 
   var _useState = useState(0),
