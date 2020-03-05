@@ -703,6 +703,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     maskedInput: {
       // extend: undefined,
+      // decorator: { extend: undefined, },
     },
     menu: {
       // background: undefined,
@@ -904,6 +905,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
+      // decorator: { extend: undefined, },
     },
     video: {
       captions: {

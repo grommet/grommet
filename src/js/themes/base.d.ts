@@ -703,6 +703,9 @@ export interface ThemeType {
   };
   maskedInput?: {
     extend?: ExtendType;
+    decorator?: {
+      extend?: ExtendType;
+    };
   };
   menu?: {
     background?: BackgroundType;
@@ -925,6 +928,9 @@ export interface ThemeType {
   textInput?: {
     extend?: ExtendType;
     disabled?: OpacityType;
+    decorator?: {
+      extend?: ExtendType;
+    };
   };
   video?: {
     captions?: {
