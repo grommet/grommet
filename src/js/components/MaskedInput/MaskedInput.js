@@ -203,9 +203,12 @@ const MaskedInput = forwardRef(
         // Align with the mask.
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
-        if (value !== nextValue) setInputValue(nextValue);
-        if (onChange) onChange(event);
-        setValue(nextValue);
+
+        if (value !== nextValue) {
+          setInputValue(nextValue);
+          if (onChange) onChange(event);
+          setValue(nextValue);
+        }
       },
       [mask, onChange, setInputValue, setValue, value],
     );
