@@ -203,8 +203,6 @@ const MaskedInput = forwardRef(
         // Align with the mask.
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
-        // eslint-disable-next-line no-param-reassign
-        event.target.value = nextValue;
 
         if (value !== nextValue) {
           setInputValue(nextValue);
