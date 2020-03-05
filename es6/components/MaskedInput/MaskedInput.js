@@ -211,9 +211,12 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     var nextValue = nextValueParts.map(function (part) {
       return part.part;
     }).join('');
-    if (value !== nextValue) setInputValue(nextValue);
-    if (onChange) onChange(event);
-    setValue(nextValue);
+
+    if (value !== nextValue) {
+      setInputValue(nextValue);
+      if (onChange) onChange(event);
+      setValue(nextValue);
+    }
   }, [mask, onChange, setInputValue, setValue, value]);
   var onOption = useCallback(function (option) {
     return function () {

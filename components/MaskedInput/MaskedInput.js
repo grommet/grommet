@@ -229,9 +229,12 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
     var nextValue = nextValueParts.map(function (part) {
       return part.part;
     }).join('');
-    if (value !== nextValue) setInputValue(nextValue);
-    if (onChange) onChange(event);
-    setValue(nextValue);
+
+    if (value !== nextValue) {
+      setInputValue(nextValue);
+      if (onChange) onChange(event);
+      setValue(nextValue);
+    }
   }, [mask, onChange, setInputValue, setValue, value]);
   var onOption = (0, _react.useCallback)(function (option) {
     return function () {
