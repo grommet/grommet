@@ -182,25 +182,6 @@ exports[`TextInput close suggestion drop 2`] = `
   padding: 12px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -328,9 +309,6 @@ exports[`TextInput close suggestion drop 2`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -463,25 +441,6 @@ exports[`TextInput complex suggestions 2`] = `
   overflow: auto;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -595,9 +554,6 @@ exports[`TextInput complex suggestions 2`] = `
           test1
         </button>
       </li>
-      <div
-        class="c6"
-      />
     </ol>
   </div>
 </div>
@@ -1023,25 +979,6 @@ exports[`TextInput large drop height 1`] = `
   padding: 12px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1169,9 +1106,6 @@ exports[`TextInput large drop height 1`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -1231,25 +1165,6 @@ exports[`TextInput medium drop height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c5 {
@@ -1379,9 +1294,6 @@ exports[`TextInput medium drop height 1`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -1590,25 +1502,6 @@ exports[`TextInput select suggestion 2`] = `
   padding: 12px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1736,9 +1629,6 @@ exports[`TextInput select suggestion 2`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -1817,25 +1707,6 @@ exports[`TextInput small drop height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c5 {
@@ -1965,9 +1836,6 @@ exports[`TextInput small drop height 1`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -2085,25 +1953,6 @@ exports[`TextInput suggestions 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c5 {
@@ -2233,9 +2082,6 @@ exports[`TextInput suggestions 2`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
