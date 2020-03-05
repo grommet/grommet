@@ -1503,7 +1503,6 @@ exports[`FormField required 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              required={true}
               value=""
             />
           </div>
