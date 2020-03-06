@@ -3159,9 +3159,11 @@ function",
     "name": "MaskedInput",
     "properties": Array [
       Object {
-        "description": "Could be an icon or perhaps a Text containing units.",
+        "description": "An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.",
         "format": "element",
-        "name": "decorator",
+        "name": "icon",
       },
       Object {
         "description": "The id attribute of the input.",
@@ -3202,6 +3204,12 @@ function",
     }
 }]",
         "name": "mask",
+      },
+      Object {
+        "description": "Whether an icon should be reversed so that the icon is at the
+      end of the input.",
+        "format": "boolean",
+        "name": "reverse",
       },
       Object {
         "description": "The size of the text.",
@@ -4508,11 +4516,6 @@ string",
     "name": "TextInput",
     "properties": Array [
       Object {
-        "description": "Could be an icon or perhaps a Text containing units.",
-        "format": "element",
-        "name": "decorator",
-      },
-      Object {
         "defaultValue": Object {
           "left": "left",
           "top": "bottom",
@@ -4555,6 +4558,13 @@ string",
         "description": "Any valid Drop prop.",
         "format": "object",
         "name": "dropProps",
+      },
+      Object {
+        "description": "An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.",
+        "format": "element",
+        "name": "icon",
       },
       Object {
         "description": "The id attribute of the input.",
@@ -4619,6 +4629,12 @@ The suggestion contains the object chosen from the supplied suggestions.",
 Only use this when the containing context provides sufficient affordance",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "description": "Whether an icon should be reversed so that the icon is at the
+      end of the input.",
+        "format": "boolean",
+        "name": "reverse",
       },
       Object {
         "description": "The size of the TextInput.",

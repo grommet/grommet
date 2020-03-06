@@ -15,7 +15,6 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { Keyboard } from '../../Keyboard';
-import { Text } from '../../Text';
 import { MaskedInput } from '..';
 
 describe('MaskedInput', () => {
@@ -27,16 +26,14 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('decorator icon', () => {
-    const { container } = render(
-      <MaskedInput decorator={<Search />} name="item" />,
-    );
+  test('icon', () => {
+    const { container } = render(<MaskedInput icon={<Search />} name="item" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('decorator text', () => {
+  test('icon reverse', () => {
     const { container } = render(
-      <MaskedInput decorator={<Text>iops</Text>} name="item" />,
+      <MaskedInput icon={<Search />} reverse name="item" />,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

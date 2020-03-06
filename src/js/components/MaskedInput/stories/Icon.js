@@ -4,18 +4,17 @@ import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Search } from 'grommet-icons';
 
-const DecoratorMaskedInput = () => {
+const IconMaskedInput = () => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
-        <Box width="medium">
-          <MaskedInput decorator={<Search />} placeholder="search ..." />
+        <Box width="medium" gap="medium">
+          <MaskedInput icon={<Search />} placeholder="search ..." />
+          <MaskedInput icon={<Search />} reverse placeholder="search ..." />
         </Box>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('MaskedInput', module).add('Decorator', () => (
-  <DecoratorMaskedInput />
-));
+storiesOf('MaskedInput', module).add('Icon', () => <IconMaskedInput />);

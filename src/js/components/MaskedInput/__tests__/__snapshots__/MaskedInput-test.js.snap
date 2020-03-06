@@ -209,222 +209,6 @@ exports[`MaskedInput basic 1`] = `
 </div>
 `;
 
-exports[`MaskedInput decorator icon 1`] = `
-.c2 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c2 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c2 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c2 *[fill-rule],
-.c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
-  padding-right: 48px;
-}
-
-.c3::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c3::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c3::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c3:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c3::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c0 {
-  position: relative;
-  width: 100%;
-}
-
-.c1 {
-  position: absolute;
-  right: 11px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  pointer-events: none;
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    <svg
-      aria-label="Search"
-      class="c2"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M15,15 L22,22 L15,15 Z M9.5,17 C13.6421356,17 17,13.6421356 17,9.5 C17,5.35786438 13.6421356,2 9.5,2 C5.35786438,2 2,5.35786438 2,9.5 C2,13.6421356 5.35786438,17 9.5,17 Z"
-        fill="none"
-        stroke="#000"
-        stroke-width="2"
-      />
-    </svg>
-  </div>
-  <input
-    autocomplete="off"
-    class="c3"
-    name="item"
-    placeholder=""
-    value=""
-  />
-</div>
-`;
-
-exports[`MaskedInput decorator text 1`] = `
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c3 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
-  padding-right: 48px;
-}
-
-.c3::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c3::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c3::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c3:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c3::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c0 {
-  position: relative;
-  width: 100%;
-}
-
-.c1 {
-  position: absolute;
-  right: 11px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  pointer-events: none;
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    <span
-      class="c2"
-    >
-      iops
-    </span>
-  </div>
-  <input
-    autocomplete="off"
-    class="c3"
-    name="item"
-    placeholder=""
-    value=""
-  />
-</div>
-`;
-
 exports[`MaskedInput event target props are available option via keyboard 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -750,6 +534,258 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
     name="item"
     placeholder="!"
     value="aa!"
+  />
+</div>
+`;
+
+exports[`MaskedInput icon 1`] = `
+.c2 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c2 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c2 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  padding-left: 48px;
+}
+
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c3:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+.c1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-label="Search"
+      class="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M15,15 L22,22 L15,15 Z M9.5,17 C13.6421356,17 17,13.6421356 17,9.5 C17,5.35786438 13.6421356,2 9.5,2 C5.35786438,2 2,5.35786438 2,9.5 C2,13.6421356 5.35786438,17 9.5,17 Z"
+        fill="none"
+        stroke="#000"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+  <input
+    autocomplete="off"
+    class="c3"
+    name="item"
+    placeholder=""
+    value=""
+  />
+</div>
+`;
+
+exports[`MaskedInput icon reverse 1`] = `
+.c2 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c2 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c2 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  padding-right: 48px;
+}
+
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c3:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+.c1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-label="Search"
+      class="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M15,15 L22,22 L15,15 Z M9.5,17 C13.6421356,17 17,13.6421356 17,9.5 C17,5.35786438 13.6421356,2 9.5,2 C5.35786438,2 2,5.35786438 2,9.5 C2,13.6421356 5.35786438,17 9.5,17 Z"
+        fill="none"
+        stroke="#000"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+  <input
+    autocomplete="off"
+    class="c3"
+    name="item"
+    placeholder=""
+    value=""
   />
 </div>
 `;

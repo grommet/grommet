@@ -3,12 +3,12 @@ import { Omit, PlaceHolderType, } from "../../utils";
 import { DropProps } from "../Drop";
 
 export interface TextInputProps {
-  decorator?: JSX.Element,
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
+  icon?: JSX.Element,
   id?: string;
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
@@ -17,6 +17,7 @@ export interface TextInputProps {
   onSuggestionsClose?: ((...args: any[]) => any);
   placeholder?: PlaceHolderType;
   plain?: boolean;
+  reverse?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
   value?: string | number;

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface MaskedInputProps {
-  decorator?: JSX.Element,
+  icon?: JSX.Element,
   id?: string;
   mask?: Array<{
     length?: number | number[];
@@ -13,6 +13,7 @@ export interface MaskedInputProps {
   name?: string;
   onBlur?: ((event: React.FocusEvent) => any);
   plain?: boolean;
+  reverse?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   value?: string | number;
 }

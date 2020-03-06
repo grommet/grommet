@@ -13,7 +13,6 @@ import { Search } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
-import { Text } from '../../Text';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
 
@@ -31,16 +30,14 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('decorator icon', () => {
-    const { container } = render(
-      <TextInput decorator={<Search />} name="item" />,
-    );
+  test('icon', () => {
+    const { container } = render(<TextInput icon={<Search />} name="item" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('decorator text', () => {
+  test('icon reverse', () => {
     const { container } = render(
-      <TextInput decorator={<Text>iops</Text>} name="item" />,
+      <TextInput icon={<Search />} reverse name="item" />,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
