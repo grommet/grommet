@@ -12,6 +12,8 @@ var _react2 = require("@testing-library/react");
 
 var _dom = require("@testing-library/dom");
 
+var _grommetIcons = require("grommet-icons");
+
 var _portal = require("../../../utils/portal");
 
 var _Grommet = require("../../Grommet");
@@ -37,12 +39,31 @@ describe('MaskedInput', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('icon', function () {
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+      icon: _react["default"].createElement(_grommetIcons.Search, null),
+      name: "item"
+    })),
+        container = _render2.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('icon reverse', function () {
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+      icon: _react["default"].createElement(_grommetIcons.Search, null),
+      reverse: true,
+      name: "item"
+    })),
+        container = _render3.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
   test('mask',
   /*#__PURE__*/
   _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var onChange, onFocus, _render2, getByTestId, container;
+    var onChange, onFocus, _render4, getByTestId, container;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -50,7 +71,7 @@ describe('MaskedInput', function () {
           case 0:
             onChange = jest.fn();
             onFocus = jest.fn();
-            _render2 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+            _render4 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
               "data-testid": "test-input",
               id: "item",
               name: "item",
@@ -67,7 +88,7 @@ describe('MaskedInput', function () {
               value: "bb!ax",
               onChange: onChange,
               onFocus: onFocus
-            })), getByTestId = _render2.getByTestId, container = _render2.container;
+            })), getByTestId = _render4.getByTestId, container = _render4.container;
             expect(container.firstChild).toMatchSnapshot();
 
             _react2.fireEvent.focus(getByTestId('test-input'));
@@ -94,7 +115,7 @@ describe('MaskedInput', function () {
   _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee2() {
-    var onChange, _render3, getByTestId, container, option;
+    var onChange, _render5, getByTestId, container, option;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -103,7 +124,7 @@ describe('MaskedInput', function () {
             onChange = jest.fn(function (event) {
               return event.target.value;
             });
-            _render3 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+            _render5 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
               "data-testid": "test-input",
               plain: true,
               size: "large",
@@ -118,7 +139,7 @@ describe('MaskedInput', function () {
               }],
               value: "",
               onChange: onChange
-            })), getByTestId = _render3.getByTestId, container = _render3.container;
+            })), getByTestId = _render5.getByTestId, container = _render5.container;
             expect(container.firstChild).toMatchSnapshot();
 
             _react2.fireEvent.focus(getByTestId('test-input'));
@@ -150,7 +171,7 @@ describe('MaskedInput', function () {
   _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee3() {
-    var onChange, _render4, getByTestId, container, input;
+    var onChange, _render6, getByTestId, container, input;
 
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
@@ -159,7 +180,7 @@ describe('MaskedInput', function () {
             onChange = jest.fn(function (event) {
               return event.target.value;
             });
-            _render4 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+            _render6 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
               "data-testid": "test-input",
               id: "item",
               name: "item",
@@ -172,7 +193,7 @@ describe('MaskedInput', function () {
               }],
               value: "",
               onChange: onChange
-            })), getByTestId = _render4.getByTestId, container = _render4.container;
+            })), getByTestId = _render6.getByTestId, container = _render6.container;
             expect(container.firstChild).toMatchSnapshot();
             input = getByTestId('test-input');
 
@@ -223,14 +244,14 @@ describe('MaskedInput', function () {
   test('Escape events should propagage if there is no drop', function () {
     var callback = jest.fn();
 
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_Keyboard.Keyboard, {
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_Keyboard.Keyboard, {
       onEsc: callback
     }, _react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item"
     })))),
-        getByTestId = _render5.getByTestId;
+        getByTestId = _render7.getByTestId;
 
     _react2.fireEvent.change(getByTestId('test-input'), {
       target: {
@@ -249,7 +270,7 @@ describe('MaskedInput', function () {
   test('next and previous without options', function () {
     var onChange = jest.fn();
 
-    var _render6 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+    var _render8 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -262,8 +283,8 @@ describe('MaskedInput', function () {
       }],
       onChange: onChange
     })),
-        getByTestId = _render6.getByTestId,
-        container = _render6.container;
+        getByTestId = _render8.getByTestId,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input');
@@ -295,7 +316,7 @@ describe('MaskedInput', function () {
   _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee4() {
-    var onChangeMock, _render7, getByTestId, container;
+    var onChangeMock, _render9, getByTestId, container;
 
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
@@ -314,7 +335,7 @@ describe('MaskedInput', function () {
                 }
               };
             });
-            _render7 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+            _render9 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
               "data-testid": "test-input",
               plain: true,
               size: "large",
@@ -329,7 +350,7 @@ describe('MaskedInput', function () {
               }],
               value: "",
               onChange: onChangeMock
-            })), getByTestId = _render7.getByTestId, container = _render7.container;
+            })), getByTestId = _render9.getByTestId, container = _render9.container;
             expect(container.firstChild).toMatchSnapshot();
 
             _react2.fireEvent.focus(getByTestId('test-input'));
@@ -366,7 +387,7 @@ describe('MaskedInput', function () {
   _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee5() {
-    var onChangeMock, _render8, getByTestId, container, input;
+    var onChangeMock, _render10, getByTestId, container, input;
 
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
@@ -385,7 +406,7 @@ describe('MaskedInput', function () {
                 }
               };
             });
-            _render8 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
+            _render10 = (0, _react2.render)(_react["default"].createElement(_.MaskedInput, {
               "data-testid": "test-input",
               id: "item",
               name: "item",
@@ -399,7 +420,7 @@ describe('MaskedInput', function () {
               }],
               value: "",
               onChange: onChangeMock
-            })), getByTestId = _render8.getByTestId, container = _render8.container;
+            })), getByTestId = _render10.getByTestId, container = _render10.container;
             expect(container.firstChild).toMatchSnapshot();
             input = getByTestId('test-input');
 
@@ -461,7 +482,7 @@ describe('MaskedInput', function () {
   _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee6() {
-    var customTheme, onChange, _render9, getByTestId, container, optionButton;
+    var customTheme, onChange, _render11, getByTestId, container, optionButton;
 
     return regeneratorRuntime.wrap(function _callee6$(_context6) {
       while (1) {
@@ -483,7 +504,7 @@ describe('MaskedInput', function () {
             onChange = jest.fn(function (event) {
               return event.target.value;
             });
-            _render9 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, {
+            _render11 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, {
               theme: customTheme
             }, _react["default"].createElement(_.MaskedInput, {
               "data-testid": "test-input",
@@ -500,7 +521,7 @@ describe('MaskedInput', function () {
               }],
               value: "",
               onChange: onChange
-            }))), getByTestId = _render9.getByTestId, container = _render9.container;
+            }))), getByTestId = _render11.getByTestId, container = _render11.container;
             expect(container.firstChild).toMatchSnapshot();
 
             _react2.fireEvent.focus(getByTestId('test-input'));

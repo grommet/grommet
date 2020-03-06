@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledSuggestions = exports.StyledPlaceholder = exports.StyledTextInputContainer = exports.StyledTextInput = void 0;
+exports.StyledSuggestions = exports.StyledIcon = exports.StyledPlaceholder = exports.StyledTextInputContainer = exports.StyledTextInput = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -23,11 +23,13 @@ var plainStyle = (0, _styledComponents.css)(["border:none;"]);
 var StyledTextInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], _utils.inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], _utils.inputStyle, function (props) {
   return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
 }, _utils.placeholderStyle, function (props) {
+  return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
+}, function (props) {
   return props.focus && !props.plain && _utils.focusStyle;
 }, function (props) {
   return props.disabled && (0, _utils.disabledStyle)(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
@@ -63,9 +65,18 @@ exports.StyledPlaceholder = StyledPlaceholder;
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, _defaultProps.defaultProps);
 
+var StyledIcon = _styledComponents["default"].div.withConfig({
+  displayName: "StyledTextInput__StyledIcon",
+  componentId: "sc-1x30a0s-3"
+})(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {
+  return props.reverse ? "right: " + props.theme.global.input.padding + ";" : "left: " + props.theme.global.input.padding + ";";
+});
+
+exports.StyledIcon = StyledIcon;
+
 var StyledSuggestions = _styledComponents["default"].ol.withConfig({
   displayName: "StyledTextInput__StyledSuggestions",
-  componentId: "sc-1x30a0s-3"
+  componentId: "sc-1x30a0s-4"
 })(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;", ";"], function (props) {
   return props.theme.textInput && props.theme.textInput.suggestions && props.theme.textInput.suggestions.extend;
 });

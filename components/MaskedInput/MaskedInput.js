@@ -125,6 +125,7 @@ var parseValue = function parseValue(mask, value) {
 var defaultMask = [];
 var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
   var focusProp = _ref.focus,
+      icon = _ref.icon,
       id = _ref.id,
       _ref$mask = _ref.mask,
       mask = _ref$mask === void 0 ? defaultMask : _ref$mask,
@@ -135,8 +136,9 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
       onKeyDown = _ref.onKeyDown,
       placeholder = _ref.placeholder,
       plain = _ref.plain,
+      reverse = _ref.reverse,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["focus", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["focus", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -301,7 +303,10 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
 
   return _react["default"].createElement(_StyledMaskedInput.StyledMaskedInputContainer, {
     plain: plain
-  }, _react["default"].createElement(_Keyboard.Keyboard, {
+  }, icon && _react["default"].createElement(_StyledMaskedInput.StyledIcon, {
+    reverse: reverse,
+    theme: theme
+  }, icon), _react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: onEsc,
     onTab: showDrop ? function () {
       return setShowDrop(false);
@@ -321,6 +326,8 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
     autoComplete: "off",
     plain: plain,
     placeholder: placeholder || renderPlaceholder(),
+    icon: icon,
+    reverse: reverse,
     focus: focus
   }, rest, {
     value: value || '',

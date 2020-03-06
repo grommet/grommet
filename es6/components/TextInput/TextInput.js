@@ -13,7 +13,7 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
 import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
-import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions } from './StyledTextInput';
+import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledSuggestions } from './StyledTextInput';
 
 var renderLabel = function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
@@ -51,6 +51,7 @@ var TextInput = forwardRef(function (_ref, ref) {
       dropHeight = _ref.dropHeight,
       dropTarget = _ref.dropTarget,
       dropProps = _ref.dropProps,
+      icon = _ref.icon,
       id = _ref.id,
       _ref$messages = _ref.messages,
       messages = _ref$messages === void 0 ? {
@@ -69,9 +70,10 @@ var TextInput = forwardRef(function (_ref, ref) {
       onSuggestionsOpen = _ref.onSuggestionsOpen,
       placeholder = _ref.placeholder,
       plain = _ref.plain,
+      reverse = _ref.reverse,
       suggestions = _ref.suggestions,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "suggestions", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "reverse", "suggestions", "value"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var announce = useContext(AnnounceContext);
@@ -252,7 +254,10 @@ var TextInput = forwardRef(function (_ref, ref) {
 
   return React.createElement(StyledTextInputContainer, {
     plain: plain
-  }, showStyledPlaceholder && React.createElement(StyledPlaceholder, null, placeholder), React.createElement(Keyboard, {
+  }, showStyledPlaceholder && React.createElement(StyledPlaceholder, null, placeholder), icon && React.createElement(StyledIcon, {
+    reverse: reverse,
+    theme: theme
+  }, icon), React.createElement(Keyboard, {
     onEnter: function onEnter(event) {
       closeDrop();
 
@@ -293,6 +298,8 @@ var TextInput = forwardRef(function (_ref, ref) {
     autoComplete: "off",
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
+    icon: icon,
+    reverse: reverse,
     focus: focus
   }, rest, {
     defaultValue: renderLabel(defaultValue),

@@ -71,6 +71,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       dropHeight = _ref.dropHeight,
       dropTarget = _ref.dropTarget,
       dropProps = _ref.dropProps,
+      icon = _ref.icon,
       id = _ref.id,
       _ref$messages = _ref.messages,
       messages = _ref$messages === void 0 ? {
@@ -89,9 +90,10 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       onSuggestionsOpen = _ref.onSuggestionsOpen,
       placeholder = _ref.placeholder,
       plain = _ref.plain,
+      reverse = _ref.reverse,
       suggestions = _ref.suggestions,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "suggestions", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "reverse", "suggestions", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -273,7 +275,10 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
 
   return _react["default"].createElement(_StyledTextInput.StyledTextInputContainer, {
     plain: plain
-  }, showStyledPlaceholder && _react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), _react["default"].createElement(_Keyboard.Keyboard, {
+  }, showStyledPlaceholder && _react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), icon && _react["default"].createElement(_StyledTextInput.StyledIcon, {
+    reverse: reverse,
+    theme: theme
+  }, icon), _react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: function onEnter(event) {
       closeDrop();
 
@@ -314,6 +319,8 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
     autoComplete: "off",
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
+    icon: icon,
+    reverse: reverse,
     focus: focus
   }, rest, {
     defaultValue: renderLabel(defaultValue),

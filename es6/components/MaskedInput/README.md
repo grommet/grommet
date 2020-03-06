@@ -11,6 +11,16 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+```
+element
+```
+
 **id**
 
 The id attribute of the input.
@@ -64,6 +74,15 @@ Describes the structure of the mask. If a regexp is provided, it should
 
     }
 }]
+```
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
+
+```
+boolean
 ```
 
 **size**

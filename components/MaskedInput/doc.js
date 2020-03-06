@@ -12,6 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(MaskedInput) {
   var DocumentedMaskedInput = (0, _reactDesc.describe)(MaskedInput).availableAt((0, _utils.getAvailableAtBadge)('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />").intrinsicElement('input');
   DocumentedMaskedInput.propTypes = {
+    icon: _reactDesc.PropTypes.element.description("An optional icon to show. This could be used to provide an\n      indication of what kind of input is expected, like an email icon,\n      or what the input will be used for, like a search icon."),
     id: _reactDesc.PropTypes.string.description('The id attribute of the input.'),
     name: _reactDesc.PropTypes.string.description('The name attribute of the input.'),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user types or pastes text."),
@@ -23,6 +24,7 @@ var doc = function doc(MaskedInput) {
       regexp: _reactDesc.PropTypes.shape({}) // RegExp
 
     })).description("Describes the structure of the mask. If a regexp is provided, it should\n      allow both the final full string element as well as partial strings\n      as the user types characters one by one."),
+    reverse: _reactDesc.PropTypes.bool.description("Whether an icon should be reversed so that the icon is at the\n      end of the input."),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('The size of the text.'),
     value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number]).description("What text to put in the input. The caller should ensure that it\n      is initially valid with respect to the mask.")
   };

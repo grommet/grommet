@@ -11,11 +11,13 @@ var plainStyle = css(["border:none;"]);
 var StyledTextInput = styled.input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], inputStyle, function (props) {
   return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
 }, placeholderStyle, function (props) {
+  return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
+}, function (props) {
   return props.focus && !props.plain && focusStyle;
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
@@ -42,12 +44,18 @@ var StyledPlaceholder = styled.div.withConfig({
 });
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
+var StyledIcon = styled.div.withConfig({
+  displayName: "StyledTextInput__StyledIcon",
+  componentId: "sc-1x30a0s-3"
+})(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {
+  return props.reverse ? "right: " + props.theme.global.input.padding + ";" : "left: " + props.theme.global.input.padding + ";";
+});
 var StyledSuggestions = styled.ol.withConfig({
   displayName: "StyledTextInput__StyledSuggestions",
-  componentId: "sc-1x30a0s-3"
+  componentId: "sc-1x30a0s-4"
 })(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;", ";"], function (props) {
   return props.theme.textInput && props.theme.textInput.suggestions && props.theme.textInput.suggestions.extend;
 });
 StyledSuggestions.defaultProps = {};
 Object.setPrototypeOf(StyledSuggestions.defaultProps, defaultProps);
-export { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions };
+export { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledSuggestions };
