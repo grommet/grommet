@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useMemo } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
@@ -14,8 +14,10 @@ const Drop = forwardRef(
     },
     ref,
   ) => {
-    const originalFocusedElement = useMemo(() => document.activeElement, []);
-    const dropContainer = useMemo(() => getNewContainer(), []);
+    const [originalFocusedElement, setOriginalFocusedElement] = useState();
+    useEffect(() => setOriginalFocusedElement(document.activeElement), []);
+    const [dropContainer, setDropContainer] = useState();
+    useEffect(() => setDropContainer(getNewContainer()), []);
 
     // just a few things to clean up when the Drop is unmounted
     useEffect(
@@ -31,14 +33,15 @@ const Drop = forwardRef(
             setFocusWithoutScroll(originalFocusedElement.parentNode);
           }
         }
-        document.body.removeChild(dropContainer);
+        if (dropContainer) {
+          document.body.removeChild(dropContainer);
+        }
       },
       [dropContainer, originalFocusedElement, restrictFocus],
     );
 
-    const portal = useMemo(
-      () =>
-        createPortal(
+    return dropContainer
+      ? createPortal(
           <DropContainer
             ref={ref}
             dropTarget={dropTarget}
@@ -46,11 +49,8 @@ const Drop = forwardRef(
             {...rest}
           />,
           dropContainer,
-        ),
-      [dropContainer, dropTarget, ref, restrictFocus, rest],
-    );
-
-    return portal;
+        )
+      : null;
   },
 );
 

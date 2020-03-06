@@ -7815,6 +7815,15 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 \`\`\`
 boolean
 \`\`\`
+
+**target**
+
+Target where the layer will be aligned to. This should be a React 
+      reference.
+
+\`\`\`
+object
+\`\`\`
   
 ## Intrinsic element
 
