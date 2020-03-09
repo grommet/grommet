@@ -19,8 +19,8 @@ exports[`DropButton close by clicking outside 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -73,8 +73,8 @@ exports[`DropButton closed 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -120,8 +120,8 @@ exports[`DropButton disabled 1`] = `
   line-height: 24px;
   opacity: 0.3;
   cursor: default;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -157,8 +157,8 @@ exports[`DropButton open and close 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -211,8 +211,8 @@ exports[`DropButton opened 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -256,8 +256,8 @@ exports[`DropButton opened ref 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;

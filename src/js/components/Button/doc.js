@@ -259,6 +259,21 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '8px',
   },
+  'button.transition.timing': {
+    description: 'The transition timing function',
+    type: 'string',
+    defaultValue: 'ease-in-out',
+  },
+  'button.transition.duration': {
+    description: 'The transition duration in seconds',
+    type: 'number',
+    defaultValue: 0.1,
+  },
+  'button.transition.properties': {
+    description: 'The transition properties',
+    type: 'string[]',
+    defaultValue: "['color', 'background-color', 'border-color', 'box-shadow']",
+  },
   'button.extend': {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}',

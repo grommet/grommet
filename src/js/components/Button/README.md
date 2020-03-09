@@ -619,6 +619,36 @@ Defaults to
 8px
 ```
 
+**button.transition.timing**
+
+The transition timing function Expects `string`.
+
+Defaults to
+
+```
+ease-in-out
+```
+
+**button.transition.duration**
+
+The transition duration in seconds Expects `number`.
+
+Defaults to
+
+```
+0.1
+```
+
+**button.transition.properties**
+
+The transition properties Expects `string[]`.
+
+Defaults to
+
+```
+['color', 'background-color', 'border-color', 'box-shadow']
+```
+
 **button.extend**
 
 Any additional style for the Button. Expects `string | (props) => {}`.
