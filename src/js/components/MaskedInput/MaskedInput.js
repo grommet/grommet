@@ -18,6 +18,7 @@ import { Keyboard } from '../Keyboard';
 import {
   StyledMaskedInput,
   StyledMaskedInputContainer,
+  StyledIcon,
 } from './StyledMaskedInput';
 
 const parseValue = (mask, value) => {
@@ -117,6 +118,7 @@ const MaskedInput = forwardRef(
   (
     {
       focus: focusProp,
+      icon,
       id,
       mask = defaultMask,
       name,
@@ -126,6 +128,7 @@ const MaskedInput = forwardRef(
       onKeyDown,
       placeholder,
       plain,
+      reverse,
       value: valueProp,
       ...rest
     },
@@ -291,6 +294,11 @@ const MaskedInput = forwardRef(
 
     return (
       <StyledMaskedInputContainer plain={plain}>
+        {icon && (
+          <StyledIcon reverse={reverse} theme={theme}>
+            {icon}
+          </StyledIcon>
+        )}
         <Keyboard
           onEsc={onEsc}
           onTab={showDrop ? () => setShowDrop(false) : undefined}
@@ -308,6 +316,8 @@ const MaskedInput = forwardRef(
             autoComplete="off"
             plain={plain}
             placeholder={placeholder || renderPlaceholder()}
+            icon={icon}
+            reverse={reverse}
             focus={focus}
             {...rest}
             value={value || ''}

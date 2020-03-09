@@ -23,6 +23,7 @@ import {
   StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
+  StyledIcon,
   StyledSuggestions,
 } from './StyledTextInput';
 
@@ -63,6 +64,7 @@ const TextInput = forwardRef(
       dropHeight,
       dropTarget,
       dropProps,
+      icon,
       id,
       messages = {
         enterSelect: '(Press Enter to Select)',
@@ -82,6 +84,7 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
+      reverse,
       suggestions,
       value: valueProp,
       ...rest
@@ -286,6 +289,11 @@ const TextInput = forwardRef(
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
+        {icon && (
+          <StyledIcon reverse={reverse} theme={theme}>
+            {icon}
+          </StyledIcon>
+        )}
         <Keyboard
           onEnter={event => {
             closeDrop();
@@ -344,6 +352,8 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
+            icon={icon}
+            reverse={reverse}
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}

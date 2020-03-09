@@ -8,6 +8,7 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -26,6 +27,18 @@ describe('TextInput', () => {
 
   test('disabled', () => {
     const { container } = render(<TextInput disabled name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('icon', () => {
+    const { container } = render(<TextInput icon={<Search />} name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('icon reverse', () => {
+    const { container } = render(
+      <TextInput icon={<Search />} reverse name="item" />,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
