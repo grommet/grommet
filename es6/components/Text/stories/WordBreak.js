@@ -2,31 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Text, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
-var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
-
-var All = function All() {
-  return React.createElement(Grommet, {
-    theme: grommet
-  }, sizes.map(function (size) {
-    return React.createElement(Box, {
-      key: size,
-      margin: "small"
-    }, React.createElement(Text, {
-      size: size
-    }, "Text " + size));
-  }));
-};
-
-var Color = function Color() {
-  return React.createElement(Grommet, {
-    theme: grommet
-  }, React.createElement(Text, {
-    color: "accent-1"
-  }, "Colored Text"));
-};
 /* eslint-disable max-len */
-
 
 var WordBreak = function WordBreak() {
   return React.createElement(Grommet, {
@@ -46,10 +23,6 @@ var WordBreak = function WordBreak() {
 /* eslint-enable max-len */
 
 
-storiesOf('Text', module).add('All', function () {
-  return React.createElement(All, null);
-}).add('Color', function () {
-  return React.createElement(Color, null);
-}).add('Word Break', function () {
+storiesOf('Text', module).add('Word Break', function () {
   return React.createElement(WordBreak, null);
 });

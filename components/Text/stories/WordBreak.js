@@ -10,31 +10,8 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
-
-var All = function All() {
-  return _react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, sizes.map(function (size) {
-    return _react["default"].createElement(_grommet.Box, {
-      key: size,
-      margin: "small"
-    }, _react["default"].createElement(_grommet.Text, {
-      size: size
-    }, "Text " + size));
-  }));
-};
-
-var Color = function Color() {
-  return _react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Text, {
-    color: "accent-1"
-  }, "Colored Text"));
-};
 /* eslint-disable max-len */
-
 
 var WordBreak = function WordBreak() {
   return _react["default"].createElement(_grommet.Grommet, {
@@ -54,10 +31,6 @@ var WordBreak = function WordBreak() {
 /* eslint-enable max-len */
 
 
-(0, _react2.storiesOf)('Text', module).add('All', function () {
-  return _react["default"].createElement(All, null);
-}).add('Color', function () {
-  return _react["default"].createElement(Color, null);
-}).add('Word Break', function () {
+(0, _react2.storiesOf)('Text', module).add('Word Break', function () {
   return _react["default"].createElement(WordBreak, null);
 });
