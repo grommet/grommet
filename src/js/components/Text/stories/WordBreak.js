@@ -4,33 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Text, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const sizes = [
-  'xxlarge',
-  'xlarge',
-  'large',
-  'medium',
-  'small',
-  'xsmall',
-  '77px',
-];
-
 const wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
-
-const All = () => (
-  <Grommet theme={grommet}>
-    {sizes.map(size => (
-      <Box key={size} margin="small">
-        <Text size={size}>{`Text ${size}`}</Text>
-      </Box>
-    ))}
-  </Grommet>
-);
-
-const Color = () => (
-  <Grommet theme={grommet}>
-    <Text color="accent-1">Colored Text</Text>
-  </Grommet>
-);
 
 /* eslint-disable max-len */
 const WordBreak = () => (
@@ -49,7 +23,4 @@ const WordBreak = () => (
 );
 /* eslint-enable max-len */
 
-storiesOf('Text', module)
-  .add('All', () => <All />)
-  .add('Color', () => <Color />)
-  .add('Word Break', () => <WordBreak />);
+storiesOf('Text', module).add('Word Break', () => <WordBreak />);
