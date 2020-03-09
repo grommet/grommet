@@ -1,10 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable, CheckBox, Anchor } from 'grommet';
+import { Grommet, Box, DataTable, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { columns, DATA } from './data';
+// Source code for the data can be found here
+// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 const controlledColumns = columns.map(col => ({ ...col }));
 delete controlledColumns[0].footer;
@@ -56,12 +58,6 @@ const ControlledDataTable = () => {
           data={DATA}
           sortable
           size="medium"
-        />
-        <Anchor
-          margin={{ top: 'medium' }}
-          alignSelf="center"
-          href="https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js"
-          label="Data used for storybook example"
         />
       </Box>
     </Grommet>
