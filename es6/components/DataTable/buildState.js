@@ -2,6 +2,7 @@
 // files simpler.
 // get the value for the property in the datum object
 export var datumValue = function datumValue(datum, property) {
+  if (!property) return undefined;
   var parts = property.split('.');
 
   if (parts.length === 1) {
