@@ -155,6 +155,61 @@ describe('TextInput', () => {
     }, 50);
   });
 
+  test('calls onSuggestionsOpen', done => {
+    const onSuggestionsOpen = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', 'test1']}
+          onSuggestionsOpen={onSuggestionsOpen}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.focus(getByTestId('test-input'));
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
+      expect(onSuggestionsOpen).toBeCalled();
+      done();
+    }, 50);
+  });
+
+  test('calls onSuggestionsClose', done => {
+    const onSuggestionsClose = jest.fn();
+    const { getByTestId, container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', 'test1']}
+          onSuggestionsClose={onSuggestionsClose}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.focus(getByTestId('test-input'));
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
+
+      fireEvent.keyDown(getByTestId('test-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27,
+      });
+      setTimeout(() => {
+        expect(document.getElementById('text-input-drop__item')).toBeNull();
+        expect(onSuggestionsClose).toBeCalled();
+        expect(container.firstChild).toMatchSnapshot();
+        done();
+      }, 50);
+    }, 50);
+  });
+
   test('select suggestion', done => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
