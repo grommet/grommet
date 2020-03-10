@@ -2231,19 +2231,10 @@ Defaults to
 8px
 \`\`\`
 
-**button.transition.timing**
-
-The transition timing function Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-ease-in-out
-\`\`\`
-
 **button.transition.duration**
 
-The transition duration in seconds Expects \`number\`.
+The length of time it will take for the element to transition
+between two defined states. Expects \`number\`.
 
 Defaults to
 
@@ -2253,12 +2244,23 @@ Defaults to
 
 **button.transition.properties**
 
-The transition properties Expects \`string[]\`.
+The property you want to add the effect to. Expects \`string[]\`.
 
 Defaults to
 
 \`\`\`
 ['color', 'background-color', 'border-color', 'box-shadow']
+\`\`\`
+
+**button.transition.timing**
+
+Describes how a transition will progress over one cycle of its
+duration and allowing it to change speed during its course. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+ease-in-out
 \`\`\`
 
 **button.extend**
