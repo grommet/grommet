@@ -260,7 +260,7 @@ export const themeDoc = {
     defaultValue: '8px',
   },
   'button.transition.timing': {
-    description: 'The transition timing function',
+    description: 'Describes how a transition will progress over one cycle of its duration and allowing it to change speed during its course.',
     type: 'string',
     defaultValue: 'ease-in-out',
   },
