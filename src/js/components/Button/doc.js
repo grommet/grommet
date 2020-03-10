@@ -265,7 +265,7 @@ export const themeDoc = {
     defaultValue: 'ease-in-out',
   },
   'button.transition.duration': {
-    description: 'The transition duration in seconds',
+    description: 'The length of time it will take for the element to transition between two defined states.',
     type: 'number',
     defaultValue: 0.1,
   },
