@@ -270,7 +270,7 @@ export const themeDoc = {
     defaultValue: 0.1,
   },
   'button.transition.properties': {
-    description: 'The transition properties',
+    description: 'The property you want to add the effect to.',
     type: 'string[]',
     defaultValue: "['color', 'background-color', 'border-color', 'box-shadow']",
   },
