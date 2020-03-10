@@ -8,15 +8,18 @@ import { StyledGrid } from './StyledGrid';
 var Grid = function Grid(props) {
   var a11yTitle = props.a11yTitle,
       fill = props.fill,
+      _props$responsive = props.responsive,
+      responsive = _props$responsive === void 0 ? true : _props$responsive,
       rows = props.rows,
       tag = props.tag,
       as = props.as,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "fill", "rows", "tag", "as"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "fill", "responsive", "rows", "tag", "as"]);
 
   return React.createElement(StyledGrid, _extends({
     a11yTitleProp: a11yTitle,
     as: !as && tag ? tag : as,
     fillContainer: fill,
+    responsive: responsive,
     rowsProp: rows
   }, rest));
 };

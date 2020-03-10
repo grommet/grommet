@@ -221,6 +221,16 @@ describe('Grid', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('responsive', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+      responsive: true
+    }), _react["default"].createElement(_.Grid, {
+      responsive: false
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('as renders', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
       as: "article"

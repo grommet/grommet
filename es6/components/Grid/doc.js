@@ -27,6 +27,7 @@ export var doc = function doc(Grid) {
     justify: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align the individual items inside the grid when there is extra\nspace in the row axis.").defaultValue('stretch'),
     justifyContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the row axis.'),
     pad: padPropType,
+    responsive: PropTypes.bool.description("Whether margin and pad sizes should be scaled for mobile\n        environments.").defaultValue(true),
     rows: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(fixedSizes), PropTypes.string]).description("Row sizes.\n      If an array value is an array, the inner array indicates the\n      minimum and maximum sizes for the row.\n      Specifying a single string will cause automatically added rows to be\n      the specified size."),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated\n      in favor of indicating the DOM tag via the 'as' property."),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description('The DOM tag or react component to use for the element.').defaultValue('div')

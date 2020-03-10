@@ -200,6 +200,15 @@ describe('Grid', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('responsive', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+      responsive: true
+    }), React.createElement(Grid, {
+      responsive: false
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('as renders', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
       as: "article"
