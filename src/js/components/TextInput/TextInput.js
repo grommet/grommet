@@ -176,6 +176,7 @@ const TextInput = forwardRef(
     const closeDrop = () => {
       setShowDrop(false);
       if (messages.onSuggestionsClose) onSuggestionsClose();
+      if (onSuggestionsClose) onSuggestionsClose();
     };
 
     const onNextSuggestion = event => {
@@ -363,6 +364,7 @@ const TextInput = forwardRef(
               if (suggestions && suggestions.length > 0) {
                 announce(messages.suggestionsExist);
                 setShowDrop(true);
+                if (onSuggestionsOpen) onSuggestionsOpen();
               }
               if (onFocus) onFocus(event);
             }}
