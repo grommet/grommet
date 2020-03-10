@@ -487,7 +487,7 @@ Object.setPrototypeOf(StyledBox.defaultProps, _defaultProps.defaultProps);
 var StyledBoxGap = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
-})(["flex:0 0 auto;", ";"], function (props) {
+})(["flex:0 0 auto;align-self:stretch;", ";"], function (props) {
   return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
 });
 
