@@ -363,8 +363,7 @@ const TextInput = forwardRef(
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
                 announce(messages.suggestionsExist);
-                setShowDrop(true);
-                if (onSuggestionsOpen) onSuggestionsOpen();
+                openDrop();
               }
               if (onFocus) onFocus(event);
             }}

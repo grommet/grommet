@@ -329,7 +329,7 @@ exports[`TextInput calls onSuggestionsClose 4`] = `
       data-testid="test-input"
       id="item"
       name="item"
-      value=" "
+      value=""
     />
   </div>
 </div>

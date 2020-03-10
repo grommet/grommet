@@ -170,7 +170,6 @@ describe('TextInput', () => {
     );
 
     fireEvent.focus(getByTestId('test-input'));
-    fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
       expect(onSuggestionsOpen).toBeCalled();
@@ -194,7 +193,6 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.focus(getByTestId('test-input'));
-    fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
