@@ -6,6 +6,7 @@ const Grid = props => {
   const {
     a11yTitle,
     fill, // munged to avoid styled-components putting it in the DOM
+    responsive = true,
     rows, // munged to avoid styled-components putting it in the DOM
     tag,
     as,
@@ -17,6 +18,7 @@ const Grid = props => {
       a11yTitleProp={a11yTitle}
       as={!as && tag ? tag : as}
       fillContainer={fill}
+      responsive={responsive}
       rowsProp={rows}
       {...rest}
     />

@@ -3,6 +3,7 @@
 
 // get the value for the property in the datum object
 export const datumValue = (datum, property) => {
+  if (!property) return undefined;
   const parts = property.split('.');
   if (parts.length === 1) {
     return datum[property];
