@@ -155,7 +155,7 @@ const StyledButton = styled.button`
     !props.plain &&
     props.theme.button.transition &&
     `
-    transition-property: ${props.theme.button.transition.properties.join(', ')};
+    transition-property: ${props.theme.button.transition.properties.join(',')};
     transition-duration: ${props.theme.button.transition.duration}s;
     transition-timing-function: ${props.theme.button.transition.timing};
   `}
