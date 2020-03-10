@@ -266,7 +266,7 @@ between two states.`,
     defaultValue: 0.1,
   },
   'button.transition.properties': {
-    description: 'The property you want to add the effect to.',
+    description: 'The CSS properties you want to add the transition to.',
     type: 'string[]',
     defaultValue: "['color', 'background-color', 'border-color', 'box-shadow']",
   },
