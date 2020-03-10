@@ -261,7 +261,7 @@ export const themeDoc = {
   },
   'button.transition.duration': {
     description: `The length of time it will take for the element to transition
-between two defined states.`,
+between two states.`,
     type: 'number',
     defaultValue: 0.1,
   },
