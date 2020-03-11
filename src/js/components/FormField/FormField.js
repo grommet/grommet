@@ -314,14 +314,29 @@ const FormField = forwardRef(
                 {label}
               </Text>
             )}
-            {help && <Text {...formField.help}>{help}</Text>}
+            {help &&
+              (typeof help === 'string' ? (
+                <Text {...formField.help}>{help}</Text>
+              ) : (
+                <Box {...formField.help}>{help}</Box>
+              ))}
           </>
         ) : (
           undefined
         )}
         {contents}
-        {normalizedError && <Text {...formField.error}>{normalizedError}</Text>}
-        {normalizedInfo && <Text {...formField.info}>{normalizedInfo}</Text>}
+        {normalizedError &&
+          (typeof normalizedError === 'string' ? (
+            <Text {...formField.error}>{normalizedError}</Text>
+          ) : (
+            <Box {...formField.error}>{normalizedError}</Box>
+          ))}
+        {normalizedInfo &&
+          (typeof normalizedInfo === 'string' ? (
+            <Text {...formField.info}>{normalizedInfo}</Text>
+          ) : (
+            <Box {...formField.info}>{normalizedInfo}</Box>
+          ))}
       </FormFieldBox>
     );
   },

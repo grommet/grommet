@@ -673,6 +673,14 @@ exports[`Form validate 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <span
   class="c0"
 >
@@ -681,8 +689,38 @@ exports[`Form validate 2`] = `
 `;
 
 exports[`Form validate 3`] = `
+.c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FF4040;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <span
-  class="StyledText-sc-1sadyjn-0 keDfiS"
+  class="c0"
 >
   status error
 </span>
@@ -697,6 +735,14 @@ exports[`Form validate 4`] = `
   font-size: 18px;
   line-height: 24px;
   color: #666666;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
