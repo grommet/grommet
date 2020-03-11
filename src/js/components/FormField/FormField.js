@@ -52,6 +52,14 @@ const FormFieldBox = styled(Box)`
   ${props => props.theme.formField && props.theme.formField.extend}
 `;
 
+const Message = ({ message, ...rest }) => {
+  if (message) {
+    if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
+    return <Box {...rest}>{message}</Box>;
+  }
+  return null;
+};
+
 const FormField = forwardRef(
   (
     {
@@ -314,29 +322,14 @@ const FormField = forwardRef(
                 {label}
               </Text>
             )}
-            {help &&
-              (typeof help === 'string' ? (
-                <Text {...formField.help}>{help}</Text>
-              ) : (
-                <Box {...formField.help}>{help}</Box>
-              ))}
+            <Message message={help} {...formField.help} />
           </>
         ) : (
           undefined
         )}
         {contents}
-        {normalizedError &&
-          (typeof normalizedError === 'string' ? (
-            <Text {...formField.error}>{normalizedError}</Text>
-          ) : (
-            <Box {...formField.error}>{normalizedError}</Box>
-          ))}
-        {normalizedInfo &&
-          (typeof normalizedInfo === 'string' ? (
-            <Text {...formField.info}>{normalizedInfo}</Text>
-          ) : (
-            <Box {...formField.info}>{normalizedInfo}</Box>
-          ))}
+        <Message message={normalizedError} {...formField.error} />
+        <Message message={normalizedInfo} {...formField.info} />
       </FormFieldBox>
     );
   },
