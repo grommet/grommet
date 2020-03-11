@@ -58,7 +58,7 @@ export const doc = FormField => {
     validate: PropTypes.oneOfType([
       PropTypes.shape({
         regexp: PropTypes.object, // regular expression
-        message: PropTypes.string,
+        message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
         status: PropTypes.oneOf(['error', 'info']),
       }),
       PropTypes.func,
@@ -66,7 +66,7 @@ export const doc = FormField => {
         PropTypes.oneOfType([
           PropTypes.shape({
             regexp: PropTypes.object, // regular expression
-            message: PropTypes.string,
+            message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
             status: PropTypes.oneOf(['error', 'info']),
           }),
           PropTypes.func,
