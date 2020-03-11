@@ -7,6 +7,7 @@ import { Form } from '..';
 import { FormField } from '../../FormField';
 import { Button } from '../../Button';
 import { Text } from '../../Text';
+import { TextInput } from '../../TextInput';
 describe('Form', function () {
   afterEach(cleanup);
   test('empty', function () {
@@ -297,6 +298,53 @@ describe('Form', function () {
         test2: 'Initial value2'
       },
       touched: {}
+    }));
+  });
+  test('lazy value', function () {
+    var _onSubmit2 = jest.fn();
+
+    var Test = function Test() {
+      var _React$useState = React.useState(),
+          test = _React$useState[0],
+          setTest = _React$useState[1];
+
+      return React.createElement(Form, {
+        onSubmit: function onSubmit(_ref2) {
+          var value = _ref2.value,
+              touched = _ref2.touched;
+          return _onSubmit2({
+            value: value,
+            touched: touched
+          });
+        }
+      }, React.createElement(TextInput, {
+        name: "test",
+        value: test
+      }), React.createElement(Button, {
+        label: "set",
+        onClick: function onClick() {
+          return setTest('a');
+        }
+      }), React.createElement(Button, {
+        label: "submit",
+        type: "submit"
+      }));
+    };
+
+    var _render7 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+        container = _render7.container,
+        getByText = _render7.getByText;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('set'));
+    fireEvent.click(getByText('submit'));
+    expect(_onSubmit2).toBeCalledWith(expect.objectContaining({
+      value: {
+        test: 'a'
+      },
+      touched: {
+        test: true
+      }
     }));
   });
 });

@@ -150,21 +150,22 @@ var Form = (0, _react.forwardRef)(function (_ref, ref) {
     });
   }, []);
 
-  var useFormContext = function useFormContext(name, dataProp) {
+  var useFormContext = function useFormContext(name, componentValue) {
     var valueData = name && value[name] !== undefined ? value[name] : '';
 
-    var _useState6 = (0, _react.useState)(dataProp !== undefined ? dataProp : valueData),
+    var _useState6 = (0, _react.useState)(componentValue !== undefined ? componentValue : valueData),
         data = _useState6[0],
-        setData = _useState6[1]; // use dataProp passed in, allowing for it to change
+        setData = _useState6[1]; // update when the component value or form value changes
 
 
     (0, _react.useEffect)(function () {
-      if (dataProp !== undefined) setData(dataProp);
-    }, [dataProp]); // update when the form value changes
-
-    (0, _react.useEffect)(function () {
-      if (name && valueData !== data) setData(valueData);
-    }, [data, name, valueData]);
+      if (componentValue !== undefined) {
+        if (componentValue !== data) {
+          setData(componentValue);
+          if (name) update(name, componentValue);
+        }
+      } else if (name && valueData !== data) setData(valueData);
+    }, [data, name, valueData, componentValue]);
     return [data, function (nextData) {
       if (name) update(name, nextData);
       setData(nextData);

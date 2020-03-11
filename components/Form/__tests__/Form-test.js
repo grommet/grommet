@@ -18,6 +18,8 @@ var _Button = require("../../Button");
 
 var _Text = require("../../Text");
 
+var _TextInput = require("../../TextInput");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Form', function () {
@@ -343,6 +345,56 @@ describe('Form', function () {
         test2: 'Initial value2'
       },
       touched: {}
+    }));
+  });
+  test('lazy value', function () {
+    var _onSubmit2 = jest.fn();
+
+    var Test = function Test() {
+      var _React$useState = _react["default"].useState(),
+          test = _React$useState[0],
+          setTest = _React$useState[1];
+
+      return _react["default"].createElement(_.Form, {
+        onSubmit: function onSubmit(_ref2) {
+          var value = _ref2.value,
+              touched = _ref2.touched;
+          return _onSubmit2({
+            value: value,
+            touched: touched
+          });
+        }
+      }, _react["default"].createElement(_TextInput.TextInput, {
+        name: "test",
+        value: test
+      }), _react["default"].createElement(_Button.Button, {
+        label: "set",
+        onClick: function onClick() {
+          return setTest('a');
+        }
+      }), _react["default"].createElement(_Button.Button, {
+        label: "submit",
+        type: "submit"
+      }));
+    };
+
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+        container = _render7.container,
+        getByText = _render7.getByText;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.click(getByText('set'));
+
+    _react2.fireEvent.click(getByText('submit'));
+
+    expect(_onSubmit2).toBeCalledWith(expect.objectContaining({
+      value: {
+        test: 'a'
+      },
+      touched: {
+        test: true
+      }
     }));
   });
 });
