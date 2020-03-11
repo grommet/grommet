@@ -622,7 +622,7 @@ Defaults to
 **button.transition.duration**
 
 The length of time it will take for the element to transition
-between two defined states. Expects `number`.
+between two states. Expects `number`.
 
 Defaults to
 
@@ -632,7 +632,7 @@ Defaults to
 
 **button.transition.properties**
 
-The property you want to add the effect to. Expects `string[]`.
+The CSS properties you want to add the transition to. Expects `string[]`.
 
 Defaults to
 
