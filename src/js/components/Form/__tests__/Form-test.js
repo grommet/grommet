@@ -8,6 +8,7 @@ import { Form } from '..';
 import { FormField } from '../../FormField';
 import { Button } from '../../Button';
 import { Text } from '../../Text';
+import { TextInput } from '../../TextInput';
 
 describe('Form', () => {
   afterEach(cleanup);
@@ -265,6 +266,34 @@ describe('Form', () => {
       expect.objectContaining({
         value: { test: 'Initial value', test2: 'Initial value2' },
         touched: {},
+      }),
+    );
+  });
+
+  test('lazy value', () => {
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [test, setTest] = React.useState();
+      return (
+        <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
+          <TextInput name="test" value={test} />
+          <Button label="set" onClick={() => setTest('a')} />
+          <Button label="submit" type="submit" />
+        </Form>
+      );
+    };
+    const { container, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('set'));
+    fireEvent.click(getByText('submit'));
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: { test: 'a' },
+        touched: { test: true },
       }),
     );
   });
