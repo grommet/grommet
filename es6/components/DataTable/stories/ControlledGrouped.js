@@ -3,7 +3,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { grommet } from 'grommet/themes'; // Source code for the data can be found here
+// https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
+
 import { columns, DATA } from './data';
 var groupColumns = [].concat(columns);
 var first = groupColumns[0];
