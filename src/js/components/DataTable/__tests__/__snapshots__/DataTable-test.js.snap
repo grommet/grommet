@@ -4168,6 +4168,9 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -4624,6 +4627,9 @@ exports[`DataTable search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -4837,7 +4843,7 @@ exports[`DataTable search 2`] = `
               A
             </span>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUZSMI"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
             />
             .c0 {
   display: -webkit-box;
@@ -5289,6 +5295,9 @@ exports[`DataTable sort 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 6px;
 }
 
