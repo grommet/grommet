@@ -2472,7 +2472,9 @@ string",
       and 'status' properties.",
         "format": "{
   regexp: object,
-  message: string,
+  message: 
+    string
+    node,
   status: 
     error
     info
@@ -2481,7 +2483,9 @@ function
 [
   {
     regexp: object,
-    message: string,
+    message: 
+      string
+      node,
     status: 
       error
       info
