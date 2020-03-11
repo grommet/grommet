@@ -129,8 +129,12 @@ const Form = forwardRef(
       );
       // update when the component value or form value changes
       useEffect(() => {
-        if (componentValue !== undefined) setData(componentValue);
-        else if (name && valueData !== data) setData(valueData);
+        if (componentValue !== undefined) {
+          if (componentValue !== data) {
+            setData(componentValue);
+            if (name) update(name, componentValue);
+          }
+        } else if (name && valueData !== data) setData(valueData);
       }, [data, name, valueData, componentValue]);
 
       return [
