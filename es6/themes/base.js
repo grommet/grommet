@@ -407,6 +407,11 @@ export var generate = function generate(baseSpacing, scale) {
       padding: {
         vertical: baseSpacing / 4 - borderWidth + "px",
         horizontal: baseSpacing - borderWidth + "px"
+      },
+      transition: {
+        timing: 'ease-in-out',
+        duration: 0.1,
+        properties: ['color', 'background-color', 'border-color', 'box-shadow']
       }
     },
     calendar: {

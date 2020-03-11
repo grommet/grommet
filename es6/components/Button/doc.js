@@ -164,6 +164,21 @@ export var themeDoc = _extends({
     type: 'string',
     defaultValue: '8px'
   },
+  'button.transition.duration': {
+    description: "The length of time it will take for the element to transition\nbetween two states.",
+    type: 'number',
+    defaultValue: 0.1
+  },
+  'button.transition.properties': {
+    description: 'The CSS properties you want to add the transition to.',
+    type: 'string[]',
+    defaultValue: "['color', 'background-color', 'border-color', 'box-shadow']"
+  },
+  'button.transition.timing': {
+    description: "Describes how a transition will progress over one cycle of its\nduration and allowing it to change speed during its course.",
+    type: 'string',
+    defaultValue: 'ease-in-out'
+  },
   'button.extend': {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}'

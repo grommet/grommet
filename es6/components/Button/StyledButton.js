@@ -91,7 +91,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && focusStyle;
 }, function (props) {
-  return !props.plain && "\n    transition-property: color,\n      background-color,\n      border-color,\n      box-shadow;\n    transition-duration: 0.1s;\n    transition-timing-function: ease-in-out;\n  ";
+  return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {
   return props.fillContainer && fillStyle(props.fillContainer);
 }, function (props) {
