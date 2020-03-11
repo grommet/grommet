@@ -6,6 +6,8 @@ var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
+var _grommetIcons = require("grommet-icons");
+
 var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -37,6 +39,14 @@ var Example = function Example() {
       regexp: /^[a-z]/i
     }, function (name) {
       if (name && name.length === 1) return 'must be >1 character';
+      return undefined;
+    }, function (name) {
+      if (name === 'good') return {
+        message: _react["default"].createElement(_grommet.Box, {
+          align: "end"
+        }, _react["default"].createElement(_grommetIcons.StatusGood, null)),
+        status: 'info'
+      };
       return undefined;
     }]
   }), _react["default"].createElement(_grommet.FormField, {

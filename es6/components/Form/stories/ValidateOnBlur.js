@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
+import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
 import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
@@ -30,6 +31,14 @@ var Example = function Example() {
       regexp: /^[a-z]/i
     }, function (name) {
       if (name && name.length === 1) return 'must be >1 character';
+      return undefined;
+    }, function (name) {
+      if (name === 'good') return {
+        message: React.createElement(Box, {
+          align: "end"
+        }, React.createElement(StatusGood, null)),
+        status: 'info'
+      };
       return undefined;
     }]
   }), React.createElement(FormField, {

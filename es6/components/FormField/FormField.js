@@ -56,27 +56,40 @@ var FormFieldBox = styled(Box).withConfig({
 })(["", ""], function (props) {
   return props.theme.formField && props.theme.formField.extend;
 });
-var FormField = forwardRef(function (_ref, ref) {
-  var checked = _ref.checked,
-      children = _ref.children,
-      className = _ref.className,
-      component = _ref.component,
-      disabled = _ref.disabled,
-      error = _ref.error,
-      help = _ref.help,
-      htmlFor = _ref.htmlFor,
-      info = _ref.info,
-      label = _ref.label,
-      margin = _ref.margin,
-      name = _ref.name,
-      _onBlur = _ref.onBlur,
-      _onFocus = _ref.onFocus,
-      pad = _ref.pad,
-      required = _ref.required,
-      style = _ref.style,
-      validate = _ref.validate,
-      valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate", "value"]);
+
+var Message = function Message(_ref) {
+  var message = _ref.message,
+      rest = _objectWithoutPropertiesLoose(_ref, ["message"]);
+
+  if (message) {
+    if (typeof message === 'string') return React.createElement(Text, rest, message);
+    return React.createElement(Box, rest, message);
+  }
+
+  return null;
+};
+
+var FormField = forwardRef(function (_ref2, ref) {
+  var checked = _ref2.checked,
+      children = _ref2.children,
+      className = _ref2.className,
+      component = _ref2.component,
+      disabled = _ref2.disabled,
+      error = _ref2.error,
+      help = _ref2.help,
+      htmlFor = _ref2.htmlFor,
+      info = _ref2.info,
+      label = _ref2.label,
+      margin = _ref2.margin,
+      name = _ref2.name,
+      _onBlur = _ref2.onBlur,
+      _onFocus = _ref2.onFocus,
+      pad = _ref2.pad,
+      required = _ref2.required,
+      style = _ref2.style,
+      validate = _ref2.validate,
+      valueProp = _ref2.value,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["checked", "children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate", "value"]);
 
   var theme = useContext(ThemeContext);
   var context = useContext(FormContext);
@@ -268,7 +281,13 @@ var FormField = forwardRef(function (_ref, ref) {
   }, containerRest), label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, formField.label), label), help && React.createElement(Text, formField.help, help)) : undefined, contents, normalizedError && React.createElement(Text, formField.error, normalizedError), normalizedInfo && React.createElement(Text, formField.info, normalizedInfo));
+  }, formField.label), label), React.createElement(Message, _extends({
+    message: help
+  }, formField.help))) : undefined, contents, React.createElement(Message, _extends({
+    message: normalizedError
+  }, formField.error)), React.createElement(Message, _extends({
+    message: normalizedInfo
+  }, formField.info)));
 });
 FormField.displayName = 'FormField';
 var FormFieldDoc;

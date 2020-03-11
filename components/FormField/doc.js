@@ -24,12 +24,12 @@ var doc = function doc(FormField) {
     validate: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
       regexp: _reactDesc.PropTypes.object,
       // regular expression
-      message: _reactDesc.PropTypes.string,
+      message: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]),
       status: _reactDesc.PropTypes.oneOf(['error', 'info'])
     }), _reactDesc.PropTypes.func, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
       regexp: _reactDesc.PropTypes.object,
       // regular expression
-      message: _reactDesc.PropTypes.string,
+      message: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]),
       status: _reactDesc.PropTypes.oneOf(['error', 'info'])
     }), _reactDesc.PropTypes.func]))]).description("Validation rule when used within a grommet Form. Provide an object\n      with a regular expression, a function, or an array of these. If a\n      function is provided, it will be called with two arguments, the value\n      for this field and the entire value object. This permits validation to\n      encompass multiple fields. The function should return a string message\n      describing the validation issue, if any, or an object with 'message'\n      and 'status' properties.")
   };
