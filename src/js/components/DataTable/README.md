@@ -402,6 +402,18 @@ When supplied, and when at least one column has 'search' enabled,
 function
 ```
 
+**onSort**
+
+When supplied, this function will be called with an event object
+      that includes a 'sort' property containing an object with a
+      'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onChange={({ sort: { property, direction }}) => {}}
+
+```
+function
+```
+
 **pad**
 
 Cell padding. You can set the padding per context by passing an
@@ -512,6 +524,19 @@ medium
 large
 xlarge
 string
+```
+
+**sort**
+
+Which property to sort on and which direction to sort.
+
+```
+{
+  direction: 
+    asc
+    desc,
+  property: string
+}
 ```
 
 **sortable**
