@@ -65,10 +65,10 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
   }
 
   if (sort) {
-    const { property, ascending } = sort;
+    const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
-    const before = ascending ? 1 : -1;
-    const after = ascending ? -1 : 1;
+    const before = direction === 'asc' ? 1 : -1;
+    const after = direction === 'asc' ? -1 : 1;
     result.sort((d1, d2) => {
       if (d1[property] > d2[property]) return before;
       if (d1[property] < d2[property]) return after;
