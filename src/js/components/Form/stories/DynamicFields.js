@@ -49,4 +49,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Dynamic children', () => <Example />);
+storiesOf('Form', module).add('Dynamic fields', () => <Example />);
