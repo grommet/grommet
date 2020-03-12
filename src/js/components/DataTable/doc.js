@@ -160,11 +160,10 @@ export const doc = DataTable => {
       employed so a back-end can be used to search through the data.`,
     ),
     onSort: PropTypes.func.description(
-      `When supplied, this function will be called with an event object
-      that includes a 'sort' property containing an object with a
-      'property' property that indicates which property
+      `When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
       is being sorted on and a 'direction' property that will either be
-      'asc' or 'desc'. onChange={({ sort: { property, direction }}) => {}}`,
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}`,
     ),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(sizes),
