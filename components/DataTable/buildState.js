@@ -83,11 +83,11 @@ var filterAndSortData = function filterAndSortData(data, filters, onSearch, sort
 
   if (sort) {
     var property = sort.property,
-        ascending = sort.ascending;
+        direction = sort.direction;
     result = result === data ? [].concat(data) : result; // don't sort caller's data
 
-    var before = ascending ? 1 : -1;
-    var after = ascending ? -1 : 1;
+    var before = direction === 'asc' ? 1 : -1;
+    var after = direction === 'asc' ? -1 : 1;
     result.sort(function (d1, d2) {
       if (d1[property] > d2[property]) return before;
       if (d1[property] < d2[property]) return after;

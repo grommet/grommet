@@ -34,16 +34,18 @@ var DataTable = function DataTable(_ref) {
       onClickRow = _ref.onClickRow,
       onMore = _ref.onMore,
       onSearch = _ref.onSearch,
+      onSortProp = _ref.onSort,
       replace = _ref.replace,
       pad = _ref.pad,
       primaryKey = _ref.primaryKey,
       resizeable = _ref.resizeable,
       rowProps = _ref.rowProps,
       size = _ref.size,
+      sortProp = _ref.sort,
       sortable = _ref.sortable,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "groupBy", "onClickRow", "onMore", "onSearch", "replace", "pad", "primaryKey", "resizeable", "rowProps", "size", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "groupBy", "onClickRow", "onMore", "onSearch", "onSort", "replace", "pad", "primaryKey", "resizeable", "rowProps", "size", "sort", "sortable", "step"]);
 
   // property name of the primary property
   var primaryProperty = useMemo(function () {
@@ -66,7 +68,7 @@ var DataTable = function DataTable(_ref) {
       setFilters = _useState2[1]; // which column we are sorting on, with direction
 
 
-  var _useState3 = useState({}),
+  var _useState3 = useState(sortProp || {}),
       sort = _useState3[0],
       setSort = _useState3[1]; // the data filtered and sorted, if needed
 
@@ -110,11 +112,14 @@ var DataTable = function DataTable(_ref) {
 
   var onSort = function onSort(property) {
     return function () {
-      var ascending = sort && property === sort.property ? !sort.ascending : true;
-      setSort({
+      var direction;
+      if (!sort || property !== sort.property) direction = 'asc';else if (sort.direction === 'asc') direction = 'desc';else direction = 'asc';
+      var nextSort = {
         property: property,
-        ascending: ascending
-      });
+        direction: direction
+      };
+      setSort(nextSort);
+      if (onSortProp) onSortProp(nextSort);
     };
   }; // toggle whether the group is expanded
 
@@ -187,7 +192,7 @@ var DataTable = function DataTable(_ref) {
     onFiltering: onFiltering,
     onFilter: onFilter,
     onResize: resizeable ? onResize : undefined,
-    onSort: sortable ? onSort : undefined,
+    onSort: sortable || sortProp || onSortProp ? onSort : undefined,
     onToggle: onToggleGroups
   }), groups ? React.createElement(GroupedBody, {
     background: normalizeProp(background, 'body'),
