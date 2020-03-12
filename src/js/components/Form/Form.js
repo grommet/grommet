@@ -189,6 +189,9 @@ const Form = forwardRef(
             addValidation: (name, validation) => {
               validations.current[name] = validation;
             },
+            removeValidation: name => {
+              delete validations.current[name];
+            },
             onBlur:
               validate === 'blur'
                 ? name => {
