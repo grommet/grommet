@@ -7,7 +7,7 @@ var responsiveLayerStyle = "\n  position: absolute;\n  width: 100%;\n  height: 1
 var StyledLayer = styled.div.withConfig({
   displayName: "StyledLayer",
   componentId: "rmtehz-0"
-})(["", " background:unset;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], baseStyle, function (props) {
+})(["", " background:transparent;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], baseStyle, function (props) {
   return props.theme.layer.zIndex;
 }, function (props) {
   if (props.position === 'hidden') {
