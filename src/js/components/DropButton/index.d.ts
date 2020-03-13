@@ -8,8 +8,8 @@ export interface DropButtonProps {
   dropContent: JSX.Element;
   dropTarget?: object;
   dropProps?: DropProps;
-  onClose?: ((...args: any[]) => any);
-  onOpen?: ((...args: any[]) => any);
+  onClose?: (() => void);
+  onOpen?: (() => void);
   open?: boolean;
 }
 
