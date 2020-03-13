@@ -6,7 +6,7 @@ import { Box, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const ControlledTabs = () => {
-  const [index, setIndex] = React.useState();
+  const [index, setIndex] = React.useState(0);
 
   const onActive = (nextIndex: number) => setIndex(nextIndex);
 
