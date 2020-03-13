@@ -211,6 +211,9 @@ var Form = forwardRef(function (_ref, ref) {
       addValidation: function addValidation(name, validation) {
         validations.current[name] = validation;
       },
+      removeValidation: function removeValidation(name) {
+        delete validations.current[name];
+      },
       onBlur: validate === 'blur' ? function (name) {
         if (validations.current[name]) {
           var error = validations.current[name](value[name], value);

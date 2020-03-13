@@ -156,17 +156,17 @@ describe('Form', function () {
     }, React.createElement(FormField, {
       name: "test",
       required: true,
-      validate: [function (name) {
-        return name.length === 1 ? 'simple string' : undefined;
-      }, function (name) {
-        return name.length === 2 ? React.createElement(Text, null, " ReactNode ") : undefined;
-      }, function (name) {
-        return name.length === 3 ? {
+      validate: [function (value) {
+        return value.length === 1 ? 'simple string' : undefined;
+      }, function (value) {
+        return value.length === 2 ? React.createElement(Text, null, " ReactNode ") : undefined;
+      }, function (value) {
+        return value.length === 3 ? {
           message: 'status error',
           status: 'error'
         } : undefined;
-      }, function (name) {
-        return name.length === 4 ? {
+      }, function (value) {
+        return value.length === 4 ? {
           message: 'status info',
           status: 'info'
         } : undefined;

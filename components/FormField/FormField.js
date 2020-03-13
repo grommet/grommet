@@ -36,38 +36,6 @@ var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
 
-var validateField = function validateField(required, validate, messages) {
-  return function (value, data) {
-    var error;
-
-    if (required && (value === undefined || value === '')) {
-      error = messages.required;
-    } else if (validate) {
-      if (Array.isArray(validate)) {
-        validate.some(function (oneValidate) {
-          error = validateField(false, oneValidate, messages)(value, data);
-          return !!error;
-        });
-      } else if (typeof validate === 'function') {
-        error = validate(value, data);
-      } else if (validate.regexp) {
-        if (!validate.regexp.test(value)) {
-          error = validate.message || messages.invalid;
-
-          if (validate.status) {
-            error = {
-              message: error,
-              status: validate.status
-            };
-          }
-        }
-      }
-    }
-
-    return error;
-  };
-};
-
 var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "m9hood-0"
@@ -124,6 +92,64 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
       context.update(name, value !== undefined ? value : checked, true);
     }
   });
+  (0, _react.useEffect)(function () {
+    if (context && context.addValidation) {
+      var addValidation = context.addValidation,
+          messages = context.messages,
+          removeValidation = context.removeValidation;
+
+      var validateSingle = function validateSingle(aValidate, value2, data) {
+        var result;
+
+        if (typeof aValidate === 'function') {
+          result = aValidate(value2, data);
+        } else if (validate.regexp) {
+          if (!validate.regexp.test(value2)) {
+            result = validate.message || messages.invalid;
+
+            if (validate.status) {
+              result = {
+                message: error,
+                status: validate.status
+              };
+            }
+          }
+        }
+
+        return result;
+      };
+
+      var validateField = function validateField(value2, data) {
+        var result;
+
+        if (required && (value2 === undefined || value2 === '')) {
+          result = messages.required;
+        } else if (validate) {
+          if (Array.isArray(validate)) {
+            validate.some(function (aValidate) {
+              result = validateSingle(aValidate, value2, data);
+              return !!result;
+            });
+          } else {
+            result = validateSingle(validate, value2, data);
+          }
+        }
+
+        return result;
+      };
+
+      if (validate || required) {
+        addValidation(name, validateField);
+        return function () {
+          return removeValidation(name, validateField);
+        };
+      }
+
+      removeValidation(name, validateField);
+    }
+
+    return undefined;
+  }, [context, error, name, required, validate]);
 
   var _useState2 = (0, _react.useState)(),
       focus = _useState2[0],
@@ -189,13 +215,10 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
   var containerRest = rest;
 
   if (context && context.addValidation) {
-    var addValidation = context.addValidation,
-        errors = context.errors,
+    var errors = context.errors,
         infos = context.infos,
         onContextBlur = context.onBlur,
-        formValue = context.value,
-        messages = context.messages;
-    addValidation(name, validateField(required, validate, messages));
+        formValue = context.value;
     normalizedError = error || errors[name];
     normalizedInfo = info || infos[name];
     if (!contents) containerRest = {};
