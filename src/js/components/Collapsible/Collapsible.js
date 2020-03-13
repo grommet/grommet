@@ -1,7 +1,8 @@
 import React, { createRef, Component } from 'react';
-import { compose } from 'recompose';
+
 import styled, { withTheme } from 'styled-components';
 
+import { compose } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';

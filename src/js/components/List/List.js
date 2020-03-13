@@ -1,12 +1,11 @@
 import React from 'react';
-import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles } from '../../utils';
+import { focusStyle, genericStyles, compose } from '../../utils';
 import { withFocus, withForwardRef } from '../hocs';
 
 const StyledList = styled.ul`

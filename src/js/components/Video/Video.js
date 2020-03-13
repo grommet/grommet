@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
 
+import { throttle, compose } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -12,7 +12,6 @@ import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
-import { throttle } from '../../utils';
 
 import {
   StyledVideo,
@@ -518,9 +517,6 @@ if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   VideoDoc = require('./doc').doc(Video);
 }
-const VideoWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(VideoDoc || Video);
+const VideoWrapper = compose(withTheme, withForwardRef)(VideoDoc || Video);
 
 export { VideoWrapper as Video };

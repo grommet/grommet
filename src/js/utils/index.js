@@ -8,6 +8,7 @@ export * from './graphics';
 export * from './prop-types';
 export * from './styles';
 export * from './object';
+export * from './recompose';
 export * from './refs';
 export * from './responsive';
 export * from './router';

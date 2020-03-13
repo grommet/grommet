@@ -1,9 +1,9 @@
 /* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
-import getDisplayName from 'recompose/getDisplayName';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { withTheme } from 'styled-components';
 import { AnnounceContext } from '../contexts';
+import { getDisplayName } from '../utils';
 
 export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
   class FocusableComponent extends Component {

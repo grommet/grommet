@@ -1,11 +1,11 @@
 import React from 'react';
-import { compose } from 'recompose';
 
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Keyboard } from '../Keyboard';
 import { withFocus, withForwardRef } from '../hocs';
+import { compose } from '../../utils';
 
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
