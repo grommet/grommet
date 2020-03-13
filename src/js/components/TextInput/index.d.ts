@@ -12,8 +12,8 @@ export interface TextInputProps {
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
-  onSuggestionsOpen?: (() => Function);
-  onSuggestionsClose?: (() => Function);
+  onSuggestionsOpen?: (() => void);
+  onSuggestionsClose?: (() => void);
   placeholder?: PlaceHolderType;
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
