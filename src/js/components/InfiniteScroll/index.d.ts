@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface InfiniteScrollProps {
-  children?: ((...args: [string, number] ) => React.ElementType);
+  children?: ((...args: [string, number] ) => React.View);
   items?: string[];
   onMore?: (() => void);
   renderMarker?: ((...args: React.ElementType[]) => React.ElementType);
