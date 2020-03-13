@@ -282,7 +282,7 @@ boolean
 
 **name**
 
-The name of the attribute when in a Form or FormField..
+The name of the attribute when in a Form or FormField.
 
 ```
 string
