@@ -157,19 +157,23 @@ describe('Form', () => {
             name="test"
             required
             validate={[
-              name => {
-                return name.length === 1 ? 'simple string' : undefined;
+              value => {
+                return value.length === 1 ? 'simple string' : undefined;
               },
-              name => {
-                return name.length === 2 ? <Text> ReactNode </Text> : undefined;
+              value => {
+                return value.length === 2 ? (
+                  <Text> ReactNode </Text>
+                ) : (
+                  undefined
+                );
               },
-              name => {
-                return name.length === 3
+              value => {
+                return value.length === 3
                   ? { message: 'status error', status: 'error' }
                   : undefined;
               },
-              name => {
-                return name.length === 4
+              value => {
+                return value.length === 4
                   ? { message: 'status info', status: 'info' }
                   : undefined;
               },
