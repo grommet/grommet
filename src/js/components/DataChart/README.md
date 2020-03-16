@@ -126,7 +126,7 @@ string
 
 **xAxis**
 
-x-xxis configuration
+x-axis configuration
 
 ```
 {
