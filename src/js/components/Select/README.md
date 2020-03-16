@@ -280,6 +280,14 @@ Whether to allow multiple options to be selected.
 boolean
 ```
 
+**name**
+
+The name of the attribute when in a Form or FormField.
+
+```
+string
+```
+
 **onChange**
 
 Function that will be called when the user selects an option.

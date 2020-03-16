@@ -113,7 +113,7 @@ Custom messages for TextInput. Used for accessibility by screen
 
 **name**
 
-The name attribute of the input.
+The name of the attribute when in a Form or FormField.
 
 ```
 string
