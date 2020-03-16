@@ -159,6 +159,12 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
     ),
+    onSort: PropTypes.func.description(
+      `When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}`,
+    ),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(sizes),
       PropTypes.string,
@@ -193,6 +199,10 @@ export const doc = DataTable => {
       header and footer cell alignment, all cells will have the same
       width. This cannot be used in combination with 'resizeable'.`,
     ),
+    sort: PropTypes.shape({
+      direction: PropTypes.oneOf(['asc', 'desc']),
+      property: PropTypes.string.isRequired,
+    }).description('Which property to sort on and which direction to sort.'),
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),

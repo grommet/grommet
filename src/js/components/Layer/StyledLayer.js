@@ -27,7 +27,7 @@ const responsiveLayerStyle = `
 
 const StyledLayer = styled.div`
   ${baseStyle}
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: ${props => props.theme.layer.zIndex};
   pointer-events: none;

@@ -576,7 +576,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const hasBetweenBorder =
     border === 'between' || (border && border.side === 'between');
   const styles = [];
-  if (directionProp === 'column' || directionProp === 'column-reverse' ) {
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
     const height = theme.global.edgeSize[gap] || gap;
     styles.push(
       css`
@@ -643,6 +643,7 @@ Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
 const StyledBoxGap = styled.div`
   flex: 0 0 auto;
+  align-self: stretch;
   ${props =>
     props.gap &&
     gapStyle(

@@ -28,6 +28,11 @@ const StyledTextInput = styled.input`
   ${props => props.plain && plainStyle}
 
   ${placeholderStyle}
+  ${props =>
+    props.icon &&
+    (props.reverse
+      ? `padding-right: ${props.theme.global.edgeSize.large};`
+      : `padding-left: ${props.theme.global.edgeSize.large};`)}
 
   &::-moz-focus-inner {
     border: none;
@@ -79,6 +84,19 @@ const StyledPlaceholder = styled.div`
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
 
+const StyledIcon = styled.div`
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  ${props =>
+    props.reverse
+      ? `right: ${props.theme.global.input.padding};`
+      : `left: ${props.theme.global.input.padding};`}
+`;
+
 const StyledSuggestions = styled.ol`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -99,5 +117,6 @@ export {
   StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
+  StyledIcon,
   StyledSuggestions,
 };

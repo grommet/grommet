@@ -114,6 +114,35 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('onSort', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          onSort={onSort}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({ property: 'a', direction: 'asc' }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('search', () => {
     const { container } = render(
       <Grommet>
