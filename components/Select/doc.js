@@ -37,6 +37,7 @@ var doc = function doc(Select) {
       multiple: _reactDesc.PropTypes.string
     }).description('Custom messages.'),
     multiple: _reactDesc.PropTypes.bool.description('Whether to allow multiple options to be selected.'),
+    name: _reactDesc.PropTypes.string.description("The name of the attribute when in a Form or FormField."),
     onChange: _reactDesc.PropTypes.func.description('Function that will be called when the user selects an option.'),
     onClose: _reactDesc.PropTypes.func.description('Function that will be called when the Select drop closes.'),
     onOpen: _reactDesc.PropTypes.func.description('Function that will be called when the Select drop opens.'),
