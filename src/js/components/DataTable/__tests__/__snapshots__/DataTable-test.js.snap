@@ -3158,6 +3158,538 @@ exports[`DataTable groupBy property 2`] = `
 </div>
 `;
 
+exports[`DataTable onSort 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c4"
+          scope="col"
+        >
+          <button
+            class="c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <span
+                class="c7"
+              >
+                A
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          class="c4"
+          scope="col"
+        >
+          <button
+            class="c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <span
+                class="c7"
+              >
+                B
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="row"
+        >
+          <span
+            class="c9"
+          >
+            zero
+          </span>
+        </th>
+        <td
+          class="c8"
+        >
+          <span
+            class="c7"
+          >
+            0
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="row"
+        >
+          <span
+            class="c9"
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="c8"
+        >
+          <span
+            class="c7"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="row"
+        >
+          <span
+            class="c9"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c8"
+        >
+          <span
+            class="c7"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable onSort 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <table
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 hJcOxq"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 dSAyNg StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gsRqPi"
+          scope="col"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 fQBEfF"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 hErwNa"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 hUokoe"
+              >
+                A
+              </span>
+              .c0 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<div
+                class="c0"
+              />
+              .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                aria-label="FormUp"
+                class="c0"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(1 0 0 -1 0 24)"
+                />
+              </svg>
+            </div>
+          </button>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gsRqPi"
+          scope="col"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 fQBEfF"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 hErwNa"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 hUokoe"
+              >
+                B
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 bMdIOJ StyledDataTable__StyledDataTableBody-xrlyjm-2 bkHhvy"
+    >
+      .c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  height: 100%;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<tr
+        class="c0 "
+      >
+        <th
+          class="c1"
+          scope="row"
+        >
+          <span
+            class="c2"
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="c1"
+        >
+          <span
+            class="c3"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      .c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  height: 100%;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<tr
+        class="c0 "
+      >
+        <th
+          class="c1"
+          scope="row"
+        >
+          <span
+            class="c2"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c1"
+        >
+          <span
+            class="c3"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+      .c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  height: 100%;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<tr
+        class="c0 "
+      >
+        <th
+          class="c1"
+          scope="row"
+        >
+          <span
+            class="c2"
+          >
+            zero
+          </span>
+        </th>
+        <td
+          class="c1"
+        >
+          <span
+            class="c3"
+          >
+            0
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`DataTable pad 1`] = `
 .c0 {
   font-size: 18px;
@@ -4168,6 +4700,9 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -4624,6 +5159,9 @@ exports[`DataTable search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -4837,7 +5375,7 @@ exports[`DataTable search 2`] = `
               A
             </span>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUZSMI"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
             />
             .c0 {
   display: -webkit-box;
@@ -5289,6 +5827,9 @@ exports[`DataTable sort 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 6px;
 }
 
@@ -5338,7 +5879,7 @@ exports[`DataTable sort 2`] = `
 }
 
 <svg
-                aria-label="FormDown"
+                aria-label="FormUp"
                 class="c0"
                 viewBox="0 0 24 24"
               >
@@ -5347,6 +5888,7 @@ exports[`DataTable sort 2`] = `
                   points="18 9 12 15 6 9"
                   stroke="#000"
                   stroke-width="2"
+                  transform="matrix(1 0 0 -1 0 24)"
                 />
               </svg>
             </div>

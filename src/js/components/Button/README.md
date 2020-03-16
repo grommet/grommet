@@ -619,6 +619,38 @@ Defaults to
 8px
 ```
 
+**button.transition.duration**
+
+The length of time it will take for the element to transition
+between two states. Expects `number`.
+
+Defaults to
+
+```
+0.1
+```
+
+**button.transition.properties**
+
+The CSS properties you want to add the transition to. Expects `string[]`.
+
+Defaults to
+
+```
+['color', 'background-color', 'border-color', 'box-shadow']
+```
+
+**button.transition.timing**
+
+Describes how a transition will progress over one cycle of its
+duration and allowing it to change speed during its course. Expects `string`.
+
+Defaults to
+
+```
+ease-in-out
+```
+
 **button.extend**
 
 Any additional style for the Button. Expects `string | (props) => {}`.
