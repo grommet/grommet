@@ -23,7 +23,7 @@ export const doc = DataChart => {
     // ).required,
     // data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set')
     //   .required,
-    xAxis: PropTypes.shape({}).description('x-xxis configuration'),
+    xAxis: PropTypes.shape({}).description('x-axis configuration'),
     yAxis: PropTypes.shape({}).description('y-axis configuration'),
   };
 
