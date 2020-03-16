@@ -200,7 +200,9 @@ Validation rule when used within a grommet Form. Provide an object
 ```
 {
   regexp: object,
-  message: string,
+  message: 
+    string
+    node,
   status: 
     error
     info
@@ -209,7 +211,9 @@ function
 [
   {
     regexp: object,
-    message: string,
+    message: 
+      string
+      node,
     status: 
       error
       info
