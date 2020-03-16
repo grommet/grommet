@@ -43,17 +43,15 @@ const LayerContainer = forwardRef(
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
-
+    const overlayRef = useRef();
     useEffect(() => {
       const handleClick = event => {
-        if (containerRef.current.contains(event.target)) {
-          return;
-        }
-        if (onClickOutside) {
+        console.log(event.target);
+        if (onClickOutside && overlayRef.current === event.target) {
           onClickOutside();
         }
       };
-      if (onClickOutside) {
+      if (modal && onClickOutside) {
         document.addEventListener('mousedown', handleClick);
       }
       return () => {
@@ -61,7 +59,7 @@ const LayerContainer = forwardRef(
           document.removeEventListener('mousedown', handleClick);
         }
       };
-    }, [onClickOutside]);
+    }, [modal, onClickOutside]);
 
     useEffect(() => {
       if (position !== 'hidden') {
@@ -145,7 +143,11 @@ const LayerContainer = forwardRef(
           tabIndex="-1"
           dir={theme.dir}
         >
-          <StyledOverlay plain={plain} responsive={responsive} />
+          <StyledOverlay
+            ref={overlayRef}
+            plain={plain}
+            responsive={responsive}
+          />
           {content}
         </StyledLayer>
       );
