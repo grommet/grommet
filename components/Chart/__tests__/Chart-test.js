@@ -148,6 +148,15 @@ test('Chart gap renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Chart dash renders', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+    dash: true,
+    values: VALUES
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Chart color renders', function () {
   var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
     color: "brand",

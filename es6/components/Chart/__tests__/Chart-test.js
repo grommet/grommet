@@ -132,6 +132,14 @@ test('Chart gap renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Chart dash renders', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Chart, {
+    dash: true,
+    values: VALUES
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Chart color renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Chart, {
     color: "brand",

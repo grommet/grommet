@@ -32,6 +32,7 @@ var defaultValues = [];
 var Chart = _react["default"].forwardRef(function (_ref, ref) {
   var propsBounds = _ref.bounds,
       color = _ref.color,
+      dash = _ref.dash,
       gap = _ref.gap,
       id = _ref.id,
       onClick = _ref.onClick,
@@ -47,7 +48,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "gap", "id", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
 
@@ -146,6 +147,15 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     return undefined;
   }, [containerRef, propsSize]);
   var useGradient = color && Array.isArray(color);
+  var strokeDasharray;
+
+  if (dash) {
+    if (round) {
+      strokeDasharray = strokeWidth + " " + strokeWidth * 1.5;
+    } else {
+      strokeDasharray = strokeWidth * 2 + " " + strokeWidth / 2;
+    }
+  }
 
   var renderBars = function renderBars() {
     return (values || []).map(function (valueArg, index) {
@@ -186,7 +196,9 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
           fill: "none"
         }, _react["default"].createElement("title", null, label), _react["default"].createElement("path", _extends({
           d: d
-        }, hoverProps, clickProps, valueRest)));
+        }, hoverProps, clickProps, valueRest, {
+          strokeDasharray: strokeDasharray
+        })));
       }
 
       return undefined;
@@ -224,7 +236,9 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       fill: "none"
     }, _react["default"].createElement("path", _extends({
       d: d
-    }, hoverProps, clickProps)));
+    }, hoverProps, clickProps, {
+      strokeDasharray: strokeDasharray
+    })));
   };
 
   var renderArea = function renderArea() {
