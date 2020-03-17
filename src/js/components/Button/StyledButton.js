@@ -178,13 +178,11 @@ const StyledButton = styled.button`
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>
     !props.plain &&
+    props.theme.button.transition &&
     `
-    transition-property: color,
-      background-color,
-      border-color,
-      box-shadow;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
+    transition-property: ${props.theme.button.transition.properties.join(',')};
+    transition-duration: ${props.theme.button.transition.duration}s;
+    transition-timing-function: ${props.theme.button.transition.timing};
   `}
   ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props =>

@@ -36,6 +36,11 @@ export const doc = TextInput => {
       aligned to the TextInput itself by default.`,
     ),
     dropProps: PropTypes.object.description('Any valid Drop prop.'),
+    icon: PropTypes.element.description(
+      `An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.`,
+    ),
     id: PropTypes.string.description('The id attribute of the input.'),
     focusIndicator: PropTypes.bool.description(
       'Whether the plain text input should receive a focus outline.',
@@ -58,7 +63,9 @@ export const doc = TextInput => {
         suggestionIsOpen:
           'Suggestions drop is open, continue to use arrow keys to navigate',
       }),
-    name: PropTypes.string.description('The name attribute of the input.'),
+    name: PropTypes.string.description(
+      `The name of the attribute when in a Form or FormField.`,
+    ),
     onChange: PropTypes.func.description(
       'Function that will be called when the user types in the input.',
     ),
@@ -78,6 +85,10 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance`,
+    ),
+    reverse: PropTypes.bool.description(
+      `Whether an icon should be reversed so that the icon is at the
+      end of the input.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),

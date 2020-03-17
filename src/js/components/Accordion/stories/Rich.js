@@ -29,7 +29,7 @@ const richAccordionTheme = {
   },
 };
 
-const RichPanel = ({ children, icon, label }) => {
+const RichPanel = ({ children, icon, label, ...rest }) => {
   const [hovering, setHovering] = React.useState(false);
 
   const renderPanelTitle = () => (
@@ -53,6 +53,7 @@ const RichPanel = ({ children, icon, label }) => {
       onMouseOut={() => setHovering(false)}
       onFocus={() => setHovering(true)}
       onBlur={() => setHovering(false)}
+      {...rest}
     >
       {children}
     </AccordionPanel>
