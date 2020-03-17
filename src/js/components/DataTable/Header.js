@@ -47,84 +47,92 @@ const Header = ({
           />
         )}
 
-        {columns.map(({ property, header, align, search, sortable }) => {
-          let content =
-            typeof header === 'string' ? <Text>{header}</Text> : header;
+        {columns.map(
+          ({ property, header, align, search, sortable, verticalAlign }) => {
+            let content =
+              typeof header === 'string' ? <Text>{header}</Text> : header;
 
-          if (onSort && sortable !== false) {
-            const Icon =
-              onSort &&
-              sortable !== false &&
-              sort &&
-              sort.property === property &&
-              theme.dataTable.icons[
-                sort.ascending ? 'ascending' : 'descending'
-              ];
-            content = (
-              <Button plain fill="vertical" onClick={onSort(property)}>
-                <Box direction="row" align="center" gap="xsmall">
-                  {content}
-                  {Icon && <Icon />}
-                </Box>
-              </Button>
-            );
-          }
+            if (onSort && sortable !== false) {
+              const Icon =
+                onSort &&
+                sortable !== false &&
+                sort &&
+                sort.property === property &&
+                theme.dataTable.icons[
+                  sort.ascending ? 'ascending' : 'descending'
+                ];
+              content = (
+                <Button plain fill="vertical" onClick={onSort(property)}>
+                  <Box direction="row" align="center" gap="xsmall">
+                    {content}
+                    {Icon && <Icon />}
+                  </Box>
+                </Button>
+              );
+            }
 
-          if (search || onResize) {
-            const resizer = onResize ? (
-              <Resizer property={property} onResize={onResize} />
-            ) : null;
-            const searcher =
-              search && filters ? (
-                <Searcher
-                  filtering={filtering}
-                  filters={filters}
-                  property={property}
-                  onFilter={onFilter}
-                  onFiltering={onFiltering}
-                />
+            if (search || onResize) {
+              const resizer = onResize ? (
+                <Resizer property={property} onResize={onResize} />
               ) : null;
-            content = (
-              <Box
-                direction="row"
-                align="center"
-                justify={!align || align === 'start' ? 'between' : align}
-                gap="small"
-                fill="vertical"
-                style={onResize ? { position: 'relative' } : undefined}
+              const searcher =
+                search && filters ? (
+                  <Searcher
+                    filtering={filtering}
+                    filters={filters}
+                    property={property}
+                    onFilter={onFilter}
+                    onFiltering={onFiltering}
+                  />
+                ) : null;
+              content = (
+                <Box
+                  direction="row"
+                  align="center"
+                  justify={!align || align === 'start' ? 'between' : align}
+                  gap="small"
+                  fill="vertical"
+                  style={onResize ? { position: 'relative' } : undefined}
+                >
+                  {content}
+                  {searcher && resizer ? (
+                    <Box
+                      flex="shrink"
+                      direction="row"
+                      align="center"
+                      gap="small"
+                    >
+                      {searcher}
+                      {resizer}
+                    </Box>
+                  ) : (
+                    searcher || resizer
+                  )}
+                </Box>
+              );
+            }
+
+            return (
+              <TableCell
+                key={property}
+                align={align}
+                verticalAlign={verticalAlign}
+                background={background}
+                border={border}
+                pad={pad}
+                plain
+                scope="col"
+                style={
+                  widths && widths[property]
+                    ? { width: widths[property] }
+                    : undefined
+                }
               >
                 {content}
-                {searcher && resizer ? (
-                  <Box flex="shrink" direction="row" align="center" gap="small">
-                    {searcher}
-                    {resizer}
-                  </Box>
-                ) : (
-                  searcher || resizer
-                )}
-              </Box>
+              </TableCell>
             );
-          }
-
-          return (
-            <TableCell
-              key={property}
-              align={align}
-              background={background}
-              border={border}
-              pad={pad}
-              plain
-              scope="col"
-              style={
-                widths && widths[property]
-                  ? { width: widths[property] }
-                  : undefined
-              }
-            >
-              {content}
-            </TableCell>
-          );
-        })}
+          },
+        )}
       </StyledDataTableRow>
     </StyledDataTableHeader>
   );

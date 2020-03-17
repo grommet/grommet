@@ -3293,6 +3293,14 @@ A unique identifier for the Chart. This
 string
 \`\`\`
 
+**dash**
+
+Whether to use dashed lines for line or bar charts.
+
+\`\`\`
+boolean
+\`\`\`
+
 **onClick**
 
 Called when the user clicks on the
@@ -4542,7 +4550,11 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 \`\`\`
 
