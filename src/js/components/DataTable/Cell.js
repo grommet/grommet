@@ -17,7 +17,7 @@ const normalizeProp = (name, rowProp, prop) => {
 const Cell = ({
   background,
   border,
-  column: { align, property, render },
+  column: { align, property, render, verticalAlign },
   context,
   datum,
   index,
@@ -46,6 +46,7 @@ const Cell = ({
       scope={scope}
       {...theme.dataTable[context]}
       align={align}
+      verticalAlign={verticalAlign}
       background={normalizeProp(
         'background',
         rowProp,
