@@ -185,6 +185,15 @@ A unique identifier for the Chart. This
 string
 ```
 
+**dash**
+
+Whether to use dashed lines for line or bar charts.
+
+```
+boolean
+string
+```
+
 **onClick**
 
 Called when the user clicks on the

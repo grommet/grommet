@@ -93,6 +93,16 @@ test('Chart gap renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Chart dash renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Chart dash values={VALUES} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Chart color renders', () => {
   const component = renderer.create(
     <Grommet>
