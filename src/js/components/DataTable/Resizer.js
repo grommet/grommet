@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 import { compose } from 'recompose';
 
@@ -12,56 +12,64 @@ const ResizerBox = styled(Box)`
   cursor: col-resize;
 `;
 
-class Resizer extends Component {
-  state = {};
+const Resizer = ({ onResize, property, theme }) => {
+  const [start, setStart] = useState();
+  const [width, setWidth] = useState();
+  const [currentEvent, setCurrentEvent] = useState();
+  const ref = useRef();
 
-  ref = React.createRef();
-
-  onMouseDown = event => {
-    if (this.ref.current) {
-      let element = this.ref.current;
-      // find TH parent
-      while (element && element.nodeName !== 'TH') element = element.parentNode;
-      const rect = element.getBoundingClientRect();
-      this.setState({ start: event.clientX, width: rect.width }, () => {
-        document.addEventListener('mousemove', this.onMouseMove);
-        document.addEventListener('mouseup', this.onMouseUp);
-      });
-    }
-  };
-
-  onMouseMove = event => {
-    const { onResize, property } = this.props;
-    const { start, width } = this.state;
+  const onMouseMove = event => {
     // We determined 12 empirically as being wide enough to hit but
     // not too wide to cause false hits.
     const nextWidth = Math.max(12, width + (event.clientX - start));
     onResize(property)(nextWidth);
   };
 
-  onMouseUp = () => {
-    document.removeEventListener('mouseup', this.onMouseUp);
-    document.removeEventListener('mousemove', this.onMouseMove);
-    this.setState({ start: undefined, width: undefined });
+  const onMouseUp = () => {
+    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener('mousemove', onMouseMove);
+    setStart(undefined);
+    setWidth(undefined);
+    setCurrentEvent(undefined);
   };
 
-  render() {
-    const { theme } = this.props;
-    const { start } = this.state;
-    return (
-      <ResizerBox
-        ref={this.ref}
-        flex={false}
-        responsive={false}
-        pad={{ vertical: 'small' }}
-        {...theme.dataTable.resize}
-        onMouseDown={this.onMouseDown}
-        onMouseMove={start ? this.onMouseMove : undefined}
-        onMouseUp={start ? this.onMouseUp : undefined}
-      />
-    );
-  }
-}
+  const onMouseDown = event => {
+    if (ref.current) {
+      let element = ref.current;
+      // find TH parent
+      while (element && element.nodeName !== 'TH') element = element.parentNode;
+      const rect = element.getBoundingClientRect();
+      setStart(event.clientX);
+      setWidth(rect.width);
+      setCurrentEvent('onMouseDown');
+    }
+  };
+
+  const addMouseEvent = useCallback(() => {
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  }, [onMouseMove, onMouseUp]);
+
+  useEffect(() => {
+    if (currentEvent === 'onMouseDown') {
+      addMouseEvent();
+      setCurrentEvent(undefined);
+    }
+  }, [currentEvent, addMouseEvent]);
+
+  return (
+    <ResizerBox
+      ref={ref}
+      flex={false}
+      responsive={false}
+      pad={{ vertical: 'small' }}
+      {...theme.dataTable.resize}
+      onMouseDown={onMouseDown}
+      onMouseMove={start ? onMouseMove : undefined}
+      onMouseUp={start ? onMouseUp : undefined}
+    />
+  );
+};
 
 Resizer.defaultProps = {};
 Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
