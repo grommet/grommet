@@ -2,9 +2,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useState, Children } from 'react';
+import React, { Children, cloneElement, useState } from 'react';
 import { Box } from '../Box';
-import { AccordionContext } from './AccordionContext';
 
 var activeAsArray = function activeAsArray(active) {
   return typeof active === 'number' ? [active] : active;
@@ -15,13 +14,9 @@ var Accordion = function Accordion(_ref) {
       _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
       children = _ref.children,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    tabContents: 'Tab Contents'
-  } : _ref$messages,
       multiple = _ref.multiple,
       onActive = _ref.onActive,
-      rest = _objectWithoutPropertiesLoose(_ref, ["activeIndex", "animate", "children", "messages", "multiple", "onActive"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["activeIndex", "animate", "children", "multiple", "onActive"]);
 
   var _useState = useState([]),
       activeIndexes = _useState[0],
@@ -57,24 +52,24 @@ var Accordion = function Accordion(_ref) {
     if (onActive) {
       onActive(nextActiveIndexes);
     }
-  }; // eslint-disable-next-line no-param-reassign
+  };
 
-
-  delete rest.onActive;
   return React.createElement(Box, _extends({
     role: "tablist"
-  }, rest), Children.toArray(children).map(function (panel, index) {
-    return React.createElement(AccordionContext.Provider, {
-      key: "accordion-panel_" + (index + 0),
-      value: {
+  }, rest), Children.toArray(children).filter(function (child) {
+    return child;
+  }).map(function (child, index) {
+    if (child) {
+      return cloneElement(child, {
         active: activeIndexes.indexOf(index) > -1,
         animate: animate,
-        messages: messages,
         onPanelChange: function onPanelChange() {
           return _onPanelChange(index);
         }
-      }
-    }, panel);
+      });
+    }
+
+    return child;
   }));
 };
 

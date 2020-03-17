@@ -5,13 +5,9 @@ exports.AccordionPanel = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _utils = require("../../utils");
-
-var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -21,10 +17,6 @@ var _Collapsible = require("../Collapsible");
 
 var _Heading = require("../Heading");
 
-var _hocs = require("../hocs");
-
-var _AccordionContext = require("../Accordion/AccordionContext");
-
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -33,108 +25,81 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var AccordionPanel = function AccordionPanel(_ref) {
-  var children = _ref.children,
+var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
+  var active = _ref.active,
+      animate = _ref.animate,
+      children = _ref.children,
       header = _ref.header,
       label = _ref.label,
-      theme = _ref.theme,
-      onMouseOut = _ref.onMouseOut,
-      onMouseOver = _ref.onMouseOver,
-      onFocus = _ref.onFocus,
-      onBlur = _ref.onBlur,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "header", "label", "theme", "onMouseOut", "onMouseOver", "onFocus", "onBlur"]);
+      onClick = _ref.onClick,
+      _onMouseOut = _ref.onMouseOut,
+      _onMouseOver = _ref.onMouseOver,
+      onPanelChange = _ref.onPanelChange,
+      _onFocus = _ref.onFocus,
+      _onBlur = _ref.onBlur,
+      rest = _objectWithoutPropertiesLoose(_ref, ["active", "animate", "children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onPanelChange", "onFocus", "onBlur"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
 
   var _useState = (0, _react.useState)(undefined),
       hover = _useState[0],
       setHover = _useState[1];
 
-  var iconColor = (0, _utils.normalizeColor)(theme.accordion.icons.color || 'control', theme);
-
-  var onHandleMouseOver = function onHandleMouseOver() {
-    var dark = theme.dark;
-    setHover(dark ? 'light-4' : 'dark-3');
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var iconColor = (0, _react.useMemo)(function () {
+    return (0, _utils.normalizeColor)(theme.accordion.icons.color || 'control', theme);
+  }, [theme]);
+  var AccordionIcon = (0, _react.useMemo)(function () {
+    return active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
+  }, [active, theme.accordion.icons]);
+  return _react["default"].createElement(_Box.Box, {
+    ref: ref,
+    flex: false,
+    onClick: onClick
+  }, _react["default"].createElement(_Button.Button, {
+    role: "tab",
+    "aria-selected": active,
+    "aria-expanded": active,
+    onClick: onPanelChange,
+    onMouseOver: function onMouseOver(event) {
+      setHover(theme.dark ? 'light-4' : 'dark-3');
+      if (_onMouseOver) _onMouseOver(event);
+    },
+    onMouseOut: function onMouseOut(event) {
+      setHover(undefined);
+      if (_onMouseOut) _onMouseOut(event);
+    },
+    onFocus: function onFocus(event) {
+      setHover(theme.dark ? 'light-4' : 'dark-3');
+      if (_onFocus) _onFocus(event);
+    },
+    onBlur: function onBlur(event) {
+      setHover(undefined);
+      if (_onBlur) _onBlur(event);
     }
-
-    if (onMouseOver) onMouseOver(args);
-  };
-
-  var onHandleMouseOut = function onHandleMouseOut() {
-    setHover(undefined);
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
+  }, header || _react["default"].createElement(_Box.Box, _extends({
+    align: "center",
+    direction: "row",
+    justify: "between"
+  }, rest), typeof label === 'string' ? _react["default"].createElement(_Box.Box, {
+    pad: {
+      horizontal: 'xsmall'
     }
-
-    if (onMouseOut) onMouseOut(args);
-  };
-
-  var onHandleFocus = function onHandleFocus() {
-    var dark = theme.dark;
-    setHover(dark ? 'light-4' : 'dark-3');
-
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
+  }, _react["default"].createElement(_Heading.Heading, {
+    level: theme.accordion.heading && theme.accordion.heading.level || 4,
+    color: hover
+  }, label)) : label, AccordionIcon && _react["default"].createElement(_Box.Box, {
+    pad: {
+      horizontal: 'small'
     }
-
-    if (onFocus) onFocus(args);
-  };
-
-  var onHandleBlur = function onHandleBlur() {
-    setHover(undefined);
-
-    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-      args[_key4] = arguments[_key4];
-    }
-
-    if (onBlur) onBlur(args);
-  };
-
-  return _react["default"].createElement(_AccordionContext.AccordionContext.Consumer, null, function (panelContext) {
-    var active = panelContext.active,
-        animate = panelContext.animate,
-        onPanelChange = panelContext.onPanelChange;
-    var AccordionIcon = active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
-    return _react["default"].createElement(_Box.Box, {
-      flex: false
-    }, _react["default"].createElement(_Button.Button, {
-      role: "tab",
-      "aria-selected": active,
-      "aria-expanded": active,
-      onClick: onPanelChange,
-      onMouseOver: onHandleMouseOver,
-      onMouseOut: onHandleMouseOut,
-      onFocus: onHandleFocus,
-      onBlur: onHandleBlur
-    }, header || _react["default"].createElement(_Box.Box, _extends({
-      align: "center",
-      direction: "row",
-      justify: "between"
-    }, rest), typeof label === 'string' ? _react["default"].createElement(_Box.Box, {
-      pad: {
-        horizontal: 'xsmall'
-      }
-    }, _react["default"].createElement(_Heading.Heading, {
-      level: theme.accordion.heading && theme.accordion.heading.level || 4,
-      color: hover
-    }, label)) : label, AccordionIcon && _react["default"].createElement(_Box.Box, {
-      pad: {
-        horizontal: 'small'
-      }
-    }, _react["default"].createElement(AccordionIcon, {
-      color: iconColor
-    })))), _react["default"].createElement(_Box.Box, {
-      border: theme.accordion.border
-    }, animate ? _react["default"].createElement(_Collapsible.Collapsible, {
-      open: active
-    }, children) : active && children));
-  });
-};
-
-AccordionPanel.defaultProps = {};
-Object.setPrototypeOf(AccordionPanel.defaultProps, _defaultProps.defaultProps);
+  }, _react["default"].createElement(AccordionIcon, {
+    color: iconColor
+  })))), _react["default"].createElement(_Box.Box, {
+    border: theme.accordion.border
+  }, animate ? _react["default"].createElement(_Collapsible.Collapsible, {
+    open: active
+  }, children) : active && children));
+});
+AccordionPanel.displayName = 'AccordionPanel';
 var AccordionPanelDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -142,5 +107,5 @@ if (process.env.NODE_ENV !== 'production') {
   AccordionPanelDoc = require('./doc').doc(AccordionPanel);
 }
 
-var AccordionPanelWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(AccordionPanelDoc || AccordionPanel);
+var AccordionPanelWrapper = AccordionPanelDoc || AccordionPanel;
 exports.AccordionPanel = AccordionPanelWrapper;

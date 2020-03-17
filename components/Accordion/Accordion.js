@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _Box = require("../Box");
 
-var _AccordionContext = require("./AccordionContext");
-
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -26,13 +24,9 @@ var Accordion = function Accordion(_ref) {
       _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
       children = _ref.children,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    tabContents: 'Tab Contents'
-  } : _ref$messages,
       multiple = _ref.multiple,
       onActive = _ref.onActive,
-      rest = _objectWithoutPropertiesLoose(_ref, ["activeIndex", "animate", "children", "messages", "multiple", "onActive"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["activeIndex", "animate", "children", "multiple", "onActive"]);
 
   var _useState = (0, _react.useState)([]),
       activeIndexes = _useState[0],
@@ -68,24 +62,24 @@ var Accordion = function Accordion(_ref) {
     if (onActive) {
       onActive(nextActiveIndexes);
     }
-  }; // eslint-disable-next-line no-param-reassign
+  };
 
-
-  delete rest.onActive;
   return _react["default"].createElement(_Box.Box, _extends({
     role: "tablist"
-  }, rest), _react.Children.toArray(children).map(function (panel, index) {
-    return _react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
-      key: "accordion-panel_" + (index + 0),
-      value: {
+  }, rest), _react.Children.toArray(children).filter(function (child) {
+    return child;
+  }).map(function (child, index) {
+    if (child) {
+      return (0, _react.cloneElement)(child, {
         active: activeIndexes.indexOf(index) > -1,
         animate: animate,
-        messages: messages,
         onPanelChange: function onPanelChange() {
           return _onPanelChange(index);
         }
-      }
-    }, panel);
+      });
+    }
+
+    return child;
   }));
 };
 
