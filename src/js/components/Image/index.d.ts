@@ -7,8 +7,8 @@ export interface ImageProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   fallback?: string;
+  fill?: FillType;
   fit?: "cover" | "contain";
-  fillProp?: FillType;
   gridArea?: GridAreaType;
   margin?: MarginType;
   opacity?: "weak" | "medium" | "strong" | string | boolean;
