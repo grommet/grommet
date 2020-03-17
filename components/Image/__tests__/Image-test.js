@@ -50,6 +50,15 @@ test('Image fillProp renders', function () {
   var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
     fill: true,
     src: SRC
+  }), _react["default"].createElement(_.Image, {
+    fill: false,
+    src: SRC
+  }), _react["default"].createElement(_.Image, {
+    fill: "horizontal",
+    src: SRC
+  }), _react["default"].createElement(_.Image, {
+    fill: "vertical",
+    src: SRC
   })));
 
   var tree = component.toJSON();

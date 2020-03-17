@@ -5,10 +5,10 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Image) {
   var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
   DocumentedImage.propTypes = _extends({}, genericProps, {
+    fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
     fallback: PropTypes.string.description("Specifies the URL of the fallback image used when \n      src is failing to load"),
-    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.string, PropTypes.bool]).description('Transparency of the image.'),
-    fill: PropTypes.bool.description('Whether the image expands to fill all of the available width and height')
+    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.string, PropTypes.bool]).description('Transparency of the image.')
   });
   return DocumentedImage;
 };

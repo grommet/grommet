@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -74,10 +74,28 @@ var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint,
   }
 
   return result;
+};
+
+exports.edgeStyle = edgeStyle;
+
+var fillStyle = function fillStyle(fillProp) {
+  if (fillProp === 'horizontal') {
+    return 'width: 100%;';
+  }
+
+  if (fillProp === 'vertical') {
+    return 'height: 100%;';
+  }
+
+  if (fillProp) {
+    return "\n      width: 100%;\n      height: 100%;\n    ";
+  }
+
+  return undefined;
 }; // focus also supports clickable elements inside svg
 
 
-exports.edgeStyle = edgeStyle;
+exports.fillStyle = fillStyle;
 var focusStyle = (0, _styledComponents.css)(["> circle,> ellipse,> line,> path,> polygon,> polyline,> rect{outline:", " solid 2px;}outline-color:", ";border-color:", ";box-shadow:0 0 2px 2px ", ";::-moz-focus-inner{border:0;}"], function (props) {
   return (0, _colors.normalizeColor)(props.theme.global.focus.border.color, props.theme);
 }, function (props) {

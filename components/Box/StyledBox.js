@@ -85,23 +85,6 @@ var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
 var flexStyle = (0, _styledComponents.css)(["flex:", ";"], function (props) {
   return "" + flexGrowShrinkProp(props.flex) + (props.flex !== true && !props.basis ? ' auto' : '');
 });
-
-var fillStyle = function fillStyle(fillProp) {
-  if (fillProp === 'horizontal') {
-    return 'width: 100%;';
-  }
-
-  if (fillProp === 'vertical') {
-    return 'height: 100%;';
-  }
-
-  if (fillProp) {
-    return "\n      width: 100%;\n      height: 100%;\n    ";
-  }
-
-  return undefined;
-};
-
 var JUSTIFY_MAP = {
   around: 'space-around',
   between: 'space-between',
@@ -411,7 +394,7 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.basis && basisStyle;
 }, function (props) {
-  return props.fillProp && fillStyle(props.fillProp);
+  return props.fillProp && (0, _utils.fillStyle)(props.fillProp);
 }, function (props) {
   return props.justify && justifyStyle;
 }, function (props) {

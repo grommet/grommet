@@ -62,6 +62,21 @@ export var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBrea
   }
 
   return result;
+};
+export var fillStyle = function fillStyle(fillProp) {
+  if (fillProp === 'horizontal') {
+    return 'width: 100%;';
+  }
+
+  if (fillProp === 'vertical') {
+    return 'height: 100%;';
+  }
+
+  if (fillProp) {
+    return "\n      width: 100%;\n      height: 100%;\n    ";
+  }
+
+  return undefined;
 }; // focus also supports clickable elements inside svg
 
 export var focusStyle = css(["> circle,> ellipse,> line,> path,> polygon,> polyline,> rect{outline:", " solid 2px;}outline-color:", ";border-color:", ";box-shadow:0 0 2px 2px ", ";::-moz-focus-inner{border:0;}"], function (props) {

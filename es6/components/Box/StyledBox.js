@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import styled, { css, keyframes } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum } from '../../utils';
+import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum } from '../../utils';
 var ALIGN_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -73,23 +73,6 @@ var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
 var flexStyle = css(["flex:", ";"], function (props) {
   return "" + flexGrowShrinkProp(props.flex) + (props.flex !== true && !props.basis ? ' auto' : '');
 });
-
-var fillStyle = function fillStyle(fillProp) {
-  if (fillProp === 'horizontal') {
-    return 'width: 100%;';
-  }
-
-  if (fillProp === 'vertical') {
-    return 'height: 100%;';
-  }
-
-  if (fillProp) {
-    return "\n      width: 100%;\n      height: 100%;\n    ";
-  }
-
-  return undefined;
-};
-
 var JUSTIFY_MAP = {
   around: 'space-around',
   between: 'space-between',

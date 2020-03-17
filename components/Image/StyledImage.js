@@ -20,7 +20,6 @@ var FIT_MAP = {
 var fitStyle = (0, _styledComponents.css)(["flex:1 1;overflow:hidden;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
 });
-var fillStyle = (0, _styledComponents.css)(["width:100%;height:100%;"]);
 
 var StyledImage = _styledComponents["default"].img.withConfig({
   displayName: "StyledImage",
@@ -28,7 +27,7 @@ var StyledImage = _styledComponents["default"].img.withConfig({
 })(["", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.fit && fitStyle;
 }, function (props) {
-  return props.fillProp && fillStyle;
+  return props.fillProp && (0, _utils.fillStyle)(props.fillProp);
 }, function (props) {
   return props.theme.image && props.theme.image.extend;
 }, function (props) {
