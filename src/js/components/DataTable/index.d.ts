@@ -27,7 +27,8 @@ export interface DataTableProps {
     header?: string | React.ReactNode | {aggregate?: boolean},
     primary?: boolean,property: string,
     render?: ((...args: any[]) => any),
-    search?: boolean,sortable?: boolean,
+    search?: boolean,
+    sortable?: boolean,
     verticalAlign?: "middle" | "top" | "bottom"}[];
   data?: {}[];
   groupBy?: string | { property: string, expand: Array<string>, onExpand: ((...args: any[]) => any) };
