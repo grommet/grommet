@@ -10,6 +10,12 @@ import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
+const verticalAlignToJustify = {
+  middle: 'center',
+  top: 'start',
+  bottom: 'end',
+};
+
 const TableCell = ({
   align,
   background,
@@ -67,7 +73,11 @@ const TableCell = ({
           {plain || !Object.keys(mergedProps).length ? (
             children
           ) : (
-            <Box {...mergedProps} align={align}>
+            <Box
+              {...mergedProps}
+              align={align}
+              justify={verticalAlignToJustify[verticalAlign]}
+            >
               {children}
             </Box>
           )}
