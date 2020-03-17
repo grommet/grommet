@@ -6,7 +6,13 @@ const useFormContext = (_, valueProp) => {
   const [value, setValue] = useState(valueProp !== undefined ? valueProp : '');
   // use whatever value is passed in, even when it changes
   useEffect(() => setValue(valueProp), [valueProp]);
-  return [value, setValue];
+  return [
+    value,
+    nextValue => {
+      // only set if the caller hasn't supplied a specific value
+      if (valueProp === undefined) setValue(nextValue);
+    },
+  ];
 };
 
 export const FormContext = React.createContext({ useFormContext });

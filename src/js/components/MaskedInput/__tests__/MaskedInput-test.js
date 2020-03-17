@@ -91,7 +91,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChange}
       />,
     );
@@ -123,7 +122,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChange}
       />,
     );
@@ -172,7 +170,6 @@ describe('MaskedInput', () => {
         data-testid="test-input"
         id="item"
         name="item"
-        value=""
         mask={[
           {
             length: [1, 2],
@@ -218,7 +215,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChangeMock}
       />,
     );
@@ -265,7 +261,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChangeMock}
       />,
     );
@@ -328,7 +323,6 @@ describe('MaskedInput', () => {
             },
             { fixed: '!' },
           ]}
-          value=""
           onChange={onChange}
         />
       </Grommet>,
