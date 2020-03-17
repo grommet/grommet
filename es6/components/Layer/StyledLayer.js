@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { baseStyle, backgroundStyle, breakpointStyle } from '../../utils';
+import { baseStyle, backgroundStyle, breakpointStyle, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 var hiddenPositionStyle = css(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
@@ -22,7 +22,7 @@ var StyledLayer = styled.div.withConfig({
         right = _props$targetBounds.right,
         top = _props$targetBounds.top,
         bottom = _props$targetBounds.bottom;
-    styles.push("\n        position: fixed;\n        top: " + top + "px;\n        left: " + left + "px;\n        right: " + (window.innerWidth - right) + "px;\n        bottom: " + (window.innerHeight - bottom) + "px;\n      ");
+    styles.push("\n        position: fixed;\n        top: " + top + "px;\n        left: " + left + "px;\n        right: " + right + "px;\n        bottom: " + bottom + "px;\n      ");
   } else {
     styles.push(desktopLayerStyle);
   }
@@ -57,29 +57,29 @@ var getMargin = function getMargin(margin, theme, position) {
   var marginValue = margin[position] || margin[axis] || margin;
   var marginApplied = theme.global.edgeSize[marginValue] || marginValue;
   var marginInTheme = !!theme.global.edgeSize[marginValue];
-  return !marginInTheme && typeof marginValue !== 'string' ? '0px' : marginApplied;
+  return !marginInTheme && typeof marginValue !== 'string' ? 0 : parseMetricToNum(marginApplied);
 };
 
-var MARGINS = function MARGINS(margin, theme, position) {
+var getBounds = function getBounds(bounds, margin, theme, position) {
   if (position === void 0) {
     position = undefined;
   }
 
   if (position) {
-    return getMargin(margin, theme, position);
+    return bounds[position] + getMargin(margin, theme, position);
   }
 
   return {
-    bottom: getMargin(margin, theme, 'bottom'),
-    'bottom-left': getMargin(margin, theme, 'bottom-left'),
-    'bottom-right': getMargin(margin, theme, 'bottom-right'),
-    end: getMargin(margin, theme, 'end'),
-    left: getMargin(margin, theme, 'left'),
-    right: getMargin(margin, theme, 'right'),
-    start: getMargin(margin, theme, 'start'),
-    top: getMargin(margin, theme, 'top'),
-    'top-right': getMargin(margin, theme, 'top-right'),
-    'top-left': getMargin(margin, theme, 'top-left')
+    bottom: bounds.bottom + getMargin(margin, theme, 'bottom'),
+    // 'bottom-left': getMargin(margin, theme, 'bottom-left'),
+    // 'bottom-right': getMargin(margin, theme, 'bottom-right'),
+    end: bounds.right + getMargin(margin, theme, 'end'),
+    left: bounds.left + getMargin(margin, theme, 'left'),
+    right: bounds.right + getMargin(margin, theme, 'right'),
+    start: bounds.left + getMargin(margin, theme, 'start'),
+    top: bounds.top + getMargin(margin, theme, 'top') // 'top-right': getMargin(margin, theme, 'top-right'),
+    // 'top-left': getMargin(margin, theme, 'top-left'),
+
   };
 };
 
@@ -151,18 +151,18 @@ var getAnimationStyle = function getAnimationStyle(props, position, full) {
 
 var POSITIONS = {
   center: {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:50%;transform:translateX(-50%);", ""], margin.top, margin.bottom, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;left:50%;transform:translateX(-50%);", ""], bounds.top, bounds.bottom, function (props) {
         return getAnimationStyle(props, 'center', 'vertical');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:50%;transform:translateY(-50%);", ""], margin.left, margin.right, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;top:50%;transform:translateY(-50%);", ""], bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'center', 'horizontal');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'center', 'true');
       });
     },
@@ -173,221 +173,221 @@ var POSITIONS = {
     }
   },
   top: {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:50%;transform:translate(-50%,0%);", ""], margin.top, margin.bottom, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;left:50%;transform:translate(-50%,0%);", ""], bounds.top, bounds.bottom, function (props) {
         return getAnimationStyle(props, 'top', 'vertical');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.top, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;top:", "px;transform:translateY(0);", ""], bounds.left, bounds.right, bounds.top, function (props) {
         return getAnimationStyle(props, 'top', 'horizontal');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateY(0);", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["top:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, function (props) {
+    "false": function _false(bounds) {
+      return css(["top:", "px;left:50%;transform:translate(-50%,0);", ""], bounds.top, function (props) {
         return getAnimationStyle(props, 'top', 'false');
       });
     }
   },
   bottom: {
-    vertical: function vertical(margin) {
-      return css(["top:", " bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, margin.bottom, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;left:50%;transform:translate(-50%,0);", ""], bounds.top, bounds.bottom, function (props) {
         return getAnimationStyle(props, 'bottom', 'vertical');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.top, margin.bottom, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;bottom:", "px;transform:translateY(0);", ""], bounds.left, bounds.top, bounds.bottom, function (props) {
         return getAnimationStyle(props, 'bottom', 'horizontal');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateY(0);", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.bottom, function (props) {
+    "false": function _false(bounds) {
+      return css(["bottom:", "px;left:50%;transform:translate(-50%,0);", ""], bounds.bottom, function (props) {
         return getAnimationStyle(props, 'bottom', 'false');
       });
     }
   },
   left: {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, function (props) {
         return getAnimationStyle(props, 'left', 'vertical');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, margin.right, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'left', 'horizontal');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'left', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["left:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, function (props) {
+    "false": function _false(bounds) {
+      return css(["left:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.left, function (props) {
         return getAnimationStyle(props, 'left', 'false');
       });
     }
   },
   right: {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.right, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;right:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.right, function (props) {
         return getAnimationStyle(props, 'right', 'vertical');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, margin.right, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'right', 'horizontal');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'right', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["right:", ";top:50%;transform:translate(0,-50%);", ""], margin.right, function (props) {
+    "false": function _false(bounds) {
+      return css(["right:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.right, function (props) {
         return getAnimationStyle(props, 'right', 'false');
       });
     }
   },
   start: {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";inset-inline-start:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.start, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;inset-inline-start:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.start, function (props) {
         return getAnimationStyle(props, 'start', 'vertical');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["inset-inline-start:", ";inset-inline-end:", ";top:50%;transform:translate(0,-50%);", ""], margin.start, margin.end, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["inset-inline-start:", "px;inset-inline-end:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.start, bounds.end, function (props) {
         return getAnimationStyle(props, 'start', 'horizontal');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";inset-inline-start:", ";inset-inline-end:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.start, margin.end, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;inset-inline-start:", "px;inset-inline-end:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.start, bounds.end, function (props) {
         return getAnimationStyle(props, 'start', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["inset-inline-start:", ";top:50%;transform:translate(0,-50%);", ""], margin.start, function (props) {
+    "false": function _false(bounds) {
+      return css(["inset-inline-start:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.start, function (props) {
         return getAnimationStyle(props, 'start', 'false');
       });
     }
   },
   end: {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";inset-inline-end:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.end, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;inset-inline-end:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.end, function (props) {
         return getAnimationStyle(props, 'end', 'vertical');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["inset-inline-start:", ";inset-inline-end:", ";top:50%;transform:translate(0,-50%);", ""], margin.start, margin.end, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["inset-inline-start:", "px;inset-inline-end:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.start, bounds.end, function (props) {
         return getAnimationStyle(props, 'end', 'horizontal');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";inset-inline-start:", ";inset-inline-end:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.start, margin.end, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;inset-inline-start:", "px;inset-inline-end:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.start, bounds.end, function (props) {
         return getAnimationStyle(props, 'end', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["inset-inline-end:", ";top:50%;transform:translate(0,-50%);", ""], margin.end, function (props) {
+    "false": function _false(bounds) {
+      return css(["inset-inline-end:", "px;top:50%;transform:translate(0,-50%);", ""], bounds.end, function (props) {
         return getAnimationStyle(props, 'end', 'false');
       });
     }
   },
   'top-right': {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.right, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;right:", "px;transform:translateX(0);", ";"], bounds.top, bounds.bottom, bounds.right, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:0;transform:translateX(0);", ";"], margin.left, margin.right, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;top:0;transform:translateX(0);", ";"], bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateX(0);", ";"], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["top:", ";right:", ";transform:translateY(0);", ";"], margin.top, margin.right, function (props) {
+    "false": function _false(bounds) {
+      return css(["top:", "px;right:", "px;transform:translateY(0);", ";"], bounds.top, bounds.right, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     }
   },
   'top-left': {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:0;transform:translateX(0);", ""], margin.left, margin.right, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;top:0;transform:translateX(0);", ""], bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["top:", ";left:", ";transform:translateY(0);", ""], margin.top, margin.left, function (props) {
+    "false": function _false(bounds) {
+      return css(["top:", "px;left:", "px;transform:translateY(0);", ""], bounds.top, bounds.left, function (props) {
         return getAnimationStyle(props, 'top', 'true');
       });
     }
   },
   'bottom-right': {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.right, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;right:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.right, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.bottom, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;bottom:", "px;transform:translateY(0);", ""], bounds.left, bounds.right, bounds.bottom, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["bottom:", ";right:", ";transform:translateY(0);", ""], margin.bottom, margin.right, function (props) {
+    "false": function _false(bounds) {
+      return css(["bottom:", "px;right:", "px;transform:translateY(0);", ""], bounds.bottom, bounds.right, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     }
   },
   'bottom-left': {
-    vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
+    vertical: function vertical(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     },
-    horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.bottom, function (props) {
+    horizontal: function horizontal(bounds) {
+      return css(["left:", "px;right:", "px;bottom:", "px;transform:translateY(0);", ""], bounds.left, bounds.right, bounds.bottom, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     },
-    "true": function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+    "true": function _true(bounds) {
+      return css(["top:", "px;bottom:", "px;left:", "px;right:", "px;transform:translateX(0);", ""], bounds.top, bounds.bottom, bounds.left, bounds.right, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     },
-    "false": function _false(margin) {
-      return css(["bottom:", ";left:", ";transform:translateY(0);", ""], margin.bottom, margin.left, function (props) {
+    "false": function _false(bounds) {
+      return css(["bottom:", "px;left:", "px;transform:translateY(0);", ""], bounds.bottom, bounds.left, function (props) {
         return getAnimationStyle(props, 'bottom', 'true');
       });
     }
@@ -396,13 +396,13 @@ var POSITIONS = {
 var desktopContainerStyle = css(["position:", ";max-height:", ";max-width:", ";border-radius:", ";", ";"], function (props) {
   return props.modal ? 'absolute' : 'fixed';
 }, function (props) {
-  return "calc(100% - " + MARGINS(props.margin, props.theme, 'top') + " - " + MARGINS(props.margin, props.theme, 'bottom') + ")";
+  return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'top') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'bottom') + "px)";
 }, function (props) {
-  return "calc(100% - " + MARGINS(props.margin, props.theme, 'left') + " - " + MARGINS(props.margin, props.theme, 'right') + ")";
+  return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'left') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'right') + "px)";
 }, function (props) {
   return props.plain ? 0 : props.theme.layer.border.radius;
 }, function (props) {
-  return props.position !== 'hidden' && POSITIONS[props.position][props.full](MARGINS(props.margin, props.theme)) || '';
+  return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(props.targetBounds, props.margin, props.theme), props.targetBounds) || '';
 });
 var responsiveContainerStyle = css(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:100vh;width:100vw;"]);
 var StyledContainer = styled.div.withConfig({

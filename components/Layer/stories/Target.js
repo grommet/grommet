@@ -21,9 +21,13 @@ var TargetLayer = function TargetLayer() {
       gutter = _React$useState2[0],
       setGutter = _React$useState2[1];
 
-  var _React$useState3 = _react["default"].useState(positions[0]),
-      position = _React$useState3[0],
-      setPosition = _React$useState3[1];
+  var _React$useState3 = _react["default"].useState(true),
+      modal = _React$useState3[0],
+      setModal = _React$useState3[1];
+
+  var _React$useState4 = _react["default"].useState(positions[0]),
+      position = _React$useState4[0],
+      setPosition = _React$useState4[1];
 
   _react["default"].useEffect(function () {
     window.dispatchEvent(new Event('resize'));
@@ -67,13 +71,20 @@ var TargetLayer = function TargetLayer() {
       var option = _ref.option;
       return setPosition(option);
     }
+  }), _react["default"].createElement(_grommet.CheckBox, {
+    toggle: true,
+    label: "modal",
+    checked: modal,
+    onChange: function onChange() {
+      return setModal(!modal);
+    }
   }), _react["default"].createElement(_grommet.Button, {
     label: "Open",
     onClick: onOpen
   }))), open && _react["default"].createElement(_grommet.Layer, {
+    modal: modal,
     position: position,
     target: ref.current,
-    modal: true,
     onClickOutside: onClose,
     onEsc: onClose
   }, _react["default"].createElement(_grommet.Box, {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, Grid, Grommet, Layer, Select } from 'grommet';
+import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var positions = ['left', 'right', 'top', 'bottom', 'center'];
 
@@ -13,9 +13,13 @@ var TargetLayer = function TargetLayer() {
       gutter = _React$useState2[0],
       setGutter = _React$useState2[1];
 
-  var _React$useState3 = React.useState(positions[0]),
-      position = _React$useState3[0],
-      setPosition = _React$useState3[1];
+  var _React$useState3 = React.useState(true),
+      modal = _React$useState3[0],
+      setModal = _React$useState3[1];
+
+  var _React$useState4 = React.useState(positions[0]),
+      position = _React$useState4[0],
+      setPosition = _React$useState4[1];
 
   React.useEffect(function () {
     window.dispatchEvent(new Event('resize'));
@@ -58,13 +62,20 @@ var TargetLayer = function TargetLayer() {
       var option = _ref.option;
       return setPosition(option);
     }
+  }), React.createElement(CheckBox, {
+    toggle: true,
+    label: "modal",
+    checked: modal,
+    onChange: function onChange() {
+      return setModal(!modal);
+    }
   }), React.createElement(Button, {
     label: "Open",
     onClick: onOpen
   }))), open && React.createElement(Layer, {
+    modal: modal,
     position: position,
     target: ref.current,
-    modal: true,
     onClickOutside: onClose,
     onEsc: onClose
   }, React.createElement(Box, {

@@ -241,6 +241,13 @@ describe('Layer', function () {
     }, "This layer has a target")));
     expectPortal('target-test').toMatchSnapshot();
   });
+  test('target not modal', function () {
+    render(React.createElement(Grommet, null, React.createElement(TargetLayer, {
+      id: "target-test",
+      modal: false
+    }, "This layer has a target")));
+    expectPortal('target-test').toMatchSnapshot();
+  });
   test('unmounts from dom', function () {
     render(React.createElement(Grommet, null, React.createElement(SimpleLayer, null)));
     setTimeout(function () {

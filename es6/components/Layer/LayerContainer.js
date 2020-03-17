@@ -12,6 +12,12 @@ var HiddenAnchor = styled.a.withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
 })(["width:0;height:0;overflow:hidden;position:absolute;"]);
+var fullBounds = {
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0
+};
 var LayerContainer = forwardRef(function (_ref, ref) {
   var children = _ref.children,
       _ref$full = _ref.full,
@@ -33,7 +39,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
 
   var theme = useContext(ThemeContext);
 
-  var _useState = useState(),
+  var _useState = useState(fullBounds),
       targetBounds = _useState[0],
       setTargetBounds = _useState[1];
 
@@ -76,9 +82,9 @@ var LayerContainer = forwardRef(function (_ref, ref) {
         var rect = findVisibleParent(layerTarget).getBoundingClientRect();
         setTargetBounds({
           left: rect.left,
-          right: rect.right,
+          right: window.innerWidth - rect.right,
           top: rect.top,
-          bottom: rect.bottom
+          bottom: window.innerHeight - rect.bottom
         });
       };
 
@@ -89,6 +95,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
       };
     }
 
+    setTargetBounds(fullBounds);
     return undefined;
   }, [layerTarget]);
   var content = React.createElement(StyledContainer, _extends({
@@ -96,7 +103,8 @@ var LayerContainer = forwardRef(function (_ref, ref) {
     id: id,
     full: full,
     margin: margin,
-    modal: modal
+    modal: modal,
+    targetBounds: !modal ? targetBounds : fullBounds
   }, rest, {
     position: position,
     plain: plain,

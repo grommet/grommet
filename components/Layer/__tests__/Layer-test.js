@@ -257,6 +257,13 @@ describe('Layer', function () {
     }, "This layer has a target")));
     (0, _portal.expectPortal)('target-test').toMatchSnapshot();
   });
+  test('target not modal', function () {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(TargetLayer, {
+      id: "target-test",
+      modal: false
+    }, "This layer has a target")));
+    (0, _portal.expectPortal)('target-test').toMatchSnapshot();
+  });
   test('unmounts from dom', function () {
     (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(SimpleLayer, null)));
     setTimeout(function () {
