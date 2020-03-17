@@ -50,7 +50,8 @@ export var doc = function doc(DataTable) {
       property: PropTypes.string.isRequired,
       render: PropTypes.func,
       search: PropTypes.bool,
-      sortable: PropTypes.bool
+      sortable: PropTypes.bool,
+      verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom'])
     })).description("A description of the data. The order controls the column order.\n      'property' indicates which property in the data objects to associate\n      the column with. 'header' indicates what to display in the column\n      header. 'render' allows for custom rendering of body cells. Use 'render'\n      for custom formatting for things like currency and date or to\n      display rich content like Meters. 'align' indicates how the cells in\n      the column are aligned. 'aggregate' indicates how the data in the\n      column should be aggregated. This only applies to a footer or groupBy\n      context. 'footer' indicates what should be shown in the footer for\n      the column. 'search' indicates whether a search filter should be\n      made available for the column. 'primary' indicates that this property\n      should be used as the unique identifier, which gives the cell 'row' scope\n      for accessibility. If 'primary' is not used for any column, and\n      'primaryKey' isn't specified either, then the first column will be used."),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('Array of data objects.'),
     groupBy: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({

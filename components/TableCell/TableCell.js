@@ -23,6 +23,12 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+var verticalAlignToJustify = {
+  middle: 'center',
+  top: 'start',
+  bottom: 'end'
+};
+
 var TableCell = function TableCell(_ref) {
   var align = _ref.align,
       background = _ref.background,
@@ -75,7 +81,8 @@ var TableCell = function TableCell(_ref) {
       tableContext: tableContext,
       tableContextTheme: tableContextTheme
     }, plain ? mergedProps : {}, cellProps), plain || !Object.keys(mergedProps).length ? children : _react["default"].createElement(_Box.Box, _extends({}, mergedProps, {
-      align: align
+      align: align,
+      justify: verticalAlignToJustify[verticalAlign]
     }), children));
   });
 };

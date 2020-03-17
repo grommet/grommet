@@ -61,7 +61,8 @@ var Header = function Header(_ref) {
         header = _ref2.header,
         align = _ref2.align,
         search = _ref2.search,
-        sortable = _ref2.sortable;
+        sortable = _ref2.sortable,
+        verticalAlign = _ref2.verticalAlign;
     var content = typeof header === 'string' ? _react["default"].createElement(_Text.Text, null, header) : header;
 
     if (onSort && sortable !== false) {
@@ -109,6 +110,7 @@ var Header = function Header(_ref) {
     return _react["default"].createElement(_TableCell.TableCell, {
       key: property,
       align: align,
+      verticalAlign: verticalAlign,
       background: background,
       border: border,
       pad: pad,

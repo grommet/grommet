@@ -9,6 +9,11 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
+var verticalAlignToJustify = {
+  middle: 'center',
+  top: 'start',
+  bottom: 'end'
+};
 
 var TableCell = function TableCell(_ref) {
   var align = _ref.align,
@@ -62,7 +67,8 @@ var TableCell = function TableCell(_ref) {
       tableContext: tableContext,
       tableContextTheme: tableContextTheme
     }, plain ? mergedProps : {}, cellProps), plain || !Object.keys(mergedProps).length ? children : React.createElement(Box, _extends({}, mergedProps, {
-      align: align
+      align: align,
+      justify: verticalAlignToJustify[verticalAlign]
     }), children));
   });
 };

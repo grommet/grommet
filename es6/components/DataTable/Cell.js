@@ -20,6 +20,7 @@ var Cell = function Cell(_ref) {
       align = _ref$column.align,
       property = _ref$column.property,
       render = _ref$column.render,
+      verticalAlign = _ref$column.verticalAlign,
       context = _ref.context,
       datum = _ref.datum,
       index = _ref.index,
@@ -46,6 +47,7 @@ var Cell = function Cell(_ref) {
     scope: scope
   }, theme.dataTable[context], {
     align: align,
+    verticalAlign: verticalAlign,
     background: normalizeProp('background', rowProp, Array.isArray(background) ? background[index % background.length] : background),
     border: normalizeProp('border', rowProp, border),
     pad: normalizeProp('pad', rowProp, pad)
