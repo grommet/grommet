@@ -1,136 +1,116 @@
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
-
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
-import { withForwardRef } from '../hocs';
 
-import { AccordionContext } from '../Accordion/AccordionContext';
+const AccordionPanel = forwardRef(
+  (
+    {
+      active,
+      animate,
+      children,
+      header,
+      label,
+      onClick,
+      onMouseOut,
+      onMouseOver,
+      onPanelChange,
+      onFocus,
+      onBlur,
+      ...rest
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext);
+    const [hover, setHover] = useState(undefined);
 
-const AccordionPanel = ({
-  children,
-  header,
-  label,
-  theme,
-  onMouseOut,
-  onMouseOver,
-  onFocus,
-  onBlur,
-  ...rest
-}) => {
-  const [hover, setHover] = useState(undefined);
+    const iconColor = useMemo(
+      () => normalizeColor(theme.accordion.icons.color || 'control', theme),
+      [theme],
+    );
 
-  const iconColor = normalizeColor(
-    theme.accordion.icons.color || 'control',
-    theme,
-  );
+    const AccordionIcon = useMemo(
+      () =>
+        active ? theme.accordion.icons.collapse : theme.accordion.icons.expand,
+      [active, theme.accordion.icons],
+    );
 
-  const onHandleMouseOver = (...args) => {
-    const { dark } = theme;
-
-    setHover(dark ? 'light-4' : 'dark-3');
-
-    if (onMouseOver) onMouseOver(args);
-  };
-
-  const onHandleMouseOut = (...args) => {
-    setHover(undefined);
-
-    if (onMouseOut) onMouseOut(args);
-  };
-
-  const onHandleFocus = (...args) => {
-    const { dark } = theme;
-
-    setHover(dark ? 'light-4' : 'dark-3');
-
-    if (onFocus) onFocus(args);
-  };
-
-  const onHandleBlur = (...args) => {
-    setHover(undefined);
-
-    if (onBlur) onBlur(args);
-  };
-
-  return (
-    <AccordionContext.Consumer>
-      {panelContext => {
-        const { active, animate, onPanelChange } = panelContext;
-        const AccordionIcon = active
-          ? theme.accordion.icons.collapse
-          : theme.accordion.icons.expand;
-
-        return (
-          <Box flex={false}>
-            <Button
-              role="tab"
-              aria-selected={active}
-              aria-expanded={active}
-              onClick={onPanelChange}
-              onMouseOver={onHandleMouseOver}
-              onMouseOut={onHandleMouseOut}
-              onFocus={onHandleFocus}
-              onBlur={onHandleBlur}
-            >
-              {header || (
-                <Box align="center" direction="row" justify="between" {...rest}>
-                  {typeof label === 'string' ? (
-                    <Box pad={{ horizontal: 'xsmall' }}>
-                      <Heading
-                        level={
-                          (theme.accordion.heading &&
-                            theme.accordion.heading.level) ||
-                          4
-                        }
-                        color={hover}
-                      >
-                        {label}
-                      </Heading>
-                    </Box>
-                  ) : (
-                    label
-                  )}
-                  {AccordionIcon && (
-                    <Box pad={{ horizontal: 'small' }}>
-                      <AccordionIcon color={iconColor} />
-                    </Box>
-                  )}
+    return (
+      <Box ref={ref} flex={false} onClick={onClick}>
+        <Button
+          role="tab"
+          aria-selected={active}
+          aria-expanded={active}
+          onClick={event => {
+            console.log('!!! clicked');
+            onPanelChange(event);
+          }}
+          onMouseOver={event => {
+            setHover(theme.dark ? 'light-4' : 'dark-3');
+            if (onMouseOver) onMouseOver(event);
+          }}
+          onMouseOut={event => {
+            setHover(undefined);
+            if (onMouseOut) onMouseOut(event);
+          }}
+          onFocus={event => {
+            setHover(theme.dark ? 'light-4' : 'dark-3');
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setHover(undefined);
+            if (onBlur) onBlur(event);
+          }}
+        >
+          {header || (
+            <Box align="center" direction="row" justify="between" {...rest}>
+              {typeof label === 'string' ? (
+                <Box pad={{ horizontal: 'xsmall' }}>
+                  <Heading
+                    level={
+                      (theme.accordion.heading &&
+                        theme.accordion.heading.level) ||
+                      4
+                    }
+                    color={hover}
+                  >
+                    {label}
+                  </Heading>
+                </Box>
+              ) : (
+                label
+              )}
+              {AccordionIcon && (
+                <Box pad={{ horizontal: 'small' }}>
+                  <AccordionIcon color={iconColor} />
                 </Box>
               )}
-            </Button>
-            <Box border={theme.accordion.border}>
-              {animate ? (
-                <Collapsible open={active}>{children}</Collapsible>
-              ) : (
-                active && children
-              )}
             </Box>
-          </Box>
-        );
-      }}
-    </AccordionContext.Consumer>
-  );
-};
+          )}
+        </Button>
+        <Box border={theme.accordion.border}>
+          {animate ? (
+            <Collapsible open={active}>{children}</Collapsible>
+          ) : (
+            active && children
+          )}
+        </Box>
+      </Box>
+    );
+  },
+);
 
-AccordionPanel.defaultProps = {};
-Object.setPrototypeOf(AccordionPanel.defaultProps, defaultProps);
+AccordionPanel.displayName = 'AccordionPanel';
 
 let AccordionPanelDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   AccordionPanelDoc = require('./doc').doc(AccordionPanel);
 }
-const AccordionPanelWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(AccordionPanelDoc || AccordionPanel);
+const AccordionPanelWrapper = AccordionPanelDoc || AccordionPanel;
 
 export { AccordionPanelWrapper as AccordionPanel };
