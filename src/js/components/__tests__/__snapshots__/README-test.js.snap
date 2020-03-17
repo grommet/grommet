@@ -1872,6 +1872,15 @@ Label text to place in the button.
 node
 \`\`\`
 
+**normalized**
+
+Whether this is a normalized button. Normalized buttons have consistent 
+      styling regardless of if they contain only an icon or an icon and label.
+
+\`\`\`
+boolean
+\`\`\`
+
 **onClick**
 
 Click handler. Not setting this property and not specifying a href
@@ -2109,6 +2118,26 @@ Defaults to
 
 \`\`\`
 0.3
+\`\`\`
+
+**button.normalized.color**
+
+The color of the background for normalized buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.normalized.hover.border.color**
+
+The color of the border for normalized buttons on hover. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **button.padding.horizontal**

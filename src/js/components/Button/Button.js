@@ -17,6 +17,7 @@ import { StyledButton } from './StyledButton';
 const Button = forwardRef(
   (
     {
+      active,
       a11yTitle,
       color, // munged to avoid styled-components putting it in the DOM
       children,
@@ -27,6 +28,7 @@ const Button = forwardRef(
       fill, // munged to avoid styled-components putting it in the DOM
       href,
       label,
+      normalized,
       onBlur,
       onClick,
       onFocus,
@@ -52,18 +54,20 @@ const Button = forwardRef(
     }
 
     const isDarkBackground = () => {
+      const buttonColor =
+        normalized && !primary
+          ? theme.button.normalized.color
+          : theme.button.primary.color;
+
       const backgroundColor = normalizeBackground(
         normalizeColor(
-          color ||
-            theme.button.primary.color ||
-            theme.global.colors.control ||
-            'brand',
+          color || buttonColor || theme.global.colors.control || 'brand',
           theme,
         ),
         theme,
       );
 
-      return colorIsDark(backgroundColor, theme);
+      return colorIsDark(backgroundColor, theme) || theme.dark;
     };
 
     const [hover, setHover] = useState(false);
@@ -84,9 +88,18 @@ const Button = forwardRef(
 
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
-    if (primary && icon && !icon.props.color) {
+    if (
+      (primary || (normalized && theme.button.normalized.color)) &&
+      icon &&
+      !icon.props.color
+    ) {
       buttonIcon = cloneElement(icon, {
         color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
+      });
+    }
+    if (active && icon && !icon.props.color) {
+      buttonIcon = cloneElement(icon, {
+        color: theme.global.active.color,
       });
     }
 
@@ -97,7 +110,12 @@ const Button = forwardRef(
     let contents;
     if (first && second) {
       contents = (
-        <Box direction="row" align="center" justify="center" gap={gap}>
+        <Box
+          direction="row"
+          align="center"
+          justify={normalized ? 'start' : 'center'}
+          gap={gap}
+        >
           {first}
           {second}
         </Box>
@@ -110,6 +128,7 @@ const Button = forwardRef(
     return (
       <StyledButton
         {...rest}
+        active={active}
         as={domTag}
         ref={ref}
         aria-label={a11yTitle}
@@ -122,6 +141,7 @@ const Button = forwardRef(
         focus={focus}
         focusIndicator={focusIndicator}
         href={href}
+        normalized={normalized}
         onClick={onClick}
         onFocus={event => {
           setFocus(true);
@@ -137,7 +157,7 @@ const Button = forwardRef(
         plain={
           typeof plain !== 'undefined'
             ? plain
-            : Children.count(children) > 0 || (icon && !label)
+            : Children.count(children) > 0 || (icon && !label && !normalized)
         }
         primary={primary}
         sizeProp={size}

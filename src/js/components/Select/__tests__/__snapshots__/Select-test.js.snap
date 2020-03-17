@@ -792,7 +792,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 iQiXoG Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -1524,7 +1524,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 ghPEWB Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 PSTIc Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   disabled=""
   id="test-select"
   type="button"
@@ -3116,7 +3116,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 iQiXoG Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -3670,7 +3670,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 iQiXoG Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -4002,7 +4002,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hTZIev"
   >
     <button
-      class="StyledButton-sc-323bzc-0 iElqND"
+      class="StyledButton-sc-323bzc-0 kwbGEq"
       role="menuitem"
       tabindex="-1"
       type="button"
@@ -4022,7 +4022,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hTZIev"
   >
     <button
-      class="StyledButton-sc-323bzc-0 iElqND"
+      class="StyledButton-sc-323bzc-0 kwbGEq"
       role="menuitem"
       tabindex="-1"
       type="button"

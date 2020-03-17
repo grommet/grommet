@@ -364,6 +364,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: `${baseSpacing * 0.75}px`,
       },
       // color: { dark: undefined, light: undefined }
+      normalized: {
+        // color: { dark: undefined, light: undefined }
+        hover: {
+          border: {
+            // color: {dark: undefined, light: undefined},
+          },
+        },
+      },
       primary: {
         // color: { dark: undefined, light: undefined }
       },

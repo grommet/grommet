@@ -2385,7 +2385,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 MiGYV"
             type="button"
           >
             <div
@@ -2439,7 +2439,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 MiGYV"
             type="button"
           >
             <div
@@ -2482,7 +2482,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 MiGYV"
             type="button"
           >
             <div
@@ -3293,7 +3293,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 MiGYV"
             type="button"
           >
             <div
@@ -3347,7 +3347,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 MiGYV"
             type="button"
           >
             <div
@@ -3390,7 +3390,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 MiGYV"
             type="button"
           >
             <div
@@ -5802,7 +5802,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 sCscA"
             type="button"
           >
             <div
@@ -5885,7 +5885,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 sCscA"
             type="button"
           >
             <div

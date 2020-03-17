@@ -79,6 +79,16 @@ function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
   }
+  // primary color styling should overrule normalized
+  if (props.normalized && !props.primary) {
+    return normalizeColor(
+      props.theme.button.normalized.hover.border.color ||
+        props.theme.button.normalized.color ||
+        props.theme.button.border.color ||
+        'control',
+      props.theme,
+    );
+  }
   return normalizeColor(
     props.theme.button.border.color || 'control',
     props.theme,
@@ -122,6 +132,20 @@ const plainStyle = props => css`
   text-align: inherit;
 `;
 
+const normalizedStyle = props => css`
+  ${backgroundStyle(
+    normalizeColor(
+      props.colorValue || props.theme.button.normalized.color || undefined,
+      props.theme,
+    ),
+    props.theme,
+    props.theme.button.color,
+  )}
+  border: none;
+  text-align: inherit;
+  padding: ${props.theme.global.edgeSize.small};
+`;
+
 // Deprecate props.theme.button.disabled.opacity in V3
 const StyledButton = styled.button`
   display: inline-block;
@@ -138,6 +162,7 @@ const StyledButton = styled.button`
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
+  ${props => props.normalized && normalizedStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
   ${props => !props.disabled && !props.focus && hoverStyle}

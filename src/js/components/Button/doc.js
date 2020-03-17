@@ -78,6 +78,10 @@ with plain Buttons.`,
     ),
     icon: PropTypes.element.description('Icon element to place in the button.'),
     label: PropTypes.node.description('Label text to place in the button.'),
+    normalized: PropTypes.bool.description(
+      `Whether this is a normalized button. Normalized buttons have consistent 
+      styling regardless of if they contain only an icon or an icon and label.`,
+    ),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
         causes the Button to be disabled.`,
@@ -199,6 +203,14 @@ export const themeDoc = {
     description: 'The opacity when the button is disabled.',
     type: 'number',
     defaultValue: 0.3,
+  },
+  'button.normalized.color': {
+    description: `The color of the background for normalized buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.normalized.hover.border.color': {
+    description: `The color of the border for normalized buttons on hover.`,
+    type: 'string | { dark: string, light: string }',
   },
   'button.padding.horizontal': {
     description: 'The horizontal padding.',

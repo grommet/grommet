@@ -205,6 +205,30 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('normalized', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button onClick={() => {}} normalized>
+          normalized
+        </Button>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('normalized primary', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button onClick={() => {}} normalized primary>
+          normalized + primary
+        </Button>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('onClick', () => {
     const onClick = jest.fn();
     const component = renderer.create(

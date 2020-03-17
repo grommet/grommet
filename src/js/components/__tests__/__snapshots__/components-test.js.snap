@@ -1128,6 +1128,12 @@ background
         "name": "label",
       },
       Object {
+        "description": "Whether this is a normalized button. Normalized buttons have consistent 
+      styling regardless of if they contain only an icon or an icon and label.",
+        "format": "boolean",
+        "name": "normalized",
+      },
+      Object {
         "description": "Click handler. Not setting this property and not specifying a href
         causes the Button to be disabled.",
         "format": "function",
