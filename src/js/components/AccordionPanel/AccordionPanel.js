@@ -45,10 +45,7 @@ const AccordionPanel = forwardRef(
           role="tab"
           aria-selected={active}
           aria-expanded={active}
-          onClick={event => {
-            console.log('!!! clicked');
-            onPanelChange(event);
-          }}
+          onClick={onPanelChange}
           onMouseOver={event => {
             setHover(theme.dark ? 'light-4' : 'dark-3');
             if (onMouseOver) onMouseOver(event);
