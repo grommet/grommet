@@ -1603,8 +1603,7 @@ string",
       Object {
         "defaultValue": false,
         "description": "Whether to use dashed lines for line or bar charts.",
-        "format": "boolean
-string",
+        "format": "boolean",
         "name": "dash",
       },
       Object {

@@ -191,7 +191,6 @@ Whether to use dashed lines for line or bar charts.
 
 ```
 boolean
-string
 ```
 
 **onClick**

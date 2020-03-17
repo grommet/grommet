@@ -11,7 +11,6 @@ const Example = () => (
       <Chart type="line" dash round values={[20, 30, 15]} />
       <Chart type="line" dash thickness="xsmall" values={[20, 30, 15]} />
       <Chart type="line" dash round thickness="xsmall" values={[20, 30, 15]} />
-      <Chart type="line" dash="8 2" values={[20, 30, 15]} />
 
       <Chart
         type="bar"

@@ -157,14 +157,10 @@ const Chart = React.forwardRef(
 
     let strokeDasharray;
     if (dash) {
-      if (dash === true) {
-        if (round) {
-          strokeDasharray = `${strokeWidth} ${strokeWidth * 1.5}`;
-        } else {
-          strokeDasharray = `${strokeWidth * 2} ${strokeWidth / 2}`;
-        }
+      if (round) {
+        strokeDasharray = `${strokeWidth} ${strokeWidth * 1.5}`;
       } else {
-        strokeDasharray = dash;
+        strokeDasharray = `${strokeWidth * 2} ${strokeWidth / 2}`;
       }
     }
 

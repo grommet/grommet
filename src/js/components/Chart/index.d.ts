@@ -14,7 +14,7 @@ export interface ChartProps {
   margin?: MarginType;
   bounds?: number[][];
   color?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean} | {color: string, value: number | number[]}[];
-  dash?: boolean | string;
+  dash?: boolean;
   gap?: GapType;
   onClick?: ((...args: any[]) => any);
   onHover?: ((...args: any[]) => any);

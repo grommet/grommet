@@ -58,7 +58,7 @@ export const doc = Chart => {
     id: PropTypes.string.description(`A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
       gradients.`),
-    dash: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+    dash: PropTypes.bool
       .description(`Whether to use dashed lines for line or bar charts.`)
       .defaultValue(false),
     onClick: PropTypes.func.description(`Called when the user clicks on the
