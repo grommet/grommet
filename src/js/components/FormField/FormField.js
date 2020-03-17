@@ -327,7 +327,6 @@ const FormField = forwardRef(
           if (onFocus) onFocus(event);
         }}
         onBlur={event => {
-          setFocus(false);
           if (onFieldBlur) onFieldBlur(event);
           if (onBlur) onBlur(event);
         }}
