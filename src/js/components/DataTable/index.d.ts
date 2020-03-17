@@ -21,13 +21,14 @@ export interface DataTableProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   columns?: {
-    align?: "center" | "start" | "end", 
+    align?: "center" | "start" | "end",
     aggregate?: "avg" | "max" | "min" | 'sum',
     footer?: React.ReactNode | {aggregate?: boolean},
     header?: string | React.ReactNode | {aggregate?: boolean},
     primary?: boolean,property: string,
     render?: ((...args: any[]) => any),
-    search?: boolean,sortable?: boolean}[];
+    search?: boolean,sortable?: boolean,
+    verticalAlign?: "middle" | "top" | "bottom"}[];
   data?: {}[];
   groupBy?: string | { property: string, expand: Array<string>, onExpand: ((...args: any[]) => any) };
   onClickRow?: (((event: React.MouseEvent) => void)) | ((event: {datum?: {}, index?: number}) => void);

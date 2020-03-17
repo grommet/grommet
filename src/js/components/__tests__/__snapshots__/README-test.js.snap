@@ -4542,7 +4542,11 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 \`\`\`
 
