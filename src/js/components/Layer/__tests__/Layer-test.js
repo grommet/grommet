@@ -275,6 +275,18 @@ describe('Layer', () => {
     );
     expectPortal('target-test').toMatchSnapshot();
   });
+
+  test('target not modal', () => {
+    render(
+      <Grommet>
+        <TargetLayer id="target-test" modal={false}>
+          This layer has a target
+        </TargetLayer>
+      </Grommet>,
+    );
+    expectPortal('target-test').toMatchSnapshot();
+  });
+
   test('unmounts from dom', () => {
     render(
       <Grommet>
