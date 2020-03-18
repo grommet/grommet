@@ -10,7 +10,10 @@ var useFormContext = function useFormContext(_, valueProp) {
   useEffect(function () {
     return setValue(valueProp);
   }, [valueProp]);
-  return [value, setValue];
+  return [value, function (nextValue) {
+    // only set if the caller hasn't supplied a specific value
+    if (valueProp === undefined) setValue(nextValue);
+  }];
 };
 
 export var FormContext = React.createContext({

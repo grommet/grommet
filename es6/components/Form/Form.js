@@ -156,8 +156,11 @@ var Form = forwardRef(function (_ref, ref) {
       } else if (name && valueData !== data) setData(valueData);
     }, [data, name, valueData, componentValue]);
     return [data, function (nextData) {
-      if (name) update(name, nextData);
-      setData(nextData);
+      // only set if the caller hasn't supplied a specific value
+      if (componentValue === undefined) {
+        if (name) update(name, nextData);
+        setData(nextData);
+      }
     }];
   };
 

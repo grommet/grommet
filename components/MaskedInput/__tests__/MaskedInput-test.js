@@ -137,7 +137,6 @@ describe('MaskedInput', function () {
               }, {
                 fixed: '!'
               }],
-              value: "",
               onChange: onChange
             })), getByTestId = _render5.getByTestId, container = _render5.container;
             expect(container.firstChild).toMatchSnapshot();
@@ -191,7 +190,6 @@ describe('MaskedInput', function () {
               }, {
                 fixed: '!'
               }],
-              value: "",
               onChange: onChange
             })), getByTestId = _render6.getByTestId, container = _render6.container;
             expect(container.firstChild).toMatchSnapshot();
@@ -274,7 +272,6 @@ describe('MaskedInput', function () {
       "data-testid": "test-input",
       id: "item",
       name: "item",
-      value: "",
       mask: [{
         length: [1, 2],
         regexp: /^[ab][ab]$|^[ab]$/
@@ -348,7 +345,6 @@ describe('MaskedInput', function () {
               }, {
                 fixed: '!'
               }],
-              value: "",
               onChange: onChangeMock
             })), getByTestId = _render9.getByTestId, container = _render9.container;
             expect(container.firstChild).toMatchSnapshot();
@@ -418,7 +414,6 @@ describe('MaskedInput', function () {
               }, {
                 fixed: '!'
               }],
-              value: "",
               onChange: onChangeMock
             })), getByTestId = _render10.getByTestId, container = _render10.container;
             expect(container.firstChild).toMatchSnapshot();
@@ -519,7 +514,6 @@ describe('MaskedInput', function () {
               }, {
                 fixed: '!'
               }],
-              value: "",
               onChange: onChange
             }))), getByTestId = _render11.getByTestId, container = _render11.container;
             expect(container.firstChild).toMatchSnapshot();

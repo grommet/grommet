@@ -68,14 +68,14 @@ var CheckBox = (0, _react.forwardRef)(function (_ref, ref) {
     return setFocus(focusProp);
   }, [focusProp]);
   (0, _react.useEffect)(function () {
-    if (checked && indeterminate) {
+    if (checkedProp && indeterminate) {
       console.warn('Checkbox cannot be "checked" and "indeterminate" at the same time.');
     }
 
     if (toggle && indeterminate) {
       console.warn('Checkbox of type toggle does not have "indeterminate" state.');
     }
-  }, [checked, toggle, indeterminate]);
+  }, [checkedProp, toggle, indeterminate]);
   var themeableProps = {
     checked: checked,
     disabled: disabled,
