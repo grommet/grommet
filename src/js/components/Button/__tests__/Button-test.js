@@ -205,12 +205,37 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('normalized', () => {
+  test('normalized label only', () => {
     const component = renderer.create(
       <Grommet>
         <Button onClick={() => {}} normalized>
           normalized
         </Button>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('normalized icon only', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button icon={<svg />} onClick={() => {}} normalized />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('normalized icon and label', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button
+          icon={<svg />}
+          label="normalized"
+          onClick={() => {}}
+          normalized
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
