@@ -2260,6 +2260,38 @@ Defaults to
 8px
 \`\`\`
 
+**button.transition.duration**
+
+The length of time it will take for the element to transition
+between two states. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.1
+\`\`\`
+
+**button.transition.properties**
+
+The CSS properties you want to add the transition to. Expects \`string[]\`.
+
+Defaults to
+
+\`\`\`
+['color', 'background-color', 'border-color', 'box-shadow']
+\`\`\`
+
+**button.transition.timing**
+
+Describes how a transition will progress over one cycle of its
+duration and allowing it to change speed during its course. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+ease-in-out
+\`\`\`
+
 **button.extend**
 
 Any additional style for the Button. Expects \`string | (props) => {}\`.
@@ -3288,6 +3320,14 @@ A unique identifier for the Chart. This
 
 \`\`\`
 string
+\`\`\`
+
+**dash**
+
+Whether to use dashed lines for line or bar charts.
+
+\`\`\`
+boolean
 \`\`\`
 
 **onClick**
@@ -4539,7 +4579,11 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 \`\`\`
 
@@ -4614,6 +4658,17 @@ When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.
+
+\`\`\`
+function
+\`\`\`
+
+**onSort**
+
+When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}
 
 \`\`\`
 function
@@ -4729,6 +4784,19 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**sort**
+
+Which property to sort on and which direction to sort.
+
+\`\`\`
+{
+  direction: 
+    asc
+    desc,
+  property: string
+}
 \`\`\`
 
 **sortable**
@@ -5996,7 +6064,9 @@ Validation rule when used within a grommet Form. Provide an object
 \`\`\`
 {
   regexp: object,
-  message: string,
+  message: 
+    string
+    node,
   status: 
     error
     info
@@ -6005,7 +6075,9 @@ function
 [
   {
     regexp: object,
-    message: string,
+    message: 
+      string
+      node,
     status: 
       error
       info
@@ -6639,6 +6711,15 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**responsive**
+
+Whether margin and pad sizes should be scaled for mobile
+        environments. Defaults to \`true\`.
+
+\`\`\`
+boolean
 \`\`\`
 
 **rows**
@@ -7383,6 +7464,16 @@ xlarge
 string
 \`\`\`
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+\`\`\`
+horizontal
+vertical
+boolean
+\`\`\`
+
 **fit**
 
 How the image fills its container.
@@ -7410,14 +7501,6 @@ weak
 medium
 strong
 string
-boolean
-\`\`\`
-
-**fill**
-
-Whether the image expands to fill all of the available width and height
-
-\`\`\`
 boolean
 \`\`\`
   
@@ -7713,7 +7796,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer Defaults to \`none\`.
+particular side of the layer
 
 \`\`\`
 none
@@ -7843,6 +7926,15 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 
 \`\`\`
 boolean
+\`\`\`
+
+**target**
+
+Target where the layer will be aligned to. This should be a React 
+      reference.
+
+\`\`\`
+object
 \`\`\`
   
 ## Intrinsic element
@@ -8457,6 +8549,16 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+\`\`\`
+element
+\`\`\`
+
 **id**
 
 The id attribute of the input.
@@ -8510,6 +8612,15 @@ Describes the structure of the mask. If a regexp is provided, it should
 
     }
 }]
+\`\`\`
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
+
+\`\`\`
+boolean
 \`\`\`
 
 **size**
@@ -10557,6 +10668,14 @@ Whether to allow multiple options to be selected.
 
 \`\`\`
 boolean
+\`\`\`
+
+**name**
+
+The name of the attribute when in a Form or FormField.
+
+\`\`\`
+string
 \`\`\`
 
 **onChange**
@@ -12609,6 +12728,16 @@ Any valid Drop prop.
 object
 \`\`\`
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+\`\`\`
+element
+\`\`\`
+
 **id**
 
 The id attribute of the input.
@@ -12646,7 +12775,7 @@ Custom messages for TextInput. Used for accessibility by screen
 
 **name**
 
-The name attribute of the input.
+The name of the attribute when in a Form or FormField.
 
 \`\`\`
 string
@@ -12697,6 +12826,15 @@ node
 
 Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance
+
+\`\`\`
+boolean
+\`\`\`
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
 
 \`\`\`
 boolean

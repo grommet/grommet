@@ -21,6 +21,11 @@ export const StyledMaskedInput = styled.input`
   props.plain && plainStyle}
 
   ${placeholderStyle}
+  ${props =>
+    props.icon &&
+    (props.reverse
+      ? `padding-right: ${props.theme.global.edgeSize.large};`
+      : `padding-left: ${props.theme.global.edgeSize.large};`)}
 
   &::-moz-focus-inner {
     border: none;
@@ -34,4 +39,17 @@ export const StyledMaskedInput = styled.input`
 export const StyledMaskedInputContainer = styled.div`
   position: relative;
   width: 100%;
+`;
+
+export const StyledIcon = styled.div`
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  ${props =>
+    props.reverse
+      ? `right: ${props.theme.global.input.padding};`
+      : `left: ${props.theme.global.input.padding};`}
 `;
