@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { fillStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const FIT_MAP = {
@@ -14,15 +14,10 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const fillStyle = css`
-  width: 100%;
-  height: 100%;
-`;
-
 const StyledImage = styled.img`
   ${genericStyles}
   ${props => props.fit && fitStyle}
-  ${props => props.fillProp && fillStyle}
+  ${props => props.fillProp && fillStyle(props.fillProp)}
   ${props => props.theme.image && props.theme.image.extend}
   ${props =>
     props.opacityProp &&
