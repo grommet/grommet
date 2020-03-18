@@ -265,6 +265,14 @@ export interface ThemeType {
     extend?: ExtendType;
     minWidth?: string;
     maxWidth?: string;
+    normalized?: {
+      color?: ColorType;
+      hover?: {
+        border?: {
+          color?: ColorType;
+        },
+      },
+    },
     padding?: {
       vertical?: string;
       horizontal?: string;
