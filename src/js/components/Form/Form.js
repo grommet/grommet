@@ -19,6 +19,7 @@ const updateErrors = (nextErrors, name, error) => {
   // we disable no-param-reassing so we can use this as a utility function
   // to update nextErrors, to avoid code duplication
   /* eslint-disable no-param-reassign */
+
   const hasStatusError = typeof error === 'object' && error.status === 'error';
 
   // typeof error === 'object' is implied for both cases of error with
@@ -74,7 +75,6 @@ const Form = forwardRef(
     const [touched, setTouched] = useState({});
 
     const validations = useRef({});
-
     useEffect(() => {
       if (onChange) onChange(value);
     }, [onChange, value]);
@@ -85,15 +85,18 @@ const Form = forwardRef(
       setValue(prevValue => {
         const nextValue = { ...prevValue };
         nextValue[name] = data;
-
         // re-run any validations, in case the validation
         // is checking across fields
         setErrors(prevErrors => {
           const nextErrors = { ...prevErrors };
           Object.keys(prevErrors).forEach(errName => {
             if (validations.current[errName]) {
-              const nextError = validations.current[errName](data, nextValue);
-              updateErrors(nextErrors, errName, nextError);
+              const nextError = validations.current[errName](nextValue, data);
+              if (!nextError && nextErrors[name]) {
+                updateErrors(nextErrors, errName, nextError);
+              } else if (nextError) {
+                updateErrors(nextErrors, errName, nextErrors[name]);
+              }
             }
           });
           return nextErrors;
