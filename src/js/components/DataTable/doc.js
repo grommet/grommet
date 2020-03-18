@@ -98,6 +98,7 @@ export const doc = DataTable => {
         render: PropTypes.func,
         search: PropTypes.bool,
         sortable: PropTypes.bool,
+        verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
       }),
     ).description(
       `A description of the data. The order controls the column order.

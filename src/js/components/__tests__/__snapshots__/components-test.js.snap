@@ -1601,6 +1601,12 @@ string",
         "name": "id",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether to use dashed lines for line or bar charts.",
+        "format": "boolean",
+        "name": "dash",
+      },
+      Object {
         "description": "Called when the user clicks on the
      visualization. Clicking on individual bars or points are handled via
      values[].onClick for those types of charts.",
@@ -2621,6 +2627,13 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "Whether the width and/or height should fill the container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
+      },
+      Object {
         "description": "How the image fills its container.",
         "format": "cover
 contain",
@@ -2640,11 +2653,6 @@ strong
 string
 boolean",
         "name": "opacity",
-      },
-      Object {
-        "description": "Whether the image expands to fill all of the available width and height",
-        "format": "boolean",
-        "name": "fill",
       },
     ],
     "usage": "import { Image } from 'grommet';

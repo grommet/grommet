@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -150,11 +150,16 @@ const DataTable = ({
   };
 
   // remember the width this property's column should be
-  const onResize = property => width => {
-    const nextWidths = { ...widths };
-    nextWidths[property] = width;
-    setWidths(nextWidths);
-  };
+  const onResize = useCallback(
+    (property, width) => {
+      if (widths[property] !== width) {
+        const nextWidths = { ...widths };
+        nextWidths[property] = width;
+        setWidths(nextWidths);
+      }
+    },
+    [widths],
+  );
 
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');

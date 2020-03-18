@@ -123,7 +123,7 @@ export interface ThemeType {
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
         size?: BreakpointSize;
-      };
+      } | undefined;
     };
     deviceBreakpoints?: {
       phone?: string;
