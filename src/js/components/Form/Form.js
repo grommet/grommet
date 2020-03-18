@@ -146,8 +146,11 @@ const Form = forwardRef(
       return [
         data,
         nextData => {
-          if (name) update(name, nextData);
-          setData(nextData);
+          // only set if the caller hasn't supplied a specific value
+          if (componentValue === undefined) {
+            if (name) update(name, nextData);
+            setData(nextData);
+          }
         },
       ];
     };
