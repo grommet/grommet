@@ -1128,8 +1128,10 @@ background
         "name": "label",
       },
       Object {
-        "description": "Whether this is a normalized button. Normalized buttons have consistent 
-      styling regardless of if they contain only an icon or an icon and label.",
+        "description": "Whether this is a normalized button. By default, icon only buttons have 
+      different styling than buttons with labels. Normalized buttons have 
+      consistent styling regardless of if they contain only an icon or an icon 
+      and label.",
         "format": "boolean",
         "name": "normalized",
       },

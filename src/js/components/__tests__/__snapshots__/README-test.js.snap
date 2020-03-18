@@ -1874,8 +1874,10 @@ node
 
 **normalized**
 
-Whether this is a normalized button. Normalized buttons have consistent 
-      styling regardless of if they contain only an icon or an icon and label.
+Whether this is a normalized button. By default, icon only buttons have 
+      different styling than buttons with labels. Normalized buttons have 
+      consistent styling regardless of if they contain only an icon or an icon 
+      and label.
 
 \`\`\`
 boolean

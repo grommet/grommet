@@ -79,8 +79,10 @@ with plain Buttons.`,
     icon: PropTypes.element.description('Icon element to place in the button.'),
     label: PropTypes.node.description('Label text to place in the button.'),
     normalized: PropTypes.bool.description(
-      `Whether this is a normalized button. Normalized buttons have consistent 
-      styling regardless of if they contain only an icon or an icon and label.`,
+      `Whether this is a normalized button. By default, icon only buttons have 
+      different styling than buttons with labels. Normalized buttons have 
+      consistent styling regardless of if they contain only an icon or an icon 
+      and label.`,
     ),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
