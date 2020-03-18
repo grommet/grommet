@@ -180,14 +180,14 @@ var DataTable = function DataTable(_ref) {
   }; // remember the width this property's column should be
 
 
-  var onResize = function onResize(property) {
-    return function (width) {
+  var onResize = (0, _react.useCallback)(function (property, width) {
+    if (widths[property] !== width) {
       var nextWidths = _extends({}, widths);
 
       nextWidths[property] = width;
       setWidths(nextWidths);
-    };
-  };
+    }
+  }, [widths]);
 
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');

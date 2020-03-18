@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
@@ -164,14 +164,14 @@ var DataTable = function DataTable(_ref) {
   }; // remember the width this property's column should be
 
 
-  var onResize = function onResize(property) {
-    return function (width) {
+  var onResize = useCallback(function (property, width) {
+    if (widths[property] !== width) {
       var nextWidths = _extends({}, widths);
 
       nextWidths[property] = width;
       setWidths(nextWidths);
-    };
-  };
+    }
+  }, [widths]);
 
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');

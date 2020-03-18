@@ -19,102 +19,82 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var ResizerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Resizer__ResizerBox",
   componentId: "sc-8l808w-0"
 })(["cursor:col-resize;"]);
 
-var Resizer =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Resizer, _Component);
+var Resizer = function Resizer(_ref) {
+  var onResize = _ref.onResize,
+      property = _ref.property,
+      theme = _ref.theme;
 
-  function Resizer() {
-    var _this;
+  var _useState = (0, _react.useState)(false),
+      active = _useState[0],
+      setActive = _useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var _useState2 = (0, _react.useState)(),
+      start = _useState2[0],
+      setStart = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(),
+      width = _useState3[0],
+      setWidth = _useState3[1];
+
+  var ref = (0, _react.useRef)();
+  var onMouseDown = (0, _react.useCallback)(function (event) {
+    if (ref.current) {
+      var element = ref.current; // find TH parent
+
+      while (element && element.nodeName !== 'TH') {
+        element = element.parentNode;
+      }
+
+      var rect = element.getBoundingClientRect();
+      setStart(event.clientX);
+      setWidth(rect.width);
+      setActive(true);
+    }
+  }, []);
+  var onMouseMove = (0, _react.useCallback)(function (event) {
+    // We determined 12 empirically as being wide enough to hit but
+    // not too wide to cause false hits.
+    var nextWidth = Math.max(12, width + (event.clientX - start));
+    onResize(property, nextWidth);
+  }, [onResize, property, start, width]);
+  var onMouseUp = (0, _react.useCallback)(function () {
+    setActive(false);
+    setStart(undefined);
+    setWidth(undefined);
+  }, []);
+  (0, _react.useEffect)(function () {
+    var remove = function remove() {
+      document.removeEventListener('mouseup', onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+    };
+
+    if (active) {
+      document.addEventListener('mouseup', onMouseUp);
+      document.addEventListener('mousemove', onMouseMove);
+      return remove;
     }
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "ref", _react["default"].createRef());
-
-    _defineProperty(_assertThisInitialized(_this), "onMouseDown", function (event) {
-      if (_this.ref.current) {
-        var element = _this.ref.current; // find TH parent
-
-        while (element && element.nodeName !== 'TH') {
-          element = element.parentNode;
-        }
-
-        var rect = element.getBoundingClientRect();
-
-        _this.setState({
-          start: event.clientX,
-          width: rect.width
-        }, function () {
-          document.addEventListener('mousemove', _this.onMouseMove);
-          document.addEventListener('mouseup', _this.onMouseUp);
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onMouseMove", function (event) {
-      var _this$props = _this.props,
-          onResize = _this$props.onResize,
-          property = _this$props.property;
-      var _this$state = _this.state,
-          start = _this$state.start,
-          width = _this$state.width; // We determined 12 empirically as being wide enough to hit but
-      // not too wide to cause false hits.
-
-      var nextWidth = Math.max(12, width + (event.clientX - start));
-      onResize(property)(nextWidth);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onMouseUp", function () {
-      document.removeEventListener('mouseup', _this.onMouseUp);
-      document.removeEventListener('mousemove', _this.onMouseMove);
-
-      _this.setState({
-        start: undefined,
-        width: undefined
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = Resizer.prototype;
-
-  _proto.render = function render() {
-    var theme = this.props.theme;
-    var start = this.state.start;
-    return _react["default"].createElement(ResizerBox, _extends({
-      ref: this.ref,
-      flex: false,
-      responsive: false,
-      pad: {
-        vertical: 'small'
-      }
-    }, theme.dataTable.resize, {
-      onMouseDown: this.onMouseDown,
-      onMouseMove: start ? this.onMouseMove : undefined,
-      onMouseUp: start ? this.onMouseUp : undefined
-    }));
-  };
-
-  return Resizer;
-}(_react.Component);
+    remove();
+    return undefined;
+  }, [active, onMouseMove, onMouseUp]);
+  return _react["default"].createElement(ResizerBox, _extends({
+    ref: ref,
+    flex: false,
+    responsive: false,
+    pad: {
+      vertical: 'small'
+    }
+  }, theme.dataTable.resize, {
+    onMouseDown: onMouseDown,
+    onMouseMove: start !== undefined ? onMouseMove : undefined,
+    onMouseUp: start !== undefined ? onMouseUp : undefined
+  }));
+};
 
 Resizer.defaultProps = {};
 Object.setPrototypeOf(Resizer.defaultProps, _defaultProps.defaultProps);
