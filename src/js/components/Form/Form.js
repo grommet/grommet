@@ -93,10 +93,13 @@ const Form = forwardRef(
             if (validations.current[errName]) {
               const nextError = validations.current[errName](nextValue, data);
               if (!nextError && nextErrors[name]) {
-                updateErrors(nextErrors, errName, nextError);
+                updateErrors(nextErrors, name, nextErrors[name]);
               } else if (nextError) {
-                updateErrors(nextErrors, errName, nextErrors[name]);
+                updateErrors(nextErrors, errName, nextError);
               }
+            }
+            if (nextValue[name]) {
+              updateErrors(nextErrors, name, undefined);
             }
           });
           return nextErrors;
