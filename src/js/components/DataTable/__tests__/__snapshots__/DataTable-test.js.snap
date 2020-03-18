@@ -3414,7 +3414,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 sCscA"
             type="button"
           >
             <div
@@ -3501,7 +3501,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 sCscA"
             type="button"
           >
             <div

@@ -28,6 +28,7 @@ export interface ButtonProps {
   target?: "_self" | "_blank" | "_parent" | "_top";
   icon?: JSX.Element;
   label?: React.ReactNode;
+  normalized?: boolean;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
