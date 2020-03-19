@@ -72,6 +72,13 @@ const primaryStyle = props => css`
     props.theme,
     props.theme.button.color,
   )}
+  ${props.theme.button.primary.border.color &&
+    `border:
+      ${props.theme.button.border.width} solid
+      ${normalizeColor(
+        props.colorValue || props.theme.button.primary.border.color,
+        props.theme,
+      )};`}
   border-radius: ${radiusStyle(props)};
 `;
 
