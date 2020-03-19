@@ -41,7 +41,7 @@ const Select = forwardRef(
       a11yTitle,
       alignSelf,
       children,
-      clear,
+      clear = false,
       closeOnChange = true,
       disabled,
       disabledKey,
@@ -273,15 +273,8 @@ const Select = forwardRef(
   },
 );
 
-<<<<<<< HEAD
 Select.defaultProps = { ...defaultProps };
 
-=======
-Select.defaultProps = {
-  clear: false,
-  ...defaultProps,
-};
->>>>>>> Some more fixes
 Select.displayName = 'Select';
 
 let SelectDoc;
