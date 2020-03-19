@@ -53,15 +53,13 @@ const Button = forwardRef(
       );
     }
 
-    const isDarkBackground = () => {
-      const buttonColor =
-        normalized && !primary
-          ? theme.button.normalized.color
-          : theme.button.primary.color;
-
+    const isDarkBackground = buttonType => {
       const backgroundColor = normalizeBackground(
         normalizeColor(
-          color || buttonColor || theme.global.colors.control || 'brand',
+          color ||
+            theme.button[buttonType].color ||
+            theme.global.colors.control ||
+            'brand',
           theme,
         ),
         theme,
@@ -93,8 +91,12 @@ const Button = forwardRef(
       icon &&
       !icon.props.color
     ) {
+      const buttonType = primary ? 'primary' : 'normalized';
       buttonIcon = cloneElement(icon, {
-        color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
+        color:
+          theme.global.colors.text[
+            isDarkBackground(buttonType) ? 'dark' : 'light'
+          ],
       });
     }
     if (active && icon && !icon.props.color) {
