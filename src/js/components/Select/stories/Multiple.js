@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 const options = ['one', 'two'];
 
 const Example = () => {
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState(['one']);
 
   return (
     <Grommet full theme={grommet}>
@@ -17,7 +17,6 @@ const Example = () => {
           multiple
           closeOnChange={false}
           value={value}
-          selected={[0]}
           options={options}
           onChange={({ value: nextValue }) => setValue(nextValue)}
         />
