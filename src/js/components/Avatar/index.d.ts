@@ -4,7 +4,7 @@ import { BoxProps } from '../Box'
 
 export interface AvatarProps {
     size?: BoxProps['height'];
-    src?: string;
+    src?: string | React.ReactNode;
   }
 
 declare const Avatar: React.FC<BoxProps & AvatarProps>;

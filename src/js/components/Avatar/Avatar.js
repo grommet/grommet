@@ -1,35 +1,36 @@
 import React from 'react';
-// import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
-
-// add warning for using size + (width + height)
-// Add theme support
-// improve src support
-// think of supporting OOTB icon
-// call out the px sizes on stack
-// add forwardref and an example of button
-
 
 const Avatar = ({
   align = 'center',
   round = 'full',
   size = 'xxsmall',
+  justify = 'center',
   src,
+  height, // for warning check and discarding the value
+  width, // for warning check and discarding the value
   ...rest
 }) => {
-  //   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const avatarProps = {
+    align,
+    justify,
+    height: size,
+    round,
+    width: size,
+  };
 
-  return (
-    <Box
-      height={size}
-      width={size}
-      background={src}
-      round={round}
-      alignSelf={align}
-      align={align}
-      {...rest}
-    />
+  if (height || width) {
+    console.warn(
+      'Avatar should use `size` instead of `height` or `width` props',
+    );
+  }
+  return typeof src === 'function' || typeof src === 'object' ? (
+    <Box {...avatarProps} {...rest}>
+      {src}
+    </Box>
+  ) : (
+    <Box {...avatarProps} background={`url(${src})`} {...rest} />
   );
 };
 
