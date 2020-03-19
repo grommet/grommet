@@ -7,7 +7,12 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
+import {
+  backgroundIsDark,
+  colorIsDark,
+  normalizeBackground,
+  normalizeColor,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -26,6 +31,7 @@ const Button = forwardRef(
       focusIndicator = true,
       gap = 'small',
       fill, // munged to avoid styled-components putting it in the DOM
+      hoverIndicator,
       href,
       label,
       normalized,
@@ -46,6 +52,11 @@ const Button = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
+    const [hover, setHover] = useState(false);
+    const buttonTypes = {
+      primary: 'primary',
+      normalized: 'normalized',
+    };
 
     if ((icon || label) && children) {
       console.warn(
@@ -54,9 +65,13 @@ const Button = forwardRef(
     }
 
     const isDarkBackground = buttonType => {
+      if (hover && hoverIndicator) {
+        return backgroundIsDark(hoverIndicator, theme);
+      }
       const backgroundColor = normalizeBackground(
         normalizeColor(
           color ||
+            (hover && theme.button[buttonType].hover.color) ||
             theme.button[buttonType].color ||
             theme.global.colors.control ||
             'brand',
@@ -67,8 +82,6 @@ const Button = forwardRef(
 
       return colorIsDark(backgroundColor, theme) || theme.dark;
     };
-
-    const [hover, setHover] = useState(false);
 
     const onMouseOverButton = event => {
       setHover(true);
@@ -85,13 +98,13 @@ const Button = forwardRef(
     };
 
     let buttonIcon = icon;
+    let buttonType;
+    // primary color styling should overrule normalized
+    if (normalized) buttonType = buttonTypes.normalized;
+    if (primary) buttonType = buttonTypes.primary;
+
     // only change color if user did not specify the color themselves...
-    if (
-      (primary || (normalized && theme.button.normalized.color)) &&
-      icon &&
-      !icon.props.color
-    ) {
-      const buttonType = primary ? 'primary' : 'normalized';
+    if (buttonType && icon && !icon.props.color) {
       buttonIcon = cloneElement(icon, {
         color:
           theme.global.colors.text[
@@ -134,11 +147,13 @@ const Button = forwardRef(
         as={domTag}
         ref={ref}
         aria-label={a11yTitle}
+        buttonType={buttonType}
         colorValue={color}
         disabled={disabled}
         hasIcon={!!icon}
         gap={gap}
         hasLabel={!!label}
+        hoverIndicator={hoverIndicator}
         fillContainer={fill}
         focus={focus}
         focusIndicator={focusIndicator}

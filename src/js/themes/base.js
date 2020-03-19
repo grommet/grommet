@@ -365,15 +365,28 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined }
       normalized: {
+        border: {
+          // color: { dark: undefined, light: undefined }
+        },
         // color: { dark: undefined, light: undefined }
         hover: {
           border: {
-            // color: {dark: undefined, light: undefined},
+            // color: {dark: undefined, light: undefined}
           },
+          // color: { dark: undefined, light: undefined }
         },
       },
       primary: {
+        border: {
+          // color: { dark: undefined, light: undefined }
+        },
         // color: { dark: undefined, light: undefined }
+        hover: {
+          border: {
+            // color: {dark: undefined, light: undefined}
+          },
+          // color: { dark: undefined, light: undefined }
+        },
       },
       // disabled: { opacity: undefined },
       padding: {

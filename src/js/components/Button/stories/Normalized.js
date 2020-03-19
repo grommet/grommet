@@ -8,7 +8,11 @@ const customTheme = deepMerge(grommet, {
   button: {
     normalized: {
       color: '#ff9999',
+      border: {
+        color: '#b9dff0',
+      },
       hover: {
+        color: '#b9dff0',
         border: {
           color: '#99ccff',
         },

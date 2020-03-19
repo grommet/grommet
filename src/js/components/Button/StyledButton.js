@@ -79,11 +79,12 @@ function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
   }
-  // primary color styling should overrule normalized
-  if (props.normalized && !props.primary) {
+  const { buttonType } = props;
+  if (buttonType) {
     return normalizeColor(
-      props.theme.button.normalized.hover.border.color ||
-        props.theme.button.normalized.color ||
+      props.theme.button[buttonType].hover.border.color ||
+        props.theme.button[buttonType].hover.color ||
+        props.theme.button[buttonType].color ||
         props.theme.button.border.color ||
         'control',
       props.theme,
@@ -97,6 +98,19 @@ function getHoverColor(props) {
 
 const hoverStyle = css`
   &:hover {
+    ${props =>
+      props.buttonType &&
+      props.theme.button[props.buttonType].hover.color &&
+      css`
+        ${backgroundStyle(
+          normalizeColor(
+            props.theme.button[props.buttonType].hover.color,
+            props.theme,
+          ),
+          props.theme,
+          props.theme.button.color,
+        )}
+      `};
     ${props =>
       props.hoverIndicator &&
       getHoverIndicatorStyle(props.hoverIndicator, props.theme)} ${props =>
@@ -141,7 +155,15 @@ const normalizedStyle = props => css`
     props.theme,
     props.theme.button.color,
   )}
-  border: none;
+  border: ${
+    !props.primary && props.theme.button.normalized.border.color
+      ? `${props.theme.button.border.width} solid
+    ${normalizeColor(
+      props.colorValue || props.theme.button.normalized.border.color,
+      props.theme,
+    )};`
+      : 'none;'
+  }
   text-align: inherit;
   padding: ${props.theme.global.edgeSize.small};
 `;

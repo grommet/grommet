@@ -1144,7 +1144,9 @@ exports[`Button normalized icon and label 1`] = `
     <div
       className="c2"
     >
-      <svg />
+      <svg
+        color="#f8f8f8"
+      />
       <div
         className="c3"
       />
@@ -1212,7 +1214,9 @@ exports[`Button normalized icon only 1`] = `
     onMouseOver={[Function]}
     type="button"
   >
-    <svg />
+    <svg
+      color="#f8f8f8"
+    />
   </button>
 </div>
 `;

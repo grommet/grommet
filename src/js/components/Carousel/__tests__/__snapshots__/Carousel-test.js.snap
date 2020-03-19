@@ -1297,7 +1297,7 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 iVIRVZ"
+          class="StyledButton-sc-323bzc-0 RRpoS"
           type="button"
         >
           <svg
@@ -1321,7 +1321,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 hNgxQO"
           >
             <button
-              class="StyledButton-sc-323bzc-0 joHqxY"
+              class="StyledButton-sc-323bzc-0 iZtczX"
               type="button"
             >
               <svg
@@ -1338,7 +1338,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 joHqxY"
+              class="StyledButton-sc-323bzc-0 iZtczX"
               type="button"
             >
               <svg
@@ -1453,7 +1453,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 hNgxQO"
           >
             <button
-              class="StyledButton-sc-323bzc-0 joHqxY"
+              class="StyledButton-sc-323bzc-0 iZtczX"
               type="button"
             >
               <svg
@@ -1470,7 +1470,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 joHqxY"
+              class="StyledButton-sc-323bzc-0 iZtczX"
               type="button"
             >
               <svg
@@ -1489,7 +1489,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 iVIRVZ"
+          class="StyledButton-sc-323bzc-0 RRpoS"
           type="button"
         >
           <svg
@@ -1958,7 +1958,7 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 iVIRVZ"
+          class="StyledButton-sc-323bzc-0 RRpoS"
           type="button"
         >
           <svg
@@ -1982,7 +1982,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 hNgxQO"
           >
             <button
-              class="StyledButton-sc-323bzc-0 joHqxY"
+              class="StyledButton-sc-323bzc-0 iZtczX"
               type="button"
             >
               <svg
@@ -1999,7 +1999,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 joHqxY"
+              class="StyledButton-sc-323bzc-0 iZtczX"
               type="button"
             >
               <svg

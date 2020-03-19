@@ -266,8 +266,12 @@ export interface ThemeType {
     minWidth?: string;
     maxWidth?: string;
     normalized?: {
+      border?: {
+        color?: ColorType,
+      },
       color?: ColorType;
       hover?: {
+        color?: ColorType,
         border?: {
           color?: ColorType;
         },
@@ -278,7 +282,16 @@ export interface ThemeType {
       horizontal?: string;
     };
     primary?: {
+      border?: {
+        color?: ColorType,
+      },
       color?: ColorType;
+      hover?: {
+        color?: ColorType,
+        border?: {
+          color?: ColorType;
+        },
+      },
     };
     size?: {
       small?: {

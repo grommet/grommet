@@ -2113,7 +2113,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 MiGYV"
+            class="StyledButton-sc-323bzc-0 bubqim"
             type="button"
           >
             <div
@@ -2167,7 +2167,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 MiGYV"
+            class="StyledButton-sc-323bzc-0 bubqim"
             type="button"
           >
             <div
@@ -2210,7 +2210,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 MiGYV"
+            class="StyledButton-sc-323bzc-0 bubqim"
             type="button"
           >
             <div
@@ -3021,7 +3021,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 MiGYV"
+            class="StyledButton-sc-323bzc-0 bubqim"
             type="button"
           >
             <div
@@ -3075,7 +3075,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 MiGYV"
+            class="StyledButton-sc-323bzc-0 bubqim"
             type="button"
           >
             <div
@@ -3118,7 +3118,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 MiGYV"
+            class="StyledButton-sc-323bzc-0 bubqim"
             type="button"
           >
             <div
@@ -3414,7 +3414,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 sCscA"
+            class="StyledButton-sc-323bzc-0 gGPjGj"
             type="button"
           >
             <div
@@ -3501,7 +3501,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 sCscA"
+            class="StyledButton-sc-323bzc-0 gGPjGj"
             type="button"
           >
             <div
@@ -5812,7 +5812,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 sCscA"
+            class="StyledButton-sc-323bzc-0 gGPjGj"
             type="button"
           >
             <div
@@ -5899,7 +5899,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 sCscA"
+            class="StyledButton-sc-323bzc-0 gGPjGj"
             type="button"
           >
             <div
