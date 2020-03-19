@@ -44,7 +44,9 @@ export const doc = Select => {
           when clicking on the item`,
         ),
       }),
-    ]).description(`Whether to provide button to clear selection.`),
+    ])
+      .description(`Whether to provide button to clear selection.`)
+      .defaultValue(false),
     disabled: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.arrayOf(

@@ -279,9 +279,7 @@ function
 
 **messages**
 
-Custom messages. Defaults to `{
-  "multiple": "multiple"
-}`.
+Custom messages.
 
 ```
 {

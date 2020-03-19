@@ -3942,6 +3942,7 @@ string",
         "name": "closeOnChange",
       },
       Object {
+        "defaultValue": false,
         "description": "Whether to provide button to clear selection.",
         "format": "boolean
 {
@@ -4046,9 +4047,6 @@ function",
         "name": "labelKey",
       },
       Object {
-        "defaultValue": Object {
-          "multiple": "multiple",
-        },
         "description": "Custom messages.",
         "format": "{
   multiple: string
