@@ -23,6 +23,7 @@ import {
   StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
+  StyledIcon,
   StyledSuggestions,
 } from './StyledTextInput';
 
@@ -63,6 +64,7 @@ const TextInput = forwardRef(
       dropHeight,
       dropTarget,
       dropProps,
+      icon,
       id,
       messages = {
         enterSelect: '(Press Enter to Select)',
@@ -82,6 +84,7 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
+      reverse,
       suggestions,
       value: valueProp,
       ...rest
@@ -173,6 +176,7 @@ const TextInput = forwardRef(
     const closeDrop = () => {
       setShowDrop(false);
       if (messages.onSuggestionsClose) onSuggestionsClose();
+      if (onSuggestionsClose) onSuggestionsClose();
     };
 
     const onNextSuggestion = event => {
@@ -286,6 +290,11 @@ const TextInput = forwardRef(
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
+        {icon && (
+          <StyledIcon reverse={reverse} theme={theme}>
+            {icon}
+          </StyledIcon>
+        )}
         <Keyboard
           onEnter={event => {
             closeDrop();
@@ -344,6 +353,8 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
+            icon={icon}
+            reverse={reverse}
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
@@ -352,24 +363,13 @@ const TextInput = forwardRef(
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
                 announce(messages.suggestionsExist);
+                openDrop();
               }
-              setShowDrop(true);
-              if (onFocus) {
-                onFocus(event);
-              }
+              if (onFocus) onFocus(event);
             }}
             onBlur={event => {
               setFocus(false);
-              // This will be called when the user clicks on a suggestion,
-              // check for that and don't remove the drop in that case.
-              // Drop will already have removed itself if the user has focused
-              // outside of the Drop.
-              if (!dropRef.current) {
-                closeDrop();
-                if (onBlur) {
-                  onBlur(event);
-                }
-              }
+              if (onBlur) onBlur(event);
             }}
             onChange={event => {
               setValue(event.target.value);

@@ -18,6 +18,7 @@ const Chart = React.forwardRef(
     {
       bounds: propsBounds,
       color,
+      dash,
       gap,
       id,
       onClick,
@@ -154,6 +155,15 @@ const Chart = React.forwardRef(
 
     const useGradient = color && Array.isArray(color);
 
+    let strokeDasharray;
+    if (dash) {
+      if (round) {
+        strokeDasharray = `${strokeWidth} ${strokeWidth * 1.5}`;
+      } else {
+        strokeDasharray = `${strokeWidth * 2} ${strokeWidth / 2}`;
+      }
+    }
+
     const renderBars = () =>
       (values || []).map((valueArg, index) => {
         const { label, onHover: valueOnHover, value, ...valueRest } = valueArg;
@@ -183,7 +193,13 @@ const Chart = React.forwardRef(
           return (
             <g key={key} fill="none">
               <title>{label}</title>
-              <path d={d} {...hoverProps} {...clickProps} {...valueRest} />
+              <path
+                d={d}
+                {...hoverProps}
+                {...clickProps}
+                {...valueRest}
+                strokeDasharray={strokeDasharray}
+              />
             </g>
           );
         }
@@ -212,7 +228,12 @@ const Chart = React.forwardRef(
 
       return (
         <g fill="none">
-          <path d={d} {...hoverProps} {...clickProps} />
+          <path
+            d={d}
+            {...hoverProps}
+            {...clickProps}
+            strokeDasharray={strokeDasharray}
+          />
         </g>
       );
     };
@@ -337,7 +358,6 @@ const Chart = React.forwardRef(
       if (color && color.color) colorName = color.color;
       else if (color) colorName = color;
       else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
-      else colorName = 'graph-0';
     }
     const opacity =
       color && color.opacity ? theme.global.opacity[color.opacity] : undefined;

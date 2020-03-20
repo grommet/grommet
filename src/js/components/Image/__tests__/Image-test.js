@@ -46,6 +46,9 @@ test('Image fillProp renders', () => {
   const component = renderer.create(
     <Grommet>
       <Image fill src={SRC} />
+      <Image fill={false} src={SRC} />
+      <Image fill="horizontal" src={SRC} />
+      <Image fill="vertical" src={SRC} />
     </Grommet>,
   );
   const tree = component.toJSON();

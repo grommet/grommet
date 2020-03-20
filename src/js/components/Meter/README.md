@@ -139,6 +139,7 @@ string
     weak
     medium
     strong
+    number
     boolean
 }
 ```

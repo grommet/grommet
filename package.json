@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.10.0",
+  "version": "2.11.2",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -109,7 +109,7 @@
     "grommet-theme-aruba": "^0.1.1",
     "grommet-theme-dxc": "^0.1.1",
     "grommet-theme-hp": "^0.1.1",
-    "grommet-theme-hpe": "https://github.com/grommet/grommet-theme-hpe/tarball/stable",
+    "grommet-theme-hpe": "^1.0.0",
     "grommet-theme-hpe-v0": "npm:grommet-theme-hpe@0.4.2",
     "grommet-theme-v1": "^0.1.1",
     "jest": "^25.1.0",

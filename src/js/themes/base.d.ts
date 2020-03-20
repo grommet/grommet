@@ -1,20 +1,26 @@
-import { 
-  BackgroundType, 
+import {
+  BackgroundType,
   BorderType,
-  ColorType,  
-  DeepReadonly, 
+  BreakpointBorderSize,
+  BreakpointEdgeSize,
+  BreakpointSize,
+  ColorType,
+  DeepReadonly,
   GapType,
   GraphColorsType,
   MarginType,
   OpacityType,
   RoundType,
   PadType,
-} from '../utils'
+} from '../utils';
 import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
 
 export declare const base: DeepReadonly<ThemeType>;
-export declare const generate: (baseSpacing?: number, scale?: number) => DeepReadonly<ThemeType>;
+export declare const generate: (
+  baseSpacing?: number,
+  scale?: number,
+) => DeepReadonly<ThemeType>;
 
 type ExtendType = string | ((...args: any) => void);
 
@@ -31,7 +37,7 @@ declare const colors: {
   icon?: ColorType;
   white?: ColorType;
 };
-  
+
 type Colors = typeof colors & {
   'accent-1'?: ColorType;
   'accent-2'?: ColorType;
@@ -75,11 +81,11 @@ export interface ThemeType {
   global?: {
     active?: {
       background?: {
-        color?: ColorType,
-        opacity?: OpacityType,
-      },
-      color?: ColorType,
-    },
+        color?: ColorType;
+        opacity?: OpacityType;
+      };
+      color?: ColorType;
+    };
     animation?: {
       duration?: string;
       jiggle?: {
@@ -96,39 +102,28 @@ export interface ThemeType {
     breakpoints?: {
       small?: {
         value?: number;
-        borderSize?: {
-          xsmall?: string;
-          small?: string;
-          medium?: string;
-          large?: string;
-          xlarge?: string;
-        };
-        edgeSize?: {
-          none?: string;
-          hair?: string;
-          xxsmall?: string;
-          xsmall?: string;
-          small?: string;
-          medium?: string;
-          large?: string;
-          xlarge?: string;
-        };
-        size?: {
-          xxsmall?: string;
-          xsmall?: string;
-          small?: string;
-          medium?: string;
-          large?: string;
-          xlarge?: string;
-          full?: string;
-        };
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
       };
       medium?: {
         value?: number;
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
       };
       large?: {
         value?: number;
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
       };
+      [x: string]: {
+        value?: number;
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
+      } | undefined;
     };
     deviceBreakpoints?: {
       phone?: string;
@@ -144,7 +139,7 @@ export interface ThemeType {
       };
       disabled?: {
         opacity: OpacityType;
-      }
+      };
     };
     debounceDelay?: number;
     drop?: {
@@ -191,15 +186,15 @@ export interface ThemeType {
       };
     };
     font?: {
-      face?: string,
-      family?: string,
+      face?: string;
+      family?: string;
       height?: string;
       maxWidth?: string;
       size?: string;
     };
     graph?: {
       colors?: GraphColorsType;
-    },
+    };
     hover?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -232,12 +227,12 @@ export interface ThemeType {
   };
   accordion?: {
     border?: {
-      side?: string,
-      color?: ColorType,
-    },
+      side?: string;
+      color?: ColorType;
+    };
     heading?: {
       level?: string;
-    }
+    };
     icons?: {
       collapse?: any;
       expand?: any;
@@ -276,36 +271,41 @@ export interface ThemeType {
     };
     primary?: {
       color?: ColorType;
-    }
+    };
     size?: {
       small?: {
         border?: {
-          radius?: string,
-        }
+          radius?: string;
+        };
         pad?: {
           vertical?: string;
           horizontal?: string;
         };
-      },
-      medium?: { 
+      };
+      medium?: {
         border?: {
-          radius?: string,
-        }
+          radius?: string;
+        };
         pad?: {
           vertical?: string;
           horizontal?: string;
         };
-      }
+      };
       large?: {
         border?: {
-          radius?: string,
-        }
+          radius?: string;
+        };
         pad?: {
           vertical?: string;
           horizontal?: string;
         };
-      }
-    },
+      };
+    };
+    transition?: {
+      timing?: string;
+      duration?: number;
+      properties?: string[];
+    };
   };
   calendar?: {
     small?: {
@@ -326,9 +326,9 @@ export interface ThemeType {
       daySize?: string;
       slideDuration?: string;
     };
-    heading?: { 
+    heading?: {
       level?: string;
-    },
+    };
     icons?: {
       previous?: any;
       next?: any;
@@ -340,13 +340,13 @@ export interface ThemeType {
   };
   carousel?: {
     animation?: {
-      duration?: number,
-    },
+      duration?: number;
+    };
     disabled?: {
       icons?: {
         color?: ColorType;
-      }
-    },
+      };
+    };
     icons?: {
       color?: ColorType;
       current?: any;
@@ -357,7 +357,7 @@ export interface ThemeType {
   chart?: {
     color?: ColorType;
     extend?: ExtendType;
-  }
+  };
   checkBox?: {
     border?: {
       color?: ColorType;
@@ -376,23 +376,23 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
-    icon?: { 
-      size?: string; 
-      extend?: ExtendType 
+    icon?: {
+      size?: string;
+      extend?: ExtendType;
     };
     icons?: {
-      checked?: any,
-      indeterminate?: any,
+      checked?: any;
+      indeterminate?: any;
     };
     size?: string;
     toggle?: {
       background?: BackgroundType;
       color?: ColorType;
-      extend?: ExtendType 
+      extend?: ExtendType;
       radius?: string;
       size?: string;
-      knob?: { 
-        extend?: ExtendType 
+      knob?: {
+        extend?: ExtendType;
       };
     };
   };
@@ -498,8 +498,8 @@ export interface ThemeType {
     };
   };
   drop?: {
-    extend?: ExtendType,
-    maxHeight?: string, 
+    extend?: ExtendType;
+    maxHeight?: string;
   };
   formField?: {
     border?: BorderType;
@@ -508,7 +508,7 @@ export interface ThemeType {
     };
     disabled?: {
       background?: BackgroundType;
-    },
+    };
     error?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -672,13 +672,13 @@ export interface ThemeType {
     weight?: number;
   };
   icon?: {
-    extend?: ExtendType,
+    extend?: ExtendType;
     size?: {
       small?: string;
       medium?: string;
       large?: string;
       xlarge?: string;
-      [x: string]: string | undefined,
+      [x: string]: string | undefined;
     };
   };
   layer?: {
@@ -699,14 +699,16 @@ export interface ThemeType {
   list?: {
     item?: {
       background?: BackgroundType;
-      border?: string | {
-        side?: string,
-        color?: ColorType,
-        size?: string,
-      };
+      border?:
+        | string
+        | {
+            side?: string;
+            color?: ColorType;
+            size?: string;
+          };
       pad?: PadType;
       extend?: ExtendType;
-    },
+    };
     extend?: ExtendType;
   };
   maskedInput?: {
@@ -714,16 +716,16 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    extend?: ExtendType,
+    extend?: ExtendType;
     icons?: {
       down?: any;
     };
   };
   meter?: {
-    color?: ColorType,
-    colors?: GraphColorsType,
-    extend?: ExtendType,
-  },
+    color?: ColorType;
+    colors?: GraphColorsType;
+    extend?: ExtendType;
+  };
   paragraph?: {
     extend?: ExtendType;
     small?: {
@@ -787,13 +789,13 @@ export interface ThemeType {
   rangeSelector?: {
     background?: {
       invert?: {
-        color?: ColorType,
+        color?: ColorType;
       };
     };
     edge?: {
-      type?: string,
-    },
-  },
+      type?: string;
+    };
+  };
   select?: {
     background?: BackgroundType;
     container?: {
@@ -810,13 +812,13 @@ export interface ThemeType {
     };
     options?: {
       container?: {
-        align?: string,
-        pad?: string,
-      },
+        align?: string;
+        pad?: string;
+      };
       text?: {
-        margin?: MarginType,
-      },
-    },
+        margin?: MarginType;
+      };
+    };
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
@@ -953,7 +955,7 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
-    }
+    };
   };
   worldMap?: {
     color?: ColorType;

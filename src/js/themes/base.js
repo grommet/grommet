@@ -76,10 +76,11 @@ const colors = {
     light: 'brand',
   },
   focus: focusColor,
-  // "graph-0": 'accent-1',
-  // "graph-1": 'neutral-1',
-  // "graph-2": 'accent-2',
-  // "graph-3": 'neutral-2',
+  'graph-0': 'accent-1',
+  'graph-1': 'neutral-1',
+  'graph-2': 'neutral-2',
+  'graph-3': 'neutral-3',
+  'graph-4': 'neutral-4',
   placeholder: '#AAAAAA',
   selected: 'brand',
   text: {
@@ -371,6 +372,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
       },
+      transition: {
+        timing: 'ease-in-out',
+        duration: 0.1,
+        properties: ['color', 'background-color', 'border-color', 'box-shadow'],
+      },
     },
     calendar: {
       // daySize must align with global.size
@@ -419,7 +425,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     chart: {
-      color: 'accent-1',
+      color: 'graph-0',
       // extend: undefined,
     },
     checkBox: {
@@ -554,7 +560,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     diagram: {
       // extend: undefined,
       line: {
-        color: 'accent-1',
+        color: 'graph-0',
       },
     },
     // drop: {
@@ -711,8 +717,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     meter: {
-      color: 'accent-1',
-      // colors: [],
+      color: 'graph-0',
+      // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
     paragraph: {

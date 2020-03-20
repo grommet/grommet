@@ -6062,9 +6062,10 @@ grommet-theme-hp@^0.1.1:
   resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-0.4.2.tgz#f2c4d02341056a34d32f1fbc4f843b523912dce5"
   integrity sha512-3GlnYNBM2DM90hgzrSedm40BsxIJaN6eDr5Ezeyqpp4SvwQnXpaEzlWkXiokTsgDlMhtNI/WoxWG9l/l9+y9oQ==
 
-"grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe/tarball/stable":
-  version "0.0.0"
-  resolved "https://github.com/grommet/grommet-theme-hpe/tarball/stable#5bd35faa5eee6aa753209194baa3101a12e2f597"
+grommet-theme-hpe@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-1.0.0.tgz#511e3ca4881c5fbac724e3f66ca898c620e9dd76"
+  integrity sha512-J+WgUTgyJpoqPort7/2J+13HZVc1EJOuy4LpIjoSO/+NLjAHoF6VY3Fguw95tk6W2jAAVW200Ghq4ZmtXYTvwA==
 
 grommet-theme-v1@^0.1.1:
   version "0.1.2"

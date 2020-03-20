@@ -102,6 +102,9 @@ export const doc = Select => {
     multiple: PropTypes.bool.description(
       'Whether to allow multiple options to be selected.',
     ),
+    name: PropTypes.string.description(
+      `The name of the attribute when in a Form or FormField.`,
+    ),
     onChange: PropTypes.func.description(
       'Function that will be called when the user selects an option.',
     ),
