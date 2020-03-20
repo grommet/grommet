@@ -1,7 +1,14 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { getByText } from '@testing-library/dom';
+import 'regenerator-runtime/runtime';
+import {
+  cleanup,
+  fireEvent,
+  render,
+  waitForElement,
+} from '@testing-library/react';
+import { getByText, screen } from '@testing-library/dom';
+import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -20,6 +27,18 @@ describe('TextInput', () => {
 
   test('disabled', () => {
     const { container } = render(<TextInput disabled name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('icon', () => {
+    const { container } = render(<TextInput icon={<Search />} name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('icon reverse', () => {
+    const { container } = render(
+      <TextInput icon={<Search />} reverse name="item" />,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -136,6 +155,61 @@ describe('TextInput', () => {
     }, 50);
   });
 
+  test('calls onSuggestionsOpen', done => {
+    const onSuggestionsOpen = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', 'test1']}
+          onSuggestionsOpen={onSuggestionsOpen}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.focus(getByTestId('test-input'));
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
+      expect(onSuggestionsOpen).toBeCalled();
+      done();
+    }, 50);
+  });
+
+  test('calls onSuggestionsClose', done => {
+    const onSuggestionsClose = jest.fn();
+    const { getByTestId, container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', 'test1']}
+          onSuggestionsClose={onSuggestionsClose}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.focus(getByTestId('test-input'));
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
+
+      fireEvent.keyDown(getByTestId('test-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27,
+      });
+      setTimeout(() => {
+        expect(document.getElementById('text-input-drop__item')).toBeNull();
+        expect(onSuggestionsClose).toBeCalled();
+        expect(container.firstChild).toMatchSnapshot();
+        done();
+      }, 50);
+    }, 50);
+  });
+
   test('select suggestion', done => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
@@ -238,5 +312,61 @@ describe('TextInput', () => {
         done();
       }, 50);
     });
+  });
+
+  test('should return focus to input on select', async () => {
+    const onSelect = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input-focus"
+          id="input-focus"
+          name="input-focus"
+          placeholder="Type to search..."
+          suggestions={['option0', 'option1', 'option2']}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Type to search...');
+
+    expect(document.activeElement).not.toEqual(input);
+    fireEvent.focus(input);
+    expect(document.activeElement).not.toEqual(input);
+
+    const selection = await waitForElement(() => screen.getByText('option1'));
+
+    fireEvent.click(selection);
+    expect(document.activeElement).toEqual(input);
+  });
+
+  test('should return focus to ref on select', async () => {
+    const inputRef = { current: {} };
+    const onSelect = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input-focus"
+          id="input-focus"
+          name="input-focus"
+          placeholder="Type to search..."
+          suggestions={['option0', 'option1', 'option2']}
+          onSelect={onSelect}
+          ref={inputRef}
+        />
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Type to search...');
+
+    expect(document.activeElement).not.toEqual(input);
+    fireEvent.focus(input);
+    expect(document.activeElement).not.toEqual(input);
+
+    const selection = await waitForElement(() => screen.getByText('option2'));
+
+    fireEvent.click(selection);
+    expect(document.activeElement).toEqual(input);
   });
 });

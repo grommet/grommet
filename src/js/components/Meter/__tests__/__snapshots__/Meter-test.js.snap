@@ -124,6 +124,31 @@ exports[`Meter background 1`] = `
       strokeWidth={24}
     />
   </svg>
+  <svg
+    className="c1"
+    height={24}
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width={384}
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#EDEDED"
+      strokeLinecap="square"
+      strokeOpacity="0.2"
+      strokeWidth={24}
+    />
+    <path
+      d="M 0,12 L 76.8,12"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+  </svg>
 </div>
 `;
 
@@ -271,7 +296,7 @@ exports[`Meter many values 1`] = `
     <path
       d="M 288,12 L 336,12"
       fill="none"
-      stroke="#00739D"
+      stroke="#00873D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
@@ -285,7 +310,7 @@ exports[`Meter many values 1`] = `
     <path
       d="M 192,12 L 240,12"
       fill="none"
-      stroke="#00873D"
+      stroke="#00739D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
@@ -299,21 +324,21 @@ exports[`Meter many values 1`] = `
     <path
       d="M 96,12 L 144,12"
       fill="none"
-      stroke="#00739D"
+      stroke="#6FFFB0"
       strokeLinecap="butt"
       strokeWidth={24}
     />
     <path
       d="M 48,12 L 96,12"
       fill="none"
-      stroke="#3D138D"
+      stroke="#00873D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 48,12"
       fill="none"
-      stroke="#00873D"
+      stroke="#3D138D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
@@ -332,16 +357,6 @@ exports[`Meter round 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.c2 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
-  transition: stroke 0.3s,stroke-width 0.3s;
-}
-
 .c1 {
   max-width: 100%;
   overflow: hidden;
@@ -349,6 +364,16 @@ exports[`Meter round 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+.c2 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c2 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }

@@ -64,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -81,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -248,9 +264,7 @@ function
 
 **messages**
 
-Custom messages. Defaults to `{
-  "multiple": "multiple"
-}`.
+Custom messages.
 
 ```
 {
@@ -264,6 +278,14 @@ Whether to allow multiple options to be selected.
 
 ```
 boolean
+```
+
+**name**
+
+The name of the attribute when in a Form or FormField.
+
+```
+string
 ```
 
 **onChange**

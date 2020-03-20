@@ -71,6 +71,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -88,6 +96,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -335,6 +351,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -352,6 +376,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -667,6 +699,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -684,6 +724,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -812,9 +860,9 @@ zoomOut
 
 **background**
 
-Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
 
 \`\`\`
 string
@@ -878,6 +926,8 @@ top
 left
 bottom
 right
+start
+end
 horizontal
 vertical
 all
@@ -894,6 +944,8 @@ between
     left
     bottom
     right
+    start
+    end
     horizontal
     vertical
     all
@@ -928,6 +980,8 @@ between
     left
     bottom
     right
+    start
+    end
     horizontal
     vertical
     all
@@ -1149,8 +1203,8 @@ string
 **pad**
 
 The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box Defaults to \`none\`.
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box Defaults to \`none\`.
 
 \`\`\`
 none
@@ -1162,6 +1216,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -1186,6 +1248,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1610,6 +1680,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1627,6 +1705,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1660,6 +1746,15 @@ Whether the button is active.
 
 \`\`\`
 boolean
+\`\`\`
+
+**as**
+
+The DOM tag or react component to use for the element.
+
+\`\`\`
+string
+function
 \`\`\`
 
 **color**
@@ -1699,6 +1794,21 @@ Whether when 'plain' it should receive a focus outline. Defaults to \`true\`.
 
 \`\`\`
 boolean
+\`\`\`
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to \`small\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **hoverIndicator**
@@ -1746,38 +1856,12 @@ If specified, the button will behave like an anchor tag.
 string
 \`\`\`
 
-**target**
-
-Specifies where to display the URL defined in the href property.
-
-\`\`\`
-_self
-_blank
-_parent
-_top
-\`\`\`
-
 **icon**
 
 Icon element to place in the button.
 
 \`\`\`
 element
-\`\`\`
-
-**gap**
-
-The amount of spacing between icon and label in the button. Defaults to \`small\`.
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string
 \`\`\`
 
 **label**
@@ -1791,7 +1875,7 @@ node
 **onClick**
 
 Click handler. Not setting this property and not specifying a href
-causes the Button to be disabled.
+        causes the Button to be disabled.
 
 \`\`\`
 function
@@ -1800,9 +1884,9 @@ function
 **plain**
 
 Whether this is a plain button with no border or pad.
-Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as 
-well.
+          Non plain button will show both pad and border.
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well.
 
 \`\`\`
 boolean
@@ -1811,7 +1895,7 @@ boolean
 **primary**
 
 Whether this is a primary button. There should be at most one per page
-         or screen.
+            or screen.
 
 \`\`\`
 boolean
@@ -1820,30 +1904,44 @@ boolean
 **reverse**
 
 Whether an icon and label should be reversed so that the icon is at the
-end of the anchor.
+              end of the anchor.
 
 \`\`\`
 boolean
 \`\`\`
 
+**size**
+
+The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
+      'size' will not impact any icon related sizing.
+
+\`\`\`
+small
+medium
+large
+\`\`\`
+
+**target**
+
+Specifies where to display the URL defined in the href property.
+
+\`\`\`
+_self
+_blank
+_parent
+_top
+\`\`\`
+
 **type**
 
 The type of button. Set the type to submit for the default button on 
-        forms. Defaults to \`button\`.
+                forms. Defaults to \`button\`.
 
 \`\`\`
 button
 reset
 submit
-\`\`\`
-
-**as**
-
-The DOM tag or react component to use for the element.
-
-\`\`\`
-string
-function
 \`\`\`
   
 ## Intrinsic element
@@ -2003,16 +2101,6 @@ Defaults to
 undefined
 \`\`\`
 
-**button.primary.color**
-
-The color of the background for primary buttons. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
 **button.disabled.opacity**
 
 The opacity when the button is disabled. Expects \`number\`.
@@ -2041,6 +2129,138 @@ Defaults to
 
 \`\`\`
 4px
+\`\`\`
+
+**button.primary.color**
+
+The color of the background for primary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.size.small.border.radius**
+
+The border corner radius. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**button.size.small.pad.horizontal**
+
+The pad Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+20px
+\`\`\`
+
+**button.size.small.pad.vertical**
+
+The pad Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**button.size.medium.border.radius**
+
+The border corner radius. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**button.size.medium.pad.horizontal**
+
+The pad Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**button.size.medium.pad.vertical**
+
+The pad Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**button.size.large.border.radius**
+
+The border corner radius. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**button.size.large.pad.horizontal**
+
+The pad Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+32px
+\`\`\`
+
+**button.size.large.pad.vertical**
+
+The pad Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+8px
+\`\`\`
+
+**button.transition.duration**
+
+The length of time it will take for the element to transition
+between two states. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.1
+\`\`\`
+
+**button.transition.properties**
+
+The CSS properties you want to add the transition to. Expects \`string[]\`.
+
+Defaults to
+
+\`\`\`
+['color', 'background-color', 'border-color', 'box-shadow']
+\`\`\`
+
+**button.transition.timing**
+
+Describes how a transition will progress over one cycle of its
+duration and allowing it to change speed during its course. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+ease-in-out
 \`\`\`
 
 **button.extend**
@@ -2141,6 +2361,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2158,6 +2386,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2672,6 +2908,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2689,6 +2933,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2920,6 +3172,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2937,6 +3197,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -3025,10 +3293,19 @@ A unique identifier for the Chart. This
 string
 \`\`\`
 
+**dash**
+
+Whether to use dashed lines for line or bar charts.
+
+\`\`\`
+boolean
+\`\`\`
+
 **onClick**
 
-Called when the user clicks on it.
-      This is only available when the type is line or area.
+Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.
 
 \`\`\`
 function
@@ -3534,7 +3811,7 @@ The width size of the toggle. Expects \`string\`.
 Defaults to
 
 \`\`\`
-42px
+48px
 \`\`\`
 ",
   "Clock": "## Clock
@@ -3603,6 +3880,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -3620,6 +3905,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -3999,6 +4292,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -4016,6 +4317,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -4241,7 +4550,11 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 \`\`\`
 
@@ -4316,6 +4629,17 @@ When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.
+
+\`\`\`
+function
+\`\`\`
+
+**onSort**
+
+When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}
 
 \`\`\`
 function
@@ -4431,6 +4755,19 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**sort**
+
+Which property to sort on and which direction to sort.
+
+\`\`\`
+{
+  direction: 
+    asc
+    desc,
+  property: string
+}
 \`\`\`
 
 **sortable**
@@ -4821,6 +5158,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -4838,6 +5183,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -5167,7 +5520,7 @@ import { DropButton } from 'grommet';
 **a11yTitle**
 
 Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element. Defaults to \`Open Drop\`.
+   be added to the element.
 
 \`\`\`
 string
@@ -5217,6 +5570,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -5234,6 +5595,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -5387,6 +5756,17 @@ An object representing any errors in the data. They keys should
 }
 \`\`\`
 
+**infos**
+
+An object representing any information details in the data.
+        They keys should match the keys in the value object. Defaults to \`{}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
 **messages**
 
 Custom validation messages. Defaults to \`{
@@ -5413,7 +5793,8 @@ function
 
 Function that will be called when the form is submitted. The
       single argument is an event containing the latest value object
-      via \`event.value\`.
+      via \`event.value\` and an object indicating which fields were
+      touched via \`event.touched\`.
 
 \`\`\`
 function
@@ -5481,9 +5862,17 @@ function
 object
 \`\`\`
 
+**disabled**
+
+Whether the field should look disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
 **error**
 
-Any error text describing issues with the field
+Any error text describing issues with the field's value
 
 \`\`\`
 string
@@ -5505,6 +5894,15 @@ The id of the input element contained in this field
 
 \`\`\`
 string
+\`\`\`
+
+**info**
+
+Any informational text regarding the field's value
+
+\`\`\`
+string
+node
 \`\`\`
 
 **label**
@@ -5548,6 +5946,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -5565,6 +5971,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -5615,18 +6029,29 @@ Validation rule when used within a grommet Form. Provide an object
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
-      describing the validation issue, if any.
+      describing the validation issue, if any, or an object with 'message'
+      and 'status' properties.
 
 \`\`\`
 {
   regexp: object,
-  message: string
+  message: 
+    string
+    node,
+  status: 
+    error
+    info
 }
 function
 [
   {
     regexp: object,
-    message: string
+    message: 
+      string
+      node,
+    status: 
+      error
+      info
   }
   function
 ]
@@ -5686,7 +6111,47 @@ The pad of the FormField content. Expects \`object\`.
 Defaults to
 
 \`\`\`
-{ horizontal: 'small', bottom: 'small' }
+small
+\`\`\`
+
+**formField.disabled.background.color**
+
+The color of the FormField background when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.disabled.background.opacity**
+
+The opacity of the FormField background when it is disabled. Expects \`string | boolean | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.background.color**
+
+The color of the FormField background when there is an error. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.background.opacity**
+
+The opacity of the FormField background when there is an error. Expects \`string | boolean | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.error.color**
@@ -5696,7 +6161,7 @@ The color of the FormField error. Expects \`string | {'dark': string, 'light': s
 Defaults to
 
 \`\`\`
-{ dark: 'status-critical', light: 'status-critical' }
+status-critical
 \`\`\`
 
 **formField.error.margin**
@@ -5739,6 +6204,26 @@ Defaults to
 { left: 'small' }
 \`\`\`
 
+**formField.info.color**
+
+The color of the FormField info. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+text-xweak
+\`\`\`
+
+**formField.info.margin**
+
+The margin used for the FormField info. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+{ vertical: 'xsmall', horizontal: 'small' }
+\`\`\`
+
 **formField.label**
 
 Any props of Text that will be applied on the FormField label. Expects \`object\`.
@@ -5767,6 +6252,16 @@ Defaults to
 
 \`\`\`
 { bottom: 'small' }
+\`\`\`
+
+**formField.round**
+
+The rounding of the FormField. Expects \`boolean | string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.borderSize**
@@ -5856,6 +6351,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -5873,6 +6376,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -6090,6 +6601,98 @@ around
 stretch
 \`\`\`
 
+**pad**
+
+The amount of padding around the box contents. An
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box Defaults to \`none\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
+**responsive**
+
+Whether margin and pad sizes should be scaled for mobile
+        environments. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
+
 **rows**
 
 Row sizes.
@@ -6230,6 +6833,48 @@ import { Grommet } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
+**dir**
+
+Layout direction for right to left contexts
+
+\`\`\`
+rtl
+\`\`\`
 
 **full**
 
@@ -6390,6 +7035,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -6407,6 +7060,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -6714,6 +7375,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -6731,6 +7400,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -6756,6 +7433,16 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**fill**
+
+Whether the width and/or height should fill the container.
+
+\`\`\`
+horizontal
+vertical
+boolean
 \`\`\`
 
 **fit**
@@ -6785,14 +7472,6 @@ weak
 medium
 strong
 string
-boolean
-\`\`\`
-
-**fill**
-
-Whether the image expands to fill all of the available width and height
-
-\`\`\`
 boolean
 \`\`\`
   
@@ -7088,7 +7767,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer Defaults to \`none\`.
+particular side of the layer
 
 \`\`\`
 none
@@ -7099,6 +7778,13 @@ medium
 large
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -7120,6 +7806,13 @@ large
     large
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -7188,9 +7881,11 @@ bottom
 bottom-left
 bottom-right
 center
+end
 hidden
 left
 right
+start
 top
 top-left
 top-right
@@ -7202,6 +7897,15 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 
 \`\`\`
 boolean
+\`\`\`
+
+**target**
+
+Target where the layer will be aligned to. This should be a React 
+      reference.
+
+\`\`\`
+object
 \`\`\`
   
 ## Intrinsic element
@@ -7393,6 +8097,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -7410,6 +8122,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -7467,6 +8187,8 @@ top
 bottom
 left
 right
+start
+end
 {
   color: 
     string
@@ -7480,7 +8202,9 @@ right
     top
     bottom
     left
-    right,
+    right
+    start
+    end,
   size: 
     xxsmall
     xsmall
@@ -7607,6 +8331,20 @@ string
     large
     xlarge,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  end: 
     xxsmall
     xsmall
     small
@@ -7782,6 +8520,16 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+\`\`\`
+element
+\`\`\`
+
 **id**
 
 The id attribute of the input.
@@ -7818,7 +8566,7 @@ function
 
 Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one. Defaults to \`[]\`.
+      as the user types characters one by one.
 
 \`\`\`
 [{
@@ -7835,6 +8583,15 @@ Describes the structure of the mask. If a regexp is provided, it should
 
     }
 }]
+\`\`\`
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
+
+\`\`\`
+boolean
 \`\`\`
 
 **size**
@@ -8018,6 +8775,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -8035,6 +8800,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -8128,7 +8901,7 @@ object
 
 **dropProps**
 
-Any valid Drop prop. Defaults to \`{}\`.
+Any valid Drop prop.
 
 \`\`\`
 object
@@ -8159,7 +8932,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
+The object values can be any Button prop, for example: label and onClick.
 
 \`\`\`
 [object]
@@ -8322,6 +9095,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -8339,6 +9120,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -8381,6 +9170,7 @@ string
     weak
     medium
     strong
+    number
     boolean
 }
 \`\`\`
@@ -8627,6 +9417,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -8644,6 +9442,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -9032,6 +9838,14 @@ Function that will be called to render the visual representation.
 function
 \`\`\`
 
+**disabled**
+
+Disables all options.
+
+\`\`\`
+boolean
+\`\`\`
+
 **name**
 
 Required. The DOM name attribute value to use for the underlying <input/> 
@@ -9072,6 +9886,7 @@ Currently selected option value.
 
 \`\`\`
 string
+object
 \`\`\`
   
 ## Intrinsic element
@@ -9296,10 +10111,7 @@ number
 
 **messages**
 
-Custom messages used by screen readers for accessibility. Defaults to \`{
-  \\"lower\\": \\"Lower Bounds\\",
-  \\"upper\\": \\"Upper Bounds\\"
-}\`.
+Custom messages used by screen readers for accessibility.
 
 \`\`\`
 {
@@ -9376,7 +10188,7 @@ number
 
 **values**
 
-Required. The current values. Defaults to \`[]\`.
+Required. The current values.
 
 \`\`\`
 [number]
@@ -9613,6 +10425,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -9630,6 +10450,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -9797,9 +10625,7 @@ function
 
 **messages**
 
-Custom messages. Defaults to \`{
-  \\"multiple\\": \\"multiple\\"
-}\`.
+Custom messages.
 
 \`\`\`
 {
@@ -9813,6 +10639,14 @@ Whether to allow multiple options to be selected.
 
 \`\`\`
 boolean
+\`\`\`
+
+**name**
+
+The name of the attribute when in a Form or FormField.
+
+\`\`\`
+string
 \`\`\`
 
 **onChange**
@@ -10228,6 +11062,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -10245,6 +11087,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -10548,6 +11398,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -10565,6 +11423,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -11026,6 +11892,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -11043,6 +11917,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -11298,6 +12180,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -11315,6 +12205,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -11801,6 +12699,16 @@ Any valid Drop prop.
 object
 \`\`\`
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+\`\`\`
+element
+\`\`\`
+
 **id**
 
 The id attribute of the input.
@@ -11838,7 +12746,7 @@ Custom messages for TextInput. Used for accessibility by screen
 
 **name**
 
-The name attribute of the input.
+The name of the attribute when in a Form or FormField.
 
 \`\`\`
 string
@@ -11889,6 +12797,15 @@ node
 
 Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance
+
+\`\`\`
+boolean
+\`\`\`
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
 
 \`\`\`
 boolean
@@ -12189,6 +13106,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -12206,6 +13131,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -12399,6 +13332,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -12416,6 +13357,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small

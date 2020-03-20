@@ -8,6 +8,7 @@ import {
   GridAreaType, 
   JustifyContentType, 
   MarginType, 
+  PadType,
   PolymorphicType,
 } from "../../utils";
 
@@ -25,6 +26,8 @@ export interface GridProps {
   justify?: "start" | "center" | "end" | "stretch";
   justifyContent?: JustifyContentType;
   margin?: MarginType;
+  pad?: PadType;
+  responsive?: boolean;
   rows?: ("xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | string | string[])[] | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   tag?: PolymorphicType;
 }

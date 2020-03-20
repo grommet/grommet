@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-
+import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
@@ -9,12 +9,8 @@ export const baseStyle = css`
   line-height: ${props => props.theme.global.font.height};
   font-weight: ${props => props.theme.global.font.weight};
   ${props =>
-    !props.plain &&
-    props.theme.global.colors.background &&
-    css`
-      background: ${normalizeColor('background', props.theme, true)};
-      color: ${normalizeColor('text', props.theme, true)};
-    `} box-sizing: border-box;
+    !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
+  box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -141,7 +137,49 @@ export const edgeStyle = (
         : ''};
     `);
   }
+  if (data.start) {
+    result.push(css`
+      ${kind}-inline-start: ${theme.global.edgeSize[data.start] || data.start};
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
+        ${kind}-inline-start: ${breakpoint.edgeSize[data.start] || data.start};
+      `,
+          )
+        : ''};
+    `);
+  }
+  if (data.end) {
+    result.push(css`
+      ${kind}-inline-end: ${theme.global.edgeSize[data.end] || data.end};
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
+        ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
+      `,
+          )
+        : ''};
+    `);
+  }
   return result;
+};
+
+export const fillStyle = fillProp => {
+  if (fillProp === 'horizontal') {
+    return 'width: 100%;';
+  }
+  if (fillProp === 'vertical') {
+    return 'height: 100%;';
+  }
+  if (fillProp) {
+    return `
+      width: 100%;
+      height: 100%;
+    `;
+  }
+  return undefined;
 };
 
 // focus also supports clickable elements inside svg
@@ -229,14 +267,6 @@ export const placeholderStyle = css`
     ${placeholderColor};
   }
 `;
-
-// evalStyle() converts a styled-components item into a string
-export const evalStyle = (arg, theme) => {
-  if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
-    return arg[0]({ theme });
-  }
-  return arg;
-};
 
 const ALIGN_SELF_MAP = {
   center: 'center',

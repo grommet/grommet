@@ -1,161 +1,229 @@
-import React, { Component } from 'react';
-import { defaultProps } from '../../default-props';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { FormContext } from './FormContext';
-
-const updateReducer = (name, data, error, validations) => state => {
-  const { errors, touched, value } = state;
-  const nextValue = { ...value };
-  nextValue[name] = data;
-  const nextTouched = { ...touched };
-  nextTouched[name] = true;
-  const nextErrors = { ...errors };
-  if (errors[name]) {
-    const nextError =
-      error || (validations[name] && validations[name](data, nextValue));
-    if (nextError) {
-      nextErrors[name] = nextError;
-    } else {
-      delete nextErrors[name];
-    }
-  }
-  return {
-    value: nextValue,
-    errors: nextErrors,
-    touched: nextTouched,
-  };
-};
 
 const defaultMessages = {
   invalid: 'invalid',
   required: 'required',
 };
+const defaultValue = {};
+const defaultErrors = {};
+const defaultInfos = {};
 
-class Form extends Component {
-  static defaultProps = {
-    messages: defaultMessages,
-    validate: 'submit',
-    value: {},
-  };
+const updateErrors = (nextErrors, name, error) => {
+  // we disable no-param-reassing so we can use this as a utility function
+  // to update nextErrors, to avoid code duplication
+  /* eslint-disable no-param-reassign */
+  const hasStatusError = typeof error === 'object' && error.status === 'error';
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { value, errors, messages } = nextProps;
-    const {
-      value: stateValue,
-      errors: stateErrors,
-      priorValue,
-      priorErrors,
-      priorMessages,
-    } = prevState;
-    if (
-      !priorValue ||
-      value !== priorValue ||
-      errors !== priorErrors ||
-      messages !== priorMessages
-    ) {
-      return {
-        value: value !== priorValue ? value : stateValue,
-        priorValue: value,
-        errors: (errors !== priorErrors ? errors : stateErrors) || {},
-        priorErrors: errors,
-        messages: { ...defaultMessages, ...messages },
-        priorMessages: messages,
-      };
-    }
-    return null;
+  // typeof error === 'object' is implied for both cases of error with
+  // a status message and for an error object that is a react node
+  if (
+    (typeof error === 'object' && !error.status) ||
+    hasStatusError ||
+    typeof error === 'string'
+  ) {
+    nextErrors[name] = hasStatusError ? error.message : error;
+  } else {
+    delete nextErrors[name];
   }
+  /* eslint-enable no-param-reassign */
+};
 
-  state = { errors: {}, value: {}, touched: {} };
+const updateInfos = (nextInfos, name, error) => {
+  /* eslint-disable no-param-reassign */
+  if (typeof error === 'object' && error.status === 'info') {
+    nextInfos[name] = error.message;
+  } else {
+    delete nextInfos[name];
+  }
+  /* eslint-enable no-param-reassign */
+};
 
-  validations = {};
+const Form = forwardRef(
+  (
+    {
+      children,
+      errors: errorsProp = defaultErrors,
+      infos: infosProp = defaultInfos,
+      messages: messagesProp = defaultMessages,
+      onChange,
+      onReset,
+      onSubmit,
+      validate = 'submit',
+      value: valueProp = defaultValue,
+      ...rest
+    },
+    ref,
+  ) => {
+    const [value, setValue] = useState(valueProp);
+    useEffect(() => {
+      if (valueProp !== defaultValue) setValue(valueProp);
+    }, [valueProp]);
+    const [messages, setMessages] = useState(messagesProp);
+    useEffect(() => setMessages(messagesProp), [messagesProp]);
+    const [errors, setErrors] = useState(errorsProp || {});
+    useEffect(() => setErrors(errorsProp || {}), [errorsProp]);
+    const [infos, setInfos] = useState(infosProp || {});
+    useEffect(() => setInfos(infosProp || {}), [infosProp]);
+    const [touched, setTouched] = useState({});
 
-  onSubmit = event => {
-    const { onSubmit } = this.props;
-    const { errors, value } = this.state;
-    // Don't submit the form via browser form action. We don't want it
-    // if the validation fails. And, we assume a javascript action handler
-    // otherwise.
-    event.preventDefault();
-    const nextErrors = { ...errors };
-    Object.keys(this.validations).forEach(name => {
-      const validate = this.validations[name];
-      const error = validate && validate(value[name], value);
-      if (error) {
-        nextErrors[name] = error;
-      } else {
-        delete nextErrors[name];
-      }
-    });
-    if (Object.keys(nextErrors).length === 0 && onSubmit) {
-      event.persist(); // extract from React's synthetic event pool
-      const adjustedEvent = event;
-      adjustedEvent.value = value;
-      onSubmit(adjustedEvent);
-    } else {
-      this.setState({ errors: nextErrors });
-    }
-  };
+    const validations = useRef({});
 
-  onReset = event => {
-    const { onChange, onReset } = this.props;
-    const value = {};
-    this.setState({ errors: {}, value, touched: {} }, () => {
-      if (onReset) {
-        event.persist(); // extract from React's synthetic event pool
-        const adjustedEvent = event;
-        adjustedEvent.value = value;
-        onReset(adjustedEvent);
-      }
-      if (onChange) {
-        onChange(value);
-      }
-    });
-  };
+    useEffect(() => {
+      if (onChange) onChange(value);
+    }, [onChange, value]);
 
-  onBlur = name => {
-    const { validate } = this.props;
-    if (validate === 'blur' && this.validations[name]) {
-      const { errors, value } = this.state;
-      const nextErrors = { ...errors };
-      const error = this.validations[name](value[name], value);
-      if (error) {
-        nextErrors[name] = error;
-      } else {
-        delete nextErrors[name];
-      }
-      this.setState({ errors: nextErrors });
-    }
-  };
+    useEffect(() => {}, [value, errors, infos]);
 
-  update = (name, data, error) => {
-    this.setState(updateReducer(name, data, error, this.validations), () => {
-      const { onChange } = this.props;
-      const { value } = this.state;
-      if (onChange) {
-        onChange(value);
-      }
-    });
-  };
+    const update = useCallback((name, data, initial) => {
+      setValue(prevValue => {
+        const nextValue = { ...prevValue };
+        nextValue[name] = data;
 
-  addValidation = (name, validate) => {
-    this.validations[name] = validate;
-  };
+        // re-run any validations, in case the validation
+        // is checking across fields
+        setErrors(prevErrors => {
+          const nextErrors = { ...prevErrors };
+          Object.keys(prevErrors).forEach(errName => {
+            if (validations.current[errName]) {
+              const nextError = validations.current[errName](data, nextValue);
+              updateErrors(nextErrors, errName, nextError);
+            }
+          });
+          return nextErrors;
+        });
+        setInfos(prevInfos => {
+          const nextInfos = { ...prevInfos };
+          // re-run any validations that have infos, in case the validation
+          // is checking across fields
+          Object.keys(nextInfos).forEach(infoName => {
+            if (validations.current[infoName]) {
+              const nextInfo = validations.current[infoName](data, nextValue);
+              updateInfos(nextInfos, infoName, nextInfo);
+            }
+          });
+          return nextInfos;
+        });
 
-  render() {
-    const { children, validate, ...rest } = this.props;
-    delete rest.messages;
-    delete rest.theme;
-    delete rest.value;
-    const { errors, touched, value, messages } = this.state;
+        return nextValue;
+      });
+
+      if (!initial)
+        setTouched(prevTouched => {
+          const nextTouched = { ...prevTouched };
+          nextTouched[name] = true;
+          return nextTouched;
+        });
+    }, []);
+
+    const useFormContext = (name, componentValue) => {
+      const valueData = name && value[name] !== undefined ? value[name] : '';
+      const [data, setData] = useState(
+        componentValue !== undefined ? componentValue : valueData,
+      );
+      // update when the component value or form value changes
+      useEffect(() => {
+        if (componentValue !== undefined) {
+          if (componentValue !== data) {
+            setData(componentValue);
+            if (name) update(name, componentValue);
+          }
+        } else if (name && valueData !== data) setData(valueData);
+      }, [data, name, valueData, componentValue]);
+
+      return [
+        data,
+        nextData => {
+          // only set if the caller hasn't supplied a specific value
+          if (componentValue === undefined) {
+            if (name) update(name, nextData);
+            setData(nextData);
+          }
+        },
+      ];
+    };
+
     return (
-      <form {...rest} onReset={this.onReset} onSubmit={this.onSubmit}>
+      <form
+        ref={ref}
+        {...rest}
+        onReset={event => {
+          setValue(defaultValue);
+          setErrors({});
+          setTouched({});
+          if (onReset) {
+            event.persist(); // extract from React's synthetic event pool
+            const adjustedEvent = event;
+            adjustedEvent.value = defaultValue;
+            onReset(adjustedEvent);
+          }
+        }}
+        onSubmit={event => {
+          // Don't submit the form via browser form action. We don't want it
+          // if the validation fails. And, we assume a javascript action handler
+          // otherwise.
+          event.preventDefault();
+          const nextErrors = { ...errors };
+          const nextInfos = { ...infos };
+          Object.keys(validations.current).forEach(name => {
+            const nextError = validations.current[name](value[name], value);
+            updateErrors(nextErrors, name, nextError);
+            updateInfos(nextInfos, name, nextError);
+          });
+          setErrors(nextErrors);
+          setInfos(nextInfos);
+          if (Object.keys(nextErrors).length === 0 && onSubmit) {
+            event.persist(); // extract from React's synthetic event pool
+            const adjustedEvent = event;
+            adjustedEvent.value = value;
+            adjustedEvent.touched = touched;
+            onSubmit(adjustedEvent);
+          }
+        }}
+      >
         <FormContext.Provider
           value={{
-            addValidation: this.addValidation,
-            onBlur: validate === 'blur' ? this.onBlur : undefined,
+            addValidation: (name, validation) => {
+              validations.current[name] = validation;
+            },
+            removeValidation: name => {
+              delete validations.current[name];
+            },
+            onBlur:
+              validate === 'blur'
+                ? name => {
+                    if (validations.current[name]) {
+                      const error = validations.current[name](
+                        value[name],
+                        value,
+                      );
+                      setErrors(prevErrors => {
+                        const nextErrors = { ...prevErrors };
+                        updateErrors(nextErrors, name, error);
+                        return nextErrors;
+                      });
+                      setInfos(prevInfos => {
+                        const nextInfos = { ...prevInfos };
+                        updateInfos(nextInfos, name, error);
+                        return nextInfos;
+                      });
+                    }
+                  }
+                : undefined,
             errors,
+            get: name => value[name],
+            infos,
             messages,
+            set: (name, nextValue) => update(name, nextValue),
             touched,
-            update: this.update,
+            update,
+            useFormContext,
             value,
           }}
         >
@@ -163,10 +231,10 @@ class Form extends Component {
         </FormContext.Provider>
       </form>
     );
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(Form.defaultProps, defaultProps);
+Form.displayName = 'Form';
 
 let FormDoc;
 if (process.env.NODE_ENV !== 'production') {
@@ -174,6 +242,5 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const FormWrapper = FormDoc || Form;
-FormWrapper.displayName = 'Form';
 
 export { FormWrapper as Form };

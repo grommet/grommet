@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, Form, FormField } from 'grommet';
+import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
+import { StatusGood } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
 const Example = () => (
@@ -23,9 +24,25 @@ const Example = () => (
                 if (name && name.length === 1) return 'must be >1 character';
                 return undefined;
               },
+              name => {
+                if (name === 'good')
+                  return {
+                    message: (
+                      <Box align="end">
+                        <StatusGood />
+                      </Box>
+                    ),
+                    status: 'info',
+                  };
+                return undefined;
+              },
             ]}
           />
-          <FormField label="Email" name="email" type="email" required />
+
+          <FormField label="Email" name="email" required>
+            <TextInput name="email" type="email" />
+          </FormField>
+
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />

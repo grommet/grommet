@@ -49,7 +49,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer Defaults to `none`.
+particular side of the layer
 
 ```
 none
@@ -60,6 +60,13 @@ medium
 large
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -81,6 +88,13 @@ large
     large
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -149,9 +163,11 @@ bottom
 bottom-left
 bottom-right
 center
+end
 hidden
 left
 right
+start
 top
 top-left
 top-right
@@ -163,6 +179,15 @@ Whether the layer should take full width and height on mobile Defaults to `true`
 
 ```
 boolean
+```
+
+**target**
+
+Target where the layer will be aligned to. This should be a React 
+      reference.
+
+```
+object
 ```
   
 ## Intrinsic element

@@ -64,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -81,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -106,6 +122,16 @@ xlarge
     string
 }
 string
+```
+
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
 ```
 
 **fit**
@@ -135,14 +161,6 @@ weak
 medium
 strong
 string
-boolean
-```
-
-**fill**
-
-Whether the image expands to fill all of the available width and height
-
-```
 boolean
 ```
   

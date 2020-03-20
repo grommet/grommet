@@ -9,7 +9,7 @@ exports[`Layer animation fadeIn 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -19,8 +19,6 @@ exports[`Layer animation fadeIn 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -35,13 +33,6 @@ exports[`Layer animation fadeIn 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -55,7 +46,7 @@ exports[`Layer animation fadeIn 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -64,8 +55,8 @@ exports[`Layer animation fadeIn 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: gdMPTF 0.2s ease-in-out forwards;
-  animation: gdMPTF 0.2s ease-in-out forwards;
+  -webkit-animation: RcxFP 0.2s ease-in-out forwards;
+  animation: RcxFP 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -132,7 +123,62 @@ exports[`Layer animation fadeIn 1`] = `
 </div>
 `;
 
-exports[`Layer animation fadeIn 2`] = `""`;
+exports[`Layer animation fadeIn 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer animation false 1`] = `
 .c0 {
@@ -143,7 +189,7 @@ exports[`Layer animation false 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -153,8 +199,6 @@ exports[`Layer animation false 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -169,13 +213,6 @@ exports[`Layer animation false 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -189,7 +226,7 @@ exports[`Layer animation false 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -264,7 +301,62 @@ exports[`Layer animation false 1`] = `
 </div>
 `;
 
-exports[`Layer animation false 2`] = `""`;
+exports[`Layer animation false 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer animation slide 1`] = `
 .c0 {
@@ -275,7 +367,7 @@ exports[`Layer animation slide 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -285,8 +377,6 @@ exports[`Layer animation slide 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -301,13 +391,6 @@ exports[`Layer animation slide 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -321,7 +404,7 @@ exports[`Layer animation slide 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -330,8 +413,8 @@ exports[`Layer animation slide 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -398,7 +481,62 @@ exports[`Layer animation slide 1`] = `
 </div>
 `;
 
-exports[`Layer animation slide 2`] = `""`;
+exports[`Layer animation slide 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer animation true 1`] = `
 .c0 {
@@ -409,7 +547,7 @@ exports[`Layer animation true 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -419,8 +557,6 @@ exports[`Layer animation true 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -435,13 +571,6 @@ exports[`Layer animation true 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -455,7 +584,7 @@ exports[`Layer animation true 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -464,8 +593,8 @@ exports[`Layer animation true 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -532,7 +661,62 @@ exports[`Layer animation true 1`] = `
 </div>
 `;
 
-exports[`Layer animation true 2`] = `""`;
+exports[`Layer animation true 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer custom margin 1`] = `
 .c0 {
@@ -543,7 +727,7 @@ exports[`Layer custom margin 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -553,8 +737,6 @@ exports[`Layer custom margin 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -569,13 +751,6 @@ exports[`Layer custom margin 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -589,7 +764,7 @@ exports[`Layer custom margin 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 50px - 40px);
   max-width: calc(100% - 30px - 20px);
   border-radius: 4px;
@@ -598,8 +773,8 @@ exports[`Layer custom margin 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -666,7 +841,62 @@ exports[`Layer custom margin 1`] = `
 </div>
 `;
 
-exports[`Layer custom margin 2`] = `""`;
+exports[`Layer custom margin 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer dark context 1`] = `
 .c0 {
@@ -699,8 +929,8 @@ exports[`Layer dark context 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -743,17 +973,45 @@ exports[`Layer dark context 1`] = `
 </div>
 `;
 
-exports[`Layer dark context 2`] = `""`;
+exports[`Layer dark context 2`] = `
+"@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer focus on layer 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -767,7 +1025,7 @@ exports[`Layer focus on layer 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -776,8 +1034,8 @@ exports[`Layer focus on layer 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -785,6 +1043,14 @@ exports[`Layer focus on layer 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -829,7 +1095,7 @@ exports[`Layer full false 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -839,8 +1105,6 @@ exports[`Layer full false 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -855,13 +1119,6 @@ exports[`Layer full false 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -875,7 +1132,7 @@ exports[`Layer full false 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -884,8 +1141,8 @@ exports[`Layer full false 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -952,7 +1209,62 @@ exports[`Layer full false 1`] = `
 </div>
 `;
 
-exports[`Layer full false 2`] = `""`;
+exports[`Layer full false 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer full horizontal 1`] = `
 .c0 {
@@ -963,7 +1275,7 @@ exports[`Layer full horizontal 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -973,8 +1285,6 @@ exports[`Layer full horizontal 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -989,13 +1299,6 @@ exports[`Layer full horizontal 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1009,7 +1312,7 @@ exports[`Layer full horizontal 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -1019,8 +1322,8 @@ exports[`Layer full horizontal 1`] = `
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-animation: dcHpVA 0.2s ease-in-out forwards;
-  animation: dcHpVA 0.2s ease-in-out forwards;
+  -webkit-animation: fEUQAU 0.2s ease-in-out forwards;
+  animation: fEUQAU 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1087,7 +1390,62 @@ exports[`Layer full horizontal 1`] = `
 </div>
 `;
 
-exports[`Layer full horizontal 2`] = `""`;
+exports[`Layer full horizontal 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer full true 1`] = `
 .c0 {
@@ -1098,7 +1456,7 @@ exports[`Layer full true 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1108,8 +1466,6 @@ exports[`Layer full true 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -1124,13 +1480,6 @@ exports[`Layer full true 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1144,7 +1493,7 @@ exports[`Layer full true 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -1152,8 +1501,8 @@ exports[`Layer full true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
-  -webkit-animation: aUlIN 0.2s ease-in-out forwards;
-  animation: aUlIN 0.2s ease-in-out forwards;
+  -webkit-animation: gVgDGd 0.2s ease-in-out forwards;
+  animation: gVgDGd 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1220,7 +1569,62 @@ exports[`Layer full true 1`] = `
 </div>
 `;
 
-exports[`Layer full true 2`] = `""`;
+exports[`Layer full true 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer full vertical 1`] = `
 .c0 {
@@ -1231,7 +1635,7 @@ exports[`Layer full vertical 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1241,8 +1645,6 @@ exports[`Layer full vertical 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -1257,13 +1659,6 @@ exports[`Layer full vertical 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1277,7 +1672,7 @@ exports[`Layer full vertical 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -1287,8 +1682,8 @@ exports[`Layer full vertical 1`] = `
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-animation: XCWMt 0.2s ease-in-out forwards;
-  animation: XCWMt 0.2s ease-in-out forwards;
+  -webkit-animation: bgBtCZ 0.2s ease-in-out forwards;
+  animation: bgBtCZ 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1355,7 +1750,62 @@ exports[`Layer full vertical 1`] = `
 </div>
 `;
 
-exports[`Layer full vertical 2`] = `""`;
+exports[`Layer full vertical 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer hidden 1`] = `
 .c0 {
@@ -1366,7 +1816,7 @@ exports[`Layer hidden 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1389,13 +1839,6 @@ exports[`Layer hidden 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1409,7 +1852,7 @@ exports[`Layer hidden 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -1470,24 +1913,59 @@ exports[`Layer hidden 1`] = `
 </div>
 `;
 
-exports[`Layer hidden 2`] = `""`;
+exports[`Layer hidden 2`] = `
+"@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 cAYDbU"
+  class="StyledLayer-rmtehz-0 XIVyE"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
+    class="StyledLayer__StyledOverlay-rmtehz-1 bnUvKb"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 bwhceh"
+    class="StyledLayer__StyledContainer-rmtehz-2 cUgmNe"
     id="hidden-test"
   >
     <a
       aria-hidden="true"
-      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 LMZHJ"
+      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 jJnknU"
       tabindex="-1"
     />
     This is a layer
@@ -1495,9 +1973,76 @@ exports[`Layer hidden 3`] = `
 </div>
 `;
 
-exports[`Layer hidden 4`] = `""`;
+exports[`Layer hidden 4`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer is accessible 1`] = `
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <div
   data-testid="test-body-node"
 >
@@ -1509,6 +2054,18 @@ exports[`Layer is accessible 1`] = `
 `;
 
 exports[`Layer is accessible 2`] = `
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <div
   data-testid="test-layer-node"
 >
@@ -1539,7 +2096,7 @@ exports[`Layer margin large 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1549,8 +2106,6 @@ exports[`Layer margin large 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -1565,13 +2120,6 @@ exports[`Layer margin large 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1585,7 +2133,7 @@ exports[`Layer margin large 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 48px - 48px);
   max-width: calc(100% - 48px - 48px);
   border-radius: 4px;
@@ -1594,8 +2142,8 @@ exports[`Layer margin large 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1662,7 +2210,62 @@ exports[`Layer margin large 1`] = `
 </div>
 `;
 
-exports[`Layer margin large 2`] = `""`;
+exports[`Layer margin large 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer margin medium 1`] = `
 .c0 {
@@ -1673,7 +2276,7 @@ exports[`Layer margin medium 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1683,8 +2286,6 @@ exports[`Layer margin medium 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -1699,13 +2300,6 @@ exports[`Layer margin medium 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1719,7 +2313,7 @@ exports[`Layer margin medium 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 24px - 24px);
   max-width: calc(100% - 24px - 24px);
   border-radius: 4px;
@@ -1728,8 +2322,8 @@ exports[`Layer margin medium 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1796,7 +2390,62 @@ exports[`Layer margin medium 1`] = `
 </div>
 `;
 
-exports[`Layer margin medium 2`] = `""`;
+exports[`Layer margin medium 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer margin none 1`] = `
 .c0 {
@@ -1807,7 +2456,7 @@ exports[`Layer margin none 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1817,8 +2466,6 @@ exports[`Layer margin none 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -1833,13 +2480,6 @@ exports[`Layer margin none 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1853,7 +2493,7 @@ exports[`Layer margin none 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -1862,8 +2502,8 @@ exports[`Layer margin none 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1930,7 +2570,62 @@ exports[`Layer margin none 1`] = `
 </div>
 `;
 
-exports[`Layer margin none 2`] = `""`;
+exports[`Layer margin none 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer margin small 1`] = `
 .c0 {
@@ -1941,7 +2636,7 @@ exports[`Layer margin small 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1951,8 +2646,6 @@ exports[`Layer margin small 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -1967,13 +2660,6 @@ exports[`Layer margin small 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1987,7 +2673,7 @@ exports[`Layer margin small 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 12px - 12px);
   max-width: calc(100% - 12px - 12px);
   border-radius: 4px;
@@ -1996,8 +2682,8 @@ exports[`Layer margin small 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2064,7 +2750,62 @@ exports[`Layer margin small 1`] = `
 </div>
 `;
 
-exports[`Layer margin small 2`] = `""`;
+exports[`Layer margin small 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer margin xsmall 1`] = `
 .c0 {
@@ -2075,7 +2816,7 @@ exports[`Layer margin xsmall 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2085,8 +2826,6 @@ exports[`Layer margin xsmall 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -2101,13 +2840,6 @@ exports[`Layer margin xsmall 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2121,7 +2853,7 @@ exports[`Layer margin xsmall 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 6px - 6px);
   max-width: calc(100% - 6px - 6px);
   border-radius: 4px;
@@ -2130,8 +2862,8 @@ exports[`Layer margin xsmall 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2198,7 +2930,62 @@ exports[`Layer margin xsmall 1`] = `
 </div>
 `;
 
-exports[`Layer margin xsmall 2`] = `""`;
+exports[`Layer margin xsmall 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer non-modal 1`] = `
 .c0 {
@@ -2231,8 +3018,8 @@ exports[`Layer non-modal 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -2275,17 +3062,45 @@ exports[`Layer non-modal 1`] = `
 </div>
 `;
 
-exports[`Layer non-modal 2`] = `""`;
+exports[`Layer non-modal 2`] = `
+"@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2299,7 +3114,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -2308,8 +3123,8 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -2317,6 +3132,14 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -2368,7 +3191,7 @@ exports[`Layer plain 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2378,8 +3201,6 @@ exports[`Layer plain 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -2392,13 +3213,6 @@ exports[`Layer plain 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2410,7 +3224,7 @@ exports[`Layer plain 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 0;
@@ -2419,8 +3233,8 @@ exports[`Layer plain 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2487,7 +3301,62 @@ exports[`Layer plain 1`] = `
 </div>
 `;
 
-exports[`Layer plain 2`] = `""`;
+exports[`Layer plain 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer position bottom 1`] = `
 .c0 {
@@ -2498,7 +3367,7 @@ exports[`Layer position bottom 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2508,8 +3377,6 @@ exports[`Layer position bottom 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -2524,13 +3391,6 @@ exports[`Layer position bottom 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2544,7 +3404,7 @@ exports[`Layer position bottom 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -2553,8 +3413,8 @@ exports[`Layer position bottom 1`] = `
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  -webkit-animation: jsmUBO 0.2s ease-in-out forwards;
-  animation: jsmUBO 0.2s ease-in-out forwards;
+  -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
+  animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2621,7 +3481,62 @@ exports[`Layer position bottom 1`] = `
 </div>
 `;
 
-exports[`Layer position bottom 2`] = `""`;
+exports[`Layer position bottom 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer position center 1`] = `
 .c0 {
@@ -2632,7 +3547,7 @@ exports[`Layer position center 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2642,8 +3557,6 @@ exports[`Layer position center 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -2658,13 +3571,6 @@ exports[`Layer position center 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2678,7 +3584,7 @@ exports[`Layer position center 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -2687,8 +3593,8 @@ exports[`Layer position center 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2755,7 +3661,242 @@ exports[`Layer position center 1`] = `
 </div>
 `;
 
-exports[`Layer position center 2`] = `""`;
+exports[`Layer position center 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer position end 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: absolute;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  inset-inline-end: 0px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
+  animation: drjPPC 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="position-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer position end 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer position left 1`] = `
 .c0 {
@@ -2766,7 +3907,7 @@ exports[`Layer position left 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2776,8 +3917,6 @@ exports[`Layer position left 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -2792,13 +3931,6 @@ exports[`Layer position left 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2812,7 +3944,7 @@ exports[`Layer position left 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -2821,8 +3953,8 @@ exports[`Layer position left 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: fNWKbM 0.2s ease-in-out forwards;
-  animation: fNWKbM 0.2s ease-in-out forwards;
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
+  animation: kPYden 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2889,7 +4021,62 @@ exports[`Layer position left 1`] = `
 </div>
 `;
 
-exports[`Layer position left 2`] = `""`;
+exports[`Layer position left 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer position right 1`] = `
 .c0 {
@@ -2900,7 +4087,7 @@ exports[`Layer position right 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2910,8 +4097,6 @@ exports[`Layer position right 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -2926,13 +4111,6 @@ exports[`Layer position right 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2946,7 +4124,7 @@ exports[`Layer position right 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -2955,8 +4133,8 @@ exports[`Layer position right 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: lhngOP 0.2s ease-in-out forwards;
-  animation: lhngOP 0.2s ease-in-out forwards;
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
+  animation: drjPPC 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -3023,7 +4201,242 @@ exports[`Layer position right 1`] = `
 </div>
 `;
 
-exports[`Layer position right 2`] = `""`;
+exports[`Layer position right 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer position start 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: absolute;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  inset-inline-start: 0px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
+  animation: kPYden 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="position-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer position start 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
 
 exports[`Layer position top 1`] = `
 .c0 {
@@ -3034,7 +4447,7 @@ exports[`Layer position top 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: unset;
+  background: transparent;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -3044,8 +4457,6 @@ exports[`Layer position top 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: 100vw;
-  height: 100vh;
 }
 
 .c1 {
@@ -3060,13 +4471,6 @@ exports[`Layer position top 1`] = `
 }
 
 .c2 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3080,7 +4484,7 @@ exports[`Layer position top 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
-  position: fixed;
+  position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
   border-radius: 4px;
@@ -3089,8 +4493,8 @@ exports[`Layer position top 1`] = `
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  -webkit-animation: bAkQbM 0.2s ease-in-out forwards;
-  animation: bAkQbM 0.2s ease-in-out forwards;
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
+  animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -3157,9 +4561,228 @@ exports[`Layer position top 1`] = `
 </div>
 `;
 
-exports[`Layer position top 2`] = `""`;
+exports[`Layer position top 2`] = `
+".XIVyE {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
 
-exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
+@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer target 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 1024px;
+  bottom: 768px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: absolute;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="target-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="target-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    this is a test layer
+  </div>
+</div>
+`;
+
+exports[`Layer target 2`] = `
+"@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer target not modal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3182,16 +4805,16 @@ exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
   pointer-events: all;
   z-index: 15;
   position: fixed;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
+  max-height: calc(100% - 0px - 768px);
+  max-width: calc(100% - 0px - 1024px);
   border-radius: 4px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-  animation: bBMZdm 0.2s ease-in-out forwards;
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -3199,6 +4822,10 @@ exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -3223,13 +4850,50 @@ exports[`Layer should be null prior to mounting, displayed after mount 1`] = `
 
 <div
   class="c0"
-  data-testid="test-layer-container"
+  id="target-test"
 >
   <a
     aria-hidden="true"
     class="c1"
     tabindex="-1"
   />
-  Layer container is available
+  this is a test layer
 </div>
+`;
+
+exports[`Layer target not modal 2`] = `
+"@media only screen and (max-width:768px) {
+  .XIVyE {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .bnUvKb {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ckZaHQ {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
 `;

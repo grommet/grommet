@@ -8,6 +8,18 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
+const SimpleLayer = () => {
+  const [showLayer, setShowLayer] = React.useState(true);
+
+  React.useEffect(() => setShowLayer(false), []);
+
+  let layer;
+  if (showLayer) {
+    layer = <Layer data-testid="test-dom-removal">This is a test</Layer>;
+  }
+  return <Box>{layer}</Box>;
+};
+
 const FakeLayer = ({ children, dataTestid }) => {
   const [showLayer, setShowLayer] = React.useState(false);
 
@@ -32,21 +44,40 @@ const FakeLayer = ({ children, dataTestid }) => {
   );
 };
 
+const TargetLayer = props => {
+  const [target, setTarget] = React.useState();
+  let layer;
+  if (target) {
+    layer = (
+      <Layer {...props} target={target}>
+        this is a test layer
+      </Layer>
+    );
+  }
+  return (
+    <Grommet>
+      <div ref={setTarget} />
+      {layer}
+    </Grommet>
+  );
+};
+
 describe('Layer', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
 
-  ['top', 'bottom', 'left', 'right', 'center'].forEach(position =>
-    test(`position ${position}`, () => {
-      render(
-        <Grommet>
-          <Layer id="position-test" position={position}>
-            This is a layer
-          </Layer>
-        </Grommet>,
-      );
-      expectPortal('position-test').toMatchSnapshot();
-    }),
+  ['top', 'bottom', 'left', 'right', 'start', 'end', 'center'].forEach(
+    position =>
+      test(`position ${position}`, () => {
+        render(
+          <Grommet>
+            <Layer id="position-test" position={position}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('position-test').toMatchSnapshot();
+      }),
   );
 
   [true, false, 'horizontal', 'vertical'].forEach(full =>
@@ -202,23 +233,6 @@ describe('Layer', () => {
     }, 300);
   });
 
-  test('should be null prior to mounting, displayed after mount', () => {
-    const ref = React.createRef();
-    render(
-      <Grommet>
-        <Layer data-testid="test-layer-container" ref={ref}>
-          Layer container is available
-        </Layer>
-      </Grommet>,
-    );
-
-    ref.current.setState({ islayerContainerAvailable: false });
-    expect(queryByTestId(document, 'test-layer-container')).toBeNull();
-
-    ref.current.componentDidMount();
-    expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
-  });
-
   test('focus on layer', () => {
     /* eslint-disable jsx-a11y/no-autofocus */
     render(
@@ -251,5 +265,36 @@ describe('Layer', () => {
     const inputNode = getByTestId(document, 'focus-input');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement).toBe(inputNode);
+  });
+
+  test('target', () => {
+    render(
+      <Grommet>
+        <TargetLayer id="target-test">This layer has a target</TargetLayer>
+      </Grommet>,
+    );
+    expectPortal('target-test').toMatchSnapshot();
+  });
+
+  test('target not modal', () => {
+    render(
+      <Grommet>
+        <TargetLayer id="target-test" modal={false}>
+          This layer has a target
+        </TargetLayer>
+      </Grommet>,
+    );
+    expectPortal('target-test').toMatchSnapshot();
+  });
+
+  test('unmounts from dom', () => {
+    render(
+      <Grommet>
+        <SimpleLayer />
+      </Grommet>,
+    );
+    setTimeout(() => {
+      expect(queryByTestId(document, 'test-dom-removal')).toBeNull();
+    }, 1000);
   });
 });
