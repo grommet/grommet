@@ -35,9 +35,6 @@ or just use children.`,
     href: PropTypes.string.description(
       'Hyperlink reference to place in the link.',
     ),
-    to: PropTypes.string.description(
-      'Path the link points to. Use with SPA routers to avoid GET requests',
-    ),
     icon: PropTypes.element.description('Icon element to place in the link.'),
     label: PropTypes.node.description('Label text to place in the link.'),
     onClick: PropTypes.func.description(

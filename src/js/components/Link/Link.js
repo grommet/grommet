@@ -22,7 +22,6 @@ const Link = forwardRef(
       children,
       color,
       disabled,
-      to,
       href,
       icon,
       label,
@@ -66,8 +65,7 @@ const Link = forwardRef(
         focus={focus}
         hasLabel={label}
         reverse={reverse}
-        href={!disabled ? href || to : undefined}
-        to={to || href}
+        href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
         onFocus={event => {
           setFocus(true);
