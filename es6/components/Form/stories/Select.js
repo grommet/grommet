@@ -1,33 +1,43 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, FormField, Select, Grommet } from 'grommet';
-import { allOptions } from './data';
+import { grommet, Box, Form, FormField, Select, Grommet } from 'grommet';
+var options = [{
+  label: 'option 1',
+  value: 1
+}, {
+  label: 'option 2',
+  value: 2
+}, {
+  label: 'option 3',
+  value: 3
+}];
 
-var FormFieldSelect = function FormFieldSelect(props) {
-  var _useState = useState(''),
+var FormFieldSelect = function FormFieldSelect() {
+  var _useState = useState({}),
       value = _useState[0],
       setValue = _useState[1];
 
+  var onChange = useCallback(function (nextValue) {
+    return setValue(nextValue);
+  }, []);
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(FormField, _extends({
-    label: "Label",
-    htmlFor: "select"
-  }, props), React.createElement(Select, {
-    id: "select",
-    placeholder: "placeholder",
-    options: allOptions,
+  }, React.createElement(Form, {
     value: value,
-    onChange: function onChange(_ref) {
-      var option = _ref.option;
-      return setValue(option);
-    }
-  }))));
+    onChange: onChange
+  }, React.createElement(FormField, {
+    label: "Label",
+    name: "select"
+  }, React.createElement(Select, {
+    name: "select",
+    placeholder: "placeholder",
+    options: options,
+    labelKey: "label",
+    valueKey: "value"
+  })))));
 };
 
 storiesOf('Form', module).add('Select', function () {

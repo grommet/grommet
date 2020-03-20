@@ -106,8 +106,8 @@ var Form = (0, _react.forwardRef)(function (_ref, ref) {
 
   var validations = (0, _react.useRef)({});
   (0, _react.useEffect)(function () {
-    if (onChange) onChange(value);
-  }, [onChange, value]);
+    if (onChange && value !== valueProp) onChange(value);
+  }, [onChange, value, valueProp]);
   (0, _react.useEffect)(function () {}, [value, errors, infos]);
   var update = (0, _react.useCallback)(function (name, data, initial) {
     setValue(function (prevValue) {
@@ -151,7 +151,7 @@ var Form = (0, _react.forwardRef)(function (_ref, ref) {
   }, []);
 
   var useFormContext = function useFormContext(name, componentValue) {
-    var valueData = name && value[name] !== undefined ? value[name] : '';
+    var valueData = name && value[name];
 
     var _useState6 = (0, _react.useState)(componentValue !== undefined ? componentValue : valueData),
         data = _useState6[0],

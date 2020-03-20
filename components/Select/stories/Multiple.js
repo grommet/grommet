@@ -6,49 +6,40 @@ var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
+var _themes = require("grommet/themes");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var options = [{
-  label: 'option 1',
-  value: 1
-}, {
-  label: 'option 2',
-  value: 2
-}, {
-  label: 'option 3',
-  value: 3
-}];
+var options = ['one', 'two'];
 
-var FormFieldSelect = function FormFieldSelect() {
-  var _useState = (0, _react.useState)({}),
+var Example = function Example() {
+  var _useState = (0, _react.useState)(['one']),
       value = _useState[0],
       setValue = _useState[1];
 
-  var onChange = (0, _react.useCallback)(function (nextValue) {
-    return setValue(nextValue);
-  }, []);
   return _react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
+    full: true,
+    theme: _themes.grommet
   }, _react["default"].createElement(_grommet.Box, {
+    fill: true,
     align: "center",
+    justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Form, {
-    value: value,
-    onChange: onChange
-  }, _react["default"].createElement(_grommet.FormField, {
-    label: "Label",
-    name: "select"
   }, _react["default"].createElement(_grommet.Select, {
-    name: "select",
-    placeholder: "placeholder",
+    placeholder: "Select",
+    multiple: true,
+    closeOnChange: false,
+    value: value,
     options: options,
-    labelKey: "label",
-    valueKey: "value"
-  })))));
+    onChange: function onChange(_ref) {
+      var nextValue = _ref.value;
+      return setValue(nextValue);
+    }
+  })));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Select', function () {
-  return _react["default"].createElement(FormFieldSelect, null);
+(0, _react2.storiesOf)('Select', module).add('Multiple', function () {
+  return _react["default"].createElement(Example, null);
 });

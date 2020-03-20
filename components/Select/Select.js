@@ -98,47 +98,87 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var inputRef = (0, _react.useRef)();
-  var formContext = (0, _react.useContext)(_FormContext.FormContext);
+  var formContext = (0, _react.useContext)(_FormContext.FormContext); // normalize the value prop to not be objects
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+  var normalizedValueProp = (0, _react.useMemo)(function () {
+    if (Array.isArray(valueProp)) {
+      if (valueProp.length === 0) return valueProp;
+
+      if (typeof valueProp[0] === 'object' && valueKey) {
+        return valueProp.map(function (v) {
+          return v[valueKey];
+        });
+      }
+
+      return valueProp;
+    }
+
+    if (typeof valueProp === 'object' && valueKey) return valueProp[valueKey];
+    return valueProp;
+  }, [valueKey, valueProp]);
+
+  var _formContext$useFormC = formContext.useFormContext(name, normalizedValueProp),
       value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+      setValue = _formContext$useFormC[1]; // track which options are present in the value
+
+
+  var valueOptions = (0, _react.useMemo)(function () {
+    return options.filter(function (option, index) {
+      if (selected !== undefined) {
+        if (Array.isArray(selected)) return selected.indexOf(index) !== -1;
+        return index === selected;
+      }
+
+      if (typeof option === 'object' && valueKey) {
+        if (Array.isArray(value)) {
+          return value.indexOf(option[valueKey]) !== -1;
+        }
+
+        return option[valueKey] === value;
+      }
+
+      if (Array.isArray(value)) {
+        return value.indexOf(option) !== -1;
+      }
+
+      return option === value;
+    });
+  }, [options, selected, value, valueKey]);
 
   var _useState = (0, _react.useState)(propOpen),
       open = _useState[0],
       setOpen = _useState[1];
 
   (0, _react.useEffect)(function () {
-    setOpen(propOpen);
+    return setOpen(propOpen);
   }, [propOpen]);
 
   var onRequestOpen = function onRequestOpen() {
     setOpen(true);
-
-    if (onOpen) {
-      onOpen();
-    }
+    if (onOpen) onOpen();
   };
 
   var onRequestClose = function onRequestClose() {
     setOpen(false);
-
-    if (onClose) {
-      onClose();
-    }
+    if (onClose) onClose();
   };
 
-  var onSelectChange = function onSelectChange(event) {
+  var onSelectChange = function onSelectChange(event, _ref2) {
+    var option = _ref2.option,
+        nextValue = _ref2.value,
+        nextSelected = _ref2.selected;
     if (closeOnChange) onRequestClose();
-    setValue(event.value);
+    setValue(nextValue);
 
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
+    if (onChange) {
+      event.persist();
+      var adjustedEvent = event;
+      adjustedEvent.target = inputRef.current;
+      adjustedEvent.value = nextValue;
+      adjustedEvent.option = option;
+      adjustedEvent.selected = nextSelected;
+      onChange(adjustedEvent);
     }
-
-    if (onChange) onChange.apply(void 0, [_extends({}, event, {
-      target: inputRef.current
-    })].concat(args));
   };
 
   var SelectIcon;
@@ -154,59 +194,53 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
 
     default:
       SelectIcon = icon;
-  }
+  } // element to show, trumps inputValue
 
-  var selectValue;
-  var inputValue = '';
 
-  if (valueLabel) {
-    selectValue = valueLabel;
-  } else if (Array.isArray(value)) {
-    if (value.length > 1) {
-      if (_react["default"].isValidElement(value[0])) {
-        selectValue = value;
-      } else {
-        inputValue = messages.multiple;
-      }
-    } else if (value.length === 1) {
-      if (_react["default"].isValidElement(value[0])) {
-        selectValue = value[0];
-      } else if (labelKey && typeof value[0] === 'object') {
-        if (typeof labelKey === 'function') {
-          inputValue = labelKey(value[0]);
-        } else {
-          inputValue = value[0][labelKey];
+  var selectValue = (0, _react.useMemo)(function () {
+    if (valueLabel) return valueLabel;
+    if (_react["default"].isValidElement(value)) return value;
+    return undefined;
+  }, [value, valueLabel]); // text to show
+
+  var inputValue = (0, _react.useMemo)(function () {
+    if (!selectValue) {
+      if (Array.isArray(valueOptions)) {
+        if (valueOptions.length === 0) return undefined;
+
+        if (valueOptions.length === 1) {
+          var valueOption = valueOptions[0];
+
+          if (typeof valueOption === 'object' && labelKey) {
+            if (typeof labelKey === 'function') {
+              return labelKey(valueOption);
+            }
+
+            return valueOption[labelKey];
+          }
+
+          return valueOption;
         }
-      } else {
-        inputValue = value[0];
+
+        return messages.multiple;
       }
-    } else {
-      inputValue = '';
-    }
-  } else if (labelKey && typeof value === 'object') {
-    if (typeof labelKey === 'function') {
-      inputValue = labelKey(value);
-    } else {
-      inputValue = value[labelKey];
-    }
-  } else if (_react["default"].isValidElement(value)) {
-    selectValue = value; // deprecated in favor of valueLabel
-  } else if (selected !== undefined) {
-    if (Array.isArray(selected)) {
-      if (selected.length > 1) {
-        inputValue = messages.multiple;
-      } else if (selected.length === 1) {
-        inputValue = options[selected[0]];
+
+      if (typeof valueOptions === 'object' && labelKey) {
+        if (typeof labelKey === 'function') {
+          return labelKey(valueOptions);
+        }
+
+        return valueOptions[labelKey];
       }
-    } else {
-      inputValue = options[selected];
+
+      if (valueOptions !== undefined) return valueOptions;
+      return '';
     }
-  } else {
-    inputValue = value;
-  } // const dark = theme.select.background
+
+    return undefined;
+  }, [labelKey, messages, selectValue, valueOptions]); // const dark = theme.select.background
   // ? colorIsDark(theme.select.background)
   // : theme.dark;
-
 
   var iconColor = (0, _utils.normalizeColor)(theme.select.icons.color || 'control', theme);
   return _react["default"].createElement(_Keyboard.Keyboard, {

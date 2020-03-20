@@ -95,8 +95,8 @@ var Form = forwardRef(function (_ref, ref) {
 
   var validations = useRef({});
   useEffect(function () {
-    if (onChange) onChange(value);
-  }, [onChange, value]);
+    if (onChange && value !== valueProp) onChange(value);
+  }, [onChange, value, valueProp]);
   useEffect(function () {}, [value, errors, infos]);
   var update = useCallback(function (name, data, initial) {
     setValue(function (prevValue) {
@@ -140,7 +140,7 @@ var Form = forwardRef(function (_ref, ref) {
   }, []);
 
   var useFormContext = function useFormContext(name, componentValue) {
-    var valueData = name && value[name] !== undefined ? value[name] : '';
+    var valueData = name && value[name];
 
     var _useState6 = useState(componentValue !== undefined ? componentValue : valueData),
         data = _useState6[0],

@@ -62,11 +62,12 @@ function (_Component) {
     }, debounceDelay(_this.props)));
 
     _defineProperty(_assertThisInitialized(_this), "selectOption", function (option) {
-      return function () {
+      return function (event) {
         var _this$props = _this.props,
             multiple = _this$props.multiple,
             onChange = _this$props.onChange,
             value = _this$props.value,
+            valueKey = _this$props.valueKey,
             selected = _this$props.selected;
         var initialOptions = _this.state.initialOptions;
 
@@ -79,22 +80,24 @@ function (_Component) {
             });
           }
 
+          var optionValue = valueKey ? option[valueKey] : option;
+
           if (multiple) {
-            if (nextValue.indexOf(option) !== -1) {
+            if (nextValue.indexOf(optionValue) !== -1) {
               nextValue = nextValue.filter(function (v) {
-                return v !== option;
+                return v !== optionValue;
               });
             } else {
-              nextValue.push(option);
+              nextValue.push(optionValue);
             }
           } else {
-            nextValue = option;
+            nextValue = optionValue;
           }
 
           var nextSelected = Array.isArray(nextValue) ? nextValue.map(function (v) {
             return initialOptions.indexOf(v);
           }) : initialOptions.indexOf(nextValue);
-          onChange({
+          onChange(event, {
             option: option,
             value: nextValue,
             selected: nextSelected
@@ -184,7 +187,7 @@ function (_Component) {
       if (activeIndex >= 0) {
         event.preventDefault(); // prevent submitting forms
 
-        _this.selectOption(options[activeIndex])();
+        _this.selectOption(options[activeIndex])(event);
       }
     });
 

@@ -82,7 +82,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
   } : _ref$messages,
       name = _ref.name,
       _onBlur = _ref.onBlur,
-      _onChange = _ref.onChange,
+      onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       onSelect = _ref.onSelect,
@@ -90,10 +90,11 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       onSuggestionsOpen = _ref.onSuggestionsOpen,
       placeholder = _ref.placeholder,
       plain = _ref.plain,
+      readOnly = _ref.readOnly,
       reverse = _ref.reverse,
       suggestions = _ref.suggestions,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "reverse", "suggestions", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -102,9 +103,10 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
   var inputRef = (0, _react.useRef)();
   var dropRef = (0, _react.useRef)();
   var suggestionsRef = (0, _react.useRef)();
-  var suggestionRefs = {};
+  var suggestionRefs = {}; // if this is a readOnly property, don't set a name with the form context
+  // this allows Select to control the form context for the name.
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+  var _formContext$useFormC = formContext.useFormContext(readOnly ? undefined : name, valueProp),
       value = _formContext$useFormC[0],
       setValue = _formContext$useFormC[1];
 
@@ -326,6 +328,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
   }, rest, {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value) || '',
+    readOnly: readOnly,
     onFocus: function onFocus(event) {
       setFocus(true);
 
@@ -340,9 +343,9 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
     },
-    onChange: function onChange(event) {
+    onChange: readOnly ? undefined : function (event) {
       setValue(event.target.value);
-      if (_onChange) _onChange(event);
+      if (onChange) onChange(event);
     }
   }))), drop);
 });
