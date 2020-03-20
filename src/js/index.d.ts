@@ -1,6 +1,6 @@
 export * from './components/Accordion';
 export * from './components/AccordionPanel';
-export * from './components/Anchor';
+export * from './components/Link';
 export * from './components/Box';
 export * from './components/Button';
 export * from './components/Calendar';

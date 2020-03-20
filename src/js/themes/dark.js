@@ -70,7 +70,7 @@ export const dark = deepFreeze({
       weight: 700,
     },
   },
-  anchor: {
+  link: {
     color: 'control',
   },
   layer: {

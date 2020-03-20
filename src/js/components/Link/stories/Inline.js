@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet, Paragraph } from 'grommet';
+import { Link, Box, Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Inline = () => {
@@ -9,12 +9,12 @@ const Inline = () => {
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Paragraph>
-          This is <Anchor label="an inline link" href="#" /> with surrounding
-          text.
+          This is <Link label="an inline link" href="#to-something" /> with
+          surrounding text.
         </Paragraph>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Anchor', module).add('Inline', () => <Inline />);
+storiesOf('Link', module).add('Inline', () => <Inline />);

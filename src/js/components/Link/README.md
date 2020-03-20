@@ -1,4 +1,4 @@
-## Link
+## undefined
 A text link.
 
 We have a separate component from the browser
@@ -243,9 +243,7 @@ Defaults to
 
 **link.textDecoration**
 
-The text decoration of the label. 
-Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-for possible values. Expects `string`.
+The text decoration of the label. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
 
 Defaults to
 
@@ -265,9 +263,7 @@ undefined
 
 **link.hover.textDecoration**
 
-The text decoration of the label when hovering. 
-Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-for possible values. Expects `string`.
+The text decoration of the label when hovering. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
 
 Defaults to
 

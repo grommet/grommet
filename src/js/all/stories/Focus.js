@@ -5,7 +5,7 @@ import { deepMerge } from 'grommet/utils';
 
 import {
   grommet,
-  Anchor,
+  Link,
   Box,
   Button,
   Grommet,
@@ -29,7 +29,7 @@ const CustomDefaultProps = () => (
         Focus on the input components and notice the custom focus color
       </Text>
       <TextInput placeholder="hi" />
-      <Anchor href="">Anchor</Anchor>
+      <Link href="#focus">Anchor</Link>
       <Menu
         label="Menu"
         items={[{ label: 'One', onClick: () => {} }, { label: 'Two' }]}

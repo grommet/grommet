@@ -97,7 +97,7 @@ exports[`SkipLink basic 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
+      class="StyledLink-sc-9nad1m-0 ktuZDm SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
       id="main"
       tabindex="-1"
     />
@@ -110,7 +110,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
+      class="StyledLink-sc-9nad1m-0 ktuZDm SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
       id="footer"
       tabindex="-1"
     />
@@ -129,7 +129,7 @@ exports[`SkipLink basic 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
+      class="StyledLink-sc-9nad1m-0 ktuZDm SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
       data-g-tabindex="-1"
       id="main"
       tabindex="-1"
@@ -145,7 +145,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 gzrmWK SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
+      class="StyledLink-sc-9nad1m-0 ktuZDm SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
       data-g-tabindex="-1"
       id="footer"
       tabindex="-1"

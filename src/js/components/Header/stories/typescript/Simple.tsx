@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Anchor, Box, Grommet, Header } from 'grommet';
+import { Link, Box, Grommet, Header } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 export const Avatar = () => (
@@ -20,8 +20,8 @@ const Simple = () => (
     <Header background="light-4" pad="small">
       <Avatar />
       <Box direction="row" gap="medium">
-        <Anchor label="Home" href="#" />
-        <Anchor label="Profile" href="#" />
+        <Link label="Home" href="#home" />
+        <Link label="Profile" href="#profile" />
       </Box>
     </Header>
   </Grommet>

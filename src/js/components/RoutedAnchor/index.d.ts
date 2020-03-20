@@ -1,5 +1,5 @@
 import * as React from "react";
-import { AnchorProps } from "../Anchor";
+import { LinkProps } from "../Link";
 import { Omit } from "../../utils";
 
 export interface RoutedAnchorProps {
@@ -7,6 +7,6 @@ export interface RoutedAnchorProps {
   path: string;
 }
 
-declare const RoutedAnchor: React.ComponentClass<RoutedAnchorProps & Omit<AnchorProps, "href">>;
+declare const RoutedAnchor: React.ComponentClass<RoutedAnchorProps & Omit<LinkProps, "href">>;
 
 export { RoutedAnchor };

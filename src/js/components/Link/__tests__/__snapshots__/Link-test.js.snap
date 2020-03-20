@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link disabled renders 1`] = `
+exports[`Anchor disabled renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -39,7 +39,7 @@ exports[`Link disabled renders 1`] = `
 </div>
 `;
 
-exports[`Link focus renders 1`] = `
+exports[`Anchor focus renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -96,7 +96,7 @@ exports[`Link focus renders 1`] = `
 </div>
 `;
 
-exports[`Link icon label renders 1`] = `
+exports[`Anchor icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -158,7 +158,6 @@ exports[`Link icon label renders 1`] = `
 >
   <a
     className="c1"
-    href="#link"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -183,7 +182,7 @@ exports[`Link icon label renders 1`] = `
 </div>
 `;
 
-exports[`Link primary renders 1`] = `
+exports[`Anchor primary renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -216,7 +215,7 @@ exports[`Link primary renders 1`] = `
 >
   <a
     className="c1"
-    href="#link"
+    href="#"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -225,7 +224,7 @@ exports[`Link primary renders 1`] = `
 </div>
 `;
 
-exports[`Link renders 1`] = `
+exports[`Anchor renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -258,7 +257,6 @@ exports[`Link renders 1`] = `
 >
   <a
     className="c1"
-    href="#link"
     onBlur={[Function]}
     onFocus={[Function]}
   />
@@ -340,7 +338,7 @@ exports[`Anchor renders with children 1`] = `
 >
   <a
     className="c1"
-    href="#link"
+    href="#"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -349,7 +347,7 @@ exports[`Anchor renders with children 1`] = `
 </div>
 `;
 
-exports[`Link reverse icon label renders 1`] = `
+exports[`Anchor reverse icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -411,7 +409,6 @@ exports[`Link reverse icon label renders 1`] = `
 >
   <a
     className="c1"
-    href="#link"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -436,7 +433,7 @@ exports[`Link reverse icon label renders 1`] = `
 </div>
 `;
 
-exports[`Link warns about invalid icon render 1`] = `
+exports[`Anchor warns about invalid icon render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -470,7 +467,7 @@ exports[`Link warns about invalid icon render 1`] = `
 >
   <a
     className="c1"
-    href="#link"
+    href="#"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -481,7 +478,7 @@ exports[`Link warns about invalid icon render 1`] = `
 </div>
 `;
 
-exports[`Link warns about invalid label render 1`] = `
+exports[`Anchor warns about invalid label render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -514,7 +511,7 @@ exports[`Link warns about invalid label render 1`] = `
 >
   <a
     className="c1"
-    href="#link"
+    href="#"
     onBlur={[Function]}
     onFocus={[Function]}
   >

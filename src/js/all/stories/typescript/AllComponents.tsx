@@ -6,7 +6,7 @@ import {
   Grommet,
   Accordion,
   AccordionPanel,
-  Anchor,
+  Link,
   Box,
   Button,
   Calendar,
@@ -87,7 +87,7 @@ const Components = () => {
       <Heading margin={{ top: 'none' }}>Heading</Heading>
       <Paragraph>Paragraph</Paragraph>
       <Text>Text</Text>
-      <Anchor href="">Anchor</Anchor>
+      <Link href="#typescript">Anchor</Link>
       <Menu
         label="Menu"
         items={[{ label: 'One', onClick: () => {} }, { label: 'Two' }]}

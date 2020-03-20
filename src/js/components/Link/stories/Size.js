@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet } from 'grommet';
+import { Link, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Size = () => {
@@ -11,7 +11,7 @@ const Size = () => {
         {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(
           size => (
             <Box key={size} margin="small">
-              <Anchor size={size} label={size} href="#" />
+              <Link size={size} label={size} href="#somewhere" />
             </Box>
           ),
         )}
@@ -20,4 +20,4 @@ const Size = () => {
   );
 };
 
-storiesOf('Anchor', module).add('Size', () => <Size />);
+storiesOf('Link', module).add('Size', () => <Size />);

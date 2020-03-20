@@ -1,17 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet } from 'grommet';
+import { Link, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Default = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <Anchor href="#">Link</Anchor>
+        <Link href="#accessible">Link</Link>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Anchor', module).add('Default', () => <Default />);
+storiesOf('Link', module).add('Default', () => <Default />);

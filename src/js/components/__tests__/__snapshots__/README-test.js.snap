@@ -299,7 +299,8 @@ import { Box } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 \`\`\`
 string
@@ -466,512 +467,6 @@ zoomOut
     zoomOut,
   delay: number,
   duration: number,
-  size: 
-    xsmall
-    small
-    medium
-    large
-    xlarge
-}
-[
-  fadeIn
-  fadeOut
-  jiggle
-  pulse
-  slideUp
-  slideDown
-  slideLeft
-  slideRight
-  zoomIn
-  zoomOut
-  {
-    type: 
-      fadeIn
-      fadeOut
-      jiggle
-      pulse
-      slideUp
-      slideDown
-      slideLeft
-      slideRight
-      zoomIn
-      zoomOut,
-    delay: number,
-    duration: number,
-    size: 
-      xsmall
-      small
-      medium
-      large
-      xlarge
-  }
-]
-\`\`\`
-
-**background**
-
-Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.
-
-\`\`\`
-string
-{
-  color: string,
-  dark: 
-    boolean
-    string,
-  image: string,
-  position: string,
-  opacity: 
-    string
-    boolean
-    number
-    weak
-    medium
-    strong,
-  repeat: 
-    no-repeat
-    repeat
-    string,
-  size: 
-    cover
-    contain
-    string,
-  light: string
-}
-\`\`\`
-
-**basis**
-
-A fixed or relative size along its container's main axis.
-
-\`\`\`
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-xxlarge
-full
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-auto
-string
-\`\`\`
-
-**border**
-
-Include a border.
-
-\`\`\`
-boolean
-top
-left
-bottom
-right
-horizontal
-vertical
-all
-{
-  color: 
-    string
-    {
-      dark: string,
-      light: string
-    },
-  side: 
-    top
-    left
-    bottom
-    right
-    horizontal
-    vertical
-    all,
-  size: 
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  style: 
-    solid
-    dashed
-    dotted
-    double
-    groove
-    ridge
-    inset
-    outset
-    hidden
-}
-\`\`\`
-
-**direction**
-
-The orientation to layout the child components in. Defaults to \`column\`.
-
-\`\`\`
-row
-column
-row-responsive
-row-reverse
-column-reverse
-\`\`\`
-
-**elevation**
-
-The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property,
-typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
-
-\`\`\`
-none
-xsmall
-small
-medium
-large
-xlarge
-string
-\`\`\`
-
-**flex**
-
-Whether flex-grow and/or flex-shrink is true and at a desired factor.
-
-\`\`\`
-grow
-shrink
-boolean
-{
-  grow: number,
-  shrink: number
-}
-\`\`\`
-
-**fill**
-
-Whether the width and/or height should fill the container.
-
-\`\`\`
-horizontal
-vertical
-boolean
-\`\`\`
-
-**gap**
-
-The font weight of the label. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-600
-\`\`\`
-
-**anchor.textDecoration**
-
-The text decoration of the label. 
-Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-for possible values. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string
-\`\`\`
-
-**anchor.hover.fontWeight**
-
-The font weight of the label when hovering. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**anchor.hover.textDecoration**
-
-The text decoration of the label when hovering. 
-Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-for possible values. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-underline
-\`\`\`
-
-**anchor.hover.extend**
-
-Any additional style for the Anchor when hovering. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**anchor.extend**
-
-Any additional style for the Anchor. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**text.medium.size**
-
-The font size of the text label. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-18px
-\`\`\`
-
-**text.medium.height**
-
-The line height of the text label. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-24px
-\`\`\`
-
-**global.focus.border.color**
-
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '3px',
-      xsmall: '6px',
-      small: '12px',
-      medium: '24px',
-      large: '48px',
-      xlarge: '96px',
-      responsiveBreakpoint: 'small',
-    },
-  }
-\`\`\`
-",
-  "Box": "## Box
-A container that lays out its contents in one direction. Box
-      provides CSS flexbox capabilities for layout, as well as general
-      styling of things like background color, border, and animation.
-
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js)
-## Usage
-
-\`\`\`javascript
-import { Box } from 'grommet';
-<Box />
-\`\`\`
-
-## Properties
-
-**a11yTitle**
-
-Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.
-
-\`\`\`
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-xxlarge
-string
-\`\`\`
-
-**justify**
-
-How to align the contents along the main axis. Defaults to \`stretch\`.
-
-\`\`\`
-around
-between
-center
-end
-evenly
-start
-stretch
-\`\`\`
-
-**overflow**
-
-box overflow.
-
-\`\`\`
-auto
-hidden
-scroll
-visible
-{
-  horizontal: 
-    auto
-    hidden
-    scroll
-    visible,
-  vertical: 
-    auto
-    hidden
-    scroll
-    visible
-}
-string
-\`\`\`
-
-**pad**
-
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string
-\`\`\`
-
-**responsive**
-
-Whether margin, pad, and border
-      sizes should be scaled for mobile environments. Defaults to \`true\`.
-
-\`\`\`
-boolean
-\`\`\`
-
-**round**
-
-How much to round the corners.
-
-\`\`\`
-boolean
-xsmall
-small
-medium
-large
-xlarge
-full
-string
-{
-  corner: 
-    top
-    left
-    bottom
-    right
-    top-left
-    top-right
-    bottom-left
-    bottom-right,
   size: 
     xsmall
     small
@@ -7899,7 +7394,7 @@ boolean
 
 **animation**
 
-Animation transition of the Layer content when it opens. Defaults to \`slide\`.
+Animation transition of the Layer content when it opens and closes. Defaults to \`slide\`.
 
 \`\`\`
 slide
@@ -7910,7 +7405,8 @@ boolean
 
 **full**
 
-Whether the width and/or height should fill the current viewport size.
+Whether the width and/or height should fill the current viewport 
+        size.
 
 \`\`\`
 boolean
@@ -7922,7 +7418,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer Defaults to \`none\`.
+particular side of the layer
 
 \`\`\`
 none
@@ -7933,6 +7429,13 @@ medium
 large
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -7960,6 +7463,13 @@ large
     medium
     large
     string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
   top: 
     xxsmall
     xsmall
@@ -7980,7 +7490,8 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath the layer. Defaults to \`true\`.
+Whether there should be an overlay preventing interaction underneath 
+        the layer. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -7988,7 +7499,8 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks outside the layer.
+Function that will be invoked on modal layers when the user clicks 
+      outside the layer.
 
 \`\`\`
 function
@@ -7996,7 +7508,8 @@ function
 
 **onEsc**
 
-Function that will be called when the user presses the escape key inside the layer.
+Function that will be called when the user presses the escape key inside
+       the layer.
 
 \`\`\`
 function
@@ -8019,9 +7532,11 @@ bottom
 bottom-left
 bottom-right
 center
+end
 hidden
 left
 right
+start
 top
 top-left
 top-right
@@ -8033,6 +7548,15 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 
 \`\`\`
 boolean
+\`\`\`
+
+**target**
+
+Target where the layer will be aligned to. This should be a React 
+      reference.
+
+\`\`\`
+object
 \`\`\`
   
 ## Intrinsic element
@@ -8094,7 +7618,8 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects \`string\`.
+The actual breakpoint to trigger changes in the border, 
+direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
 
@@ -8114,7 +7639,8 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round. Expects \`object\`.
 
 Defaults to
 
@@ -8156,7 +7682,7 @@ Defaults to
   }
 \`\`\`
 ",
-  "Link": "## Link
+  "Link": "## undefined
 A text link.
 
 We have a separate component from the browser
@@ -8183,7 +7709,8 @@ string
 
 **alignSelf**
 
-Animation transition of the Layer content when it opens and closes. Defaults to \`slide\`.
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
 
 \`\`\`
 start
@@ -8194,8 +7721,8 @@ stretch
 
 **gridArea**
 
-Whether the width and/or height should fill the current viewport 
-        size.
+The name of the area to place
+    this inside a parent Grid.
 
 \`\`\`
 string
@@ -8203,9 +7730,9 @@ string
 
 **margin**
 
-The amount of margin around the Layer. An object can be specified to
-distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 \`\`\`
 none
@@ -8230,6 +7757,7 @@ xlarge
     small
     medium
     large
+    xlarge
     string,
   horizontal: 
     xxsmall
@@ -8261,6 +7789,7 @@ xlarge
     small
     medium
     large
+    xlarge
     string,
   top: 
     xxsmall
@@ -8284,8 +7813,19 @@ string
 
 **color**
 
-Whether there should be an overlay preventing interaction underneath 
-        the layer. Defaults to \`true\`.
+Label color and icon color, if not specified on the icon.
+
+\`\`\`
+string
+{
+  dark: string,
+  light: string
+}
+\`\`\`
+
+**disabled**
+
+Whether the link is disabled.
 
 \`\`\`
 boolean
@@ -8293,8 +7833,7 @@ boolean
 
 **href**
 
-Function that will be invoked on modal layers when the user clicks 
-      outside the layer.
+Hyperlink reference to place in the link.
 
 \`\`\`
 string
@@ -8302,8 +7841,24 @@ string
 
 **icon**
 
-Function that will be called when the user presses the escape key inside
-       the layer.
+Icon element to place in the link.
+
+\`\`\`
+element
+\`\`\`
+
+**label**
+
+Label text to place in the link.
+
+\`\`\`
+node
+\`\`\`
+
+**onClick**
+
+Click handler. It can be used, for example,
+        to add analytics and track who clicked in the link.
 
 \`\`\`
 function
@@ -8321,22 +7876,17 @@ boolean
 **size**
 
 The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property, typically
-when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
+this component. But, it can be adjusted directly via this size property,
+typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
 
 \`\`\`
-bottom
-bottom-left
-bottom-right
-center
-end
-hidden
-left
-right
-start
-top
-top-left
-top-right
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
 \`\`\`
 
 **as**
@@ -8346,15 +7896,6 @@ The DOM tag or react component to use for the element.
 \`\`\`
 string
 function
-\`\`\`
-
-**target**
-
-Target where the layer will be aligned to. This should be a React 
-      reference.
-
-\`\`\`
-object
 \`\`\`
   
 ## Intrinsic element
@@ -8416,8 +7957,7 @@ underline
 
 **link.hover.extend**
 
-The actual breakpoint to trigger changes in the border, 
-direction, gap, margin, pad, and round. Expects \`string\`.
+Any additional style for the link when hovering. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -8437,8 +7977,37 @@ undefined
 
 **text.medium.size**
 
-The possible breakpoints that could affect border, direction, gap, margin, 
-    pad, and round. Expects \`object\`.
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**text.medium.height**
+
+The line height of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
 
 Defaults to
 
