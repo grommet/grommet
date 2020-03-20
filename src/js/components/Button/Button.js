@@ -33,6 +33,7 @@ const Button = forwardRef(
       fill, // munged to avoid styled-components putting it in the DOM
       hoverIndicator,
       href,
+      justify,
       label,
       normalized,
       onBlur,
@@ -128,7 +129,7 @@ const Button = forwardRef(
         <Box
           direction="row"
           align="center"
-          justify={normalized ? 'start' : 'center'}
+          justify={justify || 'center'}
           gap={gap}
         >
           {first}

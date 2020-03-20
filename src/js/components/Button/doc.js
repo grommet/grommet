@@ -77,6 +77,17 @@ with plain Buttons.`,
       'If specified, the button will behave like an anchor tag.',
     ),
     icon: PropTypes.element.description('Icon element to place in the button.'),
+    justify: PropTypes.oneOf([
+      'around',
+      'between',
+      'center',
+      'end',
+      'evenly',
+      'start',
+      'stretch',
+    ]).description(
+      'How to align the contents along the horizontal axis in the button.',
+    ),
     label: PropTypes.node.description('Label text to place in the button.'),
     normalized: PropTypes.bool.description(
       `Whether this is a normalized button. By default, icon only buttons have 

@@ -62,7 +62,13 @@ const Status = ({ theme }) => (
 );
 
 const SidebarButton = ({ expanded, label, ...rest }) => (
-  <Button label={expanded && label} gap="medium" {...rest} normalized />
+  <Button
+    label={expanded && label}
+    gap="medium"
+    {...rest}
+    justify="start"
+    normalized
+  />
 );
 
 const Sidebar = () => {

@@ -252,6 +252,20 @@ Icon element to place in the button.
 element
 ```
 
+**justify**
+
+How to align the contents along the horizontal axis in the button.
+
+```
+around
+between
+center
+end
+evenly
+start
+stretch
+```
+
 **label**
 
 Label text to place in the button.
