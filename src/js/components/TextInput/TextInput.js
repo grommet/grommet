@@ -84,6 +84,7 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
+      readOnly,
       reverse,
       suggestions,
       value: valueProp,
@@ -99,7 +100,12 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     const suggestionRefs = {};
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    // if this is a readOnly property, don't set a name with the form context
+    // this allows Select to control the form context for the name.
+    const [value, setValue] = formContext.useFormContext(
+      readOnly ? undefined : name,
+      valueProp,
+    );
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
@@ -359,6 +365,7 @@ const TextInput = forwardRef(
             {...rest}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value) || ''}
+            readOnly={readOnly}
             onFocus={event => {
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
@@ -371,10 +378,14 @@ const TextInput = forwardRef(
               setFocus(false);
               if (onBlur) onBlur(event);
             }}
-            onChange={event => {
-              setValue(event.target.value);
-              if (onChange) onChange(event);
-            }}
+            onChange={
+              readOnly
+                ? undefined
+                : event => {
+                    setValue(event.target.value);
+                    if (onChange) onChange(event);
+                  }
+            }
           />
         </Keyboard>
         {drop}
