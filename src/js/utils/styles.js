@@ -166,6 +166,22 @@ export const edgeStyle = (
   return result;
 };
 
+export const fillStyle = fillProp => {
+  if (fillProp === 'horizontal') {
+    return 'width: 100%;';
+  }
+  if (fillProp === 'vertical') {
+    return 'height: 100%;';
+  }
+  if (fillProp) {
+    return `
+      width: 100%;
+      height: 100%;
+    `;
+  }
+  return undefined;
+};
+
 // focus also supports clickable elements inside svg
 export const focusStyle = css`
   > circle,

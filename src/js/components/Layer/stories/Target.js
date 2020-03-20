@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, Grid, Grommet, Layer, Select } from 'grommet';
+import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const positions = ['left', 'right', 'top', 'bottom', 'center'];
@@ -8,6 +8,7 @@ const positions = ['left', 'right', 'top', 'bottom', 'center'];
 const TargetLayer = () => {
   const [open, setOpen] = React.useState();
   const [gutter, setGutter] = React.useState('small');
+  const [modal, setModal] = React.useState(true);
   const [position, setPosition] = React.useState(positions[0]);
   React.useEffect(() => {
     window.dispatchEvent(new Event('resize'));
@@ -39,14 +40,20 @@ const TargetLayer = () => {
             value={position}
             onChange={({ option }) => setPosition(option)}
           />
+          <CheckBox
+            toggle
+            label="modal"
+            checked={modal}
+            onChange={() => setModal(!modal)}
+          />
           <Button label="Open" onClick={onOpen} />
         </Box>
       </Grid>
       {open && (
         <Layer
+          modal={modal}
           position={position}
           target={ref.current}
-          modal
           onClickOutside={onClose}
           onEsc={onClose}
         >
