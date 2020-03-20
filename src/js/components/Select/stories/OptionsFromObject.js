@@ -39,6 +39,6 @@ const OptionsFromObject = () => {
   );
 };
 
-storiesOf('Select', module).add('OptionsFromObject', () => (
+storiesOf('Select', module).add('Options from object', () => (
   <OptionsFromObject />
 ));
