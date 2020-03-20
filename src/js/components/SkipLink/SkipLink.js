@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Anchor } from '../Anchor';
+import { Link } from '../Link';
 import { Box } from '../Box';
 
 export const SkipLink = ({ id, label, ...rest }) => (
   <Box margin="small">
-    <Anchor href={`#${id}`} label={label} {...rest} />
+    <Link href={`#${id}`} label={label} {...rest} />
   </Box>
 );

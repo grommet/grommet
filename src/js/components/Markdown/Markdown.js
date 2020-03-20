@@ -5,7 +5,7 @@ import { deepMerge } from '../../utils';
 
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
-import { Anchor } from '../Anchor';
+import { Link } from '../Link';
 import { Image } from '../Image';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
@@ -26,7 +26,7 @@ const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
 
   const overrides = deepMerge(
     {
-      a: { component: Anchor },
+      a: { component: Link },
       img: { component: Image },
       p: { component: Paragraph },
       table: { component: Table },

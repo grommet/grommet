@@ -1,16 +1,16 @@
-## Anchor
+## Link
 A text link.
 
 We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=anchor&module=%2Fsrc%2FAnchor.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Link&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=link&module=%2Fsrc%2FLink.js)
 ## Usage
 
 ```javascript
-import { Anchor } from 'grommet';
-<Anchor href={location} label='Label' />
+import { Link } from 'grommet';
+<Link href={location} label='Label' />
 ```
 
 ## Properties
@@ -141,7 +141,7 @@ string
 
 **disabled**
 
-Whether the anchor is disabled.
+Whether the link is disabled.
 
 ```
 boolean
@@ -149,7 +149,7 @@ boolean
 
 **href**
 
-Hyperlink reference to place in the anchor.
+Hyperlink reference to place in the link.
 
 ```
 string
@@ -157,7 +157,7 @@ string
 
 **icon**
 
-Icon element to place in the anchor.
+Icon element to place in the link.
 
 ```
 element
@@ -165,7 +165,7 @@ element
 
 **label**
 
-Label text to place in the anchor.
+Label text to place in the link.
 
 ```
 node
@@ -174,7 +174,7 @@ node
 **onClick**
 
 Click handler. It can be used, for example,
-        to add analytics and track who clicked in the anchor.
+        to add analytics and track who clicked in the link.
 
 ```
 function
@@ -183,7 +183,7 @@ function
 **reverse**
 
 Whether an icon and label should be reversed so that the
-        icon is at the end of the anchor.
+        icon is at the end of the link.
 
 ```
 boolean
@@ -221,7 +221,7 @@ a
 ```
 ## Theme
   
-**anchor.color**
+**link.color**
 
 The color of the label text and icon strokes. Expects `string | { dark: string, light: string }`.
 
@@ -231,7 +231,7 @@ Defaults to
 { light: '#1D67E3', dark: '#6194EB' }
 ```
 
-**anchor.fontWeight**
+**link.fontWeight**
 
 The font weight of the label. Expects `number`.
 
@@ -241,7 +241,7 @@ Defaults to
 600
 ```
 
-**anchor.textDecoration**
+**link.textDecoration**
 
 The text decoration of the label. 
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
@@ -253,7 +253,7 @@ Defaults to
 none
 ```
 
-**anchor.hover.fontWeight**
+**link.hover.fontWeight**
 
 The font weight of the label when hovering. Expects `number`.
 
@@ -263,7 +263,7 @@ Defaults to
 undefined
 ```
 
-**anchor.hover.textDecoration**
+**link.hover.textDecoration**
 
 The text decoration of the label when hovering. 
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
@@ -275,9 +275,9 @@ Defaults to
 underline
 ```
 
-**anchor.hover.extend**
+**link.hover.extend**
 
-Any additional style for the Anchor when hovering. Expects `string | (props) => {}`.
+Any additional style for the link when hovering. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -285,9 +285,9 @@ Defaults to
 undefined
 ```
 
-**anchor.extend**
+**link.extend**
 
-Any additional style for the Anchor. Expects `string | (props) => {}`.
+Any additional style for the link. Expects `string | (props) => {}`.
 
 Defaults to
 

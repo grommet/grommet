@@ -13,9 +13,9 @@ import { normalizeColor } from '../../utils';
 
 import { Box } from '../Box';
 
-import { StyledAnchor } from './StyledAnchor';
+import { StyledLink } from './StyledLink';
 
-const Anchor = forwardRef(
+const Link = forwardRef(
   (
     {
       a11yTitle,
@@ -47,7 +47,7 @@ const Anchor = forwardRef(
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
       coloredIcon = cloneElement(icon, {
-        color: normalizeColor(color || theme.anchor.color, theme),
+        color: normalizeColor(color || theme.link.color, theme),
       });
     }
 
@@ -55,7 +55,7 @@ const Anchor = forwardRef(
     const second = reverse ? coloredIcon : label;
 
     return (
-      <StyledAnchor
+      <StyledLink
         {...rest}
         ref={ref}
         aria-label={a11yTitle}
@@ -90,18 +90,16 @@ const Anchor = forwardRef(
         ) : (
           first || second || children
         )}
-      </StyledAnchor>
+      </StyledLink>
     );
   },
 );
 
-Anchor.displayName = 'Anchor';
-
-let AnchorDoc;
+let LinkDoc;
 if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AnchorDoc = require('./doc').doc(Anchor);
+  LinkDoc = require('./doc').doc(Link); // eslint-disable-line global-require
 }
-const AnchorWrapper = AnchorDoc || Anchor;
 
-export { AnchorWrapper as Anchor };
+const LinkWrapper = LinkDoc || Link;
+
+export { LinkWrapper as Link };

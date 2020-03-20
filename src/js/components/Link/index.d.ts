@@ -1,15 +1,15 @@
 import * as React from "react";
-import { 
+import {
   A11yTitleType,
-  AlignSelfType, 
-  ColorType, 
-  GridAreaType, 
-  MarginType, 
-  Omit, 
-  PolymorphicType 
+  AlignSelfType,
+  ColorType,
+  GridAreaType,
+  MarginType,
+  Omit,
+  PolymorphicType
 } from "../../utils";
 
-export interface AnchorProps {
+export interface LinkProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   color?: ColorType;
@@ -24,6 +24,6 @@ export interface AnchorProps {
   as?: PolymorphicType;
 }
 
-declare const Anchor: React.FC<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
+declare const Link: React.ComponentClass<LinkProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
 
-export { Anchor };
+export { Link };

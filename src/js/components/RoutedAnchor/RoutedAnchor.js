@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Anchor } from '../Anchor';
+import { Link } from '../Link';
 
 class RoutedAnchor extends Component {
   static contextTypes = {
@@ -22,7 +22,7 @@ class RoutedAnchor extends Component {
       );
     }
     return (
-      <Anchor
+      <Link
         {...rest}
         href={path}
         onClick={(event, ...args) => {

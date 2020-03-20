@@ -310,7 +310,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
       },
     },
-    anchor: {
+    link: {
       textDecoration: 'none',
       fontWeight: 600,
       color: {

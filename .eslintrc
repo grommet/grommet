@@ -62,7 +62,7 @@
       }
     },
     {
-      "files": ["anchor.stories.js"],
+      "files": ["link.stories.js"],
       "rules": {
         "react/jsx-one-expression-per-line": 0
       }

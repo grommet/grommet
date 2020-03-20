@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
@@ -6,7 +7,7 @@ import 'jest-styled-components';
 import { findAllByType } from '../../../utils';
 
 import { Grommet } from '../../Grommet';
-import { Anchor } from '..';
+import { Link } from '..';
 
 describe('Anchor', () => {
   afterEach(cleanup);
@@ -14,7 +15,7 @@ describe('Anchor', () => {
   test('renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor />
+        <Link />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -24,7 +25,7 @@ describe('Anchor', () => {
   test('renders with children', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor href="#">children</Anchor>
+        <Link href="#">children</Link>
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -35,9 +36,9 @@ describe('Anchor', () => {
     const warnSpy = jest.spyOn(console, 'warn');
     const component = renderer.create(
       <Grommet>
-        <Anchor href="#" label="Test">
+        <Link href="#" label="Test">
           invalid
-        </Anchor>
+        </Link>
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -54,9 +55,9 @@ describe('Anchor', () => {
     const warnSpy = jest.spyOn(console, 'warn');
     const component = renderer.create(
       <Grommet>
-        <Anchor href="#" icon={<svg />}>
+        <Link href="#" icon={<svg />}>
           invalid
-        </Anchor>
+        </Link>
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -72,7 +73,7 @@ describe('Anchor', () => {
   test('primary renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor href="#" primary label="Test" />
+        <Link href="#" primary label="Test" />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -82,7 +83,7 @@ describe('Anchor', () => {
   test('focus renders', () => {
     const { container, getByText } = render(
       <Grommet>
-        <Anchor href="#" label="Test" />
+        <Link href="#" label="Test" />
       </Grommet>,
     );
     fireEvent.focus(getByText('Test'));
@@ -92,7 +93,7 @@ describe('Anchor', () => {
   test('disabled renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor disabled />
+        <Link disabled />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -102,7 +103,7 @@ describe('Anchor', () => {
   test('icon label renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor icon={<svg />} label="Test" onClick={() => {}} />
+        <Link icon={<svg />} label="Test" onClick={() => {}} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -112,7 +113,7 @@ describe('Anchor', () => {
   test('reverse icon label renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor reverse icon={<svg />} label="Test" onClick={() => {}} />
+        <Link reverse icon={<svg />} label="Test" onClick={() => {}} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -123,7 +124,7 @@ describe('Anchor', () => {
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <Anchor href="#" label="Test" onClick={onClick} />
+        <Link href="#" label="Test" onClick={onClick} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -136,7 +137,7 @@ describe('Anchor', () => {
   test('renders tag', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor href="#" label="Test" as="span" />
+        <Link href="#" label="Test" as="span" />
       </Grommet>,
     );
     const tree = component.toJSON();
