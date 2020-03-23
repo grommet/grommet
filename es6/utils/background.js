@@ -86,7 +86,7 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
     }
 
     if (background.color) {
-      var _color2 = normalizeColor(background.color, theme);
+      var _color2 = normalizeColor(background.color, theme, background.dark);
 
       var backgroundColor = getRGBA(_color2, background.opacity === true ? theme.global.opacity.medium : theme.global.opacity[background.opacity] || background.opacity) || _color2;
 
