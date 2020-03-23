@@ -137,8 +137,8 @@ class SelectContainer extends Component {
     onSearch(search);
   }, debounceDelay(this.props));
 
-  selectOption = option => () => {
-    const { multiple, onChange, value, selected } = this.props;
+  selectOption = option => event => {
+    const { multiple, onChange, value, valueKey, selected } = this.props;
     const { initialOptions } = this.state;
     if (onChange) {
       let nextValue = Array.isArray(value) ? value.slice() : [];
@@ -146,21 +146,22 @@ class SelectContainer extends Component {
       if (selected) {
         nextValue = selected.map(s => initialOptions[s]);
       }
+      const optionValue = valueKey ? option[valueKey] : option;
 
       if (multiple) {
-        if (nextValue.indexOf(option) !== -1) {
-          nextValue = nextValue.filter(v => v !== option);
+        if (nextValue.indexOf(optionValue) !== -1) {
+          nextValue = nextValue.filter(v => v !== optionValue);
         } else {
-          nextValue.push(option);
+          nextValue.push(optionValue);
         }
       } else {
-        nextValue = option;
+        nextValue = optionValue;
       }
 
       const nextSelected = Array.isArray(nextValue)
         ? nextValue.map(v => initialOptions.indexOf(v))
         : initialOptions.indexOf(nextValue);
-      onChange({
+      onChange(event, {
         option,
         value: nextValue,
         selected: nextSelected,
@@ -252,7 +253,7 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     if (activeIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex])();
+      this.selectOption(options[activeIndex])(event);
     }
   };
 
