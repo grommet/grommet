@@ -1,4 +1,6 @@
-export const normalizeColor = (color, theme, forceDark) => {
+// Returns the specific color that should be used according to the theme.
+// If 'dark' is supplied, it takes precedence over 'theme.dark'.
+export const normalizeColor = (color, theme, dark) => {
   const colorSpec =
     theme.global && theme.global.colors[color] !== undefined
       ? theme.global.colors[color]
@@ -7,12 +9,12 @@ export const normalizeColor = (color, theme, forceDark) => {
   let result = colorSpec;
   if (colorSpec) {
     if (
-      (forceDark === true || (forceDark === undefined && theme.dark)) &&
+      (dark === true || (dark === undefined && theme.dark)) &&
       colorSpec.dark !== undefined
     ) {
       result = colorSpec.dark;
     } else if (
-      (forceDark === false || !theme.dark) &&
+      (dark === false || !theme.dark) &&
       colorSpec.light !== undefined
     ) {
       result = colorSpec.light;
