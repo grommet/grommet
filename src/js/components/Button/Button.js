@@ -10,6 +10,7 @@ import { ThemeContext } from 'styled-components';
 import {
   backgroundIsDark,
   colorIsDark,
+  getHoverIndicatorStyle,
   normalizeBackground,
   normalizeColor,
 } from '../../utils';
@@ -67,21 +68,28 @@ const Button = forwardRef(
 
     const isDarkBackground = buttonType => {
       if (hover && hoverIndicator) {
-        return backgroundIsDark(hoverIndicator, theme);
-      }
-      const backgroundColor = normalizeBackground(
-        normalizeColor(
-          color ||
-            (hover && theme.button[buttonType].hover.color) ||
-            theme.button[buttonType].color ||
-            theme.global.colors.control ||
-            'brand',
+        return backgroundIsDark(
+          getHoverIndicatorStyle(hoverIndicator, theme),
           theme,
-        ),
-        theme,
-      );
+        );
+      }
 
-      return colorIsDark(backgroundColor, theme) || theme.dark;
+      const backgroundValue =
+        color ||
+        (hover && theme.button[buttonType].hover.color) ||
+        theme.button[buttonType].color ||
+        (buttonType === buttonTypes.primary &&
+          (theme.global.colors.control || 'brand'));
+
+      let backgroundColor;
+      if (backgroundValue) {
+        backgroundColor = normalizeBackground(
+          normalizeColor(backgroundValue, theme),
+          theme,
+        );
+      }
+
+      return backgroundColor ? colorIsDark(backgroundColor, theme) : theme.dark;
     };
 
     const onMouseOverButton = event => {

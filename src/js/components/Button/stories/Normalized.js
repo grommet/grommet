@@ -28,20 +28,15 @@ const Normalized = () => (
         <Box gap="small">
           <Text>Default Buttons (Icon only, Icon + Label)</Text>
           <Box align="center" direction="row" gap="small">
-            <Button icon={<User />} color="status-warning" hoverIndicator />
-            <Button icon={<User />} label="Users" color="status-warning" />
+            <Button icon={<User />} hoverIndicator />
+            <Button icon={<User />} label="Users" />
           </Box>
         </Box>
         <Box gap="small">
           <Text>Normalized Buttons</Text>
           <Box align="center" direction="row" gap="small">
-            <Button icon={<User />} color="status-warning" normalized />
-            <Button
-              icon={<User />}
-              label="Users"
-              color="status-warning"
-              normalized
-            />
+            <Button icon={<User />} normalized />
+            <Button icon={<User />} label="Users" normalized />
           </Box>
         </Box>
       </Box>

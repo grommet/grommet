@@ -1145,7 +1145,7 @@ exports[`Button normalized icon and label 1`] = `
       className="c2"
     >
       <svg
-        color="#f8f8f8"
+        color="#444444"
       />
       <div
         className="c3"
@@ -1215,7 +1215,7 @@ exports[`Button normalized icon only 1`] = `
     type="button"
   >
     <svg
-      color="#f8f8f8"
+      color="#444444"
     />
   </button>
 </div>
