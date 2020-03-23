@@ -76,8 +76,8 @@ const Form = forwardRef(
 
     const validations = useRef({});
     useEffect(() => {
-      if (onChange) onChange(value);
-    }, [onChange, value]);
+      if (onChange && value !== valueProp) onChange(value);
+    }, [onChange, value, valueProp]);
 
     useEffect(() => {}, [value, errors, infos]);
 
@@ -129,7 +129,7 @@ const Form = forwardRef(
     }, []);
 
     const useFormContext = (name, componentValue) => {
-      const valueData = name && value[name] !== undefined ? value[name] : '';
+      const valueData = name && value[name];
       const [data, setData] = useState(
         componentValue !== undefined ? componentValue : valueData,
       );
