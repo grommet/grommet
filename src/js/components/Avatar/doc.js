@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils';
 
 export const doc = Avatar => {
   const DocumentedAvatar = describe(Avatar)
@@ -13,7 +13,9 @@ export const doc = Avatar => {
     .intrinsicElement('div');
 
   DocumentedAvatar.propTypes = {
-    ...genericProps,
+    email: PropTypes.string.description(
+      'An email address to retrieve a gravatar image.',
+    ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',

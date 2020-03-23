@@ -1,8 +1,9 @@
-import * as React from "react";
-import { BoxProps } from '../Box' 
+import * as React from 'react';
+import { BoxProps } from '../Box'; 
 
 
 export interface AvatarProps {
+    email?: string;
     size?: BoxProps['height'];
     src?: string | React.ReactNode;
   }

@@ -1,40 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Avatar icon renders 1`] = `
-.c2 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #FD6FFF;
-  stroke: #FD6FFF;
-}
-
-.c2 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c2 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c2 *[fill-rule],
-.c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -61,6 +27,7 @@ exports[`Avatar icon renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c0 {
@@ -78,20 +45,7 @@ exports[`Avatar icon renders 1`] = `
 >
   <div
     className="c1"
-  >
-    <svg
-      aria-label="Favorite"
-      className="c2"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M1,8.4 C1,4 4.5,3 6.5,3 C9,3 11,5 12,6.5 C13,5 15,3 17.5,3 C19.5,3 23,4 23,8.4 C23,15 12,21 12,21 C12,21 1,15 1,8.4 Z"
-        fill="none"
-        stroke="#000"
-        strokeWidth="2"
-      />
-    </svg>
-  </div>
+  />
 </div>
 `;
 
@@ -108,8 +62,6 @@ exports[`Avatar renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url(undefined) no-repeat center center;
-  background-size: cover;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -122,6 +74,7 @@ exports[`Avatar renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c0 {
@@ -174,6 +127,7 @@ exports[`Avatar round renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .c2 {
@@ -202,6 +156,7 @@ exports[`Avatar round renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c3 {
@@ -230,6 +185,7 @@ exports[`Avatar round renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .c4 {
@@ -258,6 +214,7 @@ exports[`Avatar round renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
+  overflow: hidden;
 }
 
 .c5 {
@@ -286,6 +243,7 @@ exports[`Avatar round renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 48px;
+  overflow: hidden;
 }
 
 .c6 {
@@ -314,6 +272,7 @@ exports[`Avatar round renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c0 {
@@ -401,6 +360,7 @@ exports[`Avatar size renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c2 {
@@ -429,6 +389,7 @@ exports[`Avatar size renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c3 {
@@ -457,6 +418,7 @@ exports[`Avatar size renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c0 {
@@ -541,6 +503,7 @@ exports[`Avatar stack renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c6 {
@@ -585,6 +548,7 @@ exports[`Avatar stack renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c0 {
@@ -683,6 +647,7 @@ exports[`Avatar text renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c3 {
@@ -711,6 +676,7 @@ exports[`Avatar text renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 .c0 {

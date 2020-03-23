@@ -52,6 +52,7 @@
     "css": "^2.2.3",
     "grommet-icons": "^4.2.0",
     "hoist-non-react-statics": "^3.2.0",
+    "js-md5": "^0.7.3",
     "markdown-to-jsx": "^6.9.1",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
