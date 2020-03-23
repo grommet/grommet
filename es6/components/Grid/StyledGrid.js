@@ -100,6 +100,7 @@ var getRepeatSize = function getRepeatSize(size, theme) {
     return "minmax(" + (theme.global.size[size[0]] || size[0]) + ", " + (theme.global.size[size[1]] || size[1]) + ")";
   }
 
+  if (size === 'flex') return '1fr';
   return "minmax(" + (theme.global.size[size] || size) + ", 1fr)";
 };
 
