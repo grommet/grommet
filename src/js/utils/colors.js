@@ -1,4 +1,4 @@
-export const normalizeColor = (color, theme) => {
+export const normalizeColor = (color, theme, forceDark) => {
   const colorSpec =
     theme.global && theme.global.colors[color] !== undefined
       ? theme.global.colors[color]
@@ -6,9 +6,15 @@ export const normalizeColor = (color, theme) => {
   // If the color has a light or dark object, use that
   let result = colorSpec;
   if (colorSpec) {
-    if (theme.dark && colorSpec.dark !== undefined) {
+    if (
+      (forceDark === true || (forceDark === undefined && theme.dark)) &&
+      colorSpec.dark !== undefined
+    ) {
       result = colorSpec.dark;
-    } else if (!theme.dark && colorSpec.light !== undefined) {
+    } else if (
+      (forceDark === false || !theme.dark) &&
+      colorSpec.light !== undefined
+    ) {
       result = colorSpec.light;
     }
   }
