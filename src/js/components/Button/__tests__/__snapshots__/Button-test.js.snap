@@ -389,7 +389,8 @@ exports[`Button disabled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  opacity: 0.3;
+  border: 2px solid #666666;
+  color: #666666;
   cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;

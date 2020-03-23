@@ -260,6 +260,10 @@ export interface ThemeType {
       radius?: string;
     };
     disabled?: {
+      border?: {
+        color: ColorType,
+      },
+      color?: ColorType,
       opacity?: OpacityType;
     };
     extend?: ExtendType;

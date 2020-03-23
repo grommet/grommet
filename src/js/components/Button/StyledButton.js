@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import {
   activeStyle,
   backgroundStyle,
-  disabledStyle,
   focusStyle,
   genericStyles,
   getHoverIndicatorStyle,
@@ -122,6 +121,25 @@ const plainStyle = props => css`
   text-align: inherit;
 `;
 
+const disabledStyle = props => css`
+  ${!props.plain &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
+  ${props.primary
+    ? backgroundStyle(
+        normalizeColor(props.theme.button.disabled.color, props.theme),
+        props.theme,
+        props.theme.button.color,
+      )
+    : `color: ${normalizeColor(
+        props.theme.button.disabled.color || 'inherit',
+        props.theme,
+      )};`}
+  cursor: default;
+  ${props.theme.button.disabled.opacity &&
+    `opacity: ${props.theme.button.disabled.opacity}`};
+`;
+
 // Deprecate props.theme.button.disabled.opacity in V3
 const StyledButton = styled.button`
   display: inline-block;
@@ -144,11 +162,7 @@ const StyledButton = styled.button`
 
   ${props => !props.disabled && props.active && activeStyle}
   ${props =>
-    props.disabled &&
-    props.theme.button &&
-    disabledStyle(
-      props.theme.button.disabled && props.theme.button.disabled.opacity,
-    )}
+    props.disabled && props.theme.button.disabled && disabledStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>

@@ -363,6 +363,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
+      disabled: {
+        border: {
+          color: 'text-xweak',
+        },
+        color: 'text-xweak',
+        // opacity: undefined,
+      },
       // color: { dark: undefined, light: undefined }
       primary: {
         // color: { dark: undefined, light: undefined }
