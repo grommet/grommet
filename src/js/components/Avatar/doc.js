@@ -13,9 +13,6 @@ export const doc = Avatar => {
     .intrinsicElement('div');
 
   DocumentedAvatar.propTypes = {
-    email: PropTypes.string.description(
-      'An email address to retrieve a gravatar image.',
-    ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',

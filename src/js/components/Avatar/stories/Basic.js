@@ -7,7 +7,7 @@ import { Avatar, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Basic = () => {
-  const email = 'shimrit.yacobi@gmail.com';
+  const src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
   return (
     <Grommet theme={grommet}>
@@ -18,7 +18,7 @@ const Basic = () => {
         gap="small"
         pad="large"
       >
-        <Avatar email={email} />
+        <Avatar src={src} />
         <Avatar background="accent-4">
           <Favorite color="accent-2" />
         </Avatar>

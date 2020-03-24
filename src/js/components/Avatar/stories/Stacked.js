@@ -7,7 +7,7 @@ import { Avatar, Box, Grommet, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Stacked = () => {
-  const shimi = 'shimrit.yacobi@gmail.com';
+  const shimi = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   const eric = '//s.gravatar.com/avatar/99020cae7ff399a4fbea19c0634f77c3?s=80';
   const bryan = '//s.gravatar.com/avatar/10d15019166606cfed23846a7f902660?s=80';
 
@@ -17,20 +17,20 @@ const Stacked = () => {
     <Stack anchor="left">
       <Avatar src={bryan} border={border} />
       <Avatar src={eric} border={border} margin={{ left: 'medium' }} />
-      <Avatar email={shimi} border={border} margin={{ left: 'large' }} />
+      <Avatar src={shimi} border={border} margin={{ left: 'large' }} />
     </Stack>
   );
 
   const GroupedGravatarCentered = () => (
     <Stack anchor="right" margin={{ left: 'xlarge' }}>
       <Avatar src={bryan} />
-      <Avatar email={shimi} margin={{ right: 'large' }} />
+      <Avatar src={shimi} margin={{ right: 'large' }} />
       <Avatar src={eric} margin={{ right: 'medium' }} />
     </Stack>
   );
   const GroupedGravatarRTL = () => (
     <Stack anchor="right" margin={{ left: 'xlarge' }}>
-      <Avatar size="xsmall" email={shimi} />
+      <Avatar size="xsmall" src={shimi} />
       <Avatar size="xsmall" src={eric} margin={{ right: 'large' }} />
       <Avatar size="xsmall" src={bryan} margin={{ right: 'xlarge' }} />
     </Stack>
@@ -57,7 +57,7 @@ const Stacked = () => {
         <Stack anchor="bottom-right">
           <Box>
             <Box direction="row">
-              <Avatar size="xsmall" email={shimi} border={borderSmall} />
+              <Avatar size="xsmall" src={shimi} border={borderSmall} />
               <Box pad="xxsmall" />
             </Box>
             <Box pad="xxsmall" />
@@ -67,7 +67,7 @@ const Stacked = () => {
 
         {/* Notification */}
         <Stack anchor="top-right">
-          <Avatar email={shimi} />
+          <Avatar src={shimi} />
           <Box pad="xsmall" round background="accent-4" responsive={false} />
         </Stack>
 
