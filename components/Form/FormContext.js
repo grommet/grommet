@@ -12,14 +12,11 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 // When not a descendant of a Form, FormContext still provides a basic
 // useFormContext that holds the value state.
 var useFormContext = function useFormContext(_, valueProp) {
-  var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : ''),
+  var _useState = (0, _react.useState)(valueProp),
       value = _useState[0],
-      setValue = _useState[1]; // use whatever value is passed in, even when it changes
+      setValue = _useState[1];
 
-
-  (0, _react.useEffect)(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
+  if (valueProp !== undefined && valueProp !== value) setValue(valueProp);
   return [value, function (nextValue) {
     // only set if the caller hasn't supplied a specific value
     if (valueProp === undefined) setValue(nextValue);
