@@ -364,7 +364,7 @@ const TextInput = forwardRef(
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
-            value={renderLabel(value) || ''}
+            value={renderLabel(value)}
             readOnly={readOnly}
             onFocus={event => {
               setFocus(true);

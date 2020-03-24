@@ -392,7 +392,6 @@ exports[`FormField default 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            value=""
           />
         </div>
       </div>
