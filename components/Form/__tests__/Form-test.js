@@ -62,12 +62,165 @@ describe('Form', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('controlled', function () {
+    var onSubmit = jest.fn();
+
+    var Test = function Test() {
+      var _React$useState = _react["default"].useState({
+        test: ''
+      }),
+          value = _React$useState[0],
+          setValue = _React$useState[1];
+
+      var onChange = _react["default"].useCallback(function (nextValue) {
+        return setValue(nextValue);
+      }, []);
+
+      return _react["default"].createElement(_.Form, {
+        value: value,
+        onChange: onChange,
+        onSubmit: onSubmit
+      }, _react["default"].createElement(_FormField.FormField, {
+        name: "test"
+      }, _react["default"].createElement(_TextInput.TextInput, {
+        name: "test",
+        placeholder: "test input"
+      })), _react["default"].createElement(_Button.Button, {
+        type: "submit",
+        primary: true,
+        label: "Submit"
+      }));
+    };
+
+    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+        getByPlaceholderText = _render.getByPlaceholderText,
+        getByText = _render.getByText,
+        container = _render.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
+      target: {
+        value: 'v'
+      }
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.click(getByText('Submit'));
+
+    expect(onSubmit).toBeCalledWith(expect.objectContaining({
+      value: {
+        test: 'v'
+      },
+      touched: {
+        test: true
+      }
+    }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('uncontrolled', function () {
+    var onSubmit = jest.fn();
+
+    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+      onSubmit: onSubmit
+    }, _react["default"].createElement(_FormField.FormField, {
+      name: "test"
+    }, _react["default"].createElement(_TextInput.TextInput, {
+      name: "test",
+      placeholder: "test input"
+    })), _react["default"].createElement(_Button.Button, {
+      type: "submit",
+      primary: true,
+      label: "Submit"
+    })))),
+        getByPlaceholderText = _render2.getByPlaceholderText,
+        getByText = _render2.getByText,
+        container = _render2.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
+      target: {
+        value: 'v'
+      }
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.click(getByText('Submit'));
+
+    expect(onSubmit).toBeCalledWith(expect.objectContaining({
+      value: {
+        test: 'v'
+      },
+      touched: {
+        test: true
+      }
+    }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('controlled input', function () {
+    var onSubmit = jest.fn();
+
+    var Test = function Test() {
+      var _React$useState2 = _react["default"].useState(''),
+          value = _React$useState2[0],
+          setValue = _React$useState2[1];
+
+      var onChange = _react["default"].useCallback(function (event) {
+        return setValue(event.target.value);
+      }, []);
+
+      return _react["default"].createElement(_.Form, {
+        onSubmit: onSubmit
+      }, _react["default"].createElement(_FormField.FormField, {
+        name: "test"
+      }, _react["default"].createElement(_TextInput.TextInput, {
+        name: "test",
+        placeholder: "test input",
+        value: value,
+        onChange: onChange
+      })), _react["default"].createElement(_Button.Button, {
+        type: "submit",
+        primary: true,
+        label: "Submit"
+      }));
+    };
+
+    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+        getByPlaceholderText = _render3.getByPlaceholderText,
+        getByText = _render3.getByText,
+        container = _render3.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.change(getByPlaceholderText('test input'), {
+      target: {
+        value: 'v'
+      }
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.click(getByText('Submit'));
+
+    expect(onSubmit).toBeCalledWith(expect.objectContaining({
+      value: {
+        test: 'v'
+      },
+      touched: {
+        test: true
+      }
+    }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
   test('update', function () {
     var validate = jest.fn().mockReturnValueOnce('too short').mockReturnValueOnce(undefined);
     var validate2 = jest.fn().mockReturnValue(undefined);
     var onSubmit = jest.fn();
 
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -83,9 +236,9 @@ describe('Form', function () {
       primary: true,
       label: "Submit"
     })))),
-        getByPlaceholderText = _render.getByPlaceholderText,
-        getByText = _render.getByText,
-        container = _render.container;
+        getByPlaceholderText = _render4.getByPlaceholderText,
+        getByText = _render4.getByText,
+        container = _render4.container;
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -140,7 +293,7 @@ describe('Form', function () {
   test('regexp validation', function () {
     var onSubmit = jest.fn();
 
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -154,9 +307,9 @@ describe('Form', function () {
       primary: true,
       label: "Submit"
     })))),
-        getByPlaceholderText = _render2.getByPlaceholderText,
-        getByText = _render2.getByText,
-        queryByText = _render2.queryByText;
+        getByPlaceholderText = _render5.getByPlaceholderText,
+        getByText = _render5.getByText,
+        queryByText = _render5.queryByText;
 
     _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
@@ -181,7 +334,7 @@ describe('Form', function () {
   test('validate', function () {
     var onSubmit = jest.fn();
 
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -207,8 +360,8 @@ describe('Form', function () {
       primary: true,
       label: "Submit"
     })))),
-        getByPlaceholderText = _render3.getByPlaceholderText,
-        getByText = _render3.getByText;
+        getByPlaceholderText = _render6.getByPlaceholderText,
+        getByText = _render6.getByText;
 
     _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
@@ -253,7 +406,7 @@ describe('Form', function () {
   test('required validation', function () {
     var onSubmit = jest.fn();
 
-    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -264,9 +417,9 @@ describe('Form', function () {
       primary: true,
       label: "Submit"
     })))),
-        getByPlaceholderText = _render4.getByPlaceholderText,
-        getByText = _render4.getByText,
-        queryByText = _render4.queryByText;
+        getByPlaceholderText = _render7.getByPlaceholderText,
+        getByText = _render7.getByText,
+        queryByText = _render7.queryByText;
 
     _react2.fireEvent.click(getByText('Submit'));
 
@@ -283,7 +436,7 @@ describe('Form', function () {
   test('reset clears form', function () {
     var onReset = jest.fn();
 
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render8 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onReset: onReset
     }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
@@ -294,9 +447,9 @@ describe('Form', function () {
       primary: true,
       label: "Reset"
     })))),
-        getByPlaceholderText = _render5.getByPlaceholderText,
-        getByText = _render5.getByText,
-        queryByText = _render5.queryByText;
+        getByPlaceholderText = _render8.getByPlaceholderText,
+        getByText = _render8.getByText,
+        queryByText = _render8.queryByText;
 
     _react2.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
@@ -311,7 +464,7 @@ describe('Form', function () {
   test('initial values', function () {
     var _onSubmit = jest.fn();
 
-    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render9 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: function onSubmit(_ref) {
         var value = _ref.value,
             touched = _ref.touched;
@@ -333,8 +486,8 @@ describe('Form', function () {
       primary: true,
       label: "Submit"
     })))),
-        getByText = _render6.getByText,
-        queryByText = _render6.queryByText;
+        getByText = _render9.getByText,
+        queryByText = _render9.queryByText;
 
     _react2.fireEvent.click(getByText('Submit'));
 
@@ -351,9 +504,9 @@ describe('Form', function () {
     var _onSubmit2 = jest.fn();
 
     var Test = function Test() {
-      var _React$useState = _react["default"].useState(),
-          test = _React$useState[0],
-          setTest = _React$useState[1];
+      var _React$useState3 = _react["default"].useState(),
+          test = _React$useState3[0],
+          setTest = _React$useState3[1];
 
       return _react["default"].createElement(_.Form, {
         onSubmit: function onSubmit(_ref2) {
@@ -378,9 +531,9 @@ describe('Form', function () {
       }));
     };
 
-    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
-        container = _render7.container,
-        getByText = _render7.getByText;
+    var _render10 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+        container = _render10.container,
+        getByText = _render10.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
 

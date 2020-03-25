@@ -155,17 +155,13 @@ var Form = (0, _react.forwardRef)(function (_ref, ref) {
 
     var _useState6 = (0, _react.useState)(componentValue !== undefined ? componentValue : valueData),
         data = _useState6[0],
-        setData = _useState6[1]; // update when the component value or form value changes
+        setData = _useState6[1];
 
+    if (componentValue !== undefined && componentValue !== data) {
+      setData(componentValue);
+      if (name) update(name, componentValue);
+    }
 
-    (0, _react.useEffect)(function () {
-      if (componentValue !== undefined) {
-        if (componentValue !== data) {
-          setData(componentValue);
-          if (name) update(name, componentValue);
-        }
-      } else if (name && valueData !== data) setData(valueData);
-    }, [data, name, valueData, componentValue]);
     return [data, function (nextData) {
       // only set if the caller hasn't supplied a specific value
       if (componentValue === undefined) {
