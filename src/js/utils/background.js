@@ -86,7 +86,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
       `);
     }
     if (background.color) {
-      const color = normalizeColor(background.color, theme);
+      const color = normalizeColor(background.color, theme, background.dark);
       const backgroundColor =
         getRGBA(
           color,
