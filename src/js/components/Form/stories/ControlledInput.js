@@ -5,13 +5,16 @@ import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
-  const [value, setValue] = React.useState({});
+  const [value, setValue] = React.useState('');
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
-            onReset={event => console.log(event)}
+            onReset={event => {
+              console.log(event);
+              setValue('');
+            }}
             onSubmit={event => console.log('Submit', event.value)}
           >
             <FormField label="Name" name="name">
