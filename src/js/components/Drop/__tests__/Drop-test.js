@@ -27,7 +27,7 @@ class TestInput extends Component {
   }
 
   render() {
-    const { inputProps, theme, elevation, ...rest } = this.props;
+    const { inputProps, theme, elevation, containerRoot, ...rest } = this.props;
     const { showDrop } = this.state;
     let drop;
     if (showDrop) {
@@ -43,7 +43,7 @@ class TestInput extends Component {
       );
     }
     return (
-      <Grommet theme={theme}>
+      <Grommet theme={theme} containerRoot={containerRoot}>
         <input ref={this.inputRef} {...inputProps} />
         {drop}
       </Grommet>
@@ -159,5 +159,25 @@ describe('Drop', () => {
   test('plain renders', () => {
     render(<TestInput plain />);
     expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('default containerRoot', () => {
+    const { getByTestId } = render(<TestInput data-testid="drop" />);
+    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(document.body);
+  });
+
+  test('custom containerRoot', () => {
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+    try {
+      const { getByTestId } = render(
+        <TestInput data-testid="drop" containerRoot={root} />,
+      );
+      const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+      expect(actualRoot).toBe(root);
+    } finally {
+      document.body.removeChild(root);
+    }
   });
 });

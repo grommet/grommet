@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-import { ResponsiveContext, ThemeContext } from '../../contexts';
+import {
+  ResponsiveContext,
+  ThemeContext,
+  ContainerRootContext,
+} from '../../contexts';
+
 import {
   backgroundIsDark,
   deepMerge,
@@ -115,7 +120,12 @@ class Grommet extends Component {
   }
 
   render() {
-    const { children, full, ...rest } = this.props;
+    const {
+      children,
+      full,
+      containerRoot = document.body,
+      ...rest
+    } = this.props;
     delete rest.theme;
     const { theme, responsive: stateResponsive } = this.state;
 
@@ -129,10 +139,12 @@ class Grommet extends Component {
     return (
       <ThemeContext.Provider value={theme}>
         <ResponsiveContext.Provider value={responsive}>
-          <StyledGrommet full={full} {...rest}>
-            {children}
-          </StyledGrommet>
-          {full && <FullGlobalStyle />}
+          <ContainerRootContext.Provider value={containerRoot}>
+            <StyledGrommet full={full} {...rest}>
+              {children}
+            </StyledGrommet>
+            {full && <FullGlobalStyle />}
+          </ContainerRootContext.Provider>
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
     );

@@ -297,4 +297,32 @@ describe('Layer', () => {
       expect(queryByTestId(document, 'test-dom-removal')).toBeNull();
     }, 1000);
   });
+
+  test('default containerRoot', () => {
+    render(
+      <Grommet>
+        <Layer data-testid="layer">Test</Layer>
+      </Grommet>,
+    );
+    const layer = getByTestId(document, 'layer');
+    const actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(document.body);
+  });
+
+  test('custom containerRoot', () => {
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+    try {
+      render(
+        <Grommet containerRoot={root}>
+          <Layer data-testid="layer">Test</Layer>
+        </Grommet>,
+      );
+      const layer = getByTestId(document, 'layer');
+      const actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+      expect(actualRoot).toBe(root);
+    } finally {
+      document.body.removeChild(root);
+    }
+  });
 });
