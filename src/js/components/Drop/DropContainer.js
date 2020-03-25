@@ -277,18 +277,8 @@ const DropContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [
-      align,
-      dropTarget,
-      onClickOutside,
-      portalContext,
-      portalId,
-      ref,
-      responsive,
-      restrictFocus,
-      stretch,
-      theme.drop,
-    ]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useEffect(() => {
       if (restrictFocus) {
