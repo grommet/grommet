@@ -1,8 +1,6 @@
-import React, { useState, Children } from 'react';
+import React, { Children, cloneElement, useState } from 'react';
 
 import { Box } from '../Box';
-
-import { AccordionContext } from './AccordionContext';
 
 const activeAsArray = active =>
   typeof active === 'number' ? [active] : active;
@@ -11,7 +9,6 @@ const Accordion = ({
   activeIndex,
   animate = true,
   children,
-  messages = { tabContents: 'Tab Contents' },
   multiple,
   onActive,
   ...rest
@@ -48,24 +45,20 @@ const Accordion = ({
     }
   };
 
-  // eslint-disable-next-line no-param-reassign
-  delete rest.onActive;
-
   return (
     <Box role="tablist" {...rest}>
-      {Children.toArray(children).map((panel, index) => (
-        <AccordionContext.Provider
-          key={`accordion-panel_${index + 0}`}
-          value={{
-            active: activeIndexes.indexOf(index) > -1,
-            animate,
-            messages,
-            onPanelChange: () => onPanelChange(index),
-          }}
-        >
-          {panel}
-        </AccordionContext.Provider>
-      ))}
+      {Children.toArray(children)
+        .filter(child => child)
+        .map((child, index) => {
+          if (child) {
+            return cloneElement(child, {
+              active: activeIndexes.indexOf(index) > -1,
+              animate,
+              onPanelChange: () => onPanelChange(index),
+            });
+          }
+          return child;
+        })}
     </Box>
   );
 };

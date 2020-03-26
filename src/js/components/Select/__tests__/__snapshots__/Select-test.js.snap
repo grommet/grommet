@@ -529,14 +529,12 @@ exports[`Select basic 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onChange={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -807,7 +805,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 iyxfWo Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1540,7 +1538,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 iyxfWo Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2853,14 +2851,12 @@ exports[`Select multiple 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onChange={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -3131,7 +3127,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 iyxfWo Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3685,7 +3681,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bnTxRt Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 iyxfWo Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4246,14 +4242,12 @@ exports[`Select renders custom icon 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onChange={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -4484,14 +4478,12 @@ exports[`Select renders default icon 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onChange={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -5381,14 +5373,12 @@ exports[`Select renders without icon 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onChange={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
@@ -7016,7 +7006,6 @@ exports[`Select size 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onChange={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -7024,7 +7013,6 @@ exports[`Select size 1`] = `
           size="large"
           tabIndex="-1"
           type="text"
-          value=""
         />
       </div>
     </div>
