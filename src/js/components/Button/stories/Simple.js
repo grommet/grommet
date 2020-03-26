@@ -6,7 +6,7 @@ import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
   button: {
-    normalized: {
+    simple: {
       color: '#ff9999',
       border: {
         color: '#b9dff0',
@@ -21,22 +21,22 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const Normalized = () => (
+const Simple = () => (
   <>
     <Grommet theme={grommet}>
       <Box pad="medium" gap="medium">
         <Box gap="small">
-          <Text>Default Buttons (Icon only, Icon + Label)</Text>
+          <Text>Default Buttons</Text>
           <Box align="center" direction="row" gap="small">
             <Button icon={<User />} hoverIndicator />
             <Button icon={<User />} label="Users" />
           </Box>
         </Box>
         <Box gap="small">
-          <Text>Normalized Buttons</Text>
+          <Text>Simple Buttons</Text>
           <Box align="center" direction="row" gap="small">
-            <Button icon={<User />} normalized />
-            <Button icon={<User />} label="Users" normalized />
+            <Button icon={<User />} simple />
+            <Button icon={<User />} label="Users" simple />
           </Box>
         </Box>
       </Box>
@@ -44,20 +44,17 @@ const Normalized = () => (
     <Grommet theme={customTheme}>
       <Box pad="medium" gap="medium">
         <Box gap="small">
-          <Text>Normalized with Custom Theme</Text>
+          <Text>Simple with Custom Theme</Text>
           <Box align="center" direction="row" gap="small">
-            <Button icon={<User />} normalized />
-            <Button icon={<User />} label="Users" normalized />
+            <Button icon={<User />} simple />
+            <Button icon={<User />} label="Users" simple />
           </Box>
         </Box>
         <Box gap="small">
-          <Text>
-            Normalized + Primary: uses `primary` button styling but maintains
-            alignment
-          </Text>
+          <Text>Simple + Primary: `primary` overrides `simple`</Text>
           <Box align="center" direction="row" gap="small">
-            <Button icon={<User />} normalized />
-            <Button icon={<User />} label="Users" normalized primary />
+            <Button icon={<User />} simple />
+            <Button icon={<User />} label="Users" simple primary />
           </Box>
         </Box>
       </Box>
@@ -65,4 +62,4 @@ const Normalized = () => (
   </>
 );
 
-storiesOf('Button', module).add('Normalized', () => <Normalized />);
+storiesOf('Button', module).add('Simple', () => <Simple />);

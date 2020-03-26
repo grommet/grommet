@@ -36,7 +36,7 @@ const Button = forwardRef(
       href,
       justify,
       label,
-      normalized,
+      simple,
       onBlur,
       onClick,
       onFocus,
@@ -57,7 +57,7 @@ const Button = forwardRef(
     const [hover, setHover] = useState(false);
     const buttonTypes = {
       primary: 'primary',
-      normalized: 'normalized',
+      simple: 'simple',
     };
 
     if ((icon || label) && children) {
@@ -108,8 +108,8 @@ const Button = forwardRef(
 
     let buttonIcon = icon;
     let buttonType;
-    // primary color styling should overrule normalized
-    if (normalized) buttonType = buttonTypes.normalized;
+    // primary color styling should overrule simple
+    if (simple) buttonType = buttonTypes.simple;
     if (primary) buttonType = buttonTypes.primary;
 
     // only change color if user did not specify the color themselves...
@@ -167,7 +167,7 @@ const Button = forwardRef(
         focus={focus}
         focusIndicator={focusIndicator}
         href={href}
-        normalized={normalized}
+        simple={simple}
         onClick={onClick}
         onFocus={event => {
           setFocus(true);
@@ -183,7 +183,7 @@ const Button = forwardRef(
         plain={
           typeof plain !== 'undefined'
             ? plain
-            : Children.count(children) > 0 || (icon && !label && !normalized)
+            : Children.count(children) > 0 || (icon && !label && !simple)
         }
         primary={primary}
         sizeProp={size}

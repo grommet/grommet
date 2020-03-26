@@ -364,7 +364,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: `${baseSpacing * 0.75}px`,
       },
       // color: { dark: undefined, light: undefined }
-      normalized: {
+      simple: {
         border: {
           // color: { dark: undefined, light: undefined }
         },
@@ -373,7 +373,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: {
             // color: {dark: undefined, light: undefined}
           },
-          // color: { dark: undefined, light: undefined }
+          color: 'active',
         },
       },
       primary: {

@@ -217,12 +217,16 @@ export const themeDoc = {
     type: 'number',
     defaultValue: 0.3,
   },
-  'button.normalized.color': {
-    description: `The color of the background for normalized buttons.`,
+  'button.simple.color': {
+    description: `The color of the background for simple buttons.`,
     type: 'string | { dark: string, light: string }',
   },
-  'button.normalized.hover.border.color': {
-    description: `The color of the border for normalized buttons on hover.`,
+  'button.simple.hover.border.color': {
+    description: `The color of the border for simple buttons on hover.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.simple.hover.color': {
+    description: `The color of the fill for simple buttons on hover.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.padding.horizontal': {

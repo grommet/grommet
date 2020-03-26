@@ -153,26 +153,26 @@ const plainStyle = props => css`
   text-align: inherit;
 `;
 
-const normalizedStyle = props => css`
+const simpleStyle = props => css`
   ${backgroundStyle(
     normalizeColor(
-      props.colorValue || props.theme.button.normalized.color || undefined,
+      props.colorValue || props.theme.button.simple.color,
       props.theme,
     ),
     props.theme,
     props.theme.button.color,
   )}
   border: ${
-    !props.primary && props.theme.button.normalized.border.color
+    props.theme.button.simple.border.color
       ? `${props.theme.button.border.width} solid
     ${normalizeColor(
-      props.colorValue || props.theme.button.normalized.border.color,
+      props.colorValue || props.theme.button.simple.border.color,
       props.theme,
     )};`
       : 'none;'
   }
+  border-radius: ${radiusStyle(props)};
   text-align: inherit;
-  padding: ${props.theme.global.edgeSize.small};
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
@@ -191,7 +191,7 @@ const StyledButton = styled.button`
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
-  ${props => props.normalized && normalizedStyle(props)}
+  ${props => props.simple && !props.primary && simpleStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
   ${props => !props.disabled && !props.focus && hoverStyle}

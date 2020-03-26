@@ -524,9 +524,9 @@ Defaults to
 0.3
 ```
 
-**button.normalized.color**
+**button.simple.color**
 
-The color of the background for normalized buttons. Expects `string | { dark: string, light: string }`.
+The color of the background for simple buttons. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -534,9 +534,19 @@ Defaults to
 undefined
 ```
 
-**button.normalized.hover.border.color**
+**button.simple.hover.border.color**
 
-The color of the border for normalized buttons on hover. Expects `string | { dark: string, light: string }`.
+The color of the border for simple buttons on hover. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.simple.hover.color**
+
+The color of the fill for simple buttons on hover. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

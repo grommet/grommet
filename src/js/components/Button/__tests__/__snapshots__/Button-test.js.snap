@@ -1104,9 +1104,6 @@ exports[`Button normalized icon and label 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border: none;
-  text-align: inherit;
-  padding: 12px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -1144,9 +1141,7 @@ exports[`Button normalized icon and label 1`] = `
     <div
       className="c2"
     >
-      <svg
-        color="#444444"
-      />
+      <svg />
       <div
         className="c3"
       />
@@ -1169,27 +1164,12 @@ exports[`Button normalized icon only 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  color: inherit;
   border: none;
+  padding: 0;
   text-align: inherit;
-  padding: 12px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
   line-height: 0;
   padding: 12px;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c0 {
@@ -1214,9 +1194,7 @@ exports[`Button normalized icon only 1`] = `
     onMouseOver={[Function]}
     type="button"
   >
-    <svg
-      color="#444444"
-    />
+    <svg />
   </button>
 </div>
 `;
@@ -1238,9 +1216,6 @@ exports[`Button normalized label only 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  border: none;
-  text-align: inherit;
-  padding: 12px;
 }
 
 .c0 {
@@ -1287,9 +1262,6 @@ exports[`Button normalized primary 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  border: none;
-  text-align: inherit;
-  padding: 12px;
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
