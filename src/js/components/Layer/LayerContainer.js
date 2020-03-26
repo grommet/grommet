@@ -6,6 +6,7 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -40,7 +41,7 @@ const LayerContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [targetBounds, setTargetBounds] = useState(fullBounds);
     const anchorRef = useRef();
     const containerRef = useRef();
