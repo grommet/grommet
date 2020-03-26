@@ -29,10 +29,10 @@ export interface ButtonProps {
   icon?: JSX.Element;
   justify?: "around" | "between" | "center" | "end" | "evenly" | "start" | "stretch";
   label?: React.ReactNode;
-  normalized?: boolean;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
+  simple?: boolean;
   size?: "small" | "medium" | "large";
   type?: "button" | "reset" | "submit";
   as?: PolymorphicType;
