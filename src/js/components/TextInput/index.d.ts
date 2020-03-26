@@ -13,8 +13,8 @@ export interface TextInputProps {
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
-  onSuggestionsOpen?: ((...args: any[]) => any);
-  onSuggestionsClose?: ((...args: any[]) => any);
+  onSuggestionsOpen?: (() => void);
+  onSuggestionsClose?: (() => void);
   placeholder?: PlaceHolderType;
   plain?: boolean;
   reverse?: boolean;
