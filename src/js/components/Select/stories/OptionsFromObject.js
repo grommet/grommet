@@ -8,7 +8,7 @@ const objectOptions = [
     value: 1,
   },
   {
-    lab: 'Female',
+    label: 'Female',
     value: 2,
   },
   {
