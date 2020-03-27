@@ -103,7 +103,20 @@ var TextInput = forwardRef(function (_ref, ref) {
       setShowDrop(false);
       if (onSuggestionsClose) onSuggestionsClose();
     }
-  }, [onSuggestionsClose, showDrop, suggestions]);
+  }, [onSuggestionsClose, showDrop, suggestions]); // If we have suggestions and focus, open drop if it's closed.
+  // This can occur when suggestions are tied to the value.
+  // We don't want focus or showDrop in the dependencies because we
+  // don't want to open the drop just because Esc close it.
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+
+  useEffect(function () {
+    if (focus && !showDrop && suggestions && suggestions.length) {
+      setShowDrop(true);
+      if (onSuggestionsOpen) onSuggestionsOpen();
+    }
+  }, [onSuggestionsOpen, suggestions]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   var _useState3 = useState(-1),
       activeSuggestionIndex = _useState3[0],

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Search } from "grommet-icons/es6/icons/Search";
 import { Box, Image, Grommet, Text, TextInput } from 'grommet';
@@ -93,7 +93,13 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
     return setValue(event.suggestion.value);
   };
 
-  var renderSuggestions = function renderSuggestions() {
+  var onOpen = useCallback(function () {
+    return setSuggestionOpen(true);
+  }, [setSuggestionOpen]);
+  var onClose = useCallback(function () {
+    return setSuggestionOpen(false);
+  }, [setSuggestionOpen]);
+  var suggestions = useMemo(function () {
     return suggestedFolks.filter(function (_ref) {
       var name = _ref.name;
       return name.toLowerCase().indexOf(value.toLowerCase()) >= 0;
@@ -117,8 +123,7 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
         value: name
       };
     });
-  };
-
+  }, [suggestedFolks, value]);
   return React.createElement(Grommet, {
     theme: myCustomTheme,
     full: true
@@ -157,14 +162,10 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
     value: value,
     onChange: onChange,
     onSelect: onSelect,
-    suggestions: renderSuggestions(),
+    suggestions: suggestions,
     placeholder: "Enter your name...",
-    onSuggestionsOpen: function onSuggestionsOpen() {
-      return setSuggestionOpen(true);
-    },
-    onSuggestionsClose: function onSuggestionsClose() {
-      return setSuggestionOpen(false);
-    }
+    onSuggestionsOpen: onOpen,
+    onSuggestionsClose: onClose
   }))));
 };
 

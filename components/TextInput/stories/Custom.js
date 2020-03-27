@@ -105,7 +105,13 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
     return setValue(event.suggestion.value);
   };
 
-  var renderSuggestions = function renderSuggestions() {
+  var onOpen = (0, _react.useCallback)(function () {
+    return setSuggestionOpen(true);
+  }, [setSuggestionOpen]);
+  var onClose = (0, _react.useCallback)(function () {
+    return setSuggestionOpen(false);
+  }, [setSuggestionOpen]);
+  var suggestions = (0, _react.useMemo)(function () {
     return suggestedFolks.filter(function (_ref) {
       var name = _ref.name;
       return name.toLowerCase().indexOf(value.toLowerCase()) >= 0;
@@ -129,8 +135,7 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
         value: name
       };
     });
-  };
-
+  }, [suggestedFolks, value]);
   return _react["default"].createElement(_grommet.Grommet, {
     theme: myCustomTheme,
     full: true
@@ -169,14 +174,10 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
     value: value,
     onChange: onChange,
     onSelect: onSelect,
-    suggestions: renderSuggestions(),
+    suggestions: suggestions,
     placeholder: "Enter your name...",
-    onSuggestionsOpen: function onSuggestionsOpen() {
-      return setSuggestionOpen(true);
-    },
-    onSuggestionsClose: function onSuggestionsClose() {
-      return setSuggestionOpen(false);
-    }
+    onSuggestionsOpen: onOpen,
+    onSuggestionsClose: onClose
   }))));
 };
 
