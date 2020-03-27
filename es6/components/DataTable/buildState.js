@@ -25,8 +25,8 @@ export var normalizePrimaryProperty = function normalizePrimaryProperty(columns,
     }
   });
 
-  if (!result && columns.length > 0) {
-    result = primaryKey || columns[0].property;
+  if (!result) {
+    if (primaryKey === false) result = undefined;else if (primaryKey) result = primaryKey;else if (columns.length > 0) result = columns[0].property;
   }
 
   return result;
