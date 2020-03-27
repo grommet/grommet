@@ -4,7 +4,7 @@ import { Box, Select } from 'grommet';
 
 const objectOptions = [
   {
-    lab: 'Male',
+    label: 'Male',
     value: 1,
   },
   {
