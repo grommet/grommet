@@ -16,7 +16,7 @@ const objectOptions = [
     value: 3,
   },
   {
-    lab: 'Other',
+    label: 'Other',
     value: 4,
   },
 ];
