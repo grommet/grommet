@@ -76,8 +76,8 @@ const Form = forwardRef(
     const validations = useRef({});
 
     useEffect(() => {
-      if (onChange) onChange(value);
-    }, [onChange, value]);
+      if (onChange && value !== valueProp) onChange(value);
+    }, [onChange, value, valueProp]);
 
     useEffect(() => {}, [value, errors, infos]);
 
@@ -123,19 +123,14 @@ const Form = forwardRef(
     }, []);
 
     const useFormContext = (name, componentValue) => {
-      const valueData = name && value[name] !== undefined ? value[name] : '';
+      const valueData = name && value[name];
       const [data, setData] = useState(
         componentValue !== undefined ? componentValue : valueData,
       );
-      // update when the component value or form value changes
-      useEffect(() => {
-        if (componentValue !== undefined) {
-          if (componentValue !== data) {
-            setData(componentValue);
-            if (name) update(name, componentValue);
-          }
-        } else if (name && valueData !== data) setData(valueData);
-      }, [data, name, valueData, componentValue]);
+      if (componentValue !== undefined && componentValue !== data) {
+        setData(componentValue);
+        if (name) update(name, componentValue);
+      }
 
       return [
         data,

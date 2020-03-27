@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.11.2",
+  "version": "2.11.3",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -175,6 +175,7 @@
     "design system",
     "framework",
     "react",
+    "theme",
     "theming",
     "templates",
     "sticker sheets",

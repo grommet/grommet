@@ -1,11 +1,6 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  useCallback,
-  useMemo,
-} from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Search } from 'grommet-icons';
 import { Box, Image, Grommet, Text, TextInput } from 'grommet';
@@ -108,14 +103,7 @@ const CustomSuggestionsTextInput = () => {
 
   const onSelect = event => setValue(event.suggestion.value);
 
-  const onOpen = useCallback(() => setSuggestionOpen(true), [
-    setSuggestionOpen,
-  ]);
-  const onClose = useCallback(() => setSuggestionOpen(false), [
-    setSuggestionOpen,
-  ]);
-
-  const suggestions = useMemo(() => {
+  const renderSuggestions = () => {
     return suggestedFolks
       .filter(
         ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0,
@@ -141,7 +129,7 @@ const CustomSuggestionsTextInput = () => {
         ),
         value: name,
       }));
-  }, [suggestedFolks, value]);
+  };
 
   return (
     <Grommet theme={myCustomTheme} full>
@@ -175,10 +163,10 @@ const CustomSuggestionsTextInput = () => {
             value={value}
             onChange={onChange}
             onSelect={onSelect}
-            suggestions={suggestions}
+            suggestions={renderSuggestions()}
             placeholder="Enter your name..."
-            onSuggestionsOpen={onOpen}
-            onSuggestionsClose={onClose}
+            onSuggestionsOpen={() => setSuggestionOpen(true)}
+            onSuggestionsClose={() => setSuggestionOpen(false)}
           />
         </Box>
       </Box>
@@ -186,6 +174,8 @@ const CustomSuggestionsTextInput = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Custom', () => (
-  <CustomSuggestionsTextInput />
-));
+if (!isChromatic()) {
+  storiesOf('TypeScript/TextInput', module).add('Custom', () => (
+    <CustomSuggestionsTextInput />
+  ));
+}
