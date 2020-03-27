@@ -12,7 +12,7 @@ const objectOptions = [
     value: 2,
   },
   {
-    lab: 'Non Binary',
+    label: 'Non Binary',
     value: 3,
   },
   {
