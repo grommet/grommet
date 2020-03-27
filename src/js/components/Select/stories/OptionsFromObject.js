@@ -30,7 +30,7 @@ const OptionsFromObject = () => {
         id="select"
         name="select"
         placeholder="Select"
-        labelKey="lab"
+        labelKey="label"
         value={value}
         options={objectOptions}
         onChange={({ option }) => setValue(option)}
