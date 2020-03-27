@@ -89,12 +89,6 @@ with plain Buttons.`,
       'How to align the contents along the horizontal axis in the button.',
     ),
     label: PropTypes.node.description('Label text to place in the button.'),
-    normalized: PropTypes.bool.description(
-      `Whether this is a normalized button. By default, icon only buttons have 
-      different styling than buttons with labels. Normalized buttons have 
-      consistent styling regardless of if they contain only an icon or an icon 
-      and label.`,
-    ),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
         causes the Button to be disabled.`,
@@ -119,6 +113,10 @@ with plain Buttons.`,
               end of the anchor.`,
       )
       .defaultValue(false),
+    simple: PropTypes.bool.description(
+      `Whether this is a simple button. By default, simple buttons have no
+      background fill but have a subtle fill on hover.`,
+    ),
     size: PropTypes.oneOf(['small', 'medium', 'large']).description(
       `The possible sizes of Button, that impacts the overall Button 
       padding, border radius, text size and line height. 

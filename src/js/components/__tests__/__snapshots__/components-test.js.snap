@@ -1139,14 +1139,6 @@ stretch",
         "name": "label",
       },
       Object {
-        "description": "Whether this is a normalized button. By default, icon only buttons have 
-      different styling than buttons with labels. Normalized buttons have 
-      consistent styling regardless of if they contain only an icon or an icon 
-      and label.",
-        "format": "boolean",
-        "name": "normalized",
-      },
-      Object {
         "description": "Click handler. Not setting this property and not specifying a href
         causes the Button to be disabled.",
         "format": "function",
@@ -1174,6 +1166,12 @@ stretch",
               end of the anchor.",
         "format": "boolean",
         "name": "reverse",
+      },
+      Object {
+        "description": "Whether this is a simple button. By default, simple buttons have no
+      background fill but have a subtle fill on hover.",
+        "format": "boolean",
+        "name": "simple",
       },
       Object {
         "description": "The possible sizes of Button, that impacts the overall Button 

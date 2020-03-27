@@ -1886,17 +1886,6 @@ Label text to place in the button.
 node
 \`\`\`
 
-**normalized**
-
-Whether this is a normalized button. By default, icon only buttons have 
-      different styling than buttons with labels. Normalized buttons have 
-      consistent styling regardless of if they contain only an icon or an icon 
-      and label.
-
-\`\`\`
-boolean
-\`\`\`
-
 **onClick**
 
 Click handler. Not setting this property and not specifying a href
@@ -1930,6 +1919,15 @@ boolean
 
 Whether an icon and label should be reversed so that the icon is at the
               end of the anchor.
+
+\`\`\`
+boolean
+\`\`\`
+
+**simple**
+
+Whether this is a simple button. By default, simple buttons have no
+      background fill but have a subtle fill on hover.
 
 \`\`\`
 boolean
