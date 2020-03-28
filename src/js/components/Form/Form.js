@@ -133,6 +133,8 @@ const Form = forwardRef(
         if (componentValue !== data) {
           setData(componentValue);
           if (name) update(name, componentValue);
+        } else if (name && valueData === undefined) {
+          update(name, componentValue, true);
         }
       } else if (valueData !== data) {
         setData(valueData);

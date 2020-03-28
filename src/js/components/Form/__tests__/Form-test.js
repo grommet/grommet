@@ -482,4 +482,36 @@ describe('Form', () => {
       }),
     );
   });
+
+  // deprecated FormField+input pattern
+
+  test('controlled FormField deprecated', () => {
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({ test: '' });
+      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      return (
+        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
+          <FormField label="test" name="test" id="test" htmlFor="test" />
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByLabelText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByLabelText('test'), { target: { value: 'v' } });
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: { test: 'v' },
+        touched: { test: true },
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
