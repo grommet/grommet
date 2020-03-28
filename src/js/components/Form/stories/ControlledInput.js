@@ -11,10 +11,7 @@ const Example = () => {
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
-            onReset={event => {
-              console.log(event);
-              setValue('');
-            }}
+            onReset={() => setValue('')}
             onSubmit={event => console.log('Submit', event.value)}
           >
             <FormField label="Name" name="name">

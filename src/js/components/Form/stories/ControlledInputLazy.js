@@ -5,19 +5,22 @@ import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
-  const [value, setValue] = React.useState({});
+  const [value, setValue] = React.useState('');
+  React.useEffect(() => setValue('initial'), []);
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
-            value={value}
-            onChange={nextValue => setValue(nextValue)}
-            onReset={() => setValue({})}
+            onReset={() => setValue('')}
             onSubmit={event => console.log('Submit', event.value)}
           >
             <FormField label="Name" name="name">
-              <TextInput name="name" />
+              <TextInput
+                name="name"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+              />
             </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
               <Button label="Cancel" />
@@ -31,4 +34,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled', () => <Example />);
+storiesOf('Form', module).add('Controlled Input lazy', () => <Example />);
