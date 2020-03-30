@@ -190,7 +190,7 @@ exports[`Form controlled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 gwyiI"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 GCqjV"
@@ -228,7 +228,7 @@ exports[`Form controlled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 gwyiI"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 GCqjV"
@@ -450,7 +450,7 @@ exports[`Form controlled input 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 gwyiI"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 GCqjV"
@@ -488,7 +488,7 @@ exports[`Form controlled input 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 gwyiI"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 GCqjV"
@@ -1242,7 +1242,7 @@ exports[`Form uncontrolled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 gwyiI"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 GCqjV"
@@ -1280,7 +1280,7 @@ exports[`Form uncontrolled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 gwyiI"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 GCqjV"

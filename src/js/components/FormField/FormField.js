@@ -25,7 +25,7 @@ const isGrommetInput = comp =>
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
-  ${props => props.theme.formField && props.theme.formField.extend}
+  ${props => props.theme.formField && props.theme.formField.extend};
 `;
 
 const Message = ({ message, ...rest }) => {
@@ -312,7 +312,6 @@ const FormField = forwardRef(
     return (
       <FormFieldBox
         ref={ref}
-        className={className}
         border={
           border && border.position === 'outer'
             ? { ...border, color: borderColor }
@@ -327,8 +326,7 @@ const FormField = forwardRef(
           if (onFocus) onFocus(event);
         }}
         onBlur={event => {
-          const role = event.target.getAttribute('role');
-          if (!role || role !== 'menubar') {
+          if (event.target.tagName === 'INPUT') {
             setFocus(false);
           }
           if (onFieldBlur) onFieldBlur(event);

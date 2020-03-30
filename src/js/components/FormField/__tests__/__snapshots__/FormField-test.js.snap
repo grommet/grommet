@@ -175,7 +175,7 @@ exports[`FormField custom formfield 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -191,7 +191,7 @@ exports[`FormField custom formfield 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -206,10 +206,6 @@ exports[`FormField custom formfield 1`] = `
   flex-direction: column;
 }
 
-.c2 {
-  font-size: 40px;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     margin-bottom: 6px;
@@ -217,7 +213,7 @@ exports[`FormField custom formfield 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -226,15 +222,15 @@ exports[`FormField custom formfield 1`] = `
   className="c0"
 >
   <div
-    className="c1 c2"
+    className="c1 "
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c3"
+      className="c2"
     >
       <div
-        className="c4"
+        className="c3"
       />
     </div>
   </div>
