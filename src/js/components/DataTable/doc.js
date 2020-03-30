@@ -175,11 +175,15 @@ export const doc = DataTable => {
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
-    primaryKey: PropTypes.string.description(
+    primaryKey: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+    ]).description(
       `When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.`,
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.`,
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',
