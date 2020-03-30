@@ -35,6 +35,25 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('!primaryKey', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey={false}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('paths', () => {
     const { container } = render(
       <Grommet>
