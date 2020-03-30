@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { Box } from '../Box';
-import { Text } from '../Text';
+import { defaultProps } from '../../default-props';
+import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
 
 const Avatar = ({
   align = 'center',
@@ -9,24 +10,27 @@ const Avatar = ({
   height, // for warning check and discarding the value
   justify = 'center',
   round = 'full',
-  size = 'xxsmall',
+  size = 'medium',
   src,
   width, // for warning check and discarding the value
   ...rest
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const avatarSize = theme.avatar.size[size] || size;
+
   const avatarProps = {
     align,
-    height: size,
+    height: avatarSize,
     justify,
     overflow: 'hidden',
     round,
-    width: size,
+    width: avatarSize,
   };
 
   const AvatarChildren = () => (
-    <Box {...avatarProps} {...rest}>
+    <StyledAvatar {...avatarProps} {...rest}>
       {children}
-    </Box>
+    </StyledAvatar>
   );
 
   if (height || width) {
@@ -36,18 +40,20 @@ const Avatar = ({
   }
 
   if (typeof src === 'string') {
-    return <Box {...avatarProps} {...rest} background={`url(${src})`} />;
+    return (
+      <StyledAvatar {...avatarProps} {...rest} background={`url(${src})`} />
+    );
   }
   if (typeof children === 'string') {
     return (
-      <Box {...avatarProps} {...rest}>
-        <Text alignSelf="center" size="large">
+      <StyledAvatar {...avatarProps} {...rest}>
+        <StyledAvatarText alignSelf="center" size="large">
           {children}
-        </Text>
-      </Box>
+        </StyledAvatarText>
+      </StyledAvatar>
     );
   }
-  return <AvatarChildren />; // typeof src === 'object'
+  return <AvatarChildren />; // typeof src === 'object', node element
 };
 
 export { Avatar };

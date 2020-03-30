@@ -10,7 +10,21 @@ import {
 } from 'grommet-icons';
 
 import { Avatar, Box, Grommet, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { ThemeType } from 'grommet/themes';
+
+const theme: ThemeType = {
+  avatar: {
+    size: {
+      myLarge: '70px',
+    },
+    text: {
+      fontWeight: 700,
+      extend: `font-family: Comic Sans MS; font-size: 30px`,
+    },
+    extend: `border: 2px solid white; 
+            box-shadow: 2px 2px 15px 1px white;`,
+  },
+};
 
 const Avatars = () => {
   const shimi = 'shimrit.yacobi@gmail.com';
@@ -36,9 +50,9 @@ const Avatars = () => {
   );
   const GroupedGravatarRTL = () => (
     <Stack anchor="right" margin={{ left: 'xlarge' }}>
-      <Avatar size="xsmall" email={shimi} />
-      <Avatar size="xsmall" src={eric} margin={{ right: 'large' }} />
-      <Avatar size="xsmall" src={bryan} margin={{ right: 'xlarge' }} />
+      <Avatar size="large" email={shimi} />
+      <Avatar size="large" src={eric} margin={{ right: 'large' }} />
+      <Avatar size="large" src={bryan} margin={{ right: 'xlarge' }} />
     </Stack>
   );
 
@@ -60,7 +74,7 @@ const Avatars = () => {
   );
 
   return (
-    <Grommet theme={grommet}>
+    <Grommet theme={theme}>
       <Box align="center" gap="medium" pad="large" background="dark-1">
         {/* Nested Avatars */}
         <Stack anchor="bottom-right">

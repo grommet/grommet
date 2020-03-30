@@ -11,33 +11,23 @@ import { Avatar } from 'grommet';
 
 ## Properties
 
-**email**
-
-An email address to retrieve a gravatar image.
-
-```
-string
-```
-
 **size**
 
-A fixed size. Defaults to `xxsmall`.
+A fixed size. Defaults to `medium`.
 
 ```
-xxsmall
 xsmall
 small
 medium
 large
 xlarge
-xxlarge
 string
 ```
 
 **src**
 
 Specifies a URL string for an avatar image, 
-      or a node element for an icon.
+      or any node element.
 
 ```
 node
@@ -48,4 +38,85 @@ string
 
 ```
 div
+```
+## Theme
+  
+**avatar.extend**
+
+Any additional style for the Avatar. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**avatar.size.xsmall**
+
+The xsmall size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**avatar.size.small**
+
+The small size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**avatar.size.medium**
+
+The medium size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+48px
+```
+
+**avatar.size.large**
+
+The large size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+72px
+```
+
+**avatar.size.xlarge**
+
+The xlarge size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+96px
+```
+
+**avatar.text.extend**
+
+Any additional style for the text. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**avatar.text.fontWeight**
+
+The font weight of the label. Expects `number`.
+
+Defaults to
+
+```
+undefined
 ```

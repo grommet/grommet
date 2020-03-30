@@ -30,9 +30,9 @@ const Stacked = () => {
   );
   const GroupedGravatarRTL = () => (
     <Stack anchor="right" margin={{ left: 'xlarge' }}>
-      <Avatar size="xsmall" src={shimi} />
-      <Avatar size="xsmall" src={eric} margin={{ right: 'large' }} />
-      <Avatar size="xsmall" src={bryan} margin={{ right: 'xlarge' }} />
+      <Avatar size="large" src={shimi} />
+      <Avatar size="large" src={eric} margin={{ right: 'large' }} />
+      <Avatar size="large" src={bryan} margin={{ right: 'xlarge' }} />
     </Stack>
   );
 
@@ -57,12 +57,12 @@ const Stacked = () => {
         <Stack anchor="bottom-right">
           <Box>
             <Box direction="row">
-              <Avatar size="xsmall" src={shimi} border={borderSmall} />
+              <Avatar size="xlarge" src={shimi} border={borderSmall} />
               <Box pad="xxsmall" />
             </Box>
             <Box pad="xxsmall" />
           </Box>
-          <Avatar src={eric} size="42px" border={borderSmall} />
+          <Avatar src={eric} border={borderSmall} />
         </Stack>
 
         {/* Notification */}

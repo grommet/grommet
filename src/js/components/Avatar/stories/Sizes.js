@@ -9,9 +9,10 @@ const Sizes = () => {
   return (
     <Grommet theme={grommet}>
       <Box direction="row" pad="large">
-        <Avatar src={src} />
-        <Avatar size="xsmall" src={src} />
         <Avatar size="small" src={src} />
+        <Avatar size="medium" src={src} />
+        <Avatar size="large" src={src} />
+        <Avatar size="xlarge" src={src} />
       </Box>
     </Grommet>
   );

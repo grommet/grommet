@@ -29,9 +29,10 @@ describe('Avatar', () => {
   test('size renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Avatar src={src} />
         <Avatar size="xsmall" src={src} />
         <Avatar size="small" src={src} />
+        <Avatar src={src} />
+        <Avatar size="large" src={src} />
       </Grommet>,
     );
     const tree = component.toJSON();

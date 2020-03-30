@@ -44,7 +44,7 @@ exports[`Avatar icon renders 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   />
 </div>
 `;
@@ -91,10 +91,10 @@ exports[`Avatar renders 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   />
   <div
-    className="c1"
+    className="c1 "
     id="test id"
     name="test name"
   />
@@ -313,28 +313,86 @@ exports[`Avatar round renders 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   />
   <div
-    className="c2"
+    className="c2 "
   />
   <div
-    className="c3"
+    className="c3 "
   />
   <div
-    className="c4"
+    className="c4 "
   />
   <div
-    className="c5"
+    className="c5 "
   />
   <div
-    className="c6"
+    className="c6 "
   />
 </div>
 `;
 
 exports[`Avatar size renders 1`] = `
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url() no-repeat center center;
+  background-size: cover;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 18px;
+  width: 18px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url() no-repeat center center;
+  background-size: cover;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -363,7 +421,7 @@ exports[`Avatar size renders 1`] = `
   overflow: hidden;
 }
 
-.c2 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -382,37 +440,8 @@ exports[`Avatar size renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 96px;
-  width: 96px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: url() no-repeat center center;
-  background-size: cover;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 192px;
-  width: 192px;
+  height: 72px;
+  width: 72px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -435,13 +464,16 @@ exports[`Avatar size renders 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   />
   <div
-    className="c2"
+    className="c2 "
   />
   <div
-    className="c3"
+    className="c3 "
+  />
+  <div
+    className="c4 "
   />
 </div>
 `;
@@ -496,8 +528,8 @@ exports[`Avatar stack renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 96px;
-  width: 96px;
+  height: 18px;
+  width: 18px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -598,7 +630,7 @@ exports[`Avatar stack renders 1`] = `
           className="c4"
         >
           <div
-            className="c5"
+            className="c5 "
           />
           <div
             className="c6"
@@ -613,7 +645,7 @@ exports[`Avatar stack renders 1`] = `
       className="c7"
     >
       <div
-        className="c8"
+        className="c8 "
       />
     </div>
   </div>
@@ -701,7 +733,7 @@ exports[`Avatar text renders 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 "
   >
     <span
       className="c2"
@@ -711,7 +743,7 @@ exports[`Avatar text renders 1`] = `
     </span>
   </div>
   <div
-    className="c3"
+    className="c3 "
   >
     <span
       className="c2"

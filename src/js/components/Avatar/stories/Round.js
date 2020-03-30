@@ -10,12 +10,12 @@ const Round = () => {
   return (
     <Grommet theme={grommet}>
       <Box direction="row" alignContent="center" gap="small" pad="large">
-        <Avatar src={src} round={false} />
-        <Avatar src={src} round="xsmall" />
-        <Avatar src={src} round="small" />
-        <Avatar src={src} round="medium" />
-        <Avatar src={src} round="large" />
-        <Avatar src={src} />
+        <Avatar size="large" src={src} round={false} />
+        <Avatar size="large" src={src} round="xsmall" />
+        <Avatar size="large" src={src} round="small" />
+        <Avatar size="large" src={src} round="medium" />
+        <Avatar size="large" src={src} round="large" />
+        <Avatar size="large" src={src} />
       </Box>
     </Grommet>
   );
