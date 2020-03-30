@@ -1,25 +1,114 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
+import {
+  Box,
+  Button,
+  CheckBox,
+  Grommet,
+  Form,
+  FormField,
+  MaskedInput,
+  RadioButtonGroup,
+  RangeInput,
+  Select,
+  TextArea,
+  TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
-  const [value, setValue] = React.useState('');
-  React.useEffect(() => setValue('initial'), []);
+  const [textInputValue, setTextInputValue] = React.useState();
+  const [maskedInputValue, setMaskedInputValue] = React.useState();
+  const [checkBoxValue, setCheckBoxValue] = React.useState(false);
+  const [radioButtonGroupValue, setRadioButtonValue] = React.useState();
+  const [selectValue, setSelectValue] = React.useState();
+  const [textAreaValue, setTextAreaValue] = React.useState();
+  const [rangeInputValue, setRangeInputValue] = React.useState();
+  React.useEffect(() => {
+    setTextInputValue('initial');
+    setMaskedInputValue('initial@my.com');
+    setCheckBoxValue(true);
+    setRadioButtonValue('evening');
+    setSelectValue('large');
+    setTextAreaValue('initial');
+    setRangeInputValue(60);
+  }, []);
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
-            onReset={() => setValue('')}
+            onReset={() => {
+              setTextInputValue(undefined);
+              setMaskedInputValue(undefined);
+              setCheckBoxValue(undefined);
+              setRadioButtonValue(undefined);
+              setSelectValue(undefined);
+              setTextAreaValue(undefined);
+              setRangeInputValue(undefined);
+            }}
             onSubmit={event => console.log('Submit', event.value)}
           >
             <FormField label="Name" name="name">
               <TextInput
                 name="name"
-                value={value}
-                onChange={event => setValue(event.target.value)}
+                value={textInputValue}
+                onChange={event => setTextInputValue(event.target.value)}
+              />
+            </FormField>
+            <FormField label="Email" name="email" required>
+              <MaskedInput
+                name="email"
+                mask={[
+                  { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
+                  { fixed: '@' },
+                  { regexp: /^[\w]+$/, placeholder: 'my' },
+                  { fixed: '.' },
+                  { regexp: /^[\w]+$/, placeholder: 'com' },
+                ]}
+                value={maskedInputValue}
+                onChange={event => setMaskedInputValue(event.target.value)}
+              />
+            </FormField>
+            <FormField name="subscribe">
+              <CheckBox
+                name="subscribe"
+                label="Subscribe?"
+                value={checkBoxValue}
+                onChange={event => setCheckBoxValue(event.target.checked)}
+              />
+            </FormField>
+            <FormField name="ampm">
+              <RadioButtonGroup
+                name="ampm"
+                options={['morning', 'evening']}
+                value={radioButtonGroupValue}
+                onChange={event => setRadioButtonValue(event.target.value)}
+              />
+            </FormField>
+            <FormField label="Size" name="size">
+              <Select
+                name="size"
+                options={['small', 'medium', 'large']}
+                value={selectValue}
+                onChange={event => setSelectValue(event.target.value)}
+              />
+            </FormField>
+            <FormField label="Comments" name="comments">
+              <TextArea
+                name="comments"
+                value={textAreaValue}
+                onChange={event => setTextAreaValue(event.target.value)}
+              />
+            </FormField>
+            <FormField label="Age" name="age" pad>
+              <RangeInput
+                name="age"
+                min={15}
+                max={75}
+                value={rangeInputValue}
+                onChange={event => setRangeInputValue(event.target.value)}
               />
             </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
