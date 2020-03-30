@@ -90,20 +90,30 @@ const Form = forwardRef(
         setErrors(prevErrors => {
           const nextErrors = { ...prevErrors };
           Object.keys(prevErrors).forEach(errName => {
+            // sets error
             if (validations.current[errName]) {
-              const nextError = validations.current[errName](data, nextValue);
-              if (!nextError && nextErrors[name]) {
-                updateErrors(nextErrors, name, nextErrors[name]);
-              } else if (nextError) {
-                updateErrors(nextErrors, errName, nextError);
-              }
+              updateErrors(nextErrors, name, nextErrors[name]);
             }
-            if (nextValue[name]) {
+            // deletes error on new value only if error exists
+            if (nextValue[name] && nextErrors[name]) {
               updateErrors(nextErrors, name, undefined);
             }
           });
           return nextErrors;
         });
+        /*         
+        // re-run any validations, in case the validation
+        // is checking across fields
+        setErrors(prevErrors => {
+          const nextErrors = { ...prevErrors };
+          Object.keys(prevErrors).forEach(errName => {
+            if (validations.current[errName]) {
+              const nextError = validations.current[errName](data, nextValue);
+              updateErrors(nextErrors, errName, nextError);
+            }
+          });
+          return nextErrors;
+        }); */
         setInfos(prevInfos => {
           const nextInfos = { ...prevInfos };
           // re-run any validations that have infos, in case the validation
