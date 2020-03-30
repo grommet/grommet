@@ -4551,6 +4551,18 @@ A description of the data. The order controls the column order.
   render: function,
   search: boolean,
   sortable: boolean,
+  size: 
+    small
+    medium
+    large
+    xlarge
+    1/2
+    1/4
+    2/4
+    3/4
+    1/3
+    2/3
+    string,
   verticalAlign: 
     middle
     top
@@ -5246,10 +5258,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react[\\"default\\"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`

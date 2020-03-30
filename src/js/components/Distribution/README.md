@@ -154,10 +154,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to `function children(value) {
-    return _react["default"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react["default"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, value.value));
   }`.
 
 ```
