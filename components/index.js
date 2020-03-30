@@ -23,6 +23,13 @@ Object.keys(_Anchor).forEach(function (key) {
   exports[key] = _Anchor[key];
 });
 
+var _Avatar = require("./Avatar");
+
+Object.keys(_Avatar).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _Avatar[key];
+});
+
 var _Box = require("./Box");
 
 Object.keys(_Box).forEach(function (key) {
