@@ -30,7 +30,6 @@ Specifies a URL string for an avatar image,
       or any node element.
 
 ```
-node
 string
 ```
   

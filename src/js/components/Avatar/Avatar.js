@@ -53,7 +53,7 @@ const Avatar = ({
       </StyledAvatar>
     );
   }
-  return <AvatarChildren />; // typeof src === 'object', node element
+  return <AvatarChildren />;
 };
 
 export { Avatar };

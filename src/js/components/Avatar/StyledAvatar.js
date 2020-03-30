@@ -5,10 +5,6 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
-const sizeStyle = props => {
-  return props.theme.avatar.size[props.size] || props.size;
-};
-
 const StyledAvatarText = styled(Text)`
   ${props =>
     props.theme.avatar &&
@@ -22,8 +18,6 @@ StyledAvatarText.defaultProps = {};
 Object.setPrototypeOf(StyledAvatarText.defaultProps, defaultProps);
 
 const StyledAvatar = styled(Box)`
-  height: ${props => sizeStyle(props)};
-  width: ${props => sizeStyle(props)};
   ${props => props.theme.avatar && props.theme.avatar.extend}
 `;
 

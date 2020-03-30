@@ -3,9 +3,8 @@ import { BoxProps } from '../Box';
 
 
 export interface AvatarProps {
-    email?: string;
-    size?: BoxProps['height'];
-    src?: string | React.ReactNode;
+    size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+    src?: string;
   }
 
 declare const Avatar: React.FC<BoxProps & AvatarProps>;
