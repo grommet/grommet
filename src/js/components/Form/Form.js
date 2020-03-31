@@ -124,8 +124,8 @@ const Form = forwardRef(
       [onChange],
     );
 
-    const useFormContext = (name, componentValue) => {
-      const valueData = name && value[name];
+    const useFormContext = (name, componentValue, defaultComponentValue) => {
+      const valueData = (name && value[name]) || defaultComponentValue;
       const [data, setData] = useState(
         componentValue !== undefined ? componentValue : valueData,
       );
@@ -133,7 +133,7 @@ const Form = forwardRef(
         if (componentValue !== data) {
           setData(componentValue);
           if (name) update(name, componentValue);
-        } else if (name && valueData === undefined) {
+        } else if (name && value[name] === undefined) {
           update(name, componentValue, true);
         }
       } else if (valueData !== data) {

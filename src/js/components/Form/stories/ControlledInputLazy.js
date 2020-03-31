@@ -20,7 +20,7 @@ import { grommet } from 'grommet/themes';
 const Example = () => {
   const [textInputValue, setTextInputValue] = React.useState();
   const [maskedInputValue, setMaskedInputValue] = React.useState();
-  const [checkBoxValue, setCheckBoxValue] = React.useState(false);
+  const [checkBoxValue, setCheckBoxValue] = React.useState();
   const [radioButtonGroupValue, setRadioButtonValue] = React.useState();
   const [selectValue, setSelectValue] = React.useState();
   const [textAreaValue, setTextAreaValue] = React.useState();
@@ -75,7 +75,7 @@ const Example = () => {
               <CheckBox
                 name="subscribe"
                 label="Subscribe?"
-                value={checkBoxValue}
+                checked={checkBoxValue}
                 onChange={event => setCheckBoxValue(event.target.checked)}
               />
             </FormField>
@@ -92,7 +92,7 @@ const Example = () => {
                 name="size"
                 options={['small', 'medium', 'large']}
                 value={selectValue}
-                onChange={event => setSelectValue(event.target.value)}
+                onChange={event => setSelectValue(event.option)}
               />
             </FormField>
             <FormField label="Comments" name="comments">
