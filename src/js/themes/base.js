@@ -324,6 +324,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // extend: undefined,
     },
+    avatar: {
+      // extend: undefined,
+      size: {
+        xsmall: `${baseSpacing * 0.75}px`,
+        small: `${baseSpacing}px`,
+        medium: `${baseSpacing * 2}px`, // default 48
+        large: `${baseSpacing * 3}px`,
+        xlarge: `${baseSpacing * 4}px`,
+      },
+      text: {
+        // fontWeight: undefined,
+        // extend: undefined
+      },
+    },
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,

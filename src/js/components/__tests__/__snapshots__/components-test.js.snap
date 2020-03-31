@@ -207,6 +207,7 @@ function",
     "usage": "import { Anchor } from 'grommet';
 <Anchor href={location} label='Label' />",
   },
+  "Avatar": [Function],
   "Box": Object {
     "availableAt": Array [
       Object {

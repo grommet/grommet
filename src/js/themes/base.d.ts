@@ -249,6 +249,21 @@ export interface ThemeType {
     };
     textDecoration?: string;
   };
+  avatar?: {
+    size?: {
+      xsmall?: string;
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
+      [x: string]: string | undefined;
+    },
+    text?: {
+      fontWeight?: number;
+      extend?: ExtendType;
+    }
+    extend?: ExtendType;
+  },
   box?: {
     extend?: ExtendType;
     responsiveBreakpoint?: string;
