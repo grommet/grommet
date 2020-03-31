@@ -48,7 +48,15 @@ const Header = ({
         )}
 
         {columns.map(
-          ({ property, header, align, search, sortable, verticalAlign }) => {
+          ({
+            property,
+            header,
+            align,
+            search,
+            sortable,
+            verticalAlign,
+            size,
+          }) => {
             let content =
               typeof header === 'string' ? <Text>{header}</Text> : header;
 
@@ -122,6 +130,7 @@ const Header = ({
                 pad={pad}
                 plain
                 scope="col"
+                size={size} // Initial size if specified
                 style={
                   widths && widths[property]
                     ? { width: widths[property] }

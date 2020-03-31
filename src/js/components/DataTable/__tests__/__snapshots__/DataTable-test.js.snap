@@ -168,6 +168,9 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  width: 400px;
+  max-width: 400px;
+  overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -177,6 +180,23 @@ exports[`DataTable absoluteColumnSizes 1`] = `
 }
 
 .c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 200px;
+  max-width: 200px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -192,7 +212,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -223,7 +243,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   line-height: 24px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -264,7 +284,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
           </span>
         </th>
         <th
-          class="c4"
+          class="c6"
           scope="col"
         >
           <span
@@ -282,17 +302,17 @@ exports[`DataTable absoluteColumnSizes 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c5"
@@ -305,17 +325,17 @@ exports[`DataTable absoluteColumnSizes 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c5"
@@ -4797,6 +4817,9 @@ exports[`DataTable relativeColumnSizes 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  width: 66.66%;
+  max-width: 66.66%;
+  overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -4806,6 +4829,23 @@ exports[`DataTable relativeColumnSizes 1`] = `
 }
 
 .c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 33.33%;
+  max-width: 33.33%;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4821,7 +4861,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4852,7 +4892,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   line-height: 24px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -4893,7 +4933,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
           </span>
         </th>
         <th
-          class="c4"
+          class="c6"
           scope="col"
         >
           <span
@@ -4911,17 +4951,17 @@ exports[`DataTable relativeColumnSizes 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c5"
@@ -4934,17 +4974,17 @@ exports[`DataTable relativeColumnSizes 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c5"
@@ -6612,6 +6652,9 @@ exports[`DataTable themeColumnSizes 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  width: 384px;
+  max-width: 384px;
+  overflow: hidden;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -6621,6 +6664,23 @@ exports[`DataTable themeColumnSizes 1`] = `
 }
 
 .c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 192px;
+  max-width: 192px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6636,7 +6696,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6667,7 +6727,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   line-height: 24px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -6708,7 +6768,7 @@ exports[`DataTable themeColumnSizes 1`] = `
           </span>
         </th>
         <th
-          class="c4"
+          class="c6"
           scope="col"
         >
           <span
@@ -6726,17 +6786,17 @@ exports[`DataTable themeColumnSizes 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c5"
@@ -6749,17 +6809,17 @@ exports[`DataTable themeColumnSizes 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c5"

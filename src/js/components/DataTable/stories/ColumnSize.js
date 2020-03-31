@@ -66,37 +66,44 @@ export const DATA = [
 const columnsThemeSize = [
   { property: 'name', header: 'Name', size: 'xlarge' },
   { property: 'location', header: 'Location', size: 'small' },
-  { property: 'date', header: 'Date', size: 'small', align: 'right' },
-  { property: 'percent', header: 'Percent', size: 'xsmall', align: 'right' },
-  { property: 'paid', header: 'Paid', size: 'xsmall', align: 'right' },
+  { property: 'date', header: 'Date', size: 'small', align: 'end' },
+  { property: 'percent', header: 'Percent', size: 'xsmall', align: 'end' },
+  { property: 'paid', header: 'Paid', size: 'xsmall', align: 'end' },
+];
+
+const columnsReize = [
+  { property: 'location', header: 'Location', size: 'small' },
+  { property: 'date', header: 'Date', size: 'small', align: 'end' },
+  { property: 'percent', header: 'Percent', size: 'xsmall', align: 'end' },
+  { property: 'paid', header: 'Paid', size: 'xsmall', align: 'end' },
 ];
 
 const columnsRelativeSize = [
   { property: 'name', header: 'Name', size: '1/2' },
   { property: 'location', header: 'Location', size: '1/4' },
-  { property: 'date', header: 'Date', size: 'small', align: '1/4' },
+  { property: 'date', header: 'Date', size: '1/4' },
 ];
 
 const columnsAbsoluteSize = [
   { property: 'name', header: 'Name', size: '600px' },
   { property: 'location', header: 'Location', size: '200px' },
-  { property: 'date', header: 'Date', size: '200px', align: 'right' },
-  { property: 'percent', header: 'Percent', size: '100px', align: 'right' },
-  { property: 'paid', header: 'Paid', size: '100px', align: 'right' },
+  { property: 'date', header: 'Date', size: '200px', align: 'end' },
+  { property: 'percent', header: 'Percent', size: '100px', align: 'end' },
+  { property: 'paid', header: 'Paid', size: '100px', align: 'end' },
 ];
 
 const columnsDefault = [
   { property: 'name', header: 'Name' },
   { property: 'location', header: 'Location' },
-  { property: 'date', header: 'Date', align: 'right'  },
-  { property: 'percent', header: 'Percent', align: 'right'  },
-  { property: 'paid', header: 'Paid', align: 'right'  },
+  { property: 'date', header: 'Date', align: 'end' },
+  { property: 'percent', header: 'Percent', align: 'end' },
+  { property: 'paid', header: 'Paid', align: 'end' },
 ];
 
 const Example = () => (
   <Grommet theme={grommet}>
-    <Box fill='horizontal' pad='medium'>
-    <Heading level='3'> Default DataTable</Heading>
+    <Box fill="horizontal" pad="medium">
+      <Heading level="3"> Default DataTable</Heading>
       <DataTable
         columns={columnsDefault}
         data={DATA}
@@ -107,12 +114,11 @@ const Example = () => (
           side: 'vertical',
           size: '1px',
         }}
-
       />
     </Box>
 
-    <Box fill='horizontal' pad='medium'>
-      <Heading level='3'>Theme Column Sizes</Heading>
+    <Box fill="horizontal" pad="medium">
+      <Heading level="3">Theme Column Sizes</Heading>
       <DataTable
         columns={columnsThemeSize}
         data={DATA}
@@ -126,8 +132,8 @@ const Example = () => (
       />
     </Box>
 
-    <Box fill='horizontal' pad='medium'>
-      <Heading level='3'>Absolute Column Sizes</Heading>
+    <Box fill="horizontal" pad="medium">
+      <Heading level="3">Absolute Column Sizes</Heading>
       <DataTable
         columns={columnsAbsoluteSize}
         data={DATA}
@@ -141,8 +147,8 @@ const Example = () => (
       />
     </Box>
 
-    <Box fill='horizontal' pad='medium'>
-      <Heading level='3'>Relative Column Sizes</Heading>
+    <Box fill="horizontal" pad="medium">
+      <Heading level="3">Relative Column Sizes</Heading>
       <DataTable
         columns={columnsRelativeSize}
         data={DATA}
@@ -158,4 +164,33 @@ const Example = () => (
   </Grommet>
 );
 
+const ExampleResizable = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="medium">
+      <Heading level="3">Large table with resizeable</Heading>
+      <DataTable
+        columns={columnsThemeSize}
+        data={DATA}
+        step={10}
+        primaryKey={false}
+        resizeable
+      />
+    </Box>
+
+    <Box align="center" pad="medium">
+      <Heading level="3">Small table with resizeable</Heading>
+      <DataTable
+        columns={columnsReize}
+        data={DATA}
+        step={10}
+        primaryKey={false}
+        resizeable
+      />
+    </Box>
+  </Grommet>
+);
 storiesOf('DataTable', module).add('Column Sizes', () => <Example />);
+
+storiesOf('DataTable', module).add('Column Sizes resizeable', () => (
+  <ExampleResizable />
+));
