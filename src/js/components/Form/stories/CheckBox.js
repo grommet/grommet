@@ -7,9 +7,9 @@ const FormFieldCheckBox = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Form>
-        <FormField label="Label" htmlFor="check-box" {...props}>
+        <FormField label="Label" name="checkbox" htmlFor="check-box" {...props}>
           <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-            <CheckBox id="check-box" label="CheckBox" />
+            <CheckBox id="check-box" name="checkbox" label="CheckBox" />
           </Box>
         </FormField>
       </Form>

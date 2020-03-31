@@ -100,6 +100,7 @@ const Select = forwardRef(
     const [value, setValue] = formContext.useFormContext(
       name,
       normalizedValueProp,
+      '',
     );
 
     // track which options are present in the value
