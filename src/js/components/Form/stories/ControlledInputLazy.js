@@ -25,6 +25,15 @@ const Example = () => {
   const [selectValue, setSelectValue] = React.useState();
   const [textAreaValue, setTextAreaValue] = React.useState();
   const [rangeInputValue, setRangeInputValue] = React.useState();
+  React.useEffect(() => {
+    setTextInputValue('initial');
+    setMaskedInputValue('initial@my.com');
+    setCheckBoxValue(true);
+    setRadioButtonValue('evening');
+    setSelectValue('large');
+    setTextAreaValue('initial');
+    setRangeInputValue(60);
+  }, []);
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
@@ -114,4 +123,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled Input', () => <Example />);
+storiesOf('Form', module).add('Controlled Input lazy', () => <Example />);

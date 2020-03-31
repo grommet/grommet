@@ -18,17 +18,11 @@ import {
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
-  const [value, setValue] = React.useState({});
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
-          <Form
-            value={value}
-            onChange={nextValue => setValue(nextValue)}
-            onReset={() => setValue({})}
-            onSubmit={event => console.log('Submit', event.value)}
-          >
+          <Form onSubmit={event => console.log('Submit', event.value)}>
             <FormField label="Name" name="name">
               <TextInput name="name" />
             </FormField>
@@ -71,4 +65,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled', () => <Example />);
+storiesOf('Form', module).add('Uncontrolled', () => <Example />);
