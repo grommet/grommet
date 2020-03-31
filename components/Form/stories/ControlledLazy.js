@@ -11,9 +11,21 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Example = function Example() {
-  var _React$useState = _react["default"].useState({}),
+  var _React$useState = _react["default"].useState(undefined),
       value = _React$useState[0],
       setValue = _React$useState[1];
+
+  _react["default"].useEffect(function () {
+    return setValue({
+      name: 'initial',
+      email: 'initial@my.com',
+      subscribe: true,
+      ampm: 'evening',
+      size: 'large',
+      comments: 'initial',
+      age: 60
+    });
+  }, []);
 
   return _react["default"].createElement(_grommet.Grommet, {
     full: true,
@@ -107,6 +119,6 @@ var Example = function Example() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Controlled', function () {
+(0, _react2.storiesOf)('Form', module).add('Controlled lazy', function () {
   return _react["default"].createElement(Example, null);
 });

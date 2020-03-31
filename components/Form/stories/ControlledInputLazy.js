@@ -1,47 +1,64 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _react2 = require("@storybook/react");
+
+var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Example = function Example() {
-  var _React$useState = React.useState(),
+  var _React$useState = _react["default"].useState(),
       textInputValue = _React$useState[0],
       setTextInputValue = _React$useState[1];
 
-  var _React$useState2 = React.useState(),
+  var _React$useState2 = _react["default"].useState(),
       maskedInputValue = _React$useState2[0],
       setMaskedInputValue = _React$useState2[1];
 
-  var _React$useState3 = React.useState(),
+  var _React$useState3 = _react["default"].useState(),
       checkBoxValue = _React$useState3[0],
       setCheckBoxValue = _React$useState3[1];
 
-  var _React$useState4 = React.useState(),
+  var _React$useState4 = _react["default"].useState(),
       radioButtonGroupValue = _React$useState4[0],
       setRadioButtonValue = _React$useState4[1];
 
-  var _React$useState5 = React.useState(),
+  var _React$useState5 = _react["default"].useState(),
       selectValue = _React$useState5[0],
       setSelectValue = _React$useState5[1];
 
-  var _React$useState6 = React.useState(),
+  var _React$useState6 = _react["default"].useState(),
       textAreaValue = _React$useState6[0],
       setTextAreaValue = _React$useState6[1];
 
-  var _React$useState7 = React.useState(),
+  var _React$useState7 = _react["default"].useState(),
       rangeInputValue = _React$useState7[0],
       setRangeInputValue = _React$useState7[1];
 
-  return React.createElement(Grommet, {
+  _react["default"].useEffect(function () {
+    setTextInputValue('initial');
+    setMaskedInputValue('initial@my.com');
+    setCheckBoxValue(true);
+    setRadioButtonValue('evening');
+    setSelectValue('large');
+    setTextAreaValue('initial');
+    setRangeInputValue(60);
+  }, []);
+
+  return _react["default"].createElement(_grommet.Grommet, {
     full: true,
-    theme: grommet
-  }, React.createElement(Box, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, React.createElement(Form, {
+  }, _react["default"].createElement(_grommet.Form, {
     onReset: function onReset() {
       setTextInputValue(undefined);
       setMaskedInputValue(undefined);
@@ -54,20 +71,20 @@ var Example = function Example() {
     onSubmit: function onSubmit(event) {
       return console.log('Submit', event.value);
     }
-  }, React.createElement(FormField, {
+  }, _react["default"].createElement(_grommet.FormField, {
     label: "Name",
     name: "name"
-  }, React.createElement(TextInput, {
+  }, _react["default"].createElement(_grommet.TextInput, {
     name: "name",
     value: textInputValue,
     onChange: function onChange(event) {
       return setTextInputValue(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), _react["default"].createElement(_grommet.FormField, {
     label: "Email",
     name: "email",
     required: true
-  }, React.createElement(MaskedInput, {
+  }, _react["default"].createElement(_grommet.MaskedInput, {
     name: "email",
     mask: [{
       regexp: /^[\w\-_.]+$/,
@@ -87,48 +104,48 @@ var Example = function Example() {
     onChange: function onChange(event) {
       return setMaskedInputValue(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), _react["default"].createElement(_grommet.FormField, {
     name: "subscribe"
-  }, React.createElement(CheckBox, {
+  }, _react["default"].createElement(_grommet.CheckBox, {
     name: "subscribe",
     label: "Subscribe?",
     checked: checkBoxValue,
     onChange: function onChange(event) {
       return setCheckBoxValue(event.target.checked);
     }
-  })), React.createElement(FormField, {
+  })), _react["default"].createElement(_grommet.FormField, {
     name: "ampm"
-  }, React.createElement(RadioButtonGroup, {
+  }, _react["default"].createElement(_grommet.RadioButtonGroup, {
     name: "ampm",
     options: ['morning', 'evening'],
     value: radioButtonGroupValue,
     onChange: function onChange(event) {
       return setRadioButtonValue(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), _react["default"].createElement(_grommet.FormField, {
     label: "Size",
     name: "size"
-  }, React.createElement(Select, {
+  }, _react["default"].createElement(_grommet.Select, {
     name: "size",
     options: ['small', 'medium', 'large'],
     value: selectValue,
     onChange: function onChange(event) {
       return setSelectValue(event.option);
     }
-  })), React.createElement(FormField, {
+  })), _react["default"].createElement(_grommet.FormField, {
     label: "Comments",
     name: "comments"
-  }, React.createElement(TextArea, {
+  }, _react["default"].createElement(_grommet.TextArea, {
     name: "comments",
     value: textAreaValue,
     onChange: function onChange(event) {
       return setTextAreaValue(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), _react["default"].createElement(_grommet.FormField, {
     label: "Age",
     name: "age",
     pad: true
-  }, React.createElement(RangeInput, {
+  }, _react["default"].createElement(_grommet.RangeInput, {
     name: "age",
     min: 15,
     max: 75,
@@ -136,24 +153,24 @@ var Example = function Example() {
     onChange: function onChange(event) {
       return setRangeInputValue(event.target.value);
     }
-  })), React.createElement(Box, {
+  })), _react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, React.createElement(Button, {
+  }, _react["default"].createElement(_grommet.Button, {
     label: "Cancel"
-  }), React.createElement(Button, {
+  }), _react["default"].createElement(_grommet.Button, {
     type: "reset",
     label: "Reset"
-  }), React.createElement(Button, {
+  }), _react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "Update",
     primary: true
   }))))));
 };
 
-storiesOf('Form', module).add('Controlled Input', function () {
-  return React.createElement(Example, null);
+(0, _react2.storiesOf)('Form', module).add('Controlled Input lazy', function () {
+  return _react["default"].createElement(Example, null);
 });

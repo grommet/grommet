@@ -53,17 +53,18 @@ var Form = forwardRef(function (_ref, ref) {
       _onSubmit = _ref.onSubmit,
       _ref$validate = _ref.validate,
       validate = _ref$validate === void 0 ? 'submit' : _ref$validate,
-      _ref$value = _ref.value,
-      valueProp = _ref$value === void 0 ? defaultValue : _ref$value,
+      valueProp = _ref.value,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "validate", "value"]);
 
-  var _useState = useState(valueProp),
+  var _useState = useState(valueProp || defaultValue),
       value = _useState[0],
       setValue = _useState[1];
 
   useEffect(function () {
-    if (valueProp !== defaultValue) setValue(valueProp);
-  }, [valueProp]);
+    if (valueProp !== undefined && valueProp !== value) {
+      setValue(valueProp);
+    }
+  }, [value, valueProp]);
 
   var _useState2 = useState(messagesProp),
       messages = _useState2[0],
@@ -94,9 +95,6 @@ var Form = forwardRef(function (_ref, ref) {
       setTouched = _useState5[1];
 
   var validations = useRef({});
-  useEffect(function () {
-    if (onChange && value !== valueProp) onChange(value);
-  }, [onChange, value, valueProp]);
   useEffect(function () {}, [value, errors, infos]);
   var update = useCallback(function (name, data, initial) {
     setValue(function (prevValue) {
@@ -129,6 +127,7 @@ var Form = forwardRef(function (_ref, ref) {
         });
         return nextInfos;
       });
+      if (onChange) onChange(nextValue);
       return nextValue;
     });
     if (!initial) setTouched(function (prevTouched) {
@@ -137,18 +136,24 @@ var Form = forwardRef(function (_ref, ref) {
       nextTouched[name] = true;
       return nextTouched;
     });
-  }, []);
+  }, [onChange]);
 
-  var useFormContext = function useFormContext(name, componentValue) {
-    var valueData = name && value[name];
+  var useFormContext = function useFormContext(name, componentValue, defaultComponentValue) {
+    var valueData = name && value[name] || defaultComponentValue;
 
     var _useState6 = useState(componentValue !== undefined ? componentValue : valueData),
         data = _useState6[0],
         setData = _useState6[1];
 
-    if (componentValue !== undefined && componentValue !== data) {
-      setData(componentValue);
-      if (name) update(name, componentValue);
+    if (componentValue !== undefined) {
+      if (componentValue !== data) {
+        setData(componentValue);
+        if (name) update(name, componentValue);
+      } else if (name && value[name] === undefined) {
+        update(name, componentValue, true);
+      }
+    } else if (valueData !== data) {
+      setData(valueData);
     }
 
     return [data, function (nextData) {

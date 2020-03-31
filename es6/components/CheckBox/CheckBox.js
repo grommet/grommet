@@ -39,7 +39,7 @@ var CheckBox = forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, checkedProp),
+  var _formContext$useFormC = formContext.useFormContext(name, checkedProp, false),
       checked = _formContext$useFormC[0],
       setChecked = _formContext$useFormC[1];
 

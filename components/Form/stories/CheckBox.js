@@ -18,6 +18,7 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
     pad: "large"
   }, _react["default"].createElement(_grommet.Form, null, _react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
+    name: "checkbox",
     htmlFor: "check-box"
   }, props), _react["default"].createElement(_grommet.Box, {
     pad: {
@@ -26,6 +27,7 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
     }
   }, _react["default"].createElement(_grommet.CheckBox, {
     id: "check-box",
+    name: "checkbox",
     label: "CheckBox"
   }))))));
 };

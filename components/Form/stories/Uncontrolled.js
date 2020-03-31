@@ -11,10 +11,6 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Example = function Example() {
-  var _React$useState = _react["default"].useState({}),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
   return _react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
@@ -25,13 +21,6 @@ var Example = function Example() {
   }, _react["default"].createElement(_grommet.Box, {
     width: "medium"
   }, _react["default"].createElement(_grommet.Form, {
-    value: value,
-    onChange: function onChange(nextValue) {
-      return setValue(nextValue);
-    },
-    onReset: function onReset() {
-      return setValue({});
-    },
     onSubmit: function onSubmit(event) {
       return console.log('Submit', event.value);
     }
@@ -107,6 +96,6 @@ var Example = function Example() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Controlled', function () {
+(0, _react2.storiesOf)('Form', module).add('Uncontrolled', function () {
   return _react["default"].createElement(Example, null);
 });

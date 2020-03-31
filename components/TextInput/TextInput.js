@@ -106,7 +106,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
   var suggestionRefs = {}; // if this is a readOnly property, don't set a name with the form context
   // this allows Select to control the form context for the name.
 
-  var _formContext$useFormC = formContext.useFormContext(readOnly ? undefined : name, valueProp),
+  var _formContext$useFormC = formContext.useFormContext(readOnly ? undefined : name, valueProp, ''),
       value = _formContext$useFormC[0],
       setValue = _formContext$useFormC[1];
 

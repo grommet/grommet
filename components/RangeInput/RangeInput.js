@@ -27,7 +27,7 @@ var RangeInput = (0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp, 0),
       value = _formContext$useFormC[0],
       setValue = _formContext$useFormC[1];
 

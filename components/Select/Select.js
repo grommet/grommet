@@ -117,7 +117,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
     return valueProp;
   }, [valueKey, valueProp]);
 
-  var _formContext$useFormC = formContext.useFormContext(name, normalizedValueProp),
+  var _formContext$useFormC = formContext.useFormContext(name, normalizedValueProp, ''),
       value = _formContext$useFormC[0],
       setValue = _formContext$useFormC[1]; // track which options are present in the value
 

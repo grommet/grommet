@@ -38,8 +38,7 @@ var Message = function Message(_ref) {
 };
 
 var FormField = forwardRef(function (_ref2, ref) {
-  var checked = _ref2.checked,
-      children = _ref2.children,
+  var children = _ref2.children,
       className = _ref2.className,
       component = _ref2.component,
       disabled = _ref2.disabled,
@@ -56,24 +55,10 @@ var FormField = forwardRef(function (_ref2, ref) {
       required = _ref2.required,
       style = _ref2.style,
       validate = _ref2.validate,
-      valueProp = _ref2.value,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["checked", "children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, ["children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate"]);
 
   var theme = useContext(ThemeContext);
   var context = useContext(FormContext);
-
-  var _useState = useState(valueProp),
-      value = _useState[0],
-      setValue = _useState[1];
-
-  useEffect(function () {
-    return setValue(valueProp);
-  }, [valueProp]);
-  useEffect(function () {
-    if (context && context.value && context.value[name] === undefined && (value !== undefined || checked !== undefined)) {
-      context.update(name, value !== undefined ? value : checked, true);
-    }
-  });
   useEffect(function () {
     if (context && context.addValidation) {
       var addValidation = context.addValidation,
@@ -133,9 +118,9 @@ var FormField = forwardRef(function (_ref2, ref) {
     return undefined;
   }, [context, error, name, required, validate]);
 
-  var _useState2 = useState(),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
+  var _useState = useState(),
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   var renderInput = function renderInput(formValue, invalid) {
     var Input = component || TextInput;
@@ -144,7 +129,6 @@ var FormField = forwardRef(function (_ref2, ref) {
       return React.createElement(Input, _extends({
         name: name,
         label: label,
-        checked: formValue[name] !== undefined ? formValue[name] : checked || false,
         disabled: disabled,
         "aria-invalid": invalid || undefined
       }, rest));
@@ -152,7 +136,7 @@ var FormField = forwardRef(function (_ref2, ref) {
 
     return React.createElement(Input, _extends({
       name: name,
-      value: formValue[name] !== undefined ? formValue[name] : valueProp || '',
+      value: !isGrommetInput(component) ? formValue[name] : undefined,
       disabled: disabled,
       plain: true,
       focusIndicator: false,

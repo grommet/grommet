@@ -32,6 +32,15 @@ var Example = function Example() {
       rangeInputValue = _React$useState7[0],
       setRangeInputValue = _React$useState7[1];
 
+  React.useEffect(function () {
+    setTextInputValue('initial');
+    setMaskedInputValue('initial@my.com');
+    setCheckBoxValue(true);
+    setRadioButtonValue('evening');
+    setSelectValue('large');
+    setTextAreaValue('initial');
+    setRangeInputValue(60);
+  }, []);
   return React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -154,6 +163,6 @@ var Example = function Example() {
   }))))));
 };
 
-storiesOf('Form', module).add('Controlled Input', function () {
+storiesOf('Form', module).add('Controlled Input lazy', function () {
   return React.createElement(Example, null);
 });

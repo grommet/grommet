@@ -56,7 +56,7 @@ var CheckBox = (0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, checkedProp),
+  var _formContext$useFormC = formContext.useFormContext(name, checkedProp, false),
       checked = _formContext$useFormC[0],
       setChecked = _formContext$useFormC[1];
 

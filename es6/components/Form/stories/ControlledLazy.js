@@ -4,10 +4,21 @@ import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButt
 import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
-  var _React$useState = React.useState({}),
+  var _React$useState = React.useState(undefined),
       value = _React$useState[0],
       setValue = _React$useState[1];
 
+  React.useEffect(function () {
+    return setValue({
+      name: 'initial',
+      email: 'initial@my.com',
+      subscribe: true,
+      ampm: 'evening',
+      size: 'large',
+      comments: 'initial',
+      age: 60
+    });
+  }, []);
   return React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -100,6 +111,6 @@ var Example = function Example() {
   }))))));
 };
 
-storiesOf('Form', module).add('Controlled', function () {
+storiesOf('Form', module).add('Controlled lazy', function () {
   return React.createElement(Example, null);
 });

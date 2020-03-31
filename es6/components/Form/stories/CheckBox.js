@@ -12,6 +12,7 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
     pad: "large"
   }, React.createElement(Form, null, React.createElement(FormField, _extends({
     label: "Label",
+    name: "checkbox",
     htmlFor: "check-box"
   }, props), React.createElement(Box, {
     pad: {
@@ -20,6 +21,7 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
     }
   }, React.createElement(CheckBox, {
     id: "check-box",
+    name: "checkbox",
     label: "CheckBox"
   }))))));
 };
