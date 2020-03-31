@@ -18,7 +18,20 @@ import {
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
-  const [value, setValue] = React.useState({});
+  const [value, setValue] = React.useState(undefined);
+  React.useEffect(
+    () =>
+      setValue({
+        name: 'initial',
+        email: 'initial@my.com',
+        subscribe: true,
+        ampm: 'evening',
+        size: 'large',
+        comments: 'initial',
+        age: 60,
+      }),
+    [],
+  );
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
@@ -71,4 +84,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled', () => <Example />);
+storiesOf('Form', module).add('Controlled lazy', () => <Example />);
