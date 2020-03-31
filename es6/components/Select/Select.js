@@ -186,7 +186,7 @@ var Select = forwardRef(function (_ref, ref) {
   var inputValue = useMemo(function () {
     if (!selectValue) {
       if (Array.isArray(valueOptions)) {
-        if (valueOptions.length === 0) return undefined;
+        if (valueOptions.length === 0) return '';
 
         if (valueOptions.length === 1) {
           var valueOption = valueOptions[0];
