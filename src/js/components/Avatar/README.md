@@ -26,8 +26,7 @@ string
 
 **src**
 
-Specifies a URL string for an avatar image, 
-      or any node element.
+Specifies a URL string for an avatar image.
 
 ```
 string

@@ -12,7 +12,7 @@ const TextArea = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
 
     const [focus, setFocus] = useState();
     return (
