@@ -7052,7 +7052,7 @@ User agent used to detect the device width for setting the initial
 string
 \`\`\`
 
-**containerRoot**
+**containerTarget**
 
 The node where Drop and Layer containers are inserted. Defaults to
       document.body which is almost always the right choice. This is used

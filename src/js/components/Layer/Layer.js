@@ -5,16 +5,16 @@ import { getNewContainer } from '../../utils';
 
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
-import { ContainerRootContext } from '../../contexts/ContainerRootContext';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 
 const Layer = forwardRef((props, ref) => {
   const { animate, animation } = props;
   const [originalFocusedElement, setOriginalFocusedElement] = useState();
   useEffect(() => setOriginalFocusedElement(document.activeElement), []);
   const [layerContainer, setLayerContainer] = useState();
-  const containerRoot = useContext(ContainerRootContext);
-  useEffect(() => setLayerContainer(getNewContainer(containerRoot)), [
-    containerRoot,
+  const containerTarget = useContext(ContainerTargetContext);
+  useEffect(() => setLayerContainer(getNewContainer(containerTarget)), [
+    containerTarget,
   ]);
 
   // just a few things to clean up when the Layer is unmounted
@@ -41,7 +41,7 @@ const Layer = forwardRef((props, ref) => {
           // animate out and remove later
           const layerClone = layerContainer.cloneNode(true);
           layerClone.id = 'layerClone';
-          containerRoot.appendChild(layerClone);
+          containerTarget.appendChild(layerClone);
           const clonedContainer = layerClone.querySelector(
             '[class*="StyledLayer__StyledContainer"]',
           );
@@ -52,16 +52,22 @@ const Layer = forwardRef((props, ref) => {
             // we add the id and query here so the unit tests work
             const clone = document.getElementById('layerClone');
             if (clone) {
-              containerRoot.removeChild(clone);
+              containerTarget.removeChild(clone);
               layerContainer.remove();
             }
           }, animationDuration);
         } else {
-          containerRoot.removeChild(layerContainer);
+          containerTarget.removeChild(layerContainer);
         }
       }
     },
-    [animate, animation, containerRoot, layerContainer, originalFocusedElement],
+    [
+      animate,
+      animation,
+      containerTarget,
+      layerContainer,
+      originalFocusedElement,
+    ],
   );
 
   return layerContainer

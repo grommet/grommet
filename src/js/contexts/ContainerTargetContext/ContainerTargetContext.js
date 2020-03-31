@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ContainerRootContext = React.createContext(
+export const ContainerTargetContext = React.createContext(
   typeof document === 'object' ? document.body : undefined,
 );

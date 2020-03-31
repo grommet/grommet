@@ -298,7 +298,7 @@ describe('Layer', () => {
     }, 1000);
   });
 
-  test('default containerRoot', () => {
+  test('default containerTarget', () => {
     render(
       <Grommet>
         <Layer data-testid="layer">Test</Layer>
@@ -309,20 +309,20 @@ describe('Layer', () => {
     expect(actualRoot).toBe(document.body);
   });
 
-  test('custom containerRoot', () => {
-    const root = document.createElement('div');
-    document.body.appendChild(root);
+  test('custom containerTarget', () => {
+    const target = document.createElement('div');
+    document.body.appendChild(target);
     try {
       render(
-        <Grommet containerRoot={root}>
+        <Grommet containerTarget={target}>
           <Layer data-testid="layer">Test</Layer>
         </Grommet>,
       );
       const layer = getByTestId(document, 'layer');
       const actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
-      expect(actualRoot).toBe(root);
+      expect(actualRoot).toBe(target);
     } finally {
-      document.body.removeChild(root);
+      document.body.removeChild(target);
     }
   });
 });

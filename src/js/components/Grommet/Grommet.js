@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import {
   ResponsiveContext,
   ThemeContext,
-  ContainerRootContext,
+  ContainerTargetContext,
 } from '../../contexts';
 
 import {
@@ -123,7 +123,7 @@ class Grommet extends Component {
     const {
       children,
       full,
-      containerRoot = document.body,
+      containerTarget = document.body,
       ...rest
     } = this.props;
     delete rest.theme;
@@ -139,12 +139,12 @@ class Grommet extends Component {
     return (
       <ThemeContext.Provider value={theme}>
         <ResponsiveContext.Provider value={responsive}>
-          <ContainerRootContext.Provider value={containerRoot}>
+          <ContainerTargetContext.Provider value={containerTarget}>
             <StyledGrommet full={full} {...rest}>
               {children}
             </StyledGrommet>
             {full && <FullGlobalStyle />}
-          </ContainerRootContext.Provider>
+          </ContainerTargetContext.Provider>
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
     );

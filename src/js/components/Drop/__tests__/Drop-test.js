@@ -27,7 +27,13 @@ class TestInput extends Component {
   }
 
   render() {
-    const { inputProps, theme, elevation, containerRoot, ...rest } = this.props;
+    const {
+      inputProps,
+      theme,
+      elevation,
+      containerTarget,
+      ...rest
+    } = this.props;
     const { showDrop } = this.state;
     let drop;
     if (showDrop) {
@@ -43,7 +49,7 @@ class TestInput extends Component {
       );
     }
     return (
-      <Grommet theme={theme} containerRoot={containerRoot}>
+      <Grommet theme={theme} containerTarget={containerTarget}>
         <input ref={this.inputRef} {...inputProps} />
         {drop}
       </Grommet>
@@ -161,23 +167,23 @@ describe('Drop', () => {
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('default containerRoot', () => {
+  test('default containerTarget', () => {
     const { getByTestId } = render(<TestInput data-testid="drop" />);
     const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
     expect(actualRoot).toBe(document.body);
   });
 
-  test('custom containerRoot', () => {
-    const root = document.createElement('div');
-    document.body.appendChild(root);
+  test('custom containerTarget', () => {
+    const target = document.createElement('div');
+    document.body.appendChild(target);
     try {
       const { getByTestId } = render(
-        <TestInput data-testid="drop" containerRoot={root} />,
+        <TestInput data-testid="drop" containerTarget={target} />,
       );
       const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
-      expect(actualRoot).toBe(root);
+      expect(actualRoot).toBe(target);
     } finally {
-      document.body.removeChild(root);
+      document.body.removeChild(target);
     }
   });
 });

@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
 import { DropContainer } from './DropContainer';
-import { ContainerRootContext } from '../../contexts/ContainerRootContext';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 
 const Drop = forwardRef(
   (
@@ -18,9 +18,9 @@ const Drop = forwardRef(
     const [originalFocusedElement, setOriginalFocusedElement] = useState();
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
-    const containerRoot = useContext(ContainerRootContext);
-    useEffect(() => setDropContainer(getNewContainer(containerRoot)), [
-      containerRoot,
+    const containerTarget = useContext(ContainerTargetContext);
+    useEffect(() => setDropContainer(getNewContainer(containerTarget)), [
+      containerTarget,
     ]);
 
     // just a few things to clean up when the Drop is unmounted
@@ -38,10 +38,10 @@ const Drop = forwardRef(
           }
         }
         if (dropContainer) {
-          containerRoot.removeChild(dropContainer);
+          containerTarget.removeChild(dropContainer);
         }
       },
-      [containerRoot, dropContainer, originalFocusedElement, restrictFocus],
+      [containerTarget, dropContainer, originalFocusedElement, restrictFocus],
     );
 
     return dropContainer
