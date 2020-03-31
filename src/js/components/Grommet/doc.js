@@ -43,7 +43,8 @@ export const doc = Grommet => {
     containerRoot: PropTypes.object.description(
       `The node where Drop and Layer containers are inserted. Defaults to
       document.body which is almost always the right choice. This is used
-      for less common cases like rendering within an internal node (e.g shadow root).`,
+      for less common cases like rendering within an internal node (e.g.
+      shadow root).`,
     ),
   };
 
