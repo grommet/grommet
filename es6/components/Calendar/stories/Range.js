@@ -10,6 +10,7 @@ var RangeCalendar = function RangeCalendar() {
     align: "center",
     pad: "large"
   }, React.createElement(Calendar, {
+    dates: [['2020-04-03', '2020-04-08']],
     range: true
   })));
 };

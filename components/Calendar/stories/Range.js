@@ -17,6 +17,7 @@ var RangeCalendar = function RangeCalendar() {
     align: "center",
     pad: "large"
   }, _react["default"].createElement(_grommet.Calendar, {
+    dates: [['2020-04-03', '2020-04-08']],
     range: true
   })));
 };

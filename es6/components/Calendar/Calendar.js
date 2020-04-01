@@ -220,7 +220,7 @@ var Calendar = forwardRef(function (_ref, ref) {
       var priorDates = dates[0].map(function (d) {
         return new Date(d);
       });
-      var previousDate = new Date(lastSelectedDate);
+      var previousDate = new Date(lastSelectedDate || dates[0][0]);
 
       var _selDate = new Date(selectedDate);
 
