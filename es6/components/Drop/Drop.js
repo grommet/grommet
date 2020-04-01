@@ -2,10 +2,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 var Drop = forwardRef(function (_ref, ref) {
   var restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
@@ -23,9 +24,10 @@ var Drop = forwardRef(function (_ref, ref) {
       dropContainer = _useState2[0],
       setDropContainer = _useState2[1];
 
+  var containerTarget = useContext(ContainerTargetContext);
   useEffect(function () {
-    return setDropContainer(getNewContainer());
-  }, []); // just a few things to clean up when the Drop is unmounted
+    return setDropContainer(getNewContainer(containerTarget));
+  }, [containerTarget]); // just a few things to clean up when the Drop is unmounted
 
   useEffect(function () {
     return function () {
@@ -39,10 +41,10 @@ var Drop = forwardRef(function (_ref, ref) {
       }
 
       if (dropContainer) {
-        document.body.removeChild(dropContainer);
+        containerTarget.removeChild(dropContainer);
       }
     };
-  }, [dropContainer, originalFocusedElement, restrictFocus]);
+  }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
   return dropContainer ? createPortal(React.createElement(DropContainer, _extends({
     ref: ref,
     dropTarget: dropTarget,

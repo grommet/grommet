@@ -68,10 +68,14 @@ var getBodyChildElements = function getBodyChildElements() {
 
 exports.getBodyChildElements = getBodyChildElements;
 
-var getNewContainer = function getNewContainer() {
+var getNewContainer = function getNewContainer(rootNode) {
+  if (rootNode === void 0) {
+    rootNode = document.body;
+  }
+
   // setup DOM
   var container = document.createElement('div');
-  document.body.appendChild(container);
+  rootNode.appendChild(container);
   return container;
 };
 

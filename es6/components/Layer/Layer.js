@@ -1,10 +1,11 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { getNewContainer } from '../../utils';
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 var Layer = forwardRef(function (props, ref) {
   var animate = props.animate,
       animation = props.animation;
@@ -21,9 +22,10 @@ var Layer = forwardRef(function (props, ref) {
       layerContainer = _useState2[0],
       setLayerContainer = _useState2[1];
 
+  var containerTarget = useContext(ContainerTargetContext);
   useEffect(function () {
-    return setLayerContainer(getNewContainer());
-  }, []); // just a few things to clean up when the Layer is unmounted
+    return setLayerContainer(getNewContainer(containerTarget));
+  }, [containerTarget]); // just a few things to clean up when the Layer is unmounted
 
   useEffect(function () {
     return function () {
@@ -48,7 +50,7 @@ var Layer = forwardRef(function (props, ref) {
           // animate out and remove later
           var layerClone = layerContainer.cloneNode(true);
           layerClone.id = 'layerClone';
-          document.body.appendChild(layerClone);
+          containerTarget.appendChild(layerClone);
           var clonedContainer = layerClone.querySelector('[class*="StyledLayer__StyledContainer"]');
 
           if (clonedContainer && clonedContainer.style) {
@@ -60,16 +62,16 @@ var Layer = forwardRef(function (props, ref) {
             var clone = document.getElementById('layerClone');
 
             if (clone) {
-              document.body.removeChild(clone);
+              containerTarget.removeChild(clone);
               layerContainer.remove();
             }
           }, animationDuration);
         } else {
-          document.body.removeChild(layerContainer);
+          containerTarget.removeChild(layerContainer);
         }
       }
     };
-  }, [animate, animation, layerContainer, originalFocusedElement]);
+  }, [animate, animation, containerTarget, layerContainer, originalFocusedElement]);
   return layerContainer ? createPortal(React.createElement(LayerContainer, _extends({
     ref: ref
   }, props)), layerContainer) : null;

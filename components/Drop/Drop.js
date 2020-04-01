@@ -11,6 +11,8 @@ var _utils = require("../../utils");
 
 var _DropContainer = require("./DropContainer");
 
+var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -36,9 +38,10 @@ var Drop = (0, _react.forwardRef)(function (_ref, ref) {
       dropContainer = _useState2[0],
       setDropContainer = _useState2[1];
 
+  var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
   (0, _react.useEffect)(function () {
-    return setDropContainer((0, _utils.getNewContainer)());
-  }, []); // just a few things to clean up when the Drop is unmounted
+    return setDropContainer((0, _utils.getNewContainer)(containerTarget));
+  }, [containerTarget]); // just a few things to clean up when the Drop is unmounted
 
   (0, _react.useEffect)(function () {
     return function () {
@@ -52,10 +55,10 @@ var Drop = (0, _react.forwardRef)(function (_ref, ref) {
       }
 
       if (dropContainer) {
-        document.body.removeChild(dropContainer);
+        containerTarget.removeChild(dropContainer);
       }
     };
-  }, [dropContainer, originalFocusedElement, restrictFocus]);
+  }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
   return dropContainer ? (0, _reactDom.createPortal)(_react["default"].createElement(_DropContainer.DropContainer, _extends({
     ref: ref,
     dropTarget: dropTarget,

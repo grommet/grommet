@@ -160,7 +160,9 @@ function (_Component) {
     var _this$props = this.props,
         children = _this$props.children,
         full = _this$props.full,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "full"]);
+        _this$props$container = _this$props.containerTarget,
+        containerTarget = _this$props$container === void 0 ? document.body : _this$props$container,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "full", "containerTarget"]);
 
     delete rest.theme;
     var _this$state2 = this.state,
@@ -173,9 +175,11 @@ function (_Component) {
       value: theme
     }, _react["default"].createElement(_contexts.ResponsiveContext.Provider, {
       value: responsive
+    }, _react["default"].createElement(_contexts.ContainerTargetContext.Provider, {
+      value: containerTarget
     }, _react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
       full: full
-    }, rest), children), full && _react["default"].createElement(FullGlobalStyle, null)));
+    }, rest), children), full && _react["default"].createElement(FullGlobalStyle, null))));
   };
 
   return Grommet;

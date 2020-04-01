@@ -22,7 +22,7 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { ResponsiveContext, ThemeContext } from '../../contexts';
+import { ResponsiveContext, ThemeContext, ContainerTargetContext } from '../../contexts';
 import { backgroundIsDark, deepMerge, getBreakpoint, getDeviceBreakpoint, normalizeColor } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
@@ -145,7 +145,9 @@ function (_Component) {
     var _this$props = this.props,
         children = _this$props.children,
         full = _this$props.full,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "full"]);
+        _this$props$container = _this$props.containerTarget,
+        containerTarget = _this$props$container === void 0 ? document.body : _this$props$container,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "full", "containerTarget"]);
 
     delete rest.theme;
     var _this$state2 = this.state,
@@ -158,9 +160,11 @@ function (_Component) {
       value: theme
     }, React.createElement(ResponsiveContext.Provider, {
       value: responsive
+    }, React.createElement(ContainerTargetContext.Provider, {
+      value: containerTarget
     }, React.createElement(StyledGrommet, _extends({
       full: full
-    }, rest), children), full && React.createElement(FullGlobalStyle, null)));
+    }, rest), children), full && React.createElement(FullGlobalStyle, null))));
   };
 
   return Grommet;

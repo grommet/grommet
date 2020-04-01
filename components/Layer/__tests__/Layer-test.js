@@ -270,4 +270,29 @@ describe('Layer', function () {
       expect((0, _dom.queryByTestId)(document, 'test-dom-removal')).toBeNull();
     }, 1000);
   });
+  test('default containerTarget', function () {
+    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      "data-testid": "layer"
+    }, "Test")));
+    var layer = (0, _dom.getByTestId)(document, 'layer');
+    var actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(document.body);
+  });
+  test('custom containerTarget', function () {
+    var target = document.createElement('div');
+    document.body.appendChild(target);
+
+    try {
+      (0, _react2.render)(_react["default"].createElement(_.Grommet, {
+        containerTarget: target
+      }, _react["default"].createElement(_.Layer, {
+        "data-testid": "layer"
+      }, "Test")));
+      var layer = (0, _dom.getByTestId)(document, 'layer');
+      var actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+      expect(actualRoot).toBe(target);
+    } finally {
+      document.body.removeChild(target);
+    }
+  });
 });

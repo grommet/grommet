@@ -13,6 +13,8 @@ var _LayerContainer = require("./LayerContainer");
 
 var _StyledLayer = require("./StyledLayer");
 
+var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35,9 +37,10 @@ var Layer = (0, _react.forwardRef)(function (props, ref) {
       layerContainer = _useState2[0],
       setLayerContainer = _useState2[1];
 
+  var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
   (0, _react.useEffect)(function () {
-    return setLayerContainer((0, _utils.getNewContainer)());
-  }, []); // just a few things to clean up when the Layer is unmounted
+    return setLayerContainer((0, _utils.getNewContainer)(containerTarget));
+  }, [containerTarget]); // just a few things to clean up when the Layer is unmounted
 
   (0, _react.useEffect)(function () {
     return function () {
@@ -62,7 +65,7 @@ var Layer = (0, _react.forwardRef)(function (props, ref) {
           // animate out and remove later
           var layerClone = layerContainer.cloneNode(true);
           layerClone.id = 'layerClone';
-          document.body.appendChild(layerClone);
+          containerTarget.appendChild(layerClone);
           var clonedContainer = layerClone.querySelector('[class*="StyledLayer__StyledContainer"]');
 
           if (clonedContainer && clonedContainer.style) {
@@ -74,16 +77,16 @@ var Layer = (0, _react.forwardRef)(function (props, ref) {
             var clone = document.getElementById('layerClone');
 
             if (clone) {
-              document.body.removeChild(clone);
+              containerTarget.removeChild(clone);
               layerContainer.remove();
             }
           }, _StyledLayer.animationDuration);
         } else {
-          document.body.removeChild(layerContainer);
+          containerTarget.removeChild(layerContainer);
         }
       }
     };
-  }, [animate, animation, layerContainer, originalFocusedElement]);
+  }, [animate, animation, containerTarget, layerContainer, originalFocusedElement]);
   return layerContainer ? (0, _reactDom.createPortal)(_react["default"].createElement(_LayerContainer.LayerContainer, _extends({
     ref: ref
   }, props)), layerContainer) : null;

@@ -9,6 +9,13 @@ Object.keys(_AnnounceContext).forEach(function (key) {
   exports[key] = _AnnounceContext[key];
 });
 
+var _ContainerTargetContext = require("./ContainerTargetContext");
+
+Object.keys(_ContainerTargetContext).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _ContainerTargetContext[key];
+});
+
 var _ResponsiveContext = require("./ResponsiveContext");
 
 Object.keys(_ResponsiveContext).forEach(function (key) {

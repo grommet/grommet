@@ -70,7 +70,8 @@ function (_Component) {
         inputProps = _this$props.inputProps,
         theme = _this$props.theme,
         elevation = _this$props.elevation,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["inputProps", "theme", "elevation"]);
+        containerTarget = _this$props.containerTarget,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["inputProps", "theme", "elevation", "containerTarget"]);
 
     var showDrop = this.state.showDrop;
     var drop;
@@ -84,7 +85,8 @@ function (_Component) {
     }
 
     return _react["default"].createElement(_Grommet.Grommet, {
-      theme: theme
+      theme: theme,
+      containerTarget: containerTarget
     }, _react["default"].createElement("input", _extends({
       ref: this.inputRef
     }, inputProps)), drop);
@@ -226,5 +228,31 @@ describe('Drop', function () {
       plain: true
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
+  });
+  test('default containerTarget', function () {
+    var _render = (0, _react2.render)(_react["default"].createElement(TestInput, {
+      "data-testid": "drop"
+    })),
+        getByTestId = _render.getByTestId;
+
+    var actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(document.body);
+  });
+  test('custom containerTarget', function () {
+    var target = document.createElement('div');
+    document.body.appendChild(target);
+
+    try {
+      var _render2 = (0, _react2.render)(_react["default"].createElement(TestInput, {
+        "data-testid": "drop",
+        containerTarget: target
+      })),
+          getByTestId = _render2.getByTestId;
+
+      var actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+      expect(actualRoot).toBe(target);
+    } finally {
+      document.body.removeChild(target);
+    }
   });
 });
