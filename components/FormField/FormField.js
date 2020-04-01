@@ -107,7 +107,8 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
       var validateField = function validateField(value2, data) {
         var result;
 
-        if (required && (value2 === undefined || value2 === '')) {
+        if (required && ( // false is for CheckBox
+        value2 === undefined || value2 === '' || value2 === false)) {
           result = messages.required;
         } else if (validate) {
           if (Array.isArray(validate)) {

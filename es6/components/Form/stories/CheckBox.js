@@ -1,20 +1,19 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, Form, FormField, CheckBox, Grommet } from 'grommet';
+import { grommet, Box, Button, Form, FormField, CheckBox, Grommet } from 'grommet';
 
-var FormFieldCheckBox = function FormFieldCheckBox(props) {
+var FormFieldCheckBox = function FormFieldCheckBox() {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Form, null, React.createElement(FormField, _extends({
+  }, React.createElement(Form, null, React.createElement(FormField, {
     label: "Label",
     name: "checkbox",
-    htmlFor: "check-box"
-  }, props), React.createElement(Box, {
+    htmlFor: "check-box",
+    required: true
+  }, React.createElement(Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
@@ -23,7 +22,10 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
     id: "check-box",
     name: "checkbox",
     label: "CheckBox"
-  }))))));
+  }))), React.createElement(Button, {
+    type: "submit",
+    label: "Submit"
+  }))));
 };
 
 storiesOf('Form', module).add('CheckBox', function () {

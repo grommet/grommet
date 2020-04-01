@@ -8,19 +8,18 @@ var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var FormFieldCheckBox = function FormFieldCheckBox(props) {
+var FormFieldCheckBox = function FormFieldCheckBox() {
   return _react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
   }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Form, null, _react["default"].createElement(_grommet.FormField, _extends({
+  }, _react["default"].createElement(_grommet.Form, null, _react["default"].createElement(_grommet.FormField, {
     label: "Label",
     name: "checkbox",
-    htmlFor: "check-box"
-  }, props), _react["default"].createElement(_grommet.Box, {
+    htmlFor: "check-box",
+    required: true
+  }, _react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
@@ -29,7 +28,10 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
     id: "check-box",
     name: "checkbox",
     label: "CheckBox"
-  }))))));
+  }))), _react["default"].createElement(_grommet.Button, {
+    type: "submit",
+    label: "Submit"
+  }))));
 };
 
 (0, _react2.storiesOf)('Form', module).add('CheckBox', function () {
