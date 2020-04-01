@@ -141,7 +141,7 @@ describe('Calendar', () => {
     const onSelect = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Calendar dates={DATES} onSelect={onSelect} />
+        <Calendar dates={DATES} onSelect={onSelect} animate={false} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
