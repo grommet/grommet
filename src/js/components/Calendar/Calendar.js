@@ -254,7 +254,7 @@ const Calendar = forwardRef(
         }
 
         setDates(nextDates);
-        setDate(nextDate);
+        if (!dates) setDate(nextDate);
         setActive(new Date(selectedDate));
         setLastSelectedDate(selectedDate);
         if (onSelect) onSelect(nextDates || nextDate);
