@@ -265,7 +265,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
     }
 
     setDates(nextDates);
-    setDate(nextDate);
+    if (!dates) setDate(nextDate);
     setActive(new Date(selectedDate));
     setLastSelectedDate(selectedDate);
     if (onSelect) onSelect(nextDates || nextDate);

@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import { FormNextLink } from "grommet-icons/es6/icons/FormNextLink";
 import { FormPreviousLink } from "grommet-icons/es6/icons/FormPreviousLink";
@@ -7,17 +8,20 @@ import { Box, Button, Calendar, Grommet, Text } from '../..';
 var DATE = '2018-01-15T00:00:00-08:00';
 var DATES = ['2018-01-12T00:00:00-08:00', ['2018-01-8T00:00:00-08:00', '2018-01-10T00:00:00-08:00']];
 describe('Calendar', function () {
+  afterEach(cleanup);
   test('date', function () {
     // need to set the date to avoid snapshot drift over time
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
-      date: DATE
+      date: DATE,
+      animate: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('dates', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
-      dates: DATES
+      dates: DATES,
+      animate: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -25,7 +29,8 @@ describe('Calendar', function () {
   test('daysOfWeek', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
       daysOfWeek: true,
-      dates: DATES
+      dates: DATES,
+      animate: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -33,13 +38,16 @@ describe('Calendar', function () {
   test('size', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
       size: "small",
-      date: DATE
+      date: DATE,
+      animate: false
     }), React.createElement(Calendar, {
       size: "medium",
-      date: DATE
+      date: DATE,
+      animate: false
     }), React.createElement(Calendar, {
       size: "large",
-      date: DATE
+      date: DATE,
+      animate: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -47,17 +55,20 @@ describe('Calendar', function () {
   test('firstDayOfWeek', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
       firstDayOfWeek: 0,
-      date: DATE
+      date: DATE,
+      animate: false
     }), React.createElement(Calendar, {
       firstDayOfWeek: 1,
-      date: DATE
+      date: DATE,
+      animate: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('reference', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
-      reference: DATE
+      reference: DATE,
+      animate: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -89,9 +100,42 @@ describe('Calendar', function () {
         }))), React.createElement(Button, {
           onClick: nextInBound && onNextMonth
         }, React.createElement(Box, null, React.createElement(FormNextLink, null))));
-      }
+      },
+      animate: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  test('select date', function () {
+    var onSelect = jest.fn();
+
+    var _render = render(React.createElement(Grommet, null, React.createElement(Calendar, {
+      date: DATE,
+      onSelect: onSelect,
+      animate: false
+    }))),
+        getByText = _render.getByText,
+        container = _render.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('17'));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-17T/));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('select dates', function () {
+    var onSelect = jest.fn();
+
+    var _render2 = render(React.createElement(Grommet, null, React.createElement(Calendar, {
+      dates: DATES,
+      onSelect: onSelect,
+      animate: false
+    }))),
+        getByText = _render2.getByText,
+        container = _render2.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('17'));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-17T/));
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

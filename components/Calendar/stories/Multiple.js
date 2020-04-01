@@ -1,0 +1,46 @@
+"use strict";
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _react2 = require("@storybook/react");
+
+var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var Example = function Example() {
+  var _useState = (0, _react.useState)([]),
+      dates = _useState[0],
+      setDates = _useState[1];
+
+  return _react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react["default"].createElement(_grommet.Calendar, {
+    dates: dates,
+    onSelect: function onSelect(date) {
+      var nextDates = [].concat(dates);
+      var index = nextDates.indexOf(date);
+
+      if (index === -1) {
+        nextDates.push(date);
+      } else {
+        nextDates.splice(index, 1);
+      }
+
+      setDates(nextDates);
+      console.log('!!! select', date, nextDates);
+    },
+    bounds: ['2018-09-08', '2020-12-13']
+  })));
+};
+
+(0, _react2.storiesOf)('Calendar', module).add('Multiple', function () {
+  return _react["default"].createElement(Example, null);
+});
