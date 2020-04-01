@@ -178,7 +178,7 @@ const Select = forwardRef(
     const inputValue = useMemo(() => {
       if (!selectValue) {
         if (Array.isArray(valueOptions)) {
-          if (valueOptions.length === 0) return undefined;
+          if (valueOptions.length === 0) return '';
           if (valueOptions.length === 1) {
             const valueOption = valueOptions[0];
             if (typeof valueOption === 'object' && labelKey) {

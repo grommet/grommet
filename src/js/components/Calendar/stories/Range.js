@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 const RangeCalendar = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Calendar range />
+      <Calendar dates={[['2020-04-03', '2020-04-08']]} range />
     </Box>
   </Grommet>
 );
