@@ -1,50 +1,64 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useEffect, useState, useContext } from 'react';
 import { createPortal } from 'react-dom';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
 import { DropContainer } from './DropContainer';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 
-class Drop extends Component {
-  static defaultProps = {
-    align: {
-      top: 'top',
-      left: 'left',
-    },
-    plain: false,
-  };
-
-  originalFocusedElement = document.activeElement;
-
-  dropContainer = getNewContainer();
-
-  componentWillUnmount() {
-    const { restrictFocus } = this.props;
-    if (restrictFocus && this.originalFocusedElement) {
-      if (this.originalFocusedElement.focus) {
-        setFocusWithoutScroll(this.originalFocusedElement);
-      } else if (
-        this.originalFocusedElement.parentNode &&
-        this.originalFocusedElement.parentNode.focus
-      ) {
-        // required for IE11 and Edge
-        setFocusWithoutScroll(this.originalFocusedElement.parentNode);
-      }
-    }
-    document.body.removeChild(this.dropContainer);
-  }
-
-  render() {
-    const {
+const Drop = forwardRef(
+  (
+    {
+      restrictFocus,
       target: dropTarget, // avoid DOM leakage
       ...rest
-    } = this.props;
-    return createPortal(
-      <DropContainer dropTarget={dropTarget} {...rest} />,
-      this.dropContainer,
+    },
+    ref,
+  ) => {
+    const [originalFocusedElement, setOriginalFocusedElement] = useState();
+    useEffect(() => setOriginalFocusedElement(document.activeElement), []);
+    const [dropContainer, setDropContainer] = useState();
+    const containerTarget = useContext(ContainerTargetContext);
+    useEffect(() => setDropContainer(getNewContainer(containerTarget)), [
+      containerTarget,
+    ]);
+
+    // just a few things to clean up when the Drop is unmounted
+    useEffect(
+      () => () => {
+        if (restrictFocus && originalFocusedElement) {
+          if (originalFocusedElement.focus) {
+            setFocusWithoutScroll(originalFocusedElement);
+          } else if (
+            originalFocusedElement.parentNode &&
+            originalFocusedElement.parentNode.focus
+          ) {
+            // required for IE11 and Edge
+            setFocusWithoutScroll(originalFocusedElement.parentNode);
+          }
+        }
+        if (dropContainer) {
+          containerTarget.removeChild(dropContainer);
+        }
+      },
+      [containerTarget, dropContainer, originalFocusedElement, restrictFocus],
     );
-  }
-}
+
+    return dropContainer
+      ? createPortal(
+          <DropContainer
+            ref={ref}
+            dropTarget={dropTarget}
+            restrictFocus={restrictFocus}
+            {...rest}
+          />,
+          dropContainer,
+        )
+      : null;
+  },
+);
+
+Drop.displayName = 'Drop';
 
 let DropDoc;
 if (process.env.NODE_ENV !== 'production') {

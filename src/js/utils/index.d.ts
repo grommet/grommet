@@ -47,7 +47,7 @@ export type AlignSelfType = "start" | "center" | "end" | "stretch";
 export type AnimateType = boolean;
 export type BackgroundType = string | {color?: string,dark?: boolean | string,image?: string,position?: string,opacity?: "weak" | "medium" | "strong" | number | boolean,repeat?: "no-repeat" | "repeat" | string,size?: "cover" | "contain" | string,light?: string};
 export type BasisType = "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "auto" | string;
-export type BorderType = boolean | BoxSideType | {color?: ColorType, side?: BoxSideType, size?: BoxSizeType, style?: BoxStyleType} | ({color?: ColorType, side?: BoxStyleType, size?: BoxStyleType, style?: BoxStyleType})[];
+export type BorderType = boolean | BoxSideType | {color?: ColorType, side?: BoxSideType, size?: BoxSizeType, style?: BoxStyleType} | ({color?: ColorType, side?: BoxSideType, size?: BoxStyleType, style?: BoxStyleType})[];
 export type ColorType = string | {dark?: string,light?: string} | undefined;
 export type ElevationType = "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 export type FillType = "horizontal" | "vertical" | boolean;
@@ -62,3 +62,35 @@ export type PadType = EdgeType;
 export type PlaceHolderType = string | JSX.Element | React.ReactNode;
 export type RoundType = boolean | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string | {corner?: "top" | "left" | "bottom" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string};
 export type TextAlignType = "start" | "center" | "end";
+
+declare const breakpointEdgeSize: {
+  none?: string;
+  hair?: string;
+  xxsmall?: string;
+  xsmall?: string;
+  small?: string;
+  medium?: string;
+  large?: string;
+  xlarge?: string;
+};
+export type BreakpointEdgeSize = typeof breakpointEdgeSize;
+
+declare const breakpointBorderSize: {
+    xsmall?: string;
+    small?: string;
+    medium?: string;
+    large?: string;
+    xlarge?: string;
+}
+export type BreakpointBorderSize = typeof breakpointBorderSize;
+
+declare const breakpointSize: {          
+  xxsmall?: string;
+  xsmall?: string;
+  small?: string;
+  medium?: string;
+  large?: string;
+  xlarge?: string;
+  full?: string;
+};
+export type BreakpointSize = typeof breakpointSize;

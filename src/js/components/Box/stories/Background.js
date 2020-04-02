@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box } from 'grommet';
+import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
 const BackgroundBox = () => (
@@ -47,6 +47,14 @@ const BackgroundBox = () => (
       <Box background="light-5" pad="medium">
         <Box background="#11111108" pad="small">
           low opacity on light background
+        </Box>
+      </Box>
+      <Box background={{ color: 'background', dark: true }} pad="medium">
+        <Text color="brand">force dark background</Text>
+      </Box>
+      <Box background="dark-1" pad="medium">
+        <Box background={{ color: 'background', dark: false }} pad="medium">
+          <Text color="brand">force light background</Text>
         </Box>
       </Box>
     </Box>

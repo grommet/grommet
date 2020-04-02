@@ -1,6 +1,7 @@
 export * from './components/Accordion';
 export * from './components/AccordionPanel';
 export * from './components/Anchor';
+export * from './components/Avatar';
 export * from './components/Box';
 export * from './components/Button';
 export * from './components/Calendar';
@@ -58,6 +59,7 @@ export * from './components/TextInput';
 export * from './components/Video';
 export * from './components/WorldMap';
 export * from './contexts/AnnounceContext';
+export * from './contexts/ContainerTargetContext';
 export * from './contexts/ResponsiveContext';
 export * from './contexts/ThemeContext';
 export * from './themes/';

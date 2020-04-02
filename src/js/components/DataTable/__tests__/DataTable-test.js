@@ -35,6 +35,25 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('!primaryKey', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey={false}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('paths', () => {
     const { container } = render(
       <Grommet>
@@ -111,6 +130,35 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onSort', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          onSort={onSort}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({ property: 'a', direction: 'asc' }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 

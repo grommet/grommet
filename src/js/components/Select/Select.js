@@ -2,6 +2,7 @@ import React, {
   forwardRef,
   isValidElement,
   useContext,
+  useMemo,
   useState,
   useRef,
   useEffect,
@@ -83,31 +84,75 @@ const Select = forwardRef(
     const inputRef = useRef();
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    // normalize the value prop to not be objects
+    const normalizedValueProp = useMemo(() => {
+      if (Array.isArray(valueProp)) {
+        if (valueProp.length === 0) return valueProp;
+        if (typeof valueProp[0] === 'object' && valueKey) {
+          return valueProp.map(v => v[valueKey]);
+        }
+        return valueProp;
+      }
+      if (typeof valueProp === 'object' && valueKey) return valueProp[valueKey];
+      return valueProp;
+    }, [valueKey, valueProp]);
+
+    const [value, setValue] = formContext.useFormContext(
+      name,
+      normalizedValueProp,
+      '',
+    );
+
+    // track which options are present in the value
+    const valueOptions = useMemo(
+      () =>
+        options.filter((option, index) => {
+          if (selected !== undefined) {
+            if (Array.isArray(selected)) return selected.indexOf(index) !== -1;
+            return index === selected;
+          }
+          if (typeof option === 'object' && valueKey) {
+            if (Array.isArray(value)) {
+              return value.indexOf(option[valueKey]) !== -1;
+            }
+            return option[valueKey] === value;
+          }
+          if (Array.isArray(value)) {
+            return value.indexOf(option) !== -1;
+          }
+          return option === value;
+        }),
+      [options, selected, value, valueKey],
+    );
 
     const [open, setOpen] = useState(propOpen);
-    useEffect(() => {
-      setOpen(propOpen);
-    }, [propOpen]);
+    useEffect(() => setOpen(propOpen), [propOpen]);
 
     const onRequestOpen = () => {
       setOpen(true);
-      if (onOpen) {
-        onOpen();
-      }
+      if (onOpen) onOpen();
     };
 
     const onRequestClose = () => {
       setOpen(false);
-      if (onClose) {
-        onClose();
-      }
+      if (onClose) onClose();
     };
 
-    const onSelectChange = (event, ...args) => {
+    const onSelectChange = (
+      event,
+      { option, value: nextValue, selected: nextSelected },
+    ) => {
       if (closeOnChange) onRequestClose();
-      setValue(event.value);
-      if (onChange) onChange({ ...event, target: inputRef.current }, ...args);
+      setValue(nextValue);
+      if (onChange) {
+        event.persist();
+        const adjustedEvent = event;
+        adjustedEvent.target = inputRef.current;
+        adjustedEvent.value = nextValue;
+        adjustedEvent.option = option;
+        adjustedEvent.selected = nextSelected;
+        onChange(adjustedEvent);
+      }
     };
 
     let SelectIcon;
@@ -121,53 +166,42 @@ const Select = forwardRef(
       default:
         SelectIcon = icon;
     }
-    let selectValue;
-    let inputValue = '';
-    if (valueLabel) {
-      selectValue = valueLabel;
-    } else if (Array.isArray(value)) {
-      if (value.length > 1) {
-        if (React.isValidElement(value[0])) {
-          selectValue = value;
-        } else {
-          inputValue = messages.multiple;
-        }
-      } else if (value.length === 1) {
-        if (React.isValidElement(value[0])) {
-          [selectValue] = value;
-        } else if (labelKey && typeof value[0] === 'object') {
-          if (typeof labelKey === 'function') {
-            inputValue = labelKey(value[0]);
-          } else {
-            inputValue = value[0][labelKey];
+
+    // element to show, trumps inputValue
+    const selectValue = useMemo(() => {
+      if (valueLabel) return valueLabel;
+      if (React.isValidElement(value)) return value;
+      return undefined;
+    }, [value, valueLabel]);
+
+    // text to show
+    const inputValue = useMemo(() => {
+      if (!selectValue) {
+        if (Array.isArray(valueOptions)) {
+          if (valueOptions.length === 0) return '';
+          if (valueOptions.length === 1) {
+            const valueOption = valueOptions[0];
+            if (typeof valueOption === 'object' && labelKey) {
+              if (typeof labelKey === 'function') {
+                return labelKey(valueOption);
+              }
+              return valueOption[labelKey];
+            }
+            return valueOption;
           }
-        } else {
-          [inputValue] = value;
+          return messages.multiple;
         }
-      } else {
-        inputValue = '';
-      }
-    } else if (labelKey && typeof value === 'object') {
-      if (typeof labelKey === 'function') {
-        inputValue = labelKey(value);
-      } else {
-        inputValue = value[labelKey];
-      }
-    } else if (React.isValidElement(value)) {
-      selectValue = value; // deprecated in favor of valueLabel
-    } else if (selected !== undefined) {
-      if (Array.isArray(selected)) {
-        if (selected.length > 1) {
-          inputValue = messages.multiple;
-        } else if (selected.length === 1) {
-          inputValue = options[selected[0]];
+        if (typeof valueOptions === 'object' && labelKey) {
+          if (typeof labelKey === 'function') {
+            return labelKey(valueOptions);
+          }
+          return valueOptions[labelKey];
         }
-      } else {
-        inputValue = options[selected];
+        if (valueOptions !== undefined) return valueOptions;
+        return '';
       }
-    } else {
-      inputValue = value;
-    }
+      return undefined;
+    }, [labelKey, messages, selectValue, valueOptions]);
 
     // const dark = theme.select.background
     // ? colorIsDark(theme.select.background)

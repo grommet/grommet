@@ -29,6 +29,9 @@ exports[`Menu basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -166,6 +169,9 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -394,6 +400,9 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -486,8 +495,9 @@ exports[`Menu close by clicking outside 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -635,6 +645,9 @@ exports[`Menu close on esc 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -777,6 +790,9 @@ exports[`Menu close on tab 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -919,6 +935,9 @@ exports[`Menu custom a11yTitle 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1062,6 +1081,9 @@ exports[`Menu custom message 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1209,6 +1231,9 @@ exports[`Menu disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1354,6 +1379,9 @@ exports[`Menu gap between icon and label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1625,6 +1653,9 @@ exports[`Menu justify content 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1982,6 +2013,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2124,6 +2158,9 @@ exports[`Menu open and close on click 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2222,7 +2259,7 @@ exports[`Menu open and close on click 2`] = `
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUZSMI"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
       />
       <svg
         aria-label="FormDown"
@@ -2390,6 +2427,9 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2482,8 +2522,9 @@ exports[`Menu open and close on click 3`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -2645,6 +2686,9 @@ exports[`Menu reverse icon and label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2800,6 +2844,9 @@ exports[`Menu select an item 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2942,6 +2989,9 @@ exports[`Menu tab through menu until it closes 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -3084,6 +3134,9 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -3312,6 +3365,9 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -3404,6 +3460,7 @@ exports[`Menu with dropAlign renders 2`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"

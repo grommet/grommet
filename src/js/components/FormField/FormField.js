@@ -19,75 +19,98 @@ import { FormContext } from '../Form/FormContext';
 const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
 
-const validateField = (required, validate, messages) => (value, data) => {
-  let error;
-  if (required && (value === undefined || value === '')) {
-    error = messages.required;
-  } else if (validate) {
-    if (Array.isArray(validate)) {
-      validate.some(oneValidate => {
-        error = validateField(false, oneValidate, messages)(value, data);
-        return !!error;
-      });
-    } else if (typeof validate === 'function') {
-      error = validate(value, data);
-    } else if (validate.regexp) {
-      if (!validate.regexp.test(value)) {
-        error = validate.message || messages.invalid;
-        if (validate.status) {
-          error = { message: error, status: validate.status };
-        }
-      }
-    }
-  }
-  return error;
-};
+const isGrommetInput = comp =>
+  comp &&
+  (grommetInputNames.indexOf(comp.displayName) !== -1 ||
+    grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
   ${props => props.theme.formField && props.theme.formField.extend}
 `;
 
+const Message = ({ message, ...rest }) => {
+  if (message) {
+    if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
+    return <Box {...rest}>{message}</Box>;
+  }
+  return null;
+};
+
 const FormField = forwardRef(
   (
     {
-      checked,
       children,
       className,
       component,
-      disabled,
+      disabled, // pass through in renderInput()
       error,
       help,
       htmlFor,
       info,
       label,
       margin,
-      name,
+      name, // pass through in renderInput()
       onBlur,
       onFocus,
       pad,
-      required,
+      required, // pass through in renderInput()
       style,
       validate,
-      value: valueProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext);
     const context = useContext(FormContext);
-    const [value, setValue] = useState(valueProp);
-    useEffect(() => setValue(valueProp), [valueProp]);
 
     useEffect(() => {
-      if (
-        context &&
-        context.value &&
-        context.value[name] === undefined &&
-        (value !== undefined || checked !== undefined)
-      ) {
-        context.update(name, value !== undefined ? value : checked, true);
+      if (context && context.addValidation) {
+        const { addValidation, messages, removeValidation } = context;
+
+        const validateSingle = (aValidate, value2, data) => {
+          let result;
+          if (typeof aValidate === 'function') {
+            result = aValidate(value2, data);
+          } else if (validate.regexp) {
+            if (!validate.regexp.test(value2)) {
+              result = validate.message || messages.invalid;
+              if (validate.status) {
+                result = { message: error, status: validate.status };
+              }
+            }
+          }
+          return result;
+        };
+
+        const validateField = (value2, data) => {
+          let result;
+          if (
+            required &&
+            // false is for CheckBox
+            (value2 === undefined || value2 === '' || value2 === false)
+          ) {
+            result = messages.required;
+          } else if (validate) {
+            if (Array.isArray(validate)) {
+              validate.some(aValidate => {
+                result = validateSingle(aValidate, value2, data);
+                return !!result;
+              });
+            } else {
+              result = validateSingle(validate, value2, data);
+            }
+          }
+          return result;
+        };
+
+        if (validate || required) {
+          addValidation(name, validateField);
+          return () => removeValidation(name, validateField);
+        }
+        removeValidation(name, validateField);
       }
-    });
+      return undefined;
+    }, [context, error, name, required, validate]);
 
     const [focus, setFocus] = useState();
 
@@ -98,9 +121,7 @@ const FormField = forwardRef(
           <Input
             name={name}
             label={label}
-            checked={
-              formValue[name] !== undefined ? formValue[name] : checked || false
-            }
+            disabled={disabled}
             aria-invalid={invalid || undefined}
             {...rest}
           />
@@ -109,13 +130,25 @@ const FormField = forwardRef(
       return (
         <Input
           name={name}
-          value={
-            formValue[name] !== undefined ? formValue[name] : valueProp || ''
-          }
+          value={!isGrommetInput(component) ? formValue[name] : undefined}
+          disabled={disabled}
           plain
           focusIndicator={false}
           aria-invalid={invalid || undefined}
           {...rest}
+          onChange={
+            // Grommet input components already check for FormContext
+            // and, using their `name`, end up calling the context.update()
+            // already. For custom components, we expect they will call
+            // this onChange() and we'll call context.update() here, primarily
+            // for backwards compatibility.
+            isGrommetInput(component)
+              ? rest.onChange
+              : event => {
+                  context.update(name, event.target.value);
+                  if (rest.onChange) rest.onChange(event);
+                }
+          }
         />
       );
     };
@@ -158,18 +191,18 @@ const FormField = forwardRef(
     let normalizedError = error;
     let normalizedInfo = info;
     let onFieldBlur;
+    // put rest on container, unless we use renderInput()
+    let containerRest = rest;
     if (context && context.addValidation) {
       const {
-        addValidation,
         errors,
         infos,
         onBlur: onContextBlur,
         value: formValue,
-        messages,
       } = context;
-      addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
       normalizedInfo = info || infos[name];
+      if (!contents) containerRest = {};
       contents = contents || renderInput(formValue, !!normalizedError);
       if (onContextBlur) {
         onFieldBlur = () => onContextBlur(name);
@@ -283,6 +316,7 @@ const FormField = forwardRef(
           if (onFieldBlur) onFieldBlur(event);
           if (onBlur) onBlur(event);
         }}
+        {...containerRest}
       >
         {(label && component !== CheckBox) || help ? (
           <>
@@ -291,14 +325,14 @@ const FormField = forwardRef(
                 {label}
               </Text>
             )}
-            {help && <Text {...formField.help}>{help}</Text>}
+            <Message message={help} {...formField.help} />
           </>
         ) : (
           undefined
         )}
         {contents}
-        {normalizedError && <Text {...formField.error}>{normalizedError}</Text>}
-        {normalizedInfo && <Text {...formField.info}>{normalizedInfo}</Text>}
+        <Message message={normalizedError} {...formField.error} />
+        <Message message={normalizedInfo} {...formField.info} />
       </FormFieldBox>
     );
   },

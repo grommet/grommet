@@ -23,6 +23,7 @@ import {
   StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
+  StyledIcon,
   StyledSuggestions,
 } from './StyledTextInput';
 
@@ -63,6 +64,7 @@ const TextInput = forwardRef(
       dropHeight,
       dropTarget,
       dropProps,
+      icon,
       id,
       messages = {
         enterSelect: '(Press Enter to Select)',
@@ -82,6 +84,8 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
+      readOnly,
+      reverse,
       suggestions,
       value: valueProp,
       ...rest
@@ -96,7 +100,13 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     const suggestionRefs = {};
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    // if this is a readOnly property, don't set a name with the form context
+    // this allows Select to control the form context for the name.
+    const [value, setValue] = formContext.useFormContext(
+      readOnly ? undefined : name,
+      valueProp,
+      '',
+    );
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
@@ -108,6 +118,19 @@ const TextInput = forwardRef(
         if (onSuggestionsClose) onSuggestionsClose();
       }
     }, [onSuggestionsClose, showDrop, suggestions]);
+
+    // If we have suggestions and focus, open drop if it's closed.
+    // This can occur when suggestions are tied to the value.
+    // We don't want focus or showDrop in the dependencies because we
+    // don't want to open the drop just because Esc close it.
+    /* eslint-disable react-hooks/exhaustive-deps */
+    useEffect(() => {
+      if (focus && !showDrop && suggestions && suggestions.length) {
+        setShowDrop(true);
+        if (onSuggestionsOpen) onSuggestionsOpen();
+      }
+    }, [onSuggestionsOpen, suggestions]);
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
 
@@ -173,6 +196,7 @@ const TextInput = forwardRef(
     const closeDrop = () => {
       setShowDrop(false);
       if (messages.onSuggestionsClose) onSuggestionsClose();
+      if (onSuggestionsClose) onSuggestionsClose();
     };
 
     const onNextSuggestion = event => {
@@ -286,6 +310,11 @@ const TextInput = forwardRef(
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
+        {icon && (
+          <StyledIcon reverse={reverse} theme={theme}>
+            {icon}
+          </StyledIcon>
+        )}
         <Keyboard
           onEnter={event => {
             closeDrop();
@@ -344,37 +373,33 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
+            icon={icon}
+            reverse={reverse}
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
-            value={renderLabel(value) || ''}
+            value={renderLabel(value)}
+            readOnly={readOnly}
             onFocus={event => {
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
                 announce(messages.suggestionsExist);
+                openDrop();
               }
-              setShowDrop(true);
-              if (onFocus) {
-                onFocus(event);
-              }
+              if (onFocus) onFocus(event);
             }}
             onBlur={event => {
               setFocus(false);
-              // This will be called when the user clicks on a suggestion,
-              // check for that and don't remove the drop in that case.
-              // Drop will already have removed itself if the user has focused
-              // outside of the Drop.
-              if (!dropRef.current) {
-                closeDrop();
-                if (onBlur) {
-                  onBlur(event);
-                }
-              }
+              if (onBlur) onBlur(event);
             }}
-            onChange={event => {
-              setValue(event.target.value);
-              if (onChange) onChange(event);
-            }}
+            onChange={
+              readOnly
+                ? undefined
+                : event => {
+                    setValue(event.target.value);
+                    if (onChange) onChange(event);
+                  }
+            }
           />
         </Keyboard>
         {drop}

@@ -72,6 +72,7 @@ Currently selected option value.
 
 ```
 string
+object
 ```
   
 ## Intrinsic element

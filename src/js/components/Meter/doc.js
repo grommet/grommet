@@ -21,6 +21,7 @@ export const doc = Meter => {
         color: PropTypes.string,
         opacity: PropTypes.oneOfType([
           PropTypes.oneOf(['weak', 'medium', 'strong']),
+          PropTypes.number,
           PropTypes.bool,
         ]),
       }),

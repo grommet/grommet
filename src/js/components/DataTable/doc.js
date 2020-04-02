@@ -98,6 +98,7 @@ export const doc = DataTable => {
         render: PropTypes.func,
         search: PropTypes.bool,
         sortable: PropTypes.bool,
+        verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
       }),
     ).description(
       `A description of the data. The order controls the column order.
@@ -159,6 +160,12 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
     ),
+    onSort: PropTypes.func.description(
+      `When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}`,
+    ),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(sizes),
       PropTypes.string,
@@ -168,11 +175,15 @@ export const doc = DataTable => {
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
-    primaryKey: PropTypes.string.description(
+    primaryKey: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+    ]).description(
       `When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.`,
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.`,
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',
@@ -193,6 +204,10 @@ export const doc = DataTable => {
       header and footer cell alignment, all cells will have the same
       width. This cannot be used in combination with 'resizeable'.`,
     ),
+    sort: PropTypes.shape({
+      direction: PropTypes.oneOf(['asc', 'desc']),
+      property: PropTypes.string.isRequired,
+    }).description('Which property to sort on and which direction to sort.'),
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),

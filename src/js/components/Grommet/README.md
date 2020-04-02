@@ -63,7 +63,7 @@ boolean
 
 **plain**
 
-Whether or not Grommet should apply a global font-family, font-size, 
+Whether or not Grommet should apply a global font-family, font-size,
         and line-height.
 
 ```
@@ -98,11 +98,22 @@ light
 
 **userAgent**
 
-User agent used to detect the device width for setting the initial 
+User agent used to detect the device width for setting the initial
       breakpoint.
 
 ```
 string
+```
+
+**containerTarget**
+
+The node where Drop and Layer containers are inserted. Defaults to
+      document.body which is almost always the right choice. This is used
+      for less common cases like rendering within an internal node (e.g.
+      shadow root).
+
+```
+object
 ```
   
 ## Intrinsic element

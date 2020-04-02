@@ -631,6 +631,127 @@ Defaults to
   }
 \`\`\`
 ",
+  "Avatar": "## Avatar
+An Avatar.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Avatar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=avatar&module=%2Fsrc%2FAvatar.js)
+## Usage
+
+\`\`\`javascript
+import { Avatar } from 'grommet';
+<Avatar/>
+\`\`\`
+
+## Properties
+
+**size**
+
+A fixed size. Defaults to \`medium\`.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**src**
+
+Specifies a URL string for an avatar image.
+
+\`\`\`
+string
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**avatar.extend**
+
+Any additional style for the Avatar. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**avatar.size.xsmall**
+
+The xsmall size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**avatar.size.small**
+
+The small size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**avatar.size.medium**
+
+The medium size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**avatar.size.large**
+
+The large size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+72px
+\`\`\`
+
+**avatar.size.xlarge**
+
+The xlarge size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+96px
+\`\`\`
+
+**avatar.text.extend**
+
+Any additional style for the text. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**avatar.text.fontWeight**
+
+The font weight of the label. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Box": "## Box
 A container that lays out its contents in one direction. Box
       provides CSS flexbox capabilities for layout, as well as general
@@ -2231,6 +2352,38 @@ Defaults to
 8px
 \`\`\`
 
+**button.transition.duration**
+
+The length of time it will take for the element to transition
+between two states. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.1
+\`\`\`
+
+**button.transition.properties**
+
+The CSS properties you want to add the transition to. Expects \`string[]\`.
+
+Defaults to
+
+\`\`\`
+['color', 'background-color', 'border-color', 'box-shadow']
+\`\`\`
+
+**button.transition.timing**
+
+Describes how a transition will progress over one cycle of its
+duration and allowing it to change speed during its course. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+ease-in-out
+\`\`\`
+
 **button.extend**
 
 Any additional style for the Button. Expects \`string | (props) => {}\`.
@@ -3259,6 +3412,14 @@ A unique identifier for the Chart. This
 
 \`\`\`
 string
+\`\`\`
+
+**dash**
+
+Whether to use dashed lines for line or bar charts.
+
+\`\`\`
+boolean
 \`\`\`
 
 **onClick**
@@ -4510,7 +4671,11 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 \`\`\`
 
@@ -4590,6 +4755,17 @@ When supplied, and when at least one column has 'search' enabled,
 function
 \`\`\`
 
+**onSort**
+
+When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}
+
+\`\`\`
+function
+\`\`\`
+
 **pad**
 
 Cell padding. You can set the padding per context by passing an
@@ -4659,10 +4835,12 @@ string
 When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.
 
 \`\`\`
 string
+boolean
 \`\`\`
 
 **resizeable**
@@ -4700,6 +4878,19 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**sort**
+
+Which property to sort on and which direction to sort.
+
+\`\`\`
+{
+  direction: 
+    asc
+    desc,
+  property: string
+}
 \`\`\`
 
 **sortable**
@@ -5967,7 +6158,9 @@ Validation rule when used within a grommet Form. Provide an object
 \`\`\`
 {
   regexp: object,
-  message: string,
+  message: 
+    string
+    node,
   status: 
     error
     info
@@ -5976,7 +6169,9 @@ function
 [
   {
     regexp: object,
-    message: string,
+    message: 
+      string
+      node,
     status: 
       error
       info
@@ -6612,6 +6807,15 @@ xlarge
 string
 \`\`\`
 
+**responsive**
+
+Whether margin and pad sizes should be scaled for mobile
+        environments. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
+
 **rows**
 
 Row sizes.
@@ -6805,7 +7009,7 @@ boolean
 
 **plain**
 
-Whether or not Grommet should apply a global font-family, font-size, 
+Whether or not Grommet should apply a global font-family, font-size,
         and line-height.
 
 \`\`\`
@@ -6840,11 +7044,22 @@ light
 
 **userAgent**
 
-User agent used to detect the device width for setting the initial 
+User agent used to detect the device width for setting the initial
       breakpoint.
 
 \`\`\`
 string
+\`\`\`
+
+**containerTarget**
+
+The node where Drop and Layer containers are inserted. Defaults to
+      document.body which is almost always the right choice. This is used
+      for less common cases like rendering within an internal node (e.g.
+      shadow root).
+
+\`\`\`
+object
 \`\`\`
   
 ## Intrinsic element
@@ -7354,6 +7569,16 @@ xlarge
 string
 \`\`\`
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+\`\`\`
+horizontal
+vertical
+boolean
+\`\`\`
+
 **fit**
 
 How the image fills its container.
@@ -7381,14 +7606,6 @@ weak
 medium
 strong
 string
-boolean
-\`\`\`
-
-**fill**
-
-Whether the image expands to fill all of the available width and height
-
-\`\`\`
 boolean
 \`\`\`
   
@@ -7684,7 +7901,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer Defaults to \`none\`.
+particular side of the layer
 
 \`\`\`
 none
@@ -7814,6 +8031,15 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 
 \`\`\`
 boolean
+\`\`\`
+
+**target**
+
+Target where the layer will be aligned to. This should be a React 
+      reference.
+
+\`\`\`
+object
 \`\`\`
   
 ## Intrinsic element
@@ -8428,6 +8654,16 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+\`\`\`
+element
+\`\`\`
+
 **id**
 
 The id attribute of the input.
@@ -8481,6 +8717,15 @@ Describes the structure of the mask. If a regexp is provided, it should
 
     }
 }]
+\`\`\`
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
+
+\`\`\`
+boolean
 \`\`\`
 
 **size**
@@ -9059,6 +9304,7 @@ string
     weak
     medium
     strong
+    number
     boolean
 }
 \`\`\`
@@ -9774,6 +10020,7 @@ Currently selected option value.
 
 \`\`\`
 string
+object
 \`\`\`
   
 ## Intrinsic element
@@ -10526,6 +10773,14 @@ Whether to allow multiple options to be selected.
 
 \`\`\`
 boolean
+\`\`\`
+
+**name**
+
+The name of the attribute when in a Form or FormField.
+
+\`\`\`
+string
 \`\`\`
 
 **onChange**
@@ -12578,6 +12833,16 @@ Any valid Drop prop.
 object
 \`\`\`
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+\`\`\`
+element
+\`\`\`
+
 **id**
 
 The id attribute of the input.
@@ -12615,7 +12880,7 @@ Custom messages for TextInput. Used for accessibility by screen
 
 **name**
 
-The name attribute of the input.
+The name of the attribute when in a Form or FormField.
 
 \`\`\`
 string
@@ -12666,6 +12931,15 @@ node
 
 Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance
+
+\`\`\`
+boolean
+\`\`\`
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
 
 \`\`\`
 boolean

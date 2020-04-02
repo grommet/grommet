@@ -21,24 +21,28 @@ export interface DataTableProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   columns?: {
-    align?: "center" | "start" | "end", 
+    align?: "center" | "start" | "end",
     aggregate?: "avg" | "max" | "min" | 'sum',
     footer?: React.ReactNode | {aggregate?: boolean},
     header?: string | React.ReactNode | {aggregate?: boolean},
     primary?: boolean,property: string,
     render?: ((...args: any[]) => any),
-    search?: boolean,sortable?: boolean}[];
+    search?: boolean,
+    sortable?: boolean,
+    verticalAlign?: "middle" | "top" | "bottom"}[];
   data?: {}[];
   groupBy?: string | { property: string, expand: Array<string>, onExpand: ((...args: any[]) => any) };
   onClickRow?: (((event: React.MouseEvent) => void)) | ((event: {datum?: {}, index?: number}) => void);
   onMore?: ((...args: any[]) => any);
   onSearch?: ((search: string) => void);
+  onSort?: ((sort: { property: string, direction: "asc" | "desc" }) => void);
   pad?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,header?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string},body?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string},footer?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string}} | string;
-  primaryKey?: string;
+  primaryKey?: string | boolean;
   replace?: boolean;
   resizeable?: boolean;
   rowProps?: { [_:string]: { background?: {}, border?: {}, pad?: {}}};
   size?: "small" | "medium" | "large" | "xlarge" | string;
+  sort?: { property: string, direction: "asc" | "desc" };
   sortable?: boolean;
   step?: number;
 }

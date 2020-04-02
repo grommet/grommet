@@ -43,7 +43,10 @@ export const doc = RadioButtonGroup => {
         }),
       ),
     ]).description(`Options can be either a string or an object.`).isRequired,
-    value: PropTypes.string.description(`Currently selected option value.`),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]).description(`Currently selected option value.`),
   };
 
   return DocumentedRadioButtonGroup;

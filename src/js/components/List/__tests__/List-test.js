@@ -138,6 +138,24 @@ describe('List', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('margin string', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['one', 'two']} margin="large" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('margin object', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['one', 'two']} margin={{ horizontal: 'large' }} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('pad string', () => {
     const { container } = render(
       <Grommet>

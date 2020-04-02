@@ -179,6 +179,17 @@ describe('Grid', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('responsive', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Grid responsive />
+        <Grid responsive={false} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('as renders', () => {
     const component = renderer.create(
       <Grommet>

@@ -22,7 +22,7 @@ const InfiniteScroll = ({
   step = 50,
 }) => {
   // the last page we have items for
-  const lastPage = useMemo(() => Math.ceil(items.length / step), [
+  const lastPage = useMemo(() => Math.floor(items.length / step), [
     items.length,
     step,
   ]);

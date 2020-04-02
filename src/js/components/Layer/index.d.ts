@@ -12,6 +12,7 @@ export interface LayerProps {
   plain?: boolean;
   position?: "bottom" | "bottom-left" | "bottom-right" | "center" | "hidden" | "left" | "right" | "top" | "top-left" | "top-right";
   responsive?: boolean;
+  target?: object;
 }
 
 declare const Layer: React.ComponentClass<LayerProps & JSX.IntrinsicElements['div']>;
