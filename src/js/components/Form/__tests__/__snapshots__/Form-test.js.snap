@@ -62,6 +62,7 @@ exports[`Form errors 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -231,6 +232,7 @@ exports[`Form infos 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -459,6 +461,7 @@ exports[`Form update 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -666,6 +669,7 @@ exports[`Form with field 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
