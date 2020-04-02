@@ -475,6 +475,7 @@ exports[`FormField disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -1429,6 +1430,7 @@ exports[`FormField required 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
