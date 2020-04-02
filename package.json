@@ -6,7 +6,9 @@
   "jsnext:main": "es6/index.js",
   "sideEffects": [
     "./src/js/contexts/ThemeContext/ThemeContext.js",
-    "./es6/contexts/ThemeContext/ThemeContext.js"
+    "./es6/contexts/ThemeContext/ThemeContext.js",
+    "./src/js/contexts/ContainerTargetContext/ContainerTargetContext.js",
+    "./es6/contexts/ContainerTargetContext/ContainerTargetContext.js"
   ],
   "description": "focus on the essential experience",
   "authors": [
