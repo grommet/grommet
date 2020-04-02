@@ -84,7 +84,11 @@ const FormField = forwardRef(
 
         const validateField = (value2, data) => {
           let result;
-          if (required && (value2 === undefined || value2 === '')) {
+          if (
+            required &&
+            // false is for CheckBox
+            (value2 === undefined || value2 === '' || value2 === false)
+          ) {
             result = messages.required;
           } else if (validate) {
             if (Array.isArray(validate)) {
