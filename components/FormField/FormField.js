@@ -243,6 +243,7 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
 
   if (border) {
     contents = _react["default"].createElement(_Box.Box, {
+      overflow: "hidden",
       border: border.position === 'inner' ? _extends({}, border, {
         side: border.side || 'bottom',
         color: borderColor
