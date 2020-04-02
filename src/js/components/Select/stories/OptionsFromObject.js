@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Select } from 'grommet';
+import { grommet, Box, Grommet, Select } from 'grommet';
 
 const objectOptions = [
   {
@@ -25,17 +25,19 @@ const OptionsFromObject = () => {
   const [value, setValue] = useState('');
 
   return (
-    <Box fill align="center" justify="start" pad="large">
-      <Select
-        id="select"
-        name="select"
-        placeholder="Select"
-        labelKey="label"
-        value={value}
-        options={objectOptions}
-        onChange={({ option }) => setValue(option)}
-      />
-    </Box>
+    <Grommet theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          id="select"
+          name="select"
+          placeholder="Select"
+          labelKey="label"
+          value={value}
+          options={objectOptions}
+          onChange={({ option }) => setValue(option)}
+        />
+      </Box>
+    </Grommet>
   );
 };
 
