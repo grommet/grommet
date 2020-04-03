@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { backgroundIsDark, findVisibleParent } from '../../utils';
@@ -37,7 +38,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
       layerTarget = _ref.target,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
-  var theme = useContext(ThemeContext);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(fullBounds),
       targetBounds = _useState[0],

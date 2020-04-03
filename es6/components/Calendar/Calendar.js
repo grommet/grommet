@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useCallback, useContext, useMemo, useState, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
@@ -77,7 +78,7 @@ var Calendar = forwardRef(function (_ref, ref) {
       size = _ref$size === void 0 ? 'medium' : _ref$size,
       rest = _objectWithoutPropertiesLoose(_ref, ["animate", "bounds", "date", "dates", "daysOfWeek", "disabled", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"]);
 
-  var theme = useContext(ThemeContext); // set date when caller changes it, allows us to change it internally too
+  var theme = useContext(ThemeContext) || defaultProps.theme; // set date when caller changes it, allows us to change it internally too
 
   var _useState = useState(dateProp),
       date = _useState[0],

@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { Children, cloneElement, forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
@@ -57,7 +58,7 @@ var FormField = forwardRef(function (_ref2, ref) {
       validate = _ref2.validate,
       rest = _objectWithoutPropertiesLoose(_ref2, ["children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate"]);
 
-  var theme = useContext(ThemeContext);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var context = useContext(FormContext);
   useEffect(function () {
     if (context && context.addValidation) {

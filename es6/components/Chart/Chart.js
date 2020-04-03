@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
@@ -35,7 +36,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
       rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
 
-  var theme = useContext(ThemeContext);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState([]),
       values = _useState[0],

@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _Box = require("../Box");
@@ -39,7 +41,7 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
       _onBlur = _ref.onBlur,
       rest = _objectWithoutPropertiesLoose(_ref, ["active", "animate", "children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onPanelChange", "onFocus", "onBlur"]);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)(undefined),
       hover = _useState[0],

@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -23,7 +24,7 @@ var AccordionPanel = forwardRef(function (_ref, ref) {
       _onBlur = _ref.onBlur,
       rest = _objectWithoutPropertiesLoose(_ref, ["active", "animate", "children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onPanelChange", "onFocus", "onBlur"]);
 
-  var theme = useContext(ThemeContext);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(undefined),
       hover = _useState[0],

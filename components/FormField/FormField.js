@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _Box = require("../Box");
@@ -75,7 +77,8 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
       validate = _ref2.validate,
       rest = _objectWithoutPropertiesLoose(_ref2, ["children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate"]);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
   var context = (0, _react.useContext)(_FormContext.FormContext);
   (0, _react.useEffect)(function () {
     if (context && context.addValidation) {

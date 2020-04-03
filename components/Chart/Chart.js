@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _StyledChart = require("./StyledChart");
@@ -50,7 +52,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
       rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)([]),
       values = _useState[0],
