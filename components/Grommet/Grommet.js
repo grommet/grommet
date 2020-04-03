@@ -161,7 +161,7 @@ function (_Component) {
         children = _this$props.children,
         full = _this$props.full,
         _this$props$container = _this$props.containerTarget,
-        containerTarget = _this$props$container === void 0 ? document.body : _this$props$container,
+        containerTarget = _this$props$container === void 0 ? typeof document === 'object' ? document.body : undefined : _this$props$container,
         rest = _objectWithoutPropertiesLoose(_this$props, ["children", "full", "containerTarget"]);
 
     delete rest.theme;
