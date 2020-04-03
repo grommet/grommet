@@ -90,13 +90,9 @@ const Form = forwardRef(
         setErrors(prevErrors => {
           const nextErrors = { ...prevErrors };
           Object.keys(prevErrors).forEach(errName => {
-            // sets error
-            if (validations.current[errName]) {
-              updateErrors(nextErrors, name, nextErrors[name]);
-            }
-            // deletes error on new value only if error exists
-            if (nextValue[name] && nextErrors[name]) {
-              updateErrors(nextErrors, name, undefined);
+            if (validations.current[errName] && nextErrors[name]) {
+              const nextError = validations.current[errName](data, nextValue);
+              updateErrors(nextErrors, name, nextError);
             }
           });
           return nextErrors;
