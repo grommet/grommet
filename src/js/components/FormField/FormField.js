@@ -234,6 +234,7 @@ const FormField = forwardRef(
     if (border) {
       contents = (
         <Box
+          overflow="hidden"
           border={
             border.position === 'inner'
               ? {
