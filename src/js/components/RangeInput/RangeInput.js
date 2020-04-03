@@ -7,7 +7,7 @@ const RangeInput = forwardRef(
   ({ name, onChange, onFocus, onBlur, value: valueProp, ...rest }, ref) => {
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    const [value, setValue] = formContext.useFormContext(name, valueProp, 0);
 
     const [focus, setFocus] = useState();
     return (
