@@ -40,7 +40,6 @@ const Message = ({ message, ...rest }) => {
 const FormField = forwardRef(
   (
     {
-      checked,
       children,
       className,
       component,
@@ -58,26 +57,12 @@ const FormField = forwardRef(
       required, // pass through in renderInput()
       style,
       validate,
-      value: valueProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
-    const [value, setValue] = useState(valueProp);
-    useEffect(() => setValue(valueProp), [valueProp]);
-
-    useEffect(() => {
-      if (
-        context &&
-        context.value &&
-        context.value[name] === undefined &&
-        (value !== undefined || checked !== undefined)
-      ) {
-        context.update(name, value !== undefined ? value : checked, true);
-      }
-    });
 
     useEffect(() => {
       if (context && context.addValidation) {
@@ -100,7 +85,11 @@ const FormField = forwardRef(
 
         const validateField = (value2, data) => {
           let result;
-          if (required && (value2 === undefined || value2 === '')) {
+          if (
+            required &&
+            // false is for CheckBox
+            (value2 === undefined || value2 === '' || value2 === false)
+          ) {
             result = messages.required;
           } else if (validate) {
             if (Array.isArray(validate)) {
@@ -133,9 +122,6 @@ const FormField = forwardRef(
           <Input
             name={name}
             label={label}
-            checked={
-              formValue[name] !== undefined ? formValue[name] : checked || false
-            }
             disabled={disabled}
             aria-invalid={invalid || undefined}
             {...rest}
@@ -145,9 +131,7 @@ const FormField = forwardRef(
       return (
         <Input
           name={name}
-          value={
-            formValue[name] !== undefined ? formValue[name] : valueProp || ''
-          }
+          value={!isGrommetInput(component) ? formValue[name] : undefined}
           disabled={disabled}
           plain
           focusIndicator={false}
@@ -251,6 +235,7 @@ const FormField = forwardRef(
     if (border) {
       contents = (
         <Box
+          overflow="hidden"
           border={
             border.position === 'inner'
               ? {

@@ -231,7 +231,7 @@ const Calendar = forwardRef(
         } else {
           // have dates
           const priorDates = dates[0].map(d => new Date(d));
-          const previousDate = new Date(lastSelectedDate);
+          const previousDate = new Date(lastSelectedDate || dates[0][0]);
           const selDate = new Date(selectedDate);
           if (selDate.getTime() === priorDates[0].getTime()) {
             [[, nextDate]] = dates;
@@ -255,7 +255,7 @@ const Calendar = forwardRef(
         }
 
         setDates(nextDates);
-        setDate(nextDate);
+        if (!dates) setDate(nextDate);
         setActive(new Date(selectedDate));
         setLastSelectedDate(selectedDate);
         if (onSelect) onSelect(nextDates || nextDate);
