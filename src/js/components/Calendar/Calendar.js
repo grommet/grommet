@@ -7,6 +7,7 @@ import React, {
   useEffect,
 } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -100,7 +101,7 @@ const Calendar = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);

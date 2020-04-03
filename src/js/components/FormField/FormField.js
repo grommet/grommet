@@ -7,6 +7,7 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
@@ -60,7 +61,7 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
 
     useEffect(() => {
