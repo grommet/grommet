@@ -137,7 +137,7 @@ const MaskedInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
 
     const [valueParts, setValueParts] = useState(parseValue(mask, value));
     useEffect(() => {

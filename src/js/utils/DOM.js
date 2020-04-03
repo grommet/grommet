@@ -49,10 +49,10 @@ export const getBodyChildElements = () => {
   return children;
 };
 
-export const getNewContainer = () => {
+export const getNewContainer = (rootNode = document.body) => {
   // setup DOM
   const container = document.createElement('div');
-  document.body.appendChild(container);
+  rootNode.appendChild(container);
   return container;
 };
 

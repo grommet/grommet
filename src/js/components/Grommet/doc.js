@@ -22,7 +22,7 @@ export const doc = Grommet => {
       .defaultValue(false),
     plain: PropTypes.bool
       .description(
-        `Whether or not Grommet should apply a global font-family, font-size, 
+        `Whether or not Grommet should apply a global font-family, font-size,
         and line-height.`,
       )
       .defaultValue(false),
@@ -37,8 +37,14 @@ export const doc = Grommet => {
       theme.`,
     ),
     userAgent: PropTypes.string.description(
-      `User agent used to detect the device width for setting the initial 
+      `User agent used to detect the device width for setting the initial
       breakpoint.`,
+    ),
+    containerTarget: PropTypes.object.description(
+      `The node where Drop and Layer containers are inserted. Defaults to
+      document.body which is almost always the right choice. This is used
+      for less common cases like rendering within an internal node (e.g.
+      shadow root).`,
     ),
   };
 
