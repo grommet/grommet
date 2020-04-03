@@ -326,9 +326,7 @@ const FormField = forwardRef(
           if (onFocus) onFocus(event);
         }}
         onBlur={event => {
-          if (event.target.tagName === 'INPUT') {
-            setFocus(false);
-          }
+          if (event.target.tagName === 'INPUT') setFocus(false);
           if (onFieldBlur) onFieldBlur(event);
           if (onBlur) onBlur(event);
         }}
