@@ -123,7 +123,9 @@ class Grommet extends Component {
     const {
       children,
       full,
-      containerTarget = document.body,
+      containerTarget = typeof document === 'object'
+        ? document.body
+        : undefined,
       ...rest
     } = this.props;
     delete rest.theme;
