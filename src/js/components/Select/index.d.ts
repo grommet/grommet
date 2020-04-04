@@ -7,8 +7,8 @@ export interface SelectProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: ((...args: any[]) => any);
+    clear?: boolean | { position?: "top" | "bottom", label?: string, renderValue?: ((param: {onClear: () => void }) => React.ReactNode)};
   closeOnChange?: boolean;
-  clear?: boolean | { position?: "top" | "bottom", label?: string, renderValue?: ((param: {onClear: () => void }) => React.ReactNode)};
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
   dropAlign?: { top?: "top" | "bottom", bottom?: "top" | "bottom", right?: "left" | "right", left?: "left" | "right" };
