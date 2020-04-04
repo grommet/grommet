@@ -36,7 +36,7 @@ const ClearSelection = () => {
         gap="small"
       >
         <Box gap="small">
-          <Text>Default</Text>
+          <Text>Default (Position 'top')</Text>
           <Select
             options={optionList}
             value={value}
