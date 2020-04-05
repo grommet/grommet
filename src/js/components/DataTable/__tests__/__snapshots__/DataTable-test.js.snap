@@ -3586,6 +3586,12 @@ exports[`DataTable onSort 2`] = `
   width: 6px;
 }
 
+@media only screen and (max-width:768px) {
+  .c0 {
+    width: 3px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -3625,6 +3631,10 @@ exports[`DataTable onSort 2`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -3699,6 +3709,10 @@ exports[`DataTable onSort 2`] = `
   font-weight: bold;
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -3754,6 +3768,10 @@ exports[`DataTable onSort 2`] = `
   font-weight: bold;
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -3807,6 +3825,10 @@ exports[`DataTable onSort 2`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4915,6 +4937,12 @@ exports[`DataTable resizeable 1`] = `
   height: auto;
 }
 
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -5395,6 +5423,12 @@ exports[`DataTable search 1`] = `
   height: auto;
 }
 
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -5526,7 +5560,7 @@ exports[`DataTable search 2`] = `
               A
             </span>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bRyuLk"
             />
             .c0 {
   display: -webkit-box;
@@ -5632,6 +5666,10 @@ exports[`DataTable search 2`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -5678,6 +5716,10 @@ exports[`DataTable search 2`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -5984,6 +6026,12 @@ exports[`DataTable sort 2`] = `
   width: 6px;
 }
 
+@media only screen and (max-width:768px) {
+  .c0 {
+    width: 3px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -6023,6 +6071,10 @@ exports[`DataTable sort 2`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -6097,6 +6149,10 @@ exports[`DataTable sort 2`] = `
   font-weight: bold;
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -6152,6 +6208,10 @@ exports[`DataTable sort 2`] = `
   font-weight: bold;
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -6205,6 +6265,10 @@ exports[`DataTable sort 2`] = `
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {

@@ -68,8 +68,12 @@ const BorderBox = () => (
         ))}
       </Box>
       <Box direction="row-responsive" gap="large" align="center">
-        {['column', 'row'].map(direction => (
-          <Box direction={direction} gap="medium" border="between">
+        {['column', 'row', 'row-responsive'].map(direction => (
+          <Box
+            direction={direction}
+            gap="large"
+            border={{ side: 'between', size: 'large' }}
+          >
             <Text>between</Text>
             <Text>{direction}</Text>
           </Box>

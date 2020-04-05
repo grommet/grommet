@@ -194,7 +194,7 @@ exports[`Form controlled 2`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -232,7 +232,7 @@ exports[`Form controlled 3`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -476,7 +476,7 @@ exports[`Form controlled FormField deprecated 2`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -520,7 +520,7 @@ exports[`Form controlled FormField deprecated 3`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -743,7 +743,7 @@ exports[`Form controlled input 2`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -781,7 +781,7 @@ exports[`Form controlled input 3`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -1004,7 +1004,7 @@ exports[`Form controlled input lazy 2`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -1042,7 +1042,7 @@ exports[`Form controlled input lazy 3`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -1265,7 +1265,7 @@ exports[`Form controlled lazy 2`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -1303,7 +1303,7 @@ exports[`Form controlled lazy 3`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -2060,7 +2060,7 @@ exports[`Form uncontrolled 2`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"
@@ -2098,7 +2098,7 @@ exports[`Form uncontrolled 3`] = `
       class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 bASmXG"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jJdKAu"

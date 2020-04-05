@@ -13,6 +13,7 @@ import {
   getHoverIndicatorStyle,
   overflowStyle,
   parseMetricToNum,
+  responsiveBorderStyle,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -553,73 +554,132 @@ const StyledBox = styled.div`
 `;
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
+  const metric = theme.global.edgeSize[gap] || gap;
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveSize =
-    breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
-  const hasBetweenBorder =
-    border === 'between' || (border && border.side === 'between');
+  const responsiveMetric =
+    responsive &&
+    breakpoint &&
+    breakpoint.edgeSize[gap] &&
+    breakpoint.edgeSize[gap];
+
   const styles = [];
   if (directionProp === 'column' || directionProp === 'column-reverse') {
-    const height = theme.global.edgeSize[gap] || gap;
-    styles.push(
-      css`
-        height: ${height};
-      `,
-    );
-    if (responsiveSize) {
-      styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
+    styles.push(`height: ${metric};`);
+    if (responsiveMetric) {
+      styles.push(breakpointStyle(breakpoint, `height: ${responsiveMetric};`));
     }
-    if (hasBetweenBorder) {
+  } else {
+    styles.push(`width: ${metric};`);
+    if (responsiveMetric) {
+      if (directionProp === 'row' || directionProp === 'row-reverse') {
+        styles.push(breakpointStyle(breakpoint, `width: ${responsiveMetric};`));
+      } else if (directionProp === 'row-responsive') {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          width: auto;
+          height: ${responsiveMetric};
+        `,
+          ),
+        );
+      }
+    }
+  }
+
+  if (border === 'between' || (border && border.side === 'between')) {
+    const borderSize = border.size || 'xsmall';
+    const borderMetric = theme.global.borderSize[borderSize] || borderSize;
+    const borderOffset = `${parseMetricToNum(metric) / 2 -
+      parseMetricToNum(borderMetric) / 2}px`;
+    const responsiveBorderMetric =
+      responsive &&
+      breakpoint &&
+      (breakpoint.borderSize[borderSize] || borderSize);
+    const responsiveBorderOffset =
+      responsiveBorderMetric &&
+      `${parseMetricToNum(responsiveMetric) / 2 -
+        parseMetricToNum(responsiveBorderMetric) / 2}px`;
+
+    if (directionProp === 'column' || directionProp === 'column-reverse') {
       const adjustedBorder =
         typeof border === 'string' ? 'top' : { ...border, side: 'top' };
-      const borderSize = border.size || 'xsmall';
-      const borderHeight = theme.global.borderSize[borderSize] || borderSize;
       styles.push(css`
         position: relative;
         &:after {
           content: '';
           position: absolute;
           width: 100%;
-          top: ${parseMetricToNum(height) / 2 -
-            parseMetricToNum(borderHeight) / 2}px;
+          top: ${borderOffset};
           ${borderStyle(adjustedBorder, responsive, theme)}
         }
       `);
-    }
-  } else {
-    const width = theme.global.edgeSize[gap] || gap;
-    styles.push(`width: ${width};`);
-    if (responsive && directionProp === 'row-responsive') {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        width: auto;
-        height: ${responsiveSize};
-      `,
-        ),
-      );
-    }
-    if (hasBetweenBorder) {
+      if (responsiveBorderOffset) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+            &:after {
+              content: '';
+              top: ${responsiveBorderOffset};
+            }`,
+          ),
+        );
+      }
+    } else {
       const adjustedBorder =
         typeof border === 'string' ? 'left' : { ...border, side: 'left' };
-      const borderSize = border.size || 'xsmall';
-      const borderWidth = theme.global.borderSize[borderSize] || borderSize;
       styles.push(css`
         position: relative;
         &:after {
           content: '';
           position: absolute;
           height: 100%;
-          left: ${parseMetricToNum(width) / 2 -
-            parseMetricToNum(borderWidth) / 2}px;
-          ${borderStyle(adjustedBorder, responsive, theme)}
+          left: ${borderOffset};
+          ${borderStyle(
+            adjustedBorder,
+            directionProp !== 'row-responsive' && responsive,
+            theme,
+          )}
         }
       `);
+      if (responsiveBorderOffset) {
+        if (directionProp === 'row' || directionProp === 'row-reverse') {
+          styles.push(
+            breakpointStyle(
+              breakpoint,
+              `
+              &:after {
+                content: '';
+                left: ${responsiveBorderOffset};
+              }`,
+            ),
+          );
+        } else if (directionProp === 'row-responsive') {
+          const adjustedBorder2 =
+            typeof border === 'string' ? 'top' : { ...border, side: 'top' };
+          styles.push(
+            breakpointStyle(
+              breakpoint,
+              `
+              &:after {
+                content: '';
+                height: auto;
+                left: unset;
+                width: 100%;
+                top: ${responsiveBorderOffset};
+                border-left: none;
+                ${responsiveBorderStyle(adjustedBorder2, theme)}
+              }`,
+            ),
+          );
+        }
+      }
     }
   }
+
   return styles;
 };
 
