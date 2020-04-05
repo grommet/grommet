@@ -149,6 +149,12 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: underline;
 }
 
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -392,6 +398,12 @@ exports[`Anchor reverse icon label renders 1`] = `
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 6px;
+  }
 }
 
 <div
