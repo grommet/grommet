@@ -12,7 +12,8 @@ const ActionList = () => (
     <Box pad="large">
       <List
         data={data.slice(0, 10)}
-        action={(elem, index) => {
+        pad={{ left: 'small', right: 'none' }}
+        action={(item, index) => {
           return (
             <Menu
               key={index}
