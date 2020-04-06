@@ -1,7 +1,12 @@
 /* eslint-disable react/no-find-dom-node */
 import React, { Component, useEffect, useMemo, useRef, useState } from 'react';
 import { findDOMNode } from 'react-dom';
-import { findScrollParents } from '../../utils';
+import {
+  findScrollParent,
+  findScrollParents,
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+} from '../../utils';
 import { Box } from '../Box';
 
 class Ref extends Component {
@@ -155,8 +160,15 @@ const InfiniteScroll = ({
     // ride out any animation delays, 100ms empirically measured
     const timer = setTimeout(() => {
       if (show && showRef.current) {
-        if (showRef.current.scrollIntoView) showRef.current.scrollIntoView();
-        else findDOMNode(showRef.current).scrollIntoView();
+        const showNode = showRef.current.scrollIntoView
+          ? showRef.current
+          : findDOMNode(showRef.current);
+        const scrollParent = findScrollParent(showNode);
+        if (isNodeBeforeScroll(showNode, scrollParent)) {
+          showNode.scrollIntoView(true);
+        } else if (isNodeAfterScroll(showNode, scrollParent)) {
+          showNode.scrollIntoView(false);
+        }
       }
     }, 100);
     return () => clearTimeout(timer);
