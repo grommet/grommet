@@ -71,13 +71,6 @@ const columnsThemeSize = [
   { property: 'paid', header: 'Paid', size: 'xsmall', align: 'end' },
 ];
 
-const columnsReize = [
-  { property: 'location', header: 'Location', size: 'small' },
-  { property: 'date', header: 'Date', size: 'small', align: 'end' },
-  { property: 'percent', header: 'Percent', size: 'xsmall', align: 'end' },
-  { property: 'paid', header: 'Paid', size: 'xsmall', align: 'end' },
-];
-
 const columnsRelativeSize = [
   { property: 'name', header: 'Name', size: '1/2' },
   { property: 'location', header: 'Location', size: '1/4' },
@@ -107,7 +100,6 @@ const Example = () => (
       <DataTable
         columns={columnsDefault}
         data={DATA}
-        step={10}
         primaryKey={false}
         border={{
           color: 'border',
@@ -122,7 +114,6 @@ const Example = () => (
       <DataTable
         columns={columnsThemeSize}
         data={DATA}
-        step={10}
         primaryKey={false}
         border={{
           color: 'border',
@@ -137,7 +128,6 @@ const Example = () => (
       <DataTable
         columns={columnsAbsoluteSize}
         data={DATA}
-        step={10}
         primaryKey={false}
         border={{
           color: 'border',
@@ -152,7 +142,6 @@ const Example = () => (
       <DataTable
         columns={columnsRelativeSize}
         data={DATA}
-        step={10}
         primaryKey={false}
         border={{
           color: 'border',
@@ -164,33 +153,4 @@ const Example = () => (
   </Grommet>
 );
 
-const ExampleResizable = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="medium">
-      <Heading level="3">Large table with resizeable</Heading>
-      <DataTable
-        columns={columnsThemeSize}
-        data={DATA}
-        step={10}
-        primaryKey={false}
-        resizeable
-      />
-    </Box>
-
-    <Box align="center" pad="medium">
-      <Heading level="3">Small table with resizeable</Heading>
-      <DataTable
-        columns={columnsReize}
-        data={DATA}
-        step={10}
-        primaryKey={false}
-        resizeable
-      />
-    </Box>
-  </Grommet>
-);
 storiesOf('DataTable', module).add('Column Sizes', () => <Example />);
-
-storiesOf('DataTable', module).add('Column Sizes resizeable', () => (
-  <ExampleResizable />
-));

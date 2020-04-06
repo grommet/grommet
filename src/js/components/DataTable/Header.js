@@ -130,7 +130,7 @@ const Header = ({
                 pad={pad}
                 plain
                 scope="col"
-                size={size} // Initial size if specified
+                size={widths && widths[property] ? undefined : size}
                 style={
                   widths && widths[property]
                     ? { width: widths[property] }
