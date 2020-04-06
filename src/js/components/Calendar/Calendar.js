@@ -7,6 +7,7 @@ import React, {
   useEffect,
 } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -100,7 +101,7 @@ const Calendar = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
@@ -230,7 +231,7 @@ const Calendar = forwardRef(
         } else {
           // have dates
           const priorDates = dates[0].map(d => new Date(d));
-          const previousDate = new Date(lastSelectedDate);
+          const previousDate = new Date(lastSelectedDate || dates[0][0]);
           const selDate = new Date(selectedDate);
           if (selDate.getTime() === priorDates[0].getTime()) {
             [[, nextDate]] = dates;
@@ -254,7 +255,7 @@ const Calendar = forwardRef(
         }
 
         setDates(nextDates);
-        setDate(nextDate);
+        if (!dates) setDate(nextDate);
         setActive(new Date(selectedDate));
         setLastSelectedDate(selectedDate);
         if (onSelect) onSelect(nextDates || nextDate);

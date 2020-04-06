@@ -254,12 +254,15 @@ const TextInput = forwardRef(
             >
               <StyledSuggestions>
                 <InfiniteScroll items={suggestions} step={theme.select.step}>
-                  {(suggestion, index) => {
+                  {(suggestion, index, itemRef) => {
                     const plainLabel =
                       typeof suggestion === 'object' &&
                       typeof isValidElement(suggestion.label);
                     return (
-                      <li key={`${stringLabel(suggestion)}-${index}`}>
+                      <li
+                        key={`${stringLabel(suggestion)}-${index}`}
+                        ref={itemRef}
+                      >
                         <Button
                           active={
                             activeSuggestionIndex === index ||

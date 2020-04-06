@@ -4,8 +4,6 @@ import styled, { withTheme } from 'styled-components';
 import {
   debounce,
   debounceDelay,
-  isNodeAfterScroll,
-  isNodeBeforeScroll,
   selectedStyle,
   setFocusWithoutScroll,
 } from '../../utils';
@@ -13,22 +11,28 @@ import {
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { SelectOption } from './SelectOption';
 import { StyledContainer } from './StyledSelect';
 
 // position relative is so scroll can be managed correctly
-const OptionsBox = styled(Box)`
+const OptionsBox = styled.div`
   position: relative;
   scroll-behavior: smooth;
+  overflow: auto;
 `;
 
 const OptionBox = styled(Box)`
   ${props => props.selected && selectedStyle}
+`;
+
+const SelectOption = styled(Button)`
+  display: block;
+  width: 100%;
 `;
 
 class SelectContainer extends Component {
@@ -47,8 +51,6 @@ class SelectContainer extends Component {
     value: '',
     replace: true,
   };
-
-  optionRefs = {};
 
   searchRef = createRef();
 
@@ -87,7 +89,6 @@ class SelectContainer extends Component {
 
   componentDidMount() {
     const { onSearch } = this.props;
-    const { activeIndex } = this.state;
     // timeout need to send the operation through event loop and allow
     // time to the portal to be available
     setTimeout(() => {
@@ -99,19 +100,6 @@ class SelectContainer extends Component {
         }
       } else if (optionsNode) {
         setFocusWithoutScroll(optionsNode);
-      }
-
-      // scroll to active option if it is below the fold
-      if (activeIndex >= 0 && optionsNode) {
-        const optionNode = this.optionRefs[activeIndex];
-        const { bottom: containerBottom } = optionsNode.getBoundingClientRect();
-        if (optionNode) {
-          const { bottom: optionTop } = optionNode.getBoundingClientRect();
-
-          if (containerBottom < optionTop) {
-            optionNode.scrollIntoView();
-          }
-        }
       }
     }, 0);
   }
@@ -192,24 +180,7 @@ class SelectContainer extends Component {
     if (nextActiveIndex !== options.length) {
       this.setState(
         { activeIndex: nextActiveIndex, keyboardNavigating: true },
-        () => {
-          const buttonNode = this.optionRefs[nextActiveIndex];
-          const optionsNode = this.optionsRef.current;
-
-          if (
-            buttonNode &&
-            isNodeAfterScroll(buttonNode, optionsNode) &&
-            optionsNode.scrollTo
-          ) {
-            optionsNode.scrollTo(
-              0,
-              buttonNode.offsetTop -
-                (optionsNode.getBoundingClientRect().height -
-                  buttonNode.getBoundingClientRect().height),
-            );
-          }
-          this.clearKeyboardNavigation();
-        },
+        () => this.clearKeyboardNavigation(),
       );
     }
   };
@@ -224,19 +195,7 @@ class SelectContainer extends Component {
     if (nextActiveIndex >= 0) {
       this.setState(
         { activeIndex: nextActiveIndex, keyboardNavigating: true },
-        () => {
-          const buttonNode = this.optionRefs[nextActiveIndex];
-          const optionsNode = this.optionsRef.current;
-
-          if (
-            buttonNode &&
-            isNodeBeforeScroll(buttonNode, optionsNode) &&
-            optionsNode.scrollTo
-          ) {
-            optionsNode.scrollTo(0, buttonNode.offsetTop);
-          }
-          this.clearKeyboardNavigation();
-        },
+        () => this.clearKeyboardNavigation(),
       );
     }
   };
@@ -391,21 +350,16 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          <OptionsBox
-            flex="shrink"
-            role="menubar"
-            tabIndex="-1"
-            ref={this.optionsRef}
-            overflow="auto"
-          >
+          <OptionsBox role="menubar" tabIndex="-1" ref={this.optionsRef}>
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
                 onMore={onMore}
                 replace={replace}
+                show={activeIndex !== -1 ? activeIndex : undefined}
               >
-                {(option, index) => {
+                {(option, index, optionRef) => {
                   const isDisabled = this.isDisabled(index);
                   const isSelected = this.isSelected(index);
                   const isActive = activeIndex === index;
@@ -413,9 +367,10 @@ class SelectContainer extends Component {
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
-                      ref={ref => {
-                        this.optionRefs[index] = ref;
-                      }}
+                      ref={optionRef}
+                      tabIndex="-1"
+                      role="menuitem"
+                      hoverIndicator="background"
                       disabled={isDisabled || undefined}
                       active={isActive}
                       selected={isSelected}
@@ -450,6 +405,9 @@ class SelectContainer extends Component {
             ) : (
               <SelectOption
                 key="search_empty"
+                tabIndex="-1"
+                role="menuitem"
+                hoverIndicator="background"
                 disabled
                 option={emptySearchMessage}
               >

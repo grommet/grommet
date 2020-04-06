@@ -8,10 +8,10 @@ const Example = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <WorldMap />
+        <WorldMap color="graph-1" />
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('WorldMap', module).add('Simple', () => <Example />);
+storiesOf('WorldMap', module).add('Color', () => <Example />);

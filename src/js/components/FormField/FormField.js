@@ -7,6 +7,7 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
@@ -60,7 +61,7 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
 
     useEffect(() => {
@@ -84,7 +85,11 @@ const FormField = forwardRef(
 
         const validateField = (value2, data) => {
           let result;
-          if (required && (value2 === undefined || value2 === '')) {
+          if (
+            required &&
+            // false is for CheckBox
+            (value2 === undefined || value2 === '' || value2 === false)
+          ) {
             result = messages.required;
           } else if (validate) {
             if (Array.isArray(validate)) {
@@ -230,6 +235,7 @@ const FormField = forwardRef(
     if (border) {
       contents = (
         <Box
+          overflow="hidden"
           border={
             border.position === 'inner'
               ? {
