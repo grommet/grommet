@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
@@ -17,7 +15,14 @@ const CONTINENTS = [
   {
     name: 'Australia',
     origin: [74, 32],
-    area: [[4, 0], [7, 1], [15, 7], [13, 9], [0, 6], [0, 2]],
+    area: [
+      [4, 0],
+      [7, 1],
+      [15, 7],
+      [13, 9],
+      [0, 6],
+      [0, 2],
+    ],
     dots: [
       [4, 0, 1],
       [2, 1, 6],
@@ -210,7 +215,16 @@ const CONTINENTS = [
   {
     name: 'South America',
     origin: [22, 26],
-    area: [[2, 0], [5, 0], [11, 4], [11, 8], [3, 18], [2, 17], [0, 4], [0, 3]],
+    area: [
+      [2, 0],
+      [5, 0],
+      [11, 4],
+      [11, 8],
+      [3, 18],
+      [2, 17],
+      [0, 4],
+      [0, 3],
+    ],
     dots: [
       [2, 0, 4],
       [1, 1, 7],
@@ -236,7 +250,15 @@ const CONTINENTS = [
   {
     name: 'North America',
     origin: [0, 0],
-    area: [[21, 0], [39, 0], [39, 6], [22, 26], [16, 23], [2, 12], [0, 7]],
+    area: [
+      [21, 0],
+      [39, 0],
+      [39, 6],
+      [22, 26],
+      [16, 23],
+      [2, 12],
+      [0, 7],
+    ],
     dots: [
       [22, 0, 6],
       [29, 0, 1],
@@ -362,7 +384,7 @@ const coordToLatLon = (coord, origin, extent) => {
   return [lat, lon];
 };
 
-const buildContinentState = ({ area, dots, origin }) => {
+const buildContinent = ({ area, dots, name, origin }) => {
   let extent = [...origin];
   const stateDots = dots
     .map(segment => {
@@ -395,21 +417,20 @@ const buildContinentState = ({ area, dots, origin }) => {
   return {
     area: stateArea,
     dots: stateDots,
+    name,
     origin,
     extent,
     mid,
   };
 };
 
-const buildState = () => {
-  const continents = {};
-
+const buildWorld = () => {
   // Build the SVG paths describing the individual dots
+  const continents = CONTINENTS.map(buildContinent);
   const origin = [0, 0];
   let extent = [0, 0];
-  CONTINENTS.forEach(continent => {
-    continents[continent.name] = buildContinentState(continent);
-    extent = maxCoordinate(extent, continents[continent.name].extent);
+  continents.forEach(continent => {
+    extent = maxCoordinate(extent, continent.extent);
   });
 
   return {
@@ -421,26 +442,6 @@ const buildState = () => {
     width: (extent[0] - origin[0] + 1) * FACTOR,
     height: (extent[1] - origin[1] + 2) * FACTOR,
   };
-};
-
-const updateState = (state, { continents, places }) => {
-  const nextState = { ...state };
-
-  if (continents) {
-    continents.forEach(continent => {
-      nextState.continents[continent.name] = {
-        ...state.continents[continent.name],
-        ...continent,
-      };
-    });
-  }
-
-  nextState.places = (places || []).map(({ location, ...place }) => {
-    const coords = latLonToCoord(location, state.origin, state.extent);
-    return { coords, key: location.join(','), ...place };
-  });
-
-  return nextState;
 };
 
 const buildInteractiveProps = (
@@ -483,79 +484,80 @@ const buildInteractiveProps = (
   },
 });
 
-class WorldMap extends Component {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (!prevState.continents) {
-      return updateState(buildState(), nextProps);
-    }
-    return updateState(prevState, nextProps);
-  }
-
-  state = {};
-
-  onMouseOver = () => {
-    // track when we're over the map to avoid dealing with mouse moves
-    this.setState({ over: true });
-  };
-
-  onMouseMove = event => {
-    const { width } = this.state;
-    // determine the map coordinates for where the mouse is
-    // containerRef uses the group so we can handle aspect ratio scaling
-    const rect = this.containerRef.getBoundingClientRect();
-    const scale = rect.width / width; // since the SVG viewBox might be scaled
-    const coords = [
-      Math.round((event.clientX - rect.left) / scale / FACTOR),
-      Math.round((event.clientY - rect.top) / scale / FACTOR),
-    ];
-    this.setState({ activeCoords: coords });
-  };
-
-  onMouseLeave = () => {
-    this.setState({ over: false, activeCoords: undefined });
-  };
-
-  render() {
-    const {
+const WorldMap = forwardRef(
+  (
+    {
+      fill,
       color,
-      fill, // munged to avoid styled-components putting it in the DOM
-      onSelectPlace,
+      continents: continentsProp,
       hoverColor,
-      theme,
+      onSelectPlace,
+      places: placesProp,
       ...rest
-    } = this.props;
-    delete rest.places;
-    delete rest.continents;
-    const {
-      activeContinent,
-      activeCoords,
-      activePlace,
-      continents: continentStates,
-      extent,
-      origin,
-      over,
-      places: placeStates,
-      x,
-      y,
-      width,
-      height,
-    } = this.state;
+    },
+    ref,
+  ) => {
+    const theme = React.useContext(ThemeContext);
 
-    const continents = Object.keys(continentStates).map(name => {
-      const {
-        area,
-        color: continentColor,
-        dots,
-        onClick,
-        onHover,
-      } = continentStates[name];
+    const world = React.useMemo(buildWorld, []);
+
+    const [continents, setContinents] = React.useState({});
+    React.useEffect(() => {
+      if (continentsProp) {
+        setContinents(
+          continentsProp.reduce((obj, continent) => {
+            // eslint-disable-next-line no-param-reassign
+            obj[continent.name] = continent;
+            return obj;
+          }, {}),
+        );
+      } else setContinents({});
+    }, [continentsProp]);
+
+    const [places, setPlaces] = React.useState([]);
+    React.useEffect(() => {
+      if (placesProp) {
+        setPlaces(
+          placesProp.map(({ location, ...place }) => {
+            const coords = latLonToCoord(location, world.origin, world.extent);
+            return { coords, key: location.join(','), ...place };
+          }),
+        );
+      } else setPlaces([]);
+    }, [placesProp, world]);
+
+    const [over, setOver] = React.useState();
+    const [activeCoords, setActiveCoords] = React.useState();
+    const [activeContinent, setActiveContinent] = React.useState();
+    const [activePlace, setActivePlace] = React.useState();
+    const containerRef = React.useRef();
+
+    const onMouseMove = React.useCallback(
+      event => {
+        // determine the map coordinates for where the mouse is
+        // containerRef uses the group so we can handle aspect ratio scaling
+        const rect = containerRef.current.getBoundingClientRect();
+        // since the SVG viewBox might be scaled
+        const scale = rect.width / world.width;
+        const coords = [
+          Math.round((event.clientX - rect.left) / scale / FACTOR),
+          Math.round((event.clientY - rect.top) / scale / FACTOR),
+        ];
+        setActiveCoords(coords);
+      },
+      [world.width],
+    );
+
+    const continentElements = world.continents.map(({ area, dots, name }) => {
+      const { color: continentColor, onClick, onHover } =
+        continents[name] || {};
       const active = activeContinent && activeContinent === name;
 
       let interactiveProps = {};
       if (onClick || onHover) {
         interactiveProps = buildInteractiveProps(
-          continentStates[name],
-          activate => this.setState({ activeContinent: activate }),
+          continents[name],
+          activate => setActiveContinent(activate),
           active,
         );
       }
@@ -578,7 +580,7 @@ class WorldMap extends Component {
       );
     });
 
-    const places = placeStates.map(place => {
+    const placeElements = places.map(place => {
       const {
         color: placeColor,
         coords,
@@ -595,7 +597,7 @@ class WorldMap extends Component {
       if (onClick || onHover) {
         interactiveProps = buildInteractiveProps(
           place,
-          activate => this.setState({ activePlace: activate }),
+          activate => setActivePlace(activate),
           active,
         );
       }
@@ -622,9 +624,12 @@ class WorldMap extends Component {
     let interactiveProps = {};
     if (onSelectPlace) {
       interactiveProps = {
-        onMouseOver: this.onMouseOver,
-        onMouseMove: over ? this.onMouseMove : undefined,
-        onMouseLeave: this.onMouseLeave,
+        onMouseOver: () => setOver(true),
+        onMouseMove: over ? onMouseMove : undefined,
+        onMouseLeave: () => {
+          setOver(false);
+          setActiveCoords(undefined);
+        },
       };
     }
 
@@ -637,7 +642,9 @@ class WorldMap extends Component {
           fill="none"
           fillRule="evenodd"
           onClick={() =>
-            onSelectPlace(coordToLatLon(activeCoords, origin, extent))
+            onSelectPlace(
+              coordToLatLon(activeCoords, world.origin, world.extent),
+            )
           }
         >
           <path
@@ -655,30 +662,27 @@ class WorldMap extends Component {
 
     return (
       <StyledWorldMap
-        viewBox={`${x} ${y} ${width} ${height}`}
+        ref={ref}
+        viewBox={`${world.x} ${world.y} ${world.width} ${world.height}`}
         preserveAspectRatio="xMinYMin meet"
         fillProp={fill}
-        width={width}
-        height={height}
+        width={world.width}
+        height={world.height}
         {...interactiveProps}
         {...rest}
       >
-        <g
-          ref={ref => {
-            this.containerRef = ref;
-          }}
-          stroke="none"
-          fill="none"
-          fillRule="evenodd"
-        >
-          {continents}
+        <g ref={containerRef} stroke="none" fill="none" fillRule="evenodd">
+          {continentElements}
         </g>
-        {places}
+        {placeElements}
         {active}
       </StyledWorldMap>
     );
-  }
-}
+    // }
+  },
+);
+
+WorldMap.displayName = 'WorldMap';
 
 WorldMap.defaultProps = {};
 Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
@@ -688,6 +692,6 @@ if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   WorldMapDoc = require('./doc').doc(WorldMap);
 }
-const WorldMapWrapper = compose(withTheme)(WorldMapDoc || WorldMap);
+const WorldMapWrapper = WorldMapDoc || WorldMap;
 
 export { WorldMapWrapper as WorldMap };
