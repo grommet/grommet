@@ -16,9 +16,11 @@ var Example = function Example() {
   }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.WorldMap, null)));
+  }, _react["default"].createElement(_grommet.WorldMap, {
+    color: "graph-1"
+  })));
 };
 
-(0, _react2.storiesOf)('WorldMap', module).add('Simple', function () {
+(0, _react2.storiesOf)('WorldMap', module).add('Color', function () {
   return _react["default"].createElement(Example, null);
 });

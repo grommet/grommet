@@ -9,9 +9,11 @@ var Example = function Example() {
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(WorldMap, null)));
+  }, React.createElement(WorldMap, {
+    color: "graph-1"
+  })));
 };
 
-storiesOf('WorldMap', module).add('Simple', function () {
+storiesOf('WorldMap', module).add('Color', function () {
   return React.createElement(Example, null);
 });
