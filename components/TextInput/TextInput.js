@@ -250,10 +250,11 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
     }, _react["default"].createElement(_StyledTextInput.StyledSuggestions, null, _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
       items: suggestions,
       step: theme.select.step
-    }, function (suggestion, index) {
+    }, function (suggestion, index, itemRef) {
       var plainLabel = typeof suggestion === 'object' && typeof (0, _react.isValidElement)(suggestion.label);
       return _react["default"].createElement("li", {
-        key: stringLabel(suggestion) + "-" + index
+        key: stringLabel(suggestion) + "-" + index,
+        ref: itemRef
       }, _react["default"].createElement(_Button.Button, {
         active: activeSuggestionIndex === index || selectedSuggestionIndex === index,
         ref: function ref(r) {

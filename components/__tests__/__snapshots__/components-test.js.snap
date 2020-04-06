@@ -4265,7 +4265,13 @@ bottom",
   },
   "TableFooter": [Function],
   "TableHeader": [Function],
-  "TableRow": [Function],
+  "TableRow": Object {
+    "description": "A row of cells in a table.",
+    "intrinsicElement": "tr",
+    "name": "TableRow",
+    "usage": "import { TableRow } from 'grommet';
+<TableRow />",
+  },
   "Tabs": Object {
     "availableAt": Array [
       Object {

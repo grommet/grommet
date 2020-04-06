@@ -13,6 +13,13 @@ describe('InfiniteScroll', function () {
   test('basic', function () {
     var _render = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, null), React.createElement(InfiniteScroll, {
       items: items
+    }, function (item, index, ref) {
+      return React.createElement("div", {
+        ref: ref,
+        key: index
+      }, item);
+    }), React.createElement(InfiniteScroll, {
+      items: items
     }, function (item, index) {
       return React.createElement("div", {
         key: index

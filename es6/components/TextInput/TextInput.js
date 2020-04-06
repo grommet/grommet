@@ -229,10 +229,11 @@ var TextInput = forwardRef(function (_ref, ref) {
     }, React.createElement(StyledSuggestions, null, React.createElement(InfiniteScroll, {
       items: suggestions,
       step: theme.select.step
-    }, function (suggestion, index) {
+    }, function (suggestion, index, itemRef) {
       var plainLabel = typeof suggestion === 'object' && typeof isValidElement(suggestion.label);
       return React.createElement("li", {
-        key: stringLabel(suggestion) + "-" + index
+        key: stringLabel(suggestion) + "-" + index,
+        ref: itemRef
       }, React.createElement(Button, {
         active: activeSuggestionIndex === index || selectedSuggestionIndex === index,
         ref: function ref(r) {

@@ -1,7 +1,41 @@
 "use strict";
 
 exports.__esModule = true;
-exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.findVisibleParent = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.setFocusWithoutScroll = exports.getNewContainer = exports.getBodyChildElements = exports.getFirstFocusableDescendant = exports.findScrollParents = void 0;
+exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.findVisibleParent = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.setFocusWithoutScroll = exports.getNewContainer = exports.getBodyChildElements = exports.getFirstFocusableDescendant = exports.findScrollParents = exports.findScrollParent = void 0;
+
+var findScrollParent = function findScrollParent(element, horizontal) {
+  var result;
+
+  if (element) {
+    var parent = element.parentNode;
+
+    while (!result && parent && parent.getBoundingClientRect) {
+      var rect = parent.getBoundingClientRect(); // 10px is to account for borders and scrollbars in a lazy way
+
+      if (horizontal) {
+        if (rect.width && parent.scrollWidth > rect.width + 10) {
+          result = parent;
+        }
+      } else if (rect.height && parent.scrollHeight > rect.height + 10) {
+        result = parent;
+      }
+
+      parent = parent.parentNode;
+    } // last scrollable element will be the document
+    // if nothing else is scrollable in the page
+
+
+    if (!result) {
+      result = document;
+    } else if (result.tagName.toLowerCase() === 'body') {
+      result = document;
+    }
+  }
+
+  return result;
+};
+
+exports.findScrollParent = findScrollParent;
 
 var findScrollParents = function findScrollParents(element, horizontal) {
   var result = [];

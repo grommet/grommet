@@ -3,8 +3,8 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 /* eslint-disable react/no-find-dom-node */
 import React, { Component, useEffect, useMemo, useRef, useState } from 'react';
 import { findDOMNode } from 'react-dom';
-import { findScrollParents } from '../../utils';
-import { Box } from '../Box'; // Wraps an item to ensure we can get a ref to it
+import { findScrollParent, findScrollParents, isNodeAfterScroll, isNodeBeforeScroll } from '../../utils';
+import { Box } from '../Box';
 
 var Ref =
 /*#__PURE__*/
@@ -78,8 +78,8 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   useEffect(function () {
     if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
       /* eslint-disable react/no-find-dom-node */
-      var beginRect = findDOMNode(firstPageItemRef.current).getBoundingClientRect();
-      var endRect = findDOMNode(lastPageItemRef.current).getBoundingClientRect();
+      var beginRect = firstPageItemRef.current.getBoundingClientRect ? firstPageItemRef.current.getBoundingClientRect() : findDOMNode(firstPageItemRef.current).getBoundingClientRect();
+      var endRect = lastPageItemRef.current.getBoundingClientRect ? lastPageItemRef.current.getBoundingClientRect() : findDOMNode(lastPageItemRef.current).getBoundingClientRect();
       var nextPageHeight = endRect.top + endRect.height - beginRect.top; // Check if the items are arranged in a single column or not.
 
       var nextMultiColumn = nextPageHeight / step < endRect.height;
@@ -150,7 +150,14 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     // ride out any animation delays, 100ms empirically measured
     var timer = setTimeout(function () {
       if (show && showRef.current) {
-        findDOMNode(showRef.current).scrollIntoView();
+        var showNode = showRef.current.scrollIntoView ? showRef.current : findDOMNode(showRef.current);
+        var scrollParent = findScrollParent(showNode);
+
+        if (isNodeBeforeScroll(showNode, scrollParent)) {
+          showNode.scrollIntoView(true);
+        } else if (isNodeAfterScroll(showNode, scrollParent)) {
+          showNode.scrollIntoView(false);
+        }
       }
     }, 100);
     return function () {
@@ -179,22 +186,26 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   }
 
   items.slice(firstIndex, lastIndex + 1).forEach(function (item, index) {
-    var itemsIndex = firstIndex + index;
-    var child = children(item, itemsIndex); // we only need the Refs if we don't know the pageHeight
+    var itemsIndex = firstIndex + index; // We only need page refs if we don't know the pageHeight
+    // The new way, we pass the ref we want to the children render function.
 
-    if (!pageHeight && itemsIndex === 0) {
+    var ref;
+    if (!pageHeight && itemsIndex === 0) ref = firstPageItemRef;else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) ref = lastPageItemRef;else if (show && show === itemsIndex) ref = showRef;
+    var child = children(item, itemsIndex, ref); // The old way, if we don't see that our ref was set, wrap it
+
+    if (!pageHeight && itemsIndex === 0 && child.ref !== firstPageItemRef) {
       child = React.createElement(Ref, {
         key: "first",
         ref: firstPageItemRef
       }, child);
-    } else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) {
+    } else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex) && child.ref !== lastPageItemRef) {
       child = React.createElement(Ref, {
         key: "last",
         ref: lastPageItemRef
       }, child);
     }
 
-    if (show && show === itemsIndex) {
+    if (show && show === itemsIndex && child.ref !== showRef) {
       child = React.createElement(Ref, {
         key: "show",
         ref: showRef

@@ -13,6 +13,8 @@ var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
+var _Button = require("../Button");
+
 var _InfiniteScroll = require("../InfiniteScroll");
 
 var _Keyboard = require("../Keyboard");
@@ -20,8 +22,6 @@ var _Keyboard = require("../Keyboard");
 var _Text = require("../Text");
 
 var _TextInput = require("../TextInput");
-
-var _SelectOption = require("./SelectOption");
 
 var _StyledSelect = require("./StyledSelect");
 
@@ -38,16 +38,21 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // position relative is so scroll can be managed correctly
-var OptionsBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var OptionsBox = _styledComponents["default"].div.withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-0"
-})(["position:relative;scroll-behavior:smooth;"]);
+})(["position:relative;scroll-behavior:smooth;overflow:auto;"]);
+
 var OptionBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionBox",
   componentId: "sc-1wi0ul8-1"
 })(["", ""], function (props) {
   return props.selected && _utils.selectedStyle;
 });
+var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig({
+  displayName: "SelectContainer__SelectOption",
+  componentId: "sc-1wi0ul8-2"
+})(["display:block;width:100%;"]);
 
 var SelectContainer =
 /*#__PURE__*/
@@ -58,8 +63,6 @@ function (_Component) {
     var _this;
 
     _this = _Component.call(this, props) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "optionRefs", {});
 
     _defineProperty(_assertThisInitialized(_this), "searchRef", (0, _react.createRef)());
 
@@ -150,14 +153,7 @@ function (_Component) {
           activeIndex: nextActiveIndex,
           keyboardNavigating: true
         }, function () {
-          var buttonNode = _this.optionRefs[nextActiveIndex];
-          var optionsNode = _this.optionsRef.current;
-
-          if (buttonNode && (0, _utils.isNodeAfterScroll)(buttonNode, optionsNode) && optionsNode.scrollTo) {
-            optionsNode.scrollTo(0, buttonNode.offsetTop - (optionsNode.getBoundingClientRect().height - buttonNode.getBoundingClientRect().height));
-          }
-
-          _this.clearKeyboardNavigation();
+          return _this.clearKeyboardNavigation();
         });
       }
     });
@@ -176,14 +172,7 @@ function (_Component) {
           activeIndex: nextActiveIndex,
           keyboardNavigating: true
         }, function () {
-          var buttonNode = _this.optionRefs[nextActiveIndex];
-          var optionsNode = _this.optionsRef.current;
-
-          if (buttonNode && (0, _utils.isNodeBeforeScroll)(buttonNode, optionsNode) && optionsNode.scrollTo) {
-            optionsNode.scrollTo(0, buttonNode.offsetTop);
-          }
-
-          _this.clearKeyboardNavigation();
+          return _this.clearKeyboardNavigation();
         });
       }
     });
@@ -350,8 +339,7 @@ function (_Component) {
   _proto.componentDidMount = function componentDidMount() {
     var _this2 = this;
 
-    var onSearch = this.props.onSearch;
-    var activeIndex = this.state.activeIndex; // timeout need to send the operation through event loop and allow
+    var onSearch = this.props.onSearch; // timeout need to send the operation through event loop and allow
     // time to the portal to be available
 
     setTimeout(function () {
@@ -365,23 +353,6 @@ function (_Component) {
         }
       } else if (optionsNode) {
         (0, _utils.setFocusWithoutScroll)(optionsNode);
-      } // scroll to active option if it is below the fold
-
-
-      if (activeIndex >= 0 && optionsNode) {
-        var optionNode = _this2.optionRefs[activeIndex];
-
-        var _optionsNode$getBound = optionsNode.getBoundingClientRect(),
-            containerBottom = _optionsNode$getBound.bottom;
-
-        if (optionNode) {
-          var _optionNode$getBoundi = optionNode.getBoundingClientRect(),
-              optionTop = _optionNode$getBoundi.bottom;
-
-          if (containerBottom < optionTop) {
-            optionNode.scrollIntoView();
-          }
-        }
       }
     }, 0);
   };
@@ -430,28 +401,28 @@ function (_Component) {
       placeholder: searchPlaceholder,
       onChange: this.onSearchChange
     })), _react["default"].createElement(OptionsBox, {
-      flex: "shrink",
       role: "menubar",
       tabIndex: "-1",
-      ref: this.optionsRef,
-      overflow: "auto"
+      ref: this.optionsRef
     }, options.length > 0 ? _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
       items: options,
       step: theme.select.step,
       onMore: onMore,
-      replace: replace
-    }, function (option, index) {
+      replace: replace,
+      show: activeIndex !== -1 ? activeIndex : undefined
+    }, function (option, index, optionRef) {
       var isDisabled = _this3.isDisabled(index);
 
       var isSelected = _this3.isSelected(index);
 
       var isActive = activeIndex === index;
-      return _react["default"].createElement(_SelectOption.SelectOption // eslint-disable-next-line react/no-array-index-key
+      return _react["default"].createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
       , {
         key: index,
-        ref: function ref(_ref) {
-          _this3.optionRefs[index] = _ref;
-        },
+        ref: optionRef,
+        tabIndex: "-1",
+        role: "menuitem",
+        hoverIndicator: "background",
         disabled: isDisabled || undefined,
         active: isActive,
         selected: isSelected,
@@ -465,8 +436,11 @@ function (_Component) {
       }) : _react["default"].createElement(OptionBox, _extends({}, selectOptionsStyle, {
         selected: isSelected
       }), _react["default"].createElement(_Text.Text, theme.select.options.text, _this3.optionLabel(index))));
-    }) : _react["default"].createElement(_SelectOption.SelectOption, {
+    }) : _react["default"].createElement(SelectOption, {
       key: "search_empty",
+      tabIndex: "-1",
+      role: "menuitem",
+      hoverIndicator: "background",
       disabled: true,
       option: emptySearchMessage
     }, _react["default"].createElement(OptionBox, selectOptionsStyle, _react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));

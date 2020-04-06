@@ -8,26 +8,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { createRef, Component } from 'react';
 import styled, { withTheme } from 'styled-components';
-import { debounce, debounceDelay, isNodeAfterScroll, isNodeBeforeScroll, selectedStyle, setFocusWithoutScroll } from '../../utils';
+import { debounce, debounceDelay, selectedStyle, setFocusWithoutScroll } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { SelectOption } from './SelectOption';
 import { StyledContainer } from './StyledSelect'; // position relative is so scroll can be managed correctly
 
-var OptionsBox = styled(Box).withConfig({
+var OptionsBox = styled.div.withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-0"
-})(["position:relative;scroll-behavior:smooth;"]);
+})(["position:relative;scroll-behavior:smooth;overflow:auto;"]);
 var OptionBox = styled(Box).withConfig({
   displayName: "SelectContainer__OptionBox",
   componentId: "sc-1wi0ul8-1"
 })(["", ""], function (props) {
   return props.selected && selectedStyle;
 });
+var SelectOption = styled(Button).withConfig({
+  displayName: "SelectContainer__SelectOption",
+  componentId: "sc-1wi0ul8-2"
+})(["display:block;width:100%;"]);
 
 var SelectContainer =
 /*#__PURE__*/
@@ -38,8 +42,6 @@ function (_Component) {
     var _this;
 
     _this = _Component.call(this, props) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "optionRefs", {});
 
     _defineProperty(_assertThisInitialized(_this), "searchRef", createRef());
 
@@ -130,14 +132,7 @@ function (_Component) {
           activeIndex: nextActiveIndex,
           keyboardNavigating: true
         }, function () {
-          var buttonNode = _this.optionRefs[nextActiveIndex];
-          var optionsNode = _this.optionsRef.current;
-
-          if (buttonNode && isNodeAfterScroll(buttonNode, optionsNode) && optionsNode.scrollTo) {
-            optionsNode.scrollTo(0, buttonNode.offsetTop - (optionsNode.getBoundingClientRect().height - buttonNode.getBoundingClientRect().height));
-          }
-
-          _this.clearKeyboardNavigation();
+          return _this.clearKeyboardNavigation();
         });
       }
     });
@@ -156,14 +151,7 @@ function (_Component) {
           activeIndex: nextActiveIndex,
           keyboardNavigating: true
         }, function () {
-          var buttonNode = _this.optionRefs[nextActiveIndex];
-          var optionsNode = _this.optionsRef.current;
-
-          if (buttonNode && isNodeBeforeScroll(buttonNode, optionsNode) && optionsNode.scrollTo) {
-            optionsNode.scrollTo(0, buttonNode.offsetTop);
-          }
-
-          _this.clearKeyboardNavigation();
+          return _this.clearKeyboardNavigation();
         });
       }
     });
@@ -330,8 +318,7 @@ function (_Component) {
   _proto.componentDidMount = function componentDidMount() {
     var _this2 = this;
 
-    var onSearch = this.props.onSearch;
-    var activeIndex = this.state.activeIndex; // timeout need to send the operation through event loop and allow
+    var onSearch = this.props.onSearch; // timeout need to send the operation through event loop and allow
     // time to the portal to be available
 
     setTimeout(function () {
@@ -345,23 +332,6 @@ function (_Component) {
         }
       } else if (optionsNode) {
         setFocusWithoutScroll(optionsNode);
-      } // scroll to active option if it is below the fold
-
-
-      if (activeIndex >= 0 && optionsNode) {
-        var optionNode = _this2.optionRefs[activeIndex];
-
-        var _optionsNode$getBound = optionsNode.getBoundingClientRect(),
-            containerBottom = _optionsNode$getBound.bottom;
-
-        if (optionNode) {
-          var _optionNode$getBoundi = optionNode.getBoundingClientRect(),
-              optionTop = _optionNode$getBoundi.bottom;
-
-          if (containerBottom < optionTop) {
-            optionNode.scrollIntoView();
-          }
-        }
       }
     }, 0);
   };
@@ -410,17 +380,16 @@ function (_Component) {
       placeholder: searchPlaceholder,
       onChange: this.onSearchChange
     })), React.createElement(OptionsBox, {
-      flex: "shrink",
       role: "menubar",
       tabIndex: "-1",
-      ref: this.optionsRef,
-      overflow: "auto"
+      ref: this.optionsRef
     }, options.length > 0 ? React.createElement(InfiniteScroll, {
       items: options,
       step: theme.select.step,
       onMore: onMore,
-      replace: replace
-    }, function (option, index) {
+      replace: replace,
+      show: activeIndex !== -1 ? activeIndex : undefined
+    }, function (option, index, optionRef) {
       var isDisabled = _this3.isDisabled(index);
 
       var isSelected = _this3.isSelected(index);
@@ -429,9 +398,10 @@ function (_Component) {
       return React.createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
       , {
         key: index,
-        ref: function ref(_ref) {
-          _this3.optionRefs[index] = _ref;
-        },
+        ref: optionRef,
+        tabIndex: "-1",
+        role: "menuitem",
+        hoverIndicator: "background",
         disabled: isDisabled || undefined,
         active: isActive,
         selected: isSelected,
@@ -447,6 +417,9 @@ function (_Component) {
       }), React.createElement(Text, theme.select.options.text, _this3.optionLabel(index))));
     }) : React.createElement(SelectOption, {
       key: "search_empty",
+      tabIndex: "-1",
+      role: "menuitem",
+      hoverIndicator: "background",
       disabled: true,
       option: emptySearchMessage
     }, React.createElement(OptionBox, selectOptionsStyle, React.createElement(Text, theme.select.container.text, emptySearchMessage))))));

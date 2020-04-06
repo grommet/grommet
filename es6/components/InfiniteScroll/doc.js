@@ -3,7 +3,7 @@ import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(InfiniteScroll) {
   var DocumentedInfiniteScroll = describe(InfiniteScroll).availableAt(getAvailableAtBadge('InfiniteScroll')).description('A container that lazily renders items.').usage("import { InfiniteScroll } from 'grommet';\n<InfiniteScroll />");
   DocumentedInfiniteScroll.propTypes = {
-    children: PropTypes.func.description('Function that will be called when each item is rendered.'),
+    children: PropTypes.func.description("Function that will be called when each item is rendered. It will be\n      called with three arguments, the item to render, the index of the item,\n      and a ref that should be applied to the element. For example:\n      {(item, index, ref) => <li key={index} ref={ref}>{item}</li>}"),
     items: PropTypes.arrayOf(PropTypes.any).description('The children callback will be called to render each item.'),
     onMore: PropTypes.func.description("Use this to indicate that 'items' doesn't contain all that it could.\n      It will be called when the entire list of items has been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed."),
     renderMarker: PropTypes.func.description("Function that will be called to render the marker element that\n      is inserted into the DOM to track when scrolling nears the end of the\n      rendered items. It will be called with a single element that should\n      be wrapped appropriately. This is needed when the default\n      element, a <span>, isn't sufficient, such as a row of a table body."),

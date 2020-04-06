@@ -1,10 +1,13 @@
-import React from 'react';
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import React, { forwardRef } from 'react';
 import { StyledTableRow } from '../Table/StyledTable';
-
-var TableRow = function TableRow(props) {
-  return React.createElement(StyledTableRow, props);
-};
-
+var TableRow = forwardRef(function (props, ref) {
+  return React.createElement(StyledTableRow, _extends({
+    ref: ref
+  }, props));
+});
+TableRow.displayName = 'TableRow';
 var TableRowDoc;
 
 if (process.env.NODE_ENV !== 'production') {

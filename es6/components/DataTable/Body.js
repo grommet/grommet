@@ -60,10 +60,11 @@ var Body = function Body(_ref) {
     },
     scrollableAncestor: "window",
     step: step
-  }, function (datum, index) {
+  }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;
     return React.createElement(StyledDataTableRow, {
       key: primaryValue || index,
+      ref: rowRef,
       size: size,
       active: active >= 0 ? active === index : undefined,
       onClick: onClickRow ? function (event) {

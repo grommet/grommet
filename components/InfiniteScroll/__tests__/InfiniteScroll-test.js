@@ -22,6 +22,13 @@ describe('InfiniteScroll', function () {
   test('basic', function () {
     var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, null), _react["default"].createElement(_.InfiniteScroll, {
       items: items
+    }, function (item, index, ref) {
+      return _react["default"].createElement("div", {
+        ref: ref,
+        key: index
+      }, item);
+    }), _react["default"].createElement(_.InfiniteScroll, {
+      items: items
     }, function (item, index) {
       return _react["default"].createElement("div", {
         key: index
