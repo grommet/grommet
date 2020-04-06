@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
@@ -25,7 +26,7 @@ const AccordionPanel = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [hover, setHover] = useState(undefined);
 
     const iconColor = useMemo(

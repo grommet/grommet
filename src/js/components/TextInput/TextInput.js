@@ -105,6 +105,7 @@ const TextInput = forwardRef(
     const [value, setValue] = formContext.useFormContext(
       readOnly ? undefined : name,
       valueProp,
+      '',
     );
 
     const [focus, setFocus] = useState();
@@ -117,6 +118,19 @@ const TextInput = forwardRef(
         if (onSuggestionsClose) onSuggestionsClose();
       }
     }, [onSuggestionsClose, showDrop, suggestions]);
+
+    // If we have suggestions and focus, open drop if it's closed.
+    // This can occur when suggestions are tied to the value.
+    // We don't want focus or showDrop in the dependencies because we
+    // don't want to open the drop just because Esc close it.
+    /* eslint-disable react-hooks/exhaustive-deps */
+    useEffect(() => {
+      if (focus && !showDrop && suggestions && suggestions.length) {
+        setShowDrop(true);
+        if (onSuggestionsOpen) onSuggestionsOpen();
+      }
+    }, [onSuggestionsOpen, suggestions]);
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
 
@@ -364,7 +378,7 @@ const TextInput = forwardRef(
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
-            value={renderLabel(value) || ''}
+            value={renderLabel(value)}
             readOnly={readOnly}
             onFocus={event => {
               setFocus(true);
