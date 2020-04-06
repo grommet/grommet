@@ -25,8 +25,9 @@ var ActionList = function ActionList() {
       left: 'small',
       right: 'none'
     },
-    action: function action() {
+    action: function action(item, index) {
       return _react["default"].createElement(_grommet.Menu, {
+        key: index,
         icon: _react["default"].createElement(_grommetIcons.More, null),
         hoverIndicator: true,
         items: [{

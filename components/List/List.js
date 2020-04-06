@@ -148,7 +148,8 @@ var List = _react["default"].forwardRef(function (props, ref) {
 
     if (action) {
       content = [_react["default"].createElement(_Box.Box, {
-        align: "start"
+        align: "start",
+        key: "actionContainer" + index
       }, content), action(item, index)];
       boxProps = {
         direction: 'row',

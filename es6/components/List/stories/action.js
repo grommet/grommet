@@ -16,8 +16,9 @@ var ActionList = function ActionList() {
       left: 'small',
       right: 'none'
     },
-    action: function action() {
+    action: function action(item, index) {
       return React.createElement(Menu, {
+        key: index,
         icon: React.createElement(More, null),
         hoverIndicator: true,
         items: [{
