@@ -20,8 +20,7 @@ export const doc = Avatar => {
       .description('A fixed size.')
       .defaultValue('medium'),
     src: PropTypes.oneOfType([PropTypes.string]).description(
-      `Specifies a URL string for an avatar image, 
-      or any node element.`,
+      `Specifies a URL string for an avatar image.`,
     ),
   };
 
