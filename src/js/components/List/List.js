@@ -140,7 +140,9 @@ const List = React.forwardRef((props, ref) => {
 
             if (action) {
               content = [
-                <Box align="start">{content}</Box>,
+                <Box align="start" key={`actionContainer${index}`}>
+                  {content}
+                </Box>,
                 action(item, index),
               ];
               boxProps = {
