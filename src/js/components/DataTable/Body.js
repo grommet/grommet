@@ -76,13 +76,14 @@ const Body = ({
           scrollableAncestor="window"
           step={step}
         >
-          {(datum, index) => {
+          {(datum, index, rowRef) => {
             const primaryValue = primaryProperty
               ? datumValue(datum, primaryProperty)
               : undefined;
             return (
               <StyledDataTableRow
                 key={primaryValue || index}
+                ref={rowRef}
                 size={size}
                 active={active >= 0 ? active === index : undefined}
                 onClick={

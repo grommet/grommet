@@ -13,9 +13,16 @@ const ActionList = () => (
       <List
         data={data.slice(0, 10)}
         pad={{ left: 'small', right: 'none' }}
-        action={() => (
-          <Menu icon={<More />} hoverIndicator items={[{ label: 'one' }]} />
-        )}
+        action={(item, index) => {
+          return (
+            <Menu
+              key={index}
+              icon={<More />}
+              hoverIndicator
+              items={[{ label: 'one' }]}
+            />
+          );
+        }}
       />
     </Box>
   </Grommet>
