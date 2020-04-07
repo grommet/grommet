@@ -20,13 +20,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Image = function Image(_ref) {
-  var fallback = _ref.fallback,
+  var a11yTitle = _ref.a11yTitle,
+      fallback = _ref.fallback,
       forwardRef = _ref.forwardRef,
       onError = _ref.onError,
       opacity = _ref.opacity,
       fill = _ref.fill,
       src = _ref.src,
-      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "forwardRef", "onError", "opacity", "fill", "src"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fallback", "forwardRef", "onError", "opacity", "fill", "src"]);
 
   var _useState = (0, _react.useState)(false),
       imageMissing = _useState[0],
@@ -43,7 +44,9 @@ var Image = function Image(_ref) {
   var extraProps = {
     onError: (onError || fallback) && handleError
   };
-  return _react["default"].createElement(_StyledImage.StyledImage, _extends({}, rest, extraProps, {
+  return _react["default"].createElement(_StyledImage.StyledImage, _extends({
+    "aria-label": a11yTitle
+  }, rest, extraProps, {
     ref: forwardRef,
     opacityProp: opacity,
     fillProp: fill,
