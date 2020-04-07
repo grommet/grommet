@@ -566,11 +566,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveMetric =
-    responsive &&
-    breakpoint &&
-    breakpoint.edgeSize[gap] &&
-    breakpoint.edgeSize[gap];
+  const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
   if (directionProp === 'column' || directionProp === 'column-reverse') {
