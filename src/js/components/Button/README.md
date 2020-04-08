@@ -496,7 +496,7 @@ The opacity when the button is disabled. Expects `number`.
 Defaults to
 
 ```
-1
+0.3
 ```
 
 **button.disabled.border.color**
@@ -506,7 +506,7 @@ The border color when the button is disabled. Expects `string`.
 Defaults to
 
 ```
-text-xweak
+undefined
 ```
 
 **button.disabled.color**
@@ -517,7 +517,7 @@ Fill color for primary, label color for plain, border color
 Defaults to
 
 ```
-text-xweak
+undefined
 ```
 
 **button.padding.horizontal**

@@ -123,16 +123,18 @@ const plainStyle = props => css`
 
 const disabledStyle = props => css`
   ${!props.plain &&
+    props.theme.button.disabled.border.color &&
     `border: ${props.theme.button.border.width} solid
     ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
-  ${props.primary
+  ${props.primary && props.theme.button.disabled.color
     ? backgroundStyle(
         normalizeColor(props.theme.button.disabled.color, props.theme),
         props.theme,
         props.theme.button.color,
       )
-    : `color: ${normalizeColor(
-        props.theme.button.disabled.color || 'inherit',
+    : props.theme.button.disabled.color &&
+      `color: ${normalizeColor(
+        props.theme.button.disabled.color,
         props.theme,
       )};`}
   cursor: default;

@@ -203,8 +203,8 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  color: #666666;
   cursor: default;
+  opacity: 0.3;
   height: 100%;
   line-height: 0;
 }
@@ -672,8 +672,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  color: #666666;
   cursor: default;
+  opacity: 0.3;
   height: 100%;
   line-height: 0;
 }
@@ -1051,8 +1051,8 @@ exports[`Carousel navigate 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  color: #666666;
   cursor: default;
+  opacity: 0.3;
   height: 100%;
   line-height: 0;
 }
@@ -1357,7 +1357,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 hCFeEv"
+          class="StyledButton-sc-323bzc-0 lifMfy"
           disabled=""
           type="button"
         >
@@ -1428,7 +1428,7 @@ exports[`Carousel navigate 3`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hCFeEv"
+          class="StyledButton-sc-323bzc-0 lifMfy"
           disabled=""
           type="button"
         >
@@ -1714,8 +1714,8 @@ exports[`Carousel play 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  color: #666666;
   cursor: default;
+  opacity: 0.3;
   height: 100%;
   line-height: 0;
 }
@@ -2018,7 +2018,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 hCFeEv"
+          class="StyledButton-sc-323bzc-0 lifMfy"
           disabled=""
           type="button"
         >

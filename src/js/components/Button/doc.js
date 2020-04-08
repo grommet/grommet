@@ -198,18 +198,16 @@ export const themeDoc = {
   'button.disabled.opacity': {
     description: 'The opacity when the button is disabled.',
     type: 'number',
-    defaultValue: 1.0,
+    defaultValue: 0.3,
   },
   'button.disabled.border.color': {
     description: 'The border color when the button is disabled.',
     type: 'string',
-    defaultValue: 'text-xweak',
   },
   'button.disabled.color': {
     description: `Fill color for primary, label color for plain, border color 
     otherwise when the button is disabled.`,
     type: 'string',
-    defaultValue: 'text-xweak',
   },
   'button.padding.horizontal': {
     description: 'The horizontal padding.',

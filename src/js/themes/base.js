@@ -379,10 +379,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       disabled: {
         border: {
-          color: 'text-xweak',
+          // color: { dark: undefined, light: undefined }
         },
-        color: 'text-xweak',
-        // opacity: undefined,
+        // color: { dark: undefined, light: undefined }
+        opacity: 0.3,
       },
       // color: { dark: undefined, light: undefined }
       primary: {

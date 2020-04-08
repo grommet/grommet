@@ -1373,8 +1373,8 @@ exports[`Select disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  color: #666666;
   cursor: default;
+  opacity: 0.3;
 }
 
 .c5 {
@@ -1489,7 +1489,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 kzsIAc Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 jAvQSR Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   disabled=""
   id="test-select"
   type="button"
@@ -1624,8 +1624,8 @@ exports[`Select empty results search 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  color: #666666;
   cursor: default;
+  opacity: 0.3;
 }
 
 .c11 {

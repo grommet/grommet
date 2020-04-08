@@ -6291,8 +6291,8 @@ exports[`Calendar header 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  color: #666666;
   cursor: default;
+  opacity: 0.3;
 }
 
 .c6 {
