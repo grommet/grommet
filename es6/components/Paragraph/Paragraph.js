@@ -2,20 +2,20 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { StyledParagraph } from './StyledParagraph';
-
-var Paragraph = function Paragraph(_ref) {
+var Paragraph = forwardRef(function (_ref, ref) {
   var color = _ref.color,
       fill = _ref.fill,
       rest = _objectWithoutPropertiesLoose(_ref, ["color", "fill"]);
 
   return React.createElement(StyledParagraph, _extends({
+    ref: ref,
     colorProp: color,
     fillProp: fill
   }, rest));
-};
-
+});
+Paragraph.displayName = 'Paragraph';
 var ParagraphDoc;
 
 if (process.env.NODE_ENV !== 'production') {
