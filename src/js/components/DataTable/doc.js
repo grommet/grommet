@@ -23,6 +23,10 @@ const backgroundShape = {};
 parts.forEach(part => {
   backgroundShape[part] = PropTypes.oneOfType([
     PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
     PropTypes.arrayOf(PropTypes.string),
   ]);
 });
