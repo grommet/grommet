@@ -13,14 +13,6 @@ test('Image renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-test('Image renders with aria-label', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
-    a11yTitle: "aria-label-text",
-    src: SRC
-  })));
-  var tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
 test('Image fit renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
     fit: "cover",

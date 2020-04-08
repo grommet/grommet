@@ -8,14 +8,13 @@ import { withForwardRef } from '../hocs';
 import { StyledImage } from './StyledImage';
 
 var Image = function Image(_ref) {
-  var a11yTitle = _ref.a11yTitle,
-      fallback = _ref.fallback,
+  var fallback = _ref.fallback,
       forwardRef = _ref.forwardRef,
       onError = _ref.onError,
       opacity = _ref.opacity,
       fill = _ref.fill,
       src = _ref.src,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fallback", "forwardRef", "onError", "opacity", "fill", "src"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "forwardRef", "onError", "opacity", "fill", "src"]);
 
   var _useState = useState(false),
       imageMissing = _useState[0],
@@ -32,9 +31,7 @@ var Image = function Image(_ref) {
   var extraProps = {
     onError: (onError || fallback) && handleError
   };
-  return React.createElement(StyledImage, _extends({
-    "aria-label": a11yTitle
-  }, rest, extraProps, {
+  return React.createElement(StyledImage, _extends({}, rest, extraProps, {
     ref: forwardRef,
     opacityProp: opacity,
     fillProp: fill,
