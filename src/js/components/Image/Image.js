@@ -4,6 +4,7 @@ import { withForwardRef } from '../hocs';
 import { StyledImage } from './StyledImage';
 
 const Image = ({
+  a11yTitle,
   fallback,
   forwardRef,
   onError,
@@ -24,6 +25,7 @@ const Image = ({
   };
   return (
     <StyledImage
+      aria-label={a11yTitle}
       {...rest}
       {...extraProps}
       ref={forwardRef}
