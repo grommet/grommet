@@ -126,20 +126,22 @@ const disabledStyle = props => css`
     props.theme.button.disabled.border.color &&
     `border: ${props.theme.button.border.width} solid
     ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
-  ${props.primary && props.theme.button.disabled.color
-    ? backgroundStyle(
-        normalizeColor(props.theme.button.disabled.color, props.theme),
-        props.theme,
-        props.theme.button.color,
-      )
-    : props.theme.button.disabled.color &&
-      `color: ${normalizeColor(
-        props.theme.button.disabled.color,
-        props.theme,
-      )};`}
-  cursor: default;
+  ${
+    props.primary && props.theme.button.disabled.color
+      ? backgroundStyle(
+          normalizeColor(props.theme.button.disabled.color, props.theme),
+          props.theme,
+          props.theme.button.color,
+        )
+      : props.theme.button.disabled.color &&
+        `color: ${normalizeColor(
+          props.theme.button.disabled.color,
+          props.theme,
+        )};`
+  }
   ${props.theme.button.disabled.opacity &&
     `opacity: ${props.theme.button.disabled.opacity}`};
+    cursor: default;
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3

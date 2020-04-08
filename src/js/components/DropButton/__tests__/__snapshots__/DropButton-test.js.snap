@@ -118,8 +118,8 @@ exports[`DropButton disabled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  cursor: default;
   opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
