@@ -54,7 +54,12 @@ const padStyle = props => {
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
-      props.colorValue || props.theme.button.border.color || 'control',
+      (props.active &&
+        props.primary &&
+        props.theme.button.primary.active.border.color) ||
+        props.colorValue ||
+        props.theme.button.border.color ||
+        'control',
       props.theme,
     )};
   border-radius: ${radiusStyle(props)};

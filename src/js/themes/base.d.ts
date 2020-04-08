@@ -286,6 +286,11 @@ export interface ThemeType {
     };
     primary?: {
       color?: ColorType;
+      active?: {
+        border?: {
+          color?: ColorType;
+        }
+      }
     };
     size?: {
       small?: {

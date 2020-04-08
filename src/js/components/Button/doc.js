@@ -214,6 +214,11 @@ export const themeDoc = {
     description: `The color of the background for primary buttons.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.primary.active.border.color': {
+    description: `The color of the border for active primary buttons.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'control',
+  },
   'button.size.small.border.radius': {
     description: 'The border corner radius.',
     type: 'string',

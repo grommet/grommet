@@ -529,6 +529,16 @@ Defaults to
 undefined
 ```
 
+**button.primary.active.border.color**
+
+The color of the border for active primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+control
+```
+
 **button.size.small.border.radius**
 
 The border corner radius. Expects `string`.
