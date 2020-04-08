@@ -18,10 +18,7 @@ parts.forEach(function (part) {
 });
 var backgroundShape = {};
 parts.forEach(function (part) {
-  backgroundShape[part] = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-    dark: PropTypes.string,
-    light: PropTypes.string
-  }), PropTypes.arrayOf(PropTypes.string)]);
+  backgroundShape[part] = PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]);
 });
 var borderTypes = [PropTypes.bool, PropTypes.oneOf(sides), PropTypes.shape({
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({

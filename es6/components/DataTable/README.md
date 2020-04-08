@@ -136,24 +136,12 @@ string
 {
   header: 
     string
-    {
-      dark: string,
-      light: string
-    }
     [string],
   body: 
     string
-    {
-      dark: string,
-      light: string
-    }
     [string],
   footer: 
     string
-    {
-      dark: string,
-      light: string
-    }
     [string]
 }
 ```
