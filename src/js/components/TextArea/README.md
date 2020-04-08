@@ -197,7 +197,8 @@ Defaults to
 
 **global.input.padding**
 
-The padding of the text. Expects `string`.
+The padding of the text. Expects `string | { top: string, bottom: string, left: string, right: 
+        string, horizontal: string, vertical: string }`.
 
 Defaults to
 

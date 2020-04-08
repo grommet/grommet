@@ -268,8 +268,10 @@ export const inputStyle = css`
   ${props =>
     props.theme.global.input.padding &&
     typeof props.theme.global.input.padding !== 'object'
-      ? `padding: ${parseMetricToNum(props.theme.global.input.padding) -
-          parseMetricToNum(props.theme.global.control.border.width)}px;`
+      ? `padding: ${parseMetricToNum(
+          props.theme.global.edgeSize[props.theme.global.input.padding] ||
+            props.theme.global.input.padding,
+        ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
       : edgeStyle(
           'padding',
           props.theme.global.input.padding,
