@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
@@ -33,7 +34,7 @@ const Chart = React.forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [values, setValues] = useState([]);
     const [bounds, setBounds] = useState([
       [0, 0],

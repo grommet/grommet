@@ -631,6 +631,127 @@ Defaults to
   }
 \`\`\`
 ",
+  "Avatar": "## Avatar
+An Avatar.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Avatar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=avatar&module=%2Fsrc%2FAvatar.js)
+## Usage
+
+\`\`\`javascript
+import { Avatar } from 'grommet';
+<Avatar/>
+\`\`\`
+
+## Properties
+
+**size**
+
+A fixed size. Defaults to \`medium\`.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**src**
+
+Specifies a URL string for an avatar image.
+
+\`\`\`
+string
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**avatar.extend**
+
+Any additional style for the Avatar. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**avatar.size.xsmall**
+
+The xsmall size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**avatar.size.small**
+
+The small size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**avatar.size.medium**
+
+The medium size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**avatar.size.large**
+
+The large size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+72px
+\`\`\`
+
+**avatar.size.xlarge**
+
+The xlarge size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+96px
+\`\`\`
+
+**avatar.text.extend**
+
+Any additional style for the text. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**avatar.text.fontWeight**
+
+The font weight of the label. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Box": "## Box
 A container that lays out its contents in one direction. Box
       provides CSS flexbox capabilities for layout, as well as general
@@ -4385,12 +4506,24 @@ string
 {
   header: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   body: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   footer: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 \`\`\`
@@ -4572,6 +4705,18 @@ A description of the data. The order controls the column order.
   render: function,
   search: boolean,
   sortable: boolean,
+  size: 
+    small
+    medium
+    large
+    xlarge
+    1/2
+    1/4
+    2/4
+    3/4
+    1/3
+    2/3
+    string,
   verticalAlign: 
     middle
     top
@@ -4735,10 +4880,12 @@ string
 When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.
 
 \`\`\`
 string
+boolean
 \`\`\`
 
 **resizeable**
@@ -6907,7 +7054,7 @@ boolean
 
 **plain**
 
-Whether or not Grommet should apply a global font-family, font-size, 
+Whether or not Grommet should apply a global font-family, font-size,
         and line-height.
 
 \`\`\`
@@ -6942,11 +7089,22 @@ light
 
 **userAgent**
 
-User agent used to detect the device width for setting the initial 
+User agent used to detect the device width for setting the initial
       breakpoint.
 
 \`\`\`
 string
+\`\`\`
+
+**containerTarget**
+
+The node where Drop and Layer containers are inserted. Defaults to
+      document.body which is almost always the right choice. This is used
+      for less common cases like rendering within an internal node (e.g.
+      shadow root).
+
+\`\`\`
+object
 \`\`\`
   
 ## Intrinsic element
@@ -7538,7 +7696,10 @@ import { InfiniteScroll } from 'grommet';
 
 **children**
 
-Function that will be called when each item is rendered.
+Function that will be called when each item is rendered. It will be
+      called with three arguments, the item to render, the index of the item,
+      and a ref that should be applied to the element. For example:
+      {(item, index, ref) => <li key={index} ref={ref}>{item}</li>}
 
 \`\`\`
 function
