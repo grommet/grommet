@@ -234,9 +234,17 @@ export const focusStyle = css`
   }
 `;
 
+// for backwards compatibility we need to add back the control border width.
+// in each case, check first if the value is an edgeSize,
+// then if it's a string value.
+const adjustPad = (props, value) =>
+  `${parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
+    parseMetricToNum(`${props.theme.global.control.border.width}px`)}px`;
+
 export const getInputPadBySide = (props, side) => {
   if (typeof props.theme.global.input.padding !== 'object') {
-    return props.theme.global.input.padding;
+    const adjustedPad = adjustPad(props, props.theme.global.input.padding);
+    return adjustedPad;
   }
 
   let orientation;
@@ -250,15 +258,9 @@ export const getInputPadBySide = (props, side) => {
     props.theme.global.input.padding[side] ||
     props.theme.global.input.padding[orientation];
 
-  // for backwards compatibility we need to add back the control border width
-  // in each case, check first if the value is an edgeSize,
-  // then if it's a string value.
-  const adjustedPad =
-    parseMetricToNum(`${props.theme.global.edgeSize[pad] || pad}px`) +
-    parseMetricToNum(`${props.theme.global.control.border.width}px`);
+  const adjustedPad = adjustPad(props, pad);
 
-  // if still undefined, there should be no pad.
-  return `${adjustedPad}px` || '0px';
+  return adjustedPad;
 };
 
 export const inputStyle = css`

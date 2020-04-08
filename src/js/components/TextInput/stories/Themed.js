@@ -12,7 +12,10 @@ const suggestions = Array(100)
 const customTheme = deepMerge(grommet, {
   global: {
     input: {
-      padding: '12px',
+      padding: {
+        horizontal: 'small',
+        vertical: 'medium',
+      },
     },
   },
   textInput: {
