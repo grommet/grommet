@@ -76,7 +76,7 @@ Grommet is produced using this great tool:
 [contributing]: CONTRIBUTING.md
 [existing app]: https://github.com/grommet/grommet-starter-existing-app
 [grommet starter]: https://github.com/grommet/grommet-starter-new-app
-[grommet]: https://grommet.io/
+[grommet]: https://v2.grommet.io/
 [medium]: https://medium.com/grommet-io
 [npm]: https://www.npmjs.com/package/grommet
 [playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
