@@ -25,7 +25,10 @@ parts.forEach(function (part) {
 });
 var backgroundShape = {};
 parts.forEach(function (part) {
-  backgroundShape[part] = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string)]);
+  backgroundShape[part] = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+    dark: _reactDesc.PropTypes.string,
+    light: _reactDesc.PropTypes.string
+  }), _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string)]);
 });
 var borderTypes = [_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(sides), _reactDesc.PropTypes.shape({
   color: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
