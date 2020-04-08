@@ -250,10 +250,15 @@ export const getInputPadBySide = (props, side) => {
     props.theme.global.input.padding[side] ||
     props.theme.global.input.padding[orientation];
 
+  // for backwards compatibility we need to add back the control border width
   // in each case, check first if the value is an edgeSize,
   // then if it's a string value.
+  const adjustedPad =
+    parseMetricToNum(`${props.theme.global.edgeSize[pad] || pad}px`) +
+    parseMetricToNum(`${props.theme.global.control.border.width}px`);
+
   // if still undefined, there should be no pad.
-  return props.theme.global.edgeSize[pad] || pad || '0px';
+  return `${adjustedPad}px` || '0px';
 };
 
 export const inputStyle = css`

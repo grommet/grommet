@@ -632,7 +632,7 @@ exports[`MaskedInput icon 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  left: 11px;
+  left: 12px;
 }
 
 <div
@@ -758,7 +758,7 @@ exports[`MaskedInput icon reverse 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 11px;
+  right: 12px;
 }
 
 <div
