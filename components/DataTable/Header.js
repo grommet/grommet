@@ -62,7 +62,8 @@ var Header = function Header(_ref) {
         align = _ref2.align,
         search = _ref2.search,
         sortable = _ref2.sortable,
-        verticalAlign = _ref2.verticalAlign;
+        verticalAlign = _ref2.verticalAlign,
+        size = _ref2.size;
     var content = typeof header === 'string' ? _react["default"].createElement(_Text.Text, null, header) : header;
 
     if (onSort && sortable !== false) {
@@ -116,6 +117,7 @@ var Header = function Header(_ref) {
       pad: pad,
       plain: true,
       scope: "col",
+      size: widths && widths[property] ? undefined : size,
       style: widths && widths[property] ? {
         width: widths[property]
       } : undefined

@@ -589,4 +589,73 @@ describe('DataTable', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('themeColumnSizes', function () {
+    var _render22 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A',
+        size: 'medium'
+      }, {
+        property: 'b',
+        header: 'B',
+        size: 'small'
+      }],
+      data: [{
+        a: 'one',
+        b: 1
+      }, {
+        a: 'two',
+        b: 2
+      }]
+    }))),
+        container = _render22.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('absoluteColumnSizes', function () {
+    var _render23 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A',
+        size: '400px'
+      }, {
+        property: 'b',
+        header: 'B',
+        size: '200px'
+      }],
+      data: [{
+        a: 'one',
+        b: 1
+      }, {
+        a: 'two',
+        b: 2
+      }]
+    }))),
+        container = _render23.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('relativeColumnSizes', function () {
+    var _render24 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A',
+        size: '2/3'
+      }, {
+        property: 'b',
+        header: 'B',
+        size: '1/3'
+      }],
+      data: [{
+        a: 'one',
+        b: 1
+      }, {
+        a: 'two',
+        b: 2
+      }]
+    }))),
+        container = _render24.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

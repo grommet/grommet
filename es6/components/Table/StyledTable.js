@@ -10,9 +10,9 @@ var SIZE_MAP = {
   '2/3': '66.66%'
 };
 var sizeStyle = css(["width:", ";max-width:", ";overflow:hidden;"], function (props) {
-  return SIZE_MAP[props.size] || props.theme.global.size[props.size];
+  return SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size;
 }, function (props) {
-  return SIZE_MAP[props.size] || props.theme.global.size[props.size];
+  return SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size;
 });
 var StyledTableCell = styled.td.withConfig({
   displayName: "StyledTable__StyledTableCell",
