@@ -23,6 +23,15 @@ test('Image renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Image renders with aria-label', function () {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
+    a11yTitle: "aria-label-text",
+    src: SRC
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 test('Image fit renders', function () {
   var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
     fit: "cover",
