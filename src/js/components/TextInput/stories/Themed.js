@@ -10,6 +10,11 @@ const suggestions = Array(100)
   .map((_, i) => `suggestion ${i + 1}`);
 
 const customTheme = deepMerge(grommet, {
+  global: {
+    input: {
+      padding: '12px',
+    },
+  },
   textInput: {
     extend: () => `
       font-size: 20px;

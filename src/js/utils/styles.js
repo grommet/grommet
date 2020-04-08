@@ -51,88 +51,112 @@ export const edgeStyle = (
     `;
   }
   const result = [];
-  if (data.horizontal) {
-    result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.horizontal] ||
-        data.horizontal};
-      ${kind}-right: ${theme.global.edgeSize[data.horizontal] ||
-        data.horizontal};
+
+  const { horizontal, vertical, top, bottom, left, right } = data;
+
+  // if horizontal and vertical are equal OR all sides are equal,
+  // we can just return a single css value such as padding: 12px
+  // instead of breaking out by sides.
+  const horizontalVerticalEqual =
+    horizontal && vertical && horizontal === vertical;
+  const allSidesEqual =
+    top && bottom && left && right && ((top === bottom) === left) === right;
+
+  if (horizontalVerticalEqual || allSidesEqual) {
+    // since the values will be the same between vertical & horizontal OR
+    // left, right, top, & bottom, we can just choose one
+    const value = horizontalVerticalEqual ? horizontal : top;
+    return css`
+      ${kind}: ${theme.global.edgeSize[value] || value};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.horizontal] ||
-              data.horizontal};
-        ${kind}-right: ${breakpoint.edgeSize[data.horizontal] ||
-              data.horizontal};
+        ${kind}: ${breakpoint.edgeSize[value] || value};
       `,
+          )
+        : ''};
+    `;
+  }
+
+  if (horizontal) {
+    result.push(css`
+      ${kind}-left: ${theme.global.edgeSize[horizontal] || horizontal};
+      ${kind}-right: ${theme.global.edgeSize[horizontal] || horizontal};
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
+          ${kind}-left: ${breakpoint.edgeSize[horizontal] || horizontal};
+          ${kind}-right: ${breakpoint.edgeSize[horizontal] || horizontal};
+        `,
           )
         : ''};
     `);
   }
-  if (data.vertical) {
+  if (vertical) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.vertical] || data.vertical};
-      ${kind}-bottom: ${theme.global.edgeSize[data.vertical] || data.vertical};
+      ${kind}-top: ${theme.global.edgeSize[vertical] || vertical};
+      ${kind}-bottom: ${theme.global.edgeSize[vertical] || vertical};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.vertical] || data.vertical};
-        ${kind}-bottom: ${breakpoint.edgeSize[data.vertical] || data.vertical};
-      `,
+          ${kind}-top: ${breakpoint.edgeSize[vertical] || vertical};
+          ${kind}-bottom: ${breakpoint.edgeSize[vertical] || vertical};
+        `,
           )
         : ''};
     `);
   }
-  if (data.top) {
+  if (top) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.top] || data.top};
+      ${kind}-top: ${theme.global.edgeSize[top] || top};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.top] || data.top};
-      `,
+          ${kind}-top: ${breakpoint.edgeSize[top] || top};
+        `,
           )
         : ''};
     `);
   }
-  if (data.bottom) {
+  if (bottom) {
     result.push(css`
-      ${kind}-bottom: ${theme.global.edgeSize[data.bottom] || data.bottom};
+      ${kind}-bottom: ${theme.global.edgeSize[bottom] || bottom};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-bottom: ${breakpoint.edgeSize[data.bottom] || data.bottom};
-      `,
+          ${kind}-bottom: ${breakpoint.edgeSize[bottom] || bottom};
+        `,
           )
         : ''};
     `);
   }
-  if (data.left) {
+  if (left) {
     result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.left] || data.left};
+      ${kind}-left: ${theme.global.edgeSize[left] || left};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.left] || data.left};
-      `,
+          ${kind}-left: ${breakpoint.edgeSize[left] || left};
+        `,
           )
         : ''};
     `);
   }
-  if (data.right) {
+  if (right) {
     result.push(css`
-      ${kind}-right: ${theme.global.edgeSize[data.right] || data.right};
+      ${kind}-right: ${theme.global.edgeSize[right] || right};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-right: ${breakpoint.edgeSize[data.right] || data.right};
-      `,
+          ${kind}-right: ${breakpoint.edgeSize[right] || right};
+        `,
           )
         : ''};
     `);
@@ -144,8 +168,9 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-inline-start: ${breakpoint.edgeSize[data.start] || data.start};
-      `,
+          ${kind}-inline-start: ${breakpoint.edgeSize[data.start] ||
+              data.start};
+        `,
           )
         : ''};
     `);
@@ -157,12 +182,13 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
-      `,
+          ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
+        `,
           )
         : ''};
     `);
   }
+
   return result;
 };
 
@@ -208,18 +234,49 @@ export const focusStyle = css`
   }
 `;
 
+export const getInputPadBySide = (props, side) => {
+  if (typeof props.theme.global.input.padding !== 'object') {
+    return props.theme.global.input.padding;
+  }
+
+  let orientation;
+  if (side === 'left' || side === 'right') orientation = 'horizontal';
+  else if (side === 'top' || side === 'bottom') orientation = 'vertical';
+  else orientation = undefined;
+
+  // if individual side isn't available, fallback to the
+  // orientation if possible
+  const pad =
+    props.theme.global.input.padding[side] ||
+    props.theme.global.input.padding[orientation];
+
+  // in each case, check first if the value is an edgeSize,
+  // then if it's a string value.
+  // if still undefined, there should be no pad.
+  return props.theme.global.edgeSize[pad] || pad || '0px';
+};
+
 export const inputStyle = css`
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: ${props =>
-    parseMetricToNum(props.theme.global.input.padding) -
-    parseMetricToNum(props.theme.global.control.border.width)}px;
   outline: none;
   background: transparent;
   color: inherit;
+  ${props =>
+    props.theme.global.input.padding &&
+    typeof props.theme.global.input.padding !== 'object'
+      ? `padding: ${parseMetricToNum(props.theme.global.input.padding) -
+          parseMetricToNum(props.theme.global.control.border.width)}px;`
+      : edgeStyle(
+          'padding',
+          props.theme.global.input.padding,
+          props.responsive,
+          props.theme.box.responsiveBreakpoint,
+          props.theme,
+        )}
   ${props =>
     props.theme.global.input.weight &&
     css`

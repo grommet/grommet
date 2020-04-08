@@ -17,10 +17,10 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -159,10 +159,10 @@ exports[`MaskedInput basic 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -216,10 +216,10 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -277,10 +277,10 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -528,7 +528,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 bhZUIG"
+    class="StyledMaskedInput-sc-99vkfa-0 fnpBsB"
     data-testid="test-input"
     id="item"
     name="item"
@@ -579,10 +579,10 @@ exports[`MaskedInput icon 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -632,7 +632,7 @@ exports[`MaskedInput icon 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  left: 12px;
+  left: 11px;
 }
 
 <div
@@ -705,10 +705,10 @@ exports[`MaskedInput icon reverse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -758,7 +758,7 @@ exports[`MaskedInput icon reverse 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
-  right: 12px;
+  right: 11px;
 }
 
 <div
@@ -797,10 +797,10 @@ exports[`MaskedInput mask 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1046,10 +1046,10 @@ exports[`MaskedInput next and previous without options 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1104,7 +1104,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 ihcUgk"
+    class="StyledMaskedInput-sc-99vkfa-0 hXfZgr"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1121,10 +1121,10 @@ exports[`MaskedInput option via keyboard 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1180,10 +1180,10 @@ exports[`MaskedInput option via mouse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1431,7 +1431,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 bhZUIG"
+    class="StyledMaskedInput-sc-99vkfa-0 fnpBsB"
     data-testid="test-input"
     id="item"
     name="item"
