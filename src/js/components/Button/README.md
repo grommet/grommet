@@ -501,7 +501,7 @@ Defaults to
 
 **button.disabled.border.color**
 
-The border color when the button is disabled. Expects `string`.
+The border color when the button is disabled. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -512,7 +512,7 @@ undefined
 **button.disabled.color**
 
 Fill color for primary, label color for plain, border color 
-    otherwise when the button is disabled. Expects `string`.
+    otherwise when the button is disabled. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

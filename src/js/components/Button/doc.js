@@ -202,12 +202,12 @@ export const themeDoc = {
   },
   'button.disabled.border.color': {
     description: 'The border color when the button is disabled.',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
   },
   'button.disabled.color': {
     description: `Fill color for primary, label color for plain, border color 
     otherwise when the button is disabled.`,
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
   },
   'button.padding.horizontal': {
     description: 'The horizontal padding.',
