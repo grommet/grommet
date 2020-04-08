@@ -29,6 +29,7 @@ export interface DataTableProps {
     render?: ((...args: any[]) => any),
     search?: boolean,
     sortable?: boolean,
+    size?: "small" | "medium" | "large" | "xlarge" | "1/2" | "1/4" | "2/4" | "3/4" | "1/3" | "2/3" | string;
     verticalAlign?: "middle" | "top" | "bottom"}[];
   data?: {}[];
   groupBy?: string | { property: string, expand: Array<string>, onExpand: ((...args: any[]) => any) };
