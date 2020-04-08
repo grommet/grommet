@@ -136,12 +136,24 @@ string
 {
   header: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   body: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   footer: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 ```
@@ -323,6 +335,18 @@ A description of the data. The order controls the column order.
   render: function,
   search: boolean,
   sortable: boolean,
+  size: 
+    small
+    medium
+    large
+    xlarge
+    1/2
+    1/4
+    2/4
+    3/4
+    1/3
+    2/3
+    string,
   verticalAlign: 
     middle
     top

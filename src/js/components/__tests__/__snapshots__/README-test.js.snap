@@ -4506,12 +4506,24 @@ string
 {
   header: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   body: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   footer: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 \`\`\`
@@ -4693,6 +4705,18 @@ A description of the data. The order controls the column order.
   render: function,
   search: boolean,
   sortable: boolean,
+  size: 
+    small
+    medium
+    large
+    xlarge
+    1/2
+    1/4
+    2/4
+    3/4
+    1/3
+    2/3
+    string,
   verticalAlign: 
     middle
     top
@@ -7672,7 +7696,10 @@ import { InfiniteScroll } from 'grommet';
 
 **children**
 
-Function that will be called when each item is rendered.
+Function that will be called when each item is rendered. It will be
+      called with three arguments, the item to render, the index of the item,
+      and a ref that should be applied to the element. For example:
+      {(item, index, ref) => <li key={index} ref={ref}>{item}</li>}
 
 \`\`\`
 function
