@@ -316,6 +316,12 @@ describe('Box', function () {
       }
     }), React.createElement(Box, {
       margin: {
+        horizontal: 'large',
+        vertical: 'large',
+        left: 'small'
+      }
+    }), React.createElement(Box, {
+      margin: {
         top: 'small',
         right: 'small',
         left: 'small',
@@ -390,6 +396,14 @@ describe('Box', function () {
         right: 'medium',
         horizontal: 'small',
         vertical: 'large'
+      }
+    }), React.createElement(Box, {
+      pad: {
+        top: 'medium',
+        right: 'medium',
+        left: 'medium',
+        bottom: 'medium',
+        horizontal: 'small'
       }
     }), React.createElement(Box, {
       pad: {
