@@ -3192,6 +3192,26 @@ exports[`Box margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  margin-left: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   margin-top: 12px;
   margin-bottom: 12px;
   margin-left: 12px;
@@ -3203,7 +3223,7 @@ exports[`Box margin 1`] = `
   flex-direction: column;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3328,13 +3348,15 @@ exports[`Box margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c14 {
-    margin-top: 6px;
+    margin-left: 24px;
+    margin-right: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c14 {
-    margin-bottom: 6px;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 }
 
@@ -3345,45 +3367,63 @@ exports[`Box margin 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
-    margin-right: 6px;
+  .c15 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c15 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
     margin-left: 12px;
     margin-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     margin-top: 6px;
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     margin-bottom: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     margin-left: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     margin-right: 12px;
   }
 }
@@ -3435,6 +3475,9 @@ exports[`Box margin 1`] = `
   />
   <div
     className="c15"
+  />
+  <div
+    className="c16"
   />
 </div>
 `;
@@ -3739,6 +3782,27 @@ exports[`Box pad 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
@@ -3878,38 +3942,69 @@ exports[`Box pad 1`] = `
 
 @media only screen and (max-width:768px) {
   .c15 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding-top: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding-left: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     padding-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     padding-bottom: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     padding-left: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c16 {
     padding-right: 12px;
   }
 }
@@ -3961,6 +4056,9 @@ exports[`Box pad 1`] = `
   />
   <div
     className="c15"
+  />
+  <div
+    className="c16"
   />
 </div>
 `;
