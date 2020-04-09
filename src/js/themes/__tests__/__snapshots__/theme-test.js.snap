@@ -215,6 +215,49 @@ exports[`Grommet custom theme 1`] = `
   text-decoration: underline;
 }
 
+.c12 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c12::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c12::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c12::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c12:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c12::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c11 {
+  position: relative;
+  width: 100%;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -359,6 +402,22 @@ exports[`Grommet custom theme 1`] = `
         Add
       </span>
     </a>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c11"
+    >
+      <input
+        autoComplete="off"
+        className="c12"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+      />
+    </div>
   </div>
 </div>
 `;

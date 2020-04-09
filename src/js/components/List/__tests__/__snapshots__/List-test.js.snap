@@ -1513,13 +1513,13 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iQXWyC List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 bJRAgK List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 lchcXI List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 iWnVHs List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta
