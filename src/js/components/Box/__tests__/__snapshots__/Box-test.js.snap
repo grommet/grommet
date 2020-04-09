@@ -3192,12 +3192,10 @@ exports[`Box margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
   margin-left: 12px;
   margin-right: 12px;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  margin-top: 12px;
-  margin-right: 24px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3330,27 +3328,25 @@ exports[`Box margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c14 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c14 {
-    margin-right: 12px;
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin-right: 6px;
   }
 }
 
@@ -3703,9 +3699,10 @@ exports[`Box pad 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  padding-left: 48px;
+  padding-right: 48px;
   padding-top: 48px;
   padding-bottom: 48px;
-  padding-top: 12px;
 }
 
 .c14 {
@@ -3841,14 +3838,15 @@ exports[`Box pad 1`] = `
 
 @media only screen and (max-width:768px) {
   .c13 {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c13 {
-    padding-top: 6px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
 

@@ -283,9 +283,9 @@ describe('Box', () => {
         <Box
           margin={{
             top: 'small',
-            right: 'medium',
-            horizontal: 'small',
-            vertical: 'large',
+            right: 'small',
+            left: 'small',
+            bottom: 'small',
           }}
         />
         <Box
@@ -319,7 +319,7 @@ describe('Box', () => {
         <Box pad={{ end: 'small' }} />
         <Box pad={{ top: 'small' }} />
         <Box pad={{ top: 'small', left: 'medium', horizontal: 'large' }} />
-        <Box pad={{ top: 'small', vertical: 'large' }} />
+        <Box pad={{ horizontal: 'large', vertical: 'large' }} />
         <Box
           pad={{
             top: 'small',
