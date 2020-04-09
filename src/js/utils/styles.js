@@ -234,9 +234,12 @@ export const focusStyle = css`
   }
 `;
 
-// for backwards compatibility we need to add back the control border width.
-// in each case, check first if the value is an edgeSize,
-// then if it's a string value.
+// For backwards compatibility we need to add back the control border width.
+// Based on how grommet was functioning prior to https://github.com/grommet/grommet/pull/3939,
+// the padding was subtracting the border width from the theme value, but the
+// placeholder was not. Because we're now placing the subtraction into the
+// theme itself, we have to add back in the border width here.
+// This is used for placeholder/icon in TextInput and MaskedInput.
 const adjustPad = (props, value) =>
   `${parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
     parseMetricToNum(`${props.theme.global.control.border.width}px`)}px`;
