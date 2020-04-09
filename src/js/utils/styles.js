@@ -278,7 +278,11 @@ export const inputStyle = css`
   ${props =>
     props.theme.global.input.padding &&
     typeof props.theme.global.input.padding !== 'object'
-      ? `padding: ${parseMetricToNum(
+      ? // On a breaking change release, this condition could be removed and
+        // just the edgeStyle could remain. Currently, this is needed for
+        // backwards compatibility since we are placing the calculation in
+        // base.js
+        `padding: ${parseMetricToNum(
           props.theme.global.edgeSize[props.theme.global.input.padding] ||
             props.theme.global.input.padding,
         ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
