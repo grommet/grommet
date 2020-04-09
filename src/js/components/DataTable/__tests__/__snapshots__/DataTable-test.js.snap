@@ -6007,7 +6007,7 @@ exports[`DataTable search 2`] = `
 </div>
 `;
 
-exports[`DataTable sort 1`] = `
+exports[`DataTable sortable 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -6245,7 +6245,7 @@ exports[`DataTable sort 1`] = `
 </div>
 `;
 
-exports[`DataTable sort 2`] = `
+exports[`DataTable sortable 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
