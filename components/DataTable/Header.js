@@ -67,7 +67,7 @@ var Header = function Header(_ref) {
     var content = typeof header === 'string' ? _react["default"].createElement(_Text.Text, null, header) : header;
 
     if (onSort && sortable !== false) {
-      var Icon = onSort && sortable !== false && sort && sort.property === property && theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
+      var Icon = onSort && sortable !== false && sort && sort.property === property && theme.dataTable.icons[sort.direction !== 'asc' ? 'ascending' : 'descending'];
       content = _react["default"].createElement(_Button.Button, {
         plain: true,
         fill: "vertical",

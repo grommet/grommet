@@ -123,7 +123,7 @@ describe('DataTable', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('sort', function () {
+  test('sortable', function () {
     var _render7 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
       columns: [{
         property: 'a',
