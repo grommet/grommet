@@ -23,7 +23,7 @@ const Example = () => {
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
-            onChange={value => console.log('!!! onChange', value)}
+            onChange={value => console.log('Change', value)}
             onSubmit={event =>
               console.log('Submit', event.value, event.touched)
             }

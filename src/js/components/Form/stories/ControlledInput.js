@@ -30,7 +30,7 @@ const Example = () => {
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
-            onChange={value => console.log('!!! onChange', value)}
+            onChange={value => console.log('Change', value)}
             onReset={() => {
               setName('');
               setEmail('');

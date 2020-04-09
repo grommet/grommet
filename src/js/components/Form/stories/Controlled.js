@@ -36,7 +36,7 @@ const Example = () => {
           <Form
             value={value}
             onChange={nextValue => {
-              console.log('!!! onChange', nextValue);
+              console.log('Change', nextValue);
               setValue(nextValue);
             }}
             onReset={() => setValue(defaultValue)}
