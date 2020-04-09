@@ -78,7 +78,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       strokeWidth = _useState6[0],
       setStrokeWidth = _useState6[1];
 
-  var containerRef = ref || (0, _react.useRef)(); // calculations
+  var containerRef = (0, _react.useRef)(); // calculations
 
   (0, _react.useEffect)(function () {
     var nextValues = (0, _utils2.normalizeValues)(propsValues);
@@ -115,8 +115,8 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     setScale(nextScale);
   }, [containerSize, gap, propsBounds, propsSize, propsValues, theme.global.edgeSize, theme.global.size, thickness]); // set container size when we get ref or when size changes
 
-  if (containerRef.current && propsSize && (propsSize === 'full' || propsSize.height === 'full' || propsSize.width === 'full')) {
-    var containerNode = containerRef.current;
+  if ((ref || containerRef).current && propsSize && (propsSize === 'full' || propsSize.height === 'full' || propsSize.width === 'full')) {
+    var containerNode = (ref || containerRef).current;
 
     if (containerNode) {
       var parentNode = containerNode.parentNode;
@@ -134,7 +134,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
 
   (0, _react.useEffect)(function () {
     var onResize = function onResize() {
-      var parentNode = containerRef.current.parentNode;
+      var parentNode = (ref || containerRef).current.parentNode;
       var rect = parentNode.getBoundingClientRect();
       setContainerSize([rect.width, rect.height]);
     };
@@ -147,7 +147,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     }
 
     return undefined;
-  }, [containerRef, propsSize]);
+  }, [containerRef, propsSize, ref]);
   var useGradient = color && Array.isArray(color);
   var strokeDasharray;
 
@@ -422,7 +422,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
   }
 
   return _react["default"].createElement(_StyledChart.StyledChart, _extends({
-    ref: containerRef,
+    ref: ref || containerRef,
     id: id,
     viewBox: viewBox,
     preserveAspectRatio: "none",

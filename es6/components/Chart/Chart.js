@@ -62,7 +62,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       strokeWidth = _useState6[0],
       setStrokeWidth = _useState6[1];
 
-  var containerRef = ref || useRef(); // calculations
+  var containerRef = useRef(); // calculations
 
   useEffect(function () {
     var nextValues = normalizeValues(propsValues);
@@ -99,8 +99,8 @@ var Chart = React.forwardRef(function (_ref, ref) {
     setScale(nextScale);
   }, [containerSize, gap, propsBounds, propsSize, propsValues, theme.global.edgeSize, theme.global.size, thickness]); // set container size when we get ref or when size changes
 
-  if (containerRef.current && propsSize && (propsSize === 'full' || propsSize.height === 'full' || propsSize.width === 'full')) {
-    var containerNode = containerRef.current;
+  if ((ref || containerRef).current && propsSize && (propsSize === 'full' || propsSize.height === 'full' || propsSize.width === 'full')) {
+    var containerNode = (ref || containerRef).current;
 
     if (containerNode) {
       var parentNode = containerNode.parentNode;
@@ -118,7 +118,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
 
   useEffect(function () {
     var onResize = function onResize() {
-      var parentNode = containerRef.current.parentNode;
+      var parentNode = (ref || containerRef).current.parentNode;
       var rect = parentNode.getBoundingClientRect();
       setContainerSize([rect.width, rect.height]);
     };
@@ -131,7 +131,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
     }
 
     return undefined;
-  }, [containerRef, propsSize]);
+  }, [containerRef, propsSize, ref]);
   var useGradient = color && Array.isArray(color);
   var strokeDasharray;
 
@@ -405,7 +405,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
   }
 
   return React.createElement(StyledChart, _extends({
-    ref: containerRef,
+    ref: ref || containerRef,
     id: id,
     viewBox: viewBox,
     preserveAspectRatio: "none",
