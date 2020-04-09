@@ -303,6 +303,33 @@ describe('Box', function () {
       margin: {
         top: 'small'
       }
+    }), React.createElement(Box, {
+      margin: {
+        top: 'small',
+        left: 'medium',
+        horizontal: 'large'
+      }
+    }), React.createElement(Box, {
+      margin: {
+        top: 'small',
+        vertical: 'large'
+      }
+    }), React.createElement(Box, {
+      margin: {
+        top: 'small',
+        right: 'small',
+        left: 'small',
+        bottom: 'small'
+      }
+    }), React.createElement(Box, {
+      margin: {
+        left: 'small',
+        right: 'medium',
+        bottom: 'large',
+        top: 'small',
+        horizontal: 'medium',
+        vertical: 'small'
+      }
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -345,6 +372,33 @@ describe('Box', function () {
     }), React.createElement(Box, {
       pad: {
         top: 'small'
+      }
+    }), React.createElement(Box, {
+      pad: {
+        top: 'small',
+        left: 'medium',
+        horizontal: 'large'
+      }
+    }), React.createElement(Box, {
+      pad: {
+        horizontal: 'large',
+        vertical: 'large'
+      }
+    }), React.createElement(Box, {
+      pad: {
+        top: 'small',
+        right: 'medium',
+        horizontal: 'small',
+        vertical: 'large'
+      }
+    }), React.createElement(Box, {
+      pad: {
+        left: 'small',
+        right: 'medium',
+        bottom: 'large',
+        top: 'small',
+        horizontal: 'medium',
+        vertical: 'small'
       }
     })));
     var tree = component.toJSON();
