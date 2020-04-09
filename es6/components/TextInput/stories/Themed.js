@@ -7,6 +7,14 @@ var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
 var customTheme = deepMerge(grommet, {
+  global: {
+    input: {
+      padding: {
+        horizontal: 'small',
+        vertical: 'medium'
+      }
+    }
+  },
   textInput: {
     extend: function extend() {
       return "\n      font-size: 20px;\n      background: #c9c19f;\n      width: 300px;\n      margin: 0 auto;\n      \n      &:focus {\n        box-shadow: none;\n        border-color: initial;\n      }\n    ";

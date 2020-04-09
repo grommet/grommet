@@ -46,7 +46,7 @@ var StyledIcon = _styledComponents["default"].div.withConfig({
   displayName: "StyledMaskedInput__StyledIcon",
   componentId: "sc-99vkfa-2"
 })(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {
-  return props.reverse ? "right: " + props.theme.global.input.padding + ";" : "left: " + props.theme.global.input.padding + ";";
+  return props.reverse ? "right: " + (0, _utils.getInputPadBySide)(props, 'right') + ";" : "left: " + (0, _utils.getInputPadBySide)(props, 'left') + ";";
 });
 
 exports.StyledIcon = StyledIcon;

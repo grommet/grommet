@@ -19,6 +19,7 @@ import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
 import { deepFreeze, deepMerge } from '../utils/object';
 import { normalizeColor } from '../utils/colors';
+import { parseMetricToNum } from '../utils/mixins';
 var brandColor = '#7D4CDB';
 var accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 var neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
@@ -130,6 +131,7 @@ export var generate = function generate(baseSpacing, scale) {
   };
 
   var borderWidth = 2;
+  var controlBorderWidth = 1;
   var result = deepMerge(iconBase, {
     global: {
       active: {
@@ -221,7 +223,7 @@ export var generate = function generate(baseSpacing, scale) {
       colors: colors,
       control: {
         border: {
-          width: '1px',
+          width: controlBorderWidth + "px",
           radius: '4px',
           color: 'border'
         },
@@ -292,7 +294,10 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       input: {
-        padding: baseSpacing / 2 + "px",
+        padding: {
+          horizontal: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px",
+          vertical: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px"
+        },
         weight: 600
       },
       opacity: {

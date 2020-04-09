@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { disabledStyle, focusStyle, inputStyle, parseMetricToNum, placeholderStyle } from '../../utils';
+import { disabledStyle, getInputPadBySide, focusStyle, inputStyle, parseMetricToNum, placeholderStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var sizeStyle = function sizeStyle(props) {
@@ -38,7 +38,7 @@ var StyledPlaceholder = styled.div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
 })(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;pointer-events:none;", ";"], function (props) {
-  return parseMetricToNum(props.theme.global.input.padding) - parseMetricToNum(props.theme.global.control.border.width);
+  return parseMetricToNum(getInputPadBySide(props, 'left')) - parseMetricToNum(props.theme.global.control.border.width);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.placeholder && props.theme.textInput.placeholder.extend;
 });
@@ -48,7 +48,7 @@ var StyledIcon = styled.div.withConfig({
   displayName: "StyledTextInput__StyledIcon",
   componentId: "sc-1x30a0s-3"
 })(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {
-  return props.reverse ? "right: " + props.theme.global.input.padding + ";" : "left: " + props.theme.global.input.padding + ";";
+  return props.reverse ? "right: " + getInputPadBySide(props, 'right') + ";" : "left: " + getInputPadBySide(props, 'left') + ";";
 });
 var StyledSuggestions = styled.ol.withConfig({
   displayName: "StyledTextInput__StyledSuggestions",

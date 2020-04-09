@@ -19,6 +19,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var colors = ['accent-1', 'accent-2', 'accent-3', 'brand', 'dark-1', 'dark-2', 'dark-3', 'dark-4', 'dark-5', 'dark-6', 'focus', 'light-1', 'light-2', 'light-3', 'light-4', 'light-5', 'light-6', 'neutral-1', 'neutral-2', 'neutral-3', 'status-critical', 'status-disabled', 'status-ok', 'status-unknown', 'status-warning'];
 var customTheme = {
   global: {
+    input: {
+      // test backwards compatibility that string value works for input pad
+      padding: '12px'
+    },
     colors: {
       custom: '#cc6633'
     }
@@ -81,7 +85,7 @@ describe('Grommet', function () {
       icon: _react["default"].createElement(_grommetIcons.Add, null),
       label: "Add",
       color: "custom"
-    }))));
+    })), _react["default"].createElement(_components.Box, null, _react["default"].createElement(_components.TextInput, null))));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();

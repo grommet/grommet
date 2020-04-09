@@ -41,6 +41,8 @@ var _object = require("../utils/object");
 
 var _colors = require("../utils/colors");
 
+var _mixins = require("../utils/mixins");
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var brandColor = '#7D4CDB';
@@ -155,6 +157,7 @@ var generate = function generate(baseSpacing, scale) {
   };
 
   var borderWidth = 2;
+  var controlBorderWidth = 1;
   var result = (0, _object.deepMerge)(_base.base, {
     global: {
       active: {
@@ -246,7 +249,7 @@ var generate = function generate(baseSpacing, scale) {
       colors: colors,
       control: {
         border: {
-          width: '1px',
+          width: controlBorderWidth + "px",
           radius: '4px',
           color: 'border'
         },
@@ -317,7 +320,10 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       input: {
-        padding: baseSpacing / 2 + "px",
+        padding: {
+          horizontal: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
+          vertical: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px"
+        },
         weight: 600
       },
       opacity: {

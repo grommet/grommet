@@ -200,7 +200,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
-      padding?: string;
+      padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
       weight?: number;
     };
     opacity?: {

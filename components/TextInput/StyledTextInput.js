@@ -56,7 +56,7 @@ var StyledPlaceholder = _styledComponents["default"].div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
 })(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;pointer-events:none;", ";"], function (props) {
-  return (0, _utils.parseMetricToNum)(props.theme.global.input.padding) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width);
+  return (0, _utils.parseMetricToNum)((0, _utils.getInputPadBySide)(props, 'left')) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.placeholder && props.theme.textInput.placeholder.extend;
 });
@@ -69,7 +69,7 @@ var StyledIcon = _styledComponents["default"].div.withConfig({
   displayName: "StyledTextInput__StyledIcon",
   componentId: "sc-1x30a0s-3"
 })(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {
-  return props.reverse ? "right: " + props.theme.global.input.padding + ";" : "left: " + props.theme.global.input.padding + ";";
+  return props.reverse ? "right: " + (0, _utils.getInputPadBySide)(props, 'right') + ";" : "left: " + (0, _utils.getInputPadBySide)(props, 'left') + ";";
 });
 
 exports.StyledIcon = StyledIcon;

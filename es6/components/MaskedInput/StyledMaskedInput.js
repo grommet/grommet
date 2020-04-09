@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
+import { focusStyle, getInputPadBySide, inputStyle, placeholderStyle } from '../../utils';
 
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.text[props.size];
@@ -29,5 +29,5 @@ export var StyledIcon = styled.div.withConfig({
   displayName: "StyledMaskedInput__StyledIcon",
   componentId: "sc-99vkfa-2"
 })(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {
-  return props.reverse ? "right: " + props.theme.global.input.padding + ";" : "left: " + props.theme.global.input.padding + ";";
+  return props.reverse ? "right: " + getInputPadBySide(props, 'right') + ";" : "left: " + getInputPadBySide(props, 'left') + ";";
 });

@@ -48,7 +48,7 @@ export var themeDocUtils = {
     },
     'global.input.padding': {
       description: 'The padding of the text.',
-      type: 'string',
+      type: "string | { top: string, bottom: string, left: string, right: \n        string, horizontal: string, vertical: string }",
       defaultValue: '12px'
     }
   },
