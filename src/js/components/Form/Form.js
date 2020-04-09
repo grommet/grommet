@@ -124,6 +124,37 @@ const Form = forwardRef(
       [onChange],
     );
 
+    // There are three basic models of handling form input value state:
+    //
+    // 1 - form controlled
+    //
+    // In this model, the caller sets `value` and `onChange` propeties
+    // on the Form component to supply the values used by the input fields.
+    // In useFormContext(), componentValue would be undefined and formValue
+    // is be set to whatever the form state has. Whenever the form state
+    // changes, we update the contextValue so the input component will use
+    // that. When the input component changes, we will call update() to
+    // update the form state.
+    //
+    // 2 - input controlled
+    //
+    // In this model, the caller sets `value` and `onChange` properties
+    // on the input components, like TextInput, to supply the value for it.
+    // In useFormContext(), componentValue is this value and we ensure to
+    // update the form state, via update(), and set the contextValue from
+    // the componentValue. When the input component changes, we will
+    // call update() to update the form state.
+    //
+    // 3 - uncontrolled
+    //
+    // In this model, the caller doesn't set a `value` or `onChange` property
+    // at either the form or input component levels.
+    // In useFormContext(), componentValue is undefined and valueProp is
+    // undefined and nothing much happens here. That is, unless the
+    // calling component needs to know the state in order to work, such
+    // as CheckBox or Select. In this case, those components supply
+    // an initialValue, which will trigger updating the contextValue so
+    // they can have access to it.
     //
     const useFormContext = (name, componentValue, initialValue) => {
       const formValue = name ? value[name] : undefined;
