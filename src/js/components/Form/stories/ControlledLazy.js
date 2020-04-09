@@ -17,8 +17,18 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+const defaultValue = {
+  name: '',
+  email: '',
+  subscribe: false,
+  ampm: '',
+  size: '',
+  comments: '',
+  age: '',
+};
+
 const Example = () => {
-  const [value, setValue] = React.useState(undefined);
+  const [value, setValue] = React.useState(defaultValue);
   React.useEffect(
     () =>
       setValue({
@@ -38,9 +48,14 @@ const Example = () => {
         <Box width="medium">
           <Form
             value={value}
-            onChange={nextValue => setValue(nextValue)}
-            onReset={() => setValue({})}
-            onSubmit={event => console.log('Submit', event.value)}
+            onChange={nextValue => {
+              console.log('!!! onChange', nextValue);
+              setValue(nextValue);
+            }}
+            onReset={() => setValue(defaultValue)}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
           >
             <FormField label="Name" name="name">
               <TextInput name="name" />

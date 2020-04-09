@@ -105,7 +105,6 @@ const TextInput = forwardRef(
     const [value, setValue] = formContext.useFormContext(
       readOnly ? undefined : name,
       valueProp,
-      '',
     );
 
     const [focus, setFocus] = useState();

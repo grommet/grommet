@@ -109,7 +109,7 @@ const Form = forwardRef(
             });
             return nextInfos;
           });
-          if (onChange) onChange(nextValue);
+          if (!initial && onChange) onChange(nextValue);
 
           return nextValue;
         });
@@ -124,29 +124,44 @@ const Form = forwardRef(
       [onChange],
     );
 
-    const useFormContext = (name, componentValue, defaultComponentValue) => {
-      const valueData = (name && value[name]) || defaultComponentValue;
-      const [data, setData] = useState(
-        componentValue !== undefined ? componentValue : valueData,
-      );
-      if (componentValue !== undefined) {
-        if (componentValue !== data) {
-          setData(componentValue);
-          if (name) update(name, componentValue);
-        } else if (name && value[name] === undefined) {
-          update(name, componentValue, true);
+    //
+    const useFormContext = (name, componentValue, initialValue) => {
+      const formValue = name ? value[name] : undefined;
+      const [contextValue, setContextValue] = useState(() => {
+        if (componentValue !== undefined) return componentValue;
+        if (valueProp) return formValue;
+        return initialValue;
+      });
+      useEffect(() => {
+        if (componentValue !== undefined) {
+          // input controls value
+          if (componentValue !== contextValue) {
+            setContextValue(componentValue);
+            if (name && componentValue !== formValue)
+              update(name, componentValue);
+          } else if (name && formValue === undefined) {
+            update(name, componentValue, true);
+          }
+        } else if (name) {
+          if (valueProp) {
+            // Form controls value
+            if (formValue !== contextValue) {
+              setContextValue(formValue);
+            }
+          } else if (formValue === undefined) {
+            setContextValue(initialValue);
+          }
         }
-      } else if (valueData !== data) {
-        setData(valueData);
-      }
+      }, [componentValue, contextValue, formValue, initialValue, name]);
 
       return [
-        data,
-        nextData => {
+        contextValue,
+        nextValue => {
           // only set if the caller hasn't supplied a specific value
           if (componentValue === undefined) {
-            if (name) update(name, nextData);
-            setData(nextData);
+            if (name) update(name, nextValue);
+            if (valueProp || initialValue !== undefined)
+              setContextValue(nextValue);
           }
         },
       ];
@@ -157,7 +172,10 @@ const Form = forwardRef(
         ref={ref}
         {...rest}
         onReset={event => {
-          setValue(defaultValue);
+          if (!valueProp) {
+            setValue(defaultValue);
+            if (onChange) onChange(defaultValue);
+          }
           setErrors({});
           setTouched({});
           if (onReset) {
