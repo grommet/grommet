@@ -109,7 +109,7 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('sort', () => {
+  test('sortable', () => {
     const { container, getByText } = render(
       <Grommet>
         <DataTable
@@ -525,5 +525,4 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-
 });
