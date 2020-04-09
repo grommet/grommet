@@ -381,7 +381,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       primary: {
         active: {
           border: {
-            // color: { dark: undefined, light: undefined }
+            color: 'control',
           },
         },
         // color: { dark: undefined, light: undefined }
