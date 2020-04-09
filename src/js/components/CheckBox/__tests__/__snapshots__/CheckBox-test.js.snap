@@ -336,7 +336,7 @@ exports[`CheckBox controlled 2`] = `
     class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eeTGTD StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+      class="StyledBox-sc-13pk1d4-0 fASNub StyledCheckBox-sc-1dbk5ju-6 CBoMo"
     >
       <input
         checked=""

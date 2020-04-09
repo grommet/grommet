@@ -278,6 +278,33 @@ describe('Box', () => {
         <Box margin={{ start: 'small' }} />
         <Box margin={{ end: 'small' }} />
         <Box margin={{ top: 'small' }} />
+        <Box margin={{ top: 'small', left: 'medium', horizontal: 'large' }} />
+        <Box margin={{ top: 'small', vertical: 'large' }} />
+        <Box
+          margin={{
+            horizontal: 'large',
+            vertical: 'large',
+            left: 'small',
+          }}
+        />
+        <Box
+          margin={{
+            top: 'small',
+            right: 'small',
+            left: 'small',
+            bottom: 'small',
+          }}
+        />
+        <Box
+          margin={{
+            left: 'small',
+            right: 'medium',
+            bottom: 'large',
+            top: 'small',
+            horizontal: 'medium',
+            vertical: 'small',
+          }}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -298,6 +325,35 @@ describe('Box', () => {
         <Box pad={{ start: 'small' }} />
         <Box pad={{ end: 'small' }} />
         <Box pad={{ top: 'small' }} />
+        <Box pad={{ top: 'small', left: 'medium', horizontal: 'large' }} />
+        <Box pad={{ horizontal: 'large', vertical: 'large' }} />
+        <Box
+          pad={{
+            top: 'small',
+            right: 'medium',
+            horizontal: 'small',
+            vertical: 'large',
+          }}
+        />
+        <Box
+          pad={{
+            top: 'medium',
+            right: 'medium',
+            left: 'medium',
+            bottom: 'medium',
+            horizontal: 'small',
+          }}
+        />
+        <Box
+          pad={{
+            left: 'small',
+            right: 'medium',
+            bottom: 'large',
+            top: 'small',
+            horizontal: 'medium',
+            vertical: 'small',
+          }}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();

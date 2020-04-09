@@ -67,7 +67,7 @@ const Header = ({
                 sort &&
                 sort.property === property &&
                 theme.dataTable.icons[
-                  sort.ascending ? 'ascending' : 'descending'
+                  sort.direction !== 'asc' ? 'ascending' : 'descending'
                 ];
               content = (
                 <Button plain fill="vertical" onClick={onSort(property)}>
