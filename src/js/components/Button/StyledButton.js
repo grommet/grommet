@@ -165,8 +165,7 @@ const StyledButton = styled.button`
   ${props => !props.disabled && !props.focus && hoverStyle}
 
   ${props => !props.disabled && props.active && activeStyle}
-  ${props =>
-    props.disabled && props.theme.button.disabled && disabledStyle(props)}
+  ${props => props.disabled && props.theme.button && disabledStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>
