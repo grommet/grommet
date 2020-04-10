@@ -138,11 +138,32 @@ describe('Button', function () {
       label: "Button"
     }), _react["default"].createElement(_.Button, {
       disabled: true,
+      plain: true,
+      label: "Button"
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      plain: false,
+      label: "Button"
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
       icon: _react["default"].createElement("svg", null)
     }), _react["default"].createElement(_.Button, {
       disabled: true,
       icon: _react["default"].createElement("svg", null),
+      plain: true
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      icon: _react["default"].createElement("svg", null),
+      plain: false
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      icon: _react["default"].createElement("svg", null),
       label: "Button"
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      icon: _react["default"].createElement("svg", null),
+      label: "Button",
+      plain: true
     }), _react["default"].createElement(_.Button, {
       disabled: true,
       icon: _react["default"].createElement("svg", null),
