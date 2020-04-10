@@ -1,15 +1,21 @@
-import React, { useState } from 'react'; // When not a descendant of a Form, FormContext still provides a basic
-// useFormContext that holds the value state.
+import React, { useEffect, useState } from 'react'; // When not a descendant of a Form, FormContext still provides a basic
+// useFormContext. It doesn't do anything for components like TextInput.
+// But, it does store the value for components like CheckBox or Select
+// where the grommet component needs to know the value in order to
+// render custom visuals.
 
-var useFormContext = function useFormContext(_, valueProp) {
-  var _useState = useState(valueProp),
+var useFormContext = function useFormContext(_, valueProp, initialValue) {
+  var _useState = useState(valueProp !== undefined ? valueProp : initialValue),
       value = _useState[0],
       setValue = _useState[1];
 
-  if (valueProp !== undefined && valueProp !== value) setValue(valueProp);
+  useEffect(function () {
+    if (valueProp !== value && valueProp !== undefined) {
+      setValue(valueProp);
+    }
+  }, [value, valueProp]);
   return [value, function (nextValue) {
-    // only set if the caller hasn't supplied a specific value
-    if (valueProp === undefined) setValue(nextValue);
+    if (initialValue !== undefined) setValue(nextValue);
   }];
 };
 

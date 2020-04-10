@@ -4,42 +4,42 @@ import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButt
 import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
-  var _React$useState = React.useState(),
-      textInputValue = _React$useState[0],
-      setTextInputValue = _React$useState[1];
+  var _React$useState = React.useState(''),
+      name = _React$useState[0],
+      setName = _React$useState[1];
 
-  var _React$useState2 = React.useState(),
-      maskedInputValue = _React$useState2[0],
-      setMaskedInputValue = _React$useState2[1];
+  var _React$useState2 = React.useState(''),
+      email = _React$useState2[0],
+      setEmail = _React$useState2[1];
 
-  var _React$useState3 = React.useState(),
-      checkBoxValue = _React$useState3[0],
-      setCheckBoxValue = _React$useState3[1];
+  var _React$useState3 = React.useState(false),
+      subscribe = _React$useState3[0],
+      setSubscribe = _React$useState3[1];
 
-  var _React$useState4 = React.useState(),
-      radioButtonGroupValue = _React$useState4[0],
-      setRadioButtonValue = _React$useState4[1];
+  var _React$useState4 = React.useState(''),
+      ampm = _React$useState4[0],
+      setAmpm = _React$useState4[1];
 
-  var _React$useState5 = React.useState(),
-      selectValue = _React$useState5[0],
-      setSelectValue = _React$useState5[1];
+  var _React$useState5 = React.useState(''),
+      size = _React$useState5[0],
+      setSize = _React$useState5[1];
 
-  var _React$useState6 = React.useState(),
-      textAreaValue = _React$useState6[0],
-      setTextAreaValue = _React$useState6[1];
+  var _React$useState6 = React.useState(''),
+      comments = _React$useState6[0],
+      setComments = _React$useState6[1];
 
-  var _React$useState7 = React.useState(),
-      rangeInputValue = _React$useState7[0],
-      setRangeInputValue = _React$useState7[1];
+  var _React$useState7 = React.useState(''),
+      age = _React$useState7[0],
+      setAge = _React$useState7[1];
 
   React.useEffect(function () {
-    setTextInputValue('initial');
-    setMaskedInputValue('initial@my.com');
-    setCheckBoxValue(true);
-    setRadioButtonValue('evening');
-    setSelectValue('large');
-    setTextAreaValue('initial');
-    setRangeInputValue(60);
+    setName('initial');
+    setEmail('initial@my.com');
+    setSubscribe(true);
+    setAmpm('evening');
+    setSize('large');
+    setComments('initial');
+    setAge(60);
   }, []);
   return React.createElement(Grommet, {
     full: true,
@@ -51,26 +51,29 @@ var Example = function Example() {
   }, React.createElement(Box, {
     width: "medium"
   }, React.createElement(Form, {
+    onChange: function onChange(value) {
+      return console.log('Change', value);
+    },
     onReset: function onReset() {
-      setTextInputValue(undefined);
-      setMaskedInputValue(undefined);
-      setCheckBoxValue(undefined);
-      setRadioButtonValue(undefined);
-      setSelectValue(undefined);
-      setTextAreaValue(undefined);
-      setRangeInputValue(undefined);
+      setName('');
+      setEmail('');
+      setSubscribe(false);
+      setAmpm('');
+      setSize('');
+      setComments('');
+      setAge('');
     },
     onSubmit: function onSubmit(event) {
-      return console.log('Submit', event.value);
+      return console.log('Submit', event.value, event.touched);
     }
   }, React.createElement(FormField, {
     label: "Name",
     name: "name"
   }, React.createElement(TextInput, {
     name: "name",
-    value: textInputValue,
+    value: name,
     onChange: function onChange(event) {
-      return setTextInputValue(event.target.value);
+      return setName(event.target.value);
     }
   })), React.createElement(FormField, {
     label: "Email",
@@ -92,27 +95,27 @@ var Example = function Example() {
       regexp: /^[\w]+$/,
       placeholder: 'com'
     }],
-    value: maskedInputValue,
+    value: email,
     onChange: function onChange(event) {
-      return setMaskedInputValue(event.target.value);
+      return setEmail(event.target.value);
     }
   })), React.createElement(FormField, {
     name: "subscribe"
   }, React.createElement(CheckBox, {
     name: "subscribe",
     label: "Subscribe?",
-    checked: checkBoxValue,
+    checked: subscribe,
     onChange: function onChange(event) {
-      return setCheckBoxValue(event.target.checked);
+      return setSubscribe(event.target.checked);
     }
   })), React.createElement(FormField, {
     name: "ampm"
   }, React.createElement(RadioButtonGroup, {
     name: "ampm",
     options: ['morning', 'evening'],
-    value: radioButtonGroupValue,
+    value: ampm,
     onChange: function onChange(event) {
-      return setRadioButtonValue(event.target.value);
+      return setAmpm(event.target.value);
     }
   })), React.createElement(FormField, {
     label: "Size",
@@ -120,18 +123,18 @@ var Example = function Example() {
   }, React.createElement(Select, {
     name: "size",
     options: ['small', 'medium', 'large'],
-    value: selectValue,
+    value: size,
     onChange: function onChange(event) {
-      return setSelectValue(event.option);
+      return setSize(event.option);
     }
   })), React.createElement(FormField, {
     label: "Comments",
     name: "comments"
   }, React.createElement(TextArea, {
     name: "comments",
-    value: textAreaValue,
+    value: comments,
     onChange: function onChange(event) {
-      return setTextAreaValue(event.target.value);
+      return setComments(event.target.value);
     }
   })), React.createElement(FormField, {
     label: "Age",
@@ -141,9 +144,9 @@ var Example = function Example() {
     name: "age",
     min: 15,
     max: 75,
-    value: rangeInputValue,
+    value: age,
     onChange: function onChange(event) {
-      return setRangeInputValue(event.target.value);
+      return setAge(event.target.value);
     }
   })), React.createElement(Box, {
     direction: "row",

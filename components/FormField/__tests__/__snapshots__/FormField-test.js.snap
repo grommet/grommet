@@ -596,7 +596,6 @@ exports[`FormField disabled 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>
@@ -1546,7 +1545,6 @@ exports[`FormField required 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>

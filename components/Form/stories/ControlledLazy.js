@@ -10,8 +10,18 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var defaultValue = {
+  name: '',
+  email: '',
+  subscribe: false,
+  ampm: '',
+  size: '',
+  comments: '',
+  age: ''
+};
+
 var Example = function Example() {
-  var _React$useState = _react["default"].useState(undefined),
+  var _React$useState = _react["default"].useState(defaultValue),
       value = _React$useState[0],
       setValue = _React$useState[1];
 
@@ -39,13 +49,14 @@ var Example = function Example() {
   }, _react["default"].createElement(_grommet.Form, {
     value: value,
     onChange: function onChange(nextValue) {
-      return setValue(nextValue);
+      console.log('Change', nextValue);
+      setValue(nextValue);
     },
     onReset: function onReset() {
-      return setValue({});
+      return setValue(defaultValue);
     },
     onSubmit: function onSubmit(event) {
-      return console.log('Submit', event.value);
+      return console.log('Submit', event.value, event.touched);
     }
   }, _react["default"].createElement(_grommet.FormField, {
     label: "Name",

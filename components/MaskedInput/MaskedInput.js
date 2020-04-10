@@ -144,7 +144,7 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp, ''),
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
       value = _formContext$useFormC[0],
       setValue = _formContext$useFormC[1];
 
@@ -234,8 +234,8 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
 
     if (value !== nextValue) {
       setInputValue(nextValue);
-      if (onChange) onChange(event);
       setValue(nextValue);
+      if (onChange) onChange(event);
     }
   }, [mask, onChange, setInputValue, setValue, value]);
   var onOption = (0, _react.useCallback)(function (option) {
@@ -330,7 +330,7 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
     reverse: reverse,
     focus: focus
   }, rest, {
-    value: value || '',
+    value: value,
     theme: theme,
     onFocus: function onFocus(event) {
       setFocus(true);

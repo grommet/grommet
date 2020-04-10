@@ -15,7 +15,7 @@ var RangeInput = forwardRef(function (_ref, ref) {
 
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp, 0),
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
       value = _formContext$useFormC[0],
       setValue = _formContext$useFormC[1];
 

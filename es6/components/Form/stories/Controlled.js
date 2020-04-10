@@ -2,9 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
+var defaultValue = {
+  name: '',
+  email: '',
+  subscribe: false,
+  ampm: '',
+  size: '',
+  comments: '',
+  age: ''
+};
 
 var Example = function Example() {
-  var _React$useState = React.useState({}),
+  var _React$useState = React.useState(defaultValue),
       value = _React$useState[0],
       setValue = _React$useState[1];
 
@@ -20,13 +29,14 @@ var Example = function Example() {
   }, React.createElement(Form, {
     value: value,
     onChange: function onChange(nextValue) {
-      return setValue(nextValue);
+      console.log('Change', nextValue);
+      setValue(nextValue);
     },
     onReset: function onReset() {
-      return setValue({});
+      return setValue(defaultValue);
     },
     onSubmit: function onSubmit(event) {
-      return console.log('Submit', event.value);
+      return console.log('Submit', event.value, event.touched);
     }
   }, React.createElement(FormField, {
     label: "Name",

@@ -21,8 +21,11 @@ var Example = function Example() {
   }, _react["default"].createElement(_grommet.Box, {
     width: "medium"
   }, _react["default"].createElement(_grommet.Form, {
+    onChange: function onChange(value) {
+      return console.log('Change', value);
+    },
     onSubmit: function onSubmit(event) {
-      return console.log('Submit', event.value);
+      return console.log('Submit', event.value, event.touched);
     }
   }, _react["default"].createElement(_grommet.FormField, {
     label: "Name",

@@ -14,8 +14,11 @@ var Example = function Example() {
   }, React.createElement(Box, {
     width: "medium"
   }, React.createElement(Form, {
+    onChange: function onChange(value) {
+      return console.log('Change', value);
+    },
     onSubmit: function onSubmit(event) {
-      return console.log('Submit', event.value);
+      return console.log('Submit', event.value, event.touched);
     }
   }, React.createElement(FormField, {
     label: "Name",

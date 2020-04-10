@@ -127,7 +127,7 @@ var Form = forwardRef(function (_ref, ref) {
         });
         return nextInfos;
       });
-      if (onChange) onChange(nextValue);
+      if (!initial && onChange) onChange(nextValue);
       return nextValue;
     });
     if (!initial) setTouched(function (prevTouched) {
@@ -136,31 +136,75 @@ var Form = forwardRef(function (_ref, ref) {
       nextTouched[name] = true;
       return nextTouched;
     });
-  }, [onChange]);
+  }, [onChange]); // There are three basic models of handling form input value state:
+  //
+  // 1 - form controlled
+  //
+  // In this model, the caller sets `value` and `onChange` propeties
+  // on the Form component to supply the values used by the input fields.
+  // In useFormContext(), componentValue would be undefined and formValue
+  // is be set to whatever the form state has. Whenever the form state
+  // changes, we update the contextValue so the input component will use
+  // that. When the input component changes, we will call update() to
+  // update the form state.
+  //
+  // 2 - input controlled
+  //
+  // In this model, the caller sets `value` and `onChange` properties
+  // on the input components, like TextInput, to supply the value for it.
+  // In useFormContext(), componentValue is this value and we ensure to
+  // update the form state, via update(), and set the contextValue from
+  // the componentValue. When the input component changes, we will
+  // call update() to update the form state.
+  //
+  // 3 - uncontrolled
+  //
+  // In this model, the caller doesn't set a `value` or `onChange` property
+  // at either the form or input component levels.
+  // In useFormContext(), componentValue is undefined and valueProp is
+  // undefined and nothing much happens here. That is, unless the
+  // calling component needs to know the state in order to work, such
+  // as CheckBox or Select. In this case, those components supply
+  // an initialValue, which will trigger updating the contextValue so
+  // they can have access to it.
+  //
 
-  var useFormContext = function useFormContext(name, componentValue, defaultComponentValue) {
-    var valueData = name && value[name] || defaultComponentValue;
+  var useFormContext = function useFormContext(name, componentValue, initialValue) {
+    var formValue = name ? value[name] : undefined;
 
-    var _useState6 = useState(componentValue !== undefined ? componentValue : valueData),
-        data = _useState6[0],
-        setData = _useState6[1];
+    var _useState6 = useState(function () {
+      if (componentValue !== undefined) return componentValue;
+      if (valueProp) return formValue;
+      return initialValue;
+    }),
+        contextValue = _useState6[0],
+        setContextValue = _useState6[1];
 
-    if (componentValue !== undefined) {
-      if (componentValue !== data) {
-        setData(componentValue);
-        if (name) update(name, componentValue);
-      } else if (name && value[name] === undefined) {
-        update(name, componentValue, true);
+    useEffect(function () {
+      if (componentValue !== undefined) {
+        // input controls value
+        if (componentValue !== contextValue) {
+          setContextValue(componentValue);
+          if (name && componentValue !== formValue) update(name, componentValue);
+        } else if (name && formValue === undefined) {
+          update(name, componentValue, true);
+        }
+      } else if (name) {
+        if (valueProp) {
+          // Form controls value
+          if (formValue !== contextValue) {
+            setContextValue(formValue);
+          }
+        } else if (formValue === undefined) {
+          setContextValue(initialValue);
+        }
       }
-    } else if (valueData !== data) {
-      setData(valueData);
-    }
-
-    return [data, function (nextData) {
+    }, [componentValue, contextValue, formValue, initialValue, name]);
+    return [contextValue, function (nextValue) {
       // only set if the caller hasn't supplied a specific value
       if (componentValue === undefined) {
-        if (name) update(name, nextData);
-        setData(nextData);
+        if (name) update(name, nextValue);
+        if (valueProp || initialValue !== undefined) setContextValue(nextValue);
       }
     }];
   };
@@ -169,7 +213,11 @@ var Form = forwardRef(function (_ref, ref) {
     ref: ref
   }, rest, {
     onReset: function onReset(event) {
-      setValue(defaultValue);
+      if (!valueProp) {
+        setValue(defaultValue);
+        if (onChange) onChange(defaultValue);
+      }
+
       setErrors({});
       setTouched({});
 

@@ -126,7 +126,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp, ''),
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
       value = _formContext$useFormC[0],
       setValue = _formContext$useFormC[1];
 
@@ -216,8 +216,8 @@ var MaskedInput = forwardRef(function (_ref, ref) {
 
     if (value !== nextValue) {
       setInputValue(nextValue);
-      if (onChange) onChange(event);
       setValue(nextValue);
+      if (onChange) onChange(event);
     }
   }, [mask, onChange, setInputValue, setValue, value]);
   var onOption = useCallback(function (option) {
@@ -312,7 +312,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     reverse: reverse,
     focus: focus
   }, rest, {
-    value: value || '',
+    value: value,
     theme: theme,
     onFocus: function onFocus(event) {
       setFocus(true);

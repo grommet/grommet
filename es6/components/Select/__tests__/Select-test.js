@@ -123,7 +123,7 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByPlaceholderText('test select')); // pressing enter here nothing will happen
 
-    fireEvent.click(document.getElementById('test-select__drop').querySelector('button')); // checks it select has a value assigned to it after option is selected
+    fireEvent.click(document.getElementById('test-select__drop').querySelector('button')); // checks if select has a value assigned to it after option is selected
 
     expect(select.value).toEqual('one');
     expect(onChange).toBeCalled();
