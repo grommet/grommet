@@ -139,8 +139,8 @@ const disabledStyle = props => css`
           props.theme,
         )};`
   }
-  ${props.theme.button.disabled.opacity &&
-    `opacity: ${props.theme.button.disabled.opacity}`};
+    opacity: ${props.theme.button.disabled.opacity ||
+      props.theme.global.control.disabled.opacity};
     cursor: default;
 `;
 

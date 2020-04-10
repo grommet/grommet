@@ -496,7 +496,7 @@ The opacity when the button is disabled. Expects `number`.
 Defaults to
 
 ```
-0.3
+undefined
 ```
 
 **button.disabled.border.color**

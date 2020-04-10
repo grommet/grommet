@@ -164,6 +164,36 @@ exports[`Grommet custom theme 1`] = `
   width: 12px;
 }
 
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  border: 2px solid red;
+  color: red;
+  opacity: 1;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
@@ -418,6 +448,21 @@ exports[`Grommet custom theme 1`] = `
         onKeyDown={[Function]}
       />
     </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <button
+      className="c13"
+      disabled={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      type="button"
+    >
+      button
+    </button>
   </div>
 </div>
 `;

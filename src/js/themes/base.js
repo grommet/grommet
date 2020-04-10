@@ -386,10 +386,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       disabled: {
         border: {
-          // color: { dark: undefined, light: undefined }
+          //   color: { dark: undefined, light: undefined }
         },
         // color: { dark: undefined, light: undefined }
-        opacity: 0.3,
+        // opacity: undefined,
       },
       // color: { dark: undefined, light: undefined }
       primary: {
