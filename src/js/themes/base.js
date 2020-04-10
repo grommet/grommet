@@ -735,6 +735,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       icons: {
         down: FormDown,
+        // up: undefined,
       },
     },
     meter: {

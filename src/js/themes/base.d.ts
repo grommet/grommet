@@ -823,6 +823,7 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       down?: any;
+      up?: any;
       margin?: MarginType;
     };
     options?: {

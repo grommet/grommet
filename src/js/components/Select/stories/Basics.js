@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
+import { FormDown, FormUp } from 'grommet-icons';
 
 const colors = {
   selected: 'neutral-3',
@@ -38,6 +39,15 @@ const customRoundedTheme = deepMerge(grommet, {
         background: '#ece0fa',
         border: '1px solid #7D4CDB',
       },
+    },
+  },
+});
+
+const iconTheme = deepMerge(grommet, {
+  select: {
+    icons: {
+      down: FormDown,
+      up: FormUp,
     },
   },
 });
@@ -84,4 +94,5 @@ for (let i = 1; i <= 200; i += 1) {
 
 storiesOf('Select', module)
   .add('Simple', () => <SimpleSelect />)
-  .add('Custom Theme', () => <SimpleSelect open theme={customRoundedTheme} />);
+  .add('Custom Theme', () => <SimpleSelect open theme={customRoundedTheme} />)
+  .add('Custom Theme Icons', () => <SimpleSelect theme={iconTheme} />);
