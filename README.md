@@ -59,6 +59,16 @@ version.
    [#i-made-this Slack channel][slack].
 1. Read more from the Grommet team on [Medium].
 
+## Stable
+
+grommet is also available on a stable branch that is built with the content of the 'master' branch.
+From your package.json point to stable.
+
+```
+"grommet": "https://github.com/grommet/grommet/tarball/stable",
+```
+For more info, read the [stable wiki](https://github.com/grommet/grommet/wiki/What-is-grommet-stable-and-how-to-use-it%3F).
+
 ## Release History
 
 See the [Change Log].
