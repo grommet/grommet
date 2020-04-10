@@ -22,7 +22,12 @@ const Example = () => {
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
-          <Form onSubmit={event => console.log('Submit', event.value)}>
+          <Form
+            onChange={value => console.log('Change', value)}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
+          >
             <FormField label="Name" name="name">
               <TextInput name="name" />
             </FormField>
