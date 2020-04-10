@@ -121,6 +121,31 @@ describe('Button', () => {
     const component = renderer.create(
       <Grommet>
         <Button disabled />
+        <Button disabled primary label="Button" />
+        <Button disabled label="Button" />
+        <Button disabled icon={<svg />} />
+        <Button disabled icon={<svg />} label="Button" />
+        <Button disabled icon={<svg />} label="Button" primary />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('active', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button active label="Button" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('active + primary', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button active primary label="Button" />
       </Grommet>,
     );
     const tree = component.toJSON();
