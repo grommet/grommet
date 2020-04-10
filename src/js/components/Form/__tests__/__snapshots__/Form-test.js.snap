@@ -1508,7 +1508,6 @@ exports[`Form errors 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>
@@ -1677,7 +1676,6 @@ exports[`Form infos 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>
@@ -2073,7 +2071,7 @@ exports[`Form uncontrolled 2`] = `
               class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
-              value="v"
+              value=""
             />
           </div>
         </div>
@@ -2111,7 +2109,7 @@ exports[`Form uncontrolled 3`] = `
               class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
-              value="v"
+              value=""
             />
           </div>
         </div>
@@ -2618,7 +2616,6 @@ exports[`Form with field 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>

@@ -137,7 +137,7 @@ describe('Select', () => {
       document.getElementById('test-select__drop').querySelector('button'),
     );
 
-    // checks it select has a value assigned to it after option is selected
+    // checks if select has a value assigned to it after option is selected
     expect(select.value).toEqual('one');
     expect(onChange).toBeCalled();
     expect(window.scrollTo).toBeCalled();
