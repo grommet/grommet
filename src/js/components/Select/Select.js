@@ -167,10 +167,7 @@ const Select = forwardRef(
             : theme.select.icons.down;
         break;
       default:
-        SelectIcon =
-          open && icon.up
-            ? icon.up
-            : icon.down || icon || theme.select.icons.down;
+        SelectIcon = open && icon.up ? icon.up : icon.down || icon;
     }
 
     // element to show, trumps inputValue
