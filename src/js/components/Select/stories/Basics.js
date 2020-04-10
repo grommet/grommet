@@ -40,11 +40,6 @@ const customRoundedTheme = deepMerge(grommet, {
         border: '1px solid #7D4CDB',
       },
     },
-  },
-});
-
-const iconTheme = deepMerge(grommet, {
-  select: {
     icons: {
       down: FormDown,
       up: FormUp,
@@ -94,5 +89,4 @@ for (let i = 1; i <= 200; i += 1) {
 
 storiesOf('Select', module)
   .add('Simple', () => <SimpleSelect />)
-  .add('Custom Theme', () => <SimpleSelect open theme={customRoundedTheme} />)
-  .add('Custom Theme Icons', () => <SimpleSelect theme={iconTheme} />);
+  .add('Custom Theme', () => <SimpleSelect open theme={customRoundedTheme} />);
