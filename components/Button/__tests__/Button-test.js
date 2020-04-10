@@ -129,6 +129,44 @@ describe('Button', function () {
   test('disabled', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       disabled: true
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      primary: true,
+      label: "Button"
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      label: "Button"
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      icon: _react["default"].createElement("svg", null)
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      icon: _react["default"].createElement("svg", null),
+      label: "Button"
+    }), _react["default"].createElement(_.Button, {
+      disabled: true,
+      icon: _react["default"].createElement("svg", null),
+      label: "Button",
+      primary: true
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('active', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
+      active: true,
+      label: "Button"
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('active + primary', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
+      active: true,
+      primary: true,
+      label: "Button"
     })));
 
     var tree = component.toJSON();

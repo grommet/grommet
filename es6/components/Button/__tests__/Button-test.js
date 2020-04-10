@@ -109,6 +109,42 @@ describe('Button', function () {
   test('disabled', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
       disabled: true
+    }), React.createElement(Button, {
+      disabled: true,
+      primary: true,
+      label: "Button"
+    }), React.createElement(Button, {
+      disabled: true,
+      label: "Button"
+    }), React.createElement(Button, {
+      disabled: true,
+      icon: React.createElement("svg", null)
+    }), React.createElement(Button, {
+      disabled: true,
+      icon: React.createElement("svg", null),
+      label: "Button"
+    }), React.createElement(Button, {
+      disabled: true,
+      icon: React.createElement("svg", null),
+      label: "Button",
+      primary: true
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('active', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+      active: true,
+      label: "Button"
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('active + primary', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+      active: true,
+      primary: true,
+      label: "Button"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
