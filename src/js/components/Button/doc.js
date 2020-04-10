@@ -198,6 +198,7 @@ export const themeDoc = {
   'button.disabled.opacity': {
     description: 'The opacity when the button is disabled.',
     type: 'number',
+    defaultValue: 0.3,
   },
   'button.disabled.border.color': {
     description: 'The border color when the button is disabled.',
