@@ -254,7 +254,7 @@ describe('Box', function () {
     expect(tree).toMatchSnapshot();
   });
   test('gap', function () {
-    var component = renderer.create(React.createElement(Grommet, null, ['xsmall', 'small', 'medium', 'large', '80px'].map(function (gap) {
+    var component = renderer.create(React.createElement(Grommet, null, ['xsmall', 'small', 'medium', 'large', '80px', 'none'].map(function (gap) {
       return React.createElement(Box, {
         key: gap,
         gap: gap,

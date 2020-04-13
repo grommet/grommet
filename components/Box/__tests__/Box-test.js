@@ -276,7 +276,7 @@ describe('Box', function () {
     expect(tree).toMatchSnapshot();
   });
   test('gap', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, ['xsmall', 'small', 'medium', 'large', '80px'].map(function (gap) {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, ['xsmall', 'small', 'medium', 'large', '80px', 'none'].map(function (gap) {
       return _react["default"].createElement(_.Box, {
         key: gap,
         gap: gap,

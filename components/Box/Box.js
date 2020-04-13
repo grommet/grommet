@@ -90,7 +90,7 @@ var Box = (0, _react.forwardRef)(function (_ref, ref) {
 
   var contents = children;
 
-  if (gap) {
+  if (gap && gap !== 'none') {
     contents = [];
     var firstIndex;
 

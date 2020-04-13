@@ -74,7 +74,7 @@ var Box = forwardRef(function (_ref, ref) {
 
   var contents = children;
 
-  if (gap) {
+  if (gap && gap !== 'none') {
     contents = [];
     var firstIndex;
     Children.forEach(children, function (child, index) {
