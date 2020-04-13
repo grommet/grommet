@@ -124,14 +124,6 @@ const SidebarButton = ({ iconName, index }) => {
   );
 };
 
-const MainNavigation = () => (
-  <Nav>
-    {['Analytics', 'Stakeholder', 'Calculator'].map((iconName, index) => (
-      <SidebarButton key={iconName} iconName={iconName} index={index} />
-    ))}
-  </Nav>
-);
-
 export const TooltipsSidebar = () => (
   <Grommet theme={grommet} full>
     <Box direction="row" height={{ min: '100%' }}>
@@ -142,7 +134,11 @@ export const TooltipsSidebar = () => (
         footer={<SidebarFooter />}
         pad="none"
       >
-        <MainNavigation />
+        <Nav>
+          {['Analytics', 'Stakeholder', 'Calculator'].map((iconName, index) => (
+            <SidebarButton key={iconName} iconName={iconName} index={index} />
+          ))}
+        </Nav>
       </Sidebar>
     </Box>
   </Grommet>
