@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Sidebar => {
   const DocumentedSidebar = describe(Sidebar)
     .availableAt(getAvailableAtBadge('Sidebar'))
-    .description('An Sidebar.')
+    .description('A sidebar, typically containing Nav children.')
     .usage(
       `import { Sidebar } from 'grommet';
 <Sidebar/>`,
@@ -14,10 +14,10 @@ export const doc = Sidebar => {
 
   DocumentedSidebar.propTypes = {
     footer: PropTypes.node.description(
-      'If specified, a footer component for the Sidebar',
+      'If specified, a footer element for the Sidebar',
     ),
     header: PropTypes.node.description(
-      'If specified, an header component for the Sidebar',
+      'If specified, an header element for the Sidebar',
     ),
   };
 
