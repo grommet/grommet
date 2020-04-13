@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Sidebar => {
   const DocumentedSidebar = describe(Sidebar)
     .availableAt(getAvailableAtBadge('Sidebar'))
-    .description('A sidebar, typically containing Nav children.')
+    .description('A sidebar, typically used with Nav children.')
     .usage(
       `import { Sidebar } from 'grommet';
 <Sidebar/>`,
