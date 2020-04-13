@@ -123,6 +123,7 @@ const plainStyle = props => css`
 
 const disabledStyle = props => css`
   ${!props.plain &&
+    props.theme.button.disabled.border &&
     props.theme.button.disabled.border.color &&
     `border: ${props.theme.button.border.width} solid
     ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}

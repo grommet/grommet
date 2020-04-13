@@ -385,9 +385,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: `${baseSpacing * 0.75}px`,
       },
       disabled: {
-        border: {
-          //   color: { dark: undefined, light: undefined }
-        },
+        // border: {
+        //   color: { dark: undefined, light: undefined },
+        // },
         // color: { dark: undefined, light: undefined }
         // opacity: undefined,
       },
