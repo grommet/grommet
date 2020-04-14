@@ -54,12 +54,7 @@ const padStyle = props => {
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
-      (props.active &&
-        props.primary &&
-        props.theme.button.primary.active.border.color) ||
-        props.colorValue ||
-        props.theme.button.border.color ||
-        'control',
+      props.colorValue || props.theme.button.border.color || 'control',
       props.theme,
     )};
   border-radius: ${radiusStyle(props)};
@@ -127,6 +122,17 @@ const plainStyle = props => css`
   text-align: inherit;
 `;
 
+const activeButtonStyle = props => css`
+  ${activeStyle}
+  ${props.primary &&
+    props.theme.button.primary.active.border.color &&
+    `border: ${props.theme.button.border.width} solid
+  ${normalizeColor(
+    props.theme.button.primary.active.border.color,
+    props.theme,
+  )};`}
+`;
+
 // Deprecate props.theme.button.disabled.opacity in V3
 const StyledButton = styled.button`
   display: inline-block;
@@ -147,7 +153,7 @@ const StyledButton = styled.button`
 
   ${props => !props.disabled && !props.focus && hoverStyle}
 
-  ${props => !props.disabled && props.active && activeStyle}
+  ${props => !props.disabled && props.active && activeButtonStyle(props)}
   ${props =>
     props.disabled &&
     props.theme.button &&
