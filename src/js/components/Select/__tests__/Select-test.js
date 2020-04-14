@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import { CaretDown } from 'grommet-icons';
+import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
@@ -573,6 +573,33 @@ describe('Select', () => {
     fireEvent.mouseOver(optionButton);
     expect(optionButton).toMatchSnapshot();
   });
+});
+
+test('renders custom up and down icons', () => {
+  const customTheme = {
+    select: {
+      icons: {
+        down: FormDown,
+        up: CaretUp,
+      },
+    },
+  };
+
+  const { getByPlaceholderText, container } = render(
+    <Grommet theme={customTheme}>
+      <Select
+        options={['morning', 'afternoon', 'evening']}
+        placeholder="Select..."
+      />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+
+  const selectButton = getByPlaceholderText('Select...');
+  fireEvent.click(selectButton);
+  // Check that custom up icon is applied when open
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('onChange without valueKey', () => {
