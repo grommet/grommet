@@ -590,3 +590,46 @@ describe('Select', function () {
     expect(optionButton).toMatchSnapshot();
   });
 });
+test('onChange without valueKey', function () {
+  var onChange = jest.fn();
+
+  var Test = function Test() {
+    var _React$useState = _react["default"].useState(),
+        value = _React$useState[0];
+
+    return _react["default"].createElement(_2.Select, {
+      id: "test-select",
+      placeholder: "test select",
+      labelKey: "name" // valueKey="name"
+      ,
+      value: value,
+      multiple: true,
+      options: [{
+        id: '1',
+        name: 'Value1'
+      }, {
+        id: '2',
+        name: 'Value2'
+      }],
+      onChange: onChange
+    });
+  };
+
+  var _render18 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(Test, null))),
+      getByPlaceholderText = _render18.getByPlaceholderText,
+      getByText = _render18.getByText,
+      container = _render18.container;
+
+  expect(container.firstChild).toMatchSnapshot();
+
+  _react2.fireEvent.click(getByPlaceholderText('test select'));
+
+  _react2.fireEvent.click(getByText('Value1'));
+
+  expect(onChange).toBeCalledWith(expect.objectContaining({
+    value: [{
+      id: '1',
+      name: 'Value1'
+    }]
+  }));
+});
