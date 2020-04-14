@@ -92,31 +92,6 @@ describe('Select', () => {
     }, 200);
   });
 
-  // NOTE: This isn't really a test for Select
-  // test('closes drop on esc', () => {
-  //   const onClose = jest.fn();
-  //   const component = mount(
-  //     <Select id='test-select' options={['one', 'two']} onClose={onClose} />
-  //   );
-  //
-  //   fireEvent.keyDown(
-  //     component.getDOMNode(),
-  //     { key: 'Down', keyCode: 40, which: 40 }
-  //   );
-  //
-  //   expectPortal('test-select__drop').toMatchSnapshot();
-  //   expect(component.getDOMNode()).toMatchSnapshot();
-  //
-  //   fireEvent.keyDown(
-  //     document.getElementById('test-select__drop'),
-  //     { key: 'Esc', keyCode: 27, which: 27 }
-  //   );
-  //
-  //   expect(onClose).toBeCalled();
-  //   expect(document.getElementById('test-select__drop')).toBeNull();
-  //   expect(component.getDOMNode()).toMatchSnapshot();
-  // });
-
   test('select an option', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
@@ -573,51 +548,136 @@ describe('Select', () => {
     fireEvent.mouseOver(optionButton);
     expect(optionButton).toMatchSnapshot();
   });
-});
 
-test('onChange without valueKey', () => {
-  const onChange = jest.fn();
-  const Test = () => {
-    const [value] = React.useState();
-    return (
-      <Select
-        id="test-select"
-        placeholder="test select"
-        labelKey="name"
-        // valueKey="name"
-        value={value}
-        multiple
-        options={[
+  test('onChange without valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          // valueKey="name"
+          value={value}
+          multiple
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
           {
-            id: '1',
+            id: 1,
             name: 'Value1',
           },
-          {
-            id: '2',
-            name: 'Value2',
-          },
-        ]}
-        onChange={onChange}
-      />
+        ],
+      }),
     );
-  };
-  const { getByPlaceholderText, getByText, container } = render(
-    <Grommet>
-      <Test />
-    </Grommet>,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-  fireEvent.click(getByPlaceholderText('test select'));
+  });
 
-  fireEvent.click(getByText('Value1'));
-  expect(onChange).toBeCalledWith(
-    expect.objectContaining({
-      value: [
-        {
-          id: '1',
-          name: 'Value1',
-        },
-      ],
-    }),
-  );
+  test('onChange with valueKey string', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey="id"
+          value={value}
+          multiple
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+        ],
+      }),
+    );
+  });
+
+  test('onChange with valueKey reduce', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey={{ key: 'id', reduce: true }}
+          value={value}
+          multiple
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: [1] }));
+  });
 });
