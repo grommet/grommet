@@ -4,6 +4,48 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
+import { FormDown } from "grommet-icons/es6/icons/FormDown";
+import { FormUp } from "grommet-icons/es6/icons/FormUp";
+var customRoundedTheme = deepMerge(grommet, {
+  global: {
+    colors: {
+      selected: 'neutral-3'
+    },
+    control: {
+      border: {
+        radius: '24px'
+      }
+    },
+    input: {
+      weight: 400
+    },
+    font: {
+      size: '12px'
+    }
+  },
+  text: {
+    medium: '13px'
+  },
+  textInput: {
+    extend: 'padding: 0 12px;'
+  },
+  select: {
+    control: {
+      extend: 'padding: 3px 6px;',
+      open: {
+        background: '#ece0fa',
+        border: '1px solid #7D4CDB'
+      }
+    },
+    icons: {
+      down: FormDown,
+      up: FormUp,
+      color: 'dark-1',
+      margin: 'small'
+    }
+  }
+});
 
 var SimpleSelect = function SimpleSelect(_ref) {
   var rest = _extends({}, _ref);
@@ -16,7 +58,7 @@ var SimpleSelect = function SimpleSelect(_ref) {
 
   return React.createElement(Grommet, {
     full: true,
-    theme: grommet
+    theme: customRoundedTheme
   }, React.createElement(Box, {
     fill: true,
     align: "center",
@@ -48,6 +90,10 @@ for (var i = 1; i <= 200; i += 1) {
   });
 }
 
-storiesOf('Select', module).add('Simple', function () {
-  return React.createElement(SimpleSelect, null);
+storiesOf('Select', module) // Chromatic does not catch open Drop.
+// Screenshot taken before the Drop is open.
+.add('Custom Theme', function () {
+  return React.createElement(SimpleSelect, {
+    open: true
+  });
 });

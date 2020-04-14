@@ -3,6 +3,8 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { CaretDown } from "grommet-icons/es6/icons/CaretDown";
+import { CaretUp } from "grommet-icons/es6/icons/CaretUp";
+import { FormDown } from "grommet-icons/es6/icons/FormDown";
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../..';
 import { Select } from '..';
@@ -525,6 +527,31 @@ describe('Select', function () {
     expect(optionButton).toMatchSnapshot();
   });
 });
+test('renders custom up and down icons', function () {
+  var customTheme = {
+    select: {
+      icons: {
+        down: FormDown,
+        up: CaretUp
+      }
+    }
+  };
+
+  var _render18 = render(React.createElement(Grommet, {
+    theme: customTheme
+  }, React.createElement(Select, {
+    options: ['morning', 'afternoon', 'evening'],
+    placeholder: "Select..."
+  }))),
+      getByPlaceholderText = _render18.getByPlaceholderText,
+      container = _render18.container;
+
+  expect(container.firstChild).toMatchSnapshot();
+  var selectButton = getByPlaceholderText('Select...');
+  fireEvent.click(selectButton); // Check that custom up icon is applied when open
+
+  expect(container.firstChild).toMatchSnapshot();
+});
 test('onChange without valueKey', function () {
   var onChange = jest.fn();
 
@@ -550,10 +577,10 @@ test('onChange without valueKey', function () {
     });
   };
 
-  var _render18 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
-      getByPlaceholderText = _render18.getByPlaceholderText,
-      getByText = _render18.getByText,
-      container = _render18.container;
+  var _render19 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+      getByPlaceholderText = _render19.getByPlaceholderText,
+      getByText = _render19.getByText,
+      container = _render19.container;
 
   expect(container.firstChild).toMatchSnapshot();
   fireEvent.click(getByPlaceholderText('test select'));

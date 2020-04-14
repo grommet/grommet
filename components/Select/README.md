@@ -577,6 +577,16 @@ Defaults to
 <FormDown />
 ```
 
+**select.icons.up**
+
+The up icon to use for closing the Select. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
 **select.searchInput**
 
 Component for the Select search input field. Expects `React.Component`.

@@ -108,6 +108,11 @@ export var themeDoc = {
     type: 'React.Element',
     defaultValue: '<FormDown />'
   },
+  'select.icons.up': {
+    description: 'The up icon to use for closing the Select.',
+    type: 'React.Element',
+    defaultValue: undefined
+  },
   'select.searchInput': {
     description: "Component for the Select search input field.",
     type: 'React.Component',

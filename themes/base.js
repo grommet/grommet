@@ -903,7 +903,8 @@ var generate = function generate(baseSpacing, scale) {
         margin: {
           horizontal: 'small'
         },
-        down: _FormDown.FormDown
+        down: _FormDown.FormDown // up: undefined
+
       },
       options: {
         container: {

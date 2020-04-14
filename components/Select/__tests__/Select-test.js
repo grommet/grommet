@@ -590,6 +590,33 @@ describe('Select', function () {
     expect(optionButton).toMatchSnapshot();
   });
 });
+test('renders custom up and down icons', function () {
+  var customTheme = {
+    select: {
+      icons: {
+        down: _grommetIcons.FormDown,
+        up: _grommetIcons.CaretUp
+      }
+    }
+  };
+
+  var _render18 = (0, _react2.render)(_react["default"].createElement(_.Grommet, {
+    theme: customTheme
+  }, _react["default"].createElement(_2.Select, {
+    options: ['morning', 'afternoon', 'evening'],
+    placeholder: "Select..."
+  }))),
+      getByPlaceholderText = _render18.getByPlaceholderText,
+      container = _render18.container;
+
+  expect(container.firstChild).toMatchSnapshot();
+  var selectButton = getByPlaceholderText('Select...');
+
+  _react2.fireEvent.click(selectButton); // Check that custom up icon is applied when open
+
+
+  expect(container.firstChild).toMatchSnapshot();
+});
 test('onChange without valueKey', function () {
   var onChange = jest.fn();
 
@@ -615,10 +642,10 @@ test('onChange without valueKey', function () {
     });
   };
 
-  var _render18 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(Test, null))),
-      getByPlaceholderText = _render18.getByPlaceholderText,
-      getByText = _render18.getByText,
-      container = _render18.container;
+  var _render19 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(Test, null))),
+      getByPlaceholderText = _render19.getByPlaceholderText,
+      getByText = _render19.getByText,
+      container = _render19.container;
 
   expect(container.firstChild).toMatchSnapshot();
 

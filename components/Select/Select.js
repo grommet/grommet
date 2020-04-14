@@ -189,7 +189,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
 
     case true:
     case undefined:
-      SelectIcon = theme.select.icons.down;
+      SelectIcon = open && theme.select.icons.up ? theme.select.icons.up : theme.select.icons.down;
       break;
 
     default:

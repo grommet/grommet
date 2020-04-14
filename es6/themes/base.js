@@ -877,7 +877,8 @@ export var generate = function generate(baseSpacing, scale) {
         margin: {
           horizontal: 'small'
         },
-        down: FormDown
+        down: FormDown // up: undefined
+
       },
       options: {
         container: {
