@@ -822,6 +822,7 @@ export interface ThemeType {
     };
     extend?: ExtendType;
     icons?: {
+      color?: ColorType;
       down?: any;
       up?: any;
       margin?: MarginType;
