@@ -823,8 +823,8 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       color?: ColorType;
-      down?: any;
-      up?: any;
+      down?: React.ReactNode;
+      up?: React.ReactNode;
       margin?: MarginType;
     };
     options?: {
