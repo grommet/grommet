@@ -520,6 +520,16 @@ Defaults to
 undefined
 ```
 
+**button.disabled.extend**
+
+Any additional style for a disabled Button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **button.padding.horizontal**
 
 The horizontal padding. Expects `string`.

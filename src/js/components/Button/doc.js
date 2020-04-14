@@ -209,6 +209,10 @@ export const themeDoc = {
     button types, when the button is disabled.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.disabled.extend': {
+    description: 'Any additional style for a disabled Button.',
+    type: 'string | (props) => {}',
+  },
   'button.padding.horizontal': {
     description: 'The horizontal padding.',
     type: 'string',

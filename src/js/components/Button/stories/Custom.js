@@ -19,6 +19,7 @@ const customTheme = {
       border: {
         color: 'orange',
       },
+      extend: `border: 10px dashed red;`,
     },
     padding: {
       vertical: '12px',
@@ -37,7 +38,6 @@ const customTheme = {
       return `
           font-size: 12px;
           font-weight: bold;
-  
           ${extraStyles}
         `;
     },

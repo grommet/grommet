@@ -142,6 +142,7 @@ ${props.theme.button.disabled.color &&
         props.theme.button.disabled.color,
         props.theme,
       )};`)}
+${props.theme.button.disabled && props.theme.button.disabled.extend}
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
