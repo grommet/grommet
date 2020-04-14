@@ -79,6 +79,16 @@ function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
   }
+  if (
+    props.active &&
+    props.primary &&
+    props.theme.button.primary.active.border.color
+  ) {
+    return normalizeColor(
+      props.theme.button.primary.active.border.color,
+      props.theme,
+    );
+  }
   return normalizeColor(
     props.theme.button.border.color || 'control',
     props.theme,

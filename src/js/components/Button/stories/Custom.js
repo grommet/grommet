@@ -20,6 +20,11 @@ const customTheme = {
     },
     primary: {
       color: '#2196f3',
+      active: {
+        border: {
+          color: 'pink',
+        },
+      },
     },
     extend: props => {
       let extraStyles = '';
@@ -29,7 +34,6 @@ const customTheme = {
           `;
       }
       return `
-          color: white;
           font-size: 12px;
           font-weight: bold;
   
@@ -54,8 +58,20 @@ const coloredButton = {
 const CustomTheme = () => (
   <>
     <Grommet theme={customTheme}>
-      <Box align="center" pad="large">
+      <Box
+        align="center"
+        justify="center"
+        pad="large"
+        direction="row"
+        gap="small"
+      >
         <Button label="custom theme" onClick={() => {}} primary />
+        <Button
+          label="custom active primary"
+          onClick={() => {}}
+          primary
+          active
+        />
       </Box>
     </Grommet>
     <Grommet theme={coloredButton}>
