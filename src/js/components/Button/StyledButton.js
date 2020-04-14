@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import {
   activeStyle,
   backgroundStyle,
+  disabledStyle,
   focusStyle,
   genericStyles,
   getHoverIndicatorStyle,
@@ -121,7 +122,7 @@ const plainStyle = props => css`
   text-align: inherit;
 `;
 
-const disabledStyle = props => css`
+const disabledButtonStyle = props => css`
   ${!props.plain &&
     props.theme.button.disabled.border &&
     props.theme.button.disabled.border.color &&
@@ -140,9 +141,7 @@ const disabledStyle = props => css`
           props.theme,
         )};`
   }
-    opacity: ${props.theme.button.disabled.opacity ||
-      props.theme.global.control.disabled.opacity};
-    cursor: default;
+  ${disabledStyle(props.theme.button.disabled.opacity)}
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
@@ -170,7 +169,7 @@ const StyledButton = styled.button`
     props.disabled &&
     props.theme.button &&
     props.theme.button.disabled &&
-    disabledStyle(props)}
+    disabledButtonStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>
