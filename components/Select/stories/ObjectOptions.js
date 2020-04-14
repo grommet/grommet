@@ -24,7 +24,7 @@ var objectOptions = [{
   value: 4
 }];
 
-var OptionsFromObject = function OptionsFromObject() {
+var Example = function Example() {
   var _useState = (0, _react.useState)(''),
       value = _useState[0],
       setValue = _useState[1];
@@ -41,15 +41,19 @@ var OptionsFromObject = function OptionsFromObject() {
     name: "select",
     placeholder: "Select",
     labelKey: "label",
+    valueKey: {
+      key: 'value',
+      reduce: true
+    },
     value: value,
     options: objectOptions,
     onChange: function onChange(_ref) {
-      var option = _ref.option;
-      return setValue(option);
+      var nextValue = _ref.value;
+      return setValue(nextValue);
     }
   })));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Options from object', function () {
-  return _react["default"].createElement(OptionsFromObject, null);
+(0, _react2.storiesOf)('Select', module).add('Object options', function () {
+  return _react["default"].createElement(Example, null);
 });

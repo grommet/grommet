@@ -16,7 +16,8 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { StyledContainer } from './StyledSelect'; // position relative is so scroll can be managed correctly
+import { StyledContainer } from './StyledSelect';
+import { applyKey } from './utils'; // position relative is so scroll can be managed correctly
 
 var OptionsBox = styled.div.withConfig({
   displayName: "SelectContainer__OptionsBox",
@@ -63,44 +64,40 @@ function (_Component) {
       onSearch(search);
     }, debounceDelay(_this.props)));
 
-    _defineProperty(_assertThisInitialized(_this), "selectOption", function (option) {
+    _defineProperty(_assertThisInitialized(_this), "selectOption", function (index) {
       return function (event) {
         var _this$props = _this.props,
             multiple = _this$props.multiple,
             onChange = _this$props.onChange,
-            value = _this$props.value,
-            valueKey = _this$props.valueKey,
-            selected = _this$props.selected;
-        var initialOptions = _this.state.initialOptions;
+            options = _this$props.options,
+            optionIndexesInValue = _this$props.optionIndexesInValue,
+            valueKey = _this$props.valueKey;
 
         if (onChange) {
-          var nextValue = Array.isArray(value) ? value.slice() : []; // preserve compatibility until selected is deprecated
-
-          if (selected) {
-            nextValue = selected.map(function (s) {
-              return initialOptions[s];
-            });
-          }
-
-          var optionValue = valueKey ? option[valueKey] : option;
+          var nextValue;
+          var nextSelected;
 
           if (multiple) {
-            if (nextValue.indexOf(optionValue) !== -1) {
-              nextValue = nextValue.filter(function (v) {
-                return v !== optionValue;
-              });
+            var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
+            var valueIndex = optionIndexesInValue.indexOf(index);
+
+            if (valueIndex === -1) {
+              nextOptionIndexesInValue.push(index);
             } else {
-              nextValue.push(optionValue);
+              nextOptionIndexesInValue.splice(index, 1);
             }
+
+            nextValue = nextOptionIndexesInValue.map(function (i) {
+              return valueKey && valueKey.reduce ? applyKey(options[i], valueKey) : options[i];
+            });
+            nextSelected = nextOptionIndexesInValue;
           } else {
-            nextValue = optionValue;
+            nextValue = valueKey && valueKey.reduce ? applyKey(options[index], valueKey) : options[index];
+            nextSelected = index;
           }
 
-          var nextSelected = Array.isArray(nextValue) ? nextValue.map(function (v) {
-            return initialOptions.indexOf(v);
-          }) : initialOptions.indexOf(nextValue);
           onChange(event, {
-            option: option,
+            option: options[index],
             value: nextValue,
             selected: nextSelected
           });
@@ -169,13 +166,12 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onSelectOption", function (event) {
-      var options = _this.props.options;
       var activeIndex = _this.state.activeIndex;
 
       if (activeIndex >= 0) {
         event.preventDefault(); // prevent submitting forms
 
-        _this.selectOption(options[activeIndex])(event);
+        _this.selectOption(activeIndex)(event);
       }
     });
 
@@ -183,40 +179,14 @@ function (_Component) {
       var _this$props2 = _this.props,
           options = _this$props2.options,
           labelKey = _this$props2.labelKey;
-      var option = options[index];
-      var optionLabel;
-
-      if (labelKey) {
-        if (typeof labelKey === 'function') {
-          optionLabel = labelKey(option);
-        } else {
-          optionLabel = option[labelKey];
-        }
-      } else {
-        optionLabel = option;
-      }
-
-      return optionLabel;
+      return applyKey(options[index], labelKey);
     });
 
     _defineProperty(_assertThisInitialized(_this), "optionValue", function (index) {
       var _this$props3 = _this.props,
           options = _this$props3.options,
           valueKey = _this$props3.valueKey;
-      var option = options[index];
-      var optionValue;
-
-      if (valueKey) {
-        if (typeof valueKey === 'function') {
-          optionValue = valueKey(option);
-        } else {
-          optionValue = option[valueKey];
-        }
-      } else {
-        optionValue = option;
-      }
-
-      return optionValue;
+      return applyKey(options[index], valueKey);
     });
 
     _defineProperty(_assertThisInitialized(_this), "isDisabled", function (index) {
@@ -228,11 +198,7 @@ function (_Component) {
       var result;
 
       if (disabledKey) {
-        if (typeof disabledKey === 'function') {
-          result = disabledKey(option, index);
-        } else {
-          result = option[disabledKey];
-        }
+        result = applyKey(option, disabledKey);
       } else if (Array.isArray(disabled)) {
         if (typeof disabled[0] === 'number') {
           result = disabled.indexOf(index) !== -1;
@@ -282,7 +248,6 @@ function (_Component) {
     });
 
     _this.state = {
-      initialOptions: props.options,
       search: '',
       activeIndex: -1
     };
@@ -291,13 +256,12 @@ function (_Component) {
 
   SelectContainer.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
     var options = nextProps.options,
-        value = nextProps.value,
+        optionIndexesInValue = nextProps.optionIndexesInValue,
         onSearch = nextProps.onSearch;
 
     if (onSearch) {
-      if (prevState.activeIndex === -1 && prevState.search === '' && options && value) {
-        var optionValue = Array.isArray(value) && value.length ? value[0] : value;
-        var activeIndex = options.indexOf(optionValue);
+      if (prevState.activeIndex === -1 && prevState.search === '' && options && optionIndexesInValue) {
+        var activeIndex = optionIndexesInValue.length ? optionIndexesInValue[0] : -1;
         return {
           activeIndex: activeIndex
         };
@@ -407,7 +371,7 @@ function (_Component) {
         selected: isSelected,
         option: option,
         onMouseOver: !isDisabled ? _this3.onActiveOption(index) : undefined,
-        onClick: !isDisabled ? _this3.selectOption(option) : undefined
+        onClick: !isDisabled ? _this3.selectOption(index) : undefined
       }, children ? children(option, index, options, {
         active: isActive,
         disabled: isDisabled,

@@ -25,12 +25,12 @@ for (var i = 1; i <= 200; i += 1) {
   });
 }
 
-var ObjectMultiSelect = function ObjectMultiSelect() {
+var Example = function Example() {
   var _useState = (0, _react.useState)(objectOptions),
       options = _useState[0],
       setOptions = _useState[1];
 
-  var _useState2 = (0, _react.useState)(''),
+  var _useState2 = (0, _react.useState)([]),
       value = _useState2[0],
       setValue = _useState2[1];
 
@@ -49,7 +49,10 @@ var ObjectMultiSelect = function ObjectMultiSelect() {
     closeOnChange: false,
     disabledKey: "dis",
     labelKey: "lab",
-    valueKey: "val",
+    valueKey: {
+      key: 'val',
+      reduce: true
+    },
     value: value,
     options: options,
     onChange: function onChange(_ref) {
@@ -75,5 +78,5 @@ var ObjectMultiSelect = function ObjectMultiSelect() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Object Multiple', function () {
-  return _react["default"].createElement(ObjectMultiSelect, null);
+  return _react["default"].createElement(Example, null);
 });

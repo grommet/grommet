@@ -12,6 +12,7 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 import { SelectContainer } from './SelectContainer';
+import { applyKey } from './utils';
 var SelectTextInput = styled(TextInput).withConfig({
   displayName: "Select__SelectTextInput",
   componentId: "sc-17idtfo-0"
@@ -78,52 +79,42 @@ var Select = forwardRef(function (_ref, ref) {
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
-  var formContext = useContext(FormContext); // normalize the value prop to not be objects
+  var formContext = useContext(FormContext); // value is used for what we receive in valueProp and the basis for
+  // what we send with onChange
 
-  var normalizedValueProp = useMemo(function () {
-    if (Array.isArray(valueProp)) {
-      if (valueProp.length === 0) return valueProp;
-
-      if (typeof valueProp[0] === 'object' && valueKey) {
-        return valueProp.map(function (v) {
-          return v[valueKey];
-        });
-      }
-
-      return valueProp;
-    }
-
-    if (typeof valueProp === 'object' && valueKey) return valueProp[valueKey];
-    return valueProp;
-  }, [valueKey, valueProp]);
-
-  var _formContext$useFormC = formContext.useFormContext(name, normalizedValueProp, ''),
+  var _formContext$useFormC = formContext.useFormContext(name, valueProp, ''),
       value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1]; // track which options are present in the value
+      setValue = _formContext$useFormC[1]; // valuedValue is the value mapped with any valueKey applied
 
 
-  var valueOptions = useMemo(function () {
-    return options.filter(function (option, index) {
-      if (selected !== undefined) {
-        if (Array.isArray(selected)) return selected.indexOf(index) !== -1;
-        return index === selected;
-      }
-
-      if (typeof option === 'object' && valueKey) {
-        if (Array.isArray(value)) {
-          return value.indexOf(option[valueKey]) !== -1;
-        }
-
-        return option[valueKey] === value;
-      }
-
-      if (Array.isArray(value)) {
-        return value.indexOf(option) !== -1;
-      }
-
-      return option === value;
+  var valuedValue = useMemo(function () {
+    if (Array.isArray(value)) return value.map(function (v) {
+      return valueKey && valueKey.reduce ? v : applyKey(v, valueKey);
     });
-  }, [options, selected, value, valueKey]);
+    return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
+  }, [value, valueKey]); // the option indexes present in the value
+
+  var optionIndexesInValue = useMemo(function () {
+    var result = [];
+    options.forEach(function (option, index) {
+      if (selected !== undefined) {
+        if (Array.isArray(selected)) {
+          if (selected.indexOf(index) !== -1) result.push(index);
+        } else if (index === selected) {
+          result.push(index);
+        }
+      } else if (Array.isArray(valuedValue)) {
+        if (valuedValue.some(function (v) {
+          return v === applyKey(option, valueKey);
+        })) {
+          result.push(index);
+        }
+      } else if (valuedValue === applyKey(option, valueKey)) {
+        result.push(index);
+      }
+    });
+    return result;
+  }, [options, selected, valueKey, valuedValue]);
 
   var _useState = useState(propOpen),
       open = _useState[0],
@@ -179,49 +170,20 @@ var Select = forwardRef(function (_ref, ref) {
 
   var selectValue = useMemo(function () {
     if (valueLabel) return valueLabel;
-    if (React.isValidElement(value)) return value;
+    if (React.isValidElement(value)) return value; // deprecated
+
     return undefined;
   }, [value, valueLabel]); // text to show
 
   var inputValue = useMemo(function () {
     if (!selectValue) {
-      if (Array.isArray(valueOptions)) {
-        if (valueOptions.length === 0) return '';
-
-        if (valueOptions.length === 1) {
-          var valueOption = valueOptions[0];
-
-          if (typeof valueOption === 'object' && labelKey) {
-            if (typeof labelKey === 'function') {
-              return labelKey(valueOption);
-            }
-
-            return valueOption[labelKey];
-          }
-
-          return valueOption;
-        }
-
-        return messages.multiple;
-      }
-
-      if (typeof valueOptions === 'object' && labelKey) {
-        if (typeof labelKey === 'function') {
-          return labelKey(valueOptions);
-        }
-
-        return valueOptions[labelKey];
-      }
-
-      if (valueOptions !== undefined) return valueOptions;
-      return '';
+      if (optionIndexesInValue.length === 0) return '';
+      if (optionIndexesInValue.length === 1) return applyKey(options[optionIndexesInValue[0]], labelKey);
+      return messages.multiple;
     }
 
     return undefined;
-  }, [labelKey, messages, selectValue, valueOptions]); // const dark = theme.select.background
-  // ? colorIsDark(theme.select.background)
-  // : theme.dark;
-
+  }, [labelKey, messages, optionIndexesInValue, options, selectValue]);
   var iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
   return React.createElement(Keyboard, {
     onDown: onRequestOpen,
@@ -253,6 +215,7 @@ var Select = forwardRef(function (_ref, ref) {
       onMore: onMore,
       onSearch: onSearch,
       options: options,
+      optionIndexesInValue: optionIndexesInValue,
       replace: replace,
       searchPlaceholder: searchPlaceholder,
       selected: selected,
