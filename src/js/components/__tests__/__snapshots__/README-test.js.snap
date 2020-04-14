@@ -2244,8 +2244,8 @@ undefined
 
 **button.disabled.color**
 
-Label color, or fill color for primary buttons, when the 
-    button is disabled. Expects \`string | { dark: string, light: string }\`.
+Fill color for primary buttons, or label color for other
+    button types, when the button is disabled. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
