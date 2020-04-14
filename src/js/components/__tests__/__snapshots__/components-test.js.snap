@@ -4312,9 +4312,11 @@ string",
         "format": "string
 element
 object
+number
 [
   string
   object
+  number
 ]",
         "name": "value",
       },
@@ -4329,9 +4331,15 @@ object
       to determine the value of each option. If a string is
       provided, it is used as the key to retrieve each option's value.
       If a function is provided, it is called with the option and the
-      return value indicates the value.",
+      return value indicates the value. If reduce is true, the value
+      coming via the key will be used for the onChange value and the value
+      property is expected to be reduced to align.",
         "format": "string
-function",
+function
+{
+  key: string,
+  reduce: boolean
+}",
         "name": "valueKey",
       },
       Object {
