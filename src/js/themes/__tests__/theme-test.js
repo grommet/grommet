@@ -5,14 +5,7 @@ import 'jest-styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import { Add } from 'grommet-icons';
 
-import {
-  Grommet,
-  Anchor,
-  Box,
-  Button,
-  Text,
-  TextInput,
-} from '../../components';
+import { Grommet, Anchor, Box, Text, TextInput } from '../../components';
 import { dark } from '..';
 
 const colors = [
@@ -51,15 +44,6 @@ const customTheme = {
     },
     colors: {
       custom: '#cc6633',
-    },
-  },
-  button: {
-    disabled: {
-      color: 'red',
-      border: {
-        color: 'red',
-      },
-      opacity: 1.0,
     },
   },
 };
@@ -120,9 +104,6 @@ describe('Grommet', () => {
         </Box>
         <Box>
           <TextInput />
-        </Box>
-        <Box>
-          <Button label="button" disabled />
         </Box>
       </Grommet>,
     );
