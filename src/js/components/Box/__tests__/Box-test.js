@@ -253,7 +253,7 @@ describe('Box', () => {
   test('gap', () => {
     const component = renderer.create(
       <Grommet>
-        {['xsmall', 'small', 'medium', 'large', '80px'].map(gap => (
+        {['xsmall', 'small', 'medium', 'large', '80px', 'none'].map(gap => (
           <Box key={gap} gap={gap} direction="row">
             <Box />
           </Box>

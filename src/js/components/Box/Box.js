@@ -83,7 +83,7 @@ const Box = forwardRef(
     }
 
     let contents = children;
-    if (gap) {
+    if (gap && gap !== 'none') {
       contents = [];
       let firstIndex;
       Children.forEach(children, (child, index) => {
