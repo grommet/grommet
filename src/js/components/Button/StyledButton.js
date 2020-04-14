@@ -128,19 +128,17 @@ const disabledButtonStyle = props => css`
     props.theme.button.disabled.border.color &&
     `border: ${props.theme.button.border.width} solid
     ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
-  ${
-    props.primary && props.theme.button.disabled.color
+  ${props.theme.button.disabled.color &&
+    (props.primary
       ? backgroundStyle(
           normalizeColor(props.theme.button.disabled.color, props.theme),
           props.theme,
           props.theme.button.color,
         )
-      : props.theme.button.disabled.color &&
-        `color: ${normalizeColor(
+      : `color: ${normalizeColor(
           props.theme.button.disabled.color,
           props.theme,
-        )};`
-  }
+        )};`)}
   ${disabledStyle(props.theme.button.disabled.opacity)}
 `;
 
