@@ -574,3 +574,50 @@ describe('Select', () => {
     expect(optionButton).toMatchSnapshot();
   });
 });
+
+test('onChange without valueKey', () => {
+  const onChange = jest.fn();
+  const Test = () => {
+    const [value] = React.useState();
+    return (
+      <Select
+        id="test-select"
+        placeholder="test select"
+        labelKey="name"
+        // valueKey="name"
+        value={value}
+        multiple
+        options={[
+          {
+            id: '1',
+            name: 'Value1',
+          },
+          {
+            id: '2',
+            name: 'Value2',
+          },
+        ]}
+        onChange={onChange}
+      />
+    );
+  };
+  const { getByPlaceholderText, getByText, container } = render(
+    <Grommet>
+      <Test />
+    </Grommet>,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+  fireEvent.click(getByPlaceholderText('test select'));
+
+  fireEvent.click(getByText('Value1'));
+  expect(onChange).toBeCalledWith(
+    expect.objectContaining({
+      value: [
+        {
+          id: '1',
+          name: 'Value1',
+        },
+      ],
+    }),
+  );
+});
