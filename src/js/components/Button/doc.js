@@ -205,8 +205,8 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
   },
   'button.disabled.color': {
-    description: `Fill color for primary, label color for plain, border color 
-    otherwise when the button is disabled.`,
+    description: `Label color, or fill color for primary buttons, when the 
+    button is disabled.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.padding.horizontal': {
