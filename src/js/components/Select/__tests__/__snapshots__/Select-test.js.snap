@@ -4645,6 +4645,72 @@ exports[`Select multiple onChange without valueKey 3`] = `
 }"
 `;
 
+exports[`Select multiple onChange without valueKey 4`] = `
+<div
+  class="StyledBox-sc-13pk1d4-0 fUuNUq StyledDrop-sc-16s5rx8-0 exrnbV"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 jJdKAu StyledSelect__StyledContainer-znp66n-0 evOFkc"
+    id="test-select__select-drop"
+  >
+    <div
+      class="SelectContainer__OptionsBox-sc-1wi0ul8-0 guPZAf"
+      role="menubar"
+      tabindex="-1"
+    >
+      <button
+        class="StyledButton-sc-323bzc-0 iElqND SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 bcEMiq SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+        >
+          <span
+            class="StyledText-sc-1sadyjn-0 bilRua"
+          >
+            Value1
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-sc-323bzc-0 iElqND SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 bcEMiq SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+        >
+          <span
+            class="StyledText-sc-1sadyjn-0 bilRua"
+          >
+            Value2
+          </span>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 fmwxyt"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select multiple onChange without valueKey 5`] = `
+"@media only screen and (max-width:768px) {
+  .jUELQZ {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
+`;
+
 exports[`Select multiple values 1`] = `
 .c8 {
   display: inline-block;

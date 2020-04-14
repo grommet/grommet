@@ -636,6 +636,7 @@ describe('Select', () => {
           labelKey="name"
           value={value}
           multiple
+          closeOnChange={false}
           options={[
             {
               id: 1,
@@ -667,6 +668,24 @@ describe('Select', () => {
           {
             id: 1,
             name: 'Value1',
+          },
+        ],
+      }),
+    );
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value2'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+          {
+            id: 2,
+            name: 'Value2',
           },
         ],
       }),
