@@ -390,6 +390,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // color: { dark: undefined, light: undefined }
         // opacity: undefined,
+        // extend: undefined
       },
       // color: { dark: undefined, light: undefined }
       primary: {
