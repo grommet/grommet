@@ -17,17 +17,32 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+const defaultValue = {
+  name: '',
+  email: '',
+  subscribe: false,
+  ampm: '',
+  size: '',
+  comments: '',
+  age: '',
+};
+
 const Example = () => {
-  const [value, setValue] = React.useState({});
+  const [value, setValue] = React.useState(defaultValue);
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
             value={value}
-            onChange={nextValue => setValue(nextValue)}
-            onReset={() => setValue({})}
-            onSubmit={event => console.log('Submit', event.value)}
+            onChange={nextValue => {
+              console.log('Change', nextValue);
+              setValue(nextValue);
+            }}
+            onReset={() => setValue(defaultValue)}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
           >
             <FormField label="Name" name="name">
               <TextInput name="name" />

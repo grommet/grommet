@@ -19,6 +19,7 @@ import { base as iconBase } from 'grommet-icons/themes/base';
 
 import { deepFreeze, deepMerge } from '../utils/object';
 import { normalizeColor } from '../utils/colors';
+import { parseMetricToNum } from '../utils/mixins';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
@@ -135,6 +136,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   });
 
   const borderWidth = 2;
+  const controlBorderWidth = 1;
 
   const result = deepMerge(iconBase, {
     global: {
@@ -206,7 +208,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       colors,
       control: {
         border: {
-          width: '1px',
+          width: `${controlBorderWidth}px`,
           radius: '4px',
           color: 'border',
         },
@@ -274,7 +276,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
-        padding: `${baseSpacing / 2}px`,
+        padding: {
+          horizontal: `${parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)}px`,
+          vertical: `${parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)}px`,
+        },
         weight: 600,
       },
       opacity: {
@@ -828,6 +835,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         margin: { horizontal: 'small' },
         down: FormDown,
+        // up: undefined
       },
       options: {
         container: {

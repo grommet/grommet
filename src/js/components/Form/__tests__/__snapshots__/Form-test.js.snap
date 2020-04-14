@@ -98,10 +98,10 @@ exports[`Form controlled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -191,7 +191,7 @@ exports[`Form controlled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -204,7 +204,7 @@ exports[`Form controlled 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -229,7 +229,7 @@ exports[`Form controlled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -242,7 +242,7 @@ exports[`Form controlled 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -368,10 +368,10 @@ exports[`Form controlled FormField deprecated 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -467,7 +467,7 @@ exports[`Form controlled FormField deprecated 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <label
         class="StyledText-sc-1sadyjn-0 enbIRN"
@@ -486,7 +486,7 @@ exports[`Form controlled FormField deprecated 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               id="test"
               name="test"
               value="v"
@@ -511,7 +511,7 @@ exports[`Form controlled FormField deprecated 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <label
         class="StyledText-sc-1sadyjn-0 enbIRN"
@@ -530,7 +530,7 @@ exports[`Form controlled FormField deprecated 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               id="test"
               name="test"
               value="v"
@@ -647,10 +647,10 @@ exports[`Form controlled input 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -740,7 +740,7 @@ exports[`Form controlled input 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -753,7 +753,7 @@ exports[`Form controlled input 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -778,7 +778,7 @@ exports[`Form controlled input 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -791,7 +791,7 @@ exports[`Form controlled input 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -908,10 +908,10 @@ exports[`Form controlled input lazy 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1001,7 +1001,7 @@ exports[`Form controlled input lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -1014,7 +1014,7 @@ exports[`Form controlled input lazy 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -1039,7 +1039,7 @@ exports[`Form controlled input lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -1052,7 +1052,7 @@ exports[`Form controlled input lazy 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -1169,10 +1169,10 @@ exports[`Form controlled lazy 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1262,7 +1262,7 @@ exports[`Form controlled lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -1275,7 +1275,7 @@ exports[`Form controlled lazy 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -1300,7 +1300,7 @@ exports[`Form controlled lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -1313,7 +1313,7 @@ exports[`Form controlled lazy 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
               value="v"
@@ -1428,10 +1428,10 @@ exports[`Form errors 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1508,7 +1508,6 @@ exports[`Form errors 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>
@@ -1598,10 +1597,10 @@ exports[`Form infos 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1677,7 +1676,6 @@ exports[`Form infos 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>
@@ -1739,10 +1737,10 @@ exports[`Form lazy value 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -1964,10 +1962,10 @@ exports[`Form uncontrolled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -2057,7 +2055,7 @@ exports[`Form uncontrolled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -2070,10 +2068,10 @@ exports[`Form uncontrolled 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
-              value="v"
+              value=""
             />
           </div>
         </div>
@@ -2095,7 +2093,7 @@ exports[`Form uncontrolled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 bIVpEL FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cIDibG"
@@ -2108,10 +2106,10 @@ exports[`Form uncontrolled 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 iyxfWo"
+              class="StyledTextInput-sc-1x30a0s-0 cMMVpP"
               name="test"
               placeholder="test input"
-              value="v"
+              value=""
             />
           </div>
         </div>
@@ -2225,10 +2223,10 @@ exports[`Form update 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -2539,10 +2537,10 @@ exports[`Form with field 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
   outline: none;
   background: transparent;
   color: inherit;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
@@ -2618,7 +2616,6 @@ exports[`Form with field 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>

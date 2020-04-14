@@ -48,7 +48,15 @@ const Header = ({
         )}
 
         {columns.map(
-          ({ property, header, align, search, sortable, verticalAlign }) => {
+          ({
+            property,
+            header,
+            align,
+            search,
+            sortable,
+            verticalAlign,
+            size,
+          }) => {
             let content =
               typeof header === 'string' ? <Text>{header}</Text> : header;
 
@@ -59,7 +67,7 @@ const Header = ({
                 sort &&
                 sort.property === property &&
                 theme.dataTable.icons[
-                  sort.ascending ? 'ascending' : 'descending'
+                  sort.direction !== 'asc' ? 'ascending' : 'descending'
                 ];
               content = (
                 <Button plain fill="vertical" onClick={onSort(property)}>
@@ -122,6 +130,7 @@ const Header = ({
                 pad={pad}
                 plain
                 scope="col"
+                size={widths && widths[property] ? undefined : size}
                 style={
                   widths && widths[property]
                     ? { width: widths[property] }

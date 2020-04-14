@@ -336,7 +336,7 @@ exports[`CheckBox controlled 2`] = `
     class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eeTGTD StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+      class="StyledBox-sc-13pk1d4-0 fASNub StyledCheckBox-sc-1dbk5ju-6 CBoMo"
     >
       <input
         checked=""
@@ -346,8 +346,28 @@ exports[`CheckBox controlled 2`] = `
       <div
         class="StyledBox-sc-13pk1d4-0 lpqrQA StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
       >
-        <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
+        .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+<svg
+          class="c0"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -524,15 +544,18 @@ exports[`CheckBox disabled renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     disabled={true}
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
       disabled={true}
     >
       <input
+        checked={false}
         className="c4"
         disabled={true}
         onBlur={[Function]}
@@ -541,6 +564,7 @@ exports[`CheckBox disabled renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
         disabled={true}
       />
@@ -749,13 +773,16 @@ exports[`CheckBox indeterminate renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -763,9 +790,11 @@ exports[`CheckBox indeterminate renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       >
         <svg
+          checked={false}
           className="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
@@ -779,13 +808,16 @@ exports[`CheckBox indeterminate renders 1`] = `
     </div>
   </label>
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c7 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -793,9 +825,11 @@ exports[`CheckBox indeterminate renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       >
         <svg
+          checked={false}
           className="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
@@ -939,13 +973,16 @@ exports[`CheckBox label renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -953,6 +990,7 @@ exports[`CheckBox label renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -961,13 +999,16 @@ exports[`CheckBox label renders 1`] = `
     </span>
   </label>
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -975,6 +1016,7 @@ exports[`CheckBox label renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -1103,13 +1145,16 @@ exports[`CheckBox renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1117,19 +1162,23 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
   </label>
   <label
+    checked={false}
     className="c1"
     htmlFor="test id"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         id="test id"
         name="test name"
@@ -1139,6 +1188,7 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -1271,6 +1321,7 @@ exports[`CheckBox reverse renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
@@ -1278,9 +1329,11 @@ exports[`CheckBox reverse renders 1`] = `
       test label
     </span>
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1288,6 +1341,7 @@ exports[`CheckBox reverse renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -1436,13 +1490,16 @@ exports[`CheckBox toggle renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1450,9 +1507,11 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
+        checked={false}
         className="c5"
       >
         <span
+          checked={false}
           className="c6"
         />
       </span>
@@ -1487,13 +1546,16 @@ exports[`CheckBox toggle renders 1`] = `
     </div>
   </label>
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c7 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1501,9 +1563,11 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
+        checked={false}
         className="c5"
       >
         <span
+          checked={false}
           className="c6"
         />
       </span>

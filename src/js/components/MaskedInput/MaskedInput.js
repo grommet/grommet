@@ -137,7 +137,7 @@ const MaskedInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
+    const [value, setValue] = formContext.useFormContext(name, valueProp);
 
     const [valueParts, setValueParts] = useState(parseValue(mask, value));
     useEffect(() => {
@@ -209,8 +209,8 @@ const MaskedInput = forwardRef(
 
         if (value !== nextValue) {
           setInputValue(nextValue);
-          if (onChange) onChange(event);
           setValue(nextValue);
+          if (onChange) onChange(event);
         }
       },
       [mask, onChange, setInputValue, setValue, value],
@@ -320,7 +320,7 @@ const MaskedInput = forwardRef(
             reverse={reverse}
             focus={focus}
             {...rest}
-            value={value || ''}
+            value={value}
             theme={theme}
             onFocus={event => {
               setFocus(true);

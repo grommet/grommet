@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import { CaretDown } from 'grommet-icons';
+import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
@@ -137,7 +137,7 @@ describe('Select', () => {
       document.getElementById('test-select__drop').querySelector('button'),
     );
 
-    // checks it select has a value assigned to it after option is selected
+    // checks if select has a value assigned to it after option is selected
     expect(select.value).toEqual('one');
     expect(onChange).toBeCalled();
     expect(window.scrollTo).toBeCalled();
@@ -573,4 +573,78 @@ describe('Select', () => {
     fireEvent.mouseOver(optionButton);
     expect(optionButton).toMatchSnapshot();
   });
+});
+
+test('renders custom up and down icons', () => {
+  const customTheme = {
+    select: {
+      icons: {
+        down: FormDown,
+        up: CaretUp,
+      },
+    },
+  };
+
+  const { getByPlaceholderText, container } = render(
+    <Grommet theme={customTheme}>
+      <Select
+        options={['morning', 'afternoon', 'evening']}
+        placeholder="Select..."
+      />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+
+  const selectButton = getByPlaceholderText('Select...');
+  fireEvent.click(selectButton);
+  // Check that custom up icon is applied when open
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('onChange without valueKey', () => {
+  const onChange = jest.fn();
+  const Test = () => {
+    const [value] = React.useState();
+    return (
+      <Select
+        id="test-select"
+        placeholder="test select"
+        labelKey="name"
+        // valueKey="name"
+        value={value}
+        multiple
+        options={[
+          {
+            id: '1',
+            name: 'Value1',
+          },
+          {
+            id: '2',
+            name: 'Value2',
+          },
+        ]}
+        onChange={onChange}
+      />
+    );
+  };
+  const { getByPlaceholderText, getByText, container } = render(
+    <Grommet>
+      <Test />
+    </Grommet>,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+  fireEvent.click(getByPlaceholderText('test select'));
+
+  fireEvent.click(getByText('Value1'));
+  expect(onChange).toBeCalledWith(
+    expect.objectContaining({
+      value: [
+        {
+          id: '1',
+          name: 'Value1',
+        },
+      ],
+    }),
+  );
 });

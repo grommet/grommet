@@ -521,7 +521,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gnpCQA StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fuNnNM StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -538,7 +538,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dmpTCI StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1231,7 +1231,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dmpTCI StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1248,7 +1248,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gnpCQA StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fuNnNM StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -1288,7 +1288,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dmpTCI StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1305,7 +1305,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dmpTCI StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 jvLdFN"
@@ -1345,7 +1345,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dmpTCI StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1362,7 +1362,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dmpTCI StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 jvLdFN"
@@ -1402,7 +1402,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dmpTCI StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1419,7 +1419,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gnpCQA StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fuNnNM StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
