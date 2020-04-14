@@ -3772,7 +3772,7 @@ exports[`Select opens 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 iElqND SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 dDPHUl SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -3788,7 +3788,7 @@ exports[`Select opens 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 iElqND SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 dDPHUl SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -7483,7 +7483,7 @@ exports[`renders custom up and down icons 2`] = `
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 dnCEuz Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+    class="StyledButton-sc-323bzc-0 cvUgit Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
     type="button"
   >
     <div

@@ -9780,7 +9780,7 @@ exports[`Calendar select date 2`] = `
         >
           <button
             aria-label="December 2017"
-            class="StyledButton-sc-323bzc-0 jvkqEN"
+            class="StyledButton-sc-323bzc-0 iZtczX"
             type="button"
           >
             <svg
@@ -9799,7 +9799,7 @@ exports[`Calendar select date 2`] = `
           </button>
           <button
             aria-label="February 2018"
-            class="StyledButton-sc-323bzc-0 jvkqEN"
+            class="StyledButton-sc-323bzc-0 iZtczX"
             type="button"
           >
             <svg
@@ -9832,7 +9832,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sun Dec 31 2017"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9848,7 +9848,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Mon Jan 01 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9864,7 +9864,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Tue Jan 02 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9880,7 +9880,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Jan 03 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9896,7 +9896,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Thu Jan 04 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9912,7 +9912,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Jan 05 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9928,7 +9928,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sat Jan 06 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9948,7 +9948,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sun Jan 07 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9964,7 +9964,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Mon Jan 08 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9980,7 +9980,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Tue Jan 09 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -9996,7 +9996,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Jan 10 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10012,7 +10012,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Thu Jan 11 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10028,7 +10028,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Jan 12 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10044,7 +10044,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sat Jan 13 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10064,7 +10064,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10080,7 +10080,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Mon Jan 15 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10096,7 +10096,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Tue Jan 16 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10112,7 +10112,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Jan 17 2018"
-                class="StyledButton-sc-323bzc-0 fWQYtn"
+                class="StyledButton-sc-323bzc-0 geVHa-d"
                 tabindex="-1"
                 type="button"
               >
@@ -10128,7 +10128,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Thu Jan 18 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10144,7 +10144,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Jan 19 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10160,7 +10160,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sat Jan 20 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10180,7 +10180,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sun Jan 21 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10196,7 +10196,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Mon Jan 22 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10212,7 +10212,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Tue Jan 23 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10228,7 +10228,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Jan 24 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10244,7 +10244,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Thu Jan 25 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10260,7 +10260,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Jan 26 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10276,7 +10276,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sat Jan 27 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10296,7 +10296,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sun Jan 28 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10312,7 +10312,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Mon Jan 29 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10328,7 +10328,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Tue Jan 30 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10344,7 +10344,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Jan 31 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10360,7 +10360,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Thu Feb 01 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10376,7 +10376,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Feb 02 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10392,7 +10392,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sat Feb 03 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10412,7 +10412,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sun Feb 04 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10428,7 +10428,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Mon Feb 05 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10444,7 +10444,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Tue Feb 06 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10460,7 +10460,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Feb 07 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10476,7 +10476,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Thu Feb 08 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10492,7 +10492,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Feb 09 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -10508,7 +10508,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Sat Feb 10 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11609,7 +11609,7 @@ exports[`Calendar select dates 2`] = `
         >
           <button
             aria-label="December 2017"
-            class="StyledButton-sc-323bzc-0 jvkqEN"
+            class="StyledButton-sc-323bzc-0 iZtczX"
             type="button"
           >
             <svg
@@ -11628,7 +11628,7 @@ exports[`Calendar select dates 2`] = `
           </button>
           <button
             aria-label="February 2018"
-            class="StyledButton-sc-323bzc-0 jvkqEN"
+            class="StyledButton-sc-323bzc-0 iZtczX"
             type="button"
           >
             <svg
@@ -11661,7 +11661,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sun Dec 31 2017"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11677,7 +11677,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Mon Jan 01 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11693,7 +11693,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Tue Jan 02 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11709,7 +11709,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Jan 03 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11725,7 +11725,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Thu Jan 04 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11741,7 +11741,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Jan 05 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11757,7 +11757,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sat Jan 06 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11777,7 +11777,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sun Jan 07 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11793,7 +11793,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Mon Jan 08 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11809,7 +11809,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Tue Jan 09 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11825,7 +11825,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Jan 10 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11841,7 +11841,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Thu Jan 11 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11857,7 +11857,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Jan 12 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11873,7 +11873,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sat Jan 13 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11893,7 +11893,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11909,7 +11909,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Mon Jan 15 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11925,7 +11925,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Tue Jan 16 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11941,7 +11941,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Jan 17 2018"
-                class="StyledButton-sc-323bzc-0 fWQYtn"
+                class="StyledButton-sc-323bzc-0 geVHa-d"
                 tabindex="-1"
                 type="button"
               >
@@ -11957,7 +11957,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Thu Jan 18 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11973,7 +11973,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Jan 19 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -11989,7 +11989,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sat Jan 20 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12009,7 +12009,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sun Jan 21 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12025,7 +12025,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Mon Jan 22 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12041,7 +12041,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Tue Jan 23 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12057,7 +12057,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Jan 24 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12073,7 +12073,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Thu Jan 25 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12089,7 +12089,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Jan 26 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12105,7 +12105,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sat Jan 27 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12125,7 +12125,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sun Jan 28 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12141,7 +12141,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Mon Jan 29 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12157,7 +12157,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Tue Jan 30 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12173,7 +12173,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Jan 31 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12189,7 +12189,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Thu Feb 01 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12205,7 +12205,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Feb 02 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12221,7 +12221,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sat Feb 03 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12241,7 +12241,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sun Feb 04 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12257,7 +12257,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Mon Feb 05 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12273,7 +12273,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Tue Feb 06 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12289,7 +12289,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Feb 07 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12305,7 +12305,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Thu Feb 08 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12321,7 +12321,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Feb 09 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
@@ -12337,7 +12337,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Sat Feb 10 2018"
-                class="StyledButton-sc-323bzc-0 dnCEuz"
+                class="StyledButton-sc-323bzc-0 cvUgit"
                 tabindex="-1"
                 type="button"
               >
