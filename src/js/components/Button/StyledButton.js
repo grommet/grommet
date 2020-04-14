@@ -129,6 +129,8 @@ const disabledButtonStyle = props => css`
     `border: ${props.theme.button.border.width} solid
     ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
   ${props.theme.button.disabled.color &&
+    // if primary button, apply disabled color to background. otherwise,
+    // apply disabled color to the label
     (props.primary
       ? backgroundStyle(
           normalizeColor(props.theme.button.disabled.color, props.theme),
