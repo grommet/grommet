@@ -821,6 +821,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         margin: { horizontal: 'small' },
         down: FormDown,
+        // up: undefined
       },
       options: {
         container: {
