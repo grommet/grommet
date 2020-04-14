@@ -153,7 +153,10 @@ const Select = forwardRef(
         break;
       case true:
       case undefined:
-        SelectIcon = theme.select.icons.down;
+        SelectIcon =
+          open && theme.select.icons.up
+            ? theme.select.icons.up
+            : theme.select.icons.down;
         break;
       default:
         SelectIcon = icon;
