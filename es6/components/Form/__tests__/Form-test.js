@@ -588,9 +588,6 @@ describe('Form', function () {
     expect(_onSubmit2).toBeCalledWith(expect.objectContaining({
       value: {
         test: 'a'
-      },
-      touched: {
-        test: true
       }
     }));
   }); // deprecated FormField+input pattern

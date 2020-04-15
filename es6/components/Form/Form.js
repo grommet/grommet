@@ -170,41 +170,24 @@ var Form = forwardRef(function (_ref, ref) {
   //
 
   var useFormContext = function useFormContext(name, componentValue, initialValue) {
-    var formValue = name ? value[name] : undefined;
-
-    var _useState6 = useState(function () {
-      if (componentValue !== undefined) return componentValue;
-      if (valueProp) return formValue;
-      return initialValue;
-    }),
+    var _useState6 = useState(initialValue),
         contextValue = _useState6[0],
         setContextValue = _useState6[1];
 
+    var formValue = name ? value[name] : undefined;
     useEffect(function () {
-      if (componentValue !== undefined) {
-        // input controls value
-        if (componentValue !== contextValue) {
-          setContextValue(componentValue);
-          if (name && componentValue !== formValue) update(name, componentValue);
-        } else if (name && formValue === undefined) {
-          update(name, componentValue, true);
-        }
-      } else if (name) {
-        if (valueProp) {
-          // Form controls value
-          if (formValue !== contextValue) {
-            setContextValue(formValue);
-          }
-        } else if (formValue === undefined) {
-          setContextValue(initialValue);
-        }
-      }
+      if (name && componentValue !== undefined && componentValue !== formValue) // input drives
+        update(name, componentValue, formValue === undefined);
     }, [componentValue, contextValue, formValue, initialValue, name]);
-    return [contextValue, function (nextValue) {
-      // only set if the caller hasn't supplied a specific value
+    var useValue;
+    if (componentValue !== undefined) // input drives
+      useValue = componentValue;else if (valueProp && name && formValue !== undefined) // form drives
+      useValue = formValue;else useValue = contextValue;
+    return [useValue, function (nextValue) {
+      // only set if the input isn't driving
       if (componentValue === undefined) {
         if (name) update(name, nextValue);
-        if (valueProp || initialValue !== undefined) setContextValue(nextValue);
+        if (initialValue !== undefined) setContextValue(nextValue);
       }
     }];
   };

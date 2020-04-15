@@ -19,12 +19,7 @@ var useFormContext = function useFormContext(_, valueProp, initialValue) {
       value = _useState[0],
       setValue = _useState[1];
 
-  (0, _react.useEffect)(function () {
-    if (valueProp !== value && valueProp !== undefined) {
-      setValue(valueProp);
-    }
-  }, [value, valueProp]);
-  return [value, function (nextValue) {
+  return [valueProp !== undefined ? valueProp : value, function (nextValue) {
     if (initialValue !== undefined) setValue(nextValue);
   }];
 };
