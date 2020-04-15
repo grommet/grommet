@@ -275,6 +275,11 @@ export interface ThemeType {
       radius?: string;
     };
     disabled?: {
+      border?: {
+        color: ColorType;
+      },
+      color?: ColorType;
+      extend?: ExtendType;
       opacity?: OpacityType;
     };
     extend?: ExtendType;
@@ -829,7 +834,9 @@ export interface ThemeType {
     };
     extend?: ExtendType;
     icons?: {
-      down?: any;
+      color?: ColorType;
+      down?: React.ReactNode;
+      up?: React.ReactNode;
       margin?: MarginType;
     };
     options?: {
