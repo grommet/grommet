@@ -93,14 +93,49 @@ const primaryStyle = props => css`
   border-radius: ${radiusStyle(props)};
 `;
 
+const simpleStyle = props => css`
+  ${backgroundStyle(
+    normalizeColor(
+      props.colorValue || props.theme.button.simple.color,
+      props.theme,
+    ),
+    props.theme,
+    props.theme.button.color,
+  )}
+  border: ${
+    props.theme.button.simple.border.color
+      ? `${props.theme.button.border.width} solid
+    ${normalizeColor(
+      props.colorValue || props.theme.button.simple.border.color,
+      props.theme,
+    )};`
+      : 'none;'
+  }
+  border-radius: ${radiusStyle(props)};
+  text-align: inherit;
+  ${props.theme.button.simple.extend} 
+`;
+
 function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
   }
   const { buttonType } = props;
   if (buttonType) {
+    if (
+      props.active &&
+      props.theme.button[buttonType].active &&
+      props.theme.button[buttonType].active.border &&
+      props.theme.button[buttonType].active.border.color
+    ) {
+      return normalizeColor(
+        props.theme.button[buttonType].active.border.color,
+        props.theme,
+      );
+    }
     return normalizeColor(
       props.theme.button[buttonType].hover.border.color ||
+        props.theme.button[buttonType].border.color ||
         props.theme.button[buttonType].hover.color ||
         props.theme.button[buttonType].color ||
         props.theme.button.border.color ||
@@ -162,29 +197,6 @@ const plainStyle = props => css`
   border: none;
   padding: 0;
   text-align: inherit;
-`;
-
-const simpleStyle = props => css`
-  ${backgroundStyle(
-    normalizeColor(
-      props.colorValue || props.theme.button.simple.color,
-      props.theme,
-    ),
-    props.theme,
-    props.theme.button.color,
-  )}
-  border: ${
-    props.theme.button.simple.border.color
-      ? `${props.theme.button.border.width} solid
-    ${normalizeColor(
-      props.colorValue || props.theme.button.simple.border.color,
-      props.theme,
-    )};`
-      : 'none;'
-  }
-  border-radius: ${radiusStyle(props)};
-  text-align: inherit;
-  ${props.theme.button.simple.extend} 
 `;
 
 const activeButtonStyle = props => css`

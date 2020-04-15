@@ -76,7 +76,7 @@ const Button = forwardRef(
 
       const backgroundValue =
         color ||
-        (hover && theme.button[buttonType].hover.color) ||
+        (hover && !disabled && theme.button[buttonType].hover.color) ||
         theme.button[buttonType].color ||
         (buttonType === buttonTypes.primary &&
           (theme.global.colors.control || 'brand'));

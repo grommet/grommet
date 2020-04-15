@@ -28,10 +28,8 @@ const customTheme = deepMerge(grommet, {
           color: '#CCC',
         },
         color: '#CCC',
-        // opacity: 1.0,
         extend: `background: white;`,
       },
-      // extend: undefined
       padding: {
         vertical: '25px',
         horizontal: 'medium',
