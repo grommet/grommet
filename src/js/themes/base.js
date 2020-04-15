@@ -394,12 +394,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined }
       primary: {
-        active: {
-          border: {
-            // color: { dark: undefined, light: undefined }
-          },
-          // extend: undefined,
-        },
+        // active: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined }
+        //   },
+        //   extend: undefined,
+        // },
         // color: { dark: undefined, light: undefined }
         // extend: undefined,
       },

@@ -83,6 +83,8 @@ function getHoverColor(props) {
   if (
     props.active &&
     props.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.border &&
     props.theme.button.primary.active.border.color
   ) {
     return normalizeColor(
@@ -136,6 +138,8 @@ const plainStyle = props => css`
 const activeButtonStyle = props => css`
   ${activeStyle}
   ${props.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.border &&
     props.theme.button.primary.active.border.color &&
     `border: ${props.theme.button.border.width} solid
     ${normalizeColor(
