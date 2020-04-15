@@ -552,6 +552,37 @@ Defaults to
 undefined
 ```
 
+**button.disabled.border.color**
+
+The border color when the button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.color**
+
+Fill color for primary buttons, or label color for other
+    button types, when the button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.extend**
+
+Any additional style for a disabled Button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **button.padding.horizontal**
 
 The horizontal padding. Expects `string`.

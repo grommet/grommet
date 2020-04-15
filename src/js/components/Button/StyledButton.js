@@ -175,6 +175,29 @@ const simpleStyle = props => css`
   text-align: inherit;
 `;
 
+const disabledButtonStyle = props => css`
+${disabledStyle(props.theme.button.disabled.opacity)}
+${!props.plain &&
+  props.theme.button.disabled.border &&
+  props.theme.button.disabled.border.color &&
+  `border: ${props.theme.button.border.width} solid
+  ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
+${props.theme.button.disabled.color &&
+  // if primary button, apply disabled color to background. otherwise,
+  // apply disabled color to the label
+  (props.primary
+    ? backgroundStyle(
+        normalizeColor(props.theme.button.disabled.color, props.theme),
+        props.theme,
+        props.theme.button.color,
+      )
+    : `color: ${normalizeColor(
+        props.theme.button.disabled.color,
+        props.theme,
+      )};`)}
+${props.theme.button.disabled && props.theme.button.disabled.extend}
+`;
+
 // Deprecate props.theme.button.disabled.opacity in V3
 const StyledButton = styled.button`
   display: inline-block;
@@ -200,9 +223,8 @@ const StyledButton = styled.button`
   ${props =>
     props.disabled &&
     props.theme.button &&
-    disabledStyle(
-      props.theme.button.disabled && props.theme.button.disabled.opacity,
-    )}
+    props.theme.button.disabled &&
+    disabledButtonStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>

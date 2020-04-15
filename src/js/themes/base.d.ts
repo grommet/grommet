@@ -275,6 +275,11 @@ export interface ThemeType {
       radius?: string;
     };
     disabled?: {
+      border?: {
+        color: ColorType;
+      },
+      color?: ColorType;
+      extend?: ExtendType;
       opacity?: OpacityType;
     };
     extend?: ExtendType;

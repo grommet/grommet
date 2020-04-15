@@ -227,6 +227,19 @@ export const themeDoc = {
     description: `The color of the fill for simple buttons on hover.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.disabled.border.color': {
+    description: 'The border color when the button is disabled.',
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.disabled.color': {
+    description: `Fill color for primary buttons, or label color for other
+    button types, when the button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.disabled.extend': {
+    description: 'Any additional style for a disabled Button.',
+    type: 'string | (props) => {}',
+  },
   'button.padding.horizontal': {
     description: 'The horizontal padding.',
     type: 'string',

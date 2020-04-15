@@ -2285,6 +2285,37 @@ Defaults to
 undefined
 \`\`\`
 
+**button.disabled.border.color**
+
+The border color when the button is disabled. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.disabled.color**
+
+Fill color for primary buttons, or label color for other
+    button types, when the button is disabled. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.disabled.extend**
+
+Any additional style for a disabled Button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.padding.horizontal**
 
 The horizontal padding. Expects \`string\`.
@@ -11004,9 +11035,11 @@ Currently selected value. This can be an array
 string
 element
 object
+number
 [
   string
   object
+  number
 ]
 \`\`\`
 
@@ -11025,11 +11058,17 @@ When the options array contains objects, this property indicates how
       to determine the value of each option. If a string is
       provided, it is used as the key to retrieve each option's value.
       If a function is provided, it is called with the option and the
-      return value indicates the value.
+      return value indicates the value. If reduce is true, the value
+      coming via the key will be used for the onChange value and the value
+      property is expected to be reduced to align.
 
 \`\`\`
 string
 function
+{
+  key: string,
+  reduce: boolean
+}
 \`\`\`
 
 **emptySearchMessage**
