@@ -144,10 +144,13 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   return undefined;
 };
 
-export const activeStyle = css`
+export const activeStyle = componentStyle => css`
   ${props =>
     backgroundStyle(
-      normalizeColor(props.theme.global.active.background, props.theme),
+      normalizeColor(
+        componentStyle || props.theme.global.active.background,
+        props.theme,
+      ),
       props.theme,
       props.theme.global.active.color,
     )}

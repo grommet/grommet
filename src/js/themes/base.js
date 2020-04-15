@@ -404,6 +404,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
           color: 'active',
         },
+        // active: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined },
+        //   },
+        //   color: { dark: undefined, light: undefined },
+        //   extend: undefined,
+        // },
+        // disabled: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined },
+        //   },
+        //   color: { dark: undefined, light: undefined },
+        //   opacity: undefined,
+        //   extend: undefined,
+        // },
+        // padding: {
+        //   vertical: undefined,
+        //   horizontal: undefined,
+        // },
+        // extend: undefined
       },
       primary: {
         border: {
@@ -416,8 +436,27 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
           // color: { dark: undefined, light: undefined }
         },
+        // active: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined },
+        //   },
+        //   color: { dark: undefined, light: undefined },
+        //   extend: undefined,
+        // },
+        // disabled: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined },
+        //   },
+        //   color: { dark: undefined, light: undefined },
+        //   opacity: undefined,
+        //   extend: undefined,
+        // },
+        // padding: {
+        //   vertical: undefined,
+        //   horizontal: undefined,
+        // },
+        // extend: undefined
       },
-      // disabled: { opacity: undefined },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,

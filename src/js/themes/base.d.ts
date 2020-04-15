@@ -285,17 +285,37 @@ export interface ThemeType {
     extend?: ExtendType;
     minWidth?: string;
     maxWidth?: string;
-    normalized?: {
+    simple?: {
       border?: {
         color?: ColorType,
       },
       color?: ColorType;
       hover?: {
-        color?: ColorType,
         border?: {
           color?: ColorType;
+        };
+        color?: ColorType;
+      };
+      active?: {
+        border?: {
+          color: ColorType;
         },
-      },
+        color?: ColorType;
+        extend?: ExtendType;
+      };
+      disabled?: {
+        border?: {
+          color: ColorType;
+        },
+        color?: ColorType;
+        extend?: ExtendType;
+        opacity?: OpacityType;
+      };
+      padding?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+      extend?: ExtendType;
     },
     padding?: {
       vertical?: string;
@@ -303,15 +323,35 @@ export interface ThemeType {
     };
     primary?: {
       border?: {
-        color?: ColorType,
+        color?: ColorType;
       },
       color?: ColorType;
       hover?: {
-        color?: ColorType,
+        color?: ColorType;
         border?: {
           color?: ColorType;
+        };
+      };
+      active?: {
+        border?: {
+          color: ColorType;
         },
-      },
+        color?: ColorType;
+        extend?: ExtendType;
+      };
+      disabled?: {
+        border?: {
+          color: ColorType;
+        },
+        color?: ColorType;
+        extend?: ExtendType;
+        opacity?: OpacityType;
+      };
+      padding?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+      extend?: ExtendType;
     };
     size?: {
       small?: {

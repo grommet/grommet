@@ -12,10 +12,29 @@ const customTheme = deepMerge(grommet, {
         color: '#b9dff0',
       },
       hover: {
-        color: '#b9dff0',
+        color: 'black',
         border: {
-          color: '#99ccff',
+          color: 'magenta',
         },
+      },
+      active: {
+        border: {
+          color: 'orange',
+        },
+        color: 'skyblue',
+      },
+      disabled: {
+        border: {
+          color: '#CCC',
+        },
+        color: '#CCC',
+        // opacity: 1.0,
+        extend: `background: white;`,
+      },
+      // extend: undefined
+      padding: {
+        vertical: '25px',
+        horizontal: 'medium',
       },
     },
   },
@@ -26,17 +45,13 @@ const Simple = () => (
     <Grommet theme={grommet}>
       <Box pad="medium" gap="medium">
         <Box gap="small">
-          <Text>Default Buttons</Text>
-          <Box align="center" direction="row" gap="small">
-            <Button icon={<User />} hoverIndicator />
-            <Button icon={<User />} label="Users" />
-          </Box>
-        </Box>
-        <Box gap="small">
           <Text>Simple Buttons</Text>
           <Box align="center" direction="row" gap="small">
             <Button icon={<User />} simple />
-            <Button icon={<User />} label="Users" simple />
+            <Button icon={<User />} label="Simple" simple />
+            <Button icon={<User />} label="Active" simple active />
+            <Button icon={<User />} label="Disabled" simple disabled />
+            <Button icon={<User />} label="Plain" simple plain />
           </Box>
         </Box>
       </Box>
@@ -48,12 +63,17 @@ const Simple = () => (
           <Box align="center" direction="row" gap="small">
             <Button icon={<User />} simple />
             <Button icon={<User />} label="Users" simple />
+            <Button icon={<User />} label="Active" simple active />
+            <Button icon={<User />} label="Disabled" simple disabled />
+            <Button icon={<User />} label="Plain" simple plain />
           </Box>
         </Box>
         <Box gap="small">
-          <Text>Simple + Primary: `primary` overrides `simple`</Text>
+          <Text>
+            Note: `primary` overrides `simple`. It is not recommended to use
+            these props together.
+          </Text>
           <Box align="center" direction="row" gap="small">
-            <Button icon={<User />} simple />
             <Button icon={<User />} label="Users" simple primary />
           </Box>
         </Box>

@@ -38,6 +38,14 @@ const fontStyle = props => {
 
 const padStyle = props => {
   const size = props.sizeProp;
+  // if buttonType is specified, use those styles
+  // otherwise, use generic button styles
+  const padButtonTheme =
+    props.buttonType &&
+    props.theme.button[props.buttonType] &&
+    props.theme.button[props.buttonType].padding
+      ? props.theme.button[props.buttonType].padding
+      : props.theme.button.padding;
 
   if (size && props.theme.button.size && props.theme.button.size[size]) {
     return css`
@@ -45,9 +53,12 @@ const padStyle = props => {
       ${props.theme.button.size[size].pad.horizontal}
     `;
   }
+
   return css`
-    ${props.theme.button.padding.vertical}
-    ${props.theme.button.padding.horizontal}
+    ${props.theme.global.edgeSize[padButtonTheme.vertical] ||
+      padButtonTheme.vertical}
+    ${props.theme.global.edgeSize[padButtonTheme.horizontal] ||
+      padButtonTheme.horizontal}
   `;
 };
 
@@ -173,30 +184,66 @@ const simpleStyle = props => css`
   }
   border-radius: ${radiusStyle(props)};
   text-align: inherit;
+  ${props.theme.button.simple.extend} 
 `;
 
-const disabledButtonStyle = props => css`
-${disabledStyle(props.theme.button.disabled.opacity)}
-${!props.plain &&
-  props.theme.button.disabled.border &&
-  props.theme.button.disabled.border.color &&
-  `border: ${props.theme.button.border.width} solid
-  ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
-${props.theme.button.disabled.color &&
-  // if primary button, apply disabled color to background. otherwise,
-  // apply disabled color to the label
-  (props.primary
-    ? backgroundStyle(
-        normalizeColor(props.theme.button.disabled.color, props.theme),
-        props.theme,
-        props.theme.button.color,
-      )
-    : `color: ${normalizeColor(
-        props.theme.button.disabled.color,
-        props.theme,
-      )};`)}
-${props.theme.button.disabled && props.theme.button.disabled.extend}
+const activeButtonStyle = props => css`
+  ${activeStyle(
+    props.theme.button[props.buttonType] &&
+      props.theme.button[props.buttonType].active &&
+      props.theme.button[props.buttonType].active.color,
+  )}
+  ${props[props.buttonType] &&
+    props.theme.button[props.buttonType].active &&
+    props.theme.button[props.buttonType].active.border &&
+    props.theme.button[props.buttonType].active.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(
+      props.theme.button[props.buttonType].active.border.color,
+      props.theme,
+    )};
+    `}
+  ${props[props.buttonType] &&
+    props.theme.button[props.buttonType].active &&
+    props.theme.button[props.buttonType].active.extend}
 `;
+
+const disabledButtonStyle = props => {
+  // if buttonType is specified, use those styles
+  // otherwise, use generic button styles
+  const disabledButtonTheme =
+    props.buttonType &&
+    props.theme.button[props.buttonType] &&
+    props.theme.button[props.buttonType].disabled
+      ? props.theme.button[props.buttonType].disabled
+      : props.theme.button.disabled;
+
+  return css`
+  ${disabledStyle(disabledButtonTheme.opacity)}
+  ${!props.plain &&
+    disabledButtonTheme.border &&
+    disabledButtonTheme.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(disabledButtonTheme.border.color, props.theme)};`}
+  ${disabledButtonTheme.color &&
+    // if primary button, apply disabled color to background. otherwise,
+    // apply disabled color to the label
+    (props.primary
+      ? backgroundStyle(
+          normalizeColor(
+            (props.theme.button.primary &&
+              props.theme.button.primary.disabled &&
+              props.theme.button.primary.disabled.color) ||
+              props.theme.button.disabled.color,
+            props.theme,
+          ),
+          props.theme,
+          props.theme.button.color,
+        )
+      : `color: ${normalizeColor(disabledButtonTheme.color, props.theme)};`)}
+  ${disabledButtonTheme && disabledButtonTheme.extend}
+`;
+};
 
 // Deprecate props.theme.button.disabled.opacity in V3
 const StyledButton = styled.button`
@@ -214,12 +261,13 @@ const StyledButton = styled.button`
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
-  ${props => props.simple && !props.primary && simpleStyle(props)}
+  ${props =>
+    !props.plain && props.simple && !props.primary && simpleStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
   ${props => !props.disabled && !props.focus && hoverStyle}
 
-  ${props => !props.disabled && props.active && activeStyle}
+  ${props => !props.disabled && props.active && activeButtonStyle(props)}
   ${props =>
     props.disabled &&
     props.theme.button &&
