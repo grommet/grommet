@@ -14,6 +14,13 @@ const customTheme = {
       radius: undefined,
       color: '#2196f3',
     },
+    disabled: {
+      color: 'orange',
+      border: {
+        color: 'orange',
+      },
+      extend: `border: 10px dashed red;`,
+    },
     padding: {
       vertical: '12px',
       horizontal: '24px',
@@ -29,10 +36,8 @@ const customTheme = {
           `;
       }
       return `
-          color: white;
           font-size: 12px;
           font-weight: bold;
-  
           ${extraStyles}
         `;
     },
@@ -54,8 +59,17 @@ const coloredButton = {
 const CustomTheme = () => (
   <>
     <Grommet theme={customTheme}>
-      <Box align="center" pad="large">
+      <Box
+        align="center"
+        justify="center"
+        pad="large"
+        direction="row"
+        gap="medium"
+      >
         <Button label="custom theme" onClick={() => {}} primary />
+        <Button label="primary disabled" onClick={() => {}} primary disabled />
+        <Button label="Disabled" onClick={() => {}} disabled />
+        <Button label="Plain Disabled" onClick={() => {}} plain disabled />
       </Box>
     </Grommet>
     <Grommet theme={coloredButton}>
