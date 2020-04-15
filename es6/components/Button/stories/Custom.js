@@ -12,6 +12,13 @@ var customTheme = {
       radius: undefined,
       color: '#2196f3'
     },
+    disabled: {
+      color: 'orange',
+      border: {
+        color: 'orange'
+      },
+      extend: "border: 10px dashed red;"
+    },
     padding: {
       vertical: '12px',
       horizontal: '24px'
@@ -26,7 +33,7 @@ var customTheme = {
         extraStyles = "\n            text-transform: uppercase;\n          ";
       }
 
-      return "\n          color: white;\n          font-size: 12px;\n          font-weight: bold;\n  \n          " + extraStyles + "\n        ";
+      return "\n          font-size: 12px;\n          font-weight: bold;\n          " + extraStyles + "\n        ";
     }
   }
 };
@@ -50,11 +57,28 @@ var CustomTheme = function CustomTheme() {
     theme: customTheme
   }, React.createElement(Box, {
     align: "center",
-    pad: "large"
+    justify: "center",
+    pad: "large",
+    direction: "row",
+    gap: "medium"
   }, React.createElement(Button, {
     label: "custom theme",
     onClick: function onClick() {},
     primary: true
+  }), React.createElement(Button, {
+    label: "primary disabled",
+    onClick: function onClick() {},
+    primary: true,
+    disabled: true
+  }), React.createElement(Button, {
+    label: "Disabled",
+    onClick: function onClick() {},
+    disabled: true
+  }), React.createElement(Button, {
+    label: "Plain Disabled",
+    onClick: function onClick() {},
+    plain: true,
+    disabled: true
   }))), React.createElement(Grommet, {
     theme: coloredButton
   }, React.createElement(Box, {

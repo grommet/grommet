@@ -419,6 +419,13 @@ export var generate = function generate(baseSpacing, scale) {
         width: borderWidth + "px",
         radius: baseSpacing * 0.75 + "px"
       },
+      disabled: {// border: {
+        //   color: { dark: undefined, light: undefined },
+        // },
+        // color: { dark: undefined, light: undefined }
+        // opacity: undefined,
+        // extend: undefined
+      },
       // color: { dark: undefined, light: undefined }
       primary: {// color: { dark: undefined, light: undefined }
       },

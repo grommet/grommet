@@ -19,6 +19,13 @@ var customTheme = {
       radius: undefined,
       color: '#2196f3'
     },
+    disabled: {
+      color: 'orange',
+      border: {
+        color: 'orange'
+      },
+      extend: "border: 10px dashed red;"
+    },
     padding: {
       vertical: '12px',
       horizontal: '24px'
@@ -33,7 +40,7 @@ var customTheme = {
         extraStyles = "\n            text-transform: uppercase;\n          ";
       }
 
-      return "\n          color: white;\n          font-size: 12px;\n          font-weight: bold;\n  \n          " + extraStyles + "\n        ";
+      return "\n          font-size: 12px;\n          font-weight: bold;\n          " + extraStyles + "\n        ";
     }
   }
 };
@@ -57,11 +64,28 @@ var CustomTheme = function CustomTheme() {
     theme: customTheme
   }, _react["default"].createElement(_grommet.Box, {
     align: "center",
-    pad: "large"
+    justify: "center",
+    pad: "large",
+    direction: "row",
+    gap: "medium"
   }, _react["default"].createElement(_grommet.Button, {
     label: "custom theme",
     onClick: function onClick() {},
     primary: true
+  }), _react["default"].createElement(_grommet.Button, {
+    label: "primary disabled",
+    onClick: function onClick() {},
+    primary: true,
+    disabled: true
+  }), _react["default"].createElement(_grommet.Button, {
+    label: "Disabled",
+    onClick: function onClick() {},
+    disabled: true
+  }), _react["default"].createElement(_grommet.Button, {
+    label: "Plain Disabled",
+    onClick: function onClick() {},
+    plain: true,
+    disabled: true
   }))), _react["default"].createElement(_grommet.Grommet, {
     theme: coloredButton
   }, _react["default"].createElement(_grommet.Box, {
