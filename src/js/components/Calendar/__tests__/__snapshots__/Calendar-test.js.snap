@@ -10112,7 +10112,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Jan 17 2018"
-                class="StyledButton-sc-323bzc-0 fEUqIb"
+                class="StyledButton-sc-323bzc-0 bmILgb"
                 tabindex="-1"
                 type="button"
               >
@@ -11941,7 +11941,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Jan 17 2018"
-                class="StyledButton-sc-323bzc-0 fEUqIb"
+                class="StyledButton-sc-323bzc-0 bmILgb"
                 tabindex="-1"
                 type="button"
               >

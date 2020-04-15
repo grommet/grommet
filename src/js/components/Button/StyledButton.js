@@ -73,6 +73,7 @@ const primaryStyle = props => css`
     props.theme.button.color,
   )}
   border-radius: ${radiusStyle(props)};
+  ${props.theme.button.primary.extend}
 `;
 
 function getHoverColor(props) {
@@ -137,10 +138,14 @@ const activeButtonStyle = props => css`
   ${props.primary &&
     props.theme.button.primary.active.border.color &&
     `border: ${props.theme.button.border.width} solid
-  ${normalizeColor(
-    props.theme.button.primary.active.border.color,
-    props.theme,
-  )};`}
+    ${normalizeColor(
+      props.theme.button.primary.active.border.color,
+      props.theme,
+    )};
+    `}
+  ${props.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.extend}
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3

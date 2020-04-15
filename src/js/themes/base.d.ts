@@ -289,8 +289,10 @@ export interface ThemeType {
       active?: {
         border?: {
           color?: ColorType;
-        }
-      }
+        };
+        extend?: ExtendType;
+      };
+      extend?: ExtendType;
     };
     size?: {
       small?: {

@@ -24,6 +24,7 @@ const customTheme = {
         border: {
           color: 'pink',
         },
+        extend: `border: 2px dashed red;`,
       },
     },
     extend: props => {
