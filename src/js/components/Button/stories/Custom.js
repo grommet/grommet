@@ -29,10 +29,11 @@ const customTheme = {
       color: '#2196f3',
       active: {
         border: {
-          color: 'pink',
+          color: 'red',
         },
-        extend: `border: 2px dashed red;`,
+        extend: `background: cadetblue;`,
       },
+      extend: `background: skyblue; border: 5px dotted green;`,
     },
     extend: props => {
       let extraStyles = '';
