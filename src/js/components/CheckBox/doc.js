@@ -87,8 +87,8 @@ export const themeDoc = {
     defaultValue: '4px',
   },
   'checkBox.color': {
-    description: `The stroke color for the CheckBox icon,
-       and the border color when checked.`,
+    description:
+      'The stroke color for the CheckBox icon, and the border when checked.',
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined,
   },
