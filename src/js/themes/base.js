@@ -384,9 +384,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
+      disabled: {
+        // border: {
+        //   color: { dark: undefined, light: undefined },
+        // },
+        // color: { dark: undefined, light: undefined }
+        // opacity: undefined,
+        // extend: undefined
+      },
       // color: { dark: undefined, light: undefined }
       primary: {
+        // active: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined }
+        //   },
+        //   extend: undefined,
+        // },
         // color: { dark: undefined, light: undefined }
+        // extend: undefined,
       },
       // disabled: { opacity: undefined },
       padding: {
@@ -814,6 +829,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         margin: { horizontal: 'small' },
         down: FormDown,
+        // up: undefined
       },
       options: {
         container: {

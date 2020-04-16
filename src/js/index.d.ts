@@ -41,6 +41,7 @@ export * from './components/RangeSelector';
 export * from './components/RoutedAnchor';
 export * from './components/RoutedButton';
 export * from './components/Select';
+export * from './components/Sidebar';
 export * from './components/SkipLink';
 export * from './components/SkipLinks';
 export * from './components/SkipLinkTarget';
