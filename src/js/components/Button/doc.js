@@ -240,6 +240,7 @@ export const themeDoc = {
   'button.primary.active.extend': {
     description: 'Any additional style for an active primary button.',
     type: 'string | (props) => {}',
+    defaultValue: 'undefined',
   },
   'button.size.small.border.radius': {
     description: 'The border corner radius.',
