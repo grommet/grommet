@@ -303,6 +303,13 @@ Object.keys(_Select).forEach(function (key) {
   exports[key] = _Select[key];
 });
 
+var _Sidebar = require("./Sidebar");
+
+Object.keys(_Sidebar).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _Sidebar[key];
+});
+
 var _SkipLink = require("./SkipLink");
 
 Object.keys(_SkipLink).forEach(function (key) {

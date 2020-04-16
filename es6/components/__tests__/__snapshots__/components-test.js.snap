@@ -4518,6 +4518,7 @@ function
     "usage": "import { Select } from 'grommet';
 <Select />",
   },
+  "Sidebar": [Function],
   "SkipLink": [Function],
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
