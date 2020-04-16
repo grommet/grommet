@@ -33,6 +33,14 @@ var BasicButtons = function BasicButtons(props) {
     primary: true,
     label: "Primary",
     onClick: function onClick() {}
+  }, props))), React.createElement(Box, {
+    align: "center",
+    pad: "medium"
+  }, React.createElement(Button, _extends({
+    primary: true,
+    label: "Active Primary",
+    active: true,
+    onClick: function onClick() {}
   }, props))));
 };
 

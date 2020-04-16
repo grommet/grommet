@@ -31,7 +31,14 @@ var customTheme = {
       horizontal: '24px'
     },
     primary: {
-      color: '#2196f3'
+      color: '#2196f3',
+      active: {
+        border: {
+          color: 'red'
+        },
+        extend: "background: cadetblue;"
+      },
+      extend: "background: skyblue; border: 5px dotted green;"
     },
     extend: function extend(props) {
       var extraStyles = '';
@@ -67,11 +74,16 @@ var CustomTheme = function CustomTheme() {
     justify: "center",
     pad: "large",
     direction: "row",
-    gap: "medium"
+    gap: "small"
   }, _react["default"].createElement(_grommet.Button, {
     label: "custom theme",
     onClick: function onClick() {},
     primary: true
+  }), _react["default"].createElement(_grommet.Button, {
+    label: "custom active primary",
+    onClick: function onClick() {},
+    primary: true,
+    active: true
   }), _react["default"].createElement(_grommet.Button, {
     label: "primary disabled",
     onClick: function onClick() {},

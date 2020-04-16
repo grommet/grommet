@@ -39,6 +39,14 @@ var BasicButtons = function BasicButtons(props) {
     primary: true,
     label: "Primary",
     onClick: function onClick() {}
+  }, props))), _react["default"].createElement(_grommet.Box, {
+    align: "center",
+    pad: "medium"
+  }, _react["default"].createElement(_grommet.Button, _extends({
+    primary: true,
+    label: "Active Primary",
+    active: true,
+    onClick: function onClick() {}
   }, props))));
 };
 

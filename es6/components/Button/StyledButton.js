@@ -35,12 +35,16 @@ var basicStyle = function basicStyle(props) {
 };
 
 var primaryStyle = function primaryStyle(props) {
-  return css(["", " border-radius:", ";"], backgroundStyle(normalizeColor(props.colorValue || props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props));
+  return css(["", " border-radius:", ";", ""], backgroundStyle(normalizeColor(props.colorValue || props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), radiusStyle(props), props.theme.button.primary.extend);
 };
 
 function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
+  }
+
+  if (props.active && props.primary && props.theme.button.primary.active && props.theme.button.primary.active.border && props.theme.button.primary.active.border.color) {
+    return normalizeColor(props.theme.button.primary.active.border.color, props.theme);
   }
 
   return normalizeColor(props.theme.button.border.color || 'control', props.theme);
@@ -72,8 +76,12 @@ var plainStyle = function plainStyle(props) {
   return css(["color:", ";border:none;padding:0;text-align:inherit;"], normalizeColor(props.colorValue || 'inherit', props.theme));
 };
 
+var activeButtonStyle = function activeButtonStyle(props) {
+  return css(["", " ", " ", ""], activeStyle, props.primary && props.theme.button.primary.active && props.theme.button.primary.active.border && props.theme.button.primary.active.border.color && "border: " + props.theme.button.border.width + " solid\n    " + normalizeColor(props.theme.button.primary.active.border.color, props.theme) + ";\n    ", props.primary && props.theme.button.primary.active && props.theme.button.primary.active.extend);
+};
+
 var disabledButtonStyle = function disabledButtonStyle(props) {
-  return css(["", " ", " ", " ", ""], disabledStyle(props.theme.button.disabled.opacity), !props.plain && props.theme.button.disabled.border && props.theme.button.disabled.border.color && "border: " + props.theme.button.border.width + " solid\n  " + normalizeColor(props.theme.button.disabled.border.color, props.theme) + ";", props.theme.button.disabled.color && ( // if primary button, apply disabled color to background. otherwise,
+  return css(["", " ", " ", " ", ""], disabledStyle(props.theme.button.disabled.opacity), !props.plain && props.theme.button.disabled.border && props.theme.button.disabled.border.color && "border: " + props.theme.button.border.width + " solid\n    " + normalizeColor(props.theme.button.disabled.border.color, props.theme) + ";", props.theme.button.disabled.color && ( // if primary button, apply disabled color to background. otherwise,
   // apply disabled color to the label
   props.primary ? backgroundStyle(normalizeColor(props.theme.button.disabled.color, props.theme), props.theme, props.theme.button.color) : "color: " + normalizeColor(props.theme.button.disabled.color, props.theme) + ";"), props.theme.button.disabled && props.theme.button.disabled.extend);
 }; // Deprecate props.theme.button.disabled.opacity in V3
@@ -91,7 +99,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return !props.disabled && !props.focus && hoverStyle;
 }, function (props) {
-  return !props.disabled && props.active && activeStyle;
+  return !props.disabled && props.active && activeButtonStyle(props);
 }, function (props) {
   return props.disabled && props.theme.button && props.theme.button.disabled && disabledButtonStyle(props);
 }, function (props) {

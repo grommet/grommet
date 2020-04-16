@@ -427,7 +427,14 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined
       },
       // color: { dark: undefined, light: undefined }
-      primary: {// color: { dark: undefined, light: undefined }
+      primary: {// active: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined }
+        //   },
+        //   extend: undefined,
+        // },
+        // color: { dark: undefined, light: undefined }
+        // extend: undefined,
       },
       // disabled: { opacity: undefined },
       padding: {

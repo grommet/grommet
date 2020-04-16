@@ -131,6 +131,21 @@ export var themeDoc = _extends({
     description: "The color of the background for primary buttons.",
     type: 'string | { dark: string, light: string }'
   },
+  'button.primary.extend': {
+    description: 'Any additional style for a primary button.',
+    type: 'string | (props) => {}',
+    defaultValue: 'undefined'
+  },
+  'button.primary.active.border.color': {
+    description: "The color of the border for active primary buttons.",
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined'
+  },
+  'button.primary.active.extend': {
+    description: 'Any additional style for an active primary button.',
+    type: 'string | (props) => {}',
+    defaultValue: 'undefined'
+  },
   'button.size.small.border.radius': {
     description: 'The border corner radius.',
     type: 'string',

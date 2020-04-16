@@ -2293,6 +2293,36 @@ Defaults to
 undefined
 \`\`\`
 
+**button.primary.extend**
+
+Any additional style for a primary button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.active.border.color**
+
+The color of the border for active primary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.active.extend**
+
+Any additional style for an active primary button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.size.small.border.radius**
 
 The border corner radius. Expects \`string\`.
