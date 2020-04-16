@@ -214,4 +214,28 @@ describe('Accordion', () => {
     fireEvent.mouseOut(getByText('Panel 2'));
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('wrapped panel', () => {
+    const onActive = jest.fn();
+    const Panel = ({ index }) => (
+      <AccordionPanel label={`Panel ${index}`}>
+        Panel body {index}
+      </AccordionPanel>
+    );
+    const { getByText, container } = render(
+      <Grommet>
+        <Accordion animate={false} onActive={onActive}>
+          {[1, 2].map(index => (
+            <Panel key={index} index={index} />
+          ))}
+        </Accordion>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('Panel 1'));
+    expect(onActive).toBeCalledWith([0]);
+    expect(getByText('Panel body 1')).not.toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
