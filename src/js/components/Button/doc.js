@@ -230,6 +230,7 @@ export const themeDoc = {
   'button.primary.extend': {
     description: 'Any additional style for a primary button.',
     type: 'string | (props) => {}',
+    defaultValue: 'undefined',
   },
   'button.primary.active.border.color': {
     description: `The color of the border for active primary buttons.`,
