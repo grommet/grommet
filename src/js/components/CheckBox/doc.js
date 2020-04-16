@@ -93,7 +93,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'checkBox.extend': {
-    description: 'Any additional style for CheckBox & label container.',
+    description: 'Any additional style for CheckBox container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
