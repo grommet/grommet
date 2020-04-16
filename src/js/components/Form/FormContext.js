@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 // When not a descendant of a Form, FormContext still provides a basic
 // useFormContext. It doesn't do anything for components like TextInput.
@@ -9,13 +9,8 @@ const useFormContext = (_, valueProp, initialValue) => {
   const [value, setValue] = useState(
     valueProp !== undefined ? valueProp : initialValue,
   );
-  useEffect(() => {
-    if (valueProp !== value && valueProp !== undefined) {
-      setValue(valueProp);
-    }
-  }, [value, valueProp]);
   return [
-    value,
+    valueProp !== undefined ? valueProp : value,
     nextValue => {
       if (initialValue !== undefined) setValue(nextValue);
     },
