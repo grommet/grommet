@@ -10,21 +10,24 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
+import { AccordionContext } from '../Accordion/AccordionContext';
 var AccordionPanel = forwardRef(function (_ref, ref) {
-  var active = _ref.active,
-      animate = _ref.animate,
-      children = _ref.children,
+  var children = _ref.children,
       header = _ref.header,
       label = _ref.label,
       onClick = _ref.onClick,
       _onMouseOut = _ref.onMouseOut,
       _onMouseOver = _ref.onMouseOver,
-      onPanelChange = _ref.onPanelChange,
       _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
-      rest = _objectWithoutPropertiesLoose(_ref, ["active", "animate", "children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onPanelChange", "onFocus", "onBlur"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onFocus", "onBlur"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+
+  var _useContext = useContext(AccordionContext),
+      active = _useContext.active,
+      animate = _useContext.animate,
+      onPanelChange = _useContext.onPanelChange;
 
   var _useState = useState(undefined),
       hover = _useState[0],

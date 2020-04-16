@@ -2,14 +2,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { Children, cloneElement, useState } from 'react';
+import React, { Children, forwardRef, useState } from 'react';
 import { Box } from '../Box';
+import { AccordionContext } from './AccordionContext';
 
 var activeAsArray = function activeAsArray(active) {
   return typeof active === 'number' ? [active] : active;
 };
 
-var Accordion = function Accordion(_ref) {
+var Accordion = forwardRef(function (_ref, ref) {
   var activeIndex = _ref.activeIndex,
       _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
@@ -55,24 +56,25 @@ var Accordion = function Accordion(_ref) {
   };
 
   return React.createElement(Box, _extends({
+    ref: ref,
     role: "tablist"
   }, rest), Children.toArray(children).filter(function (child) {
     return child;
   }).map(function (child, index) {
-    if (child) {
-      return cloneElement(child, {
+    return React.createElement(AccordionContext.Provider, {
+      // eslint-disable-next-line react/no-array-index-key
+      key: index,
+      value: {
         active: activeIndexes.indexOf(index) > -1,
         animate: animate,
         onPanelChange: function onPanelChange() {
           return _onPanelChange(index);
         }
-      });
-    }
-
-    return child;
+      }
+    }, child);
   }));
-};
-
+});
+Accordion.displayName = 'Accordion';
 var AccordionDoc;
 
 if (process.env.NODE_ENV !== 'production') {

@@ -168,4 +168,32 @@ describe('Accordion', function () {
     fireEvent.mouseOut(getByText('Panel 2'));
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('wrapped panel', function () {
+    var onActive = jest.fn();
+
+    var Panel = function Panel(_ref) {
+      var index = _ref.index;
+      return React.createElement(AccordionPanel, {
+        label: "Panel " + index
+      }, "Panel body ", index);
+    };
+
+    var _render6 = render(React.createElement(Grommet, null, React.createElement(Accordion, {
+      animate: false,
+      onActive: onActive
+    }, [1, 2].map(function (index) {
+      return React.createElement(Panel, {
+        key: index,
+        index: index
+      });
+    })))),
+        getByText = _render6.getByText,
+        container = _render6.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Panel 1'));
+    expect(onActive).toBeCalledWith([0]);
+    expect(getByText('Panel body 1')).not.toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

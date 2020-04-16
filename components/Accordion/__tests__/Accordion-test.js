@@ -204,4 +204,34 @@ describe('Accordion', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('wrapped panel', function () {
+    var onActive = jest.fn();
+
+    var Panel = function Panel(_ref) {
+      var index = _ref.index;
+      return _react["default"].createElement(_.AccordionPanel, {
+        label: "Panel " + index
+      }, "Panel body ", index);
+    };
+
+    var _render6 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, {
+      animate: false,
+      onActive: onActive
+    }, [1, 2].map(function (index) {
+      return _react["default"].createElement(Panel, {
+        key: index,
+        index: index
+      });
+    })))),
+        getByText = _render6.getByText,
+        container = _render6.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _react2.fireEvent.click(getByText('Panel 1'));
+
+    expect(onActive).toBeCalledWith([0]);
+    expect(getByText('Panel body 1')).not.toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

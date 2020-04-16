@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _Box = require("../Box");
 
+var _AccordionContext = require("./AccordionContext");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -19,7 +21,7 @@ var activeAsArray = function activeAsArray(active) {
   return typeof active === 'number' ? [active] : active;
 };
 
-var Accordion = function Accordion(_ref) {
+var Accordion = (0, _react.forwardRef)(function (_ref, ref) {
   var activeIndex = _ref.activeIndex,
       _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
@@ -65,24 +67,25 @@ var Accordion = function Accordion(_ref) {
   };
 
   return _react["default"].createElement(_Box.Box, _extends({
+    ref: ref,
     role: "tablist"
   }, rest), _react.Children.toArray(children).filter(function (child) {
     return child;
   }).map(function (child, index) {
-    if (child) {
-      return (0, _react.cloneElement)(child, {
+    return _react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
+      // eslint-disable-next-line react/no-array-index-key
+      key: index,
+      value: {
         active: activeIndexes.indexOf(index) > -1,
         animate: animate,
         onPanelChange: function onPanelChange() {
           return _onPanelChange(index);
         }
-      });
-    }
-
-    return child;
+      }
+    }, child);
   }));
-};
-
+});
+Accordion.displayName = 'Accordion';
 var AccordionDoc;
 
 if (process.env.NODE_ENV !== 'production') {
