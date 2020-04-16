@@ -66,6 +66,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '2px',
   },
+  'checkBox.box.extend': {
+    description: 'Any additional style for CheckBox container.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'checkBox.check.extend': {
     description: 'Any additional style for checked CheckBox.',
     type: 'string | (props) => {}',
@@ -82,13 +87,13 @@ export const themeDoc = {
     defaultValue: '4px',
   },
   'checkBox.color': {
-    description:
-      'The stroke color for the CheckBox icon, and the border when checked.',
+    description: `The stroke color for the CheckBox icon,
+       and the border color when checked.`,
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined,
   },
   'checkBox.extend': {
-    description: 'Any additional style for CheckBox.',
+    description: 'Any additional style for CheckBox & label container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

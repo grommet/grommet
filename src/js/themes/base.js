@@ -503,6 +503,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: `${baseSpacing * 2}px`,
         // extend: undefined,
       },
+      box: {
+        // extend: undefined,
+      },
     },
     clock: {
       analog: {

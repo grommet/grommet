@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, CheckBox } from 'grommet';
+import { Box, Grommet, CheckBox, FormField, Form, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { normalizeColor, deepMerge } from 'grommet/utils';
 
 import { FormCheckmark } from 'grommet-icons';
 
 const customCheckBoxTheme = {
+  formField: {
+    border: {
+      error: {
+        color: 'text-xweak',
+      },
+    },
+    error: {
+      background: {
+        color: { light: '#FF40404D', dark: '#FF404066' },
+      },
+    },
+  },
   checkBox: {
+    box: {
+      extend: () => `
+        background-color: white;
+        border-radius: 4px;
+      `,
+    },
     border: {
       color: {
         light: 'accent-2',
@@ -21,10 +39,7 @@ const customCheckBoxTheme = {
         ${checked && `background-color: ${normalizeColor('neutral-1', theme)};`}
         `,
     },
-    color: {
-      light: 'neutral-3',
-      dark: 'neutral-3',
-    },
+    color: 'neutral-3',
     gap: 'xsmall',
     hover: {
       border: {
@@ -40,8 +55,8 @@ const customCheckBoxTheme = {
     },
     size: '18px',
     extend: `
-      color: #9C9C9C;
-    `,
+    color: #9C9C9C;
+  `,
   },
 };
 
@@ -51,12 +66,29 @@ const ThemedCheckBox = props => {
   return (
     <Grommet theme={deepMerge(grommet, customCheckBoxTheme)}>
       <Box align="center" pad="large">
-        <CheckBox
-          {...props}
-          label="Choice"
-          checked={checked}
-          onChange={event => setChecked(event.target.checked)}
-        />
+        <FormField label="label" required>
+          <CheckBox
+            {...props}
+            label="Choice"
+            checked={checked}
+            onChange={event => setChecked(event.target.checked)}
+          />
+        </FormField>
+      </Box>
+      <Box gap="medium">
+        <Form>
+          <FormField required label="Validation">
+            <CheckBox
+              {...props}
+              label="Choice"
+              checked={checked}
+              onChange={event => setChecked(event.target.checked)}
+            />
+          </FormField>
+          <Box align="start" margin={{ top: 'medium', bottom: 'small' }}>
+            <Button label="Sign up" primary type="submit" />
+          </Box>
+        </Form>
       </Box>
     </Grommet>
   );

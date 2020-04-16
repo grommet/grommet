@@ -415,6 +415,9 @@ export interface ThemeType {
         extend?: ExtendType;
       };
     };
+    box?: {
+      extend?: ExtendType;
+    };
   };
   clock?: {
     analog?: {

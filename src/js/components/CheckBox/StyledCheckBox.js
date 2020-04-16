@@ -119,6 +119,7 @@ Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
 const StyledCheckBox = styled.div`
   flex-shrink: 0;
+  ${props => props.theme.checkBox.box.extend};
 `;
 
 StyledCheckBox.defaultProps = {};

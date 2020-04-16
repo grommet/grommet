@@ -115,6 +115,16 @@ Defaults to
 2px
 ```
 
+**checkBox.box.extend**
+
+Any additional style for CheckBox container. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **checkBox.check.extend**
 
 Any additional style for checked CheckBox. Expects `string | (props) => {}`.
@@ -147,7 +157,8 @@ Defaults to
 
 **checkBox.color**
 
-The stroke color for the CheckBox icon, and the border when checked. Expects `string | { 'dark': string, 'light': string }`.
+The stroke color for the CheckBox icon,
+       and the border color when checked. Expects `string | { 'dark': string, 'light': string }`.
 
 Defaults to
 
@@ -157,7 +168,7 @@ undefined
 
 **checkBox.extend**
 
-Any additional style for CheckBox. Expects `string | (props) => {}`.
+Any additional style for CheckBox & label container. Expects `string | (props) => {}`.
 
 Defaults to
 
