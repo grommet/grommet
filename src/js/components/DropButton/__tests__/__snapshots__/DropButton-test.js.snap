@@ -292,3 +292,61 @@ exports[`DropButton opened ref 2`] = `
 `;
 
 exports[`DropButton opened ref 3`] = `""`;
+
+exports[`DropButton ref function 1`] = `
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c0:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<button
+  aria-label="Open Drop"
+  class="c0"
+  type="button"
+>
+  Dropper
+</button>
+`;
+
+exports[`DropButton ref function 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  id="drop-contents"
+>
+  Drop Contents
+</div>
+`;
+
+exports[`DropButton ref function 3`] = `""`;

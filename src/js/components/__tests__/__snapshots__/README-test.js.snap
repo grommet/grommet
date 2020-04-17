@@ -6002,6 +6002,7 @@ Custom validation messages. Defaults to \`{
 **onChange**
 
 Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.
 
 \`\`\`
 function
@@ -11130,8 +11131,8 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control open state of the Select 
-component. Expects \`object\`.
+Any additional style for the Select DropButton when using the
+    controlled open state. Expects \`string | object\`.
 
 Defaults to
 
