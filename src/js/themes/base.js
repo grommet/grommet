@@ -623,6 +623,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           opacity: 'medium',
         },
+        border: {
+          // color: undefined,
+        },
+        label: {
+          // color: undefined,
+        },
       },
       error: {
         color: 'status-critical',

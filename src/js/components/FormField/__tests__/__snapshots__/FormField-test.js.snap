@@ -558,6 +558,7 @@ exports[`FormField disabled 1`] = `
 >
   <div
     className="c1 "
+    disabled={true}
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -576,6 +577,7 @@ exports[`FormField disabled 1`] = `
   >
     <div
       className="c1 "
+      disabled={true}
       onBlur={[Function]}
       onFocus={[Function]}
     >
