@@ -2416,7 +2416,8 @@ string",
         "name": "messages",
       },
       Object {
-        "description": "Function that will be called when any fields are updated.",
+        "description": "Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.",
         "format": "function",
         "name": "onChange",
       },
