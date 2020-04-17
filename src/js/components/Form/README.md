@@ -50,6 +50,7 @@ Custom validation messages. Defaults to `{
 **onChange**
 
 Function that will be called when any fields are updated.
+      The fields must have a non-null `name` property assigned.
 
 ```
 function
