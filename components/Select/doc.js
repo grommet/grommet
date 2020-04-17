@@ -96,8 +96,8 @@ var themeDoc = {
     defaultValue: undefined
   },
   'select.control.open': {
-    description: "Any additional style for the control open state of the Select \ncomponent.",
-    type: 'object',
+    description: "Any additional style for the Select DropButton when using the\n    controlled open state.",
+    type: 'string | object',
     defaultValue: undefined
   },
   'select.control.extend': {
