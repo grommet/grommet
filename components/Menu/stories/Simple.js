@@ -21,7 +21,8 @@ var SimpleMenu = function SimpleMenu() {
       align: {
         top: 'bottom',
         left: 'left'
-      }
+      },
+      elevation: 'xlarge'
     },
     label: "actions",
     items: [{

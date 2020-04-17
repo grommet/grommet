@@ -251,6 +251,7 @@ var Menu = function Menu(props) {
     disabled: disabled,
     dropAlign: align,
     dropTarget: dropTarget,
+    dropProps: dropProps,
     plain: plain,
     open: isOpen,
     onOpen: onDropOpen,
