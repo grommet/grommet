@@ -2,7 +2,173 @@
 
 exports[`Components loads 1`] = `
 Object {
-  "Accordion": [Function],
+  "Accordion": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Accordion&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=accordion&module=%2Fsrc%2FAccordion.js",
+      },
+    ],
+    "description": "An accordion containing collapsible panels.",
+    "intrinsicElement": "div",
+    "name": "Accordion",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": 0,
+        "description": "Active panel index. If specified, Accordion will be a controlled 
+component. This means that future panel changes will not work unless you
+subscribe to onActive function and update activeIndex accordingly.",
+        "format": "number
+[number]",
+        "name": "activeIndex",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Transition content in & out with a slide down animation.",
+        "format": "boolean",
+        "name": "animate",
+      },
+      Object {
+        "description": "Array of AccordionPanels.",
+        "format": "node",
+        "name": "children",
+      },
+      Object {
+        "description": "Function that will be called when the active index changes.
+It will always send an array with currently active panel indexes.",
+        "format": "function",
+        "name": "onActive",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Allow multiple panels to be opened at once.",
+        "format": "boolean",
+        "name": "multiple",
+      },
+      Object {
+        "defaultValue": Object {
+          "tabContents": "Tab Contents",
+        },
+        "description": "Custom messages for Tabs. Used for accessibility by screen readers.",
+        "format": "{
+  tabContents: string
+}",
+        "name": "messages",
+      },
+    ],
+    "usage": "import { Accordion, AccordionPanel } from 'grommet';
+<Accordion>
+  <AccordionPanel label='Panel 1'>...</AccordionPanel>
+  <AccordionPanel label='Panel 2'>...</AccordionPanel>
+</Accordion>",
+  },
   "AccordionPanel": Object {
     "description": "An Accordion panel.",
     "intrinsicElement": "div",
@@ -2250,7 +2416,8 @@ string",
         "name": "messages",
       },
       Object {
-        "description": "Function that will be called when any fields are updated.",
+        "description": "Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.",
         "format": "function",
         "name": "onChange",
       },
@@ -4352,6 +4519,7 @@ function
     "usage": "import { Select } from 'grommet';
 <Select />",
   },
+  "Sidebar": [Function],
   "SkipLink": [Function],
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],

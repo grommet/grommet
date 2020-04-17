@@ -8,18 +8,17 @@ import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 
+import { AccordionContext } from '../Accordion/AccordionContext';
+
 const AccordionPanel = forwardRef(
   (
     {
-      active,
-      animate,
       children,
       header,
       label,
       onClick,
       onMouseOut,
       onMouseOver,
-      onPanelChange,
       onFocus,
       onBlur,
       ...rest
@@ -27,6 +26,7 @@ const AccordionPanel = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { active, animate, onPanelChange } = useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
 
     const iconColor = useMemo(

@@ -2293,6 +2293,36 @@ Defaults to
 undefined
 \`\`\`
 
+**button.primary.extend**
+
+Any additional style for a primary button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.active.border.color**
+
+The color of the border for active primary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.active.extend**
+
+Any additional style for an active primary button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.size.small.border.radius**
 
 The border corner radius. Expects \`string\`.
@@ -5962,6 +5992,7 @@ Custom validation messages. Defaults to \`{
 **onChange**
 
 Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.
 
 \`\`\`
 function
@@ -11110,8 +11141,8 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control open state of the Select 
-component. Expects \`object\`.
+Any additional style for the Select DropButton when using the
+    controlled open state. Expects \`string | object\`.
 
 Defaults to
 
@@ -11189,6 +11220,40 @@ Defaults to
 20
 \`\`\`
 ",
+  "Sidebar": "## Sidebar
+A sidebar, typically used with Nav children.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Sidebar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=sidebar&module=%2Fsrc%2FSidebar.js)
+## Usage
+
+\`\`\`javascript
+import { Sidebar } from 'grommet';
+<Sidebar/>
+\`\`\`
+
+## Properties
+
+**footer**
+
+If specified, a footer element for the Sidebar
+
+\`\`\`
+node
+\`\`\`
+
+**header**
+
+If specified, an header element for the Sidebar
+
+\`\`\`
+node
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "SkipLinks": "## SkipLinks
 Describe a list of elements to skip to.
 
