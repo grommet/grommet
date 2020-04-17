@@ -225,7 +225,7 @@ exports[`Grommet custom theme 1`] = `
   background: transparent;
   color: inherit;
   padding: 11px;
-  font-weight: 600;
+  font-weight: bold;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
@@ -416,6 +416,7 @@ exports[`Grommet custom theme 1`] = `
         onChange={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
+        value="Value"
       />
     </div>
   </div>

@@ -84,9 +84,19 @@ export const themeDocUtils = {
   },
 
   inputStyle: {
-    'global.input.weight': {
-      description: 'The font weight of the text entered.',
-      type: 'number',
+    'global.input.font.height': {
+      description: 'The line-height of the text.',
+      type: 'string',
+      defaultValue: undefined,
+    },
+    'global.input.font.size': {
+      description: 'The size of the text.',
+      type: 'string',
+      defaultValue: undefined,
+    },
+    'global.input.font.weight': {
+      description: 'The font-weight of the text.',
+      type: 'string',
       defaultValue: 600,
     },
     'global.input.padding': {

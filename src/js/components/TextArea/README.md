@@ -185,9 +185,29 @@ Defaults to
 #AAAAAA
 ```
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects `number`.
+The line-height of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.size**
+
+The size of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.weight**
+
+The font-weight of the text. Expects `string`.
 
 Defaults to
 

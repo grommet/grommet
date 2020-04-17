@@ -41,6 +41,9 @@ const customTheme = {
     input: {
       // test backwards compatibility that string value works for input pad
       padding: '12px',
+      font: {
+        weight: 'bold',
+      },
     },
     colors: {
       custom: '#cc6633',
@@ -103,7 +106,7 @@ describe('Grommet', () => {
           <Anchor icon={<Add />} label="Add" color="custom" />
         </Box>
         <Box>
-          <TextInput />
+          <TextInput value="Value" />
         </Box>
       </Grommet>,
     );
