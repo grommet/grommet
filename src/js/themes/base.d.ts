@@ -204,9 +204,9 @@ export interface ThemeType {
       font?: {
         height?: string;
         size?: string;
-        weight?: string;
+        weight?: number | string;
       };
-      weight?: number;
+      weight?: number | string;
     };
     opacity?: {
       strong?: number;

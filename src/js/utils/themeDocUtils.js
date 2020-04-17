@@ -96,7 +96,7 @@ export const themeDocUtils = {
     },
     'global.input.font.weight': {
       description: 'The font-weight of the text.',
-      type: 'string',
+      type: 'number | string',
       defaultValue: 600,
     },
     'global.input.padding': {

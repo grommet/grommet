@@ -196,7 +196,7 @@ undefined
 
 **global.input.font.weight**
 
-The font-weight of the text. Expects `string`.
+The font-weight of the text. Expects `number | string`.
 
 Defaults to
 
