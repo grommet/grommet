@@ -101,4 +101,21 @@ describe('DropButton', function () {
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('drop-contents').toMatchSnapshot();
   });
+  test('ref function', function () {
+    var ref = jest.fn();
+
+    var _render5 = render(React.createElement(DropButton, {
+      ref: ref,
+      open: true,
+      label: "Dropper",
+      dropContent: React.createElement("div", {
+        id: "drop-contents"
+      }, "Drop Contents")
+    })),
+        container = _render5.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    expect(ref).toBeCalled();
+    expectPortal('drop-contents').toMatchSnapshot();
+  });
 });

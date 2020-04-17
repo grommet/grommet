@@ -2,9 +2,10 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
+import { useForwardedRef } from '../../utils';
 var DropButton = forwardRef(function (_ref, ref) {
   var _ref$a11yTitle = _ref.a11yTitle,
       a11yTitle = _ref$a11yTitle === void 0 ? 'Open Drop' : _ref$a11yTitle,
@@ -24,6 +25,8 @@ var DropButton = forwardRef(function (_ref, ref) {
       onOpen = _ref.onOpen,
       rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "disabled", "dropAlign", "dropProps", "dropContent", "dropTarget", "id", "open", "onClick", "onClose", "onOpen"]);
 
+  var buttonRef = useForwardedRef(ref);
+
   var _useState = useState(),
       show = _useState[0],
       setShow = _useState[1];
@@ -33,21 +36,20 @@ var DropButton = forwardRef(function (_ref, ref) {
       setShow(open);
     }
   }, [open, show]);
-  var buttonRef = useRef();
   var onDropClose = useCallback(function (event) {
     // if the user has clicked on our Button, don't do anything here,
     // handle that in onClickInternal() below.
     var node = event.target;
 
-    while (node !== document && node !== (ref || buttonRef).current) {
+    while (node !== document && node !== buttonRef.current) {
       node = node.parentNode;
     }
 
-    if (node !== (ref || buttonRef).current) {
+    if (node !== buttonRef.current) {
       setShow(false);
       if (onClose) onClose(event);
     }
-  }, [onClose, ref]);
+  }, [buttonRef, onClose]);
   var onClickInternal = useCallback(function (event) {
     if (!show) {
       setShow(true);
@@ -61,16 +63,16 @@ var DropButton = forwardRef(function (_ref, ref) {
   }, [onClick, onClose, onOpen, show]);
   return React.createElement(React.Fragment, null, React.createElement(Button, _extends({
     id: id,
-    ref: ref || buttonRef,
+    ref: buttonRef,
     a11yTitle: a11yTitle,
     disabled: disabled
   }, rest, {
     onClick: onClickInternal
-  })), show && (ref || buttonRef).current && React.createElement(Drop, _extends({
+  })), show && buttonRef.current && React.createElement(Drop, _extends({
     id: id ? id + "__drop" : undefined,
     restrictFocus: true,
     align: dropAlign,
-    target: dropTarget || (ref || buttonRef).current,
+    target: dropTarget || buttonRef.current,
     onClickOutside: onDropClose,
     onEsc: onDropClose
   }, dropProps), dropContent));
