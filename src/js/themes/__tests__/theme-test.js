@@ -42,6 +42,8 @@ const customTheme = {
       // test backwards compatibility that string value works for input pad
       padding: '12px',
       font: {
+        height: '50px',
+        size: 'large',
         weight: 'bold',
       },
     },

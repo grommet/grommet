@@ -217,13 +217,14 @@ exports[`Grommet custom theme 1`] = `
 
 .c12 {
   box-sizing: border-box;
-  font-size: inherit;
+  font-size: 22px;
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
   outline: none;
   background: transparent;
   color: inherit;
+  line-height: 50px;
   padding: 11px;
   font-weight: bold;
   margin: 0;
