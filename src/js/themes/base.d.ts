@@ -296,6 +296,13 @@ export interface ThemeType {
     };
     primary?: {
       color?: ColorType;
+      active?: {
+        border?: {
+          color?: ColorType;
+        };
+        extend?: ExtendType;
+      };
+      extend?: ExtendType;
     };
     size?: {
       small?: {
@@ -828,7 +835,7 @@ export interface ThemeType {
     };
     control?: {
       extend?: ExtendType;
-      open?: boolean;
+      open?: string | object;
     };
     extend?: ExtendType;
     icons?: {
