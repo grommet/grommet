@@ -13,7 +13,6 @@ import {
   MarginType, 
   PadType,
   PolymorphicType,
-  ColorType, 
   RoundType,
 } from "../../utils";
 
@@ -30,7 +29,7 @@ export interface BoxProps {
   border?: BorderType;
   direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
   elevation?: ElevationType;
-  flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
+  flex?: "grow" | "shrink" | boolean | { grow?: number, shrink?: number };
   fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
