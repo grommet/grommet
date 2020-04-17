@@ -1253,6 +1253,8 @@ exports[`Menu disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c3 {

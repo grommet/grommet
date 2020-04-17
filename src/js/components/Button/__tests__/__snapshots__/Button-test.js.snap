@@ -543,6 +543,8 @@ exports[`Button disabled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -572,6 +574,8 @@ exports[`Button disabled 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -596,6 +600,8 @@ exports[`Button disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c4 {
@@ -614,6 +620,8 @@ exports[`Button disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   line-height: 0;
   padding: 12px;
 }
@@ -634,6 +642,8 @@ exports[`Button disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   line-height: 0;
 }
 
@@ -655,6 +665,8 @@ exports[`Button disabled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
