@@ -16,11 +16,13 @@ import { StyledTab } from './StyledTab';
 const Tab = ({
   active,
   forwardRef,
+  icon,
   plain,
   title,
   onActivate,
   onMouseOver,
   onMouseOut,
+  reverse,
   theme,
   ...rest
 }) => {
@@ -86,6 +88,35 @@ const Tab = ({
     tabStyles.margin = theme.tab.margin;
   }
 
+  // needed to apply hover/active styles to the icon
+  const renderIcon = iconProp => {
+    if (active) {
+      return React.cloneElement(iconProp, {
+        ...theme.tab.active,
+      });
+    }
+    return React.cloneElement(iconProp, {
+      color: over ? theme.tab.hover.color : theme.tab.color,
+    });
+  };
+
+  let normalizedIcon;
+  if (icon) {
+    normalizedIcon = renderIcon(icon);
+  }
+
+  const first = reverse ? normalizedTitle : normalizedIcon;
+  const second = reverse ? normalizedIcon : normalizedTitle;
+
+  let withIconStyles;
+  if (first && second) {
+    withIconStyles = {
+      direction: 'row',
+      align: 'center',
+      justify: 'center',
+      gap: 'small',
+    };
+  }
   return (
     <Button
       ref={forwardRef}
@@ -100,8 +131,9 @@ const Tab = ({
       onFocus={onMouseOver}
       onBlur={onMouseOut}
     >
-      <StyledTab as={Box} plain={plain} {...tabStyles}>
-        {normalizedTitle}
+      <StyledTab as={Box} plain={plain} {...withIconStyles} {...tabStyles}>
+        {first}
+        {second}
       </StyledTab>
     </Button>
   );
@@ -114,9 +146,6 @@ let TabDoc;
 if (process.env.NODE_ENV !== 'production') {
   TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
 }
-const TabWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(TabDoc || Tab);
+const TabWrapper = compose(withTheme, withForwardRef)(TabDoc || Tab);
 
 export { TabWrapper as Tab };
