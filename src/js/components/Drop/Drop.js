@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useState, useContext } from 'react';
 import { createPortal } from 'react-dom';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
-
+import { ThemeContext } from '../../contexts';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 
@@ -46,12 +46,17 @@ const Drop = forwardRef(
 
     return dropContainer
       ? createPortal(
-          <DropContainer
-            ref={ref}
-            dropTarget={dropTarget}
-            restrictFocus={restrictFocus}
-            {...rest}
-          />,
+          <ThemeContext.Consumer>
+            {theme => (
+              <DropContainer
+                ref={ref}
+                dir={theme && theme.dir}
+                dropTarget={dropTarget}
+                restrictFocus={restrictFocus}
+                {...rest}
+              />
+            )}
+          </ThemeContext.Consumer>,
           dropContainer,
         )
       : null;
