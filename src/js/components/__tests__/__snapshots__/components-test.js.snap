@@ -591,7 +591,12 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
 'url()' for an image. Dark is not needed if color is provided.",
         "format": "string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,

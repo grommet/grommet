@@ -20,7 +20,12 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
 ```
 string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
