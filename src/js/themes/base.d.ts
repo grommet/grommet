@@ -535,7 +535,7 @@ export interface ThemeType {
     };
     disabled?: {
       background?: BackgroundType;
-      border: {
+      border?: {
         color?: ColorType;
       },
       label?: {
