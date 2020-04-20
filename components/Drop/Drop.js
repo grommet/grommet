@@ -7,6 +7,10 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = require("react-dom");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _DropContainer = require("./DropContainer");
@@ -25,6 +29,8 @@ var Drop = (0, _react.forwardRef)(function (_ref, ref) {
   var restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
       rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)(),
       originalFocusedElement = _useState[0],
@@ -61,6 +67,7 @@ var Drop = (0, _react.forwardRef)(function (_ref, ref) {
   }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
   return dropContainer ? (0, _reactDom.createPortal)(_react["default"].createElement(_DropContainer.DropContainer, _extends({
     ref: ref,
+    dir: theme && theme.dir,
     dropTarget: dropTarget,
     restrictFocus: restrictFocus
   }, rest)), dropContainer) : null;

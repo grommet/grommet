@@ -4,6 +4,8 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useEffect, useState, useContext } from 'react';
 import { createPortal } from 'react-dom';
+import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
@@ -11,6 +13,8 @@ var Drop = forwardRef(function (_ref, ref) {
   var restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
       rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target"]);
+
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(),
       originalFocusedElement = _useState[0],
@@ -47,6 +51,7 @@ var Drop = forwardRef(function (_ref, ref) {
   }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
   return dropContainer ? createPortal(React.createElement(DropContainer, _extends({
     ref: ref,
+    dir: theme && theme.dir,
     dropTarget: dropTarget,
     restrictFocus: restrictFocus
   }, rest)), dropContainer) : null;
