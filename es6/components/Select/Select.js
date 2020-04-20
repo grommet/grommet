@@ -59,6 +59,7 @@ var Select = forwardRef(function (_ref, ref) {
       multiple = _ref.multiple,
       name = _ref.name,
       onChange = _ref.onChange,
+      onClick = _ref.onClick,
       onClose = _ref.onClose,
       onKeyDown = _ref.onKeyDown,
       onMore = _ref.onMore,
@@ -75,7 +76,7 @@ var Select = forwardRef(function (_ref, ref) {
       valueProp = _ref.value,
       valueKey = _ref.valueKey,
       valueLabel = _ref.valueLabel,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
@@ -201,6 +202,7 @@ var Select = forwardRef(function (_ref, ref) {
     margin: margin,
     onOpen: onRequestOpen,
     onClose: onRequestClose,
+    onClick: onClick,
     dropContent: React.createElement(SelectContainer, {
       disabled: disabled,
       disabledKey: disabledKey,
