@@ -538,7 +538,7 @@ export interface ThemeType {
       border: {
         color?: ColorType;
       },
-      label: {
+      label?: {
         color?: ColorType;
       },
     };
