@@ -303,11 +303,11 @@ export const inputStyle = css`
           props.theme,
         )}
   ${props =>
-    // for backwards compatibility, fallback to props.theme.global.input.weight
-    (props.theme.global.input.font.weight || props.theme.global.input.weight) &&
+    // for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
     css`
-      font-weight: ${props.theme.global.input.font.weight ||
-        props.theme.global.input.weight};
+      font-weight: ${props.theme.global.input.weight ||
+        props.theme.global.input.font.weight};
     `} margin: 0;
 
   ${props =>
