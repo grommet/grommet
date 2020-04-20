@@ -170,7 +170,6 @@ export var withFocus = function withFocus(_temp) {
       }));
     });
     ForwardRef.displayName = getDisplayName(WrappedComponent);
-    ForwardRef.name = ForwardRef.displayName;
     ForwardRef.defaultProps = WrappedComponent.defaultProps;
     hoistNonReactStatics(ForwardRef, WrappedComponent);
     return ForwardRef;
@@ -183,7 +182,6 @@ export var withForwardRef = function withForwardRef(WrappedComponent) {
     }, props));
   });
   ForwardRefComponent.displayName = getDisplayName(WrappedComponent);
-  ForwardRefComponent.name = ForwardRefComponent.displayName;
   ForwardRefComponent.defaultProps = WrappedComponent.defaultProps;
   hoistNonReactStatics(ForwardRefComponent, WrappedComponent);
   return ForwardRefComponent;
@@ -198,7 +196,6 @@ export var withAnnounce = function withAnnounce(WrappedComponent) {
     });
   });
   ForwardRef.displayName = getDisplayName(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
   ForwardRef.defaultProps = WrappedComponent.defaultProps;
   hoistNonReactStatics(ForwardRef, WrappedComponent);
   return ForwardRef;

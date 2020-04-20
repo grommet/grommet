@@ -188,7 +188,6 @@ var withFocus = function withFocus(_temp) {
     });
 
     ForwardRef.displayName = (0, _getDisplayName["default"])(WrappedComponent);
-    ForwardRef.name = ForwardRef.displayName;
     ForwardRef.defaultProps = WrappedComponent.defaultProps;
     (0, _hoistNonReactStatics["default"])(ForwardRef, WrappedComponent);
     return ForwardRef;
@@ -205,7 +204,6 @@ var withForwardRef = function withForwardRef(WrappedComponent) {
   });
 
   ForwardRefComponent.displayName = (0, _getDisplayName["default"])(WrappedComponent);
-  ForwardRefComponent.name = ForwardRefComponent.displayName;
   ForwardRefComponent.defaultProps = WrappedComponent.defaultProps;
   (0, _hoistNonReactStatics["default"])(ForwardRefComponent, WrappedComponent);
   return ForwardRefComponent;
@@ -224,7 +222,6 @@ var withAnnounce = function withAnnounce(WrappedComponent) {
   });
 
   ForwardRef.displayName = (0, _getDisplayName["default"])(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
   ForwardRef.defaultProps = WrappedComponent.defaultProps;
   (0, _hoistNonReactStatics["default"])(ForwardRef, WrappedComponent);
   return ForwardRef;
