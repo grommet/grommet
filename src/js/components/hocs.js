@@ -152,7 +152,6 @@ export const withAnnounce = WrappedComponent => {
   ));
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
   ForwardRef.defaultProps = WrappedComponent.defaultProps;
   hoistNonReactStatics(ForwardRef, WrappedComponent);
 
