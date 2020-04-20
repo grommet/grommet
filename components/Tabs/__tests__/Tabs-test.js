@@ -36,6 +36,18 @@ describe('Tabs', function () {
 
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('with icon + reverse', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, null, _react["default"].createElement(_.Tab, {
+      title: "Tab 1",
+      icon: _react["default"].createElement("svg", null)
+    }, "Tab body 1"), _react["default"].createElement(_.Tab, {
+      title: "Tab 2",
+      icon: _react["default"].createElement("svg", null),
+      reverse: true
+    }, "Tab body 2"))));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('change to second tab', function () {
     var onActive = jest.fn();
 

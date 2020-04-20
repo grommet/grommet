@@ -24,6 +24,17 @@ describe('Tabs', function () {
     }, "Tab body 2"))));
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('with icon + reverse', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Tabs, null, React.createElement(Tab, {
+      title: "Tab 1",
+      icon: React.createElement("svg", null)
+    }, "Tab body 1"), React.createElement(Tab, {
+      title: "Tab 2",
+      icon: React.createElement("svg", null),
+      reverse: true
+    }, "Tab body 2"))));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('change to second tab', function () {
     var onActive = jest.fn();
 

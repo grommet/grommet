@@ -5,8 +5,6 @@ exports.Tab = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _defaultProps = require("../../default-props");
@@ -16,8 +14,6 @@ var _Box = require("../Box");
 var _Button = require("../Button");
 
 var _Text = require("../Text");
-
-var _hocs = require("../hocs");
 
 var _utils = require("../../utils");
 
@@ -31,16 +27,18 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Tab = function Tab(_ref) {
+var Tab = (0, _react.forwardRef)(function (_ref, ref) {
   var active = _ref.active,
-      forwardRef = _ref.forwardRef,
+      icon = _ref.icon,
       plain = _ref.plain,
       title = _ref.title,
       onActivate = _ref.onActivate,
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["active", "forwardRef", "plain", "title", "onActivate", "onMouseOver", "onMouseOut", "theme"]);
+      reverse = _ref.reverse,
+      rest = _objectWithoutPropertiesLoose(_ref, ["active", "icon", "plain", "title", "onActivate", "onMouseOver", "onMouseOut", "reverse"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)(undefined),
       over = _useState[0],
@@ -104,10 +102,40 @@ var Tab = function Tab(_ref) {
     tabStyles.background = active ? theme.tab.active.background || theme.tab.background : theme.tab.background;
     tabStyles.pad = theme.tab.pad;
     tabStyles.margin = theme.tab.margin;
+  } // needed to apply hover/active styles to the icon
+
+
+  var renderIcon = function renderIcon(iconProp) {
+    if (active) {
+      return _react["default"].cloneElement(iconProp, _extends({}, theme.tab.active));
+    }
+
+    return _react["default"].cloneElement(iconProp, {
+      color: over ? theme.tab.hover.color : theme.tab.color
+    });
+  };
+
+  var normalizedIcon;
+
+  if (icon) {
+    normalizedIcon = renderIcon(icon);
+  }
+
+  var first = reverse ? normalizedTitle : normalizedIcon;
+  var second = reverse ? normalizedIcon : normalizedTitle;
+  var withIconStyles;
+
+  if (first && second) {
+    withIconStyles = {
+      direction: 'row',
+      align: 'center',
+      justify: 'center',
+      gap: 'small'
+    };
   }
 
   return _react["default"].createElement(_Button.Button, _extends({
-    ref: forwardRef,
+    ref: ref,
     plain: true,
     role: "tab",
     "aria-selected": active,
@@ -121,9 +149,9 @@ var Tab = function Tab(_ref) {
   }), _react["default"].createElement(_StyledTab.StyledTab, _extends({
     as: _Box.Box,
     plain: plain
-  }, tabStyles), normalizedTitle));
-};
-
+  }, withIconStyles, tabStyles), first, second));
+});
+Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, _defaultProps.defaultProps);
 var TabDoc;
@@ -132,5 +160,5 @@ if (process.env.NODE_ENV !== 'production') {
   TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
 }
 
-var TabWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(TabDoc || Tab);
+var TabWrapper = TabDoc || Tab;
 exports.Tab = TabWrapper;

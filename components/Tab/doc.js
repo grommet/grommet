@@ -8,7 +8,9 @@ var _reactDesc = require("react-desc");
 var doc = function doc(Tab) {
   var DocumentedTab = (0, _reactDesc.describe)(Tab).description('One tab within Tabs.').usage("import { Tab } from 'grommet';\n<Tab />").intrinsicElement('button');
   DocumentedTab.propTypes = {
+    icon: _reactDesc.PropTypes.element.description('Icon element to place in the tab.'),
     plain: _reactDesc.PropTypes.bool.description('Whether this is a plain tab with no style.').defaultValue(false),
+    reverse: _reactDesc.PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\n              end of the tab.").defaultValue(false),
     title: _reactDesc.PropTypes.node.description('The title of the tab.')
   };
   return DocumentedTab;

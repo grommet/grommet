@@ -2,27 +2,26 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 import { StyledTab } from './StyledTab';
-
-var Tab = function Tab(_ref) {
+var Tab = forwardRef(function (_ref, ref) {
   var active = _ref.active,
-      forwardRef = _ref.forwardRef,
+      icon = _ref.icon,
       plain = _ref.plain,
       title = _ref.title,
       onActivate = _ref.onActivate,
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["active", "forwardRef", "plain", "title", "onActivate", "onMouseOver", "onMouseOut", "theme"]);
+      reverse = _ref.reverse,
+      rest = _objectWithoutPropertiesLoose(_ref, ["active", "icon", "plain", "title", "onActivate", "onMouseOver", "onMouseOut", "reverse"]);
+
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(undefined),
       over = _useState[0],
@@ -86,10 +85,40 @@ var Tab = function Tab(_ref) {
     tabStyles.background = active ? theme.tab.active.background || theme.tab.background : theme.tab.background;
     tabStyles.pad = theme.tab.pad;
     tabStyles.margin = theme.tab.margin;
+  } // needed to apply hover/active styles to the icon
+
+
+  var renderIcon = function renderIcon(iconProp) {
+    if (active) {
+      return React.cloneElement(iconProp, _extends({}, theme.tab.active));
+    }
+
+    return React.cloneElement(iconProp, {
+      color: over ? theme.tab.hover.color : theme.tab.color
+    });
+  };
+
+  var normalizedIcon;
+
+  if (icon) {
+    normalizedIcon = renderIcon(icon);
+  }
+
+  var first = reverse ? normalizedTitle : normalizedIcon;
+  var second = reverse ? normalizedIcon : normalizedTitle;
+  var withIconStyles;
+
+  if (first && second) {
+    withIconStyles = {
+      direction: 'row',
+      align: 'center',
+      justify: 'center',
+      gap: 'small'
+    };
   }
 
   return React.createElement(Button, _extends({
-    ref: forwardRef,
+    ref: ref,
     plain: true,
     role: "tab",
     "aria-selected": active,
@@ -103,9 +132,9 @@ var Tab = function Tab(_ref) {
   }), React.createElement(StyledTab, _extends({
     as: Box,
     plain: plain
-  }, tabStyles), normalizedTitle));
-};
-
+  }, withIconStyles, tabStyles), first, second));
+});
+Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, defaultProps);
 var TabDoc;
@@ -114,5 +143,5 @@ if (process.env.NODE_ENV !== 'production') {
   TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
 }
 
-var TabWrapper = compose(withTheme, withForwardRef)(TabDoc || Tab);
+var TabWrapper = TabDoc || Tab;
 export { TabWrapper as Tab };
