@@ -1,112 +1,146 @@
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 
 import { StyledTab } from './StyledTab';
 
-const Tab = ({
-  active,
-  forwardRef,
-  plain,
-  title,
-  onActivate,
-  onMouseOver,
-  onMouseOut,
-  theme,
-  ...rest
-}) => {
-  const [over, setOver] = useState(undefined);
-  let normalizedTitle = title;
-  const tabStyles = {};
+const Tab = forwardRef(
+  (
+    {
+      active,
+      icon,
+      plain,
+      title,
+      onActivate,
+      onMouseOver,
+      onMouseOut,
+      reverse,
+      ...rest
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [over, setOver] = useState(undefined);
+    let normalizedTitle = title;
+    const tabStyles = {};
 
-  const onMouseOverTab = event => {
-    setOver(true);
-    if (onMouseOver) {
-      onMouseOver(event);
-    }
-  };
-
-  const onMouseOutTab = event => {
-    setOver(undefined);
-    if (onMouseOut) {
-      onMouseOut(event);
-    }
-  };
-
-  const onClickTab = event => {
-    if (event) {
-      event.preventDefault();
-    }
-    onActivate();
-  };
-
-  if (!plain) {
-    if (typeof title !== 'string') {
-      normalizedTitle = title;
-    } else if (active) {
-      normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
-    } else {
-      normalizedTitle = (
-        <Text color={over ? theme.tab.hover.color : theme.tab.color}>
-          {title}
-        </Text>
-      );
-    }
-
-    if (theme.tab.border) {
-      let borderColor =
-        theme.tab.border.color || theme.global.control.border.color;
-      if (active) {
-        borderColor = theme.tab.border.active.color || borderColor;
-      } else if (over) {
-        borderColor = theme.tab.border.hover.color || borderColor;
+    const onMouseOverTab = event => {
+      setOver(true);
+      if (onMouseOver) {
+        onMouseOver(event);
       }
-      borderColor = normalizeColor(borderColor, theme);
+    };
 
-      tabStyles.border = {
-        side: theme.tab.border.side,
-        size: theme.tab.border.size,
-        color: borderColor,
+    const onMouseOutTab = event => {
+      setOver(undefined);
+      if (onMouseOut) {
+        onMouseOut(event);
+      }
+    };
+
+    const onClickTab = event => {
+      if (event) {
+        event.preventDefault();
+      }
+      onActivate();
+    };
+
+    if (!plain) {
+      if (typeof title !== 'string') {
+        normalizedTitle = title;
+      } else if (active) {
+        normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
+      } else {
+        normalizedTitle = (
+          <Text color={over ? theme.tab.hover.color : theme.tab.color}>
+            {title}
+          </Text>
+        );
+      }
+
+      if (theme.tab.border) {
+        let borderColor =
+          theme.tab.border.color || theme.global.control.border.color;
+        if (active) {
+          borderColor = theme.tab.border.active.color || borderColor;
+        } else if (over) {
+          borderColor = theme.tab.border.hover.color || borderColor;
+        }
+        borderColor = normalizeColor(borderColor, theme);
+
+        tabStyles.border = {
+          side: theme.tab.border.side,
+          size: theme.tab.border.size,
+          color: borderColor,
+        };
+      }
+
+      tabStyles.background = active
+        ? theme.tab.active.background || theme.tab.background
+        : theme.tab.background;
+      tabStyles.pad = theme.tab.pad;
+      tabStyles.margin = theme.tab.margin;
+    }
+
+    // needed to apply hover/active styles to the icon
+    const renderIcon = iconProp => {
+      if (active) {
+        return React.cloneElement(iconProp, {
+          ...theme.tab.active,
+        });
+      }
+      return React.cloneElement(iconProp, {
+        color: over ? theme.tab.hover.color : theme.tab.color,
+      });
+    };
+
+    let normalizedIcon;
+    if (icon) {
+      normalizedIcon = renderIcon(icon);
+    }
+
+    const first = reverse ? normalizedTitle : normalizedIcon;
+    const second = reverse ? normalizedIcon : normalizedTitle;
+
+    let withIconStyles;
+    if (first && second) {
+      withIconStyles = {
+        direction: 'row',
+        align: 'center',
+        justify: 'center',
+        gap: 'small',
       };
     }
+    return (
+      <Button
+        ref={ref}
+        plain
+        role="tab"
+        aria-selected={active}
+        aria-expanded={active}
+        {...rest}
+        onClick={onClickTab}
+        onMouseOver={onMouseOverTab}
+        onMouseOut={onMouseOutTab}
+        onFocus={onMouseOver}
+        onBlur={onMouseOut}
+      >
+        <StyledTab as={Box} plain={plain} {...withIconStyles} {...tabStyles}>
+          {first}
+          {second}
+        </StyledTab>
+      </Button>
+    );
+  },
+);
 
-    tabStyles.background = active
-      ? theme.tab.active.background || theme.tab.background
-      : theme.tab.background;
-    tabStyles.pad = theme.tab.pad;
-    tabStyles.margin = theme.tab.margin;
-  }
-
-  return (
-    <Button
-      ref={forwardRef}
-      plain
-      role="tab"
-      aria-selected={active}
-      aria-expanded={active}
-      {...rest}
-      onClick={onClickTab}
-      onMouseOver={onMouseOverTab}
-      onMouseOut={onMouseOutTab}
-      onFocus={onMouseOver}
-      onBlur={onMouseOut}
-    >
-      <StyledTab as={Box} plain={plain} {...tabStyles}>
-        {normalizedTitle}
-      </StyledTab>
-    </Button>
-  );
-};
-
+Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, defaultProps);
 
@@ -114,9 +148,6 @@ let TabDoc;
 if (process.env.NODE_ENV !== 'production') {
   TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
 }
-const TabWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(TabDoc || Tab);
+const TabWrapper = TabDoc || Tab;
 
 export { TabWrapper as Tab };
