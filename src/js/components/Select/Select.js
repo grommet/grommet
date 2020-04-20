@@ -61,6 +61,7 @@ const Select = forwardRef(
       multiple,
       name,
       onChange,
+      onClick,
       onClose,
       onKeyDown,
       onMore,
@@ -200,6 +201,7 @@ const Select = forwardRef(
           margin={margin}
           onOpen={onRequestOpen}
           onClose={onRequestClose}
+          onClick={onClick}
           dropContent={
             <SelectContainer
               disabled={disabled}
