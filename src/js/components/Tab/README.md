@@ -10,9 +10,26 @@ import { Tab } from 'grommet';
 
 ## Properties
 
+**icon**
+
+Icon element to place in the tab.
+
+```
+element
+```
+
 **plain**
 
 Whether this is a plain tab with no style.
+
+```
+boolean
+```
+
+**reverse**
+
+Whether an icon and label should be reversed so that the icon is at the
+              end of the tab.
 
 ```
 boolean
