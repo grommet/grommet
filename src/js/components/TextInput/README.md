@@ -409,12 +409,24 @@ undefined
 
 **global.input.font.weight**
 
-The font-weight of the text. Expects `number | string`.
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects `number | string`.
 
 Defaults to
 
 ```
 600
+```
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **global.input.padding**

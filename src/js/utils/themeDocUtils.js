@@ -95,9 +95,16 @@ export const themeDocUtils = {
       defaultValue: undefined,
     },
     'global.input.font.weight': {
-      description: 'The font-weight of the text.',
+      description: `The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined.`,
       type: 'number | string',
       defaultValue: 600,
+    },
+    'global.input.weight': {
+      description: `This value has been deprecated and replaced by 
+      global.input.font.weight.`,
+      type: 'number | string',
+      defaultValue: undefined,
     },
     'global.input.padding': {
       description: 'The padding of the text.',
