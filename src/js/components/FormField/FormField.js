@@ -236,7 +236,7 @@ const FormField = forwardRef(
     let labelColor;
 
     if (disabled) {
-      labelColor = formField.disabled.label.color;
+      labelColor = formField.disabled.label && formField.disabled.label.color;
     } else {
       labelColor = formField.label.color;
     }
