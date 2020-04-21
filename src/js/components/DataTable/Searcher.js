@@ -13,7 +13,7 @@ import { TextInput } from '../TextInput';
 import { normalizeColor } from '../../utils';
 
 const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const inputRef = useRef();
   const needsFocus = filtering === property;
 
