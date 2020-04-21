@@ -29,6 +29,16 @@ describe('Select', function () {
 
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('0 value', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_2.Select, {
+      id: "test-select",
+      placeholder: "test select",
+      options: [0, 1],
+      value: 0
+    }));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('opens', function (done) {
     window.scrollTo = jest.fn();
 
