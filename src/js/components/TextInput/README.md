@@ -387,14 +387,46 @@ Defaults to
 0.3
 ```
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects `number`.
+The line-height of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.size**
+
+The size of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects `number | string`.
 
 Defaults to
 
 ```
 600
+```
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **global.input.padding**
