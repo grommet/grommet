@@ -9,7 +9,7 @@ import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
 
 const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   let content;
   if (onToggle) {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
