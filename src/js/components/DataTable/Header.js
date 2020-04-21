@@ -31,7 +31,7 @@ const Header = ({
   widths,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
     <StyledDataTableHeader {...rest}>
       <StyledDataTableRow>
