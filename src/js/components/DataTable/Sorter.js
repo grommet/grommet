@@ -1,6 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -19,9 +18,9 @@ const Sorter = ({
   onSort,
   property,
   sort,
-  theme,
   themeProps,
 }) => {
+  const theme = useContext(ThemeContext);
   let icon;
   if (sort && sort.property === property) {
     const Icon =
@@ -53,9 +52,9 @@ const Sorter = ({
   return content;
 };
 
+Sorter.displayName = 'Sorter';
+
 Sorter.defaultProps = {};
 Object.setPrototypeOf(Sorter.defaultProps, defaultProps);
 
-const SorterWrapper = compose(withTheme)(Sorter);
-
-export { SorterWrapper as Sorter };
+export { Sorter };

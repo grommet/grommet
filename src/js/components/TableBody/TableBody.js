@@ -1,21 +1,21 @@
-import React from 'react';
-import { compose } from 'recompose';
+import React, { forwardRef } from 'react';
 
-import { withForwardRef } from '../hocs';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableBody } from '../Table/StyledTable';
 
-const TableBody = ({ forwardRef, ...rest }) => (
+const TableBody = forwardRef((props, ref) => (
   <TableContext.Provider value="body">
-    <StyledTableBody ref={forwardRef} {...rest} />
+    <StyledTableBody ref={ref} {...props} />
   </TableContext.Provider>
-);
+));
+
+TableBody.displayName = 'TableBody';
 
 let TableBodyDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   TableBodyDoc = require('./doc').doc(TableBody);
 }
-const TableBodyWrapper = compose(withForwardRef)(TableBodyDoc || TableBody);
+const TableBodyWrapper = TableBodyDoc || TableBody;
 
 export { TableBodyWrapper as TableBody };

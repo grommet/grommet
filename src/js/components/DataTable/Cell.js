@@ -1,7 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -25,8 +23,8 @@ const Cell = ({
   primaryProperty,
   rowProp,
   scope,
-  theme,
 }) => {
+  const theme = useContext(ThemeContext);
   const value = datumValue(datum, property);
   let content;
   if (render) {
@@ -63,9 +61,9 @@ const Cell = ({
   );
 };
 
+Cell.displayName = 'Cell';
+
 Cell.defaultProps = {};
 Object.setPrototypeOf(Cell.defaultProps, defaultProps);
 
-const CellWrapper = compose(withTheme)(Cell);
-
-export { CellWrapper as Cell };
+export { Cell };

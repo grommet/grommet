@@ -1,6 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -9,7 +14,8 @@ const ResizerBox = styled(Box)`
   cursor: col-resize;
 `;
 
-const Resizer = ({ onResize, property, theme }) => {
+const Resizer = ({ onResize, property }) => {
+  const theme = useContext(ThemeContext);
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
   const [width, setWidth] = useState();
@@ -72,9 +78,9 @@ const Resizer = ({ onResize, property, theme }) => {
   );
 };
 
+Resizer.displayName = 'Resizer';
+
 Resizer.defaultProps = {};
 Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
 
-const ResizerWrapper = compose(withTheme)(Resizer);
-
-export { ResizerWrapper as Resizer };
+export { Resizer };
