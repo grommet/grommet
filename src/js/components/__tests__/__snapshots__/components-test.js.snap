@@ -4531,9 +4531,27 @@ function
     "properties": Array [
       Object {
         "defaultValue": false,
+        "description": "Whether the tab is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "Icon element to place in the tab.",
+        "format": "element",
+        "name": "icon",
+      },
+      Object {
+        "defaultValue": false,
         "description": "Whether this is a plain tab with no style.",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether an icon and label should be reversed so that the icon is at the
+              end of the tab.",
+        "format": "boolean",
+        "name": "reverse",
       },
       Object {
         "description": "The title of the tab.",

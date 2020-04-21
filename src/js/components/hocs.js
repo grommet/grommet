@@ -122,7 +122,6 @@ export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
   ));
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
   ForwardRef.defaultProps = WrappedComponent.defaultProps;
   hoistNonReactStatics(ForwardRef, WrappedComponent);
 
@@ -135,7 +134,6 @@ export const withForwardRef = WrappedComponent => {
   ));
 
   ForwardRefComponent.displayName = getDisplayName(WrappedComponent);
-  ForwardRefComponent.name = ForwardRefComponent.displayName;
   ForwardRefComponent.defaultProps = WrappedComponent.defaultProps;
   hoistNonReactStatics(ForwardRefComponent, WrappedComponent);
 
@@ -152,7 +150,6 @@ export const withAnnounce = WrappedComponent => {
   ));
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
   ForwardRef.defaultProps = WrappedComponent.defaultProps;
   hoistNonReactStatics(ForwardRef, WrappedComponent);
 
