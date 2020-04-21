@@ -4535,6 +4535,12 @@ function
     "name": "Tab",
     "properties": Array [
       Object {
+        "defaultValue": false,
+        "description": "Whether the tab is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
         "description": "Icon element to place in the tab.",
         "format": "element",
         "name": "icon",

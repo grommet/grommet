@@ -10,6 +10,9 @@ export const doc = Tab => {
     .intrinsicElement('button');
 
   DocumentedTab.propTypes = {
+    disabled: PropTypes.bool
+      .description('Whether the tab is disabled.')
+      .defaultValue(false),
     icon: PropTypes.element.description('Icon element to place in the tab.'),
     plain: PropTypes.bool
       .description('Whether this is a plain tab with no style.')
