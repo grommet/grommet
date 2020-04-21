@@ -20,7 +20,7 @@ const Sorter = ({
   sort,
   themeProps,
 }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   let icon;
   if (sort && sort.property === property) {
     const Icon =
