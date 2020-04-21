@@ -9,7 +9,7 @@ import { strokeProps, defaultColor } from './utils';
 
 const Bar = forwardRef((props, ref) => {
   const { background, max, round, size, thickness, values, ...rest } = props;
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const height = parseMetricToNum(
