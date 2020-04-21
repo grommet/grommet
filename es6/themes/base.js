@@ -298,7 +298,13 @@ export var generate = function generate(baseSpacing, scale) {
           horizontal: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px",
           vertical: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px"
         },
-        weight: 600
+        font: {
+          // size: undefined,
+          // height: undefined,
+          weight: 600
+        } // deprecate in v3
+        // weight: undefined,
+
       },
       opacity: {
         strong: 0.8,

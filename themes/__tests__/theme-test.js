@@ -21,7 +21,12 @@ var customTheme = {
   global: {
     input: {
       // test backwards compatibility that string value works for input pad
-      padding: '12px'
+      padding: '12px',
+      font: {
+        height: '50px',
+        size: 'large',
+        weight: 'bold'
+      }
     },
     colors: {
       custom: '#cc6633'
@@ -85,7 +90,9 @@ describe('Grommet', function () {
       icon: _react["default"].createElement(_grommetIcons.Add, null),
       label: "Add",
       color: "custom"
-    })), _react["default"].createElement(_components.Box, null, _react["default"].createElement(_components.TextInput, null))));
+    })), _react["default"].createElement(_components.Box, null, _react["default"].createElement(_components.TextInput, {
+      value: "Value"
+    }))));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -131,14 +131,20 @@ export var getInputPadBySide = function getInputPadBySide(props, side) {
   var adjustedPad = adjustPad(props, pad);
   return adjustedPad;
 };
-export var inputStyle = css(["box-sizing:border-box;font-size:inherit;font-family:inherit;border:none;-webkit-appearance:none;outline:none;background:transparent;color:inherit;", " ", " margin:0;", " ", "::-webkit-search-decoration{-webkit-appearance:none;}"], function (props) {
+export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;outline:none;background:transparent;color:inherit;", " ", " ", " margin:0;", " ", "::-webkit-search-decoration{-webkit-appearance:none;}"], function (props) {
+  return "font-size: " + (props.theme.global.input.font.size ? props.theme.text[props.theme.global.input.font.size].size || props.theme.global.input.font.size : 'inherit') + ";";
+}, function (props) {
+  return props.theme.global.input.font.height && "line-height: " + props.theme.global.input.font.height + ";";
+}, function (props) {
   return props.theme.global.input.padding && typeof props.theme.global.input.padding !== 'object' ? // On a breaking change release, this condition could be removed and
   // just the edgeStyle could remain. Currently, this is needed for
   // backwards compatibility since we are placing the calculation in
   // base.js
   "padding: " + (parseMetricToNum(props.theme.global.edgeSize[props.theme.global.input.padding] || props.theme.global.input.padding) - parseMetricToNum(props.theme.global.control.border.width)) + "px;" : edgeStyle('padding', props.theme.global.input.padding, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
-  return props.theme.global.input.weight && css(["font-weight:", ";"], props.theme.global.input.weight);
+  return (// for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) && css(["font-weight:", ";"], props.theme.global.input.weight || props.theme.global.input.font.weight)
+  );
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && focusStyle;
 }, controlBorderStyle);

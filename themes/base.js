@@ -324,7 +324,13 @@ var generate = function generate(baseSpacing, scale) {
           horizontal: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
           vertical: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px"
         },
-        weight: 600
+        font: {
+          // size: undefined,
+          // height: undefined,
+          weight: 600
+        } // deprecate in v3
+        // weight: undefined,
+
       },
       opacity: {
         strong: 0.8,
