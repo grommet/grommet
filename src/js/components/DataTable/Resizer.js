@@ -15,7 +15,7 @@ const ResizerBox = styled(Box)`
 `;
 
 const Resizer = ({ onResize, property }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
   const [width, setWidth] = useState();
