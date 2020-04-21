@@ -24,7 +24,7 @@ const Cell = ({
   rowProp,
   scope,
 }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const value = datumValue(datum, property);
   let content;
   if (render) {
