@@ -27,6 +27,7 @@ const Tab = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [over, setOver] = useState(undefined);
+    const [zIndex, setZIndex] = useState();
     let normalizedTitle = title;
     const tabStyles = {};
 
@@ -117,6 +118,7 @@ const Tab = forwardRef(
         gap: 'small',
       };
     }
+
     return (
       <Button
         ref={ref}
@@ -128,8 +130,17 @@ const Tab = forwardRef(
         onClick={onClickTab}
         onMouseOver={onMouseOverTab}
         onMouseOut={onMouseOutTab}
-        onFocus={onMouseOver}
-        onBlur={onMouseOut}
+        onFocus={() => {
+          // ensure focus outline is not covered by hover styling
+          // of adjacent tabs
+          setZIndex(1);
+          if (onMouseOver) onMouseOver();
+        }}
+        onBlur={() => {
+          setZIndex();
+          if (onMouseOut) onMouseOut();
+        }}
+        style={zIndex && { zIndex }}
       >
         <StyledTab as={Box} plain={plain} {...withIconStyles} {...tabStyles}>
           {first}
