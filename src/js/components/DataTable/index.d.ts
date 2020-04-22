@@ -11,8 +11,29 @@ import {
 
 type Sections<T> = { header?: T; body?: T; footer?: T };
 
+type ColumnSizeType =
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | '1/2'
+  | '1/4'
+  | '2/4'
+  | '3/4'
+  | '1/3'
+  | '2/3';
+
+type MouseClick<TRowType> = React.MouseEvent<HTMLTableRowElement> & {
+  datum: TRowType;
+  index: number;
+};
+
+type KeyboardClick<TRowType> = React.KeyboardEvent & { datum: TRowType };
+
 export interface DataTableProps<TRowType = any> {
   a11yTitle?: A11yTitleType;
+
+  // Appearance
   alignSelf?: AlignSelfType;
   background?: BackgroundType | Sections<BorderType>;
   border?: BorderType | Sections<BorderType>;
@@ -28,20 +49,22 @@ export interface DataTableProps<TRowType = any> {
     render?: (datum: TRowType) => any;
     search?: boolean;
     sortable?: boolean;
-    size?:
-      | 'small'
-      | 'medium'
-      | 'large'
-      | 'xlarge'
-      | '1/2'
-      | '1/4'
-      | '2/4'
-      | '3/4'
-      | '1/3'
-      | '2/3'
-      | string;
+    size?: ColumnSizeType | string;
     verticalAlign?: 'middle' | 'top' | 'bottom';
   }[];
+  pad?: PadType | Sections<PadType>;
+  resizeable?: boolean;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  replace?: boolean;
+  rowProps?: {
+    [primaryValue: string]: {
+      background?: BackgroundType;
+      border?: BorderType;
+      pad?: PadType;
+    };
+  };
+
+  // Data
   data?: TRowType[];
   groupBy?:
     | string
@@ -50,25 +73,16 @@ export interface DataTableProps<TRowType = any> {
         expand: Array<string>;
         onExpand: (expandedKeys: string[]) => void;
       };
-  onClickRow?: (event: { datum: TRowType; index?: number }) => void;
-  onMore?: () => void;
-  onSearch?: (search: string) => void;
-  onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
-  pad?: PadType | Sections<PadType>;
   primaryKey?: string | boolean;
-  replace?: boolean;
-  resizeable?: boolean;
-  rowProps?: {
-    [_: string]: {
-      background?: BackgroundType;
-      border?: BorderType;
-      pad?: PadType;
-    };
-  };
-  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   sort?: { property: string; direction: 'asc' | 'desc' };
   sortable?: boolean;
   step?: number;
+
+  // Events
+  onClickRow?: (event: MouseClick<TRowType> | KeyboardClick<TRowType>) => void;
+  onMore?: () => void;
+  onSearch?: (search: string) => void;
+  onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
 }
 
 declare class DataTable<TRowType = any> extends React.Component<
