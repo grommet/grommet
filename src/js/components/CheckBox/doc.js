@@ -98,7 +98,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'checkBox.hover.background.color': {
-    description: 'The background color on hover.',
+    description:
+      'The background color surrounding the checkbox & label on hover.',
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined,
   },

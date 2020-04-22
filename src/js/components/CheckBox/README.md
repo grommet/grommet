@@ -177,7 +177,7 @@ undefined
 
 **checkBox.hover.background.color**
 
-The background color on hover. Expects `string | { 'dark': string, 'light': string }`.
+The background color surrounding the checkbox & label on hover. Expects `string | { 'dark': string, 'light': string }`.
 
 Defaults to
 

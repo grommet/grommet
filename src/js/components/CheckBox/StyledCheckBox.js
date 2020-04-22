@@ -16,6 +16,7 @@ const hoverStyle = css`
   }
   :hover {
     background-color: ${props =>
+      props.theme.checkBox.hover.background &&
       normalizeColor(props.theme.checkBox.hover.background.color, props.theme)};
   }
 `;
@@ -43,8 +44,7 @@ const StyledCheckBoxContainer = styled.label`
   width: fit-content;
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
-  ${props => props.theme.checkBox.hover.border.color && hoverStyle}
-  ${props => props.theme.checkBox.hover.background.color && hoverStyle}
+  ${hoverStyle}
   ${props => props.theme.checkBox.extend}
 `;
 
