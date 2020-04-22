@@ -233,12 +233,12 @@ const FormField = forwardRef(
       borderColor = (border && border.color) || 'border';
     }
 
-    let labelColor;
+    const labelStyle = formField.label;
 
     if (disabled) {
-      labelColor = formField.disabled.label && formField.disabled.label.color;
-    } else {
-      labelColor = formField.label.color;
+      labelStyle.color = formField.disabled.label
+        ? formField.disabled.label.color
+        : labelStyle.color;
     }
 
     let abut;
@@ -318,7 +318,6 @@ const FormField = forwardRef(
             : undefined
         }
         background={outerBackground}
-        disabled={disabled}
         margin={abut ? abutMargin : margin || { ...formField.margin }}
         round={border.position === 'outer' ? formField.round : undefined}
         style={outerStyle}
@@ -336,12 +335,7 @@ const FormField = forwardRef(
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text
-                as="label"
-                htmlFor={htmlFor}
-                {...formField.label}
-                color={labelColor}
-              >
+              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
               </Text>
             )}
