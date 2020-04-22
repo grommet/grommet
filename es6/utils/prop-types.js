@@ -1,7 +1,11 @@
 import { PropTypes } from 'react-desc';
 export var a11yTitlePropType = PropTypes.string.description("Custom label to be used by screen readers. When provided, an aria-label will\n   be added to the element.");
+export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+  dark: PropTypes.string,
+  light: PropTypes.string
+})]);
 export var backgroundDoc = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-  color: PropTypes.string,
+  color: colorPropType,
   dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   image: PropTypes.string,
   position: PropTypes.string,
@@ -10,10 +14,6 @@ export var backgroundDoc = PropTypes.oneOfType([PropTypes.string, PropTypes.shap
   size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string]),
   light: PropTypes.string
 })]).description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
-export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-  dark: PropTypes.string,
-  light: PropTypes.string
-})]);
 var MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export var marginProp = PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(MARGIN_SIZES)), PropTypes.shape({
   bottom: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),

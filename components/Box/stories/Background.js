@@ -76,7 +76,32 @@ var BackgroundBox = function BackgroundBox() {
     pad: "medium"
   }, _react["default"].createElement(_grommet.Text, {
     color: "brand"
-  }, "force light background")))));
+  }, "force light background"))), _react["default"].createElement(_grommet.Box, {
+    background: {
+      color: {
+        dark: 'darkgrey',
+        light: 'lightgrey'
+      },
+      dark: true
+    },
+    pad: "medium"
+  }, _react["default"].createElement(_grommet.Text, {
+    color: "brand"
+  }, "force dark background with color as object")), _react["default"].createElement(_grommet.Box, {
+    background: "dark-1",
+    pad: "medium"
+  }, _react["default"].createElement(_grommet.Box, {
+    background: {
+      color: {
+        dark: 'darkgrey',
+        light: 'lightgrey'
+      },
+      dark: false
+    },
+    pad: "medium"
+  }, _react["default"].createElement(_grommet.Text, {
+    color: "brand"
+  }, "force light background with color as object")))));
 };
 
 (0, _react2.storiesOf)('Box', module).add('Background', function () {

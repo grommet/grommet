@@ -69,7 +69,32 @@ var BackgroundBox = function BackgroundBox() {
     pad: "medium"
   }, React.createElement(Text, {
     color: "brand"
-  }, "force light background")))));
+  }, "force light background"))), React.createElement(Box, {
+    background: {
+      color: {
+        dark: 'darkgrey',
+        light: 'lightgrey'
+      },
+      dark: true
+    },
+    pad: "medium"
+  }, React.createElement(Text, {
+    color: "brand"
+  }, "force dark background with color as object")), React.createElement(Box, {
+    background: "dark-1",
+    pad: "medium"
+  }, React.createElement(Box, {
+    background: {
+      color: {
+        dark: 'darkgrey',
+        light: 'lightgrey'
+      },
+      dark: false
+    },
+    pad: "medium"
+  }, React.createElement(Text, {
+    color: "brand"
+  }, "force light background with color as object")))));
 };
 
 storiesOf('Box', module).add('Background', function () {
