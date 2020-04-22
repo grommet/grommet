@@ -12,6 +12,7 @@ const hoverStyle = css`
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
     border-color: ${props =>
+      props.theme.checkBox.hover.border.color &&
       normalizeColor(props.theme.checkBox.hover.border.color, props.theme)};
   }
   :hover {
@@ -42,9 +43,9 @@ const StyledCheckBoxContainer = styled.label`
   align-items: center;
   user-select: none;
   width: fit-content;
+  ${hoverStyle}
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
-  ${hoverStyle}
   ${props => props.theme.checkBox.extend}
 `;
 
