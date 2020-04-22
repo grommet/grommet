@@ -10,6 +10,14 @@ import { Tab } from 'grommet';
 
 ## Properties
 
+**disabled**
+
+Whether the tab is disabled.
+
+```
+boolean
+```
+
 **icon**
 
 Icon element to place in the tab.
