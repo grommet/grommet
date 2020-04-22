@@ -1,53 +1,78 @@
-import * as React from "react";
-import { 
-  A11yTitleType, 
-  AlignSelfType, 
-  GridAreaType, 
+import * as React from 'react';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
   MarginType,
-} from "../../utils";
+  BackgroundType,
+  PadType,
+  BorderType,
+} from '../../utils';
 
-export interface DataTableProps {
+type Sections<T> = { header?: T; body?: T; footer?: T };
+
+export interface DataTableProps<TRowType = any> {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  background?: 
-    string | 
-    {
-      color?: string, dark?: string, light?: string,
-      header?: string | {color?: string, dark?: string, light?: string},
-      body?: string | {color?: string, dark?: string, light?: string} | string[],
-      footer?: string | {color?: string, dark?: string, light?: string}
-    };
-  border?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string,header?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string},body?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string},footer?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string}};
+  background?: BackgroundType | Sections<BorderType>;
+  border?: BorderType | Sections<BorderType>;
   gridArea?: GridAreaType;
   margin?: MarginType;
   columns?: {
-    align?: "center" | "start" | "end",
-    aggregate?: "avg" | "max" | "min" | 'sum',
-    footer?: React.ReactNode | {aggregate?: boolean},
-    header?: string | React.ReactNode | {aggregate?: boolean},
-    primary?: boolean,property: string,
-    render?: ((...args: any[]) => any),
-    search?: boolean,
-    sortable?: boolean,
-    size?: "small" | "medium" | "large" | "xlarge" | "1/2" | "1/4" | "2/4" | "3/4" | "1/3" | "2/3" | string;
-    verticalAlign?: "middle" | "top" | "bottom"}[];
-  data?: {}[];
-  groupBy?: string | { property: string, expand: Array<string>, onExpand: ((...args: any[]) => any) };
-  onClickRow?: (((event: React.MouseEvent) => void)) | ((event: {datum?: {}, index?: number}) => void);
-  onMore?: ((...args: any[]) => any);
-  onSearch?: ((search: string) => void);
-  onSort?: ((sort: { property: string, direction: "asc" | "desc" }) => void);
-  pad?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,header?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string},body?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string},footer?:"none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string}} | string;
+    align?: 'center' | 'start' | 'end';
+    aggregate?: 'avg' | 'max' | 'min' | 'sum';
+    footer?: React.ReactNode | { aggregate?: boolean };
+    header?: string | React.ReactNode | { aggregate?: boolean };
+    primary?: boolean;
+    property: string;
+    render?: (datum: TRowType) => any;
+    search?: boolean;
+    sortable?: boolean;
+    size?:
+      | 'small'
+      | 'medium'
+      | 'large'
+      | 'xlarge'
+      | '1/2'
+      | '1/4'
+      | '2/4'
+      | '3/4'
+      | '1/3'
+      | '2/3'
+      | string;
+    verticalAlign?: 'middle' | 'top' | 'bottom';
+  }[];
+  data?: TRowType[];
+  groupBy?:
+    | string
+    | {
+        property: string;
+        expand: Array<string>;
+        onExpand: (expandedKeys: string[]) => void;
+      };
+  onClickRow?: (event: { datum: TRowType; index?: number }) => void;
+  onMore?: () => void;
+  onSearch?: (search: string) => void;
+  onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
+  pad?: PadType | Sections<PadType>;
   primaryKey?: string | boolean;
   replace?: boolean;
   resizeable?: boolean;
-  rowProps?: { [_:string]: { background?: {}, border?: {}, pad?: {}}};
-  size?: "small" | "medium" | "large" | "xlarge" | string;
-  sort?: { property: string, direction: "asc" | "desc" };
+  rowProps?: {
+    [_: string]: {
+      background?: BackgroundType;
+      border?: BorderType;
+      pad?: PadType;
+    };
+  };
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  sort?: { property: string; direction: 'asc' | 'desc' };
   sortable?: boolean;
   step?: number;
 }
 
-declare const DataTable: React.ComponentClass<DataTableProps & JSX.IntrinsicElements['table']>;
+declare class DataTable<TRowType = any> extends React.Component<
+  DataTableProps<TRowType> & JSX.IntrinsicElements['table']
+> {}
 
 export { DataTable };
