@@ -27,7 +27,7 @@ const Tab = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [over, setOver] = useState(undefined);
-    const [zIndex, setZIndex] = useState();
+    const [focus, setFocus] = useState();
     let normalizedTitle = title;
     const tabStyles = {};
 
@@ -131,16 +131,16 @@ const Tab = forwardRef(
         onMouseOver={onMouseOverTab}
         onMouseOut={onMouseOutTab}
         onFocus={() => {
-          // ensure focus outline is not covered by hover styling
-          // of adjacent tabs
-          setZIndex(1);
+          setFocus(true);
           if (onMouseOver) onMouseOver();
         }}
         onBlur={() => {
-          setZIndex();
+          setFocus();
           if (onMouseOut) onMouseOut();
         }}
-        style={zIndex && { zIndex }}
+        // ensure focus outline is not covered by hover styling
+        // of adjacent tabs
+        style={focus && { zIndex: 1 }}
       >
         <StyledTab as={Box} plain={plain} {...withIconStyles} {...tabStyles}>
           {first}
