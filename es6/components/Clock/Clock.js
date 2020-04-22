@@ -1,14 +1,8 @@
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { Analog } from './Analog';
 import { Digital } from './Digital';
 var TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
@@ -56,198 +50,136 @@ var parseTime = function parseTime(time, hourLimit) {
   return result;
 };
 
-var Clock =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Clock, _Component);
+var Clock = forwardRef(function (_ref, ref) {
+  var _ref$hourLimit = _ref.hourLimit,
+      hourLimit = _ref$hourLimit === void 0 ? 24 : _ref$hourLimit,
+      onChange = _ref.onChange,
+      _ref$precision = _ref.precision,
+      precision = _ref$precision === void 0 ? 'seconds' : _ref$precision,
+      _ref$run = _ref.run,
+      run = _ref$run === void 0 ? 'forward' : _ref$run,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'medium' : _ref$size,
+      time = _ref.time,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'analog' : _ref$type,
+      rest = _objectWithoutPropertiesLoose(_ref, ["hourLimit", "onChange", "precision", "run", "size", "time", "type"]);
 
-  function Clock() {
-    var _this;
+  var _useState = useState(parseTime(time, hourLimit)),
+      elements = _useState[0],
+      setElements = _useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  useEffect(function () {
+    return setElements(parseTime(time, hourLimit));
+  }, [hourLimit, time]);
+  useEffect(function () {
+    var atDurationEnd = run === 'backward' && elements.duration && !elements.hours && !elements.minutes && !elements.seconds;
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+    if (run && !atDurationEnd) {
+      // set the interval time based on the precision
+      var interval = 1000;
+      var increment = 'seconds';
 
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    return _this;
-  }
-
-  Clock.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var hourLimit = nextProps.hourLimit,
-        time = nextProps.time;
-    var elements = prevState.elements;
-
-    if (!elements || time) {
-      var nextElements = parseTime(time, hourLimit);
-
-      if (!elements) {
-        return {
-          elements: nextElements
-        };
-      }
-
-      if (Object.keys(nextElements).some(function (k) {
-        return elements[k] !== nextElements[k];
-      })) {
-        return {
-          elements: nextElements
-        };
-      }
-    }
-
-    return null;
-  };
-
-  var _proto = Clock.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var run = this.props.run;
-
-    if (run) {
-      this.run();
-    }
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    var run = this.props.run;
-
-    if (run && !prevProps.run) {
-      this.run();
-    } else if (!run && prevProps.run) {
-      clearInterval(this.timer);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    clearInterval(this.timer);
-  };
-
-  _proto.run = function run() {
-    var _this2 = this;
-
-    var _this$props = this.props,
-        hourLimit = _this$props.hourLimit,
-        onChange = _this$props.onChange,
-        precision = _this$props.precision,
-        run = _this$props.run;
-    var elements = this.state.elements; // set the interval time based on the precision
-
-    var interval = 1000;
-    var increment = 'seconds';
-
-    if (precision !== 'seconds' && elements.seconds === 0) {
-      interval *= 60;
-      increment = 'minutes';
-
-      if (precision !== 'minutes' && elements.minutes === 0) {
+      if (precision !== 'seconds' && elements.seconds === 0) {
         interval *= 60;
-        increment = 'hours';
-      }
-    }
+        increment = 'minutes';
 
-    clearInterval(this.timer);
-    this.timer = setInterval(function () {
-      var previousElements = _this2.state.elements;
-
-      var nextElements = _extends({}, previousElements); // adjust time based on precision
-
-
-      if (increment === 'seconds') {
-        if (run === 'backward') {
-          nextElements.seconds -= 1;
-        } else {
-          nextElements.seconds += 1;
+        if (precision !== 'minutes' && elements.minutes === 0) {
+          interval *= 60;
+          increment = 'hours';
         }
-      } else if (increment === 'minutes') {
-        if (run === 'backward') {
-          nextElements.minutes -= 1;
-        } else {
-          nextElements.minutes += 1;
-        }
-      } else if (increment === 'hours') {
-        if (run === 'backward') {
-          nextElements.hours -= 1;
-        } else {
-          nextElements.hours += 1;
-        }
-      } // deal with overflows
-
-
-      if (nextElements.seconds >= 60) {
-        nextElements.minutes += Math.floor(nextElements.seconds / 60);
-        nextElements.seconds = 0;
-      } else if (nextElements.seconds < 0) {
-        nextElements.minutes += Math.floor(nextElements.seconds / 60);
-        nextElements.seconds = 59;
       }
 
-      if (nextElements.minutes >= 60) {
-        nextElements.hours += Math.floor(nextElements.minutes / 60);
-        nextElements.minutes = 0;
-      } else if (nextElements.minutes < 0) {
-        nextElements.hours += Math.floor(nextElements.minutes / 60);
-        nextElements.minutes = 59;
-      }
+      var timer = setInterval(function () {
+        var nextElements = _extends({}, elements); // adjust time based on precision
 
-      if (nextElements.hours >= 24 || nextElements.hours < 0) {
-        nextElements.hours = 0;
-      }
 
-      if (hourLimit === 12) {
-        nextElements.hours12 = nextElements.hours > 12 ? nextElements.hours - 12 : nextElements.hours;
-      }
-
-      _this2.setState({
-        elements: nextElements
-      }, function () {
-        if (onChange) {
-          var e2 = _this2.state.elements;
-
-          if (elements.duration) {
-            onChange("P" + e2.hours + "H" + e2.minutes + "M" + e2.seconds + "S");
+        if (increment === 'seconds') {
+          if (run === 'backward') {
+            nextElements.seconds -= 1;
           } else {
-            onChange("T" + e2.hours + ":" + e2.minutes + ":" + e2.seconds);
+            nextElements.seconds += 1;
+          }
+        } else if (increment === 'minutes') {
+          if (run === 'backward') {
+            nextElements.minutes -= 1;
+          } else {
+            nextElements.minutes += 1;
+          }
+        } else if (increment === 'hours') {
+          if (run === 'backward') {
+            nextElements.hours -= 1;
+          } else {
+            nextElements.hours += 1;
+          }
+        } // deal with overflows
+
+
+        if (nextElements.seconds >= 60) {
+          nextElements.minutes += Math.floor(nextElements.seconds / 60);
+          nextElements.seconds = 0;
+        } else if (nextElements.seconds < 0) {
+          nextElements.minutes += Math.floor(nextElements.seconds / 60);
+          nextElements.seconds = 59;
+        }
+
+        if (nextElements.minutes >= 60) {
+          nextElements.hours += Math.floor(nextElements.minutes / 60);
+          nextElements.minutes = 0;
+        } else if (nextElements.minutes < 0) {
+          nextElements.hours += Math.floor(nextElements.minutes / 60);
+          nextElements.minutes = 59;
+        }
+
+        if (nextElements.hours >= 24 || nextElements.hours < 0) {
+          nextElements.hours = 0;
+        }
+
+        if (hourLimit === 12) {
+          nextElements.hours12 = nextElements.hours > 12 ? nextElements.hours - 12 : nextElements.hours;
+        }
+
+        setElements(nextElements);
+
+        if (onChange) {
+          var e = nextElements;
+
+          if (e.duration) {
+            onChange("P" + e.hours + "H" + e.minutes + "M" + e.seconds + "S");
+          } else {
+            onChange("T" + e.hours + ":" + e.minutes + ":" + e.seconds);
           }
         }
-      });
-    }, interval);
-  };
-
-  _proto.render = function render() {
-    var _this$props2 = this.props,
-        type = _this$props2.type,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["type"]);
-
-    var elements = this.state.elements;
-    var content;
-
-    if (type === 'analog') {
-      content = React.createElement(Analog, _extends({
-        elements: elements
-      }, rest));
-    } else if (type === 'digital') {
-      content = React.createElement(Digital, _extends({
-        elements: elements
-      }, rest));
+      }, interval);
+      return function () {
+        return clearInterval(timer);
+      };
     }
 
-    return content;
-  };
+    return undefined;
+  }, [elements, hourLimit, onChange, precision, run]);
+  var content;
 
-  return Clock;
-}(Component);
+  if (type === 'analog') {
+    content = React.createElement(Analog, _extends({
+      ref: ref,
+      elements: elements,
+      precision: precision,
+      size: size
+    }, rest));
+  } else if (type === 'digital') {
+    content = React.createElement(Digital, _extends({
+      ref: ref,
+      elements: elements,
+      precision: precision,
+      run: run,
+      size: size
+    }, rest));
+  }
 
-_defineProperty(Clock, "defaultProps", {
-  hourLimit: 24,
-  precision: 'seconds',
-  run: 'forward',
-  size: 'medium',
-  type: 'analog'
+  return content;
 });
-
+Clock.displayName = 'Clock';
 var ClockDoc;
 
 if (process.env.NODE_ENV !== 'production') {

@@ -2,15 +2,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useMemo } from 'react';
+import { ThemeContext } from 'styled-components';
 import { parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { StyledAnalog, StyledHour, StyledMinute, StyledSecond } from './StyledClock'; // this will serve both minutes and hours (360 / 6)
@@ -43,119 +36,82 @@ var getClockState = function getClockState(_ref) {
   };
 };
 
-var Analog =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Analog, _Component);
+var Analog = forwardRef(function (_ref2, ref) {
+  var elements = _ref2.elements,
+      precision = _ref2.precision,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["elements", "precision"]);
 
-  function Analog() {
-    var _this;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  var _useMemo = useMemo(function () {
+    return getClockState(elements);
+  }, [elements]),
+      hourAngle = _useMemo.hourAngle,
+      minuteAngle = _useMemo.minuteAngle,
+      secondAngle = _useMemo.secondAngle;
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+  var _useMemo2 = useMemo(function () {
+    return getClockDimensions(theme);
+  }, [theme]),
+      size = _useMemo2.size,
+      secondSize = _useMemo2.secondSize,
+      minuteSize = _useMemo2.minuteSize,
+      hourSize = _useMemo2.hourSize;
 
-    _defineProperty(_assertThisInitialized(_this), "state", {});
+  var halfSize = size / 2;
+  var secondHand;
 
-    return _this;
-  }
-
-  Analog.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var elements = nextProps.elements;
-    var nextState = getClockState(elements);
-
-    if (prevState.hourAngle === undefined || Object.keys(nextState).some(function (k) {
-      return prevState[k] !== nextState[k];
-    })) {
-      return nextState;
-    }
-
-    return null;
-  };
-
-  var _proto = Analog.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        precision = _this$props.precision,
-        theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["precision", "theme"]);
-
-    var _this$state = this.state,
-        hourAngle = _this$state.hourAngle,
-        minuteAngle = _this$state.minuteAngle,
-        secondAngle = _this$state.secondAngle;
-
-    var _getClockDimensions = getClockDimensions(theme),
-        size = _getClockDimensions.size,
-        secondSize = _getClockDimensions.secondSize,
-        minuteSize = _getClockDimensions.minuteSize,
-        hourSize = _getClockDimensions.hourSize;
-
-    var halfSize = size / 2;
-    var secondHand;
-
-    if (precision === 'seconds') {
-      secondHand = React.createElement(StyledSecond, {
-        x1: halfSize,
-        y1: halfSize,
-        x2: halfSize,
-        y2: secondSize,
-        stroke: "#000000",
-        strokeLinecap: theme.clock.analog.second.shape,
-        style: {
-          transform: "rotate(" + secondAngle + "deg)",
-          transformOrigin: halfSize + "px " + halfSize + "px"
-        }
-      });
-    }
-
-    var minuteHand;
-
-    if (precision === 'seconds' || precision === 'minutes') {
-      minuteHand = React.createElement(StyledMinute, {
-        x1: halfSize,
-        y1: halfSize,
-        x2: halfSize,
-        y2: minuteSize,
-        stroke: "#000000",
-        strokeLinecap: theme.clock.analog.minute.shape,
-        style: {
-          transform: "rotate(" + minuteAngle + "deg)",
-          transformOrigin: halfSize + "px " + halfSize + "px"
-        }
-      });
-    }
-
-    return React.createElement(StyledAnalog, _extends({
-      version: "1.1",
-      width: size,
-      height: size,
-      preserveAspectRatio: "xMidYMid meet",
-      viewBox: "0 0 " + size + " " + size
-    }, rest), secondHand, minuteHand, React.createElement(StyledHour, {
+  if (precision === 'seconds') {
+    secondHand = React.createElement(StyledSecond, {
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
-      y2: hourSize,
+      y2: secondSize,
       stroke: "#000000",
-      strokeLinecap: theme.clock.analog.hour.shape,
+      strokeLinecap: theme.clock.analog.second.shape,
       style: {
-        transform: "rotate(" + hourAngle + "deg)",
+        transform: "rotate(" + secondAngle + "deg)",
         transformOrigin: halfSize + "px " + halfSize + "px"
       }
-    }));
-  };
+    });
+  }
 
-  return Analog;
-}(Component);
+  var minuteHand;
 
-_defineProperty(Analog, "defaultProps", {
-  size: 'medium'
+  if (precision === 'seconds' || precision === 'minutes') {
+    minuteHand = React.createElement(StyledMinute, {
+      x1: halfSize,
+      y1: halfSize,
+      x2: halfSize,
+      y2: minuteSize,
+      stroke: "#000000",
+      strokeLinecap: theme.clock.analog.minute.shape,
+      style: {
+        transform: "rotate(" + minuteAngle + "deg)",
+        transformOrigin: halfSize + "px " + halfSize + "px"
+      }
+    });
+  }
+
+  return React.createElement(StyledAnalog, _extends({
+    ref: ref,
+    version: "1.1",
+    width: size,
+    height: size,
+    preserveAspectRatio: "xMidYMid meet",
+    viewBox: "0 0 " + size + " " + size
+  }, rest), secondHand, minuteHand, React.createElement(StyledHour, {
+    x1: halfSize,
+    y1: halfSize,
+    x2: halfSize,
+    y2: hourSize,
+    stroke: "#000000",
+    strokeLinecap: theme.clock.analog.hour.shape,
+    style: {
+      transform: "rotate(" + hourAngle + "deg)",
+      transformOrigin: halfSize + "px " + halfSize + "px"
+    }
+  }));
 });
-
-Object.setPrototypeOf(Analog.defaultProps, defaultProps);
-var AnalogWrapper = compose(withTheme)(Analog);
-export { AnalogWrapper as Analog };
+Analog.displayName = 'Analog';
+export { Analog };

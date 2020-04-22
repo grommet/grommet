@@ -2,102 +2,59 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { Box } from '../Box';
 import { StyledDigitalDigit, StyledDigitalNext, StyledDigitalPrevious } from './StyledClock';
 
-var Digit =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(Digit, _Component);
+var Digit = function Digit(_ref) {
+  var number = _ref.number,
+      run = _ref.run,
+      size = _ref.size;
 
-  function Digit() {
-    var _this;
+  var _useState = useState(number),
+      previous = _useState[0],
+      setPrevious = _useState[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+  var _useState2 = useState(),
+      changing = _useState2[0],
+      setChanging = _useState2[1];
 
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    return _this;
-  }
-
-  Digit.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var number = nextProps.number;
-
-    if (number !== prevState.number) {
-      return {
-        previous: prevState.number,
-        number: number
+  useEffect(function () {
+    if (number !== previous) {
+      setChanging(true);
+      var timer = setTimeout(function () {
+        setPrevious(number);
+        setChanging(false);
+      }, 900);
+      return function () {
+        return clearTimeout(timer);
       };
     }
 
-    return null;
-  };
+    return undefined;
+  }, [number, previous]);
 
-  var _proto = Digit.prototype;
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
-    var _this2 = this;
-
-    var previous = this.state.previous;
-
-    if (prevState.previous === undefined && previous !== undefined) {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(function () {
-        _this2.setState({
-          previous: undefined
-        });
-      }, 900);
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    clearTimeout(this.timer);
-  };
-
-  _proto.render = function render() {
-    /* eslint-disable-next-line react/prop-types */
-    var _this$props = this.props,
-        run = _this$props.run,
-        size = _this$props.size;
-    var _this$state = this.state,
-        number = _this$state.number,
-        previous = _this$state.previous;
-
-    if (previous !== undefined) {
-      var direction = run === 'backward' ? 'down' : 'up';
-      return React.createElement(StyledDigitalDigit, {
-        size: size
-      }, React.createElement(StyledDigitalPrevious, {
-        direction: direction
-      }, Math.floor(previous)), React.createElement(StyledDigitalNext, {
-        direction: direction
-      }, Math.floor(number)));
-    }
-
+  if (changing) {
+    var direction = run === 'backward' ? 'down' : 'up';
     return React.createElement(StyledDigitalDigit, {
       size: size
-    }, Math.floor(number));
-  };
+    }, React.createElement(StyledDigitalPrevious, {
+      direction: direction
+    }, Math.floor(previous)), React.createElement(StyledDigitalNext, {
+      direction: direction
+    }, Math.floor(number)));
+  }
 
-  return Digit;
-}(Component);
+  return React.createElement(StyledDigitalDigit, {
+    size: size
+  }, Math.floor(number));
+};
 
-var Element = function Element(_ref) {
-  var number = _ref.number,
-      run = _ref.run,
-      sep = _ref.sep,
-      size = _ref.size;
+var Element = function Element(_ref2) {
+  var number = _ref2.number,
+      run = _ref2.run,
+      sep = _ref2.sep,
+      size = _ref2.size;
   var tens = Math.floor(number / 10);
   var ones = number % 10;
   var result = [React.createElement(Digit, {
@@ -122,7 +79,7 @@ var Element = function Element(_ref) {
   return result;
 };
 
-export var Digital = function Digital(props) {
+export var Digital = forwardRef(function (props, ref) {
   var elements = props.elements,
       precision = props.precision,
       run = props.run,
@@ -152,10 +109,11 @@ export var Digital = function Digital(props) {
   }
 
   return React.createElement(Box, _extends({
+    ref: ref,
     direction: "row"
   }, rest), React.createElement(Element, {
     number: elements.hours12 || elements.hours,
     run: run,
     size: size
   }), minutes, seconds);
-};
+});
