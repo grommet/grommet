@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
 
@@ -60,10 +65,11 @@ const findTarget = target => {
   return target;
 };
 
-const Diagram = ({ connections, theme, ...rest }) => {
+const Diagram = forwardRef(({ connections, ...rest }, ref) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [connectionPoints, setConnectionPoints] = useState();
-  const svgRef = useRef();
+  const svgRef = useForwardedRef(ref);
 
   useEffect(() => {
     setConnectionPoints(undefined);
@@ -85,7 +91,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
         setConnectionPoints(undefined);
       }
     }
-  }, [dimensions.width, dimensions.height]);
+  }, [dimensions.width, dimensions.height, svgRef]);
 
   // Ref that stores resize handler
   const savedOnResize = useRef();
@@ -163,7 +169,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
       },
     );
     setConnectionPoints(updatedConnectionPoints);
-  }, [connections]);
+  }, [connections, svgRef]);
 
   useEffect(() => {
     if (!connectionPoints) {
@@ -235,16 +241,17 @@ const Diagram = ({ connections, theme, ...rest }) => {
       <g>{paths}</g>
     </StyledDiagram>
   );
-};
+});
+
+Diagram.displayName = 'Diagram';
 
 Diagram.defaultProps = { connections: [] };
-Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 
 let DiagramDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   DiagramDoc = require('./doc').doc(Diagram);
 }
-const DiagramWrapper = compose(withTheme)(DiagramDoc || Diagram);
+const DiagramWrapper = DiagramDoc || Diagram;
 
 export { DiagramWrapper as Diagram };
