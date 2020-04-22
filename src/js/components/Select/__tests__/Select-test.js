@@ -21,6 +21,18 @@ describe('Select', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('0 value', () => {
+    const component = renderer.create(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={[0, 1]}
+        value={0}
+      />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('opens', done => {
     window.scrollTo = jest.fn();
     const { getByPlaceholderText, container } = render(
