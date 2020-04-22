@@ -19,6 +19,21 @@ exports[`List background array 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   background: #6FFFB0;
   color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
@@ -37,7 +52,7 @@ exports[`List background array 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,6 +62,188 @@ exports[`List background array 1`] = `
   max-width: 100%;
   background: #FD6FFF;
   color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #6FFFB0;
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <li
+      class="c4 "
+    >
+      two
+    </li>
+    <li
+      class="c5 "
+    >
+      three
+    </li>
+    <div
+      class="c2"
+    >
+      <li
+        class="c4 "
+      >
+        four
+      </li>
+    </div>
+  </ul>
+</div>
+`;
+
+exports[`List background string 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #6FFFB0;
+  color: #444444;
+  border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -94,28 +291,8 @@ exports[`List background array 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
+    border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -160,155 +337,24 @@ exports[`List background array 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
-    <li
-      class="c4 "
-    >
-      three
-    </li>
-    <li
-      class="c3 "
-    >
-      four
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`List background string 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #6FFFB0;
-  color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #6FFFB0;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.c1 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <ul
-    class="c1"
-  >
-    <li
-      class="c2 "
-    >
-      one
-    </li>
-    <li
-      class="c3 "
-    >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -325,6 +371,21 @@ exports[`List border boolean 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -354,20 +415,20 @@ exports[`List border boolean 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -379,16 +440,24 @@ exports[`List border boolean 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c2 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c3 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -405,6 +474,21 @@ exports[`List border object 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -435,21 +519,21 @@ exports[`List border object 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 6px #6FFFB0;
     border-bottom: solid 6px #6FFFB0;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -461,16 +545,24 @@ exports[`List border object 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c2 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c3 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -494,6 +586,21 @@ exports[`List border side 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -510,7 +617,7 @@ exports[`List border side 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -540,41 +647,41 @@ exports[`List border side 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -586,16 +693,24 @@ exports[`List border side 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -619,6 +734,21 @@ exports[`List children render 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -635,7 +765,7 @@ exports[`List children render 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -665,41 +795,41 @@ exports[`List children render 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -711,16 +841,24 @@ exports[`List children render 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one - 0
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one - 0
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two - 1
-    </li>
+      <li
+        class="c4 "
+      >
+        two - 1
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -744,6 +882,21 @@ exports[`List data objects 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -760,7 +913,7 @@ exports[`List data objects 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -790,41 +943,41 @@ exports[`List data objects 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -836,16 +989,24 @@ exports[`List data objects 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -869,6 +1030,21 @@ exports[`List data strings 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -885,7 +1061,7 @@ exports[`List data strings 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -915,41 +1091,41 @@ exports[`List data strings 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -961,16 +1137,24 @@ exports[`List data strings 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1020,6 +1204,21 @@ exports[`List itemProps 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1036,7 +1235,7 @@ exports[`List itemProps 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1066,35 +1265,35 @@ exports[`List itemProps 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-top: solid 2px rgba(0,0,0,0.33);
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding: 24px;
   }
 }
@@ -1105,16 +1304,24 @@ exports[`List itemProps 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1138,6 +1345,21 @@ exports[`List margin object 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1154,7 +1376,7 @@ exports[`List margin object 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1185,41 +1407,41 @@ exports[`List margin object 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -1231,16 +1453,24 @@ exports[`List margin object 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1264,6 +1494,21 @@ exports[`List margin string 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1280,7 +1525,7 @@ exports[`List margin string 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1310,41 +1555,41 @@ exports[`List margin string 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -1356,16 +1601,24 @@ exports[`List margin string 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1389,6 +1642,21 @@ exports[`List onClickItem 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1406,7 +1674,7 @@ exports[`List onClickItem 1`] = `
   cursor: pointer;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1436,46 +1704,46 @@ exports[`List onClickItem 1`] = `
   padding: 0;
 }
 
-.c3 {
+.c4 {
   cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -1488,18 +1756,26 @@ exports[`List onClickItem 1`] = `
     class="c1"
     tabindex="0"
   >
-    <li
-      class="c2 c3"
-      tabindex="-1"
+    <div
+      class="c2"
     >
-      alpha
-    </li>
-    <li
-      class="c4 c3"
-      tabindex="-1"
+      <li
+        class="c3 c4"
+        tabindex="-1"
+      >
+        alpha
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      beta
-    </li>
+      <li
+        class="c5 c4"
+        tabindex="-1"
+      >
+        beta
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1512,18 +1788,26 @@ exports[`List onClickItem 2`] = `
     class="List__StyledList-sc-130gdqg-0 ckPrwz"
     tabindex="0"
   >
-    <li
-      class="StyledBox-sc-13pk1d4-0 bJRAgK List__StyledItem-sc-130gdqg-1 fBniOQ"
-      tabindex="-1"
+    <div
+      class="StyledBox-sc-13pk1d4-0 jJdKAu"
     >
-      alpha
-    </li>
-    <li
-      class="StyledBox-sc-13pk1d4-0 iWnVHs List__StyledItem-sc-130gdqg-1 fBniOQ"
-      tabindex="-1"
+      <li
+        class="StyledBox-sc-13pk1d4-0 bJRAgK List__StyledItem-sc-130gdqg-1 fBniOQ"
+        tabindex="-1"
+      >
+        alpha
+      </li>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jJdKAu"
     >
-      beta
-    </li>
+      <li
+        class="StyledBox-sc-13pk1d4-0 iWnVHs List__StyledItem-sc-130gdqg-1 fBniOQ"
+        tabindex="-1"
+      >
+        beta
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1547,6 +1831,21 @@ exports[`List pad object 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1561,7 +1860,7 @@ exports[`List pad object 1`] = `
   padding-right: 48px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1589,27 +1888,27 @@ exports[`List pad object 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -1621,16 +1920,24 @@ exports[`List pad object 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1654,6 +1961,21 @@ exports[`List pad string 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1667,7 +1989,7 @@ exports[`List pad string 1`] = `
   padding: 48px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1694,26 +2016,26 @@ exports[`List pad string 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding: 24px;
   }
 }
@@ -1724,16 +2046,24 @@ exports[`List pad string 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      one
-    </li>
-    <li
-      class="c3 "
+      <li
+        class="c3 "
+      >
+        one
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      two
-    </li>
+      <li
+        class="c4 "
+      >
+        two
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1757,6 +2087,21 @@ exports[`List primaryKey 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1773,7 +2118,7 @@ exports[`List primaryKey 1`] = `
   padding-bottom: 12px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1796,7 +2141,7 @@ exports[`List primaryKey 1`] = `
   padding-bottom: 12px;
 }
 
-.c3 {
+.c4 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -1809,41 +2154,41 @@ exports[`List primaryKey 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -1855,24 +2200,32 @@ exports[`List primaryKey 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      <span
-        class="c3"
+      <li
+        class="c3 "
       >
-        one
-      </span>
-    </li>
-    <li
-      class="c4 "
+        <span
+          class="c4"
+        >
+          one
+        </span>
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      <span
-        class="c3"
+      <li
+        class="c5 "
       >
-        two
-      </span>
-    </li>
+        <span
+          class="c4"
+        >
+          two
+        </span>
+      </li>
+    </div>
   </ul>
 </div>
 `;
@@ -1896,6 +2249,21 @@ exports[`List secondaryKey 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1920,7 +2288,7 @@ exports[`List secondaryKey 1`] = `
   padding-bottom: 12px;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1951,7 +2319,7 @@ exports[`List secondaryKey 1`] = `
   padding-bottom: 12px;
 }
 
-.c4 {
+.c5 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1961,13 +2329,13 @@ exports[`List secondaryKey 1`] = `
   width: 24px;
 }
 
-.c3 {
+.c4 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c5 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1979,41 +2347,41 @@ exports[`List secondaryKey 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -2025,40 +2393,48 @@ exports[`List secondaryKey 1`] = `
   <ul
     class="c1"
   >
-    <li
-      class="c2 "
+    <div
+      class="c2"
     >
-      <span
-        class="c3"
+      <li
+        class="c3 "
       >
-        one
-      </span>
-      <div
-        class="c4"
-      />
-      <span
-        class="c5"
-      >
-        1
-      </span>
-    </li>
-    <li
-      class="c6 "
+        <span
+          class="c4"
+        >
+          one
+        </span>
+        <div
+          class="c5"
+        />
+        <span
+          class="c6"
+        >
+          1
+        </span>
+      </li>
+    </div>
+    <div
+      class="c2"
     >
-      <span
-        class="c3"
+      <li
+        class="c7 "
       >
-        two
-      </span>
-      <div
-        class="c4"
-      />
-      <span
-        class="c5"
-      >
-        2
-      </span>
-    </li>
+        <span
+          class="c4"
+        >
+          two
+        </span>
+        <div
+          class="c5"
+        />
+        <span
+          class="c6"
+        >
+          2
+        </span>
+      </li>
+    </div>
   </ul>
 </div>
 `;

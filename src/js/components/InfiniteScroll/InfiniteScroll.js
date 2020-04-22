@@ -1,6 +1,5 @@
 /* eslint-disable react/no-find-dom-node */
-import React, { Component, useEffect, useMemo, useRef, useState } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   findScrollParent,
   findScrollParents,
@@ -9,12 +8,9 @@ import {
 } from '../../utils';
 import { Box } from '../Box';
 
-class Ref extends Component {
-  render() {
-    const { children } = this.props;
-    return children;
-  }
-}
+const Ref = React.forwardRef((props, ref) => (
+  <Box ref={ref}>{props.children}</Box>
+));
 
 const InfiniteScroll = ({
   children,
@@ -55,12 +51,8 @@ const InfiniteScroll = ({
   useEffect(() => {
     if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
       /* eslint-disable react/no-find-dom-node */
-      const beginRect = firstPageItemRef.current.getBoundingClientRect
-        ? firstPageItemRef.current.getBoundingClientRect()
-        : findDOMNode(firstPageItemRef.current).getBoundingClientRect();
-      const endRect = lastPageItemRef.current.getBoundingClientRect
-        ? lastPageItemRef.current.getBoundingClientRect()
-        : findDOMNode(lastPageItemRef.current).getBoundingClientRect();
+      const beginRect = firstPageItemRef.current.getBoundingClientRect();
+      const endRect = lastPageItemRef.current.getBoundingClientRect();
 
       const nextPageHeight = endRect.top + endRect.height - beginRect.top;
       // Check if the items are arranged in a single column or not.
@@ -160,9 +152,7 @@ const InfiniteScroll = ({
     // ride out any animation delays, 100ms empirically measured
     const timer = setTimeout(() => {
       if (show && showRef.current) {
-        const showNode = showRef.current.scrollIntoView
-          ? showRef.current
-          : findDOMNode(showRef.current);
+        const showNode = showRef.current.scrollIntoView && showRef.current;
         const scrollParent = findScrollParent(showNode);
         if (isNodeBeforeScroll(showNode, scrollParent)) {
           showNode.scrollIntoView(true);

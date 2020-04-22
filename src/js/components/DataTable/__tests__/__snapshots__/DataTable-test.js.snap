@@ -5957,7 +5957,22 @@ exports[`DataTable search 2`] = `
     <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3 bMdIOJ StyledDataTable__StyledDataTableBody-xrlyjm-2 bkHhvy"
     >
-      .c1 {
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5970,11 +5985,11 @@ exports[`DataTable search 2`] = `
   padding-bottom: 6px;
 }
 
-.c0 {
+.c1 {
   height: 100%;
 }
 
-.c2 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -5988,20 +6003,24 @@ exports[`DataTable search 2`] = `
 
 }
 
-<tr
-        class="c0 "
+<div
+        class="c0"
       >
-        <th
-          class="c1"
-          scope="row"
+        <tr
+          class="c1 "
         >
-          <span
+          <th
             class="c2"
+            scope="row"
           >
-            []
-          </span>
-        </th>
-      </tr>
+            <span
+              class="c3"
+            >
+              []
+            </span>
+          </th>
+        </tr>
+      </div>
     </tbody>
   </table>
 </div>
