@@ -27,6 +27,10 @@ var Tab = forwardRef(function (_ref, ref) {
       over = _useState[0],
       setOver = _useState[1];
 
+  var _useState2 = useState(undefined),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
+
   var normalizedTitle = title;
   var tabStyles = {};
 
@@ -127,8 +131,19 @@ var Tab = forwardRef(function (_ref, ref) {
     onClick: onClickTab,
     onMouseOver: onMouseOverTab,
     onMouseOut: onMouseOutTab,
-    onFocus: onMouseOver,
-    onBlur: onMouseOut
+    onFocus: function onFocus() {
+      setFocus(true);
+      if (onMouseOver) onMouseOver();
+    },
+    onBlur: function onBlur() {
+      setFocus(undefined);
+      if (onMouseOut) onMouseOut();
+    } // ensure focus outline is not covered by hover styling
+    // of adjacent tabs
+    ,
+    style: focus && {
+      zIndex: 1
+    }
   }), React.createElement(StyledTab, _extends({
     as: Box,
     plain: plain
