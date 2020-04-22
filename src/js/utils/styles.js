@@ -268,13 +268,22 @@ export const getInputPadBySide = (props, side) => {
 
 export const inputStyle = css`
   box-sizing: border-box;
-  font-size: inherit;
+  ${props =>
+    `font-size: ${
+      props.theme.global.input.font.size
+        ? props.theme.text[props.theme.global.input.font.size].size ||
+          props.theme.global.input.font.size
+        : 'inherit'
+    };`}
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
   outline: none;
   background: transparent;
   color: inherit;
+  ${props =>
+    props.theme.global.input.font.height &&
+    `line-height: ${props.theme.global.input.font.height};`}
   ${props =>
     props.theme.global.input.padding &&
     typeof props.theme.global.input.padding !== 'object'
@@ -294,9 +303,11 @@ export const inputStyle = css`
           props.theme,
         )}
   ${props =>
-    props.theme.global.input.weight &&
+    // for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
     css`
-      font-weight: ${props.theme.global.input.weight};
+      font-weight: ${props.theme.global.input.weight ||
+        props.theme.global.input.font.weight};
     `} margin: 0;
 
   ${props =>

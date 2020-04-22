@@ -201,7 +201,12 @@ export interface ThemeType {
     };
     input?: {
       padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
-      weight?: number;
+      font?: {
+        height?: string;
+        size?: string;
+        weight?: number | string;
+      };
+      weight?: number | string;
     };
     opacity?: {
       strong?: number;
