@@ -394,7 +394,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledSecond-y4xw8s-2 irurNo"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      style="transform: rotate(210deg); transform-origin: 48px 48px;"
       x1="48"
       x2="48"
       y1="48"
@@ -433,7 +433,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledSecond-y4xw8s-2 irurNo"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      style="transform: rotate(198deg); transform-origin: 48px 48px;"
       x1="48"
       x2="48"
       y1="48"
@@ -501,7 +501,38 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-y4xw8s-4 gvEvWO"
     >
-      4
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: gDuLQv 0.5s forwards;
+  animation: gDuLQv 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="up"
+      >
+        4
+      </div>
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: cQwfQi 0.5s forwards;
+  animation: cQwfQi 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="up"
+      >
+        5
+      </div>
     </div>
   </div>
   <div
@@ -545,7 +576,38 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-y4xw8s-4 gvEvWO"
     >
-      4
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: buZueW 0.5s forwards;
+  animation: buZueW 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="down"
+      >
+        4
+      </div>
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: ffftsv 0.5s forwards;
+  animation: ffftsv 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="down"
+      >
+        3
+      </div>
     </div>
   </div>
 </div>

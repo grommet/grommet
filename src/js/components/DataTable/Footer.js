@@ -1,7 +1,4 @@
 import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -19,7 +16,6 @@ const Footer = ({
   groups,
   pad,
   primaryProperty,
-  theme,
   ...rest
 }) => (
   <StyledDataTableFooter {...rest}>
@@ -43,9 +39,9 @@ const Footer = ({
   </StyledDataTableFooter>
 );
 
+Footer.displayName = 'Footer';
+
 Footer.defaultProps = {};
 Object.setPrototypeOf(Footer.defaultProps, defaultProps);
 
-const FooterWrapper = compose(withTheme)(Footer);
-
-export { FooterWrapper as Footer };
+export { Footer };
