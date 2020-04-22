@@ -29,13 +29,14 @@ const Anchor = forwardRef(
       onClick,
       onFocus,
       reverse,
+      target,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
-
+    console.log(target);
     useEffect(() => {
       if ((icon || label) && children) {
         console.warn(
@@ -65,6 +66,7 @@ const Anchor = forwardRef(
         focus={focus}
         hasLabel={label}
         reverse={reverse}
+        target={target}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
         onFocus={event => {
