@@ -9,9 +9,13 @@ import {
   BorderType,
 } from '../../utils';
 
-type Sections<T> = { header?: T; body?: T; footer?: T };
+type Sections<TBody, THeader = TBody, TFooter = TBody> = {
+  header?: THeader;
+  body?: TBody;
+  footer?: TFooter;
+};
 
-type ColumnSizeType =
+export type ColumnSizeType =
   | 'small'
   | 'medium'
   | 'large'
@@ -23,22 +27,22 @@ type ColumnSizeType =
   | '1/3'
   | '2/3';
 
-type MouseClick<TRowType> = React.MouseEvent<HTMLTableRowElement> & {
+export type MouseClick<TRowType> = React.MouseEvent<HTMLTableRowElement> & {
   datum: TRowType;
   index: number;
 };
 
-type KeyboardClick<TRowType> = React.KeyboardEvent & { datum: TRowType };
+export type KeyPress<TRowType> = React.KeyboardEvent & { datum: TRowType };
 
 export interface DataTableProps<TRowType = any> {
   a11yTitle?: A11yTitleType;
 
   // Appearance
   alignSelf?: AlignSelfType;
-  background?: BackgroundType | Sections<BorderType>;
+  background?:
+    | BackgroundType
+    | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   columns?: {
     align?: 'center' | 'start' | 'end';
     aggregate?: 'avg' | 'max' | 'min' | 'sum';
@@ -46,15 +50,16 @@ export interface DataTableProps<TRowType = any> {
     header?: string | React.ReactNode | { aggregate?: boolean };
     primary?: boolean;
     property: string;
-    render?: (datum: TRowType) => any;
+    render?: (datum: TRowType) => React.ReactNode;
     search?: boolean;
     sortable?: boolean;
     size?: ColumnSizeType | string;
     verticalAlign?: 'middle' | 'top' | 'bottom';
   }[];
+  gridArea?: GridAreaType;
+  margin?: MarginType;
   pad?: PadType | Sections<PadType>;
   resizeable?: boolean;
-  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   replace?: boolean;
   rowProps?: {
     [primaryValue: string]: {
@@ -63,6 +68,7 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
   data?: TRowType[];
@@ -79,7 +85,7 @@ export interface DataTableProps<TRowType = any> {
   step?: number;
 
   // Events
-  onClickRow?: (event: MouseClick<TRowType> | KeyboardClick<TRowType>) => void;
+  onClickRow?: (event: MouseClick<TRowType> | KeyPress<TRowType>) => void;
   onMore?: () => void;
   onSearch?: (search: string) => void;
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
