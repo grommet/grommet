@@ -3,9 +3,7 @@
 exports.__esModule = true;
 exports.Sorter = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _recompose = require("recompose");
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -18,8 +16,6 @@ var _Box = require("../Box");
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -35,8 +31,10 @@ var Sorter = function Sorter(_ref) {
       onSort = _ref.onSort,
       property = _ref.property,
       sort = _ref.sort,
-      theme = _ref.theme,
       themeProps = _ref.themeProps;
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
   var icon;
 
   if (sort && sort.property === property) {
@@ -64,7 +62,7 @@ var Sorter = function Sorter(_ref) {
   return content;
 };
 
+exports.Sorter = Sorter;
+Sorter.displayName = 'Sorter';
 Sorter.defaultProps = {};
 Object.setPrototypeOf(Sorter.defaultProps, _defaultProps.defaultProps);
-var SorterWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Sorter);
-exports.Sorter = SorterWrapper;

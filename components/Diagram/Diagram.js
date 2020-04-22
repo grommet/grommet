@@ -5,8 +5,6 @@ exports.Diagram = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _defaultProps = require("../../default-props");
@@ -67,10 +65,11 @@ var findTarget = function findTarget(target) {
   return target;
 };
 
-var Diagram = function Diagram(_ref) {
+var Diagram = (0, _react.forwardRef)(function (_ref, ref) {
   var connections = _ref.connections,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["connections", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["connections"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)({
     width: 0,
@@ -83,7 +82,7 @@ var Diagram = function Diagram(_ref) {
       connectionPoints = _useState2[0],
       setConnectionPoints = _useState2[1];
 
-  var svgRef = (0, _react.useRef)();
+  var svgRef = (0, _utils.useForwardedRef)(ref);
   (0, _react.useEffect)(function () {
     setConnectionPoints(undefined);
   }, [connections]);
@@ -101,7 +100,7 @@ var Diagram = function Diagram(_ref) {
         setConnectionPoints(undefined);
       }
     }
-  }, [dimensions.width, dimensions.height]); // Ref that stores resize handler
+  }, [dimensions.width, dimensions.height, svgRef]); // Ref that stores resize handler
 
   var savedOnResize = (0, _react.useRef)(); // Update resize ref value if onResize changes.
   // This allows our effect below to always get latest handler
@@ -177,7 +176,7 @@ var Diagram = function Diagram(_ref) {
       return points;
     });
     setConnectionPoints(updatedConnectionPoints);
-  }, [connections]);
+  }, [connections, svgRef]);
   (0, _react.useEffect)(function () {
     if (!connectionPoints) {
       placeConnections();
@@ -238,12 +237,11 @@ var Diagram = function Diagram(_ref) {
     viewBox: "0 0 " + dimensions.width + " " + dimensions.height,
     preserveAspectRatio: "xMinYMin meet"
   }, rest), _react["default"].createElement("g", null, paths));
-};
-
+});
+Diagram.displayName = 'Diagram';
 Diagram.defaultProps = {
   connections: []
 };
-Object.setPrototypeOf(Diagram.defaultProps, _defaultProps.defaultProps);
 var DiagramDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -251,5 +249,5 @@ if (process.env.NODE_ENV !== 'production') {
   DiagramDoc = require('./doc').doc(Diagram);
 }
 
-var DiagramWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(DiagramDoc || Diagram);
+var DiagramWrapper = DiagramDoc || Diagram;
 exports.Diagram = DiagramWrapper;

@@ -2,9 +2,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -15,9 +14,9 @@ var ExpanderCell = function ExpanderCell(_ref) {
   var context = _ref.context,
       expanded = _ref.expanded,
       onToggle = _ref.onToggle,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["context", "expanded", "onToggle", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["context", "expanded", "onToggle"]);
 
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var content;
 
   if (onToggle) {
@@ -55,7 +54,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
   }, content);
 };
 
+ExpanderCell.displayName = 'ExpanderCell';
 ExpanderCell.defaultProps = {};
 Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
-var ExpanderCellWrapper = compose(withTheme)(ExpanderCell);
-export { ExpanderCellWrapper as ExpanderCell };
+export { ExpanderCell };

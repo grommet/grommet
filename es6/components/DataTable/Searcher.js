@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { useContext, useEffect, useRef } from 'react';
+import { ThemeContext } from 'styled-components';
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -15,8 +14,8 @@ var Searcher = function Searcher(_ref) {
       filters = _ref.filters,
       onFilter = _ref.onFilter,
       onFiltering = _ref.onFiltering,
-      property = _ref.property,
-      theme = _ref.theme;
+      property = _ref.property;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
   var needsFocus = filtering === property;
   useEffect(function () {
@@ -62,7 +61,7 @@ var Searcher = function Searcher(_ref) {
   }));
 };
 
+Searcher.displayName = 'Searcher';
 Searcher.defaultProps = {};
 Object.setPrototypeOf(Searcher.defaultProps, defaultProps);
-var SearcherWrapper = compose(withTheme)(Searcher);
-export { SearcherWrapper as Searcher };
+export { Searcher };

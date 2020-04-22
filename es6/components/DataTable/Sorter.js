@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Button } from '../Button';
 import { Box } from '../Box';
@@ -18,8 +17,8 @@ var Sorter = function Sorter(_ref) {
       onSort = _ref.onSort,
       property = _ref.property,
       sort = _ref.sort,
-      theme = _ref.theme,
       themeProps = _ref.themeProps;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var icon;
 
   if (sort && sort.property === property) {
@@ -47,7 +46,7 @@ var Sorter = function Sorter(_ref) {
   return content;
 };
 
+Sorter.displayName = 'Sorter';
 Sorter.defaultProps = {};
 Object.setPrototypeOf(Sorter.defaultProps, defaultProps);
-var SorterWrapper = compose(withTheme)(Sorter);
-export { SorterWrapper as Sorter };
+export { Sorter };

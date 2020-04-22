@@ -2,9 +2,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
@@ -14,8 +13,7 @@ var verticalAlignToJustify = {
   top: 'start',
   bottom: 'end'
 };
-
-var TableCell = function TableCell(_ref) {
+var TableCell = forwardRef(function (_ref, ref) {
   var align = _ref.align,
       background = _ref.background,
       border = _ref.border,
@@ -25,10 +23,10 @@ var TableCell = function TableCell(_ref) {
       plain = _ref.plain,
       scope = _ref.scope,
       size = _ref.size,
-      theme = _ref.theme,
       verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "colSpan", "pad", "plain", "scope", "size", "theme", "verticalAlign"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "colSpan", "pad", "plain", "scope", "size", "verticalAlign"]);
 
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   return React.createElement(TableContext.Consumer, null, function (tableContext) {
     var tableContextTheme;
 
@@ -60,6 +58,7 @@ var TableCell = function TableCell(_ref) {
     delete mergedProps.pad;
     delete mergedProps.verticalAlign;
     return React.createElement(StyledTableCell, _extends({
+      ref: ref,
       as: scope ? 'th' : undefined,
       scope: scope,
       size: size,
@@ -71,10 +70,8 @@ var TableCell = function TableCell(_ref) {
       justify: verticalAlignToJustify[verticalAlign]
     }), children));
   });
-};
-
-TableCell.defaultProps = {};
-Object.setPrototypeOf(TableCell.defaultProps, defaultProps);
+});
+TableCell.displayName = 'TableCell';
 var TableCellDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -82,5 +79,5 @@ if (process.env.NODE_ENV !== 'production') {
   TableCellDoc = require('./doc').doc(TableCell);
 }
 
-var TableCellWrapper = compose(withTheme)(TableCellDoc || TableCell);
+var TableCellWrapper = TableCellDoc || TableCell;
 export { TableCellWrapper as TableCell };

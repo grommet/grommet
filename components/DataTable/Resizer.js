@@ -5,8 +5,6 @@ exports.Resizer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _defaultProps = require("../../default-props");
@@ -26,8 +24,9 @@ var ResizerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 
 var Resizer = function Resizer(_ref) {
   var onResize = _ref.onResize,
-      property = _ref.property,
-      theme = _ref.theme;
+      property = _ref.property;
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)(false),
       active = _useState[0],
@@ -96,7 +95,7 @@ var Resizer = function Resizer(_ref) {
   }));
 };
 
+exports.Resizer = Resizer;
+Resizer.displayName = 'Resizer';
 Resizer.defaultProps = {};
 Object.setPrototypeOf(Resizer.defaultProps, _defaultProps.defaultProps);
-var ResizerWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Resizer);
-exports.Resizer = ResizerWrapper;

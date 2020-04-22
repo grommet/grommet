@@ -3,9 +3,7 @@
 exports.__esModule = true;
 exports.Cell = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _recompose = require("recompose");
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
@@ -17,7 +15,9 @@ var _Text = require("../Text");
 
 var _buildState = require("./buildState");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -41,8 +41,10 @@ var Cell = function Cell(_ref) {
       pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
       rowProp = _ref.rowProp,
-      scope = _ref.scope,
-      theme = _ref.theme;
+      scope = _ref.scope;
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
   var value = (0, _buildState.datumValue)(datum, property);
   var content;
 
@@ -69,7 +71,7 @@ var Cell = function Cell(_ref) {
   }), content);
 };
 
+exports.Cell = Cell;
+Cell.displayName = 'Cell';
 Cell.defaultProps = {};
 Object.setPrototypeOf(Cell.defaultProps, _defaultProps.defaultProps);
-var CellWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Cell);
-exports.Cell = CellWrapper;

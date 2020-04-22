@@ -2,24 +2,22 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
-
-var Bar = function Bar(props) {
+var Bar = forwardRef(function (props, ref) {
   var background = props.background,
       max = props.max,
       round = props.round,
       size = props.size,
-      theme = props.theme,
       thickness = props.thickness,
       values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "theme", "thickness", "values"]);
+      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "values"]);
 
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   var height = parseMetricToNum(theme.global.edgeSize[thickness] || thickness); // account for the round cap, if any
 
@@ -68,6 +66,7 @@ var Bar = function Bar(props) {
   }).reverse(); // reverse so the caps looks right
 
   return React.createElement(StyledMeter, _extends({
+    ref: ref,
     viewBox: "0 0 " + width + " " + height,
     preserveAspectRatio: "none",
     width: size === 'full' ? '100%' : width,
@@ -82,11 +81,10 @@ var Bar = function Bar(props) {
     strokeWidth: height,
     strokeLinecap: round ? 'round' : 'square'
   })), paths);
-};
-
+});
+Bar.displayName = 'Bar';
 Bar.defaultProps = {
   background: 'light-1'
 };
 Object.setPrototypeOf(Bar.defaultProps, defaultProps);
-var BarWrapper = compose(withTheme)(Bar);
-export { BarWrapper as Bar };
+export { Bar };

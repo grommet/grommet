@@ -5,8 +5,6 @@ exports.EdgeControl = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _defaultProps = require("../../default-props");
@@ -16,8 +14,6 @@ var _Box = require("../Box");
 var _Keyboard = require("../Keyboard");
 
 var _utils = require("../../utils");
-
-var _hocs = require("../hocs");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -37,17 +33,16 @@ var DIRECTION_PROPS = {
     fill: 'horizontal'
   }
 };
-
-var EdgeControl = function EdgeControl(_ref) {
+var EdgeControl = (0, _react.forwardRef)(function (_ref, ref) {
   var color = _ref.color,
       direction = _ref.direction,
       edge = _ref.edge,
-      forwardRef = _ref.forwardRef,
       onDecrease = _ref.onDecrease,
       onIncrease = _ref.onIncrease,
-      theme = _ref.theme,
       thickness = _ref.thickness,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "edge", "forwardRef", "onDecrease", "onIncrease", "theme", "thickness"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "edge", "onDecrease", "onIncrease", "thickness"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
 
   var _useState = (0, _react.useState)(false),
       focused = _useState[0],
@@ -103,7 +98,7 @@ var EdgeControl = function EdgeControl(_ref) {
     justify: "center",
     alignSelf: "stretch"
   }, _react["default"].createElement(_Box.Box, _extends({
-    ref: forwardRef,
+    ref: ref,
     direction: boxDirection,
     justify: "center",
     align: "center",
@@ -123,9 +118,8 @@ var EdgeControl = function EdgeControl(_ref) {
       return setFocused(false);
     }
   }, rest), node)));
-};
-
+});
+exports.EdgeControl = EdgeControl;
+EdgeControl.displayName = 'EdgeControl';
 EdgeControl.defaultProps = {};
 Object.setPrototypeOf(EdgeControl.defaultProps, _defaultProps.defaultProps);
-var EdgeControlWrapper = (0, _recompose.compose)(_hocs.withForwardRef, _styledComponents.withTheme)(EdgeControl);
-exports.EdgeControl = EdgeControlWrapper;

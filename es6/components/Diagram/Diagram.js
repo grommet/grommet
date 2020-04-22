@@ -2,11 +2,10 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 import { StyledDiagram } from './StyledDiagram';
 
 var computeMidPoint = function computeMidPoint(fromPoint, toPoint) {
@@ -53,10 +52,11 @@ var findTarget = function findTarget(target) {
   return target;
 };
 
-var Diagram = function Diagram(_ref) {
+var Diagram = forwardRef(function (_ref, ref) {
   var connections = _ref.connections,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["connections", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["connections"]);
+
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState({
     width: 0,
@@ -69,7 +69,7 @@ var Diagram = function Diagram(_ref) {
       connectionPoints = _useState2[0],
       setConnectionPoints = _useState2[1];
 
-  var svgRef = useRef();
+  var svgRef = useForwardedRef(ref);
   useEffect(function () {
     setConnectionPoints(undefined);
   }, [connections]);
@@ -87,7 +87,7 @@ var Diagram = function Diagram(_ref) {
         setConnectionPoints(undefined);
       }
     }
-  }, [dimensions.width, dimensions.height]); // Ref that stores resize handler
+  }, [dimensions.width, dimensions.height, svgRef]); // Ref that stores resize handler
 
   var savedOnResize = useRef(); // Update resize ref value if onResize changes.
   // This allows our effect below to always get latest handler
@@ -163,7 +163,7 @@ var Diagram = function Diagram(_ref) {
       return points;
     });
     setConnectionPoints(updatedConnectionPoints);
-  }, [connections]);
+  }, [connections, svgRef]);
   useEffect(function () {
     if (!connectionPoints) {
       placeConnections();
@@ -224,12 +224,11 @@ var Diagram = function Diagram(_ref) {
     viewBox: "0 0 " + dimensions.width + " " + dimensions.height,
     preserveAspectRatio: "xMinYMin meet"
   }, rest), React.createElement("g", null, paths));
-};
-
+});
+Diagram.displayName = 'Diagram';
 Diagram.defaultProps = {
   connections: []
 };
-Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 var DiagramDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -237,5 +236,5 @@ if (process.env.NODE_ENV !== 'production') {
   DiagramDoc = require('./doc').doc(Diagram);
 }
 
-var DiagramWrapper = compose(withTheme)(DiagramDoc || Diagram);
+var DiagramWrapper = DiagramDoc || Diagram;
 export { DiagramWrapper as Diagram };

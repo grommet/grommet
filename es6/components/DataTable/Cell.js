@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
@@ -28,8 +27,8 @@ var Cell = function Cell(_ref) {
       pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
       rowProp = _ref.rowProp,
-      scope = _ref.scope,
-      theme = _ref.theme;
+      scope = _ref.scope;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var value = datumValue(datum, property);
   var content;
 
@@ -56,7 +55,7 @@ var Cell = function Cell(_ref) {
   }), content);
 };
 
+Cell.displayName = 'Cell';
 Cell.defaultProps = {};
 Object.setPrototypeOf(Cell.defaultProps, defaultProps);
-var CellWrapper = compose(withTheme)(Cell);
-export { CellWrapper as Cell };
+export { Cell };

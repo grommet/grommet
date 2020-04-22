@@ -2,14 +2,12 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-import { withForwardRef } from '../hocs';
 var DIRECTION_PROPS = {
   horizontal: {
     cursor: 'col-resize',
@@ -20,17 +18,16 @@ var DIRECTION_PROPS = {
     fill: 'horizontal'
   }
 };
-
-var EdgeControl = function EdgeControl(_ref) {
+var EdgeControl = forwardRef(function (_ref, ref) {
   var color = _ref.color,
       direction = _ref.direction,
       edge = _ref.edge,
-      forwardRef = _ref.forwardRef,
       onDecrease = _ref.onDecrease,
       onIncrease = _ref.onIncrease,
-      theme = _ref.theme,
       thickness = _ref.thickness,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "edge", "forwardRef", "onDecrease", "onIncrease", "theme", "thickness"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "edge", "onDecrease", "onIncrease", "thickness"]);
+
+  var theme = useContext(ThemeContext);
 
   var _useState = useState(false),
       focused = _useState[0],
@@ -86,7 +83,7 @@ var EdgeControl = function EdgeControl(_ref) {
     justify: "center",
     alignSelf: "stretch"
   }, React.createElement(Box, _extends({
-    ref: forwardRef,
+    ref: ref,
     direction: boxDirection,
     justify: "center",
     align: "center",
@@ -106,9 +103,8 @@ var EdgeControl = function EdgeControl(_ref) {
       return setFocused(false);
     }
   }, rest), node)));
-};
-
+});
+EdgeControl.displayName = 'EdgeControl';
 EdgeControl.defaultProps = {};
 Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
-var EdgeControlWrapper = compose(withForwardRef, withTheme)(EdgeControl);
-export { EdgeControlWrapper as EdgeControl };
+export { EdgeControl };

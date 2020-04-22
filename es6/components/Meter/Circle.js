@@ -2,24 +2,22 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
-
-var Circle = function Circle(props) {
+var Circle = forwardRef(function (props, ref) {
   var background = props.background,
       max = props.max,
       round = props.round,
       size = props.size,
-      theme = props.theme,
       thickness = props.thickness,
       values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "theme", "thickness", "values"]);
+      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "values"]);
 
+  var theme = useContext(ThemeContext);
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   var height = parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   var mid = width / 2;
@@ -112,6 +110,7 @@ var Circle = function Circle(props) {
     startAngle = endAngle;
   });
   return React.createElement(StyledMeter, _extends({
+    ref: ref,
     viewBox: "0 0 " + width + " " + width,
     width: size === 'full' ? '100%' : width,
     height: size === 'full' ? '100%' : width
@@ -124,9 +123,8 @@ var Circle = function Circle(props) {
     strokeLinecap: round ? 'round' : 'square',
     fill: "none"
   })), paths, pathCaps);
-};
-
+});
+Circle.displayName = 'Circle';
 Circle.defaultProps = {};
 Object.setPrototypeOf(Circle.defaultProps, defaultProps);
-var CircleWrapper = compose(withTheme)(Circle);
-export { CircleWrapper as Circle };
+export { Circle };

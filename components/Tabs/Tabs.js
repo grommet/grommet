@@ -5,8 +5,6 @@ exports.Tabs = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _defaultProps = require("../../default-props");
@@ -25,7 +23,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Tabs = function Tabs(_ref) {
+var Tabs = (0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
       flex = _ref.flex,
       _ref$justify = _ref.justify,
@@ -34,8 +32,9 @@ var Tabs = function Tabs(_ref) {
       messages = _ref$messages === void 0 ? {
     tabContents: 'Tab Contents'
   } : _ref$messages,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var propsActiveIndex = rest.activeIndex,
       onActive = rest.onActive;
@@ -92,6 +91,7 @@ var Tabs = function Tabs(_ref) {
 
   var tabContentTitle = (activeTitle || '') + " " + messages.tabContents;
   return _react["default"].createElement(_StyledTabs.StyledTabs, _extends({
+    ref: ref,
     as: _Box.Box,
     role: "tablist",
     flex: flex
@@ -110,15 +110,13 @@ var Tabs = function Tabs(_ref) {
     "aria-label": tabContentTitle,
     role: "tabpanel"
   }, activeContent));
-};
-
-Tabs.defaultProps = {};
-Object.setPrototypeOf(Tabs.defaultProps, _defaultProps.defaultProps);
+});
+Tabs.displayName = 'Tabs';
 var TabsDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
 }
 
-var TabsWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(TabsDoc || Tabs);
+var TabsWrapper = TabsDoc || Tabs;
 exports.Tabs = TabsWrapper;

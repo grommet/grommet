@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 var ResizerBox = styled(Box).withConfig({
@@ -12,8 +11,8 @@ var ResizerBox = styled(Box).withConfig({
 
 var Resizer = function Resizer(_ref) {
   var onResize = _ref.onResize,
-      property = _ref.property,
-      theme = _ref.theme;
+      property = _ref.property;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(false),
       active = _useState[0],
@@ -82,7 +81,7 @@ var Resizer = function Resizer(_ref) {
   }));
 };
 
+Resizer.displayName = 'Resizer';
 Resizer.defaultProps = {};
 Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
-var ResizerWrapper = compose(withTheme)(Resizer);
-export { ResizerWrapper as Resizer };
+export { Resizer };

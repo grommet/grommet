@@ -5,10 +5,6 @@ exports.Footer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recompose = require("recompose");
-
-var _styledComponents = require("styled-components");
-
 var _defaultProps = require("../../default-props");
 
 var _TableRow = require("../TableRow");
@@ -31,8 +27,7 @@ var Footer = function Footer(_ref) {
       groups = _ref.groups,
       pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "footerValues", "groups", "pad", "primaryProperty", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "footerValues", "groups", "pad", "primaryProperty"]);
 
   return _react["default"].createElement(_StyledDataTable.StyledDataTableFooter, rest, _react["default"].createElement(_TableRow.TableRow, null, groups && _react["default"].createElement(_TableCell.TableCell, {
     plain: true,
@@ -53,7 +48,7 @@ var Footer = function Footer(_ref) {
   })));
 };
 
+exports.Footer = Footer;
+Footer.displayName = 'Footer';
 Footer.defaultProps = {};
 Object.setPrototypeOf(Footer.defaultProps, _defaultProps.defaultProps);
-var FooterWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Footer);
-exports.Footer = FooterWrapper;

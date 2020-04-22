@@ -3,9 +3,7 @@
 exports.__esModule = true;
 exports.Bar = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _recompose = require("recompose");
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
@@ -17,21 +15,24 @@ var _StyledMeter = require("./StyledMeter");
 
 var _utils2 = require("./utils");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Bar = function Bar(props) {
+var Bar = (0, _react.forwardRef)(function (props, ref) {
   var background = props.background,
       max = props.max,
       round = props.round,
       size = props.size,
-      theme = props.theme,
       thickness = props.thickness,
       values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "theme", "thickness", "values"]);
+      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "values"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var width = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size] || size);
   var height = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness); // account for the round cap, if any
@@ -81,6 +82,7 @@ var Bar = function Bar(props) {
   }).reverse(); // reverse so the caps looks right
 
   return _react["default"].createElement(_StyledMeter.StyledMeter, _extends({
+    ref: ref,
     viewBox: "0 0 " + width + " " + height,
     preserveAspectRatio: "none",
     width: size === 'full' ? '100%' : width,
@@ -95,11 +97,10 @@ var Bar = function Bar(props) {
     strokeWidth: height,
     strokeLinecap: round ? 'round' : 'square'
   })), paths);
-};
-
+});
+exports.Bar = Bar;
+Bar.displayName = 'Bar';
 Bar.defaultProps = {
   background: 'light-1'
 };
 Object.setPrototypeOf(Bar.defaultProps, _defaultProps.defaultProps);
-var BarWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Bar);
-exports.Bar = BarWrapper;

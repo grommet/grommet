@@ -3,9 +3,7 @@
 exports.__esModule = true;
 exports.ExpanderCell = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _recompose = require("recompose");
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
@@ -19,7 +17,9 @@ var _TableCell = require("../TableCell");
 
 var _utils = require("../../utils");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -29,8 +29,9 @@ var ExpanderCell = function ExpanderCell(_ref) {
   var context = _ref.context,
       expanded = _ref.expanded,
       onToggle = _ref.onToggle,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["context", "expanded", "onToggle", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["context", "expanded", "onToggle"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var content;
 
@@ -69,7 +70,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
   }, content);
 };
 
+exports.ExpanderCell = ExpanderCell;
+ExpanderCell.displayName = 'ExpanderCell';
 ExpanderCell.defaultProps = {};
 Object.setPrototypeOf(ExpanderCell.defaultProps, _defaultProps.defaultProps);
-var ExpanderCellWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(ExpanderCell);
-exports.ExpanderCell = ExpanderCellWrapper;

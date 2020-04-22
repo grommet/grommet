@@ -4,14 +4,12 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { cloneElement, Children, useState } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { forwardRef, cloneElement, Children, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
-
-var Tabs = function Tabs(_ref) {
+var Tabs = forwardRef(function (_ref, ref) {
   var children = _ref.children,
       flex = _ref.flex,
       _ref$justify = _ref.justify,
@@ -20,9 +18,9 @@ var Tabs = function Tabs(_ref) {
       messages = _ref$messages === void 0 ? {
     tabContents: 'Tab Contents'
   } : _ref$messages,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages"]);
 
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var propsActiveIndex = rest.activeIndex,
       onActive = rest.onActive;
 
@@ -76,6 +74,7 @@ var Tabs = function Tabs(_ref) {
   }, _this);
   var tabContentTitle = (activeTitle || '') + " " + messages.tabContents;
   return React.createElement(StyledTabs, _extends({
+    ref: ref,
     as: Box,
     role: "tablist",
     flex: flex
@@ -94,15 +93,13 @@ var Tabs = function Tabs(_ref) {
     "aria-label": tabContentTitle,
     role: "tabpanel"
   }, activeContent));
-};
-
-Tabs.defaultProps = {};
-Object.setPrototypeOf(Tabs.defaultProps, defaultProps);
+});
+Tabs.displayName = 'Tabs';
 var TabsDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
 }
 
-var TabsWrapper = compose(withTheme)(TabsDoc || Tabs);
+var TabsWrapper = TabsDoc || Tabs;
 export { TabsWrapper as Tabs };

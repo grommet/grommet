@@ -5,10 +5,6 @@ exports.Image = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _StyledImage = require("./StyledImage");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -19,15 +15,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Image = function Image(_ref) {
+var Image = (0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fallback = _ref.fallback,
-      forwardRef = _ref.forwardRef,
       onError = _ref.onError,
       opacity = _ref.opacity,
       fill = _ref.fill,
       src = _ref.src,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fallback", "forwardRef", "onError", "opacity", "fill", "src"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fallback", "onError", "opacity", "fill", "src"]);
 
   var _useState = (0, _react.useState)(false),
       imageMissing = _useState[0],
@@ -47,18 +42,18 @@ var Image = function Image(_ref) {
   return _react["default"].createElement(_StyledImage.StyledImage, _extends({
     "aria-label": a11yTitle
   }, rest, extraProps, {
-    ref: forwardRef,
+    ref: ref,
     opacityProp: opacity,
     fillProp: fill,
     src: !imageMissing ? src : fallback
   }));
-};
-
+});
+Image.displayName = 'Image';
 var ImageDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   ImageDoc = require('./doc').doc(Image); // eslint-disable-line global-require
 }
 
-var ImageWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(ImageDoc || Image);
+var ImageWrapper = ImageDoc || Image;
 exports.Image = ImageWrapper;

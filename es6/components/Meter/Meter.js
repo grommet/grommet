@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useMemo } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 
@@ -19,7 +19,7 @@ var deriveMax = function deriveMax(values) {
   return max;
 };
 
-var Meter = function Meter(_ref) {
+var Meter = forwardRef(function (_ref, ref) {
   var _ref$background = _ref.background,
       background = _ref$background === void 0 ? {
     color: 'light-2',
@@ -41,6 +41,7 @@ var Meter = function Meter(_ref) {
 
   if (type === 'bar') {
     content = React.createElement(Bar, _extends({
+      ref: ref,
       max: memoizedMax,
       values: values,
       size: size,
@@ -49,6 +50,7 @@ var Meter = function Meter(_ref) {
     }, rest));
   } else if (type === 'circle') {
     content = React.createElement(Circle, _extends({
+      ref: ref,
       max: memoizedMax,
       values: values,
       size: size,
@@ -58,8 +60,8 @@ var Meter = function Meter(_ref) {
   }
 
   return content;
-};
-
+});
+Meter.displayName = 'Meter';
 var MeterDoc;
 
 if (process.env.NODE_ENV !== 'production') {

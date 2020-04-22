@@ -5,8 +5,6 @@ exports.Menu = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _PropTypes = _interopRequireDefault(require("react-desc/lib/PropTypes"));
@@ -22,8 +20,6 @@ var _DropButton = require("../DropButton");
 var _Keyboard = require("../Keyboard");
 
 var _Text = require("../Text");
-
-var _hocs = require("../hocs");
 
 var _utils = require("../../utils");
 
@@ -64,7 +60,7 @@ To make a selection:
 - Space is pressed.
 */
 
-var Menu = function Menu(props) {
+var Menu = (0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       children = props.children,
       disabled = props.disabled,
@@ -72,7 +68,6 @@ var Menu = function Menu(props) {
       dropBackground = props.dropBackground,
       dropProps = props.dropProps,
       dropTarget = props.dropTarget,
-      forwardRef = props.forwardRef,
       justifyContent = props.justifyContent,
       icon = props.icon,
       items = props.items,
@@ -82,8 +77,9 @@ var Menu = function Menu(props) {
       open = props.open,
       plain = props.plain,
       size = props.size,
-      theme = props.theme,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size", "theme"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var MenuIcon = theme.menu.icons.down;
   var iconColor = (0, _utils.normalizeColor)('control', theme);
@@ -245,7 +241,7 @@ var Menu = function Menu(props) {
     onTab: onDropClose,
     onKeyDown: onKeyDown
   }, _react["default"].createElement(_DropButton.DropButton, _extends({
-    ref: forwardRef
+    ref: ref
   }, rest, {
     a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
     disabled: disabled,
@@ -302,8 +298,7 @@ var Menu = function Menu(props) {
       );
     })), align.bottom === 'bottom' ? controlMirror : undefined))
   }), content));
-};
-
+});
 Menu.propTypes = {
   dropAlign: _PropTypes["default"].shape({
     top: _PropTypes["default"].string,
@@ -331,12 +326,11 @@ Menu.defaultProps = {
   justifyContent: 'start'
 };
 Menu.displayName = 'Menu';
-Object.setPrototypeOf(Menu.defaultProps, _defaultProps.defaultProps);
 var MenuDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
 }
 
-var MenuWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(MenuDoc || Menu);
+var MenuWrapper = MenuDoc || Menu;
 exports.Menu = MenuWrapper;

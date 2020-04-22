@@ -1,8 +1,7 @@
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -28,10 +27,10 @@ var Header = function Header(_ref) {
       onToggle = _ref.onToggle,
       pad = _ref.pad,
       sort = _ref.sort,
-      theme = _ref.theme,
       widths = _ref.widths,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "sort", "theme", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "sort", "widths"]);
 
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   return React.createElement(StyledDataTableHeader, rest, React.createElement(StyledDataTableRow, null, groups && React.createElement(ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
@@ -107,7 +106,7 @@ var Header = function Header(_ref) {
   })));
 };
 
+Header.displayName = 'Header';
 Header.defaultProps = {};
 Object.setPrototypeOf(Header.defaultProps, defaultProps);
-var HeaderWrapper = compose(withTheme)(Header);
-export { HeaderWrapper as Header };
+export { Header };

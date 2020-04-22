@@ -3,9 +3,7 @@
 exports.__esModule = true;
 exports.TableCell = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _recompose = require("recompose");
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
@@ -17,7 +15,9 @@ var _TableContext = require("../Table/TableContext");
 
 var _StyledTable = require("../Table/StyledTable");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -28,8 +28,7 @@ var verticalAlignToJustify = {
   top: 'start',
   bottom: 'end'
 };
-
-var TableCell = function TableCell(_ref) {
+var TableCell = (0, _react.forwardRef)(function (_ref, ref) {
   var align = _ref.align,
       background = _ref.background,
       border = _ref.border,
@@ -39,9 +38,10 @@ var TableCell = function TableCell(_ref) {
       plain = _ref.plain,
       scope = _ref.scope,
       size = _ref.size,
-      theme = _ref.theme,
       verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "colSpan", "pad", "plain", "scope", "size", "theme", "verticalAlign"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "colSpan", "pad", "plain", "scope", "size", "verticalAlign"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   return _react["default"].createElement(_TableContext.TableContext.Consumer, null, function (tableContext) {
     var tableContextTheme;
@@ -74,6 +74,7 @@ var TableCell = function TableCell(_ref) {
     delete mergedProps.pad;
     delete mergedProps.verticalAlign;
     return _react["default"].createElement(_StyledTable.StyledTableCell, _extends({
+      ref: ref,
       as: scope ? 'th' : undefined,
       scope: scope,
       size: size,
@@ -85,10 +86,8 @@ var TableCell = function TableCell(_ref) {
       justify: verticalAlignToJustify[verticalAlign]
     }), children));
   });
-};
-
-TableCell.defaultProps = {};
-Object.setPrototypeOf(TableCell.defaultProps, _defaultProps.defaultProps);
+});
+TableCell.displayName = 'TableCell';
 var TableCellDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -96,5 +95,5 @@ if (process.env.NODE_ENV !== 'production') {
   TableCellDoc = require('./doc').doc(TableCell);
 }
 
-var TableCellWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(TableCellDoc || TableCell);
+var TableCellWrapper = TableCellDoc || TableCell;
 exports.TableCell = TableCellWrapper;

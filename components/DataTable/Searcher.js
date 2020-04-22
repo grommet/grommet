@@ -5,8 +5,6 @@ exports.Searcher = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _FormSearch = require("grommet-icons/icons/FormSearch");
@@ -34,8 +32,10 @@ var Searcher = function Searcher(_ref) {
       filters = _ref.filters,
       onFilter = _ref.onFilter,
       onFiltering = _ref.onFiltering,
-      property = _ref.property,
-      theme = _ref.theme;
+      property = _ref.property;
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
   var inputRef = (0, _react.useRef)();
   var needsFocus = filtering === property;
   (0, _react.useEffect)(function () {
@@ -81,7 +81,7 @@ var Searcher = function Searcher(_ref) {
   }));
 };
 
+exports.Searcher = Searcher;
+Searcher.displayName = 'Searcher';
 Searcher.defaultProps = {};
 Object.setPrototypeOf(Searcher.defaultProps, _defaultProps.defaultProps);
-var SearcherWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Searcher);
-exports.Searcher = SearcherWrapper;
