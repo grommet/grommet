@@ -3881,6 +3881,16 @@ Defaults to
 undefined
 \`\`\`
 
+**checkBox.hover.background.color**
+
+The background color on hover. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **checkBox.hover.border.color**
 
 The border color on hover. Expects \`string | { 'dark': string, 'light': string }\`.

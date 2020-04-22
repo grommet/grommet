@@ -97,6 +97,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
+  'checkBox.hover.background.color': {
+    description: 'The background color on hover.',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
   'checkBox.hover.border.color': {
     description: 'The border color on hover.',
     type: "string | { 'dark': string, 'light': string }",

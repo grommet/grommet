@@ -96,6 +96,11 @@ exports[`CheckBox checked renders 1`] = `
   border-color: #000000;
 }
 
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c4 {
   opacity: 0;
   -moz-appearance: none;
@@ -260,6 +265,11 @@ exports[`CheckBox controlled 1`] = `
   border-color: #000000;
 }
 
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c4 {
   opacity: 0;
   -moz-appearance: none;
@@ -333,7 +343,7 @@ exports[`CheckBox controlled 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cEfSxU"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fASNub StyledCheckBox-sc-1dbk5ju-6 CBoMo"
@@ -482,6 +492,11 @@ exports[`CheckBox disabled renders 1`] = `
   width: fit-content;
   opacity: 0.5;
   cursor: default;
+}
+
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
 }
 
 .c1:hover input:not([disabled]) + div,
@@ -717,6 +732,11 @@ exports[`CheckBox indeterminate renders 1`] = `
   border-color: #000000;
 }
 
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c4 {
   opacity: 0;
   -moz-appearance: none;
@@ -917,6 +937,11 @@ exports[`CheckBox label renders 1`] = `
   border-color: #000000;
 }
 
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c4 {
   opacity: 0;
   -moz-appearance: none;
@@ -1095,6 +1120,11 @@ exports[`CheckBox renders 1`] = `
   border-color: #000000;
 }
 
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c4 {
   opacity: 0;
   -moz-appearance: none;
@@ -1265,6 +1295,11 @@ exports[`CheckBox reverse renders 1`] = `
   border-color: #000000;
 }
 
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c4 {
   opacity: 0;
   -moz-appearance: none;
@@ -1407,6 +1442,11 @@ exports[`CheckBox toggle renders 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
+}
+
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
 }
 
 .c1:hover input:not([disabled]) + div,

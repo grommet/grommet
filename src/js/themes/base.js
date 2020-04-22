@@ -493,6 +493,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        background: {
+          color: { dark: undefined, light: undefined },
+        },
       },
       icon: {
         // size: undefined,

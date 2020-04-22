@@ -14,6 +14,10 @@ const hoverStyle = css`
     border-color: ${props =>
       normalizeColor(props.theme.checkBox.hover.border.color, props.theme)};
   }
+  :hover {
+    background-color: ${props =>
+      normalizeColor(props.theme.checkBox.hover.background.color, props.theme)};
+  }
 `;
 
 const StyledCheckBoxIcon = styled.svg`
@@ -40,6 +44,7 @@ const StyledCheckBoxContainer = styled.label`
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
   ${props => props.theme.checkBox.hover.border.color && hoverStyle}
+  ${props => props.theme.checkBox.hover.background.color && hoverStyle}
   ${props => props.theme.checkBox.extend}
 `;
 

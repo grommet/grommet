@@ -35,6 +35,9 @@ const customToggleTheme = {
       border: {
         color: undefined,
       },
+      background: {
+        color: 'light-2',
+      },
     },
     toggle: {
       background: { light: 'toggle-accent' },

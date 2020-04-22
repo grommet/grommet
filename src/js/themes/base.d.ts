@@ -407,6 +407,9 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      background?: {
+        color?: ColorType;
+      };
     };
     icon?: {
       size?: string;
