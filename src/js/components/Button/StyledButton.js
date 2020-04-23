@@ -151,9 +151,14 @@ const plainStyle = props => css`
 
 const activeButtonStyle = props => {
   let activeButtonPrefix;
-  if (props.primary && props.theme.button.active.primary)
-    activeButtonPrefix = props.theme.button.active.primary;
-  else activeButtonPrefix = props.theme.button.active;
+  if (props.primary) {
+    // backwards compatibility for theme styling introduced in v2.13.0
+    if (props.theme.button.primary.active)
+      activeButtonPrefix = props.theme.button.primary.active;
+    if (props.theme.button.active.primary)
+      activeButtonPrefix = props.theme.button.active.primary;
+  }
+  if (!activeButtonPrefix) activeButtonPrefix = props.theme.button.active;
 
   return css`
   ${activeStyle}
@@ -170,9 +175,8 @@ const activeButtonStyle = props => {
     )}
   ${activeButtonPrefix.color &&
     `color: ${normalizeColor(activeButtonPrefix.color, props.theme)};`}
-  ${props.primary &&
-    props.theme.button.active.primary &&
-    props.theme.button.active.primary.extend}
+  ${activeButtonPrefix && activeButtonPrefix.extend}
+  ${props.primary && activeButtonPrefix && activeButtonPrefix.extend}
 `;
 };
 
