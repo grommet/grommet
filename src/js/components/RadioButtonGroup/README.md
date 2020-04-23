@@ -44,7 +44,7 @@ string
 **onChange**
 
 Function that will be called when the user clicks on one of the radio
-      buttons. It will be passed as a React event object.
+      buttons. It will be passed a React event object.
 
 ```
 function

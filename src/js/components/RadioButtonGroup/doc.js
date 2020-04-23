@@ -30,7 +30,7 @@ export const doc = RadioButtonGroup => {
     ).isRequired,
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks on one of the radio
-      buttons. It will be passed as a React event object.`,
+      buttons. It will be passed a React event object.`,
     ),
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
