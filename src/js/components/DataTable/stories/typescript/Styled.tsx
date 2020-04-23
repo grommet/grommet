@@ -5,7 +5,7 @@ import isChromatic from 'storybook-chromatic/isChromatic';
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { columns, DATA } from '../data';
+import { columns, DATA } from './Shared';
 
 const StyledDataTable = () => (
   <Grommet theme={grommet}>
@@ -28,5 +28,7 @@ const StyledDataTable = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/DataTable', module).add('Style', () => <StyledDataTable />);
+  storiesOf('TypeScript/DataTable', module).add('Style', () => (
+    <StyledDataTable />
+  ));
 }

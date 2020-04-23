@@ -34,6 +34,20 @@ export type MouseClick<TRowType> = React.MouseEvent<HTMLTableRowElement> & {
 
 export type KeyPress<TRowType> = React.KeyboardEvent & { datum: TRowType };
 
+export interface ColumnConfig<TRowType> {
+  align?: 'center' | 'start' | 'end';
+  aggregate?: 'avg' | 'max' | 'min' | 'sum';
+  footer?: React.ReactNode | { aggregate?: boolean };
+  header?: string | React.ReactNode | { aggregate?: boolean };
+  primary?: boolean;
+  property: string;
+  render?: (datum: TRowType) => React.ReactNode;
+  search?: boolean;
+  sortable?: boolean;
+  size?: ColumnSizeType | string;
+  verticalAlign?: 'middle' | 'top' | 'bottom';
+}
+
 export interface DataTableProps<TRowType = any> {
   a11yTitle?: A11yTitleType;
 
@@ -43,19 +57,7 @@ export interface DataTableProps<TRowType = any> {
     | BackgroundType
     | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
-  columns?: {
-    align?: 'center' | 'start' | 'end';
-    aggregate?: 'avg' | 'max' | 'min' | 'sum';
-    footer?: React.ReactNode | { aggregate?: boolean };
-    header?: string | React.ReactNode | { aggregate?: boolean };
-    primary?: boolean;
-    property: string;
-    render?: (datum: TRowType) => React.ReactNode;
-    search?: boolean;
-    sortable?: boolean;
-    size?: ColumnSizeType | string;
-    verticalAlign?: 'middle' | 'top' | 'bottom';
-  }[];
+  columns?: ColumnConfig<TRowType>[];
   gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;

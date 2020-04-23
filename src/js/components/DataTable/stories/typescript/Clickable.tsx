@@ -5,7 +5,7 @@ import isChromatic from 'storybook-chromatic/isChromatic';
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { columns, DATA } from '../data';
+import { columns, DATA } from './Shared';
 
 const ClickableDataTable = () => (
   <Grommet theme={grommet}>
