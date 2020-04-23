@@ -66,12 +66,23 @@ const basicStyle = props => css`
 const primaryStyle = props => css`
   ${backgroundStyle(
     normalizeColor(
-      props.colorValue || props.theme.button.primary.color || 'control',
+      props.colorValue ||
+        props.theme.button.primary.background ||
+        props.theme.button.primary.color ||
+        'control',
       props.theme,
     ),
     props.theme,
     props.theme.button.color,
   )}
+  ${
+    // For backwards compatibility and to align with convention that `color`
+    // should now refer to label color, only apply primary.color as label
+    // color if user has defined primary.background
+    props.theme.button.primary.color &&
+      props.theme.button.primary.background &&
+      `color: ${normalizeColor(props.theme.button.primary.color, props.theme)};`
+  }
   border-radius: ${radiusStyle(props)};
   ${props.theme.button.primary.extend}
 `;
@@ -80,18 +91,21 @@ function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
   }
-  if (
-    props.active &&
-    props.primary &&
-    props.theme.button.primary.active &&
-    props.theme.button.primary.active.border &&
-    props.theme.button.primary.active.border.color
-  ) {
-    return normalizeColor(
-      props.theme.button.primary.active.border.color,
-      props.theme,
-    );
+
+  if (props.active) {
+    let activeButtonPrefix;
+    if (props.primary && props.theme.button.active.primary)
+      activeButtonPrefix = props.theme.button.active.primary;
+    else activeButtonPrefix = props.theme.button.active;
+    if (
+      activeButtonPrefix &&
+      activeButtonPrefix.border &&
+      activeButtonPrefix.border.color
+    ) {
+      return normalizeColor(activeButtonPrefix.border.color, props.theme);
+    }
   }
+
   return normalizeColor(
     props.theme.button.border.color || 'control',
     props.theme,
@@ -135,45 +149,60 @@ const plainStyle = props => css`
   text-align: inherit;
 `;
 
-const activeButtonStyle = props => css`
-  ${activeStyle}
-  ${props.primary &&
-    props.theme.button.primary.active &&
-    props.theme.button.primary.active.border &&
-    props.theme.button.primary.active.border.color &&
-    `border: ${props.theme.button.border.width} solid
-    ${normalizeColor(
-      props.theme.button.primary.active.border.color,
-      props.theme,
-    )};
-    `}
-  ${props.primary &&
-    props.theme.button.primary.active &&
-    props.theme.button.primary.active.extend}
-`;
+const activeButtonStyle = props => {
+  let activeButtonPrefix;
+  if (props.primary && props.theme.button.active.primary)
+    activeButtonPrefix = props.theme.button.active.primary;
+  else activeButtonPrefix = props.theme.button.active;
 
-const disabledButtonStyle = props => css`
+  return css`
+  ${activeStyle}
+  ${!props.plain &&
+    activeButtonPrefix.border &&
+    activeButtonPrefix.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(activeButtonPrefix.border.color, props.theme)};`}
+  ${activeButtonPrefix.background &&
+    backgroundStyle(
+      normalizeColor(activeButtonPrefix.background, props.theme),
+      props.theme,
+      props.theme.button.color,
+    )}
+  ${activeButtonPrefix.color &&
+    `color: ${normalizeColor(activeButtonPrefix.color, props.theme)};`}
+  ${props.primary &&
+    props.theme.button.active.primary &&
+    props.theme.button.active.primary.extend}
+`;
+};
+
+const disabledButtonStyle = props => {
+  let disabledButtonPrefix;
+  if (props.primary && props.theme.button.disabled.primary)
+    disabledButtonPrefix = props.theme.button.disabled.primary;
+  else disabledButtonPrefix = props.theme.button.disabled;
+
+  return css`
   ${disabledStyle(props.theme.button.disabled.opacity)}
   ${!props.plain &&
-    props.theme.button.disabled.border &&
-    props.theme.button.disabled.border.color &&
+    disabledButtonPrefix.border &&
+    disabledButtonPrefix.border.color &&
     `border: ${props.theme.button.border.width} solid
-    ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
-  ${props.theme.button.disabled.color &&
-    // if primary button, apply disabled color to background. otherwise,
-    // apply disabled color to the label
-    (props.primary
-      ? backgroundStyle(
-          normalizeColor(props.theme.button.disabled.color, props.theme),
-          props.theme,
-          props.theme.button.color,
-        )
-      : `color: ${normalizeColor(
-          props.theme.button.disabled.color,
-          props.theme,
-        )};`)}
-  ${props.theme.button.disabled && props.theme.button.disabled.extend}
+    ${normalizeColor(disabledButtonPrefix.border.color, props.theme)};`}
+  ${disabledButtonPrefix.background &&
+    backgroundStyle(
+      normalizeColor(disabledButtonPrefix.background, props.theme),
+      props.theme,
+      props.theme.button.color,
+    )}
+  ${disabledButtonPrefix.color &&
+    `color: ${normalizeColor(disabledButtonPrefix.color, props.theme)};`}
+  ${props.theme.button.disabled.extend}
+  ${props.primary &&
+    props.theme.button.disabled.primary &&
+    props.theme.button.disabled.primary.extend}
 `;
+};
 
 // Deprecate props.theme.button.disabled.opacity in V3
 const StyledButton = styled.button`

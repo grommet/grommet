@@ -1357,7 +1357,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 lbekSm"
+          class="StyledButton-sc-323bzc-0 eZMfxG"
           disabled=""
           type="button"
         >
@@ -1428,7 +1428,7 @@ exports[`Carousel navigate 3`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 lbekSm"
+          class="StyledButton-sc-323bzc-0 eZMfxG"
           disabled=""
           type="button"
         >
@@ -2018,7 +2018,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 lbekSm"
+          class="StyledButton-sc-323bzc-0 eZMfxG"
           disabled=""
           type="button"
         >

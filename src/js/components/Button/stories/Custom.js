@@ -19,21 +19,36 @@ const customTheme = {
       border: {
         color: 'orange',
       },
+      primary: {
+        background: 'orange',
+        color: 'text',
+      },
       extend: `border: 10px dashed red;`,
     },
     padding: {
       vertical: '12px',
       horizontal: '24px',
     },
-    primary: {
-      color: '#2196f3',
-      active: {
+    active: {
+      color: 'purple',
+      background: {
+        color: '#54FG32',
+        opacity: 0.2,
+      },
+      primary: {
         border: {
           color: 'red',
         },
         extend: `background: cadetblue;`,
       },
-      extend: `background: skyblue; border: 5px dotted green;`,
+    },
+    primary: {
+      color: 'orange',
+      background: {
+        color: '#333',
+        opacity: 0.2,
+      },
+      extend: `border: 5px dotted green;`,
     },
     extend: props => {
       let extraStyles = '';
@@ -74,6 +89,7 @@ const CustomTheme = () => (
         gap="small"
       >
         <Button label="custom theme" onClick={() => {}} primary />
+        <Button label="custom active" onClick={() => {}} active />
         <Button
           label="custom active primary"
           onClick={() => {}}

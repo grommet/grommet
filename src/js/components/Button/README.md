@@ -369,6 +369,56 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
+**button.active.background.color**
+
+The background color for active buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.background.opacity**
+
+The background opacity for active buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.border.color**
+
+The color of the border for active buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.color**
+
+The label color for active buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.extend**
+
+Any additional style for an active button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.hover.background**
 
 The background style when hovering. Expects `string | { color: string, opacity: string }`.
@@ -511,8 +561,27 @@ undefined
 
 **button.disabled.color**
 
-Fill color for primary buttons, or label color for other
-    button types, when the button is disabled. Expects `string | { dark: string, light: string }`.
+Label color when the button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.background.color**
+
+Background color when the button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.background.opacity**
+
+Background opacity when the button is disabled. Expects `number`.
 
 Defaults to
 
@@ -523,6 +592,56 @@ undefined
 **button.disabled.extend**
 
 Any additional style for a disabled Button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.primary.border.color**
+
+The border color when a primary button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.primary.color**
+
+Label color when a primary button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.primary.background.color**
+
+Background color when a primary button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.primary.background.opacity**
+
+Background opacity when a primary button is disabled. Expects `number`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.primary.extend**
+
+Any additional style for a disabled primary button. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -552,7 +671,29 @@ Defaults to
 
 **button.primary.color**
 
-The color of the background for primary buttons. Expects `string | { dark: string, light: string }`.
+The label color for primary buttons if 
+    button.primary.background is defined. The background color for 
+    primary buttons otherwise. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.background.color**
+
+The background color for primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.background.opacity**
+
+The background opacity for primary buttons. Expects `number`.
 
 Defaults to
 
@@ -570,7 +711,27 @@ Defaults to
 undefined
 ```
 
-**button.primary.active.border.color**
+**button.active.primary.background.color**
+
+The background color for active primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.primary.background.opacity**
+
+The background opacity for active primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.primary.border.color**
 
 The color of the border for active primary buttons. Expects `string | { dark: string, light: string }`.
 
@@ -580,7 +741,17 @@ Defaults to
 undefined
 ```
 
-**button.primary.active.extend**
+**button.active.primary.color**
+
+The label color for active primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.primary.extend**
 
 Any additional style for an active primary button. Expects `string | (props) => {}`.
 

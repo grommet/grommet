@@ -279,6 +279,22 @@ export interface ThemeType {
       width?: string;
       radius?: string;
     };
+    active?: {
+      border?: {
+        color: ColorType;
+      },
+      background?: BackgroundType;
+      color?: ColorType;
+      extend?: ExtendType;
+      primary?: {
+        border?: {
+          color?: ColorType;
+        };
+        background?: BackgroundType;
+        color?: ColorType;
+        extend?: ExtendType;
+      };
+    },
     disabled?: {
       border?: {
         color: ColorType;
@@ -286,6 +302,14 @@ export interface ThemeType {
       color?: ColorType;
       extend?: ExtendType;
       opacity?: OpacityType;
+      primary?: {
+        border?: {
+          color: ColorType;
+        },
+        background?: BackgroundType;
+        color?: ColorType;
+        extend?: ExtendType;
+      };
     };
     extend?: ExtendType;
     minWidth?: string;
@@ -295,13 +319,8 @@ export interface ThemeType {
       horizontal?: string;
     };
     primary?: {
-      color?: ColorType;
-      active?: {
-        border?: {
-          color?: ColorType;
-        };
-        extend?: ExtendType;
-      };
+      background?: BackgroundType;
+      color?: ColorType; 
       extend?: ExtendType;
     };
     size?: {
