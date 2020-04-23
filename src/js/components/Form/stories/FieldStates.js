@@ -2,65 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
-import { deepMerge } from '../../../utils';
 
-const customTheme = deepMerge(grommet, {
-  formField: {
-    border: {
-      error: {
-        color: 'border',
-      },
-      color: 'border',
-      side: 'all',
-    },
-    disabled: {
-      background: {
-        color: undefined,
-      },
-      border: {
-        color: 'status-disabled',
-      },
-      label: {
-        color: 'status-disabled',
-      },
-    },
-    error: {
-      background: {
-        color: { light: '#FF404033', dark: '#FF40404D' },
-      },
-      size: 'xsmall',
-      color: 'text-weak',
-      margin: {
-        start: 'none',
-      },
-    },
-    help: {
-      size: 'xsmall',
-      color: 'text-weak',
-      margin: {
-        start: 'none',
-        bottom: 'xsmall',
-      },
-    },
-    info: {
-      size: 'xsmall',
-      color: 'text-weak',
-      margin: {
-        start: 'none',
-      },
-    },
-    label: {
-      size: 'xsmall',
-      color: 'text-weak',
-      margin: {
-        horizontal: 'none',
-      },
-    },
-    round: '4px',
-  },
-});
-
-const CustomFormFieldStates = () => {
+const FormFieldStates = () => {
   const inputRef = useRef();
 
   useEffect(() => {
@@ -68,7 +11,7 @@ const CustomFormFieldStates = () => {
   }, []);
 
   return (
-    <Grommet theme={customTheme}>
+    <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Form>
           <Box border gap="medium" pad="large" width="medium">
@@ -133,6 +76,4 @@ const CustomFormFieldStates = () => {
   );
 };
 
-storiesOf('FormField', module).add('Field States Custom', () => (
-  <CustomFormFieldStates />
-));
+storiesOf('Form', module).add('Field States', () => <FormFieldStates />);
