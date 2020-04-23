@@ -178,4 +178,56 @@ describe('FormField', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('custom label', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+      theme: {
+        formField: {
+          label: {
+            color: 'red',
+            size: 'small',
+            margin: 'xsmall',
+            weight: 600
+          }
+        }
+      }
+    }, _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+      label: "label"
+    }))));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  }); // This test should be fully un-commented for PR #3973
+  // Before un-commenting this test fully, merge this test with branch
+  // halocline:formfield-disabled-styling an run `yarn test` to
+  // make sure the snapshots passes as is, and
+  // that should confirm the backward compatibility aspect.
+  // If that passes as expected, continue with
+  // un-commenting the theme properties of disabled, and verify that the only 
+  // snapshot change is for the text color (changing from red to teal)
+
+  test('disabled with custom label', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+      theme: {
+        formField: {
+          label: {
+            color: 'red',
+            size: 'small',
+            margin: 'xsmall',
+            weight: 600
+          } // disabled: {
+          //   label: {
+          //     color: 'teal',
+          //   },
+          // },
+
+        }
+      }
+    }, _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+      disabled: true,
+      label: "label"
+    }))));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
