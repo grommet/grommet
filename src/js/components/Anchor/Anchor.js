@@ -36,7 +36,6 @@ const Anchor = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
-    console.log(target);
     useEffect(() => {
       if ((icon || label) && children) {
         console.warn(
