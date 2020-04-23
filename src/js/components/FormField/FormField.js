@@ -233,12 +233,13 @@ const FormField = forwardRef(
       borderColor = (border && border.color) || 'border';
     }
 
-    const labelStyle = formField.label;
+    const labelStyle = { ...formField.label };
 
     if (disabled) {
-      labelStyle.color = formField.disabled && formField.disabled.label
-        ? formField.disabled.label.color
-        : labelStyle.color;
+      labelStyle.color =
+        formField.disabled && formField.disabled.label
+          ? formField.disabled.label.color
+          : labelStyle.color;
     }
 
     let abut;
