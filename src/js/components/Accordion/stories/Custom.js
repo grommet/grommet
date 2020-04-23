@@ -7,7 +7,12 @@ import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 
 const CustomAccordionTheme = {
   accordion: {
-    heading: { level: '3' },
+    heading: {
+      level: 3,
+      hover: {
+        color: 'accent-2',
+      },
+    },
     icons: {
       collapse: SubtractCircle,
       expand: AddCircle,
@@ -17,7 +22,7 @@ const CustomAccordionTheme = {
   },
 };
 
-const CustomAccordion = ({ animate, multiple, ...rest }) => (
+const CustomAccordion = ({ color, animate, multiple, ...rest }) => (
   <Grommet theme={CustomAccordionTheme}>
     <Box {...rest} pad="large" align="center" justify="center">
       <Accordion animate={animate} multiple>
@@ -40,7 +45,10 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
           </Box>
         </AccordionPanel>
         {/* eslint-disable-next-line max-len */}
-        <AccordionPanel label="Panel 3 - uses custom theme heading level for sizing">
+        <AccordionPanel
+          color="undefined"
+          label="Panel 3 - uses custom theme heading level for sizing"
+        >
           <Box background="light-2" height="xsmall">
             <Text size="small">Important Info</Text>
           </Box>

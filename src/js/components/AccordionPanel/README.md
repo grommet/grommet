@@ -28,6 +28,16 @@ div
 ```
 ## Theme
   
+**accordion.heading.hover.color**
+
+The hover color used for the accordion. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: "light-4", light: "dark-3" }
+```
+
 **accordion.heading.level**
 
 The heading level used for the accordion. Expects `number`.

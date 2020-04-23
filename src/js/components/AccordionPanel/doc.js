@@ -16,6 +16,11 @@ export function doc(Panel) {
 }
 
 export const themeDoc = {
+  'accordion.heading.hover.color': {
+    description: 'The hover color used for the accordion.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: "light-4", light: "dark-3" }',
+  },
   'accordion.heading.level': {
     description: 'The heading level used for the accordion.',
     type: 'number',
