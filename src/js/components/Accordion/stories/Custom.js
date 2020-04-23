@@ -22,7 +22,7 @@ const CustomAccordionTheme = {
   },
 };
 
-const CustomAccordion = ({ color, animate, multiple, ...rest }) => (
+const CustomAccordion = ({ animate, multiple, ...rest }) => (
   <Grommet theme={CustomAccordionTheme}>
     <Box {...rest} pad="large" align="center" justify="center">
       <Accordion animate={animate} multiple>
@@ -45,10 +45,7 @@ const CustomAccordion = ({ color, animate, multiple, ...rest }) => (
           </Box>
         </AccordionPanel>
         {/* eslint-disable-next-line max-len */}
-        <AccordionPanel
-          color="undefined"
-          label="Panel 3 - uses custom theme heading level for sizing"
-        >
+        <AccordionPanel label="Panel 3 - uses custom theme heading level for sizing">
           <Box background="light-2" height="xsmall">
             <Text size="small">Important Info</Text>
           </Box>
