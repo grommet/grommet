@@ -317,7 +317,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'border',
       },
       heading: {
-        level: '4',
+        level: '4', // level ranges from 1-6
         // hover: {
         //   color: { dark: undefined, light: undefined },
         // },
