@@ -43,8 +43,8 @@ string
 
 **onChange**
 
-Function that will be called when the user clicks on of the radio
-      buttons. It will be passed a React event object.
+Function that will be called when the user clicks on one of the radio
+      buttons. It will be passed as a React event object.
 
 ```
 function
@@ -52,7 +52,8 @@ function
 
 **options**
 
-Required. Options can be either a string or an object.
+Required. Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.
 
 ```
 [string]

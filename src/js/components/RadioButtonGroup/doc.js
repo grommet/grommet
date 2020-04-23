@@ -29,8 +29,8 @@ export const doc = RadioButtonGroup => {
       elements.`,
     ).isRequired,
     onChange: PropTypes.func.description(
-      `Function that will be called when the user clicks on of the radio
-      buttons. It will be passed a React event object.`,
+      `Function that will be called when the user clicks on one of the radio
+      buttons. It will be passed as a React event object.`,
     ),
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
@@ -42,7 +42,8 @@ export const doc = RadioButtonGroup => {
           value: PropTypes.string.isRequired,
         }),
       ),
-    ]).description(`Options can be either a string or an object.`).isRequired,
+    ]).description(`Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.`).isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
