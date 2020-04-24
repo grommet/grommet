@@ -63,6 +63,7 @@ const LayerContainer = forwardRef(
           }
           element = element.parentElement;
         }
+        // this is keeping onEsc from working with modal set to false
         if (modal && !element && anchorRef.current) {
           anchorRef.current.focus();
         }
@@ -131,6 +132,8 @@ const LayerContainer = forwardRef(
           tabIndex="-1"
           dir={theme.dir}
         >
+          {/* This handles to onclickoutside which is not present 
+          when modal is set to false */}
           <StyledOverlay
             plain={plain}
             onMouseDown={onClickOutside}
