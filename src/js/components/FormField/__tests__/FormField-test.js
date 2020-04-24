@@ -197,4 +197,63 @@ describe('FormField', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  // This test should be fully un-commented for PR #3973
+  // Before un-commenting this test fully, merge this test with branch
+  // halocline:formfield-disabled-styling an run `yarn test` to
+  // make sure the snapshots passes as is, and
+  // that should confirm the backward compatibility aspect.
+  // If that passes as expected, continue with
+  // un-commenting the theme properties of disabled, and verify that the only 
+  // snapshot change is for the text color (changing from red to teal)
+  test('disabled with custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+            // disabled: {
+            //   label: {
+            //     color: 'teal',
+            //   },
+            // },
+          },
+        }}
+      >
+        <Form>
+          <FormField disabled label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

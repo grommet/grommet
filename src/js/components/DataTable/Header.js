@@ -1,6 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -29,10 +28,10 @@ const Header = ({
   onToggle,
   pad,
   sort,
-  theme,
   widths,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
     <StyledDataTableHeader {...rest}>
       <StyledDataTableRow>
@@ -147,9 +146,9 @@ const Header = ({
   );
 };
 
+Header.displayName = 'Header';
+
 Header.defaultProps = {};
 Object.setPrototypeOf(Header.defaultProps, defaultProps);
 
-const HeaderWrapper = compose(withTheme)(Header);
-
-export { HeaderWrapper as Header };
+export { Header };

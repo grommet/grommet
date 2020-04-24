@@ -988,7 +988,12 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
 \`\`\`
 string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
@@ -5192,7 +5197,7 @@ Required. Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
       'offset' can be used to shift a bit to reduce the amount of overlap
-      with other connection lines to make the lines easier to distinguish.
+      with other connection lines to make the lines easier to distinguish. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -7052,7 +7057,12 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
 \`\`\`
 string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
@@ -8906,14 +8916,46 @@ Defaults to
 #AAAAAA
 \`\`\`
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects \`number\`.
+The line-height of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.size**
+
+The size of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects \`number | string\`.
 
 Defaults to
 
 \`\`\`
 600
+\`\`\`
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.input.padding**
@@ -9125,7 +9167,7 @@ object
 
 **dropProps**
 
-Any valid Drop prop.
+Any valid Drop prop. Defaults to \`{}\`.
 
 \`\`\`
 object
@@ -9156,7 +9198,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -10081,7 +10123,7 @@ string
 
 **onChange**
 
-Function that will be called when the user clicks on of the radio
+Function that will be called when the user clicks on one of the radio
       buttons. It will be passed a React event object.
 
 \`\`\`
@@ -10090,7 +10132,8 @@ function
 
 **options**
 
-Required. Options can be either a string or an object.
+Required. Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.
 
 \`\`\`
 [string]
@@ -11475,9 +11518,34 @@ import { Tab } from 'grommet';
 
 ## Properties
 
+**disabled**
+
+Whether the tab is disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
+**icon**
+
+Icon element to place in the tab.
+
+\`\`\`
+element
+\`\`\`
+
 **plain**
 
 Whether this is a plain tab with no style.
+
+\`\`\`
+boolean
+\`\`\`
+
+**reverse**
+
+Whether an icon and label should be reversed so that the icon is at the
+              end of the tab.
 
 \`\`\`
 boolean
@@ -12877,14 +12945,46 @@ Defaults to
 #AAAAAA
 \`\`\`
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects \`number\`.
+The line-height of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.size**
+
+The size of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects \`number | string\`.
 
 Defaults to
 
 \`\`\`
 600
+\`\`\`
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.input.padding**
@@ -13297,14 +13397,46 @@ Defaults to
 0.3
 \`\`\`
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects \`number\`.
+The line-height of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.size**
+
+The size of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects \`number | string\`.
 
 Defaults to
 
 \`\`\`
 600
+\`\`\`
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.input.padding**
