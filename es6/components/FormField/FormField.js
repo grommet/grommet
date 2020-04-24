@@ -212,12 +212,20 @@ var FormField = forwardRef(function (_ref2, ref) {
   contents = React.createElement(Box, contentProps, contents);
   var borderColor;
 
-  if (focus && !normalizedError) {
+  if (disabled) {
+    borderColor = formField.disabled.border && formField.disabled.border.color;
+  } else if (focus && !normalizedError) {
     borderColor = 'focus';
   } else if (normalizedError) {
     borderColor = border && border.error.color || 'status-critical';
   } else {
     borderColor = border && border.color || 'border';
+  }
+
+  var labelStyle = _extends({}, formField.label);
+
+  if (disabled) {
+    labelStyle.color = formField.disabled && formField.disabled.label ? formField.disabled.label.color : labelStyle.color;
   }
 
   var abut;
@@ -291,7 +299,7 @@ var FormField = forwardRef(function (_ref2, ref) {
   }, containerRest), label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, formField.label), label), React.createElement(Message, _extends({
+  }, labelStyle), label), React.createElement(Message, _extends({
     message: help
   }, formField.help))) : undefined, contents, React.createElement(Message, _extends({
     message: normalizedError

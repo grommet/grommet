@@ -64,6 +64,16 @@ export var themeDoc = {
     type: 'string | boolean | number',
     defaultValue: undefined
   },
+  'formField.disabled.border.color': {
+    description: 'The color of the FormField border when it is disabled.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined
+  },
+  'formField.disabled.label.color': {
+    description: 'The color of the FormField label when it is disabled.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined
+  },
   'formField.error.background.color': {
     description: 'The color of the FormField background when there is an error.',
     type: "string | {'dark': string, 'light': string}",

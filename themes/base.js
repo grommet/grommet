@@ -713,7 +713,13 @@ var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'status-disabled',
           opacity: 'medium'
-        }
+        } // border: {
+        //   color: undefined,
+        // },
+        // label: {
+        //   color: undefined,
+        // },
+
       },
       error: {
         color: 'status-critical',
