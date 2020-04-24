@@ -6519,6 +6519,26 @@ Defaults to
 undefined
 \`\`\`
 
+**formField.disabled.border.color**
+
+The color of the FormField border when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.disabled.label.color**
+
+The color of the FormField label when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.error.background.color**
 
 The color of the FormField background when there is an error. Expects \`string | {'dark': string, 'light': string}\`.
@@ -10294,7 +10314,7 @@ string
 
 **onChange**
 
-Function that will be called when the user clicks on of the radio
+Function that will be called when the user clicks on one of the radio
       buttons. It will be passed a React event object.
 
 \`\`\`
@@ -10303,7 +10323,8 @@ function
 
 **options**
 
-Required. Options can be either a string or an object.
+Required. Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.
 
 \`\`\`
 [string]
