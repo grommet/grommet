@@ -221,13 +221,27 @@ const FormField = forwardRef(
     contents = <Box {...contentProps}>{contents}</Box>;
 
     let borderColor;
-    if (focus && !normalizedError) {
+
+    if (disabled) {
+      borderColor =
+        formField.disabled.border && formField.disabled.border.color;
+    } else if (focus && !normalizedError) {
       borderColor = 'focus';
     } else if (normalizedError) {
       borderColor = (border && border.error.color) || 'status-critical';
     } else {
       borderColor = (border && border.color) || 'border';
     }
+
+    const labelStyle = { ...formField.label };
+
+    if (disabled) {
+      labelStyle.color =
+        formField.disabled && formField.disabled.label
+          ? formField.disabled.label.color
+          : labelStyle.color;
+    }
+
     let abut;
     let abutMargin;
     let outerStyle = style;
@@ -322,7 +336,7 @@ const FormField = forwardRef(
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...formField.label}>
+              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
               </Text>
             )}
