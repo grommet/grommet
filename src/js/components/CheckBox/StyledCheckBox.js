@@ -13,6 +13,7 @@ const hoverStyle = css`
   :hover input:not([disabled]) + span {
     ${props =>
       props.theme.checkBox.hover &&
+      props.theme.checkBox.hover.border &&
       props.theme.checkBox.hover.border.color &&
       `border-color: ${normalizeColor(
         props.theme.checkBox.hover.border.color,
@@ -22,6 +23,7 @@ const hoverStyle = css`
   :hover {
     ${props =>
       props.theme.checkBox.hover &&
+      props.theme.checkBox.hover.background &&
       props.theme.checkBox.hover.background.color &&
       `background-color: ${normalizeColor(
         props.theme.checkBox.hover.background.color,
