@@ -540,6 +540,12 @@ export interface ThemeType {
     };
     disabled?: {
       background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      },
+      label?: {
+        color?: ColorType;
+      },
     };
     error?: {
       background?: BackgroundType;
