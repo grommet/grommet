@@ -106,7 +106,7 @@ function (_Component) {
             if (valueIndex === -1) {
               nextOptionIndexesInValue.push(index);
             } else {
-              nextOptionIndexesInValue.splice(index, 1);
+              nextOptionIndexesInValue.splice(valueIndex, 1);
             }
 
             nextValue = nextOptionIndexesInValue.map(function (i) {
