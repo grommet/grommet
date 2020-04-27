@@ -321,7 +321,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // hover: {
         //   color: { dark: undefined, light: undefined },
         // },
-      }, // level ranges from 1-6
+      },
       icons: {
         collapse: FormUp,
         expand: FormDown,
