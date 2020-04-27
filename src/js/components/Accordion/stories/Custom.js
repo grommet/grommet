@@ -9,9 +9,9 @@ const CustomAccordionTheme = {
   accordion: {
     heading: {
       level: 3,
-      hover: {
-        color: 'accent-2',
-      },
+    },
+    hover: {
+      color: 'accent-2',
     },
     icons: {
       collapse: SubtractCircle,
