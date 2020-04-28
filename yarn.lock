@@ -1574,15 +1574,6 @@
   dependencies:
     type-detect "4.0.8"
 
-"@storybook/addon-options@^5.3.18":
-  version "5.3.18"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-5.3.18.tgz#cd40fa137213e4f738691771c404a255eee5b39a"
-  integrity sha512-AlejrKB0oiG/tVpqziA0zyKa9KhIwL7xGZYy+kdgTmXiWVJzp4OQgxaOrVD6trPrPpx8/YIwe5ivClxD5HuUpA==
-  dependencies:
-    "@storybook/addons" "5.3.18"
-    core-js "^3.0.1"
-    util-deprecate "^1.0.2"
-
 "@storybook/addon-storysource@^5.3.18":
   version "5.3.18"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-5.3.18.tgz#003374d76c0898c3b74aa4cd008f444eb6b63c68"
