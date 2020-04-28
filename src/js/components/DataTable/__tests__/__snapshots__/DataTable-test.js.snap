@@ -5885,7 +5885,8 @@ exports[`DataTable search 2`] = `
 .c2 > polygon,
 .c2 > polyline,
 .c2 > rect {
-  outline: #6FFFB0 solid 2px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c2::-moz-focus-inner {

@@ -1060,7 +1060,8 @@ exports[`Button focus 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #6FFFB0 solid 2px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c1::-moz-focus-inner {

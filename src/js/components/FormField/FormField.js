@@ -26,12 +26,12 @@ const isGrommetInput = comp =>
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
-  ${props => props.focus && focusStyle(true)}
+  ${props => props.focus && focusStyle({ justBorder: true })}
   ${props => props.theme.formField && props.theme.formField.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${props => props.focus && focusStyle(true)}
+  ${props => props.focus && focusStyle({ justBorder: true })}
 `;
 
 const Message = ({ message, ...rest }) => {

@@ -208,72 +208,68 @@ export const fillStyle = fillProp => {
   return undefined;
 };
 
-export const focusStyle = justBorder => css`
-  ${props =>
-    // focus also supports clickable elements inside svg
-    props.theme.global.focus &&
-    props.theme.global.focus.border &&
-    props.theme.global.focus.border.color &&
-    `> circle,
-    > ellipse,
-    > line,
-    > path,
-    > polygon,
-    > polyline,
-    > rect {
-      outline: ${normalizeColor(
-        props.theme.global.focus.border.color,
+const focusStyles = (props, { justBorder } = {}) => {
+  const {
+    theme: {
+      global: { focus },
+    },
+  } = props;
+  if (!focus) return ''; // native
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      const color = normalizeColor(
+        // If there is a focus.border.color, use that for shadow too.
+        // This is for backwards compatibility in v2.
+        (focus.border && focus.border.color) || focus.shadow.color || 'focus',
         props.theme,
-      )}
-        solid 2px;
-    }`}
-  ${props => {
-    const {
-      theme: {
-        global: { focus },
-      },
-    } = props;
-    if (!focus) return ''; // native
-    if (focus.shadow && (!focus.border || !justBorder)) {
-      if (typeof focus.shadow === 'object') {
-        const color = normalizeColor(
-          focus.shadow.color || 'focus',
-          props.theme,
-        );
-        const size = focus.shadow.size || '2px'; // backwards compatible default
-        return `
-          outline: none;
-          box-shadow: 0 0 ${size} ${size} ${color};
-        `;
-      }
+      );
+      const size = focus.shadow.size || '2px'; // backwards compatible default
       return `
         outline: none;
-        box-shadow: ${focus.shadow};
+        box-shadow: 0 0 ${size} ${size} ${color};
       `;
     }
-    if (focus.outline && (!focus.border || !justBorder)) {
-      if (typeof focus.outline === 'object') {
-        const color = normalizeColor(
-          focus.outline.color || 'focus',
-          props.theme,
-        );
-        const size = focus.outline.size || '2px';
-        return `
-          outline-offset: 0px;
-          outline: ${size} solid ${color};
-        `;
-      }
-      return `outline: ${focus.outline};`;
-    }
-    if (focus.border) {
-      const color = normalizeColor(focus.border.color || 'focus', props.theme);
+    return `
+      outline: none;
+      box-shadow: ${focus.shadow};
+    `;
+  }
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      const color = normalizeColor(focus.outline.color || 'focus', props.theme);
+      const size = focus.outline.size || '2px';
       return `
-        outline: none;
-        border-color: ${color};
+        outline-offset: 0px;
+        outline: ${size} solid ${color};
       `;
     }
-    return ''; // defensive
-  }}
+    return `outline: ${focus.outline};`;
+  }
+  if (focus.border) {
+    const color = normalizeColor(focus.border.color || 'focus', props.theme);
+    return `
+      outline: none;
+      border-color: ${color};
+    `;
+  }
+  return ''; // defensive
+};
+
+// focus also supports clickable elements inside svg
+export const focusStyle = ({ justBorder, skipSvgChildren } = {}) => css`
+  ${props =>
+    !skipSvgChildren &&
+    `
+  > circle,
+  > ellipse,
+  > line,
+  > path,
+  > polygon,
+  > polyline,
+  > rect {
+    ${focusStyles(props)}
+  }`}
+  ${props => focusStyles(props, { justBorder })}
   ::-moz-focus-inner {
     border: 0;
   }
