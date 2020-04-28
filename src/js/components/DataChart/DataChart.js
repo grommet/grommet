@@ -65,6 +65,7 @@ const DataChart = ({
   /* eslint-disable react/no-array-index-key */
   return (
     <Grid
+      // fill
       columns={['auto', 'flex']}
       rows={['flex', 'auto']}
       areas={[
@@ -78,9 +79,7 @@ const DataChart = ({
         <Box gridArea="xAxis" direction="row" justify="between">
           {axis[0].map((a, i) =>
             xAxis.render ? (
-              <Box key={i} border={xGuide[i]}>
-                {xAxis.render(i)}
-              </Box>
+              <Box key={i}>{xAxis.render(i)}</Box>
             ) : (
               <Box key={i} pad="xsmall" align="start" border={xGuide[i]}>
                 <Text>{xAxis.key ? data[i][xAxis.key] : a}</Text>

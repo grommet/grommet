@@ -1,16 +1,31 @@
 import * as React from "react";
 import { 
   A11yTitleType,
-  ColorType, 
+  AlignSelfType,
+  BackgroundType,
+  GapType,
   GridAreaType, 
   MarginType, 
 } from "../../utils";
-import { ChartProps } from "../Chart";
+import { ChartProps, OpacityType, ChartTypes } from "../Chart";
 import { GridProps } from "../Grid";
 
 type ChartType = {
   key: string;
-  ChartProps?;
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  bounds?: number[];
+  color?: string | {color?: string, opacity?: OpacityType | boolean} | {color: string, value: number | number[]}[];
+  gap?: GapType;
+  onClick?: ((...args: any[]) => any);
+  onHover?: ((...args: any[]) => any);
+  overflow?: boolean;
+  round?: boolean;
+  size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | {height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string, width?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string} | string;
+  thickness?: "hair" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "none" | string;
+  type?: ChartTypes;
 }
 
 export interface DataChartProps {
@@ -21,9 +36,9 @@ export interface DataChartProps {
   gridArea?: GridAreaType,
   margin?: MarginType;
   pad?: GridProps["pad"];
-  steps?: number[][];
+  steps?: [number, number];
   thickness?: ChartProps["thickness"];
-  xAxis?: boolean | { guide?: boolean, key?: string, render?: (index:number) => (any) };
+  xAxis?: boolean | { guide?: boolean, background?: BackgroundType, key?: string, render?: (index:number) => void };
   yAxis?: boolean | { guide?: boolean };
 }
 
