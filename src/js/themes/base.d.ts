@@ -184,6 +184,14 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      outline?: {
+        color?: ColorType;
+        size?: string;
+      };
+      shadow?: {
+        color?: ColorType;
+        size?: string;
+      };
     };
     font?: {
       face?: string;

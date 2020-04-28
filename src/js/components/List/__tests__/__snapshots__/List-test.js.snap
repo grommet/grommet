@@ -17,7 +17,6 @@ exports[`List background array 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #6FFFB0;
   color: #444444;
@@ -43,7 +42,6 @@ exports[`List background array 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #FD6FFF;
   color: #444444;
@@ -68,7 +66,6 @@ exports[`List background array 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #6FFFB0;
   color: #444444;
@@ -201,7 +198,6 @@ exports[`List background string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #6FFFB0;
   color: #444444;
@@ -227,7 +223,6 @@ exports[`List background string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #6FFFB0;
   color: #444444;
@@ -330,7 +325,6 @@ exports[`List border boolean 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -410,7 +404,6 @@ exports[`List border object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 12px #6FFFB0;
   border-bottom: solid 12px #6FFFB0;
@@ -492,7 +485,6 @@ exports[`List border side 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -516,7 +508,6 @@ exports[`List border side 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -617,7 +608,6 @@ exports[`List children render 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -641,7 +631,6 @@ exports[`List children render 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -742,7 +731,6 @@ exports[`List data objects 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -766,7 +754,6 @@ exports[`List data objects 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -867,7 +854,6 @@ exports[`List data strings 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -891,7 +877,6 @@ exports[`List data strings 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1018,7 +1003,6 @@ exports[`List itemProps 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1042,7 +1026,6 @@ exports[`List itemProps 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #6FFFB0;
   color: #444444;
@@ -1136,7 +1119,6 @@ exports[`List margin object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1160,7 +1142,6 @@ exports[`List margin object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1262,7 +1243,6 @@ exports[`List margin string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1286,7 +1266,6 @@ exports[`List margin string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1387,7 +1366,6 @@ exports[`List onClickItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1412,7 +1390,6 @@ exports[`List onClickItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1513,13 +1490,13 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 bJRAgK List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 hRnMDt List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 iWnVHs List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 fbIRTP List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta
@@ -1545,7 +1522,6 @@ exports[`List pad object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1567,7 +1543,6 @@ exports[`List pad object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1652,7 +1627,6 @@ exports[`List pad string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1673,7 +1647,6 @@ exports[`List pad string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1755,7 +1728,6 @@ exports[`List primaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1779,7 +1751,6 @@ exports[`List primaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1894,7 +1865,6 @@ exports[`List secondaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1926,7 +1896,6 @@ exports[`List secondaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;

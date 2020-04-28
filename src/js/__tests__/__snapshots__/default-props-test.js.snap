@@ -7,7 +7,6 @@ exports[`default theme is used 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #7D4CDB;
   color: #f8f8f8;
@@ -30,7 +29,6 @@ exports[`extends default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: red;
   color: #444444;
@@ -53,7 +51,6 @@ exports[`extends default theme twice 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: red;
   color: #444444;
@@ -76,7 +73,6 @@ exports[`extends default theme twice 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: blue;
   color: #444444;
@@ -109,7 +105,6 @@ exports[`uses Grommet theme instead of default 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: #7D4CDB;
   color: #f8f8f8;

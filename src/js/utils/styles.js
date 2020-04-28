@@ -208,8 +208,58 @@ export const fillStyle = fillProp => {
   return undefined;
 };
 
+const focusStyles = (props, { justBorder } = {}) => {
+  const {
+    theme: {
+      global: { focus },
+    },
+  } = props;
+  if (!focus) return ''; // native
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      const color = normalizeColor(
+        // If there is a focus.border.color, use that for shadow too.
+        // This is for backwards compatibility in v2.
+        (focus.border && focus.border.color) || focus.shadow.color || 'focus',
+        props.theme,
+      );
+      const size = focus.shadow.size || '2px'; // backwards compatible default
+      return `
+        outline: none;
+        box-shadow: 0 0 ${size} ${size} ${color};
+      `;
+    }
+    return `
+      outline: none;
+      box-shadow: ${focus.shadow};
+    `;
+  }
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      const color = normalizeColor(focus.outline.color || 'focus', props.theme);
+      const size = focus.outline.size || '2px';
+      return `
+        outline-offset: 0px;
+        outline: ${size} solid ${color};
+      `;
+    }
+    return `outline: ${focus.outline};`;
+  }
+  if (focus.border) {
+    const color = normalizeColor(focus.border.color || 'focus', props.theme);
+    return `
+      outline: none;
+      border-color: ${color};
+    `;
+  }
+  return ''; // defensive
+};
+
 // focus also supports clickable elements inside svg
-export const focusStyle = css`
+export const focusStyle = ({ justBorder, skipSvgChildren } = {}) => css`
+  ${props =>
+    !skipSvgChildren &&
+    `
   > circle,
   > ellipse,
   > line,
@@ -217,18 +267,9 @@ export const focusStyle = css`
   > polygon,
   > polyline,
   > rect {
-    outline: ${props =>
-        normalizeColor(props.theme.global.focus.border.color, props.theme)}
-      solid 2px;
-  }
-  outline-color: ${props =>
-    normalizeColor(props.theme.global.focus.border.color, props.theme)};
-  border-color: ${props =>
-    normalizeColor(props.theme.global.focus.border.color, props.theme)};
-  box-shadow: 0 0 2px 2px
-    ${props =>
-      normalizeColor(props.theme.global.focus.border.color, props.theme)};
-
+    ${focusStyles(props)}
+  }`}
+  ${props => focusStyles(props, { justBorder })}
   ::-moz-focus-inner {
     border: 0;
   }
@@ -278,7 +319,6 @@ export const inputStyle = css`
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   ${props =>
@@ -309,11 +349,7 @@ export const inputStyle = css`
       font-weight: ${props.theme.global.input.weight ||
         props.theme.global.input.font.weight};
     `} margin: 0;
-
-  ${props =>
-    props.focus &&
-    (!props.plain || props.focusIndicator) &&
-    focusStyle} ${controlBorderStyle}
+  ${controlBorderStyle}
 
   ::-webkit-search-decoration {
     -webkit-appearance: none;

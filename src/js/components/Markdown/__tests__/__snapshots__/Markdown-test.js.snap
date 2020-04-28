@@ -51,7 +51,6 @@ exports[`Markdown renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -69,7 +68,6 @@ exports[`Markdown renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c6:hover {

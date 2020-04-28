@@ -85,7 +85,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -101,7 +100,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -116,7 +114,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -134,7 +131,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -155,7 +151,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -174,7 +169,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -191,7 +185,6 @@ exports[`Carousel basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -200,6 +193,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -213,7 +207,6 @@ exports[`Carousel basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -222,6 +215,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -233,7 +227,6 @@ exports[`Carousel basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -242,6 +235,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -509,7 +503,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -525,7 +518,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -543,7 +535,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -558,7 +549,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -579,7 +569,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -598,7 +587,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -615,7 +603,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -624,6 +611,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -640,7 +628,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -649,6 +636,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -660,7 +648,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -669,6 +656,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -933,7 +921,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -949,7 +936,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -964,7 +950,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -982,7 +967,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1003,7 +987,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1022,7 +1005,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1039,7 +1021,6 @@ exports[`Carousel navigate 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1048,6 +1029,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1061,7 +1043,6 @@ exports[`Carousel navigate 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1070,6 +1051,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1081,7 +1063,6 @@ exports[`Carousel navigate 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1090,6 +1071,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1261,10 +1243,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 EaYGa"
+          class="StyledBox-sc-13pk1d4-0 fijLVp"
         >
           <img
             class="StyledImage-ey4zx9-0 gtXVuX"
@@ -1277,10 +1259,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fdJwEo"
+          class="StyledBox-sc-13pk1d4-0 fyNJTz"
         >
           <img
             class="StyledImage-ey4zx9-0 gtXVuX"
@@ -1293,11 +1275,11 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 NqokZ"
+        class="StyledBox-sc-13pk1d4-0 iLSfXS"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bYeHmo"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
@@ -1315,13 +1297,13 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 QbJgA"
+          class="StyledBox-sc-13pk1d4-0 idXMGj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hNgxQO"
+            class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1338,7 +1320,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1357,7 +1339,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 lbekSm"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
@@ -1392,10 +1374,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gaLfCI"
+          class="StyledBox-sc-13pk1d4-0 dGhOz"
         >
           <img
             class="StyledImage-ey4zx9-0 gtXVuX"
@@ -1408,10 +1390,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 EaYGa"
+          class="StyledBox-sc-13pk1d4-0 fijLVp"
         >
           <img
             class="StyledImage-ey4zx9-0 gtXVuX"
@@ -1424,11 +1406,11 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 NqokZ"
+        class="StyledBox-sc-13pk1d4-0 iLSfXS"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 lbekSm"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
@@ -1447,13 +1429,13 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 QbJgA"
+          class="StyledBox-sc-13pk1d4-0 idXMGj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hNgxQO"
+            class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1470,7 +1452,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1489,7 +1471,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 bYeHmo"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
@@ -1596,7 +1578,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1612,7 +1593,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1627,7 +1607,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1645,7 +1624,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1666,7 +1644,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1685,7 +1662,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1702,7 +1678,6 @@ exports[`Carousel play 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1711,6 +1686,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1724,7 +1700,6 @@ exports[`Carousel play 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1733,6 +1708,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1744,7 +1720,6 @@ exports[`Carousel play 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1753,6 +1728,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1922,10 +1898,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 EaYGa"
+          class="StyledBox-sc-13pk1d4-0 fijLVp"
         >
           <img
             class="StyledImage-ey4zx9-0 gtXVuX"
@@ -1938,10 +1914,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fdJwEo"
+          class="StyledBox-sc-13pk1d4-0 fyNJTz"
         >
           <img
             class="StyledImage-ey4zx9-0 gtXVuX"
@@ -1954,11 +1930,11 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 NqokZ"
+        class="StyledBox-sc-13pk1d4-0 iLSfXS"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bYeHmo"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
@@ -1976,13 +1952,13 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 QbJgA"
+          class="StyledBox-sc-13pk1d4-0 idXMGj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hNgxQO"
+            class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1999,7 +1975,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -2018,7 +1994,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 lbekSm"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
