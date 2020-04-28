@@ -1,11 +1,11 @@
 import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 
 const DIRECTION_PROPS = {
   horizontal: {
@@ -18,13 +18,17 @@ const DIRECTION_PROPS = {
   },
 };
 
+const StyledBox = styled(Box)`
+  ${props => props.focus && focusStyle()}
+`;
+
 const EdgeControl = forwardRef(
   (
     { color, direction, edge, onDecrease, onIncrease, thickness, ...rest },
     ref,
   ) => {
     const theme = useContext(ThemeContext);
-    const [focused, setFocused] = useState(false);
+    const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const size = parseMetricToNum(theme.global.spacing) / 2;
     const keyboardProps =
@@ -39,29 +43,26 @@ const EdgeControl = forwardRef(
       'disc';
 
     let node;
+    const backgroundColor = normalizeColor(color || 'control', theme);
     if (type === 'bar') {
       node = (
-        <Box
+        <StyledBox
           flex={!thickness}
           justifySelf="stretch"
           width={direction === 'vertical' ? thickness : `${size}px`}
           height={direction === 'vertical' ? `${size}px` : thickness}
-          background={normalizeColor(color || 'control', theme)}
-          border={
-            focused ? { color: normalizeColor('focus', theme) } : undefined
-          }
+          background={backgroundColor}
+          focus={focus}
         />
       );
     } else if (type === 'disc') {
       node = (
-        <Box
-          width={`${size + (focused ? 2 : 0)}px`}
-          height={`${size + (focused ? 2 : 0)}px`}
+        <StyledBox
+          width={`${size}px`}
+          height={`${size}px`}
           round="full"
-          background={normalizeColor(color || 'control', theme)}
-          border={
-            focused ? { color: normalizeColor('focus', theme) } : undefined
-          }
+          background={backgroundColor}
+          focus={focus}
         />
       );
     } else {
@@ -86,13 +87,14 @@ const EdgeControl = forwardRef(
             fill={fill}
             style={{
               cursor,
+              outline: 'none',
               minWidth: size,
               minHeight: size,
               zIndex: 10,
             }}
             tabIndex={0}
-            onFocus={() => setFocused(true)}
-            onBlur={() => setFocused(false)}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
             {...rest}
           >
             {node}

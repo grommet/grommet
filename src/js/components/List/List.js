@@ -14,7 +14,7 @@ const StyledList = styled.ul`
   ${props => !props.margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
-  ${props => props.focus && focusStyle}
+  ${props => props.focus && focusStyle()}
 `;
 
 const StyledItem = styled(Box)`

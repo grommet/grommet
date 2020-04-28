@@ -7,7 +7,6 @@ exports[`Tabs Tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -22,7 +21,6 @@ exports[`Tabs Tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -47,7 +45,6 @@ exports[`Tabs Tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -68,7 +65,6 @@ exports[`Tabs Tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -87,7 +83,6 @@ exports[`Tabs Tab 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -96,6 +91,7 @@ exports[`Tabs Tab 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -263,7 +259,6 @@ exports[`Tabs change to second tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -278,7 +273,6 @@ exports[`Tabs change to second tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -303,7 +297,6 @@ exports[`Tabs change to second tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -324,7 +317,6 @@ exports[`Tabs change to second tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -343,7 +335,6 @@ exports[`Tabs change to second tab 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -352,6 +343,7 @@ exports[`Tabs change to second tab 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -507,21 +499,21 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jJdKAu StyledTabs-a4fwxl-2 gjpnHh"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cbhmKY StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
+      class="StyledBox-sc-13pk1d4-0 ewBYLf StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fuNnNM StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -533,12 +525,12 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -566,7 +558,6 @@ exports[`Tabs complex title 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -581,7 +572,6 @@ exports[`Tabs complex title 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -606,7 +596,6 @@ exports[`Tabs complex title 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -627,7 +616,6 @@ exports[`Tabs complex title 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -646,7 +634,6 @@ exports[`Tabs complex title 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -655,6 +642,7 @@ exports[`Tabs complex title 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -806,7 +794,6 @@ exports[`Tabs no Tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -821,7 +808,6 @@ exports[`Tabs no Tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -846,7 +832,6 @@ exports[`Tabs no Tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -865,7 +850,6 @@ exports[`Tabs no Tab 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -874,6 +858,7 @@ exports[`Tabs no Tab 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -973,7 +958,6 @@ exports[`Tabs set on hover 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -988,7 +972,6 @@ exports[`Tabs set on hover 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1013,7 +996,6 @@ exports[`Tabs set on hover 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -1034,7 +1016,6 @@ exports[`Tabs set on hover 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -1053,7 +1034,6 @@ exports[`Tabs set on hover 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1062,6 +1042,7 @@ exports[`Tabs set on hover 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1217,21 +1198,21 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jJdKAu StyledTabs-a4fwxl-2 gjpnHh"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cbhmKY StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
+      class="StyledBox-sc-13pk1d4-0 ewBYLf StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1243,12 +1224,12 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fuNnNM StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -1274,21 +1255,21 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jJdKAu StyledTabs-a4fwxl-2 gjpnHh"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cbhmKY StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
+      class="StyledBox-sc-13pk1d4-0 ewBYLf StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1300,12 +1281,12 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 jvLdFN"
@@ -1331,21 +1312,21 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jJdKAu StyledTabs-a4fwxl-2 gjpnHh"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cbhmKY StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
+      class="StyledBox-sc-13pk1d4-0 ewBYLf StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1357,12 +1338,12 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 jvLdFN"
@@ -1388,21 +1369,21 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jJdKAu StyledTabs-a4fwxl-2 gjpnHh"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cbhmKY StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
+      class="StyledBox-sc-13pk1d4-0 ewBYLf StyledTabs__StyledTabsHeader-a4fwxl-0 fXJmvC"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hZYEKY StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1414,12 +1395,12 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 dnCEuz"
+        class="StyledButton-sc-323bzc-0 bwJeiP"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fuNnNM StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 cuuQmA"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -1447,7 +1428,6 @@ exports[`Tabs with icon + reverse 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1462,7 +1442,6 @@ exports[`Tabs with icon + reverse 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1487,7 +1466,6 @@ exports[`Tabs with icon + reverse 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -1516,7 +1494,6 @@ exports[`Tabs with icon + reverse 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -1553,7 +1530,6 @@ exports[`Tabs with icon + reverse 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1562,6 +1538,7 @@ exports[`Tabs with icon + reverse 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
