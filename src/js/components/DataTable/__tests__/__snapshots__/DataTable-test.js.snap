@@ -2183,6 +2183,7 @@ exports[`DataTable groupBy 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2460,7 +2461,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 hvdwlH"
+            class="StyledButton-sc-323bzc-0 iCVMHc"
             type="button"
           >
             <div
@@ -2514,7 +2515,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 hvdwlH"
+            class="StyledButton-sc-323bzc-0 iCVMHc"
             type="button"
           >
             <div
@@ -2557,7 +2558,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 hvdwlH"
+            class="StyledButton-sc-323bzc-0 iCVMHc"
             type="button"
           >
             <div
@@ -2673,6 +2674,7 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3087,6 +3089,7 @@ exports[`DataTable groupBy property 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3364,7 +3367,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 hvdwlH"
+            class="StyledButton-sc-323bzc-0 iCVMHc"
             type="button"
           >
             <div
@@ -3418,7 +3421,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 hvdwlH"
+            class="StyledButton-sc-323bzc-0 iCVMHc"
             type="button"
           >
             <div
@@ -3461,7 +3464,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 hvdwlH"
+            class="StyledButton-sc-323bzc-0 iCVMHc"
             type="button"
           >
             <div
@@ -3542,6 +3545,7 @@ exports[`DataTable onSort 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3755,7 +3759,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jHVuIG"
+            class="StyledButton-sc-323bzc-0 grapNN"
             type="button"
           >
             <div
@@ -3842,7 +3846,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jHVuIG"
+            class="StyledButton-sc-323bzc-0 grapNN"
             type="button"
           >
             <div
@@ -5616,6 +5620,7 @@ exports[`DataTable search 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -6015,6 +6020,7 @@ exports[`DataTable sortable 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -6228,7 +6234,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jHVuIG"
+            class="StyledButton-sc-323bzc-0 grapNN"
             type="button"
           >
             <div
@@ -6315,7 +6321,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jHVuIG"
+            class="StyledButton-sc-323bzc-0 grapNN"
             type="button"
           >
             <div

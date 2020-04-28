@@ -343,6 +343,7 @@ exports[`FormField custom label 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -497,6 +498,7 @@ exports[`FormField default 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -655,6 +657,7 @@ exports[`FormField disabled 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   opacity: 0.3;
   cursor: default;
@@ -830,6 +833,7 @@ exports[`FormField disabled with custom label 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   opacity: 0.3;
   cursor: default;
@@ -1746,6 +1750,7 @@ exports[`FormField required 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 

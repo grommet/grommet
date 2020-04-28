@@ -102,6 +102,7 @@ exports[`Form controlled 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -199,7 +200,7 @@ exports[`Form controlled 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -237,7 +238,7 @@ exports[`Form controlled 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -367,6 +368,7 @@ exports[`Form controlled FormField deprecated 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -476,7 +478,7 @@ exports[`Form controlled FormField deprecated 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               id="test"
               name="test"
               value="v"
@@ -520,7 +522,7 @@ exports[`Form controlled FormField deprecated 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               id="test"
               name="test"
               value="v"
@@ -641,6 +643,7 @@ exports[`Form controlled input 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -738,7 +741,7 @@ exports[`Form controlled input 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -776,7 +779,7 @@ exports[`Form controlled input 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -897,6 +900,7 @@ exports[`Form controlled input lazy 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -994,7 +998,7 @@ exports[`Form controlled input lazy 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -1032,7 +1036,7 @@ exports[`Form controlled input lazy 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -1153,6 +1157,7 @@ exports[`Form controlled lazy 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -1250,7 +1255,7 @@ exports[`Form controlled lazy 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -1288,7 +1293,7 @@ exports[`Form controlled lazy 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value="v"
@@ -1408,6 +1413,7 @@ exports[`Form errors 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -1573,6 +1579,7 @@ exports[`Form infos 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -1931,6 +1938,7 @@ exports[`Form uncontrolled 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -2028,7 +2036,7 @@ exports[`Form uncontrolled 2`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value=""
@@ -2066,7 +2074,7 @@ exports[`Form uncontrolled 3`] = `
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
+              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
               name="test"
               placeholder="test input"
               value=""
@@ -2187,6 +2195,7 @@ exports[`Form update 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 
@@ -2497,6 +2506,7 @@ exports[`Form with field 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
 }
 

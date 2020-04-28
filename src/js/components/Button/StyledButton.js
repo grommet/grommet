@@ -130,6 +130,7 @@ const fillStyle = fillContainer => {
 
 const plainStyle = props => css`
   color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;

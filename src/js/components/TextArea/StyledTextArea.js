@@ -9,6 +9,7 @@ import {
 import { defaultProps } from '../../default-props';
 
 const plainStyle = css`
+  outline: none;
   border: none;
   width: 100%;
   -webkit-appearance: none;

@@ -88,6 +88,7 @@ exports[`TextArea disabled 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   width: 100%;
   -webkit-appearance: none;
@@ -348,6 +349,7 @@ exports[`TextArea plain 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   width: 100%;
   -webkit-appearance: none;

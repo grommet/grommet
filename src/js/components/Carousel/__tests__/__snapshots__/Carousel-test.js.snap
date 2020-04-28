@@ -193,6 +193,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -214,6 +215,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -233,6 +235,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -608,6 +611,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -632,6 +636,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -651,6 +656,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1023,6 +1029,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1044,6 +1051,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1063,6 +1071,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1270,7 +1279,7 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bOIOdP"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
@@ -1294,7 +1303,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 yquOu"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1311,7 +1320,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 yquOu"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1330,7 +1339,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 bJuENl"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
@@ -1401,7 +1410,7 @@ exports[`Carousel navigate 3`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bJuENl"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
@@ -1426,7 +1435,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 yquOu"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1443,7 +1452,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 yquOu"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1462,7 +1471,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 bOIOdP"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
@@ -1677,6 +1686,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1698,6 +1708,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1717,6 +1728,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1922,7 +1934,7 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bOIOdP"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
@@ -1946,7 +1958,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 yquOu"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1963,7 +1975,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 yquOu"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
@@ -1982,7 +1994,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 bJuENl"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
