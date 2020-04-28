@@ -312,6 +312,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     accordion: {
+      // outer: {
+      //   border: {
+      //     side: undefined,
+      //     color: undefined,
+      //   },
+      // },
       border: {
         side: 'bottom',
         color: 'border',

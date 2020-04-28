@@ -1,5 +1,6 @@
-import React, { Children, forwardRef, useState } from 'react';
+import React, { Children, forwardRef, useState, useContext } from 'react';
 
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 
 import { AccordionContext } from './AccordionContext';
@@ -14,6 +15,7 @@ const Accordion = forwardRef(
   ) => {
     const [activeIndexes, setActiveIndexes] = useState([]);
     const [stateActiveIndex, setStateActiveIndex] = useState();
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // Derived state from props
     // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
@@ -46,7 +48,12 @@ const Accordion = forwardRef(
     };
 
     return (
-      <Box ref={ref} role="tablist" {...rest}>
+      <Box
+        border={(theme.accordion.outer && theme.accordion.outer.border) || ''}
+        ref={ref}
+        role="tablist"
+        {...rest}
+      >
         {Children.toArray(children)
           .filter(child => child)
           .map((child, index) => (

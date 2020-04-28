@@ -37,13 +37,23 @@ export const themeDoc = {
     defaultValue: '<FormDown />',
   },
   'accordion.border.color': {
-    description: 'The border color to use in the accordion.',
+    description: 'The panel border color to use in the accordion panel.',
     type: 'string | { dark: string, light: string }',
     defaultValue: 'border',
   },
   'accordion.border.side': {
-    description: 'The border side to use in the accordion.',
+    description: 'The panel border side to use in the accordion panel.',
     type: 'string',
     defaultValue: 'bottom',
+  },
+  'accordion.outer.border.color': {
+    description: 'The outer border color around to use in the accordion.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
+  },
+  'accordion.outer.border.side': {
+    description: 'The outer border side to use in accordion.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
   },
 };

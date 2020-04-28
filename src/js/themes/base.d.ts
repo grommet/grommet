@@ -231,6 +231,12 @@ export interface ThemeType {
     };
   };
   accordion?: {
+    outer?:{
+      border?: {
+        side?: string;
+        color?: ColorType;
+      }
+    }
     border?: {
       side?: string;
       color?: ColorType;

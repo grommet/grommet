@@ -70,7 +70,7 @@ Defaults to
 
 **accordion.border.color**
 
-The border color to use in the accordion. Expects `string | { dark: string, light: string }`.
+The panel border color to use in the accordion panel. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -80,10 +80,30 @@ border
 
 **accordion.border.side**
 
-The border side to use in the accordion. Expects `string`.
+The panel border side to use in the accordion panel. Expects `string`.
 
 Defaults to
 
 ```
 bottom
+```
+
+**accordion.outer.border.color**
+
+The outer border color around to use in the accordion. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**accordion.outer.border.side**
+
+The outer border side to use in accordion. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
 ```
