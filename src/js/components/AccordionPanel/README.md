@@ -28,7 +28,7 @@ div
 ```
 ## Theme
   
-**accordion.heading.hover.color**
+**accordion.hover.color**
 
 The hover color used for the accordion. Expects `string | { dark: string, light: string }`.
 
