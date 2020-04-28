@@ -7,7 +7,6 @@ exports[`Avatar icon renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -56,7 +55,6 @@ exports[`Avatar renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -108,7 +106,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -136,7 +133,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -165,7 +161,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -194,7 +189,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -223,7 +217,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -252,7 +245,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -340,7 +332,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -369,7 +360,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -398,7 +388,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -427,7 +416,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -485,7 +473,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -500,7 +487,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -515,7 +501,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -544,7 +529,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -560,7 +544,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -659,7 +642,6 @@ exports[`Avatar text renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -688,7 +670,6 @@ exports[`Avatar text renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { disabledStyle, focusStyle, inputStyle, placeholderStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
-var plainStyle = css(["border:none;width:100%;-webkit-appearance:none;"]);
+var plainStyle = css(["outline:none;border:none;width:100%;-webkit-appearance:none;"]);
 
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.text[props.size];
@@ -38,7 +38,7 @@ var StyledTextArea = styled.textarea.withConfig({
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.textArea.disabled && props.theme.textArea.disabled.opacity);
 }, placeholderStyle, function (props) {
-  return props.focus && !props.plain && focusStyle;
+  return props.focus && !props.plain && focusStyle();
 }, function (props) {
   return props.theme.textArea && props.theme.textArea.extend;
 });

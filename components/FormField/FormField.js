@@ -41,8 +41,20 @@ var isGrommetInput = function isGrommetInput(comp) {
 var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "m9hood-0"
-})(["", ""], function (props) {
+})(["", " ", ""], function (props) {
+  return props.focus && (0, _utils.focusStyle)({
+    justBorder: true
+  });
+}, function (props) {
   return props.theme.formField && props.theme.formField.extend;
+});
+var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "FormField__FormFieldContentBox",
+  componentId: "m9hood-1"
+})(["", ""], function (props) {
+  return props.focus && (0, _utils.focusStyle)({
+    justBorder: true
+  });
 });
 
 var Message = function Message(_ref) {
@@ -176,13 +188,13 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
     }));
   };
 
-  var formField = theme.formField;
-  var border = formField.border; // This is here for backwards compatibility. In case the child is a grommet
+  var formFieldTheme = theme.formField;
+  var themeBorder = formFieldTheme.border; // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
 
   var wantContentPad = component && (component === _CheckBox.CheckBox || component === _RadioButtonGroup.RadioButtonGroup);
-  var contents = border && children && _react.Children.map(children, function (child) {
+  var contents = themeBorder && children && _react.Children.map(children, function (child) {
     if (child && child.type && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
       wantContentPad = true;
     }
@@ -219,13 +231,13 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
     }
   }
 
-  var contentProps = pad || wantContentPad ? _extends({}, formField.content) : {};
+  var contentProps = pad || wantContentPad ? _extends({}, formFieldTheme.content) : {};
 
-  if (border.position === 'inner') {
-    if (normalizedError && formField.error) {
-      contentProps.background = formField.error.background;
-    } else if (disabled && formField.disabled) {
-      contentProps.background = formField.disabled.background;
+  if (themeBorder.position === 'inner') {
+    if (normalizedError && formFieldTheme.error) {
+      contentProps.background = formFieldTheme.error.background;
+    } else if (disabled && formFieldTheme.disabled) {
+      contentProps.background = formFieldTheme.disabled.background;
     }
   }
 
@@ -233,36 +245,37 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
   var borderColor;
 
   if (disabled) {
-    borderColor = formField.disabled.border && formField.disabled.border.color;
-  } else if (focus && !normalizedError) {
-    borderColor = 'focus';
+    borderColor = formFieldTheme.disabled.border && formFieldTheme.disabled.border.color;
   } else if (normalizedError) {
-    borderColor = border && border.error.color || 'status-critical';
+    borderColor = themeBorder && themeBorder.error.color || 'status-critical';
   } else {
-    borderColor = border && border.color || 'border';
+    borderColor = themeBorder && themeBorder.color || 'border';
   }
 
-  var labelStyle = _extends({}, formField.label);
+  var labelStyle = _extends({}, formFieldTheme.label);
 
   if (disabled) {
-    labelStyle.color = formField.disabled && formField.disabled.label ? formField.disabled.label.color : labelStyle.color;
+    labelStyle.color = formFieldTheme.disabled && formFieldTheme.disabled.label ? formFieldTheme.disabled.label.color : labelStyle.color;
   }
 
   var abut;
   var abutMargin;
   var outerStyle = style;
 
-  if (border) {
-    contents = _react["default"].createElement(_Box.Box, {
-      overflow: "hidden",
-      border: border.position === 'inner' ? _extends({}, border, {
-        side: border.side || 'bottom',
+  if (themeBorder) {
+    var innerProps = themeBorder.position === 'inner' ? {
+      border: _extends({}, themeBorder, {
+        side: themeBorder.side || 'bottom',
         color: borderColor
-      }) : undefined,
-      round: border.position === 'inner' ? formField.round : undefined
-    }, contents);
-    var mergedMargin = margin || formField.margin;
-    abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
+      }),
+      round: formFieldTheme.round,
+      focus: focus
+    } : {};
+    contents = _react["default"].createElement(FormFieldContentBox, _extends({
+      overflow: "hidden"
+    }, innerProps), contents);
+    var mergedMargin = margin || formFieldTheme.margin;
+    abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
 
     if (abut) {
       // marginBottom is set to overlap adjacent fields
@@ -272,11 +285,11 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
 
       if (margin) {
         abutMargin = margin;
-      } else if (border.size) {
+      } else if (themeBorder.size) {
         // if the user defines a margin,
         // then the default margin below will be overriden
         abutMargin = {
-          bottom: "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[border.size] || border.size) + "px"
+          bottom: "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[themeBorder.size] || themeBorder.size) + "px"
         };
       }
 
@@ -289,23 +302,27 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
 
   var outerBackground;
 
-  if (border.position === 'outer') {
-    if (normalizedError && formField.error) {
-      outerBackground = formField.error.background;
-    } else if (disabled && formField.disabled) {
-      outerBackground = formField.disabled.background;
+  if (themeBorder.position === 'outer') {
+    if (normalizedError && formFieldTheme.error) {
+      outerBackground = formFieldTheme.error.background;
+    } else if (disabled && formFieldTheme.disabled) {
+      outerBackground = formFieldTheme.disabled.background;
     }
   }
 
+  var outerProps = themeBorder && themeBorder.position === 'outer' ? {
+    border: _extends({}, themeBorder, {
+      color: borderColor
+    }),
+    round: formFieldTheme.round,
+    focus: focus
+  } : {};
   return _react["default"].createElement(FormFieldBox, _extends({
     ref: ref,
     className: className,
-    border: border && border.position === 'outer' ? _extends({}, border, {
-      color: borderColor
-    }) : undefined,
     background: outerBackground,
-    margin: abut ? abutMargin : margin || _extends({}, formField.margin),
-    round: border.position === 'outer' ? formField.round : undefined,
+    margin: abut ? abutMargin : margin || _extends({}, formFieldTheme.margin)
+  }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
       setFocus(true);
@@ -321,11 +338,11 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
     htmlFor: htmlFor
   }, labelStyle), label), _react["default"].createElement(Message, _extends({
     message: help
-  }, formField.help))) : undefined, contents, _react["default"].createElement(Message, _extends({
+  }, formFieldTheme.help))) : undefined, contents, _react["default"].createElement(Message, _extends({
     message: normalizedError
-  }, formField.error)), _react["default"].createElement(Message, _extends({
+  }, formFieldTheme.error)), _react["default"].createElement(Message, _extends({
     message: normalizedInfo
-  }, formField.info)));
+  }, formFieldTheme.info)));
 });
 FormField.displayName = 'FormField';
 var FormFieldDoc;

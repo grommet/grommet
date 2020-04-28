@@ -73,7 +73,7 @@ var fillStyle = function fillStyle(fillContainer) {
 };
 
 var plainStyle = function plainStyle(props) {
-  return css(["color:", ";border:none;padding:0;text-align:inherit;"], normalizeColor(props.colorValue || 'inherit', props.theme));
+  return css(["color:", ";outline:none;border:none;padding:0;text-align:inherit;"], normalizeColor(props.colorValue || 'inherit', props.theme));
 };
 
 var activeButtonStyle = function activeButtonStyle(props) {
@@ -90,7 +90,7 @@ var disabledButtonStyle = function disabledButtonStyle(props) {
 var StyledButton = styled.button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;outline:none;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
@@ -103,7 +103,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.disabled && props.theme.button && props.theme.button.disabled && disabledButtonStyle(props);
 }, function (props) {
-  return props.focus && (!props.plain || props.focusIndicator) && focusStyle;
+  return props.focus && (!props.plain || props.focusIndicator) && focusStyle();
 }, function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {

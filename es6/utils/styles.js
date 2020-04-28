@@ -95,17 +95,63 @@ export var fillStyle = function fillStyle(fillProp) {
   }
 
   return undefined;
+};
+
+var focusStyles = function focusStyles(props, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      justBorder = _ref.justBorder;
+
+  var focus = props.theme.global.focus;
+  if (!focus) return ''; // native
+
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      var color = normalizeColor( // If there is a focus.border.color, use that for shadow too.
+      // This is for backwards compatibility in v2.
+      focus.border && focus.border.color || focus.shadow.color || 'focus', props.theme);
+      var size = focus.shadow.size || '2px'; // backwards compatible default
+
+      return "\n        outline: none;\n        box-shadow: 0 0 " + size + " " + size + " " + color + ";\n      ";
+    }
+
+    return "\n      outline: none;\n      box-shadow: " + focus.shadow + ";\n    ";
+  }
+
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      var _color = normalizeColor(focus.outline.color || 'focus', props.theme);
+
+      var _size = focus.outline.size || '2px';
+
+      return "\n        outline-offset: 0px;\n        outline: " + _size + " solid " + _color + ";\n      ";
+    }
+
+    return "outline: " + focus.outline + ";";
+  }
+
+  if (focus.border) {
+    var _color2 = normalizeColor(focus.border.color || 'focus', props.theme);
+
+    return "\n      outline: none;\n      border-color: " + _color2 + ";\n    ";
+  }
+
+  return ''; // defensive
 }; // focus also supports clickable elements inside svg
 
-export var focusStyle = css(["> circle,> ellipse,> line,> path,> polygon,> polyline,> rect{outline:", " solid 2px;}outline-color:", ";border-color:", ";box-shadow:0 0 2px 2px ", ";::-moz-focus-inner{border:0;}"], function (props) {
-  return normalizeColor(props.theme.global.focus.border.color, props.theme);
-}, function (props) {
-  return normalizeColor(props.theme.global.focus.border.color, props.theme);
-}, function (props) {
-  return normalizeColor(props.theme.global.focus.border.color, props.theme);
-}, function (props) {
-  return normalizeColor(props.theme.global.focus.border.color, props.theme);
-}); // For backwards compatibility we need to add back the control border width.
+
+export var focusStyle = function focusStyle(_temp2) {
+  var _ref2 = _temp2 === void 0 ? {} : _temp2,
+      justBorder = _ref2.justBorder,
+      skipSvgChildren = _ref2.skipSvgChildren;
+
+  return css(["", " ", "::-moz-focus-inner{border:0;}"], function (props) {
+    return !skipSvgChildren && "\n  > circle,\n  > ellipse,\n  > line,\n  > path,\n  > polygon,\n  > polyline,\n  > rect {\n    " + focusStyles(props) + "\n  }";
+  }, function (props) {
+    return focusStyles(props, {
+      justBorder: justBorder
+    });
+  });
+}; // For backwards compatibility we need to add back the control border width.
 // Based on how grommet was functioning prior to https://github.com/grommet/grommet/pull/3939,
 // the padding was subtracting the border width from the theme value, but the
 // placeholder was not. Because we're now placing the subtraction into the
@@ -131,7 +177,7 @@ export var getInputPadBySide = function getInputPadBySide(props, side) {
   var adjustedPad = adjustPad(props, pad);
   return adjustedPad;
 };
-export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;outline:none;background:transparent;color:inherit;", " ", " ", " margin:0;", " ", "::-webkit-search-decoration{-webkit-appearance:none;}"], function (props) {
+export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;", " ", " ", " margin:0;", "::-webkit-search-decoration{-webkit-appearance:none;}"], function (props) {
   return "font-size: " + (props.theme.global.input.font.size ? props.theme.text[props.theme.global.input.font.size].size || props.theme.global.input.font.size : 'inherit') + ";";
 }, function (props) {
   return props.theme.global.input.font.height && "line-height: " + props.theme.global.input.font.height + ";";
@@ -145,8 +191,6 @@ export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;bor
   return (// for backwards compatibility, check if props.theme.global.input.weight
     (props.theme.global.input.weight || props.theme.global.input.font.weight) && css(["font-weight:", ";"], props.theme.global.input.weight || props.theme.global.input.font.weight)
   );
-}, function (props) {
-  return props.focus && (!props.plain || props.focusIndicator) && focusStyle;
 }, controlBorderStyle);
 export var overflowStyle = function overflowStyle(overflowProp) {
   if (typeof overflowProp === 'string') {

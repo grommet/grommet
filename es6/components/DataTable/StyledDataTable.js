@@ -37,7 +37,7 @@ var StyledDataTableBody = styled(TableBody).withConfig({
 })(["", " ", ""], function (props) {
   return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
 }, function (props) {
-  return props.focus && focusStyle;
+  return props.focus && focusStyle();
 });
 StyledDataTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);

@@ -13,7 +13,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var plainStyle = (0, _styledComponents.css)(["border:none;width:100%;-webkit-appearance:none;"]);
+var plainStyle = (0, _styledComponents.css)(["outline:none;border:none;width:100%;-webkit-appearance:none;"]);
 
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.text[props.size];
@@ -50,7 +50,7 @@ var StyledTextArea = _styledComponents["default"].textarea.withConfig({
 }, function (props) {
   return props.disabled && (0, _utils.disabledStyle)(props.theme.textArea.disabled && props.theme.textArea.disabled.opacity);
 }, _utils.placeholderStyle, function (props) {
-  return props.focus && !props.plain && _utils.focusStyle;
+  return props.focus && !props.plain && (0, _utils.focusStyle)();
 }, function (props) {
   return props.theme.textArea && props.theme.textArea.extend;
 });

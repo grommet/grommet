@@ -17,7 +17,7 @@ var StyledList = styled.ul.withConfig({
 })(["list-style:none;", " padding:0;", " ", ""], function (props) {
   return !props.margin && 'margin: 0;';
 }, genericStyles, function (props) {
-  return props.focus && focusStyle;
+  return props.focus && focusStyle();
 });
 var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",

@@ -56,7 +56,7 @@ var StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody
 })(["", " ", ""], function (props) {
   return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
 }, function (props) {
-  return props.focus && _utils.focusStyle;
+  return props.focus && (0, _utils.focusStyle)();
 });
 exports.StyledDataTableBody = StyledDataTableBody;
 StyledDataTableBody.defaultProps = {};

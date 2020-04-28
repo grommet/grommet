@@ -37,7 +37,7 @@ var StyledList = _styledComponents["default"].ul.withConfig({
 })(["list-style:none;", " padding:0;", " ", ""], function (props) {
   return !props.margin && 'margin: 0;';
 }, _utils.genericStyles, function (props) {
-  return props.focus && _utils.focusStyle;
+  return props.focus && (0, _utils.focusStyle)();
 });
 
 var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({

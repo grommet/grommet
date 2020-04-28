@@ -34,6 +34,16 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+// Temporarily added to make testing focus changes easier.
+// This is the expected HPE theme focus.
+var hpeNext = (0, _utils.deepMerge)(_grommetThemeHpeNext.hpe, {
+  global: {
+    focus: {
+      border: undefined
+    }
+  }
+});
+
 var Node = function Node(_ref) {
   var id = _ref.id,
       rest = _objectWithoutPropertiesLoose(_ref, ["id"]);
@@ -68,10 +78,9 @@ var connection = function connection(fromTarget, toTarget, _ref2) {
 };
 
 var themes = {
-  dark: _themes.dark,
   grommet: _themes.grommet,
   hpe: _grommetThemeHpe.hpe,
-  hpeNext: _grommetThemeHpeNext.hpe,
+  hpeNext: hpeNext,
   hpeV0: _grommetThemeHpeV.hpe,
   aruba: _grommetThemeAruba.aruba,
   hp: _grommetThemeHp.hp,
@@ -120,7 +129,8 @@ var Components = function Components() {
   }, [theme]);
   var content = [_react["default"].createElement(_grommet.Box, {
     key: "type",
-    align: "start"
+    align: "start",
+    gap: "small"
   }, _react["default"].createElement(_grommet.Heading, {
     margin: {
       top: 'none'
@@ -138,7 +148,10 @@ var Components = function Components() {
   }), _react["default"].createElement(_grommet.Button, {
     label: "Button",
     onClick: function onClick() {}
-  })), _react["default"].createElement(_grommet.Box, {
+  }), _react["default"].createElement(_grommet.Button, {
+    plain: true,
+    onClick: function onClick() {}
+  }, _react["default"].createElement(_grommet.Text, null, "plain button"))), _react["default"].createElement(_grommet.Box, {
     key: "input",
     gap: "small"
   }, _react["default"].createElement(_grommet.Select, {

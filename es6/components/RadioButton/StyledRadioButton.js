@@ -42,7 +42,7 @@ var StyledRadioButtonBox = styled.div.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonBox",
   componentId: "g1f6ld-3"
 })(["", ";", ";"], function (props) {
-  return props.focus && focusStyle;
+  return props.focus && focusStyle();
 }, function (props) {
   return props.theme.radioButton.check.extend;
 });

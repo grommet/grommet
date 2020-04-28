@@ -5,7 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { Children, cloneElement, forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { parseMetricToNum } from '../../utils';
+import { focusStyle, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { RadioButtonGroup } from '../RadioButtonGroup';
@@ -22,8 +22,20 @@ var isGrommetInput = function isGrommetInput(comp) {
 var FormFieldBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "m9hood-0"
-})(["", ""], function (props) {
+})(["", " ", ""], function (props) {
+  return props.focus && focusStyle({
+    justBorder: true
+  });
+}, function (props) {
   return props.theme.formField && props.theme.formField.extend;
+});
+var FormFieldContentBox = styled(Box).withConfig({
+  displayName: "FormField__FormFieldContentBox",
+  componentId: "m9hood-1"
+})(["", ""], function (props) {
+  return props.focus && focusStyle({
+    justBorder: true
+  });
 });
 
 var Message = function Message(_ref) {
@@ -156,13 +168,13 @@ var FormField = forwardRef(function (_ref2, ref) {
     }));
   };
 
-  var formField = theme.formField;
-  var border = formField.border; // This is here for backwards compatibility. In case the child is a grommet
+  var formFieldTheme = theme.formField;
+  var themeBorder = formFieldTheme.border; // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
 
   var wantContentPad = component && (component === CheckBox || component === RadioButtonGroup);
-  var contents = border && children && Children.map(children, function (child) {
+  var contents = themeBorder && children && Children.map(children, function (child) {
     if (child && child.type && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
       wantContentPad = true;
     }
@@ -199,13 +211,13 @@ var FormField = forwardRef(function (_ref2, ref) {
     }
   }
 
-  var contentProps = pad || wantContentPad ? _extends({}, formField.content) : {};
+  var contentProps = pad || wantContentPad ? _extends({}, formFieldTheme.content) : {};
 
-  if (border.position === 'inner') {
-    if (normalizedError && formField.error) {
-      contentProps.background = formField.error.background;
-    } else if (disabled && formField.disabled) {
-      contentProps.background = formField.disabled.background;
+  if (themeBorder.position === 'inner') {
+    if (normalizedError && formFieldTheme.error) {
+      contentProps.background = formFieldTheme.error.background;
+    } else if (disabled && formFieldTheme.disabled) {
+      contentProps.background = formFieldTheme.disabled.background;
     }
   }
 
@@ -213,36 +225,37 @@ var FormField = forwardRef(function (_ref2, ref) {
   var borderColor;
 
   if (disabled) {
-    borderColor = formField.disabled.border && formField.disabled.border.color;
-  } else if (focus && !normalizedError) {
-    borderColor = 'focus';
+    borderColor = formFieldTheme.disabled.border && formFieldTheme.disabled.border.color;
   } else if (normalizedError) {
-    borderColor = border && border.error.color || 'status-critical';
+    borderColor = themeBorder && themeBorder.error.color || 'status-critical';
   } else {
-    borderColor = border && border.color || 'border';
+    borderColor = themeBorder && themeBorder.color || 'border';
   }
 
-  var labelStyle = _extends({}, formField.label);
+  var labelStyle = _extends({}, formFieldTheme.label);
 
   if (disabled) {
-    labelStyle.color = formField.disabled && formField.disabled.label ? formField.disabled.label.color : labelStyle.color;
+    labelStyle.color = formFieldTheme.disabled && formFieldTheme.disabled.label ? formFieldTheme.disabled.label.color : labelStyle.color;
   }
 
   var abut;
   var abutMargin;
   var outerStyle = style;
 
-  if (border) {
-    contents = React.createElement(Box, {
-      overflow: "hidden",
-      border: border.position === 'inner' ? _extends({}, border, {
-        side: border.side || 'bottom',
+  if (themeBorder) {
+    var innerProps = themeBorder.position === 'inner' ? {
+      border: _extends({}, themeBorder, {
+        side: themeBorder.side || 'bottom',
         color: borderColor
-      }) : undefined,
-      round: border.position === 'inner' ? formField.round : undefined
-    }, contents);
-    var mergedMargin = margin || formField.margin;
-    abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
+      }),
+      round: formFieldTheme.round,
+      focus: focus
+    } : {};
+    contents = React.createElement(FormFieldContentBox, _extends({
+      overflow: "hidden"
+    }, innerProps), contents);
+    var mergedMargin = margin || formFieldTheme.margin;
+    abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
 
     if (abut) {
       // marginBottom is set to overlap adjacent fields
@@ -252,11 +265,11 @@ var FormField = forwardRef(function (_ref2, ref) {
 
       if (margin) {
         abutMargin = margin;
-      } else if (border.size) {
+      } else if (themeBorder.size) {
         // if the user defines a margin,
         // then the default margin below will be overriden
         abutMargin = {
-          bottom: "-" + parseMetricToNum(theme.global.borderSize[border.size] || border.size) + "px"
+          bottom: "-" + parseMetricToNum(theme.global.borderSize[themeBorder.size] || themeBorder.size) + "px"
         };
       }
 
@@ -269,23 +282,27 @@ var FormField = forwardRef(function (_ref2, ref) {
 
   var outerBackground;
 
-  if (border.position === 'outer') {
-    if (normalizedError && formField.error) {
-      outerBackground = formField.error.background;
-    } else if (disabled && formField.disabled) {
-      outerBackground = formField.disabled.background;
+  if (themeBorder.position === 'outer') {
+    if (normalizedError && formFieldTheme.error) {
+      outerBackground = formFieldTheme.error.background;
+    } else if (disabled && formFieldTheme.disabled) {
+      outerBackground = formFieldTheme.disabled.background;
     }
   }
 
+  var outerProps = themeBorder && themeBorder.position === 'outer' ? {
+    border: _extends({}, themeBorder, {
+      color: borderColor
+    }),
+    round: formFieldTheme.round,
+    focus: focus
+  } : {};
   return React.createElement(FormFieldBox, _extends({
     ref: ref,
     className: className,
-    border: border && border.position === 'outer' ? _extends({}, border, {
-      color: borderColor
-    }) : undefined,
     background: outerBackground,
-    margin: abut ? abutMargin : margin || _extends({}, formField.margin),
-    round: border.position === 'outer' ? formField.round : undefined,
+    margin: abut ? abutMargin : margin || _extends({}, formFieldTheme.margin)
+  }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
       setFocus(true);
@@ -301,11 +318,11 @@ var FormField = forwardRef(function (_ref2, ref) {
     htmlFor: htmlFor
   }, labelStyle), label), React.createElement(Message, _extends({
     message: help
-  }, formField.help))) : undefined, contents, React.createElement(Message, _extends({
+  }, formFieldTheme.help))) : undefined, contents, React.createElement(Message, _extends({
     message: normalizedError
-  }, formField.error)), React.createElement(Message, _extends({
+  }, formFieldTheme.error)), React.createElement(Message, _extends({
     message: normalizedInfo
-  }, formField.info)));
+  }, formFieldTheme.info)));
 });
 FormField.displayName = 'FormField';
 var FormFieldDoc;

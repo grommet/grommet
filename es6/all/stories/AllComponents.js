@@ -5,16 +5,25 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, Menu, Meter, Paragraph, RadioButtonGroup, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
-import { grommet, dark } from 'grommet/themes';
+import { grommet } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
 import { hpe as hpeV0 } from 'grommet-theme-hpe-v0';
-import { hpe as hpeNext } from 'grommet-theme-hpe-next';
+import { hpe as hpeNextBase } from 'grommet-theme-hpe-next';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
+import { v1 } from 'grommet-theme-v1'; // Temporarily added to make testing focus changes easier.
+// This is the expected HPE theme focus.
+
+var hpeNext = deepMerge(hpeNextBase, {
+  global: {
+    focus: {
+      border: undefined
+    }
+  }
+});
 
 var Node = function Node(_ref) {
   var id = _ref.id,
@@ -50,7 +59,6 @@ var connection = function connection(fromTarget, toTarget, _ref2) {
 };
 
 var themes = {
-  dark: dark,
   grommet: grommet,
   hpe: hpe,
   hpeNext: hpeNext,
@@ -102,7 +110,8 @@ var Components = function Components() {
   }, [theme]);
   var content = [React.createElement(Box, {
     key: "type",
-    align: "start"
+    align: "start",
+    gap: "small"
   }, React.createElement(Heading, {
     margin: {
       top: 'none'
@@ -120,7 +129,10 @@ var Components = function Components() {
   }), React.createElement(Button, {
     label: "Button",
     onClick: function onClick() {}
-  })), React.createElement(Box, {
+  }), React.createElement(Button, {
+    plain: true,
+    onClick: function onClick() {}
+  }, React.createElement(Text, null, "plain button"))), React.createElement(Box, {
     key: "input",
     gap: "small"
   }, React.createElement(Select, {

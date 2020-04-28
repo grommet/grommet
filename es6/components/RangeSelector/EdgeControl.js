@@ -3,11 +3,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 var DIRECTION_PROPS = {
   horizontal: {
     cursor: 'col-resize',
@@ -18,6 +18,12 @@ var DIRECTION_PROPS = {
     fill: 'horizontal'
   }
 };
+var StyledBox = styled(Box).withConfig({
+  displayName: "EdgeControl__StyledBox",
+  componentId: "sc-1xo2yt9-0"
+})(["", ""], function (props) {
+  return props.focus && focusStyle();
+});
 var EdgeControl = forwardRef(function (_ref, ref) {
   var color = _ref.color,
       direction = _ref.direction,
@@ -30,8 +36,8 @@ var EdgeControl = forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext);
 
   var _useState = useState(false),
-      focused = _useState[0],
-      setFocused = _useState[1];
+      focus = _useState[0],
+      setFocus = _useState[1];
 
   var _DIRECTION_PROPS$dire = DIRECTION_PROPS[direction],
       cursor = _DIRECTION_PROPS$dire.cursor,
@@ -47,27 +53,24 @@ var EdgeControl = forwardRef(function (_ref, ref) {
   var boxDirection = direction === 'vertical' ? 'row' : 'column';
   var type = theme.rangeSelector && theme.rangeSelector.edge && theme.rangeSelector.edge.type || 'disc';
   var node;
+  var backgroundColor = normalizeColor(color || 'control', theme);
 
   if (type === 'bar') {
-    node = React.createElement(Box, {
+    node = React.createElement(StyledBox, {
       flex: !thickness,
       justifySelf: "stretch",
       width: direction === 'vertical' ? thickness : size + "px",
       height: direction === 'vertical' ? size + "px" : thickness,
-      background: normalizeColor(color || 'control', theme),
-      border: focused ? {
-        color: normalizeColor('focus', theme)
-      } : undefined
+      background: backgroundColor,
+      focus: focus
     });
   } else if (type === 'disc') {
-    node = React.createElement(Box, {
-      width: size + (focused ? 2 : 0) + "px",
-      height: size + (focused ? 2 : 0) + "px",
+    node = React.createElement(StyledBox, {
+      width: size + "px",
+      height: size + "px",
       round: "full",
-      background: normalizeColor(color || 'control', theme),
-      border: focused ? {
-        color: normalizeColor('focus', theme)
-      } : undefined
+      background: backgroundColor,
+      focus: focus
     });
   } else {
     node = type;
@@ -91,16 +94,17 @@ var EdgeControl = forwardRef(function (_ref, ref) {
     fill: fill,
     style: {
       cursor: cursor,
+      outline: 'none',
       minWidth: size,
       minHeight: size,
       zIndex: 10
     },
     tabIndex: 0,
     onFocus: function onFocus() {
-      return setFocused(true);
+      return setFocus(true);
     },
     onBlur: function onBlur() {
-      return setFocused(false);
+      return setFocus(false);
     }
   }, rest), node)));
 });

@@ -53,7 +53,7 @@ var StyledCheckBoxBox = styled.div.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxBox",
   componentId: "sc-1dbk5ju-3"
 })(["", ";", ";"], function (props) {
-  return props.focus && focusStyle;
+  return props.focus && focusStyle();
 }, function (props) {
   return props.theme.checkBox.check.extend;
 });
@@ -75,7 +75,7 @@ var StyledCheckBoxToggle = styled.span.withConfig({
 }, function (props) {
   return props.theme.checkBox.toggle.background ? normalizeColor(props.theme.checkBox.toggle.background, props.theme) : 'transparent';
 }, function (props) {
-  return props.focus && focusStyle;
+  return props.focus && focusStyle();
 }, function (props) {
   return props.theme.checkBox.toggle.extend;
 });

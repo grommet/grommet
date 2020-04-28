@@ -28,9 +28,27 @@ export var themeDocUtils = {
   },
   focusStyle: {
     'global.focus.border.color': {
-      description: 'The color around the component when in focus.',
+      description: 'The border color of the component when in focus.',
       type: 'string | { dark: string, light: string }',
       defaultValue: 'focus'
+    },
+    'global.focus.outline.color': {
+      description: 'The outline color around the component when in focus.',
+      type: 'string | { dark: string, light: string }'
+    },
+    'global.focus.outline.size': {
+      description: 'The size of the outline around the component when in focus.',
+      type: 'string'
+    },
+    'global.focus.shadow.color': {
+      description: 'The shadow color around the component when in focus.',
+      type: 'string | { dark: string, light: string }',
+      defaultValue: 'focus'
+    },
+    'global.focus.shadow.size': {
+      description: 'The size of the shadow around the component when in focus.',
+      type: 'string',
+      defaultValue: '2px'
     }
   },
   iconColor: {

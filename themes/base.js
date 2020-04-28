@@ -304,8 +304,15 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       focus: {
+        // shadow or outline are required for accessibility
         border: {
+          // remove to only have shadow
           color: 'focus'
+        },
+        // outline: { color: undefined, size: undefined },
+        shadow: {
+          color: 'focus',
+          size: '2px'
         }
       },
       font: _extends({}, fontSizing(0)),

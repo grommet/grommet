@@ -28,7 +28,7 @@ var sizeStyle = function sizeStyle(props) {
 var StyledAnchor = _styledComponents["default"].a.withConfig({
   displayName: "StyledAnchor",
   componentId: "sc-1rp7lwl-0"
-})(["box-sizing:border-box;", " color:", ";", " text-decoration:", ";cursor:pointer;outline:none;", " ", " ", " ", " ", " ", ""], function (props) {
+})(["box-sizing:border-box;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {
   return sizeStyle(props);
 }, function (props) {
   return (0, _utils.normalizeColor)(props.colorProp || props.theme.anchor.color, props.theme);
@@ -43,7 +43,7 @@ var StyledAnchor = _styledComponents["default"].a.withConfig({
 }, function (props) {
   return props.disabled && disabledStyle;
 }, function (props) {
-  return props.focus && _utils.focusStyle;
+  return props.focus && (0, _utils.focusStyle)();
 }, function (props) {
   return props.theme.anchor.extend;
 });

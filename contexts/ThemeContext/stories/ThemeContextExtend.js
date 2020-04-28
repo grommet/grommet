@@ -19,6 +19,9 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     focus: {
       border: {
         color: 'red'
+      },
+      shadow: {
+        color: 'red'
       }
     }
   }

@@ -359,7 +359,7 @@ var widthStyle = css(["width:", ";"], function (props) {
 var StyledBox = styled.div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
-})(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, genericStyles, function (props) {
   return props.align && alignStyle;
@@ -400,7 +400,7 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.onClick && interactiveStyle;
 }, function (props) {
-  return props.onClick && props.focus && props.focusIndicator !== false && focusStyle;
+  return props.onClick && props.focus && props.focusIndicator !== false && focusStyle();
 }, function (props) {
   return props.theme.box && props.theme.box.extend;
 });

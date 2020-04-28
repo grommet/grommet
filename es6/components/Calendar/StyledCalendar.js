@@ -20,10 +20,10 @@ Object.setPrototypeOf(StyledCalendar.defaultProps, defaultProps);
 var StyledWeeksContainer = styled.div.withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
   componentId: "sc-1y4xhmp-1"
-})(["overflow:hidden;", ";outline:none;", ";"], function (props) {
+})(["overflow:hidden;", ";", ";"], function (props) {
   return "height: " + parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6 + "px;";
 }, function (props) {
-  return props.focus && !props.plain && focusStyle;
+  return props.focus && !props.plain && focusStyle();
 });
 StyledWeeksContainer.defaultProps = {};
 Object.setPrototypeOf(StyledWeeksContainer.defaultProps, defaultProps);

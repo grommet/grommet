@@ -8,6 +8,9 @@ var customTheme = deepMerge(grommet, {
     focus: {
       border: {
         color: 'red'
+      },
+      shadow: {
+        color: 'red'
       }
     }
   }

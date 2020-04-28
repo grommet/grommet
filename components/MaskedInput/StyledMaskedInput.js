@@ -16,7 +16,7 @@ var sizeStyle = function sizeStyle(props) {
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
-var plainStyle = (0, _styledComponents.css)(["border:none;"]);
+var plainStyle = (0, _styledComponents.css)(["outline:none;border:none;"]);
 
 var StyledMaskedInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledMaskedInput",
@@ -28,7 +28,7 @@ var StyledMaskedInput = _styledComponents["default"].input.withConfig({
 }, _utils.placeholderStyle, function (props) {
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
 }, function (props) {
-  return props.focus && !props.plain && _utils.focusStyle;
+  return props.focus && !props.plain && (0, _utils.focusStyle)();
 }, function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.extend;
 });

@@ -6,7 +6,7 @@ var sizeStyle = function sizeStyle(props) {
   return css(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
-var plainStyle = css(["border:none;"]);
+var plainStyle = css(["outline:none;border:none;"]);
 export var StyledMaskedInput = styled.input.withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"
@@ -17,7 +17,7 @@ export var StyledMaskedInput = styled.input.withConfig({
 }, placeholderStyle, function (props) {
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
 }, function (props) {
-  return props.focus && !props.plain && focusStyle;
+  return props.focus && !props.plain && focusStyle();
 }, function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.extend;
 });
