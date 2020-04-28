@@ -256,8 +256,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       focus: {
+        // shadow or outline are required for accessibility
         border: {
+          // remove to only have shadow
           color: 'focus',
+        },
+        // outline: { color: undefined, size: undefined },
+        shadow: {
+          color: 'focus',
+          size: '2px',
         },
       },
       font: {

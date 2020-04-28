@@ -79,7 +79,7 @@ const StyledDataTableBody = styled(TableBody)`
     max-height: ${props.theme.global.size[props.size]};
     overflow: auto;
   `}
-  ${props => props.focus && focusStyle}
+  ${props => props.focus && focusStyle()}
 `;
 
 StyledDataTableBody.defaultProps = {};

@@ -9,6 +9,7 @@ import {
 import { defaultProps } from '../../default-props';
 
 const plainStyle = css`
+  outline: none;
   border: none;
   width: 100%;
   -webkit-appearance: none;
@@ -55,7 +56,7 @@ const StyledTextArea = styled.textarea`
     outline: none;
   }
 
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.focus && !props.plain && focusStyle()};
   ${props => props.theme.textArea && props.theme.textArea.extend};
 `;
 
