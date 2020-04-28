@@ -20,7 +20,6 @@ exports[`RoutedAnchor renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {

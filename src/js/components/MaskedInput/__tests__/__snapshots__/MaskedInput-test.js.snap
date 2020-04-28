@@ -17,7 +17,6 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -83,7 +82,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -100,7 +98,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -159,7 +156,6 @@ exports[`MaskedInput basic 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -216,7 +212,6 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -277,7 +272,6 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -339,7 +333,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -356,7 +349,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -371,7 +363,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -389,7 +380,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -406,7 +396,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -528,7 +517,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 ePLrXp"
+    class="StyledMaskedInput-sc-99vkfa-0 dVJbJT"
     data-testid="test-input"
     id="item"
     name="item"
@@ -579,7 +568,6 @@ exports[`MaskedInput icon 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -705,7 +693,6 @@ exports[`MaskedInput icon reverse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -797,7 +784,6 @@ exports[`MaskedInput mask 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -856,7 +842,6 @@ exports[`MaskedInput mask 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -873,7 +858,6 @@ exports[`MaskedInput mask 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -888,7 +872,6 @@ exports[`MaskedInput mask 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -906,7 +889,6 @@ exports[`MaskedInput mask 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -923,7 +905,6 @@ exports[`MaskedInput mask 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1046,7 +1027,6 @@ exports[`MaskedInput next and previous without options 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1104,7 +1084,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 jKiojf"
+    class="StyledMaskedInput-sc-99vkfa-0 jLSwLs"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1121,7 +1101,6 @@ exports[`MaskedInput option via keyboard 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1180,7 +1159,6 @@ exports[`MaskedInput option via mouse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1242,7 +1220,6 @@ exports[`MaskedInput option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1259,7 +1236,6 @@ exports[`MaskedInput option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1274,7 +1250,6 @@ exports[`MaskedInput option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1292,7 +1267,6 @@ exports[`MaskedInput option via mouse 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1309,7 +1283,6 @@ exports[`MaskedInput option via mouse 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1431,7 +1404,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 ePLrXp"
+    class="StyledMaskedInput-sc-99vkfa-0 dVJbJT"
     data-testid="test-input"
     id="item"
     name="item"

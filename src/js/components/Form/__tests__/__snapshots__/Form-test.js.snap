@@ -17,7 +17,6 @@ exports[`Form controlled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -33,7 +32,6 @@ exports[`Form controlled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -50,7 +48,6 @@ exports[`Form controlled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -63,7 +60,6 @@ exports[`Form controlled 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -98,7 +94,6 @@ exports[`Form controlled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -156,7 +151,7 @@ exports[`Form controlled 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -191,20 +186,20 @@ exports[`Form controlled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -214,7 +209,7 @@ exports[`Form controlled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -229,20 +224,20 @@ exports[`Form controlled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -252,7 +247,7 @@ exports[`Form controlled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -278,7 +273,6 @@ exports[`Form controlled FormField deprecated 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -294,7 +288,6 @@ exports[`Form controlled FormField deprecated 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -311,7 +304,6 @@ exports[`Form controlled FormField deprecated 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -333,7 +325,6 @@ exports[`Form controlled FormField deprecated 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -368,7 +359,6 @@ exports[`Form controlled FormField deprecated 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -432,7 +422,7 @@ exports[`Form controlled FormField deprecated 1`] = `
         test
       </label>
       <div
-        class="c3"
+        class="c3 "
       >
         <div
           class="c4"
@@ -467,7 +457,7 @@ exports[`Form controlled FormField deprecated 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <label
         class="StyledText-sc-1sadyjn-0 enbIRN"
@@ -476,17 +466,17 @@ exports[`Form controlled FormField deprecated 2`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               id="test"
               name="test"
               value="v"
@@ -496,7 +486,7 @@ exports[`Form controlled FormField deprecated 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -511,7 +501,7 @@ exports[`Form controlled FormField deprecated 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <label
         class="StyledText-sc-1sadyjn-0 enbIRN"
@@ -520,17 +510,17 @@ exports[`Form controlled FormField deprecated 3`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               id="test"
               name="test"
               value="v"
@@ -540,7 +530,7 @@ exports[`Form controlled FormField deprecated 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -566,7 +556,6 @@ exports[`Form controlled input 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -582,7 +571,6 @@ exports[`Form controlled input 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -599,7 +587,6 @@ exports[`Form controlled input 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -612,7 +599,6 @@ exports[`Form controlled input 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -647,7 +633,6 @@ exports[`Form controlled input 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -705,7 +690,7 @@ exports[`Form controlled input 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -740,20 +725,20 @@ exports[`Form controlled input 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -763,7 +748,7 @@ exports[`Form controlled input 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -778,20 +763,20 @@ exports[`Form controlled input 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -801,7 +786,7 @@ exports[`Form controlled input 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -827,7 +812,6 @@ exports[`Form controlled input lazy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -843,7 +827,6 @@ exports[`Form controlled input lazy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -860,7 +843,6 @@ exports[`Form controlled input lazy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -873,7 +855,6 @@ exports[`Form controlled input lazy 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -908,7 +889,6 @@ exports[`Form controlled input lazy 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -966,7 +946,7 @@ exports[`Form controlled input lazy 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -1001,20 +981,20 @@ exports[`Form controlled input lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -1024,7 +1004,7 @@ exports[`Form controlled input lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -1039,20 +1019,20 @@ exports[`Form controlled input lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -1062,7 +1042,7 @@ exports[`Form controlled input lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -1088,7 +1068,6 @@ exports[`Form controlled lazy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1104,7 +1083,6 @@ exports[`Form controlled lazy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1121,7 +1099,6 @@ exports[`Form controlled lazy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1134,7 +1111,6 @@ exports[`Form controlled lazy 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1169,7 +1145,6 @@ exports[`Form controlled lazy 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1227,7 +1202,7 @@ exports[`Form controlled lazy 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -1262,20 +1237,20 @@ exports[`Form controlled lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -1285,7 +1260,7 @@ exports[`Form controlled lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -1300,20 +1275,20 @@ exports[`Form controlled lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value="v"
@@ -1323,7 +1298,7 @@ exports[`Form controlled lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -1370,7 +1345,6 @@ exports[`Form errors 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1386,7 +1360,6 @@ exports[`Form errors 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px #FF4040;
   min-width: 0;
@@ -1403,7 +1376,6 @@ exports[`Form errors 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1428,7 +1400,6 @@ exports[`Form errors 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1491,7 +1462,7 @@ exports[`Form errors 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"
@@ -1539,7 +1510,6 @@ exports[`Form infos 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1555,7 +1525,6 @@ exports[`Form infos 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1572,7 +1541,6 @@ exports[`Form infos 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1597,7 +1565,6 @@ exports[`Form infos 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1660,7 +1627,7 @@ exports[`Form infos 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"
@@ -1705,7 +1672,6 @@ exports[`Form lazy value 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1737,7 +1703,6 @@ exports[`Form lazy value 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1881,7 +1846,6 @@ exports[`Form uncontrolled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1897,7 +1861,6 @@ exports[`Form uncontrolled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1914,7 +1877,6 @@ exports[`Form uncontrolled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1927,7 +1889,6 @@ exports[`Form uncontrolled 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1962,7 +1923,6 @@ exports[`Form uncontrolled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -2020,7 +1980,7 @@ exports[`Form uncontrolled 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -2055,20 +2015,20 @@ exports[`Form uncontrolled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value=""
@@ -2078,7 +2038,7 @@ exports[`Form uncontrolled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -2093,20 +2053,20 @@ exports[`Form uncontrolled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 eIRqpH FormField__FormFieldBox-m9hood-0 ddgSii"
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cIDibG"
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jJdKAu"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 dofnYn"
+              class="StyledTextInput-sc-1x30a0s-0 cjOhSV"
               name="test"
               placeholder="test input"
               value=""
@@ -2116,7 +2076,7 @@ exports[`Form uncontrolled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 etKeHw"
+      class="StyledButton-sc-323bzc-0 kpnlyr"
       type="submit"
     >
       Submit
@@ -2142,7 +2102,6 @@ exports[`Form update 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -2158,7 +2117,6 @@ exports[`Form update 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -2175,7 +2133,6 @@ exports[`Form update 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2188,7 +2145,6 @@ exports[`Form update 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2223,7 +2179,6 @@ exports[`Form update 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -2281,7 +2236,7 @@ exports[`Form update 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -2304,7 +2259,7 @@ exports[`Form update 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -2489,7 +2444,6 @@ exports[`Form with field 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -2505,7 +2459,6 @@ exports[`Form with field 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -2522,7 +2475,6 @@ exports[`Form with field 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2537,7 +2489,6 @@ exports[`Form with field 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -2600,7 +2551,7 @@ exports[`Form with field 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"

@@ -180,7 +180,6 @@ const StyledButton = styled.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   text-decoration: none;
   margin: 0;
@@ -202,7 +201,7 @@ const StyledButton = styled.button`
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
   ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle}
+    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

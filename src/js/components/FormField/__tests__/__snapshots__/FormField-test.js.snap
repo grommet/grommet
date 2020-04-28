@@ -17,7 +17,6 @@ exports[`FormField abut 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   border: solid 12px rgba(0,0,0,0.33);
@@ -34,7 +33,6 @@ exports[`FormField abut 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -50,7 +48,6 @@ exports[`FormField abut 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -80,7 +77,7 @@ exports[`FormField abut 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -107,7 +104,6 @@ exports[`FormField abut with margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin: 24px;
   border: solid 12px rgba(0,0,0,0.33);
@@ -124,7 +120,6 @@ exports[`FormField abut with margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -140,7 +135,6 @@ exports[`FormField abut with margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -170,7 +164,7 @@ exports[`FormField abut with margin 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -197,7 +191,6 @@ exports[`FormField custom formfield 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -213,7 +206,6 @@ exports[`FormField custom formfield 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -230,7 +222,6 @@ exports[`FormField custom formfield 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -264,7 +255,7 @@ exports[`FormField custom formfield 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c3"
+      className="c3 "
     >
       <div
         className="c4"
@@ -291,7 +282,6 @@ exports[`FormField custom label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -307,7 +297,6 @@ exports[`FormField custom label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -324,7 +313,6 @@ exports[`FormField custom label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -347,7 +335,6 @@ exports[`FormField custom label 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -416,7 +403,7 @@ exports[`FormField custom label 1`] = `
         label
       </label>
       <div
-        className="c3"
+        className="c3 "
       >
         <div
           className="c4"
@@ -457,7 +444,6 @@ exports[`FormField default 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -473,7 +459,6 @@ exports[`FormField default 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -490,7 +475,6 @@ exports[`FormField default 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -505,7 +489,6 @@ exports[`FormField default 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -564,7 +547,7 @@ exports[`FormField default 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -577,7 +560,7 @@ exports[`FormField default 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -617,7 +600,6 @@ exports[`FormField disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -633,7 +615,6 @@ exports[`FormField disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -650,7 +631,6 @@ exports[`FormField disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-color: rgba(204,204,204,0.4);
   color: #444444;
@@ -667,7 +647,6 @@ exports[`FormField disabled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -728,7 +707,7 @@ exports[`FormField disabled 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -746,7 +725,7 @@ exports[`FormField disabled 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"
@@ -788,7 +767,6 @@ exports[`FormField disabled with custom label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -804,7 +782,6 @@ exports[`FormField disabled with custom label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -821,7 +798,6 @@ exports[`FormField disabled with custom label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-color: rgba(204,204,204,0.4);
   color: #444444;
@@ -846,7 +822,6 @@ exports[`FormField disabled with custom label 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -917,7 +892,7 @@ exports[`FormField disabled with custom label 1`] = `
         label
       </label>
       <div
-        className="c3"
+        className="c3 "
       >
         <div
           className="c4"
@@ -959,7 +934,6 @@ exports[`FormField empty margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin: 0px;
   min-width: 0;
@@ -975,7 +949,6 @@ exports[`FormField empty margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -992,7 +965,6 @@ exports[`FormField empty margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1022,7 +994,7 @@ exports[`FormField empty margin 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -1049,7 +1021,6 @@ exports[`FormField error 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1065,7 +1036,6 @@ exports[`FormField error 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px #FF4040;
   min-width: 0;
@@ -1082,7 +1052,6 @@ exports[`FormField error 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1122,7 +1091,7 @@ exports[`FormField error 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -1154,7 +1123,6 @@ exports[`FormField help 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1170,7 +1138,6 @@ exports[`FormField help 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1187,7 +1154,6 @@ exports[`FormField help 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1229,7 +1195,7 @@ exports[`FormField help 1`] = `
       test help
     </span>
     <div
-      className="c3"
+      className="c3 "
     >
       <div
         className="c4"
@@ -1256,7 +1222,6 @@ exports[`FormField htmlFor 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1272,7 +1237,6 @@ exports[`FormField htmlFor 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1289,7 +1253,6 @@ exports[`FormField htmlFor 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1319,7 +1282,7 @@ exports[`FormField htmlFor 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -1346,7 +1309,6 @@ exports[`FormField info 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1362,7 +1324,6 @@ exports[`FormField info 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1379,7 +1340,6 @@ exports[`FormField info 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1419,7 +1379,7 @@ exports[`FormField info 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -1451,7 +1411,6 @@ exports[`FormField label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1467,7 +1426,6 @@ exports[`FormField label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1484,7 +1442,6 @@ exports[`FormField label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1528,7 +1485,7 @@ exports[`FormField label 1`] = `
       test label
     </label>
     <div
-      className="c3"
+      className="c3 "
     >
       <div
         className="c4"
@@ -1555,7 +1512,6 @@ exports[`FormField margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin: 24px;
   min-width: 0;
@@ -1571,7 +1527,6 @@ exports[`FormField margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1588,7 +1543,6 @@ exports[`FormField margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1618,7 +1572,7 @@ exports[`FormField margin 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -1645,7 +1599,6 @@ exports[`FormField pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1661,7 +1614,6 @@ exports[`FormField pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1678,7 +1630,6 @@ exports[`FormField pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1715,7 +1666,7 @@ exports[`FormField pad 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -1742,7 +1693,6 @@ exports[`FormField required 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -1758,7 +1708,6 @@ exports[`FormField required 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1775,7 +1724,6 @@ exports[`FormField required 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1790,7 +1738,6 @@ exports[`FormField required 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1849,7 +1796,7 @@ exports[`FormField required 1`] = `
     onFocus={[Function]}
   >
     <div
-      className="c2"
+      className="c2 "
     >
       <div
         className="c3"
@@ -1867,7 +1814,7 @@ exports[`FormField required 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"

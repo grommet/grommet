@@ -2158,7 +2158,6 @@ exports[`DataTable groupBy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2176,7 +2175,6 @@ exports[`DataTable groupBy 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2462,11 +2460,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 hvdwlH"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 guJnsz"
+              class="StyledBox-sc-13pk1d4-0 bCSAfw"
             >
               <svg
                 aria-label="FormDown"
@@ -2516,11 +2514,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 hvdwlH"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 guJnsz"
+              class="StyledBox-sc-13pk1d4-0 bCSAfw"
             >
               <svg
                 aria-label="FormDown"
@@ -2559,11 +2557,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 hvdwlH"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 guJnsz"
+              class="StyledBox-sc-13pk1d4-0 bCSAfw"
             >
               <svg
                 aria-label="FormDown"
@@ -2650,7 +2648,6 @@ exports[`DataTable groupBy expand 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2668,7 +2665,6 @@ exports[`DataTable groupBy expand 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3066,7 +3062,6 @@ exports[`DataTable groupBy property 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3084,7 +3079,6 @@ exports[`DataTable groupBy property 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3370,11 +3364,11 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 hvdwlH"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 guJnsz"
+              class="StyledBox-sc-13pk1d4-0 bCSAfw"
             >
               <svg
                 aria-label="FormDown"
@@ -3424,11 +3418,11 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 hvdwlH"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 guJnsz"
+              class="StyledBox-sc-13pk1d4-0 bCSAfw"
             >
               <svg
                 aria-label="FormDown"
@@ -3467,11 +3461,11 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 hvdwlH"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 guJnsz"
+              class="StyledBox-sc-13pk1d4-0 bCSAfw"
             >
               <svg
                 aria-label="FormDown"
@@ -3524,7 +3518,6 @@ exports[`DataTable onSort 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3541,7 +3534,6 @@ exports[`DataTable onSort 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3763,11 +3755,11 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 jHVuIG"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hErwNa"
+              class="StyledBox-sc-13pk1d4-0 rpWqh"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 hUokoe"
@@ -3850,11 +3842,11 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 jHVuIG"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hErwNa"
+              class="StyledBox-sc-13pk1d4-0 rpWqh"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 hUokoe"
@@ -4919,7 +4911,6 @@ exports[`DataTable replace 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -5108,7 +5099,6 @@ exports[`DataTable resizeable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -5132,7 +5122,6 @@ exports[`DataTable resizeable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-inline-end: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -5588,7 +5577,6 @@ exports[`DataTable search 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -5620,7 +5608,6 @@ exports[`DataTable search 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -5818,7 +5805,7 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eDJNoM"
+            class="StyledBox-sc-13pk1d4-0 empHH"
           >
             <span
               class="StyledText-sc-1sadyjn-0 hUokoe"
@@ -5834,7 +5821,6 @@ exports[`DataTable search 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -5854,35 +5840,16 @@ exports[`DataTable search 2`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  outline-color: #6FFFB0;
-  border-color: #6FFFB0;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
-  outline-color: #6FFFB0;
-  border-color: #6FFFB0;
+  outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
-  outline: #6FFFB0 solid 2px;
-}
-
-.c2::-moz-focus-inner {
-  border: 0;
 }
 
 .c2::-webkit-search-decoration {
@@ -6024,7 +5991,6 @@ exports[`DataTable sortable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -6041,7 +6007,6 @@ exports[`DataTable sortable 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -6263,11 +6228,11 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 jHVuIG"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hErwNa"
+              class="StyledBox-sc-13pk1d4-0 rpWqh"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 hUokoe"
@@ -6350,11 +6315,11 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fQBEfF"
+            class="StyledButton-sc-323bzc-0 jHVuIG"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hErwNa"
+              class="StyledBox-sc-13pk1d4-0 rpWqh"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 hUokoe"
