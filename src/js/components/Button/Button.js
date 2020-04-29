@@ -17,7 +17,6 @@ import { StyledButton } from './StyledButton';
 const Button = forwardRef(
   (
     {
-      active,
       a11yTitle,
       color, // munged to avoid styled-components putting it in the DOM
       children,
@@ -26,7 +25,6 @@ const Button = forwardRef(
       focusIndicator = true,
       gap = 'small',
       fill, // munged to avoid styled-components putting it in the DOM
-      hoverIndicator,
       href,
       label,
       onBlur,
@@ -125,7 +123,6 @@ const Button = forwardRef(
     return (
       <StyledButton
         {...rest}
-        active={active}
         as={domTag}
         ref={ref}
         aria-label={a11yTitle}
@@ -135,7 +132,6 @@ const Button = forwardRef(
         hasIcon={!!icon}
         gap={gap}
         hasLabel={!!label}
-        hoverIndicator={hoverIndicator}
         fillContainer={fill}
         focus={focus}
         focusIndicator={focusIndicator}
