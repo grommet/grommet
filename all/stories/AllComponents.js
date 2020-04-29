@@ -34,16 +34,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-// Temporarily added to make testing focus changes easier.
-// This is the expected HPE theme focus.
-var hpeNext = (0, _utils.deepMerge)(_grommetThemeHpeNext.hpe, {
-  global: {
-    focus: {
-      border: undefined
-    }
-  }
-});
-
 var Node = function Node(_ref) {
   var id = _ref.id,
       rest = _objectWithoutPropertiesLoose(_ref, ["id"]);
@@ -80,7 +70,7 @@ var connection = function connection(fromTarget, toTarget, _ref2) {
 var themes = {
   grommet: _themes.grommet,
   hpe: _grommetThemeHpe.hpe,
-  hpeNext: hpeNext,
+  hpeNext: _grommetThemeHpeNext.hpe,
   hpeV0: _grommetThemeHpeV.hpe,
   aruba: _grommetThemeAruba.aruba,
   hp: _grommetThemeHp.hp,
