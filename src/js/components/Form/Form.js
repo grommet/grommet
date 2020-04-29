@@ -90,8 +90,6 @@ const Form = forwardRef(
           // is checking across fields
           setErrors(prevErrors => {
             if (prevErrors[name] && validations.current[name]) {
-              console.log(prevErrors[name], validations.current[name]);
-              console.log('hello');
               const nextErrors = { ...prevErrors };
               Object.keys(prevErrors).forEach(errName => {
                 if (validations.current[errName] && errName === name) {
