@@ -707,7 +707,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -723,7 +723,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -739,7 +739,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #00873D;
+  background-color: #00873D;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -755,7 +755,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #F8F8F8;
+  background-color: #F8F8F8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -771,7 +771,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #333333;
+  background-color: #333333;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -787,7 +787,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #FF4040;
+  background-color: #FF4040;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -803,7 +803,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #aabbcc;
+  background-color: #aabbcc;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -819,7 +819,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #def;
+  background-color: #def;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -835,7 +835,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: rgb(90,80,50);
+  background-color: rgb(90,80,50);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -851,7 +851,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: rgba(200,100,150,0.8);
+  background-color: rgba(200,100,150,0.8);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -867,7 +867,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: hsl(10,50%,20%);
+  background-color: hsl(10,50%,20%);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -883,7 +883,7 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: hsla(10,50%,70%,0.7);
+  background-color: hsla(10,50%,70%,0.7);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -920,7 +920,6 @@ exports[`Box background 1`] = `
   background-position: center center;
   background-size: cover;
   color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -940,7 +939,6 @@ exports[`Box background 1`] = `
   background-position: center center;
   background-size: cover;
   color: #f8f8f8;
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -959,7 +957,6 @@ exports[`Box background 1`] = `
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -978,7 +975,6 @@ exports[`Box background 1`] = `
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: inherit;
   background-color: rgba(111,255,176,1);
   color: #444444;
   min-width: 0;
@@ -999,7 +995,6 @@ exports[`Box background 1`] = `
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1018,7 +1013,6 @@ exports[`Box background 1`] = `
   background-repeat: repeat;
   background-position: center center;
   background-size: cover;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1037,7 +1031,6 @@ exports[`Box background 1`] = `
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2131,7 +2124,7 @@ exports[`Box elevation 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #333333;
+  background-color: #333333;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
