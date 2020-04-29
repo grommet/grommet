@@ -224,7 +224,7 @@ div
   
 **accordion.hover.color**
 
-The hover color used for the accordion. Expects \`string | { dark: string, light: string }\`.
+The hover color used for an accordion panel control. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
