@@ -27,12 +27,11 @@ export interface ButtonProps {
   href?: string;
   target?: "_self" | "_blank" | "_parent" | "_top";
   icon?: JSX.Element;
-  justify?: "around" | "between" | "center" | "end" | "evenly" | "start" | "stretch";
   label?: React.ReactNode;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
-  simple?: boolean;
+  secondary?: boolean;
   size?: "small" | "medium" | "large";
   type?: "button" | "reset" | "submit";
   as?: PolymorphicType;

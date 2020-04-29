@@ -1329,10 +1329,9 @@ background
         "name": "reverse",
       },
       Object {
-        "description": "Whether this is a simple button. By default, simple buttons have no
-      background fill but have a subtle fill on hover.",
+        "description": "Whether this is a secondary button.",
         "format": "boolean",
-        "name": "simple",
+        "name": "secondary",
       },
       Object {
         "description": "The possible sizes of Button, that impacts the overall Button 

@@ -102,9 +102,8 @@ with plain Buttons.`,
               end of the anchor.`,
       )
       .defaultValue(false),
-    simple: PropTypes.bool.description(
-      `Whether this is a simple button. By default, simple buttons have no
-      background fill but have a subtle fill on hover.`,
+    secondary: PropTypes.bool.description(
+      `Whether this is a secondary button.`,
     ),
     size: PropTypes.oneOf(['small', 'medium', 'large']).description(
       `The possible sizes of Button, that impacts the overall Button 
