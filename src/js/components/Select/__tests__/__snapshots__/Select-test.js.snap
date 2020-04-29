@@ -1151,7 +1151,7 @@ exports[`Select complex options and children 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1857,7 +1857,7 @@ exports[`Select empty results search 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2127,7 +2127,7 @@ exports[`Select large drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2351,7 +2351,7 @@ exports[`Select medium drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3281,7 +3281,7 @@ exports[`Select multiple onChange toggle with valueKey reduce 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3307,7 +3307,7 @@ exports[`Select multiple onChange toggle with valueKey reduce 2`] = `
 }
 
 .c8 {
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #FFFFFF;
 }
 
@@ -3754,7 +3754,7 @@ exports[`Select multiple onChange with valueKey reduce 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -4222,7 +4222,7 @@ exports[`Select multiple onChange with valueKey string 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -4690,7 +4690,7 @@ exports[`Select multiple onChange without valueKey 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -4816,7 +4816,7 @@ exports[`Select multiple onChange without valueKey 3`] = `
 
 exports[`Select multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 glPSfV StyledDrop-sc-16s5rx8-0 exrnbV"
+  class="StyledBox-sc-13pk1d4-0 glPSfV StyledDrop-sc-16s5rx8-0 kQAKuZ"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -5259,7 +5259,7 @@ exports[`Select multiple values 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -5285,7 +5285,7 @@ exports[`Select multiple values 3`] = `
 }
 
 .c8 {
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #FFFFFF;
 }
 
@@ -5732,7 +5732,7 @@ exports[`Select onChange with valueKey string 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -6200,7 +6200,7 @@ exports[`Select onChange without valueKey 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -6703,7 +6703,7 @@ exports[`Select opens 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -8886,7 +8886,7 @@ exports[`Select search 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -10240,7 +10240,7 @@ exports[`Select small drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;

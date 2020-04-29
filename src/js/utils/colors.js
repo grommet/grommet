@@ -1,5 +1,6 @@
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
+// Can return undefined.
 export const normalizeColor = (color, theme, dark) => {
   const colorSpec =
     theme.global && theme.global.colors[color] !== undefined
@@ -105,13 +106,16 @@ const getRGBArray = color => {
 };
 
 export const colorIsDark = color => {
-  const [red, green, blue, alpha] = getRGBArray(color);
-  // if there is an alpha and it's greater than 50%, we can't really tell
-  if (alpha < 0.5) return undefined;
-  const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
-  // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
-  // Above domain is no longer registered.
-  return brightness < 125;
+  if (color && canExtractRGBArray(color)) {
+    const [red, green, blue, alpha] = getRGBArray(color);
+    // if there is an alpha and it's greater than 50%, we can't really tell
+    if (alpha < 0.5) return undefined;
+    const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
+    // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
+    // Above domain is no longer registered.
+    return brightness < 125;
+  }
+  return undefined;
 };
 
 export const getRGBA = (color, opacity) => {

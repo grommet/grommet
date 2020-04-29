@@ -1847,7 +1847,7 @@ exports[`Accordion complex title 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #333333;
+  background-color: #333333;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
