@@ -210,7 +210,7 @@ exports[`Form controlled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -248,7 +248,7 @@ exports[`Form controlled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -488,7 +488,7 @@ exports[`Form controlled FormField deprecated 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -532,7 +532,7 @@ exports[`Form controlled FormField deprecated 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -751,7 +751,7 @@ exports[`Form controlled input 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -789,7 +789,7 @@ exports[`Form controlled input 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -1008,7 +1008,7 @@ exports[`Form controlled input lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -1046,7 +1046,7 @@ exports[`Form controlled input lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -1265,7 +1265,7 @@ exports[`Form controlled lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -1303,7 +1303,7 @@ exports[`Form controlled lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -2046,7 +2046,7 @@ exports[`Form uncontrolled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
@@ -2084,7 +2084,7 @@ exports[`Form uncontrolled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 idorkZ"
       type="submit"
     >
       Submit
