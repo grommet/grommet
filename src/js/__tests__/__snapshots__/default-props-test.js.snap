@@ -30,8 +30,8 @@ exports[`extends default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: red;
-  color: #444444;
+  background-color: #ff0000;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -52,8 +52,8 @@ exports[`extends default theme twice 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: red;
-  color: #444444;
+  background-color: #ff0000;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -74,8 +74,8 @@ exports[`extends default theme twice 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: blue;
-  color: #444444;
+  background-color: #0000ff;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;

@@ -56,14 +56,18 @@ export const backgroundIsDark = (backgroundArg, theme) => {
   return result;
 };
 
-const darkContext = (backgroundColor, theme) => {
+const darkContext = backgroundColor => {
   const isDark = colorIsDark(backgroundColor);
-  return isDark || (isDark === undefined && theme.dark) ? 'dark' : 'light';
+  if (isDark === undefined) return undefined;
+  return isDark ? 'dark' : 'light';
 };
 
 // Returns an array of two CSS colors: [background, color]
 // Either could be undefined.
+// background could be a CSS gradient, like "linear-gradient(...)"
 export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
+  if (!backgroundArg) return [];
+
   const { global } = theme;
   const background = normalizeBackground(backgroundArg, theme);
   const text = textArg || global.colors.text;
@@ -76,6 +80,7 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
     } else if (background.dark) {
       textColor = text.dark || text;
     }
+
     if (background.color) {
       const color = normalizeColor(background.color, theme, background.dark);
       const opacity =
@@ -87,16 +92,20 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       // If we don't have a textColor already, and we aren't too translucent,
       // set the textColor to have the best contrast against the background
       // color.
-      if (backgroundColor && !textColor && opacity !== 'weak') {
+      if (!textColor && opacity !== 'weak') {
         const shade = darkContext(backgroundColor, theme);
-        textColor = normalizeColor(text[shade] || text, theme);
+        textColor = normalizeColor((shade && text[shade]) || text, theme);
       }
     }
   } else {
     backgroundColor = normalizeColor(background, theme);
-    if (backgroundColor) {
-      const shade = darkContext(backgroundColor, theme);
+    const shade = darkContext(backgroundColor, theme);
+    if (shade) {
       textColor = normalizeColor(text[shade] || text, theme);
+    } else {
+      // If we can't determine the shade, we assume this isn't a simple color.
+      // It could be a gradient. backgroundStyle() will take care of that case.
+      backgroundColor = undefined;
     }
   }
 
@@ -126,6 +135,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   );
 
   if (background.image) {
+    // allow both background color and image, in case the image doesn't fill
     return css`
       background-image: ${background.image};
       background-repeat: ${background.repeat || 'no-repeat'};
@@ -142,6 +152,11 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
       ${textColor ? `color: ${textColor};` : ''}
     `;
   }
+
+  if (typeof background === 'string')
+    return css`
+      background: ${background};
+    `;
 
   return undefined;
 };

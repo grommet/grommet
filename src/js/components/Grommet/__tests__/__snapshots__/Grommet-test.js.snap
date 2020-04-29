@@ -40,8 +40,8 @@ exports[`Grommet background 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  background-color: blue;
-  color: #444444;
+  background-color: #0000ff;
+  color: #f8f8f8;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
