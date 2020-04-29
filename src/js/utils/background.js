@@ -154,8 +154,10 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   }
 
   if (typeof background === 'string')
+    // This case takes care of gradients
+    // or theme colors that use CSS names like 'red' that we don't parse
     return css`
-      background: ${background};
+      background: ${normalizeColor(background, theme)};
     `;
 
   return undefined;
