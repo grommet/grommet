@@ -33,7 +33,7 @@ test('extends default theme', function () {
   (0, _.extendDefaultTheme)({
     global: {
       colors: {
-        brand: 'red'
+        brand: '#ff0000'
       }
     }
   });
@@ -49,7 +49,7 @@ test('extends default theme twice', function () {
   (0, _.extendDefaultTheme)({
     global: {
       colors: {
-        brand: 'red'
+        brand: '#ff0000'
       }
     }
   });
@@ -63,7 +63,7 @@ test('extends default theme twice', function () {
   (0, _.extendDefaultTheme)({
     global: {
       colors: {
-        brand: 'blue'
+        brand: '#0000ff'
       }
     }
   });

@@ -5,6 +5,7 @@ exports.getRGBA = exports.colorIsDark = exports.normalizeColor = void 0;
 
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
+// Can return undefined.
 var normalizeColor = function normalizeColor(color, theme, dark) {
   var colorSpec = theme.global && theme.global.colors[color] !== undefined ? theme.global.colors[color] : color; // If the color has a light or dark object, use that
 
@@ -129,18 +130,22 @@ var getRGBArray = function getRGBArray(color) {
 };
 
 var colorIsDark = function colorIsDark(color) {
-  var _getRGBArray = getRGBArray(color),
-      red = _getRGBArray[0],
-      green = _getRGBArray[1],
-      blue = _getRGBArray[2],
-      alpha = _getRGBArray[3]; // if there is an alpha and it's greater than 50%, we can't really tell
+  if (color && canExtractRGBArray(color)) {
+    var _getRGBArray = getRGBArray(color),
+        red = _getRGBArray[0],
+        green = _getRGBArray[1],
+        blue = _getRGBArray[2],
+        alpha = _getRGBArray[3]; // if there is an alpha and it's greater than 50%, we can't really tell
 
 
-  if (alpha < 0.5) return undefined;
-  var brightness = (299 * red + 587 * green + 114 * blue) / 1000; // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
-  // Above domain is no longer registered.
+    if (alpha < 0.5) return undefined;
+    var brightness = (299 * red + 587 * green + 114 * blue) / 1000; // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
+    // Above domain is no longer registered.
 
-  return brightness < 125;
+    return brightness < 125;
+  }
+
+  return undefined;
 };
 
 exports.colorIsDark = colorIsDark;

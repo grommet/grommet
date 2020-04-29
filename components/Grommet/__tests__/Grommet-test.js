@@ -107,7 +107,7 @@ describe('Grommet', function () {
   test('background', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
       full: true,
-      background: "blue"
+      background: "#0000ff"
     }, "Grommet App"));
 
     expect(component.toJSON()).toMatchSnapshot();

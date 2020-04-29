@@ -22,7 +22,7 @@ test('extends default theme', function () {
   extendDefaultTheme({
     global: {
       colors: {
-        brand: 'red'
+        brand: '#ff0000'
       }
     }
   });
@@ -36,7 +36,7 @@ test('extends default theme twice', function () {
   extendDefaultTheme({
     global: {
       colors: {
-        brand: 'red'
+        brand: '#ff0000'
       }
     }
   });
@@ -48,7 +48,7 @@ test('extends default theme twice', function () {
   extendDefaultTheme({
     global: {
       colors: {
-        brand: 'blue'
+        brand: '#0000ff'
       }
     }
   });
