@@ -17,7 +17,10 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var CustomAccordionTheme = {
   accordion: {
     heading: {
-      level: '3'
+      level: 3
+    },
+    hover: {
+      color: 'accent-2'
     },
     icons: {
       collapse: _grommetIcons.SubtractCircle,

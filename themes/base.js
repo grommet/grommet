@@ -373,9 +373,15 @@ var generate = function generate(baseSpacing, scale) {
         color: 'border'
       },
       heading: {
-        level: '4'
+        level: '4' // level ranges from 1-6
+
       },
-      // level ranges from 1-6
+      hover: {
+        color: {
+          dark: 'light-4',
+          light: 'dark-3'
+        }
+      },
       icons: {
         collapse: _FormUp.FormUp,
         expand: _FormDown.FormDown // color: { dark: undefined, light: undefined },

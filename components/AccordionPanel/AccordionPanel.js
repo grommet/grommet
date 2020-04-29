@@ -67,7 +67,7 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
     "aria-expanded": active,
     onClick: onPanelChange,
     onMouseOver: function onMouseOver(event) {
-      setHover(theme.dark ? 'light-4' : 'dark-3');
+      setHover(theme.accordion.hover && theme.accordion.hover.color || undefined);
       if (_onMouseOver) _onMouseOver(event);
     },
     onMouseOut: function onMouseOut(event) {
@@ -75,7 +75,7 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
       if (_onMouseOut) _onMouseOut(event);
     },
     onFocus: function onFocus(event) {
-      setHover(theme.dark ? 'light-4' : 'dark-3');
+      setHover(theme.accordion.hover && theme.accordion.hover.color || undefined);
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {

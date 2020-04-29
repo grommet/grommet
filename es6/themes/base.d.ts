@@ -246,6 +246,9 @@ export interface ThemeType {
     heading?: {
       level?: string;
     };
+    hover?: {
+      color?: ColorType;
+    };
     icons?: {
       collapse?: any;
       expand?: any;

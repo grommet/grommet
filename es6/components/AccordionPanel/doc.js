@@ -8,6 +8,11 @@ export function doc(Panel) {
   return DocumentedAccordionPanel;
 }
 export var themeDoc = {
+  'accordion.hover.color': {
+    description: 'The hover color used for an accordion panel control.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: "light-4", light: "dark-3" }'
+  },
   'accordion.heading.level': {
     description: 'The heading level used for the accordion.',
     type: 'number',
