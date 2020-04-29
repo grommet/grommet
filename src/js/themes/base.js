@@ -323,7 +323,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         side: 'bottom',
         color: 'border',
       },
-      heading: { level: '4' }, // level ranges from 1-6
+      heading: {
+        level: '4', // level ranges from 1-6
+      },
+      hover: {
+        color: { dark: 'light-4', light: 'dark-3' },
+      },
       icons: {
         collapse: FormUp,
         expand: FormDown,
