@@ -5547,10 +5547,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react[\\"default\\"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`
@@ -6496,6 +6496,26 @@ Defaults to
 
 \`\`\`
 { vertical: 'xsmall', horizontal: 'small' }
+\`\`\`
+
+**formField.focus.background.color**
+
+The color of the FormField background when it is in focus. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.focus.border.color**
+
+The color of the FormField border when it is in focus. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.extend**

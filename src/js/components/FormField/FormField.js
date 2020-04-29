@@ -234,6 +234,11 @@ const FormField = forwardRef(
     } else if (normalizedError) {
       borderColor =
         (themeBorder && themeBorder.error.color) || 'status-critical';
+    } else if (focus) {
+      borderColor =
+        formFieldTheme.focus &&
+        formFieldTheme.focus.border &&
+        formFieldTheme.focus.border.color;
     } else {
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
@@ -309,6 +314,8 @@ const FormField = forwardRef(
     if (themeBorder.position === 'outer') {
       if (normalizedError && formFieldTheme.error) {
         outerBackground = formFieldTheme.error.background;
+      } else if (focus && formFieldTheme.focus) {
+        outerBackground = formFieldTheme.focus.background;
       } else if (disabled && formFieldTheme.disabled) {
         outerBackground = formFieldTheme.disabled.background;
       }
