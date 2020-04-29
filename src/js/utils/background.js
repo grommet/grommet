@@ -92,7 +92,7 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       // If we don't have a textColor already, and we aren't too translucent,
       // set the textColor to have the best contrast against the background
       // color.
-      if (!textColor && opacity !== 'weak') {
+      if (!textColor && (opacity === undefined || opacity > 0.3)) {
         const shade = darkContext(backgroundColor, theme);
         textColor = normalizeColor((shade && text[shade]) || text, theme);
       }
