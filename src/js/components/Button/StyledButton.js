@@ -77,103 +77,129 @@ const basicStyle = props => css`
 const primaryStyle = props => css`
   ${backgroundStyle(
     normalizeColor(
-      props.colorValue || props.theme.button.primary.color || 'control',
+      props.colorValue ||
+        props.theme.button.primary.background ||
+        props.theme.button.primary.color ||
+        'control',
       props.theme,
     ),
     props.theme,
     props.theme.button.color,
   )}
-  ${props.theme.button.primary.border.color &&
-    `border:
-      ${props.theme.button.border.width} solid
-      ${normalizeColor(
-        props.colorValue || props.theme.button.primary.border.color,
-        props.theme,
-      )};`}
+  ${
+    // For backwards compatibility and to align with convention that `color`
+    // should now refer to label color, only apply primary.color as label
+    // color if user has defined primary.background
+    props.theme.button.primary.color &&
+      props.theme.button.primary.background &&
+      `color: ${normalizeColor(props.theme.button.primary.color, props.theme)};`
+  }
+
   border-radius: ${radiusStyle(props)};
   ${props.theme.button.primary.extend}
 `;
 
-const simpleStyle = props => css`
+const buttonTypeStyle = props => {
+  const { buttonType } = props;
+  return css`
   ${backgroundStyle(
-    normalizeColor(
-      props.colorValue || props.theme.button.simple.color,
-      props.theme,
-    ),
+    normalizeColor(props.theme.button[buttonType].background, props.theme),
     props.theme,
-    props.theme.button.color,
+    props.theme.global.colors[props.theme.button[buttonType].color] ||
+      props.theme.button[buttonType].color ||
+      props.theme.button.color,
   )}
   border: ${
-    props.theme.button.simple.border.color
+    props.colorValue ||
+    (props.theme.button[buttonType].border &&
+      props.theme.button[buttonType].border.color)
       ? `${props.theme.button.border.width} solid
     ${normalizeColor(
-      props.colorValue || props.theme.button.simple.border.color,
+      props.colorValue || props.theme.button[buttonType].border.color,
       props.theme,
     )};`
       : 'none;'
   }
+  ${props.theme.button[buttonType].color &&
+    `color: ${props.theme.button[buttonType].color};`}
   border-radius: ${radiusStyle(props)};
   text-align: inherit;
-  ${props.theme.button.simple.extend} 
+  ${props.theme.button[buttonType].extend} 
 `;
+};
 
 function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
   }
+
   const { buttonType } = props;
   if (buttonType) {
     if (
-      props.active &&
-      props.theme.button[buttonType].active &&
-      props.theme.button[buttonType].active.border &&
-      props.theme.button[buttonType].active.border.color
-    ) {
+      props.theme.button.hover[buttonType] &&
+      props.theme.button.hover[buttonType].border &&
+      props.theme.button.hover[buttonType].border.color
+    )
       return normalizeColor(
-        props.theme.button[buttonType].active.border.color,
+        props.theme.button.hover[buttonType].border.color,
         props.theme,
       );
-    }
-    return normalizeColor(
-      props.theme.button[buttonType].hover.border.color ||
-        props.theme.button[buttonType].border.color ||
-        props.theme.button[buttonType].hover.color ||
-        props.theme.button[buttonType].color ||
-        props.theme.button.border.color ||
-        'control',
-      props.theme,
-    );
+    // if no hover border color for buttonType, try to match buttonType border
+    if (
+      props.theme.button[buttonType] &&
+      props.theme.button[buttonType].border &&
+      props.theme.button[buttonType].border.color
+    )
+      return normalizeColor(
+        props.theme.button[buttonType].border.color,
+        props.theme,
+      );
   }
+
+  const hoverBorderColor =
+    props.theme.button.hover &&
+    props.theme.button.hover.border &&
+    props.theme.button.hover.border.color;
+
   return normalizeColor(
-    props.theme.button.border.color || 'control',
+    hoverBorderColor || props.theme.button.border.color || 'control',
     props.theme,
   );
 }
 
-const hoverStyle = css`
-  &:hover {
-    ${props =>
-      props.buttonType &&
-      props.theme.button[props.buttonType].hover.color &&
-      css`
-        ${backgroundStyle(
-          normalizeColor(
-            props.theme.button[props.buttonType].hover.color,
+const hoverStyle = props => {
+  let hoverButtonPrefix;
+  if (props.buttonType && props.theme.button.hover[props.buttonType])
+    hoverButtonPrefix = props.theme.button.hover[props.buttonType];
+  else hoverButtonPrefix = props.theme.button.hover;
+
+  return css`
+    &:hover {
+      ${!props.plain &&
+        (hoverButtonPrefix.background || hoverButtonPrefix.color) &&
+        css`
+          ${backgroundStyle(
+            normalizeColor(
+              hoverButtonPrefix.background || hoverButtonPrefix.color,
+              props.theme,
+            ),
             props.theme,
-          ),
+            hoverButtonPrefix.color ||
+              props.theme.button.hover.color ||
+              props.theme.button.color,
+          )}
+        `};
+      ${props.hoverIndicator &&
+        getHoverIndicatorStyle(
+          props.hoverIndicator,
           props.theme,
-          props.theme.button.color,
-        )}
-      `};
-    ${props =>
-      props.hoverIndicator &&
-      getHoverIndicatorStyle(props.hoverIndicator, props.theme)} ${props =>
-      !props.plain &&
-      css`
-        box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};
-      `};
-  }
-`;
+        )} ${!props.plain &&
+        css`
+          box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};
+        `};
+    }
+  `;
+};
 
 const fillStyle = fillContainer => {
   if (fillContainer === 'horizontal') {
@@ -201,61 +227,66 @@ const plainStyle = props => css`
   text-align: inherit;
 `;
 
-const activeButtonStyle = props => css`
-  ${activeStyle(
-    props.theme.button[props.buttonType] &&
-      props.theme.button[props.buttonType].active &&
-      props.theme.button[props.buttonType].active.color,
-  )}
-  ${props[props.buttonType] &&
-    props.theme.button[props.buttonType].active &&
-    props.theme.button[props.buttonType].active.border &&
-    props.theme.button[props.buttonType].active.border.color &&
-    `border: ${props.theme.button.border.width} solid
-    ${normalizeColor(
-      props.theme.button[props.buttonType].active.border.color,
-      props.theme,
-    )};
-    `}
-  ${props[props.buttonType] &&
-    props.theme.button[props.buttonType].active &&
-    props.theme.button[props.buttonType].active.extend}
-`;
-
-const disabledButtonStyle = props => {
-  // if buttonType is specified, use those styles
-  // otherwise, use generic button styles
-  const disabledButtonTheme =
-    props.buttonType &&
-    props.theme.button[props.buttonType] &&
-    props.theme.button[props.buttonType].disabled
-      ? props.theme.button[props.buttonType].disabled
-      : props.theme.button.disabled;
+const activeButtonStyle = props => {
+  let activeButtonPrefix;
+  if (props.buttonType) {
+    // backwards compatibility for theme styling introduced in v2.13.0
+    if (props.theme.button[props.buttonType].active)
+      activeButtonPrefix = props.theme.button[props.buttonType].active;
+    if (props.theme.button.active[props.buttonType])
+      activeButtonPrefix = props.theme.button.active[props.buttonType];
+  }
+  if (!activeButtonPrefix) activeButtonPrefix = props.theme.button.active;
 
   return css`
-  ${disabledStyle(disabledButtonTheme.opacity)}
+  ${activeStyle}
   ${!props.plain &&
-    disabledButtonTheme.border &&
-    disabledButtonTheme.border.color &&
+    activeButtonPrefix.border &&
+    activeButtonPrefix.border.color &&
     `border: ${props.theme.button.border.width} solid
-    ${normalizeColor(disabledButtonTheme.border.color, props.theme)};`}
-  ${disabledButtonTheme.color &&
-    // if primary button, apply disabled color to background. otherwise,
-    // apply disabled color to the label
-    (props.primary
-      ? backgroundStyle(
-          normalizeColor(
-            (props.theme.button.primary &&
-              props.theme.button.primary.disabled &&
-              props.theme.button.primary.disabled.color) ||
-              props.theme.button.disabled.color,
-            props.theme,
-          ),
-          props.theme,
-          props.theme.button.color,
-        )
-      : `color: ${normalizeColor(disabledButtonTheme.color, props.theme)};`)}
-  ${disabledButtonTheme && disabledButtonTheme.extend}
+    ${normalizeColor(activeButtonPrefix.border.color, props.theme)};`}
+  ${backgroundStyle(
+    normalizeColor(
+      activeButtonPrefix.background ||
+        props.theme.button.active.background ||
+        props.theme.global.active.background,
+      props.theme,
+    ),
+    props.theme,
+    props.theme.global.colors[activeButtonPrefix.color] ||
+      activeButtonPrefix.color ||
+      props.theme.button.color,
+  )}
+  ${activeButtonPrefix && activeButtonPrefix.extend}
+  ${props.primary && activeButtonPrefix && activeButtonPrefix.extend}
+`;
+};
+
+const disabledButtonStyle = props => {
+  let disabledButtonPrefix;
+  if (props.buttonType && props.theme.button.disabled[props.buttonType])
+    disabledButtonPrefix = props.theme.button.disabled[props.buttonType];
+  else disabledButtonPrefix = props.theme.button.disabled;
+
+  return css`
+  ${disabledStyle(props.theme.button.disabled.opacity)}
+  ${!props.plain &&
+    disabledButtonPrefix.border &&
+    disabledButtonPrefix.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(disabledButtonPrefix.border.color, props.theme)};`}
+  ${disabledButtonPrefix.background &&
+    backgroundStyle(
+      normalizeColor(disabledButtonPrefix.background, props.theme),
+      props.theme,
+      props.theme.button.color,
+    )}
+  ${disabledButtonPrefix.color &&
+    `color: ${normalizeColor(disabledButtonPrefix.color, props.theme)};`}
+  ${props.theme.button.disabled.extend}
+  ${props.buttonType &&
+    props.theme.button.disabled[props.buttonType] &&
+    props.theme.button.disabled[props.buttonType].extend}
 `;
 };
 
@@ -275,11 +306,13 @@ const StyledButton = styled.button`
   ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
   ${props =>
-    !props.plain && props.simple && !props.primary && simpleStyle(props)}
+    !props.plain &&
+    props.buttonType &&
+    !props.primary &&
+    buttonTypeStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
-  ${props => !props.disabled && !props.focus && hoverStyle}
-
+  ${props => !props.disabled && !props.focus && hoverStyle(props)}
   ${props => !props.disabled && props.active && activeButtonStyle(props)}
   ${props =>
     props.disabled &&

@@ -508,7 +508,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   padding: 0;
   text-align: inherit;
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #444444;
 }
 
 .c0:hover {
@@ -1705,7 +1705,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 cwTsPg Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 kJiOdE Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   disabled=""
   id="test-select"
   type="button"

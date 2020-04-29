@@ -22,7 +22,7 @@ exports[`Button active + primary 1`] = `
   color: #f8f8f8;
   border-radius: 18px;
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #444444;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -80,7 +80,7 @@ exports[`Button active 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #444444;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;

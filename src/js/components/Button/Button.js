@@ -7,13 +7,7 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import {
-  backgroundIsDark,
-  colorIsDark,
-  getHoverIndicatorStyle,
-  normalizeBackground,
-  normalizeColor,
-} from '../../utils';
+import { backgroundAndTextColors, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -36,7 +30,6 @@ const Button = forwardRef(
       href,
       justify,
       label,
-      simple,
       onBlur,
       onClick,
       onFocus,
@@ -45,6 +38,7 @@ const Button = forwardRef(
       plain,
       primary,
       reverse,
+      secondary,
       size,
       type = 'button',
       as,
@@ -56,8 +50,9 @@ const Button = forwardRef(
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const buttonTypes = {
+      default: 'default',
       primary: 'primary',
-      simple: 'simple',
+      secondary: 'secondary',
     };
 
     if ((icon || label) && children) {
@@ -65,32 +60,6 @@ const Button = forwardRef(
         'Button should not have children if icon or label is provided',
       );
     }
-
-    const isDarkBackground = buttonType => {
-      if (hover && hoverIndicator) {
-        return backgroundIsDark(
-          getHoverIndicatorStyle(hoverIndicator, theme),
-          theme,
-        );
-      }
-
-      const backgroundValue =
-        color ||
-        (hover && !disabled && theme.button[buttonType].hover.color) ||
-        theme.button[buttonType].color ||
-        (buttonType === buttonTypes.primary &&
-          (theme.global.colors.control || 'brand'));
-
-      let backgroundColor;
-      if (backgroundValue) {
-        backgroundColor = normalizeBackground(
-          normalizeColor(backgroundValue, theme),
-          theme,
-        );
-      }
-
-      return backgroundColor ? colorIsDark(backgroundColor, theme) : theme.dark;
-    };
 
     const onMouseOverButton = event => {
       setHover(true);
@@ -108,23 +77,101 @@ const Button = forwardRef(
 
     let buttonIcon = icon;
     let buttonType;
-    // primary color styling should overrule simple
-    if (simple) buttonType = buttonTypes.simple;
+    // if default style defined in the theme, use these as default
+    // button styling instead of underlying theme
+    if (theme.button.default) buttonType = buttonTypes.default;
+    if (secondary) buttonType = buttonTypes.secondary;
     if (primary) buttonType = buttonTypes.primary;
 
+    // needed to keep icon color aligned with label color which is handled
+    // in StyledButton.js
     // only change color if user did not specify the color themselves...
-    if (buttonType && icon && !icon.props.color) {
-      buttonIcon = cloneElement(icon, {
-        color:
-          theme.global.colors.text[
-            isDarkBackground(buttonType) ? 'dark' : 'light'
-          ],
-      });
-    }
-    if (active && icon && !icon.props.color) {
-      buttonIcon = cloneElement(icon, {
-        color: theme.global.active.color,
-      });
+    if (icon && !icon.props.color) {
+      if (buttonType) {
+        const buttonThemePrefix = theme.button[buttonType]
+          ? theme.button[buttonType]
+          : theme.button;
+
+        const iconColor = backgroundAndTextColors(
+          buttonThemePrefix.background,
+          theme.global.colors[buttonThemePrefix.color] ||
+            buttonThemePrefix.color,
+          theme,
+        );
+
+        buttonIcon = cloneElement(icon, {
+          color: iconColor[1],
+        });
+      }
+      if (primary) {
+        const iconColor = backgroundAndTextColors(
+          color ||
+            theme.button.primary.background ||
+            theme.button.primary.color ||
+            'control',
+          theme.button.primary.color,
+          theme,
+        );
+
+        if (iconColor[1]) {
+          buttonIcon = cloneElement(icon, {
+            color: iconColor[1],
+          });
+        }
+      }
+      if (active) {
+        const activeThemePrefix =
+          theme.button.active && theme.button.active[buttonType]
+            ? theme.button.active[buttonType]
+            : theme.button.active;
+
+        const iconColor = backgroundAndTextColors(
+          activeThemePrefix.background,
+          activeThemePrefix.color,
+          theme,
+        );
+
+        buttonIcon = cloneElement(icon, {
+          color: iconColor[1],
+        });
+      }
+      if (hover && !disabled) {
+        const hoverThemePrefix =
+          theme.button.hover && theme.button.hover[buttonType]
+            ? theme.button.hover[buttonType]
+            : theme.button.hover;
+
+        // TO-DO: check if hover indicator is true
+        const iconColor = backgroundAndTextColors(
+          hoverIndicator || hoverThemePrefix.background,
+          !hoverIndicator && hoverThemePrefix.color,
+          theme,
+        );
+
+        // only apply it if it exists, otherwise keep the previous style
+        if (iconColor[1]) {
+          buttonIcon = cloneElement(icon, {
+            color: iconColor[1],
+          });
+        }
+      }
+      if (disabled) {
+        const disabledThemePrefix =
+          theme.button.disabled && theme.button.disabled[buttonType]
+            ? theme.button.disabled[buttonType]
+            : theme.button.disabled;
+
+        if (disabledThemePrefix.color) {
+          buttonIcon = cloneElement(icon, {
+            color: disabledThemePrefix.color,
+          });
+        }
+      }
+      if (plain && !primary) {
+        buttonIcon = cloneElement(icon, {
+          color: normalizeColor(color, theme),
+        });
+      }
     }
 
     const domTag = !as && href ? 'a' : as;
@@ -167,7 +214,7 @@ const Button = forwardRef(
         focus={focus}
         focusIndicator={focusIndicator}
         href={href}
-        simple={simple}
+        secondary={secondary}
         onClick={onClick}
         onFocus={event => {
           setFocus(true);
@@ -183,7 +230,7 @@ const Button = forwardRef(
         plain={
           typeof plain !== 'undefined'
             ? plain
-            : Children.count(children) > 0 || (icon && !label && !simple)
+            : Children.count(children) > 0 || (icon && !label)
         }
         primary={primary}
         sizeProp={size}

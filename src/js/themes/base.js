@@ -402,6 +402,25 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
+      hover: {
+        // secondary: {
+        //   border: {
+        //     // color: {dark: undefined, light: undefined}
+        //   },
+        //   color: 'active',
+        // },
+      },
+      active: {
+        // secondary: {
+        //   border: {
+        //     color: 'transparent',
+        //   },
+        //   background: {
+        //     color: 'active',
+        //   },
+        //   // extend: undefined,
+        // },
+      },
       disabled: {
         // border: {
         //   color: { dark: undefined, light: undefined },
@@ -411,24 +430,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined
       },
       // color: { dark: undefined, light: undefined }
-      simple: {
+      secondary: {
         border: {
           // color: { dark: undefined, light: undefined }
         },
         // color: { dark: undefined, light: undefined }
-        hover: {
-          border: {
-            // color: {dark: undefined, light: undefined}
-          },
-          color: 'active',
-        },
-        // active: {
-        //   border: {
-        //     color: { dark: undefined, light: undefined },
-        //   },
-        //   color: { dark: undefined, light: undefined },
-        //   extend: undefined,
-        // },
+
         // disabled: {
         //   border: {
         //     color: { dark: undefined, light: undefined },
