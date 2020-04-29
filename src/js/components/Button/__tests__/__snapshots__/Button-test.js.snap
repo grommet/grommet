@@ -18,7 +18,7 @@ exports[`Button active + primary 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   background-color: rgba(221,221,221,0.4);
@@ -343,7 +343,7 @@ exports[`Button color 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -375,7 +375,7 @@ exports[`Button color 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #111111;
+  background-color: #111111;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -407,7 +407,7 @@ exports[`Button color 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #123;
+  background-color: #123;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -559,7 +559,7 @@ exports[`Button disabled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   opacity: 0.3;
@@ -1263,7 +1263,7 @@ exports[`Button hoverIndicator color 1`] = `
 }
 
 .c1:hover {
-  background: #777777;
+  background-color: #777777;
   color: #FFFFFF;
 }
 
@@ -1463,7 +1463,7 @@ exports[`Button primary 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -1807,7 +1807,7 @@ exports[`Button size 1`] = `
   padding: 4px 20px;
   font-size: 14px;
   line-height: 20px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -1839,7 +1839,7 @@ exports[`Button size 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -1871,7 +1871,7 @@ exports[`Button size 1`] = `
   padding: 8px 32px;
   font-size: 22px;
   line-height: 28px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 24px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -1902,7 +1902,7 @@ exports[`Button size 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   line-height: 0;

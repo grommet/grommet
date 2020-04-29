@@ -73,7 +73,7 @@ exports[`Form controlled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -210,7 +210,7 @@ exports[`Form controlled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -248,7 +248,7 @@ exports[`Form controlled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -339,7 +339,7 @@ exports[`Form controlled FormField deprecated 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -488,7 +488,7 @@ exports[`Form controlled FormField deprecated 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -532,7 +532,7 @@ exports[`Form controlled FormField deprecated 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -614,7 +614,7 @@ exports[`Form controlled input 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -751,7 +751,7 @@ exports[`Form controlled input 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -789,7 +789,7 @@ exports[`Form controlled input 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -871,7 +871,7 @@ exports[`Form controlled input lazy 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -1008,7 +1008,7 @@ exports[`Form controlled input lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -1046,7 +1046,7 @@ exports[`Form controlled input lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -1128,7 +1128,7 @@ exports[`Form controlled lazy 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -1265,7 +1265,7 @@ exports[`Form controlled lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -1303,7 +1303,7 @@ exports[`Form controlled lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -1909,7 +1909,7 @@ exports[`Form uncontrolled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -2046,7 +2046,7 @@ exports[`Form uncontrolled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -2084,7 +2084,7 @@ exports[`Form uncontrolled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kpnlyr"
+      class="StyledButton-sc-323bzc-0 kIXxtf"
       type="submit"
     >
       Submit
@@ -2166,7 +2166,7 @@ exports[`Form update 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
