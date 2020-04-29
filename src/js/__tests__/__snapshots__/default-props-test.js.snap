@@ -8,7 +8,7 @@ exports[`default theme is used 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -30,7 +30,7 @@ exports[`extends default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: red;
+  background-color: red;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -52,7 +52,7 @@ exports[`extends default theme twice 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: red;
+  background-color: red;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -74,7 +74,7 @@ exports[`extends default theme twice 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: blue;
+  background-color: blue;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -106,7 +106,7 @@ exports[`uses Grommet theme instead of default 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -119,7 +119,7 @@ exports[`uses Grommet theme instead of default 1`] = `
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
   line-height: 24px;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

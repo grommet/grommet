@@ -208,7 +208,7 @@ exports[`RadioButtonGroup children 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;

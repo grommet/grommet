@@ -241,7 +241,7 @@ exports[`Calendar date 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -1517,7 +1517,7 @@ exports[`Calendar dates 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -2793,7 +2793,7 @@ exports[`Calendar daysOfWeek 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -4136,7 +4136,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -6362,7 +6362,7 @@ exports[`Calendar header 1`] = `
   align-items: center;
   width: 27.428571428571427px;
   height: 27.428571428571427px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -8911,7 +8911,7 @@ exports[`Calendar select date 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -10084,7 +10084,7 @@ exports[`Calendar select date 2`] = `
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 eaIdgx"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gBUPeV"
                 >
                   17
                 </div>
@@ -10735,7 +10735,7 @@ exports[`Calendar select dates 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -12669,7 +12669,7 @@ exports[`Calendar size 1`] = `
   align-items: center;
   width: 27.428571428571427px;
   height: 27.428571428571427px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -12724,7 +12724,7 @@ exports[`Calendar size 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -12779,7 +12779,7 @@ exports[`Calendar size 1`] = `
   align-items: center;
   width: 109.71428571428571px;
   height: 109.71428571428571px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }

@@ -27,7 +27,7 @@ exports[`Layer animation fadeIn 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -41,7 +41,7 @@ exports[`Layer animation fadeIn 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -154,13 +154,13 @@ exports[`Layer animation fadeIn 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -207,7 +207,7 @@ exports[`Layer animation false 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -221,7 +221,7 @@ exports[`Layer animation false 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -332,13 +332,13 @@ exports[`Layer animation false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -385,7 +385,7 @@ exports[`Layer animation slide 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -399,7 +399,7 @@ exports[`Layer animation slide 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -512,13 +512,13 @@ exports[`Layer animation slide 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -565,7 +565,7 @@ exports[`Layer animation true 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -579,7 +579,7 @@ exports[`Layer animation true 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -692,13 +692,13 @@ exports[`Layer animation true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -745,7 +745,7 @@ exports[`Layer custom margin 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -759,7 +759,7 @@ exports[`Layer custom margin 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -872,13 +872,13 @@ exports[`Layer custom margin 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -915,7 +915,7 @@ exports[`Layer dark context 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -984,13 +984,13 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1020,7 +1020,7 @@ exports[`Layer focus on layer 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -1113,7 +1113,7 @@ exports[`Layer full false 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -1127,7 +1127,7 @@ exports[`Layer full false 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -1240,13 +1240,13 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1293,7 +1293,7 @@ exports[`Layer full horizontal 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -1307,7 +1307,7 @@ exports[`Layer full horizontal 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -1421,13 +1421,13 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1474,7 +1474,7 @@ exports[`Layer full true 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -1488,7 +1488,7 @@ exports[`Layer full true 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -1600,13 +1600,13 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1653,7 +1653,7 @@ exports[`Layer full vertical 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -1667,7 +1667,7 @@ exports[`Layer full vertical 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -1781,13 +1781,13 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1833,7 +1833,7 @@ exports[`Layer hidden 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -1847,7 +1847,7 @@ exports[`Layer hidden 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -1924,13 +1924,13 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1957,10 +1957,10 @@ exports[`Layer hidden 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-rmtehz-1 bnUvKb"
+    class="StyledLayer__StyledOverlay-rmtehz-1 TgNMj"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 cUgmNe"
+    class="StyledLayer__StyledContainer-rmtehz-2 hyqqbS"
     id="hidden-test"
   >
     <a
@@ -2004,13 +2004,13 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2114,7 +2114,7 @@ exports[`Layer margin large 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -2128,7 +2128,7 @@ exports[`Layer margin large 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -2241,13 +2241,13 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2294,7 +2294,7 @@ exports[`Layer margin medium 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -2308,7 +2308,7 @@ exports[`Layer margin medium 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -2421,13 +2421,13 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2474,7 +2474,7 @@ exports[`Layer margin none 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -2488,7 +2488,7 @@ exports[`Layer margin none 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -2601,13 +2601,13 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2654,7 +2654,7 @@ exports[`Layer margin small 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -2668,7 +2668,7 @@ exports[`Layer margin small 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -2781,13 +2781,13 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2834,7 +2834,7 @@ exports[`Layer margin xsmall 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -2848,7 +2848,7 @@ exports[`Layer margin xsmall 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -2961,13 +2961,13 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3004,7 +3004,7 @@ exports[`Layer non-modal 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -3073,13 +3073,13 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3109,7 +3109,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -3332,13 +3332,13 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3385,7 +3385,7 @@ exports[`Layer position bottom 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -3399,7 +3399,7 @@ exports[`Layer position bottom 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -3512,13 +3512,13 @@ exports[`Layer position bottom 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3565,7 +3565,7 @@ exports[`Layer position center 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -3579,7 +3579,7 @@ exports[`Layer position center 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -3692,13 +3692,13 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3745,7 +3745,7 @@ exports[`Layer position end 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -3759,7 +3759,7 @@ exports[`Layer position end 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -3872,13 +3872,13 @@ exports[`Layer position end 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3925,7 +3925,7 @@ exports[`Layer position left 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -3939,7 +3939,7 @@ exports[`Layer position left 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -4052,13 +4052,13 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4105,7 +4105,7 @@ exports[`Layer position right 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -4119,7 +4119,7 @@ exports[`Layer position right 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -4232,13 +4232,13 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4285,7 +4285,7 @@ exports[`Layer position start 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -4299,7 +4299,7 @@ exports[`Layer position start 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -4412,13 +4412,13 @@ exports[`Layer position start 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4465,7 +4465,7 @@ exports[`Layer position top 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -4479,7 +4479,7 @@ exports[`Layer position top 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -4592,13 +4592,13 @@ exports[`Layer position top 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4645,7 +4645,7 @@ exports[`Layer target 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
 }
@@ -4659,7 +4659,7 @@ exports[`Layer target 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -4756,13 +4756,13 @@ exports[`Layer target 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4799,7 +4799,7 @@ exports[`Layer target not modal 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -4872,13 +4872,13 @@ exports[`Layer target not modal 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bnUvKb {
+  .TgNMj {
     position: relative;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .ckZaHQ {
+  .fYgBNY {
     position: relative;
     max-height: none;
     max-width: none;
