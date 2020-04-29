@@ -483,11 +483,7 @@ describe('Form', () => {
   });
   test('validate on blur', () => {
     const Test = () => (
-      <Form
-        validate="blur"
-        onReset={event => console.log(event)}
-        onSubmit={({ value }) => console.log('Submit', value)}
-      >
+      <Form validate="blur">
         <FormField
           label="Name"
           name="name"
@@ -537,13 +533,6 @@ describe('Form', () => {
     });
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(1);
-
-    // fields reset to required error message
-    fireEvent.change(getByPlaceholderText('name'), {
-      target: { value: '' },
-    });
-    fireEvent.click(getByText('submit'));
-    expect(queryAllByText('required')).toHaveLength(2);
 
     // name field has new error and email field still has required error message
     fireEvent.change(getByPlaceholderText('name'), {
