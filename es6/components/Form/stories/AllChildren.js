@@ -94,6 +94,6 @@ var Example = function Example() {
   }))))));
 };
 
-storiesOf('Form', module).add('All children', function () {
+storiesOf('Form', module).add('FormField children', function () {
   return React.createElement(Example, null);
 });

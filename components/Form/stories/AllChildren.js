@@ -101,6 +101,6 @@ var Example = function Example() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('All children', function () {
+(0, _react2.storiesOf)('Form', module).add('FormField children', function () {
   return _react["default"].createElement(Example, null);
 });

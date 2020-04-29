@@ -1,26 +1,19 @@
-"use strict";
-
-var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
-
-var _grommet = require("grommet");
-
-var _themes = require("grommet/themes");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box, Button, CheckBox, Grommet, Form, FormField, RadioButtonGroup, RangeInput, Select, TextArea } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return React.createElement(Grommet, {
     full: true,
-    theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+    theme: grommet
+  }, React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, React.createElement(Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.Form, {
+  }, React.createElement(Form, {
     onReset: function onReset(event) {
       return console.log(event);
     },
@@ -29,7 +22,7 @@ var Example = function Example() {
           touched = _ref.touched;
       return console.log('Submit', value, touched);
     }
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, React.createElement(FormField, {
     label: "Name",
     name: "name",
     required: true,
@@ -45,12 +38,12 @@ var Example = function Example() {
       };
       return undefined;
     }]
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), React.createElement(FormField, {
     label: "Email",
     name: "email",
     type: "email",
     required: true
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), React.createElement(FormField, {
     label: "Employee ID",
     name: "employeeId",
     required: true,
@@ -58,57 +51,57 @@ var Example = function Example() {
       regexp: /^[0-9]{4,6}$/,
       message: '4-6 digits'
     }
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), React.createElement(FormField, {
     name: "subscribe",
-    component: _grommet.CheckBox,
+    component: CheckBox,
     label: "Subscribe?"
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), React.createElement(FormField, {
     name: "ampm",
-    component: _grommet.RadioButtonGroup,
+    component: RadioButtonGroup,
     options: ['morning', 'evening']
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), React.createElement(FormField, {
     label: "Size",
     name: "size",
-    component: _grommet.Select,
+    component: Select,
     onChange: function onChange(event) {
       return console.log(event);
     },
     options: ['small', 'medium', 'large', 'xlarge']
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), React.createElement(FormField, {
     label: "Comments",
     name: "comments",
-    component: _grommet.TextArea
-  }), _react["default"].createElement(_grommet.FormField, {
+    component: TextArea
+  }), React.createElement(FormField, {
     label: "Age",
     name: "age",
-    component: _grommet.RangeInput,
+    component: RangeInput,
     pad: true,
     min: 15,
     max: 75
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), React.createElement(FormField, {
     label: "Custom",
     name: "custom",
     component: function component(props) {
-      return _react["default"].createElement("input", props);
+      return React.createElement("input", props);
     }
-  }), _react["default"].createElement(_grommet.Box, {
+  }), React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Button, {
+  }, React.createElement(Button, {
     label: "Cancel"
-  }), _react["default"].createElement(_grommet.Button, {
+  }), React.createElement(Button, {
     type: "reset",
     label: "Reset"
-  }), _react["default"].createElement(_grommet.Button, {
+  }), React.createElement(Button, {
     type: "submit",
     label: "Update",
     primary: true
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('All', function () {
-  return _react["default"].createElement(Example, null);
+storiesOf('Form', module).add('FormField component', function () {
+  return React.createElement(Example, null);
 });
