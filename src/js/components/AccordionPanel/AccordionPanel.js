@@ -48,7 +48,10 @@ const AccordionPanel = forwardRef(
           aria-expanded={active}
           onClick={onPanelChange}
           onMouseOver={event => {
-            setHover(theme.dark ? 'light-4' : 'dark-3');
+            setHover(
+              (theme.accordion.hover && theme.accordion.hover.color) ||
+                undefined,
+            );
             if (onMouseOver) onMouseOver(event);
           }}
           onMouseOut={event => {
@@ -56,7 +59,10 @@ const AccordionPanel = forwardRef(
             if (onMouseOut) onMouseOut(event);
           }}
           onFocus={event => {
-            setHover(theme.dark ? 'light-4' : 'dark-3');
+            setHover(
+              (theme.accordion.hover && theme.accordion.hover.color) ||
+                undefined,
+            );
             if (onFocus) onFocus(event);
           }}
           onBlur={event => {
