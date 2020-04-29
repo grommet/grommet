@@ -290,79 +290,192 @@ export interface ThemeType {
       width?: string;
       radius?: string;
     };
-    disabled?: {
-      border?: {
-        color: ColorType;
-      },
-      color?: ColorType;
-      extend?: ExtendType;
-      opacity?: OpacityType;
-    };
+    color?: ColorType;
     extend?: ExtendType;
     minWidth?: string;
     maxWidth?: string;
-    simple?: {
+    padding?: {
+      vertical?: string;
+      horizontal?: string;
+    };
+    active?: {
+      background?: BackgroundType;
       border?: {
-        color?: ColorType,
-      },
+        color?: ColorType;
+      };
       color?: ColorType;
-      hover?: {
-        border?: {
-          color?: ColorType;
-        };
-        color?: ColorType;
-      };
-      active?: {
-        border?: {
-          color: ColorType;
-        },
-        color?: ColorType;
-        extend?: ExtendType;
-      };
-      disabled?: {
-        border?: {
-          color: ColorType;
-        },
-        color?: ColorType;
-        extend?: ExtendType;
-        opacity?: OpacityType;
-      };
       padding?: {
         vertical?: string;
         horizontal?: string;
       };
       extend?: ExtendType;
-    },
-    padding?: {
-      vertical?: string;
-      horizontal?: string;
-    };
-    primary?: {
-      border?: {
-        color?: ColorType;
-      },
-      color?: ColorType;
-      hover?: {
-        color?: ColorType;
+      primary?: {
+        background?: BackgroundType;
         border?: {
           color?: ColorType;
         };
-      };
-      active?: {
-        border?: {
-          color: ColorType;
-        },
         color?: ColorType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
         extend?: ExtendType;
       };
-      disabled?: {
+      secondary?: {
+        background?: BackgroundType;
         border?: {
-          color: ColorType;
-        },
+          color?: ColorType;
+        };
         color?: ColorType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
         extend?: ExtendType;
+      };
+      default?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+        extend?: ExtendType;
+      };
+    };
+    disabled?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
+      color?: ColorType;
+      opacity?: OpacityType;
+      padding?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+      extend?: ExtendType;
+      primary?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
         opacity?: OpacityType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+        extend?: ExtendType;
       };
+      secondary?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
+        opacity?: OpacityType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+        extend?: ExtendType;
+      };
+      default?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
+        opacity?: OpacityType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+        extend?: ExtendType;
+      };
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
+      color?: ColorType;
+      padding?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+      extend?: ExtendType;
+      primary?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+        extend?: ExtendType;
+      };
+      secondary?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+        extend?: ExtendType;
+      };
+      default?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
+        padding?: {
+          vertical?: string;
+          horizontal?: string;
+        };
+        extend?: ExtendType;
+      };
+    };
+    primary?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
+      color?: ColorType;
+      padding?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+      extend?: ExtendType;
+    };
+    secondary?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
+      color?: ColorType;
+      padding?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+      extend?: ExtendType;
+    };
+    default?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
+      color?: ColorType;
       padding?: {
         vertical?: string;
         horizontal?: string;

@@ -1295,17 +1295,6 @@ background
         "name": "icon",
       },
       Object {
-        "description": "How to align the contents along the horizontal axis in the button.",
-        "format": "around
-between
-center
-end
-evenly
-start
-stretch",
-        "name": "justify",
-      },
-      Object {
         "description": "Label text to place in the button.",
         "format": "node",
         "name": "label",

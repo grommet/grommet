@@ -144,7 +144,38 @@ function getHoverColor(props) {
         props.theme.button.hover[buttonType].border.color,
         props.theme,
       );
-    // if no hover border color for buttonType, try to match buttonType border
+
+    // if no hover border color for buttonType, check if it's active
+    // and try to match the border or background of that
+    if (props.active) {
+      let activeButtonPrefix;
+      if (props.buttonType) {
+        // backwards compatibility for theme styling introduced in v2.13.0
+        if (props.theme.button[props.buttonType].active)
+          activeButtonPrefix = props.theme.button[props.buttonType].active;
+        if (props.theme.button.active[props.buttonType])
+          activeButtonPrefix = props.theme.button.active[props.buttonType];
+      }
+      if (activeButtonPrefix === undefined)
+        activeButtonPrefix = props.theme.button.active;
+
+      // border transparent might be used when low opacity backgrounds are used
+      // on button. border stacks on top of background fill, so use of
+      // transparent maintains dimension of button without defaulting to
+      // control color. we still want the hover box shadow though, so we try
+      // to match the background color
+      if (
+        activeButtonPrefix.border &&
+        activeButtonPrefix.border.color !== 'transparent'
+      )
+        return normalizeColor(activeButtonPrefix.border.color, props.theme);
+      if (
+        activeButtonPrefix.border &&
+        activeButtonPrefix.border.color === 'transparent' &&
+        activeButtonPrefix.background
+      )
+        return normalizeColor(activeButtonPrefix.background.color, props.theme);
+    }
     if (
       props.theme.button[buttonType] &&
       props.theme.button[buttonType].border &&
@@ -269,7 +300,7 @@ const disabledButtonStyle = props => {
   else disabledButtonPrefix = props.theme.button.disabled;
 
   return css`
-  ${disabledStyle(props.theme.button.disabled.opacity)}
+  ${disabledStyle(disabledButtonPrefix.opacity)}
   ${!props.plain &&
     disabledButtonPrefix.border &&
     disabledButtonPrefix.border.color &&

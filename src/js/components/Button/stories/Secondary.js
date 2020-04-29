@@ -16,6 +16,10 @@ const myHpe = deepMerge(hpe, {
         dark: '#FFFFFF14',
         light: '#0000000A',
       },
+      'text-weak': {
+        light: '#bbbbbb',
+        dark: '#606B7D',
+      },
       control: 'green',
     },
   },
@@ -33,9 +37,9 @@ const myHpe = deepMerge(hpe, {
     disabled: {
       background: 'transparent',
       border: {
-        color: '#DDD',
+        color: 'text-weak',
       },
-      color: '#DDD',
+      color: 'text-weak',
       opacity: 1.0,
     },
     hover: {
@@ -50,6 +54,9 @@ const myHpe = deepMerge(hpe, {
     },
     default: {
       color: 'text',
+      border: {
+        color: 'transparent', // needed to maintain 36px height
+      },
     },
     secondary: {
       border: {

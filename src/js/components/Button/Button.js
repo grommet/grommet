@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import { backgroundAndTextColors, normalizeColor } from '../../utils';
+import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -28,7 +28,6 @@ const Button = forwardRef(
       fill, // munged to avoid styled-components putting it in the DOM
       hoverIndicator,
       href,
-      justify,
       label,
       onBlur,
       onClick,
@@ -49,6 +48,7 @@ const Button = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
+
     const buttonTypes = {
       default: 'default',
       primary: 'primary',
@@ -60,6 +60,21 @@ const Button = forwardRef(
         'Button should not have children if icon or label is provided',
       );
     }
+
+    const isDarkBackground = () => {
+      const backgroundColor = normalizeBackground(
+        normalizeColor(
+          color ||
+            theme.button.primary.color ||
+            theme.global.colors.control ||
+            'brand',
+          theme,
+        ),
+        theme,
+      );
+
+      return colorIsDark(backgroundColor, theme);
+    };
 
     const onMouseOverButton = event => {
       setHover(true);
@@ -75,7 +90,6 @@ const Button = forwardRef(
       }
     };
 
-    let buttonIcon = icon;
     let buttonType;
     // if default style defined in the theme, use these as default
     // button styling instead of underlying theme
@@ -83,95 +97,12 @@ const Button = forwardRef(
     if (secondary) buttonType = buttonTypes.secondary;
     if (primary) buttonType = buttonTypes.primary;
 
-    // needed to keep icon color aligned with label color which is handled
-    // in StyledButton.js
+    let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
-    if (icon && !icon.props.color) {
-      if (buttonType) {
-        const buttonThemePrefix = theme.button[buttonType]
-          ? theme.button[buttonType]
-          : theme.button;
-
-        const iconColor = backgroundAndTextColors(
-          buttonThemePrefix.background,
-          theme.global.colors[buttonThemePrefix.color] ||
-            buttonThemePrefix.color,
-          theme,
-        );
-
-        buttonIcon = cloneElement(icon, {
-          color: iconColor[1],
-        });
-      }
-      if (primary) {
-        const iconColor = backgroundAndTextColors(
-          color ||
-            theme.button.primary.background ||
-            theme.button.primary.color ||
-            'control',
-          theme.button.primary.color,
-          theme,
-        );
-
-        if (iconColor[1]) {
-          buttonIcon = cloneElement(icon, {
-            color: iconColor[1],
-          });
-        }
-      }
-      if (active) {
-        const activeThemePrefix =
-          theme.button.active && theme.button.active[buttonType]
-            ? theme.button.active[buttonType]
-            : theme.button.active;
-
-        const iconColor = backgroundAndTextColors(
-          activeThemePrefix.background,
-          activeThemePrefix.color,
-          theme,
-        );
-
-        buttonIcon = cloneElement(icon, {
-          color: iconColor[1],
-        });
-      }
-      if (hover && !disabled) {
-        const hoverThemePrefix =
-          theme.button.hover && theme.button.hover[buttonType]
-            ? theme.button.hover[buttonType]
-            : theme.button.hover;
-
-        // TO-DO: check if hover indicator is true
-        const iconColor = backgroundAndTextColors(
-          hoverIndicator || hoverThemePrefix.background,
-          !hoverIndicator && hoverThemePrefix.color,
-          theme,
-        );
-
-        // only apply it if it exists, otherwise keep the previous style
-        if (iconColor[1]) {
-          buttonIcon = cloneElement(icon, {
-            color: iconColor[1],
-          });
-        }
-      }
-      if (disabled) {
-        const disabledThemePrefix =
-          theme.button.disabled && theme.button.disabled[buttonType]
-            ? theme.button.disabled[buttonType]
-            : theme.button.disabled;
-
-        if (disabledThemePrefix.color) {
-          buttonIcon = cloneElement(icon, {
-            color: disabledThemePrefix.color,
-          });
-        }
-      }
-      if (plain && !primary) {
-        buttonIcon = cloneElement(icon, {
-          color: normalizeColor(color, theme),
-        });
-      }
+    if (primary && icon && !icon.props.color) {
+      buttonIcon = cloneElement(icon, {
+        color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
+      });
     }
 
     const domTag = !as && href ? 'a' : as;
@@ -181,12 +112,7 @@ const Button = forwardRef(
     let contents;
     if (first && second) {
       contents = (
-        <Box
-          direction="row"
-          align="center"
-          justify={justify || 'center'}
-          gap={gap}
-        >
+        <Box direction="row" align="center" justify="center" gap={gap}>
           {first}
           {second}
         </Box>

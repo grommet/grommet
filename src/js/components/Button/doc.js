@@ -77,17 +77,6 @@ with plain Buttons.`,
       'If specified, the button will behave like an anchor tag.',
     ),
     icon: PropTypes.element.description('Icon element to place in the button.'),
-    justify: PropTypes.oneOf([
-      'around',
-      'between',
-      'center',
-      'end',
-      'evenly',
-      'start',
-      'stretch',
-    ]).description(
-      'How to align the contents along the horizontal axis in the button.',
-    ),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
@@ -210,34 +199,57 @@ export const themeDoc = {
     description: `The color of the text label.`,
     type: 'string | { dark: string, light: string }',
   },
-  'button.disabled.opacity': {
-    description: 'The opacity when the button is disabled.',
-    type: 'number',
-    defaultValue: 0.3,
-  },
-  'button.simple.color': {
-    description: `The color of the background for simple buttons.`,
+  'button.active.color': {
+    description: `Label color when the button is active.`,
     type: 'string | { dark: string, light: string }',
   },
-  'button.simple.hover.border.color': {
-    description: `The color of the border for simple buttons on hover.`,
+  'button.active.border.color': {
+    description: 'The border color when the button is active.',
     type: 'string | { dark: string, light: string }',
   },
-  'button.simple.hover.color': {
-    description: `The color of the fill for simple buttons on hover.`,
+  'button.active.background.color': {
+    description: `Background color when the button is active.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.active.extend': {
+    description: 'Any additional style for an active Button.',
+    type: 'string | (props) => {}',
+  },
+  'button.disabled.color': {
+    description: `Label color when the button is disabled.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.disabled.border.color': {
     description: 'The border color when the button is disabled.',
     type: 'string | { dark: string, light: string }',
   },
-  'button.disabled.color': {
-    description: `Fill color for primary buttons, or label color for other
-    button types, when the button is disabled.`,
+  'button.disabled.background.color': {
+    description: `Background color when the button is disabled.`,
     type: 'string | { dark: string, light: string }',
+  },
+  'button.disabled.opacity': {
+    description: 'The opacity when the button is disabled.',
+    type: 'number',
+    defaultValue: 0.3,
   },
   'button.disabled.extend': {
     description: 'Any additional style for a disabled Button.',
+    type: 'string | (props) => {}',
+  },
+  'button.hover.color': {
+    description: `Label color when the button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.hover.border.color': {
+    description: 'The border color when the button is hovered.',
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.hover.background.color': {
+    description: `Background color when the button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.hover.extend': {
+    description: 'Any additional style for a hovered Button.',
     type: 'string | (props) => {}',
   },
   'button.padding.horizontal': {
@@ -250,24 +262,301 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '4px',
   },
-  'button.primary.color': {
+  'button.primary.background.color': {
     description: `The color of the background for primary buttons.`,
     type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.primary.background.opacity': {
+    description: 'The value used for primary button background opacity.',
+    type: 'number | string',
+    defaultValue: undefined,
+  },
+  'button.primary.border.color': {
+    description: `The color of the border for primary buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.primary.color': {
+    description: `The color of the label for primary buttons if 
+    button.primary.background.color is defined. Otherwise, the fill color for 
+    primary buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.primary.padding.horizontal': {
+    description: 'The horizontal padding for a primary button.',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'button.primary.padding.vertical': {
+    description: 'The vertical padding for a primary button.',
+    type: 'string',
+    defaultValue: '4px',
   },
   'button.primary.extend': {
     description: 'Any additional style for a primary button.',
     type: 'string | (props) => {}',
     defaultValue: 'undefined',
   },
-  'button.primary.active.border.color': {
-    description: `The color of the border for active primary buttons.`,
+  'button.active.primary.color': {
+    description: `Label color when the primary button is active.`,
     type: 'string | { dark: string, light: string }',
-    defaultValue: 'undefined',
+    defaultValue: undefined,
   },
-  'button.primary.active.extend': {
-    description: 'Any additional style for an active primary button.',
+  'button.active.primary.border.color': {
+    description: 'The border color when the primary button is active.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.primary.background.color': {
+    description: `Background color when the primary button is active.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.primary.extend': {
+    description: 'Any additional style for a active primary Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.disabled.primary.color': {
+    description: `Label color when the primary button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.primary.border.color': {
+    description: 'The border color when the primary button is disabled.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.primary.background.color': {
+    description: `Background color when the primary button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.primary.opacity': {
+    description: 'The opacity when the primary button is disabled.',
+    type: 'number',
+    defaultValue: undefined,
+  },
+  'button.disabled.primary.extend': {
+    description: 'Any additional style for a disabled primary Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.hover.primary.color': {
+    description: `Label color when the primary button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.primary.border.color': {
+    description: 'The border color when the primary button is hovered.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.primary.background.color': {
+    description: `Background color when the primary button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.primary.extend': {
+    description: 'Any additional style for a hover primary Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.secondary.background.color': {
+    description: `The color of the background for secondary buttons.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.secondary.background.opacity': {
+    description: 'The value used for secondary button background opacity.',
+    type: 'number | string',
+    defaultValue: undefined,
+  },
+  'button.secondary.border.color': {
+    description: `The color of the border for secondary buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.secondary.color': {
+    description: `The color of the label for secondary buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.secondary.padding.horizontal': {
+    description: 'The horizontal padding for a secondary button.',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'button.secondary.padding.vertical': {
+    description: 'The vertical padding for a secondary button.',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'button.secondary.extend': {
+    description: 'Any additional style for a secondary button.',
     type: 'string | (props) => {}',
     defaultValue: 'undefined',
+  },
+  'button.active.secondary.color': {
+    description: `Label color when the secondary button is active.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.secondary.border.color': {
+    description: 'The border color when the secondary button is active.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.secondary.background.color': {
+    description: `Background color when the secondary button is active.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.secondary.extend': {
+    description: 'Any additional style for a active secondary Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.disabled.secondary.color': {
+    description: `Label color when the secondary button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.secondary.border.color': {
+    description: 'The border color when the secondary button is disabled.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.secondary.background.color': {
+    description: `Background color when the secondary button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.secondary.opacity': {
+    description: 'The opacity when the secondary button is disabled.',
+    type: 'number',
+    defaultValue: undefined,
+  },
+  'button.disabled.secondary.extend': {
+    description: 'Any additional style for a disabled secondary Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.hover.secondary.color': {
+    description: `Label color when the secondary button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.secondary.border.color': {
+    description: 'The border color when the secondary button is hovered.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.secondary.background.color': {
+    description: `Background color when the secondary button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.secondary.extend': {
+    description: 'Any additional style for a hover secondary Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.default.background.color': {
+    description: `The color of the background for default buttons.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.default.background.opacity': {
+    description: 'The value used for default button background opacity.',
+    type: 'number | string',
+    defaultValue: undefined,
+  },
+  'button.default.border.color': {
+    description: `The color of the border for default buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.default.color': {
+    description: `The color of the label for default buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.default.padding.horizontal': {
+    description: 'The horizontal padding for a default button.',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'button.default.padding.vertical': {
+    description: 'The vertical padding for a default button.',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'button.default.extend': {
+    description: 'Any additional style for a default button.',
+    type: 'string | (props) => {}',
+    defaultValue: 'undefined',
+  },
+  'button.active.default.color': {
+    description: `Label color when the default button is active.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.default.border.color': {
+    description: 'The border color when the default button is active.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.default.background.color': {
+    description: `Background color when the default button is active.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.active.default.extend': {
+    description: 'Any additional style for a active default Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.disabled.default.color': {
+    description: `Label color when the default button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.default.border.color': {
+    description: 'The border color when the default button is disabled.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.default.background.color': {
+    description: `Background color when the default button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.disabled.default.opacity': {
+    description: 'The opacity when the default button is disabled.',
+    type: 'number',
+    defaultValue: undefined,
+  },
+  'button.disabled.default.extend': {
+    description: 'Any additional style for a disabled default Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'button.hover.default.color': {
+    description: `Label color when the default button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.default.border.color': {
+    description: 'The border color when the default button is hovered.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.default.background.color': {
+    description: `Background color when the default button is hovered.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'button.hover.default.extend': {
+    description: 'Any additional style for a hover default Button.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
   'button.size.small.border.radius': {
     description: 'The border corner radius.',

@@ -403,25 +403,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: `${baseSpacing * 0.75}px`,
       },
       hover: {
-        // secondary: {
-        //   border: {
-        //     // color: {dark: undefined, light: undefined}
-        //   },
-        //   color: 'active',
+        // background: undefined,
+        // border: {
+        //   color: { dark: undefined, light: undefined },
         // },
+        // color: { dark: undefined, light: undefined }
+        // extend: undefined
       },
       active: {
-        // secondary: {
-        //   border: {
-        //     color: 'transparent',
-        //   },
-        //   background: {
-        //     color: 'active',
-        //   },
-        //   // extend: undefined,
+        // background: undefined,
+        // border: {
+        //   color: { dark: undefined, light: undefined },
         // },
+        // color: { dark: undefined, light: undefined }
+        // extend: undefined
       },
       disabled: {
+        // background: undefined,
         // border: {
         //   color: { dark: undefined, light: undefined },
         // },
@@ -430,57 +428,41 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined
       },
       // color: { dark: undefined, light: undefined }
-      secondary: {
-        border: {
-          // color: { dark: undefined, light: undefined }
-        },
-        // color: { dark: undefined, light: undefined }
-
-        // disabled: {
-        //   border: {
-        //     color: { dark: undefined, light: undefined },
-        //   },
-        //   color: { dark: undefined, light: undefined },
-        //   opacity: undefined,
-        //   extend: undefined,
-        // },
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
-        // extend: undefined
-      },
+      // default: {
+      //   background: undefined,
+      //   border: {
+      //     color: { dark: undefined, light: undefined },
+      //   },
+      //   color: { dark: undefined, light: undefined },
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      // secondary: {
+      //   background: undefined,
+      //   border: {
+      //     color: { dark: undefined, light: undefined }
+      //   },
+      //   color: { dark: undefined, light: undefined },
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
       primary: {
-        border: {
-          // color: { dark: undefined, light: undefined }
-        },
-        // color: { dark: undefined, light: undefined }
-        hover: {
-          border: {
-            // color: {dark: undefined, light: undefined}
-          },
-          // color: { dark: undefined, light: undefined }
-        },
-        // active: {
+        //   background: undefined,
         //   border: {
         //     color: { dark: undefined, light: undefined },
         //   },
         //   color: { dark: undefined, light: undefined },
-        //   extend: undefined,
-        // },
-        // disabled: {
-        //   border: {
-        //     color: { dark: undefined, light: undefined },
+        //   padding: {
+        //     vertical: undefined,
+        //     horizontal: undefined,
         //   },
-        //   color: { dark: undefined, light: undefined },
-        //   opacity: undefined,
         //   extend: undefined,
-        // },
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
-        // extend: undefined
       },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
