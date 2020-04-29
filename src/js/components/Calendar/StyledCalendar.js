@@ -31,8 +31,7 @@ const StyledWeeksContainer = styled.div`
   ${props =>
     `height: ${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) *
       6}px;`};
-  outline: none;
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.focus && !props.plain && focusStyle()};
 `;
 
 StyledWeeksContainer.defaultProps = {};

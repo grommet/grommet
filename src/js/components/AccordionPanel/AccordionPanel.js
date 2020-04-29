@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
@@ -7,25 +8,25 @@ import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 
+import { AccordionContext } from '../Accordion/AccordionContext';
+
 const AccordionPanel = forwardRef(
   (
     {
-      active,
-      animate,
       children,
       header,
       label,
       onClick,
       onMouseOut,
       onMouseOver,
-      onPanelChange,
       onFocus,
       onBlur,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { active, animate, onPanelChange } = useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
 
     const iconColor = useMemo(
@@ -47,7 +48,10 @@ const AccordionPanel = forwardRef(
           aria-expanded={active}
           onClick={onPanelChange}
           onMouseOver={event => {
-            setHover(theme.dark ? 'light-4' : 'dark-3');
+            setHover(
+              (theme.accordion.hover && theme.accordion.hover.color) ||
+                undefined,
+            );
             if (onMouseOver) onMouseOver(event);
           }}
           onMouseOut={event => {
@@ -55,7 +59,10 @@ const AccordionPanel = forwardRef(
             if (onMouseOut) onMouseOut(event);
           }}
           onFocus={event => {
-            setHover(theme.dark ? 'light-4' : 'dark-3');
+            setHover(
+              (theme.accordion.hover && theme.accordion.hover.color) ||
+                undefined,
+            );
             if (onFocus) onFocus(event);
           }}
           onBlur={event => {

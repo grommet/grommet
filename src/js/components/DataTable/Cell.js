@@ -1,7 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -17,7 +15,7 @@ const normalizeProp = (name, rowProp, prop) => {
 const Cell = ({
   background,
   border,
-  column: { align, property, render, verticalAlign },
+  column: { align, property, render, verticalAlign, size },
   context,
   datum,
   index,
@@ -25,8 +23,8 @@ const Cell = ({
   primaryProperty,
   rowProp,
   scope,
-  theme,
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const value = datumValue(datum, property);
   let content;
   if (render) {
@@ -47,6 +45,7 @@ const Cell = ({
       {...theme.dataTable[context]}
       align={align}
       verticalAlign={verticalAlign}
+      size={size}
       background={normalizeProp(
         'background',
         rowProp,
@@ -62,9 +61,9 @@ const Cell = ({
   );
 };
 
+Cell.displayName = 'Cell';
+
 Cell.defaultProps = {};
 Object.setPrototypeOf(Cell.defaultProps, defaultProps);
 
-const CellWrapper = compose(withTheme)(Cell);
-
-export { CellWrapper as Cell };
+export { Cell };

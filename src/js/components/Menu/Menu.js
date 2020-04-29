@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
@@ -10,7 +9,6 @@ import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 
 const ContainerBox = styled(Box)`
@@ -45,7 +43,7 @@ To make a selection:
 - Space is pressed.
 */
 
-const Menu = props => {
+const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
     children,
@@ -54,7 +52,6 @@ const Menu = props => {
     dropBackground,
     dropProps,
     dropTarget,
-    forwardRef,
     justifyContent,
     icon,
     items,
@@ -64,9 +61,9 @@ const Menu = props => {
     open,
     plain,
     size,
-    theme,
     ...rest
   } = props;
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;
@@ -232,12 +229,13 @@ const Menu = props => {
       onKeyDown={onKeyDown}
     >
       <DropButton
-        ref={forwardRef}
+        ref={ref}
         {...rest}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
+        dropProps={dropProps}
         plain={plain}
         open={isOpen}
         onOpen={onDropOpen}
@@ -296,7 +294,7 @@ const Menu = props => {
       </DropButton>
     </Keyboard>
   );
-};
+});
 
 Menu.propTypes = {
   dropAlign: PropTypes.shape({
@@ -328,12 +326,10 @@ Menu.defaultProps = {
 
 Menu.displayName = 'Menu';
 
-Object.setPrototypeOf(Menu.defaultProps, defaultProps);
-
 let MenuDoc;
 if (process.env.NODE_ENV !== 'production') {
   MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
 }
-const MenuWrapper = compose(withTheme, withForwardRef)(MenuDoc || Menu);
+const MenuWrapper = MenuDoc || Menu;
 
 export { MenuWrapper as Menu };

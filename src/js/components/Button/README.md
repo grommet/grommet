@@ -499,6 +499,37 @@ Defaults to
 0.3
 ```
 
+**button.disabled.border.color**
+
+The border color when the button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.color**
+
+Fill color for primary buttons, or label color for other
+    button types, when the button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.extend**
+
+Any additional style for a disabled Button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **button.padding.horizontal**
 
 The horizontal padding. Expects `string`.
@@ -522,6 +553,36 @@ Defaults to
 **button.primary.color**
 
 The color of the background for primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.extend**
+
+Any additional style for a primary button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.active.border.color**
+
+The color of the border for active primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.active.extend**
+
+Any additional style for an active primary button. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -663,12 +724,52 @@ undefined
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+The border color of the component when in focus. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 focus
+```
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+2px
 ```
 
 **global.control.disabled.opacity**

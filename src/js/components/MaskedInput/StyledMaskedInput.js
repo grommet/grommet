@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
+import {
+  focusStyle,
+  getInputPadBySide,
+  inputStyle,
+  placeholderStyle,
+} from '../../utils';
 
 const sizeStyle = props => {
   const data = props.theme.text[props.size];
@@ -11,6 +16,7 @@ const sizeStyle = props => {
 };
 
 const plainStyle = css`
+  outline: none;
   border: none;
 `;
 
@@ -32,7 +38,7 @@ export const StyledMaskedInput = styled.input`
     outline: none;
   }
 
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.focus && !props.plain && focusStyle()};
   ${props => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 
@@ -50,6 +56,6 @@ export const StyledIcon = styled.div`
   pointer-events: none;
   ${props =>
     props.reverse
-      ? `right: ${props.theme.global.input.padding};`
-      : `left: ${props.theme.global.input.padding};`}
+      ? `right: ${getInputPadBySide(props, 'right')};`
+      : `left: ${getInputPadBySide(props, 'left')};`}
 `;

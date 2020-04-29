@@ -21,7 +21,7 @@ const Example = () => {
               nextDates.splice(index, 1);
             }
             setDates(nextDates);
-            console.log('!!! select', date, nextDates);
+            console.log('Select', date, nextDates);
           }}
           bounds={['2018-09-08', '2020-12-13']}
         />

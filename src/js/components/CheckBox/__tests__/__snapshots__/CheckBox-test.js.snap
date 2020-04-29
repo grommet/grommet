@@ -17,7 +17,6 @@ exports[`CheckBox checked renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -40,7 +39,6 @@ exports[`CheckBox checked renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -180,7 +178,6 @@ exports[`CheckBox controlled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;
@@ -204,7 +201,6 @@ exports[`CheckBox controlled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -336,7 +332,7 @@ exports[`CheckBox controlled 2`] = `
     class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eeTGTD StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+      class="StyledBox-sc-13pk1d4-0 fuEVwc StyledCheckBox-sc-1dbk5ju-6 CBoMo"
     >
       <input
         checked=""
@@ -344,7 +340,7 @@ exports[`CheckBox controlled 2`] = `
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lpqrQA StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+        class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
       >
         <svg
           class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
@@ -382,7 +378,6 @@ exports[`CheckBox disabled renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -405,7 +400,6 @@ exports[`CheckBox disabled renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -432,7 +426,6 @@ exports[`CheckBox disabled renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -524,15 +517,18 @@ exports[`CheckBox disabled renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     disabled={true}
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
       disabled={true}
     >
       <input
+        checked={false}
         className="c4"
         disabled={true}
         onBlur={[Function]}
@@ -541,6 +537,7 @@ exports[`CheckBox disabled renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
         disabled={true}
       />
@@ -610,7 +607,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -633,7 +629,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -660,7 +655,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;
@@ -749,13 +743,16 @@ exports[`CheckBox indeterminate renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -763,9 +760,11 @@ exports[`CheckBox indeterminate renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       >
         <svg
+          checked={false}
           className="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
@@ -779,13 +778,16 @@ exports[`CheckBox indeterminate renders 1`] = `
     </div>
   </label>
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c7 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -793,9 +795,11 @@ exports[`CheckBox indeterminate renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       >
         <svg
+          checked={false}
           className="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
@@ -831,7 +835,6 @@ exports[`CheckBox label renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;
@@ -855,7 +858,6 @@ exports[`CheckBox label renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -939,13 +941,16 @@ exports[`CheckBox label renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -953,6 +958,7 @@ exports[`CheckBox label renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -961,13 +967,16 @@ exports[`CheckBox label renders 1`] = `
     </span>
   </label>
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -975,6 +984,7 @@ exports[`CheckBox label renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -1002,7 +1012,6 @@ exports[`CheckBox renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1025,7 +1034,6 @@ exports[`CheckBox renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1103,13 +1111,16 @@ exports[`CheckBox renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1117,19 +1128,23 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
   </label>
   <label
+    checked={false}
     className="c1"
     htmlFor="test id"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         id="test id"
         name="test name"
@@ -1139,6 +1154,7 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -1163,7 +1179,6 @@ exports[`CheckBox reverse renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   -webkit-align-items: center;
@@ -1187,7 +1202,6 @@ exports[`CheckBox reverse renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1271,6 +1285,7 @@ exports[`CheckBox reverse renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
@@ -1278,9 +1293,11 @@ exports[`CheckBox reverse renders 1`] = `
       test label
     </span>
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1288,6 +1305,7 @@ exports[`CheckBox reverse renders 1`] = `
         type="checkbox"
       />
       <div
+        checked={false}
         className="c5 "
       />
     </div>
@@ -1312,7 +1330,6 @@ exports[`CheckBox toggle renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1335,7 +1352,6 @@ exports[`CheckBox toggle renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;
@@ -1436,13 +1452,16 @@ exports[`CheckBox toggle renders 1`] = `
   className="c0"
 >
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c2 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1450,9 +1469,11 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
+        checked={false}
         className="c5"
       >
         <span
+          checked={false}
           className="c6"
         />
       </span>
@@ -1487,13 +1508,16 @@ exports[`CheckBox toggle renders 1`] = `
     </div>
   </label>
   <label
+    checked={false}
     className="c1"
     onClick={[Function]}
   >
     <div
+      checked={false}
       className="c7 c3"
     >
       <input
+        checked={false}
         className="c4"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1501,9 +1525,11 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
+        checked={false}
         className="c5"
       >
         <span
+          checked={false}
           className="c6"
         />
       </span>

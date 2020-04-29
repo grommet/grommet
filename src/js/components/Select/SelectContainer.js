@@ -4,8 +4,6 @@ import styled, { withTheme } from 'styled-components';
 import {
   debounce,
   debounceDelay,
-  isNodeAfterScroll,
-  isNodeBeforeScroll,
   selectedStyle,
   setFocusWithoutScroll,
 } from '../../utils';
@@ -13,22 +11,29 @@ import {
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { SelectOption } from './SelectOption';
 import { StyledContainer } from './StyledSelect';
+import { applyKey } from './utils';
 
 // position relative is so scroll can be managed correctly
-const OptionsBox = styled(Box)`
+const OptionsBox = styled.div`
   position: relative;
   scroll-behavior: smooth;
+  overflow: auto;
 `;
 
 const OptionBox = styled(Box)`
   ${props => props.selected && selectedStyle}
+`;
+
+const SelectOption = styled(Button)`
+  display: block;
+  width: 100%;
 `;
 
 class SelectContainer extends Component {
@@ -48,8 +53,6 @@ class SelectContainer extends Component {
     replace: true,
   };
 
-  optionRefs = {};
-
   searchRef = createRef();
 
   optionsRef = createRef();
@@ -57,25 +60,24 @@ class SelectContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      initialOptions: props.options,
       search: '',
       activeIndex: -1,
     };
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { options, value, onSearch } = nextProps;
+    const { options, optionIndexesInValue, onSearch } = nextProps;
 
     if (onSearch) {
       if (
         prevState.activeIndex === -1 &&
         prevState.search === '' &&
         options &&
-        value
+        optionIndexesInValue
       ) {
-        const optionValue =
-          Array.isArray(value) && value.length ? value[0] : value;
-        const activeIndex = options.indexOf(optionValue);
+        const activeIndex = optionIndexesInValue.length
+          ? optionIndexesInValue[0]
+          : -1;
         return { activeIndex };
       }
       if (prevState.activeIndex === -1 && prevState.search !== '') {
@@ -87,7 +89,6 @@ class SelectContainer extends Component {
 
   componentDidMount() {
     const { onSearch } = this.props;
-    const { activeIndex } = this.state;
     // timeout need to send the operation through event loop and allow
     // time to the portal to be available
     setTimeout(() => {
@@ -99,19 +100,6 @@ class SelectContainer extends Component {
         }
       } else if (optionsNode) {
         setFocusWithoutScroll(optionsNode);
-      }
-
-      // scroll to active option if it is below the fold
-      if (activeIndex >= 0 && optionsNode) {
-        const optionNode = this.optionRefs[activeIndex];
-        const { bottom: containerBottom } = optionsNode.getBoundingClientRect();
-        if (optionNode) {
-          const { bottom: optionTop } = optionNode.getBoundingClientRect();
-
-          if (containerBottom < optionTop) {
-            optionNode.scrollIntoView();
-          }
-        }
       }
     }, 0);
   }
@@ -137,32 +125,40 @@ class SelectContainer extends Component {
     onSearch(search);
   }, debounceDelay(this.props));
 
-  selectOption = option => event => {
-    const { multiple, onChange, value, valueKey, selected } = this.props;
-    const { initialOptions } = this.state;
+  selectOption = index => event => {
+    const {
+      multiple,
+      onChange,
+      options,
+      optionIndexesInValue,
+      valueKey,
+    } = this.props;
     if (onChange) {
-      let nextValue = Array.isArray(value) ? value.slice() : [];
-      // preserve compatibility until selected is deprecated
-      if (selected) {
-        nextValue = selected.map(s => initialOptions[s]);
-      }
-      const optionValue = valueKey ? option[valueKey] : option;
-
+      let nextValue;
+      let nextSelected;
       if (multiple) {
-        if (nextValue.indexOf(optionValue) !== -1) {
-          nextValue = nextValue.filter(v => v !== optionValue);
+        const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
+        const valueIndex = optionIndexesInValue.indexOf(index);
+        if (valueIndex === -1) {
+          nextOptionIndexesInValue.push(index);
         } else {
-          nextValue.push(optionValue);
+          nextOptionIndexesInValue.splice(valueIndex, 1);
         }
+        nextValue = nextOptionIndexesInValue.map(i =>
+          valueKey && valueKey.reduce
+            ? applyKey(options[i], valueKey)
+            : options[i],
+        );
+        nextSelected = nextOptionIndexesInValue;
       } else {
-        nextValue = optionValue;
+        nextValue =
+          valueKey && valueKey.reduce
+            ? applyKey(options[index], valueKey)
+            : options[index];
+        nextSelected = index;
       }
-
-      const nextSelected = Array.isArray(nextValue)
-        ? nextValue.map(v => initialOptions.indexOf(v))
-        : initialOptions.indexOf(nextValue);
       onChange(event, {
-        option,
+        option: options[index],
         value: nextValue,
         selected: nextSelected,
       });
@@ -192,24 +188,7 @@ class SelectContainer extends Component {
     if (nextActiveIndex !== options.length) {
       this.setState(
         { activeIndex: nextActiveIndex, keyboardNavigating: true },
-        () => {
-          const buttonNode = this.optionRefs[nextActiveIndex];
-          const optionsNode = this.optionsRef.current;
-
-          if (
-            buttonNode &&
-            isNodeAfterScroll(buttonNode, optionsNode) &&
-            optionsNode.scrollTo
-          ) {
-            optionsNode.scrollTo(
-              0,
-              buttonNode.offsetTop -
-                (optionsNode.getBoundingClientRect().height -
-                  buttonNode.getBoundingClientRect().height),
-            );
-          }
-          this.clearKeyboardNavigation();
-        },
+        () => this.clearKeyboardNavigation(),
       );
     }
   };
@@ -224,19 +203,7 @@ class SelectContainer extends Component {
     if (nextActiveIndex >= 0) {
       this.setState(
         { activeIndex: nextActiveIndex, keyboardNavigating: true },
-        () => {
-          const buttonNode = this.optionRefs[nextActiveIndex];
-          const optionsNode = this.optionsRef.current;
-
-          if (
-            buttonNode &&
-            isNodeBeforeScroll(buttonNode, optionsNode) &&
-            optionsNode.scrollTo
-          ) {
-            optionsNode.scrollTo(0, buttonNode.offsetTop);
-          }
-          this.clearKeyboardNavigation();
-        },
+        () => this.clearKeyboardNavigation(),
       );
     }
   };
@@ -249,44 +216,21 @@ class SelectContainer extends Component {
   };
 
   onSelectOption = event => {
-    const { options } = this.props;
     const { activeIndex } = this.state;
     if (activeIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex])(event);
+      this.selectOption(activeIndex)(event);
     }
   };
 
   optionLabel = index => {
     const { options, labelKey } = this.props;
-    const option = options[index];
-    let optionLabel;
-    if (labelKey) {
-      if (typeof labelKey === 'function') {
-        optionLabel = labelKey(option);
-      } else {
-        optionLabel = option[labelKey];
-      }
-    } else {
-      optionLabel = option;
-    }
-    return optionLabel;
+    return applyKey(options[index], labelKey);
   };
 
   optionValue = index => {
     const { options, valueKey } = this.props;
-    const option = options[index];
-    let optionValue;
-    if (valueKey) {
-      if (typeof valueKey === 'function') {
-        optionValue = valueKey(option);
-      } else {
-        optionValue = option[valueKey];
-      }
-    } else {
-      optionValue = option;
-    }
-    return optionValue;
+    return applyKey(options[index], valueKey);
   };
 
   isDisabled = index => {
@@ -294,11 +238,7 @@ class SelectContainer extends Component {
     const option = options[index];
     let result;
     if (disabledKey) {
-      if (typeof disabledKey === 'function') {
-        result = disabledKey(option, index);
-      } else {
-        result = option[disabledKey];
-      }
+      result = applyKey(option, disabledKey);
     } else if (Array.isArray(disabled)) {
       if (typeof disabled[0] === 'number') {
         result = disabled.indexOf(index) !== -1;
@@ -391,21 +331,16 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          <OptionsBox
-            flex="shrink"
-            role="menubar"
-            tabIndex="-1"
-            ref={this.optionsRef}
-            overflow="auto"
-          >
+          <OptionsBox role="menubar" tabIndex="-1" ref={this.optionsRef}>
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
                 onMore={onMore}
                 replace={replace}
+                show={activeIndex !== -1 ? activeIndex : undefined}
               >
-                {(option, index) => {
+                {(option, index, optionRef) => {
                   const isDisabled = this.isDisabled(index);
                   const isSelected = this.isSelected(index);
                   const isActive = activeIndex === index;
@@ -413,9 +348,10 @@ class SelectContainer extends Component {
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
-                      ref={ref => {
-                        this.optionRefs[index] = ref;
-                      }}
+                      ref={optionRef}
+                      tabIndex="-1"
+                      role="menuitem"
+                      hoverIndicator="background"
                       disabled={isDisabled || undefined}
                       active={isActive}
                       selected={isSelected}
@@ -424,7 +360,7 @@ class SelectContainer extends Component {
                         !isDisabled ? this.onActiveOption(index) : undefined
                       }
                       onClick={
-                        !isDisabled ? this.selectOption(option) : undefined
+                        !isDisabled ? this.selectOption(index) : undefined
                       }
                     >
                       {children ? (
@@ -450,6 +386,9 @@ class SelectContainer extends Component {
             ) : (
               <SelectOption
                 key="search_empty"
+                tabIndex="-1"
+                role="menuitem"
+                hoverIndicator="background"
                 disabled
                 option={emptySearchMessage}
               >

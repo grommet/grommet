@@ -51,88 +51,112 @@ export const edgeStyle = (
     `;
   }
   const result = [];
-  if (data.horizontal) {
-    result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.horizontal] ||
-        data.horizontal};
-      ${kind}-right: ${theme.global.edgeSize[data.horizontal] ||
-        data.horizontal};
+
+  const { horizontal, vertical, top, bottom, left, right } = data;
+
+  // if horizontal and vertical are equal OR all sides are equal,
+  // we can just return a single css value such as padding: 12px
+  // instead of breaking out by sides.
+  const horizontalVerticalEqual =
+    horizontal && vertical && horizontal === vertical;
+  const allSidesEqual =
+    top && bottom && left && right && ((top === bottom) === left) === right;
+
+  if (horizontalVerticalEqual || allSidesEqual) {
+    // since the values will be the same between vertical & horizontal OR
+    // left, right, top, & bottom, we can just choose one
+    const value = horizontalVerticalEqual ? horizontal : top;
+    return css`
+      ${kind}: ${theme.global.edgeSize[value] || value};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.horizontal] ||
-              data.horizontal};
-        ${kind}-right: ${breakpoint.edgeSize[data.horizontal] ||
-              data.horizontal};
+        ${kind}: ${breakpoint.edgeSize[value] || value};
       `,
+          )
+        : ''};
+    `;
+  }
+
+  if (horizontal) {
+    result.push(css`
+      ${kind}-left: ${theme.global.edgeSize[horizontal] || horizontal};
+      ${kind}-right: ${theme.global.edgeSize[horizontal] || horizontal};
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
+          ${kind}-left: ${breakpoint.edgeSize[horizontal] || horizontal};
+          ${kind}-right: ${breakpoint.edgeSize[horizontal] || horizontal};
+        `,
           )
         : ''};
     `);
   }
-  if (data.vertical) {
+  if (vertical) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.vertical] || data.vertical};
-      ${kind}-bottom: ${theme.global.edgeSize[data.vertical] || data.vertical};
+      ${kind}-top: ${theme.global.edgeSize[vertical] || vertical};
+      ${kind}-bottom: ${theme.global.edgeSize[vertical] || vertical};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.vertical] || data.vertical};
-        ${kind}-bottom: ${breakpoint.edgeSize[data.vertical] || data.vertical};
-      `,
+          ${kind}-top: ${breakpoint.edgeSize[vertical] || vertical};
+          ${kind}-bottom: ${breakpoint.edgeSize[vertical] || vertical};
+        `,
           )
         : ''};
     `);
   }
-  if (data.top) {
+  if (top) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.top] || data.top};
+      ${kind}-top: ${theme.global.edgeSize[top] || top};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.top] || data.top};
-      `,
+          ${kind}-top: ${breakpoint.edgeSize[top] || top};
+        `,
           )
         : ''};
     `);
   }
-  if (data.bottom) {
+  if (bottom) {
     result.push(css`
-      ${kind}-bottom: ${theme.global.edgeSize[data.bottom] || data.bottom};
+      ${kind}-bottom: ${theme.global.edgeSize[bottom] || bottom};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-bottom: ${breakpoint.edgeSize[data.bottom] || data.bottom};
-      `,
+          ${kind}-bottom: ${breakpoint.edgeSize[bottom] || bottom};
+        `,
           )
         : ''};
     `);
   }
-  if (data.left) {
+  if (left) {
     result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.left] || data.left};
+      ${kind}-left: ${theme.global.edgeSize[left] || left};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.left] || data.left};
-      `,
+          ${kind}-left: ${breakpoint.edgeSize[left] || left};
+        `,
           )
         : ''};
     `);
   }
-  if (data.right) {
+  if (right) {
     result.push(css`
-      ${kind}-right: ${theme.global.edgeSize[data.right] || data.right};
+      ${kind}-right: ${theme.global.edgeSize[right] || right};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-right: ${breakpoint.edgeSize[data.right] || data.right};
-      `,
+          ${kind}-right: ${breakpoint.edgeSize[right] || right};
+        `,
           )
         : ''};
     `);
@@ -144,8 +168,9 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-inline-start: ${breakpoint.edgeSize[data.start] || data.start};
-      `,
+          ${kind}-inline-start: ${breakpoint.edgeSize[data.start] ||
+              data.start};
+        `,
           )
         : ''};
     `);
@@ -157,12 +182,13 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
-      `,
+          ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
+        `,
           )
         : ''};
     `);
   }
+
   return result;
 };
 
@@ -182,8 +208,58 @@ export const fillStyle = fillProp => {
   return undefined;
 };
 
+const focusStyles = (props, { justBorder } = {}) => {
+  const {
+    theme: {
+      global: { focus },
+    },
+  } = props;
+  if (!focus) return ''; // native
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      const color = normalizeColor(
+        // If there is a focus.border.color, use that for shadow too.
+        // This is for backwards compatibility in v2.
+        (focus.border && focus.border.color) || focus.shadow.color || 'focus',
+        props.theme,
+      );
+      const size = focus.shadow.size || '2px'; // backwards compatible default
+      return `
+        outline: none;
+        box-shadow: 0 0 ${size} ${size} ${color};
+      `;
+    }
+    return `
+      outline: none;
+      box-shadow: ${focus.shadow};
+    `;
+  }
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      const color = normalizeColor(focus.outline.color || 'focus', props.theme);
+      const size = focus.outline.size || '2px';
+      return `
+        outline-offset: 0px;
+        outline: ${size} solid ${color};
+      `;
+    }
+    return `outline: ${focus.outline};`;
+  }
+  if (focus.border) {
+    const color = normalizeColor(focus.border.color || 'focus', props.theme);
+    return `
+      outline: none;
+      border-color: ${color};
+    `;
+  }
+  return ''; // defensive
+};
+
 // focus also supports clickable elements inside svg
-export const focusStyle = css`
+export const focusStyle = ({ justBorder, skipSvgChildren } = {}) => css`
+  ${props =>
+    !skipSvgChildren &&
+    `
   > circle,
   > ellipse,
   > line,
@@ -191,45 +267,89 @@ export const focusStyle = css`
   > polygon,
   > polyline,
   > rect {
-    outline: ${props =>
-        normalizeColor(props.theme.global.focus.border.color, props.theme)}
-      solid 2px;
-  }
-  outline-color: ${props =>
-    normalizeColor(props.theme.global.focus.border.color, props.theme)};
-  border-color: ${props =>
-    normalizeColor(props.theme.global.focus.border.color, props.theme)};
-  box-shadow: 0 0 2px 2px
-    ${props =>
-      normalizeColor(props.theme.global.focus.border.color, props.theme)};
-
+    ${focusStyles(props)}
+  }`}
+  ${props => focusStyles(props, { justBorder })}
   ::-moz-focus-inner {
     border: 0;
   }
 `;
 
+// For backwards compatibility we need to add back the control border width.
+// Based on how grommet was functioning prior to https://github.com/grommet/grommet/pull/3939,
+// the padding was subtracting the border width from the theme value, but the
+// placeholder was not. Because we're now placing the subtraction into the
+// theme itself, we have to add back in the border width here.
+// This is used for placeholder/icon in TextInput and MaskedInput.
+const adjustPad = (props, value) =>
+  `${parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
+    parseMetricToNum(`${props.theme.global.control.border.width}px`)}px`;
+
+export const getInputPadBySide = (props, side) => {
+  if (typeof props.theme.global.input.padding !== 'object') {
+    const adjustedPad = adjustPad(props, props.theme.global.input.padding);
+    return adjustedPad;
+  }
+
+  let orientation;
+  if (side === 'left' || side === 'right') orientation = 'horizontal';
+  else if (side === 'top' || side === 'bottom') orientation = 'vertical';
+  else orientation = undefined;
+
+  // if individual side isn't available, fallback to the
+  // orientation if possible
+  const pad =
+    props.theme.global.input.padding[side] ||
+    props.theme.global.input.padding[orientation];
+
+  const adjustedPad = adjustPad(props, pad);
+
+  return adjustedPad;
+};
+
 export const inputStyle = css`
   box-sizing: border-box;
-  font-size: inherit;
+  ${props =>
+    `font-size: ${
+      props.theme.global.input.font.size
+        ? props.theme.text[props.theme.global.input.font.size].size ||
+          props.theme.global.input.font.size
+        : 'inherit'
+    };`}
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: ${props =>
-    parseMetricToNum(props.theme.global.input.padding) -
-    parseMetricToNum(props.theme.global.control.border.width)}px;
-  outline: none;
   background: transparent;
   color: inherit;
   ${props =>
-    props.theme.global.input.weight &&
-    css`
-      font-weight: ${props.theme.global.input.weight};
-    `} margin: 0;
-
+    props.theme.global.input.font.height &&
+    `line-height: ${props.theme.global.input.font.height};`}
   ${props =>
-    props.focus &&
-    (!props.plain || props.focusIndicator) &&
-    focusStyle} ${controlBorderStyle}
+    props.theme.global.input.padding &&
+    typeof props.theme.global.input.padding !== 'object'
+      ? // On a breaking change release, this condition could be removed and
+        // just the edgeStyle could remain. Currently, this is needed for
+        // backwards compatibility since we are placing the calculation in
+        // base.js
+        `padding: ${parseMetricToNum(
+          props.theme.global.edgeSize[props.theme.global.input.padding] ||
+            props.theme.global.input.padding,
+        ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
+      : edgeStyle(
+          'padding',
+          props.theme.global.input.padding,
+          props.responsive,
+          props.theme.box.responsiveBreakpoint,
+          props.theme,
+        )}
+  ${props =>
+    // for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
+    css`
+      font-weight: ${props.theme.global.input.weight ||
+        props.theme.global.input.font.weight};
+    `} margin: 0;
+  ${controlBorderStyle}
 
   ::-webkit-search-decoration {
     -webkit-appearance: none;

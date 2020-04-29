@@ -478,7 +478,6 @@ describe('Form', () => {
     expect(onSubmit).toBeCalledWith(
       expect.objectContaining({
         value: { test: 'a' },
-        touched: { test: true },
       }),
     );
   });

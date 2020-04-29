@@ -184,6 +184,14 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      outline?: {
+        color?: ColorType;
+        size?: string;
+      };
+      shadow?: {
+        color?: ColorType;
+        size?: string;
+      };
     };
     font?: {
       face?: string;
@@ -200,8 +208,13 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
-      padding?: string;
-      weight?: number;
+      padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
+      font?: {
+        height?: string;
+        size?: string;
+        weight?: number | string;
+      };
+      weight?: number | string;
     };
     opacity?: {
       strong?: number;
@@ -232,6 +245,9 @@ export interface ThemeType {
     };
     heading?: {
       level?: string;
+    };
+    hover?: {
+      color?: ColorType;
     };
     icons?: {
       collapse?: any;
@@ -275,6 +291,11 @@ export interface ThemeType {
       radius?: string;
     };
     disabled?: {
+      border?: {
+        color: ColorType;
+      },
+      color?: ColorType;
+      extend?: ExtendType;
       opacity?: OpacityType;
     };
     extend?: ExtendType;
@@ -286,6 +307,13 @@ export interface ThemeType {
     };
     primary?: {
       color?: ColorType;
+      active?: {
+        border?: {
+          color?: ColorType;
+        };
+        extend?: ExtendType;
+      };
+      extend?: ExtendType;
     };
     size?: {
       small?: {
@@ -523,6 +551,12 @@ export interface ThemeType {
     };
     disabled?: {
       background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      },
+      label?: {
+        color?: ColorType;
+      },
     };
     error?: {
       background?: BackgroundType;
@@ -818,11 +852,13 @@ export interface ThemeType {
     };
     control?: {
       extend?: ExtendType;
-      open?: boolean;
+      open?: string | object;
     };
     extend?: ExtendType;
     icons?: {
-      down?: any;
+      color?: ColorType;
+      down?: React.ReactNode;
+      up?: React.ReactNode;
       margin?: MarginType;
     };
     options?: {

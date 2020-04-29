@@ -109,7 +109,7 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('sort', () => {
+  test('sortable', () => {
     const { container, getByText } = render(
       <Grommet>
         <DataTable
@@ -466,6 +466,60 @@ describe('DataTable', () => {
           primaryKey="b"
           step={2}
           replace
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('themeColumnSizes', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: 'medium' },
+            { property: 'b', header: 'B', size: 'small' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('absoluteColumnSizes', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: '400px' },
+            { property: 'b', header: 'B', size: '200px' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('relativeColumnSizes', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: '2/3' },
+            { property: 'b', header: 'B', size: '1/3' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
         />
       </Grommet>,
     );

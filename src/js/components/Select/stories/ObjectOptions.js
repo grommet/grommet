@@ -21,7 +21,7 @@ const objectOptions = [
   },
 ];
 
-const OptionsFromObject = () => {
+const Example = () => {
   const [value, setValue] = useState('');
 
   return (
@@ -32,15 +32,14 @@ const OptionsFromObject = () => {
           name="select"
           placeholder="Select"
           labelKey="label"
+          valueKey={{ key: 'value', reduce: true }}
           value={value}
           options={objectOptions}
-          onChange={({ option }) => setValue(option)}
+          onChange={({ value: nextValue }) => setValue(nextValue)}
         />
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Select', module).add('Options from object', () => (
-  <OptionsFromObject />
-));
+storiesOf('Select', module).add('Object options', () => <Example />);
