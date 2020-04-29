@@ -19,6 +19,7 @@ const sizeStyle = props => {
 };
 
 const plainStyle = css`
+  outline: none;
   border: none;
 `;
 
@@ -40,7 +41,7 @@ const StyledTextInput = styled.input`
     outline: none;
   }
 
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.focus && !props.plain && focusStyle()};
   ${props =>
     props.disabled &&
     disabledStyle(

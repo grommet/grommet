@@ -256,8 +256,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       focus: {
+        // shadow or outline are required for accessibility
         border: {
+          // remove to only have shadow
           color: 'focus',
+        },
+        // outline: { color: undefined, size: undefined },
+        shadow: {
+          color: 'focus',
+          size: '2px',
         },
       },
       font: {
@@ -282,7 +289,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           vertical: `${parseMetricToNum(`${baseSpacing / 2}px`) -
             parseMetricToNum(`${controlBorderWidth}px`)}px`,
         },
-        weight: 600,
+        font: {
+          // size: undefined,
+          // height: undefined,
+          weight: 600,
+        },
+        // deprecate in v3
+        // weight: undefined,
       },
       opacity: {
         strong: 0.8,
@@ -310,7 +323,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         side: 'bottom',
         color: 'border',
       },
-      heading: { level: '4' }, // level ranges from 1-6
+      heading: {
+        level: '4', // level ranges from 1-6
+      },
+      hover: {
+        color: { dark: 'light-4', light: 'dark-3' },
+      },
       icons: {
         collapse: FormUp,
         expand: FormDown,
@@ -676,6 +694,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           opacity: 'medium',
         },
+        // border: {
+        //   color: undefined,
+        // },
+        // label: {
+        //   color: undefined,
+        // },
       },
       error: {
         color: 'status-critical',

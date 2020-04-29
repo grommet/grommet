@@ -184,6 +184,14 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      outline?: {
+        color?: ColorType;
+        size?: string;
+      };
+      shadow?: {
+        color?: ColorType;
+        size?: string;
+      };
     };
     font?: {
       face?: string;
@@ -201,7 +209,12 @@ export interface ThemeType {
     };
     input?: {
       padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
-      weight?: number;
+      font?: {
+        height?: string;
+        size?: string;
+        weight?: number | string;
+      };
+      weight?: number | string;
     };
     opacity?: {
       strong?: number;
@@ -232,6 +245,9 @@ export interface ThemeType {
     };
     heading?: {
       level?: string;
+    };
+    hover?: {
+      color?: ColorType;
     };
     icons?: {
       collapse?: any;
@@ -589,6 +605,12 @@ export interface ThemeType {
     };
     disabled?: {
       background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      },
+      label?: {
+        color?: ColorType;
+      },
     };
     error?: {
       background?: BackgroundType;
@@ -884,7 +906,7 @@ export interface ThemeType {
     };
     control?: {
       extend?: ExtendType;
-      open?: boolean;
+      open?: string | object;
     };
     extend?: ExtendType;
     icons?: {

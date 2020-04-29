@@ -197,4 +197,55 @@ describe('FormField', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('disabled with custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+            disabled: {
+              label: {
+                color: 'teal',
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField disabled label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

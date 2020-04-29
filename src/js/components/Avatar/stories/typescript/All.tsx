@@ -37,7 +37,12 @@ const Avatars = () => {
     <Stack anchor="left">
       <Avatar src={bryan} border={border} />
       <Avatar src={eric} border={border} margin={{ left: 'medium' }} />
-      <Avatar src={shimi} border={border} margin={{ left: 'large' }} />
+      <Avatar
+        title="shimi"
+        src={shimi}
+        border={border}
+        margin={{ left: 'large' }}
+      />
     </Stack>
   );
 

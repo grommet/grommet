@@ -91,6 +91,7 @@ const primaryStyle = props => css`
         props.theme,
       )};`}
   border-radius: ${radiusStyle(props)};
+  ${props.theme.button.primary.extend}
 `;
 
 const simpleStyle = props => css`
@@ -194,6 +195,7 @@ const fillStyle = fillContainer => {
 
 const plainStyle = props => css`
   color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -262,7 +264,6 @@ const StyledButton = styled.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   text-decoration: none;
   margin: 0;
@@ -286,7 +287,7 @@ const StyledButton = styled.button`
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
   ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle}
+    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

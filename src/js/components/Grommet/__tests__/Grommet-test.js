@@ -85,7 +85,7 @@ describe('Grommet', () => {
 
   test('background', () => {
     const component = renderer.create(
-      <Grommet full background="blue">
+      <Grommet full background="#0000ff">
         Grommet App
       </Grommet>,
     );

@@ -1,7 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -10,7 +8,8 @@ import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
 
-const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
+const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   let content;
   if (onToggle) {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
@@ -53,9 +52,9 @@ const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
   );
 };
 
+ExpanderCell.displayName = 'ExpanderCell';
+
 ExpanderCell.defaultProps = {};
 Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
 
-const ExpanderCellWrapper = compose(withTheme)(ExpanderCell);
-
-export { ExpanderCellWrapper as ExpanderCell };
+export { ExpanderCell };

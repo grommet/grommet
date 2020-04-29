@@ -222,6 +222,16 @@ div
 \`\`\`
 ## Theme
   
+**accordion.hover.color**
+
+The hover color used for an accordion panel control. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: \\"light-4\\", light: \\"dark-3\\" }
+\`\`\`
+
 **accordion.heading.level**
 
 The heading level used for the accordion. Expects \`number\`.
@@ -601,12 +611,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.edgeSize**
@@ -988,7 +1038,12 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
 \`\`\`
 string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
@@ -2346,6 +2401,36 @@ Defaults to
 undefined
 \`\`\`
 
+**button.primary.extend**
+
+Any additional style for a primary button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.active.border.color**
+
+The color of the border for active primary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.active.extend**
+
+Any additional style for an active primary button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.size.small.border.radius**
 
 The border corner radius. Expects \`string\`.
@@ -2480,12 +2565,52 @@ undefined
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.control.disabled.opacity**
@@ -5215,7 +5340,7 @@ Required. Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
       'offset' can be used to shift a bit to reduce the amount of overlap
-      with other connection lines to make the lines easier to distinguish.
+      with other connection lines to make the lines easier to distinguish. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -6015,6 +6140,7 @@ Custom validation messages. Defaults to \`{
 **onChange**
 
 Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.
 
 \`\`\`
 function
@@ -6358,6 +6484,26 @@ undefined
 **formField.disabled.background.opacity**
 
 The opacity of the FormField background when it is disabled. Expects \`string | boolean | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.disabled.border.color**
+
+The color of the FormField border when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.disabled.label.color**
+
+The color of the FormField label when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
 
 Defaults to
 
@@ -7074,7 +7220,12 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
 \`\`\`
 string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
@@ -8910,12 +9061,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.colors.placeholder**
@@ -8928,14 +9119,46 @@ Defaults to
 #AAAAAA
 \`\`\`
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects \`number\`.
+The line-height of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.size**
+
+The size of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects \`number | string\`.
 
 Defaults to
 
 \`\`\`
 600
+\`\`\`
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.input.padding**
@@ -9147,7 +9370,7 @@ object
 
 **dropProps**
 
-Any valid Drop prop.
+Any valid Drop prop. Defaults to \`{}\`.
 
 \`\`\`
 object
@@ -9178,7 +9401,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -10103,7 +10326,7 @@ string
 
 **onChange**
 
-Function that will be called when the user clicks on of the radio
+Function that will be called when the user clicks on one of the radio
       buttons. It will be passed a React event object.
 
 \`\`\`
@@ -10112,7 +10335,8 @@ function
 
 **options**
 
-Required. Options can be either a string or an object.
+Required. Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.
 
 \`\`\`
 [string]
@@ -10223,12 +10447,52 @@ input
   
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.spacing**
@@ -11143,8 +11407,8 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control open state of the Select 
-component. Expects \`object\`.
+Any additional style for the Select DropButton when using the
+    controlled open state. Expects \`string | object\`.
 
 Defaults to
 
@@ -11222,6 +11486,40 @@ Defaults to
 20
 \`\`\`
 ",
+  "Sidebar": "## Sidebar
+A sidebar, typically used with Nav children.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Sidebar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=sidebar&module=%2Fsrc%2FSidebar.js)
+## Usage
+
+\`\`\`javascript
+import { Sidebar } from 'grommet';
+<Sidebar/>
+\`\`\`
+
+## Properties
+
+**footer**
+
+If specified, a footer element for the Sidebar
+
+\`\`\`
+node
+\`\`\`
+
+**header**
+
+If specified, an header element for the Sidebar
+
+\`\`\`
+node
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "SkipLinks": "## SkipLinks
 Describe a list of elements to skip to.
 
@@ -11463,9 +11761,34 @@ import { Tab } from 'grommet';
 
 ## Properties
 
+**disabled**
+
+Whether the tab is disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
+**icon**
+
+Icon element to place in the tab.
+
+\`\`\`
+element
+\`\`\`
+
 **plain**
 
 Whether this is a plain tab with no style.
+
+\`\`\`
+boolean
+\`\`\`
+
+**reverse**
+
+Whether an icon and label should be reversed so that the icon is at the
+              end of the tab.
 
 \`\`\`
 boolean
@@ -12847,12 +13170,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.colors.placeholder**
@@ -12865,14 +13228,46 @@ Defaults to
 #AAAAAA
 \`\`\`
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects \`number\`.
+The line-height of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.size**
+
+The size of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects \`number | string\`.
 
 Defaults to
 
 \`\`\`
 600
+\`\`\`
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.input.padding**
@@ -13257,12 +13652,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.colors.placeholder**
@@ -13285,14 +13720,46 @@ Defaults to
 0.3
 \`\`\`
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects \`number\`.
+The line-height of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.size**
+
+The size of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects \`number | string\`.
 
 Defaults to
 
 \`\`\`
 600
+\`\`\`
+
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.input.padding**

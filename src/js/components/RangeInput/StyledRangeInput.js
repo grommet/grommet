@@ -57,10 +57,6 @@ const StyledRangeInput = styled.input`
   cursor: pointer;
   background: transparent;
 
-  &:focus {
-    outline: none;
-  }
-
   &::-moz-focus-inner {
     border: none;
   }
@@ -140,7 +136,7 @@ const StyledRangeInput = styled.input`
     border-color: transparent;
   }
 
-  ${props => props.focus && focusStyle}
+  ${props => props.focus && focusStyle()}
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
 /* eslint-enable max-len */

@@ -361,7 +361,6 @@ exports[`Chart gap renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -531,7 +530,6 @@ exports[`Chart size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;

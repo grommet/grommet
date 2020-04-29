@@ -104,4 +104,19 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('drop-contents').toMatchSnapshot();
   });
+
+  test('ref function', () => {
+    const ref = jest.fn();
+    const { container } = render(
+      <DropButton
+        ref={ref}
+        open
+        label="Dropper"
+        dropContent={<div id="drop-contents">Drop Contents</div>}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(ref).toBeCalled();
+    expectPortal('drop-contents').toMatchSnapshot();
+  });
 });

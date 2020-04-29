@@ -7,7 +7,12 @@ import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 
 const CustomAccordionTheme = {
   accordion: {
-    heading: { level: '3' },
+    heading: {
+      level: 3,
+    },
+    hover: {
+      color: 'accent-2',
+    },
     icons: {
       collapse: SubtractCircle,
       expand: AddCircle,

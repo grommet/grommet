@@ -58,7 +58,6 @@ exports[`InfiniteScroll renderMarker 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -105,7 +104,6 @@ exports[`InfiniteScroll replace 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -150,7 +148,6 @@ exports[`InfiniteScroll show 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -201,7 +198,6 @@ exports[`InfiniteScroll step 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;

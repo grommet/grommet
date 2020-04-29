@@ -27,6 +27,13 @@ const customTheme = {
     },
     primary: {
       color: '#2196f3',
+      active: {
+        border: {
+          color: 'red',
+        },
+        extend: `background: cadetblue;`,
+      },
+      extend: `background: skyblue; border: 5px dotted green;`,
     },
     extend: props => {
       let extraStyles = '';
@@ -64,9 +71,15 @@ const CustomTheme = () => (
         justify="center"
         pad="large"
         direction="row"
-        gap="medium"
+        gap="small"
       >
         <Button label="custom theme" onClick={() => {}} primary />
+        <Button
+          label="custom active primary"
+          onClick={() => {}}
+          primary
+          active
+        />
         <Button label="primary disabled" onClick={() => {}} primary disabled />
         <Button label="Disabled" onClick={() => {}} disabled />
         <Button label="Plain Disabled" onClick={() => {}} plain disabled />
