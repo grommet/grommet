@@ -8,6 +8,7 @@ export * from './components/Calendar';
 export * from './components/Carousel';
 export * from './components/Chart';
 export * from './components/CheckBox';
+export * from './components/CheckBoxGroup';
 export * from './components/Clock';
 export * from './components/Collapsible';
 export * from './components/DataTable';

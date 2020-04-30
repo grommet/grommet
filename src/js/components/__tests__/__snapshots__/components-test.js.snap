@@ -1967,6 +1967,75 @@ NOTE: This can only be used with non-toggle components",
     "usage": "import { CheckBox } from 'grommet';
 <CheckBox />",
   },
+  "CheckBoxGroup": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js",
+      },
+    ],
+    "description": "A group of CheckBoxes.",
+    "intrinsicElement": "div",
+    "name": "CheckBoxGroup",
+    "properties": Array [
+      Object {
+        "description": "An array of the checked options. If options is provided as an object, the
+      checked array will be the strings of the checked option valueKey.",
+        "format": "[string]",
+        "name": "checked",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Disables all options.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "When the options array contains objects, this property indicates how
+        to determine the label of each option. If a string is
+        provided, it is used as the key to retrieve each option's label.",
+        "format": "string
+function",
+        "name": "labelKey",
+      },
+      Object {
+        "description": "The DOM name attribute value to use for the underlying <input/> 
+      elements. Required when used in the Context of FormField.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Function that will be called when the user clicks on a CheckBox option. 
+      It will be passed a React event object with a value.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Options can be either a string or an object of CheckBox props.",
+        "format": "[string]
+[{
+
+}]",
+        "name": "options",
+        "required": true,
+      },
+      Object {
+        "description": "When the options array contains objects, this property indicates how
+        to determine the value of each option. If a string is
+        provided, it is used as the key to retrieve each option's value.",
+        "format": "string",
+        "name": "valueKey",
+      },
+    ],
+    "usage": "import { CheckBoxGroup } from 'grommet';
+        <CheckBoxGroup />",
+  },
   "Clock": Object {
     "availableAt": Array [
       Object {
