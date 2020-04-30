@@ -3,23 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { User } from 'grommet-icons';
 import { Box, Button, grommet, Grommet, Text } from 'grommet';
 import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
+import { hpe } from 'grommet-theme-hpe-next';
 
 const myHpe = deepMerge(hpe, {
   global: {
     colors: {
-      green: {
-        light: '#17EBA0',
-        dark: '#008567',
-      },
-      'background-contrast': {
-        dark: '#FFFFFF14',
-        light: '#0000000A',
-      },
-      'text-weak': {
-        light: '#bbbbbb',
-        dark: '#606B7D',
-      },
       control: 'green',
     },
   },
