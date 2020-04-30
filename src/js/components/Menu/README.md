@@ -284,6 +284,17 @@ button
 ```
 ## Theme
   
+**global.colors.control**
+
+The color to use for the icon if menu.icons.color is 
+    undefined. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
 **menu.icons.color**
 
 The color to use for the icon. Expects `string | { dark: string, light: string }`.
@@ -291,7 +302,7 @@ The color to use for the icon. Expects `string | { dark: string, light: string }
 Defaults to
 
 ```
-global.colors.control
+control
 ```
 
 **menu.background**
