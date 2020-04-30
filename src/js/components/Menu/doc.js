@@ -104,8 +104,7 @@ The object values can be any Button prop, for example: label and onClick.`,
 
 export const themeDoc = {
   'global.colors.control': {
-    description: `The color to use for the icon if menu.icons.color is 
-    undefined.`,
+    description: `The default color to use for the icon.`,
     type: 'string | { dark: string, light: string }',
     defaultValue: `{ dark: 'accent-1', light: 'brand'}`,
   },

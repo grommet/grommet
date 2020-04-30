@@ -286,8 +286,7 @@ button
   
 **global.colors.control**
 
-The color to use for the icon if menu.icons.color is 
-    undefined. Expects `string | { dark: string, light: string }`.
+The default color to use for the icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
