@@ -103,10 +103,10 @@ The object values can be any Button prop, for example: label and onClick.`,
 };
 
 export const themeDoc = {
-  'global.colors.control': {
+  'menu.icons.color': {
     description: 'The color to use for the icon.',
     type: 'string | { dark: string, light: string }',
-    defaultValue: undefined,
+    defaultValue: 'global.colors.control',
   },
   'menu.background': {
     description:

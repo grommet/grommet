@@ -284,14 +284,14 @@ button
 ```
 ## Theme
   
-**global.colors.control**
+**menu.icons.color**
 
 The color to use for the icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-undefined
+global.colors.control
 ```
 
 **menu.background**

@@ -768,6 +768,7 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       down?: any;
+      color?: ColorType;
     };
   };
   meter?: {
