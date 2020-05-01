@@ -184,6 +184,14 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      outline?: {
+        color?: ColorType;
+        size?: string;
+      };
+      shadow?: {
+        color?: ColorType;
+        size?: string;
+      };
     };
     font?: {
       face?: string;
@@ -243,6 +251,9 @@ export interface ThemeType {
     };
     heading?: {
       level?: string;
+    };
+    hover?: {
+      color?: ColorType;
     };
     icons?: {
       collapse?: any;

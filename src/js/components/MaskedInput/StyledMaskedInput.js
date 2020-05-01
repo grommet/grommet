@@ -16,6 +16,7 @@ const sizeStyle = props => {
 };
 
 const plainStyle = css`
+  outline: none;
   border: none;
 `;
 
@@ -37,7 +38,7 @@ export const StyledMaskedInput = styled.input`
     outline: none;
   }
 
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.focus && !props.plain && focusStyle()};
   ${props => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 

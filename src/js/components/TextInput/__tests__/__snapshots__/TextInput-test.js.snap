@@ -7,7 +7,6 @@ exports[`TextInput basic 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -73,7 +72,6 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -135,7 +133,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -152,7 +149,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -168,7 +164,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -186,7 +181,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -195,6 +189,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -223,7 +218,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -325,7 +320,7 @@ exports[`TextInput calls onSuggestionsClose 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 infNeI"
+      class="StyledTextInput-sc-1x30a0s-0 ieaeUD"
       data-testid="test-input"
       id="item"
       name="item"
@@ -342,7 +337,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -359,7 +353,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -375,7 +368,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -393,7 +385,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -402,6 +393,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -430,7 +422,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -540,7 +532,6 @@ exports[`TextInput close suggestion drop 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -602,7 +593,6 @@ exports[`TextInput close suggestion drop 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -619,7 +609,6 @@ exports[`TextInput close suggestion drop 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -635,7 +624,6 @@ exports[`TextInput close suggestion drop 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -653,7 +641,6 @@ exports[`TextInput close suggestion drop 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -662,6 +649,7 @@ exports[`TextInput close suggestion drop 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -690,7 +678,7 @@ exports[`TextInput close suggestion drop 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -792,7 +780,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 infNeI"
+      class="StyledTextInput-sc-1x30a0s-0 ieaeUD"
       data-testid="test-input"
       id="item"
       name="item"
@@ -819,7 +807,6 @@ exports[`TextInput complex suggestions 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -881,7 +868,6 @@ exports[`TextInput complex suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -898,7 +884,6 @@ exports[`TextInput complex suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -912,7 +897,6 @@ exports[`TextInput complex suggestions 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -921,6 +905,7 @@ exports[`TextInput complex suggestions 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -949,7 +934,7 @@ exports[`TextInput complex suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1035,7 +1020,6 @@ exports[`TextInput disabled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1104,7 +1088,6 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1168,7 +1151,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kQqgOI"
+      class="StyledTextInput-sc-1x30a0s-0 dcnGDe"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1219,7 +1202,6 @@ exports[`TextInput icon 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1344,7 +1326,6 @@ exports[`TextInput icon reverse 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1435,7 +1416,6 @@ exports[`TextInput large drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1452,7 +1432,6 @@ exports[`TextInput large drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1468,7 +1447,6 @@ exports[`TextInput large drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -1486,7 +1464,6 @@ exports[`TextInput large drop height 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1495,6 +1472,7 @@ exports[`TextInput large drop height 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1523,7 +1501,7 @@ exports[`TextInput large drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1623,7 +1601,6 @@ exports[`TextInput medium drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1640,7 +1617,6 @@ exports[`TextInput medium drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1656,7 +1632,6 @@ exports[`TextInput medium drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -1674,7 +1649,6 @@ exports[`TextInput medium drop height 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1683,6 +1657,7 @@ exports[`TextInput medium drop height 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1711,7 +1686,7 @@ exports[`TextInput medium drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1821,7 +1796,6 @@ exports[`TextInput select a suggestion 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1893,7 +1867,6 @@ exports[`TextInput select suggestion 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -1904,6 +1877,7 @@ exports[`TextInput select suggestion 1`] = `
   width: 100%;
   font-size: 22px;
   line-height: 28px;
+  outline: none;
   border: none;
 }
 
@@ -1958,7 +1932,6 @@ exports[`TextInput select suggestion 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1975,7 +1948,6 @@ exports[`TextInput select suggestion 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1991,7 +1963,6 @@ exports[`TextInput select suggestion 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -2009,7 +1980,6 @@ exports[`TextInput select suggestion 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2018,6 +1988,7 @@ exports[`TextInput select suggestion 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2046,7 +2017,7 @@ exports[`TextInput select suggestion 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2148,7 +2119,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 bFsRze"
+      class="StyledTextInput-sc-1x30a0s-0 cWvRjL"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2165,7 +2136,6 @@ exports[`TextInput small drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2182,7 +2152,6 @@ exports[`TextInput small drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2198,7 +2167,6 @@ exports[`TextInput small drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -2216,7 +2184,6 @@ exports[`TextInput small drop height 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2225,6 +2192,7 @@ exports[`TextInput small drop height 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2253,7 +2221,7 @@ exports[`TextInput small drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2353,7 +2321,6 @@ exports[`TextInput suggestions 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  outline: none;
   background: transparent;
   color: inherit;
   padding: 11px;
@@ -2411,7 +2378,6 @@ exports[`TextInput suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2428,7 +2394,6 @@ exports[`TextInput suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2444,7 +2409,6 @@ exports[`TextInput suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -2462,7 +2426,6 @@ exports[`TextInput suggestions 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2471,6 +2434,7 @@ exports[`TextInput suggestions 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2499,7 +2463,7 @@ exports[`TextInput suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;

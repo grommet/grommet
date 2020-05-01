@@ -13,8 +13,12 @@ const CustomAccordionTheme = {
         color: 'border',
       },
     },
-    pad: { horizontal: '12px' },
-    heading: { level: '3', margin: '12px' },
+    heading: {
+      level: 3,
+    },
+    hover: {
+      color: 'accent-2',
+    },
     icons: {
       collapse: SubtractCircle,
       expand: AddCircle,

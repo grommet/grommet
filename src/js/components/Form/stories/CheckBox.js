@@ -11,11 +11,28 @@ import {
   Grommet,
 } from 'grommet';
 
-const FormFieldCheckBox = () => (
+const FormFieldCheckBox = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Form>
-        <FormField label="Label" name="checkbox" htmlFor="check-box" required>
+      <Form
+        onSubmit={({ value, touched }) => console.log('Submit', value, touched)}
+      >
+        <FormField
+          label="Toggle"
+          name="toggle"
+          htmlFor="check-box-toggle"
+          {...props}
+        >
+          <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+            <CheckBox
+              id="check-box-toggle"
+              name="toggle"
+              label="CheckBox"
+              toggle
+            />
+          </Box>
+        </FormField>
+        <FormField label="Default" name="checkbox" htmlFor="check-box" required>
           <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
             <CheckBox id="check-box" name="checkbox" label="CheckBox" />
           </Box>

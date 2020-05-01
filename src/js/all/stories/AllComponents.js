@@ -33,7 +33,7 @@ import {
   TextInput,
   Video,
 } from 'grommet';
-import { grommet, dark } from 'grommet/themes';
+import { grommet } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
@@ -67,7 +67,6 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 });
 
 const themes = {
-  dark,
   grommet,
   hpe,
   hpeNext,
@@ -102,7 +101,7 @@ const Components = () => {
   );
 
   const content = [
-    <Box key="type" align="start">
+    <Box key="type" align="start" gap="small">
       <Heading margin={{ top: 'none' }}>Heading</Heading>
       <Paragraph>Paragraph</Paragraph>
       <Text>Text</Text>
@@ -112,6 +111,9 @@ const Components = () => {
         items={[{ label: 'One', onClick: () => {} }, { label: 'Two' }]}
       />
       <Button label="Button" onClick={() => {}} />
+      <Button plain onClick={() => {}}>
+        <Text>plain button</Text>
+      </Button>
     </Box>,
     <Box key="input" gap="small">
       <Select

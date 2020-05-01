@@ -66,4 +66,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('All children', () => <Example />);
+storiesOf('Form', module).add('FormField children', () => <Example />);
