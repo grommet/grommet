@@ -24,9 +24,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var FakeRouter =
-/*#__PURE__*/
-function (_Component) {
+var FakeRouter = /*#__PURE__*/function (_Component) {
   _inheritsLoose(FakeRouter, _Component);
 
   function FakeRouter() {
@@ -51,7 +49,7 @@ function (_Component) {
 
   _proto.render = function render() {
     var children = this.props.children;
-    return _react["default"].createElement("div", null, children);
+    return /*#__PURE__*/_react["default"].createElement("div", null, children);
   };
 
   return FakeRouter;
@@ -71,10 +69,10 @@ describe('RoutedAnchor', function () {
   var replace = jest.fn();
   var push = jest.fn();
   test('renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, _react["default"].createElement(_.RoutedAnchor, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedAnchor, {
       label: "Test",
       path: "/"
     }))));
@@ -86,10 +84,10 @@ describe('RoutedAnchor', function () {
     var preventDefault = jest.fn();
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, _react["default"].createElement(_.RoutedAnchor, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedAnchor, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -107,10 +105,10 @@ describe('RoutedAnchor', function () {
   test('skips onClick if right clicked', function () {
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, _react["default"].createElement(_.RoutedAnchor, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedAnchor, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -129,10 +127,10 @@ describe('RoutedAnchor', function () {
   test('calls router context push', function () {
     var preventDefault = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, _react["default"].createElement(_.RoutedAnchor, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedAnchor, {
       label: "Test",
       path: "/"
     }))));
@@ -148,10 +146,10 @@ describe('RoutedAnchor', function () {
   test('calls router context replace', function () {
     var preventDefault = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react["default"].createElement(_.RoutedAnchor, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedAnchor, {
       label: "Test",
       path: "/",
       method: "replace"

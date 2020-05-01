@@ -17,12 +17,12 @@ var HorizontalCollapsible = function HorizontalCollapsible() {
       openNotification = _React$useState[0],
       setOpenNotification = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     as: "header",
     direction: "row",
     align: "center",
@@ -36,38 +36,38 @@ var HorizontalCollapsible = function HorizontalCollapsible() {
     style: {
       zIndex: '1000'
     }
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 3,
     margin: "none",
     color: "white"
-  }, _react["default"].createElement("strong", null, "My App")), _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "My App")), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     onClick: function onClick() {
       return setOpenNotification(!openNotification);
     },
-    icon: _react["default"].createElement(_grommetIcons.Notification, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Notification, {
       color: "white"
     })
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true,
     direction: "row"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true,
     align: "center",
     justify: "center"
-  }, "Dashboard content goes here, click on the notification icon"), _react["default"].createElement(_grommet.Collapsible, {
+  }, "Dashboard content goes here, click on the notification icon"), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, {
     direction: "horizontal",
     open: openNotification
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true,
     width: "medium",
     background: "light-2",
     pad: "small",
     elevation: "small"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "xlarge"
   }, "Sidebar"))))));
 };
 
 (0, _react2.storiesOf)('Collapsible', module).add('Horizontal', function () {
-  return _react["default"].createElement(HorizontalCollapsible, null);
+  return /*#__PURE__*/_react["default"].createElement(HorizontalCollapsible, null);
 });

@@ -47,16 +47,16 @@ var Digit = function Digit(_ref) {
 
   if (changing) {
     var direction = run === 'backward' ? 'down' : 'up';
-    return _react["default"].createElement(_StyledClock.StyledDigitalDigit, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledDigitalDigit, {
       size: size
-    }, _react["default"].createElement(_StyledClock.StyledDigitalPrevious, {
+    }, /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledDigitalPrevious, {
       direction: direction
-    }, Math.floor(previous)), _react["default"].createElement(_StyledClock.StyledDigitalNext, {
+    }, Math.floor(previous)), /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledDigitalNext, {
       direction: direction
     }, Math.floor(number)));
   }
 
-  return _react["default"].createElement(_StyledClock.StyledDigitalDigit, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledDigitalDigit, {
     size: size
   }, Math.floor(number));
 };
@@ -68,12 +68,12 @@ var Element = function Element(_ref2) {
       size = _ref2.size;
   var tens = Math.floor(number / 10);
   var ones = number % 10;
-  var result = [_react["default"].createElement(Digit, {
+  var result = [/*#__PURE__*/_react["default"].createElement(Digit, {
     key: "tens",
     run: run,
     size: size,
     number: tens
-  }), _react["default"].createElement(Digit, {
+  }), /*#__PURE__*/_react["default"].createElement(Digit, {
     key: "ones",
     run: run,
     size: size,
@@ -81,7 +81,7 @@ var Element = function Element(_ref2) {
   })];
 
   if (sep) {
-    result.unshift(_react["default"].createElement(_StyledClock.StyledDigitalDigit, {
+    result.unshift( /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledDigitalDigit, {
       key: "sep",
       size: size
     }, ":"));
@@ -100,7 +100,7 @@ var Digital = (0, _react.forwardRef)(function (props, ref) {
   var seconds;
 
   if (precision === 'seconds') {
-    seconds = _react["default"].createElement(Element, {
+    seconds = /*#__PURE__*/_react["default"].createElement(Element, {
       number: elements.seconds,
       run: run,
       size: size,
@@ -111,7 +111,7 @@ var Digital = (0, _react.forwardRef)(function (props, ref) {
   var minutes;
 
   if (precision === 'minutes' || precision === 'seconds') {
-    minutes = _react["default"].createElement(Element, {
+    minutes = /*#__PURE__*/_react["default"].createElement(Element, {
       number: elements.minutes,
       run: run,
       size: size,
@@ -119,10 +119,10 @@ var Digital = (0, _react.forwardRef)(function (props, ref) {
     });
   }
 
-  return _react["default"].createElement(_Box.Box, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: ref,
     direction: "row"
-  }, rest), _react["default"].createElement(Element, {
+  }, rest), /*#__PURE__*/_react["default"].createElement(Element, {
     number: elements.hours12 || elements.hours,
     run: run,
     size: size

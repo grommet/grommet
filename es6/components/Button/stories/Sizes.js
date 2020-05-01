@@ -6,91 +6,91 @@ import { Add } from "grommet-icons/es6/icons/Add";
 import { grommet } from 'grommet/themes';
 
 var SizedButton = function SizedButton() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "start",
     pad: "large",
     gap: "large"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     size: "small",
     label: "Small"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     size: "medium",
     label: "Medium"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Default"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     size: "large",
     label: "Large"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "start",
     pad: "large",
     gap: "large"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     primary: true,
     size: "small",
     label: "Small"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     primary: true,
     size: "medium",
     label: "Medium"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     primary: true,
     label: "Default"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     primary: true,
     size: "large",
     label: "Large"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "start",
     pad: "large",
     gap: "large"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     size: "small",
     label: "Small",
-    icon: React.createElement(Next, null),
+    icon: /*#__PURE__*/React.createElement(Next, null),
     reverse: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     size: "medium",
     label: "Medium",
-    icon: React.createElement(Next, null),
+    icon: /*#__PURE__*/React.createElement(Next, null),
     reverse: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Default",
-    icon: React.createElement(Next, null),
+    icon: /*#__PURE__*/React.createElement(Next, null),
     reverse: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     size: "large",
     label: "Large",
-    icon: React.createElement(Next, null),
+    icon: /*#__PURE__*/React.createElement(Next, null),
     reverse: true
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "start",
     pad: "large",
     gap: "large"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     size: "small",
-    icon: React.createElement(Add, null),
+    icon: /*#__PURE__*/React.createElement(Add, null),
     primary: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     size: "medium",
-    icon: React.createElement(Add, null),
+    icon: /*#__PURE__*/React.createElement(Add, null),
     primary: true
-  }), React.createElement(Button, {
-    icon: React.createElement(Add, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, null),
     primary: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     size: "large",
-    icon: React.createElement(Add, null),
+    icon: /*#__PURE__*/React.createElement(Add, null),
     primary: true
   }))));
 };
 
 storiesOf('Button', module).add('Sizes', function () {
-  return React.createElement(SizedButton, {
+  return /*#__PURE__*/React.createElement(SizedButton, {
     active: true
   });
 });

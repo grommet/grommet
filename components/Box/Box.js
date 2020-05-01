@@ -99,7 +99,7 @@ var Box = (0, _react.forwardRef)(function (_ref, ref) {
         if (firstIndex === undefined) {
           firstIndex = index;
         } else {
-          contents.push(_react["default"].createElement(_StyledBox.StyledBoxGap // eslint-disable-next-line react/no-array-index-key
+          contents.push( /*#__PURE__*/_react["default"].createElement(_StyledBox.StyledBoxGap // eslint-disable-next-line react/no-array-index-key
           , {
             key: "gap-" + index,
             gap: gap,
@@ -120,15 +120,15 @@ var Box = (0, _react.forwardRef)(function (_ref, ref) {
 
     if (darkChanged || theme.darkChanged) {
       dark = dark === undefined ? theme.dark : dark;
-      contents = _react["default"].createElement(_styledComponents.ThemeContext.Provider, {
-        value: _extends({}, theme, {
+      contents = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+        value: _extends(_extends({}, theme), {}, {
           dark: dark
         })
       }, contents);
     }
   }
 
-  var content = _react["default"].createElement(_StyledBox.StyledBox, _extends({
+  var content = /*#__PURE__*/_react["default"].createElement(_StyledBox.StyledBox, _extends({
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
     background: background,
@@ -147,7 +147,7 @@ var Box = (0, _react.forwardRef)(function (_ref, ref) {
   }, clickProps, rest), contents);
 
   if (onClick) {
-    content = _react["default"].createElement(_Keyboard.Keyboard, {
+    content = /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: onClick
     }, content);
   }

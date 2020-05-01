@@ -25,15 +25,15 @@ var CustomSelect = function CustomSelect(_ref) {
       value = _useState[0],
       setValue = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Select, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, _extends({
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -44,19 +44,19 @@ var CustomSelect = function CustomSelect(_ref) {
       return setValue(option);
     },
     plain: true,
-    valueLabel: _react["default"].createElement(_grommet.Box, {
+    valueLabel: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "brand",
       width: "small",
       round: "small",
       overflow: "hidden",
       align: "center"
     }, value || 'Select...'),
-    icon: _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommetIcons.CaretDown, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommetIcons.CaretDown, {
       color: "black"
     }))
   }, rest))));
 };
 
 (0, _react2.storiesOf)('Select', module).add('Custom', function () {
-  return _react["default"].createElement(CustomSelect, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomSelect, null);
 });

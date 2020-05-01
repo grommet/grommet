@@ -25,23 +25,23 @@ var gradient = [{
 }];
 
 var GradientCharts = function GradientCharts() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     id: "bar",
     type: "bar",
     color: gradient,
     values: [[10, 20], [20, 30], [30, 15]]
-  }), _react["default"].createElement(_grommet.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     id: "line",
     type: "line",
     color: gradient,
     values: [20, 30, 15]
-  }), _react["default"].createElement(_grommet.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     id: "area",
     type: "area",
     color: gradient,
@@ -52,7 +52,7 @@ var GradientCharts = function GradientCharts() {
     }, {
       value: [30, 15]
     }]
-  }), _react["default"].createElement(_grommet.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     id: "point",
     type: "point",
     color: gradient,
@@ -62,5 +62,5 @@ var GradientCharts = function GradientCharts() {
 };
 
 (0, _react2.storiesOf)('Chart', module).add('Gradient', function () {
-  return _react["default"].createElement(GradientCharts, null);
+  return /*#__PURE__*/_react["default"].createElement(GradientCharts, null);
 });

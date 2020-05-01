@@ -11,17 +11,17 @@ describe('InfiniteScroll', function () {
   }
 
   test('basic', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, null), React.createElement(InfiniteScroll, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(InfiniteScroll, null), /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: items
     }, function (item, index, ref) {
-      return React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         ref: ref,
         key: index
       }, item);
-    }), React.createElement(InfiniteScroll, {
+    }), /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: items
     }, function (item, index) {
-      return React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         key: index
       }, item);
     }))),
@@ -30,11 +30,11 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('step', function () {
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: items,
       step: 2
     }, function (item, index) {
-      return React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         key: index
       }, item);
     }))),
@@ -43,12 +43,12 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('show', function () {
-    var _render3 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render3 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: items,
       step: 2,
       show: 3
     }, function (item, index) {
-      return React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         key: index
       }, item);
     }))),
@@ -57,14 +57,14 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('renderMarker', function () {
-    var _render4 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render4 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: items,
       step: 2,
       renderMarker: function renderMarker(m) {
-        return React.createElement("div", null, m);
+        return /*#__PURE__*/React.createElement("div", null, m);
       }
     }, function (item, index) {
-      return React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         key: index
       }, item);
     }))),
@@ -73,12 +73,12 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('replace', function () {
-    var _render5 = render(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+    var _render5 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: items,
       step: 2,
       replace: true
     }, function (item, index) {
-      return React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         key: index
       }, item);
     }))),

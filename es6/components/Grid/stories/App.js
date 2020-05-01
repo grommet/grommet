@@ -8,10 +8,10 @@ var AppGrid = function AppGrid() {
       sidebar = _useState[0],
       setSidebar = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Grid, {
+  }, /*#__PURE__*/React.createElement(Grid, {
     fill: true,
     rows: ['auto', 'flex'],
     columns: ['auto', 'flex'],
@@ -28,7 +28,7 @@ var AppGrid = function AppGrid() {
       start: [1, 1],
       end: [1, 1]
     }]
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     gridArea: "header",
     direction: "row",
     align: "center",
@@ -38,13 +38,13 @@ var AppGrid = function AppGrid() {
       vertical: 'small'
     },
     background: "dark-2"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     onClick: function onClick() {
       return setSidebar(!sidebar);
     }
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "large"
-  }, "Title")), React.createElement(Text, null, "my@email")), sidebar && React.createElement(Box, {
+  }, "Title")), /*#__PURE__*/React.createElement(Text, null, "my@email")), sidebar && /*#__PURE__*/React.createElement(Box, {
     gridArea: "sidebar",
     background: "dark-3",
     width: "small",
@@ -57,23 +57,23 @@ var AppGrid = function AppGrid() {
       duration: 150
     }]
   }, ['First', 'Second', 'Third'].map(function (name) {
-    return React.createElement(Button, {
+    return /*#__PURE__*/React.createElement(Button, {
       key: name,
       href: "#",
       hoverIndicator: true
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       pad: {
         horizontal: 'medium',
         vertical: 'small'
       }
-    }, React.createElement(Text, null, name)));
-  })), React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Text, null, name)));
+  })), /*#__PURE__*/React.createElement(Box, {
     gridArea: "main",
     justify: "center",
     align: "center"
-  }, React.createElement(Text, null, "main"))));
+  }, /*#__PURE__*/React.createElement(Text, null, "main"))));
 };
 
 storiesOf('Grid', module).add('App', function () {
-  return React.createElement(AppGrid, null);
+  return /*#__PURE__*/React.createElement(AppGrid, null);
 });

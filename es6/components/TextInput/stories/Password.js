@@ -13,24 +13,24 @@ var PasswordInput = function PasswordInput() {
       reveal = _React$useState2[0],
       setReveal = _React$useState2[1];
 
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     width: "medium",
     direction: "row",
     margin: "large",
     align: "center",
     round: "small",
     border: true
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     plain: true,
     type: reveal ? 'text' : 'password',
     value: value,
     onChange: function onChange(event) {
       return setValue(event.target.value);
     }
-  }), React.createElement(Button, {
-    icon: reveal ? React.createElement(View, {
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: reveal ? /*#__PURE__*/React.createElement(View, {
       size: "medium"
-    }) : React.createElement(Hide, {
+    }) : /*#__PURE__*/React.createElement(Hide, {
       size: "medium"
     }),
     onClick: function onClick() {
@@ -40,5 +40,5 @@ var PasswordInput = function PasswordInput() {
 };
 
 storiesOf('TextInput', module).add('Password', function () {
-  return React.createElement(PasswordInput, null);
+  return /*#__PURE__*/React.createElement(PasswordInput, null);
 });

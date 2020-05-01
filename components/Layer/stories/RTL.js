@@ -11,34 +11,34 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var RTLLayer = function RTLLayer() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     dir: "rtl"
-  }, _react["default"].createElement(_grommet.Layer, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "start",
     margin: {
       vertical: 'small',
       start: 'xlarge',
       end: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "small",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
   }, "text"))));
 };
 
 (0, _react2.storiesOf)('Layer', module).add('RTL', function () {
-  return _react["default"].createElement(RTLLayer, null);
+  return /*#__PURE__*/_react["default"].createElement(RTLLayer, null);
 });

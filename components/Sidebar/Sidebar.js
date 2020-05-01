@@ -21,13 +21,13 @@ var Sidebar = function Sidebar(_ref) {
       header = _ref.header,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "footer", "header"]);
 
-  return _react["default"].createElement(_Box.Box, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     pad: "small",
     gap: "large",
     height: {
       min: '100%'
     }
-  }, rest), header, _react["default"].createElement(_Box.Box, {
+  }, rest), header, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: true
   }, children), footer);
 };

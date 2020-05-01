@@ -27,7 +27,7 @@ var TestAnnouncer = function TestAnnouncer(_ref) {
     return announce('hello', 'assertive');
   });
 
-  return _react["default"].createElement("div", null, "hi");
+  return /*#__PURE__*/_react["default"].createElement("div", null, "hi");
 };
 
 var customBreakpointsTheme = {
@@ -53,37 +53,37 @@ var customBreakpointsTheme = {
 
 var SSRTester = function SSRTester(_ref2) {
   var ua = _ref2.ua;
-  return _react["default"].createElement(_.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_.Grommet, {
     theme: customBreakpointsTheme,
     userAgent: ua
-  }, _react["default"].createElement(_contexts.ResponsiveContext.Consumer, null, function (size) {
-    return _react["default"].createElement(_Heading.Heading, null, "Received size " + size + " for " + ua);
+  }, /*#__PURE__*/_react["default"].createElement(_contexts.ResponsiveContext.Consumer, null, function (size) {
+    return /*#__PURE__*/_react["default"].createElement(_Heading.Heading, null, "Received size " + size + " for " + ua);
   }));
 };
 
 describe('Grommet', function () {
   afterEach(_react2.cleanup);
   test('basic', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null));
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('grommet theme', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
       theme: _grommet.grommet
     }));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('hpe theme', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
       theme: _grommetThemeHpe.hpe
     }, "Grommet App"));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('themeMode', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
       theme: _grommet.grommet,
       themeMode: "dark"
     }));
@@ -91,21 +91,21 @@ describe('Grommet', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('cssVars', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
       cssVars: true
     }, "Grommet App"));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('full', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
       full: true
     }, "Grommet App"));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('background', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
       full: true,
       background: "#0000ff"
     }, "Grommet App"));
@@ -113,8 +113,8 @@ describe('Grommet', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('announce', function (done) {
-    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
-      return _react["default"].createElement(TestAnnouncer, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
+      return /*#__PURE__*/_react["default"].createElement(TestAnnouncer, {
         announce: announce
       });
     }))),
@@ -135,7 +135,7 @@ describe('Grommet', function () {
   /* eslint-enable max-len */
   ].forEach(function (ua) {
     test("ssr rendering " + ua.substring(0, 25), function () {
-      var component = _reactTestRenderer["default"].create(_react["default"].createElement(SSRTester, {
+      var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(SSRTester, {
         ua: ua
       }));
 

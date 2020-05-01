@@ -37,13 +37,13 @@ var ThemeRadioButton = function ThemeRadioButton() {
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "large"
-  }, _react["default"].createElement(_grommet.RadioButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButton, {
     label: "option 1",
     name: "name",
     value: "option 1",
@@ -51,7 +51,7 @@ var ThemeRadioButton = function ThemeRadioButton() {
     onChange: function onChange(event) {
       return setSelected(event.target.value);
     }
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "clear",
     onClick: function onClick() {
       return setSelected(undefined);
@@ -60,5 +60,5 @@ var ThemeRadioButton = function ThemeRadioButton() {
 };
 
 (0, _react2.storiesOf)('RadioButton', module).add('Theme', function () {
-  return _react["default"].createElement(ThemeRadioButton, null);
+  return /*#__PURE__*/_react["default"].createElement(ThemeRadioButton, null);
 });

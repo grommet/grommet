@@ -13,7 +13,7 @@ var TestAnnouncer = function TestAnnouncer(_ref) {
   React.useEffect(function () {
     return announce('hello', 'assertive');
   });
-  return React.createElement("div", null, "hi");
+  return /*#__PURE__*/React.createElement("div", null, "hi");
 };
 
 var customBreakpointsTheme = {
@@ -39,61 +39,61 @@ var customBreakpointsTheme = {
 
 var SSRTester = function SSRTester(_ref2) {
   var ua = _ref2.ua;
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpointsTheme,
     userAgent: ua
-  }, React.createElement(ResponsiveContext.Consumer, null, function (size) {
-    return React.createElement(Heading, null, "Received size " + size + " for " + ua);
+  }, /*#__PURE__*/React.createElement(ResponsiveContext.Consumer, null, function (size) {
+    return /*#__PURE__*/React.createElement(Heading, null, "Received size " + size + " for " + ua);
   }));
 };
 
 describe('Grommet', function () {
   afterEach(cleanup);
   test('basic', function () {
-    var component = renderer.create(React.createElement(Grommet, null));
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('grommet theme', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       theme: grommet
     }));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('hpe theme', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       theme: hpeTheme
     }, "Grommet App"));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('themeMode', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       theme: grommet,
       themeMode: "dark"
     }));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('cssVars', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       cssVars: true
     }, "Grommet App"));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('full', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       full: true
     }, "Grommet App"));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('background', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       full: true,
       background: "#0000ff"
     }, "Grommet App"));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('announce', function (done) {
-    var _render = render(React.createElement(Grommet, null, React.createElement(AnnounceContext.Consumer, null, function (announce) {
-      return React.createElement(TestAnnouncer, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(AnnounceContext.Consumer, null, function (announce) {
+      return /*#__PURE__*/React.createElement(TestAnnouncer, {
         announce: announce
       });
     }))),
@@ -114,7 +114,7 @@ describe('Grommet', function () {
   /* eslint-enable max-len */
   ].forEach(function (ua) {
     test("ssr rendering " + ua.substring(0, 25), function () {
-      var component = renderer.create(React.createElement(SSRTester, {
+      var component = renderer.create( /*#__PURE__*/React.createElement(SSRTester, {
         ua: ua
       }));
       expect(component.toJSON()).toMatchSnapshot();

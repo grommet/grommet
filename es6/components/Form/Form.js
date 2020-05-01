@@ -192,7 +192,7 @@ var Form = forwardRef(function (_ref, ref) {
     }];
   };
 
-  return React.createElement("form", _extends({
+  return /*#__PURE__*/React.createElement("form", _extends({
     ref: ref
   }, rest, {
     onReset: function onReset(event) {
@@ -241,7 +241,7 @@ var Form = forwardRef(function (_ref, ref) {
         _onSubmit(adjustedEvent);
       }
     }
-  }), React.createElement(FormContext.Provider, {
+  }), /*#__PURE__*/React.createElement(FormContext.Provider, {
     value: {
       addValidation: function addValidation(name, validation) {
         validations.current[name] = validation;

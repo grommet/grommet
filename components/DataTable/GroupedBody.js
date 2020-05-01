@@ -32,20 +32,20 @@ var GroupedBody = function GroupedBody(_ref) {
       size = _ref.size,
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "primaryProperty", "onToggle", "size"]);
 
-  return _react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     size: size
   }, rest), groups.map(function (group) {
     var expanded = groupState[group.key].expanded;
     var memberCount = group.data.length;
-    var content = memberCount > 1 ? _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+    var content = memberCount > 1 ? /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       key: group.key,
       size: size
-    }, _react["default"].createElement(_ExpanderCell.ExpanderCell, {
+    }, /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
       context: expanded ? 'groupHeader' : 'body',
       expanded: expanded,
       onToggle: onToggle(group.key)
     }), columns.map(function (column) {
-      return _react["default"].createElement(_Cell.Cell, {
+      return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
         key: column.property,
         background: background,
         border: border,
@@ -58,17 +58,17 @@ var GroupedBody = function GroupedBody(_ref) {
     })) : null;
 
     if (memberCount === 1 || expanded) {
-      content = _react["default"].createElement(_react.Fragment, {
+      content = /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
         key: group.key
       }, content, group.data.map(function (datum, index) {
         var context = memberCount > 1 && index === memberCount - 1 ? 'groupEnd' : 'body';
-        return _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+        return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
           key: datum[primaryProperty],
           size: size
-        }, _react["default"].createElement(_ExpanderCell.ExpanderCell, {
+        }, /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
           context: context
         }), columns.map(function (column) {
-          return _react["default"].createElement(_Cell.Cell, {
+          return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
             key: column.property,
             background: background,
             border: border,

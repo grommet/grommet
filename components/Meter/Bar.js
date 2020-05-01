@@ -71,7 +71,7 @@ var Bar = (0, _react.forwardRef)(function (props, ref) {
     }
 
     start += delta;
-    return _react["default"].createElement("path", _extends({
+    return /*#__PURE__*/_react["default"].createElement("path", _extends({
       key: key,
       d: d,
       fill: "none"
@@ -81,7 +81,7 @@ var Bar = (0, _react.forwardRef)(function (props, ref) {
     }, hoverProps, pathRest));
   }).reverse(); // reverse so the caps looks right
 
-  return _react["default"].createElement(_StyledMeter.StyledMeter, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledMeter.StyledMeter, _extends({
     ref: ref,
     viewBox: "0 0 " + width + " " + height,
     preserveAspectRatio: "none",
@@ -90,7 +90,7 @@ var Bar = (0, _react.forwardRef)(function (props, ref) {
     round: round ? {
       size: thickness
     } : undefined
-  }, rest), _react["default"].createElement("path", _extends({
+  }, rest), /*#__PURE__*/_react["default"].createElement("path", _extends({
     d: "M " + capOffset + "," + mid + " L " + (width - capOffset) + "," + mid,
     fill: "none"
   }, (0, _utils2.strokeProps)(background, theme), {

@@ -19,22 +19,22 @@ var SimpleTextInput = function SimpleTextInput() {
     return setValue(event.target.value);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     value: value,
     onChange: onChange
   }))));
 };
 
 (0, _react2.storiesOf)('TextInput', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleTextInput, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleTextInput, null);
 });

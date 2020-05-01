@@ -13,25 +13,25 @@ var _Basics = require("./Basics");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var GridInfiniteScroll = function GridInfiniteScroll() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Grid, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: "xsmall",
     rows: "small"
-  }, _react["default"].createElement(_grommet.InfiniteScroll, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, {
     items: _Basics.allItems,
     step: 12
   }, function (item) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: item,
       as: "article",
       pad: "xsmall"
-    }, _react["default"].createElement(_grommet.Image, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       src: "https://via.placeholder.com/350x150"
-    }), _react["default"].createElement(_grommet.Text, null, item));
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
   })));
 };
 
 (0, _react2.storiesOf)('InfiniteScroll', module).add('Grid', function () {
-  return _react["default"].createElement(GridInfiniteScroll, null);
+  return /*#__PURE__*/_react["default"].createElement(GridInfiniteScroll, null);
 });

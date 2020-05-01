@@ -36,16 +36,16 @@ var Digit = function Digit(_ref) {
 
   if (changing) {
     var direction = run === 'backward' ? 'down' : 'up';
-    return React.createElement(StyledDigitalDigit, {
+    return /*#__PURE__*/React.createElement(StyledDigitalDigit, {
       size: size
-    }, React.createElement(StyledDigitalPrevious, {
+    }, /*#__PURE__*/React.createElement(StyledDigitalPrevious, {
       direction: direction
-    }, Math.floor(previous)), React.createElement(StyledDigitalNext, {
+    }, Math.floor(previous)), /*#__PURE__*/React.createElement(StyledDigitalNext, {
       direction: direction
     }, Math.floor(number)));
   }
 
-  return React.createElement(StyledDigitalDigit, {
+  return /*#__PURE__*/React.createElement(StyledDigitalDigit, {
     size: size
   }, Math.floor(number));
 };
@@ -57,12 +57,12 @@ var Element = function Element(_ref2) {
       size = _ref2.size;
   var tens = Math.floor(number / 10);
   var ones = number % 10;
-  var result = [React.createElement(Digit, {
+  var result = [/*#__PURE__*/React.createElement(Digit, {
     key: "tens",
     run: run,
     size: size,
     number: tens
-  }), React.createElement(Digit, {
+  }), /*#__PURE__*/React.createElement(Digit, {
     key: "ones",
     run: run,
     size: size,
@@ -70,7 +70,7 @@ var Element = function Element(_ref2) {
   })];
 
   if (sep) {
-    result.unshift(React.createElement(StyledDigitalDigit, {
+    result.unshift( /*#__PURE__*/React.createElement(StyledDigitalDigit, {
       key: "sep",
       size: size
     }, ":"));
@@ -89,7 +89,7 @@ export var Digital = forwardRef(function (props, ref) {
   var seconds;
 
   if (precision === 'seconds') {
-    seconds = React.createElement(Element, {
+    seconds = /*#__PURE__*/React.createElement(Element, {
       number: elements.seconds,
       run: run,
       size: size,
@@ -100,7 +100,7 @@ export var Digital = forwardRef(function (props, ref) {
   var minutes;
 
   if (precision === 'minutes' || precision === 'seconds') {
-    minutes = React.createElement(Element, {
+    minutes = /*#__PURE__*/React.createElement(Element, {
       number: elements.minutes,
       run: run,
       size: size,
@@ -108,10 +108,10 @@ export var Digital = forwardRef(function (props, ref) {
     });
   }
 
-  return React.createElement(Box, _extends({
+  return /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     direction: "row"
-  }, rest), React.createElement(Element, {
+  }, rest), /*#__PURE__*/React.createElement(Element, {
     number: elements.hours12 || elements.hours,
     run: run,
     size: size

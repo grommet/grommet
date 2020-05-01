@@ -17,25 +17,25 @@ import { Sidebar } from '../Sidebar';
 var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
 var SidebarHeader = function SidebarHeader() {
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     gap: "small",
     direction: "row",
     margin: {
       bottom: 'large'
     }
-  }, React.createElement(Stack, {
+  }, /*#__PURE__*/React.createElement(Stack, {
     alignSelf: "start",
     align: "center",
     anchor: "top-right"
-  }, React.createElement(Avatar, {
+  }, /*#__PURE__*/React.createElement(Avatar, {
     src: src
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     background: "orange",
     round: true,
     responsive: false
-  })), React.createElement(Text, null, "Shimrit Yacobi"));
+  })), /*#__PURE__*/React.createElement(Text, null, "Shimrit Yacobi"));
 };
 
 var SidebarButton = function SidebarButton(_ref) {
@@ -43,9 +43,9 @@ var SidebarButton = function SidebarButton(_ref) {
       label = _ref.label,
       rest = _objectWithoutPropertiesLoose(_ref, ["icon", "label"]);
 
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "small"
-  }, React.createElement(Button, _extends({
+  }, /*#__PURE__*/React.createElement(Button, _extends({
     gap: "medium",
     alignSelf: "start",
     plain: true,
@@ -55,61 +55,61 @@ var SidebarButton = function SidebarButton(_ref) {
 };
 
 var SidebarFooter = function SidebarFooter() {
-  return React.createElement(Nav, null, React.createElement(SidebarButton, {
-    icon: React.createElement(Chat, null),
+  return /*#__PURE__*/React.createElement(Nav, null, /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(Chat, null),
     label: "Chat"
-  }), React.createElement(SidebarButton, {
-    icon: React.createElement(Help, null),
+  }), /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(Help, null),
     label: "Support"
   }));
 };
 
 var MainNavigation = function MainNavigation() {
-  return React.createElement(Nav, {
+  return /*#__PURE__*/React.createElement(Nav, {
     gap: "large",
     responsive: false
-  }, React.createElement(SidebarButton, {
-    icon: React.createElement(StatusInfoSmall, null),
+  }, /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(StatusInfoSmall, null),
     label: "Focus"
-  }), React.createElement(SidebarButton, {
-    icon: React.createElement(Projects, null),
+  }), /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(Projects, null),
     label: "Services"
-  }), React.createElement(SidebarButton, {
-    icon: React.createElement(Clock, null),
+  }), /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(Clock, null),
     label: "Glances"
-  }), React.createElement(SidebarButton, {
-    icon: React.createElement(Split, null),
+  }), /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(Split, null),
     label: "Flows"
-  }), React.createElement(SidebarButton, {
-    icon: React.createElement(Analytics, null),
+  }), /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(Analytics, null),
     label: "Analytics"
-  }), React.createElement(SidebarButton, {
-    icon: React.createElement(Configure, null),
+  }), /*#__PURE__*/React.createElement(SidebarButton, {
+    icon: /*#__PURE__*/React.createElement(Configure, null),
     label: "Configure"
   }));
 };
 
 export var Labels = function Labels() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     height: {
       min: '100%'
     }
-  }, React.createElement(Sidebar, {
+  }, /*#__PURE__*/React.createElement(Sidebar, {
     responsive: false,
     background: "neutral-2",
-    header: React.createElement(SidebarHeader, null),
-    footer: React.createElement(SidebarFooter, null),
+    header: /*#__PURE__*/React.createElement(SidebarHeader, null),
+    footer: /*#__PURE__*/React.createElement(SidebarFooter, null),
     pad: {
       left: 'medium',
       right: 'large',
       vertical: 'medium'
     }
-  }, React.createElement(MainNavigation, null))));
+  }, /*#__PURE__*/React.createElement(MainNavigation, null))));
 };
 storiesOf('Sidebar', module).add('Labels', function () {
-  return React.createElement(Labels, null);
+  return /*#__PURE__*/React.createElement(Labels, null);
 });

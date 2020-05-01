@@ -28,16 +28,16 @@ var theme = (0, _utils.deepMerge)(_themes.grommet, {
 });
 
 var ThemedList = function ThemedList() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.List, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
     data: _data.locations
   })));
 };
 
 (0, _react2.storiesOf)('List', module).add('theme', function () {
-  return _react["default"].createElement(ThemedList, null);
+  return /*#__PURE__*/_react["default"].createElement(ThemedList, null);
 });

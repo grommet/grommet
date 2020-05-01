@@ -12,15 +12,15 @@ var FormFieldSelect = function FormFieldSelect(props) {
       value = _useState[0],
       setValue = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(FormField, _extends({
+  }, /*#__PURE__*/React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "select"
-  }, props), React.createElement(Select, {
+  }, props), /*#__PURE__*/React.createElement(Select, {
     id: "select",
     placeholder: "placeholder",
     options: allOptions,
@@ -33,5 +33,5 @@ var FormFieldSelect = function FormFieldSelect(props) {
 };
 
 storiesOf('FormField', module).add('Select', function () {
-  return React.createElement(FormFieldSelect, null);
+  return /*#__PURE__*/React.createElement(FormFieldSelect, null);
 });

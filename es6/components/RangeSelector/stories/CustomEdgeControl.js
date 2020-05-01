@@ -12,7 +12,7 @@ import { deepMerge } from 'grommet/utils';
 var customEdge = deepMerge(grommet, {
   rangeSelector: {
     edge: {
-      type: React.createElement(Gremlin, {
+      type: /*#__PURE__*/React.createElement(Gremlin, {
         size: "large",
         color: "neutral-2"
       }) // it is also possible to use an actual node
@@ -35,22 +35,22 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
     setRange(values);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customEdge
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "xlarge",
     gap: "large"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     style: {
       fontFamily: 'Comic Sans MS'
     },
     color: "brand"
-  }, "Feed the gremlins with grommets...", ' '), React.createElement(Stack, null, React.createElement(Box, {
+  }, "Feed the gremlins with grommets...", ' '), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between"
   }, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (value) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       key: value,
       width: "xsmall",
       height: "xsmall",
@@ -58,11 +58,11 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
       align: "center",
       pad: "small",
       border: false
-    }, React.createElement(GrommetIcon, {
+    }, /*#__PURE__*/React.createElement(GrommetIcon, {
       color: "brand",
       size: "small"
     }));
-  })), React.createElement(RangeSelector, _extends({
+  })), /*#__PURE__*/React.createElement(RangeSelector, _extends({
     direction: direction,
     min: 0,
     max: 9,
@@ -74,5 +74,5 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
 };
 
 storiesOf('RangeSelector', module).add('Custom Edge Controls', function () {
-  return React.createElement(CustomEdgeControl, null);
+  return /*#__PURE__*/React.createElement(CustomEdgeControl, null);
 });

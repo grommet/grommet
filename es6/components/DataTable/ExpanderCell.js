@@ -21,23 +21,23 @@ var ExpanderCell = function ExpanderCell(_ref) {
 
   if (onToggle) {
     var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
-    content = React.createElement(ExpandIcon, {
+    content = /*#__PURE__*/React.createElement(ExpandIcon, {
       color: normalizeColor('border', theme)
     });
   }
 
-  var normalizedThemeProps = _extends({}, theme.table[context], {}, theme.dataTable[context]);
+  var normalizedThemeProps = _extends(_extends({}, theme.table[context]), theme.dataTable[context]);
 
   delete normalizedThemeProps.background;
   delete normalizedThemeProps.border;
   delete normalizedThemeProps.pad;
-  content = React.createElement(Box, _extends({}, normalizedThemeProps, rest, {
+  content = /*#__PURE__*/React.createElement(Box, _extends({}, normalizedThemeProps, rest, {
     align: "center",
     pad: "xsmall"
   }), content);
 
   if (onToggle) {
-    content = React.createElement(Button, {
+    content = /*#__PURE__*/React.createElement(Button, {
       fill: true,
       a11yTitle: expanded ? 'collapse' : 'expand',
       hoverIndicator: true,
@@ -46,7 +46,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
     }, content);
   }
 
-  return React.createElement(TableCell, {
+  return /*#__PURE__*/React.createElement(TableCell, {
     size: "xxsmall",
     plain: true,
     verticalAlign: context === 'groupEnd' ? 'bottom' : 'top',

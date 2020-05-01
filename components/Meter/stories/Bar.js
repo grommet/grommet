@@ -12,12 +12,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var BarMeter = function BarMeter() {
   var value = 30;
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Meter, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
     type: "bar",
     background: "light-2",
     values: [{
@@ -27,5 +27,5 @@ var BarMeter = function BarMeter() {
 };
 
 (0, _react2.storiesOf)('Meter', module).add('Bar', function () {
-  return _react["default"].createElement(BarMeter, null);
+  return /*#__PURE__*/_react["default"].createElement(BarMeter, null);
 });

@@ -47,37 +47,37 @@ var customTheme = {
 };
 
 var CustomThemeTable = function CustomThemeTable() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Table, {
+  }, /*#__PURE__*/React.createElement(Table, {
     caption: "Custom Theme Table"
-  }, React.createElement(TableHeader, null, React.createElement(TableRow, null, columns.map(function (c) {
-    return React.createElement(TableCell, {
+  }, /*#__PURE__*/React.createElement(TableHeader, null, /*#__PURE__*/React.createElement(TableRow, null, columns.map(function (c) {
+    return /*#__PURE__*/React.createElement(TableCell, {
       key: c.property,
       scope: "col",
       align: c.align
-    }, React.createElement(Text, null, c.label));
-  }))), React.createElement(TableBody, null, data.map(function (datum) {
-    return React.createElement(TableRow, {
+    }, /*#__PURE__*/React.createElement(Text, null, c.label));
+  }))), /*#__PURE__*/React.createElement(TableBody, null, data.map(function (datum) {
+    return /*#__PURE__*/React.createElement(TableRow, {
       key: datum.id
     }, columns.map(function (c) {
-      return React.createElement(TableCell, {
+      return /*#__PURE__*/React.createElement(TableCell, {
         key: c.property,
         scope: c.dataScope,
         align: c.align
-      }, React.createElement(Text, null, c.format ? c.format(datum) : datum[c.property]));
+      }, /*#__PURE__*/React.createElement(Text, null, c.format ? c.format(datum) : datum[c.property]));
     }));
-  })), React.createElement(TableFooter, null, React.createElement(TableRow, null, columns.map(function (c) {
-    return React.createElement(TableCell, {
+  })), /*#__PURE__*/React.createElement(TableFooter, null, /*#__PURE__*/React.createElement(TableRow, null, columns.map(function (c) {
+    return /*#__PURE__*/React.createElement(TableCell, {
       key: c.property,
       align: c.align
-    }, React.createElement(Text, null, c.footer));
+    }, /*#__PURE__*/React.createElement(Text, null, c.footer));
   }))))));
 };
 
 storiesOf('Table', module).add('Custom', function () {
-  return React.createElement(CustomThemeTable, null);
+  return /*#__PURE__*/React.createElement(CustomThemeTable, null);
 });

@@ -119,10 +119,10 @@ var Carousel = function Carousel(_ref) {
   var selectors = [];
 
   var wrappedChildren = _react.Children.map(children, function (child, index) {
-    selectors.push(_react["default"].createElement(_Button.Button // eslint-disable-next-line react/no-array-index-key
+    selectors.push( /*#__PURE__*/_react["default"].createElement(_Button.Button // eslint-disable-next-line react/no-array-index-key
     , {
       key: index,
-      icon: _react["default"].createElement(CurrentIcon, {
+      icon: /*#__PURE__*/_react["default"].createElement(CurrentIcon, {
         color: activeIndex === index ? iconColor : undefined
       }),
       onClick: onSelect(index)
@@ -149,10 +149,10 @@ var Carousel = function Carousel(_ref) {
       };
     }
 
-    return _react["default"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       fill: fill,
       overflow: "hidden"
-    }, _react["default"].createElement(_Box.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       fill: fill,
       animation: animation
     }, child));
@@ -162,13 +162,13 @@ var Carousel = function Carousel(_ref) {
   var PreviousIcon = theme.carousel.icons.previous;
   var nextIconDisabled = activeIndex >= lastIndex;
   var previousIconDisabled = activeIndex <= 0;
-  return _react["default"].createElement(_Keyboard.Keyboard, {
+  return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onLeft: onLeft,
     onRight: onRight
-  }, _react["default"].createElement(_Stack.Stack, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_Stack.Stack, _extends({
     guidingChild: activeIndex,
     fill: fill
-  }, rest), wrappedChildren, _react["default"].createElement(_Box.Box, {
+  }, rest), wrappedChildren, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     tabIndex: "0",
     focus: focus,
     onFocus: function onFocus(event) {
@@ -182,24 +182,24 @@ var Carousel = function Carousel(_ref) {
     fill: true,
     direction: "row",
     justify: "between"
-  }, showArrows && _react["default"].createElement(_Button.Button, {
+  }, showArrows && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     fill: "vertical",
-    icon: _react["default"].createElement(PreviousIcon, {
+    icon: /*#__PURE__*/_react["default"].createElement(PreviousIcon, {
       color: (0, _utils.normalizeColor)(previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
     }),
     plain: true,
     disabled: previousIconDisabled,
     onClick: onLeft,
     hoverIndicator: true
-  }), showSelectors && _react["default"].createElement(_Box.Box, {
+  }), showSelectors && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     justify: "end",
     fill: !showArrows && 'horizontal'
-  }, _react["default"].createElement(_Box.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     direction: "row",
     justify: "center"
-  }, selectors)), showArrows && _react["default"].createElement(_Button.Button, {
+  }, selectors)), showArrows && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     fill: "vertical",
-    icon: _react["default"].createElement(NextIcon, {
+    icon: /*#__PURE__*/_react["default"].createElement(NextIcon, {
       color: (0, _utils.normalizeColor)(nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
     }),
     plain: true,

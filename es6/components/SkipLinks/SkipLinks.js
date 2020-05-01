@@ -33,19 +33,19 @@ var SkipLinks = function SkipLinks(_ref) {
     }, 0);
   };
 
-  return React.createElement(Layer, {
+  return /*#__PURE__*/React.createElement(Layer, {
     id: id,
     position: showLayer ? 'top' : 'hidden',
     ref: layerRef,
     onFocus: onFocus,
     onBlur: onBlur
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'medium'
     }
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 2
-  }, messages.skipTo, ":"), React.createElement(Box, {
+  }, messages.skipTo, ":"), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
     pad: {

@@ -50,7 +50,7 @@ var Body = function Body(_ref) {
       active = _React$useState[0],
       setActive = _React$useState[1];
 
-  return _react["default"].createElement(_Keyboard.Keyboard, {
+  return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: onClickRow && active >= 0 ? function (event) {
       event.persist();
       var adjustedEvent = event;
@@ -63,22 +63,22 @@ var Body = function Body(_ref) {
     onDown: onClickRow && data.length ? function () {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
     } : undefined
-  }, _react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     ref: forwardRef,
     size: size,
     tabIndex: onClickRow ? 0 : undefined
-  }, rest), _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+  }, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: data,
     onMore: onMore,
     replace: replace,
     renderMarker: function renderMarker(marker) {
-      return _react["default"].createElement(_TableRow.TableRow, null, _react["default"].createElement(_TableCell.TableCell, null, marker));
+      return /*#__PURE__*/_react["default"].createElement(_TableRow.TableRow, null, /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null, marker));
     },
     scrollableAncestor: "window",
     step: step
   }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
-    return _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       key: primaryValue || index,
       ref: rowRef,
       size: size,
@@ -104,7 +104,7 @@ var Body = function Body(_ref) {
         return setActive(undefined);
       } : undefined
     }, columns.map(function (column) {
-      return _react["default"].createElement(_Cell.Cell, {
+      return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
         key: column.property,
         background: background,
         border: border,

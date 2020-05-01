@@ -284,14 +284,14 @@ var WorldMap = forwardRef(function (_ref3, ref) {
       }, active);
     }
 
-    return React.createElement("g", _extends({
+    return /*#__PURE__*/React.createElement("g", _extends({
       key: name
-    }, interactiveProps), React.createElement("path", {
+    }, interactiveProps), /*#__PURE__*/React.createElement("path", {
       stroke: "none",
       fill: "#fff",
       fillOpacity: "0.01",
       d: area
-    }), React.createElement("path", {
+    }), /*#__PURE__*/React.createElement("path", {
       d: dots,
       strokeLinecap: "round",
       strokeWidth: parseMetricToNum(theme.worldMap.continent[active ? 'active' : 'base']),
@@ -317,7 +317,7 @@ var WorldMap = forwardRef(function (_ref3, ref) {
       }, active);
     }
 
-    return React.createElement("path", _extends({
+    return /*#__PURE__*/React.createElement("path", _extends({
       key: key,
       strokeLinecap: "round",
       strokeWidth: parseMetricToNum(theme.worldMap.place[active ? 'active' : 'base']),
@@ -346,14 +346,14 @@ var WorldMap = forwardRef(function (_ref3, ref) {
 
   if (activeCoords) {
     var d = "M" + FACTOR * activeCoords[0] + ", " + FACTOR * activeCoords[1] + " h0";
-    active = React.createElement("g", {
+    active = /*#__PURE__*/React.createElement("g", {
       stroke: "none",
       fill: "none",
       fillRule: "evenodd",
       onClick: function onClick() {
         return onSelectPlace(coordToLatLon(activeCoords, world.origin, world.extent));
       }
-    }, React.createElement("path", {
+    }, /*#__PURE__*/React.createElement("path", {
       strokeLinecap: "round",
       strokeWidth: parseMetricToNum(theme.worldMap.place.active),
       stroke: normalizeColor(hoverColor || color || theme.worldMap.hover.color, theme),
@@ -361,14 +361,14 @@ var WorldMap = forwardRef(function (_ref3, ref) {
     }));
   }
 
-  return React.createElement(StyledWorldMap, _extends({
+  return /*#__PURE__*/React.createElement(StyledWorldMap, _extends({
     ref: ref,
     viewBox: world.x + " " + world.y + " " + world.width + " " + world.height,
     preserveAspectRatio: "xMinYMin meet",
     fillProp: fill,
     width: world.width,
     height: world.height
-  }, interactiveProps, rest), React.createElement("g", {
+  }, interactiveProps, rest), /*#__PURE__*/React.createElement("g", {
     ref: containerRef,
     stroke: "none",
     fill: "none",

@@ -14,12 +14,12 @@ var CustomHeaderCalendar = function CustomHeaderCalendar() {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     date: date,
     onSelect: onSelect,
     size: "small",
@@ -31,26 +31,26 @@ var CustomHeaderCalendar = function CustomHeaderCalendar() {
           onNextMonth = _ref.onNextMonth,
           previousInBound = _ref.previousInBound,
           nextInBound = _ref.nextInBound;
-      return React.createElement(Box, {
+      return /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
         justify: "between"
-      }, React.createElement(Button, {
+      }, /*#__PURE__*/React.createElement(Button, {
         disabled: !previousInBound,
         onClick: onPreviousMonth
-      }, React.createElement(Box, null, React.createElement(FormPreviousLink, null))), React.createElement(Text, {
+      }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(FormPreviousLink, null))), /*#__PURE__*/React.createElement(Text, {
         size: "small"
-      }, React.createElement("strong", null, currentDate.toLocaleDateString(locale, {
+      }, /*#__PURE__*/React.createElement("strong", null, currentDate.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
-      }))), React.createElement(Button, {
+      }))), /*#__PURE__*/React.createElement(Button, {
         disabled: !nextInBound,
         onClick: onNextMonth
-      }, React.createElement(Box, null, React.createElement(FormNextLink, null))));
+      }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(FormNextLink, null))));
     }
   })));
 };
 
 storiesOf('Calendar', module).add('Custom Header', function () {
-  return React.createElement(CustomHeaderCalendar, null);
+  return /*#__PURE__*/React.createElement(CustomHeaderCalendar, null);
 });

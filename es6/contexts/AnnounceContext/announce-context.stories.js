@@ -15,7 +15,7 @@ var Announcer = function Announcer(_ref) {
     var timeout = 3000;
     announce(message, mode, timeout);
   }, [announce, message, mode]);
-  return React.createElement(Text, {
+  return /*#__PURE__*/React.createElement(Text, {
     align: "center",
     role: role,
     "aria-live": mode
@@ -35,25 +35,25 @@ Announcer.defaultProps = {
 };
 
 var AnnounceContextComponent = function AnnounceContextComponent(props) {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     justify: "center",
     align: "center",
     background: "brand",
     fill: true
-  }, React.createElement(Heading, null, "Welcome to announcement section"), React.createElement(AnnounceContext.Consumer, null, function (announce) {
-    return React.createElement(Announcer, _extends({
+  }, /*#__PURE__*/React.createElement(Heading, null, "Welcome to announcement section"), /*#__PURE__*/React.createElement(AnnounceContext.Consumer, null, function (announce) {
+    return /*#__PURE__*/React.createElement(Announcer, _extends({
       announce: announce
     }, props));
   })));
 };
 
 storiesOf('AnnounceContext', module).add('Polite', function () {
-  return React.createElement(AnnounceContextComponent, null);
+  return /*#__PURE__*/React.createElement(AnnounceContextComponent, null);
 }).add('Assertive', function () {
-  return React.createElement(AnnounceContextComponent, {
+  return /*#__PURE__*/React.createElement(AnnounceContextComponent, {
     message: "Turn on Accessibility feature to listen to this announcement.  This will soon disappear",
     mode: "assertive",
     role: "alert"

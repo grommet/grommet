@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Image) {
   var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
-  DocumentedImage.propTypes = _extends({}, genericProps, {
+  DocumentedImage.propTypes = _extends(_extends({}, genericProps), {}, {
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
     fallback: PropTypes.string.description("Specifies the URL of the fallback image used when \n      src is failing to load"),

@@ -26,20 +26,20 @@ var OverflowDrop = function OverflowDrop() {
   useEffect(function () {
     return setShowDrop(true);
   }, []);
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     justify: "start",
     ref: targetRef
-  }, "Target"), targetRef.current && React.createElement(Drop, {
+  }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
     overflow: "unset",
     align: {
       top: 'bottom',
@@ -49,27 +49,27 @@ var OverflowDrop = function OverflowDrop() {
     onClose: function onClose() {
       return setShowCalendar(false);
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: "small"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 4
-  }, "Select Start Date"), React.createElement("div", {
+  }, "Select Start Date"), /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'relative'
     }
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     ref: inputRef,
     value: date || '',
     placeholder: "Focus on me",
     onFocus: function onFocus() {
       return setShowCalendar(true);
     }
-  }), showCalendar && React.createElement("div", {
+  }), showCalendar && /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
       background: '#eee'
     }
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     date: date,
     onSelect: onSelect,
     size: "small"
@@ -77,5 +77,5 @@ var OverflowDrop = function OverflowDrop() {
 };
 
 storiesOf('Drop', module).add('Overflow', function () {
-  return React.createElement(OverflowDrop, null);
+  return /*#__PURE__*/React.createElement(OverflowDrop, null);
 });

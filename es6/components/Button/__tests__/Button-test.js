@@ -9,7 +9,7 @@ import { Grommet, Button, Text } from '../..';
 describe('Button', function () {
   afterEach(cleanup);
   test('basic', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -17,17 +17,17 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('children function', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       onClick: function onClick() {}
     }, function () {
-      return React.createElement(Text, null, "Test");
+      return /*#__PURE__*/React.createElement(Text, null, "Test");
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('warns about invalid label', function () {
     var warnSpy = jest.spyOn(console, 'warn');
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       label: "Test",
       onClick: function onClick() {}
     }, "invalid")));
@@ -39,8 +39,8 @@ describe('Button', function () {
   });
   test('warns about invalid icon', function () {
     var warnSpy = jest.spyOn(console, 'warn');
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
-      icon: React.createElement("svg", null),
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement("svg", null),
       onClick: function onClick() {}
     }, "invalid")));
     var tree = component.toJSON();
@@ -50,7 +50,7 @@ describe('Button', function () {
     warnSpy.mockRestore();
   });
   test('primary', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       primary: true,
       label: "Test",
       onClick: function onClick() {}
@@ -59,21 +59,21 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('color', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       color: "accent-1",
       label: "Test",
       onClick: function onClick() {}
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       color: "accent-1",
       primary: true,
       label: "Test",
       onClick: function onClick() {}
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       color: "#111111",
       primary: true,
       label: "Test",
       onClick: function onClick() {}
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       color: "#123",
       primary: true,
       label: "Test",
@@ -83,20 +83,20 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('fill', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, null, /*#__PURE__*/React.createElement(Button, {
       fill: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       fill: false
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       fill: "horizontal"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       fill: "vertical"
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('focus', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(Button, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       label: "Test",
       onClick: function onClick() {}
     }))),
@@ -107,46 +107,46 @@ describe('Button', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       disabled: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
       primary: true,
       label: "Button"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
       label: "Button"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
       plain: true,
       label: "Button"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
       plain: false,
       label: "Button"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
-      icon: React.createElement("svg", null)
-    }), React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement("svg", null)
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
-      icon: React.createElement("svg", null),
+      icon: /*#__PURE__*/React.createElement("svg", null),
       plain: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
-      icon: React.createElement("svg", null),
+      icon: /*#__PURE__*/React.createElement("svg", null),
       plain: false
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
-      icon: React.createElement("svg", null),
+      icon: /*#__PURE__*/React.createElement("svg", null),
       label: "Button"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
-      icon: React.createElement("svg", null),
+      icon: /*#__PURE__*/React.createElement("svg", null),
       label: "Button",
       plain: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       disabled: true,
-      icon: React.createElement("svg", null),
+      icon: /*#__PURE__*/React.createElement("svg", null),
       label: "Button",
       primary: true
     })));
@@ -154,7 +154,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('active', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       active: true,
       label: "Button"
     })));
@@ -162,7 +162,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('active + primary', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       active: true,
       primary: true,
       label: "Button"
@@ -171,8 +171,8 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('icon label', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
-      icon: React.createElement("svg", null),
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -180,9 +180,9 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('reverse icon label', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       reverse: true,
-      icon: React.createElement("svg", null),
+      icon: /*#__PURE__*/React.createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -190,14 +190,14 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('href', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       href: "test"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator background', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       onClick: function onClick() {},
       hoverIndicator: "background"
     }, "hoverIndicator")));
@@ -205,7 +205,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator as object with color', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         color: 'brand'
@@ -215,7 +215,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator as object with invalid color', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         color: 'invalid'
@@ -225,7 +225,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator color', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       onClick: function onClick() {},
       hoverIndicator: "dark-3"
     }, "hoverIndicator")));
@@ -234,7 +234,7 @@ describe('Button', function () {
   });
   test('onClick', function () {
     var onClick = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       label: "Test",
       onClick: onClick
     })));
@@ -244,72 +244,72 @@ describe('Button', function () {
     expect(onClick).toBeCalled();
   });
   test('size', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       size: "small",
       label: "Small"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "medium",
       label: "Medium"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       label: "Default"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "large",
       label: "Large"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       primary: true,
       size: "small",
       label: "Small"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       primary: true,
       size: "medium",
       label: "Medium"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       primary: true,
       label: "Default"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       primary: true,
       size: "large",
       label: "Large"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "small",
-      icon: React.createElement(Add, null),
+      icon: /*#__PURE__*/React.createElement(Add, null),
       primary: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "medium",
-      icon: React.createElement(Add, null),
+      icon: /*#__PURE__*/React.createElement(Add, null),
       primary: true
-    }), React.createElement(Button, {
-      icon: React.createElement(Add, null),
+    }), /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement(Add, null),
       primary: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "large",
-      icon: React.createElement(Add, null),
+      icon: /*#__PURE__*/React.createElement(Add, null),
       primary: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "small",
       label: "Small",
-      icon: React.createElement(Next, null),
+      icon: /*#__PURE__*/React.createElement(Next, null),
       reverse: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "medium",
       label: "Medium",
-      icon: React.createElement(Next, null),
+      icon: /*#__PURE__*/React.createElement(Next, null),
       reverse: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       label: "Default",
-      icon: React.createElement(Next, null),
+      icon: /*#__PURE__*/React.createElement(Next, null),
       reverse: true
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       size: "large",
       label: "Large",
-      icon: React.createElement(Next, null),
+      icon: /*#__PURE__*/React.createElement(Next, null),
       reverse: true
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('as', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Button, {
       as: "span"
     })));
     var tree = component.toJSON();

@@ -20,7 +20,7 @@ describe('Calendar', function () {
   afterEach(_react2.cleanup);
   test('date', function () {
     // need to set the date to avoid snapshot drift over time
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       date: DATE,
       animate: false
     })));
@@ -29,7 +29,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('dates', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       dates: DATES,
       animate: false
     })));
@@ -38,7 +38,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('daysOfWeek', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       daysOfWeek: true,
       dates: DATES,
       animate: false
@@ -48,15 +48,15 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('size', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       size: "small",
       date: DATE,
       animate: false
-    }), _react["default"].createElement(_.Calendar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       size: "medium",
       date: DATE,
       animate: false
-    }), _react["default"].createElement(_.Calendar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       size: "large",
       date: DATE,
       animate: false
@@ -66,11 +66,11 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('firstDayOfWeek', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       firstDayOfWeek: 0,
       date: DATE,
       animate: false
-    }), _react["default"].createElement(_.Calendar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       firstDayOfWeek: 1,
       date: DATE,
       animate: false
@@ -80,7 +80,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('reference', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       reference: DATE,
       animate: false
     })));
@@ -89,7 +89,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('header', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       date: DATE,
       onSelect: function onSelect() {},
       size: "small",
@@ -101,20 +101,20 @@ describe('Calendar', function () {
             onNextMonth = _ref.onNextMonth,
             previousInBound = _ref.previousInBound,
             nextInBound = _ref.nextInBound;
-        return _react["default"].createElement(_.Box, {
+        return /*#__PURE__*/_react["default"].createElement(_.Box, {
           direction: "row",
           align: "center",
           justify: "between"
-        }, _react["default"].createElement(_.Button, {
+        }, /*#__PURE__*/_react["default"].createElement(_.Button, {
           onClick: previousInBound && onPreviousMonth
-        }, _react["default"].createElement(_.Box, null, _react["default"].createElement(_grommetIcons.FormPreviousLink, null))), _react["default"].createElement(_.Text, {
+        }, /*#__PURE__*/_react["default"].createElement(_.Box, null, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormPreviousLink, null))), /*#__PURE__*/_react["default"].createElement(_.Text, {
           size: "small"
-        }, _react["default"].createElement("strong", null, date.toLocaleDateString(locale, {
+        }, /*#__PURE__*/_react["default"].createElement("strong", null, date.toLocaleDateString(locale, {
           month: 'long',
           year: 'numeric'
-        }))), _react["default"].createElement(_.Button, {
+        }))), /*#__PURE__*/_react["default"].createElement(_.Button, {
           onClick: nextInBound && onNextMonth
-        }, _react["default"].createElement(_.Box, null, _react["default"].createElement(_grommetIcons.FormNextLink, null))));
+        }, /*#__PURE__*/_react["default"].createElement(_.Box, null, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormNextLink, null))));
       },
       animate: false
     })));
@@ -125,7 +125,7 @@ describe('Calendar', function () {
   test('select date', function () {
     var onSelect = jest.fn();
 
-    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       date: DATE,
       onSelect: onSelect,
       animate: false
@@ -143,7 +143,7 @@ describe('Calendar', function () {
   test('select dates', function () {
     var onSelect = jest.fn();
 
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Calendar, {
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Calendar, {
       dates: DATES,
       onSelect: onSelect,
       animate: false

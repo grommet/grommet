@@ -32,16 +32,16 @@ var Example = function Example() {
       age = _React$useState7[0],
       setAge = _React$useState7[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(Form, {
+  }, /*#__PURE__*/React.createElement(Form, {
     onChange: function onChange(value) {
       return console.log('Change', value);
     },
@@ -57,20 +57,20 @@ var Example = function Example() {
     onSubmit: function onSubmit(event) {
       return console.log('Submit', event.value, event.touched);
     }
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
     name: "name"
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     name: "name",
     value: name,
     onChange: function onChange(event) {
       return setName(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Email",
     name: "email",
     required: true
-  }, React.createElement(MaskedInput, {
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
     name: "email",
     mask: [{
       regexp: /^[\w\-_.]+$/,
@@ -90,48 +90,48 @@ var Example = function Example() {
     onChange: function onChange(event) {
       return setEmail(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     name: "subscribe"
-  }, React.createElement(CheckBox, {
+  }, /*#__PURE__*/React.createElement(CheckBox, {
     name: "subscribe",
     label: "Subscribe?",
     checked: subscribe,
     onChange: function onChange(event) {
       return setSubscribe(event.target.checked);
     }
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     name: "ampm"
-  }, React.createElement(RadioButtonGroup, {
+  }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
     name: "ampm",
     options: ['morning', 'evening'],
     value: ampm,
     onChange: function onChange(event) {
       return setAmpm(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Size",
     name: "size"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     name: "size",
     options: ['small', 'medium', 'large'],
     value: size,
     onChange: function onChange(event) {
       return setSize(event.option);
     }
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Comments",
     name: "comments"
-  }, React.createElement(TextArea, {
+  }, /*#__PURE__*/React.createElement(TextArea, {
     name: "comments",
     value: comments,
     onChange: function onChange(event) {
       return setComments(event.target.value);
     }
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Age",
     name: "age",
     pad: true
-  }, React.createElement(RangeInput, {
+  }, /*#__PURE__*/React.createElement(RangeInput, {
     name: "age",
     min: 15,
     max: 75,
@@ -139,18 +139,18 @@ var Example = function Example() {
     onChange: function onChange(event) {
       return setAge(event.target.value);
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Cancel"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "reset",
     label: "Reset"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -158,5 +158,5 @@ var Example = function Example() {
 };
 
 storiesOf('Form', module).add('Controlled Input', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

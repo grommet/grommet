@@ -19,9 +19,7 @@ export var withFocus = function withFocus(_temp) {
       focusWithMouse = _ref.focusWithMouse;
 
   return function (WrappedComponent) {
-    var FocusableComponent =
-    /*#__PURE__*/
-    function (_Component) {
+    var FocusableComponent = /*#__PURE__*/function (_Component) {
       _inheritsLoose(FocusableComponent, _Component);
 
       FocusableComponent.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
@@ -140,7 +138,7 @@ export var withFocus = function withFocus(_temp) {
         var _this$state = this.state,
             focus = _this$state.focus,
             wrappedRef = _this$state.wrappedRef;
-        return React.createElement(WrappedComponent, _extends({
+        return /*#__PURE__*/React.createElement(WrappedComponent, _extends({
           ref: wrappedRef,
           focus: focus
         }, rest, {
@@ -165,7 +163,7 @@ export var withFocus = function withFocus(_temp) {
     }(Component);
 
     var ForwardRef = React.forwardRef(function (props, ref) {
-      return React.createElement(FocusableComponent, _extends({}, props, {
+      return /*#__PURE__*/React.createElement(FocusableComponent, _extends({}, props, {
         withFocusRef: ref
       }));
     });
@@ -177,7 +175,7 @@ export var withFocus = function withFocus(_temp) {
 };
 export var withForwardRef = function withForwardRef(WrappedComponent) {
   var ForwardRefComponent = React.forwardRef(function (props, ref) {
-    return React.createElement(WrappedComponent, _extends({
+    return /*#__PURE__*/React.createElement(WrappedComponent, _extends({
       forwardRef: ref
     }, props));
   });
@@ -188,8 +186,8 @@ export var withForwardRef = function withForwardRef(WrappedComponent) {
 };
 export var withAnnounce = function withAnnounce(WrappedComponent) {
   var ForwardRef = React.forwardRef(function (props, ref) {
-    return React.createElement(AnnounceContext.Consumer, null, function (announce) {
-      return React.createElement(WrappedComponent, _extends({}, props, {
+    return /*#__PURE__*/React.createElement(AnnounceContext.Consumer, null, function (announce) {
+      return /*#__PURE__*/React.createElement(WrappedComponent, _extends({}, props, {
         announce: announce,
         ref: ref
       }));

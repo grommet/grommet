@@ -31,19 +31,19 @@ var CustomRangeInput = function CustomRangeInput() {
     return setValue(event.target.value);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customThemeRangeInput
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
     pad: "large",
     gap: "small"
-  }, React.createElement(Volume, {
+  }, /*#__PURE__*/React.createElement(Volume, {
     color: "neutral-2"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     width: "small"
-  }, React.createElement(RangeInput, {
+  }, /*#__PURE__*/React.createElement(RangeInput, {
     min: 0,
     max: 1,
     step: 0.1,
@@ -53,5 +53,5 @@ var CustomRangeInput = function CustomRangeInput() {
 };
 
 storiesOf('RangeInput', module).add('Custom', function () {
-  return React.createElement(CustomRangeInput, null);
+  return /*#__PURE__*/React.createElement(CustomRangeInput, null);
 });

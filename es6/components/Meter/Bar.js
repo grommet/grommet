@@ -55,7 +55,7 @@ var Bar = forwardRef(function (props, ref) {
     }
 
     start += delta;
-    return React.createElement("path", _extends({
+    return /*#__PURE__*/React.createElement("path", _extends({
       key: key,
       d: d,
       fill: "none"
@@ -65,7 +65,7 @@ var Bar = forwardRef(function (props, ref) {
     }, hoverProps, pathRest));
   }).reverse(); // reverse so the caps looks right
 
-  return React.createElement(StyledMeter, _extends({
+  return /*#__PURE__*/React.createElement(StyledMeter, _extends({
     ref: ref,
     viewBox: "0 0 " + width + " " + height,
     preserveAspectRatio: "none",
@@ -74,7 +74,7 @@ var Bar = forwardRef(function (props, ref) {
     round: round ? {
       size: thickness
     } : undefined
-  }, rest), React.createElement("path", _extends({
+  }, rest), /*#__PURE__*/React.createElement("path", _extends({
     d: "M " + capOffset + "," + mid + " L " + (width - capOffset) + "," + mid,
     fill: "none"
   }, strokeProps(background, theme), {

@@ -29,27 +29,27 @@ var OnMoreInfiniteScroll = function OnMoreInfiniteScroll(_ref) {
     }, 1000);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.InfiniteScroll, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, _extends({
     items: items,
     onMore: onMore
   }, props), function (item) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: item,
       pad: "medium",
       border: {
         side: 'bottom'
       },
       align: "center"
-    }, _react["default"].createElement(_grommet.Text, null, item));
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
   })));
 };
 
 (0, _react2.storiesOf)('InfiniteScroll', module).add('onMore', function () {
-  return _react["default"].createElement(OnMoreInfiniteScroll, null);
+  return /*#__PURE__*/_react["default"].createElement(OnMoreInfiniteScroll, null);
 }).add('onMore step', function () {
-  return _react["default"].createElement(OnMoreInfiniteScroll, {
+  return /*#__PURE__*/_react["default"].createElement(OnMoreInfiniteScroll, {
     step: 75
   });
 });

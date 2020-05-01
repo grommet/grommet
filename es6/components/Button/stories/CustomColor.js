@@ -14,42 +14,42 @@ var customButtonColor = deepMerge(grommet, {
 });
 
 var Colored = function Colored(props) {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customButtonColor
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "small"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     primary: true,
     label: "Submit",
     onClick: function onClick() {}
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     primary: true,
     color: "dark-1",
     label: "custom theme text colored",
     onClick: function onClick() {}
-  }), React.createElement(Button, _extends({
+  }), /*#__PURE__*/React.createElement(Button, _extends({
     primary: true,
     color: "dark-1",
     label: "dark-1",
     onClick: function onClick() {}
-  }, props)), React.createElement(Button, _extends({
+  }, props)), /*#__PURE__*/React.createElement(Button, _extends({
     primary: true,
     color: "#111111",
     label: "#111111",
     onClick: function onClick() {}
-  }, props)), React.createElement(Button, _extends({
+  }, props)), /*#__PURE__*/React.createElement(Button, _extends({
     primary: true,
     color: "#777",
     label: "#777",
     onClick: function onClick() {}
-  }, props)), React.createElement(Button, _extends({
+  }, props)), /*#__PURE__*/React.createElement(Button, _extends({
     plain: true,
     color: "red",
     label: "plain red",
     onClick: function onClick() {}
-  }, props)), React.createElement(Button, _extends({
+  }, props)), /*#__PURE__*/React.createElement(Button, _extends({
     plain: true,
     label: "plain inherit",
     onClick: function onClick() {}
@@ -57,5 +57,5 @@ var Colored = function Colored(props) {
 };
 
 storiesOf('Button', module).add('Colored', function () {
-  return React.createElement(Colored, null);
+  return /*#__PURE__*/React.createElement(Colored, null);
 });

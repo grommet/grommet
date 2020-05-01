@@ -35,10 +35,10 @@ var TargetLayer = function TargetLayer() {
     return setOpen(undefined);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Grid, {
+  }, /*#__PURE__*/React.createElement(Grid, {
     fill: true,
     columns: [gutter, 'flex', gutter],
     rows: [gutter, 'flex', gutter],
@@ -47,7 +47,7 @@ var TargetLayer = function TargetLayer() {
       start: [1, 1],
       end: [1, 1]
     }]
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     ref: ref,
     gridArea: "main",
     fill: true,
@@ -55,44 +55,44 @@ var TargetLayer = function TargetLayer() {
     justify: "center",
     gap: "medium",
     background: "brand"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     options: positions,
     value: position,
     onChange: function onChange(_ref) {
       var option = _ref.option;
       return setPosition(option);
     }
-  }), React.createElement(CheckBox, {
+  }), /*#__PURE__*/React.createElement(CheckBox, {
     toggle: true,
     label: "modal",
     checked: modal,
     onChange: function onChange() {
       return setModal(!modal);
     }
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Open",
     onClick: onOpen
-  }))), open && React.createElement(Layer, {
+  }))), open && /*#__PURE__*/React.createElement(Layer, {
     modal: modal,
     position: position,
     target: ref.current,
     onClickOutside: onClose,
     onEsc: onClose
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "small",
     width: "medium"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Toggle gutter size",
     onClick: function onClick() {
       return setGutter(gutter === 'small' ? 'xsmall' : 'small');
     }
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Close",
     onClick: onClose
   }))));
 };
 
 storiesOf('Layer', module).add('Target', function () {
-  return React.createElement(TargetLayer, null);
+  return /*#__PURE__*/React.createElement(TargetLayer, null);
 });

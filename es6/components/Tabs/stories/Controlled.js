@@ -15,41 +15,41 @@ var ControlledTabs = function ControlledTabs() {
     return setIndex(nextIndex);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Tabs, {
+  }, /*#__PURE__*/React.createElement(Tabs, {
     activeIndex: index,
     onActive: onActive
-  }, React.createElement(Tab, {
+  }, /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 1"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 2"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 3"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
   })))));
 };
 
 storiesOf('Tabs', module).add('Controlled', function () {
-  return React.createElement(ControlledTabs, null);
+  return /*#__PURE__*/React.createElement(ControlledTabs, null);
 });

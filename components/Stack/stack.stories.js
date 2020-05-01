@@ -11,31 +11,31 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var SimpleStack = function SimpleStack() {
-  return _react["default"].createElement(_grommet.Grommet, null, _react["default"].createElement(_grommet.Stack, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     anchor: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     background: "neutral-1"
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     background: "accent-1"
   })));
 };
 
 var FillStack = function FillStack() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Stack, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     fill: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand",
     fill: true
   }, "Test")));
 };
 
 (0, _react2.storiesOf)('Stack', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleStack, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleStack, null);
 }).add('Fill', function () {
-  return _react["default"].createElement(FillStack, null);
+  return /*#__PURE__*/_react["default"].createElement(FillStack, null);
 });

@@ -38,16 +38,16 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
       valueBlue = _useState2[0],
       setValueBlue = _useState2[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     direction: "column",
     gap: "large"
-  }, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     margin: "medium"
-  }, "The focus color of this select component is being altered by the custom theme that is passed into the Grommet component."), _react["default"].createElement(_grommet.Select, {
+  }, "The focus color of this select component is being altered by the custom theme that is passed into the Grommet component."), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     alignSelf: "center",
     placeholder: "Select",
     value: valueRed,
@@ -56,7 +56,7 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
       var option = _ref.option;
       return setValueRed(option);
     }
-  })), _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.ThemeContext.Extend, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.ThemeContext.Extend, {
     value: {
       global: {
         focus: {
@@ -66,9 +66,9 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
         }
       }
     }
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     margin: "medium"
-  }, "The focus color of this select component is being altered by ThemeContext, independent from the custom theme"), _react["default"].createElement(_grommet.Select, {
+  }, "The focus color of this select component is being altered by ThemeContext, independent from the custom theme"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     alignSelf: "center",
     placeholder: "Select",
     value: valueBlue,
@@ -81,5 +81,5 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
 };
 
 (0, _react2.storiesOf)('Theme', module).add('ThemeContext.Extend', function () {
-  return _react["default"].createElement(GlobalThemeWithThemeContext, null);
+  return /*#__PURE__*/_react["default"].createElement(GlobalThemeWithThemeContext, null);
 });

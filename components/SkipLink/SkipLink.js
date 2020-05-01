@@ -20,9 +20,9 @@ var SkipLink = function SkipLink(_ref) {
       label = _ref.label,
       rest = _objectWithoutPropertiesLoose(_ref, ["id", "label"]);
 
-  return _react["default"].createElement(_Box.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     margin: "small"
-  }, _react["default"].createElement(_Anchor.Anchor, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_Anchor.Anchor, _extends({
     href: "#" + id,
     label: label
   }, rest)));

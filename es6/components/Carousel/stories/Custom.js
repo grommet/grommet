@@ -28,31 +28,31 @@ var CustomCarousel = function CustomCarousel(_ref) {
   var controls = _ref.controls,
       rest = _objectWithoutPropertiesLoose(_ref, ["controls"]);
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Carousel, _extends({
+  }, /*#__PURE__*/React.createElement(Carousel, _extends({
     controls: controls
-  }, rest), React.createElement(Box, {
+  }, rest), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
   })))));
 };
 
 storiesOf('Carousel', module).add('Custom Controls', function () {
-  return React.createElement(CustomCarousel, null);
+  return /*#__PURE__*/React.createElement(CustomCarousel, null);
 });

@@ -87,7 +87,7 @@ var Layer = (0, _react.forwardRef)(function (props, ref) {
       }
     };
   }, [animate, animation, containerTarget, layerContainer, originalFocusedElement]);
-  return layerContainer ? (0, _reactDom.createPortal)(_react["default"].createElement(_LayerContainer.LayerContainer, _extends({
+  return layerContainer ? (0, _reactDom.createPortal)( /*#__PURE__*/_react["default"].createElement(_LayerContainer.LayerContainer, _extends({
     ref: ref
   }, props)), layerContainer) : null;
 });

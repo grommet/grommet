@@ -26,7 +26,7 @@ var src = '';
 describe('Avatar', function () {
   afterEach(_react2.cleanup);
   test('renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Avatar, null), _react["default"].createElement(_.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Avatar, null), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       id: "test id",
       name: "test name"
     })));
@@ -35,15 +35,15 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('size renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       size: "xsmall",
       src: src
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       size: "small",
       src: src
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       size: "large",
       src: src
     })));
@@ -52,22 +52,22 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('round renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src,
       round: false
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src,
       round: "xsmall"
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src,
       round: "small"
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src,
       round: "medium"
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src,
       round: "large"
-    }), _react["default"].createElement(_.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src
     })));
 
@@ -75,14 +75,14 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('text renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       background: "dark-2"
-    }, _react["default"].createElement(_Text.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       alignSelf: "center",
       size: "xlarge"
-    }, "R")), _react["default"].createElement(_.Avatar, {
+    }, "R")), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       background: "brand"
-    }, _react["default"].createElement(_Text.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       alignSelf: "center",
       size: "xlarge"
     }, "SY"))));
@@ -91,8 +91,8 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('icon renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Avatar, {
-      src: _react["default"].createElement(_grommetIcons.Favorite, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Avatar, {
+      src: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Favorite, {
         color: "accent-2"
       }),
       background: "accent-4"
@@ -102,18 +102,18 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('stack renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_Stack.Stack, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_Stack.Stack, {
       anchor: "bottom-right"
-    }, _react["default"].createElement(_Box.Box, null, _react["default"].createElement(_Box.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, null, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row"
-    }, _react["default"].createElement(_.Avatar, {
+    }, /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       size: "xsmall",
       src: src
-    }), _react["default"].createElement(_Box.Box, {
+    }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: "xxsmall"
-    })), _react["default"].createElement(_Box.Box, {
+    })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: "xxsmall"
-    })), _react["default"].createElement(_.Avatar, {
+    })), /*#__PURE__*/_react["default"].createElement(_.Avatar, {
       src: src,
       size: "42px"
     }))));

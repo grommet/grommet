@@ -9,15 +9,15 @@ var Example = function Example() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     placeholder: "Select",
     multiple: true,
     closeOnChange: false,
@@ -31,5 +31,5 @@ var Example = function Example() {
 };
 
 storiesOf('Select', module).add('Multiple', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

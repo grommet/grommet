@@ -19,12 +19,12 @@ var ChildrenRadioButtonGroup = function ChildrenRadioButtonGroup() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.RadioButtonGroup, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
     name: "radio",
     direction: "row",
     gap: "xsmall",
@@ -39,13 +39,13 @@ var ChildrenRadioButtonGroup = function ChildrenRadioButtonGroup() {
     var Icon = option === 'asc' ? _grommetIcons.Ascend : _grommetIcons.Descend;
     var background;
     if (checked) background = 'brand';else if (hover) background = 'light-4';else background = 'light-2';
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: background,
       pad: "xsmall"
-    }, _react["default"].createElement(Icon, null));
+    }, /*#__PURE__*/_react["default"].createElement(Icon, null));
   })));
 };
 
 (0, _react2.storiesOf)('RadioButtonGroup', module).add('Children', function () {
-  return _react["default"].createElement(ChildrenRadioButtonGroup, null);
+  return /*#__PURE__*/_react["default"].createElement(ChildrenRadioButtonGroup, null);
 });

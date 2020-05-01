@@ -5,39 +5,39 @@ import { Box, Button, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var IconLabel = function IconLabel() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     round: "full",
     overflow: "hidden",
     background: "neutral-1"
-  }, React.createElement(Button, {
-    icon: React.createElement(Add, null),
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, null),
     hoverIndicator: true,
     onClick: function onClick() {}
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "small"
-  }, React.createElement(Button, {
-    icon: React.createElement(Add, null),
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, null),
     label: "Add",
     onClick: function onClick() {},
     primary: true
-  }), React.createElement(Button, {
-    icon: React.createElement(Add, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, null),
     label: "Add",
     onClick: function onClick() {}
-  }), React.createElement(Button, {
-    icon: React.createElement(Add, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, null),
     label: "Add",
     gap: "xlarge",
     onClick: function onClick() {}
-  }), React.createElement(Button, {
-    icon: React.createElement(Add, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, null),
     label: "500px gap",
     gap: "500px",
     onClick: function onClick() {}
@@ -45,5 +45,5 @@ var IconLabel = function IconLabel() {
 };
 
 storiesOf('Button', module).add('Icon Label', function () {
-  return React.createElement(IconLabel, null);
+  return /*#__PURE__*/React.createElement(IconLabel, null);
 });

@@ -43,9 +43,7 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 var FullGlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject());
 
-var Grommet =
-/*#__PURE__*/
-function (_Component) {
+var Grommet = /*#__PURE__*/function (_Component) {
   _inheritsLoose(Grommet, _Component);
 
   function Grommet() {
@@ -171,15 +169,15 @@ function (_Component) {
     // On first render we try to guess otherwise set the default as a tablet
 
     var responsive = stateResponsive || this.deviceResponsive() || theme.global.deviceBreakpoints.tablet;
-    return _react["default"].createElement(_contexts.ThemeContext.Provider, {
+    return /*#__PURE__*/_react["default"].createElement(_contexts.ThemeContext.Provider, {
       value: theme
-    }, _react["default"].createElement(_contexts.ResponsiveContext.Provider, {
+    }, /*#__PURE__*/_react["default"].createElement(_contexts.ResponsiveContext.Provider, {
       value: responsive
-    }, _react["default"].createElement(_contexts.ContainerTargetContext.Provider, {
+    }, /*#__PURE__*/_react["default"].createElement(_contexts.ContainerTargetContext.Provider, {
       value: containerTarget
-    }, _react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
+    }, /*#__PURE__*/_react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
       full: full
-    }, rest), children), full && _react["default"].createElement(FullGlobalStyle, null))));
+    }, rest), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null))));
   };
 
   return Grommet;

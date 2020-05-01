@@ -41,32 +41,32 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
 });
 
 var CustomAnchor = function CustomAnchor() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-1",
     pad: "large",
     fill: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     pad: {
       vertical: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Nav, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
     width: "small",
     margin: {
       right: 'large'
     }
   }, navItems.map(function (item) {
-    return _react["default"].createElement(_grommet.Anchor, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
       href: item.href,
       label: item.label,
       key: item.label
     });
-  })), _react["default"].createElement(_grommet.Main, null, "Place main content here"))));
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, "Place main content here"))));
 };
 
 (0, _react2.storiesOf)('Nav', module).add('Custom Anchor', function () {
-  return _react["default"].createElement(CustomAnchor, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomAnchor, null);
 });

@@ -113,14 +113,14 @@ var fixedGridAreas = {
 var animals = ['dog', 'cat', 'pig', 'cow', 'giraffe', 'elephant', 'dinosaur', 'chicken', 'duck', 'tiger', 'lion', 'cheetah']; // Create box for each animal
 
 var listAnimalsBoxes = animals.map(function (animalName) {
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     elevation: "large",
     key: animalName,
     background: "light-3",
     flex: false,
     justify: "center",
     align: "center"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
   }, animalName));
 });
@@ -132,7 +132,7 @@ var Responsive = function Responsive(_ref) {
       areas = _ref.areas,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "overrideColumns", "overrideRows", "areas"]);
 
-  return _react["default"].createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
     // Take into consideration if not array is sent but a simple string
     var columnsVal = columns;
 
@@ -154,7 +154,7 @@ var Responsive = function Responsive(_ref) {
 
     var areasVal = areas;
     if (areas && !Array.isArray(areas)) areasVal = areas[size];
-    return _react["default"].createElement(_grommet.Grid, _extends({}, props, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Grid, _extends({}, props, {
       areas: !areasVal ? undefined : areasVal,
       rows: !rowsVal ? size : rowsVal,
       columns: !columnsVal ? size : columnsVal
@@ -163,32 +163,32 @@ var Responsive = function Responsive(_ref) {
 };
 
 var ResponsiveGrid = function ResponsiveGrid() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints
-  }, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "Resize me."), _react["default"].createElement(Responsive, {
+  }, "Resize me."), /*#__PURE__*/_react["default"].createElement(Responsive, {
     rows: rows,
     columns: columns,
     gap: "small",
     areas: fixedGridAreas,
     margin: "medium"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gridArea: "header",
     background: "neutral-2",
     justify: "center",
     align: "center"
-  }, _react["default"].createElement("strong", null, "Box 1")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "Box 1")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gridArea: "test",
     background: "neutral-3",
     justify: "center",
     align: "center"
-  }, _react["default"].createElement("strong", null, "Box 2")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "Box 2")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gridArea: "test1",
     background: "neutral-4",
     justify: "center",
     align: "center"
-  }, _react["default"].createElement("strong", null, "Box 3"))), _react["default"].createElement(Responsive, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "Box 3"))), /*#__PURE__*/_react["default"].createElement(Responsive, {
     gap: "small",
     margin: "medium",
     columns: "medium",
@@ -197,5 +197,5 @@ var ResponsiveGrid = function ResponsiveGrid() {
 };
 
 (0, _react2.storiesOf)('Grid', module).add('Responsive Grid', function () {
-  return _react["default"].createElement(ResponsiveGrid, null);
+  return /*#__PURE__*/_react["default"].createElement(ResponsiveGrid, null);
 });

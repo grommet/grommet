@@ -3,9 +3,9 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableHeader } from '../Table/StyledTable';
 
 var TableHeader = function TableHeader(props) {
-  return React.createElement(TableContext.Provider, {
+  return /*#__PURE__*/React.createElement(TableContext.Provider, {
     value: "header"
-  }, React.createElement(StyledTableHeader, props));
+  }, /*#__PURE__*/React.createElement(StyledTableHeader, props));
 };
 
 var TableHeaderDoc;

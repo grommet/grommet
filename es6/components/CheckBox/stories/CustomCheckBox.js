@@ -49,12 +49,12 @@ var ThemedCheckBox = function ThemedCheckBox(props) {
       checked = _useState[0],
       setChecked = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: deepMerge(grommet, customCheckBoxTheme)
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(CheckBox, _extends({}, props, {
+  }, /*#__PURE__*/React.createElement(CheckBox, _extends({}, props, {
     label: "Choice",
     checked: checked,
     onChange: function onChange(event) {
@@ -64,5 +64,5 @@ var ThemedCheckBox = function ThemedCheckBox(props) {
 };
 
 storiesOf('CheckBox', module).add('Custom', function () {
-  return React.createElement(ThemedCheckBox, null);
+  return /*#__PURE__*/React.createElement(ThemedCheckBox, null);
 });

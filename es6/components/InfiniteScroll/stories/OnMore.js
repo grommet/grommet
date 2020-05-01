@@ -19,27 +19,27 @@ var OnMoreInfiniteScroll = function OnMoreInfiniteScroll(_ref) {
     }, 1000);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, null, React.createElement(InfiniteScroll, _extends({
+  }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(InfiniteScroll, _extends({
     items: items,
     onMore: onMore
   }, props), function (item) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       key: item,
       pad: "medium",
       border: {
         side: 'bottom'
       },
       align: "center"
-    }, React.createElement(Text, null, item));
+    }, /*#__PURE__*/React.createElement(Text, null, item));
   })));
 };
 
 storiesOf('InfiniteScroll', module).add('onMore', function () {
-  return React.createElement(OnMoreInfiniteScroll, null);
+  return /*#__PURE__*/React.createElement(OnMoreInfiniteScroll, null);
 }).add('onMore step', function () {
-  return React.createElement(OnMoreInfiniteScroll, {
+  return /*#__PURE__*/React.createElement(OnMoreInfiniteScroll, {
     step: 75
   });
 });

@@ -4,13 +4,13 @@ import { Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Color = function Color() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     color: "accent-1"
   }, "Colored Text"));
 };
 
 storiesOf('Text', module).add('Color', function () {
-  return React.createElement(Color, null);
+  return /*#__PURE__*/React.createElement(Color, null);
 });

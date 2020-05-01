@@ -8,7 +8,7 @@ var Table = function Table(_ref) {
       children = _ref.children,
       rest = _objectWithoutPropertiesLoose(_ref, ["caption", "children"]);
 
-  return React.createElement(StyledTable, rest, caption ? React.createElement(StyledTableDataCaption, null, caption) : null, children);
+  return /*#__PURE__*/React.createElement(StyledTable, rest, caption ? /*#__PURE__*/React.createElement(StyledTableDataCaption, null, caption) : null, children);
 };
 
 var TableDoc;

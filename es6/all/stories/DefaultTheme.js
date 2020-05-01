@@ -12,12 +12,12 @@ extendDefaultTheme(deepMerge(base, {
 }));
 
 var CustomDefaultProps = function CustomDefaultProps() {
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     background: "brand",
     pad: "small"
   }, "Hello");
 };
 
 storiesOf('Theme', module).add('Extend Default', function () {
-  return React.createElement(CustomDefaultProps, null);
+  return /*#__PURE__*/React.createElement(CustomDefaultProps, null);
 });

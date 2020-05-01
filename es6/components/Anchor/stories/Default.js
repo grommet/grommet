@@ -4,16 +4,16 @@ import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Default = function Default() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Anchor, {
     href: "#"
   }, "Link")));
 };
 
 storiesOf('Anchor', module).add('Default', function () {
-  return React.createElement(Default, null);
+  return /*#__PURE__*/React.createElement(Default, null);
 });

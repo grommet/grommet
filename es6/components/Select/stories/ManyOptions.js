@@ -5,9 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { Box, CheckBox, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var Option =
-/*#__PURE__*/
-function (_PureComponent) {
+var Option = /*#__PURE__*/function (_PureComponent) {
   _inheritsLoose(Option, _PureComponent);
 
   function Option() {
@@ -20,12 +18,12 @@ function (_PureComponent) {
     var _this$props = this.props,
         value = _this$props.value,
         selected = _this$props.selected;
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       gap: "small",
       align: "center",
       pad: "xsmall"
-    }, React.createElement(CheckBox, {
+    }, /*#__PURE__*/React.createElement(CheckBox, {
       tabIndex: "-1",
       checked: selected,
       onChange: function onChange() {}
@@ -53,15 +51,15 @@ var ManyOptions = function ManyOptions() {
       options = _React$useState2[0],
       setOptions = _React$useState2[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     multiple: true,
     closeOnChange: false,
     placeholder: "select an option...",
@@ -92,7 +90,7 @@ var ManyOptions = function ManyOptions() {
       setSelected(nextSelected);
     }
   }, function (option, index) {
-    return React.createElement(Option, {
+    return /*#__PURE__*/React.createElement(Option, {
       value: option,
       selected: selected.indexOf(index) !== -1
     });
@@ -100,5 +98,5 @@ var ManyOptions = function ManyOptions() {
 };
 
 storiesOf('Select', module).add('Lots of options', function () {
-  return React.createElement(ManyOptions, null);
+  return /*#__PURE__*/React.createElement(ManyOptions, null);
 });

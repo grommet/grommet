@@ -20,28 +20,28 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
     setRange(values);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Stack, null, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, {
     direction: direction === 'vertical' ? 'column' : 'row',
     justify: "between"
   }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       key: value,
       width: "xxsmall",
       height: "xxsmall",
       align: "center",
       pad: "small",
       border: false
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       style: {
         fontFamily: 'monospace'
       }
     }, value));
-  })), React.createElement(RangeSelector, _extends({
+  })), /*#__PURE__*/React.createElement(RangeSelector, _extends({
     direction: direction,
     min: 10,
     max: 20,
@@ -52,13 +52,13 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
 };
 
 storiesOf('RangeSelector', module).add('Simple', function () {
-  return React.createElement(SimpleRangeSelector, null);
+  return /*#__PURE__*/React.createElement(SimpleRangeSelector, null);
 }).add('Step', function () {
-  return React.createElement(SimpleRangeSelector, {
+  return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
     step: 2
   });
 }).add('Vertical', function () {
-  return React.createElement(SimpleRangeSelector, {
+  return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
     direction: "vertical"
   });
 });

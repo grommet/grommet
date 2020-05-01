@@ -17,18 +17,18 @@ var Stacked = function Stacked() {
 
   var GroupedGravatar = function GroupedGravatar(_ref) {
     var border = _ref.border;
-    return React.createElement(Stack, {
+    return /*#__PURE__*/React.createElement(Stack, {
       anchor: "left"
-    }, React.createElement(Avatar, {
+    }, /*#__PURE__*/React.createElement(Avatar, {
       src: bryan,
       border: border
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: eric,
       border: border,
       margin: {
         left: 'medium'
       }
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: shimi,
       border: border,
       margin: {
@@ -38,19 +38,19 @@ var Stacked = function Stacked() {
   };
 
   var GroupedGravatarCentered = function GroupedGravatarCentered() {
-    return React.createElement(Stack, {
+    return /*#__PURE__*/React.createElement(Stack, {
       anchor: "right",
       margin: {
         left: 'xlarge'
       }
-    }, React.createElement(Avatar, {
+    }, /*#__PURE__*/React.createElement(Avatar, {
       src: bryan
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: shimi,
       margin: {
         right: 'large'
       }
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: eric,
       margin: {
         right: 'medium'
@@ -59,21 +59,21 @@ var Stacked = function Stacked() {
   };
 
   var GroupedGravatarRTL = function GroupedGravatarRTL() {
-    return React.createElement(Stack, {
+    return /*#__PURE__*/React.createElement(Stack, {
       anchor: "right",
       margin: {
         left: 'xlarge'
       }
-    }, React.createElement(Avatar, {
+    }, /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: shimi
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: eric,
       margin: {
         right: 'large'
       }
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: bryan,
       margin: {
@@ -83,65 +83,65 @@ var Stacked = function Stacked() {
   };
 
   var GroupedIcons = function GroupedIcons() {
-    return React.createElement(Stack, {
+    return /*#__PURE__*/React.createElement(Stack, {
       anchor: "left"
-    }, React.createElement(Avatar, {
+    }, /*#__PURE__*/React.createElement(Avatar, {
       background: "accent-1"
-    }, React.createElement(UserNew, {
+    }, /*#__PURE__*/React.createElement(UserNew, {
       color: "accent-2"
-    })), React.createElement(Avatar, {
+    })), /*#__PURE__*/React.createElement(Avatar, {
       background: "accent-2",
       margin: {
         left: 'medium'
       }
-    }, React.createElement(UserFemale, {
+    }, /*#__PURE__*/React.createElement(UserFemale, {
       color: "accent-1"
-    })), React.createElement(Avatar, {
+    })), /*#__PURE__*/React.createElement(Avatar, {
       background: "accent-4",
       margin: {
         left: 'large'
       }
-    }, React.createElement(Favorite, {
+    }, /*#__PURE__*/React.createElement(Favorite, {
       color: "accent-2"
     })));
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     gap: "medium",
     pad: "large",
     background: "dark-1"
-  }, React.createElement(Stack, {
+  }, /*#__PURE__*/React.createElement(Stack, {
     anchor: "bottom-right"
-  }, React.createElement(Box, null, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
     direction: "row"
-  }, React.createElement(Avatar, {
+  }, /*#__PURE__*/React.createElement(Avatar, {
     size: "xlarge",
     src: shimi,
     border: borderSmall
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     pad: "xxsmall"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     pad: "xxsmall"
-  })), React.createElement(Avatar, {
+  })), /*#__PURE__*/React.createElement(Avatar, {
     src: eric,
     border: borderSmall
-  })), React.createElement(Stack, {
+  })), /*#__PURE__*/React.createElement(Stack, {
     anchor: "top-right"
-  }, React.createElement(Avatar, {
+  }, /*#__PURE__*/React.createElement(Avatar, {
     src: shimi
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     round: true,
     background: "accent-4",
     responsive: false
-  })), React.createElement(GroupedIcons, null), React.createElement(GroupedGravatar, {
+  })), /*#__PURE__*/React.createElement(GroupedIcons, null), /*#__PURE__*/React.createElement(GroupedGravatar, {
     border: borderSmall
-  }), React.createElement(GroupedGravatarCentered, null), React.createElement(GroupedGravatarRTL, null)));
+  }), /*#__PURE__*/React.createElement(GroupedGravatarCentered, null), /*#__PURE__*/React.createElement(GroupedGravatarRTL, null)));
 };
 
 storiesOf('Avatar', module).add('Stacked', function () {
-  return React.createElement(Stacked, null);
+  return /*#__PURE__*/React.createElement(Stacked, null);
 });

@@ -10,7 +10,7 @@ import { Projects } from "grommet-icons/es6/icons/Projects";
 import { StatusInfoSmall } from "grommet-icons/es6/icons/StatusInfoSmall";
 
 var SidebarHeader = function SidebarHeader() {
-  return React.createElement(Avatar, {
+  return /*#__PURE__*/React.createElement(Avatar, {
     border: {
       size: 'small',
       color: 'accent-2'
@@ -20,66 +20,66 @@ var SidebarHeader = function SidebarHeader() {
 };
 
 var SidebarFooter = function SidebarFooter() {
-  return React.createElement(Nav, {
+  return /*#__PURE__*/React.createElement(Nav, {
     gap: "small"
-  }, React.createElement(Button, {
-    icon: React.createElement(Chat, null),
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Chat, null),
     hoverIndicator: true
-  }), React.createElement(Button, {
-    icon: React.createElement(Help, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Help, null),
     hoverIndicator: true
   }));
 };
 
 var MainNavigation = function MainNavigation() {
-  return React.createElement(Nav, {
+  return /*#__PURE__*/React.createElement(Nav, {
     gap: "small"
-  }, React.createElement(Button, {
-    icon: React.createElement(StatusInfoSmall, null),
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(StatusInfoSmall, null),
     hoverIndicator: true
-  }), React.createElement(Button, {
-    icon: React.createElement(Projects, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Projects, null),
     hoverIndicator: true
-  }), React.createElement(Button, {
-    icon: React.createElement(Clock, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Clock, null),
     hoverIndicator: true
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     border: {
       color: 'white',
       side: 'bottom'
     },
     hoverIndicator: true
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     gap: "small",
     pad: {
       vertical: 'medium'
     },
     hoverIndicator: true
-  }, React.createElement(Button, {
-    icon: React.createElement(Analytics, null),
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Analytics, null),
     hoverIndicator: true
-  }), React.createElement(Button, {
-    icon: React.createElement(Configure, null),
+  }), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Configure, null),
     hoverIndicator: true
   })));
 };
 
 export var SidebarIcons = function SidebarIcons() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     height: {
       min: '100%'
     }
-  }, React.createElement(Sidebar, {
+  }, /*#__PURE__*/React.createElement(Sidebar, {
     background: "accent-1",
-    header: React.createElement(SidebarHeader, null),
-    footer: React.createElement(SidebarFooter, null)
-  }, React.createElement(MainNavigation, null))));
+    header: /*#__PURE__*/React.createElement(SidebarHeader, null),
+    footer: /*#__PURE__*/React.createElement(SidebarFooter, null)
+  }, /*#__PURE__*/React.createElement(MainNavigation, null))));
 };
 storiesOf('Sidebar', module).add('Icons', function () {
-  return React.createElement(SidebarIcons, null);
+  return /*#__PURE__*/React.createElement(SidebarIcons, null);
 });

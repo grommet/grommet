@@ -27,17 +27,17 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
     return setValue(event.suggestion);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     value: value,
     dropProps: {
       height: 'small'
@@ -49,5 +49,5 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
 };
 
 (0, _react2.storiesOf)('TextInput', module).add('Suggestions', function () {
-  return _react["default"].createElement(SuggestionsTextInput, null);
+  return /*#__PURE__*/_react["default"].createElement(SuggestionsTextInput, null);
 });

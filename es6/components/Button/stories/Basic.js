@@ -5,38 +5,38 @@ import { storiesOf } from '@storybook/react';
 import { grommet, Box, Button, Grommet } from 'grommet';
 
 var BasicButtons = function BasicButtons(props) {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium"
-  }, React.createElement(Button, _extends({
+  }, /*#__PURE__*/React.createElement(Button, _extends({
     label: "Default",
     onClick: function onClick() {}
-  }, props))), React.createElement(Box, {
+  }, props))), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Anchor",
     href: "#"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium"
-  }, React.createElement(Button, _extends({
+  }, /*#__PURE__*/React.createElement(Button, _extends({
     disabled: true,
     label: "Disabled",
     onClick: function onClick() {}
-  }, props))), React.createElement(Box, {
+  }, props))), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium"
-  }, React.createElement(Button, _extends({
+  }, /*#__PURE__*/React.createElement(Button, _extends({
     primary: true,
     label: "Primary",
     onClick: function onClick() {}
-  }, props))), React.createElement(Box, {
+  }, props))), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium"
-  }, React.createElement(Button, _extends({
+  }, /*#__PURE__*/React.createElement(Button, _extends({
     primary: true,
     label: "Active Primary",
     active: true,
@@ -45,5 +45,5 @@ var BasicButtons = function BasicButtons(props) {
 };
 
 storiesOf('Button', module).add('Basic', function () {
-  return React.createElement(BasicButtons, null);
+  return /*#__PURE__*/React.createElement(BasicButtons, null);
 });

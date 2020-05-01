@@ -39,7 +39,7 @@ var Image = (0, _react.forwardRef)(function (_ref, ref) {
   var extraProps = {
     onError: (onError || fallback) && handleError
   };
-  return _react["default"].createElement(_StyledImage.StyledImage, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledImage.StyledImage, _extends({
     "aria-label": a11yTitle
   }, rest, extraProps, {
     ref: ref,

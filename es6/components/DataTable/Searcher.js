@@ -23,16 +23,16 @@ var Searcher = function Searcher(_ref) {
       inputRef.current.focus();
     }
   }, [needsFocus, inputRef]);
-  return filtering === property ? React.createElement(Keyboard, {
+  return filtering === property ? /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: function onEsc() {
       return onFiltering(undefined);
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     flex: true,
     pad: {
       horizontal: 'small'
     }
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     name: "search-" + property,
     ref: inputRef,
     value: filters[property],
@@ -42,16 +42,16 @@ var Searcher = function Searcher(_ref) {
     onBlur: function onBlur() {
       return onFiltering(undefined);
     }
-  }))) : React.createElement(React.Fragment, null, filters[property] ? React.createElement(Box, {
+  }))) : /*#__PURE__*/React.createElement(React.Fragment, null, filters[property] ? /*#__PURE__*/React.createElement(Box, {
     flex: false,
     pad: {
       horizontal: 'small'
     },
     direction: "row",
     align: "center"
-  }, React.createElement(Text, null, filters[property])) : null, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Text, null, filters[property])) : null, /*#__PURE__*/React.createElement(Button, {
     a11yTitle: "focus-search-" + property,
-    icon: React.createElement(FormSearch, {
+    icon: /*#__PURE__*/React.createElement(FormSearch, {
       color: normalizeColor(filtering === property ? 'brand' : 'border', theme)
     }),
     hoverIndicator: true,

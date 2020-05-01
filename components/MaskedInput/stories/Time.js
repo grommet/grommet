@@ -15,17 +15,17 @@ var TimeMaskedInput = function TimeMaskedInput() {
       value = _React$useState[0],
       setValue = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.MaskedInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     mask: [{
       length: [1, 2],
       options: Array.from({
@@ -58,5 +58,5 @@ var TimeMaskedInput = function TimeMaskedInput() {
 };
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Time', function () {
-  return _react["default"].createElement(TimeMaskedInput, null);
+  return /*#__PURE__*/_react["default"].createElement(TimeMaskedInput, null);
 });

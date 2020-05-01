@@ -81,7 +81,7 @@ var Resizer = function Resizer(_ref) {
     remove();
     return undefined;
   }, [active, onMouseMove, onMouseUp]);
-  return _react["default"].createElement(ResizerBox, _extends({
+  return /*#__PURE__*/_react["default"].createElement(ResizerBox, _extends({
     ref: ref,
     flex: false,
     responsive: false,

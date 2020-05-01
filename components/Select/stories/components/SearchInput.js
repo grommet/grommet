@@ -27,11 +27,11 @@ var SearchInput = function SearchInput(props) {
       clearTimeout(focusTimeout);
     };
   }, []);
-  return _react["default"].createElement(_SearchInputContext.SearchInputContext.Consumer, null, function (_ref) {
+  return /*#__PURE__*/_react["default"].createElement(_SearchInputContext.SearchInputContext.Consumer, null, function (_ref) {
     var searching = _ref.searching;
-    return _react["default"].createElement(_SearchBorderBox.SearchBorderBox, {
+    return /*#__PURE__*/_react["default"].createElement(_SearchBorderBox.SearchBorderBox, {
       searching: searching
-    }, _react["default"].createElement(_.TextInput, _extends({}, props, {
+    }, /*#__PURE__*/_react["default"].createElement(_.TextInput, _extends({}, props, {
       plain: true,
       ref: textInputRef
     })));

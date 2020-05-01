@@ -4,19 +4,19 @@ import { Box, Grommet, Clock } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var AnalogClock = function AnalogClock() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Clock, {
+  }, /*#__PURE__*/React.createElement(Clock, {
     type: "analog"
   })));
 };
 
 storiesOf('Clock', module).add('Analog', function () {
-  return React.createElement(AnalogClock, null);
+  return /*#__PURE__*/React.createElement(AnalogClock, null);
 }, {
   chromatic: {
     disable: true

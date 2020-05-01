@@ -11,19 +11,19 @@ var _ = require("../..");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // import { mount } from 'enzyme';
-var CONTENTS = [_react["default"].createElement("source", {
+var CONTENTS = [/*#__PURE__*/_react["default"].createElement("source", {
   key: "source"
-}), _react["default"].createElement("track", {
+}), /*#__PURE__*/_react["default"].createElement("track", {
   key: "track"
 })];
 test('Video renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Video, null, CONTENTS)));
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Video, null, CONTENTS)));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Video autoPlay renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Video, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Video, {
     autoPlay: true
   }, CONTENTS)));
 
@@ -31,7 +31,7 @@ test('Video autoPlay renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Video loop renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Video, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Video, {
     loop: true
   }, CONTENTS)));
 
@@ -39,7 +39,7 @@ test('Video loop renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Video mute renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Video, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Video, {
     mute: true
   }, CONTENTS)));
 
@@ -47,9 +47,9 @@ test('Video mute renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Video controls renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Video, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Video, {
     controls: "over"
-  }, CONTENTS), _react["default"].createElement(_.Video, {
+  }, CONTENTS), /*#__PURE__*/_react["default"].createElement(_.Video, {
     controls: "below"
   }, CONTENTS)));
 
@@ -57,9 +57,9 @@ test('Video controls renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Video fit renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Video, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Video, {
     fit: "cover"
-  }, CONTENTS), _react["default"].createElement(_.Video, {
+  }, CONTENTS), /*#__PURE__*/_react["default"].createElement(_.Video, {
     fit: "contain"
   }, CONTENTS)));
 

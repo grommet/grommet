@@ -55,13 +55,13 @@ var Accordion = forwardRef(function (_ref, ref) {
     }
   };
 
-  return React.createElement(Box, _extends({
+  return /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     role: "tablist"
   }, rest), Children.toArray(children).filter(function (child) {
     return child;
   }).map(function (child, index) {
-    return React.createElement(AccordionContext.Provider, {
+    return /*#__PURE__*/React.createElement(AccordionContext.Provider, {
       // eslint-disable-next-line react/no-array-index-key
       key: index,
       value: {

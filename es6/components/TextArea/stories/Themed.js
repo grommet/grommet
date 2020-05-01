@@ -20,16 +20,16 @@ var ThemedTextArea = function ThemedTextArea() {
     return setValue(event.target.value);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "large",
     height: "medium",
     border: {
       color: 'brand',
       size: 'medium'
     }
-  }, React.createElement(TextArea, {
+  }, /*#__PURE__*/React.createElement(TextArea, {
     value: value,
     onChange: onChange,
     fill: true
@@ -37,5 +37,5 @@ var ThemedTextArea = function ThemedTextArea() {
 };
 
 storiesOf('TextArea', module).add('Themed', function () {
-  return React.createElement(ThemedTextArea, null);
+  return /*#__PURE__*/React.createElement(ThemedTextArea, null);
 });

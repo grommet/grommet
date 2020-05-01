@@ -12,7 +12,7 @@ var src = '';
 describe('Avatar', function () {
   afterEach(cleanup);
   test('renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Avatar, null), React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Avatar, null), /*#__PURE__*/React.createElement(Avatar, {
       id: "test id",
       name: "test name"
     })));
@@ -20,15 +20,15 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('size renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Avatar, {
       size: "xsmall",
       src: src
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       size: "small",
       src: src
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: src
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: src
     })));
@@ -36,36 +36,36 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('round renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Avatar, {
       src: src,
       round: false
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: src,
       round: "xsmall"
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: src,
       round: "small"
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: src,
       round: "medium"
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: src,
       round: "large"
-    }), React.createElement(Avatar, {
+    }), /*#__PURE__*/React.createElement(Avatar, {
       src: src
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('text renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Avatar, {
       background: "dark-2"
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       alignSelf: "center",
       size: "xlarge"
-    }, "R")), React.createElement(Avatar, {
+    }, "R")), /*#__PURE__*/React.createElement(Avatar, {
       background: "brand"
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       alignSelf: "center",
       size: "xlarge"
     }, "SY"))));
@@ -73,8 +73,8 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('icon renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Avatar, {
-      src: React.createElement(Favorite, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Avatar, {
+      src: /*#__PURE__*/React.createElement(Favorite, {
         color: "accent-2"
       }),
       background: "accent-4"
@@ -83,18 +83,18 @@ describe('Avatar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('stack renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Stack, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Stack, {
       anchor: "bottom-right"
-    }, React.createElement(Box, null, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
       direction: "row"
-    }, React.createElement(Avatar, {
+    }, /*#__PURE__*/React.createElement(Avatar, {
       size: "xsmall",
       src: src
-    }), React.createElement(Box, {
+    }), /*#__PURE__*/React.createElement(Box, {
       pad: "xxsmall"
-    })), React.createElement(Box, {
+    })), /*#__PURE__*/React.createElement(Box, {
       pad: "xxsmall"
-    })), React.createElement(Avatar, {
+    })), /*#__PURE__*/React.createElement(Avatar, {
       src: src,
       size: "42px"
     }))));

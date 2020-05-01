@@ -28,37 +28,37 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
     return setChecked(event.target.checked);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.CheckBox, _extends({}, rest, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, _extends({}, rest, {
     checked: checked,
     onChange: onChange
   }))));
 };
 
 (0, _react2.storiesOf)('CheckBox', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleCheckBox, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice"
   });
 }).add('Toggle', function () {
-  return _react["default"].createElement(SimpleCheckBox, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice",
     toggle: true
   });
 }).add('Disabled', function () {
-  return _react["default"].createElement(SimpleCheckBox, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice",
     checked: true,
     disabled: true
   });
 }).add('Reverse', function () {
-  return _react["default"].createElement(SimpleCheckBox, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice",
     reverse: true
   });
 }).add('No Label', function () {
-  return _react["default"].createElement(SimpleCheckBox, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, null);
 });

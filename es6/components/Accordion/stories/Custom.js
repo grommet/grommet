@@ -29,42 +29,42 @@ var CustomAccordion = function CustomAccordion(_ref) {
       multiple = _ref.multiple,
       rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: CustomAccordionTheme
-  }, React.createElement(Box, _extends({}, rest, {
+  }, /*#__PURE__*/React.createElement(Box, _extends({}, rest, {
     pad: "large",
     align: "center",
     justify: "center"
-  }), React.createElement(Accordion, {
+  }), /*#__PURE__*/React.createElement(Accordion, {
     animate: animate,
     multiple: true
-  }, React.createElement(AccordionPanel, {
-    label: React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(AccordionPanel, {
+    label: /*#__PURE__*/React.createElement(Text, {
       size: "large"
     }, "Panel 1 - uses large Text size")
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "light-2",
     height: "small"
-  }, "Important Info")), React.createElement(AccordionPanel, {
-    label: React.createElement(Text, {
+  }, "Important Info")), /*#__PURE__*/React.createElement(AccordionPanel, {
+    label: /*#__PURE__*/React.createElement(Text, {
       size: "xlarge",
       margin: "vertical"
     }, "Panel 2 - uses xlarge Text size")
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "light-2",
     height: "xsmall"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
-  }, "Important Info"))), React.createElement(AccordionPanel, {
+  }, "Important Info"))), /*#__PURE__*/React.createElement(AccordionPanel, {
     label: "Panel 3 - uses custom theme heading level for sizing"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "light-2",
     height: "xsmall"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
   }, "Important Info"))))));
 };
 
 storiesOf('Accordion', module).add('Custom', function () {
-  return React.createElement(CustomAccordion, null);
+  return /*#__PURE__*/React.createElement(CustomAccordion, null);
 });

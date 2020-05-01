@@ -11,19 +11,19 @@ var DATE = '2018-02-22T18:23:34-10:00';
 describe('Clock', function () {
   afterEach(cleanup);
   test('time', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Clock, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Clock, {
       run: false,
       type: "digital",
       time: DURATION
-    }), React.createElement(Clock, {
+    }), /*#__PURE__*/React.createElement(Clock, {
       run: false,
       type: "digital",
       time: TIME
-    }), React.createElement(Clock, {
+    }), /*#__PURE__*/React.createElement(Clock, {
       run: false,
       type: "digital",
       time: TIME2
-    }), React.createElement(Clock, {
+    }), /*#__PURE__*/React.createElement(Clock, {
       run: false,
       type: "digital",
       time: DATE
@@ -31,12 +31,12 @@ describe('Clock', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('hourLimit', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Clock, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Clock, {
       run: false,
       type: "digital",
       time: DURATION,
       hourLimit: 12
-    }), React.createElement(Clock, {
+    }), /*#__PURE__*/React.createElement(Clock, {
       run: false,
       type: "digital",
       time: DURATION,
@@ -45,19 +45,19 @@ describe('Clock', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('run', function (done) {
-    var _render = render(React.createElement(Grommet, null, React.createElement(Clock, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Clock, {
       type: "analog",
       run: "forward",
       time: DURATION
-    }), React.createElement(Clock, {
+    }), /*#__PURE__*/React.createElement(Clock, {
       type: "analog",
       run: "backward",
       time: DURATION
-    }), React.createElement(Clock, {
+    }), /*#__PURE__*/React.createElement(Clock, {
       type: "digital",
       run: "forward",
       time: DURATION
-    }), React.createElement(Clock, {
+    }), /*#__PURE__*/React.createElement(Clock, {
       type: "digital",
       run: "backward",
       time: DURATION
@@ -75,7 +75,7 @@ describe('Clock', function () {
     return ['hours', 'minutes', 'seconds'].forEach(function (precision) {
       return ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(function (size) {
         return test("type " + type + " precision " + precision + " size " + size, function () {
-          var component = renderer.create(React.createElement(Grommet, null, React.createElement(Clock, {
+          var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Clock, {
             run: false,
             type: type,
             precision: precision,

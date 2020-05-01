@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 export var Avatar = function Avatar(_ref) {
   var rest = _extends({}, _ref);
 
-  return React.createElement(Box, _extends({
+  return /*#__PURE__*/React.createElement(Box, _extends({
     height: "xxsmall",
     width: "xxsmall",
     round: "full" // eslint-disable-next-line max-len
@@ -17,23 +17,23 @@ export var Avatar = function Avatar(_ref) {
 };
 
 var Simple = function Simple() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Header, {
+  }, /*#__PURE__*/React.createElement(Header, {
     background: "light-4",
     pad: "small"
-  }, React.createElement(Avatar, null), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Avatar, null), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "medium"
-  }, React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Anchor, {
     label: "Home",
     href: "#"
-  }), React.createElement(Anchor, {
+  }), /*#__PURE__*/React.createElement(Anchor, {
     label: "Profile",
     href: "#"
   }))));
 };
 
 storiesOf('Header', module).add('Simple', function () {
-  return React.createElement(Simple, null);
+  return /*#__PURE__*/React.createElement(Simple, null);
 });

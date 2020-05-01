@@ -28,7 +28,7 @@ var doc = function doc(TextArea) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({
+var themeDoc = _extends(_extends(_extends(_extends({
   'global.colors.border': {
     description: 'The color of the border.',
     type: 'string | { dark: string, light: string }',
@@ -62,6 +62,6 @@ var themeDoc = _extends({
     type: 'number',
     defaultValue: 0.3
   }
-}, _utils.themeDocUtils.focusStyle, {}, _utils.themeDocUtils.placeholderStyle, {}, _utils.themeDocUtils.inputStyle, {}, _utils.themeDocUtils.disabledStyle);
+}, _utils.themeDocUtils.focusStyle), _utils.themeDocUtils.placeholderStyle), _utils.themeDocUtils.inputStyle), _utils.themeDocUtils.disabledStyle);
 
 exports.themeDoc = themeDoc;

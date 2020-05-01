@@ -27,12 +27,12 @@ var CircleMeter = function CircleMeter() {
       clearTimeout(timer.current);
     };
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Meter, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
     type: "circle",
     background: "light-2",
     values: [{
@@ -43,5 +43,5 @@ var CircleMeter = function CircleMeter() {
 };
 
 (0, _react2.storiesOf)('Meter', module).add('Circle', function () {
-  return _react["default"].createElement(CircleMeter, null);
+  return /*#__PURE__*/_react["default"].createElement(CircleMeter, null);
 });

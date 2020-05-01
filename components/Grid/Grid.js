@@ -23,7 +23,7 @@ var Grid = function Grid(props) {
       as = props.as,
       rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "fill", "responsive", "rows", "tag", "as"]);
 
-  return _react["default"].createElement(_StyledGrid.StyledGrid, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledGrid.StyledGrid, _extends({
     a11yTitleProp: a11yTitle,
     as: !as && tag ? tag : as,
     fillContainer: fill,

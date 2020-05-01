@@ -17,13 +17,13 @@ var OnClickItemList = function OnClickItemList() {
       clicked = _React$useState[0],
       setClicked = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "large"
-  }, _react["default"].createElement(_grommet.List, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
     data: _data.data.slice(0, 10),
     onClickItem: function onClickItem(event) {
       return setClicked(event.item);
@@ -32,5 +32,5 @@ var OnClickItemList = function OnClickItemList() {
 };
 
 (0, _react2.storiesOf)('List', module).add('onClickItem', function () {
-  return _react["default"].createElement(OnClickItemList, null);
+  return /*#__PURE__*/_react["default"].createElement(OnClickItemList, null);
 });

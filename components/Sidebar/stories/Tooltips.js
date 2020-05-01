@@ -20,9 +20,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
 var NotificationIcon = function NotificationIcon() {
-  return _react["default"].createElement(_grommet.Stack, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     anchor: "top-right"
-  }, _react["default"].createElement(_grommetIcons.Notification, null), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Notification, null), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "accent-1",
     pad: "xsmall",
     round: true,
@@ -37,9 +37,9 @@ var NotificationAlert = function NotificationAlert() {
       over = _useState[0],
       setOver = _useState[1];
 
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     alignSelf: "center"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     onFocus: function onFocus() {
       return setOver(true);
     },
@@ -52,15 +52,15 @@ var NotificationAlert = function NotificationAlert() {
     onMouseOut: function onMouseOut() {
       return setOver(false);
     },
-    icon: _react["default"].createElement(NotificationIcon, null),
+    icon: /*#__PURE__*/_react["default"].createElement(NotificationIcon, null),
     ref: ref
-  }), ref.current && over && _react["default"].createElement(_grommet.Drop, {
+  }), ref.current && over && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       left: 'right'
     },
     plain: true,
     target: ref.current
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     animation: "jiggle",
     background: "accent-1",
     round: {
@@ -74,33 +74,33 @@ var NotificationAlert = function NotificationAlert() {
 };
 
 var SidebarFooter = function SidebarFooter() {
-  return _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(NotificationAlert, null), _react["default"].createElement(_grommet.Avatar, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(NotificationAlert, null), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     margin: "small",
     src: src
   }));
 };
 
 var SidebarHeader = function SidebarHeader() {
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react["default"].createElement(_grommet.Avatar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     background: "linear-gradient(#6FFFB0 0%, #7D4CDB 100%)",
     border: {
       color: 'white',
       size: 'small'
     },
     round: "medium"
-  }, _react["default"].createElement(_grommetIcons.Gremlin, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Gremlin, {
     color: "white"
   })));
 };
 
 var iconsMap = function iconsMap(color) {
-  return [_react["default"].createElement(_grommetIcons.Analytics, {
+  return [/*#__PURE__*/_react["default"].createElement(_grommetIcons.Analytics, {
     color: color
-  }), _react["default"].createElement(_grommetIcons.Stakeholder, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Stakeholder, {
     color: color
-  }), _react["default"].createElement(_grommetIcons.Calculator, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Calculator, {
     color: color
   })];
 };
@@ -118,9 +118,9 @@ var SidebarButton = function SidebarButton(_ref) {
     opacity: 0.9
   };
   var ref = (0, _react.useRef)();
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "horizontal"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     ref: ref,
     onMouseOver: function onMouseOver() {
       return setOver(true);
@@ -138,19 +138,19 @@ var SidebarButton = function SidebarButton(_ref) {
     plain: true
   }, function (_ref2) {
     var hover = _ref2.hover;
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'small'
       },
       align: "center"
     }, iconsMap(hover ? 'black' : 'white')[index]);
-  }), ref.current && over && _react["default"].createElement(_grommet.Drop, {
+  }), ref.current && over && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       left: 'right'
     },
     target: ref.current,
     plain: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     animation: "slideRight",
     margin: "xsmall",
     pad: "small",
@@ -163,22 +163,22 @@ var SidebarButton = function SidebarButton(_ref) {
 };
 
 var TooltipsSidebar = function TooltipsSidebar() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     height: {
       min: '100%'
     }
-  }, _react["default"].createElement(_Sidebar.Sidebar, {
+  }, /*#__PURE__*/_react["default"].createElement(_Sidebar.Sidebar, {
     overflow: "auto",
     background: "brand",
-    header: _react["default"].createElement(SidebarHeader, null),
-    footer: _react["default"].createElement(SidebarFooter, null),
+    header: /*#__PURE__*/_react["default"].createElement(SidebarHeader, null),
+    footer: /*#__PURE__*/_react["default"].createElement(SidebarFooter, null),
     pad: "none"
-  }, _react["default"].createElement(_grommet.Nav, null, ['Analytics', 'Stakeholder', 'Calculator'].map(function (iconName, index) {
-    return _react["default"].createElement(SidebarButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, null, ['Analytics', 'Stakeholder', 'Calculator'].map(function (iconName, index) {
+    return /*#__PURE__*/_react["default"].createElement(SidebarButton, {
       key: iconName,
       iconName: iconName,
       index: index
@@ -188,5 +188,5 @@ var TooltipsSidebar = function TooltipsSidebar() {
 
 exports.TooltipsSidebar = TooltipsSidebar;
 (0, _react2.storiesOf)('Sidebar', module).add('Tooltips', function () {
-  return _react["default"].createElement(TooltipsSidebar, null);
+  return /*#__PURE__*/_react["default"].createElement(TooltipsSidebar, null);
 });

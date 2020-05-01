@@ -11,18 +11,18 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "neutral-3"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "light-1"
-  }, "This is a grommet component")), _react["default"].createElement(_grommet.ThemeContext.Consumer, null, function (theme) {
-    return _react["default"].createElement("div", {
+  }, "This is a grommet component")), /*#__PURE__*/_react["default"].createElement(_grommet.ThemeContext.Consumer, null, function (theme) {
+    return /*#__PURE__*/_react["default"].createElement("div", {
       style: {
         backgroundColor: theme.global.colors['neutral-3']
       }
-    }, _react["default"].createElement("p", {
+    }, /*#__PURE__*/_react["default"].createElement("p", {
       style: {
         color: theme.global.colors['light-1']
       }
@@ -31,5 +31,5 @@ var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
 };
 
 (0, _react2.storiesOf)('Theme', module).add('External Components', function () {
-  return _react["default"].createElement(ExternalComponentWithTheme, null);
+  return /*#__PURE__*/_react["default"].createElement(ExternalComponentWithTheme, null);
 });

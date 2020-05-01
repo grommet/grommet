@@ -11,17 +11,17 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Example = function Example() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     onChange: function onChange(event) {
       return console.log('Change', event.target.value);
     }
@@ -29,5 +29,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('TextInput', module).add('Uncontrolled', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

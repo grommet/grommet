@@ -23,18 +23,18 @@ var Stacked = function Stacked() {
 
   var GroupedGravatar = function GroupedGravatar(_ref) {
     var border = _ref.border;
-    return _react["default"].createElement(_grommet.Stack, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
       anchor: "left"
-    }, _react["default"].createElement(_grommet.Avatar, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       src: bryan,
       border: border
-    }), _react["default"].createElement(_grommet.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       src: eric,
       border: border,
       margin: {
         left: 'medium'
       }
-    }), _react["default"].createElement(_grommet.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       src: shimi,
       border: border,
       margin: {
@@ -44,19 +44,19 @@ var Stacked = function Stacked() {
   };
 
   var GroupedGravatarCentered = function GroupedGravatarCentered() {
-    return _react["default"].createElement(_grommet.Stack, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
       anchor: "right",
       margin: {
         left: 'xlarge'
       }
-    }, _react["default"].createElement(_grommet.Avatar, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       src: bryan
-    }), _react["default"].createElement(_grommet.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       src: shimi,
       margin: {
         right: 'large'
       }
-    }), _react["default"].createElement(_grommet.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       src: eric,
       margin: {
         right: 'medium'
@@ -65,21 +65,21 @@ var Stacked = function Stacked() {
   };
 
   var GroupedGravatarRTL = function GroupedGravatarRTL() {
-    return _react["default"].createElement(_grommet.Stack, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
       anchor: "right",
       margin: {
         left: 'xlarge'
       }
-    }, _react["default"].createElement(_grommet.Avatar, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "large",
       src: shimi
-    }), _react["default"].createElement(_grommet.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "large",
       src: eric,
       margin: {
         right: 'large'
       }
-    }), _react["default"].createElement(_grommet.Avatar, {
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "large",
       src: bryan,
       margin: {
@@ -89,65 +89,65 @@ var Stacked = function Stacked() {
   };
 
   var GroupedIcons = function GroupedIcons() {
-    return _react["default"].createElement(_grommet.Stack, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
       anchor: "left"
-    }, _react["default"].createElement(_grommet.Avatar, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       background: "accent-1"
-    }, _react["default"].createElement(_grommetIcons.UserNew, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.UserNew, {
       color: "accent-2"
-    })), _react["default"].createElement(_grommet.Avatar, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       background: "accent-2",
       margin: {
         left: 'medium'
       }
-    }, _react["default"].createElement(_grommetIcons.UserFemale, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.UserFemale, {
       color: "accent-1"
-    })), _react["default"].createElement(_grommet.Avatar, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       background: "accent-4",
       margin: {
         left: 'large'
       }
-    }, _react["default"].createElement(_grommetIcons.Favorite, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Favorite, {
       color: "accent-2"
     })));
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     gap: "medium",
     pad: "large",
     background: "dark-1"
-  }, _react["default"].createElement(_grommet.Stack, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     anchor: "bottom-right"
-  }, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row"
-  }, _react["default"].createElement(_grommet.Avatar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "xlarge",
     src: shimi,
     border: borderSmall
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xxsmall"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xxsmall"
-  })), _react["default"].createElement(_grommet.Avatar, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     src: eric,
     border: borderSmall
-  })), _react["default"].createElement(_grommet.Stack, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     anchor: "top-right"
-  }, _react["default"].createElement(_grommet.Avatar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     src: shimi
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     round: true,
     background: "accent-4",
     responsive: false
-  })), _react["default"].createElement(GroupedIcons, null), _react["default"].createElement(GroupedGravatar, {
+  })), /*#__PURE__*/_react["default"].createElement(GroupedIcons, null), /*#__PURE__*/_react["default"].createElement(GroupedGravatar, {
     border: borderSmall
-  }), _react["default"].createElement(GroupedGravatarCentered, null), _react["default"].createElement(GroupedGravatarRTL, null)));
+  }), /*#__PURE__*/_react["default"].createElement(GroupedGravatarCentered, null), /*#__PURE__*/_react["default"].createElement(GroupedGravatarRTL, null)));
 };
 
 (0, _react2.storiesOf)('Avatar', module).add('Stacked', function () {
-  return _react["default"].createElement(Stacked, null);
+  return /*#__PURE__*/_react["default"].createElement(Stacked, null);
 });

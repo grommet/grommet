@@ -62,9 +62,9 @@ var Tab = forwardRef(function (_ref, ref) {
     if (typeof title !== 'string') {
       normalizedTitle = title;
     } else if (active) {
-      normalizedTitle = React.createElement(Text, theme.tab.active, title);
+      normalizedTitle = /*#__PURE__*/React.createElement(Text, theme.tab.active, title);
     } else {
-      normalizedTitle = React.createElement(Text, {
+      normalizedTitle = /*#__PURE__*/React.createElement(Text, {
         color: over ? theme.tab.hover.color : theme.tab.color
       }, title);
     }
@@ -121,7 +121,7 @@ var Tab = forwardRef(function (_ref, ref) {
     };
   }
 
-  return React.createElement(Button, _extends({
+  return /*#__PURE__*/React.createElement(Button, _extends({
     ref: ref,
     plain: true,
     role: "tab",
@@ -144,7 +144,7 @@ var Tab = forwardRef(function (_ref, ref) {
     style: focus && {
       zIndex: 1
     }
-  }), React.createElement(StyledTab, _extends({
+  }), /*#__PURE__*/React.createElement(StyledTab, _extends({
     as: Box,
     plain: plain
   }, withIconStyles, tabStyles), first, second));

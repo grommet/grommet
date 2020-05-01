@@ -4,36 +4,36 @@ import { Grommet, Box, Chart } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var BarChart = function BarChart() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: "bar",
     values: [[10, 20], [20, 30], [30, 15]]
   })));
 };
 
 var LineChart = function LineChart() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: "line",
     values: [20, 30, 15]
   })));
 };
 
 var AreaChart = function AreaChart() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: "area",
     values: [{
       value: [10, 20]
@@ -46,15 +46,15 @@ var AreaChart = function AreaChart() {
 };
 
 var PointChart = function PointChart() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: "point",
     values: [[10, 20], [20, 30], [30, 15]]
-  }), React.createElement(Chart, {
+  }), /*#__PURE__*/React.createElement(Chart, {
     type: "point",
     values: [[10, 20], [20, 30], [30, 15]],
     round: true
@@ -62,11 +62,11 @@ var PointChart = function PointChart() {
 };
 
 storiesOf('Chart', module).add('Bar', function () {
-  return React.createElement(BarChart, null);
+  return /*#__PURE__*/React.createElement(BarChart, null);
 }).add('Line', function () {
-  return React.createElement(LineChart, null);
+  return /*#__PURE__*/React.createElement(LineChart, null);
 }).add('Area', function () {
-  return React.createElement(AreaChart, null);
+  return /*#__PURE__*/React.createElement(AreaChart, null);
 }).add('Point', function () {
-  return React.createElement(PointChart, null);
+  return /*#__PURE__*/React.createElement(PointChart, null);
 });

@@ -18,22 +18,22 @@ var items = [{
 }];
 
 var OnHeader = function OnHeader() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Header, {
+  }, /*#__PURE__*/React.createElement(Header, {
     background: "dark-1",
     pad: "medium"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
     gap: "small"
-  }, React.createElement(Avatar, null), React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Avatar, null), /*#__PURE__*/React.createElement(Anchor, {
     color: "white",
     href: "https://github.com/ShimiSun"
-  }, "ShimiSun")), React.createElement(Nav, {
+  }, "ShimiSun")), /*#__PURE__*/React.createElement(Nav, {
     direction: "row"
   }, items.map(function (item) {
-    return React.createElement(Anchor, {
+    return /*#__PURE__*/React.createElement(Anchor, {
       href: item.href,
       label: item.label,
       key: item.label
@@ -42,5 +42,5 @@ var OnHeader = function OnHeader() {
 };
 
 storiesOf('Nav', module).add('On Header', function () {
-  return React.createElement(OnHeader, null);
+  return /*#__PURE__*/React.createElement(OnHeader, null);
 });

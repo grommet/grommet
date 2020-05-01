@@ -15,17 +15,17 @@ var Example = function Example() {
     }]);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(WorldMap, {
+  }, /*#__PURE__*/React.createElement(WorldMap, {
     onSelectPlace: onSelectPlace,
     places: places
   })));
 };
 
 storiesOf('WorldMap', module).add('Select place', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

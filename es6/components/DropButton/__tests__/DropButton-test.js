@@ -8,19 +8,19 @@ describe('DropButton', function () {
   beforeEach(createPortal);
   afterEach(cleanup);
   test('closed', function () {
-    var component = renderer.create(React.createElement(DropButton, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(DropButton, {
       label: "Dropper",
-      dropContent: React.createElement("div", {
+      dropContent: /*#__PURE__*/React.createElement("div", {
         id: "drop-contents"
       }, "drop contents")
     }));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('opened', function () {
-    var component = renderer.create(React.createElement(DropButton, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(DropButton, {
       label: "Dropper",
       open: true,
-      dropContent: React.createElement("div", {
+      dropContent: /*#__PURE__*/React.createElement("div", {
         id: "drop-contents"
       }, "drop contents")
     }));
@@ -29,9 +29,9 @@ describe('DropButton', function () {
   test('open and close', function () {
     window.scrollTo = jest.fn();
 
-    var _render = render(React.createElement(DropButton, {
+    var _render = render( /*#__PURE__*/React.createElement(DropButton, {
       label: "Dropper",
-      dropContent: React.createElement("div", {
+      dropContent: /*#__PURE__*/React.createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),
@@ -47,9 +47,9 @@ describe('DropButton', function () {
     expect(window.scrollTo).toBeCalled();
   });
   test('close by clicking outside', function (done) {
-    var _render2 = render(React.createElement(DropButton, {
+    var _render2 = render( /*#__PURE__*/React.createElement(DropButton, {
       label: "Dropper",
-      dropContent: React.createElement("div", {
+      dropContent: /*#__PURE__*/React.createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),
@@ -70,10 +70,10 @@ describe('DropButton', function () {
     }, 50);
   });
   test('disabled', function () {
-    var _render3 = render(React.createElement(DropButton, {
+    var _render3 = render( /*#__PURE__*/React.createElement(DropButton, {
       disabled: true,
       label: "Dropper",
-      dropContent: React.createElement("div", {
+      dropContent: /*#__PURE__*/React.createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),
@@ -88,11 +88,11 @@ describe('DropButton', function () {
   test('opened ref', function () {
     var ref = React.createRef();
 
-    var _render4 = render(React.createElement(DropButton, {
+    var _render4 = render( /*#__PURE__*/React.createElement(DropButton, {
       ref: ref,
       open: true,
       label: "Dropper",
-      dropContent: React.createElement("div", {
+      dropContent: /*#__PURE__*/React.createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),
@@ -104,11 +104,11 @@ describe('DropButton', function () {
   test('ref function', function () {
     var ref = jest.fn();
 
-    var _render5 = render(React.createElement(DropButton, {
+    var _render5 = render( /*#__PURE__*/React.createElement(DropButton, {
       ref: ref,
       open: true,
       label: "Dropper",
-      dropContent: React.createElement("div", {
+      dropContent: /*#__PURE__*/React.createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),

@@ -51,7 +51,7 @@ var Header = function Header(_ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  return _react["default"].createElement(_StyledDataTable.StyledDataTableHeader, rest, _react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && _react["default"].createElement(_ExpanderCell.ExpanderCell, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, rest, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
@@ -65,34 +65,34 @@ var Header = function Header(_ref) {
         sortable = _ref2.sortable,
         verticalAlign = _ref2.verticalAlign,
         size = _ref2.size;
-    var content = typeof header === 'string' ? _react["default"].createElement(_Text.Text, null, header) : header;
+    var content = typeof header === 'string' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, null, header) : header;
 
     if (onSort && sortable !== false) {
       var Icon = onSort && sortable !== false && sort && sort.property === property && theme.dataTable.icons[sort.direction !== 'asc' ? 'ascending' : 'descending'];
-      content = _react["default"].createElement(_Button.Button, {
+      content = /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         plain: true,
         fill: "vertical",
         onClick: onSort(property)
-      }, _react["default"].createElement(_Box.Box, {
+      }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         direction: "row",
         align: "center",
         gap: "xsmall"
-      }, content, Icon && _react["default"].createElement(Icon, null)));
+      }, content, Icon && /*#__PURE__*/_react["default"].createElement(Icon, null)));
     }
 
     if (search || onResize) {
-      var resizer = onResize ? _react["default"].createElement(_Resizer.Resizer, {
+      var resizer = onResize ? /*#__PURE__*/_react["default"].createElement(_Resizer.Resizer, {
         property: property,
         onResize: onResize
       }) : null;
-      var searcher = search && filters ? _react["default"].createElement(_Searcher.Searcher, {
+      var searcher = search && filters ? /*#__PURE__*/_react["default"].createElement(_Searcher.Searcher, {
         filtering: filtering,
         filters: filters,
         property: property,
         onFilter: onFilter,
         onFiltering: onFiltering
       }) : null;
-      content = _react["default"].createElement(_Box.Box, {
+      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         direction: "row",
         align: "center",
         justify: !align || align === 'start' ? 'between' : align,
@@ -101,7 +101,7 @@ var Header = function Header(_ref) {
         style: onResize ? {
           position: 'relative'
         } : undefined
-      }, content, searcher && resizer ? _react["default"].createElement(_Box.Box, {
+      }, content, searcher && resizer ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         flex: "shrink",
         direction: "row",
         align: "center",
@@ -109,7 +109,7 @@ var Header = function Header(_ref) {
       }, searcher, resizer) : searcher || resizer);
     }
 
-    return _react["default"].createElement(_TableCell.TableCell, {
+    return /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
       key: property,
       align: align,
       verticalAlign: verticalAlign,

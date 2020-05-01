@@ -45,15 +45,15 @@ var CreateOption = function CreateOption() {
       searchValue = _useState3[0],
       setSearchValue = _useState3[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     size: "medium",
     placeholder: "Select",
     value: value,
@@ -85,5 +85,5 @@ var CreateOption = function CreateOption() {
 };
 
 storiesOf('Select', module).add('Create Option', function () {
-  return React.createElement(CreateOption, null);
+  return /*#__PURE__*/React.createElement(CreateOption, null);
 });

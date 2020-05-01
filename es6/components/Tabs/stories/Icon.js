@@ -37,47 +37,47 @@ var customTheme = deepMerge(grommet, {
 });
 
 var Icon = function Icon() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     fill: true
-  }, React.createElement(Tabs, {
+  }, /*#__PURE__*/React.createElement(Tabs, {
     flex: true
-  }, React.createElement(Tab, {
+  }, /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 1",
-    icon: React.createElement(Attraction, null)
-  }, React.createElement(Box, {
+    icon: /*#__PURE__*/React.createElement(Attraction, null)
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 2",
-    icon: React.createElement(TreeOption, null)
-  }, React.createElement(Box, {
+    icon: /*#__PURE__*/React.createElement(TreeOption, null)
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 3",
-    icon: React.createElement(Car, null)
-  }, React.createElement(Box, {
+    icon: /*#__PURE__*/React.createElement(Car, null)
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
   }))))));
 };
 
 storiesOf('Tabs', module).add('Icon', function () {
-  return React.createElement(Icon, null);
+  return /*#__PURE__*/React.createElement(Icon, null);
 });

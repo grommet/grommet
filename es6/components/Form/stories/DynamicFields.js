@@ -8,16 +8,16 @@ var Example = function Example() {
       haveAlias = _useState[0],
       setHaveAlias = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(Form, {
+  }, /*#__PURE__*/React.createElement(Form, {
     onReset: function onReset(event) {
       return console.log(event);
     },
@@ -25,37 +25,37 @@ var Example = function Example() {
       var value = _ref.value;
       return console.log('Submit', value);
     }
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
     name: "name",
     required: true
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     name: "name"
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     name: "haveAlias"
-  }, React.createElement(CheckBox, {
+  }, /*#__PURE__*/React.createElement(CheckBox, {
     name: "haveAlias",
     label: "alias?",
     checked: haveAlias,
     onChange: function onChange() {
       return setHaveAlias(!haveAlias);
     }
-  })), haveAlias && React.createElement(FormField, {
+  })), haveAlias && /*#__PURE__*/React.createElement(FormField, {
     label: "Alias",
     name: "alias",
     required: true
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     name: "alias"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     type: "reset",
     label: "Reset"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -63,5 +63,5 @@ var Example = function Example() {
 };
 
 storiesOf('Form', module).add('Dynamic fields', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

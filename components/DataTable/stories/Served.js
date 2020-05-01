@@ -51,14 +51,14 @@ var ServedDataTable = function ServedDataTable() {
     setData2(nextData);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.DataTable, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: _data.columns.map(function (column) {
-      return _extends({}, column, {
+      return _extends(_extends({}, column), {}, {
         search: column.property === 'name' || column.property === 'location'
       });
     }),
@@ -68,5 +68,5 @@ var ServedDataTable = function ServedDataTable() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('Served', function () {
-  return _react["default"].createElement(ServedDataTable, null);
+  return /*#__PURE__*/_react["default"].createElement(ServedDataTable, null);
 });

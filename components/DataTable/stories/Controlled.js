@@ -44,16 +44,16 @@ var ControlledDataTable = function ControlledDataTable() {
     }) : []);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "medium"
-  }, _react["default"].createElement(_grommet.DataTable, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: [{
       property: 'checkbox',
       render: function render(datum) {
-        return _react["default"].createElement(_grommet.CheckBox, {
+        return /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
           key: datum.name,
           checked: checked.indexOf(datum.name) !== -1,
           onChange: function onChange(e) {
@@ -61,7 +61,7 @@ var ControlledDataTable = function ControlledDataTable() {
           }
         });
       },
-      header: _react["default"].createElement(_grommet.CheckBox, {
+      header: /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
         checked: checked.length === _data.DATA.length,
         indeterminate: checked.length > 0 && checked.length < _data.DATA.length,
         onChange: onCheckAll
@@ -77,5 +77,5 @@ var ControlledDataTable = function ControlledDataTable() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('Controlled', function () {
-  return _react["default"].createElement(ControlledDataTable, null);
+  return /*#__PURE__*/_react["default"].createElement(ControlledDataTable, null);
 });

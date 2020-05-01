@@ -22,9 +22,7 @@ var customTheme = {
   }
 };
 
-var TestInput =
-/*#__PURE__*/
-function (_Component) {
+var TestInput = /*#__PURE__*/function (_Component) {
   _inheritsLoose(TestInput, _Component);
 
   function TestInput() {
@@ -65,17 +63,17 @@ function (_Component) {
     var drop;
 
     if (showDrop) {
-      drop = React.createElement(Drop, _extends({
+      drop = /*#__PURE__*/React.createElement(Drop, _extends({
         id: "drop-node",
         elevation: elevation,
         target: this.inputRef.current
       }, rest), "this is a test");
     }
 
-    return React.createElement(Grommet, {
+    return /*#__PURE__*/React.createElement(Grommet, {
       theme: theme,
       containerTarget: containerTarget
-    }, React.createElement("input", _extends({
+    }, /*#__PURE__*/React.createElement("input", _extends({
       ref: this.inputRef
     }, inputProps)), drop);
   };
@@ -87,11 +85,11 @@ describe('Drop', function () {
   afterEach(cleanup);
   test('basic', function () {
     window.scrollTo = jest.fn();
-    render(React.createElement(TestInput, null));
+    render( /*#__PURE__*/React.createElement(TestInput, null));
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('align left right top bottom', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       align: {
         left: 'right',
         top: 'bottom'
@@ -100,7 +98,7 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('align right right bottom top', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       align: {
         right: 'right',
         bottom: 'top'
@@ -109,7 +107,7 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('align left left', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       align: {
         left: 'left',
         bottom: 'bottom'
@@ -118,7 +116,7 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('align right left top top', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       align: {
         right: 'left',
         top: 'top'
@@ -127,7 +125,7 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('align right right bottom top', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       align: {
         right: 'right',
         bottom: 'top'
@@ -136,7 +134,7 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('align right right', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       align: {
         right: 'right'
       }
@@ -144,7 +142,7 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('invalid align', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       align: {
         whatever: 'right'
       }
@@ -152,20 +150,20 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('no stretch', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       stretch: false
     }));
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('close', function () {
-    render(React.createElement(TestInput, null));
+    render( /*#__PURE__*/React.createElement(TestInput, null));
     expectPortal('drop-node').toMatchSnapshot();
     cleanup();
     expect(document.getElementById('drop-node')).toBeNull();
   });
   test('invoke onClickOutside', function () {
     var onClickOutside = jest.fn();
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       onClickOutside: onClickOutside
     }));
     expectPortal('drop-node').toMatchSnapshot();
@@ -176,7 +174,7 @@ describe('Drop', function () {
     expect(onClickOutside).toBeCalled();
   });
   test('resize', function () {
-    render(React.createElement(TestInput, null));
+    render( /*#__PURE__*/React.createElement(TestInput, null));
     global.window.innerWidth = 1000;
     global.window.innerHeight = 1000;
     fireEvent(window, new Event('resize', {
@@ -186,7 +184,7 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('restrict focus', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       restrictFocus: true
     }));
     expect(document.activeElement).toMatchSnapshot();
@@ -195,30 +193,30 @@ describe('Drop', function () {
     expect(document.activeElement).toMatchSnapshot();
   });
   test('default elevation renders', function () {
-    render(React.createElement(TestInput, null));
+    render( /*#__PURE__*/React.createElement(TestInput, null));
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('theme elevation renders', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       theme: customTheme
     }));
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('props elevation renders', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       theme: customTheme,
       elevation: "medium"
     }));
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('plain renders', function () {
-    render(React.createElement(TestInput, {
+    render( /*#__PURE__*/React.createElement(TestInput, {
       plain: true
     }));
     expectPortal('drop-node').toMatchSnapshot();
   });
   test('default containerTarget', function () {
-    var _render = render(React.createElement(TestInput, {
+    var _render = render( /*#__PURE__*/React.createElement(TestInput, {
       "data-testid": "drop"
     })),
         getByTestId = _render.getByTestId;
@@ -231,7 +229,7 @@ describe('Drop', function () {
     document.body.appendChild(target);
 
     try {
-      var _render2 = render(React.createElement(TestInput, {
+      var _render2 = render( /*#__PURE__*/React.createElement(TestInput, {
         "data-testid": "drop",
         containerTarget: target
       })),

@@ -89,17 +89,17 @@ var CustomSearchSelect = function CustomSearchSelect() {
 
   var renderOption = function renderOption(_ref) {
     var name = _ref.name;
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       align: "center",
       pad: "small",
       flex: false
-    }, _react["default"].createElement(_grommet.CheckBox, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
       tabIndex: "-1",
       checked: selectedContentPartners.some(function (partner) {
         return partner.name === name;
       }),
-      label: _react["default"].createElement(_grommet.Text, {
+      label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         size: "small"
       }, name),
       onChange: function onChange() {}
@@ -107,7 +107,7 @@ var CustomSearchSelect = function CustomSearchSelect() {
   };
 
   var renderContentPartners = function renderContentPartners() {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       gap: "xsmall",
       pad: {
@@ -116,7 +116,7 @@ var CustomSearchSelect = function CustomSearchSelect() {
       },
       align: "center",
       flex: true
-    }, _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "brand",
       round: "medium",
       align: "center",
@@ -127,17 +127,17 @@ var CustomSearchSelect = function CustomSearchSelect() {
       style: {
         minWidth: '21px'
       }
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "small"
-    }, selectedContentPartners.length)), _react["default"].createElement(_grommet.Box, {
+    }, selectedContentPartners.length)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       flex: true
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "small",
       truncate: true
     }, selectedContentPartners.map(function (_ref2) {
       var name = _ref2.name;
       return name;
-    }).join(', '))), _react["default"].createElement(_grommet.Button, {
+    }).join(', '))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       href: "#",
       onFocus: function onFocus(event) {
         return event.stopPropagation();
@@ -148,10 +148,10 @@ var CustomSearchSelect = function CustomSearchSelect() {
         clearContentPartners();
         selectRef.current.focus();
       }
-    }, _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "gray",
       round: "full"
-    }, _react["default"].createElement(_grommetIcons.FormClose, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, {
       style: {
         width: '12px',
         height: '12px'
@@ -180,19 +180,19 @@ var CustomSearchSelect = function CustomSearchSelect() {
     };
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _theme.theme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center",
     width: "medium"
-  }, _react["default"].createElement(_SearchInputContext.SearchInputContext.Provider, {
+  }, /*#__PURE__*/_react["default"].createElement(_SearchInputContext.SearchInputContext.Provider, {
     value: {
       searching: searching
     }
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     ref: selectRef,
     closeOnChange: false,
     placeholder: "Select Content Partners",
@@ -234,5 +234,5 @@ var CustomSearchSelect = function CustomSearchSelect() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Custom Search', function () {
-  return _react["default"].createElement(CustomSearchSelect, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomSearchSelect, null);
 });

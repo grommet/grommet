@@ -27,7 +27,7 @@ var TableCell = forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "colSpan", "pad", "plain", "scope", "size", "verticalAlign"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  return React.createElement(TableContext.Consumer, null, function (tableContext) {
+  return /*#__PURE__*/React.createElement(TableContext.Consumer, null, function (tableContext) {
     var tableContextTheme;
 
     if (tableContext === 'header') {
@@ -39,7 +39,7 @@ var TableCell = forwardRef(function (_ref, ref) {
     } // merge tabelContextTheme and rest
 
 
-    var mergedProps = _extends({}, tableContextTheme, {}, rest);
+    var mergedProps = _extends(_extends({}, tableContextTheme), rest);
 
     Object.keys(mergedProps).forEach(function (key) {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
@@ -57,7 +57,7 @@ var TableCell = forwardRef(function (_ref, ref) {
     delete mergedProps.border;
     delete mergedProps.pad;
     delete mergedProps.verticalAlign;
-    return React.createElement(StyledTableCell, _extends({
+    return /*#__PURE__*/React.createElement(StyledTableCell, _extends({
       ref: ref,
       as: scope ? 'th' : undefined,
       scope: scope,
@@ -65,7 +65,7 @@ var TableCell = forwardRef(function (_ref, ref) {
       colSpan: colSpan,
       tableContext: tableContext,
       tableContextTheme: tableContextTheme
-    }, plain ? mergedProps : {}, cellProps), plain || !Object.keys(mergedProps).length ? children : React.createElement(Box, _extends({}, mergedProps, {
+    }, plain ? mergedProps : {}, cellProps), plain || !Object.keys(mergedProps).length ? children : /*#__PURE__*/React.createElement(Box, _extends({}, mergedProps, {
       align: align,
       justify: verticalAlignToJustify[verticalAlign]
     }), children));

@@ -20,17 +20,17 @@ describe('InfiniteScroll', function () {
   }
 
   test('basic', function () {
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, null), _react["default"].createElement(_.InfiniteScroll, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.InfiniteScroll, null), /*#__PURE__*/_react["default"].createElement(_.InfiniteScroll, {
       items: items
     }, function (item, index, ref) {
-      return _react["default"].createElement("div", {
+      return /*#__PURE__*/_react["default"].createElement("div", {
         ref: ref,
         key: index
       }, item);
-    }), _react["default"].createElement(_.InfiniteScroll, {
+    }), /*#__PURE__*/_react["default"].createElement(_.InfiniteScroll, {
       items: items
     }, function (item, index) {
-      return _react["default"].createElement("div", {
+      return /*#__PURE__*/_react["default"].createElement("div", {
         key: index
       }, item);
     }))),
@@ -39,11 +39,11 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('step', function () {
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2
     }, function (item, index) {
-      return _react["default"].createElement("div", {
+      return /*#__PURE__*/_react["default"].createElement("div", {
         key: index
       }, item);
     }))),
@@ -52,12 +52,12 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('show', function () {
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render3 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2,
       show: 3
     }, function (item, index) {
-      return _react["default"].createElement("div", {
+      return /*#__PURE__*/_react["default"].createElement("div", {
         key: index
       }, item);
     }))),
@@ -66,14 +66,14 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('renderMarker', function () {
-    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render4 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2,
       renderMarker: function renderMarker(m) {
-        return _react["default"].createElement("div", null, m);
+        return /*#__PURE__*/_react["default"].createElement("div", null, m);
       }
     }, function (item, index) {
-      return _react["default"].createElement("div", {
+      return /*#__PURE__*/_react["default"].createElement("div", {
         key: index
       }, item);
     }))),
@@ -82,12 +82,12 @@ describe('InfiniteScroll', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('replace', function () {
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.InfiniteScroll, {
+    var _render5 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.InfiniteScroll, {
       items: items,
       step: 2,
       replace: true
     }, function (item, index) {
-      return _react["default"].createElement("div", {
+      return /*#__PURE__*/_react["default"].createElement("div", {
         key: index
       }, item);
     }))),

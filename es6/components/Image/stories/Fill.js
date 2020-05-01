@@ -4,28 +4,28 @@ import { Grommet, Box, Image, Anchor } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Fill = function Fill() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "start",
     gap: "small"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: "small",
     width: "small",
     border: true
-  }, React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Anchor, {
     href: "#"
-  }, React.createElement(Image, {
+  }, /*#__PURE__*/React.createElement(Image, {
     fit: "cover",
     fill: true,
     src: "//v2.grommet.io/assets/IMG_4245.jpg"
-  }))), React.createElement(Box, {
+  }))), /*#__PURE__*/React.createElement(Box, {
     height: "small",
     width: "small",
     border: true
-  }, React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Anchor, {
     href: "#"
-  }, React.createElement(Image, {
+  }, /*#__PURE__*/React.createElement(Image, {
     fit: "contain",
     fill: true,
     src: "//v2.grommet.io/assets/IMG_4245.jpg"
@@ -33,5 +33,5 @@ var Fill = function Fill() {
 };
 
 storiesOf('Image', module).add('Fill', function () {
-  return React.createElement(Fill, null);
+  return /*#__PURE__*/React.createElement(Fill, null);
 });

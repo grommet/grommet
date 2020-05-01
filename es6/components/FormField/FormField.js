@@ -43,8 +43,8 @@ var Message = function Message(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["message"]);
 
   if (message) {
-    if (typeof message === 'string') return React.createElement(Text, rest, message);
-    return React.createElement(Box, rest, message);
+    if (typeof message === 'string') return /*#__PURE__*/React.createElement(Text, rest, message);
+    return /*#__PURE__*/React.createElement(Box, rest, message);
   }
 
   return null;
@@ -140,7 +140,7 @@ var FormField = forwardRef(function (_ref2, ref) {
     var Input = component || TextInput;
 
     if (Input === CheckBox) {
-      return React.createElement(Input, _extends({
+      return /*#__PURE__*/React.createElement(Input, _extends({
         name: name,
         label: label,
         disabled: disabled,
@@ -148,7 +148,7 @@ var FormField = forwardRef(function (_ref2, ref) {
       }, rest));
     }
 
-    return React.createElement(Input, _extends({
+    return /*#__PURE__*/React.createElement(Input, _extends({
       name: name,
       value: !isGrommetInput(component) ? formValue[name] : undefined,
       disabled: disabled,
@@ -221,7 +221,7 @@ var FormField = forwardRef(function (_ref2, ref) {
     }
   }
 
-  contents = React.createElement(Box, contentProps, contents);
+  contents = /*#__PURE__*/React.createElement(Box, contentProps, contents);
   var borderColor;
 
   if (disabled) {
@@ -244,14 +244,14 @@ var FormField = forwardRef(function (_ref2, ref) {
 
   if (themeBorder) {
     var innerProps = themeBorder.position === 'inner' ? {
-      border: _extends({}, themeBorder, {
+      border: _extends(_extends({}, themeBorder), {}, {
         side: themeBorder.side || 'bottom',
         color: borderColor
       }),
       round: formFieldTheme.round,
       focus: focus
     } : {};
-    contents = React.createElement(FormFieldContentBox, _extends({
+    contents = /*#__PURE__*/React.createElement(FormFieldContentBox, _extends({
       overflow: "hidden"
     }, innerProps), contents);
     var mergedMargin = margin || formFieldTheme.margin;
@@ -291,13 +291,13 @@ var FormField = forwardRef(function (_ref2, ref) {
   }
 
   var outerProps = themeBorder && themeBorder.position === 'outer' ? {
-    border: _extends({}, themeBorder, {
+    border: _extends(_extends({}, themeBorder), {}, {
       color: borderColor
     }),
     round: formFieldTheme.round,
     focus: focus
   } : {};
-  return React.createElement(FormFieldBox, _extends({
+  return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
     ref: ref,
     className: className,
     background: outerBackground,
@@ -313,14 +313,14 @@ var FormField = forwardRef(function (_ref2, ref) {
       if (onFieldBlur) onFieldBlur(event);
       if (_onBlur) _onBlur(event);
     }
-  }, containerRest), label && component !== CheckBox || help ? React.createElement(React.Fragment, null, label && component !== CheckBox && React.createElement(Text, _extends({
+  }, containerRest), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, labelStyle), label), React.createElement(Message, _extends({
+  }, labelStyle), label), /*#__PURE__*/React.createElement(Message, _extends({
     message: help
-  }, formFieldTheme.help))) : undefined, contents, React.createElement(Message, _extends({
+  }, formFieldTheme.help))) : undefined, contents, /*#__PURE__*/React.createElement(Message, _extends({
     message: normalizedError
-  }, formFieldTheme.error)), React.createElement(Message, _extends({
+  }, formFieldTheme.error)), /*#__PURE__*/React.createElement(Message, _extends({
     message: normalizedInfo
   }, formFieldTheme.info)));
 });

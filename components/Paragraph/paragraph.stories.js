@@ -14,20 +14,20 @@ var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small'];
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 
 var All = function All() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, sizes.map(function (size) {
-    return _react["default"].createElement(_grommet.Paragraph, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
       key: size,
       size: size
     }, "Paragraph " + size, paragraphFiller);
-  }), _react["default"].createElement(_grommet.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
     color: "status-critical"
-  }, "This is an error message."), _react["default"].createElement(_grommet.Paragraph, {
+  }, "This is an error message."), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
     fill: true
   }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
 };
 
 (0, _react2.storiesOf)('Paragraph', module).add('All', function () {
-  return _react["default"].createElement(All, null);
+  return /*#__PURE__*/_react["default"].createElement(All, null);
 });

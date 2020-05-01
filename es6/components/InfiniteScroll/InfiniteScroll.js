@@ -6,9 +6,7 @@ import { findDOMNode } from 'react-dom';
 import { findScrollParent, findScrollParents, isNodeAfterScroll, isNodeBeforeScroll } from '../../utils';
 import { Box } from '../Box';
 
-var Ref =
-/*#__PURE__*/
-function (_Component) {
+var Ref = /*#__PURE__*/function (_Component) {
   _inheritsLoose(Ref, _Component);
 
   function Ref() {
@@ -169,7 +167,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   var result = [];
 
   if (replace && pageHeight && firstIndex) {
-    var marker = React.createElement(Box, {
+    var marker = /*#__PURE__*/React.createElement(Box, {
       key: "above",
       flex: false,
       height: beginPage * pageHeight + "px"
@@ -194,19 +192,19 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     var child = children(item, itemsIndex, ref); // The old way, if we don't see that our ref was set, wrap it
 
     if (!pageHeight && itemsIndex === 0 && child.ref !== firstPageItemRef) {
-      child = React.createElement(Ref, {
+      child = /*#__PURE__*/React.createElement(Ref, {
         key: "first",
         ref: firstPageItemRef
       }, child);
     } else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex) && child.ref !== lastPageItemRef) {
-      child = React.createElement(Ref, {
+      child = /*#__PURE__*/React.createElement(Ref, {
         key: "last",
         ref: lastPageItemRef
       }, child);
     }
 
     if (show && show === itemsIndex && child.ref !== showRef) {
-      child = React.createElement(Ref, {
+      child = /*#__PURE__*/React.createElement(Ref, {
         key: "show",
         ref: showRef
       }, child);
@@ -216,7 +214,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   });
 
   if (endPage < lastPage || replace || onMore) {
-    var _marker = React.createElement(Box, {
+    var _marker = /*#__PURE__*/React.createElement(Box, {
       key: "below",
       ref: belowMarkerRef,
       flex: false,

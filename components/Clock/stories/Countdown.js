@@ -11,13 +11,13 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Example = function Example() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Clock, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Clock, {
     type: "digital",
     time: "PT0H0M20S",
     run: "backward"
@@ -25,7 +25,7 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('Clock', module).add('Countdown', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 }, {
   chromatic: {
     disable: true

@@ -10,25 +10,25 @@ var allItems = Array(240).fill().map(function (_, i) {
 });
 
 var InfiniteScrollReplace = function InfiniteScrollReplace(props) {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(InfiniteScroll, _extends({
+  }, /*#__PURE__*/React.createElement(InfiniteScroll, _extends({
     items: allItems
   }, props), function (item) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       key: item,
       pad: "medium",
       border: {
         side: 'bottom'
       },
       align: "center"
-    }, React.createElement(Text, null, item));
+    }, /*#__PURE__*/React.createElement(Text, null, item));
   }));
 };
 
 if (!isChromatic()) {
   storiesOf('InfiniteScroll', module).add('Replace', function () {
-    return React.createElement(InfiniteScrollReplace, {
+    return /*#__PURE__*/React.createElement(InfiniteScrollReplace, {
       replace: true
     });
   });

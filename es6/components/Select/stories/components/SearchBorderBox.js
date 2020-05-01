@@ -29,9 +29,9 @@ export var SearchBorderBox = function SearchBorderBox(_ref) {
       extend: searching ? searchingStyle : defaultStyle
     }
   };
-  return React.createElement(ThemeContext.Extend, {
+  return /*#__PURE__*/React.createElement(ThemeContext.Extend, {
     value: boxBorderTheme
-  }, React.createElement(Box, _extends({
+  }, /*#__PURE__*/React.createElement(Box, _extends({
     focus: focus,
     searching: searching,
     onFocus: function onFocus() {

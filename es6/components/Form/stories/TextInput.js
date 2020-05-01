@@ -33,20 +33,20 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   };
 
   var onSelect = function onSelect(event) {
-    return setState(_extends({}, state, {
+    return setState(_extends(_extends({}, state), {}, {
       value: event.suggestion
     }));
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(FormField, _extends({
+  }, /*#__PURE__*/React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
-  }, props), React.createElement(TextInput, {
+  }, props), /*#__PURE__*/React.createElement(TextInput, {
     id: "text-input",
     placeholder: "placeholder",
     value: state.value,
@@ -57,5 +57,5 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
 };
 
 storiesOf('Form', module).add('TextInput', function () {
-  return React.createElement(FormFieldTextInput, null);
+  return /*#__PURE__*/React.createElement(FormFieldTextInput, null);
 });

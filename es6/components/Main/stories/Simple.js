@@ -4,18 +4,18 @@ import { Grommet, Header, Main, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Simple = function Simple() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Header, {
+  }, /*#__PURE__*/React.createElement(Header, {
     background: "light-4",
     pad: "small"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
-  }, "Header")), React.createElement(Main, {
+  }, "Header")), /*#__PURE__*/React.createElement(Main, {
     pad: "small"
   }, "I am Main! Main is a good place to place your content."));
 };
 
 storiesOf('Main', module).add('Simple', function () {
-  return React.createElement(Simple, null);
+  return /*#__PURE__*/React.createElement(Simple, null);
 });

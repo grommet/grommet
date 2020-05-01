@@ -258,44 +258,44 @@ var Calendar = forwardRef(function (_ref, ref) {
   var renderCalendarHeader = function renderCalendarHeader() {
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
     var NextIcon = size === 'small' ? theme.calendar.icons.small.next : theme.calendar.icons.next;
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       justify: "between",
       align: "center"
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       flex: true,
       pad: {
         horizontal: headingPadMap[size] || 'small'
       }
-    }, React.createElement(Heading, {
+    }, /*#__PURE__*/React.createElement(Heading, {
       level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
       size: size,
       margin: "none"
     }, reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'
-    }))), React.createElement(Box, {
+    }))), /*#__PURE__*/React.createElement(Box, {
       flex: false,
       direction: "row",
       align: "center"
-    }, React.createElement(Button, {
+    }, /*#__PURE__*/React.createElement(Button, {
       a11yTitle: previousMonth.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
       }),
-      icon: React.createElement(PreviousIcon, {
+      icon: /*#__PURE__*/React.createElement(PreviousIcon, {
         size: size !== 'small' ? size : undefined
       }),
       disabled: !betweenDates(previousMonth, validBounds),
       onClick: function onClick() {
         return changeReference(previousMonth);
       }
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       a11yTitle: nextMonth.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
       }),
-      icon: React.createElement(NextIcon, {
+      icon: /*#__PURE__*/React.createElement(NextIcon, {
         size: size !== 'small' ? size : undefined
       }),
       disabled: !betweenDates(nextMonth, validBounds),
@@ -310,10 +310,10 @@ var Calendar = forwardRef(function (_ref, ref) {
     var days = [];
 
     while (days.length < 7) {
-      days.push(React.createElement(StyledDayContainer, {
+      days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
         key: days.length,
         sizeProp: size
-      }, React.createElement(StyledDay, {
+      }, /*#__PURE__*/React.createElement(StyledDay, {
         otherMonth: true,
         sizeProp: size
       }, day.toLocaleDateString(locale, {
@@ -322,7 +322,7 @@ var Calendar = forwardRef(function (_ref, ref) {
       day = addDays(day, 1);
     }
 
-    return React.createElement(StyledWeek, null, days);
+    return /*#__PURE__*/React.createElement(StyledWeek, null, days);
   };
 
   var weeks = [];
@@ -333,7 +333,7 @@ var Calendar = forwardRef(function (_ref, ref) {
   while (day.getTime() < displayBounds[1].getTime()) {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
-        weeks.push(React.createElement(StyledWeek, {
+        weeks.push( /*#__PURE__*/React.createElement(StyledWeek, {
           key: day.getTime()
         }, days));
       }
@@ -344,10 +344,10 @@ var Calendar = forwardRef(function (_ref, ref) {
     var otherMonth = day.getMonth() !== reference.getMonth();
 
     if (!showAdjacentDays && otherMonth) {
-      days.push(React.createElement(StyledDayContainer, {
+      days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size
-      }, React.createElement(StyledDay, {
+      }, /*#__PURE__*/React.createElement(StyledDay, {
         sizeProp: size
       })));
     } else {
@@ -370,10 +370,10 @@ var Calendar = forwardRef(function (_ref, ref) {
           firstDayInMonth = dateString;
         }
 
-        days.push(React.createElement(StyledDayContainer, {
+        days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
           key: day.getTime(),
           sizeProp: size
-        }, React.createElement(Button, {
+        }, /*#__PURE__*/React.createElement(Button, {
           a11yTitle: day.toDateString(),
           plain: true,
           tabIndex: -1,
@@ -390,7 +390,7 @@ var Calendar = forwardRef(function (_ref, ref) {
           },
           onFocus: function onFocus() {},
           onBlur: function onBlur() {}
-        }, React.createElement(StyledDay, {
+        }, /*#__PURE__*/React.createElement(StyledDay, {
           inRange: inRange,
           otherMonth: day.getMonth() !== reference.getMonth(),
           isSelected: selected,
@@ -402,13 +402,13 @@ var Calendar = forwardRef(function (_ref, ref) {
     day = addDays(day, 1);
   }
 
-  weeks.push(React.createElement(StyledWeek, {
+  weeks.push( /*#__PURE__*/React.createElement(StyledWeek, {
     key: day.getTime()
   }, days));
-  return React.createElement(StyledCalendar, _extends({
+  return /*#__PURE__*/React.createElement(StyledCalendar, _extends({
     ref: ref,
     sizeProp: size
-  }, rest), React.createElement(Box, null, header ? header({
+  }, rest), /*#__PURE__*/React.createElement(Box, null, header ? header({
     date: reference,
     locale: locale,
     onPreviousMonth: function onPreviousMonth() {
@@ -419,7 +419,7 @@ var Calendar = forwardRef(function (_ref, ref) {
     },
     previousInBound: betweenDates(previousMonth, validBounds),
     nextInBound: betweenDates(nextMonth, validBounds)
-  }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), React.createElement(Keyboard, {
+  }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: function onEnter() {
       return selectDate(active.toISOString());
     },
@@ -441,7 +441,7 @@ var Calendar = forwardRef(function (_ref, ref) {
     onRight: function onRight() {
       return active && setActive(addDays(active, 1));
     }
-  }, React.createElement(StyledWeeksContainer, {
+  }, /*#__PURE__*/React.createElement(StyledWeeksContainer, {
     sizeProp: size,
     tabIndex: 0,
     focus: focus,
@@ -458,7 +458,7 @@ var Calendar = forwardRef(function (_ref, ref) {
       setFocus(false);
       setActive(undefined);
     }
-  }, React.createElement(StyledWeeks, {
+  }, /*#__PURE__*/React.createElement(StyledWeeks, {
     slide: slide,
     sizeProp: size
   }, weeks)))));

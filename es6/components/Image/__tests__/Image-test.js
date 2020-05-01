@@ -7,14 +7,14 @@ var opacityTypes = ['weak', 'medium', 'strong', '0.3', true, false];
 var SRC = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII='; // eslint-disable-line max-len
 
 test('Image renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Image, {
     src: SRC
   })));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Image renders with aria-label', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Image, {
     a11yTitle: "aria-label-text",
     src: SRC
   })));
@@ -22,10 +22,10 @@ test('Image renders with aria-label', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Image fit renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Image, {
     fit: "cover",
     src: SRC
-  }), React.createElement(Image, {
+  }), /*#__PURE__*/React.createElement(Image, {
     fit: "contain",
     src: SRC
   })));
@@ -34,7 +34,7 @@ test('Image fit renders', function () {
 });
 opacityTypes.forEach(function (opacity) {
   test("Image opacity of " + opacity + " renders", function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Image, {
       opacity: opacity,
       src: SRC
     })));
@@ -43,16 +43,16 @@ opacityTypes.forEach(function (opacity) {
   });
 });
 test('Image fillProp renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Image, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Image, {
     fill: true,
     src: SRC
-  }), React.createElement(Image, {
+  }), /*#__PURE__*/React.createElement(Image, {
     fill: false,
     src: SRC
-  }), React.createElement(Image, {
+  }), /*#__PURE__*/React.createElement(Image, {
     fill: "horizontal",
     src: SRC
-  }), React.createElement(Image, {
+  }), /*#__PURE__*/React.createElement(Image, {
     fill: "vertical",
     src: SRC
   })));

@@ -434,7 +434,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
     }
 
     if (hasBetweenBorder) {
-      var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
+      var adjustedBorder = typeof border === 'string' ? 'top' : _extends(_extends({}, border), {}, {
         side: 'top'
       });
       var borderSize = border.size || 'xsmall';
@@ -450,7 +450,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) 
     }
 
     if (hasBetweenBorder) {
-      var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
+      var _adjustedBorder = typeof border === 'string' ? 'left' : _extends(_extends({}, border), {}, {
         side: 'left'
       });
 

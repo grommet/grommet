@@ -4,16 +4,16 @@ import { Box, Button, CheckBox, Grommet, Form, FormField, RadioButtonGroup, Rang
 import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(Form, {
+  }, /*#__PURE__*/React.createElement(Form, {
     onReset: function onReset(event) {
       return console.log(event);
     },
@@ -22,7 +22,7 @@ var Example = function Example() {
           touched = _ref.touched;
       return console.log('Submit', value, touched);
     }
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
     name: "name",
     required: true,
@@ -38,12 +38,12 @@ var Example = function Example() {
       };
       return undefined;
     }]
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     label: "Email",
     name: "email",
     type: "email",
     required: true
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     label: "Employee ID",
     name: "employeeId",
     required: true,
@@ -51,15 +51,15 @@ var Example = function Example() {
       regexp: /^[0-9]{4,6}$/,
       message: '4-6 digits'
     }
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     name: "subscribe",
     component: CheckBox,
     label: "Subscribe?"
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     name: "ampm",
     component: RadioButtonGroup,
     options: ['morning', 'evening']
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     label: "Size",
     name: "size",
     component: Select,
@@ -67,35 +67,35 @@ var Example = function Example() {
       return console.log(event);
     },
     options: ['small', 'medium', 'large', 'xlarge']
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     label: "Comments",
     name: "comments",
     component: TextArea
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     label: "Age",
     name: "age",
     component: RangeInput,
     pad: true,
     min: 15,
     max: 75
-  }), React.createElement(FormField, {
+  }), /*#__PURE__*/React.createElement(FormField, {
     label: "Custom",
     name: "custom",
     component: function component(props) {
-      return React.createElement("input", props);
+      return /*#__PURE__*/React.createElement("input", props);
     }
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Cancel"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "reset",
     label: "Reset"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -103,5 +103,5 @@ var Example = function Example() {
 };
 
 storiesOf('Form', module).add('FormField component', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

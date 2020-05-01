@@ -22,17 +22,17 @@ var Example = function Example() {
     }]);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.WorldMap, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.WorldMap, {
     onSelectPlace: onSelectPlace,
     places: places
   })));
 };
 
 (0, _react2.storiesOf)('WorldMap', module).add('Select place', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

@@ -36,20 +36,20 @@ var RichPanel = function RichPanel(_ref) {
       setHovering = _React$useState[1];
 
   var renderPanelTitle = function renderPanelTitle() {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       align: "center",
       gap: "small",
       pad: {
         horizontal: 'small'
       }
-    }, icon, _react["default"].createElement(_grommet.Heading, {
+    }, icon, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
       level: 4,
       color: hovering ? 'dark-1' : 'dark-3'
     }, label));
   };
 
-  return _react["default"].createElement(_grommet.AccordionPanel, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_grommet.AccordionPanel, _extends({
     label: renderPanelTitle(),
     onMouseOver: function onMouseOver() {
       return setHovering(true);
@@ -66,18 +66,18 @@ var RichPanel = function RichPanel(_ref) {
   }, rest), children);
 };
 
-var spinning = _react["default"].createElement("svg", {
+var spinning = /*#__PURE__*/_react["default"].createElement("svg", {
   version: "1.1",
   viewBox: "0 0 32 32",
   width: "32px",
   height: "32px",
   fill: "#333333"
-}, _react["default"].createElement("path", {
+}, /*#__PURE__*/_react["default"].createElement("path", {
   opacity: ".25",
   d: "M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28  A12 12 0 0 1 16 4"
-}), _react["default"].createElement("path", {
+}), /*#__PURE__*/_react["default"].createElement("path", {
   d: "M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z"
-}, _react["default"].createElement("animateTransform", {
+}, /*#__PURE__*/_react["default"].createElement("animateTransform", {
   attributeName: "transform",
   type: "rotate",
   from: "0 16 16",
@@ -86,7 +86,7 @@ var spinning = _react["default"].createElement("svg", {
   repeatCount: "indefinite"
 })));
 
-var loading = _react["default"].createElement(_grommet.Box, {
+var loading = /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
   align: "center",
   justify: "center",
   style: {
@@ -99,16 +99,16 @@ var RichAccordion = function RichAccordion() {
       highlightLoaded = _React$useState2[0],
       setHighlightLoaded = _React$useState2[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     direction: "row"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     basis: "medium",
     border: "all"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: false,
     border: "bottom",
     background: "light-2",
@@ -116,11 +116,11 @@ var RichAccordion = function RichAccordion() {
     pad: {
       horizontal: 'small'
     }
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 3
-  }, _react["default"].createElement("strong", null, "About #announcements"))), _react["default"].createElement(_grommet.ThemeContext.Extend, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "About #announcements"))), /*#__PURE__*/_react["default"].createElement(_grommet.ThemeContext.Extend, {
     value: richAccordionTheme
-  }, _react["default"].createElement(_grommet.Accordion, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Accordion, {
     multiple: true,
     onActive: function onActive(activeIndexes) {
       if (activeIndexes.includes(1)) {
@@ -130,30 +130,30 @@ var RichAccordion = function RichAccordion() {
         }, 1000);
       }
     }
-  }, _react["default"].createElement(RichPanel, {
-    icon: _react["default"].createElement(_grommetIcons.CircleInformation, null),
+  }, /*#__PURE__*/_react["default"].createElement(RichPanel, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.CircleInformation, null),
     label: "Channel Details"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       bottom: 'medium',
       horizontal: 'small',
       top: 'small'
     },
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "xsmall"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "dark-3"
-  }, _react["default"].createElement("strong", null, "Purpose")), _react["default"].createElement(_grommet.Text, null, "Used for general announcements like new releases, trainings...")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "Purpose")), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Used for general announcements like new releases, trainings...")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "xsmall"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "dark-3"
-  }, _react["default"].createElement("strong", null, "Created")), _react["default"].createElement(_grommet.Text, null, "Created by Bryan Jacquot on January 19, 2016")))), _react["default"].createElement(RichPanel, {
-    icon: _react["default"].createElement(_grommetIcons.Bookmark, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "Created")), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Created by Bryan Jacquot on January 19, 2016")))), /*#__PURE__*/_react["default"].createElement(RichPanel, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Bookmark, {
       color: "accent-1"
     }),
     label: "Highlights"
-  }, highlightLoaded ? _react["default"].createElement(_grommet.Box, {
+  }, highlightLoaded ? /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       bottom: 'medium',
       horizontal: 'small',
@@ -164,14 +164,14 @@ var RichAccordion = function RichAccordion() {
     style: {
       maxHeight: '400px'
     }
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "dark-3"
-  }, "Below is the top message in", _react["default"].createElement("strong", null, "#announcements"), "."), _react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), _react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), _react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), _react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), _react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")) : loading), _react["default"].createElement(RichPanel, {
-    icon: _react["default"].createElement(_grommetIcons.User, {
+  }, "Below is the top message in", /*#__PURE__*/_react["default"].createElement("strong", null, "#announcements"), "."), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")) : loading), /*#__PURE__*/_react["default"].createElement(RichPanel, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.User, {
       color: "accent-2"
     }),
     label: "2,000 members"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       bottom: 'medium',
       horizontal: 'small',
@@ -182,5 +182,5 @@ var RichAccordion = function RichAccordion() {
 };
 
 (0, _react2.storiesOf)('Accordion', module).add('Rich', function () {
-  return _react["default"].createElement(RichAccordion, null);
+  return /*#__PURE__*/_react["default"].createElement(RichAccordion, null);
 });

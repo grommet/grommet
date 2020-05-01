@@ -17,7 +17,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var FooterAnchor = function FooterAnchor(_ref) {
   var rest = _extends({}, _ref);
 
-  return _react["default"].createElement(_grommet.Anchor, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, _extends({
     href: "/",
     size: "small",
     color: "white"
@@ -26,14 +26,14 @@ var FooterAnchor = function FooterAnchor(_ref) {
 
 var FooterContent = function FooterContent() {
   return _data.threeColumns.map(function (item) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       gap: "medium",
       key: item[0]
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold",
       size: "small"
-    }, item[0]), _react["default"].createElement(_grommet.Box, null, [1, 2, 3].map(function (i) {
-      return _react["default"].createElement(FooterAnchor, {
+    }, item[0]), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, [1, 2, 3].map(function (i) {
+      return /*#__PURE__*/_react["default"].createElement(FooterAnchor, {
         key: item[i]
       }, item[i]);
     })));
@@ -41,38 +41,38 @@ var FooterContent = function FooterContent() {
 };
 
 var Sitemap = function Sitemap() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, _react["default"].createElement(_grommet.Main, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
     background: "light-4",
     elevation: "large",
     pad: "large",
     gap: "large",
     border: true
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     margin: "small",
     size: "xsmall"
-  }, "Main Content"), _react["default"].createElement(_grommet.Box, {
+  }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true
-  })), _react["default"].createElement(_grommet.Footer, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
     background: "dark-1",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row-responsive",
     gap: "xsmall"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     gap: "small"
-  }, _react["default"].createElement(_grommetIcons.Grommet, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
     color: "brand",
     size: "large"
-  }), _react["default"].createElement(_grommet.Text, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     alignSelf: "center",
     color: "brand",
     weight: "bold"
-  }, "grommet.io"))), _react["default"].createElement(FooterContent, null)));
+  }, "grommet.io"))), /*#__PURE__*/_react["default"].createElement(FooterContent, null)));
 };
 
 (0, _react2.storiesOf)('Footer', module).add('Sitemap', function () {
-  return _react["default"].createElement(Sitemap, null);
+  return /*#__PURE__*/_react["default"].createElement(Sitemap, null);
 });

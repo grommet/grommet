@@ -20,16 +20,16 @@ var Example = function Example() {
       setValue = _React$useState[1];
 
   var message = value.name && value.email && value.name[0] !== value.email[0] ? 'Mismatched first character' : undefined;
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.Form, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
     value: value,
     onChange: function onChange(nextValue) {
       return setValue(nextValue);
@@ -38,36 +38,36 @@ var Example = function Example() {
       var nextValue = _ref.value;
       return console.log(nextValue);
     }
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Name",
     name: "name",
     required: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     name: "name",
     type: "name"
-  })), _react["default"].createElement(_grommet.FormField, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Email",
     name: "email",
     required: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     name: "email",
     type: "email"
-  })), message && _react["default"].createElement(_grommet.Box, {
+  })), message && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: 'small'
     }
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "status-error"
-  }, message)), _react["default"].createElement(_grommet.Box, {
+  }, message)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "reset",
     label: "Reset"
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -75,5 +75,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('Form', module).add('Aggregate validation', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

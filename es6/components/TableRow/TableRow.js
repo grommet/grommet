@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React, { forwardRef } from 'react';
 import { StyledTableRow } from '../Table/StyledTable';
 var TableRow = forwardRef(function (props, ref) {
-  return React.createElement(StyledTableRow, _extends({
+  return /*#__PURE__*/React.createElement(StyledTableRow, _extends({
     ref: ref
   }, props));
 });

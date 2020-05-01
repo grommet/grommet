@@ -72,7 +72,7 @@ var Layer = forwardRef(function (props, ref) {
       }
     };
   }, [animate, animation, containerTarget, layerContainer, originalFocusedElement]);
-  return layerContainer ? createPortal(React.createElement(LayerContainer, _extends({
+  return layerContainer ? createPortal( /*#__PURE__*/React.createElement(LayerContainer, _extends({
     ref: ref
   }, props)), layerContainer) : null;
 });

@@ -18,14 +18,14 @@ var TestDiv = _react["default"].forwardRef(function (_ref, ref) {
   var focus = _ref.focus,
       rest = _objectWithoutPropertiesLoose(_ref, ["focus"]);
 
-  return _react["default"].createElement("div", _extends({
+  return /*#__PURE__*/_react["default"].createElement("div", _extends({
     ref: ref
   }, rest), focus ? 'focus' : 'no focus');
 });
 
 var Test = (0, _hocs.withFocus)()(TestDiv);
 test('withFocus set focus', function (done) {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(Test, null));
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(Test, null));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -41,7 +41,7 @@ test('withFocus calls callback', function () {
   var onFocus = jest.fn();
   var onBlur = jest.fn();
 
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(Test, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(Test, {
     onFocus: onFocus,
     onBlur: onBlur
   }));

@@ -15,13 +15,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 describe('List', function () {
   afterEach(_react2.cleanup);
   test('empty', function () {
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, null))),
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, null))),
         container = _render.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
   test('data strings', function () {
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two']
     }))),
         container = _render2.container;
@@ -29,7 +29,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('data objects', function () {
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render3 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: [{
         a: 'one',
         b: 1
@@ -45,7 +45,7 @@ describe('List', function () {
   test('onClickItem', function () {
     var onClickItem = jest.fn();
 
-    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render4 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: [{
         a: 'alpha'
       }, {
@@ -68,7 +68,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('background string', function () {
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render5 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       background: "accent-1"
     }))),
@@ -77,7 +77,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('background array', function () {
-    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render6 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two', 'three', 'four'],
       background: ['accent-1', 'accent-2']
     }))),
@@ -86,7 +86,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('border boolean', function () {
-    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render7 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       border: true
     }))),
@@ -95,7 +95,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('border side', function () {
-    var _render8 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render8 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       border: "horizontal"
     }))),
@@ -104,7 +104,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('border object', function () {
-    var _render9 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render9 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       border: {
         color: 'accent-1',
@@ -117,7 +117,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('children render', function () {
-    var _render10 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render10 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two']
     }, function (item, index) {
       return item + " - " + index;
@@ -127,7 +127,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('itemProps', function () {
-    var _render11 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render11 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       itemProps: {
         1: {
@@ -145,7 +145,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('margin string', function () {
-    var _render12 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render12 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       margin: "large"
     }))),
@@ -154,7 +154,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('margin object', function () {
-    var _render13 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render13 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       margin: {
         horizontal: 'large'
@@ -165,7 +165,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('pad string', function () {
-    var _render14 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render14 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       pad: "large"
     }))),
@@ -174,7 +174,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('pad object', function () {
-    var _render15 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render15 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: ['one', 'two'],
       pad: {
         horizontal: 'large'
@@ -185,7 +185,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('primaryKey', function () {
-    var _render16 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render16 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: [{
         a: 'one',
         b: 1
@@ -200,7 +200,7 @@ describe('List', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('secondaryKey', function () {
-    var _render17 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.List, {
+    var _render17 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.List, {
       data: [{
         a: 'one',
         b: 1

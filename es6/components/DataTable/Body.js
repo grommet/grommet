@@ -34,7 +34,7 @@ var Body = function Body(_ref) {
       active = _React$useState[0],
       setActive = _React$useState[1];
 
-  return React.createElement(Keyboard, {
+  return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onClickRow && active >= 0 ? function (event) {
       event.persist();
       var adjustedEvent = event;
@@ -47,22 +47,22 @@ var Body = function Body(_ref) {
     onDown: onClickRow && data.length ? function () {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
     } : undefined
-  }, React.createElement(StyledDataTableBody, _extends({
+  }, /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
     ref: forwardRef,
     size: size,
     tabIndex: onClickRow ? 0 : undefined
-  }, rest), React.createElement(InfiniteScroll, {
+  }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: data,
     onMore: onMore,
     replace: replace,
     renderMarker: function renderMarker(marker) {
-      return React.createElement(TableRow, null, React.createElement(TableCell, null, marker));
+      return /*#__PURE__*/React.createElement(TableRow, null, /*#__PURE__*/React.createElement(TableCell, null, marker));
     },
     scrollableAncestor: "window",
     step: step
   }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;
-    return React.createElement(StyledDataTableRow, {
+    return /*#__PURE__*/React.createElement(StyledDataTableRow, {
       key: primaryValue || index,
       ref: rowRef,
       size: size,
@@ -88,7 +88,7 @@ var Body = function Body(_ref) {
         return setActive(undefined);
       } : undefined
     }, columns.map(function (column) {
-      return React.createElement(Cell, {
+      return /*#__PURE__*/React.createElement(Cell, {
         key: column.property,
         background: background,
         border: border,

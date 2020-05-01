@@ -13,16 +13,16 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Example = function Example() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.Form, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
     validate: "blur",
     onReset: function onReset(event) {
       return console.log(event);
@@ -31,7 +31,7 @@ var Example = function Example() {
       var value = _ref.value;
       return console.log('Submit', value);
     }
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Name",
     name: "name",
     required: true,
@@ -42,32 +42,32 @@ var Example = function Example() {
       return undefined;
     }, function (name) {
       if (name === 'good') return {
-        message: _react["default"].createElement(_grommet.Box, {
+        message: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
           align: "end"
-        }, _react["default"].createElement(_grommetIcons.StatusGood, null)),
+        }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusGood, null)),
         status: 'info'
       };
       return undefined;
     }]
-  }), _react["default"].createElement(_grommet.FormField, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Email",
     name: "email",
     required: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     name: "email",
     type: "email"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Cancel"
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "reset",
     label: "Reset"
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -75,5 +75,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('Form', module).add('Validate on blur', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

@@ -29,18 +29,18 @@ var FormFieldSelect = function FormFieldSelect() {
   var onChange = (0, _react.useCallback)(function (nextValue) {
     return setValue(nextValue);
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Form, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
     value: value,
     onChange: onChange
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Label",
     name: "select"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     name: "select",
     placeholder: "placeholder",
     options: options,
@@ -50,5 +50,5 @@ var FormFieldSelect = function FormFieldSelect() {
 };
 
 (0, _react2.storiesOf)('Form', module).add('Select', function () {
-  return _react["default"].createElement(FormFieldSelect, null);
+  return /*#__PURE__*/_react["default"].createElement(FormFieldSelect, null);
 });

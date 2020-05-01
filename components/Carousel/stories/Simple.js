@@ -18,37 +18,37 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   var initialChild = _ref.initialChild,
       props = _objectWithoutPropertiesLoose(_ref, ["initialChild"]);
 
-  return _react["default"].createElement(_grommet.Grommet, null, _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Carousel, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, _extends({
     initialChild: initialChild
-  }, props), _react["default"].createElement(_grommet.Box, {
+  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-1"
-  }, _react["default"].createElement(_grommetIcons.Attraction, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
     size: "xlarge"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-2"
-  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
     size: "xlarge"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-3"
-  }, _react["default"].createElement(_grommetIcons.Car, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
     size: "xlarge"
   })))));
 };
 
 (0, _react2.storiesOf)('Carousel', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleCarousel, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, null);
 }).add('Initial Child', function () {
-  return _react["default"].createElement(SimpleCarousel, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, {
     initialChild: 1
   });
 }).add('Without Controls', function () {
-  return _react["default"].createElement(SimpleCarousel, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, {
     controls: false,
     play: 1500
   });

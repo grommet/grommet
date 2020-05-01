@@ -56,7 +56,7 @@ var EdgeControl = forwardRef(function (_ref, ref) {
   var backgroundColor = normalizeColor(color || 'control', theme);
 
   if (type === 'bar') {
-    node = React.createElement(StyledBox, {
+    node = /*#__PURE__*/React.createElement(StyledBox, {
       flex: !thickness,
       justifySelf: "stretch",
       width: direction === 'vertical' ? thickness : size + "px",
@@ -65,7 +65,7 @@ var EdgeControl = forwardRef(function (_ref, ref) {
       focus: focus
     });
   } else if (type === 'disc') {
-    node = React.createElement(StyledBox, {
+    node = /*#__PURE__*/React.createElement(StyledBox, {
       width: size + "px",
       height: size + "px",
       round: "full",
@@ -76,7 +76,7 @@ var EdgeControl = forwardRef(function (_ref, ref) {
     node = type;
   }
 
-  return React.createElement(Keyboard, keyboardProps, React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Keyboard, keyboardProps, /*#__PURE__*/React.createElement(Box, {
     direction: boxDirection,
     style: {
       flex: '0 0 1px'
@@ -85,7 +85,7 @@ var EdgeControl = forwardRef(function (_ref, ref) {
     align: "center",
     justify: "center",
     alignSelf: "stretch"
-  }, React.createElement(Box, _extends({
+  }, /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     direction: boxDirection,
     justify: "center",

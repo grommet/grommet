@@ -7,12 +7,12 @@ import { grommet } from 'grommet/themes'; // Source code for the data can be fou
 import { columns, data } from './data';
 
 var SizedDataTable = function SizedDataTable() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns,
     data: data,
     size: "medium"
@@ -20,5 +20,5 @@ var SizedDataTable = function SizedDataTable() {
 };
 
 storiesOf('DataTable', module).add('Sized', function () {
-  return React.createElement(SizedDataTable, null);
+  return /*#__PURE__*/React.createElement(SizedDataTable, null);
 });

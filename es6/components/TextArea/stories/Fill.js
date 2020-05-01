@@ -12,16 +12,16 @@ var FillTextArea = function FillTextArea() {
     return setValue(event.target.value);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "large",
     height: "medium",
     border: {
       color: 'brand',
       size: 'medium'
     }
-  }, React.createElement(TextArea, {
+  }, /*#__PURE__*/React.createElement(TextArea, {
     value: value,
     onChange: onChange,
     fill: true
@@ -29,5 +29,5 @@ var FillTextArea = function FillTextArea() {
 };
 
 storiesOf('TextArea', module).add('Fill', function () {
-  return React.createElement(FillTextArea, null);
+  return /*#__PURE__*/React.createElement(FillTextArea, null);
 });

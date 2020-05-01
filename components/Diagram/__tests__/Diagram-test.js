@@ -14,12 +14,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var Context = function Context(_ref) {
   var children = _ref.children;
-  return _react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Stack, null, _react["default"].createElement(_.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Stack, null, /*#__PURE__*/_react["default"].createElement(_.Box, {
     direction: "row"
-  }, _react["default"].createElement(_.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_.Box, {
     id: "1",
     pad: "medium"
-  }), _react["default"].createElement(_.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Box, {
     id: "2",
     pad: "medium"
   })), children));
@@ -31,7 +31,7 @@ Context.propTypes = {
 describe('Diagram', function () {
   afterEach(_react2.cleanup);
   test('basic', function () {
-    var _render = (0, _react2.render)(_react["default"].createElement(Context, null, _react["default"].createElement(_.Diagram, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(Context, null, /*#__PURE__*/_react["default"].createElement(_.Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2'
@@ -42,7 +42,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('type', function () {
-    var _render2 = (0, _react2.render)(_react["default"].createElement(Context, null, _react["default"].createElement(_.Diagram, {
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(Context, null, /*#__PURE__*/_react["default"].createElement(_.Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -62,7 +62,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('color', function () {
-    var _render3 = (0, _react2.render)(_react["default"].createElement(Context, null, _react["default"].createElement(_.Diagram, {
+    var _render3 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(Context, null, /*#__PURE__*/_react["default"].createElement(_.Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -74,7 +74,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('offset', function () {
-    var _render4 = (0, _react2.render)(_react["default"].createElement(Context, null, _react["default"].createElement(_.Diagram, {
+    var _render4 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(Context, null, /*#__PURE__*/_react["default"].createElement(_.Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -94,7 +94,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('thickness', function () {
-    var _render5 = (0, _react2.render)(_react["default"].createElement(Context, null, _react["default"].createElement(_.Diagram, {
+    var _render5 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(Context, null, /*#__PURE__*/_react["default"].createElement(_.Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -126,7 +126,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('anchor', function () {
-    var _render6 = (0, _react2.render)(_react["default"].createElement(Context, null, _react["default"].createElement(_.Diagram, {
+    var _render6 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(Context, null, /*#__PURE__*/_react["default"].createElement(_.Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',

@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Tabs) {
   var DocumentedTabs = describe(Tabs).availableAt(getAvailableAtBadge('Tabs')).description('A container with controls to show one Tab at a time.').usage("import { Tabs, Tab } from 'grommet';\n<Tabs>\n  <Tab title='Tab 1'>...</Tab>\n  <Tab title='Tab 2'>...</Tab>\n</Tabs>").intrinsicElement('div');
-  DocumentedTabs.propTypes = _extends({}, genericProps, {
+  DocumentedTabs.propTypes = _extends(_extends({}, genericProps), {}, {
     activeIndex: PropTypes.number.description("Active tab index. If specified, Tabs will be a controlled component.\nThis means that future tab changes will not work unless you subscribe to\nonActive function and update activeIndex accordingly."),
     children: PropTypes.node.description('Array of Tab.').isRequired,
     flex: PropTypes.oneOfType([PropTypes.oneOf(['grow', 'shrink']), PropTypes.bool]).description('Whether flex-grow and/or flex-shrink is true.'),

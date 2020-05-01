@@ -29,32 +29,32 @@ var ProgressiveDrop = function ProgressiveDrop() {
     setOpenInnerDrop(false);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     ref: boxRef,
     primary: true,
     label: "Click me",
     onClick: onOpenDrop
-  }), openDrop && React.createElement(Drop, {
+  }), openDrop && /*#__PURE__*/React.createElement(Drop, {
     target: boxRef.current,
     onClickOutside: onCloseDrop,
     onEsc: onCloseDrop
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     ref: innerBoxRef
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     primary: true,
     label: "Click me again",
     onClick: function onClick() {
       return setOpenInnerDrop(true);
     }
-  })), openInnerDrop && React.createElement(Drop, {
+  })), openInnerDrop && /*#__PURE__*/React.createElement(Drop, {
     target: innerBoxRef.current,
     onClickOutside: function onClickOutside() {
       return setOpenInnerDrop(false);
@@ -66,9 +66,9 @@ var ProgressiveDrop = function ProgressiveDrop() {
       top: 'bottom',
       right: 'right'
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     primary: true,
     label: interactedWithInnerButton ? 'Good job!' : 'You can interact with me',
     onClick: function onClick() {
@@ -78,5 +78,5 @@ var ProgressiveDrop = function ProgressiveDrop() {
 };
 
 storiesOf('Drop', module).add('Progressive', function () {
-  return React.createElement(ProgressiveDrop, null);
+  return /*#__PURE__*/React.createElement(ProgressiveDrop, null);
 });

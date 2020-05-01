@@ -77,17 +77,17 @@ var CustomSearchSelect = function CustomSearchSelect() {
 
   var renderOption = function renderOption(_ref) {
     var name = _ref.name;
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       align: "center",
       pad: "small",
       flex: false
-    }, React.createElement(CheckBox, {
+    }, /*#__PURE__*/React.createElement(CheckBox, {
       tabIndex: "-1",
       checked: selectedContentPartners.some(function (partner) {
         return partner.name === name;
       }),
-      label: React.createElement(Text, {
+      label: /*#__PURE__*/React.createElement(Text, {
         size: "small"
       }, name),
       onChange: function onChange() {}
@@ -95,7 +95,7 @@ var CustomSearchSelect = function CustomSearchSelect() {
   };
 
   var renderContentPartners = function renderContentPartners() {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       gap: "xsmall",
       pad: {
@@ -104,7 +104,7 @@ var CustomSearchSelect = function CustomSearchSelect() {
       },
       align: "center",
       flex: true
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       background: "brand",
       round: "medium",
       align: "center",
@@ -115,17 +115,17 @@ var CustomSearchSelect = function CustomSearchSelect() {
       style: {
         minWidth: '21px'
       }
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       size: "small"
-    }, selectedContentPartners.length)), React.createElement(Box, {
+    }, selectedContentPartners.length)), /*#__PURE__*/React.createElement(Box, {
       flex: true
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       size: "small",
       truncate: true
     }, selectedContentPartners.map(function (_ref2) {
       var name = _ref2.name;
       return name;
-    }).join(', '))), React.createElement(Button, {
+    }).join(', '))), /*#__PURE__*/React.createElement(Button, {
       href: "#",
       onFocus: function onFocus(event) {
         return event.stopPropagation();
@@ -136,10 +136,10 @@ var CustomSearchSelect = function CustomSearchSelect() {
         clearContentPartners();
         selectRef.current.focus();
       }
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       background: "gray",
       round: "full"
-    }, React.createElement(FormClose, {
+    }, /*#__PURE__*/React.createElement(FormClose, {
       style: {
         width: '12px',
         height: '12px'
@@ -168,19 +168,19 @@ var CustomSearchSelect = function CustomSearchSelect() {
     };
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: customSearchTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center",
     width: "medium"
-  }, React.createElement(SearchInputContext.Provider, {
+  }, /*#__PURE__*/React.createElement(SearchInputContext.Provider, {
     value: {
       searching: searching
     }
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     ref: selectRef,
     closeOnChange: false,
     placeholder: "Select Content Partners",
@@ -222,5 +222,5 @@ var CustomSearchSelect = function CustomSearchSelect() {
 };
 
 storiesOf('Select', module).add('Custom Search', function () {
-  return React.createElement(CustomSearchSelect, null);
+  return /*#__PURE__*/React.createElement(CustomSearchSelect, null);
 });

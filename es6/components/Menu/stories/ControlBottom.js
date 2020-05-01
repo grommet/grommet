@@ -4,14 +4,14 @@ import { Grommet, Box, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var ControlBottom = function ControlBottom() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: "medium",
     justify: "center",
     align: "center",
     pad: "large"
-  }, React.createElement(Menu, {
+  }, /*#__PURE__*/React.createElement(Menu, {
     dropProps: {
       align: {
         bottom: 'bottom',
@@ -33,5 +33,5 @@ var ControlBottom = function ControlBottom() {
 };
 
 storiesOf('Menu', module).add('Bottom Control Button', function () {
-  return React.createElement(ControlBottom, null);
+  return /*#__PURE__*/React.createElement(ControlBottom, null);
 });

@@ -10,9 +10,9 @@ import { Sidebar } from '../Sidebar';
 var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
 var NotificationIcon = function NotificationIcon() {
-  return React.createElement(Stack, {
+  return /*#__PURE__*/React.createElement(Stack, {
     anchor: "top-right"
-  }, React.createElement(Notification, null), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Notification, null), /*#__PURE__*/React.createElement(Box, {
     background: "accent-1",
     pad: "xsmall",
     round: true,
@@ -27,9 +27,9 @@ var NotificationAlert = function NotificationAlert() {
       over = _useState[0],
       setOver = _useState[1];
 
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     onFocus: function onFocus() {
       return setOver(true);
     },
@@ -42,15 +42,15 @@ var NotificationAlert = function NotificationAlert() {
     onMouseOut: function onMouseOut() {
       return setOver(false);
     },
-    icon: React.createElement(NotificationIcon, null),
+    icon: /*#__PURE__*/React.createElement(NotificationIcon, null),
     ref: ref
-  }), ref.current && over && React.createElement(Drop, {
+  }), ref.current && over && /*#__PURE__*/React.createElement(Drop, {
     align: {
       left: 'right'
     },
     plain: true,
     target: ref.current
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     animation: "jiggle",
     background: "accent-1",
     round: {
@@ -64,33 +64,33 @@ var NotificationAlert = function NotificationAlert() {
 };
 
 var SidebarFooter = function SidebarFooter() {
-  return React.createElement(Box, null, React.createElement(NotificationAlert, null), React.createElement(Avatar, {
+  return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(NotificationAlert, null), /*#__PURE__*/React.createElement(Avatar, {
     margin: "small",
     src: src
   }));
 };
 
 var SidebarHeader = function SidebarHeader() {
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "small"
-  }, React.createElement(Avatar, {
+  }, /*#__PURE__*/React.createElement(Avatar, {
     background: "linear-gradient(#6FFFB0 0%, #7D4CDB 100%)",
     border: {
       color: 'white',
       size: 'small'
     },
     round: "medium"
-  }, React.createElement(Gremlin, {
+  }, /*#__PURE__*/React.createElement(Gremlin, {
     color: "white"
   })));
 };
 
 var iconsMap = function iconsMap(color) {
-  return [React.createElement(Analytics, {
+  return [/*#__PURE__*/React.createElement(Analytics, {
     color: color
-  }), React.createElement(Stakeholder, {
+  }), /*#__PURE__*/React.createElement(Stakeholder, {
     color: color
-  }), React.createElement(Calculator, {
+  }), /*#__PURE__*/React.createElement(Calculator, {
     color: color
   })];
 };
@@ -108,9 +108,9 @@ var SidebarButton = function SidebarButton(_ref) {
     opacity: 0.9
   };
   var ref = useRef();
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: "horizontal"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     ref: ref,
     onMouseOver: function onMouseOver() {
       return setOver(true);
@@ -128,19 +128,19 @@ var SidebarButton = function SidebarButton(_ref) {
     plain: true
   }, function (_ref2) {
     var hover = _ref2.hover;
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'small'
       },
       align: "center"
     }, iconsMap(hover ? 'black' : 'white')[index]);
-  }), ref.current && over && React.createElement(Drop, {
+  }), ref.current && over && /*#__PURE__*/React.createElement(Drop, {
     align: {
       left: 'right'
     },
     target: ref.current,
     plain: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     animation: "slideRight",
     margin: "xsmall",
     pad: "small",
@@ -153,22 +153,22 @@ var SidebarButton = function SidebarButton(_ref) {
 };
 
 export var TooltipsSidebar = function TooltipsSidebar() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     height: {
       min: '100%'
     }
-  }, React.createElement(Sidebar, {
+  }, /*#__PURE__*/React.createElement(Sidebar, {
     overflow: "auto",
     background: "brand",
-    header: React.createElement(SidebarHeader, null),
-    footer: React.createElement(SidebarFooter, null),
+    header: /*#__PURE__*/React.createElement(SidebarHeader, null),
+    footer: /*#__PURE__*/React.createElement(SidebarFooter, null),
     pad: "none"
-  }, React.createElement(Nav, null, ['Analytics', 'Stakeholder', 'Calculator'].map(function (iconName, index) {
-    return React.createElement(SidebarButton, {
+  }, /*#__PURE__*/React.createElement(Nav, null, ['Analytics', 'Stakeholder', 'Calculator'].map(function (iconName, index) {
+    return /*#__PURE__*/React.createElement(SidebarButton, {
       key: iconName,
       iconName: iconName,
       index: index
@@ -176,5 +176,5 @@ export var TooltipsSidebar = function TooltipsSidebar() {
   })))));
 };
 storiesOf('Sidebar', module).add('Tooltips', function () {
-  return React.createElement(TooltipsSidebar, null);
+  return /*#__PURE__*/React.createElement(TooltipsSidebar, null);
 });

@@ -6,7 +6,7 @@ import { Box } from '../../Box';
 import { RadioButtonGroup } from '..';
 describe('RadioButtonGroup', function () {
   test('default', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",
       options: []
     })));
@@ -14,7 +14,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('string options', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",
       options: ['one', 'two'],
       value: "one"
@@ -23,7 +23,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options just value', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",
       options: [{
         value: 'one'
@@ -36,7 +36,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",
       options: [{
         id: 'onE',
@@ -52,7 +52,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options disabled', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",
       options: [{
         value: 'one',
@@ -67,13 +67,13 @@ describe('RadioButtonGroup', function () {
   test('children', function () {
     var child = function child(_ref) {
       var checked = _ref.checked;
-      return React.createElement(Box, {
+      return /*#__PURE__*/React.createElement(Box, {
         pad: "small",
         background: checked ? 'accent-1' : 'control'
       });
     };
 
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",
       options: ['one', 'two'],
       value: "one"
@@ -82,7 +82,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('adding additional props', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButtonGroup, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",
       options: [{
         id: 'ONE',

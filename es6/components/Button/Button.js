@@ -84,7 +84,7 @@ var Button = forwardRef(function (_ref, ref) {
   var contents;
 
   if (first && second) {
-    contents = React.createElement(Box, {
+    contents = /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       align: "center",
       justify: "center",
@@ -99,7 +99,7 @@ var Button = forwardRef(function (_ref, ref) {
     contents = first || second || children;
   }
 
-  return React.createElement(StyledButton, _extends({}, rest, {
+  return /*#__PURE__*/React.createElement(StyledButton, _extends({}, rest, {
     as: domTag,
     ref: ref,
     "aria-label": a11yTitle,

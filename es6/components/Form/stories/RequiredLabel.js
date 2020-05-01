@@ -11,10 +11,10 @@ var FormFieldLabel = function FormFieldLabel(props) {
       label = props.label,
       rest = _objectWithoutPropertiesLoose(props, ["required", "label"]);
 
-  return React.createElement(FormField, _extends({
-    label: required ? React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(FormField, _extends({
+    label: required ? /*#__PURE__*/React.createElement(Box, {
       direction: "row"
-    }, React.createElement(Text, null, label), React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, null, label), /*#__PURE__*/React.createElement(Text, {
       color: "status-critical"
     }, "*")) : label,
     required: required
@@ -22,27 +22,27 @@ var FormFieldLabel = function FormFieldLabel(props) {
 };
 
 var LabelFormField = function LabelFormField() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Form, null, React.createElement(FormFieldLabel, {
+  }, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormFieldLabel, {
     name: "firstName",
     label: "FirstName",
     required: true
-  }), React.createElement(FormFieldLabel, {
+  }), /*#__PURE__*/React.createElement(FormFieldLabel, {
     name: "LastName",
     label: "LastName",
     required: true
-  }), React.createElement(FormFieldLabel, {
+  }), /*#__PURE__*/React.createElement(FormFieldLabel, {
     name: "email",
     label: "Email"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Submit",
     primary: true
-  }), React.createElement(Text, {
+  }), /*#__PURE__*/React.createElement(Text, {
     margin: {
       left: 'small'
     },
@@ -52,5 +52,5 @@ var LabelFormField = function LabelFormField() {
 };
 
 storiesOf('Form', module).add('Required Label', function () {
-  return React.createElement(LabelFormField, null);
+  return /*#__PURE__*/React.createElement(LabelFormField, null);
 });

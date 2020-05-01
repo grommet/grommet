@@ -22,32 +22,32 @@ var MultipleDrop = function MultipleDrop() {
       setShowLayer = _useState2[1];
 
   var targetRef = (0, _react.useRef)();
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.DropButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
     label: "drop button",
     dropAlign: {
       right: 'left'
     },
-    dropContent: _react["default"].createElement(_grommet.Box, {
+    dropContent: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large"
-    }, _react["default"].createElement(_grommet.TextInput, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
       value: "",
       onChange: function onChange() {},
       suggestions: ['one', 'two']
     }))
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     ref: targetRef,
     label: "button",
     onClick: function onClick() {
       return setShowDrop(true);
     }
-  }), showDrop && _react["default"].createElement(_grommet.Drop, {
+  }), showDrop && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       left: 'right'
     },
@@ -55,24 +55,24 @@ var MultipleDrop = function MultipleDrop() {
     onClickOutside: function onClickOutside() {
       return setShowDrop(false);
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     value: "",
     onChange: function onChange() {},
     suggestions: ['one', 'two']
-  }))), _react["default"].createElement(_grommet.Button, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "layer",
     onClick: function onClick() {
       return setShowLayer(!showLayer);
     }
-  }), showLayer && _react["default"].createElement(_grommet.Layer, {
+  }), showLayer && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "left",
     modal: false
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     border: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     value: "",
     onChange: function onChange() {},
     suggestions: ['one', 'two']
@@ -80,5 +80,5 @@ var MultipleDrop = function MultipleDrop() {
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Multiple', function () {
-  return _react["default"].createElement(MultipleDrop, null);
+  return /*#__PURE__*/_react["default"].createElement(MultipleDrop, null);
 });

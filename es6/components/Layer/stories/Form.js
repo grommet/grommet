@@ -22,51 +22,51 @@ var FormLayer = function FormLayer() {
     return setOpen(undefined);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Button, {
-    icon: React.createElement(Add, null),
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, null),
     label: "Add",
     onClick: onOpen
-  }), open && React.createElement(Layer, {
+  }), open && /*#__PURE__*/React.createElement(Layer, {
     position: "right",
     full: "vertical",
     modal: true,
     onClickOutside: onClose,
     onEsc: onClose
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     as: "form",
     fill: "vertical",
     overflow: "auto",
     width: "medium",
     pad: "medium",
     onSubmit: onClose
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     flex: false,
     direction: "row",
     justify: "between"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 2,
     margin: "none"
-  }, "Add"), React.createElement(Button, {
-    icon: React.createElement(Close, null),
+  }, "Add"), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Close, null),
     onClick: onClose
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     flex: "grow",
     overflow: "auto",
     pad: {
       vertical: 'medium'
     }
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "First"
-  }, React.createElement(TextInput, null)), React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(TextInput, null)), /*#__PURE__*/React.createElement(FormField, {
     label: "Second"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     options: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
     value: select,
     onSearch: function onSearch() {},
@@ -74,13 +74,13 @@ var FormLayer = function FormLayer() {
       var option = _ref.option;
       return setSelect(option);
     }
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Third"
-  }, React.createElement(TextArea, null))), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(TextArea, null))), /*#__PURE__*/React.createElement(Box, {
     flex: false,
     as: "footer",
     align: "start"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Submit",
     onClick: onClose,
@@ -89,5 +89,5 @@ var FormLayer = function FormLayer() {
 };
 
 storiesOf('Layer', module).add('Form', function () {
-  return React.createElement(FormLayer, null);
+  return /*#__PURE__*/React.createElement(FormLayer, null);
 });

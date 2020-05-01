@@ -23,7 +23,7 @@ var RangeInput = forwardRef(function (_ref, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
-  return React.createElement(StyledRangeInput, _extends({
+  return /*#__PURE__*/React.createElement(StyledRangeInput, _extends({
     ref: ref,
     name: name,
     focus: focus,

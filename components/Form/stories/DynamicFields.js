@@ -17,16 +17,16 @@ var Example = function Example() {
       haveAlias = _useState[0],
       setHaveAlias = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.Form, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
     onReset: function onReset(event) {
       return console.log(event);
     },
@@ -34,37 +34,37 @@ var Example = function Example() {
       var value = _ref.value;
       return console.log('Submit', value);
     }
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Name",
     name: "name",
     required: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     name: "name"
-  })), _react["default"].createElement(_grommet.FormField, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     name: "haveAlias"
-  }, _react["default"].createElement(_grommet.CheckBox, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     name: "haveAlias",
     label: "alias?",
     checked: haveAlias,
     onChange: function onChange() {
       return setHaveAlias(!haveAlias);
     }
-  })), haveAlias && _react["default"].createElement(_grommet.FormField, {
+  })), haveAlias && /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Alias",
     name: "alias",
     required: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     name: "alias"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "reset",
     label: "Reset"
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -72,5 +72,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('Form', module).add('Dynamic fields', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

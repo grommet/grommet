@@ -14,7 +14,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var Main = function Main(_ref) {
   var rest = _extends({}, _ref);
 
-  return _react["default"].createElement(_Box.Box, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     as: "main",
     fill: "vertical",
     flex: "grow",

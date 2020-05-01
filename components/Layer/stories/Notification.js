@@ -25,21 +25,21 @@ var NotificationLayer = function NotificationLayer() {
     return setOpen(undefined);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Button, {
-    icon: _react["default"].createElement(_grommetIcons.Add, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, {
       color: "brand"
     }),
-    label: _react["default"].createElement(_grommet.Text, null, _react["default"].createElement("strong", null, "Add")),
+    label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, /*#__PURE__*/_react["default"].createElement("strong", null, "Add")),
     onClick: onOpen,
     plain: true
-  })), open && _react["default"].createElement(_grommet.Layer, {
+  })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "bottom",
     modal: false,
     margin: {
@@ -49,7 +49,7 @@ var NotificationLayer = function NotificationLayer() {
     onEsc: onClose,
     responsive: false,
     plain: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     direction: "row",
     gap: "small",
@@ -61,17 +61,17 @@ var NotificationLayer = function NotificationLayer() {
       horizontal: 'small'
     },
     background: "status-ok"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     direction: "row",
     gap: "xsmall"
-  }, _react["default"].createElement(_grommetIcons.StatusGood, null), _react["default"].createElement(_grommet.Text, null, "A new virtual machine has been successfully added")), _react["default"].createElement(_grommet.Button, {
-    icon: _react["default"].createElement(_grommetIcons.FormClose, null),
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusGood, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "A new virtual machine has been successfully added")), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, null),
     onClick: onClose,
     plain: true
   }))));
 };
 
 (0, _react2.storiesOf)('Layer', module).add('Notification', function () {
-  return _react["default"].createElement(NotificationLayer, null);
+  return /*#__PURE__*/_react["default"].createElement(NotificationLayer, null);
 });

@@ -42,9 +42,7 @@ var formatTime = function formatTime(time) {
 
 var videoEvents = ['onAbort', 'onCanPlay', 'onCanPlayThrough', 'onDurationChange', 'onEmptied', 'onEncrypted', 'onEnded', 'onError', 'onLoadedData', 'onLoadedMetadata', 'onLoadStart', 'onPause', 'onPlay', 'onPlaying', 'onProgress', 'onRateChange', 'onSeeked', 'onSeeking', 'onStalled', 'onSuspend', 'onTimeUpdate', 'onVolumeChange', 'onWaiting'];
 
-var Video =
-/*#__PURE__*/
-function (_Component) {
+var Video = /*#__PURE__*/function (_Component) {
   _inheritsLoose(Video, _Component);
 
   Video.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
@@ -397,7 +395,7 @@ function (_Component) {
     };
     var captionControls = captions.map(function (caption) {
       return {
-        icon: caption.label ? undefined : React.createElement(Icons.ClosedCaption, {
+        icon: caption.label ? undefined : /*#__PURE__*/React.createElement(Icons.ClosedCaption, {
           color: iconColor
         }),
         label: caption.label,
@@ -407,29 +405,29 @@ function (_Component) {
         }
       };
     });
-    return React.createElement(StyledVideoControls, {
+    return /*#__PURE__*/React.createElement(StyledVideoControls, {
       over: over,
       active: !this.hasPlayed || controls === 'below' || over && interacting
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       align: "center",
       justify: "between",
       background: background
-    }, React.createElement(Button, {
-      icon: playing ? React.createElement(Icons.Pause, {
+    }, /*#__PURE__*/React.createElement(Button, {
+      icon: playing ? /*#__PURE__*/React.createElement(Icons.Pause, {
         color: iconColor
-      }) : React.createElement(Icons.Play, {
+      }) : /*#__PURE__*/React.createElement(Icons.Play, {
         color: iconColor
       }),
       hoverIndicator: "background",
       onClick: playing ? this.pause : this.play
-    }), React.createElement(Box, {
+    }), /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       align: "center",
       flex: true
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       flex: true
-    }, React.createElement(Stack, null, React.createElement(Meter, {
+    }, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Meter, {
       "aria-label": "Video progress",
       background: over ? theme.video.scrubber && theme.video.scrubber.track && theme.video.scrubber.track.color || 'dark-3' : undefined,
       size: "full",
@@ -437,7 +435,7 @@ function (_Component) {
       values: [{
         value: percentagePlayed || 0
       }]
-    }), React.createElement(StyledVideoScrubber, {
+    }), /*#__PURE__*/React.createElement(StyledVideoScrubber, {
       ref: scrubberRef,
       tabIndex: 0,
       role: "button",
@@ -449,14 +447,14 @@ function (_Component) {
         });
       },
       onClick: this.seek
-    }))), React.createElement(Box, {
+    }))), /*#__PURE__*/React.createElement(Box, {
       pad: {
         horizontal: 'small'
       }
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       margin: "none"
-    }, formattedTime))), React.createElement(Menu, {
-      icon: React.createElement(Icons.Configure, {
+    }, formattedTime))), /*#__PURE__*/React.createElement(Menu, {
+      icon: /*#__PURE__*/React.createElement(Icons.Configure, {
         color: iconColor
       }),
       dropAlign: {
@@ -465,19 +463,19 @@ function (_Component) {
       },
       dropBackground: background,
       items: [{
-        icon: React.createElement(Icons.Volume, {
+        icon: /*#__PURE__*/React.createElement(Icons.Volume, {
           color: iconColor
         }),
         onClick: volume <= 1 - VOLUME_STEP ? this.louder : undefined,
         close: false
       }, {
-        icon: React.createElement(Icons.ReduceVolume, {
+        icon: /*#__PURE__*/React.createElement(Icons.ReduceVolume, {
           color: iconColor
         }),
         onClick: volume >= VOLUME_STEP ? this.quieter : undefined,
         close: false
       }].concat(captionControls, [{
-        icon: React.createElement(Icons.FullScreen, {
+        icon: /*#__PURE__*/React.createElement(Icons.FullScreen, {
           color: iconColor
         }),
         onClick: this.fullscreen
@@ -528,12 +526,12 @@ function (_Component) {
       }
     }
 
-    return React.createElement(StyledVideoContainer, _extends({}, mouseEventListeners, {
+    return /*#__PURE__*/React.createElement(StyledVideoContainer, _extends({}, mouseEventListeners, {
       alignSelf: alignSelf,
       gridArea: gridArea,
       margin: margin,
       style: style
-    }), React.createElement(StyledVideo, _extends({}, rest, {
+    }), /*#__PURE__*/React.createElement(StyledVideo, _extends({}, rest, {
       ref: videoRef
     }, this.mediaEventProps, {
       autoPlay: autoPlay || false,

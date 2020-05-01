@@ -11,7 +11,7 @@ describe('Calendar', function () {
   afterEach(cleanup);
   test('date', function () {
     // need to set the date to avoid snapshot drift over time
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       date: DATE,
       animate: false
     })));
@@ -19,7 +19,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('dates', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       dates: DATES,
       animate: false
     })));
@@ -27,7 +27,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('daysOfWeek', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       daysOfWeek: true,
       dates: DATES,
       animate: false
@@ -36,15 +36,15 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('size', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       size: "small",
       date: DATE,
       animate: false
-    }), React.createElement(Calendar, {
+    }), /*#__PURE__*/React.createElement(Calendar, {
       size: "medium",
       date: DATE,
       animate: false
-    }), React.createElement(Calendar, {
+    }), /*#__PURE__*/React.createElement(Calendar, {
       size: "large",
       date: DATE,
       animate: false
@@ -53,11 +53,11 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('firstDayOfWeek', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       firstDayOfWeek: 0,
       date: DATE,
       animate: false
-    }), React.createElement(Calendar, {
+    }), /*#__PURE__*/React.createElement(Calendar, {
       firstDayOfWeek: 1,
       date: DATE,
       animate: false
@@ -66,7 +66,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('reference', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       reference: DATE,
       animate: false
     })));
@@ -74,7 +74,7 @@ describe('Calendar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('header', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       date: DATE,
       onSelect: function onSelect() {},
       size: "small",
@@ -86,20 +86,20 @@ describe('Calendar', function () {
             onNextMonth = _ref.onNextMonth,
             previousInBound = _ref.previousInBound,
             nextInBound = _ref.nextInBound;
-        return React.createElement(Box, {
+        return /*#__PURE__*/React.createElement(Box, {
           direction: "row",
           align: "center",
           justify: "between"
-        }, React.createElement(Button, {
+        }, /*#__PURE__*/React.createElement(Button, {
           onClick: previousInBound && onPreviousMonth
-        }, React.createElement(Box, null, React.createElement(FormPreviousLink, null))), React.createElement(Text, {
+        }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(FormPreviousLink, null))), /*#__PURE__*/React.createElement(Text, {
           size: "small"
-        }, React.createElement("strong", null, date.toLocaleDateString(locale, {
+        }, /*#__PURE__*/React.createElement("strong", null, date.toLocaleDateString(locale, {
           month: 'long',
           year: 'numeric'
-        }))), React.createElement(Button, {
+        }))), /*#__PURE__*/React.createElement(Button, {
           onClick: nextInBound && onNextMonth
-        }, React.createElement(Box, null, React.createElement(FormNextLink, null))));
+        }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(FormNextLink, null))));
       },
       animate: false
     })));
@@ -109,7 +109,7 @@ describe('Calendar', function () {
   test('select date', function () {
     var onSelect = jest.fn();
 
-    var _render = render(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       date: DATE,
       onSelect: onSelect,
       animate: false
@@ -125,7 +125,7 @@ describe('Calendar', function () {
   test('select dates', function () {
     var onSelect = jest.fn();
 
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(Calendar, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Calendar, {
       dates: DATES,
       onSelect: onSelect,
       animate: false

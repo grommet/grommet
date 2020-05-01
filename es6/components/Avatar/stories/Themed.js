@@ -17,33 +17,33 @@ var theme = {
 
 var Themed = function Themed() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     justify: "center",
     direction: "row",
     gap: "small",
     pad: "large",
     background: "dark-2"
-  }, React.createElement(Avatar, {
+  }, /*#__PURE__*/React.createElement(Avatar, {
     src: src,
     size: "myLarge"
-  }), React.createElement(Avatar, {
+  }), /*#__PURE__*/React.createElement(Avatar, {
     size: "myLarge",
     background: "accent-4"
-  }, React.createElement(Favorite, {
+  }, /*#__PURE__*/React.createElement(Favorite, {
     color: "accent-2",
     size: "36px"
-  })), React.createElement(Avatar, {
+  })), /*#__PURE__*/React.createElement(Avatar, {
     size: "myLarge",
     background: "dark-2"
-  }, "R"), React.createElement(Avatar, {
+  }, "R"), /*#__PURE__*/React.createElement(Avatar, {
     size: "myLarge",
     background: "brand"
   }, "SY")));
 };
 
 storiesOf('Avatar', module).add('Themed', function () {
-  return React.createElement(Themed, null);
+  return /*#__PURE__*/React.createElement(Themed, null);
 });

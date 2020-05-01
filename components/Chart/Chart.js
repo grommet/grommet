@@ -193,10 +193,10 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
           };
         }
 
-        return _react["default"].createElement("g", {
+        return /*#__PURE__*/_react["default"].createElement("g", {
           key: key,
           fill: "none"
-        }, _react["default"].createElement("title", null, label), _react["default"].createElement("path", _extends({
+        }, /*#__PURE__*/_react["default"].createElement("title", null, label), /*#__PURE__*/_react["default"].createElement("path", _extends({
           d: d
         }, hoverProps, clickProps, valueRest, {
           strokeDasharray: strokeDasharray
@@ -234,9 +234,9 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       };
     }
 
-    return _react["default"].createElement("g", {
+    return /*#__PURE__*/_react["default"].createElement("g", {
       fill: "none"
-    }, _react["default"].createElement("path", _extends({
+    }, /*#__PURE__*/_react["default"].createElement("path", _extends({
       d: d
     }, hoverProps, clickProps, {
       strokeDasharray: strokeDasharray
@@ -281,7 +281,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       };
     }
 
-    return _react["default"].createElement("g", null, _react["default"].createElement("path", _extends({
+    return /*#__PURE__*/_react["default"].createElement("g", null, /*#__PURE__*/_react["default"].createElement("path", _extends({
       d: d
     }, hoverProps, clickProps)));
   };
@@ -321,7 +321,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       if (round) {
         var cx = (value[0] - bounds[0][0]) * scale[0];
         var cy = size[1] - (center - bounds[1][0]) * scale[1];
-        shape = _react["default"].createElement("circle", _extends({
+        shape = /*#__PURE__*/_react["default"].createElement("circle", _extends({
           cx: cx,
           cy: cy,
           r: strokeWidth / 2
@@ -329,7 +329,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
       } else {
         var x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
         var y = size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
-        shape = _react["default"].createElement("rect", _extends({
+        shape = /*#__PURE__*/_react["default"].createElement("rect", _extends({
           x: x,
           y: y,
           width: strokeWidth,
@@ -337,10 +337,10 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
         }, hoverProps, clickProps, valueRest));
       }
 
-      return _react["default"].createElement("g", {
+      return /*#__PURE__*/_react["default"].createElement("g", {
         key: key,
         stroke: "none"
-      }, _react["default"].createElement("title", null, label), shape);
+      }, /*#__PURE__*/_react["default"].createElement("title", null, label), shape);
     });
   };
 
@@ -377,7 +377,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     if (useGradient) fill = gradientMaskColor;else fill = (0, _utils.normalizeColor)(colorName, theme);
   } else fill = 'none';
 
-  var drawing = _react["default"].createElement("g", {
+  var drawing = /*#__PURE__*/_react["default"].createElement("g", {
     stroke: stroke,
     strokeWidth: type !== 'point' ? strokeWidth : undefined,
     fill: fill,
@@ -392,7 +392,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
   if (useGradient && size[1]) {
     var gradientId = id + "-gradient";
     var maskId = id + "-mask";
-    defs = _react["default"].createElement("defs", null, _react["default"].createElement("linearGradient", {
+    defs = /*#__PURE__*/_react["default"].createElement("defs", null, /*#__PURE__*/_react["default"].createElement("linearGradient", {
       id: gradientId,
       x1: 0,
       y1: 0,
@@ -403,15 +403,15 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     }).map(function (_ref5) {
       var value = _ref5.value,
           gradientColor = _ref5.color;
-      return _react["default"].createElement("stop", {
+      return /*#__PURE__*/_react["default"].createElement("stop", {
         key: value,
         offset: (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
         stopColor: (0, _utils.normalizeColor)(gradientColor, theme)
       });
-    })), _react["default"].createElement("mask", {
+    })), /*#__PURE__*/_react["default"].createElement("mask", {
       id: maskId
     }, drawing));
-    gradientRect = _react["default"].createElement("rect", {
+    gradientRect = /*#__PURE__*/_react["default"].createElement("rect", {
       x: viewBounds[0],
       y: viewBounds[1],
       width: viewBounds[2],
@@ -421,7 +421,7 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
     });
   }
 
-  return _react["default"].createElement(_StyledChart.StyledChart, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledChart.StyledChart, _extends({
     ref: ref || containerRef,
     id: id,
     viewBox: viewBox,

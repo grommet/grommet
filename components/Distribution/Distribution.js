@@ -20,7 +20,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Value = function Value(_ref) {
   var basis = _ref.basis,
       children = _ref.children;
-  return _react["default"].createElement(_Box.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     basis: basis,
     flex: "shrink",
     overflow: "hidden"
@@ -43,7 +43,7 @@ var Distribution = function Distribution(_ref2) {
 
   if (values.length === 1) {
     var value = values[0];
-    return _react["default"].createElement(Value, {
+    return /*#__PURE__*/_react["default"].createElement(Value, {
       value: value,
       basis: basis
     }, children(value));
@@ -73,7 +73,7 @@ var Distribution = function Distribution(_ref2) {
 
     if (subIndex === values.length) {
       var _value = values[0];
-      return _react["default"].createElement(Value, {
+      return /*#__PURE__*/_react["default"].createElement(Value, {
         value: _value,
         basis: basis
       }, children(_value));
@@ -89,19 +89,19 @@ var Distribution = function Distribution(_ref2) {
       childBasis = ['1/2', '1/2'];
     }
 
-    return _react["default"].createElement(_Box.Box, _extends({
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
       direction: direction,
       basis: basis,
       flex: basis ? 'shrink' : true,
       overflow: "hidden",
       gap: gap,
       fill: fill
-    }, rest), _react["default"].createElement(Distribution, {
+    }, rest), /*#__PURE__*/_react["default"].createElement(Distribution, {
       values: values.slice(0, subIndex),
       basis: childBasis[0],
       direction: direction === 'row' ? 'column' : 'row',
       gap: gap
-    }, children), _react["default"].createElement(Distribution, {
+    }, children), /*#__PURE__*/_react["default"].createElement(Distribution, {
       values: values.slice(subIndex),
       basis: childBasis[1],
       direction: direction === 'row' ? 'column' : 'row',
@@ -115,10 +115,10 @@ var Distribution = function Distribution(_ref2) {
 Distribution.defaultProps = {
   basis: undefined,
   children: function children(value) {
-    return _react["default"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react["default"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, value.value));
   },
   direction: 'row',
   gap: 'xsmall',

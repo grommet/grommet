@@ -301,14 +301,14 @@ var WorldMap = (0, _react.forwardRef)(function (_ref3, ref) {
       }, active);
     }
 
-    return _react["default"].createElement("g", _extends({
+    return /*#__PURE__*/_react["default"].createElement("g", _extends({
       key: name
-    }, interactiveProps), _react["default"].createElement("path", {
+    }, interactiveProps), /*#__PURE__*/_react["default"].createElement("path", {
       stroke: "none",
       fill: "#fff",
       fillOpacity: "0.01",
       d: area
-    }), _react["default"].createElement("path", {
+    }), /*#__PURE__*/_react["default"].createElement("path", {
       d: dots,
       strokeLinecap: "round",
       strokeWidth: (0, _utils.parseMetricToNum)(theme.worldMap.continent[active ? 'active' : 'base']),
@@ -334,7 +334,7 @@ var WorldMap = (0, _react.forwardRef)(function (_ref3, ref) {
       }, active);
     }
 
-    return _react["default"].createElement("path", _extends({
+    return /*#__PURE__*/_react["default"].createElement("path", _extends({
       key: key,
       strokeLinecap: "round",
       strokeWidth: (0, _utils.parseMetricToNum)(theme.worldMap.place[active ? 'active' : 'base']),
@@ -363,14 +363,14 @@ var WorldMap = (0, _react.forwardRef)(function (_ref3, ref) {
 
   if (activeCoords) {
     var d = "M" + FACTOR * activeCoords[0] + ", " + FACTOR * activeCoords[1] + " h0";
-    active = _react["default"].createElement("g", {
+    active = /*#__PURE__*/_react["default"].createElement("g", {
       stroke: "none",
       fill: "none",
       fillRule: "evenodd",
       onClick: function onClick() {
         return onSelectPlace(coordToLatLon(activeCoords, world.origin, world.extent));
       }
-    }, _react["default"].createElement("path", {
+    }, /*#__PURE__*/_react["default"].createElement("path", {
       strokeLinecap: "round",
       strokeWidth: (0, _utils.parseMetricToNum)(theme.worldMap.place.active),
       stroke: (0, _utils.normalizeColor)(hoverColor || color || theme.worldMap.hover.color, theme),
@@ -378,14 +378,14 @@ var WorldMap = (0, _react.forwardRef)(function (_ref3, ref) {
     }));
   }
 
-  return _react["default"].createElement(_StyledWorldMap.StyledWorldMap, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledWorldMap.StyledWorldMap, _extends({
     ref: ref,
     viewBox: world.x + " " + world.y + " " + world.width + " " + world.height,
     preserveAspectRatio: "xMinYMin meet",
     fillProp: fill,
     width: world.width,
     height: world.height
-  }, interactiveProps, rest), _react["default"].createElement("g", {
+  }, interactiveProps, rest), /*#__PURE__*/_react["default"].createElement("g", {
     ref: containerRef,
     stroke: "none",
     fill: "none",

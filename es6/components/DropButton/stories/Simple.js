@@ -7,19 +7,19 @@ import { grommet } from 'grommet/themes';
 
 var DropContent = function DropContent(_ref) {
   var onClose = _ref.onClose;
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "small"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     align: "center"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 3,
     margin: "small"
-  }, "Heading"), React.createElement(Button, {
-    icon: React.createElement(Close, null),
+  }, "Heading"), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Close, null),
     onClick: onClose
-  })), React.createElement(Text, null, "Content"));
+  })), /*#__PURE__*/React.createElement(Text, null, "Content"));
 };
 
 DropContent.propTypes = {
@@ -39,17 +39,17 @@ var SimpleDropButton = function SimpleDropButton() {
     setOpen(false);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DropButton, {
+  }, /*#__PURE__*/React.createElement(DropButton, {
     label: "Open",
     open: open,
     onOpen: onOpen,
     onClose: onClose,
-    dropContent: React.createElement(DropContent, {
+    dropContent: /*#__PURE__*/React.createElement(DropContent, {
       onClose: onClose
     }),
     dropProps: {
@@ -61,5 +61,5 @@ var SimpleDropButton = function SimpleDropButton() {
 };
 
 storiesOf('DropButton', module).add('Simple', function () {
-  return React.createElement(SimpleDropButton, null);
+  return /*#__PURE__*/React.createElement(SimpleDropButton, null);
 });

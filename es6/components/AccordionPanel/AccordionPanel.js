@@ -39,11 +39,11 @@ var AccordionPanel = forwardRef(function (_ref, ref) {
   var AccordionIcon = useMemo(function () {
     return active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
   }, [active, theme.accordion.icons]);
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     ref: ref,
     flex: false,
     onClick: onClick
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     role: "tab",
     "aria-selected": active,
     "aria-expanded": active,
@@ -64,26 +64,26 @@ var AccordionPanel = forwardRef(function (_ref, ref) {
       setHover(undefined);
       if (_onBlur) _onBlur(event);
     }
-  }, header || React.createElement(Box, _extends({
+  }, header || /*#__PURE__*/React.createElement(Box, _extends({
     align: "center",
     direction: "row",
     justify: "between"
-  }, rest), typeof label === 'string' ? React.createElement(Box, {
+  }, rest), typeof label === 'string' ? /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'xsmall'
     }
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: theme.accordion.heading && theme.accordion.heading.level || 4,
     color: hover
-  }, label)) : label, AccordionIcon && React.createElement(Box, {
+  }, label)) : label, AccordionIcon && /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'small'
     }
-  }, React.createElement(AccordionIcon, {
+  }, /*#__PURE__*/React.createElement(AccordionIcon, {
     color: iconColor
-  })))), React.createElement(Box, {
+  })))), /*#__PURE__*/React.createElement(Box, {
     border: theme.accordion.border
-  }, animate ? React.createElement(Collapsible, {
+  }, animate ? /*#__PURE__*/React.createElement(Collapsible, {
     open: active
   }, children) : active && children));
 });

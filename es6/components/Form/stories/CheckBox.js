@@ -5,51 +5,51 @@ import { storiesOf } from '@storybook/react';
 import { grommet, Box, Button, Form, FormField, CheckBox, Grommet } from 'grommet';
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Form, {
+  }, /*#__PURE__*/React.createElement(Form, {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value,
           touched = _ref.touched;
       return console.log('Submit', value, touched);
     }
-  }, React.createElement(FormField, _extends({
+  }, /*#__PURE__*/React.createElement(FormField, _extends({
     label: "Toggle",
     name: "toggle",
     htmlFor: "check-box-toggle"
-  }, props), React.createElement(Box, {
+  }, props), /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
     }
-  }, React.createElement(CheckBox, {
+  }, /*#__PURE__*/React.createElement(CheckBox, {
     id: "check-box-toggle",
     name: "toggle",
     label: "CheckBox",
     toggle: true
-  }))), React.createElement(FormField, {
+  }))), /*#__PURE__*/React.createElement(FormField, {
     label: "Default",
     name: "checkbox",
     htmlFor: "check-box",
     required: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
     }
-  }, React.createElement(CheckBox, {
+  }, /*#__PURE__*/React.createElement(CheckBox, {
     id: "check-box",
     name: "checkbox",
     label: "CheckBox"
-  }))), React.createElement(Button, {
+  }))), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Submit"
   }))));
 };
 
 storiesOf('Form', module).add('CheckBox', function () {
-  return React.createElement(FormFieldCheckBox, null);
+  return /*#__PURE__*/React.createElement(FormFieldCheckBox, null);
 });

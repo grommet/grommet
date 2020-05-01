@@ -27,9 +27,9 @@ var ScanChart = function ScanChart(props) {
       pad = _useMemo.pad,
       thickness = _useMemo.thickness;
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Keyboard, {
+  }, /*#__PURE__*/React.createElement(Keyboard, {
     onLeft: function onLeft() {
       return setActive(Math.max(0, active - 1));
     },
@@ -39,45 +39,45 @@ var ScanChart = function ScanChart(props) {
     onEsc: function onEsc() {
       return setActive(undefined);
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     tabIndex: "0",
     direction: "row",
     margin: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "xxsmall"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     flex: true,
     justify: "between"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     border: "top",
     align: "end"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, React.createElement(Text, null, axis[1][0]))), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Text, null, axis[1][0]))), /*#__PURE__*/React.createElement(Box, {
     border: "bottom",
     align: "end"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, React.createElement(Text, null, axis[1][1])))), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Text, null, axis[1][1])))), /*#__PURE__*/React.createElement(Box, {
     height: "xxsmall",
     flex: false
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     width: "large"
-  }, React.createElement(Stack, {
+  }, /*#__PURE__*/React.createElement(Stack, {
     guidingChild: "first"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: pad
     }
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: "bar",
     overflow: true,
     bounds: bounds,
@@ -87,19 +87,19 @@ var ScanChart = function ScanChart(props) {
       width: 'full',
       height: 'small'
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     fill: true,
     direction: "row",
     justify: "between"
   }, values.map(function (v, i) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       flex: false,
       key: v[0]
-    }, React.createElement(Stack, {
+    }, /*#__PURE__*/React.createElement(Stack, {
       fill: true,
       anchor: "center",
       interactiveChild: "first"
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       fill: true,
       pad: pad,
       background: active === i ? {
@@ -114,7 +114,7 @@ var ScanChart = function ScanChart(props) {
       },
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
-    }), active === i && React.createElement(Box, {
+    }), active === i && /*#__PURE__*/React.createElement(Box, {
       animation: {
         type: 'fadeIn',
         duration: 100
@@ -123,19 +123,19 @@ var ScanChart = function ScanChart(props) {
       pad: "small",
       round: "small",
       background: "dark-3"
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       size: "large"
-    }, data[active].value), React.createElement(Text, {
+    }, data[active].value), /*#__PURE__*/React.createElement(Text, {
       className: "chromatic-ignore",
       size: "small"
     }, new Date(data[active].time).toLocaleDateString()))));
-  }))), React.createElement(Box, {
+  }))), /*#__PURE__*/React.createElement(Box, {
     height: "xxsmall",
     direction: "row",
     justify: "between",
     align: "center"
   }, axis[0].map(function (t) {
-    return React.createElement(Text, {
+    return /*#__PURE__*/React.createElement(Text, {
       className: "chromatic-ignore",
       key: t
     }, new Date(t).toLocaleDateString());
@@ -143,7 +143,7 @@ var ScanChart = function ScanChart(props) {
 };
 
 storiesOf('Chart', module).add('Scan', function () {
-  return React.createElement(ScanChart, {
+  return /*#__PURE__*/React.createElement(ScanChart, {
     data: generateData(30, 100),
     max: 100
   });

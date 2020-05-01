@@ -16,13 +16,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 describe('Grid', function () {
   test('renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, null)));
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, null)));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('a11yTitle renders', function () {
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       a11yTitle: "My Grid"
     }))),
         container = _render.container,
@@ -33,9 +33,9 @@ describe('Grid', function () {
     expect(container).toMatchSnapshot();
   });
   test('rows renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       rows: ['small', 'large', 'medium']
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       rows: "small"
     })));
 
@@ -43,20 +43,20 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('columns renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       columns: ['1/2', '2/4']
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       columns: ['1/3', '2/3']
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       columns: ['1/4', '3/4']
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       columns: "small"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       columns: {
         count: 'fit',
         size: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       columns: {
         count: 'fill',
         size: ['small', 'medium']
@@ -67,7 +67,7 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('areas renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       rows: ['xxsmall', 'medium', 'xsmall'],
       columns: ['3/4', '1/4'],
       areas: [{
@@ -93,7 +93,7 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('areas renders when given an array of string arrays', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       rows: ['xxsmall', 'medium', 'xsmall'],
       columns: ['3/4', '1/4'],
       areas: [['header', 'header'], ['sidebar', 'main'], ['footer', 'footer']]
@@ -103,13 +103,13 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('justify renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justify: "start"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justify: "center"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justify: "end"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justify: "stretch"
     })));
 
@@ -117,13 +117,13 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('align renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       align: "start"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       align: "center"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       align: "end"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       align: "stretch"
     })));
 
@@ -131,17 +131,17 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('justifyContent renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justifyContent: "start"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justifyContent: "center"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justifyContent: "between"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justifyContent: "around"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justifyContent: "end"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       justifyContent: "stretch"
     })));
 
@@ -149,17 +149,17 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('alignContent renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       alignContent: "start"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       alignContent: "center"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       alignContent: "between"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       alignContent: "around"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       alignContent: "end"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       alignContent: "stretch"
     })));
 
@@ -167,37 +167,37 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('gap renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: "small"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: "medium"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: "large"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: {
         row: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: {
         row: 'medium'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: {
         row: 'large'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: {
         column: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: {
         column: 'medium'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: {
         column: 'large'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       gap: {
         row: 'small',
         column: 'medium'
@@ -208,13 +208,13 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('fill renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       fill: true
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       fill: false
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       fill: "horizontal"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       fill: "vertical"
     })));
 
@@ -222,9 +222,9 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('responsive', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       responsive: true
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       responsive: false
     })));
 
@@ -232,7 +232,7 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('as renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       as: "article"
     })));
 
@@ -240,52 +240,52 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('proxies tag', function () {
-    var tagComponent = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var tagComponent = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       tag: "article"
     })));
 
-    var asComponent = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var asComponent = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       as: "article"
     })));
 
     expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
   });
   test('pad', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: "small"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: "medium"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: "large"
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         horizontal: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         vertical: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         bottom: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         left: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         right: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         start: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         end: 'small'
       }
-    }), _react["default"].createElement(_.Grid, {
+    }), /*#__PURE__*/_react["default"].createElement(_.Grid, {
       pad: {
         top: 'small'
       }

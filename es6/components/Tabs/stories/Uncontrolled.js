@@ -10,42 +10,42 @@ import { grommet } from 'grommet/themes';
 var UncontrolledTabs = function UncontrolledTabs(_ref) {
   var _ref$plain = _ref.plain,
       plain = _ref$plain === void 0 ? false : _ref$plain;
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true
-  }, React.createElement(Tabs, {
+  }, /*#__PURE__*/React.createElement(Tabs, {
     flex: true
-  }, React.createElement(Tab, {
+  }, /*#__PURE__*/React.createElement(Tab, {
     plain: plain,
     title: "Tab 1"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     plain: plain,
     title: "Tab 2"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     plain: plain,
     title: "Tab 3"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
   }))))));
 };
@@ -55,9 +55,9 @@ UncontrolledTabs.propTypes = {
 
 };
 storiesOf('Tabs', module).add('Uncontrolled', function () {
-  return React.createElement(UncontrolledTabs, null);
+  return /*#__PURE__*/React.createElement(UncontrolledTabs, null);
 }).add('Plain', function () {
-  return React.createElement(UncontrolledTabs, {
+  return /*#__PURE__*/React.createElement(UncontrolledTabs, {
     plain: true
   });
 });

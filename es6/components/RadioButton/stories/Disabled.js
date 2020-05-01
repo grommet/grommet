@@ -4,13 +4,13 @@ import { Grommet, Box, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var DisabledRadioButton = function DisabledRadioButton() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "large"
-  }, React.createElement(RadioButton, {
+  }, /*#__PURE__*/React.createElement(RadioButton, {
     label: "option 1",
     name: "name",
     value: "option 1",
@@ -20,5 +20,5 @@ var DisabledRadioButton = function DisabledRadioButton() {
 };
 
 storiesOf('RadioButton', module).add('Disabled', function () {
-  return React.createElement(DisabledRadioButton, null);
+  return /*#__PURE__*/React.createElement(DisabledRadioButton, null);
 });

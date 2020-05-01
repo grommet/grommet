@@ -50,7 +50,7 @@ exports.themeDoc = themeDoc;
 
 var doc = function doc(WorldMap) {
   var DocumentedWorldMap = (0, _reactDesc.describe)(WorldMap).availableAt((0, _utils.getAvailableAtBadge)('WorldMap')).description('A map of the world, or a continent.').usage("import { WorldMap } from 'grommet';\n<WorldMap />").intrinsicElement('svg');
-  DocumentedWorldMap.propTypes = _extends({}, _utils.genericProps, {
+  DocumentedWorldMap.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
     color: _utils.colorPropType.description('Default color'),
     continents: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       color: _utils.colorPropType,

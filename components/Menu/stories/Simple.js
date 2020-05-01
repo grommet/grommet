@@ -11,12 +11,12 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var SimpleMenu = function SimpleMenu() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Menu, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Menu, {
     dropProps: {
       align: {
         top: 'bottom',
@@ -39,5 +39,5 @@ var SimpleMenu = function SimpleMenu() {
 };
 
 (0, _react2.storiesOf)('Menu', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleMenu, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleMenu, null);
 });

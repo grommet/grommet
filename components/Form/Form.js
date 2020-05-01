@@ -203,7 +203,7 @@ var Form = (0, _react.forwardRef)(function (_ref, ref) {
     }];
   };
 
-  return _react["default"].createElement("form", _extends({
+  return /*#__PURE__*/_react["default"].createElement("form", _extends({
     ref: ref
   }, rest, {
     onReset: function onReset(event) {
@@ -252,7 +252,7 @@ var Form = (0, _react.forwardRef)(function (_ref, ref) {
         _onSubmit(adjustedEvent);
       }
     }
-  }), _react["default"].createElement(_FormContext.FormContext.Provider, {
+  }), /*#__PURE__*/_react["default"].createElement(_FormContext.FormContext.Provider, {
     value: {
       addValidation: function addValidation(name, validation) {
         validations.current[name] = validation;

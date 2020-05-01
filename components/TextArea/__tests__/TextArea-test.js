@@ -15,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 jest.mock('react-dom');
 describe('TextArea', function () {
   test('basic', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
       id: "item",
       name: "item"
     })));
@@ -24,7 +24,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('placeholder', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
       id: "item",
       name: "item",
       placeholder: "placeholder"
@@ -34,7 +34,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('plain', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
       id: "item",
       name: "item",
       plain: true
@@ -44,7 +44,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
       disabled: true,
       id: "item",
       name: "item",
@@ -55,7 +55,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('focusIndicator', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
       id: "item",
       name: "item",
       focusIndicator: true
@@ -65,7 +65,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('fill', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
       id: "item",
       name: "item",
       fill: true
@@ -76,7 +76,7 @@ describe('TextArea', function () {
   });
   [true, false, 'horizontal', 'vertical'].forEach(function (resize) {
     test("resize " + resize, function () {
-      var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+      var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
         id: "item",
         name: "item",
         resize: resize
@@ -88,7 +88,7 @@ describe('TextArea', function () {
   });
   ['small', 'medium', 'large'].forEach(function (size) {
     test("size " + size, function () {
-      var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextArea, {
+      var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.TextArea, {
         id: "item",
         name: "item",
         size: size

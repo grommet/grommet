@@ -12,14 +12,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var LabelledMeter = function LabelledMeter() {
   var meterValue = 30;
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Stack, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     anchor: "center"
-  }, _react["default"].createElement(_grommet.Meter, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
     type: "circle",
     background: "light-2",
     values: [{
@@ -27,20 +27,20 @@ var LabelledMeter = function LabelledMeter() {
     }],
     size: "xsmall",
     thickness: "small"
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     pad: {
       bottom: 'xsmall'
     }
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "xlarge",
     weight: "bold"
-  }, meterValue), _react["default"].createElement(_grommet.Text, {
+  }, meterValue), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "small"
   }, "%")))));
 };
 
 (0, _react2.storiesOf)('Meter', module).add('Labelled', function () {
-  return _react["default"].createElement(LabelledMeter, null);
+  return /*#__PURE__*/_react["default"].createElement(LabelledMeter, null);
 });

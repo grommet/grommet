@@ -4,10 +4,10 @@ import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Percentages = function Percentages() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Grid, {
+  }, /*#__PURE__*/React.createElement(Grid, {
     fill: true,
     areas: [{
       name: 'nav',
@@ -21,15 +21,15 @@ var Percentages = function Percentages() {
     columns: ['small', 'flex'],
     rows: ['flex'],
     gap: "small"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     gridArea: "nav",
     background: "brand"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     gridArea: "main",
     background: "brand"
   })));
 };
 
 storiesOf('Grid', module).add('Percentages', function () {
-  return React.createElement(Percentages, null);
+  return /*#__PURE__*/React.createElement(Percentages, null);
 });

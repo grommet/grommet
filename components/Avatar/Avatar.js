@@ -47,7 +47,7 @@ var Avatar = function Avatar(_ref) {
   };
 
   var AvatarChildren = function AvatarChildren() {
-    return _react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest), children);
+    return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest), children);
   };
 
   if (height || width) {
@@ -55,19 +55,19 @@ var Avatar = function Avatar(_ref) {
   }
 
   if (typeof src === 'string') {
-    return _react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest, {
       background: "url(" + src + ")"
     }));
   }
 
   if (typeof children === 'string') {
-    return _react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest), _react["default"].createElement(_StyledAvatar.StyledAvatarText, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest), /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatarText, {
       alignSelf: "center",
       size: "large"
     }, children));
   }
 
-  return _react["default"].createElement(AvatarChildren, null);
+  return /*#__PURE__*/_react["default"].createElement(AvatarChildren, null);
 };
 
 exports.Avatar = Avatar;

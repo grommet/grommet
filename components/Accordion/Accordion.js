@@ -66,13 +66,13 @@ var Accordion = (0, _react.forwardRef)(function (_ref, ref) {
     }
   };
 
-  return _react["default"].createElement(_Box.Box, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: ref,
     role: "tablist"
   }, rest), _react.Children.toArray(children).filter(function (child) {
     return child;
   }).map(function (child, index) {
-    return _react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
+    return /*#__PURE__*/_react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
       // eslint-disable-next-line react/no-array-index-key
       key: index,
       value: {

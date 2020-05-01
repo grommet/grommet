@@ -4,12 +4,12 @@ import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
 var FixedSizesBox = function FixedSizesBox() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     gap: "small"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "small",
     height: "small",
     round: "small",
@@ -21,19 +21,21 @@ var FixedSizesBox = function FixedSizesBox() {
       vertical: 'scroll'
     }
   }, Array(20).fill().map(function (_, i) {
-    return (// eslint-disable-next-line react/no-array-index-key
+    return (
+      /*#__PURE__*/
+      // eslint-disable-next-line react/no-array-index-key
       React.createElement(Text, {
         key: i
       }, "Small (" + i + ")")
     );
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     width: "medium",
     height: "medium",
     round: "small",
     align: "center",
     justify: "center",
     background: "brand"
-  }, "Medium"), React.createElement(Box, {
+  }, "Medium"), /*#__PURE__*/React.createElement(Box, {
     width: "large",
     height: "large",
     round: "small",
@@ -44,5 +46,5 @@ var FixedSizesBox = function FixedSizesBox() {
 };
 
 storiesOf('Box', module).add('Fixed sizes', function () {
-  return React.createElement(FixedSizesBox, null);
+  return /*#__PURE__*/React.createElement(FixedSizesBox, null);
 });

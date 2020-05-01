@@ -10,17 +10,17 @@ var SidebarButton = function SidebarButton(_ref) {
   var label = _ref.label,
       rest = _objectWithoutPropertiesLoose(_ref, ["label"]);
 
-  return React.createElement(Button, _extends({
+  return /*#__PURE__*/React.createElement(Button, _extends({
     plain: true
   }, rest), function (_ref2) {
     var hover = _ref2.hover;
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       background: hover ? 'accent-1' : undefined,
       pad: {
         horizontal: 'large',
         vertical: 'medium'
       }
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       size: "large"
     }, label));
   });
@@ -31,16 +31,16 @@ var SidebarNav = function SidebarNav() {
       active = _useState[0],
       setActive = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     direction: "row"
-  }, React.createElement(Nav, {
+  }, /*#__PURE__*/React.createElement(Nav, {
     background: "neutral-1"
   }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
-    return React.createElement(SidebarButton, {
+    return /*#__PURE__*/React.createElement(SidebarButton, {
       key: label,
       label: label,
       active: label === active,
@@ -52,5 +52,5 @@ var SidebarNav = function SidebarNav() {
 };
 
 storiesOf('Nav', module).add('Sidebar', function () {
-  return React.createElement(SidebarNav, null);
+  return /*#__PURE__*/React.createElement(SidebarNav, null);
 });

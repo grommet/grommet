@@ -37,20 +37,20 @@ var customlevel = (0, _utils.deepMerge)(_themes.grommet, {
 });
 
 var CustomHeading = function CustomHeading() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customlevel
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 5,
     size: "small"
-  }, "Heading level 5 small"), _react["default"].createElement(_grommet.Heading, {
+  }, "Heading level 5 small"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 5,
     size: "medium"
-  }, "Heading level 5 small"), _react["default"].createElement(_grommet.Heading, {
+  }, "Heading level 5 small"), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 5,
     size: "large"
   }, "Heading level 5 small"));
 };
 
 (0, _react2.storiesOf)('Heading', module).add('Custom', function () {
-  return _react["default"].createElement(CustomHeading, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomHeading, null);
 });

@@ -17,31 +17,31 @@ var CornerLayer = function CornerLayer() {
     return setOpen(undefined);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Button, {
-    icon: React.createElement(Add, {
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, {
       color: "brand"
     }),
-    label: React.createElement(Text, null, React.createElement("strong", null, "Add Corner Layer")),
+    label: /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement("strong", null, "Add Corner Layer")),
     onClick: onOpen,
     plain: true
-  })), open && React.createElement(Layer, {
+  })), open && /*#__PURE__*/React.createElement(Layer, {
     position: "top-right",
     onClickOutside: onClose
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: "small",
     overflow: "auto"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge"
   }, "Corner top-right position"))));
 };
 
 storiesOf('Layer', module).add('Corner', function () {
-  return React.createElement(CornerLayer, null);
+  return /*#__PURE__*/React.createElement(CornerLayer, null);
 });

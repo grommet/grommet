@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Calendar) {
   var DocumentedCalendar = (0, _reactDesc.describe)(Calendar).availableAt((0, _utils.getAvailableAtBadge)('Calendar')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />").intrinsicElement('div');
-  DocumentedCalendar.propTypes = _extends({}, _utils.genericProps, {
+  DocumentedCalendar.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
     animate: _reactDesc.PropTypes.bool.description("Whether to animate the calender as the user interacts with it.").defaultValue(true),
     bounds: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string).description("An array of two numbers indicating the limits on\n        navigation in ISO8601 format"),
     date: _reactDesc.PropTypes.string.description('The selected date in ISO8601 format'),
@@ -33,7 +33,7 @@ var doc = function doc(Calendar) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({
+var themeDoc = _extends(_extends({
   'calendar.day.extend': {
     description: 'Any additional style for the day of Calendar.',
     type: 'string | (props) => {}'
@@ -142,6 +142,6 @@ var themeDoc = _extends({
     type: 'string',
     defaultValue: '768px'
   }
-}, _utils.themeDocUtils.iconColor, {}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, _utils.themeDocUtils.iconColor), _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

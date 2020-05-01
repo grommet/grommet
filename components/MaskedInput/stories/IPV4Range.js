@@ -17,17 +17,17 @@ var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
       value = _React$useState[0],
       setValue = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.MaskedInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     mask: [{
       length: [1, 3],
       regexp: IPv4ElementExp,
@@ -83,5 +83,5 @@ var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
 };
 
 (0, _react2.storiesOf)('MaskedInput', module).add('IPv4 Range', function () {
-  return _react["default"].createElement(IPv4RangeMaskedInput, null);
+  return /*#__PURE__*/_react["default"].createElement(IPv4RangeMaskedInput, null);
 });

@@ -12,26 +12,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var Sizes = function Sizes() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Avatar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "small",
     src: src
-  }), _react["default"].createElement(_grommet.Avatar, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "medium",
     src: src
-  }), _react["default"].createElement(_grommet.Avatar, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "large",
     src: src
-  }), _react["default"].createElement(_grommet.Avatar, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "xlarge",
     src: src
   })));
 };
 
 (0, _react2.storiesOf)('Avatar', module).add('Sizes', function () {
-  return _react["default"].createElement(Sizes, null);
+  return /*#__PURE__*/_react["default"].createElement(Sizes, null);
 });

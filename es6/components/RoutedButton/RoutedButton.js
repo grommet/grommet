@@ -12,9 +12,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '../Button';
 
-var RoutedButton =
-/*#__PURE__*/
-function (_Component) {
+var RoutedButton = /*#__PURE__*/function (_Component) {
   _inheritsLoose(RoutedButton, _Component);
 
   function RoutedButton() {
@@ -72,7 +70,7 @@ function (_Component) {
       console.warn("This component will be deprecated in the upcoming releases.\n         Please refer to https://github.com/grommet/grommet/issues/2855 \n         for more information.");
     }
 
-    return React.createElement(Button, _extends({}, rest, {
+    return /*#__PURE__*/React.createElement(Button, _extends({}, rest, {
       href: path || href,
       disabled: !path && !onClick,
       onClick: this.onClick

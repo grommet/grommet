@@ -12,13 +12,9 @@ var customTheme = deepMerge(grommet, {
   }
 });
 
-var connection = function connection(fromTarget, toTarget, _ref) {
-  if (_ref === void 0) {
-    _ref = {};
-  }
-
-  var _ref2 = _ref,
-      rest = _extends({}, _ref2);
+var connection = function connection(fromTarget, toTarget, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      rest = _extends({}, _ref);
 
   return _extends({
     fromTarget: fromTarget,
@@ -31,42 +27,42 @@ var connection = function connection(fromTarget, toTarget, _ref) {
   }, rest);
 };
 
-var DiamondContainer = function DiamondContainer(_ref3) {
-  var carat = _ref3.carat,
-      color = _ref3.color,
-      cut = _ref3.cut,
-      align = _ref3.align,
-      id = _ref3.id,
-      name = _ref3.name,
-      textSize = _ref3.textSize;
-  return React.createElement(Box, {
+var DiamondContainer = function DiamondContainer(_ref2) {
+  var carat = _ref2.carat,
+      color = _ref2.color,
+      cut = _ref2.cut,
+      align = _ref2.align,
+      id = _ref2.id,
+      name = _ref2.name,
+      textSize = _ref2.textSize;
+  return /*#__PURE__*/React.createElement(Box, {
     align: align || 'center',
     alignSelf: "center",
     direction: "row",
     gap: "medium",
     key: id
-  }, React.createElement(Diamond, {
+  }, /*#__PURE__*/React.createElement(Diamond, {
     id: id,
     size: "xlarge",
     color: "neutral-3"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     align: align
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "medium",
     weight: "bold"
-  }, name), carat && React.createElement(Text, {
+  }, name), carat && /*#__PURE__*/React.createElement(Text, {
     size: textSize
-  }, " Carat: ", carat, " "), color && React.createElement(Text, {
+  }, " Carat: ", carat, " "), color && /*#__PURE__*/React.createElement(Text, {
     size: textSize
-  }, " Color: ", color, " "), cut && React.createElement(Text, {
+  }, " Color: ", color, " "), cut && /*#__PURE__*/React.createElement(Text, {
     size: textSize
   }, " Cut: ", cut, " ")));
 };
 
-var Container = function Container(_ref4) {
-  var node = _ref4.node,
-      index = _ref4.index;
-  return React.createElement(DiamondContainer, {
+var Container = function Container(_ref3) {
+  var node = _ref3.node,
+      index = _ref3.index;
+  return /*#__PURE__*/React.createElement(DiamondContainer, {
     carat: node.carat,
     color: node.color,
     cut: node.cut,
@@ -108,43 +104,43 @@ var Animated = function Animated() {
     }));
   }
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large"
-  }, React.createElement(Stack, null, React.createElement(Box, null, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center",
     margin: {
       bottom: 'large'
     }
-  }, React.createElement(Container, {
+  }, /*#__PURE__*/React.createElement(Container, {
     node: data[0],
     index: 1
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     pad: "small"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     id: "4",
     width: "xsmall",
     margin: {
       bottom: 'large',
       top: 'xlarge'
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "xlarge"
   }, [2, 3].map(function (id) {
-    return React.createElement(Container, {
+    return /*#__PURE__*/React.createElement(Container, {
       key: id,
       node: data[id - 1],
       index: id
     });
-  }))), React.createElement(Diagram, {
+  }))), /*#__PURE__*/React.createElement(Diagram, {
     connections: connections
   })))));
 };
 
 storiesOf('Diagram', module).add('Animated', function () {
-  return React.createElement(Animated, null);
+  return /*#__PURE__*/React.createElement(Animated, null);
 });

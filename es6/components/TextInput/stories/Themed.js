@@ -50,17 +50,17 @@ var ThemedTextInput = function ThemedTextInput() {
     return setValue(event.suggestion);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: customTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     type: "password",
     value: value,
     dropProps: {
@@ -69,10 +69,10 @@ var ThemedTextInput = function ThemedTextInput() {
     onChange: onChange,
     onSelect: onSelect,
     suggestions: suggestions,
-    placeholder: React.createElement("span", null, "Enter something...")
+    placeholder: /*#__PURE__*/React.createElement("span", null, "Enter something...")
   }))));
 };
 
 storiesOf('TextInput', module).add('Themed', function () {
-  return React.createElement(ThemedTextInput, null);
+  return /*#__PURE__*/React.createElement(ThemedTextInput, null);
 });

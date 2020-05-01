@@ -19,37 +19,37 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
     return setChecked(event.target.checked);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(CheckBox, _extends({}, rest, {
+  }, /*#__PURE__*/React.createElement(CheckBox, _extends({}, rest, {
     checked: checked,
     onChange: onChange
   }))));
 };
 
 storiesOf('CheckBox', module).add('Simple', function () {
-  return React.createElement(SimpleCheckBox, {
+  return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice"
   });
 }).add('Toggle', function () {
-  return React.createElement(SimpleCheckBox, {
+  return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice",
     toggle: true
   });
 }).add('Disabled', function () {
-  return React.createElement(SimpleCheckBox, {
+  return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice",
     checked: true,
     disabled: true
   });
 }).add('Reverse', function () {
-  return React.createElement(SimpleCheckBox, {
+  return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice",
     reverse: true
   });
 }).add('No Label', function () {
-  return React.createElement(SimpleCheckBox, null);
+  return /*#__PURE__*/React.createElement(SimpleCheckBox, null);
 });

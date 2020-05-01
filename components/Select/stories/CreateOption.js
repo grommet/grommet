@@ -55,15 +55,15 @@ var CreateOption = function CreateOption() {
       searchValue = _useState3[0],
       setSearchValue = _useState3[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     size: "medium",
     placeholder: "Select",
     value: value,
@@ -95,5 +95,5 @@ var CreateOption = function CreateOption() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Create Option', function () {
-  return _react["default"].createElement(CreateOption, null);
+  return /*#__PURE__*/_react["default"].createElement(CreateOption, null);
 });

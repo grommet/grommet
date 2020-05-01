@@ -14,7 +14,7 @@ var StyledAnchor = styled(Anchor).withConfig({
 var FooterAnchor = function FooterAnchor(_ref) {
   var rest = _extends({}, _ref);
 
-  return React.createElement(StyledAnchor, _extends({
+  return /*#__PURE__*/React.createElement(StyledAnchor, _extends({
     href: "/",
     size: "small",
     color: "white"
@@ -23,14 +23,14 @@ var FooterAnchor = function FooterAnchor(_ref) {
 
 var FooterContent = function FooterContent() {
   return data.map(function (item) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       gap: "medium",
       key: item[0]
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       weight: "bold",
       size: "small"
-    }, item[0]), React.createElement(Box, null, [1, 2, 3, 4].map(function (i) {
-      return React.createElement(FooterAnchor, {
+    }, item[0]), /*#__PURE__*/React.createElement(Box, null, [1, 2, 3, 4].map(function (i) {
+      return /*#__PURE__*/React.createElement(FooterAnchor, {
         key: item[i]
       }, item[i]);
     })));
@@ -38,40 +38,40 @@ var FooterContent = function FooterContent() {
 };
 
 var DoubleFooter = function DoubleFooter() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Main, {
+  }, /*#__PURE__*/React.createElement(Main, {
     background: "light-4",
     elevation: "large",
     pad: "large",
     border: true
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     margin: "small",
     size: "xsmall"
-  }, "Main Content"), React.createElement(Box, {
+  }, "Main Content"), /*#__PURE__*/React.createElement(Box, {
     flex: true
-  })), React.createElement(Footer, {
+  })), /*#__PURE__*/React.createElement(Footer, {
     background: "dark-1",
     pad: "large"
-  }, React.createElement(FooterContent, null)), React.createElement(Footer, {
+  }, /*#__PURE__*/React.createElement(FooterContent, null)), /*#__PURE__*/React.createElement(Footer, {
     background: "dark-2",
     pad: {
       horizontal: 'large',
       vertical: 'small'
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "small"
-  }, React.createElement(GrommetIcon, {
+  }, /*#__PURE__*/React.createElement(GrommetIcon, {
     color: "brand"
-  }), React.createElement(Text, {
+  }), /*#__PURE__*/React.createElement(Text, {
     alignSelf: "center"
-  }, "grommet.io")), React.createElement(Text, {
+  }, "grommet.io")), /*#__PURE__*/React.createElement(Text, {
     textAlign: "center",
     size: "small"
   }, "\xA9 2019 Copyright")));
 };
 
 storiesOf('Footer', module).add('DoubleFooter', function () {
-  return React.createElement(DoubleFooter, null);
+  return /*#__PURE__*/React.createElement(DoubleFooter, null);
 });

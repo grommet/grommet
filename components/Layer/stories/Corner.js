@@ -25,31 +25,31 @@ var CornerLayer = function CornerLayer() {
     return setOpen(undefined);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Button, {
-    icon: _react["default"].createElement(_grommetIcons.Add, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, {
       color: "brand"
     }),
-    label: _react["default"].createElement(_grommet.Text, null, _react["default"].createElement("strong", null, "Add Corner Layer")),
+    label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, /*#__PURE__*/_react["default"].createElement("strong", null, "Add Corner Layer")),
     onClick: onOpen,
     plain: true
-  })), open && _react["default"].createElement(_grommet.Layer, {
+  })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "top-right",
     onClickOutside: onClose
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "small",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
   }, "Corner top-right position"))));
 };
 
 (0, _react2.storiesOf)('Layer', module).add('Corner', function () {
-  return _react["default"].createElement(CornerLayer, null);
+  return /*#__PURE__*/_react["default"].createElement(CornerLayer, null);
 });

@@ -15,15 +15,15 @@ var CustomSelect = function CustomSelect(_ref) {
       value = _useState[0],
       setValue = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Select, _extends({
+  }, /*#__PURE__*/React.createElement(Select, _extends({
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -34,19 +34,19 @@ var CustomSelect = function CustomSelect(_ref) {
       return setValue(option);
     },
     plain: true,
-    valueLabel: React.createElement(Box, {
+    valueLabel: /*#__PURE__*/React.createElement(Box, {
       background: "brand",
       width: "small",
       round: "small",
       overflow: "hidden",
       align: "center"
     }, value || 'Select...'),
-    icon: React.createElement(Box, null, React.createElement(CaretDown, {
+    icon: /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(CaretDown, {
       color: "black"
     }))
   }, rest))));
 };
 
 storiesOf('Select', module).add('Custom', function () {
-  return React.createElement(CustomSelect, null);
+  return /*#__PURE__*/React.createElement(CustomSelect, null);
 });

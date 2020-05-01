@@ -16,10 +16,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 describe('RadioButton', function () {
   test('basic', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       name: "test",
       value: "1"
-    }), _react["default"].createElement(_.RadioButton, {
+    }), /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       id: "test id",
       name: "test",
       value: "2"
@@ -29,12 +29,12 @@ describe('RadioButton', function () {
     expect(tree).toMatchSnapshot();
   });
   test('label', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       label: "test label",
       name: "test",
       value: "1"
-    }), _react["default"].createElement(_.RadioButton, {
-      label: _react["default"].createElement("div", null, "test label"),
+    }), /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
+      label: /*#__PURE__*/_react["default"].createElement("div", null, "test label"),
       name: "test",
       value: "2"
     })));
@@ -43,7 +43,7 @@ describe('RadioButton', function () {
     expect(tree).toMatchSnapshot();
   });
   test('checked', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       checked: true,
       name: "test",
       value: "1"
@@ -53,11 +53,11 @@ describe('RadioButton', function () {
     expect(tree).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       disabled: true,
       name: "test",
       value: "1"
-    }), _react["default"].createElement(_.RadioButton, {
+    }), /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       disabled: true,
       checked: true,
       name: "test",
@@ -70,16 +70,16 @@ describe('RadioButton', function () {
   test('children', function () {
     var child = function child(_ref) {
       var checked = _ref.checked;
-      return _react["default"].createElement(_Box.Box, {
+      return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         pad: "small",
         background: checked ? 'accent-1' : 'control'
       });
     };
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       name: "test",
       value: "1"
-    }, child), _react["default"].createElement(_.RadioButton, {
+    }, child), /*#__PURE__*/_react["default"].createElement(_.RadioButton, {
       checked: true,
       name: "test",
       value: "2"

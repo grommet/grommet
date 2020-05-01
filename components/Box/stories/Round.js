@@ -11,21 +11,21 @@ var _themes = require("../../../themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var RoundBox = function RoundBox() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     background: "brand",
     round: true,
     alignSelf: "start"
-  }, "true"), _react["default"].createElement(_grommet.Grid, {
+  }, "true"), /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: "small",
     gap: "small"
   }, ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(function (size) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: size,
       pad: "large",
       background: "brand",
@@ -33,11 +33,11 @@ var RoundBox = function RoundBox() {
         size: size
       }
     }, size);
-  })), _react["default"].createElement(_grommet.Grid, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: "small",
     gap: "small"
   }, ['large', 'xlarge', 'full'].map(function (size) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       responsive: false,
       key: size,
       pad: "large",
@@ -46,11 +46,11 @@ var RoundBox = function RoundBox() {
         size: size
       }
     }, size, " - Not responsive");
-  })), _react["default"].createElement(_grommet.Grid, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: "small",
     gap: "small"
   }, ['left', 'top', 'right', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right'].map(function (corner) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: corner,
       pad: "small",
       background: "brand",
@@ -58,7 +58,7 @@ var RoundBox = function RoundBox() {
         corner: corner
       }
     }, corner);
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand",
     pad: "small",
     round: {
@@ -69,5 +69,5 @@ var RoundBox = function RoundBox() {
 };
 
 (0, _react2.storiesOf)('Box', module).add('Round', function () {
-  return _react["default"].createElement(RoundBox, null);
+  return /*#__PURE__*/_react["default"].createElement(RoundBox, null);
 });

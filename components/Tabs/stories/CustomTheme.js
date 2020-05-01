@@ -71,35 +71,35 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
 });
 
 var CustomTabs = function CustomTabs() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Tabs, null, _react["default"].createElement(_grommet.Tab, {
-    title: _react["default"].createElement(_Rich.RichTabTitle, {
-      icon: _react["default"].createElement(_grommetIcons.CircleInformation, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tabs, null, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+    title: /*#__PURE__*/_react["default"].createElement(_Rich.RichTabTitle, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.CircleInformation, {
         color: "accent-1"
       }),
       label: "Personal Data"
     })
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Name"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     placeholder: "Enter your name..."
-  }))), _react["default"].createElement(_grommet.Tab, {
-    title: _react["default"].createElement(_Rich.RichTabTitle, {
-      icon: _react["default"].createElement(_grommetIcons.Currency, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+    title: /*#__PURE__*/_react["default"].createElement(_Rich.RichTabTitle, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Currency, {
         color: "light-3"
       }),
       label: "Payment"
     })
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Card Number"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     placeholder: "Enter your card number..."
-  }))), _react["default"].createElement(_grommet.Tab, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
     title: "Simple Tab"
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
 
 (0, _react2.storiesOf)('Tabs', module).add('Custom Theme', function () {
-  return _react["default"].createElement(CustomTabs, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomTabs, null);
 });

@@ -6,8 +6,8 @@ import { deepMerge } from '../../utils';
 ThemeContext.Extend = function (_ref) {
   var children = _ref.children,
       value = _ref.value;
-  return React.createElement(ThemeContext.Consumer, null, function (theme) {
-    return React.createElement(ThemeContext.Provider, {
+  return /*#__PURE__*/React.createElement(ThemeContext.Consumer, null, function (theme) {
+    return /*#__PURE__*/React.createElement(ThemeContext.Provider, {
       value: deepMerge(theme, value)
     }, children);
   });

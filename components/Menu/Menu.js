@@ -193,22 +193,22 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
     }
   };
 
-  var content = children || _react["default"].createElement(_Box.Box, {
+  var content = children || /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     direction: "row",
     justify: justifyContent,
     align: "center",
     pad: "small",
     gap: label && icon !== false ? 'small' : undefined
-  }, _react["default"].createElement(_Text.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
     size: size
-  }, label), icon !== false ? icon !== true && icon || _react["default"].createElement(MenuIcon, {
+  }, label), icon !== false ? icon !== true && icon || /*#__PURE__*/_react["default"].createElement(MenuIcon, {
     color: iconColor,
     size: size
   }) : null);
 
-  var controlMirror = _react["default"].createElement(_Box.Box, {
+  var controlMirror = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: false
-  }, _react["default"].createElement(_Button.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     ref: function ref(r) {
       // make it accessible at the end of all menu items
       buttonRefs[items.length] = r;
@@ -227,12 +227,12 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
     ,
     tabIndex: activeItemIndex === constants.none ? '-1' : undefined
   }, typeof content === 'function' ? function () {
-    return content(_extends({}, props, {
+    return content(_extends(_extends({}, props), {}, {
       drop: true
     }));
   } : content));
 
-  return _react["default"].createElement(_Keyboard.Keyboard, {
+  return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onNextMenuItem,
     onUp: onPreviousMenuItem,
     onEnter: onSelectMenuItem,
@@ -240,7 +240,7 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
     onEsc: onDropClose,
     onTab: onDropClose,
     onKeyDown: onKeyDown
-  }, _react["default"].createElement(_DropButton.DropButton, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, _extends({
     ref: ref
   }, rest, {
     a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
@@ -252,21 +252,23 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
     open: isOpen,
     onOpen: onDropOpen,
     onClose: onDropClose,
-    dropContent: _react["default"].createElement(_Keyboard.Keyboard, {
+    dropContent: /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
       onTab: function onTab(event) {
         return event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event);
       },
       onEnter: onSelectMenuItem
-    }, _react["default"].createElement(ContainerBox, {
+    }, /*#__PURE__*/_react["default"].createElement(ContainerBox, {
       background: dropBackground || theme.menu.background
-    }, align.top === 'top' ? controlMirror : undefined, _react["default"].createElement(_Box.Box, {
+    }, align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       overflow: "auto"
     }, items.map(function (item, index) {
-      return (// eslint-disable-next-line react/no-array-index-key
+      return (
+        /*#__PURE__*/
+        // eslint-disable-next-line react/no-array-index-key
         _react["default"].createElement(_Box.Box, {
           key: index,
           flex: false
-        }, _react["default"].createElement(_Button.Button, _extends({
+        }, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
           ref: function ref(r) {
             buttonRefs[index] = r;
           },
@@ -276,7 +278,7 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
           active: activeItemIndex === index,
           hoverIndicator: "background",
           focusIndicator: false
-        }, _extends({}, item, {
+        }, _extends(_extends({}, item), {}, {
           icon: undefined,
           label: undefined
         }), {
@@ -289,7 +291,7 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
               onDropClose();
             }
           }
-        }), _react["default"].createElement(_Box.Box, {
+        }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
           align: "start",
           pad: "small",
           direction: "row",

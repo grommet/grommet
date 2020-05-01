@@ -14,13 +14,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 describe('WorldMap', function () {
   test('default', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.WorldMap, null)));
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.WorldMap, null)));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('color', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.WorldMap, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       color: "brand"
     })));
 
@@ -28,7 +28,7 @@ describe('WorldMap', function () {
     expect(tree).toMatchSnapshot();
   });
   test('continents', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.WorldMap, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       continents: [{
         name: 'Africa',
         color: 'accent-1',
@@ -40,7 +40,7 @@ describe('WorldMap', function () {
     expect(tree).toMatchSnapshot();
   });
   test('places', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.WorldMap, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       places: [{
         name: 'Sydney',
         location: [-33.8830555556, 151.216666667],
@@ -53,7 +53,7 @@ describe('WorldMap', function () {
     expect(tree).toMatchSnapshot();
   });
   test('onSelectPlace', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.WorldMap, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       onSelectPlace: function onSelectPlace() {}
     })));
 
@@ -61,13 +61,13 @@ describe('WorldMap', function () {
     expect(tree).toMatchSnapshot();
   });
   test('fill', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.WorldMap, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       fill: true
-    }), _react["default"].createElement(_.WorldMap, {
+    }), /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       fill: false
-    }), _react["default"].createElement(_.WorldMap, {
+    }), /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       fill: "horizontal"
-    }), _react["default"].createElement(_.WorldMap, {
+    }), /*#__PURE__*/_react["default"].createElement(_.WorldMap, {
       fill: "vertical"
     })));
 

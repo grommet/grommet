@@ -11,13 +11,13 @@ export var Sidebar = function Sidebar(_ref) {
       header = _ref.header,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "footer", "header"]);
 
-  return React.createElement(Box, _extends({
+  return /*#__PURE__*/React.createElement(Box, _extends({
     pad: "small",
     gap: "large",
     height: {
       min: '100%'
     }
-  }, rest), header, React.createElement(Box, {
+  }, rest), header, /*#__PURE__*/React.createElement(Box, {
     flex: true
   }, children), footer);
 };

@@ -84,8 +84,8 @@ var GrommetMarkdown = function GrommetMarkdown(_ref) {
       component: _TableRow.TableRow
     }
   }, heading, components, options && options.overrides);
-  return _react["default"].createElement(_markdownToJsx["default"], _extends({
-    options: _extends({}, options, {
+  return /*#__PURE__*/_react["default"].createElement(_markdownToJsx["default"], _extends({
+    options: _extends(_extends({}, options), {}, {
       overrides: overrides
     })
   }, rest));

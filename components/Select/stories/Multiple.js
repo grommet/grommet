@@ -19,15 +19,15 @@ var Example = function Example() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     placeholder: "Select",
     multiple: true,
     closeOnChange: false,
@@ -41,5 +41,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Multiple', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

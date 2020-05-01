@@ -10,28 +10,28 @@ var SimpleCollapsible = function SimpleCollapsible(props) {
       open = _React$useState[0],
       setOpen = _React$useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "start",
     gap: "small"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     primary: true,
     onClick: function onClick() {
       return setOpen(!open);
     },
     label: "Toggle"
-  }), React.createElement(Collapsible, _extends({
+  }), /*#__PURE__*/React.createElement(Collapsible, _extends({
     open: open
-  }, props), React.createElement(Box, {
+  }, props), /*#__PURE__*/React.createElement(Box, {
     background: "light-2",
     round: "medium",
     pad: "medium",
     align: "center",
     justify: "center"
-  }, React.createElement(Text, null, "This is a box inside a Collapsible component"))), React.createElement(Text, null, "This is other content outside the Collapsible box")));
+  }, /*#__PURE__*/React.createElement(Text, null, "This is a box inside a Collapsible component"))), /*#__PURE__*/React.createElement(Text, null, "This is other content outside the Collapsible box")));
 };
 
 storiesOf('Collapsible', module).add('Default', function () {
-  return React.createElement(SimpleCollapsible, null);
+  return /*#__PURE__*/React.createElement(SimpleCollapsible, null);
 });

@@ -11,34 +11,34 @@ import { TextInput } from '../../TextInput';
 describe('Form', function () {
   afterEach(cleanup);
   test('empty', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Form, null)));
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, null)));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('with field', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Form, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
       name: "test"
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('errors', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Form, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       errors: {
         test: 'missing'
       }
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test"
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('infos', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Form, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       infos: {
         test: 'missing'
       }
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test"
     }))));
     var tree = component.toJSON();
@@ -57,23 +57,23 @@ describe('Form', function () {
       var onChange = React.useCallback(function (nextValue) {
         return setValue(nextValue);
       }, []);
-      return React.createElement(Form, {
+      return /*#__PURE__*/React.createElement(Form, {
         value: value,
         onChange: onChange,
         onSubmit: onSubmit
-      }, React.createElement(FormField, {
+      }, /*#__PURE__*/React.createElement(FormField, {
         name: "test"
-      }, React.createElement(TextInput, {
+      }, /*#__PURE__*/React.createElement(TextInput, {
         name: "test",
         placeholder: "test input"
-      })), React.createElement(Button, {
+      })), /*#__PURE__*/React.createElement(Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render.getByPlaceholderText,
         getByText = _render.getByText,
         container = _render.container;
@@ -112,23 +112,23 @@ describe('Form', function () {
       var onChange = React.useCallback(function (nextValue) {
         return setValue(nextValue);
       }, []);
-      return React.createElement(Form, {
+      return /*#__PURE__*/React.createElement(Form, {
         value: value,
         onChange: onChange,
         onSubmit: onSubmit
-      }, React.createElement(FormField, {
+      }, /*#__PURE__*/React.createElement(FormField, {
         name: "test"
-      }, React.createElement(TextInput, {
+      }, /*#__PURE__*/React.createElement(TextInput, {
         name: "test",
         placeholder: "test input"
-      })), React.createElement(Button, {
+      })), /*#__PURE__*/React.createElement(Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render2 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render2.getByPlaceholderText,
         getByText = _render2.getByText,
         container = _render2.container;
@@ -154,14 +154,14 @@ describe('Form', function () {
   test('uncontrolled', function () {
     var onSubmit = jest.fn();
 
-    var _render3 = render(React.createElement(Grommet, null, React.createElement(Form, {
+    var _render3 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       onSubmit: onSubmit
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test"
-    }, React.createElement(TextInput, {
+    }, /*#__PURE__*/React.createElement(TextInput, {
       name: "test",
       placeholder: "test input"
-    })), React.createElement(Button, {
+    })), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -199,23 +199,23 @@ describe('Form', function () {
       var onChange = React.useCallback(function (event) {
         return setValue(event.target.value);
       }, []);
-      return React.createElement(Form, {
+      return /*#__PURE__*/React.createElement(Form, {
         onSubmit: onSubmit
-      }, React.createElement(FormField, {
+      }, /*#__PURE__*/React.createElement(FormField, {
         name: "test"
-      }, React.createElement(TextInput, {
+      }, /*#__PURE__*/React.createElement(TextInput, {
         name: "test",
         placeholder: "test input",
         value: value,
         onChange: onChange
-      })), React.createElement(Button, {
+      })), /*#__PURE__*/React.createElement(Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render4 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render4 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render4.getByPlaceholderText,
         getByText = _render4.getByText,
         container = _render4.container;
@@ -252,23 +252,23 @@ describe('Form', function () {
       var onChange = React.useCallback(function (event) {
         return setValue(event.target.value);
       }, []);
-      return React.createElement(Form, {
+      return /*#__PURE__*/React.createElement(Form, {
         onSubmit: onSubmit
-      }, React.createElement(FormField, {
+      }, /*#__PURE__*/React.createElement(FormField, {
         name: "test"
-      }, React.createElement(TextInput, {
+      }, /*#__PURE__*/React.createElement(TextInput, {
         name: "test",
         placeholder: "test input",
         value: value,
         onChange: onChange
-      })), React.createElement(Button, {
+      })), /*#__PURE__*/React.createElement(Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render5 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render5 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render5.getByPlaceholderText,
         getByText = _render5.getByText,
         container = _render5.container;
@@ -296,18 +296,18 @@ describe('Form', function () {
     var validate2 = jest.fn().mockReturnValue(undefined);
     var onSubmit = jest.fn();
 
-    var _render6 = render(React.createElement(Grommet, null, React.createElement(Form, {
+    var _render6 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       onSubmit: onSubmit
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test",
       required: true,
       validate: validate,
       placeholder: "test input"
-    }), React.createElement(FormField, {
+    }), /*#__PURE__*/React.createElement(FormField, {
       name: "test2",
       placeholder: "test-2 input",
       validate: [validate2]
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -362,16 +362,16 @@ describe('Form', function () {
   test('regexp validation', function () {
     var onSubmit = jest.fn();
 
-    var _render7 = render(React.createElement(Grommet, null, React.createElement(Form, {
+    var _render7 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       onSubmit: onSubmit
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test",
       required: true,
       validate: {
         regexp: /^[a-z]/i
       },
       placeholder: "test input"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -398,15 +398,15 @@ describe('Form', function () {
   test('validate', function () {
     var onSubmit = jest.fn();
 
-    var _render8 = render(React.createElement(Grommet, null, React.createElement(Form, {
+    var _render8 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       onSubmit: onSubmit
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test",
       required: true,
       validate: [function (value) {
         return value.length === 1 ? 'simple string' : undefined;
       }, function (value) {
-        return value.length === 2 ? React.createElement(Text, null, " ReactNode ") : undefined;
+        return value.length === 2 ? /*#__PURE__*/React.createElement(Text, null, " ReactNode ") : undefined;
       }, function (value) {
         return value.length === 3 ? {
           message: 'status error',
@@ -419,7 +419,7 @@ describe('Form', function () {
         } : undefined;
       }],
       placeholder: "test input"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -459,13 +459,13 @@ describe('Form', function () {
   test('required validation', function () {
     var onSubmit = jest.fn();
 
-    var _render9 = render(React.createElement(Grommet, null, React.createElement(Form, {
+    var _render9 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       onSubmit: onSubmit
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test",
       required: true,
       placeholder: "test input"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -486,13 +486,13 @@ describe('Form', function () {
   test('reset clears form', function () {
     var onReset = jest.fn();
 
-    var _render10 = render(React.createElement(Grommet, null, React.createElement(Form, {
+    var _render10 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       onReset: onReset
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test",
       required: true,
       placeholder: "test input"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       type: "reset",
       primary: true,
       label: "Reset"
@@ -512,7 +512,7 @@ describe('Form', function () {
   test('initial values', function () {
     var _onSubmit = jest.fn();
 
-    var _render11 = render(React.createElement(Grommet, null, React.createElement(Form, {
+    var _render11 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Form, {
       onSubmit: function onSubmit(_ref) {
         var value = _ref.value,
             touched = _ref.touched;
@@ -521,15 +521,15 @@ describe('Form', function () {
           touched: touched
         });
       }
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       name: "test",
       required: true,
       placeholder: "test input",
       value: "Initial value"
-    }), React.createElement(FormField, {
+    }), /*#__PURE__*/React.createElement(FormField, {
       name: "test2",
       value: "Initial value2"
-    }), React.createElement(Button, {
+    }), /*#__PURE__*/React.createElement(Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -555,7 +555,7 @@ describe('Form', function () {
           test = _React$useState5[0],
           setTest = _React$useState5[1];
 
-      return React.createElement(Form, {
+      return /*#__PURE__*/React.createElement(Form, {
         onSubmit: function onSubmit(_ref2) {
           var value = _ref2.value,
               touched = _ref2.touched;
@@ -564,21 +564,21 @@ describe('Form', function () {
             touched: touched
           });
         }
-      }, React.createElement(TextInput, {
+      }, /*#__PURE__*/React.createElement(TextInput, {
         name: "test",
         value: test
-      }), React.createElement(Button, {
+      }), /*#__PURE__*/React.createElement(Button, {
         label: "set",
         onClick: function onClick() {
           return setTest('a');
         }
-      }), React.createElement(Button, {
+      }), /*#__PURE__*/React.createElement(Button, {
         label: "submit",
         type: "submit"
       }));
     };
 
-    var _render12 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render12 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         container = _render12.container,
         getByText = _render12.getByText;
 
@@ -605,23 +605,23 @@ describe('Form', function () {
       var onChange = React.useCallback(function (nextValue) {
         return setValue(nextValue);
       }, []);
-      return React.createElement(Form, {
+      return /*#__PURE__*/React.createElement(Form, {
         value: value,
         onChange: onChange,
         onSubmit: onSubmit
-      }, React.createElement(FormField, {
+      }, /*#__PURE__*/React.createElement(FormField, {
         label: "test",
         name: "test",
         id: "test",
         htmlFor: "test"
-      }), React.createElement(Button, {
+      }), /*#__PURE__*/React.createElement(Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render13 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render13 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByLabelText = _render13.getByLabelText,
         getByText = _render13.getByText,
         container = _render13.container;

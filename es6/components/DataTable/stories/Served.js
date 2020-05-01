@@ -45,14 +45,14 @@ var ServedDataTable = function ServedDataTable() {
     setData2(nextData);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns.map(function (column) {
-      return _extends({}, column, {
+      return _extends(_extends({}, column), {}, {
         search: column.property === 'name' || column.property === 'location'
       });
     }),
@@ -62,5 +62,5 @@ var ServedDataTable = function ServedDataTable() {
 };
 
 storiesOf('DataTable', module).add('Served', function () {
-  return React.createElement(ServedDataTable, null);
+  return /*#__PURE__*/React.createElement(ServedDataTable, null);
 });

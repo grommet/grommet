@@ -15,14 +15,14 @@ describe('FocusedContainer', function () {
   test('basic', function () {
     jest.useFakeTimers();
 
-    var _render = (0, _react2.render)(_react["default"].createElement("div", {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement("div", {
       id: "focus-trap-test"
-    }, _react["default"].createElement("input", {
+    }, /*#__PURE__*/_react["default"].createElement("input", {
       id: "test"
     }))),
         trapped = _render.container;
 
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_FocusedContainer.FocusedContainer, {
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       id: "container"
     }, "test focused container")),
         focuser = _render2.container;
@@ -37,7 +37,7 @@ describe('FocusedContainer', function () {
   test('restrict scroll', function () {
     jest.useFakeTimers();
 
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_FocusedContainer.FocusedContainer, {
+    var _render3 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       id: "container",
       restrictScroll: true
     }, "test focused container")),
@@ -52,14 +52,14 @@ describe('FocusedContainer', function () {
   test('blurs', function () {
     jest.useFakeTimers();
 
-    var _render4 = (0, _react2.render)(_react["default"].createElement("div", {
+    var _render4 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement("div", {
       id: "focus-trap-test"
-    }, _react["default"].createElement("input", {
+    }, /*#__PURE__*/_react["default"].createElement("input", {
       id: "test"
     }))),
         trapped = _render4.container;
 
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_FocusedContainer.FocusedContainer, {
+    var _render5 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       id: "container"
     }, "test focused container")),
         focuser = _render5.container;

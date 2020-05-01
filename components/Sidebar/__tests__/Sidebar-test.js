@@ -20,7 +20,7 @@ var src = '';
 describe('Sidebar', function () {
   afterEach(_react2.cleanup);
   test('renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Sidebar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Sidebar, {
       id: "test id",
       name: "test name"
     })));
@@ -29,8 +29,8 @@ describe('Sidebar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('header', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Sidebar, {
-      header: _react["default"].createElement(_Avatar.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Sidebar, {
+      header: /*#__PURE__*/_react["default"].createElement(_Avatar.Avatar, {
         src: src
       })
     })));
@@ -39,8 +39,8 @@ describe('Sidebar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('footer', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Sidebar, {
-      footer: _react["default"].createElement(_Avatar.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Sidebar, {
+      footer: /*#__PURE__*/_react["default"].createElement(_Avatar.Avatar, {
         src: src
       })
     })));
@@ -49,7 +49,7 @@ describe('Sidebar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('children', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Sidebar, null, _react["default"].createElement(_Avatar.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Sidebar, null, /*#__PURE__*/_react["default"].createElement(_Avatar.Avatar, {
       src: src
     }), "children test")));
 
@@ -57,9 +57,9 @@ describe('Sidebar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('all', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Sidebar, {
-      footer: _react["default"].createElement(_Avatar.Avatar, null, "SY"),
-      header: _react["default"].createElement(_Avatar.Avatar, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Sidebar, {
+      footer: /*#__PURE__*/_react["default"].createElement(_Avatar.Avatar, null, "SY"),
+      header: /*#__PURE__*/_react["default"].createElement(_Avatar.Avatar, {
         src: src
       }),
       background: "brand"

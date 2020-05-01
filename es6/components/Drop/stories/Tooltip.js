@@ -9,14 +9,14 @@ var TooltipDrop = function TooltipDrop() {
       setOver = _useState[1];
 
   var ref = useRef();
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Button",
     ref: ref,
     onMouseOver: function onMouseOver() {
@@ -27,13 +27,13 @@ var TooltipDrop = function TooltipDrop() {
     },
     onFocus: function onFocus() {},
     onBlur: function onBlur() {}
-  }), ref.current && over && React.createElement(Drop, {
+  }), ref.current && over && /*#__PURE__*/React.createElement(Drop, {
     align: {
       left: 'right'
     },
     target: ref.current,
     plain: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "xsmall",
     pad: "small",
     background: "dark-3",
@@ -45,5 +45,5 @@ var TooltipDrop = function TooltipDrop() {
 };
 
 storiesOf('Drop', module).add('Tooltip', function () {
-  return React.createElement(TooltipDrop, null);
+  return /*#__PURE__*/React.createElement(TooltipDrop, null);
 });

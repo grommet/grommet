@@ -28,21 +28,21 @@ var IndeterminateCheckBox = function IndeterminateCheckBox() {
     }
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "medium"
-  }, React.createElement(CheckBox, {
+  }, /*#__PURE__*/React.createElement(CheckBox, {
     checked: checked.length === 3,
     indeterminate: checked.length > 0 && checked.length < 3,
     label: "All",
     onChange: onCheckAll
   }), checkboxes.map(function (item) {
-    return React.createElement(CheckBox, {
+    return /*#__PURE__*/React.createElement(CheckBox, {
       key: item,
       checked: checked.includes(item),
       label: item,
@@ -54,5 +54,5 @@ var IndeterminateCheckBox = function IndeterminateCheckBox() {
 };
 
 storiesOf('CheckBox', module).add('Indeterminate', function () {
-  return React.createElement(IndeterminateCheckBox, null);
+  return /*#__PURE__*/React.createElement(IndeterminateCheckBox, null);
 });

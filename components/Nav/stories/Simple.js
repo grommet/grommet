@@ -25,12 +25,12 @@ var items = [{
 }];
 
 var Simple = function Simple() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Nav, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
     pad: "large"
   }, items.map(function (item) {
-    return _react["default"].createElement(_grommet.Anchor, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
       href: item.href,
       label: item.label,
       key: item.label
@@ -39,5 +39,5 @@ var Simple = function Simple() {
 };
 
 (0, _react2.storiesOf)('Nav', module).add('Simple', function () {
-  return _react["default"].createElement(Simple, null);
+  return /*#__PURE__*/_react["default"].createElement(Simple, null);
 });

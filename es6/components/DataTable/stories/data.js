@@ -7,7 +7,7 @@ var amountFormatter = new Intl.NumberFormat('en-US', {
 });
 export var columns = [{
   property: 'name',
-  header: React.createElement(Text, null, "Name with extra"),
+  header: /*#__PURE__*/React.createElement(Text, null, "Name with extra"),
   primary: true,
   footer: 'Total'
 }, {
@@ -24,11 +24,11 @@ export var columns = [{
   property: 'percent',
   header: 'Percent Complete',
   render: function render(datum) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'xsmall'
       }
-    }, React.createElement(Meter, {
+    }, /*#__PURE__*/React.createElement(Meter, {
       values: [{
         value: datum.percent
       }],

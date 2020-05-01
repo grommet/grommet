@@ -10,9 +10,7 @@ import { findAllByType } from '../../../utils';
 import { Grommet } from '../../Grommet';
 import { RoutedAnchor } from '..';
 
-var FakeRouter =
-/*#__PURE__*/
-function (_Component) {
+var FakeRouter = /*#__PURE__*/function (_Component) {
   _inheritsLoose(FakeRouter, _Component);
 
   function FakeRouter() {
@@ -37,7 +35,7 @@ function (_Component) {
 
   _proto.render = function render() {
     var children = this.props.children;
-    return React.createElement("div", null, children);
+    return /*#__PURE__*/React.createElement("div", null, children);
   };
 
   return FakeRouter;
@@ -57,10 +55,10 @@ describe('RoutedAnchor', function () {
   var replace = jest.fn();
   var push = jest.fn();
   test('renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, React.createElement(RoutedAnchor, {
+    }, /*#__PURE__*/React.createElement(RoutedAnchor, {
       label: "Test",
       path: "/"
     }))));
@@ -70,10 +68,10 @@ describe('RoutedAnchor', function () {
   test('is clickable', function () {
     var preventDefault = jest.fn();
     var onClick = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, React.createElement(RoutedAnchor, {
+    }, /*#__PURE__*/React.createElement(RoutedAnchor, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -89,10 +87,10 @@ describe('RoutedAnchor', function () {
   });
   test('skips onClick if right clicked', function () {
     var onClick = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, React.createElement(RoutedAnchor, {
+    }, /*#__PURE__*/React.createElement(RoutedAnchor, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -109,10 +107,10 @@ describe('RoutedAnchor', function () {
   });
   test('calls router context push', function () {
     var preventDefault = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       push: push,
       replace: replace
-    }, React.createElement(RoutedAnchor, {
+    }, /*#__PURE__*/React.createElement(RoutedAnchor, {
       label: "Test",
       path: "/"
     }))));
@@ -126,10 +124,10 @@ describe('RoutedAnchor', function () {
   });
   test('calls router context replace', function () {
     var preventDefault = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, React.createElement(RoutedAnchor, {
+    }, /*#__PURE__*/React.createElement(RoutedAnchor, {
       label: "Test",
       path: "/",
       method: "replace"

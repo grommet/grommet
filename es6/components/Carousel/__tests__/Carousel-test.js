@@ -8,31 +8,31 @@ import { Image } from '../../Image';
 describe('Carousel', function () {
   afterEach(cleanup);
   test('basic', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Carousel, null, React.createElement(Image, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Carousel, null, /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }), React.createElement(Image, {
+    }), /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4210.jpg"
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('basic with `initialChild: 1`', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Carousel, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Carousel, {
       initialChild: 1
-    }, React.createElement(Image, {
+    }, /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }), React.createElement(Image, {
+    }), /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4210.jpg"
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('navigate', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(Carousel, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Carousel, {
       "data-testid": "test-carousel"
-    }, React.createElement(Image, {
+    }, /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }), React.createElement(Image, {
+    }), /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4210.jpg"
     })))),
         getByTestId = _render.getByTestId,
@@ -53,11 +53,11 @@ describe('Carousel', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('play', function (done) {
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(Carousel, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Carousel, {
       play: 1000
-    }, React.createElement(Image, {
+    }, /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }), React.createElement(Image, {
+    }), /*#__PURE__*/React.createElement(Image, {
       src: "//v2.grommet.io/assets/IMG_4210.jpg"
     })))),
         container = _render2.container;

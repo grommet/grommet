@@ -5,59 +5,59 @@ import { grommet } from 'grommet/themes'; // DSTCalendar has dates specifically 
 // crossing the daylight savings time boundary (from California).
 
 var DSTCalendar = function DSTCalendar() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     direction: "row",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     border: "right"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "xlarge"
-  }, "Daylight MST"), React.createElement(Box, {
+  }, "Daylight MST"), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     date: "2018-11-04T06:00:00.000Z",
     bounds: ['2013-11-06', '2018-12-06']
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     date: "2019-03-11T05:00:01.409Z",
     bounds: ['2019-03-01', '2019-03-31']
-  }))), React.createElement(Box, {
+  }))), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "xlarge"
-  }, "Daylight PST"), React.createElement(Box, {
+  }, "Daylight PST"), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     date: "2018-11-04T07:00:00.000Z",
     bounds: ['2013-11-06', '2018-12-06']
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     date: "2019-03-15T06:00:01.409Z",
     bounds: ['2019-03-01', '2019-03-31']
   })))));
 };
 
 storiesOf('Calendar', module).add('Daylight Savings Time', function () {
-  return React.createElement(DSTCalendar, null);
+  return /*#__PURE__*/React.createElement(DSTCalendar, null);
 });

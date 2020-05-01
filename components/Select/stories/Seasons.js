@@ -29,7 +29,7 @@ var SeasonsSelect = function SeasonsSelect() {
   };
 
   var renderSeason = function renderSeason(season) {
-    return _react["default"].createElement(_grommet.Button, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       key: "season_tag_" + season,
       href: "#",
       onClick: function onClick(event) {
@@ -40,7 +40,7 @@ var SeasonsSelect = function SeasonsSelect() {
       onFocus: function onFocus(event) {
         return event.stopPropagation();
       }
-    }, _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       align: "center",
       direction: "row",
       gap: "xsmall",
@@ -51,16 +51,16 @@ var SeasonsSelect = function SeasonsSelect() {
       margin: "xsmall",
       background: "accent-1",
       round: "large"
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "small",
       color: "white"
-    }, season), _react["default"].createElement(_grommet.Box, {
+    }, season), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: "white",
       round: "full",
       margin: {
         left: 'xsmall'
       }
-    }, _react["default"].createElement(_grommetIcons.FormClose, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, {
       color: "accent-1",
       size: "small",
       style: {
@@ -71,29 +71,29 @@ var SeasonsSelect = function SeasonsSelect() {
   };
 
   var renderOption = function renderOption(option, state) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "small",
       background: state.active ? 'active' : undefined
     }, option);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     closeOnChange: false,
     multiple: true,
-    value: _react["default"].createElement(_grommet.Box, {
+    value: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       wrap: true,
       direction: "row",
       width: "small"
     }, selected && selected.length ? selected.map(function (index) {
       return renderSeason(allSeasons[index]);
-    }) : _react["default"].createElement(_grommet.Box, {
+    }) : /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall',
         horizontal: 'small'
@@ -111,5 +111,5 @@ var SeasonsSelect = function SeasonsSelect() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Seasons', function () {
-  return _react["default"].createElement(SeasonsSelect, null);
+  return /*#__PURE__*/_react["default"].createElement(SeasonsSelect, null);
 });

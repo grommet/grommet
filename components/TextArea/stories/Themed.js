@@ -29,16 +29,16 @@ var ThemedTextArea = function ThemedTextArea() {
     return setValue(event.target.value);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "large",
     height: "medium",
     border: {
       color: 'brand',
       size: 'medium'
     }
-  }, _react["default"].createElement(_grommet.TextArea, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
     value: value,
     onChange: onChange,
     fill: true
@@ -46,5 +46,5 @@ var ThemedTextArea = function ThemedTextArea() {
 };
 
 (0, _react2.storiesOf)('TextArea', module).add('Themed', function () {
-  return _react["default"].createElement(ThemedTextArea, null);
+  return /*#__PURE__*/_react["default"].createElement(ThemedTextArea, null);
 });

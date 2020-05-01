@@ -11,7 +11,7 @@ var Text = function Text(_ref) {
       as = _ref.as,
       rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag", "as"]);
 
-  return React.createElement(StyledText, _extends({
+  return /*#__PURE__*/React.createElement(StyledText, _extends({
     as: !as && tag ? tag : as,
     colorProp: color
   }, rest));

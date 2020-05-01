@@ -44,9 +44,9 @@ var SearchBorderBox = function SearchBorderBox(_ref) {
       extend: searching ? searchingStyle : defaultStyle
     }
   };
-  return _react["default"].createElement(_contexts.ThemeContext.Extend, {
+  return /*#__PURE__*/_react["default"].createElement(_contexts.ThemeContext.Extend, {
     value: boxBorderTheme
-  }, _react["default"].createElement(_.Box, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_.Box, _extends({
     focus: focus,
     searching: searching,
     onFocus: function onFocus() {

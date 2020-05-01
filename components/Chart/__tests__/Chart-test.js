@@ -22,7 +22,7 @@ var VALUES = [{
   label: 'zero'
 }];
 test('Chart renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     values: VALUES
   })));
 
@@ -30,16 +30,16 @@ test('Chart renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart type renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     type: "bar",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     type: "line",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     type: "area",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     type: "point",
     values: VALUES
   })));
@@ -48,29 +48,29 @@ test('Chart type renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart size renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: "xsmall",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: "small",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: "medium",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: "large",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: "xlarge",
     values: VALUES
-  }), _react["default"].createElement(_Box.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     width: "large"
-  }, _react["default"].createElement(_.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: {
       width: 'full'
     },
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: {
       width: 'auto'
     },
@@ -81,19 +81,19 @@ test('Chart size renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart thickness renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     thickness: "xsmall",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     thickness: "small",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     thickness: "medium",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     thickness: "large",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     thickness: "xlarge",
     values: VALUES
   })));
@@ -102,18 +102,18 @@ test('Chart thickness renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart cap renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     round: true,
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     type: "line",
     round: true,
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     type: "area",
     round: true,
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     type: "point",
     round: true,
     values: VALUES
@@ -123,21 +123,21 @@ test('Chart cap renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart gap renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_Box.Box, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     width: "large"
-  }, _react["default"].createElement(_.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: {
       width: 'auto'
     },
     gap: "small",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: {
       width: 'auto'
     },
     gap: "medium",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     size: {
       width: 'auto'
     },
@@ -149,7 +149,7 @@ test('Chart gap renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart dash renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     dash: true,
     values: VALUES
   })));
@@ -158,16 +158,16 @@ test('Chart dash renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart color renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Chart, {
     color: "brand",
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     color: {
       color: 'brand',
       opacity: 'strong'
     },
     values: VALUES
-  }), _react["default"].createElement(_.Chart, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Chart, {
     color: [{
       value: 0,
       color: 'brand'

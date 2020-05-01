@@ -21,20 +21,20 @@ var SimpleCalendar = function SimpleCalendar() {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: date,
     onSelect: onSelect,
     size: "small",
     bounds: ['2018-09-08', '2020-12-13']
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: date,
     daysOfWeek: true,
     onSelect: onSelect,
@@ -44,5 +44,5 @@ var SimpleCalendar = function SimpleCalendar() {
 };
 
 (0, _react2.storiesOf)('Calendar', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleCalendar, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleCalendar, null);
 });

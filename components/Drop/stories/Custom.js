@@ -37,30 +37,30 @@ var Custom = function Custom() {
   (0, _react.useEffect)(function () {
     return setShowDrop(true);
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     justify: "start",
     ref: targetRef
-  }, "Box"), targetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Box"), targetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       top: 'bottom',
       left: 'right'
     },
     target: targetRef.current
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
   }, "This Drop uses a custom theme"))));
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Custom', function () {
-  return _react["default"].createElement(Custom, null);
+  return /*#__PURE__*/_react["default"].createElement(Custom, null);
 });

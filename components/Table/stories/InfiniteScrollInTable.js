@@ -30,30 +30,30 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
     })));
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     basis: "small"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 3
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "small"
-  }, _react["default"].createElement("strong", null, "InfiniteScroll embedded in a Table"), _react["default"].createElement(_grommet.Text, null, "Scroll down to load more data, open console to see loading info"))), _react["default"].createElement(_grommet.Table, null, _react["default"].createElement(_grommet.TableHeader, null, _react["default"].createElement(_grommet.TableRow, null, _react["default"].createElement(_grommet.TableCell, {
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, "InfiniteScroll embedded in a Table"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/_react["default"].createElement(_grommet.Table, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableHeader, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Key"), _react["default"].createElement(_grommet.TableCell, {
+  }, "Key"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Cartoon"), _react["default"].createElement(_grommet.TableCell, {
+  }, "Cartoon"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Movie"), _react["default"].createElement(_grommet.TableCell, {
+  }, "Movie"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Year"))), _react["default"].createElement(_grommet.TableBody, null, _react["default"].createElement(_grommet.InfiniteScroll, {
+  }, "Year"))), /*#__PURE__*/_react["default"].createElement(_grommet.TableBody, null, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, {
     renderMarker: function renderMarker(marker) {
-      return _react["default"].createElement(_grommet.TableRow, null, _react["default"].createElement(_grommet.TableCell, null, marker));
+      return /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, marker));
     },
     scrollableAncestor: "window",
     items: results,
@@ -62,14 +62,14 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
     },
     step: step
   }, function (result) {
-    return _react["default"].createElement(_grommet.TableRow, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, {
       key: result
-    }, _react["default"].createElement(_grommet.TableCell, null, result), _react["default"].createElement(_grommet.TableCell, null, "cartoon"), _react["default"].createElement(_grommet.TableCell, null, "movie name"), _react["default"].createElement(_grommet.TableCell, null, "year"));
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, result), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "cartoon"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "movie name"), /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, "year"));
   })))));
 };
 
 (0, _react2.storiesOf)('Table', module).add('InfiniteScroll', function () {
-  return _react["default"].createElement(InfiniteScrollInTable, null);
+  return /*#__PURE__*/_react["default"].createElement(InfiniteScrollInTable, null);
 }, {
   chromatic: {
     disable: true

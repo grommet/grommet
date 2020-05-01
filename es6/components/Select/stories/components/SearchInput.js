@@ -14,11 +14,11 @@ export var SearchInput = function SearchInput(props) {
       clearTimeout(focusTimeout);
     };
   }, []);
-  return React.createElement(SearchInputContext.Consumer, null, function (_ref) {
+  return /*#__PURE__*/React.createElement(SearchInputContext.Consumer, null, function (_ref) {
     var searching = _ref.searching;
-    return React.createElement(SearchBorderBox, {
+    return /*#__PURE__*/React.createElement(SearchBorderBox, {
       searching: searching
-    }, React.createElement(TextInput, _extends({}, props, {
+    }, /*#__PURE__*/React.createElement(TextInput, _extends({}, props, {
       plain: true,
       ref: textInputRef
     })));

@@ -19,13 +19,13 @@ var SelectionList = function SelectionList() {
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "large"
-  }, _react["default"].createElement(_grommet.List, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
     data: _data.data.slice(0, 10),
     itemProps: selected >= 0 ? (_ref = {}, _ref[selected] = {
       background: 'brand'
@@ -37,5 +37,5 @@ var SelectionList = function SelectionList() {
 };
 
 (0, _react2.storiesOf)('List', module).add('selection', function () {
-  return _react["default"].createElement(SelectionList, null);
+  return /*#__PURE__*/_react["default"].createElement(SelectionList, null);
 });

@@ -6,12 +6,12 @@ import { Grommet, Box, Diagram, Stack } from '../..';
 
 var Context = function Context(_ref) {
   var children = _ref.children;
-  return React.createElement(Grommet, null, React.createElement(Stack, null, React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, {
     direction: "row"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     id: "1",
     pad: "medium"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     id: "2",
     pad: "medium"
   })), children));
@@ -23,7 +23,7 @@ Context.propTypes = {
 describe('Diagram', function () {
   afterEach(cleanup);
   test('basic', function () {
-    var _render = render(React.createElement(Context, null, React.createElement(Diagram, {
+    var _render = render( /*#__PURE__*/React.createElement(Context, null, /*#__PURE__*/React.createElement(Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2'
@@ -34,7 +34,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('type', function () {
-    var _render2 = render(React.createElement(Context, null, React.createElement(Diagram, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Context, null, /*#__PURE__*/React.createElement(Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -54,7 +54,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('color', function () {
-    var _render3 = render(React.createElement(Context, null, React.createElement(Diagram, {
+    var _render3 = render( /*#__PURE__*/React.createElement(Context, null, /*#__PURE__*/React.createElement(Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -66,7 +66,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('offset', function () {
-    var _render4 = render(React.createElement(Context, null, React.createElement(Diagram, {
+    var _render4 = render( /*#__PURE__*/React.createElement(Context, null, /*#__PURE__*/React.createElement(Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -86,7 +86,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('thickness', function () {
-    var _render5 = render(React.createElement(Context, null, React.createElement(Diagram, {
+    var _render5 = render( /*#__PURE__*/React.createElement(Context, null, /*#__PURE__*/React.createElement(Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',
@@ -118,7 +118,7 @@ describe('Diagram', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('anchor', function () {
-    var _render6 = render(React.createElement(Context, null, React.createElement(Diagram, {
+    var _render6 = render( /*#__PURE__*/React.createElement(Context, null, /*#__PURE__*/React.createElement(Diagram, {
       connections: [{
         fromTarget: '1',
         toTarget: '2',

@@ -4,9 +4,9 @@ import React, { forwardRef } from 'react';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableBody } from '../Table/StyledTable';
 var TableBody = forwardRef(function (props, ref) {
-  return React.createElement(TableContext.Provider, {
+  return /*#__PURE__*/React.createElement(TableContext.Provider, {
     value: "body"
-  }, React.createElement(StyledTableBody, _extends({
+  }, /*#__PURE__*/React.createElement(StyledTableBody, _extends({
     ref: ref
   }, props)));
 });

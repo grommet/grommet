@@ -38,88 +38,88 @@ var LazyDrop = function LazyDrop() {
       setPad(finalLazyPad);
     }, 2000);
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: lazyTheme,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     justify: "between",
     pad: "large",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     pad: {
       horizontal: 'small'
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     ref: topLeftTargetRef
-  }, "Target"), topLeftTargetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Target"), topLeftTargetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       top: 'bottom',
       left: 'left'
     },
     target: topLeftTargetRef.current,
     responsive: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
       vertical: pad
     }
-  }, "align top to bottom")), _react["default"].createElement(_grommet.Box, {
+  }, "align top to bottom")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     ref: topRightTargetRef
-  }, "Target"), topRightTargetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Target"), topRightTargetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       bottom: 'top',
       right: 'right'
     },
     target: topRightTargetRef.current,
     responsive: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
       vertical: pad
     }
-  }, "align bottom to top"))), _react["default"].createElement(_grommet.Box, {
+  }, "align bottom to top"))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     ref: bottomLeftTargetRef
-  }, "Target"), bottomLeftTargetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Target"), bottomLeftTargetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       bottom: 'top',
       left: 'left'
     },
     target: bottomLeftTargetRef.current,
     responsive: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
       vertical: pad
     }
-  }, "align bottom to top")), _react["default"].createElement(_grommet.Box, {
+  }, "align bottom to top")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     ref: bottomRightTargetRef
-  }, "Target"), bottomRightTargetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Target"), bottomRightTargetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       top: 'bottom',
       right: 'right'
     },
     target: bottomRightTargetRef.current,
     responsive: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
@@ -129,5 +129,5 @@ var LazyDrop = function LazyDrop() {
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Lazy', function () {
-  return _react["default"].createElement(LazyDrop, null);
+  return /*#__PURE__*/_react["default"].createElement(LazyDrop, null);
 });

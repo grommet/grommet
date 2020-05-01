@@ -18,43 +18,43 @@ var MarginLayer = function MarginLayer(_ref) {
   var margin = _ref.margin,
       rest = _objectWithoutPropertiesLoose(_ref, ["margin"]);
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Layer, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Layer, _extends({
     margin: margin || {
       left: '40px',
       top: '50px',
       right: '30px',
       bottom: '10px'
     }
-  }, rest), _react["default"].createElement(_grommet.Box, {
+  }, rest), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "small",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
-  }, "text"), _react["default"].createElement(_grommet.Box, {
+  }, "text"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge"
   }, "text"))));
 };
 
 (0, _react2.storiesOf)('Layer', module).add('Margin', function () {
-  return _react["default"].createElement(MarginLayer, {
+  return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     full: true
   });
 }).add('Margin (Center)', function () {
-  return _react["default"].createElement(MarginLayer, {
+  return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     margin: "large"
   });
 }).add('Margin Top (Center)', function () {
-  return _react["default"].createElement(MarginLayer, {
+  return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     margin: {
       top: 'large'
     },

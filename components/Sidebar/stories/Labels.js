@@ -22,25 +22,25 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
 var SidebarHeader = function SidebarHeader() {
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     gap: "small",
     direction: "row",
     margin: {
       bottom: 'large'
     }
-  }, _react["default"].createElement(_grommet.Stack, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     alignSelf: "start",
     align: "center",
     anchor: "top-right"
-  }, _react["default"].createElement(_grommet.Avatar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     src: src
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     background: "orange",
     round: true,
     responsive: false
-  })), _react["default"].createElement(_grommet.Text, null, "Shimrit Yacobi"));
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Shimrit Yacobi"));
 };
 
 var SidebarButton = function SidebarButton(_ref) {
@@ -48,9 +48,9 @@ var SidebarButton = function SidebarButton(_ref) {
       label = _ref.label,
       rest = _objectWithoutPropertiesLoose(_ref, ["icon", "label"]);
 
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react["default"].createElement(_grommet.Button, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, _extends({
     gap: "medium",
     alignSelf: "start",
     plain: true,
@@ -60,63 +60,63 @@ var SidebarButton = function SidebarButton(_ref) {
 };
 
 var SidebarFooter = function SidebarFooter() {
-  return _react["default"].createElement(_grommet.Nav, null, _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.Chat, null),
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Nav, null, /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Chat, null),
     label: "Chat"
-  }), _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.Help, null),
+  }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Help, null),
     label: "Support"
   }));
 };
 
 var MainNavigation = function MainNavigation() {
-  return _react["default"].createElement(_grommet.Nav, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
     gap: "large",
     responsive: false
-  }, _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.StatusInfoSmall, null),
+  }, /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusInfoSmall, null),
     label: "Focus"
-  }), _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.Projects, null),
+  }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Projects, null),
     label: "Services"
-  }), _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.Clock, null),
+  }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Clock, null),
     label: "Glances"
-  }), _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.Split, null),
+  }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Split, null),
     label: "Flows"
-  }), _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.Analytics, null),
+  }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Analytics, null),
     label: "Analytics"
-  }), _react["default"].createElement(SidebarButton, {
-    icon: _react["default"].createElement(_grommetIcons.Configure, null),
+  }), /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Configure, null),
     label: "Configure"
   }));
 };
 
 var Labels = function Labels() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     height: {
       min: '100%'
     }
-  }, _react["default"].createElement(_Sidebar.Sidebar, {
+  }, /*#__PURE__*/_react["default"].createElement(_Sidebar.Sidebar, {
     responsive: false,
     background: "neutral-2",
-    header: _react["default"].createElement(SidebarHeader, null),
-    footer: _react["default"].createElement(SidebarFooter, null),
+    header: /*#__PURE__*/_react["default"].createElement(SidebarHeader, null),
+    footer: /*#__PURE__*/_react["default"].createElement(SidebarFooter, null),
     pad: {
       left: 'medium',
       right: 'large',
       vertical: 'medium'
     }
-  }, _react["default"].createElement(MainNavigation, null))));
+  }, /*#__PURE__*/_react["default"].createElement(MainNavigation, null))));
 };
 
 exports.Labels = Labels;
 (0, _react2.storiesOf)('Sidebar', module).add('Labels', function () {
-  return _react["default"].createElement(Labels, null);
+  return /*#__PURE__*/_react["default"].createElement(Labels, null);
 });

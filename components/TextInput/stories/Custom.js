@@ -119,34 +119,34 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
       var name = _ref2.name,
           imageUrl = _ref2.imageUrl;
       return {
-        label: _react["default"].createElement(_grommet.Box, {
+        label: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
           direction: "row",
           align: "center",
           gap: "small",
           border: index < list.length - 1 ? 'bottom' : undefined,
           pad: "small"
-        }, _react["default"].createElement(_grommet.Image, {
+        }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
           width: "48px",
           src: imageUrl,
           style: {
             borderRadius: '100%'
           }
-        }), _react["default"].createElement(_grommet.Text, null, _react["default"].createElement("strong", null, name))),
+        }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, /*#__PURE__*/_react["default"].createElement("strong", null, name))),
         value: name
       };
     });
   }, [suggestedFolks, value]);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: myCustomTheme,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-1",
     fill: true,
     align: "center",
     pad: {
       top: 'large'
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     ref: boxRef,
     width: "large",
     direction: "row",
@@ -165,9 +165,9 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
       borderBottomLeftRadius: '0px',
       borderBottomRightRadius: '0px'
     } : undefined
-  }, _react["default"].createElement(_grommetIcons.Search, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Search, {
     color: "brand"
-  }), _react["default"].createElement(_grommet.TextInput, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     type: "search",
     dropTarget: boxRef.current,
     plain: true,
@@ -182,5 +182,5 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
 };
 
 (0, _react2.storiesOf)('TextInput', module).add('Custom', function () {
-  return _react["default"].createElement(CustomSuggestionsTextInput, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomSuggestionsTextInput, null);
 });

@@ -24,13 +24,13 @@ var CustomFormField = (0, _styledComponents["default"])(_.FormField).withConfig(
 })(["font-size:40px;"]);
 describe('FormField', function () {
   test('default', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, null), _react["default"].createElement(_.FormField, null, _react["default"].createElement(_TextInput.TextInput, null))));
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, null), /*#__PURE__*/_react["default"].createElement(_.FormField, null, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, null))));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('label', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       label: "test label"
     })));
 
@@ -38,7 +38,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('help', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       help: "test help"
     })));
 
@@ -46,7 +46,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('error', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       error: "test error"
     })));
 
@@ -54,7 +54,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('info', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       info: "test info"
     })));
 
@@ -62,7 +62,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('htmlFor', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       htmlFor: "test-id"
     })));
 
@@ -70,7 +70,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('margin', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       margin: "medium"
     })));
 
@@ -78,7 +78,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('empty margin', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       margin: "none"
     })));
 
@@ -86,7 +86,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('pad', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       pad: true
     })));
 
@@ -94,7 +94,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('abut', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, {
       theme: {
         formField: {
           border: {
@@ -114,7 +114,7 @@ describe('FormField', function () {
           }
         }
       }
-    }, _react["default"].createElement(_.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       htmlFor: "test-id"
     })));
 
@@ -122,7 +122,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('abut with margin', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, {
       theme: {
         formField: {
           border: {
@@ -142,7 +142,7 @@ describe('FormField', function () {
           }
         }
       }
-    }, _react["default"].createElement(_.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       margin: "medium",
       htmlFor: "test-id"
     })));
@@ -151,7 +151,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('custom formfield', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(CustomFormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(CustomFormField, {
       htmlFor: "test-id"
     })));
 
@@ -159,9 +159,9 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       disabled: true
-    }), " ", _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+    }), " ", /*#__PURE__*/_react["default"].createElement(_Form.Form, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       disabled: true
     }))));
 
@@ -169,9 +169,9 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('required', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       required: true
-    }), " ", _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+    }), " ", /*#__PURE__*/_react["default"].createElement(_Form.Form, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       required: true
     }))));
 
@@ -179,7 +179,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('custom label', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, {
       theme: {
         formField: {
           label: {
@@ -190,7 +190,7 @@ describe('FormField', function () {
           }
         }
       }
-    }, _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_Form.Form, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       label: "label"
     }))));
 
@@ -198,7 +198,7 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('disabled with custom label', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, {
       theme: {
         formField: {
           label: {
@@ -214,7 +214,7 @@ describe('FormField', function () {
           }
         }
       }
-    }, _react["default"].createElement(_Form.Form, null, _react["default"].createElement(_.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_Form.Form, null, /*#__PURE__*/_react["default"].createElement(_.FormField, {
       disabled: true,
       label: "label"
     }))));

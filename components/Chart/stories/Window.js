@@ -102,32 +102,32 @@ var WindowChart = function WindowChart(_ref) {
       innerBounds = _useMemo2.bounds,
       thickness = _useMemo2.thickness;
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     className: "chromatic-ignore"
   }, innerAxis[0].reverse().map(function (t) {
-    return _react["default"].createElement(_grommet.Text, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       key: t
     }, new Date(t).toLocaleDateString());
-  })), _react["default"].createElement(_grommet.Stack, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     guidingChild: "first",
     interactiveChild: "first"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: thickness
     }
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: "bar",
     color: "accent-2",
     overflow: true,
     bounds: innerBounds,
     values: innerValues.map(function (v) {
-      return _extends({}, v, {
+      return _extends(_extends({}, v), {}, {
         onHover: onHover(v)
       });
     }),
@@ -136,38 +136,38 @@ var WindowChart = function WindowChart(_ref) {
       width: 'full',
       height: 'small'
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     justify: "between"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: {
       side: 'top'
     },
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Text, null, innerAxis[1][0]))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, innerAxis[1][0]))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: {
       side: 'bottom',
       color: 'accent-2',
       size: 'medium'
     },
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Text, null, innerAxis[1][1])))), hover && _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, innerAxis[1][1])))), hover && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     animation: {
       type: 'fadeIn',
       duration: 100
@@ -182,10 +182,10 @@ var WindowChart = function WindowChart(_ref) {
     },
     round: true,
     className: "chromatic-ignore"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "large",
     weight: "bold"
-  }, hover.value[1]), _react["default"].createElement(_grommet.Text, null, new Date(hover.value[0]).toLocaleDateString())))), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Chart, {
+  }, hover.value[1]), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, new Date(hover.value[0]).toLocaleDateString())))), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: "line",
     bounds: outerBounds,
     values: outerValues,
@@ -194,7 +194,7 @@ var WindowChart = function WindowChart(_ref) {
       height: 'xxsmall'
     },
     thickness: "xxsmall"
-  }), _react["default"].createElement(_grommet.RangeSelector, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, {
     min: 0,
     max: data.length,
     size: "full",
@@ -208,7 +208,7 @@ var WindowChart = function WindowChart(_ref) {
 };
 
 (0, _react2.storiesOf)('Chart', module).add('Window', function () {
-  return _react["default"].createElement(WindowChart, {
+  return /*#__PURE__*/_react["default"].createElement(WindowChart, {
     data: (0, _data.generateData)(1000, 100),
     max: 100
   });

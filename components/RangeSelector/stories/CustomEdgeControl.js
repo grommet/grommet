@@ -23,7 +23,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var customEdge = (0, _utils.deepMerge)(_themes.grommet, {
   rangeSelector: {
     edge: {
-      type: _react["default"].createElement(_grommetIcons.Gremlin, {
+      type: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Gremlin, {
         size: "large",
         color: "neutral-2"
       }) // it is also possible to use an actual node
@@ -46,22 +46,22 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
     setRange(values);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customEdge
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "xlarge",
     gap: "large"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     style: {
       fontFamily: 'Comic Sans MS'
     },
     color: "brand"
-  }, "Feed the gremlins with grommets...", ' '), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
+  }, "Feed the gremlins with grommets...", ' '), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between"
   }, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (value) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: value,
       width: "xsmall",
       height: "xsmall",
@@ -69,11 +69,11 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
       align: "center",
       pad: "small",
       border: false
-    }, _react["default"].createElement(_grommetIcons.Grommet, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
       color: "brand",
       size: "small"
     }));
-  })), _react["default"].createElement(_grommet.RangeSelector, _extends({
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, _extends({
     direction: direction,
     min: 0,
     max: 9,
@@ -85,5 +85,5 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
 };
 
 (0, _react2.storiesOf)('RangeSelector', module).add('Custom Edge Controls', function () {
-  return _react["default"].createElement(CustomEdgeControl, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomEdgeControl, null);
 });

@@ -298,7 +298,7 @@ var DropContainer = (0, _react.forwardRef)(function (_ref, ref) {
     }
   }, [ref, restrictFocus]);
 
-  var content = _react["default"].createElement(_StyledDrop.StyledDrop, _extends({
+  var content = /*#__PURE__*/_react["default"].createElement(_StyledDrop.StyledDrop, _extends({
     ref: ref || dropRef,
     as: _Box.Box,
     plain: plain,
@@ -313,19 +313,19 @@ var DropContainer = (0, _react.forwardRef)(function (_ref, ref) {
     var dark = (0, _utils.backgroundIsDark)(theme.global.drop.background, theme);
 
     if (dark !== undefined && dark !== theme.dark) {
-      content = _react["default"].createElement(_styledComponents.ThemeContext.Provider, {
-        value: _extends({}, theme, {
+      content = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+        value: _extends(_extends({}, theme), {}, {
           dark: dark
         })
       }, content);
     }
   }
 
-  return _react["default"].createElement(_PortalContext.PortalContext.Provider, {
+  return /*#__PURE__*/_react["default"].createElement(_PortalContext.PortalContext.Provider, {
     value: nextPortalContext
-  }, _react["default"].createElement(_FocusedContainer.FocusedContainer, {
+  }, /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
     onKeyDown: onEsc && preventLayerClose
-  }, _react["default"].createElement(_Keyboard.Keyboard, {
+  }, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: onEsc ? function (event) {
       event.stopPropagation();
       onEsc(event);

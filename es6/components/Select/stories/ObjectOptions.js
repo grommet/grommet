@@ -20,14 +20,14 @@ var Example = function Example() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -46,5 +46,5 @@ var Example = function Example() {
 };
 
 storiesOf('Select', module).add('Object options', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

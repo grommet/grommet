@@ -2,11 +2,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 export var ArrowDown = function ArrowDown(props) {
-  return React.createElement("svg", _extends({
+  return /*#__PURE__*/React.createElement("svg", _extends({
     width: "10",
     height: "20",
     fill: "rgba(0, 0, 0, 0.54)"
-  }, props), React.createElement("path", {
+  }, props), /*#__PURE__*/React.createElement("path", {
     d: "m0,7.5l5,5l5,-5l-10,0z"
   }));
 };

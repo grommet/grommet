@@ -38,32 +38,32 @@ var ProgressiveDrop = function ProgressiveDrop() {
     setOpenInnerDrop(false);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     ref: boxRef,
     primary: true,
     label: "Click me",
     onClick: onOpenDrop
-  }), openDrop && _react["default"].createElement(_grommet.Drop, {
+  }), openDrop && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     target: boxRef.current,
     onClickOutside: onCloseDrop,
     onEsc: onCloseDrop
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     ref: innerBoxRef
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     primary: true,
     label: "Click me again",
     onClick: function onClick() {
       return setOpenInnerDrop(true);
     }
-  })), openInnerDrop && _react["default"].createElement(_grommet.Drop, {
+  })), openInnerDrop && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     target: innerBoxRef.current,
     onClickOutside: function onClickOutside() {
       return setOpenInnerDrop(false);
@@ -75,9 +75,9 @@ var ProgressiveDrop = function ProgressiveDrop() {
       top: 'bottom',
       right: 'right'
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     primary: true,
     label: interactedWithInnerButton ? 'Good job!' : 'You can interact with me',
     onClick: function onClick() {
@@ -87,5 +87,5 @@ var ProgressiveDrop = function ProgressiveDrop() {
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Progressive', function () {
-  return _react["default"].createElement(ProgressiveDrop, null);
+  return /*#__PURE__*/_react["default"].createElement(ProgressiveDrop, null);
 });

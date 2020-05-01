@@ -6,12 +6,12 @@ import { Grommet } from '../../Grommet';
 import { Grid } from '..';
 describe('Grid', function () {
   test('renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, null)));
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, null)));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('a11yTitle renders', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(Grid, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       a11yTitle: "My Grid"
     }))),
         container = _render.container,
@@ -22,29 +22,29 @@ describe('Grid', function () {
     expect(container).toMatchSnapshot();
   });
   test('rows renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       rows: ['small', 'large', 'medium']
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       rows: "small"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('columns renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       columns: ['1/2', '2/4']
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       columns: ['1/3', '2/3']
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       columns: ['1/4', '3/4']
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       columns: "small"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       columns: {
         count: 'fit',
         size: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       columns: {
         count: 'fill',
         size: ['small', 'medium']
@@ -54,7 +54,7 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('areas renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       rows: ['xxsmall', 'medium', 'xsmall'],
       columns: ['3/4', '1/4'],
       areas: [{
@@ -79,7 +79,7 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('areas renders when given an array of string arrays', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       rows: ['xxsmall', 'medium', 'xsmall'],
       columns: ['3/4', '1/4'],
       areas: [['header', 'header'], ['sidebar', 'main'], ['footer', 'footer']]
@@ -88,97 +88,97 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('justify renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       justify: "start"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justify: "center"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justify: "end"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justify: "stretch"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('align renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       align: "start"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       align: "center"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       align: "end"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       align: "stretch"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('justifyContent renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       justifyContent: "start"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justifyContent: "center"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justifyContent: "between"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justifyContent: "around"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justifyContent: "end"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       justifyContent: "stretch"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('alignContent renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       alignContent: "start"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       alignContent: "center"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       alignContent: "between"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       alignContent: "around"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       alignContent: "end"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       alignContent: "stretch"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('gap renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       gap: "small"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: "medium"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: "large"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: {
         row: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: {
         row: 'medium'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: {
         row: 'large'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: {
         column: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: {
         column: 'medium'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: {
         column: 'large'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       gap: {
         row: 'small',
         column: 'medium'
@@ -188,79 +188,79 @@ describe('Grid', function () {
     expect(tree).toMatchSnapshot();
   });
   test('fill renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       fill: true
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       fill: false
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       fill: "horizontal"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       fill: "vertical"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('responsive', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       responsive: true
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       responsive: false
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('as renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       as: "article"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('proxies tag', function () {
-    var tagComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var tagComponent = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       tag: "article"
     })));
-    var asComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var asComponent = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       as: "article"
     })));
     expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
   });
   test('pad', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Grid, {
       pad: "small"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: "medium"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: "large"
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         horizontal: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         vertical: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         bottom: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         left: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         right: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         start: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         end: 'small'
       }
-    }), React.createElement(Grid, {
+    }), /*#__PURE__*/React.createElement(Grid, {
       pad: {
         top: 'small'
       }

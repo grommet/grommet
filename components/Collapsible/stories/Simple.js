@@ -17,28 +17,28 @@ var SimpleCollapsible = function SimpleCollapsible(props) {
       open = _React$useState[0],
       setOpen = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "start",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     primary: true,
     onClick: function onClick() {
       return setOpen(!open);
     },
     label: "Toggle"
-  }), _react["default"].createElement(_grommet.Collapsible, _extends({
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Collapsible, _extends({
     open: open
-  }, props), _react["default"].createElement(_grommet.Box, {
+  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "light-2",
     round: "medium",
     pad: "medium",
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Text, null, "This is a box inside a Collapsible component"))), _react["default"].createElement(_grommet.Text, null, "This is other content outside the Collapsible box")));
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "This is a box inside a Collapsible component"))), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "This is other content outside the Collapsible box")));
 };
 
 (0, _react2.storiesOf)('Collapsible', module).add('Default', function () {
-  return _react["default"].createElement(SimpleCollapsible, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleCollapsible, null);
 });

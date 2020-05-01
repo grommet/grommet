@@ -11,30 +11,30 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var NColumnGrid = function NColumnGrid() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Grid, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: {
       count: 6,
       size: 'auto'
     },
     gap: "small"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 1"), _react["default"].createElement(_grommet.Box, {
+  }, "Item 1"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 2"), _react["default"].createElement(_grommet.Box, {
+  }, "Item 2"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 3"), _react["default"].createElement(_grommet.Box, {
+  }, "Item 3"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 4"), _react["default"].createElement(_grommet.Box, {
+  }, "Item 4"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 5"), _react["default"].createElement(_grommet.Box, {
+  }, "Item 5"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand"
   }, "Item 6")));
 };
 
 (0, _react2.storiesOf)('Grid', module).add('N-column layout', function () {
-  return _react["default"].createElement(NColumnGrid, null);
+  return /*#__PURE__*/_react["default"].createElement(NColumnGrid, null);
 });

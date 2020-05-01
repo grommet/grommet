@@ -43,7 +43,7 @@ var Anchor = forwardRef(function (_ref, ref) {
 
   var first = reverse ? label : coloredIcon;
   var second = reverse ? coloredIcon : label;
-  return React.createElement(StyledAnchor, _extends({}, rest, {
+  return /*#__PURE__*/React.createElement(StyledAnchor, _extends({}, rest, {
     ref: ref,
     "aria-label": a11yTitle,
     colorProp: color,
@@ -62,7 +62,7 @@ var Anchor = forwardRef(function (_ref, ref) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
     }
-  }), first && second ? React.createElement(Box, {
+  }), first && second ? /*#__PURE__*/React.createElement(Box, {
     as: "span",
     direction: "row",
     align: "center",

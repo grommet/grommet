@@ -102,10 +102,10 @@ var Carousel = function Carousel(_ref) {
   var iconColor = normalizeColor(theme.carousel.icons.color || 'control', theme);
   var selectors = [];
   var wrappedChildren = Children.map(children, function (child, index) {
-    selectors.push(React.createElement(Button // eslint-disable-next-line react/no-array-index-key
+    selectors.push( /*#__PURE__*/React.createElement(Button // eslint-disable-next-line react/no-array-index-key
     , {
       key: index,
-      icon: React.createElement(CurrentIcon, {
+      icon: /*#__PURE__*/React.createElement(CurrentIcon, {
         color: activeIndex === index ? iconColor : undefined
       }),
       onClick: onSelect(index)
@@ -132,10 +132,10 @@ var Carousel = function Carousel(_ref) {
       };
     }
 
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       fill: fill,
       overflow: "hidden"
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       fill: fill,
       animation: animation
     }, child));
@@ -144,13 +144,13 @@ var Carousel = function Carousel(_ref) {
   var PreviousIcon = theme.carousel.icons.previous;
   var nextIconDisabled = activeIndex >= lastIndex;
   var previousIconDisabled = activeIndex <= 0;
-  return React.createElement(Keyboard, {
+  return /*#__PURE__*/React.createElement(Keyboard, {
     onLeft: onLeft,
     onRight: onRight
-  }, React.createElement(Stack, _extends({
+  }, /*#__PURE__*/React.createElement(Stack, _extends({
     guidingChild: activeIndex,
     fill: fill
-  }, rest), wrappedChildren, React.createElement(Box, {
+  }, rest), wrappedChildren, /*#__PURE__*/React.createElement(Box, {
     tabIndex: "0",
     focus: focus,
     onFocus: function onFocus(event) {
@@ -164,24 +164,24 @@ var Carousel = function Carousel(_ref) {
     fill: true,
     direction: "row",
     justify: "between"
-  }, showArrows && React.createElement(Button, {
+  }, showArrows && /*#__PURE__*/React.createElement(Button, {
     fill: "vertical",
-    icon: React.createElement(PreviousIcon, {
+    icon: /*#__PURE__*/React.createElement(PreviousIcon, {
       color: normalizeColor(previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
     }),
     plain: true,
     disabled: previousIconDisabled,
     onClick: onLeft,
     hoverIndicator: true
-  }), showSelectors && React.createElement(Box, {
+  }), showSelectors && /*#__PURE__*/React.createElement(Box, {
     justify: "end",
     fill: !showArrows && 'horizontal'
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "center"
-  }, selectors)), showArrows && React.createElement(Button, {
+  }, selectors)), showArrows && /*#__PURE__*/React.createElement(Button, {
     fill: "vertical",
-    icon: React.createElement(NextIcon, {
+    icon: /*#__PURE__*/React.createElement(NextIcon, {
       color: normalizeColor(nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
     }),
     plain: true,

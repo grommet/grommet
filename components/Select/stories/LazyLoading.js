@@ -22,12 +22,12 @@ var dummyOptions = Array(2000).fill().map(function (_, i) {
 var Option = function Option(_ref) {
   var value = _ref.value,
       selected = _ref.selected;
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     gap: "small",
     align: "center",
     pad: "xsmall"
-  }, _react["default"].createElement(_grommet.CheckBox, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     tabIndex: "-1",
     checked: selected,
     onChange: function onChange() {}
@@ -75,14 +75,14 @@ var LazyLoading = function LazyLoading() {
     return setSelected(nextSelected);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     multiple: true,
     closeOnChange: false,
     placeholder: "select an option...",
@@ -93,7 +93,7 @@ var LazyLoading = function LazyLoading() {
     onClose: onClose,
     onChange: onChange
   }, function (option, index) {
-    return _react["default"].createElement(Option, {
+    return /*#__PURE__*/_react["default"].createElement(Option, {
       value: option,
       selected: selected.indexOf(index) !== -1
     });
@@ -101,5 +101,5 @@ var LazyLoading = function LazyLoading() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Lazy Loading options', function () {
-  return _react["default"].createElement(LazyLoading, null);
+  return /*#__PURE__*/_react["default"].createElement(LazyLoading, null);
 });

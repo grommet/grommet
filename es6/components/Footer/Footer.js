@@ -6,7 +6,7 @@ import { Box } from '../Box';
 var Footer = function Footer(_ref) {
   var rest = _extends({}, _ref);
 
-  return React.createElement(Box, _extends({
+  return /*#__PURE__*/React.createElement(Box, _extends({
     as: "footer",
     align: "center",
     direction: "row",

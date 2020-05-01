@@ -64,7 +64,7 @@ var FocusedContainer = function FocusedContainer(_ref) {
       clearTimeout(timer);
     };
   }, [hidden, bodyOverflowStyle, restrictScroll]);
-  return _react["default"].createElement("div", _extends({
+  return /*#__PURE__*/_react["default"].createElement("div", _extends({
     ref: ref,
     "aria-hidden": hidden
   }, rest), children);

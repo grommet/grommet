@@ -57,11 +57,11 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
   var AccordionIcon = (0, _react.useMemo)(function () {
     return active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
   }, [active, theme.accordion.icons]);
-  return _react["default"].createElement(_Box.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     ref: ref,
     flex: false,
     onClick: onClick
-  }, _react["default"].createElement(_Button.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     role: "tab",
     "aria-selected": active,
     "aria-expanded": active,
@@ -82,26 +82,26 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
       setHover(undefined);
       if (_onBlur) _onBlur(event);
     }
-  }, header || _react["default"].createElement(_Box.Box, _extends({
+  }, header || /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     align: "center",
     direction: "row",
     justify: "between"
-  }, rest), typeof label === 'string' ? _react["default"].createElement(_Box.Box, {
+  }, rest), typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: {
       horizontal: 'xsmall'
     }
-  }, _react["default"].createElement(_Heading.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
     level: theme.accordion.heading && theme.accordion.heading.level || 4,
     color: hover
-  }, label)) : label, AccordionIcon && _react["default"].createElement(_Box.Box, {
+  }, label)) : label, AccordionIcon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: {
       horizontal: 'small'
     }
-  }, _react["default"].createElement(AccordionIcon, {
+  }, /*#__PURE__*/_react["default"].createElement(AccordionIcon, {
     color: iconColor
-  })))), _react["default"].createElement(_Box.Box, {
+  })))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     border: theme.accordion.border
-  }, animate ? _react["default"].createElement(_Collapsible.Collapsible, {
+  }, animate ? /*#__PURE__*/_react["default"].createElement(_Collapsible.Collapsible, {
     open: active
   }, children) : active && children));
 });

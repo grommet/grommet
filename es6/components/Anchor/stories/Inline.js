@@ -4,17 +4,17 @@ import { Anchor, Box, Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Inline = function Inline() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Paragraph, null, "This is ", React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Paragraph, null, "This is ", /*#__PURE__*/React.createElement(Anchor, {
     label: "an inline link",
     href: "#"
   }), " with surrounding text.")));
 };
 
 storiesOf('Anchor', module).add('Inline', function () {
-  return React.createElement(Inline, null);
+  return /*#__PURE__*/React.createElement(Inline, null);
 });

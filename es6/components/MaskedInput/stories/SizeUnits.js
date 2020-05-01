@@ -8,17 +8,17 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
       value = _React$useState[0],
       setValue = _React$useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(MaskedInput, {
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
     mask: [{
       length: [1, 4],
       options: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
@@ -40,5 +40,5 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
 };
 
 storiesOf('MaskedInput', module).add('Size + Units', function () {
-  return React.createElement(SizeUnitsMaskedInput, null);
+  return /*#__PURE__*/React.createElement(SizeUnitsMaskedInput, null);
 });

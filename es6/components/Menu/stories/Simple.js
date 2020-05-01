@@ -4,12 +4,12 @@ import { Grommet, Box, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var SimpleMenu = function SimpleMenu() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Menu, {
+  }, /*#__PURE__*/React.createElement(Menu, {
     dropProps: {
       align: {
         top: 'bottom',
@@ -32,5 +32,5 @@ var SimpleMenu = function SimpleMenu() {
 };
 
 storiesOf('Menu', module).add('Simple', function () {
-  return React.createElement(SimpleMenu, null);
+  return /*#__PURE__*/React.createElement(SimpleMenu, null);
 });

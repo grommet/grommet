@@ -9,7 +9,7 @@ var src = '';
 describe('Sidebar', function () {
   afterEach(cleanup);
   test('renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Sidebar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Sidebar, {
       id: "test id",
       name: "test name"
     })));
@@ -17,8 +17,8 @@ describe('Sidebar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('header', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Sidebar, {
-      header: React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Sidebar, {
+      header: /*#__PURE__*/React.createElement(Avatar, {
         src: src
       })
     })));
@@ -26,8 +26,8 @@ describe('Sidebar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('footer', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Sidebar, {
-      footer: React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Sidebar, {
+      footer: /*#__PURE__*/React.createElement(Avatar, {
         src: src
       })
     })));
@@ -35,16 +35,16 @@ describe('Sidebar', function () {
     expect(tree).toMatchSnapshot();
   });
   test('children', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Sidebar, null, React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Sidebar, null, /*#__PURE__*/React.createElement(Avatar, {
       src: src
     }), "children test")));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('all', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Sidebar, {
-      footer: React.createElement(Avatar, null, "SY"),
-      header: React.createElement(Avatar, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Sidebar, {
+      footer: /*#__PURE__*/React.createElement(Avatar, null, "SY"),
+      header: /*#__PURE__*/React.createElement(Avatar, {
         src: src
       }),
       background: "brand"

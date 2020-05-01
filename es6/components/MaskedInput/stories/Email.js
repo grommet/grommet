@@ -23,27 +23,27 @@ var EmailMaskedInput = function EmailMaskedInput() {
     regexp: /^[\w]+$/,
     placeholder: 'com'
   }];
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium",
     gap: "medium"
-  }, React.createElement(MaskedInput, {
-    icon: React.createElement(MailOption, null),
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
+    icon: /*#__PURE__*/React.createElement(MailOption, null),
     mask: emailMask,
     value: value,
     onChange: function onChange(event) {
       return setValue(event.target.value);
     }
-  }), React.createElement(MaskedInput, {
+  }), /*#__PURE__*/React.createElement(MaskedInput, {
     reverse: true,
-    icon: React.createElement(MailOption, null),
+    icon: /*#__PURE__*/React.createElement(MailOption, null),
     mask: emailMask,
     value: value,
     onChange: function onChange(event) {
@@ -53,5 +53,5 @@ var EmailMaskedInput = function EmailMaskedInput() {
 };
 
 storiesOf('MaskedInput', module).add('Email with Icon', function () {
-  return React.createElement(EmailMaskedInput, null);
+  return /*#__PURE__*/React.createElement(EmailMaskedInput, null);
 });

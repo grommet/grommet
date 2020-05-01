@@ -3,9 +3,9 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableFooter } from '../Table/StyledTable';
 
 var TableFooter = function TableFooter(props) {
-  return React.createElement(TableContext.Provider, {
+  return /*#__PURE__*/React.createElement(TableContext.Provider, {
     value: "footer"
-  }, React.createElement(StyledTableFooter, props));
+  }, /*#__PURE__*/React.createElement(StyledTableFooter, props));
 };
 
 var TableFooterDoc;

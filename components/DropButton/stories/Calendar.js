@@ -26,12 +26,12 @@ var CalendarDropButton = function CalendarDropButton() {
     setOpen(false);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.DropButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
     open: open,
     onClose: function onClose() {
       return setOpen(false);
@@ -39,20 +39,20 @@ var CalendarDropButton = function CalendarDropButton() {
     onOpen: function onOpen() {
       return setOpen(true);
     },
-    dropContent: _react["default"].createElement(_grommet.Calendar, {
+    dropContent: /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
       date: date,
       onSelect: onSelect
     })
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     gap: "medium",
     align: "center",
     pad: "small"
-  }, _react["default"].createElement(_grommet.Text, null, date ? new Date(date).toLocaleDateString() : 'Select date'), _react["default"].createElement(_grommetIcons.FormDown, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, date ? new Date(date).toLocaleDateString() : 'Select date'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormDown, {
     color: "brand"
   })))));
 };
 
 (0, _react2.storiesOf)('DropButton', module).add('Calendar', function () {
-  return _react["default"].createElement(CalendarDropButton, null);
+  return /*#__PURE__*/_react["default"].createElement(CalendarDropButton, null);
 });

@@ -17,8 +17,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 _styledComponents.ThemeContext.Extend = function (_ref) {
   var children = _ref.children,
       value = _ref.value;
-  return _react["default"].createElement(_styledComponents.ThemeContext.Consumer, null, function (theme) {
-    return _react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Consumer, null, function (theme) {
+    return /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
       value: (0, _utils.deepMerge)(theme, value)
     }, children);
   });

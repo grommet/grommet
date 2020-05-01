@@ -21,30 +21,30 @@ var SimpleDrop = function SimpleDrop() {
   (0, _react.useEffect)(function () {
     setShowDrop(true);
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     justify: "start",
     ref: targetRef
-  }, "Target"), targetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Target"), targetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       top: 'bottom',
       left: 'left'
     },
     target: targetRef.current
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
   }, "Drop Contents"))));
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleDrop, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleDrop, null);
 });

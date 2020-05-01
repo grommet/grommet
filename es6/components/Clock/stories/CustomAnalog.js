@@ -28,19 +28,19 @@ var analogClockTheme = {
 };
 
 var CustomAnalog = function CustomAnalog() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: analogClockTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Clock, {
+  }, /*#__PURE__*/React.createElement(Clock, {
     type: "analog"
   })));
 };
 
 storiesOf('Clock', module).add('Custom Analog', function () {
-  return React.createElement(CustomAnalog, null);
+  return /*#__PURE__*/React.createElement(CustomAnalog, null);
 }, {
   chromatic: {
     disable: true

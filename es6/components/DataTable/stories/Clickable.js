@@ -7,12 +7,12 @@ import { grommet } from 'grommet/themes'; // Source code for the data can be fou
 import { columns, DATA } from './data';
 
 var ClickableDataTable = function ClickableDataTable() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns,
     data: DATA,
     step: 10,
@@ -23,5 +23,5 @@ var ClickableDataTable = function ClickableDataTable() {
 };
 
 storiesOf('DataTable', module).add('Clickable', function () {
-  return React.createElement(ClickableDataTable, null);
+  return /*#__PURE__*/React.createElement(ClickableDataTable, null);
 });

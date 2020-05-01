@@ -42,16 +42,16 @@ var customFormFieldTheme = {
 };
 
 var CustomFormField = function CustomFormField() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: deepMerge(grommet, customFormFieldTheme)
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(Form, {
+  }, /*#__PURE__*/React.createElement(Form, {
     onReset: function onReset(event) {
       return console.log(event);
     },
@@ -59,17 +59,17 @@ var CustomFormField = function CustomFormField() {
       var value = _ref.value;
       return console.log('Submit', value);
     }
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
     name: "name",
     required: true
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     name: "name"
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Email",
     name: "email",
     required: true
-  }, React.createElement(MaskedInput, {
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
     name: "email",
     mask: [{
       regexp: /^[\w\-_.]+$/,
@@ -85,48 +85,48 @@ var CustomFormField = function CustomFormField() {
       regexp: /^[\w]+$/,
       placeholder: 'com'
     }]
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     name: "subscribe"
-  }, React.createElement(CheckBox, {
+  }, /*#__PURE__*/React.createElement(CheckBox, {
     name: "subscribe",
     label: "Subscribe?"
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     name: "ampm"
-  }, React.createElement(RadioButtonGroup, {
+  }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
     name: "ampm",
     options: ['morning', 'evening']
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Size",
     name: "size"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     name: "size",
     options: ['small', 'medium', 'large']
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Comments",
     name: "comments",
     disabled: true
-  }, React.createElement(TextArea, {
+  }, /*#__PURE__*/React.createElement(TextArea, {
     name: "comments",
     disabled: true
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Age",
     name: "age"
-  }, React.createElement(RangeInput, {
+  }, /*#__PURE__*/React.createElement(RangeInput, {
     name: "age",
     min: 15,
     max: 75
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Cancel"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "reset",
     label: "Reset"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -134,5 +134,5 @@ var CustomFormField = function CustomFormField() {
 };
 
 storiesOf('Form', module).add('Custom Theme', function () {
-  return React.createElement(CustomFormField, null);
+  return /*#__PURE__*/React.createElement(CustomFormField, null);
 });

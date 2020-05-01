@@ -29,17 +29,17 @@ var FilteredMaskedInput = function FilteredMaskedInput() {
   poems.forEach(function (p) {
     longestPoemLength = Math.max(longestPoemLength, p.length);
   });
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(MaskedInput, {
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
     mask: [{
       options: poets,
       placeholder: 'poet'
@@ -58,5 +58,5 @@ var FilteredMaskedInput = function FilteredMaskedInput() {
 };
 
 storiesOf('MaskedInput', module).add('Filtered', function () {
-  return React.createElement(FilteredMaskedInput, null);
+  return /*#__PURE__*/React.createElement(FilteredMaskedInput, null);
 });

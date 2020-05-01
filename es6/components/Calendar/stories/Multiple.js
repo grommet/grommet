@@ -8,12 +8,12 @@ var Example = function Example() {
       dates = _useState[0],
       setDates = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     dates: dates,
     onSelect: function onSelect(date) {
       var nextDates = [].concat(dates);
@@ -33,5 +33,5 @@ var Example = function Example() {
 };
 
 storiesOf('Calendar', module).add('Multiple', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

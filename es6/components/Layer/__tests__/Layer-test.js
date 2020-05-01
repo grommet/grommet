@@ -19,12 +19,12 @@ var SimpleLayer = function SimpleLayer() {
   var layer;
 
   if (showLayer) {
-    layer = React.createElement(Layer, {
+    layer = /*#__PURE__*/React.createElement(Layer, {
       "data-testid": "test-dom-removal"
     }, "This is a test");
   }
 
-  return React.createElement(Box, null, layer);
+  return /*#__PURE__*/React.createElement(Box, null, layer);
 };
 
 var FakeLayer = function FakeLayer(_ref) {
@@ -41,18 +41,18 @@ var FakeLayer = function FakeLayer(_ref) {
   var layer;
 
   if (showLayer) {
-    layer = React.createElement(Layer, {
+    layer = /*#__PURE__*/React.createElement(Layer, {
       onEsc: function onEsc() {
         return setShowLayer(false);
       }
-    }, React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       "data-testid": dataTestid
-    }, "This is a layer", React.createElement("input", {
+    }, "This is a layer", /*#__PURE__*/React.createElement("input", {
       "data-testid": "test-input"
     })));
   }
 
-  return React.createElement(Box, null, layer, children);
+  return /*#__PURE__*/React.createElement(Box, null, layer, children);
 };
 
 var TargetLayer = function TargetLayer(props) {
@@ -63,12 +63,12 @@ var TargetLayer = function TargetLayer(props) {
   var layer;
 
   if (target) {
-    layer = React.createElement(Layer, _extends({}, props, {
+    layer = /*#__PURE__*/React.createElement(Layer, _extends({}, props, {
       target: target
     }), "this is a test layer");
   }
 
-  return React.createElement(Grommet, null, React.createElement("div", {
+  return /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement("div", {
     ref: setTarget
   }), layer);
 };
@@ -78,7 +78,7 @@ describe('Layer', function () {
   afterEach(cleanup);
   ['top', 'bottom', 'left', 'right', 'start', 'end', 'center'].forEach(function (position) {
     return test("position " + position, function () {
-      render(React.createElement(Grommet, null, React.createElement(Layer, {
+      render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
         id: "position-test",
         position: position
       }, "This is a layer")));
@@ -87,7 +87,7 @@ describe('Layer', function () {
   });
   [true, false, 'horizontal', 'vertical'].forEach(function (full) {
     return test("full " + full, function () {
-      render(React.createElement(Grommet, null, React.createElement(Layer, {
+      render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
         id: "full-test",
         full: full
       }, "This is a layer")));
@@ -96,7 +96,7 @@ describe('Layer', function () {
   });
   ['none', 'xsmall', 'small', 'medium', 'large'].forEach(function (margin) {
     return test("margin " + margin, function () {
-      render(React.createElement(Grommet, null, React.createElement(Layer, {
+      render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
         id: "margin-test",
         margin: margin
       }, "This is a layer")));
@@ -104,7 +104,7 @@ describe('Layer', function () {
     });
   });
   test("custom margin", function () {
-    render(React.createElement(Grommet, null, React.createElement(Layer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       id: "margin-test",
       margin: {
         top: '50px',
@@ -116,37 +116,37 @@ describe('Layer', function () {
     expectPortal('margin-test').toMatchSnapshot();
   });
   test('hidden', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(Layer, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       id: "hidden-test",
       position: "hidden"
     }, "This is a layer"))),
         rerender = _render.rerender;
 
     expectPortal('hidden-test').toMatchSnapshot();
-    rerender(React.createElement(Grommet, null, React.createElement(Layer, {
+    rerender( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       id: "hidden-test",
       position: "center"
     }, "This is a layer")));
     expectPortal('hidden-test').toMatchSnapshot();
   });
   test('plain', function () {
-    render(React.createElement(Grommet, null, React.createElement(Layer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       id: "plain-test",
       plain: true
     }, "This is a plain layer")));
     expectPortal('plain-test').toMatchSnapshot();
   });
   test('non-modal', function () {
-    render(React.createElement(Grommet, null, React.createElement(Layer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       id: "non-modal-test",
       modal: false
     }, "This is a non-modal layer")));
     expectPortal('non-modal-test').toMatchSnapshot();
   });
   test('dark context', function () {
-    render(React.createElement(Grommet, null, React.createElement(Box, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Box, {
       background: "dark-1"
-    }, React.createElement(Layer, {
+    }, /*#__PURE__*/React.createElement(Layer, {
       id: "non-modal-test",
       modal: false
     }, "This is a non-modal layer"))));
@@ -154,7 +154,7 @@ describe('Layer', function () {
   });
   ['slide', 'fadeIn', false, true].forEach(function (animation) {
     return test("animation " + animation, function () {
-      render(React.createElement(Grommet, null, React.createElement(Layer, {
+      render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
         id: "animation-test",
         animation: animation
       }, "This is a layer")));
@@ -163,9 +163,9 @@ describe('Layer', function () {
   });
   test('invokes onEsc', function () {
     var onEsc = jest.fn();
-    render(React.createElement(Grommet, null, React.createElement(LayerContainer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(LayerContainer, {
       onEsc: onEsc
-    }, React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", {
       "data-testid": "test-input"
     }))));
     var inputNode = getByTestId(document, 'test-input');
@@ -178,11 +178,11 @@ describe('Layer', function () {
   });
   test('is accessible', function (done) {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
-    render(React.createElement(Grommet, null, React.createElement(FakeLayer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeLayer, {
       dataTestid: "test-layer-node"
-    }, React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       "data-testid": "test-body-node"
-    }, React.createElement("input", null), React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", null), /*#__PURE__*/React.createElement("input", {
       tabIndex: "10"
     })))));
     /* eslint-enable jsx-a11y/tabindex-no-positive */
@@ -207,9 +207,9 @@ describe('Layer', function () {
   });
   test('focus on layer', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
-    render(React.createElement(Grommet, null, React.createElement(Layer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       "data-testid": "focus-layer-test"
-    }, React.createElement("input", null)), React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", null)), /*#__PURE__*/React.createElement("input", {
       autoFocus: true
     })));
     /* eslint-disable jsx-a11y/no-autofocus */
@@ -220,12 +220,12 @@ describe('Layer', function () {
   });
   test('not steal focus from an autofocus focusable element', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
-    render(React.createElement(Grommet, null, React.createElement(Layer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       "data-testid": "focus-layer-input-test"
-    }, React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", {
       autoFocus: true,
       "data-testid": "focus-input"
-    }), React.createElement("button", {
+    }), /*#__PURE__*/React.createElement("button", {
       type: "button"
     }, "Button"))));
     /* eslint-disable jsx-a11y/no-autofocus */
@@ -236,26 +236,26 @@ describe('Layer', function () {
     expect(document.activeElement).toBe(inputNode);
   });
   test('target', function () {
-    render(React.createElement(Grommet, null, React.createElement(TargetLayer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TargetLayer, {
       id: "target-test"
     }, "This layer has a target")));
     expectPortal('target-test').toMatchSnapshot();
   });
   test('target not modal', function () {
-    render(React.createElement(Grommet, null, React.createElement(TargetLayer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TargetLayer, {
       id: "target-test",
       modal: false
     }, "This layer has a target")));
     expectPortal('target-test').toMatchSnapshot();
   });
   test('unmounts from dom', function () {
-    render(React.createElement(Grommet, null, React.createElement(SimpleLayer, null)));
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(SimpleLayer, null)));
     setTimeout(function () {
       expect(queryByTestId(document, 'test-dom-removal')).toBeNull();
     }, 1000);
   });
   test('default containerTarget', function () {
-    render(React.createElement(Grommet, null, React.createElement(Layer, {
+    render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Layer, {
       "data-testid": "layer"
     }, "Test")));
     var layer = getByTestId(document, 'layer');
@@ -267,9 +267,9 @@ describe('Layer', function () {
     document.body.appendChild(target);
 
     try {
-      render(React.createElement(Grommet, {
+      render( /*#__PURE__*/React.createElement(Grommet, {
         containerTarget: target
-      }, React.createElement(Layer, {
+      }, /*#__PURE__*/React.createElement(Layer, {
         "data-testid": "layer"
       }, "Test")));
       var layer = getByTestId(document, 'layer');

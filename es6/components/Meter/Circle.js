@@ -67,7 +67,7 @@ var Circle = forwardRef(function (props, ref) {
 
     if (round) {
       var d1 = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.unshift(React.createElement("path", _extends({
+      paths.unshift( /*#__PURE__*/React.createElement("path", _extends({
         key: key,
         d: d1,
         fill: "none"
@@ -79,7 +79,7 @@ var Circle = forwardRef(function (props, ref) {
       // leakage around the edge.
 
       var d2 = arcCommands(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
-      var pathCap = React.createElement("path", _extends({
+      var pathCap = /*#__PURE__*/React.createElement("path", _extends({
         key: key + "-",
         d: d2,
         fill: "none"
@@ -96,7 +96,7 @@ var Circle = forwardRef(function (props, ref) {
       pathCaps.unshift(pathCap);
     } else {
       var d = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.push(React.createElement("path", _extends({
+      paths.push( /*#__PURE__*/React.createElement("path", _extends({
         key: key,
         d: d,
         fill: "none"
@@ -109,12 +109,12 @@ var Circle = forwardRef(function (props, ref) {
     startValue += value;
     startAngle = endAngle;
   });
-  return React.createElement(StyledMeter, _extends({
+  return /*#__PURE__*/React.createElement(StyledMeter, _extends({
     ref: ref,
     viewBox: "0 0 " + width + " " + width,
     width: size === 'full' ? '100%' : width,
     height: size === 'full' ? '100%' : width
-  }, rest), React.createElement("circle", _extends({
+  }, rest), /*#__PURE__*/React.createElement("circle", _extends({
     cx: mid,
     cy: mid,
     r: radius

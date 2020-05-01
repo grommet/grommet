@@ -17,23 +17,23 @@ var gradient = [{
 }];
 
 var GradientCharts = function GradientCharts() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "medium"
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     id: "bar",
     type: "bar",
     color: gradient,
     values: [[10, 20], [20, 30], [30, 15]]
-  }), React.createElement(Chart, {
+  }), /*#__PURE__*/React.createElement(Chart, {
     id: "line",
     type: "line",
     color: gradient,
     values: [20, 30, 15]
-  }), React.createElement(Chart, {
+  }), /*#__PURE__*/React.createElement(Chart, {
     id: "area",
     type: "area",
     color: gradient,
@@ -44,7 +44,7 @@ var GradientCharts = function GradientCharts() {
     }, {
       value: [30, 15]
     }]
-  }), React.createElement(Chart, {
+  }), /*#__PURE__*/React.createElement(Chart, {
     id: "point",
     type: "point",
     color: gradient,
@@ -54,5 +54,5 @@ var GradientCharts = function GradientCharts() {
 };
 
 storiesOf('Chart', module).add('Gradient', function () {
-  return React.createElement(GradientCharts, null);
+  return /*#__PURE__*/React.createElement(GradientCharts, null);
 });

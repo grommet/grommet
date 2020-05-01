@@ -9,13 +9,13 @@ var ChildrenRadioButton = function ChildrenRadioButton() {
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "large"
-  }, React.createElement(RadioButton, {
+  }, /*#__PURE__*/React.createElement(RadioButton, {
     name: "name",
     value: "option 1",
     checked: selected === 'option 1',
@@ -24,10 +24,10 @@ var ChildrenRadioButton = function ChildrenRadioButton() {
     }
   }, function (_ref) {
     var checked = _ref.checked;
-    return React.createElement(Ascend, {
+    return /*#__PURE__*/React.createElement(Ascend, {
       color: checked ? 'brand' : 'status-unknown'
     });
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "clear",
     onClick: function onClick() {
       return setSelected(undefined);
@@ -36,5 +36,5 @@ var ChildrenRadioButton = function ChildrenRadioButton() {
 };
 
 storiesOf('RadioButton', module).add('Children', function () {
-  return React.createElement(ChildrenRadioButton, null);
+  return /*#__PURE__*/React.createElement(ChildrenRadioButton, null);
 });

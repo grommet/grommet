@@ -6,13 +6,13 @@ import { DataTable } from '..';
 describe('DataTable', function () {
   afterEach(cleanup);
   test('empty', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(DataTable, null))),
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, null))),
         container = _render.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
   test('basic', function () {
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -33,7 +33,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('!primaryKey', function () {
-    var _render3 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render3 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -55,7 +55,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('paths', function () {
-    var _render4 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render4 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -80,7 +80,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('primaryKey', function () {
-    var _render5 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render5 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -102,7 +102,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('footer', function () {
-    var _render6 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render6 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -124,7 +124,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('sortable', function () {
-    var _render7 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render7 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -155,7 +155,7 @@ describe('DataTable', function () {
   test('onSort', function () {
     var onSort = jest.fn();
 
-    var _render8 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render8 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -189,7 +189,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('search', function () {
-    var _render9 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render9 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -217,7 +217,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('resizeable', function () {
-    var _render10 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render10 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -239,7 +239,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('aggregate', function () {
-    var _render11 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render11 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -264,7 +264,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('groupBy', function () {
-    var _render12 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render12 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -298,7 +298,7 @@ describe('DataTable', function () {
   test('click', function () {
     var onClickRow = jest.fn();
 
-    var _render13 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render13 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -323,12 +323,12 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('background', function () {
-    var _render14 = render(React.createElement(Grommet, null, ['accent-1', ['accent-1', 'accent-2'], {
+    var _render14 = render( /*#__PURE__*/React.createElement(Grommet, null, ['accent-1', ['accent-1', 'accent-2'], {
       header: 'accent-1',
       body: 'accent-2',
       footer: 'accent-3'
     }].map(function (background) {
-      return React.createElement(DataTable, {
+      return /*#__PURE__*/React.createElement(DataTable, {
         key: JSON.stringify(background),
         columns: [{
           property: 'a',
@@ -353,7 +353,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('border', function () {
-    var _render15 = render(React.createElement(Grommet, null, [true, 'top', {
+    var _render15 = render( /*#__PURE__*/React.createElement(Grommet, null, [true, 'top', {
       color: 'accent-1',
       side: 'top',
       size: 'small'
@@ -365,7 +365,7 @@ describe('DataTable', function () {
         size: 'small'
       }
     }].map(function (border) {
-      return React.createElement(DataTable, {
+      return /*#__PURE__*/React.createElement(DataTable, {
         key: JSON.stringify(border),
         columns: [{
           property: 'a',
@@ -390,7 +390,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('pad', function () {
-    var _render16 = render(React.createElement(Grommet, null, ['small', {
+    var _render16 = render( /*#__PURE__*/React.createElement(Grommet, null, ['small', {
       vertical: 'small',
       horizontal: 'medium'
     }, {
@@ -400,7 +400,7 @@ describe('DataTable', function () {
         horizontal: 'medium'
       }
     }].map(function (pad) {
-      return React.createElement(DataTable, {
+      return /*#__PURE__*/React.createElement(DataTable, {
         key: JSON.stringify(pad),
         columns: [{
           property: 'a',
@@ -425,7 +425,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('rowProps', function () {
-    var _render17 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render17 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -454,7 +454,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('groupBy property', function () {
-    var _render18 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render18 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -488,7 +488,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('groupBy expand', function () {
-    var _render19 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render19 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -524,7 +524,7 @@ describe('DataTable', function () {
       return groupState;
     });
 
-    var _render20 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render20 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -560,7 +560,7 @@ describe('DataTable', function () {
     expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
   test('replace', function () {
-    var _render21 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render21 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -590,7 +590,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('themeColumnSizes', function () {
-    var _render22 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render22 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -613,7 +613,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('absoluteColumnSizes', function () {
-    var _render23 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render23 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -636,7 +636,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('relativeColumnSizes', function () {
-    var _render24 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render24 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A',

@@ -215,7 +215,7 @@ var Diagram = (0, _react.forwardRef)(function (_ref, ref) {
           colorName = colors[index % colors.length];
         }
 
-        path = _react["default"].createElement("path", _extends({
+        path = /*#__PURE__*/_react["default"].createElement("path", _extends({
           // eslint-disable-next-line react/no-array-index-key
           key: index
         }, cleanedRest, {
@@ -232,11 +232,11 @@ var Diagram = (0, _react.forwardRef)(function (_ref, ref) {
     });
   }
 
-  return _react["default"].createElement(_StyledDiagram.StyledDiagram, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledDiagram.StyledDiagram, _extends({
     ref: svgRef,
     viewBox: "0 0 " + dimensions.width + " " + dimensions.height,
     preserveAspectRatio: "xMinYMin meet"
-  }, rest), _react["default"].createElement("g", null, paths));
+  }, rest), /*#__PURE__*/_react["default"].createElement("g", null, paths));
 });
 Diagram.displayName = 'Diagram';
 Diagram.defaultProps = {

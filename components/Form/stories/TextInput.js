@@ -45,20 +45,20 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   };
 
   var onSelect = function onSelect(event) {
-    return setState(_extends({}, state, {
+    return setState(_extends(_extends({}, state), {}, {
       value: event.suggestion
     }));
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.FormField, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
-  }, props), _react["default"].createElement(_grommet.TextInput, {
+  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     id: "text-input",
     placeholder: "placeholder",
     value: state.value,
@@ -69,5 +69,5 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
 };
 
 (0, _react2.storiesOf)('Form', module).add('TextInput', function () {
-  return _react["default"].createElement(FormFieldTextInput, null);
+  return /*#__PURE__*/_react["default"].createElement(FormFieldTextInput, null);
 });

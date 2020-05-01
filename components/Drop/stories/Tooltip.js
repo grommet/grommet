@@ -18,14 +18,14 @@ var TooltipDrop = function TooltipDrop() {
       setOver = _useState[1];
 
   var ref = (0, _react.useRef)();
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Button",
     ref: ref,
     onMouseOver: function onMouseOver() {
@@ -36,13 +36,13 @@ var TooltipDrop = function TooltipDrop() {
     },
     onFocus: function onFocus() {},
     onBlur: function onBlur() {}
-  }), ref.current && over && _react["default"].createElement(_grommet.Drop, {
+  }), ref.current && over && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: {
       left: 'right'
     },
     target: ref.current,
     plain: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     margin: "xsmall",
     pad: "small",
     background: "dark-3",
@@ -54,5 +54,5 @@ var TooltipDrop = function TooltipDrop() {
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Tooltip', function () {
-  return _react["default"].createElement(TooltipDrop, null);
+  return /*#__PURE__*/_react["default"].createElement(TooltipDrop, null);
 });

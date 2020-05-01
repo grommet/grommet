@@ -3,50 +3,50 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components'; // import { mount } from 'enzyme';
 
 import { Grommet, Video } from '../..';
-var CONTENTS = [React.createElement("source", {
+var CONTENTS = [/*#__PURE__*/React.createElement("source", {
   key: "source"
-}), React.createElement("track", {
+}), /*#__PURE__*/React.createElement("track", {
   key: "track"
 })];
 test('Video renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Video, null, CONTENTS)));
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Video, null, CONTENTS)));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Video autoPlay renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Video, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Video, {
     autoPlay: true
   }, CONTENTS)));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Video loop renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Video, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Video, {
     loop: true
   }, CONTENTS)));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Video mute renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Video, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Video, {
     mute: true
   }, CONTENTS)));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Video controls renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Video, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Video, {
     controls: "over"
-  }, CONTENTS), React.createElement(Video, {
+  }, CONTENTS), /*#__PURE__*/React.createElement(Video, {
     controls: "below"
   }, CONTENTS)));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Video fit renders', function () {
-  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Video, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Video, {
     fit: "cover"
-  }, CONTENTS), React.createElement(Video, {
+  }, CONTENTS), /*#__PURE__*/React.createElement(Video, {
     fit: "contain"
   }, CONTENTS)));
   var tree = component.toJSON();

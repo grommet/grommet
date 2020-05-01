@@ -6,7 +6,7 @@ import { Box } from '../Box';
 var Header = function Header(_ref) {
   var rest = _extends({}, _ref);
 
-  return React.createElement(Box, _extends({
+  return /*#__PURE__*/React.createElement(Box, _extends({
     align: "center",
     as: "header",
     direction: "row",

@@ -11,51 +11,51 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Form, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value,
           touched = _ref.touched;
       return console.log('Submit', value, touched);
     }
-  }, _react["default"].createElement(_grommet.FormField, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
     label: "Toggle",
     name: "toggle",
     htmlFor: "check-box-toggle"
-  }, props), _react["default"].createElement(_grommet.Box, {
+  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
     }
-  }, _react["default"].createElement(_grommet.CheckBox, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     id: "check-box-toggle",
     name: "toggle",
     label: "CheckBox",
     toggle: true
-  }))), _react["default"].createElement(_grommet.FormField, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Default",
     name: "checkbox",
     htmlFor: "check-box",
     required: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
     }
-  }, _react["default"].createElement(_grommet.CheckBox, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     id: "check-box",
     name: "checkbox",
     label: "CheckBox"
-  }))), _react["default"].createElement(_grommet.Button, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "Submit"
   }))));
 };
 
 (0, _react2.storiesOf)('Form', module).add('CheckBox', function () {
-  return _react["default"].createElement(FormFieldCheckBox, null);
+  return /*#__PURE__*/_react["default"].createElement(FormFieldCheckBox, null);
 });

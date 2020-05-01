@@ -17,22 +17,22 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 /* eslint-disable react/prefer-stateless-function */
 var MyItem = function MyItem(_ref) {
   var item = _ref.item;
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     border: {
       side: 'bottom'
     },
     align: "center"
-  }, _react["default"].createElement(_grommet.Text, null, item));
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
 };
 
 var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.InfiniteScroll, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, _extends({
     items: _Basics.allItems
   }, props), function (item) {
-    return _react["default"].createElement(MyItem, {
+    return /*#__PURE__*/_react["default"].createElement(MyItem, {
       key: item,
       item: item
     });
@@ -40,5 +40,5 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
 };
 
 (0, _react2.storiesOf)('InfiniteScroll', module).add('Class Children', function () {
-  return _react["default"].createElement(ClassChildrenInfiniteScroll, null);
+  return /*#__PURE__*/_react["default"].createElement(ClassChildrenInfiniteScroll, null);
 });

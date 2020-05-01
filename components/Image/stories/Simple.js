@@ -11,13 +11,13 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Simple = function Simple() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Image, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
     src: "//v2.grommet.io/assets/IMG_4245.jpg"
   }));
 };
 
 (0, _react2.storiesOf)('Image', module).add('Simple', function () {
-  return _react["default"].createElement(Simple, null);
+  return /*#__PURE__*/_react["default"].createElement(Simple, null);
 });

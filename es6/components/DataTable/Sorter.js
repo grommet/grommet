@@ -23,10 +23,10 @@ var Sorter = function Sorter(_ref) {
 
   if (sort && sort.property === property) {
     var Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
-    icon = React.createElement(Icon, null);
+    icon = /*#__PURE__*/React.createElement(Icon, null);
   }
 
-  var content = React.createElement(Box, _extends({}, themeProps, {
+  var content = /*#__PURE__*/React.createElement(Box, _extends({}, themeProps, {
     flex: "shrink",
     direction: "row",
     justify: align,
@@ -36,7 +36,7 @@ var Sorter = function Sorter(_ref) {
   }), children, icon);
 
   if (onSort) {
-    content = React.createElement(SorterButton, {
+    content = /*#__PURE__*/React.createElement(SorterButton, {
       fill: fill,
       hoverIndicator: true,
       onClick: onSort(property)

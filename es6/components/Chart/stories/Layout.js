@@ -11,28 +11,28 @@ var values = Array(14).fill(0).map(function (_, index) {
 });
 
 var LayoutChart = function LayoutChart() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "medium"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 2
-  }, "full"), React.createElement(Box, {
+  }, "full"), /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     border: true
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: type,
     values: values,
     size: {
       width: 'full'
     },
     round: true
-  })), React.createElement(Heading, {
+  })), /*#__PURE__*/React.createElement(Heading, {
     level: 2
-  }, "auto, gap"), React.createElement(Box, {
+  }, "auto, gap"), /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     border: true
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: type,
     values: values,
     size: {
@@ -40,12 +40,12 @@ var LayoutChart = function LayoutChart() {
     },
     gap: "small",
     round: true
-  })), React.createElement(Heading, {
+  })), /*#__PURE__*/React.createElement(Heading, {
     level: 2
-  }, "default"), React.createElement(Box, {
+  }, "default"), /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     border: true
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: type,
     values: values,
     round: true
@@ -53,5 +53,5 @@ var LayoutChart = function LayoutChart() {
 };
 
 storiesOf('Chart', module).add('Layout', function () {
-  return React.createElement(LayoutChart, null);
+  return /*#__PURE__*/React.createElement(LayoutChart, null);
 });

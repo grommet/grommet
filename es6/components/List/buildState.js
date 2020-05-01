@@ -64,7 +64,7 @@ var findPrimary = function findPrimary(nextProps, prevState, nextState) {
     primaryProperty = primaryKey || columns[0].property;
   }
 
-  return _extends({}, nextState, {
+  return _extends(_extends({}, nextState), {}, {
     primaryProperty: primaryProperty
   });
 }; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
@@ -105,7 +105,7 @@ var filter = function filter(nextProps, prevState, nextState) {
     });
   }
 
-  return _extends({}, nextState, {
+  return _extends(_extends({}, nextState), {}, {
     filters: nextFilters,
     data: nextData
   });
@@ -120,7 +120,7 @@ var aggregate = function aggregate(nextProps, prevState, nextState) {
       aggregateValues[column.property] = aggregateColumn(column, data);
     }
   });
-  return _extends({}, nextState, {
+  return _extends(_extends({}, nextState), {}, {
     aggregateValues: aggregateValues
   });
 };
@@ -141,7 +141,7 @@ var buildFooterValues = function buildFooterValues(nextProps, prevState, nextSta
       }
     }
   });
-  return _extends({}, nextState, {
+  return _extends(_extends({}, nextState), {}, {
     footerValues: footerValues,
     showFooter: showFooter
   });
@@ -165,7 +165,7 @@ var sortData = function sortData(nextProps, prevState, nextState) {
     });
   }
 
-  return _extends({}, nextState, {
+  return _extends(_extends({}, nextState), {}, {
     data: nextData
   });
 };
@@ -221,7 +221,7 @@ var groupData = function groupData(nextProps, prevState, nextState) {
     });
   }
 
-  return _extends({}, nextState, {
+  return _extends(_extends({}, nextState), {}, {
     groups: groups,
     groupState: groupState
   });

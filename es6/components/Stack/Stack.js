@@ -23,7 +23,7 @@ var buildStyledChildren = function buildStyledChildren(_ref) {
       } : {
         anchor: anchor
       };
-      return React.createElement(StyledStackLayer, _extends({
+      return /*#__PURE__*/React.createElement(StyledStackLayer, _extends({
         interactive: interactive
       }, props), child);
     }
@@ -55,7 +55,7 @@ var Stack = function Stack(_ref2) {
     interactiveChild: interactiveChild,
     interactiveIndex: interactiveIndex
   }));
-  return React.createElement(StyledStack, _extends({
+  return /*#__PURE__*/React.createElement(StyledStack, _extends({
     fillContainer: fill
   }, rest), styledChildren);
 };

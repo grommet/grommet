@@ -62,7 +62,7 @@ var Analog = forwardRef(function (_ref2, ref) {
   var secondHand;
 
   if (precision === 'seconds') {
-    secondHand = React.createElement(StyledSecond, {
+    secondHand = /*#__PURE__*/React.createElement(StyledSecond, {
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -79,7 +79,7 @@ var Analog = forwardRef(function (_ref2, ref) {
   var minuteHand;
 
   if (precision === 'seconds' || precision === 'minutes') {
-    minuteHand = React.createElement(StyledMinute, {
+    minuteHand = /*#__PURE__*/React.createElement(StyledMinute, {
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -93,14 +93,14 @@ var Analog = forwardRef(function (_ref2, ref) {
     });
   }
 
-  return React.createElement(StyledAnalog, _extends({
+  return /*#__PURE__*/React.createElement(StyledAnalog, _extends({
     ref: ref,
     version: "1.1",
     width: size,
     height: size,
     preserveAspectRatio: "xMidYMid meet",
     viewBox: "0 0 " + size + " " + size
-  }, rest), secondHand, minuteHand, React.createElement(StyledHour, {
+  }, rest), secondHand, minuteHand, /*#__PURE__*/React.createElement(StyledHour, {
     x1: halfSize,
     y1: halfSize,
     x2: halfSize,

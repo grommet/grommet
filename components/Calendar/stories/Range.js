@@ -11,17 +11,17 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var RangeCalendar = function RangeCalendar() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     dates: [['2020-04-03', '2020-04-08']],
     range: true
   })));
 };
 
 (0, _react2.storiesOf)('Calendar', module).add('Range', function () {
-  return _react["default"].createElement(RangeCalendar, null);
+  return /*#__PURE__*/_react["default"].createElement(RangeCalendar, null);
 });

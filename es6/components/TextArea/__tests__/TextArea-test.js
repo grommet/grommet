@@ -6,7 +6,7 @@ import { TextArea } from '..';
 jest.mock('react-dom');
 describe('TextArea', function () {
   test('basic', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
       id: "item",
       name: "item"
     })));
@@ -14,7 +14,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('placeholder', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
       id: "item",
       name: "item",
       placeholder: "placeholder"
@@ -23,7 +23,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('plain', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
       id: "item",
       name: "item",
       plain: true
@@ -32,7 +32,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
       disabled: true,
       id: "item",
       name: "item",
@@ -42,7 +42,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('focusIndicator', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
       id: "item",
       name: "item",
       focusIndicator: true
@@ -51,7 +51,7 @@ describe('TextArea', function () {
     expect(tree).toMatchSnapshot();
   });
   test('fill', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
       id: "item",
       name: "item",
       fill: true
@@ -61,7 +61,7 @@ describe('TextArea', function () {
   });
   [true, false, 'horizontal', 'vertical'].forEach(function (resize) {
     test("resize " + resize, function () {
-      var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+      var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
         id: "item",
         name: "item",
         resize: resize
@@ -72,7 +72,7 @@ describe('TextArea', function () {
   });
   ['small', 'medium', 'large'].forEach(function (size) {
     test("size " + size, function () {
-      var component = renderer.create(React.createElement(Grommet, null, React.createElement(TextArea, {
+      var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextArea, {
         id: "item",
         name: "item",
         size: size

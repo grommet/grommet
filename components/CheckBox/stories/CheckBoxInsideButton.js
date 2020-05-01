@@ -23,22 +23,22 @@ var CheckBoxInsideButton = function CheckBoxInsideButton() {
 
   var onCheckboxChange = function onCheckboxChange() {};
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     hoverIndicator: "background",
     onClick: onButtonClick
-  }, _react["default"].createElement(_grommet.CheckBox, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     tabIndex: "-1",
     checked: checked,
-    label: _react["default"].createElement(_grommet.Text, null, "Hi"),
+    label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Hi"),
     onChange: onCheckboxChange
   }))));
 };
 
 (0, _react2.storiesOf)('CheckBox', module).add('Inside a Button', function () {
-  return _react["default"].createElement(CheckBoxInsideButton, null);
+  return /*#__PURE__*/_react["default"].createElement(CheckBoxInsideButton, null);
 });

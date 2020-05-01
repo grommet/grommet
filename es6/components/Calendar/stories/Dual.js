@@ -36,14 +36,14 @@ var DualCalendar = function DualCalendar() {
     }
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     justify: "center",
     pad: "large",
     direction: "row",
     gap: "small"
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     animate: false,
     showAdjacentDays: false,
     range: true,
@@ -63,23 +63,23 @@ var DualCalendar = function DualCalendar() {
           locale = _ref.locale,
           onPreviousMonth = _ref.onPreviousMonth,
           previousInBound = _ref.previousInBound;
-      return React.createElement(Box, {
+      return /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
         justify: "between"
-      }, React.createElement(Button, {
+      }, /*#__PURE__*/React.createElement(Button, {
         disabled: !previousInBound,
-        icon: React.createElement(Previous, null),
+        icon: /*#__PURE__*/React.createElement(Previous, null),
         onClick: onPreviousMonth
-      }), React.createElement(Heading, {
+      }), /*#__PURE__*/React.createElement(Heading, {
         level: 3,
         margin: "none"
       }, currentDate.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
-      })), React.createElement(Blank, null));
+      })), /*#__PURE__*/React.createElement(Blank, null));
     }
-  }), React.createElement(Calendar, {
+  }), /*#__PURE__*/React.createElement(Calendar, {
     animate: false,
     showAdjacentDays: false,
     date: date,
@@ -99,19 +99,19 @@ var DualCalendar = function DualCalendar() {
           locale = _ref2.locale,
           onNextMonth = _ref2.onNextMonth,
           nextInBound = _ref2.nextInBound;
-      return React.createElement(Box, {
+      return /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
         justify: "between"
-      }, React.createElement(Blank, null), React.createElement(Heading, {
+      }, /*#__PURE__*/React.createElement(Blank, null), /*#__PURE__*/React.createElement(Heading, {
         level: 3,
         margin: "none"
       }, currentDate.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
-      })), React.createElement(Button, {
+      })), /*#__PURE__*/React.createElement(Button, {
         disabled: !nextInBound,
-        icon: React.createElement(Next, null),
+        icon: /*#__PURE__*/React.createElement(Next, null),
         onClick: onNextMonth
       }));
     }
@@ -119,5 +119,5 @@ var DualCalendar = function DualCalendar() {
 };
 
 storiesOf('Calendar', module).add('Dual', function () {
-  return React.createElement(DualCalendar, null);
+  return /*#__PURE__*/React.createElement(DualCalendar, null);
 });

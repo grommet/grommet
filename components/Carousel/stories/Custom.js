@@ -34,31 +34,31 @@ var CustomCarousel = function CustomCarousel(_ref) {
   var controls = _ref.controls,
       rest = _objectWithoutPropertiesLoose(_ref, ["controls"]);
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Carousel, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, _extends({
     controls: controls
-  }, rest), _react["default"].createElement(_grommet.Box, {
+  }, rest), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-1"
-  }, _react["default"].createElement(_grommetIcons.Attraction, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
     size: "xlarge"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-2"
-  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
     size: "xlarge"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-3"
-  }, _react["default"].createElement(_grommetIcons.Car, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
     size: "xlarge"
   })))));
 };
 
 (0, _react2.storiesOf)('Carousel', module).add('Custom Controls', function () {
-  return _react["default"].createElement(CustomCarousel, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomCarousel, null);
 });

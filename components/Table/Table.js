@@ -16,7 +16,7 @@ var Table = function Table(_ref) {
       children = _ref.children,
       rest = _objectWithoutPropertiesLoose(_ref, ["caption", "children"]);
 
-  return _react["default"].createElement(_StyledTable.StyledTable, rest, caption ? _react["default"].createElement(_StyledTable.StyledTableDataCaption, null, caption) : null, children);
+  return /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTable, rest, caption ? /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTableDataCaption, null, caption) : null, children);
 };
 
 var TableDoc;

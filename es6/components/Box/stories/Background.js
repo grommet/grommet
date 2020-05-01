@@ -4,72 +4,72 @@ import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
 var BackgroundBox = function BackgroundBox() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     gap: "small",
     align: "start"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     background: {
       color: 'brand',
       opacity: true
     },
     elevation: "large"
-  }, "brand opacity"), React.createElement(Box, {
+  }, "brand opacity"), /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     background: "brand",
     elevation: "large"
-  }, "brand"), React.createElement(Box, {
+  }, "brand"), /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     background: {
       color: 'brand'
     },
     elevation: "large"
-  }, "brand object"), React.createElement(Box, {
+  }, "brand object"), /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     background: {
       image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
     }
-  }, "image"), React.createElement(Box, {
+  }, "image"), /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     background: {
       color: 'accent-2',
       image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
     }
-  }, "image + color"), React.createElement(Box, {
+  }, "image + color"), /*#__PURE__*/React.createElement(Box, {
     background: "dark-1",
     pad: "medium"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "#FFFFFF08",
     pad: "small"
-  }, "low opacity on dark background")), React.createElement(Box, {
+  }, "low opacity on dark background")), /*#__PURE__*/React.createElement(Box, {
     background: "light-5",
     pad: "medium"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "#11111108",
     pad: "small"
-  }, "low opacity on light background")), React.createElement(Box, {
+  }, "low opacity on light background")), /*#__PURE__*/React.createElement(Box, {
     background: {
       color: 'background',
       dark: true
     },
     pad: "medium"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     color: "brand"
-  }, "force dark background")), React.createElement(Box, {
+  }, "force dark background")), /*#__PURE__*/React.createElement(Box, {
     background: "dark-1",
     pad: "medium"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: {
       color: 'background',
       dark: false
     },
     pad: "medium"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     color: "brand"
-  }, "force light background"))), React.createElement(Box, {
+  }, "force light background"))), /*#__PURE__*/React.createElement(Box, {
     background: {
       color: {
         dark: 'darkgrey',
@@ -78,12 +78,12 @@ var BackgroundBox = function BackgroundBox() {
       dark: true
     },
     pad: "medium"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     color: "brand"
-  }, "force dark background with color as object")), React.createElement(Box, {
+  }, "force dark background with color as object")), /*#__PURE__*/React.createElement(Box, {
     background: "dark-1",
     pad: "medium"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: {
       color: {
         dark: 'darkgrey',
@@ -92,11 +92,11 @@ var BackgroundBox = function BackgroundBox() {
       dark: false
     },
     pad: "medium"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     color: "brand"
   }, "force light background with color as object")))));
 };
 
 storiesOf('Box', module).add('Background', function () {
-  return React.createElement(BackgroundBox, null);
+  return /*#__PURE__*/React.createElement(BackgroundBox, null);
 });

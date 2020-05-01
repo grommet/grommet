@@ -56,10 +56,10 @@ var Cell = function Cell(_ref) {
 
   if (typeof content === 'string' || typeof content === 'number') {
     var textProps = property === primaryProperty ? theme.dataTable.primary : {};
-    content = _react["default"].createElement(_Text.Text, textProps, content);
+    content = /*#__PURE__*/_react["default"].createElement(_Text.Text, textProps, content);
   }
 
-  return _react["default"].createElement(_TableCell.TableCell, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
     align: align,

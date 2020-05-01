@@ -25,7 +25,7 @@ var RadioButton = forwardRef(function (_ref, ref) {
       hover = _useState[0],
       setHover = _useState[1];
 
-  var normalizedLabel = typeof label === 'string' ? React.createElement("span", null, label) : label;
+  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement("span", null, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = normalizeColor(theme.radioButton.border.color, theme);
 
@@ -33,7 +33,7 @@ var RadioButton = forwardRef(function (_ref, ref) {
     borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
   }
 
-  return React.createElement(StyledRadioButtonContainer, _extends({}, removeUndefined({
+  return /*#__PURE__*/React.createElement(StyledRadioButtonContainer, _extends({}, removeUndefined({
     htmlFor: id,
     disabled: disabled
   }), {
@@ -50,12 +50,12 @@ var RadioButton = forwardRef(function (_ref, ref) {
     onMouseLeave: function onMouseLeave() {
       return setHover(false);
     }
-  }), React.createElement(StyledRadioButton, {
+  }), /*#__PURE__*/React.createElement(StyledRadioButton, {
     as: Box,
     margin: label ? {
       right: theme.radioButton.gap || 'small'
     } : undefined
-  }, React.createElement(StyledRadioButtonInput, _extends({}, rest, {
+  }, /*#__PURE__*/React.createElement(StyledRadioButtonInput, _extends({}, rest, {
     ref: ref,
     type: "radio"
   }, removeUndefined({
@@ -67,7 +67,7 @@ var RadioButton = forwardRef(function (_ref, ref) {
   }))), children ? children({
     checked: checked,
     hover: hover
-  }) : React.createElement(StyledRadioButtonBox, {
+  }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, {
     focus: focus,
     as: Box,
     align: "center",
@@ -79,12 +79,12 @@ var RadioButton = forwardRef(function (_ref, ref) {
       color: borderColor
     },
     round: theme.radioButton.check.radius
-  }, checked && (Icon ? React.createElement(Icon, {
+  }, checked && (Icon ? /*#__PURE__*/React.createElement(Icon, {
     as: StyledRadioButtonIcon
-  }) : React.createElement(StyledRadioButtonIcon, {
+  }) : /*#__PURE__*/React.createElement(StyledRadioButtonIcon, {
     viewBox: "0 0 24 24",
     preserveAspectRatio: "xMidYMid meet"
-  }, React.createElement("circle", {
+  }, /*#__PURE__*/React.createElement("circle", {
     cx: 12,
     cy: 12,
     r: 6

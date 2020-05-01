@@ -28,9 +28,7 @@ import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 var FullGlobalStyle = createGlobalStyle(_templateObject());
 
-var Grommet =
-/*#__PURE__*/
-function (_Component) {
+var Grommet = /*#__PURE__*/function (_Component) {
   _inheritsLoose(Grommet, _Component);
 
   function Grommet() {
@@ -156,15 +154,15 @@ function (_Component) {
     // On first render we try to guess otherwise set the default as a tablet
 
     var responsive = stateResponsive || this.deviceResponsive() || theme.global.deviceBreakpoints.tablet;
-    return React.createElement(ThemeContext.Provider, {
+    return /*#__PURE__*/React.createElement(ThemeContext.Provider, {
       value: theme
-    }, React.createElement(ResponsiveContext.Provider, {
+    }, /*#__PURE__*/React.createElement(ResponsiveContext.Provider, {
       value: responsive
-    }, React.createElement(ContainerTargetContext.Provider, {
+    }, /*#__PURE__*/React.createElement(ContainerTargetContext.Provider, {
       value: containerTarget
-    }, React.createElement(StyledGrommet, _extends({
+    }, /*#__PURE__*/React.createElement(StyledGrommet, _extends({
       full: full
-    }, rest), children), full && React.createElement(FullGlobalStyle, null))));
+    }, rest), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null))));
   };
 
   return Grommet;

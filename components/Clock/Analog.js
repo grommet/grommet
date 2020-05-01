@@ -76,7 +76,7 @@ var Analog = (0, _react.forwardRef)(function (_ref2, ref) {
   var secondHand;
 
   if (precision === 'seconds') {
-    secondHand = _react["default"].createElement(_StyledClock.StyledSecond, {
+    secondHand = /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledSecond, {
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -93,7 +93,7 @@ var Analog = (0, _react.forwardRef)(function (_ref2, ref) {
   var minuteHand;
 
   if (precision === 'seconds' || precision === 'minutes') {
-    minuteHand = _react["default"].createElement(_StyledClock.StyledMinute, {
+    minuteHand = /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledMinute, {
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -107,14 +107,14 @@ var Analog = (0, _react.forwardRef)(function (_ref2, ref) {
     });
   }
 
-  return _react["default"].createElement(_StyledClock.StyledAnalog, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledAnalog, _extends({
     ref: ref,
     version: "1.1",
     width: size,
     height: size,
     preserveAspectRatio: "xMidYMid meet",
     viewBox: "0 0 " + size + " " + size
-  }, rest), secondHand, minuteHand, _react["default"].createElement(_StyledClock.StyledHour, {
+  }, rest), secondHand, minuteHand, /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledHour, {
     x1: halfSize,
     y1: halfSize,
     x2: halfSize,

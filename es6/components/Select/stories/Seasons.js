@@ -18,7 +18,7 @@ var SeasonsSelect = function SeasonsSelect() {
   };
 
   var renderSeason = function renderSeason(season) {
-    return React.createElement(Button, {
+    return /*#__PURE__*/React.createElement(Button, {
       key: "season_tag_" + season,
       href: "#",
       onClick: function onClick(event) {
@@ -29,7 +29,7 @@ var SeasonsSelect = function SeasonsSelect() {
       onFocus: function onFocus(event) {
         return event.stopPropagation();
       }
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       align: "center",
       direction: "row",
       gap: "xsmall",
@@ -40,16 +40,16 @@ var SeasonsSelect = function SeasonsSelect() {
       margin: "xsmall",
       background: "accent-1",
       round: "large"
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       size: "small",
       color: "white"
-    }, season), React.createElement(Box, {
+    }, season), /*#__PURE__*/React.createElement(Box, {
       background: "white",
       round: "full",
       margin: {
         left: 'xsmall'
       }
-    }, React.createElement(FormClose, {
+    }, /*#__PURE__*/React.createElement(FormClose, {
       color: "accent-1",
       size: "small",
       style: {
@@ -60,29 +60,29 @@ var SeasonsSelect = function SeasonsSelect() {
   };
 
   var renderOption = function renderOption(option, state) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       pad: "small",
       background: state.active ? 'active' : undefined
     }, option);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     closeOnChange: false,
     multiple: true,
-    value: React.createElement(Box, {
+    value: /*#__PURE__*/React.createElement(Box, {
       wrap: true,
       direction: "row",
       width: "small"
     }, selected && selected.length ? selected.map(function (index) {
       return renderSeason(allSeasons[index]);
-    }) : React.createElement(Box, {
+    }) : /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'xsmall',
         horizontal: 'small'
@@ -100,5 +100,5 @@ var SeasonsSelect = function SeasonsSelect() {
 };
 
 storiesOf('Select', module).add('Seasons', function () {
-  return React.createElement(SeasonsSelect, null);
+  return /*#__PURE__*/React.createElement(SeasonsSelect, null);
 });

@@ -7,14 +7,14 @@ describe('FocusedContainer', function () {
   test('basic', function () {
     jest.useFakeTimers();
 
-    var _render = render(React.createElement("div", {
+    var _render = render( /*#__PURE__*/React.createElement("div", {
       id: "focus-trap-test"
-    }, React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", {
       id: "test"
     }))),
         trapped = _render.container;
 
-    var _render2 = render(React.createElement(FocusedContainer, {
+    var _render2 = render( /*#__PURE__*/React.createElement(FocusedContainer, {
       id: "container"
     }, "test focused container")),
         focuser = _render2.container;
@@ -29,7 +29,7 @@ describe('FocusedContainer', function () {
   test('restrict scroll', function () {
     jest.useFakeTimers();
 
-    var _render3 = render(React.createElement(FocusedContainer, {
+    var _render3 = render( /*#__PURE__*/React.createElement(FocusedContainer, {
       id: "container",
       restrictScroll: true
     }, "test focused container")),
@@ -44,14 +44,14 @@ describe('FocusedContainer', function () {
   test('blurs', function () {
     jest.useFakeTimers();
 
-    var _render4 = render(React.createElement("div", {
+    var _render4 = render( /*#__PURE__*/React.createElement("div", {
       id: "focus-trap-test"
-    }, React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", {
       id: "test"
     }))),
         trapped = _render4.container;
 
-    var _render5 = render(React.createElement(FocusedContainer, {
+    var _render5 = render( /*#__PURE__*/React.createElement(FocusedContainer, {
       id: "container"
     }, "test focused container")),
         focuser = _render5.container;

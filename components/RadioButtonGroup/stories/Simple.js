@@ -24,12 +24,12 @@ var SimpleRadioButtonGroup = function SimpleRadioButtonGroup(_ref) {
       value = _useState[0],
       setValue = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.RadioButtonGroup, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, _extends({
     name: "radio",
     options: [{
       label: 'Choice 1',
@@ -49,5 +49,5 @@ var SimpleRadioButtonGroup = function SimpleRadioButtonGroup(_ref) {
 };
 
 (0, _react2.storiesOf)('RadioButtonGroup', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleRadioButtonGroup, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleRadioButtonGroup, null);
 });

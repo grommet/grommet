@@ -4,17 +4,17 @@ import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var RangeCalendar = function RangeCalendar() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     dates: [['2020-04-03', '2020-04-08']],
     range: true
   })));
 };
 
 storiesOf('Calendar', module).add('Range', function () {
-  return React.createElement(RangeCalendar, null);
+  return /*#__PURE__*/React.createElement(RangeCalendar, null);
 });

@@ -70,41 +70,41 @@ var ZoomChart = function ZoomChart(_ref) {
     previousReference = lastReference;
   }
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     direction: "row",
     gap: "medium"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     hoverIndicator: true,
-    icon: React.createElement(Previous, null),
+    icon: /*#__PURE__*/React.createElement(Previous, null),
     onClick: function onClick() {
       return setReference(previousReference);
     }
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     flex: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "end"
   }, Object.keys(intervalDays).map(function (_int) {
-    return React.createElement(Button, {
+    return /*#__PURE__*/React.createElement(Button, {
       key: _int,
       onClick: function onClick() {
         return setInterval(_int);
       }
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       pad: "small"
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       color: interval === _int ? 'black' : 'brand'
     }, _int)));
-  })), React.createElement(Stack, {
+  })), /*#__PURE__*/React.createElement(Stack, {
     guidingChild: "first"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: thickness
     }
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: "bar",
     overflow: true,
     bounds: bounds,
@@ -114,38 +114,38 @@ var ZoomChart = function ZoomChart(_ref) {
       width: 'full',
       height: 'small'
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     fill: true,
     justify: "between"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     border: "top",
     align: "start"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, React.createElement(Text, null, axis[1][0]))), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Text, null, axis[1][0]))), /*#__PURE__*/React.createElement(Box, {
     border: "bottom",
     align: "start"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, React.createElement(Text, null, axis[1][1]))))), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Text, null, axis[1][1]))))), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between"
   }, axis[0].map(function (t) {
-    return React.createElement(Text, {
+    return /*#__PURE__*/React.createElement(Text, {
       key: t,
       className: "chromatic-ignore"
     }, new Date(t).toLocaleDateString());
-  }))), React.createElement(Button, {
+  }))), /*#__PURE__*/React.createElement(Button, {
     hoverIndicator: true,
-    icon: React.createElement(Next, null),
+    icon: /*#__PURE__*/React.createElement(Next, null),
     onClick: function onClick() {
       return setReference(nextReference);
     }
@@ -153,7 +153,7 @@ var ZoomChart = function ZoomChart(_ref) {
 };
 
 storiesOf('Chart', module).add('Zoom', function () {
-  return React.createElement(ZoomChart, {
+  return /*#__PURE__*/React.createElement(ZoomChart, {
     data: generateData(1000, 100),
     max: 100
   });

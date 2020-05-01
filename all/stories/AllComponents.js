@@ -38,7 +38,7 @@ var Node = function Node(_ref) {
   var id = _ref.id,
       rest = _objectWithoutPropertiesLoose(_ref, ["id"]);
 
-  return _react["default"].createElement(_grommet.Box, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({
     id: id,
     basis: "xxsmall",
     margin: "small",
@@ -48,14 +48,10 @@ var Node = function Node(_ref) {
   }, rest));
 };
 
-var connection = function connection(fromTarget, toTarget, _ref2) {
-  if (_ref2 === void 0) {
-    _ref2 = {};
-  }
-
-  var _ref3 = _ref2,
-      color = _ref3.color,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["color"]);
+var connection = function connection(fromTarget, toTarget, _temp) {
+  var _ref2 = _temp === void 0 ? {} : _temp,
+      color = _ref2.color,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["color"]);
 
   return _extends({
     fromTarget: fromTarget,
@@ -117,17 +113,17 @@ var Components = function Components() {
   var themeCanMode = (0, _react.useMemo)(function () {
     return theme && theme.global.colors.background && theme.global.colors.background.dark;
   }, [theme]);
-  var content = [_react["default"].createElement(_grommet.Box, {
+  var content = [/*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "type",
     align: "start",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     margin: {
       top: 'none'
     }
-  }, "Heading"), _react["default"].createElement(_grommet.Paragraph, null, "Paragraph"), _react["default"].createElement(_grommet.Text, null, "Text"), _react["default"].createElement(_grommet.Anchor, {
+  }, "Heading"), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Paragraph"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Text"), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: ""
-  }, "Anchor"), _react["default"].createElement(_grommet.Menu, {
+  }, "Anchor"), /*#__PURE__*/_react["default"].createElement(_grommet.Menu, {
     label: "Menu",
     items: [{
       label: 'One',
@@ -135,27 +131,27 @@ var Components = function Components() {
     }, {
       label: 'Two'
     }]
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Button",
     onClick: function onClick() {}
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     plain: true,
     onClick: function onClick() {}
-  }, _react["default"].createElement(_grommet.Text, null, "plain button"))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "plain button"))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "input",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     placeholder: "Select",
     options: ['One', 'Two'],
     onChange: function onChange() {}
-  }), _react["default"].createElement(_grommet.CheckBox, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     name: "check",
     checked: checkBox,
     label: "CheckBox",
     onChange: function onChange(event) {
       return setCheckBox(event.target.checked);
     }
-  }), _react["default"].createElement(_grommet.CheckBox, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     name: "toggle",
     toggle: true,
     checked: checkBox,
@@ -163,33 +159,33 @@ var Components = function Components() {
     onChange: function onChange(event) {
       return setCheckBox(event.target.checked);
     }
-  }), _react["default"].createElement(_grommet.RadioButtonGroup, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
     name: "radio",
     options: ['RadioButton 1', 'RadioButton 2'],
     value: radioButton,
     onChange: function onChange(event) {
       return setRadioButton(event.target.value);
     }
-  }), _react["default"].createElement(_grommet.TextInput, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     placeholder: "TextInput"
-  }), _react["default"].createElement(_grommet.TextArea, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
     placeholder: "TextArea"
-  }), _react["default"].createElement(_grommet.RangeInput, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
     value: 24,
     onChange: function onChange() {}
-  }), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between"
   }, [0, 1, 2, 3].map(function (value) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: value,
       pad: "small"
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       style: {
         fontFamily: 'monospace'
       }
     }, value));
-  })), _react["default"].createElement(_grommet.RangeSelector, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, {
     direction: "horizontal",
     invert: false,
     min: 0,
@@ -200,24 +196,24 @@ var Components = function Components() {
     onChange: function onChange(values) {
       return setRangeSelector(values);
     }
-  })), _react["default"].createElement(_grommet.FormField, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "FormField"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     placeholder: "TextInput"
-  }))), _react["default"].createElement(_grommet.Box, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "time",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     size: "small"
-  }), _react["default"].createElement(_grommet.Clock, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Clock, {
     type: "digital",
     className: "chromatic-ignore"
-  }), _react["default"].createElement(_grommet.Clock, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Clock, {
     className: "chromatic-ignore"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "measure",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: "bar",
     round: true,
     size: "small",
@@ -228,7 +224,7 @@ var Components = function Components() {
     }, {
       value: [30, 15]
     }]
-  }), _react["default"].createElement(_grommet.Meter, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
     type: "bar",
     round: true,
     size: "small",
@@ -236,10 +232,10 @@ var Components = function Components() {
     values: [{
       value: 30
     }]
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "visualize",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Distribution, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Distribution, {
     basis: "small",
     values: [{
       value: 50,
@@ -258,33 +254,33 @@ var Components = function Components() {
       color: 'light-4'
     }]
   }, function (value) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "xsmall",
       background: value.color,
       fill: true
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "large"
     }, value.value));
-  }), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row"
   }, [1, 2].map(function (id) {
-    return _react["default"].createElement(Node, {
+    return /*#__PURE__*/_react["default"].createElement(Node, {
       key: id,
       id: id
     });
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row"
   }, [3, 4].map(function (id) {
-    return _react["default"].createElement(Node, {
+    return /*#__PURE__*/_react["default"].createElement(Node, {
       key: id,
       id: id
     });
-  }))), _react["default"].createElement(_grommet.Diagram, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
     connections: [connection('1', '4')]
-  }))), _react["default"].createElement(_grommet.Box, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "dataTable",
     alignSelf: "start"
-  }, _react["default"].createElement(_grommet.DataTable, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: [{
       property: 'name',
       header: 'Name'
@@ -303,67 +299,67 @@ var Components = function Components() {
       color: 'orange'
     }],
     sortable: true
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "accordion"
-  }, _react["default"].createElement(_grommet.Accordion, null, _react["default"].createElement(_grommet.AccordionPanel, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Accordion, null, /*#__PURE__*/_react["default"].createElement(_grommet.AccordionPanel, {
     label: "Accordion Panel 1"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react["default"].createElement(_grommet.Text, null, "Accordion panel 1 content"))), _react["default"].createElement(_grommet.AccordionPanel, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Accordion panel 1 content"))), /*#__PURE__*/_react["default"].createElement(_grommet.AccordionPanel, {
     label: "Accordion Panel 2"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react["default"].createElement(_grommet.Text, null, "Accordion panel 2 content"))))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Accordion panel 2 content"))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "tabs"
-  }, _react["default"].createElement(_grommet.Tabs, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tabs, {
     activeIndex: tabIndex,
     onActive: function onActive(index) {
       return setTabIndex(index);
     }
-  }, _react["default"].createElement(_grommet.Tab, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
     title: "Tab 1"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react["default"].createElement(_grommet.Text, null, "Tab 1 content"))), _react["default"].createElement(_grommet.Tab, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Tab 1 content"))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
     title: "Tab 2"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react["default"].createElement(_grommet.Text, null, "Tab 2 content"))))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Tab 2 content"))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     key: "video",
     alignSelf: "start"
-  }, _react["default"].createElement(_grommet.Video, null, _react["default"].createElement("source", {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Video, null, /*#__PURE__*/_react["default"].createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.webm",
     type: "video/webm"
-  }), _react["default"].createElement("source", {
+  }), /*#__PURE__*/_react["default"].createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.ogv",
     type: "video/ogg"
-  }), _react["default"].createElement("source", {
+  }), /*#__PURE__*/_react["default"].createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.mp4",
     type: "video/mp4"
-  }), _react["default"].createElement("source", {
+  }), /*#__PURE__*/_react["default"].createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.3gp",
     type: "video/3gp"
   })))];
-  return _react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       height: '100vh',
       display: 'flex',
       flexDirection: 'column'
     }
-  }, _react["default"].createElement(_grommet.Grommet, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     style: {
       flex: '0 0 auto'
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row-responsive",
     gap: "medium",
     justify: "end",
     align: "center",
     margin: "small"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     basis: "small"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     plain: true,
     size: "small",
     options: Object.keys(themes),
@@ -371,15 +367,15 @@ var Components = function Components() {
     onChange: function onChange(event) {
       return setThemeName(event.option);
     }
-  })), themeCanMode && _react["default"].createElement(_grommet.CheckBox, {
+  })), themeCanMode && /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     label: "dark",
     checked: themeMode === 'dark',
     onChange: function onChange() {
       return setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
     }
-  }), !themeCanMode && _react["default"].createElement(_grommet.Box, {
+  }), !themeCanMode && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     basis: "small"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     plain: true,
     placeholder: "background",
     size: "small",
@@ -388,9 +384,9 @@ var Components = function Components() {
     onChange: function onChange(event) {
       return setBackground(event.option);
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     basis: "small"
-  }, _react["default"].createElement(_grommet.RangeInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
     min: 16,
     max: 36,
     step: 2,
@@ -398,23 +394,23 @@ var Components = function Components() {
     onChange: function onChange(event) {
       return setBaseSize(parseInt(event.target.value, 10));
     }
-  })), _react["default"].createElement(_grommet.Text, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "small"
-  }, baseSize + "px base spacing"))), _react["default"].createElement(_grommet.Grommet, {
+  }, baseSize + "px base spacing"))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
     themeMode: themeMode,
     style: {
       flex: '1 1'
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     pad: "medium",
     background: background || theme.global.colors.background,
     overflow: "auto"
-  }, _grommet.Grid.available ? _react["default"].createElement(_grommet.Grid, {
+  }, _grommet.Grid.available ? /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     columns: "small",
     gap: "medium"
-  }, content) : _react["default"].createElement(_grommet.Box, {
+  }, content) : /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     wrap: true,
     align: "start",
@@ -423,5 +419,5 @@ var Components = function Components() {
 };
 
 (0, _react2.storiesOf)('All', module).add('All', function () {
-  return _react["default"].createElement(Components, null);
+  return /*#__PURE__*/_react["default"].createElement(Components, null);
 });

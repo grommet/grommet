@@ -20,7 +20,7 @@ var Node = function Node(_ref) {
   var id = _ref.id,
       rest = _objectWithoutPropertiesLoose(_ref, ["id"]);
 
-  return _react["default"].createElement(_grommet.Box, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({
     id: id,
     basis: "xxsmall",
     margin: "small",
@@ -30,14 +30,10 @@ var Node = function Node(_ref) {
   }, rest));
 };
 
-var connection = function connection(fromTarget, toTarget, _ref2) {
-  if (_ref2 === void 0) {
-    _ref2 = {};
-  }
-
-  var _ref3 = _ref2,
-      color = _ref3.color,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["color"]);
+var connection = function connection(fromTarget, toTarget, _temp) {
+  var _ref2 = _temp === void 0 ? {} : _temp,
+      color = _ref2.color,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["color"]);
 
   return _extends({
     fromTarget: fromTarget,
@@ -85,31 +81,31 @@ var SimpleDiagram = function SimpleDiagram() {
     }));
   }
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Text, null, " Adding and removing nodes"), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, " Adding and removing nodes"), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row"
   }, topRow.map(function (id) {
-    return _react["default"].createElement(Node, {
+    return /*#__PURE__*/_react["default"].createElement(Node, {
       key: id,
       id: id
     });
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row"
   }, [4, 5].map(function (id) {
-    return _react["default"].createElement(Node, {
+    return /*#__PURE__*/_react["default"].createElement(Node, {
       key: id,
       id: id,
       background: "dark-2"
     });
-  }))), _react["default"].createElement(_grommet.Diagram, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
     connections: connections
   }))));
 };
 
 (0, _react2.storiesOf)('Diagram', module).add('Progressing', function () {
-  return _react["default"].createElement(SimpleDiagram, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleDiagram, null);
 });

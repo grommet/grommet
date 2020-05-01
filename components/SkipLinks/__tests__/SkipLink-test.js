@@ -15,23 +15,23 @@ describe('SkipLink', function () {
   test('basic', function () {
     jest.useFakeTimers();
 
-    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.SkipLinks, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.SkipLinks, {
       id: "skip-links"
-    }, _react["default"].createElement(_.SkipLink, {
+    }, /*#__PURE__*/_react["default"].createElement(_.SkipLink, {
       id: "main",
       label: "Main Content"
-    }), _react["default"].createElement(_.SkipLink, {
+    }), /*#__PURE__*/_react["default"].createElement(_.SkipLink, {
       id: "footer",
       label: "Footer"
-    })), _react["default"].createElement("div", null, _react["default"].createElement(_.SkipLinkTarget, {
+    })), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_.SkipLinkTarget, {
       id: "main"
-    }), "Main Content", _react["default"].createElement("input", {
+    }), "Main Content", /*#__PURE__*/_react["default"].createElement("input", {
       type: "text",
       value: "main content",
       onChange: function onChange() {}
-    })), _react["default"].createElement("footer", null, _react["default"].createElement(_.SkipLinkTarget, {
+    })), /*#__PURE__*/_react["default"].createElement("footer", null, /*#__PURE__*/_react["default"].createElement(_.SkipLinkTarget, {
       id: "footer"
-    }), _react["default"].createElement("input", {
+    }), /*#__PURE__*/_react["default"].createElement("input", {
       type: "text",
       value: "footer",
       onChange: function onChange() {}

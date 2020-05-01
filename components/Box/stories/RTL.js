@@ -11,28 +11,28 @@ var _themes = require("../../../themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var RTLBox = function RTLBox() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     dir: "rtl"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     pad: "small",
     gap: "small",
     border: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     pad: "small",
     border: "start"
-  }, "border start"), _react["default"].createElement(_grommet.Box, {
+  }, "border start"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     pad: {
       start: 'large'
     },
     background: "brand"
-  }, "pad start"), _react["default"].createElement(_grommet.Box, {
+  }, "pad start"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     margin: {
@@ -43,5 +43,5 @@ var RTLBox = function RTLBox() {
 };
 
 (0, _react2.storiesOf)('Box', module).add('RTL', function () {
-  return _react["default"].createElement(RTLBox, null);
+  return /*#__PURE__*/_react["default"].createElement(RTLBox, null);
 });

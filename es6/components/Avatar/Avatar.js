@@ -34,7 +34,7 @@ var Avatar = function Avatar(_ref) {
   };
 
   var AvatarChildren = function AvatarChildren() {
-    return React.createElement(StyledAvatar, _extends({}, avatarProps, rest), children);
+    return /*#__PURE__*/React.createElement(StyledAvatar, _extends({}, avatarProps, rest), children);
   };
 
   if (height || width) {
@@ -42,19 +42,19 @@ var Avatar = function Avatar(_ref) {
   }
 
   if (typeof src === 'string') {
-    return React.createElement(StyledAvatar, _extends({}, avatarProps, rest, {
+    return /*#__PURE__*/React.createElement(StyledAvatar, _extends({}, avatarProps, rest, {
       background: "url(" + src + ")"
     }));
   }
 
   if (typeof children === 'string') {
-    return React.createElement(StyledAvatar, _extends({}, avatarProps, rest), React.createElement(StyledAvatarText, {
+    return /*#__PURE__*/React.createElement(StyledAvatar, _extends({}, avatarProps, rest), /*#__PURE__*/React.createElement(StyledAvatarText, {
       alignSelf: "center",
       size: "large"
     }, children));
   }
 
-  return React.createElement(AvatarChildren, null);
+  return /*#__PURE__*/React.createElement(AvatarChildren, null);
 };
 
 export { Avatar };

@@ -11,28 +11,28 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Fit = function Fit() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "start",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "small",
     width: "small",
     border: true
-  }, _react["default"].createElement(_grommet.Image, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
     src: "//v2.grommet.io/assets/IMG_4245.jpg",
     fit: "contain"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "small",
     width: "small",
     border: true
-  }, _react["default"].createElement(_grommet.Image, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
     src: "//v2.grommet.io/assets/IMG_4245.jpg",
     fit: "cover"
   }))));
 };
 
 (0, _react2.storiesOf)('Image', module).add('Fit', function () {
-  return _react["default"].createElement(Fit, null);
+  return /*#__PURE__*/_react["default"].createElement(Fit, null);
 });

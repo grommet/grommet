@@ -11,13 +11,13 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var DisabledRadioButton = function DisabledRadioButton() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "large"
-  }, _react["default"].createElement(_grommet.RadioButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButton, {
     label: "option 1",
     name: "name",
     value: "option 1",
@@ -27,5 +27,5 @@ var DisabledRadioButton = function DisabledRadioButton() {
 };
 
 (0, _react2.storiesOf)('RadioButton', module).add('Disabled', function () {
-  return _react["default"].createElement(DisabledRadioButton, null);
+  return /*#__PURE__*/_react["default"].createElement(DisabledRadioButton, null);
 });

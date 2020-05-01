@@ -10,7 +10,7 @@ import { Text } from '../Text';
 var Value = function Value(_ref) {
   var basis = _ref.basis,
       children = _ref.children;
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     basis: basis,
     flex: "shrink",
     overflow: "hidden"
@@ -33,7 +33,7 @@ var Distribution = function Distribution(_ref2) {
 
   if (values.length === 1) {
     var value = values[0];
-    return React.createElement(Value, {
+    return /*#__PURE__*/React.createElement(Value, {
       value: value,
       basis: basis
     }, children(value));
@@ -63,7 +63,7 @@ var Distribution = function Distribution(_ref2) {
 
     if (subIndex === values.length) {
       var _value = values[0];
-      return React.createElement(Value, {
+      return /*#__PURE__*/React.createElement(Value, {
         value: _value,
         basis: basis
       }, children(_value));
@@ -79,19 +79,19 @@ var Distribution = function Distribution(_ref2) {
       childBasis = ['1/2', '1/2'];
     }
 
-    return React.createElement(Box, _extends({
+    return /*#__PURE__*/React.createElement(Box, _extends({
       direction: direction,
       basis: basis,
       flex: basis ? 'shrink' : true,
       overflow: "hidden",
       gap: gap,
       fill: fill
-    }, rest), React.createElement(Distribution, {
+    }, rest), /*#__PURE__*/React.createElement(Distribution, {
       values: values.slice(0, subIndex),
       basis: childBasis[0],
       direction: direction === 'row' ? 'column' : 'row',
       gap: gap
-    }, children), React.createElement(Distribution, {
+    }, children), /*#__PURE__*/React.createElement(Distribution, {
       values: values.slice(subIndex),
       basis: childBasis[1],
       direction: direction === 'row' ? 'column' : 'row',
@@ -105,10 +105,10 @@ var Distribution = function Distribution(_ref2) {
 Distribution.defaultProps = {
   basis: undefined,
   children: function children(value) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       fill: true,
       border: true
-    }, React.createElement(Text, null, value.value));
+    }, /*#__PURE__*/React.createElement(Text, null, value.value));
   },
   direction: 'row',
   gap: 'xsmall',

@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Accordion) {
   var DocumentedAccordion = (0, _reactDesc.describe)(Accordion).availableAt((0, _utils.getAvailableAtBadge)('Accordion')).description('An accordion containing collapsible panels.').usage("import { Accordion, AccordionPanel } from 'grommet';\n<Accordion>\n  <AccordionPanel label='Panel 1'>...</AccordionPanel>\n  <AccordionPanel label='Panel 2'>...</AccordionPanel>\n</Accordion>").intrinsicElement('div');
-  DocumentedAccordion.propTypes = _extends({}, _utils.genericProps, {
+  DocumentedAccordion.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
     activeIndex: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)]).description("Active panel index. If specified, Accordion will be a controlled \ncomponent. This means that future panel changes will not work unless you\nsubscribe to onActive function and update activeIndex accordingly.").defaultValue(0),
     animate: _reactDesc.PropTypes.bool.description('Transition content in & out with a slide down animation.').defaultValue(true),
     children: _reactDesc.PropTypes.node.description('Array of AccordionPanels.'),

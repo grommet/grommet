@@ -27,15 +27,15 @@ var SearchSelect = function SearchSelect() {
       value = _useState2[0],
       setValue = _useState2[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     size: "medium",
     placeholder: "Select",
     value: value,
@@ -63,5 +63,5 @@ var SearchSelect = function SearchSelect() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Search', function () {
-  return _react["default"].createElement(SearchSelect, null);
+  return /*#__PURE__*/_react["default"].createElement(SearchSelect, null);
 });

@@ -104,14 +104,14 @@ var fixedGridAreas = {
 var animals = ['dog', 'cat', 'pig', 'cow', 'giraffe', 'elephant', 'dinosaur', 'chicken', 'duck', 'tiger', 'lion', 'cheetah']; // Create box for each animal
 
 var listAnimalsBoxes = animals.map(function (animalName) {
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     elevation: "large",
     key: animalName,
     background: "light-3",
     flex: false,
     justify: "center",
     align: "center"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 2
   }, animalName));
 });
@@ -123,7 +123,7 @@ var Responsive = function Responsive(_ref) {
       areas = _ref.areas,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "overrideColumns", "overrideRows", "areas"]);
 
-  return React.createElement(ResponsiveContext.Consumer, null, function (size) {
+  return /*#__PURE__*/React.createElement(ResponsiveContext.Consumer, null, function (size) {
     // Take into consideration if not array is sent but a simple string
     var columnsVal = columns;
 
@@ -145,7 +145,7 @@ var Responsive = function Responsive(_ref) {
 
     var areasVal = areas;
     if (areas && !Array.isArray(areas)) areasVal = areas[size];
-    return React.createElement(Grid, _extends({}, props, {
+    return /*#__PURE__*/React.createElement(Grid, _extends({}, props, {
       areas: !areasVal ? undefined : areasVal,
       rows: !rowsVal ? size : rowsVal,
       columns: !columnsVal ? size : columnsVal
@@ -154,32 +154,32 @@ var Responsive = function Responsive(_ref) {
 };
 
 var ResponsiveGrid = function ResponsiveGrid() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpoints
-  }, React.createElement(Box, null, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Heading, {
     level: 2
-  }, "Resize me."), React.createElement(Responsive, {
+  }, "Resize me."), /*#__PURE__*/React.createElement(Responsive, {
     rows: rows,
     columns: columns,
     gap: "small",
     areas: fixedGridAreas,
     margin: "medium"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     gridArea: "header",
     background: "neutral-2",
     justify: "center",
     align: "center"
-  }, React.createElement("strong", null, "Box 1")), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement("strong", null, "Box 1")), /*#__PURE__*/React.createElement(Box, {
     gridArea: "test",
     background: "neutral-3",
     justify: "center",
     align: "center"
-  }, React.createElement("strong", null, "Box 2")), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement("strong", null, "Box 2")), /*#__PURE__*/React.createElement(Box, {
     gridArea: "test1",
     background: "neutral-4",
     justify: "center",
     align: "center"
-  }, React.createElement("strong", null, "Box 3"))), React.createElement(Responsive, {
+  }, /*#__PURE__*/React.createElement("strong", null, "Box 3"))), /*#__PURE__*/React.createElement(Responsive, {
     gap: "small",
     margin: "medium",
     columns: "medium",
@@ -188,5 +188,5 @@ var ResponsiveGrid = function ResponsiveGrid() {
 };
 
 storiesOf('Grid', module).add('Responsive Grid', function () {
-  return React.createElement(ResponsiveGrid, null);
+  return /*#__PURE__*/React.createElement(ResponsiveGrid, null);
 });

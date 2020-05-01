@@ -19,21 +19,21 @@ var NotificationLayer = function NotificationLayer() {
     return setOpen(undefined);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Button, {
-    icon: React.createElement(Add, {
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Add, {
       color: "brand"
     }),
-    label: React.createElement(Text, null, React.createElement("strong", null, "Add")),
+    label: /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement("strong", null, "Add")),
     onClick: onOpen,
     plain: true
-  })), open && React.createElement(Layer, {
+  })), open && /*#__PURE__*/React.createElement(Layer, {
     position: "bottom",
     modal: false,
     margin: {
@@ -43,7 +43,7 @@ var NotificationLayer = function NotificationLayer() {
     onEsc: onClose,
     responsive: false,
     plain: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     direction: "row",
     gap: "small",
@@ -55,17 +55,17 @@ var NotificationLayer = function NotificationLayer() {
       horizontal: 'small'
     },
     background: "status-ok"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     direction: "row",
     gap: "xsmall"
-  }, React.createElement(StatusGood, null), React.createElement(Text, null, "A new virtual machine has been successfully added")), React.createElement(Button, {
-    icon: React.createElement(FormClose, null),
+  }, /*#__PURE__*/React.createElement(StatusGood, null), /*#__PURE__*/React.createElement(Text, null, "A new virtual machine has been successfully added")), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(FormClose, null),
     onClick: onClose,
     plain: true
   }))));
 };
 
 storiesOf('Layer', module).add('Notification', function () {
-  return React.createElement(NotificationLayer, null);
+  return /*#__PURE__*/React.createElement(NotificationLayer, null);
 });

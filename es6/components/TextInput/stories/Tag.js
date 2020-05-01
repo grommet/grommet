@@ -14,7 +14,7 @@ var Tag = function Tag(_ref) {
       onRemove = _ref.onRemove,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "onRemove"]);
 
-  var tag = React.createElement(Box, _extends({
+  var tag = /*#__PURE__*/React.createElement(Box, _extends({
     direction: "row",
     align: "center",
     background: "brand",
@@ -26,18 +26,18 @@ var Tag = function Tag(_ref) {
       vertical: 'xxsmall'
     },
     round: "medium"
-  }, rest), React.createElement(Text, {
+  }, rest), /*#__PURE__*/React.createElement(Text, {
     size: "xsmall",
     margin: {
       right: 'xxsmall'
     }
-  }, children), onRemove && React.createElement(FormClose, {
+  }, children), onRemove && /*#__PURE__*/React.createElement(FormClose, {
     size: "small",
     color: "white"
   }));
 
   if (onRemove) {
-    return React.createElement(Button, {
+    return /*#__PURE__*/React.createElement(Button, {
       onClick: onRemove
     }, tag);
   }
@@ -86,7 +86,7 @@ var TagInput = function TagInput(_ref2) {
 
   var renderValue = function renderValue() {
     return value.map(function (v, index) {
-      return React.createElement(Tag, {
+      return /*#__PURE__*/React.createElement(Tag, {
         margin: "xxsmall",
         key: "" + v + (index + 0),
         onRemove: function onRemove() {
@@ -96,9 +96,9 @@ var TagInput = function TagInput(_ref2) {
     });
   };
 
-  return React.createElement(Keyboard, {
+  return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onEnter
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
     pad: {
@@ -107,12 +107,12 @@ var TagInput = function TagInput(_ref2) {
     border: "all",
     ref: boxRef,
     wrap: true
-  }, value.length > 0 && renderValue(), React.createElement(Box, {
+  }, value.length > 0 && renderValue(), /*#__PURE__*/React.createElement(Box, {
     flex: true,
     style: {
       minWidth: '120px'
     }
-  }, React.createElement(TextInput, _extends({
+  }, /*#__PURE__*/React.createElement(TextInput, _extends({
     type: "search",
     plain: true,
     dropTarget: box
@@ -156,12 +156,12 @@ var TagTextInput = function TagTextInput() {
     }));
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "small"
-  }, React.createElement(TagInput, {
+  }, /*#__PURE__*/React.createElement(TagInput, {
     placeholder: "Search for aliases...",
     suggestions: suggestions,
     value: selectedTags,
@@ -175,5 +175,5 @@ var TagTextInput = function TagTextInput() {
 };
 
 storiesOf('TextInput', module).add('Tag', function () {
-  return React.createElement(TagTextInput, null);
+  return /*#__PURE__*/React.createElement(TagTextInput, null);
 });

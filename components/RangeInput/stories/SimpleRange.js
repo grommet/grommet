@@ -19,17 +19,17 @@ var SimpleRangeInput = function SimpleRangeInput() {
     return setValue(event.target.value);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.RangeInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
     value: value,
     onChange: onChange
   })));
 };
 
 (0, _react2.storiesOf)('RangeInput', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleRangeInput, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleRangeInput, null);
 });

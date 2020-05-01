@@ -14,12 +14,12 @@ var columns = [{
 }];
 
 var Example = function Example() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns,
     data: DATA,
     step: 10,
@@ -28,5 +28,5 @@ var Example = function Example() {
 };
 
 storiesOf('DataTable', module).add('No Primary', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

@@ -18,17 +18,17 @@ var SidebarButton = function SidebarButton(_ref) {
   var label = _ref.label,
       rest = _objectWithoutPropertiesLoose(_ref, ["label"]);
 
-  return _react["default"].createElement(_grommet.Button, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Button, _extends({
     plain: true
   }, rest), function (_ref2) {
     var hover = _ref2.hover;
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       background: hover ? 'accent-1' : undefined,
       pad: {
         horizontal: 'large',
         vertical: 'medium'
       }
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "large"
     }, label));
   });
@@ -39,16 +39,16 @@ var SidebarNav = function SidebarNav() {
       active = _useState[0],
       setActive = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _grommet.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     direction: "row"
-  }, _react["default"].createElement(_grommet.Nav, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
     background: "neutral-1"
   }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
-    return _react["default"].createElement(SidebarButton, {
+    return /*#__PURE__*/_react["default"].createElement(SidebarButton, {
       key: label,
       label: label,
       active: label === active,
@@ -60,5 +60,5 @@ var SidebarNav = function SidebarNav() {
 };
 
 (0, _react2.storiesOf)('Nav', module).add('Sidebar', function () {
-  return _react["default"].createElement(SidebarNav, null);
+  return /*#__PURE__*/_react["default"].createElement(SidebarNav, null);
 });

@@ -36,7 +36,7 @@ export var columns = [{
   label: 'Name',
   dataScope: 'row',
   format: function format(datum) {
-    return React.createElement(Text, {
+    return /*#__PURE__*/React.createElement(Text, {
       weight: "bold"
     }, datum.name);
   }

@@ -10,9 +10,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Anchor } from '../Anchor';
 
-var RoutedAnchor =
-/*#__PURE__*/
-function (_Component) {
+var RoutedAnchor = /*#__PURE__*/function (_Component) {
   _inheritsLoose(RoutedAnchor, _Component);
 
   function RoutedAnchor() {
@@ -33,7 +31,7 @@ function (_Component) {
       console.warn("This component will be deprecated in the upcoming releases. \n        Please refer to https://github.com/grommet/grommet/issues/2855 \n        for more information.");
     }
 
-    return React.createElement(Anchor, _extends({}, rest, {
+    return /*#__PURE__*/React.createElement(Anchor, _extends({}, rest, {
       href: path,
       onClick: function onClick(event) {
         var onClick = _this.props.onClick;

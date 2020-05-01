@@ -31,7 +31,7 @@ var Header = function Header(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "sort", "widths"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  return React.createElement(StyledDataTableHeader, rest, React.createElement(StyledDataTableRow, null, groups && React.createElement(ExpanderCell, {
+  return /*#__PURE__*/React.createElement(StyledDataTableHeader, rest, /*#__PURE__*/React.createElement(StyledDataTableRow, null, groups && /*#__PURE__*/React.createElement(ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
@@ -45,34 +45,34 @@ var Header = function Header(_ref) {
         sortable = _ref2.sortable,
         verticalAlign = _ref2.verticalAlign,
         size = _ref2.size;
-    var content = typeof header === 'string' ? React.createElement(Text, null, header) : header;
+    var content = typeof header === 'string' ? /*#__PURE__*/React.createElement(Text, null, header) : header;
 
     if (onSort && sortable !== false) {
       var Icon = onSort && sortable !== false && sort && sort.property === property && theme.dataTable.icons[sort.direction !== 'asc' ? 'ascending' : 'descending'];
-      content = React.createElement(Button, {
+      content = /*#__PURE__*/React.createElement(Button, {
         plain: true,
         fill: "vertical",
         onClick: onSort(property)
-      }, React.createElement(Box, {
+      }, /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
         gap: "xsmall"
-      }, content, Icon && React.createElement(Icon, null)));
+      }, content, Icon && /*#__PURE__*/React.createElement(Icon, null)));
     }
 
     if (search || onResize) {
-      var resizer = onResize ? React.createElement(Resizer, {
+      var resizer = onResize ? /*#__PURE__*/React.createElement(Resizer, {
         property: property,
         onResize: onResize
       }) : null;
-      var searcher = search && filters ? React.createElement(Searcher, {
+      var searcher = search && filters ? /*#__PURE__*/React.createElement(Searcher, {
         filtering: filtering,
         filters: filters,
         property: property,
         onFilter: onFilter,
         onFiltering: onFiltering
       }) : null;
-      content = React.createElement(Box, {
+      content = /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
         justify: !align || align === 'start' ? 'between' : align,
@@ -81,7 +81,7 @@ var Header = function Header(_ref) {
         style: onResize ? {
           position: 'relative'
         } : undefined
-      }, content, searcher && resizer ? React.createElement(Box, {
+      }, content, searcher && resizer ? /*#__PURE__*/React.createElement(Box, {
         flex: "shrink",
         direction: "row",
         align: "center",
@@ -89,7 +89,7 @@ var Header = function Header(_ref) {
       }, searcher, resizer) : searcher || resizer);
     }
 
-    return React.createElement(TableCell, {
+    return /*#__PURE__*/React.createElement(TableCell, {
       key: property,
       align: align,
       verticalAlign: verticalAlign,

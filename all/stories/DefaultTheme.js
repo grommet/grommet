@@ -21,12 +21,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 }));
 
 var CustomDefaultProps = function CustomDefaultProps() {
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand",
     pad: "small"
   }, "Hello");
 };
 
 (0, _react2.storiesOf)('Theme', module).add('Extend Default', function () {
-  return _react["default"].createElement(CustomDefaultProps, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomDefaultProps, null);
 });

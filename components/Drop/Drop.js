@@ -65,7 +65,7 @@ var Drop = (0, _react.forwardRef)(function (_ref, ref) {
       }
     };
   }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
-  return dropContainer ? (0, _reactDom.createPortal)(_react["default"].createElement(_DropContainer.DropContainer, _extends({
+  return dropContainer ? (0, _reactDom.createPortal)( /*#__PURE__*/_react["default"].createElement(_DropContainer.DropContainer, _extends({
     ref: ref,
     dir: theme && theme.dir,
     dropTarget: dropTarget,

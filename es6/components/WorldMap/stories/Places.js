@@ -8,12 +8,12 @@ var Example = function Example() {
       active = _React$useState[0],
       setActive = _React$useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(WorldMap, {
+  }, /*#__PURE__*/React.createElement(WorldMap, {
     places: [{
       name: 'Sydney',
       location: [-33.8830555556, 151.216666667],
@@ -22,11 +22,11 @@ var Example = function Example() {
         return setActive(!active);
       }
     }]
-  }), active && React.createElement(Box, {
+  }), active && /*#__PURE__*/React.createElement(Box, {
     margin: "large"
   }, "Sydney")));
 };
 
 storiesOf('WorldMap', module).add('Places', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

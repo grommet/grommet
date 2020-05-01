@@ -82,41 +82,41 @@ var ZoomChart = function ZoomChart(_ref) {
     previousReference = lastReference;
   }
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     direction: "row",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     hoverIndicator: true,
-    icon: _react["default"].createElement(_grommetIcons.Previous, null),
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Previous, null),
     onClick: function onClick() {
       return setReference(previousReference);
     }
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "end"
   }, Object.keys(intervalDays).map(function (_int) {
-    return _react["default"].createElement(_grommet.Button, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       key: _int,
       onClick: function onClick() {
         return setInterval(_int);
       }
-    }, _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "small"
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       color: interval === _int ? 'black' : 'brand'
     }, _int)));
-  })), _react["default"].createElement(_grommet.Stack, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     guidingChild: "first"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: thickness
     }
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: "bar",
     overflow: true,
     bounds: bounds,
@@ -126,38 +126,38 @@ var ZoomChart = function ZoomChart(_ref) {
       width: 'full',
       height: 'small'
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     justify: "between"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: "top",
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Text, null, axis[1][0]))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][0]))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: "bottom",
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Text, null, axis[1][1]))))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][1]))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between"
   }, axis[0].map(function (t) {
-    return _react["default"].createElement(_grommet.Text, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       key: t,
       className: "chromatic-ignore"
     }, new Date(t).toLocaleDateString());
-  }))), _react["default"].createElement(_grommet.Button, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     hoverIndicator: true,
-    icon: _react["default"].createElement(_grommetIcons.Next, null),
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Next, null),
     onClick: function onClick() {
       return setReference(nextReference);
     }
@@ -165,7 +165,7 @@ var ZoomChart = function ZoomChart(_ref) {
 };
 
 (0, _react2.storiesOf)('Chart', module).add('Zoom', function () {
-  return _react["default"].createElement(ZoomChart, {
+  return /*#__PURE__*/_react["default"].createElement(ZoomChart, {
     data: (0, _data.generateData)(1000, 100),
     max: 100
   });

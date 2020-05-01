@@ -5,7 +5,7 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Video) {
   var DocumentedVideo = describe(Video).availableAt(getAvailableAtBadge('Video')).description('A video player.').usage("import { Video } from 'grommet';\n<Video />").intrinsicElement('video');
-  DocumentedVideo.propTypes = _extends({}, genericProps, {
+  DocumentedVideo.propTypes = _extends(_extends({}, genericProps), {}, {
     autoPlay: PropTypes.bool.description('Enables automatic playback of the video as soon as it is loaded.'),
     controls: PropTypes.oneOf([false, 'over', 'below']).description('Whether to show playback controls and where to place them.').defaultValue('over'),
     fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
@@ -14,7 +14,7 @@ export var doc = function doc(Video) {
   });
   return DocumentedVideo;
 };
-export var themeDoc = _extends({}, themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in the video component layout.'), {
+export var themeDoc = _extends(_extends({}, themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in the video component layout.')), {}, {
   'global.edgeSize.xsmall': {
     description: 'The width of the video scrubber.',
     type: 'object',

@@ -30,12 +30,12 @@ var SimpleLayer = function SimpleLayer() {
   var layer;
 
   if (showLayer) {
-    layer = _react["default"].createElement(_.Layer, {
+    layer = /*#__PURE__*/_react["default"].createElement(_.Layer, {
       "data-testid": "test-dom-removal"
     }, "This is a test");
   }
 
-  return _react["default"].createElement(_.Box, null, layer);
+  return /*#__PURE__*/_react["default"].createElement(_.Box, null, layer);
 };
 
 var FakeLayer = function FakeLayer(_ref) {
@@ -53,18 +53,18 @@ var FakeLayer = function FakeLayer(_ref) {
   var layer;
 
   if (showLayer) {
-    layer = _react["default"].createElement(_.Layer, {
+    layer = /*#__PURE__*/_react["default"].createElement(_.Layer, {
       onEsc: function onEsc() {
         return setShowLayer(false);
       }
-    }, _react["default"].createElement("div", {
+    }, /*#__PURE__*/_react["default"].createElement("div", {
       "data-testid": dataTestid
-    }, "This is a layer", _react["default"].createElement("input", {
+    }, "This is a layer", /*#__PURE__*/_react["default"].createElement("input", {
       "data-testid": "test-input"
     })));
   }
 
-  return _react["default"].createElement(_.Box, null, layer, children);
+  return /*#__PURE__*/_react["default"].createElement(_.Box, null, layer, children);
 };
 
 var TargetLayer = function TargetLayer(props) {
@@ -75,12 +75,12 @@ var TargetLayer = function TargetLayer(props) {
   var layer;
 
   if (target) {
-    layer = _react["default"].createElement(_.Layer, _extends({}, props, {
+    layer = /*#__PURE__*/_react["default"].createElement(_.Layer, _extends({}, props, {
       target: target
     }), "this is a test layer");
   }
 
-  return _react["default"].createElement(_.Grommet, null, _react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement("div", {
     ref: setTarget
   }), layer);
 };
@@ -90,7 +90,7 @@ describe('Layer', function () {
   afterEach(_react2.cleanup);
   ['top', 'bottom', 'left', 'right', 'start', 'end', 'center'].forEach(function (position) {
     return test("position " + position, function () {
-      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
         id: "position-test",
         position: position
       }, "This is a layer")));
@@ -99,7 +99,7 @@ describe('Layer', function () {
   });
   [true, false, 'horizontal', 'vertical'].forEach(function (full) {
     return test("full " + full, function () {
-      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
         id: "full-test",
         full: full
       }, "This is a layer")));
@@ -108,7 +108,7 @@ describe('Layer', function () {
   });
   ['none', 'xsmall', 'small', 'medium', 'large'].forEach(function (margin) {
     return test("margin " + margin, function () {
-      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
         id: "margin-test",
         margin: margin
       }, "This is a layer")));
@@ -116,7 +116,7 @@ describe('Layer', function () {
     });
   });
   test("custom margin", function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       id: "margin-test",
       margin: {
         top: '50px',
@@ -128,37 +128,37 @@ describe('Layer', function () {
     (0, _portal.expectPortal)('margin-test').toMatchSnapshot();
   });
   test('hidden', function () {
-    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       id: "hidden-test",
       position: "hidden"
     }, "This is a layer"))),
         rerender = _render.rerender;
 
     (0, _portal.expectPortal)('hidden-test').toMatchSnapshot();
-    rerender(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    rerender( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       id: "hidden-test",
       position: "center"
     }, "This is a layer")));
     (0, _portal.expectPortal)('hidden-test').toMatchSnapshot();
   });
   test('plain', function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       id: "plain-test",
       plain: true
     }, "This is a plain layer")));
     (0, _portal.expectPortal)('plain-test').toMatchSnapshot();
   });
   test('non-modal', function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       id: "non-modal-test",
       modal: false
     }, "This is a non-modal layer")));
     (0, _portal.expectPortal)('non-modal-test').toMatchSnapshot();
   });
   test('dark context', function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Box, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Box, {
       background: "dark-1"
-    }, _react["default"].createElement(_.Layer, {
+    }, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       id: "non-modal-test",
       modal: false
     }, "This is a non-modal layer"))));
@@ -166,7 +166,7 @@ describe('Layer', function () {
   });
   ['slide', 'fadeIn', false, true].forEach(function (animation) {
     return test("animation " + animation, function () {
-      (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
         id: "animation-test",
         animation: animation
       }, "This is a layer")));
@@ -175,9 +175,9 @@ describe('Layer', function () {
   });
   test('invokes onEsc', function () {
     var onEsc = jest.fn();
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_LayerContainer.LayerContainer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_LayerContainer.LayerContainer, {
       onEsc: onEsc
-    }, _react["default"].createElement("input", {
+    }, /*#__PURE__*/_react["default"].createElement("input", {
       "data-testid": "test-input"
     }))));
     var inputNode = (0, _dom.getByTestId)(document, 'test-input');
@@ -192,11 +192,11 @@ describe('Layer', function () {
   });
   test('is accessible', function (done) {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeLayer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeLayer, {
       dataTestid: "test-layer-node"
-    }, _react["default"].createElement("div", {
+    }, /*#__PURE__*/_react["default"].createElement("div", {
       "data-testid": "test-body-node"
-    }, _react["default"].createElement("input", null), _react["default"].createElement("input", {
+    }, /*#__PURE__*/_react["default"].createElement("input", null), /*#__PURE__*/_react["default"].createElement("input", {
       tabIndex: "10"
     })))));
     /* eslint-enable jsx-a11y/tabindex-no-positive */
@@ -223,9 +223,9 @@ describe('Layer', function () {
   });
   test('focus on layer', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       "data-testid": "focus-layer-test"
-    }, _react["default"].createElement("input", null)), _react["default"].createElement("input", {
+    }, /*#__PURE__*/_react["default"].createElement("input", null)), /*#__PURE__*/_react["default"].createElement("input", {
       autoFocus: true
     })));
     /* eslint-disable jsx-a11y/no-autofocus */
@@ -236,12 +236,12 @@ describe('Layer', function () {
   });
   test('not steal focus from an autofocus focusable element', function () {
     /* eslint-disable jsx-a11y/no-autofocus */
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       "data-testid": "focus-layer-input-test"
-    }, _react["default"].createElement("input", {
+    }, /*#__PURE__*/_react["default"].createElement("input", {
       autoFocus: true,
       "data-testid": "focus-input"
-    }), _react["default"].createElement("button", {
+    }), /*#__PURE__*/_react["default"].createElement("button", {
       type: "button"
     }, "Button"))));
     /* eslint-disable jsx-a11y/no-autofocus */
@@ -252,26 +252,26 @@ describe('Layer', function () {
     expect(document.activeElement).toBe(inputNode);
   });
   test('target', function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(TargetLayer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(TargetLayer, {
       id: "target-test"
     }, "This layer has a target")));
     (0, _portal.expectPortal)('target-test').toMatchSnapshot();
   });
   test('target not modal', function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(TargetLayer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(TargetLayer, {
       id: "target-test",
       modal: false
     }, "This layer has a target")));
     (0, _portal.expectPortal)('target-test').toMatchSnapshot();
   });
   test('unmounts from dom', function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(SimpleLayer, null)));
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(SimpleLayer, null)));
     setTimeout(function () {
       expect((0, _dom.queryByTestId)(document, 'test-dom-removal')).toBeNull();
     }, 1000);
   });
   test('default containerTarget', function () {
-    (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+    (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Layer, {
       "data-testid": "layer"
     }, "Test")));
     var layer = (0, _dom.getByTestId)(document, 'layer');
@@ -283,9 +283,9 @@ describe('Layer', function () {
     document.body.appendChild(target);
 
     try {
-      (0, _react2.render)(_react["default"].createElement(_.Grommet, {
+      (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
         containerTarget: target
-      }, _react["default"].createElement(_.Layer, {
+      }, /*#__PURE__*/_react["default"].createElement(_.Layer, {
         "data-testid": "layer"
       }, "Test")));
       var layer = (0, _dom.getByTestId)(document, 'layer');

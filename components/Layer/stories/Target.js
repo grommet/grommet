@@ -44,10 +44,10 @@ var TargetLayer = function TargetLayer() {
     return setOpen(undefined);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Grid, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     fill: true,
     columns: [gutter, 'flex', gutter],
     rows: [gutter, 'flex', gutter],
@@ -56,7 +56,7 @@ var TargetLayer = function TargetLayer() {
       start: [1, 1],
       end: [1, 1]
     }]
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     ref: ref,
     gridArea: "main",
     fill: true,
@@ -64,44 +64,44 @@ var TargetLayer = function TargetLayer() {
     justify: "center",
     gap: "medium",
     background: "brand"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     options: positions,
     value: position,
     onChange: function onChange(_ref) {
       var option = _ref.option;
       return setPosition(option);
     }
-  }), _react["default"].createElement(_grommet.CheckBox, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     toggle: true,
     label: "modal",
     checked: modal,
     onChange: function onChange() {
       return setModal(!modal);
     }
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Open",
     onClick: onOpen
-  }))), open && _react["default"].createElement(_grommet.Layer, {
+  }))), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     modal: modal,
     position: position,
     target: ref.current,
     onClickOutside: onClose,
     onEsc: onClose
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     gap: "small",
     width: "medium"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Toggle gutter size",
     onClick: function onClick() {
       return setGutter(gutter === 'small' ? 'xsmall' : 'small');
     }
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Close",
     onClick: onClose
   }))));
 };
 
 (0, _react2.storiesOf)('Layer', module).add('Target', function () {
-  return _react["default"].createElement(TargetLayer, null);
+  return /*#__PURE__*/_react["default"].createElement(TargetLayer, null);
 });

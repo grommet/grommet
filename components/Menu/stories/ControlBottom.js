@@ -11,14 +11,14 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var ControlBottom = function ControlBottom() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "medium",
     justify: "center",
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Menu, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Menu, {
     dropProps: {
       align: {
         bottom: 'bottom',
@@ -40,5 +40,5 @@ var ControlBottom = function ControlBottom() {
 };
 
 (0, _react2.storiesOf)('Menu', module).add('Bottom Control Button', function () {
-  return _react["default"].createElement(ControlBottom, null);
+  return /*#__PURE__*/_react["default"].createElement(ControlBottom, null);
 });

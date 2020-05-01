@@ -5,13 +5,13 @@ import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
 var OnClickBox = function OnClickBox() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     justify: "center",
     align: "center",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     border: true,
     pad: "large",
     align: "center",
@@ -21,11 +21,11 @@ var OnClickBox = function OnClickBox() {
     onClick: function onClick() {
       alert('clicked');
     }
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "large"
-  }), React.createElement(Text, null, "Party"))));
+  }), /*#__PURE__*/React.createElement(Text, null, "Party"))));
 };
 
 storiesOf('Box', module).add('onClick', function () {
-  return React.createElement(OnClickBox, null);
+  return /*#__PURE__*/React.createElement(OnClickBox, null);
 });

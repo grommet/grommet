@@ -82,12 +82,12 @@ var RichChart = function RichChart() {
     values: values,
     overflow: true
   };
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     width: "medium",
@@ -95,12 +95,12 @@ var RichChart = function RichChart() {
       vertical: 'small'
     }
   }, xAxis.map(function (x) {
-    return _react["default"].createElement(_grommet.Text, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       key: x
     }, x);
-  })), _react["default"].createElement(_grommet.Stack, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     guidingChild: "last"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     justify: "between"
   }, yAxis.map(function (y, index) {
@@ -116,26 +116,26 @@ var RichChart = function RichChart() {
       align = 'center';
     }
 
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: y,
       direction: "row",
       align: align
-    }, _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         horizontal: 'small'
       }
-    }, _react["default"].createElement(_grommet.Text, null, y)), _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, y)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       border: "top",
       flex: true
     }));
-  })), _react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
     type: "area",
     color: {
       color: 'accent-1',
       opacity: 'medium'
     },
     thickness: "hair"
-  })), _react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
     type: "line",
     round: true,
     color: {
@@ -147,5 +147,5 @@ var RichChart = function RichChart() {
 };
 
 (0, _react2.storiesOf)('Chart', module).add('Rich', function () {
-  return _react["default"].createElement(RichChart, null);
+  return /*#__PURE__*/_react["default"].createElement(RichChart, null);
 });

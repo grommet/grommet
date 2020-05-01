@@ -11,12 +11,12 @@ var _themes = require("../../../themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var FixedSizesBox = function FixedSizesBox() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: "small",
     round: "small",
@@ -28,19 +28,21 @@ var FixedSizesBox = function FixedSizesBox() {
       vertical: 'scroll'
     }
   }, Array(20).fill().map(function (_, i) {
-    return (// eslint-disable-next-line react/no-array-index-key
+    return (
+      /*#__PURE__*/
+      // eslint-disable-next-line react/no-array-index-key
       _react["default"].createElement(_grommet.Text, {
         key: i
       }, "Small (" + i + ")")
     );
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium",
     height: "medium",
     round: "small",
     align: "center",
     justify: "center",
     background: "brand"
-  }, "Medium"), _react["default"].createElement(_grommet.Box, {
+  }, "Medium"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "large",
     height: "large",
     round: "small",
@@ -51,5 +53,5 @@ var FixedSizesBox = function FixedSizesBox() {
 };
 
 (0, _react2.storiesOf)('Box', module).add('Fixed sizes', function () {
-  return _react["default"].createElement(FixedSizesBox, null);
+  return /*#__PURE__*/_react["default"].createElement(FixedSizesBox, null);
 });

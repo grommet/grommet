@@ -14,14 +14,14 @@ var MultipleValues = function MultipleValues() {
       label = _useState2[0],
       setLabel = _useState2[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Stack, {
+  }, /*#__PURE__*/React.createElement(Stack, {
     anchor: "center"
-  }, React.createElement(Meter, {
+  }, /*#__PURE__*/React.createElement(Meter, {
     type: "circle",
     background: "light-2",
     values: [{
@@ -40,20 +40,20 @@ var MultipleValues = function MultipleValues() {
     max: 100,
     size: "small",
     thickness: "medium"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     align: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
     pad: {
       bottom: 'xsmall'
     }
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "xxlarge",
     weight: "bold"
-  }, active || total), React.createElement(Text, null, "GB")), React.createElement(Text, null, label || 'total')))));
+  }, active || total), /*#__PURE__*/React.createElement(Text, null, "GB")), /*#__PURE__*/React.createElement(Text, null, label || 'total')))));
 };
 
 storiesOf('Meter', module).add('Multiple Values', function () {
-  return React.createElement(MultipleValues, null);
+  return /*#__PURE__*/React.createElement(MultipleValues, null);
 });

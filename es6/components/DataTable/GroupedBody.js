@@ -19,20 +19,20 @@ export var GroupedBody = function GroupedBody(_ref) {
       size = _ref.size,
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "primaryProperty", "onToggle", "size"]);
 
-  return React.createElement(StyledDataTableBody, _extends({
+  return /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
     size: size
   }, rest), groups.map(function (group) {
     var expanded = groupState[group.key].expanded;
     var memberCount = group.data.length;
-    var content = memberCount > 1 ? React.createElement(StyledDataTableRow, {
+    var content = memberCount > 1 ? /*#__PURE__*/React.createElement(StyledDataTableRow, {
       key: group.key,
       size: size
-    }, React.createElement(ExpanderCell, {
+    }, /*#__PURE__*/React.createElement(ExpanderCell, {
       context: expanded ? 'groupHeader' : 'body',
       expanded: expanded,
       onToggle: onToggle(group.key)
     }), columns.map(function (column) {
-      return React.createElement(Cell, {
+      return /*#__PURE__*/React.createElement(Cell, {
         key: column.property,
         background: background,
         border: border,
@@ -45,17 +45,17 @@ export var GroupedBody = function GroupedBody(_ref) {
     })) : null;
 
     if (memberCount === 1 || expanded) {
-      content = React.createElement(Fragment, {
+      content = /*#__PURE__*/React.createElement(Fragment, {
         key: group.key
       }, content, group.data.map(function (datum, index) {
         var context = memberCount > 1 && index === memberCount - 1 ? 'groupEnd' : 'body';
-        return React.createElement(StyledDataTableRow, {
+        return /*#__PURE__*/React.createElement(StyledDataTableRow, {
           key: datum[primaryProperty],
           size: size
-        }, React.createElement(ExpanderCell, {
+        }, /*#__PURE__*/React.createElement(ExpanderCell, {
           context: context
         }), columns.map(function (column) {
-          return React.createElement(Cell, {
+          return /*#__PURE__*/React.createElement(Cell, {
             key: column.property,
             background: background,
             border: border,

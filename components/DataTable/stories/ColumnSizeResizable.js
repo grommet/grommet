@@ -77,14 +77,14 @@ var columnsResize = [{
 }];
 
 var ExampleResizable = function ExampleResizable() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: "3"
-  }, "Table with resizeable & column sizes"), _react["default"].createElement(_grommet.DataTable, {
+  }, "Table with resizeable & column sizes"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: columnsResize,
     data: DATA,
     primaryKey: false,
@@ -93,5 +93,5 @@ var ExampleResizable = function ExampleResizable() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('Column Sizes resizeable', function () {
-  return _react["default"].createElement(ExampleResizable, null);
+  return /*#__PURE__*/_react["default"].createElement(ExampleResizable, null);
 });

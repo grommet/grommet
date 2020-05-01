@@ -25,7 +25,7 @@ var doc = function doc(RangeInput) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({}, _utils.themeDocUtils.focusStyle, {
+var themeDoc = _extends(_extends({}, _utils.themeDocUtils.focusStyle), {}, {
   'global.spacing': {
     description: 'The height, width and border-radius of the range thumb.',
     type: 'string',

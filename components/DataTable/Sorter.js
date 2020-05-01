@@ -39,10 +39,10 @@ var Sorter = function Sorter(_ref) {
 
   if (sort && sort.property === property) {
     var Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
-    icon = _react["default"].createElement(Icon, null);
+    icon = /*#__PURE__*/_react["default"].createElement(Icon, null);
   }
 
-  var content = _react["default"].createElement(_Box.Box, _extends({}, themeProps, {
+  var content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, themeProps, {
     flex: "shrink",
     direction: "row",
     justify: align,
@@ -52,7 +52,7 @@ var Sorter = function Sorter(_ref) {
   }), children, icon);
 
   if (onSort) {
-    content = _react["default"].createElement(SorterButton, {
+    content = /*#__PURE__*/_react["default"].createElement(SorterButton, {
       fill: fill,
       hoverIndicator: true,
       onClick: onSort(property)

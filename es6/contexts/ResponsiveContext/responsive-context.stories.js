@@ -30,16 +30,16 @@ var ResponsiveGrid = function ResponsiveGrid(_ref) {
       props = _objectWithoutPropertiesLoose(_ref, ["children", "areas"]);
 
   var size = React.useContext(ResponsiveContext);
-  return React.createElement(Grid, _extends({
+  return /*#__PURE__*/React.createElement(Grid, _extends({
     areas: areas[size]
   }, props), children);
 };
 
 var ResponsiveGridExample = function ResponsiveGridExample() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpoints,
     full: true
-  }, React.createElement(ResponsiveGrid, {
+  }, /*#__PURE__*/React.createElement(ResponsiveGrid, {
     columns: ['25%', '25%', '25%', '25%'],
     rows: ['3em', '3em', '3em'],
     areas: {
@@ -112,31 +112,31 @@ var ResponsiveGridExample = function ResponsiveGridExample() {
         end: [3, 1]
       }]
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     gridArea: "header",
     background: "brand"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     gridArea: "one",
     background: "dark-1"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     gridArea: "two",
     background: "dark-2"
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     gridArea: "three",
     background: "dark-3"
-  })), React.createElement(Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
+  })), /*#__PURE__*/React.createElement(Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
 };
 
 storiesOf('ResponsiveContext', module).add('Custom Breakpoints', function () {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpoints,
     full: true
-  }, React.createElement(ResponsiveContext.Consumer, null, function (size) {
-    return React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(ResponsiveContext.Consumer, null, function (size) {
+    return /*#__PURE__*/React.createElement(Box, {
       fill: true,
       background: "brand"
-    }, React.createElement(Heading, null, "Hi, I'm " + size + ", resize me!"));
+    }, /*#__PURE__*/React.createElement(Heading, null, "Hi, I'm " + size + ", resize me!"));
   }));
 }).add('Responsive Grid', function () {
-  return React.createElement(ResponsiveGridExample, null);
+  return /*#__PURE__*/React.createElement(ResponsiveGridExample, null);
 });

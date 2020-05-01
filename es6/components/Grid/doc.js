@@ -7,7 +7,7 @@ var sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3
 var edgeSizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none'];
 export var doc = function doc(Grid) {
   var DocumentedGrid = describe(Grid).availableAt(getAvailableAtBadge('Grid')).description("A grid system for laying out content. To use, define the\nrows and columns, create area names for adjacent cells, and then\nplace Box components inside those areas using the gridArea property.\nSee https://css-tricks.com/snippets/css/complete-guide-grid/.\nThe availability of Grid can be tested via `Grid.available`. Use this\nto create fallback rendering for older browsers, like ie11.").usage("import { Grid } from 'grommet';\n<Grid />").intrinsicElement('div');
-  DocumentedGrid.propTypes = _extends({}, genericProps, {
+  DocumentedGrid.propTypes = _extends(_extends({}, genericProps), {}, {
     align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align the individual items inside the grid when there is extra\nspace in the column axis.").defaultValue('stretch'),
     alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the column axis.'),
     areas: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.shape({

@@ -13,32 +13,32 @@ var MultipleDrop = function MultipleDrop() {
       setShowLayer = _useState2[1];
 
   var targetRef = useRef();
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(DropButton, {
+  }, /*#__PURE__*/React.createElement(DropButton, {
     label: "drop button",
     dropAlign: {
       right: 'left'
     },
-    dropContent: React.createElement(Box, {
+    dropContent: /*#__PURE__*/React.createElement(Box, {
       pad: "large"
-    }, React.createElement(TextInput, {
+    }, /*#__PURE__*/React.createElement(TextInput, {
       value: "",
       onChange: function onChange() {},
       suggestions: ['one', 'two']
     }))
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     ref: targetRef,
     label: "button",
     onClick: function onClick() {
       return setShowDrop(true);
     }
-  }), showDrop && React.createElement(Drop, {
+  }), showDrop && /*#__PURE__*/React.createElement(Drop, {
     align: {
       left: 'right'
     },
@@ -46,24 +46,24 @@ var MultipleDrop = function MultipleDrop() {
     onClickOutside: function onClickOutside() {
       return setShowDrop(false);
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large"
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     value: "",
     onChange: function onChange() {},
     suggestions: ['one', 'two']
-  }))), React.createElement(Button, {
+  }))), /*#__PURE__*/React.createElement(Button, {
     label: "layer",
     onClick: function onClick() {
       return setShowLayer(!showLayer);
     }
-  }), showLayer && React.createElement(Layer, {
+  }), showLayer && /*#__PURE__*/React.createElement(Layer, {
     position: "left",
     modal: false
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     border: true
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     value: "",
     onChange: function onChange() {},
     suggestions: ['one', 'two']
@@ -71,5 +71,5 @@ var MultipleDrop = function MultipleDrop() {
 };
 
 storiesOf('Drop', module).add('Multiple', function () {
-  return React.createElement(MultipleDrop, null);
+  return /*#__PURE__*/React.createElement(MultipleDrop, null);
 });

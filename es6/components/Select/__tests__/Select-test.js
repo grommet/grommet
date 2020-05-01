@@ -12,14 +12,14 @@ describe('Select', function () {
   beforeEach(createPortal);
   afterEach(cleanup);
   test('basic', function () {
-    var component = renderer.create(React.createElement(Select, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       options: ['one', 'two']
     }));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('0 value', function () {
-    var component = renderer.create(React.createElement(Select, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       options: [0, 1],
@@ -30,7 +30,7 @@ describe('Select', function () {
   test('opens', function (done) {
     window.scrollTo = jest.fn();
 
-    var _render = render(React.createElement(Select, {
+    var _render = render( /*#__PURE__*/React.createElement(Select, {
       placeholder: "test select",
       id: "test-select",
       options: ['one', 'two']
@@ -49,7 +49,7 @@ describe('Select', function () {
     }, 100);
   });
   test('complex options and children', function () {
-    var _render2 = render(React.createElement(Select, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       options: [{
@@ -58,7 +58,7 @@ describe('Select', function () {
         test: 'two'
       }]
     }, function (option) {
-      return React.createElement("span", null, option.test);
+      return /*#__PURE__*/React.createElement("span", null, option.test);
     })),
         getByPlaceholderText = _render2.getByPlaceholderText,
         container = _render2.container;
@@ -73,7 +73,7 @@ describe('Select', function () {
     jest.useFakeTimers();
     var onSearch = jest.fn();
 
-    var _render3 = render(React.createElement(Select, {
+    var _render3 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -97,7 +97,7 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render4 = render(React.createElement(Select, {
+    var _render4 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -122,10 +122,10 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render5 = render(React.createElement(Select, {
+    var _render5 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       plain: true,
-      value: React.createElement("span", null, "one"),
+      value: /*#__PURE__*/React.createElement("span", null, "one"),
       options: [{
         test: 'one'
       }, {
@@ -133,7 +133,7 @@ describe('Select', function () {
       }],
       onChange: onChange
     }, function (option) {
-      return React.createElement("span", null, option.test);
+      return /*#__PURE__*/React.createElement("span", null, option.test);
     })),
         getByText = _render5.getByText,
         container = _render5.container;
@@ -153,7 +153,7 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render6 = render(React.createElement(Select, {
+    var _render6 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -185,7 +185,7 @@ describe('Select', function () {
     expect(window.scrollTo).toBeCalled();
   });
   test('size', function () {
-    var component = renderer.create(React.createElement(Select, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       size: "large",
       options: ['one', 'two'],
@@ -196,7 +196,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('multiple', function () {
-    var component = renderer.create(React.createElement(Select, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       multiple: true,
       options: ['one', 'two'],
@@ -206,7 +206,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('multiple values', function () {
-    var _render7 = render(React.createElement(Select, {
+    var _render7 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -225,7 +225,7 @@ describe('Select', function () {
   test('select another option', function () {
     var onChange = jest.fn();
 
-    var _render8 = render(React.createElement(Select, {
+    var _render8 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -247,7 +247,7 @@ describe('Select', function () {
   test('deselect an option', function () {
     var onChange = jest.fn();
 
-    var _render9 = render(React.createElement(Select, {
+    var _render9 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -267,7 +267,7 @@ describe('Select', function () {
     }));
   });
   test('disabled', function () {
-    var _render10 = render(React.createElement(Select, {
+    var _render10 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       disabled: true,
@@ -284,7 +284,7 @@ describe('Select', function () {
   });
   ['small', 'medium', 'large'].forEach(function (dropHeight) {
     test(dropHeight + " drop container height", function () {
-      var _render11 = render(React.createElement(Select, {
+      var _render11 = render( /*#__PURE__*/React.createElement(Select, {
         id: "test-select",
         size: "large",
         options: ['one', 'two'],
@@ -301,7 +301,7 @@ describe('Select', function () {
     });
   });
   test('empty results search', function () {
-    var _render12 = render(React.createElement(Select, {
+    var _render12 = render( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       placeholder: "test select",
       options: [],
@@ -316,7 +316,7 @@ describe('Select', function () {
     expect(document.activeElement).toMatchSnapshot();
   });
   test('open default state', function () {
-    render(React.createElement(Select, {
+    render( /*#__PURE__*/React.createElement(Select, {
       open: true,
       id: "test-select",
       placeholder: "test select",
@@ -325,7 +325,7 @@ describe('Select', function () {
     expect(document.getElementById('test-select__drop')).not.toBeNull();
   });
   test('renders without icon', function () {
-    var component = renderer.create(React.createElement(Select, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       options: ['one', 'two'],
       icon: false
@@ -333,7 +333,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('renders custom icon', function () {
-    var component = renderer.create(React.createElement(Select, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       options: ['one', 'two'],
       icon: CaretDown
@@ -341,7 +341,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('renders default icon', function () {
-    var component = renderer.create(React.createElement(Select, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",
       options: ['one', 'two'],
       icon: true
@@ -363,9 +363,9 @@ describe('Select', function () {
       }
     };
 
-    var _render13 = render(React.createElement(Grommet, {
+    var _render13 = render( /*#__PURE__*/React.createElement(Grommet, {
       theme: customTheme
-    }, React.createElement(Select, {
+    }, /*#__PURE__*/React.createElement(Select, {
       "data-testid": "test-select-style-open",
       id: "test-open-id",
       options: ['morning', 'afternoon', 'evening'],
@@ -396,9 +396,9 @@ describe('Select', function () {
       }
     };
 
-    var _render14 = render(React.createElement(Grommet, {
+    var _render14 = render( /*#__PURE__*/React.createElement(Grommet, {
       theme: customTheme
-    }, React.createElement(Select, {
+    }, /*#__PURE__*/React.createElement(Select, {
       "data-testid": "test-select-style-options-1",
       id: "test-options-style-id",
       options: ['morning', 'afternoon', 'evening'],
@@ -426,9 +426,9 @@ describe('Select', function () {
       }
     };
 
-    var _render15 = render(React.createElement(Grommet, {
+    var _render15 = render( /*#__PURE__*/React.createElement(Grommet, {
       theme: customTheme
-    }, React.createElement(Select, {
+    }, /*#__PURE__*/React.createElement(Select, {
       "data-testid": "test-select-style-options-2",
       id: "test-options-style-id",
       options: ['morning', 'afternoon', 'evening'],
@@ -464,9 +464,9 @@ describe('Select', function () {
       }
     };
 
-    var _render16 = render(React.createElement(Grommet, {
+    var _render16 = render( /*#__PURE__*/React.createElement(Grommet, {
       theme: customTheme
-    }, React.createElement(Select, {
+    }, /*#__PURE__*/React.createElement(Select, {
       "data-testid": "test-select-style-options-3",
       id: "test-options-style-id",
       options: ['morning', 'afternoon', 'evening'],
@@ -502,9 +502,9 @@ describe('Select', function () {
       }
     };
 
-    var _render17 = render(React.createElement(Grommet, {
+    var _render17 = render( /*#__PURE__*/React.createElement(Grommet, {
       theme: customTheme
-    }, React.createElement(Select, {
+    }, /*#__PURE__*/React.createElement(Select, {
       "data-testid": "applies-custom-hover-style",
       id: "applies-custom-hover-style-id",
       options: ['morning', 'afternoon', 'evening'],
@@ -531,9 +531,9 @@ describe('Select', function () {
       }
     };
 
-    var _render18 = render(React.createElement(Grommet, {
+    var _render18 = render( /*#__PURE__*/React.createElement(Grommet, {
       theme: customTheme
-    }, React.createElement(Select, {
+    }, /*#__PURE__*/React.createElement(Select, {
       options: ['morning', 'afternoon', 'evening'],
       placeholder: "Select..."
     }))),
@@ -553,7 +553,7 @@ describe('Select', function () {
       var _React$useState = React.useState(),
           value = _React$useState[0];
 
-      return React.createElement(Select, {
+      return /*#__PURE__*/React.createElement(Select, {
         id: "test-select",
         placeholder: "test select",
         labelKey: "name",
@@ -569,7 +569,7 @@ describe('Select', function () {
       });
     };
 
-    var _render19 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render19 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render19.getByPlaceholderText,
         getByText = _render19.getByText,
         container = _render19.container;
@@ -592,7 +592,7 @@ describe('Select', function () {
       var _React$useState2 = React.useState(),
           value = _React$useState2[0];
 
-      return React.createElement(Select, {
+      return /*#__PURE__*/React.createElement(Select, {
         id: "test-select",
         placeholder: "test select",
         labelKey: "name",
@@ -610,7 +610,7 @@ describe('Select', function () {
       });
     };
 
-    var _render20 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render20 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render20.getByPlaceholderText,
         getByText = _render20.getByText,
         container = _render20.container;
@@ -644,7 +644,7 @@ describe('Select', function () {
       var _React$useState3 = React.useState(),
           value = _React$useState3[0];
 
-      return React.createElement(Select, {
+      return /*#__PURE__*/React.createElement(Select, {
         id: "test-select",
         placeholder: "test select",
         labelKey: "name",
@@ -661,7 +661,7 @@ describe('Select', function () {
       });
     };
 
-    var _render21 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render21 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render21.getByPlaceholderText,
         getByText = _render21.getByText,
         container = _render21.container;
@@ -684,7 +684,7 @@ describe('Select', function () {
       var _React$useState4 = React.useState([]),
           value = _React$useState4[0];
 
-      return React.createElement(Select, {
+      return /*#__PURE__*/React.createElement(Select, {
         id: "test-select",
         placeholder: "test select",
         labelKey: "name",
@@ -702,7 +702,7 @@ describe('Select', function () {
       });
     };
 
-    var _render22 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render22 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render22.getByPlaceholderText,
         getByText = _render22.getByText,
         container = _render22.container;
@@ -725,7 +725,7 @@ describe('Select', function () {
       var _React$useState5 = React.useState(),
           value = _React$useState5[0];
 
-      return React.createElement(Select, {
+      return /*#__PURE__*/React.createElement(Select, {
         id: "test-select",
         placeholder: "test select",
         labelKey: "name",
@@ -746,7 +746,7 @@ describe('Select', function () {
       });
     };
 
-    var _render23 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render23 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render23.getByPlaceholderText,
         getByText = _render23.getByText,
         container = _render23.container;
@@ -766,7 +766,7 @@ describe('Select', function () {
       var _React$useState6 = React.useState([1]),
           value = _React$useState6[0];
 
-      return React.createElement(Select, {
+      return /*#__PURE__*/React.createElement(Select, {
         id: "test-select",
         placeholder: "test select",
         labelKey: "name",
@@ -787,7 +787,7 @@ describe('Select', function () {
       });
     };
 
-    var _render24 = render(React.createElement(Grommet, null, React.createElement(Test, null))),
+    var _render24 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
         getByPlaceholderText = _render24.getByPlaceholderText,
         getByText = _render24.getByText,
         container = _render24.container;

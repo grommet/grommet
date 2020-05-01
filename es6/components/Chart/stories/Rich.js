@@ -72,12 +72,12 @@ var RichChart = function RichChart() {
     values: values,
     overflow: true
   };
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     width: "medium",
@@ -85,12 +85,12 @@ var RichChart = function RichChart() {
       vertical: 'small'
     }
   }, xAxis.map(function (x) {
-    return React.createElement(Text, {
+    return /*#__PURE__*/React.createElement(Text, {
       key: x
     }, x);
-  })), React.createElement(Stack, {
+  })), /*#__PURE__*/React.createElement(Stack, {
     guidingChild: "last"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     justify: "between"
   }, yAxis.map(function (y, index) {
@@ -106,26 +106,26 @@ var RichChart = function RichChart() {
       align = 'center';
     }
 
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       key: y,
       direction: "row",
       align: align
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       pad: {
         horizontal: 'small'
       }
-    }, React.createElement(Text, null, y)), React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Text, null, y)), /*#__PURE__*/React.createElement(Box, {
       border: "top",
       flex: true
     }));
-  })), React.createElement(Chart, _extends({}, chartProps, {
+  })), /*#__PURE__*/React.createElement(Chart, _extends({}, chartProps, {
     type: "area",
     color: {
       color: 'accent-1',
       opacity: 'medium'
     },
     thickness: "hair"
-  })), React.createElement(Chart, _extends({}, chartProps, {
+  })), /*#__PURE__*/React.createElement(Chart, _extends({}, chartProps, {
     type: "line",
     round: true,
     color: {
@@ -137,5 +137,5 @@ var RichChart = function RichChart() {
 };
 
 storiesOf('Chart', module).add('Rich', function () {
-  return React.createElement(RichChart, null);
+  return /*#__PURE__*/React.createElement(RichChart, null);
 });

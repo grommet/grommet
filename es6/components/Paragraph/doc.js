@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { colorPropType, getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
 export var doc = function doc(Paragraph) {
   var DocumentedParagraph = describe(Paragraph).availableAt(getAvailableAtBadge('Paragraph')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
-  DocumentedParagraph.propTypes = _extends({}, genericProps, {
+  DocumentedParagraph.propTypes = _extends(_extends({}, genericProps), {}, {
     color: colorPropType.description('A color identifier to use for the text color.'),
     fill: PropTypes.bool.description('Whether the width should fill the container.').defaultValue(false),
     responsive: PropTypes.bool.description("Whether margin should be scaled for mobile environments.").defaultValue(true),

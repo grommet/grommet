@@ -19,17 +19,17 @@ var DateMaskedInput = function DateMaskedInput() {
       value = _React$useState[0],
       setValue = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.MaskedInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     mask: [{
       length: [1, 2],
       options: Array.from({
@@ -70,5 +70,5 @@ var DateMaskedInput = function DateMaskedInput() {
 };
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Date', function () {
-  return _react["default"].createElement(DateMaskedInput, null);
+  return /*#__PURE__*/_react["default"].createElement(DateMaskedInput, null);
 });

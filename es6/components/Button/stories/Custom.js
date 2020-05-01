@@ -60,57 +60,57 @@ var coloredButton = {
 };
 
 var CustomTheme = function CustomTheme() {
-  return React.createElement(React.Fragment, null, React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     justify: "center",
     pad: "large",
     direction: "row",
     gap: "small"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "custom theme",
     onClick: function onClick() {},
     primary: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "custom active primary",
     onClick: function onClick() {},
     primary: true,
     active: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "primary disabled",
     onClick: function onClick() {},
     primary: true,
     disabled: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Disabled",
     onClick: function onClick() {},
     disabled: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Plain Disabled",
     onClick: function onClick() {},
     plain: true,
     disabled: true
-  }))), React.createElement(Grommet, {
+  }))), /*#__PURE__*/React.createElement(Grommet, {
     theme: coloredButton
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     as: "span",
     label: "theme on dark background",
     primary: true
-  }))), React.createElement(Grommet, {
+  }))), /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     as: "span",
     label: "Custom as=span"
   }))));
 };
 
 storiesOf('Button', module).add('Custom', function () {
-  return React.createElement(CustomTheme, null);
+  return /*#__PURE__*/React.createElement(CustomTheme, null);
 });

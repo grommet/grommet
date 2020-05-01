@@ -23,12 +23,12 @@ var columns = [{
 }];
 
 var Example = function Example() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.DataTable, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: columns,
     data: _data.DATA,
     step: 10,
@@ -37,5 +37,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('No Primary', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

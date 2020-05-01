@@ -99,7 +99,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
     setTargetBounds(fullBounds);
     return undefined;
   }, [layerTarget]);
-  var content = React.createElement(StyledContainer, _extends({
+  var content = /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
     id: id,
     full: full,
@@ -111,14 +111,14 @@ var LayerContainer = forwardRef(function (_ref, ref) {
     plain: plain,
     responsive: responsive,
     dir: theme.dir
-  }), React.createElement(HiddenAnchor, {
+  }), /*#__PURE__*/React.createElement(HiddenAnchor, {
     ref: anchorRef,
     tabIndex: "-1",
     "aria-hidden": "true"
   }), children);
 
   if (modal) {
-    content = React.createElement(StyledLayer, {
+    content = /*#__PURE__*/React.createElement(StyledLayer, {
       ref: layerRef,
       id: id,
       targetBounds: targetBounds,
@@ -127,7 +127,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
       responsive: responsive,
       tabIndex: "-1",
       dir: theme.dir
-    }, React.createElement(StyledOverlay, {
+    }, /*#__PURE__*/React.createElement(StyledOverlay, {
       plain: plain,
       onMouseDown: onClickOutside,
       responsive: responsive
@@ -135,7 +135,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
   }
 
   if (onEsc) {
-    content = React.createElement(Keyboard, {
+    content = /*#__PURE__*/React.createElement(Keyboard, {
       onEsc: onEsc
     }, content);
   }
@@ -144,8 +144,8 @@ var LayerContainer = forwardRef(function (_ref, ref) {
     var dark = backgroundIsDark(theme.layer.background, theme);
 
     if (dark !== undefined && dark !== theme.dark) {
-      content = React.createElement(ThemeContext.Provider, {
-        value: _extends({}, theme, {
+      content = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+        value: _extends(_extends({}, theme), {}, {
           dark: dark
         })
       }, content);
@@ -153,7 +153,7 @@ var LayerContainer = forwardRef(function (_ref, ref) {
   }
 
   if (modal) {
-    content = React.createElement(FocusedContainer, {
+    content = /*#__PURE__*/React.createElement(FocusedContainer, {
       hidden: position === 'hidden',
       restrictScroll: true
     }, content);

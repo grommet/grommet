@@ -19,17 +19,17 @@ var customFocus = (0, _utils.deepMerge)(_grommet.grommet, {
 });
 
 var CustomDefaultProps = function CustomDefaultProps() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customFocus
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "medium",
     width: "medium"
-  }, _react["default"].createElement(_grommet.Text, null, "Focus on the input components and notice the custom focus color"), _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Focus on the input components and notice the custom focus color"), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     placeholder: "hi"
-  }), _react["default"].createElement(_grommet.Anchor, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: ""
-  }, "Anchor"), _react["default"].createElement(_grommet.Menu, {
+  }, "Anchor"), /*#__PURE__*/_react["default"].createElement(_grommet.Menu, {
     label: "Menu",
     items: [{
       label: 'One',
@@ -37,12 +37,12 @@ var CustomDefaultProps = function CustomDefaultProps() {
     }, {
       label: 'Two'
     }]
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Button",
     onClick: function onClick() {}
   })));
 };
 
 (0, _react2.storiesOf)('Theme', module).add('Focus', function () {
-  return _react["default"].createElement(CustomDefaultProps, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomDefaultProps, null);
 });

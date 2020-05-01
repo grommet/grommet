@@ -56,9 +56,7 @@ var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig(
   componentId: "sc-1wi0ul8-2"
 })(["display:block;width:100%;"]);
 
-var SelectContainer =
-/*#__PURE__*/
-function (_Component) {
+var SelectContainer = /*#__PURE__*/function (_Component) {
   _inheritsLoose(SelectContainer, _Component);
 
   function SelectContainer(props) {
@@ -343,21 +341,21 @@ function (_Component) {
     var customSearchInput = theme.select.searchInput;
     var SelectTextInput = customSearchInput || _TextInput.TextInput;
 
-    var selectOptionsStyle = _extends({}, theme.select.options.box, {}, theme.select.options.container);
+    var selectOptionsStyle = _extends(_extends({}, theme.select.options.box), theme.select.options.container);
 
-    return _react["default"].createElement(_Keyboard.Keyboard, {
+    return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: this.onSelectOption,
       onUp: this.onPreviousOption,
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
-    }, _react["default"].createElement(_StyledSelect.StyledContainer, {
+    }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledContainer, {
       as: _Box.Box,
       id: id ? id + "__select-drop" : undefined,
       dropHeight: dropHeight
-    }, onSearch && _react["default"].createElement(_Box.Box, {
+    }, onSearch && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,
       flex: false
-    }, _react["default"].createElement(SelectTextInput, {
+    }, /*#__PURE__*/_react["default"].createElement(SelectTextInput, {
       focusIndicator: !customSearchInput,
       size: "small",
       ref: this.searchRef,
@@ -365,11 +363,11 @@ function (_Component) {
       value: search,
       placeholder: searchPlaceholder,
       onChange: this.onSearchChange
-    })), _react["default"].createElement(OptionsBox, {
+    })), /*#__PURE__*/_react["default"].createElement(OptionsBox, {
       role: "menubar",
       tabIndex: "-1",
       ref: this.optionsRef
-    }, options.length > 0 ? _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+    }, options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
       items: options,
       step: theme.select.step,
       onMore: onMore,
@@ -381,7 +379,7 @@ function (_Component) {
       var isSelected = _this3.isSelected(index);
 
       var isActive = activeIndex === index;
-      return _react["default"].createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
+      return /*#__PURE__*/_react["default"].createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
       , {
         key: index,
         ref: optionRef,
@@ -398,17 +396,17 @@ function (_Component) {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : _react["default"].createElement(OptionBox, _extends({}, selectOptionsStyle, {
+      }) : /*#__PURE__*/_react["default"].createElement(OptionBox, _extends({}, selectOptionsStyle, {
         selected: isSelected
-      }), _react["default"].createElement(_Text.Text, theme.select.options.text, _this3.optionLabel(index))));
-    }) : _react["default"].createElement(SelectOption, {
+      }), /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.options.text, _this3.optionLabel(index))));
+    }) : /*#__PURE__*/_react["default"].createElement(SelectOption, {
       key: "search_empty",
       tabIndex: "-1",
       role: "menuitem",
       hoverIndicator: "background",
       disabled: true,
       option: emptySearchMessage
-    }, _react["default"].createElement(OptionBox, selectOptionsStyle, _react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));
+    }, /*#__PURE__*/_react["default"].createElement(OptionBox, selectOptionsStyle, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));
   };
 
   return SelectContainer;

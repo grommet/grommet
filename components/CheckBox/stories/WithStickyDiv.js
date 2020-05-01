@@ -50,21 +50,21 @@ var CheckBoxWithStickyDiv = function CheckBoxWithStickyDiv() {
     };
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     align: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "120px",
     width: "120px",
     overflow: "auto",
     style: boxStyle
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: titleBoxBackground,
     style: titleBoxStyle
   }, "Click & Scroll"), checkboxes.map(function (item) {
-    return _react["default"].createElement(_grommet.CheckBox, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
       key: item,
       checked: checks.includes(item),
       label: item,
@@ -74,5 +74,5 @@ var CheckBoxWithStickyDiv = function CheckBoxWithStickyDiv() {
 };
 
 (0, _react2.storiesOf)('CheckBox', module).add('With Sticky Div', function () {
-  return _react["default"].createElement(CheckBoxWithStickyDiv, null);
+  return /*#__PURE__*/_react["default"].createElement(CheckBoxWithStickyDiv, null);
 });

@@ -38,14 +38,14 @@ var CustomRadioButtomGroup = function CustomRadioButtomGroup(_ref) {
       value = _useState[0],
       setValue = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(ThemeContext.Consumer, null, function (theme) {
+  }, /*#__PURE__*/React.createElement(ThemeContext.Consumer, null, function (theme) {
     return console.log(JSON.stringify(theme.radioButton));
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(RadioButtonGroup, _extends({
+  }, /*#__PURE__*/React.createElement(RadioButtonGroup, _extends({
     name: "radio",
     options: [{
       label: 'Choice 1',
@@ -65,5 +65,5 @@ var CustomRadioButtomGroup = function CustomRadioButtomGroup(_ref) {
 };
 
 storiesOf('RadioButtonGroup', module).add('Custom Theme', function () {
-  return React.createElement(CustomRadioButtomGroup, null);
+  return /*#__PURE__*/React.createElement(CustomRadioButtomGroup, null);
 });

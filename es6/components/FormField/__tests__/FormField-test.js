@@ -12,68 +12,68 @@ var CustomFormField = styled(FormField).withConfig({
 })(["font-size:40px;"]);
 describe('FormField', function () {
   test('default', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, null), React.createElement(FormField, null, React.createElement(TextInput, null))));
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, null), /*#__PURE__*/React.createElement(FormField, null, /*#__PURE__*/React.createElement(TextInput, null))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('label', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       label: "test label"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('help', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       help: "test help"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('error', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       error: "test error"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('info', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       info: "test info"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('htmlFor', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       htmlFor: "test-id"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('margin', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       margin: "medium"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('empty margin', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       margin: "none"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('pad', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       pad: true
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('abut', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       theme: {
         formField: {
           border: {
@@ -93,14 +93,14 @@ describe('FormField', function () {
           }
         }
       }
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       htmlFor: "test-id"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('abut with margin', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       theme: {
         formField: {
           border: {
@@ -120,7 +120,7 @@ describe('FormField', function () {
           }
         }
       }
-    }, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(FormField, {
       margin: "medium",
       htmlFor: "test-id"
     })));
@@ -128,32 +128,32 @@ describe('FormField', function () {
     expect(tree).toMatchSnapshot();
   });
   test('custom formfield', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(CustomFormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(CustomFormField, {
       htmlFor: "test-id"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       disabled: true
-    }), " ", React.createElement(Form, null, React.createElement(FormField, {
+    }), " ", /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
       disabled: true
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('required', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FormField, {
       required: true
-    }), " ", React.createElement(Form, null, React.createElement(FormField, {
+    }), " ", /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
       required: true
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('custom label', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       theme: {
         formField: {
           label: {
@@ -164,14 +164,14 @@ describe('FormField', function () {
           }
         }
       }
-    }, React.createElement(Form, null, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
       label: "label"
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('disabled with custom label', function () {
-    var component = renderer.create(React.createElement(Grommet, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
       theme: {
         formField: {
           label: {
@@ -187,7 +187,7 @@ describe('FormField', function () {
           }
         }
       }
-    }, React.createElement(Form, null, React.createElement(FormField, {
+    }, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, {
       disabled: true,
       label: "label"
     }))));

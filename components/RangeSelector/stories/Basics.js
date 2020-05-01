@@ -29,28 +29,28 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
     setRange(values);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: direction === 'vertical' ? 'column' : 'row',
     justify: "between"
   }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: value,
       width: "xxsmall",
       height: "xxsmall",
       align: "center",
       pad: "small",
       border: false
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       style: {
         fontFamily: 'monospace'
       }
     }, value));
-  })), _react["default"].createElement(_grommet.RangeSelector, _extends({
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, _extends({
     direction: direction,
     min: 10,
     max: 20,
@@ -61,13 +61,13 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
 };
 
 (0, _react2.storiesOf)('RangeSelector', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleRangeSelector, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleRangeSelector, null);
 }).add('Step', function () {
-  return _react["default"].createElement(SimpleRangeSelector, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleRangeSelector, {
     step: 2
   });
 }).add('Vertical', function () {
-  return _react["default"].createElement(SimpleRangeSelector, {
+  return /*#__PURE__*/_react["default"].createElement(SimpleRangeSelector, {
     direction: "vertical"
   });
 });

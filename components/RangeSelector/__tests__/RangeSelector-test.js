@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 describe('RangeSelector', function () {
   afterEach(_react2.cleanup);
   test('basic', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       values: [20, 30]
     })));
 
@@ -25,7 +25,7 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('color', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       color: "accent-1",
       values: [20, 30]
     })));
@@ -34,10 +34,10 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('direction', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       direction: "horizontal",
       values: [20, 30]
-    }), _react["default"].createElement(_.RangeSelector, {
+    }), /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       direction: "vertical",
       values: [20, 30]
     })));
@@ -46,10 +46,10 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('invert', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       invert: true,
       values: [20, 30]
-    }), _react["default"].createElement(_.RangeSelector, {
+    }), /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       invert: false,
       values: [20, 30]
     })));
@@ -58,7 +58,7 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('max', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       max: 50,
       values: [20, 30]
     })));
@@ -67,7 +67,7 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('min', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       min: 10,
       values: [20, 30]
     })));
@@ -76,8 +76,8 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('opacity', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, ['weak', 'medium', 'strong'].map(function (opacity) {
-      return _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, ['weak', 'medium', 'strong'].map(function (opacity) {
+      return /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
         key: opacity,
         opacity: opacity,
         values: [20, 30]
@@ -88,8 +88,8 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('round', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, ['xsmall', 'small', 'medium', 'large', 'full'].map(function (round) {
-      return _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, ['xsmall', 'small', 'medium', 'large', 'full'].map(function (round) {
+      return /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
         key: round,
         round: round,
         values: [20, 30]
@@ -100,8 +100,8 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('size', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(function (size) {
-      return _react["default"].createElement(_.RangeSelector, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(function (size) {
+      return /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
         key: size,
         size: size,
         values: [20, 30]
@@ -122,7 +122,7 @@ describe('RangeSelector', function () {
       return setValues(nextValues);
     });
 
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       values: [0, 100],
       step: 3,
       onChange: onChange
@@ -162,7 +162,7 @@ describe('RangeSelector', function () {
   test('handle keyboard', function () {
     var onChange = jest.fn();
 
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       values: [20, 30],
       onChange: onChange
     }))),
@@ -204,7 +204,7 @@ describe('RangeSelector', function () {
   test('handle mouse', function () {
     var onChange = jest.fn();
 
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RangeSelector, {
+    var _render3 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RangeSelector, {
       values: [20, 30],
       onChange: onChange
     }))),

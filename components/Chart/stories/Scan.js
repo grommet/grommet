@@ -38,9 +38,9 @@ var ScanChart = function ScanChart(props) {
       pad = _useMemo.pad,
       thickness = _useMemo.thickness;
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Keyboard, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Keyboard, {
     onLeft: function onLeft() {
       return setActive(Math.max(0, active - 1));
     },
@@ -50,45 +50,45 @@ var ScanChart = function ScanChart(props) {
     onEsc: function onEsc() {
       return setActive(undefined);
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     tabIndex: "0",
     direction: "row",
     margin: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "xxsmall"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true,
     justify: "between"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: "top",
     align: "end"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Text, null, axis[1][0]))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][0]))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: "bottom",
     align: "end"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Text, null, axis[1][1])))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][1])))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "xxsmall",
     flex: false
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "large"
-  }, _react["default"].createElement(_grommet.Stack, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     guidingChild: "first"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: pad
     }
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: "bar",
     overflow: true,
     bounds: bounds,
@@ -98,19 +98,19 @@ var ScanChart = function ScanChart(props) {
       width: 'full',
       height: 'small'
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     direction: "row",
     justify: "between"
   }, values.map(function (v, i) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       flex: false,
       key: v[0]
-    }, _react["default"].createElement(_grommet.Stack, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
       fill: true,
       anchor: "center",
       interactiveChild: "first"
-    }, _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       fill: true,
       pad: pad,
       background: active === i ? {
@@ -125,7 +125,7 @@ var ScanChart = function ScanChart(props) {
       },
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
-    }), active === i && _react["default"].createElement(_grommet.Box, {
+    }), active === i && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       animation: {
         type: 'fadeIn',
         duration: 100
@@ -134,19 +134,19 @@ var ScanChart = function ScanChart(props) {
       pad: "small",
       round: "small",
       background: "dark-3"
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "large"
-    }, data[active].value), _react["default"].createElement(_grommet.Text, {
+    }, data[active].value), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       className: "chromatic-ignore",
       size: "small"
     }, new Date(data[active].time).toLocaleDateString()))));
-  }))), _react["default"].createElement(_grommet.Box, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "xxsmall",
     direction: "row",
     justify: "between",
     align: "center"
   }, axis[0].map(function (t) {
-    return _react["default"].createElement(_grommet.Text, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       className: "chromatic-ignore",
       key: t
     }, new Date(t).toLocaleDateString());
@@ -154,7 +154,7 @@ var ScanChart = function ScanChart(props) {
 };
 
 (0, _react2.storiesOf)('Chart', module).add('Scan', function () {
-  return _react["default"].createElement(ScanChart, {
+  return /*#__PURE__*/_react["default"].createElement(ScanChart, {
     data: (0, _data.generateData)(30, 100),
     max: 100
   });

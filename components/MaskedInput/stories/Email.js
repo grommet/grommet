@@ -31,27 +31,27 @@ var EmailMaskedInput = function EmailMaskedInput() {
     regexp: /^[\w]+$/,
     placeholder: 'com'
   }];
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.MaskedInput, {
-    icon: _react["default"].createElement(_grommetIcons.MailOption, null),
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.MailOption, null),
     mask: emailMask,
     value: value,
     onChange: function onChange(event) {
       return setValue(event.target.value);
     }
-  }), _react["default"].createElement(_grommet.MaskedInput, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     reverse: true,
-    icon: _react["default"].createElement(_grommetIcons.MailOption, null),
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.MailOption, null),
     mask: emailMask,
     value: value,
     onChange: function onChange(event) {
@@ -61,5 +61,5 @@ var EmailMaskedInput = function EmailMaskedInput() {
 };
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Email with Icon', function () {
-  return _react["default"].createElement(EmailMaskedInput, null);
+  return /*#__PURE__*/_react["default"].createElement(EmailMaskedInput, null);
 });

@@ -278,7 +278,7 @@ var DropContainer = forwardRef(function (_ref, ref) {
       (ref || dropRef).current.focus();
     }
   }, [ref, restrictFocus]);
-  var content = React.createElement(StyledDrop, _extends({
+  var content = /*#__PURE__*/React.createElement(StyledDrop, _extends({
     ref: ref || dropRef,
     as: Box,
     plain: plain,
@@ -293,19 +293,19 @@ var DropContainer = forwardRef(function (_ref, ref) {
     var dark = backgroundIsDark(theme.global.drop.background, theme);
 
     if (dark !== undefined && dark !== theme.dark) {
-      content = React.createElement(ThemeContext.Provider, {
-        value: _extends({}, theme, {
+      content = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+        value: _extends(_extends({}, theme), {}, {
           dark: dark
         })
       }, content);
     }
   }
 
-  return React.createElement(PortalContext.Provider, {
+  return /*#__PURE__*/React.createElement(PortalContext.Provider, {
     value: nextPortalContext
-  }, React.createElement(FocusedContainer, {
+  }, /*#__PURE__*/React.createElement(FocusedContainer, {
     onKeyDown: onEsc && preventLayerClose
-  }, React.createElement(Keyboard, {
+  }, /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: onEsc ? function (event) {
       event.stopPropagation();
       onEsc(event);

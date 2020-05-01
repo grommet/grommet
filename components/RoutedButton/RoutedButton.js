@@ -25,9 +25,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var RoutedButton =
-/*#__PURE__*/
-function (_Component) {
+var RoutedButton = /*#__PURE__*/function (_Component) {
   _inheritsLoose(RoutedButton, _Component);
 
   function RoutedButton() {
@@ -85,7 +83,7 @@ function (_Component) {
       console.warn("This component will be deprecated in the upcoming releases.\n         Please refer to https://github.com/grommet/grommet/issues/2855 \n         for more information.");
     }
 
-    return _react["default"].createElement(_Button.Button, _extends({}, rest, {
+    return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({}, rest, {
       href: path || href,
       disabled: !path && !onClick,
       onClick: this.onClick

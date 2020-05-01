@@ -13,25 +13,25 @@ var _ = require("..");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 test('Paragraph renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Paragraph, null)));
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Paragraph, null)));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Paragraph size renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Paragraph, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     size: "small"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     size: "medium"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     size: "large"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     size: "xlarge"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     size: "xxlarge"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     fill: true
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     fill: false
   })));
 
@@ -39,19 +39,19 @@ test('Paragraph size renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Paragraph margin renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Paragraph, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     margin: "small"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     margin: "medium"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     margin: "large"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     margin: "none"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     margin: {
       bottom: 'small'
     }
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     margin: {
       top: 'small'
     }
@@ -61,11 +61,11 @@ test('Paragraph margin renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Paragraph textAlign renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Paragraph, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     textAlign: "start"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     textAlign: "center"
-  }), _react["default"].createElement(_.Paragraph, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Paragraph, {
     textAlign: "end"
   })));
 

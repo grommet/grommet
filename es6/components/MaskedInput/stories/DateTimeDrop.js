@@ -21,24 +21,24 @@ var DropContent = function DropContent(_ref) {
     return onClose(date || initialDate, time || initialTime);
   };
 
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center"
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     animate: false,
     date: date || initialDate,
     onSelect: setDate,
     showAdjacentDays: false
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     flex: false,
     pad: "medium",
     gap: "medium"
-  }, React.createElement(Keyboard, {
+  }, /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: function onEnter(event) {
       event.preventDefault(); // so drop doesn't re-open
 
       close();
     }
-  }, React.createElement(MaskedInput, {
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
     mask: [{
       length: [1, 2],
       options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
@@ -64,9 +64,9 @@ var DropContent = function DropContent(_ref) {
     onChange: function onChange(event) {
       return setTime(event.target.value);
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     flex: false
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Done",
     onClick: close
   }))));
@@ -94,12 +94,12 @@ var DateTimeDropButton = function DateTimeDropButton() {
     }, 1);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DropButton, {
+  }, /*#__PURE__*/React.createElement(DropButton, {
     open: open,
     onClose: function onClose() {
       return setOpen(false);
@@ -107,21 +107,21 @@ var DateTimeDropButton = function DateTimeDropButton() {
     onOpen: function onOpen() {
       return setOpen(true);
     },
-    dropContent: React.createElement(DropContent, {
+    dropContent: /*#__PURE__*/React.createElement(DropContent, {
       date: date,
       time: time,
       onClose: onClose
     })
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "medium",
     align: "center",
     pad: "small"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     color: date ? undefined : 'dark-5'
-  }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), React.createElement(Schedule, null)))));
+  }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/React.createElement(Schedule, null)))));
 };
 
 storiesOf('MaskedInput', module).add('Date Time Drop', function () {
-  return React.createElement(DateTimeDropButton, null);
+  return /*#__PURE__*/React.createElement(DateTimeDropButton, null);
 });

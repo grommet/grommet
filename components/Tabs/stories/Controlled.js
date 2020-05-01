@@ -21,41 +21,41 @@ var ControlledTabs = function ControlledTabs() {
     return setIndex(nextIndex);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Tabs, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tabs, {
     activeIndex: index,
     onActive: onActive
-  }, _react["default"].createElement(_grommet.Tab, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
     title: "Tab 1"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, _react["default"].createElement(_grommetIcons.Attraction, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
     size: "xlarge"
-  }))), _react["default"].createElement(_grommet.Tab, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
     title: "Tab 2"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, _react["default"].createElement(_grommetIcons.TreeOption, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
     size: "xlarge"
-  }))), _react["default"].createElement(_grommet.Tab, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
     title: "Tab 3"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, _react["default"].createElement(_grommetIcons.Car, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
     size: "xlarge"
   })))));
 };
 
 (0, _react2.storiesOf)('Tabs', module).add('Controlled', function () {
-  return _react["default"].createElement(ControlledTabs, null);
+  return /*#__PURE__*/_react["default"].createElement(ControlledTabs, null);
 });

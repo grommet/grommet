@@ -15,12 +15,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var CONTENT = "\n  # Out of Breath\n\n  You know, sometimes in life it seems like there's no way out. Like\n  a sheep trapped in a maze designed by wolves.\n\n  [reference](#)\n\n```\nimport { Grommet } from 'grommet';\n```\n\n  > i carry your heart with me\n\n  ![alt text](//v2.grommet.io/assets/IMG_4245.jpg \"Markdown Image\")\n\n  Markdown | Less | Pretty\n  --- | --- | ---\n  *Still* | `renders` | **nicely**\n  1 | 2 | 3\n";
 
 var SimpleMarkdown = function SimpleMarkdown() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Markdown, null, CONTENT)));
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Markdown, null, CONTENT)));
 };
 
 var StyledPre = _styledComponents["default"].pre.withConfig({
@@ -29,12 +29,12 @@ var StyledPre = _styledComponents["default"].pre.withConfig({
 })(["background-color:#7d4cdb;"]);
 
 var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Markdown, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Markdown, {
     components: {
       pre: StyledPre
     }
@@ -42,7 +42,7 @@ var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
 };
 
 (0, _react2.storiesOf)('Markdown', module).add('Simple', function () {
-  return _react["default"].createElement(SimpleMarkdown, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleMarkdown, null);
 }).add('Component Override Markdown', function () {
-  return _react["default"].createElement(ComponentOverrideMarkdown, null);
+  return /*#__PURE__*/_react["default"].createElement(ComponentOverrideMarkdown, null);
 });

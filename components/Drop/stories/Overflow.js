@@ -35,20 +35,20 @@ var OverflowDrop = function OverflowDrop() {
   (0, _react.useEffect)(function () {
     return setShowDrop(true);
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     justify: "start",
     ref: targetRef
-  }, "Target"), targetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Target"), targetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     overflow: "unset",
     align: {
       top: 'bottom',
@@ -58,27 +58,27 @@ var OverflowDrop = function OverflowDrop() {
     onClose: function onClose() {
       return setShowCalendar(false);
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "small"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 4
-  }, "Select Start Date"), _react["default"].createElement("div", {
+  }, "Select Start Date"), /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       position: 'relative'
     }
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     ref: inputRef,
     value: date || '',
     placeholder: "Focus on me",
     onFocus: function onFocus() {
       return setShowCalendar(true);
     }
-  }), showCalendar && _react["default"].createElement("div", {
+  }), showCalendar && /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       position: 'absolute',
       background: '#eee'
     }
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: date,
     onSelect: onSelect,
     size: "small"
@@ -86,5 +86,5 @@ var OverflowDrop = function OverflowDrop() {
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Overflow', function () {
-  return _react["default"].createElement(OverflowDrop, null);
+  return /*#__PURE__*/_react["default"].createElement(OverflowDrop, null);
 });

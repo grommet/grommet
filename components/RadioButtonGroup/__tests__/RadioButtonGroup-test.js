@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 describe('RadioButtonGroup', function () {
   test('default', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: []
     })));
@@ -25,7 +25,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('string options', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: ['one', 'two'],
       value: "one"
@@ -35,7 +35,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options just value', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: [{
         value: 'one'
@@ -49,7 +49,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: [{
         id: 'onE',
@@ -66,7 +66,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options disabled', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: [{
         value: 'one',
@@ -82,13 +82,13 @@ describe('RadioButtonGroup', function () {
   test('children', function () {
     var child = function child(_ref) {
       var checked = _ref.checked;
-      return _react["default"].createElement(_Box.Box, {
+      return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         pad: "small",
         background: checked ? 'accent-1' : 'control'
       });
     };
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: ['one', 'two'],
       value: "one"
@@ -98,7 +98,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('adding additional props', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: [{
         id: 'ONE',

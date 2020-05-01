@@ -11,17 +11,17 @@ var customFocus = deepMerge(grommet, {
 });
 
 var CustomDefaultProps = function CustomDefaultProps() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customFocus
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     gap: "medium",
     width: "medium"
-  }, React.createElement(Text, null, "Focus on the input components and notice the custom focus color"), React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(Text, null, "Focus on the input components and notice the custom focus color"), /*#__PURE__*/React.createElement(TextInput, {
     placeholder: "hi"
-  }), React.createElement(Anchor, {
+  }), /*#__PURE__*/React.createElement(Anchor, {
     href: ""
-  }, "Anchor"), React.createElement(Menu, {
+  }, "Anchor"), /*#__PURE__*/React.createElement(Menu, {
     label: "Menu",
     items: [{
       label: 'One',
@@ -29,12 +29,12 @@ var CustomDefaultProps = function CustomDefaultProps() {
     }, {
       label: 'Two'
     }]
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     label: "Button",
     onClick: function onClick() {}
   })));
 };
 
 storiesOf('Theme', module).add('Focus', function () {
-  return React.createElement(CustomDefaultProps, null);
+  return /*#__PURE__*/React.createElement(CustomDefaultProps, null);
 });

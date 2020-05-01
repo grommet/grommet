@@ -13,7 +13,7 @@ export var SkipLinkTarget = function SkipLinkTarget(_ref) {
   var label = _ref.label,
       rest = _objectWithoutPropertiesLoose(_ref, ["label"]);
 
-  return React.createElement(HiddenAnchor, _extends({}, rest, {
+  return /*#__PURE__*/React.createElement(HiddenAnchor, _extends({}, rest, {
     tabIndex: "-1",
     "aria-hidden": "true"
   }), label);

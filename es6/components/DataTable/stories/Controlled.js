@@ -36,16 +36,16 @@ var ControlledDataTable = function ControlledDataTable() {
     }) : []);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: [{
       property: 'checkbox',
       render: function render(datum) {
-        return React.createElement(CheckBox, {
+        return /*#__PURE__*/React.createElement(CheckBox, {
           key: datum.name,
           checked: checked.indexOf(datum.name) !== -1,
           onChange: function onChange(e) {
@@ -53,7 +53,7 @@ var ControlledDataTable = function ControlledDataTable() {
           }
         });
       },
-      header: React.createElement(CheckBox, {
+      header: /*#__PURE__*/React.createElement(CheckBox, {
         checked: checked.length === DATA.length,
         indeterminate: checked.length > 0 && checked.length < DATA.length,
         onChange: onCheckAll
@@ -69,5 +69,5 @@ var ControlledDataTable = function ControlledDataTable() {
 };
 
 storiesOf('DataTable', module).add('Controlled', function () {
-  return React.createElement(ControlledDataTable, null);
+  return /*#__PURE__*/React.createElement(ControlledDataTable, null);
 });

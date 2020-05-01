@@ -283,12 +283,12 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     }).join('');
   };
 
-  return React.createElement(StyledMaskedInputContainer, {
+  return /*#__PURE__*/React.createElement(StyledMaskedInputContainer, {
     plain: plain
-  }, icon && React.createElement(StyledIcon, {
+  }, icon && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
-  }, icon), React.createElement(Keyboard, {
+  }, icon), /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: onEsc,
     onTab: showDrop ? function () {
       return setShowDrop(false);
@@ -301,7 +301,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     },
     onEnter: onSelectOption,
     onKeyDown: onKeyDown
-  }, React.createElement(StyledMaskedInput, _extends({
+  }, /*#__PURE__*/React.createElement(StyledMaskedInput, _extends({
     ref: ref || inputRef,
     id: id,
     name: name,
@@ -329,7 +329,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: onChangeInput
-  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && React.createElement(Drop, {
+  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && /*#__PURE__*/React.createElement(Drop, {
     id: id ? "masked-input-drop__" + id : undefined,
     align: {
       top: 'bottom',
@@ -343,13 +343,13 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     onEsc: function onEsc() {
       return setShowDrop(false);
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     ref: dropRef
   }, mask[activeMaskIndex].options.map(function (option, index) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       key: option,
       flex: false
-    }, React.createElement(Button, {
+    }, /*#__PURE__*/React.createElement(Button, {
       tabIndex: "-1",
       onClick: onOption(option),
       onMouseOver: function onMouseOver() {
@@ -358,7 +358,7 @@ var MaskedInput = forwardRef(function (_ref, ref) {
       onFocus: function onFocus() {},
       active: index === activeOptionIndex,
       hoverIndicator: "background"
-    }, React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       pad: {
         horizontal: 'small',
         vertical: 'xsmall'

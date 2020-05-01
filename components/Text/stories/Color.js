@@ -11,13 +11,13 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Color = function Color() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "accent-1"
   }, "Colored Text"));
 };
 
 (0, _react2.storiesOf)('Text', module).add('Color', function () {
-  return _react["default"].createElement(Color, null);
+  return /*#__PURE__*/_react["default"].createElement(Color, null);
 });

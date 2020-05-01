@@ -19,12 +19,12 @@ var CustomSizeCalendar = function CustomSizeCalendar() {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customHeading
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Calendar, {
+  }, /*#__PURE__*/React.createElement(Calendar, {
     date: date,
     onSelect: onSelect,
     bounds: ['2018-09-08', '2020-12-13']
@@ -32,5 +32,5 @@ var CustomSizeCalendar = function CustomSizeCalendar() {
 };
 
 storiesOf('Calendar', module).add('Heading Size', function () {
-  return React.createElement(CustomSizeCalendar, null);
+  return /*#__PURE__*/React.createElement(CustomSizeCalendar, null);
 });

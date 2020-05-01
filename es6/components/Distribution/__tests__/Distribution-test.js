@@ -5,7 +5,7 @@ import { Grommet } from '../../Grommet';
 import { Distribution } from '..';
 describe('Distribution', function () {
   test('renders', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(Distribution, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Distribution, {
       values: []
     }))),
         container = _render.container;
@@ -13,7 +13,7 @@ describe('Distribution', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('values renders', function () {
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(Distribution, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Distribution, {
       values: [{
         value: 20
       }, {
@@ -24,15 +24,15 @@ describe('Distribution', function () {
         value: 1
       }]
     }, function (value) {
-      return React.createElement("span", null, value.value);
+      return /*#__PURE__*/React.createElement("span", null, value.value);
     }))),
         container = _render2.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
   test('gap renders', function () {
-    var _render3 = render(React.createElement(Grommet, null, ['xsmall', 'small', 'medium', 'large'].map(function (gap) {
-      return React.createElement(Distribution, {
+    var _render3 = render( /*#__PURE__*/React.createElement(Grommet, null, ['xsmall', 'small', 'medium', 'large'].map(function (gap) {
+      return /*#__PURE__*/React.createElement(Distribution, {
         key: gap,
         gap: gap,
         values: [{
@@ -43,7 +43,7 @@ describe('Distribution', function () {
           value: 1
         }]
       }, function (value) {
-        return React.createElement("span", null, value.value);
+        return /*#__PURE__*/React.createElement("span", null, value.value);
       });
     }))),
         container = _render3.container;

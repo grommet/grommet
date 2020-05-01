@@ -19,24 +19,24 @@ var PasswordInput = function PasswordInput() {
       reveal = _React$useState2[0],
       setReveal = _React$useState2[1];
 
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium",
     direction: "row",
     margin: "large",
     align: "center",
     round: "small",
     border: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     plain: true,
     type: reveal ? 'text' : 'password',
     value: value,
     onChange: function onChange(event) {
       return setValue(event.target.value);
     }
-  }), _react["default"].createElement(_grommet.Button, {
-    icon: reveal ? _react["default"].createElement(_grommetIcons.View, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    icon: reveal ? /*#__PURE__*/_react["default"].createElement(_grommetIcons.View, {
       size: "medium"
-    }) : _react["default"].createElement(_grommetIcons.Hide, {
+    }) : /*#__PURE__*/_react["default"].createElement(_grommetIcons.Hide, {
       size: "medium"
     }),
     onClick: function onClick() {
@@ -46,5 +46,5 @@ var PasswordInput = function PasswordInput() {
 };
 
 (0, _react2.storiesOf)('TextInput', module).add('Password', function () {
-  return _react["default"].createElement(PasswordInput, null);
+  return /*#__PURE__*/_react["default"].createElement(PasswordInput, null);
 });

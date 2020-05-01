@@ -33,7 +33,7 @@ var doc = function doc(MaskedInput) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({
+var themeDoc = _extends(_extends(_extends({
   'global.hover.background': {
     description: 'The background style when hovering.',
     type: 'string | { color: string, opacity: string }',
@@ -54,6 +54,6 @@ var themeDoc = _extends({
     type: 'string',
     defaultValue: '18px'
   }
-}, _utils.themeDocUtils.focusStyle, {}, _utils.themeDocUtils.placeholderStyle, {}, _utils.themeDocUtils.inputStyle);
+}, _utils.themeDocUtils.focusStyle), _utils.themeDocUtils.placeholderStyle), _utils.themeDocUtils.inputStyle);
 
 exports.themeDoc = themeDoc;

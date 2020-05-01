@@ -70,12 +70,12 @@ var ThemedToggle = function ThemedToggle(props) {
       checked = _useState[0],
       setChecked = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: (0, _utils.deepMerge)(_themes.grommet, customToggleTheme)
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.CheckBox, _extends({}, props, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, _extends({}, props, {
     label: "Choice",
     checked: checked,
     onChange: function onChange(event) {
@@ -86,5 +86,5 @@ var ThemedToggle = function ThemedToggle(props) {
 };
 
 (0, _react2.storiesOf)('CheckBox', module).add('Custom Toggle', function () {
-  return _react["default"].createElement(ThemedToggle, null);
+  return /*#__PURE__*/_react["default"].createElement(ThemedToggle, null);
 });

@@ -14,9 +14,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var Option =
-/*#__PURE__*/
-function (_PureComponent) {
+var Option = /*#__PURE__*/function (_PureComponent) {
   _inheritsLoose(Option, _PureComponent);
 
   function Option() {
@@ -29,12 +27,12 @@ function (_PureComponent) {
     var _this$props = this.props,
         value = _this$props.value,
         selected = _this$props.selected;
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       gap: "small",
       align: "center",
       pad: "xsmall"
-    }, _react["default"].createElement(_grommet.CheckBox, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
       tabIndex: "-1",
       checked: selected,
       onChange: function onChange() {}
@@ -62,15 +60,15 @@ var ManyOptions = function ManyOptions() {
       options = _React$useState2[0],
       setOptions = _React$useState2[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     multiple: true,
     closeOnChange: false,
     placeholder: "select an option...",
@@ -101,7 +99,7 @@ var ManyOptions = function ManyOptions() {
       setSelected(nextSelected);
     }
   }, function (option, index) {
-    return _react["default"].createElement(Option, {
+    return /*#__PURE__*/_react["default"].createElement(Option, {
       value: option,
       selected: selected.indexOf(index) !== -1
     });
@@ -109,5 +107,5 @@ var ManyOptions = function ManyOptions() {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Lots of options', function () {
-  return _react["default"].createElement(ManyOptions, null);
+  return /*#__PURE__*/_react["default"].createElement(ManyOptions, null);
 });

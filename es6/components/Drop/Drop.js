@@ -49,7 +49,7 @@ var Drop = forwardRef(function (_ref, ref) {
       }
     };
   }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
-  return dropContainer ? createPortal(React.createElement(DropContainer, _extends({
+  return dropContainer ? createPortal( /*#__PURE__*/React.createElement(DropContainer, _extends({
     ref: ref,
     dir: theme && theme.dir,
     dropTarget: dropTarget,

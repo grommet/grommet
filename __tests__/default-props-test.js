@@ -22,7 +22,7 @@ var CustomBox = _styledComponents["default"].div.withConfig({
 CustomBox.defaultProps = {};
 Object.setPrototypeOf(CustomBox.defaultProps, _.defaultProps);
 test('default theme is used', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Box, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Box, {
     background: "brand"
   }));
 
@@ -38,7 +38,7 @@ test('extends default theme', function () {
     }
   });
 
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Box, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Box, {
     background: "brand"
   }));
 
@@ -54,7 +54,7 @@ test('extends default theme twice', function () {
     }
   });
 
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Box, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Box, {
     background: "brand"
   }));
 
@@ -67,7 +67,7 @@ test('extends default theme twice', function () {
       }
     }
   });
-  component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Box, {
+  component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Box, {
     background: "brand"
   }));
   tree = component.toJSON();
@@ -82,9 +82,9 @@ test('uses Grommet theme instead of default', function () {
     }
   });
 
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
     theme: _.grommet
-  }, _react["default"].createElement(_.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_.Box, {
     background: "brand"
   })));
 
@@ -100,7 +100,7 @@ test('leverages default theme', function () {
     }
   });
 
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(CustomBox, null));
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(CustomBox, null));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();

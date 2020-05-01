@@ -6,7 +6,7 @@ export var doc = function doc(Meter) {
   var DocumentedMeter = describe(Meter).availableAt(getAvailableAtBadge('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
-  DocumentedMeter.propTypes = _extends({}, genericProps, {
+  DocumentedMeter.propTypes = _extends(_extends({}, genericProps), {}, {
     background: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
       color: PropTypes.string,
       opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.number, PropTypes.bool])

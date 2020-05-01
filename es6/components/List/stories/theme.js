@@ -18,16 +18,16 @@ var theme = deepMerge(grommet, {
 });
 
 var ThemedList = function ThemedList() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(List, {
+  }, /*#__PURE__*/React.createElement(List, {
     data: locations
   })));
 };
 
 storiesOf('List', module).add('theme', function () {
-  return React.createElement(ThemedList, null);
+  return /*#__PURE__*/React.createElement(ThemedList, null);
 });

@@ -11,16 +11,16 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Default = function Default() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Anchor, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "#"
   }, "Link")));
 };
 
 (0, _react2.storiesOf)('Anchor', module).add('Default', function () {
-  return _react["default"].createElement(Default, null);
+  return /*#__PURE__*/_react["default"].createElement(Default, null);
 });

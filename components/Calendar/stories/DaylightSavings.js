@@ -13,59 +13,59 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
 var DSTCalendar = function DSTCalendar() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     direction: "row",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     border: "right"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "xlarge"
-  }, "Daylight MST"), _react["default"].createElement(_grommet.Box, {
+  }, "Daylight MST"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: "2018-11-04T06:00:00.000Z",
     bounds: ['2013-11-06', '2018-12-06']
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: "2019-03-11T05:00:01.409Z",
     bounds: ['2019-03-01', '2019-03-31']
-  }))), _react["default"].createElement(_grommet.Box, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "xlarge"
-  }, "Daylight PST"), _react["default"].createElement(_grommet.Box, {
+  }, "Daylight PST"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: "2018-11-04T07:00:00.000Z",
     bounds: ['2013-11-06', '2018-12-06']
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: {
       vertical: 'medium'
     }
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: "2019-03-15T06:00:01.409Z",
     bounds: ['2019-03-01', '2019-03-31']
   })))));
 };
 
 (0, _react2.storiesOf)('Calendar', module).add('Daylight Savings Time', function () {
-  return _react["default"].createElement(DSTCalendar, null);
+  return /*#__PURE__*/_react["default"].createElement(DSTCalendar, null);
 });

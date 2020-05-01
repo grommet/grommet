@@ -13,18 +13,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 
 var All = function All() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, sizes.map(function (size) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: size,
       margin: "small"
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: size
     }, "Text " + size));
   }));
 };
 
 (0, _react2.storiesOf)('Text', module).add('All', function () {
-  return _react["default"].createElement(All, null);
+  return /*#__PURE__*/_react["default"].createElement(All, null);
 });

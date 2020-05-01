@@ -9,12 +9,12 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var StyledPlaceholder = function StyledPlaceholder() {
-  return _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Form, null, _react["default"].createElement(_grommet.TextInput, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     name: "name",
-    placeholder: _react["default"].createElement(_grommet.Text, null, "footer")
+    placeholder: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "footer")
   })));
 };
 
 (0, _react2.storiesOf)('TextInput', module).add('StyledPlaceholder', function () {
-  return _react["default"].createElement(StyledPlaceholder, null);
+  return /*#__PURE__*/_react["default"].createElement(StyledPlaceholder, null);
 });

@@ -28,9 +28,9 @@ var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
       expandedGroups = _useState[0],
       setExpandedGroups = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.DataTable, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: groupColumns,
     data: _data.DATA,
     groupBy: {
@@ -43,5 +43,5 @@ var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('Controlled grouped', function () {
-  return _react["default"].createElement(ControlledGroupedDataTable, null);
+  return /*#__PURE__*/_react["default"].createElement(ControlledGroupedDataTable, null);
 });

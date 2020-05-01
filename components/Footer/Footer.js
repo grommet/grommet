@@ -14,7 +14,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var Footer = function Footer(_ref) {
   var rest = _extends({}, _ref);
 
-  return _react["default"].createElement(_Box.Box, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     as: "footer",
     align: "center",
     direction: "row",

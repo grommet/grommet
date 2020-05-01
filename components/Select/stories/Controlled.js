@@ -30,21 +30,21 @@ var SimpleSelect = function SimpleSelect(_ref) {
       open = _useState2[0],
       setOpen = _useState2[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: theme || _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     onClick: function onClick() {
       return setOpen(!open);
     },
     label: "Control the select"
-  }), _react["default"].createElement(_grommet.Select, _extends({
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Select, _extends({
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -59,5 +59,5 @@ var SimpleSelect = function SimpleSelect(_ref) {
 };
 
 (0, _react2.storiesOf)('Select', module).add('Controlled', function () {
-  return _react["default"].createElement(SimpleSelect, null);
+  return /*#__PURE__*/_react["default"].createElement(SimpleSelect, null);
 });

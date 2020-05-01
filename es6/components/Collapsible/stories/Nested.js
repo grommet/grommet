@@ -16,18 +16,18 @@ var MenuButton = function MenuButton(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["label", "open", "submenu"]);
 
   var Icon = open ? FormDown : FormNext;
-  return React.createElement(Button, _extends({
+  return /*#__PURE__*/React.createElement(Button, _extends({
     hoverIndicator: "background"
-  }, rest), React.createElement(Box, {
+  }, rest), /*#__PURE__*/React.createElement(Box, {
     margin: submenu ? {
       left: 'small'
     } : undefined,
     direction: "row",
     align: "center",
     pad: "xsmall"
-  }, React.createElement(Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     color: "brand"
-  }), React.createElement(Text, {
+  }), /*#__PURE__*/React.createElement(Text, {
     size: "small"
   }, label)));
 };
@@ -45,11 +45,11 @@ var NestedCollapsible = function NestedCollapsible() {
       openMenu2 = _React$useState3[0],
       setOpenMenu2 = _React$useState3[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "small"
-  }, React.createElement(MenuButton, {
+  }, /*#__PURE__*/React.createElement(MenuButton, {
     open: openMenu1,
     label: "Accordion",
     onClick: function onClick() {
@@ -57,70 +57,70 @@ var NestedCollapsible = function NestedCollapsible() {
       setOpenMenu1(newOpenMenu1);
       setOpenSubmenu1(!newOpenMenu1 ? false : openSubmenu1);
     }
-  }), React.createElement(Collapsible, {
+  }), /*#__PURE__*/React.createElement(Collapsible, {
     open: openMenu1
-  }, React.createElement(MenuButton, {
+  }, /*#__PURE__*/React.createElement(MenuButton, {
     submenu: true,
     open: openSubmenu1,
     label: "Accordion Basics",
     onClick: function onClick() {
       return setOpenSubmenu1(!openSubmenu1);
     }
-  }), React.createElement(Collapsible, {
+  }), /*#__PURE__*/React.createElement(Collapsible, {
     open: openSubmenu1
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     hoverIndicator: "background",
     onClick: function onClick() {
       return alert('Submenu item 1 selected');
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: {
       left: 'medium'
     },
     direction: "row",
     align: "center",
     pad: "xsmall"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
-  }, "Submenu item 1"))), React.createElement(Button, {
+  }, "Submenu item 1"))), /*#__PURE__*/React.createElement(Button, {
     hoverIndicator: "background",
     onClick: function onClick() {
       return alert('Submenu item 2 selected');
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: {
       left: 'medium'
     },
     direction: "row",
     align: "center",
     pad: "xsmall"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
-  }, "Submenu item 2"))))), React.createElement(MenuButton, {
+  }, "Submenu item 2"))))), /*#__PURE__*/React.createElement(MenuButton, {
     open: openMenu2,
     label: "Button",
     onClick: function onClick() {
       return setOpenMenu2(!openMenu2);
     }
-  }), React.createElement(Collapsible, {
+  }), /*#__PURE__*/React.createElement(Collapsible, {
     open: openMenu2
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     hoverIndicator: "background",
     onClick: function onClick() {
       return alert('Submenu item 1 selected');
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: {
       left: 'medium'
     },
     direction: "row",
     align: "center",
     pad: "xsmall"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
   }, "Submenu item 1"))))));
 };
 
 storiesOf('Collapsible', module).add('Nested', function () {
-  return React.createElement(NestedCollapsible, null);
+  return /*#__PURE__*/React.createElement(NestedCollapsible, null);
 });

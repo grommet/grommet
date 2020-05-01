@@ -13,42 +13,42 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Colors = function Colors() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Anchor, {
-    icon: _react["default"].createElement(_grommetIcons.Add, null),
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
     href: "#"
-  }), _react["default"].createElement(_grommet.Anchor, {
-    icon: _react["default"].createElement(_grommetIcons.Add, null),
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
     label: "Add",
     href: "#"
-  }), _react["default"].createElement(_grommet.Anchor, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     label: "Add",
     href: "#"
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-1",
     pad: "medium",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.Anchor, {
-    icon: _react["default"].createElement(_grommetIcons.Add, null),
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
     href: "#"
-  }), _react["default"].createElement(_grommet.Anchor, {
-    icon: _react["default"].createElement(_grommetIcons.Add, null),
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
     label: "Add",
     href: "#"
-  }), _react["default"].createElement(_grommet.Anchor, {
-    icon: _react["default"].createElement(_grommetIcons.Add, null),
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
     label: "Add",
     href: "#"
-  }), _react["default"].createElement(_grommet.Anchor, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     label: "Add",
     href: "#"
   })));
 };
 
 (0, _react2.storiesOf)('Anchor', module).add('Colors', function () {
-  return _react["default"].createElement(Colors, null);
+  return /*#__PURE__*/_react["default"].createElement(Colors, null);
 });

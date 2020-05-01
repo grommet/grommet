@@ -79,9 +79,9 @@ var Tab = (0, _react.forwardRef)(function (_ref, ref) {
     if (typeof title !== 'string') {
       normalizedTitle = title;
     } else if (active) {
-      normalizedTitle = _react["default"].createElement(_Text.Text, theme.tab.active, title);
+      normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.tab.active, title);
     } else {
-      normalizedTitle = _react["default"].createElement(_Text.Text, {
+      normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, {
         color: over ? theme.tab.hover.color : theme.tab.color
       }, title);
     }
@@ -138,7 +138,7 @@ var Tab = (0, _react.forwardRef)(function (_ref, ref) {
     };
   }
 
-  return _react["default"].createElement(_Button.Button, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
     ref: ref,
     plain: true,
     role: "tab",
@@ -161,7 +161,7 @@ var Tab = (0, _react.forwardRef)(function (_ref, ref) {
     style: focus && {
       zIndex: 1
     }
-  }), _react["default"].createElement(_StyledTab.StyledTab, _extends({
+  }), /*#__PURE__*/_react["default"].createElement(_StyledTab.StyledTab, _extends({
     as: _Box.Box,
     plain: plain
   }, withIconStyles, tabStyles), first, second));

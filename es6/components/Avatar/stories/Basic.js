@@ -6,27 +6,27 @@ import { grommet } from 'grommet/themes';
 
 var Basic = function Basic() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     justify: "center",
     direction: "row",
     gap: "small",
     pad: "large"
-  }, React.createElement(Avatar, {
+  }, /*#__PURE__*/React.createElement(Avatar, {
     src: src
-  }), React.createElement(Avatar, {
+  }), /*#__PURE__*/React.createElement(Avatar, {
     background: "accent-4"
-  }, React.createElement(Favorite, {
+  }, /*#__PURE__*/React.createElement(Favorite, {
     color: "accent-2"
-  })), React.createElement(Avatar, {
+  })), /*#__PURE__*/React.createElement(Avatar, {
     background: "dark-2"
-  }, "R"), React.createElement(Avatar, {
+  }, "R"), /*#__PURE__*/React.createElement(Avatar, {
     background: "brand"
   }, "SY")));
 };
 
 storiesOf('Avatar', module).add('Basic', function () {
-  return React.createElement(Basic, null);
+  return /*#__PURE__*/React.createElement(Basic, null);
 });

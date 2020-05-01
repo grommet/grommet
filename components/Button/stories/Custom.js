@@ -67,57 +67,57 @@ var coloredButton = {
 };
 
 var CustomTheme = function CustomTheme() {
-  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     justify: "center",
     pad: "large",
     direction: "row",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "custom theme",
     onClick: function onClick() {},
     primary: true
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "custom active primary",
     onClick: function onClick() {},
     primary: true,
     active: true
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "primary disabled",
     onClick: function onClick() {},
     primary: true,
     disabled: true
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Disabled",
     onClick: function onClick() {},
     disabled: true
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Plain Disabled",
     onClick: function onClick() {},
     plain: true,
     disabled: true
-  }))), _react["default"].createElement(_grommet.Grommet, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: coloredButton
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     as: "span",
     label: "theme on dark background",
     primary: true
-  }))), _react["default"].createElement(_grommet.Grommet, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     as: "span",
     label: "Custom as=span"
   }))));
 };
 
 (0, _react2.storiesOf)('Button', module).add('Custom', function () {
-  return _react["default"].createElement(CustomTheme, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomTheme, null);
 });

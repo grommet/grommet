@@ -17,13 +17,13 @@ var Footer = function Footer(_ref) {
       primaryProperty = _ref.primaryProperty,
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "footerValues", "groups", "pad", "primaryProperty"]);
 
-  return React.createElement(StyledDataTableFooter, rest, React.createElement(TableRow, null, groups && React.createElement(TableCell, {
+  return /*#__PURE__*/React.createElement(StyledDataTableFooter, rest, /*#__PURE__*/React.createElement(TableRow, null, groups && /*#__PURE__*/React.createElement(TableCell, {
     plain: true,
     size: "xxsmall",
     pad: "none",
     verticalAlign: "top"
   }), columns.map(function (column) {
-    return React.createElement(Cell, {
+    return /*#__PURE__*/React.createElement(Cell, {
       key: column.property,
       background: background,
       border: border,

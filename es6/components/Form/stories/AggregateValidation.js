@@ -12,16 +12,16 @@ var Example = function Example() {
       setValue = _React$useState[1];
 
   var message = value.name && value.email && value.name[0] !== value.email[0] ? 'Mismatched first character' : undefined;
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(Form, {
+  }, /*#__PURE__*/React.createElement(Form, {
     value: value,
     onChange: function onChange(nextValue) {
       return setValue(nextValue);
@@ -30,36 +30,36 @@ var Example = function Example() {
       var nextValue = _ref.value;
       return console.log(nextValue);
     }
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
     name: "name",
     required: true
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     name: "name",
     type: "name"
-  })), React.createElement(FormField, {
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Email",
     name: "email",
     required: true
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     name: "email",
     type: "email"
-  })), message && React.createElement(Box, {
+  })), message && /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'small'
     }
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     color: "status-error"
-  }, message)), React.createElement(Box, {
+  }, message)), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
       top: 'medium'
     }
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     type: "reset",
     label: "Reset"
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Update",
     primary: true
@@ -67,5 +67,5 @@ var Example = function Example() {
 };
 
 storiesOf('Form', module).add('Aggregate validation', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

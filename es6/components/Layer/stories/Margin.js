@@ -11,43 +11,43 @@ var MarginLayer = function MarginLayer(_ref) {
   var margin = _ref.margin,
       rest = _objectWithoutPropertiesLoose(_ref, ["margin"]);
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Layer, _extends({
+  }, /*#__PURE__*/React.createElement(Layer, _extends({
     margin: margin || {
       left: '40px',
       top: '50px',
       right: '30px',
       bottom: '10px'
     }
-  }, rest), React.createElement(Box, {
+  }, rest), /*#__PURE__*/React.createElement(Box, {
     height: "small",
     overflow: "auto"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge"
-  }, "text"), React.createElement(Box, {
+  }, "text"), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge"
-  }, "text"), React.createElement(Box, {
+  }, "text"), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge"
-  }, "text"), React.createElement(Box, {
+  }, "text"), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge"
-  }, "text"), React.createElement(Box, {
+  }, "text"), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge"
-  }, "text"), React.createElement(Box, {
+  }, "text"), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge"
   }, "text"))));
 };
 
 storiesOf('Layer', module).add('Margin', function () {
-  return React.createElement(MarginLayer, {
+  return /*#__PURE__*/React.createElement(MarginLayer, {
     full: true
   });
 }).add('Margin (Center)', function () {
-  return React.createElement(MarginLayer, {
+  return /*#__PURE__*/React.createElement(MarginLayer, {
     margin: "large"
   });
 }).add('Margin Top (Center)', function () {
-  return React.createElement(MarginLayer, {
+  return /*#__PURE__*/React.createElement(MarginLayer, {
     margin: {
       top: 'large'
     },

@@ -4,10 +4,10 @@ import { Grommet, Box, Distribution, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var SimpleDistribution = function SimpleDistribution() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Distribution, {
+  }, /*#__PURE__*/React.createElement(Distribution, {
     fill: true,
     values: [{
       value: 50,
@@ -26,16 +26,16 @@ var SimpleDistribution = function SimpleDistribution() {
       color: 'neutral-1'
     }]
   }, function (value) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       pad: "xsmall",
       background: value.color,
       fill: true
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       size: "large"
     }, value.value));
   }));
 };
 
 storiesOf('Distribution', module).add('Simple', function () {
-  return React.createElement(SimpleDistribution, null);
+  return /*#__PURE__*/React.createElement(SimpleDistribution, null);
 });

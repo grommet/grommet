@@ -144,7 +144,7 @@ var DataTable = function DataTable(_ref) {
     return function () {
       var nextGroupState = _extends({}, groupState);
 
-      nextGroupState[groupValue] = _extends({}, nextGroupState[groupValue], {
+      nextGroupState[groupValue] = _extends(_extends({}, nextGroupState[groupValue]), {}, {
         expanded: !nextGroupState[groupValue].expanded
       });
       setGroupState(nextGroupState);
@@ -165,7 +165,7 @@ var DataTable = function DataTable(_ref) {
     }).length === 0;
     var nextGroupState = {};
     Object.keys(groupState).forEach(function (k) {
-      nextGroupState[k] = _extends({}, groupState[k], {
+      nextGroupState[k] = _extends(_extends({}, groupState[k]), {}, {
         expanded: !expanded
       });
     });
@@ -193,7 +193,7 @@ var DataTable = function DataTable(_ref) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  return _react["default"].createElement(_StyledDataTable.StyledDataTable, rest, _react["default"].createElement(_Header.Header, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, rest, /*#__PURE__*/_react["default"].createElement(_Header.Header, {
     background: normalizeProp(background, 'header'),
     border: normalizeProp(border, 'header'),
     columns: columns,
@@ -210,7 +210,7 @@ var DataTable = function DataTable(_ref) {
     onResize: resizeable ? onResize : undefined,
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,
     onToggle: onToggleGroups
-  }), groups ? _react["default"].createElement(_GroupedBody.GroupedBody, {
+  }), groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
@@ -221,7 +221,7 @@ var DataTable = function DataTable(_ref) {
     primaryProperty: primaryProperty,
     onToggle: onToggleGroup,
     size: size
-  }) : _react["default"].createElement(_Body.Body, {
+  }) : /*#__PURE__*/_react["default"].createElement(_Body.Body, {
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
@@ -234,7 +234,7 @@ var DataTable = function DataTable(_ref) {
     rowProps: rowProps,
     size: size,
     step: step
-  }), showFooter && _react["default"].createElement(_Footer.Footer, {
+  }), showFooter && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
     background: normalizeProp(background, 'footer'),
     border: normalizeProp(border, 'footer'),
     columns: columns,

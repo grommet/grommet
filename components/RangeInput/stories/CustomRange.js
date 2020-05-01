@@ -41,19 +41,19 @@ var CustomRangeInput = function CustomRangeInput() {
     return setValue(event.target.value);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customThemeRangeInput
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     pad: "large",
     gap: "small"
-  }, _react["default"].createElement(_grommetIcons.Volume, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Volume, {
     color: "neutral-2"
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     width: "small"
-  }, _react["default"].createElement(_grommet.RangeInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
     min: 0,
     max: 1,
     step: 0.1,
@@ -63,5 +63,5 @@ var CustomRangeInput = function CustomRangeInput() {
 };
 
 (0, _react2.storiesOf)('RangeInput', module).add('Custom', function () {
-  return _react["default"].createElement(CustomRangeInput, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomRangeInput, null);
 });

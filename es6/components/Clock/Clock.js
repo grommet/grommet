@@ -161,14 +161,14 @@ var Clock = forwardRef(function (_ref, ref) {
   var content;
 
   if (type === 'analog') {
-    content = React.createElement(Analog, _extends({
+    content = /*#__PURE__*/React.createElement(Analog, _extends({
       ref: ref,
       elements: elements,
       precision: precision,
       size: size
     }, rest));
   } else if (type === 'digital') {
-    content = React.createElement(Digital, _extends({
+    content = /*#__PURE__*/React.createElement(Digital, _extends({
       ref: ref,
       elements: elements,
       precision: precision,

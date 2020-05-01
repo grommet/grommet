@@ -21,21 +21,21 @@ var SimpleSelect = function SimpleSelect(_ref) {
       open = _useState2[0],
       setOpen = _useState2[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: theme || grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large",
     gap: "small"
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     onClick: function onClick() {
       return setOpen(!open);
     },
     label: "Control the select"
-  }), React.createElement(Select, _extends({
+  }), /*#__PURE__*/React.createElement(Select, _extends({
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -50,5 +50,5 @@ var SimpleSelect = function SimpleSelect(_ref) {
 };
 
 storiesOf('Select', module).add('Controlled', function () {
-  return React.createElement(SimpleSelect, null);
+  return /*#__PURE__*/React.createElement(SimpleSelect, null);
 });

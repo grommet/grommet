@@ -277,44 +277,44 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
   var renderCalendarHeader = function renderCalendarHeader() {
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
     var NextIcon = size === 'small' ? theme.calendar.icons.small.next : theme.calendar.icons.next;
-    return _react["default"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       justify: "between",
       align: "center"
-    }, _react["default"].createElement(_Box.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: true,
       pad: {
         horizontal: headingPadMap[size] || 'small'
       }
-    }, _react["default"].createElement(_Heading.Heading, {
+    }, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
       level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
       size: size,
       margin: "none"
     }, reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'
-    }))), _react["default"].createElement(_Box.Box, {
+    }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: false,
       direction: "row",
       align: "center"
-    }, _react["default"].createElement(_Button.Button, {
+    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       a11yTitle: previousMonth.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
       }),
-      icon: _react["default"].createElement(PreviousIcon, {
+      icon: /*#__PURE__*/_react["default"].createElement(PreviousIcon, {
         size: size !== 'small' ? size : undefined
       }),
       disabled: !(0, _utils.betweenDates)(previousMonth, validBounds),
       onClick: function onClick() {
         return changeReference(previousMonth);
       }
-    }), _react["default"].createElement(_Button.Button, {
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       a11yTitle: nextMonth.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
       }),
-      icon: _react["default"].createElement(NextIcon, {
+      icon: /*#__PURE__*/_react["default"].createElement(NextIcon, {
         size: size !== 'small' ? size : undefined
       }),
       disabled: !(0, _utils.betweenDates)(nextMonth, validBounds),
@@ -329,10 +329,10 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
     var days = [];
 
     while (days.length < 7) {
-      days.push(_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+      days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: days.length,
         sizeProp: size
-      }, _react["default"].createElement(_StyledCalendar.StyledDay, {
+      }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
         otherMonth: true,
         sizeProp: size
       }, day.toLocaleDateString(locale, {
@@ -341,7 +341,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
       day = (0, _utils.addDays)(day, 1);
     }
 
-    return _react["default"].createElement(_StyledCalendar.StyledWeek, null, days);
+    return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, null, days);
   };
 
   var weeks = [];
@@ -352,7 +352,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
   while (day.getTime() < displayBounds[1].getTime()) {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
-        weeks.push(_react["default"].createElement(_StyledCalendar.StyledWeek, {
+        weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
           key: day.getTime()
         }, days));
       }
@@ -363,10 +363,10 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
     var otherMonth = day.getMonth() !== reference.getMonth();
 
     if (!showAdjacentDays && otherMonth) {
-      days.push(_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+      days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: day.getTime(),
         sizeProp: size
-      }, _react["default"].createElement(_StyledCalendar.StyledDay, {
+      }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
         sizeProp: size
       })));
     } else {
@@ -389,10 +389,10 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
           firstDayInMonth = dateString;
         }
 
-        days.push(_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+        days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
           key: day.getTime(),
           sizeProp: size
-        }, _react["default"].createElement(_Button.Button, {
+        }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
           a11yTitle: day.toDateString(),
           plain: true,
           tabIndex: -1,
@@ -409,7 +409,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
           },
           onFocus: function onFocus() {},
           onBlur: function onBlur() {}
-        }, _react["default"].createElement(_StyledCalendar.StyledDay, {
+        }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
           inRange: inRange,
           otherMonth: day.getMonth() !== reference.getMonth(),
           isSelected: selected,
@@ -421,13 +421,13 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
     day = (0, _utils.addDays)(day, 1);
   }
 
-  weeks.push(_react["default"].createElement(_StyledCalendar.StyledWeek, {
+  weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
     key: day.getTime()
   }, days));
-  return _react["default"].createElement(_StyledCalendar.StyledCalendar, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledCalendar, _extends({
     ref: ref,
     sizeProp: size
-  }, rest), _react["default"].createElement(_Box.Box, null, header ? header({
+  }, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, null, header ? header({
     date: reference,
     locale: locale,
     onPreviousMonth: function onPreviousMonth() {
@@ -438,7 +438,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
     },
     previousInBound: (0, _utils.betweenDates)(previousMonth, validBounds),
     nextInBound: (0, _utils.betweenDates)(nextMonth, validBounds)
-  }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), _react["default"].createElement(_Keyboard.Keyboard, {
+  }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: function onEnter() {
       return selectDate(active.toISOString());
     },
@@ -460,7 +460,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
     onRight: function onRight() {
       return active && setActive((0, _utils.addDays)(active, 1));
     }
-  }, _react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
+  }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
     sizeProp: size,
     tabIndex: 0,
     focus: focus,
@@ -477,7 +477,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
       setFocus(false);
       setActive(undefined);
     }
-  }, _react["default"].createElement(_StyledCalendar.StyledWeeks, {
+  }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeks, {
     slide: slide,
     sizeProp: size
   }, weeks)))));

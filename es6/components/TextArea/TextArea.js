@@ -25,14 +25,14 @@ var TextArea = forwardRef(function (_ref, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
-  return React.createElement(Keyboard, {
+  return /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: function onEsc(event) {
       // we have to stop both synthetic events and native events
       // drop and layer should not close by pressing esc on this input
       event.stopPropagation();
       event.nativeEvent.stopImmediatePropagation();
     }
-  }, React.createElement(StyledTextArea, _extends({
+  }, /*#__PURE__*/React.createElement(StyledTextArea, _extends({
     ref: ref,
     name: name,
     fillArg: fill,

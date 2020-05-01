@@ -10,15 +10,15 @@ var DarkSelect = function DarkSelect() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     background: "dark-1",
     align: "center",
     justify: "center"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     placeholder: "Select",
     value: value,
     options: options,
@@ -30,5 +30,5 @@ var DarkSelect = function DarkSelect() {
 };
 
 storiesOf('Select', module).add('Dark', function () {
-  return React.createElement(DarkSelect, null);
+  return /*#__PURE__*/React.createElement(DarkSelect, null);
 });

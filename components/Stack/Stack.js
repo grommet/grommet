@@ -33,7 +33,7 @@ var buildStyledChildren = function buildStyledChildren(_ref) {
       } : {
         anchor: anchor
       };
-      return _react["default"].createElement(_StyledStack.StyledStackLayer, _extends({
+      return /*#__PURE__*/_react["default"].createElement(_StyledStack.StyledStackLayer, _extends({
         interactive: interactive
       }, props), child);
     }
@@ -67,7 +67,7 @@ var Stack = function Stack(_ref2) {
     interactiveIndex: interactiveIndex
   }));
 
-  return _react["default"].createElement(_StyledStack.StyledStack, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledStack.StyledStack, _extends({
     fillContainer: fill
   }, rest), styledChildren);
 };

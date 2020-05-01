@@ -27,88 +27,88 @@ var LazyDrop = function LazyDrop() {
       setPad(finalLazyPad);
     }, 2000);
   }, []);
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: lazyTheme,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     justify: "between",
     pad: "large",
     gap: "small"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     pad: {
       horizontal: 'small'
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     ref: topLeftTargetRef
-  }, "Target"), topLeftTargetRef.current && React.createElement(Drop, {
+  }, "Target"), topLeftTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
     align: {
       top: 'bottom',
       left: 'left'
     },
     target: topLeftTargetRef.current,
     responsive: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
       vertical: pad
     }
-  }, "align top to bottom")), React.createElement(Box, {
+  }, "align top to bottom")), /*#__PURE__*/React.createElement(Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     ref: topRightTargetRef
-  }, "Target"), topRightTargetRef.current && React.createElement(Drop, {
+  }, "Target"), topRightTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
     align: {
       bottom: 'top',
       right: 'right'
     },
     target: topRightTargetRef.current,
     responsive: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
       vertical: pad
     }
-  }, "align bottom to top"))), React.createElement(Box, {
+  }, "align bottom to top"))), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "dark-3",
     pad: "medium",
     ref: bottomLeftTargetRef
-  }, "Target"), bottomLeftTargetRef.current && React.createElement(Drop, {
+  }, "Target"), bottomLeftTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
     align: {
       bottom: 'top',
       left: 'left'
     },
     target: bottomLeftTargetRef.current,
     responsive: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
       vertical: pad
     }
-  }, "align bottom to top")), React.createElement(Box, {
+  }, "align bottom to top")), /*#__PURE__*/React.createElement(Box, {
     background: "dark-3",
     pad: "medium",
     ref: bottomRightTargetRef
-  }, "Target"), bottomRightTargetRef.current && React.createElement(Drop, {
+  }, "Target"), bottomRightTargetRef.current && /*#__PURE__*/React.createElement(Drop, {
     align: {
       top: 'bottom',
       right: 'right'
     },
     target: bottomRightTargetRef.current,
     responsive: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: pad === 'small' ? 'xsmall' : undefined,
     pad: {
       horizontal: 'xlarge',
@@ -118,5 +118,5 @@ var LazyDrop = function LazyDrop() {
 };
 
 storiesOf('Drop', module).add('Lazy', function () {
-  return React.createElement(LazyDrop, null);
+  return /*#__PURE__*/React.createElement(LazyDrop, null);
 });

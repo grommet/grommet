@@ -15,12 +15,12 @@ var DisabledRadioButtonGroup = function DisabledRadioButtonGroup(_ref) {
       value = _useState[0],
       setValue = _useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(RadioButtonGroup, _extends({
+  }, /*#__PURE__*/React.createElement(RadioButtonGroup, _extends({
     name: "radio",
     options: [{
       label: 'Choice 1',
@@ -41,5 +41,5 @@ var DisabledRadioButtonGroup = function DisabledRadioButtonGroup(_ref) {
 };
 
 storiesOf('RadioButtonGroup', module).add('Disabled', function () {
-  return React.createElement(DisabledRadioButtonGroup, null);
+  return /*#__PURE__*/React.createElement(DisabledRadioButtonGroup, null);
 });

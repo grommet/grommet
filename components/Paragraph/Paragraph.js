@@ -20,7 +20,7 @@ var Paragraph = (0, _react.forwardRef)(function (_ref, ref) {
       fill = _ref.fill,
       rest = _objectWithoutPropertiesLoose(_ref, ["color", "fill"]);
 
-  return _react["default"].createElement(_StyledParagraph.StyledParagraph, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledParagraph.StyledParagraph, _extends({
     ref: ref,
     colorProp: color,
     fillProp: fill

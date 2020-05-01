@@ -22,9 +22,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var FakeRouter =
-/*#__PURE__*/
-function (_Component) {
+var FakeRouter = /*#__PURE__*/function (_Component) {
   _inheritsLoose(FakeRouter, _Component);
 
   function FakeRouter() {
@@ -49,7 +47,7 @@ function (_Component) {
 
   _proto.render = function render() {
     var children = this.props.children;
-    return _react["default"].createElement("div", null, children);
+    return /*#__PURE__*/_react["default"].createElement("div", null, children);
   };
 
   return FakeRouter;
@@ -69,10 +67,10 @@ describe('RoutedButton', function () {
   var push = jest.fn();
   var replace = jest.fn();
   test('renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react["default"].createElement(_.RoutedButton, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedButton, {
       label: "Test",
       path: "/"
     }))));
@@ -84,10 +82,10 @@ describe('RoutedButton', function () {
     var preventDefault = jest.fn();
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react["default"].createElement(_.RoutedButton, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedButton, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -105,10 +103,10 @@ describe('RoutedButton', function () {
   test('RoutedButton skips onClick if right clicked', function () {
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react["default"].createElement(_.RoutedButton, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedButton, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -127,10 +125,10 @@ describe('RoutedButton', function () {
   test('RoutedButton calls router context push', function () {
     var preventDefault = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react["default"].createElement(_.RoutedButton, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedButton, {
       label: "Test",
       path: "/"
     }))));
@@ -146,10 +144,10 @@ describe('RoutedButton', function () {
   test('RoutedButton calls router context replace', function () {
     var preventDefault = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react["default"].createElement(_.RoutedButton, {
+    }, /*#__PURE__*/_react["default"].createElement(_.RoutedButton, {
       label: "Test",
       path: "/",
       method: "replace"

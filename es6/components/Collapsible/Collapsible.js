@@ -21,9 +21,7 @@ var AnimatedBox = styled(Box).withConfig({
   return !props.animate && (props.open ? "\n    max-" + animatedBoxProperty(props.collapsibleDirection) + ": unset;\n    visibility: visible;\n  " : "\n    max-" + animatedBoxProperty(props.collapsibleDirection) + ": 0;\n    visibility: hidden;\n    overflow: hidden;\n  ");
 });
 
-var Collapsible =
-/*#__PURE__*/
-function (_Component) {
+var Collapsible = /*#__PURE__*/function (_Component) {
   _inheritsLoose(Collapsible, _Component);
 
   Collapsible.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
@@ -123,7 +121,7 @@ function (_Component) {
     var _this$state2 = this.state,
         animate = _this$state2.animate,
         open = _this$state2.open;
-    return React.createElement(AnimatedBox, {
+    return /*#__PURE__*/React.createElement(AnimatedBox, {
       "aria-hidden": !open,
       ref: this.ref,
       open: open,

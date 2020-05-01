@@ -6,12 +6,12 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Table) {
   var DocumentedTable = describe(Table).availableAt(getAvailableAtBadge('Table')).description('A table of data organized in cells.').usage( // eslint-disable-next-line max-len
   "import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';\n<Table />").intrinsicElement('table');
-  DocumentedTable.propTypes = _extends({}, genericProps, {
+  DocumentedTable.propTypes = _extends(_extends({}, genericProps), {}, {
     caption: PropTypes.string.description('One line description.')
   });
   return DocumentedTable;
 };
-export var themeDoc = _extends({}, themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in Table.'), {
+export var themeDoc = _extends(_extends({}, themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in Table.')), {}, {
   'global.size': {
     description: 'The size that impacts max-width and width.',
     defaultValue: "{\n      xxsmall: '48px',\n      xsmall: '96px',\n      small: '192px',\n      medium: '384px',\n      large: '768px',\n      xlarge: '1152px',\n      xxlarge: '1536px',\n      full: '100%',\n      }"

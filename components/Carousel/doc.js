@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Carousel) {
   var DocumentedCarousel = (0, _reactDesc.describe)(Carousel).availableAt((0, _utils.getAvailableAtBadge)('Carousel')).description("A carousel that cycles through children. Child components\n      would typically be Images. It is the caller's responsibility to ensure\n      that all children are the same size.").usage("import { Carousel } from 'grommet';\n<Carousel />").intrinsicElement('div');
-  DocumentedCarousel.propTypes = _extends({}, _utils.genericProps, {
+  DocumentedCarousel.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
     fill: _reactDesc.PropTypes.bool.description("Whether to expand to fill\n      all of the available width and height in the parent container."),
     play: _reactDesc.PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely."),
     initialChild: _reactDesc.PropTypes.number.description("If specified, the index of\n      the first element to be shown. Defaults to 0."),
@@ -22,7 +22,7 @@ var doc = function doc(Carousel) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({
+var themeDoc = _extends(_extends({
   'carousel.icons.next': {
     description: 'The icon to use for the next image navigation control.',
     type: 'element',
@@ -53,6 +53,6 @@ var themeDoc = _extends({
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined
   }
-}, _utils.themeDocUtils.iconColor, {}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, _utils.themeDocUtils.iconColor), _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

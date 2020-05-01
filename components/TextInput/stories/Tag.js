@@ -23,7 +23,7 @@ var Tag = function Tag(_ref) {
       onRemove = _ref.onRemove,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "onRemove"]);
 
-  var tag = _react["default"].createElement(_grommet.Box, _extends({
+  var tag = /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({
     direction: "row",
     align: "center",
     background: "brand",
@@ -35,18 +35,18 @@ var Tag = function Tag(_ref) {
       vertical: 'xxsmall'
     },
     round: "medium"
-  }, rest), _react["default"].createElement(_grommet.Text, {
+  }, rest), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "xsmall",
     margin: {
       right: 'xxsmall'
     }
-  }, children), onRemove && _react["default"].createElement(_grommetIcons.FormClose, {
+  }, children), onRemove && /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, {
     size: "small",
     color: "white"
   }));
 
   if (onRemove) {
-    return _react["default"].createElement(_grommet.Button, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       onClick: onRemove
     }, tag);
   }
@@ -95,7 +95,7 @@ var TagInput = function TagInput(_ref2) {
 
   var renderValue = function renderValue() {
     return value.map(function (v, index) {
-      return _react["default"].createElement(Tag, {
+      return /*#__PURE__*/_react["default"].createElement(Tag, {
         margin: "xxsmall",
         key: "" + v + (index + 0),
         onRemove: function onRemove() {
@@ -105,9 +105,9 @@ var TagInput = function TagInput(_ref2) {
     });
   };
 
-  return _react["default"].createElement(_grommet.Keyboard, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Keyboard, {
     onEnter: onEnter
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     pad: {
@@ -116,12 +116,12 @@ var TagInput = function TagInput(_ref2) {
     border: "all",
     ref: boxRef,
     wrap: true
-  }, value.length > 0 && renderValue(), _react["default"].createElement(_grommet.Box, {
+  }, value.length > 0 && renderValue(), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true,
     style: {
       minWidth: '120px'
     }
-  }, _react["default"].createElement(_grommet.TextInput, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, _extends({
     type: "search",
     plain: true,
     dropTarget: box
@@ -165,12 +165,12 @@ var TagTextInput = function TagTextInput() {
     }));
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react["default"].createElement(TagInput, {
+  }, /*#__PURE__*/_react["default"].createElement(TagInput, {
     placeholder: "Search for aliases...",
     suggestions: suggestions,
     value: selectedTags,
@@ -184,5 +184,5 @@ var TagTextInput = function TagTextInput() {
 };
 
 (0, _react2.storiesOf)('TextInput', module).add('Tag', function () {
-  return _react["default"].createElement(TagTextInput, null);
+  return /*#__PURE__*/_react["default"].createElement(TagTextInput, null);
 });

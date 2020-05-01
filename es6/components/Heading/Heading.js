@@ -11,7 +11,7 @@ var Heading = function Heading(props) {
       rest = _objectWithoutPropertiesLoose(props, ["color", "level"]); // enforce level to be a number
 
 
-  return React.createElement(StyledHeading, _extends({
+  return /*#__PURE__*/React.createElement(StyledHeading, _extends({
     as: "h" + level,
     colorProp: color,
     level: +level

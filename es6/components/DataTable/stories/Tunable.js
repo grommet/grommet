@@ -9,14 +9,14 @@ import { grommet } from 'grommet/themes'; // Source code for the data can be fou
 import { columns, DATA } from './data';
 
 var TunableDataTable = function TunableDataTable() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns.map(function (c) {
-      return _extends({}, c, {
+      return _extends(_extends({}, c), {}, {
         search: c.property === 'name' || c.property === 'location'
       });
     }),
@@ -27,5 +27,5 @@ var TunableDataTable = function TunableDataTable() {
 };
 
 storiesOf('DataTable', module).add('Tunable', function () {
-  return React.createElement(TunableDataTable, null);
+  return /*#__PURE__*/React.createElement(TunableDataTable, null);
 });

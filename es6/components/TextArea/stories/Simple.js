@@ -14,23 +14,23 @@ var SimpleTextArea = function SimpleTextArea(props) {
     return setValue(event.target.value);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(TextArea, _extends({
+  }, /*#__PURE__*/React.createElement(TextArea, _extends({
     value: value,
     onChange: onChange
   }, props))));
 };
 
 storiesOf('TextArea', module).add('Simple', function () {
-  return React.createElement(SimpleTextArea, {
+  return /*#__PURE__*/React.createElement(SimpleTextArea, {
     resize: true
   });
 }).add('Non resizable', function () {
-  return React.createElement(SimpleTextArea, {
+  return /*#__PURE__*/React.createElement(SimpleTextArea, {
     resize: false
   });
 });

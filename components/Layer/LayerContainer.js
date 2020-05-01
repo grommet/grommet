@@ -117,7 +117,7 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
     return undefined;
   }, [layerTarget]);
 
-  var content = _react["default"].createElement(_StyledLayer.StyledContainer, _extends({
+  var content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledContainer, _extends({
     ref: ref || containerRef,
     id: id,
     full: full,
@@ -129,14 +129,14 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
     plain: plain,
     responsive: responsive,
     dir: theme.dir
-  }), _react["default"].createElement(HiddenAnchor, {
+  }), /*#__PURE__*/_react["default"].createElement(HiddenAnchor, {
     ref: anchorRef,
     tabIndex: "-1",
     "aria-hidden": "true"
   }), children);
 
   if (modal) {
-    content = _react["default"].createElement(_StyledLayer.StyledLayer, {
+    content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledLayer, {
       ref: layerRef,
       id: id,
       targetBounds: targetBounds,
@@ -145,7 +145,7 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
       responsive: responsive,
       tabIndex: "-1",
       dir: theme.dir
-    }, _react["default"].createElement(_StyledLayer.StyledOverlay, {
+    }, /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledOverlay, {
       plain: plain,
       onMouseDown: onClickOutside,
       responsive: responsive
@@ -153,7 +153,7 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
   }
 
   if (onEsc) {
-    content = _react["default"].createElement(_Keyboard.Keyboard, {
+    content = /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
       onEsc: onEsc
     }, content);
   }
@@ -162,8 +162,8 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
     var dark = (0, _utils.backgroundIsDark)(theme.layer.background, theme);
 
     if (dark !== undefined && dark !== theme.dark) {
-      content = _react["default"].createElement(_styledComponents.ThemeContext.Provider, {
-        value: _extends({}, theme, {
+      content = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+        value: _extends(_extends({}, theme), {}, {
           dark: dark
         })
       }, content);
@@ -171,7 +171,7 @@ var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
   }
 
   if (modal) {
-    content = _react["default"].createElement(_FocusedContainer.FocusedContainer, {
+    content = /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       hidden: position === 'hidden',
       restrictScroll: true
     }, content);

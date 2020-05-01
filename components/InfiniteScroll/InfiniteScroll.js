@@ -17,9 +17,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var Ref =
-/*#__PURE__*/
-function (_Component) {
+var Ref = /*#__PURE__*/function (_Component) {
   _inheritsLoose(Ref, _Component);
 
   function Ref() {
@@ -180,7 +178,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   var result = [];
 
   if (replace && pageHeight && firstIndex) {
-    var marker = _react["default"].createElement(_Box.Box, {
+    var marker = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       key: "above",
       flex: false,
       height: beginPage * pageHeight + "px"
@@ -205,19 +203,19 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     var child = children(item, itemsIndex, ref); // The old way, if we don't see that our ref was set, wrap it
 
     if (!pageHeight && itemsIndex === 0 && child.ref !== firstPageItemRef) {
-      child = _react["default"].createElement(Ref, {
+      child = /*#__PURE__*/_react["default"].createElement(Ref, {
         key: "first",
         ref: firstPageItemRef
       }, child);
     } else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex) && child.ref !== lastPageItemRef) {
-      child = _react["default"].createElement(Ref, {
+      child = /*#__PURE__*/_react["default"].createElement(Ref, {
         key: "last",
         ref: lastPageItemRef
       }, child);
     }
 
     if (show && show === itemsIndex && child.ref !== showRef) {
-      child = _react["default"].createElement(Ref, {
+      child = /*#__PURE__*/_react["default"].createElement(Ref, {
         key: "show",
         ref: showRef
       }, child);
@@ -227,7 +225,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   });
 
   if (endPage < lastPage || replace || onMore) {
-    var _marker = _react["default"].createElement(_Box.Box, {
+    var _marker = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       key: "below",
       ref: belowMarkerRef,
       flex: false,

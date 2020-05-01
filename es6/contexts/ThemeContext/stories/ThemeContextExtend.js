@@ -27,16 +27,16 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
       valueBlue = _useState2[0],
       setValueBlue = _useState2[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     direction: "column",
     gap: "large"
-  }, React.createElement(Box, null, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, {
     margin: "medium"
-  }, "The focus color of this select component is being altered by the custom theme that is passed into the Grommet component."), React.createElement(Select, {
+  }, "The focus color of this select component is being altered by the custom theme that is passed into the Grommet component."), /*#__PURE__*/React.createElement(Select, {
     alignSelf: "center",
     placeholder: "Select",
     value: valueRed,
@@ -45,7 +45,7 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
       var option = _ref.option;
       return setValueRed(option);
     }
-  })), React.createElement(Box, null, React.createElement(ThemeContext.Extend, {
+  })), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(ThemeContext.Extend, {
     value: {
       global: {
         focus: {
@@ -55,9 +55,9 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
         }
       }
     }
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     margin: "medium"
-  }, "The focus color of this select component is being altered by ThemeContext, independent from the custom theme"), React.createElement(Select, {
+  }, "The focus color of this select component is being altered by ThemeContext, independent from the custom theme"), /*#__PURE__*/React.createElement(Select, {
     alignSelf: "center",
     placeholder: "Select",
     value: valueBlue,
@@ -70,5 +70,5 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
 };
 
 storiesOf('Theme', module).add('ThemeContext.Extend', function () {
-  return React.createElement(GlobalThemeWithThemeContext, null);
+  return /*#__PURE__*/React.createElement(GlobalThemeWithThemeContext, null);
 });

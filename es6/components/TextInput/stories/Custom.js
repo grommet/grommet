@@ -107,34 +107,34 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
       var name = _ref2.name,
           imageUrl = _ref2.imageUrl;
       return {
-        label: React.createElement(Box, {
+        label: /*#__PURE__*/React.createElement(Box, {
           direction: "row",
           align: "center",
           gap: "small",
           border: index < list.length - 1 ? 'bottom' : undefined,
           pad: "small"
-        }, React.createElement(Image, {
+        }, /*#__PURE__*/React.createElement(Image, {
           width: "48px",
           src: imageUrl,
           style: {
             borderRadius: '100%'
           }
-        }), React.createElement(Text, null, React.createElement("strong", null, name))),
+        }), /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement("strong", null, name))),
         value: name
       };
     });
   }, [suggestedFolks, value]);
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: myCustomTheme,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "dark-1",
     fill: true,
     align: "center",
     pad: {
       top: 'large'
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     ref: boxRef,
     width: "large",
     direction: "row",
@@ -153,9 +153,9 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
       borderBottomLeftRadius: '0px',
       borderBottomRightRadius: '0px'
     } : undefined
-  }, React.createElement(Search, {
+  }, /*#__PURE__*/React.createElement(Search, {
     color: "brand"
-  }), React.createElement(TextInput, {
+  }), /*#__PURE__*/React.createElement(TextInput, {
     type: "search",
     dropTarget: boxRef.current,
     plain: true,
@@ -170,5 +170,5 @@ var CustomSuggestionsTextInput = function CustomSuggestionsTextInput() {
 };
 
 storiesOf('TextInput', module).add('Custom', function () {
-  return React.createElement(CustomSuggestionsTextInput, null);
+  return /*#__PURE__*/React.createElement(CustomSuggestionsTextInput, null);
 });

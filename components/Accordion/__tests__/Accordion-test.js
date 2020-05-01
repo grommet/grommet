@@ -22,40 +22,40 @@ var customTheme = {
 describe('Accordion', function () {
   afterEach(_react2.cleanup);
   test('no AccordionPanel', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, null)));
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, null)));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('AccordionPanel', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, null, _react["default"].createElement(_.AccordionPanel, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, null, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 1"
-    }, "Panel body 1"), _react["default"].createElement(_.AccordionPanel, {
+    }, "Panel body 1"), /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 2"
-    }, "Panel body 2"), false && _react["default"].createElement(_.AccordionPanel, {
+    }, "Panel body 2"), false && /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 2"
     }, "Panel body 2"))));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('complex title', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Box, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Box, {
       background: "dark-1"
-    }, _react["default"].createElement(_.Accordion, null, _react["default"].createElement(_.AccordionPanel, {
-      label: _react["default"].createElement("div", null, "Panel 1 complex")
-    }, "Panel body 1"), undefined, _react["default"].createElement(_.AccordionPanel, {
-      label: _react["default"].createElement("div", null, "Panel 2 complex")
+    }, /*#__PURE__*/_react["default"].createElement(_.Accordion, null, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
+      label: /*#__PURE__*/_react["default"].createElement("div", null, "Panel 1 complex")
+    }, "Panel body 1"), undefined, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
+      label: /*#__PURE__*/_react["default"].createElement("div", null, "Panel 2 complex")
     }, "Panel body 2")))));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('complex header', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, {
       activeIndex: 1,
       animate: false
-    }, _react["default"].createElement(_.AccordionPanel, {
-      header: _react["default"].createElement("div", null, "Panel 1 header")
-    }, "Panel body 1"), undefined, _react["default"].createElement(_.AccordionPanel, {
-      header: _react["default"].createElement("div", null, "Panel 2 header")
+    }, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
+      header: /*#__PURE__*/_react["default"].createElement("div", null, "Panel 1 header")
+    }, "Panel body 1"), undefined, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
+      header: /*#__PURE__*/_react["default"].createElement("div", null, "Panel 2 header")
     }, "Panel body 2"))));
 
     expect(component.toJSON()).toMatchSnapshot();
@@ -63,11 +63,11 @@ describe('Accordion', function () {
   test('change to second Panel', function (done) {
     var onActive = jest.fn();
 
-    var _render = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, {
       onActive: onActive
-    }, _react["default"].createElement(_.AccordionPanel, {
+    }, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 1"
-    }, "Panel body 1"), _react["default"].createElement(_.AccordionPanel, {
+    }, "Panel body 1"), /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 2"
     }, "Panel body 2")))),
         getByText = _render.getByText,
@@ -85,11 +85,11 @@ describe('Accordion', function () {
     }, 500);
   });
   test('change to second Panel without onActive', function () {
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, {
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, {
       animate: false
-    }, _react["default"].createElement(_.AccordionPanel, {
+    }, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 1"
-    }, "Panel body 1"), _react["default"].createElement(_.AccordionPanel, {
+    }, "Panel body 1"), /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 2"
     }, "Panel body 2")))),
         getByText = _render2.getByText,
@@ -104,13 +104,13 @@ describe('Accordion', function () {
   test('multiple panels', function () {
     var onActive = jest.fn();
 
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, {
+    var _render3 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, {
       animate: false,
       multiple: true,
       onActive: onActive
-    }, _react["default"].createElement(_.AccordionPanel, {
+    }, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 1"
-    }, "Panel body 1"), _react["default"].createElement(_.AccordionPanel, {
+    }, "Panel body 1"), /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 2"
     }, "Panel body 2")))),
         getByText = _render3.getByText,
@@ -139,9 +139,9 @@ describe('Accordion', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('custom accordion', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
       theme: customTheme
-    }, _react["default"].createElement(_.Accordion, null, _react["default"].createElement(_.AccordionPanel, {
+    }, /*#__PURE__*/_react["default"].createElement(_.Accordion, null, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 1"
     }, "Panel body 1"))));
 
@@ -150,13 +150,13 @@ describe('Accordion', function () {
   test('change active index', function () {
     var onActive = jest.fn();
 
-    var _render4 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, {
+    var _render4 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, {
       animate: false,
       activeIndex: 1,
       onActive: onActive
-    }, _react["default"].createElement(_.AccordionPanel, {
+    }, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 1"
-    }, "Panel body 1"), _react["default"].createElement(_.AccordionPanel, {
+    }, "Panel body 1"), /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 2"
     }, "Panel body 2")))),
         getByText = _render4.getByText,
@@ -170,13 +170,13 @@ describe('Accordion', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('set on hover', function () {
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, null, _react["default"].createElement(_.AccordionPanel, {
+    var _render5 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, null, /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 1",
       onMouseOver: function onMouseOver() {},
       onMouseOut: function onMouseOut() {},
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
-    }, "Panel body 1"), _react["default"].createElement(_.AccordionPanel, {
+    }, "Panel body 1"), /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
       label: "Panel 2",
       onMouseOver: function onMouseOver() {},
       onMouseOut: function onMouseOut() {},
@@ -209,16 +209,16 @@ describe('Accordion', function () {
 
     var Panel = function Panel(_ref) {
       var index = _ref.index;
-      return _react["default"].createElement(_.AccordionPanel, {
+      return /*#__PURE__*/_react["default"].createElement(_.AccordionPanel, {
         label: "Panel " + index
       }, "Panel body ", index);
     };
 
-    var _render6 = (0, _react2.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Accordion, {
+    var _render6 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Accordion, {
       animate: false,
       onActive: onActive
     }, [1, 2].map(function (index) {
-      return _react["default"].createElement(Panel, {
+      return /*#__PURE__*/_react["default"].createElement(Panel, {
         key: index,
         index: index
       });

@@ -29,31 +29,31 @@ var CenterLayer = function CenterLayer() {
     return setOpen2(undefined);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Button, {
-    icon: React.createElement(Trash, null),
-    label: React.createElement(Text, null, React.createElement("strong", null, "Remove")),
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(Trash, null),
+    label: /*#__PURE__*/React.createElement(Text, null, /*#__PURE__*/React.createElement("strong", null, "Remove")),
     onClick: onOpen,
     plain: true
-  })), open && React.createElement(Layer, {
+  })), open && /*#__PURE__*/React.createElement(Layer, {
     position: "center",
     modal: true,
     onClickOutside: onClose,
     onEsc: onClose
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "small",
     width: "medium"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 3,
     margin: "none"
-  }, "Confirm"), React.createElement(Text, null, "Are you sure you want to delete?"), React.createElement(Box, {
+  }, "Confirm"), /*#__PURE__*/React.createElement(Text, null, "Are you sure you want to delete?"), /*#__PURE__*/React.createElement(Box, {
     as: "footer",
     gap: "small",
     direction: "row",
@@ -63,32 +63,32 @@ var CenterLayer = function CenterLayer() {
       top: 'medium',
       bottom: 'small'
     }
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Open 2",
     onClick: onOpen2,
     color: "dark-3"
-  }), React.createElement(Button, {
-    label: React.createElement(Text, {
+  }), /*#__PURE__*/React.createElement(Button, {
+    label: /*#__PURE__*/React.createElement(Text, {
       color: "white"
-    }, React.createElement("strong", null, "Delete")),
+    }, /*#__PURE__*/React.createElement("strong", null, "Delete")),
     onClick: onClose,
     primary: true,
     color: "status-critical"
-  })))), open2 && React.createElement(Layer, {
+  })))), open2 && /*#__PURE__*/React.createElement(Layer, {
     position: "top",
     modal: true,
     onClickOutside: onClose2,
     onEsc: onClose2
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "small",
     width: "medium"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 3,
     margin: "none"
-  }, "Confirm 2"), React.createElement(Select, {
+  }, "Confirm 2"), /*#__PURE__*/React.createElement(Select, {
     options: ['one', 'two', 'three']
-  }), React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     as: "footer",
     gap: "small",
     direction: "row",
@@ -98,7 +98,7 @@ var CenterLayer = function CenterLayer() {
       top: 'medium',
       bottom: 'small'
     }
-  }, React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, {
     label: "Close",
     onClick: onClose2,
     color: "dark-3"
@@ -106,5 +106,5 @@ var CenterLayer = function CenterLayer() {
 };
 
 storiesOf('Layer', module).add('Center', function () {
-  return React.createElement(CenterLayer, null);
+  return /*#__PURE__*/React.createElement(CenterLayer, null);
 });

@@ -6,10 +6,10 @@ import { Box } from '../../Box';
 import { RadioButton } from '..';
 describe('RadioButton', function () {
   test('basic', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButton, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButton, {
       name: "test",
       value: "1"
-    }), React.createElement(RadioButton, {
+    }), /*#__PURE__*/React.createElement(RadioButton, {
       id: "test id",
       name: "test",
       value: "2"
@@ -18,12 +18,12 @@ describe('RadioButton', function () {
     expect(tree).toMatchSnapshot();
   });
   test('label', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButton, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButton, {
       label: "test label",
       name: "test",
       value: "1"
-    }), React.createElement(RadioButton, {
-      label: React.createElement("div", null, "test label"),
+    }), /*#__PURE__*/React.createElement(RadioButton, {
+      label: /*#__PURE__*/React.createElement("div", null, "test label"),
       name: "test",
       value: "2"
     })));
@@ -31,7 +31,7 @@ describe('RadioButton', function () {
     expect(tree).toMatchSnapshot();
   });
   test('checked', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButton, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButton, {
       checked: true,
       name: "test",
       value: "1"
@@ -40,11 +40,11 @@ describe('RadioButton', function () {
     expect(tree).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButton, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButton, {
       disabled: true,
       name: "test",
       value: "1"
-    }), React.createElement(RadioButton, {
+    }), /*#__PURE__*/React.createElement(RadioButton, {
       disabled: true,
       checked: true,
       name: "test",
@@ -56,16 +56,16 @@ describe('RadioButton', function () {
   test('children', function () {
     var child = function child(_ref) {
       var checked = _ref.checked;
-      return React.createElement(Box, {
+      return /*#__PURE__*/React.createElement(Box, {
         pad: "small",
         background: checked ? 'accent-1' : 'control'
       });
     };
 
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RadioButton, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButton, {
       name: "test",
       value: "1"
-    }, child), React.createElement(RadioButton, {
+    }, child), /*#__PURE__*/React.createElement(RadioButton, {
       checked: true,
       name: "test",
       value: "2"

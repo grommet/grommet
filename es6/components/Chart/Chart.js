@@ -177,10 +177,10 @@ var Chart = React.forwardRef(function (_ref, ref) {
           };
         }
 
-        return React.createElement("g", {
+        return /*#__PURE__*/React.createElement("g", {
           key: key,
           fill: "none"
-        }, React.createElement("title", null, label), React.createElement("path", _extends({
+        }, /*#__PURE__*/React.createElement("title", null, label), /*#__PURE__*/React.createElement("path", _extends({
           d: d
         }, hoverProps, clickProps, valueRest, {
           strokeDasharray: strokeDasharray
@@ -218,9 +218,9 @@ var Chart = React.forwardRef(function (_ref, ref) {
       };
     }
 
-    return React.createElement("g", {
+    return /*#__PURE__*/React.createElement("g", {
       fill: "none"
-    }, React.createElement("path", _extends({
+    }, /*#__PURE__*/React.createElement("path", _extends({
       d: d
     }, hoverProps, clickProps, {
       strokeDasharray: strokeDasharray
@@ -265,7 +265,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       };
     }
 
-    return React.createElement("g", null, React.createElement("path", _extends({
+    return /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", _extends({
       d: d
     }, hoverProps, clickProps)));
   };
@@ -305,7 +305,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       if (round) {
         var cx = (value[0] - bounds[0][0]) * scale[0];
         var cy = size[1] - (center - bounds[1][0]) * scale[1];
-        shape = React.createElement("circle", _extends({
+        shape = /*#__PURE__*/React.createElement("circle", _extends({
           cx: cx,
           cy: cy,
           r: strokeWidth / 2
@@ -313,7 +313,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
       } else {
         var x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
         var y = size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
-        shape = React.createElement("rect", _extends({
+        shape = /*#__PURE__*/React.createElement("rect", _extends({
           x: x,
           y: y,
           width: strokeWidth,
@@ -321,10 +321,10 @@ var Chart = React.forwardRef(function (_ref, ref) {
         }, hoverProps, clickProps, valueRest));
       }
 
-      return React.createElement("g", {
+      return /*#__PURE__*/React.createElement("g", {
         key: key,
         stroke: "none"
-      }, React.createElement("title", null, label), shape);
+      }, /*#__PURE__*/React.createElement("title", null, label), shape);
     });
   };
 
@@ -361,7 +361,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
     if (useGradient) fill = gradientMaskColor;else fill = normalizeColor(colorName, theme);
   } else fill = 'none';
 
-  var drawing = React.createElement("g", {
+  var drawing = /*#__PURE__*/React.createElement("g", {
     stroke: stroke,
     strokeWidth: type !== 'point' ? strokeWidth : undefined,
     fill: fill,
@@ -375,7 +375,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
   if (useGradient && size[1]) {
     var gradientId = id + "-gradient";
     var maskId = id + "-mask";
-    defs = React.createElement("defs", null, React.createElement("linearGradient", {
+    defs = /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
       id: gradientId,
       x1: 0,
       y1: 0,
@@ -386,15 +386,15 @@ var Chart = React.forwardRef(function (_ref, ref) {
     }).map(function (_ref5) {
       var value = _ref5.value,
           gradientColor = _ref5.color;
-      return React.createElement("stop", {
+      return /*#__PURE__*/React.createElement("stop", {
         key: value,
         offset: (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
         stopColor: normalizeColor(gradientColor, theme)
       });
-    })), React.createElement("mask", {
+    })), /*#__PURE__*/React.createElement("mask", {
       id: maskId
     }, drawing));
-    gradientRect = React.createElement("rect", {
+    gradientRect = /*#__PURE__*/React.createElement("rect", {
       x: viewBounds[0],
       y: viewBounds[1],
       width: viewBounds[2],
@@ -404,7 +404,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
     });
   }
 
-  return React.createElement(StyledChart, _extends({
+  return /*#__PURE__*/React.createElement(StyledChart, _extends({
     ref: ref || containerRef,
     id: id,
     viewBox: viewBox,

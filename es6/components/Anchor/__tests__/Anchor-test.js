@@ -8,12 +8,12 @@ import { Anchor } from '..';
 describe('Anchor', function () {
   afterEach(cleanup);
   test('renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, null)));
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, null)));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('renders with children', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       href: "#"
     }, "children")));
     var tree = component.toJSON();
@@ -21,7 +21,7 @@ describe('Anchor', function () {
   });
   test('warns about invalid label render', function () {
     var warnSpy = jest.spyOn(console, 'warn');
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       href: "#",
       label: "Test"
     }, "invalid")));
@@ -33,9 +33,9 @@ describe('Anchor', function () {
   });
   test('warns about invalid icon render', function () {
     var warnSpy = jest.spyOn(console, 'warn');
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       href: "#",
-      icon: React.createElement("svg", null)
+      icon: /*#__PURE__*/React.createElement("svg", null)
     }, "invalid")));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -44,7 +44,7 @@ describe('Anchor', function () {
     warnSpy.mockRestore();
   });
   test('primary renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       href: "#",
       primary: true,
       label: "Test"
@@ -53,7 +53,7 @@ describe('Anchor', function () {
     expect(tree).toMatchSnapshot();
   });
   test('focus renders', function () {
-    var _render = render(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       href: "#",
       label: "Test"
     }))),
@@ -64,15 +64,15 @@ describe('Anchor', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('disabled renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       disabled: true
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('icon label renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
-      icon: React.createElement("svg", null),
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
+      icon: /*#__PURE__*/React.createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -80,9 +80,9 @@ describe('Anchor', function () {
     expect(tree).toMatchSnapshot();
   });
   test('reverse icon label renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       reverse: true,
-      icon: React.createElement("svg", null),
+      icon: /*#__PURE__*/React.createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -91,7 +91,7 @@ describe('Anchor', function () {
   });
   test('is clickable', function () {
     var onClick = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       href: "#",
       label: "Test",
       onClick: onClick
@@ -102,7 +102,7 @@ describe('Anchor', function () {
     expect(onClick).toBeCalled();
   });
   test('renders tag', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Anchor, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Anchor, {
       href: "#",
       label: "Test",
       as: "span"

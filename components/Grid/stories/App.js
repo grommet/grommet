@@ -17,10 +17,10 @@ var AppGrid = function AppGrid() {
       sidebar = _useState[0],
       setSidebar = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Grid, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     fill: true,
     rows: ['auto', 'flex'],
     columns: ['auto', 'flex'],
@@ -37,7 +37,7 @@ var AppGrid = function AppGrid() {
       start: [1, 1],
       end: [1, 1]
     }]
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gridArea: "header",
     direction: "row",
     align: "center",
@@ -47,13 +47,13 @@ var AppGrid = function AppGrid() {
       vertical: 'small'
     },
     background: "dark-2"
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     onClick: function onClick() {
       return setSidebar(!sidebar);
     }
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "large"
-  }, "Title")), _react["default"].createElement(_grommet.Text, null, "my@email")), sidebar && _react["default"].createElement(_grommet.Box, {
+  }, "Title")), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "my@email")), sidebar && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gridArea: "sidebar",
     background: "dark-3",
     width: "small",
@@ -66,23 +66,23 @@ var AppGrid = function AppGrid() {
       duration: 150
     }]
   }, ['First', 'Second', 'Third'].map(function (name) {
-    return _react["default"].createElement(_grommet.Button, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       key: name,
       href: "#",
       hoverIndicator: true
-    }, _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         horizontal: 'medium',
         vertical: 'small'
       }
-    }, _react["default"].createElement(_grommet.Text, null, name)));
-  })), _react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, name)));
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gridArea: "main",
     justify: "center",
     align: "center"
-  }, _react["default"].createElement(_grommet.Text, null, "main"))));
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "main"))));
 };
 
 (0, _react2.storiesOf)('Grid', module).add('App', function () {
-  return _react["default"].createElement(AppGrid, null);
+  return /*#__PURE__*/_react["default"].createElement(AppGrid, null);
 });

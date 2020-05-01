@@ -27,22 +27,22 @@ var items = [{
 }];
 
 var OnHeader = function OnHeader() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Header, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
     background: "dark-1",
     pad: "medium"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     gap: "small"
-  }, _react["default"].createElement(_Simple.Avatar, null), _react["default"].createElement(_grommet.Anchor, {
+  }, /*#__PURE__*/_react["default"].createElement(_Simple.Avatar, null), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     color: "white",
     href: "https://github.com/ShimiSun"
-  }, "ShimiSun")), _react["default"].createElement(_grommet.Nav, {
+  }, "ShimiSun")), /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
     direction: "row"
   }, items.map(function (item) {
-    return _react["default"].createElement(_grommet.Anchor, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
       href: item.href,
       label: item.label,
       key: item.label
@@ -51,5 +51,5 @@ var OnHeader = function OnHeader() {
 };
 
 (0, _react2.storiesOf)('Nav', module).add('On Header', function () {
-  return _react["default"].createElement(OnHeader, null);
+  return /*#__PURE__*/_react["default"].createElement(OnHeader, null);
 });

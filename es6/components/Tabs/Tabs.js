@@ -73,14 +73,14 @@ var Tabs = forwardRef(function (_ref, ref) {
     });
   }, _this);
   var tabContentTitle = (activeTitle || '') + " " + messages.tabContents;
-  return React.createElement(StyledTabs, _extends({
+  return /*#__PURE__*/React.createElement(StyledTabs, _extends({
     ref: ref,
     as: Box,
     role: "tablist",
     flex: flex
   }, rest, {
     background: theme.tabs.background
-  }), React.createElement(StyledTabsHeader, {
+  }), /*#__PURE__*/React.createElement(StyledTabsHeader, {
     as: Box,
     direction: "row",
     justify: justify,
@@ -88,7 +88,7 @@ var Tabs = forwardRef(function (_ref, ref) {
     wrap: true,
     background: theme.tabs.header.background,
     gap: theme.tabs.gap
-  }, tabs), React.createElement(StyledTabPanel, {
+  }, tabs), /*#__PURE__*/React.createElement(StyledTabPanel, {
     flex: flex,
     "aria-label": tabContentTitle,
     role: "tabpanel"

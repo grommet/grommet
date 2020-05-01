@@ -5,21 +5,21 @@ import { grommet } from 'grommet/themes';
 import { data } from './data';
 
 var RenderedList = function RenderedList() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(List, {
+  }, /*#__PURE__*/React.createElement(List, {
     data: data.slice(0, 10),
     primaryKey: function primaryKey(item) {
-      return React.createElement(Text, {
+      return /*#__PURE__*/React.createElement(Text, {
         size: "large",
         weight: "bold"
       }, item.entry);
     },
     secondaryKey: function secondaryKey(item) {
-      return React.createElement(Text, {
+      return /*#__PURE__*/React.createElement(Text, {
         size: "small",
         color: "dark-4"
       }, item.location);
@@ -28,5 +28,5 @@ var RenderedList = function RenderedList() {
 };
 
 storiesOf('List', module).add('key render', function () {
-  return React.createElement(RenderedList, null);
+  return /*#__PURE__*/React.createElement(RenderedList, null);
 });

@@ -76,59 +76,59 @@ var CustomFormFieldStates = function CustomFormFieldStates() {
   (0, _react.useEffect)(function () {
     inputRef.current.focus();
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Form, null, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: true,
     gap: "medium",
     pad: "large",
     width: "medium"
-  }, _react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     htmlFor: "enabled-id",
     name: "enabled",
     label: "Default"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     id: "enabled-id",
     name: "enabled",
     placeholder: "Enter a username"
-  })), _react["default"].createElement(_grommet.FormField, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     htmlFor: "focus-id",
     name: "focus",
     label: "Focus State"
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     id: "focus-id",
     name: "focus",
     placeholder: "Enter a username",
     ref: inputRef
-  })), _react["default"].createElement(_grommet.FormField, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     htmlFor: "info-id",
     name: "info-demo",
     label: "Info State",
     info: "Unique name. No spaces. May include '-' as a separator."
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     id: "info-id",
     name: "info-demo",
     placeholder: "Enter a username",
     value: "fluffyKi"
-  })), _react["default"].createElement(_grommet.FormField, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     htmlFor: "error-id",
     name: "error-demo",
     label: "Error State",
     error: "It looks like that username is already taken. Bummer."
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     id: "error-id",
     name: "error-demo",
     placeholder: "Enter a username",
     value: "fluffyKitty123"
-  })), _react["default"].createElement(_grommet.FormField, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     htmlFor: "disabled-id",
     name: "disabled",
     label: "Disabled State",
     disabled: true
-  }, _react["default"].createElement(_grommet.TextInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     id: "disabled-id",
     name: "disabled",
     placeholder: "Enter a username",
@@ -137,5 +137,5 @@ var CustomFormFieldStates = function CustomFormFieldStates() {
 };
 
 (0, _react2.storiesOf)('Form', module).add('Field States Custom', function () {
-  return _react["default"].createElement(CustomFormFieldStates, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomFormFieldStates, null);
 });

@@ -12,30 +12,30 @@ var SimpleDrop = function SimpleDrop() {
   useEffect(function () {
     setShowDrop(true);
   }, []);
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     justify: "start",
     ref: targetRef
-  }, "Target"), targetRef.current && React.createElement(Drop, {
+  }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
     align: {
       top: 'bottom',
       left: 'left'
     },
     target: targetRef.current
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large"
   }, "Drop Contents"))));
 };
 
 storiesOf('Drop', module).add('Simple', function () {
-  return React.createElement(SimpleDrop, null);
+  return /*#__PURE__*/React.createElement(SimpleDrop, null);
 });

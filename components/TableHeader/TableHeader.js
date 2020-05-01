@@ -12,9 +12,9 @@ var _StyledTable = require("../Table/StyledTable");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var TableHeader = function TableHeader(props) {
-  return _react["default"].createElement(_TableContext.TableContext.Provider, {
+  return /*#__PURE__*/_react["default"].createElement(_TableContext.TableContext.Provider, {
     value: "header"
-  }, _react["default"].createElement(_StyledTable.StyledTableHeader, props));
+  }, /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTableHeader, props));
 };
 
 var TableHeaderDoc;

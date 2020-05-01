@@ -40,10 +40,10 @@ var Cell = function Cell(_ref) {
 
   if (typeof content === 'string' || typeof content === 'number') {
     var textProps = property === primaryProperty ? theme.dataTable.primary : {};
-    content = React.createElement(Text, textProps, content);
+    content = /*#__PURE__*/React.createElement(Text, textProps, content);
   }
 
-  return React.createElement(TableCell, _extends({
+  return /*#__PURE__*/React.createElement(TableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
     align: align,

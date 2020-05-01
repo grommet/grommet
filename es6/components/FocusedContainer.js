@@ -54,7 +54,7 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       clearTimeout(timer);
     };
   }, [hidden, bodyOverflowStyle, restrictScroll]);
-  return React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", _extends({
     ref: ref,
     "aria-hidden": hidden
   }, rest), children);

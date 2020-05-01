@@ -12,7 +12,7 @@ var CustomBox = styled.div.withConfig({
 CustomBox.defaultProps = {};
 Object.setPrototypeOf(CustomBox.defaultProps, defaultProps);
 test('default theme is used', function () {
-  var component = renderer.create(React.createElement(Box, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Box, {
     background: "brand"
   }));
   var tree = component.toJSON();
@@ -26,7 +26,7 @@ test('extends default theme', function () {
       }
     }
   });
-  var component = renderer.create(React.createElement(Box, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Box, {
     background: "brand"
   }));
   var tree = component.toJSON();
@@ -40,7 +40,7 @@ test('extends default theme twice', function () {
       }
     }
   });
-  var component = renderer.create(React.createElement(Box, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Box, {
     background: "brand"
   }));
   var tree = component.toJSON();
@@ -52,7 +52,7 @@ test('extends default theme twice', function () {
       }
     }
   });
-  component = renderer.create(React.createElement(Box, {
+  component = renderer.create( /*#__PURE__*/React.createElement(Box, {
     background: "brand"
   }));
   tree = component.toJSON();
@@ -66,9 +66,9 @@ test('uses Grommet theme instead of default', function () {
       }
     }
   });
-  var component = renderer.create(React.createElement(Grommet, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "brand"
   })));
   var tree = component.toJSON();
@@ -82,7 +82,7 @@ test('leverages default theme', function () {
       }
     }
   });
-  var component = renderer.create(React.createElement(CustomBox, null));
+  var component = renderer.create( /*#__PURE__*/React.createElement(CustomBox, null));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

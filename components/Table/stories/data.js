@@ -46,7 +46,7 @@ var columns = [{
   label: 'Name',
   dataScope: 'row',
   format: function format(datum) {
-    return _react["default"].createElement(_grommet.Text, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold"
     }, datum.name);
   }

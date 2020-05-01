@@ -192,7 +192,9 @@ var TextInput = forwardRef(function (_ref, ref) {
   var drop;
 
   if (showDrop) {
-    drop = // keyboard access needed here in case user clicks
+    drop =
+    /*#__PURE__*/
+    // keyboard access needed here in case user clicks
     // and drags on scroll bar and focus shifts to drop
     React.createElement(Keyboard, {
       onDown: function onDown(event) {
@@ -214,7 +216,7 @@ var TextInput = forwardRef(function (_ref, ref) {
 
         setValue(suggestions[activeSuggestionIndex]);
       }
-    }, React.createElement(Drop, _extends({
+    }, /*#__PURE__*/React.createElement(Drop, _extends({
       ref: dropRef,
       id: id ? "text-input-drop__" + id : undefined,
       align: dropAlign,
@@ -222,19 +224,19 @@ var TextInput = forwardRef(function (_ref, ref) {
       target: dropTarget || (ref || inputRef).current,
       onClickOutside: closeDrop,
       onEsc: closeDrop
-    }, dropProps), React.createElement(ContainerBox, {
+    }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, {
       ref: suggestionsRef,
       overflow: "auto",
       dropHeight: dropHeight
-    }, React.createElement(StyledSuggestions, null, React.createElement(InfiniteScroll, {
+    }, /*#__PURE__*/React.createElement(StyledSuggestions, null, /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: suggestions,
       step: theme.select.step
     }, function (suggestion, index, itemRef) {
       var plainLabel = typeof suggestion === 'object' && typeof isValidElement(suggestion.label);
-      return React.createElement("li", {
+      return /*#__PURE__*/React.createElement("li", {
         key: stringLabel(suggestion) + "-" + index,
         ref: itemRef
-      }, React.createElement(Button, {
+      }, /*#__PURE__*/React.createElement(Button, {
         active: activeSuggestionIndex === index || selectedSuggestionIndex === index,
         ref: function ref(r) {
           suggestionRefs[index] = r;
@@ -262,19 +264,19 @@ var TextInput = forwardRef(function (_ref, ref) {
         onFocus: function onFocus() {
           return setActiveSuggestionIndex(index);
         }
-      }, plainLabel ? renderLabel(suggestion) : React.createElement(Box, {
+      }, plainLabel ? renderLabel(suggestion) : /*#__PURE__*/React.createElement(Box, {
         align: "start",
         pad: "small"
       }, renderLabel(suggestion))));
     })))));
   }
 
-  return React.createElement(StyledTextInputContainer, {
+  return /*#__PURE__*/React.createElement(StyledTextInputContainer, {
     plain: plain
-  }, showStyledPlaceholder && React.createElement(StyledPlaceholder, null, placeholder), icon && React.createElement(StyledIcon, {
+  }, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, null, placeholder), icon && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
-  }, icon), React.createElement(Keyboard, {
+  }, icon), /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: function onEnter(event) {
       closeDrop();
 
@@ -308,7 +310,7 @@ var TextInput = forwardRef(function (_ref, ref) {
       }
     } : undefined,
     onKeyDown: onKeyDown
-  }, React.createElement(StyledTextInput, _extends({
+  }, /*#__PURE__*/React.createElement(StyledTextInput, _extends({
     ref: ref || inputRef,
     id: id,
     name: name,

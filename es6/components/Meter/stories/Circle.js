@@ -18,12 +18,12 @@ var CircleMeter = function CircleMeter() {
       clearTimeout(timer.current);
     };
   }, []);
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Meter, {
+  }, /*#__PURE__*/React.createElement(Meter, {
     type: "circle",
     background: "light-2",
     values: [{
@@ -34,5 +34,5 @@ var CircleMeter = function CircleMeter() {
 };
 
 storiesOf('Meter', module).add('Circle', function () {
-  return React.createElement(CircleMeter, null);
+  return /*#__PURE__*/React.createElement(CircleMeter, null);
 });

@@ -15,11 +15,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var OneDrop = function OneDrop(_ref) {
   var align = _ref.align,
       target = _ref.target;
-  return _react["default"].createElement(_grommet.Drop, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     align: align,
     target: target,
     stretch: false
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
   }));
 };
@@ -39,10 +39,10 @@ var Set = function Set(_ref2) {
 
   var targetRef = _react["default"].useCallback(setTarget, []);
 
-  return _react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: true,
     pad: "small"
-  }, _react["default"].createElement(_grommet.Text, null, label), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, label), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     margin: "xlarge",
     background: "dark-3",
     pad: {
@@ -52,8 +52,8 @@ var Set = function Set(_ref2) {
     align: "center",
     justify: "center",
     ref: targetRef
-  }, "\xA0"), target && _react["default"].createElement(_react["default"].Fragment, null, aligns.map(function (align, index) {
-    return _react["default"].createElement(OneDrop // eslint-disable-next-line react/no-array-index-key
+  }, "\xA0"), target && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, aligns.map(function (align, index) {
+    return /*#__PURE__*/_react["default"].createElement(OneDrop // eslint-disable-next-line react/no-array-index-key
     , {
       key: index,
       align: align,
@@ -68,9 +68,9 @@ Set.propTypes = {
 };
 
 var AllDrops = function AllDrops() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.ThemeContext.Extend, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.ThemeContext.Extend, {
     value: {
       global: {
         drop: {
@@ -81,13 +81,13 @@ var AllDrops = function AllDrops() {
         }
       }
     }
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     wrap: true,
     pad: "large",
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(Set, {
+  }, /*#__PURE__*/_react["default"].createElement(Set, {
     label: "left: left",
     aligns: [{
       top: 'top',
@@ -102,7 +102,7 @@ var AllDrops = function AllDrops() {
       bottom: 'bottom',
       left: 'left'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "left: right",
     aligns: [{
       top: 'top',
@@ -117,7 +117,7 @@ var AllDrops = function AllDrops() {
       bottom: 'bottom',
       left: 'right'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "(center horizontal)",
     aligns: [{
       top: 'top'
@@ -128,7 +128,7 @@ var AllDrops = function AllDrops() {
     }, {
       bottom: 'bottom'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "right: left",
     aligns: [{
       top: 'top',
@@ -143,7 +143,7 @@ var AllDrops = function AllDrops() {
       bottom: 'bottom',
       right: 'left'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "right: right",
     aligns: [{
       top: 'top',
@@ -158,7 +158,7 @@ var AllDrops = function AllDrops() {
       bottom: 'bottom',
       right: 'right'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "top: top",
     aligns: [{
       left: 'left',
@@ -173,7 +173,7 @@ var AllDrops = function AllDrops() {
       right: 'right',
       top: 'top'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "top: bottom",
     aligns: [{
       left: 'left',
@@ -188,7 +188,7 @@ var AllDrops = function AllDrops() {
       right: 'right',
       top: 'bottom'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "(center vertical)",
     aligns: [{
       left: 'left'
@@ -199,7 +199,7 @@ var AllDrops = function AllDrops() {
     }, {
       right: 'right'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "bottom: top",
     aligns: [{
       left: 'left',
@@ -214,7 +214,7 @@ var AllDrops = function AllDrops() {
       right: 'right',
       bottom: 'top'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "bottom: bottom",
     aligns: [{
       left: 'left',
@@ -229,12 +229,12 @@ var AllDrops = function AllDrops() {
       right: 'right',
       bottom: 'bottom'
     }]
-  }), _react["default"].createElement(Set, {
+  }), /*#__PURE__*/_react["default"].createElement(Set, {
     label: "(center vertical and horizontal)",
     aligns: [{}]
   }))));
 };
 
 (0, _react2.storiesOf)('Drop', module).add('All not stretch', function () {
-  return _react["default"].createElement(AllDrops, null);
+  return /*#__PURE__*/_react["default"].createElement(AllDrops, null);
 });

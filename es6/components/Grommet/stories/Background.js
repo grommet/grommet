@@ -7,42 +7,42 @@ var Background = function Background() {
   var themeColor = 'background-back';
   var hexValue = '#DCD0FF';
   var cssColor = 'gold';
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     gap: "medium"
-  }, React.createElement(Grommet, null, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
-  }, React.createElement(Text, null, "Grommet with no theme or background prop"))), React.createElement(Grommet, {
+  }, /*#__PURE__*/React.createElement(Text, null, "Grommet with no theme or background prop"))), /*#__PURE__*/React.createElement(Grommet, {
     theme: hpe,
     themeMode: "dark"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
-  }, React.createElement(Text, null, "Grommet with theme & themeMode but no background prop"))), React.createElement(Grommet, {
+  }, /*#__PURE__*/React.createElement(Text, null, "Grommet with theme & themeMode but no background prop"))), /*#__PURE__*/React.createElement(Grommet, {
     theme: hpe,
     themeMode: "light",
     background: themeColor
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
-  }, React.createElement(Text, null, "Grommet with background as theme color of '", themeColor, "'"))), React.createElement(Grommet, {
+  }, /*#__PURE__*/React.createElement(Text, null, "Grommet with background as theme color of '", themeColor, "'"))), /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     background: hexValue
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
-  }, React.createElement(Text, null, "Grommet with background as HEX value of '", hexValue, "'"))), React.createElement(Grommet, {
+  }, /*#__PURE__*/React.createElement(Text, null, "Grommet with background as HEX value of '", hexValue, "'"))), /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     background: cssColor
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
-  }, React.createElement(Text, null, "Grommet with background as CSS color name of '", cssColor, "'"))), React.createElement(Grommet, {
+  }, /*#__PURE__*/React.createElement(Text, null, "Grommet with background as CSS color name of '", cssColor, "'"))), /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     background: {
       color: 'pink',
       image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
     }
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
-  }, React.createElement(Text, null, "Grommet with background as object containing color and image"))));
+  }, /*#__PURE__*/React.createElement(Text, null, "Grommet with background as object containing color and image"))));
 };
 
 storiesOf('Grommet', module).add('Background', function () {
-  return React.createElement(Background, null);
+  return /*#__PURE__*/React.createElement(Background, null);
 });

@@ -15,17 +15,17 @@ var PhoneMaskedInput = function PhoneMaskedInput() {
       value = _React$useState[0],
       setValue = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, _react["default"].createElement(_grommet.MaskedInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     mask: [{
       fixed: '('
     }, {
@@ -55,5 +55,5 @@ var PhoneMaskedInput = function PhoneMaskedInput() {
 };
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Phone', function () {
-  return _react["default"].createElement(PhoneMaskedInput, null);
+  return /*#__PURE__*/_react["default"].createElement(PhoneMaskedInput, null);
 });

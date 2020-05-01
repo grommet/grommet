@@ -10,30 +10,30 @@ var SimpleAccordion = function SimpleAccordion(props) {
       multiple = props.multiple,
       rest = _objectWithoutPropertiesLoose(props, ["animate", "multiple"]);
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, rest, React.createElement(Accordion, {
+  }, /*#__PURE__*/React.createElement(Box, rest, /*#__PURE__*/React.createElement(Accordion, {
     animate: animate,
     multiple: multiple
-  }, React.createElement(AccordionPanel, {
+  }, /*#__PURE__*/React.createElement(AccordionPanel, {
     label: "Panel 1"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "light-2",
     overflow: "auto",
     height: "medium"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     height: "large",
     flex: false
-  }, "Panel 1 contents"))), React.createElement(AccordionPanel, {
+  }, "Panel 1 contents"))), /*#__PURE__*/React.createElement(AccordionPanel, {
     label: "Panel 2"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "light-2",
     style: {
       height: '50px'
     }
-  }, "Panel 2 contents")), React.createElement(AccordionPanel, {
+  }, "Panel 2 contents")), /*#__PURE__*/React.createElement(AccordionPanel, {
     label: "Panel 3"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     background: "light-2",
     style: {
       height: '300px'
@@ -42,14 +42,14 @@ var SimpleAccordion = function SimpleAccordion(props) {
 };
 
 storiesOf('Accordion', module).add('Simple', function () {
-  return React.createElement(SimpleAccordion, null);
+  return /*#__PURE__*/React.createElement(SimpleAccordion, null);
 }).add('Dark no animation', function () {
-  return React.createElement(SimpleAccordion, {
+  return /*#__PURE__*/React.createElement(SimpleAccordion, {
     animate: false,
     background: "dark-2"
   });
 }).add('Multiple', function () {
-  return React.createElement(SimpleAccordion, {
+  return /*#__PURE__*/React.createElement(SimpleAccordion, {
     multiple: true
   });
 });

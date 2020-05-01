@@ -18,12 +18,12 @@ var CalendarDropButton = function CalendarDropButton() {
     setOpen(false);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DropButton, {
+  }, /*#__PURE__*/React.createElement(DropButton, {
     open: open,
     onClose: function onClose() {
       return setOpen(false);
@@ -31,20 +31,20 @@ var CalendarDropButton = function CalendarDropButton() {
     onOpen: function onOpen() {
       return setOpen(true);
     },
-    dropContent: React.createElement(Calendar, {
+    dropContent: /*#__PURE__*/React.createElement(Calendar, {
       date: date,
       onSelect: onSelect
     })
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "medium",
     align: "center",
     pad: "small"
-  }, React.createElement(Text, null, date ? new Date(date).toLocaleDateString() : 'Select date'), React.createElement(FormDown, {
+  }, /*#__PURE__*/React.createElement(Text, null, date ? new Date(date).toLocaleDateString() : 'Select date'), /*#__PURE__*/React.createElement(FormDown, {
     color: "brand"
   })))));
 };
 
 storiesOf('DropButton', module).add('Calendar', function () {
-  return React.createElement(CalendarDropButton, null);
+  return /*#__PURE__*/React.createElement(CalendarDropButton, null);
 });

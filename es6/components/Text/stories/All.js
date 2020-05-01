@@ -5,18 +5,18 @@ import { grommet } from 'grommet/themes';
 var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 
 var All = function All() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, sizes.map(function (size) {
-    return React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(Box, {
       key: size,
       margin: "small"
-    }, React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Text, {
       size: size
     }, "Text " + size));
   }));
 };
 
 storiesOf('Text', module).add('All', function () {
-  return React.createElement(All, null);
+  return /*#__PURE__*/React.createElement(All, null);
 });

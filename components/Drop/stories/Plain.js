@@ -21,32 +21,32 @@ var PlainDrop = function PlainDrop() {
   (0, _react.useEffect)(function () {
     return setShowDrop(true);
   }, []);
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand",
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-3",
     pad: "medium",
     align: "center",
     justify: "start",
     ref: targetRef
-  }, "Target"), targetRef.current && _react["default"].createElement(_grommet.Drop, {
+  }, "Target"), targetRef.current && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
     plain: true,
     align: {
       top: 'bottom',
       left: 'left'
     },
     target: targetRef.current
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
   }, "No background no shadow"))));
 };
 
 (0, _react2.storiesOf)('Drop', module).add('Plain', function () {
-  return _react["default"].createElement(PlainDrop, null);
+  return /*#__PURE__*/_react["default"].createElement(PlainDrop, null);
 });

@@ -7,64 +7,64 @@ import { Twitter } from "grommet-icons/es6/icons/Twitter";
 import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
 
 var Media = function Media() {
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     gap: "xxsmall",
     justify: "center"
-  }, React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Anchor, {
     a11yTitle: "Share feedback on Github",
     href: "https://www.instagram.com/",
-    icon: React.createElement(Instagram, {
+    icon: /*#__PURE__*/React.createElement(Instagram, {
       color: "brand"
     })
-  }), React.createElement(Anchor, {
+  }), /*#__PURE__*/React.createElement(Anchor, {
     a11yTitle: "Chat with us on Slack",
     href: "https://www.facebook.com/",
-    icon: React.createElement(FacebookOption, {
+    icon: /*#__PURE__*/React.createElement(FacebookOption, {
       color: "brand"
     })
-  }), React.createElement(Anchor, {
+  }), /*#__PURE__*/React.createElement(Anchor, {
     a11yTitle: "Follow us on Twitter",
     href: "https://twitter.com/",
-    icon: React.createElement(Twitter, {
+    icon: /*#__PURE__*/React.createElement(Twitter, {
       color: "brand"
     })
   }));
 };
 
 var Social = function Social() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Main, {
+  }, /*#__PURE__*/React.createElement(Main, {
     background: "light-2",
     elevation: "large",
     pad: "medium",
     gap: "large"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     margin: "small",
     size: "xsmall"
-  }, "Main Content"), React.createElement(Box, {
+  }, "Main Content"), /*#__PURE__*/React.createElement(Box, {
     flex: true
-  })), React.createElement(Footer, {
+  })), /*#__PURE__*/React.createElement(Footer, {
     background: "light-4",
     pad: "small"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     direction: "row",
     gap: "xsmall"
-  }, React.createElement(GrommetIcon, {
+  }, /*#__PURE__*/React.createElement(GrommetIcon, {
     color: "brand",
     size: "medium"
-  }), React.createElement(Text, {
+  }), /*#__PURE__*/React.createElement(Text, {
     alignSelf: "center",
     color: "brand",
     size: "small"
-  }, "Grommet")), React.createElement(Media, null), React.createElement(Text, {
+  }, "Grommet")), /*#__PURE__*/React.createElement(Media, null), /*#__PURE__*/React.createElement(Text, {
     textAlign: "center",
     size: "xsmall"
   }, "\xA9Copyright")));
 };
 
 storiesOf('Footer', module).add('Social', function () {
-  return React.createElement(Social, null);
+  return /*#__PURE__*/React.createElement(Social, null);
 });

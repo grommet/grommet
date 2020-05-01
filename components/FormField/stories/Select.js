@@ -21,15 +21,15 @@ var FormFieldSelect = function FormFieldSelect(props) {
       value = _useState[0],
       setValue = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.FormField, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "select"
-  }, props), _react["default"].createElement(_grommet.Select, {
+  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     id: "select",
     placeholder: "placeholder",
     options: allOptions,
@@ -42,5 +42,5 @@ var FormFieldSelect = function FormFieldSelect(props) {
 };
 
 (0, _react2.storiesOf)('FormField', module).add('Select', function () {
-  return _react["default"].createElement(FormFieldSelect, null);
+  return /*#__PURE__*/_react["default"].createElement(FormFieldSelect, null);
 });

@@ -16,14 +16,14 @@ var Example = function Example() {
       sort = _React$useState[0],
       setSort = _React$useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns.map(function (c) {
-      return _extends({}, c, {
+      return _extends(_extends({}, c), {}, {
         search: c.property === 'name' || c.property === 'location'
       });
     }),
@@ -35,5 +35,5 @@ var Example = function Example() {
 };
 
 storiesOf('DataTable', module).add('Sort', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

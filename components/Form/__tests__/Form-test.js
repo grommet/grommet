@@ -25,13 +25,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 describe('Form', function () {
   afterEach(_react2.cleanup);
   test('empty', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, null)));
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, null)));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('with field', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, null, _react["default"].createElement(_FormField.FormField, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, null, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test"
     }))));
 
@@ -39,11 +39,11 @@ describe('Form', function () {
     expect(tree).toMatchSnapshot();
   });
   test('errors', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       errors: {
         test: 'missing'
       }
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test"
     }))));
 
@@ -51,11 +51,11 @@ describe('Form', function () {
     expect(tree).toMatchSnapshot();
   });
   test('infos', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       infos: {
         test: 'missing'
       }
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test"
     }))));
 
@@ -76,23 +76,23 @@ describe('Form', function () {
         return setValue(nextValue);
       }, []);
 
-      return _react["default"].createElement(_.Form, {
+      return /*#__PURE__*/_react["default"].createElement(_.Form, {
         value: value,
         onChange: onChange,
         onSubmit: onSubmit
-      }, _react["default"].createElement(_FormField.FormField, {
+      }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
         name: "test"
-      }, _react["default"].createElement(_TextInput.TextInput, {
+      }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
         name: "test",
         placeholder: "test input"
-      })), _react["default"].createElement(_Button.Button, {
+      })), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(Test, null))),
         getByPlaceholderText = _render.getByPlaceholderText,
         getByText = _render.getByText,
         container = _render.container;
@@ -137,23 +137,23 @@ describe('Form', function () {
         return setValue(nextValue);
       }, []);
 
-      return _react["default"].createElement(_.Form, {
+      return /*#__PURE__*/_react["default"].createElement(_.Form, {
         value: value,
         onChange: onChange,
         onSubmit: onSubmit
-      }, _react["default"].createElement(_FormField.FormField, {
+      }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
         name: "test"
-      }, _react["default"].createElement(_TextInput.TextInput, {
+      }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
         name: "test",
         placeholder: "test input"
-      })), _react["default"].createElement(_Button.Button, {
+      })), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render2 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+    var _render2 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(Test, null))),
         getByPlaceholderText = _render2.getByPlaceholderText,
         getByText = _render2.getByText,
         container = _render2.container;
@@ -183,14 +183,14 @@ describe('Form', function () {
   test('uncontrolled', function () {
     var onSubmit = jest.fn();
 
-    var _render3 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render3 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test"
-    }, _react["default"].createElement(_TextInput.TextInput, {
+    }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
       name: "test",
       placeholder: "test input"
-    })), _react["default"].createElement(_Button.Button, {
+    })), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -233,23 +233,23 @@ describe('Form', function () {
         return setValue(event.target.value);
       }, []);
 
-      return _react["default"].createElement(_.Form, {
+      return /*#__PURE__*/_react["default"].createElement(_.Form, {
         onSubmit: onSubmit
-      }, _react["default"].createElement(_FormField.FormField, {
+      }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
         name: "test"
-      }, _react["default"].createElement(_TextInput.TextInput, {
+      }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
         name: "test",
         placeholder: "test input",
         value: value,
         onChange: onChange
-      })), _react["default"].createElement(_Button.Button, {
+      })), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render4 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+    var _render4 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(Test, null))),
         getByPlaceholderText = _render4.getByPlaceholderText,
         getByText = _render4.getByText,
         container = _render4.container;
@@ -292,23 +292,23 @@ describe('Form', function () {
         return setValue(event.target.value);
       }, []);
 
-      return _react["default"].createElement(_.Form, {
+      return /*#__PURE__*/_react["default"].createElement(_.Form, {
         onSubmit: onSubmit
-      }, _react["default"].createElement(_FormField.FormField, {
+      }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
         name: "test"
-      }, _react["default"].createElement(_TextInput.TextInput, {
+      }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
         name: "test",
         placeholder: "test input",
         value: value,
         onChange: onChange
-      })), _react["default"].createElement(_Button.Button, {
+      })), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render5 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+    var _render5 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(Test, null))),
         getByPlaceholderText = _render5.getByPlaceholderText,
         getByText = _render5.getByText,
         container = _render5.container;
@@ -340,18 +340,18 @@ describe('Form', function () {
     var validate2 = jest.fn().mockReturnValue(undefined);
     var onSubmit = jest.fn();
 
-    var _render6 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render6 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       validate: validate,
       placeholder: "test input"
-    }), _react["default"].createElement(_FormField.FormField, {
+    }), /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test2",
       placeholder: "test-2 input",
       validate: [validate2]
-    }), _react["default"].createElement(_Button.Button, {
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -413,16 +413,16 @@ describe('Form', function () {
   test('regexp validation', function () {
     var onSubmit = jest.fn();
 
-    var _render7 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render7 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       validate: {
         regexp: /^[a-z]/i
       },
       placeholder: "test input"
-    }), _react["default"].createElement(_Button.Button, {
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -454,15 +454,15 @@ describe('Form', function () {
   test('validate', function () {
     var onSubmit = jest.fn();
 
-    var _render8 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render8 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       validate: [function (value) {
         return value.length === 1 ? 'simple string' : undefined;
       }, function (value) {
-        return value.length === 2 ? _react["default"].createElement(_Text.Text, null, " ReactNode ") : undefined;
+        return value.length === 2 ? /*#__PURE__*/_react["default"].createElement(_Text.Text, null, " ReactNode ") : undefined;
       }, function (value) {
         return value.length === 3 ? {
           message: 'status error',
@@ -475,7 +475,7 @@ describe('Form', function () {
         } : undefined;
       }],
       placeholder: "test input"
-    }), _react["default"].createElement(_Button.Button, {
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -526,13 +526,13 @@ describe('Form', function () {
   test('required validation', function () {
     var onSubmit = jest.fn();
 
-    var _render9 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render9 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       placeholder: "test input"
-    }), _react["default"].createElement(_Button.Button, {
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -556,13 +556,13 @@ describe('Form', function () {
   test('reset clears form', function () {
     var onReset = jest.fn();
 
-    var _render10 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render10 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       onReset: onReset
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       placeholder: "test input"
-    }), _react["default"].createElement(_Button.Button, {
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       type: "reset",
       primary: true,
       label: "Reset"
@@ -584,7 +584,7 @@ describe('Form', function () {
   test('initial values', function () {
     var _onSubmit = jest.fn();
 
-    var _render11 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
+    var _render11 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Form, {
       onSubmit: function onSubmit(_ref) {
         var value = _ref.value,
             touched = _ref.touched;
@@ -593,15 +593,15 @@ describe('Form', function () {
           touched: touched
         });
       }
-    }, _react["default"].createElement(_FormField.FormField, {
+    }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       placeholder: "test input",
       value: "Initial value"
-    }), _react["default"].createElement(_FormField.FormField, {
+    }), /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
       name: "test2",
       value: "Initial value2"
-    }), _react["default"].createElement(_Button.Button, {
+    }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -628,7 +628,7 @@ describe('Form', function () {
           test = _React$useState5[0],
           setTest = _React$useState5[1];
 
-      return _react["default"].createElement(_.Form, {
+      return /*#__PURE__*/_react["default"].createElement(_.Form, {
         onSubmit: function onSubmit(_ref2) {
           var value = _ref2.value,
               touched = _ref2.touched;
@@ -637,21 +637,21 @@ describe('Form', function () {
             touched: touched
           });
         }
-      }, _react["default"].createElement(_TextInput.TextInput, {
+      }, /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, {
         name: "test",
         value: test
-      }), _react["default"].createElement(_Button.Button, {
+      }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         label: "set",
         onClick: function onClick() {
           return setTest('a');
         }
-      }), _react["default"].createElement(_Button.Button, {
+      }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         label: "submit",
         type: "submit"
       }));
     };
 
-    var _render12 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+    var _render12 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(Test, null))),
         container = _render12.container,
         getByText = _render12.getByText;
 
@@ -682,23 +682,23 @@ describe('Form', function () {
         return setValue(nextValue);
       }, []);
 
-      return _react["default"].createElement(_.Form, {
+      return /*#__PURE__*/_react["default"].createElement(_.Form, {
         value: value,
         onChange: onChange,
         onSubmit: onSubmit
-      }, _react["default"].createElement(_FormField.FormField, {
+      }, /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
         label: "test",
         name: "test",
         id: "test",
         htmlFor: "test"
-      }), _react["default"].createElement(_Button.Button, {
+      }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
         type: "submit",
         primary: true,
         label: "Submit"
       }));
     };
 
-    var _render13 = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(Test, null))),
+    var _render13 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(Test, null))),
         getByLabelText = _render13.getByLabelText,
         getByText = _render13.getByText,
         container = _render13.container;

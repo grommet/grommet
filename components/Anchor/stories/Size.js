@@ -11,16 +11,16 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Size = function Size() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(function (size) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: size,
       margin: "small"
-    }, _react["default"].createElement(_grommet.Anchor, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
       size: size,
       label: size,
       href: "#"
@@ -29,5 +29,5 @@ var Size = function Size() {
 };
 
 (0, _react2.storiesOf)('Anchor', module).add('Size', function () {
-  return _react["default"].createElement(Size, null);
+  return /*#__PURE__*/_react["default"].createElement(Size, null);
 });

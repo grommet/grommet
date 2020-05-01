@@ -133,14 +133,14 @@ var columnsDefault = [{
 }];
 
 var Example = function Example() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: "horizontal",
     pad: "medium"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: "3"
-  }, " Default DataTable"), React.createElement(DataTable, {
+  }, " Default DataTable"), /*#__PURE__*/React.createElement(DataTable, {
     columns: columnsDefault,
     data: DATA,
     primaryKey: false,
@@ -149,12 +149,12 @@ var Example = function Example() {
       side: 'vertical',
       size: '1px'
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     fill: "horizontal",
     pad: "medium"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: "3"
-  }, "Theme Column Sizes"), React.createElement(DataTable, {
+  }, "Theme Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
     columns: columnsThemeSize,
     data: DATA,
     primaryKey: false,
@@ -163,12 +163,12 @@ var Example = function Example() {
       side: 'vertical',
       size: '1px'
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     fill: "horizontal",
     pad: "medium"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: "3"
-  }, "Absolute Column Sizes"), React.createElement(DataTable, {
+  }, "Absolute Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
     columns: columnsAbsoluteSize,
     data: DATA,
     primaryKey: false,
@@ -177,12 +177,12 @@ var Example = function Example() {
       side: 'vertical',
       size: '1px'
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     fill: "horizontal",
     pad: "medium"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: "3"
-  }, "Relative Column Sizes"), React.createElement(DataTable, {
+  }, "Relative Column Sizes"), /*#__PURE__*/React.createElement(DataTable, {
     columns: columnsRelativeSize,
     data: DATA,
     primaryKey: false,
@@ -195,5 +195,5 @@ var Example = function Example() {
 };
 
 storiesOf('DataTable', module).add('Column Sizes', function () {
-  return React.createElement(Example, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

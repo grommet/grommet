@@ -24,13 +24,9 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   }
 });
 
-var connection = function connection(fromTarget, toTarget, _ref) {
-  if (_ref === void 0) {
-    _ref = {};
-  }
-
-  var _ref2 = _ref,
-      rest = _extends({}, _ref2);
+var connection = function connection(fromTarget, toTarget, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      rest = _extends({}, _ref);
 
   return _extends({
     fromTarget: fromTarget,
@@ -43,42 +39,42 @@ var connection = function connection(fromTarget, toTarget, _ref) {
   }, rest);
 };
 
-var DiamondContainer = function DiamondContainer(_ref3) {
-  var carat = _ref3.carat,
-      color = _ref3.color,
-      cut = _ref3.cut,
-      align = _ref3.align,
-      id = _ref3.id,
-      name = _ref3.name,
-      textSize = _ref3.textSize;
-  return _react["default"].createElement(_grommet.Box, {
+var DiamondContainer = function DiamondContainer(_ref2) {
+  var carat = _ref2.carat,
+      color = _ref2.color,
+      cut = _ref2.cut,
+      align = _ref2.align,
+      id = _ref2.id,
+      name = _ref2.name,
+      textSize = _ref2.textSize;
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: align || 'center',
     alignSelf: "center",
     direction: "row",
     gap: "medium",
     key: id
-  }, _react["default"].createElement(_grommetIcons.Diamond, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Diamond, {
     id: id,
     size: "xlarge",
     color: "neutral-3"
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: align
-  }, _react["default"].createElement(_grommet.Text, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "medium",
     weight: "bold"
-  }, name), carat && _react["default"].createElement(_grommet.Text, {
+  }, name), carat && /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: textSize
-  }, " Carat: ", carat, " "), color && _react["default"].createElement(_grommet.Text, {
+  }, " Carat: ", carat, " "), color && /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: textSize
-  }, " Color: ", color, " "), cut && _react["default"].createElement(_grommet.Text, {
+  }, " Color: ", color, " "), cut && /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: textSize
   }, " Cut: ", cut, " ")));
 };
 
-var Container = function Container(_ref4) {
-  var node = _ref4.node,
-      index = _ref4.index;
-  return _react["default"].createElement(DiamondContainer, {
+var Container = function Container(_ref3) {
+  var node = _ref3.node,
+      index = _ref3.index;
+  return /*#__PURE__*/_react["default"].createElement(DiamondContainer, {
     carat: node.carat,
     color: node.color,
     cut: node.cut,
@@ -120,43 +116,43 @@ var Animated = function Animated() {
     }));
   }
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
-  }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     alignSelf: "center",
     margin: {
       bottom: 'large'
     }
-  }, _react["default"].createElement(Container, {
+  }, /*#__PURE__*/_react["default"].createElement(Container, {
     node: _data.data[0],
     index: 1
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     id: "4",
     width: "xsmall",
     margin: {
       bottom: 'large',
       top: 'xlarge'
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     gap: "xlarge"
   }, [2, 3].map(function (id) {
-    return _react["default"].createElement(Container, {
+    return /*#__PURE__*/_react["default"].createElement(Container, {
       key: id,
       node: _data.data[id - 1],
       index: id
     });
-  }))), _react["default"].createElement(_grommet.Diagram, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
     connections: connections
   })))));
 };
 
 (0, _react2.storiesOf)('Diagram', module).add('Animated', function () {
-  return _react["default"].createElement(Animated, null);
+  return /*#__PURE__*/_react["default"].createElement(Animated, null);
 });

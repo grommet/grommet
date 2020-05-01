@@ -90,32 +90,32 @@ var WindowChart = function WindowChart(_ref) {
       innerBounds = _useMemo2.bounds,
       thickness = _useMemo2.thickness;
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     className: "chromatic-ignore"
   }, innerAxis[0].reverse().map(function (t) {
-    return React.createElement(Text, {
+    return /*#__PURE__*/React.createElement(Text, {
       key: t
     }, new Date(t).toLocaleDateString());
-  })), React.createElement(Stack, {
+  })), /*#__PURE__*/React.createElement(Stack, {
     guidingChild: "first",
     interactiveChild: "first"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: thickness
     }
-  }, React.createElement(Chart, {
+  }, /*#__PURE__*/React.createElement(Chart, {
     type: "bar",
     color: "accent-2",
     overflow: true,
     bounds: innerBounds,
     values: innerValues.map(function (v) {
-      return _extends({}, v, {
+      return _extends(_extends({}, v), {}, {
         onHover: onHover(v)
       });
     }),
@@ -124,38 +124,38 @@ var WindowChart = function WindowChart(_ref) {
       width: 'full',
       height: 'small'
     }
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     fill: true,
     justify: "between"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     border: {
       side: 'top'
     },
     align: "start"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, React.createElement(Text, null, innerAxis[1][0]))), React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Text, null, innerAxis[1][0]))), /*#__PURE__*/React.createElement(Box, {
     border: {
       side: 'bottom',
       color: 'accent-2',
       size: 'medium'
     },
     align: "start"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "xsmall",
     background: {
       color: 'white',
       opacity: 'medium'
     }
-  }, React.createElement(Text, null, innerAxis[1][1])))), hover && React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Text, null, innerAxis[1][1])))), hover && /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     animation: {
       type: 'fadeIn',
       duration: 100
@@ -170,10 +170,10 @@ var WindowChart = function WindowChart(_ref) {
     },
     round: true,
     className: "chromatic-ignore"
-  }, React.createElement(Text, {
+  }, /*#__PURE__*/React.createElement(Text, {
     size: "large",
     weight: "bold"
-  }, hover.value[1]), React.createElement(Text, null, new Date(hover.value[0]).toLocaleDateString())))), React.createElement(Stack, null, React.createElement(Chart, {
+  }, hover.value[1]), /*#__PURE__*/React.createElement(Text, null, new Date(hover.value[0]).toLocaleDateString())))), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Chart, {
     type: "line",
     bounds: outerBounds,
     values: outerValues,
@@ -182,7 +182,7 @@ var WindowChart = function WindowChart(_ref) {
       height: 'xxsmall'
     },
     thickness: "xxsmall"
-  }), React.createElement(RangeSelector, {
+  }), /*#__PURE__*/React.createElement(RangeSelector, {
     min: 0,
     max: data.length,
     size: "full",
@@ -196,7 +196,7 @@ var WindowChart = function WindowChart(_ref) {
 };
 
 storiesOf('Chart', module).add('Window', function () {
-  return React.createElement(WindowChart, {
+  return /*#__PURE__*/React.createElement(WindowChart, {
     data: generateData(1000, 100),
     max: 100
   });

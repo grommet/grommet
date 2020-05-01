@@ -37,21 +37,21 @@ var IndeterminateCheckBox = function IndeterminateCheckBox() {
     }
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     gap: "medium"
-  }, _react["default"].createElement(_grommet.CheckBox, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     checked: checked.length === 3,
     indeterminate: checked.length > 0 && checked.length < 3,
     label: "All",
     onChange: onCheckAll
   }), checkboxes.map(function (item) {
-    return _react["default"].createElement(_grommet.CheckBox, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
       key: item,
       checked: checked.includes(item),
       label: item,
@@ -63,5 +63,5 @@ var IndeterminateCheckBox = function IndeterminateCheckBox() {
 };
 
 (0, _react2.storiesOf)('CheckBox', module).add('Indeterminate', function () {
-  return _react["default"].createElement(IndeterminateCheckBox, null);
+  return /*#__PURE__*/_react["default"].createElement(IndeterminateCheckBox, null);
 });

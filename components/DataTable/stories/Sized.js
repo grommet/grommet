@@ -15,12 +15,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 var SizedDataTable = function SizedDataTable() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.DataTable, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: _data.columns,
     data: _data.data,
     size: "medium"
@@ -28,5 +28,5 @@ var SizedDataTable = function SizedDataTable() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('Sized', function () {
-  return _react["default"].createElement(SizedDataTable, null);
+  return /*#__PURE__*/_react["default"].createElement(SizedDataTable, null);
 });

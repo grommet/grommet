@@ -173,14 +173,14 @@ var Clock = (0, _react.forwardRef)(function (_ref, ref) {
   var content;
 
   if (type === 'analog') {
-    content = _react["default"].createElement(_Analog.Analog, _extends({
+    content = /*#__PURE__*/_react["default"].createElement(_Analog.Analog, _extends({
       ref: ref,
       elements: elements,
       precision: precision,
       size: size
     }, rest));
   } else if (type === 'digital') {
-    content = _react["default"].createElement(_Digital.Digital, _extends({
+    content = /*#__PURE__*/_react["default"].createElement(_Digital.Digital, _extends({
       ref: ref,
       elements: elements,
       precision: precision,

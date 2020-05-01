@@ -17,13 +17,13 @@ var ChildrenRadioButton = function ChildrenRadioButton() {
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "large"
-  }, _react["default"].createElement(_grommet.RadioButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButton, {
     name: "name",
     value: "option 1",
     checked: selected === 'option 1',
@@ -32,10 +32,10 @@ var ChildrenRadioButton = function ChildrenRadioButton() {
     }
   }, function (_ref) {
     var checked = _ref.checked;
-    return _react["default"].createElement(_grommetIcons.Ascend, {
+    return /*#__PURE__*/_react["default"].createElement(_grommetIcons.Ascend, {
       color: checked ? 'brand' : 'status-unknown'
     });
-  }), _react["default"].createElement(_grommet.Button, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "clear",
     onClick: function onClick() {
       return setSelected(undefined);
@@ -44,5 +44,5 @@ var ChildrenRadioButton = function ChildrenRadioButton() {
 };
 
 (0, _react2.storiesOf)('RadioButton', module).add('Children', function () {
-  return _react["default"].createElement(ChildrenRadioButton, null);
+  return /*#__PURE__*/_react["default"].createElement(ChildrenRadioButton, null);
 });

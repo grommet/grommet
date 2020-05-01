@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Button) {
   var DocumentedButton = (0, _reactDesc.describe)(Button).availableAt((0, _utils.getAvailableAtBadge)('Button')).description('A button.').details("You can provide a single function child that will be called with\n      'hover' and 'focus' keys. This allows you to customize the rendering\n      of the Button in those cases.").usage("import { Button } from 'grommet';\n<Button primary label='Label' />").intrinsicElement('button');
-  DocumentedButton.propTypes = _extends({}, _utils.genericProps, {
+  DocumentedButton.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
     active: _reactDesc.PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag or react component to use for the element."),
     color: _utils.colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
@@ -36,7 +36,7 @@ var doc = function doc(Button) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({
+var themeDoc = _extends(_extends({
   'global.active.background.color': {
     description: 'The background color when using active prop.',
     type: 'string | { dark: string, light: string }',
@@ -220,6 +220,6 @@ var themeDoc = _extends({
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}'
   }
-}, _utils.themeDocUtils.focusStyle, {}, _utils.themeDocUtils.disabledStyle);
+}, _utils.themeDocUtils.focusStyle), _utils.themeDocUtils.disabledStyle);
 
 exports.themeDoc = themeDoc;

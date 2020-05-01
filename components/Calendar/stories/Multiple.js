@@ -17,12 +17,12 @@ var Example = function Example() {
       dates = _useState[0],
       setDates = _useState[1];
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Calendar, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     dates: dates,
     onSelect: function onSelect(date) {
       var nextDates = [].concat(dates);
@@ -42,5 +42,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('Calendar', module).add('Multiple', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

@@ -37,31 +37,31 @@ var CenterLayer = function CenterLayer() {
     return setOpen2(undefined);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "center"
-  }, _react["default"].createElement(_grommet.Button, {
-    icon: _react["default"].createElement(_grommetIcons.Trash, null),
-    label: _react["default"].createElement(_grommet.Text, null, _react["default"].createElement("strong", null, "Remove")),
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
+    label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, /*#__PURE__*/_react["default"].createElement("strong", null, "Remove")),
     onClick: onOpen,
     plain: true
-  })), open && _react["default"].createElement(_grommet.Layer, {
+  })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "center",
     modal: true,
     onClickOutside: onClose,
     onEsc: onClose
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     gap: "small",
     width: "medium"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 3,
     margin: "none"
-  }, "Confirm"), _react["default"].createElement(_grommet.Text, null, "Are you sure you want to delete?"), _react["default"].createElement(_grommet.Box, {
+  }, "Confirm"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Are you sure you want to delete?"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     as: "footer",
     gap: "small",
     direction: "row",
@@ -71,32 +71,32 @@ var CenterLayer = function CenterLayer() {
       top: 'medium',
       bottom: 'small'
     }
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Open 2",
     onClick: onOpen2,
     color: "dark-3"
-  }), _react["default"].createElement(_grommet.Button, {
-    label: _react["default"].createElement(_grommet.Text, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    label: /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       color: "white"
-    }, _react["default"].createElement("strong", null, "Delete")),
+    }, /*#__PURE__*/_react["default"].createElement("strong", null, "Delete")),
     onClick: onClose,
     primary: true,
     color: "status-critical"
-  })))), open2 && _react["default"].createElement(_grommet.Layer, {
+  })))), open2 && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "top",
     modal: true,
     onClickOutside: onClose2,
     onEsc: onClose2
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     gap: "small",
     width: "medium"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 3,
     margin: "none"
-  }, "Confirm 2"), _react["default"].createElement(_grommet.Select, {
+  }, "Confirm 2"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     options: ['one', 'two', 'three']
-  }), _react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     as: "footer",
     gap: "small",
     direction: "row",
@@ -106,7 +106,7 @@ var CenterLayer = function CenterLayer() {
       top: 'medium',
       bottom: 'small'
     }
-  }, _react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Close",
     onClick: onClose2,
     color: "dark-3"
@@ -114,5 +114,5 @@ var CenterLayer = function CenterLayer() {
 };
 
 (0, _react2.storiesOf)('Layer', module).add('Center', function () {
-  return _react["default"].createElement(CenterLayer, null);
+  return /*#__PURE__*/_react["default"].createElement(CenterLayer, null);
 });

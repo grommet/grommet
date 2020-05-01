@@ -15,12 +15,12 @@ groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
 var GroupedDataTable = function GroupedDataTable() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(DataTable, {
+  }, /*#__PURE__*/React.createElement(DataTable, {
     columns: groupColumns,
     data: DATA,
     groupBy: "location",
@@ -29,5 +29,5 @@ var GroupedDataTable = function GroupedDataTable() {
 };
 
 storiesOf('DataTable', module).add('Grouped', function () {
-  return React.createElement(GroupedDataTable, null);
+  return /*#__PURE__*/React.createElement(GroupedDataTable, null);
 });

@@ -7,29 +7,29 @@ import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var RichTabs = function RichTabs() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Tabs, null, React.createElement(Tab, {
-    title: React.createElement(RichTabTitle, {
-      icon: React.createElement(CircleInformation, {
+  }, /*#__PURE__*/React.createElement(Tabs, null, /*#__PURE__*/React.createElement(Tab, {
+    title: /*#__PURE__*/React.createElement(RichTabTitle, {
+      icon: /*#__PURE__*/React.createElement(CircleInformation, {
         color: "accent-2"
       }),
       label: "Personal Data"
     })
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name"
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     placeholder: "Enter your name..."
-  }))), React.createElement(Tab, {
-    title: React.createElement(RichTabTitle, {
-      icon: React.createElement(Currency, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
+    title: /*#__PURE__*/React.createElement(RichTabTitle, {
+      icon: /*#__PURE__*/React.createElement(Currency, {
         color: "neutral-2"
       }),
       label: "Payment"
     })
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Card Number"
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     placeholder: "Enter your card number..."
   })))));
 };
@@ -37,14 +37,14 @@ var RichTabs = function RichTabs() {
 var RichTabTitle = function RichTabTitle(_ref) {
   var icon = _ref.icon,
       label = _ref.label;
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
     gap: "xsmall",
     margin: "xsmall"
-  }, icon, React.createElement(Text, {
+  }, icon, /*#__PURE__*/React.createElement(Text, {
     size: "small"
-  }, React.createElement("strong", null, label)));
+  }, /*#__PURE__*/React.createElement("strong", null, label)));
 };
 
 RichTabTitle.propTypes = {
@@ -52,6 +52,6 @@ RichTabTitle.propTypes = {
   label: PropTypes.string.isRequired
 };
 storiesOf('Tabs', module).add('Rich', function () {
-  return React.createElement(RichTabs, null);
+  return /*#__PURE__*/React.createElement(RichTabs, null);
 });
 export { RichTabTitle };

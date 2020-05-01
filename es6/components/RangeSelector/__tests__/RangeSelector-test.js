@@ -7,14 +7,14 @@ import { RangeSelector } from '..';
 describe('RangeSelector', function () {
   afterEach(cleanup);
   test('basic', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       values: [20, 30]
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('color', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       color: "accent-1",
       values: [20, 30]
     })));
@@ -22,10 +22,10 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('direction', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       direction: "horizontal",
       values: [20, 30]
-    }), React.createElement(RangeSelector, {
+    }), /*#__PURE__*/React.createElement(RangeSelector, {
       direction: "vertical",
       values: [20, 30]
     })));
@@ -33,10 +33,10 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('invert', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       invert: true,
       values: [20, 30]
-    }), React.createElement(RangeSelector, {
+    }), /*#__PURE__*/React.createElement(RangeSelector, {
       invert: false,
       values: [20, 30]
     })));
@@ -44,7 +44,7 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('max', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       max: 50,
       values: [20, 30]
     })));
@@ -52,7 +52,7 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('min', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       min: 10,
       values: [20, 30]
     })));
@@ -60,8 +60,8 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('opacity', function () {
-    var component = renderer.create(React.createElement(Grommet, null, ['weak', 'medium', 'strong'].map(function (opacity) {
-      return React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, ['weak', 'medium', 'strong'].map(function (opacity) {
+      return /*#__PURE__*/React.createElement(RangeSelector, {
         key: opacity,
         opacity: opacity,
         values: [20, 30]
@@ -71,8 +71,8 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('round', function () {
-    var component = renderer.create(React.createElement(Grommet, null, ['xsmall', 'small', 'medium', 'large', 'full'].map(function (round) {
-      return React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, ['xsmall', 'small', 'medium', 'large', 'full'].map(function (round) {
+      return /*#__PURE__*/React.createElement(RangeSelector, {
         key: round,
         round: round,
         values: [20, 30]
@@ -82,8 +82,8 @@ describe('RangeSelector', function () {
     expect(tree).toMatchSnapshot();
   });
   test('size', function () {
-    var component = renderer.create(React.createElement(Grommet, null, ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(function (size) {
-      return React.createElement(RangeSelector, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(function (size) {
+      return /*#__PURE__*/React.createElement(RangeSelector, {
         key: size,
         size: size,
         values: [20, 30]
@@ -103,7 +103,7 @@ describe('RangeSelector', function () {
       return setValues(nextValues);
     });
 
-    var _render = render(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var _render = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       values: [0, 100],
       step: 3,
       onChange: onChange
@@ -135,7 +135,7 @@ describe('RangeSelector', function () {
   test('handle keyboard', function () {
     var onChange = jest.fn();
 
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var _render2 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       values: [20, 30],
       onChange: onChange
     }))),
@@ -169,7 +169,7 @@ describe('RangeSelector', function () {
   test('handle mouse', function () {
     var onChange = jest.fn();
 
-    var _render3 = render(React.createElement(Grommet, null, React.createElement(RangeSelector, {
+    var _render3 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RangeSelector, {
       values: [20, 30],
       onChange: onChange
     }))),

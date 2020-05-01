@@ -60,35 +60,35 @@ var customTheme = deepMerge(grommet, {
 });
 
 var CustomTabs = function CustomTabs() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
-  }, React.createElement(Tabs, null, React.createElement(Tab, {
-    title: React.createElement(RichTabTitle, {
-      icon: React.createElement(CircleInformation, {
+  }, /*#__PURE__*/React.createElement(Tabs, null, /*#__PURE__*/React.createElement(Tab, {
+    title: /*#__PURE__*/React.createElement(RichTabTitle, {
+      icon: /*#__PURE__*/React.createElement(CircleInformation, {
         color: "accent-1"
       }),
       label: "Personal Data"
     })
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name"
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     placeholder: "Enter your name..."
-  }))), React.createElement(Tab, {
-    title: React.createElement(RichTabTitle, {
-      icon: React.createElement(Currency, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
+    title: /*#__PURE__*/React.createElement(RichTabTitle, {
+      icon: /*#__PURE__*/React.createElement(Currency, {
         color: "light-3"
       }),
       label: "Payment"
     })
-  }, React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(FormField, {
     label: "Card Number"
-  }, React.createElement(TextInput, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
     placeholder: "Enter your card number..."
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Simple Tab"
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
 
 storiesOf('Tabs', module).add('Custom Theme', function () {
-  return React.createElement(CustomTabs, null);
+  return /*#__PURE__*/React.createElement(CustomTabs, null);
 });

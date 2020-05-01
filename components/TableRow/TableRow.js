@@ -14,7 +14,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var TableRow = (0, _react.forwardRef)(function (props, ref) {
-  return _react["default"].createElement(_StyledTable.StyledTableRow, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTableRow, _extends({
     ref: ref
   }, props));
 });

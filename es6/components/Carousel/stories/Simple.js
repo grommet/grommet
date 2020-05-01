@@ -13,37 +13,37 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   var initialChild = _ref.initialChild,
       props = _objectWithoutPropertiesLoose(_ref, ["initialChild"]);
 
-  return React.createElement(Grommet, null, React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Carousel, _extends({
+  }, /*#__PURE__*/React.createElement(Carousel, _extends({
     initialChild: initialChild
-  }, props), React.createElement(Box, {
+  }, props), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  })), React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     pad: "xlarge",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
   })))));
 };
 
 storiesOf('Carousel', module).add('Simple', function () {
-  return React.createElement(SimpleCarousel, null);
+  return /*#__PURE__*/React.createElement(SimpleCarousel, null);
 }).add('Initial Child', function () {
-  return React.createElement(SimpleCarousel, {
+  return /*#__PURE__*/React.createElement(SimpleCarousel, {
     initialChild: 1
   });
 }).add('Without Controls', function () {
-  return React.createElement(SimpleCarousel, {
+  return /*#__PURE__*/React.createElement(SimpleCarousel, {
     controls: false,
     play: 1500
   });

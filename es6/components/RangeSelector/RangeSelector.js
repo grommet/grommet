@@ -144,7 +144,7 @@ var RangeSelector = forwardRef(function (_ref, ref) {
   };
   if (direction === 'vertical') layoutProps.width = thickness;else layoutProps.height = thickness;
   if (size === 'full') layoutProps.alignSelf = 'stretch';
-  return React.createElement(Container, _extends({
+  return /*#__PURE__*/React.createElement(Container, _extends({
     ref: containerRef,
     direction: direction === 'vertical' ? 'column' : 'row',
     align: "center",
@@ -152,7 +152,7 @@ var RangeSelector = forwardRef(function (_ref, ref) {
   }, rest, {
     tabIndex: "-1",
     onClick: onChange ? onClick : undefined
-  }), React.createElement(Box, _extends({
+  }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {
       flex: lower - min + " 0 0"
     },
@@ -163,7 +163,7 @@ var RangeSelector = forwardRef(function (_ref, ref) {
       opacity: opacity,
       dark: theme.dark
     } : undefined
-  }, layoutProps)), React.createElement(EdgeControl, {
+  }, layoutProps)), /*#__PURE__*/React.createElement(EdgeControl, {
     a11yTitle: messages.lower,
     tabIndex: 0,
     ref: ref,
@@ -180,7 +180,7 @@ var RangeSelector = forwardRef(function (_ref, ref) {
     onIncrease: onChange && lower + step <= upper ? function () {
       return onChange([lower + step, upper]);
     } : undefined
-  }), React.createElement(Box, _extends({
+  }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {
       flex: upper - lower + 1 + " 0 0",
       cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize'
@@ -198,7 +198,7 @@ var RangeSelector = forwardRef(function (_ref, ref) {
       setChanging('selection');
       setMoveValue(nextMoveValue);
     } : undefined
-  })), React.createElement(EdgeControl, {
+  })), /*#__PURE__*/React.createElement(EdgeControl, {
     a11yTitle: messages.upper,
     tabIndex: 0,
     color: color,
@@ -214,7 +214,7 @@ var RangeSelector = forwardRef(function (_ref, ref) {
     onIncrease: onChange && upper + step <= max ? function () {
       return onChange([lower, upper + step]);
     } : undefined
-  }), React.createElement(Box, _extends({
+  }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {
       flex: max - upper + " 0 0"
     },

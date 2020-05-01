@@ -4,19 +4,19 @@ import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Disabled = function Disabled() {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small"
-  }, React.createElement(Anchor, {
+  }, /*#__PURE__*/React.createElement(Anchor, {
     disabled: true,
     label: "Disabled Anchor"
   }))));
 };
 
 storiesOf('Anchor', module).add('Disabled', function () {
-  return React.createElement(Disabled, null);
+  return /*#__PURE__*/React.createElement(Disabled, null);
 });

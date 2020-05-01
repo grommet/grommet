@@ -74,14 +74,14 @@ var DropButton = (0, _react.forwardRef)(function (_ref, ref) {
 
     if (onClick) onClick(event);
   }, [onClick, onClose, onOpen, show]);
-  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_Button.Button, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
     id: id,
     ref: buttonRef,
     a11yTitle: a11yTitle,
     disabled: disabled
   }, rest, {
     onClick: onClickInternal
-  })), show && buttonRef.current && _react["default"].createElement(_Drop.Drop, _extends({
+  })), show && buttonRef.current && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
     id: id ? id + "__drop" : undefined,
     restrictFocus: true,
     align: dropAlign,

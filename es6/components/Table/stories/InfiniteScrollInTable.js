@@ -22,30 +22,30 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
     })));
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "small",
     basis: "small"
-  }, React.createElement(Heading, {
+  }, /*#__PURE__*/React.createElement(Heading, {
     level: 3
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     gap: "small"
-  }, React.createElement("strong", null, "InfiniteScroll embedded in a Table"), React.createElement(Text, null, "Scroll down to load more data, open console to see loading info"))), React.createElement(Table, null, React.createElement(TableHeader, null, React.createElement(TableRow, null, React.createElement(TableCell, {
+  }, /*#__PURE__*/React.createElement("strong", null, "InfiniteScroll embedded in a Table"), /*#__PURE__*/React.createElement(Text, null, "Scroll down to load more data, open console to see loading info"))), /*#__PURE__*/React.createElement(Table, null, /*#__PURE__*/React.createElement(TableHeader, null, /*#__PURE__*/React.createElement(TableRow, null, /*#__PURE__*/React.createElement(TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Key"), React.createElement(TableCell, {
+  }, "Key"), /*#__PURE__*/React.createElement(TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Cartoon"), React.createElement(TableCell, {
+  }, "Cartoon"), /*#__PURE__*/React.createElement(TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Movie"), React.createElement(TableCell, {
+  }, "Movie"), /*#__PURE__*/React.createElement(TableCell, {
     scope: "col",
     border: "bottom"
-  }, "Year"))), React.createElement(TableBody, null, React.createElement(InfiniteScroll, {
+  }, "Year"))), /*#__PURE__*/React.createElement(TableBody, null, /*#__PURE__*/React.createElement(InfiniteScroll, {
     renderMarker: function renderMarker(marker) {
-      return React.createElement(TableRow, null, React.createElement(TableCell, null, marker));
+      return /*#__PURE__*/React.createElement(TableRow, null, /*#__PURE__*/React.createElement(TableCell, null, marker));
     },
     scrollableAncestor: "window",
     items: results,
@@ -54,14 +54,14 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
     },
     step: step
   }, function (result) {
-    return React.createElement(TableRow, {
+    return /*#__PURE__*/React.createElement(TableRow, {
       key: result
-    }, React.createElement(TableCell, null, result), React.createElement(TableCell, null, "cartoon"), React.createElement(TableCell, null, "movie name"), React.createElement(TableCell, null, "year"));
+    }, /*#__PURE__*/React.createElement(TableCell, null, result), /*#__PURE__*/React.createElement(TableCell, null, "cartoon"), /*#__PURE__*/React.createElement(TableCell, null, "movie name"), /*#__PURE__*/React.createElement(TableCell, null, "year"));
   })))));
 };
 
 storiesOf('Table', module).add('InfiniteScroll', function () {
-  return React.createElement(InfiniteScrollInTable, null);
+  return /*#__PURE__*/React.createElement(InfiniteScrollInTable, null);
 }, {
   chromatic: {
     disable: true

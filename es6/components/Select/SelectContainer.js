@@ -34,9 +34,7 @@ var SelectOption = styled(Button).withConfig({
   componentId: "sc-1wi0ul8-2"
 })(["display:block;width:100%;"]);
 
-var SelectContainer =
-/*#__PURE__*/
-function (_Component) {
+var SelectContainer = /*#__PURE__*/function (_Component) {
   _inheritsLoose(SelectContainer, _Component);
 
   function SelectContainer(props) {
@@ -321,21 +319,21 @@ function (_Component) {
     var customSearchInput = theme.select.searchInput;
     var SelectTextInput = customSearchInput || TextInput;
 
-    var selectOptionsStyle = _extends({}, theme.select.options.box, {}, theme.select.options.container);
+    var selectOptionsStyle = _extends(_extends({}, theme.select.options.box), theme.select.options.container);
 
-    return React.createElement(Keyboard, {
+    return /*#__PURE__*/React.createElement(Keyboard, {
       onEnter: this.onSelectOption,
       onUp: this.onPreviousOption,
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
-    }, React.createElement(StyledContainer, {
+    }, /*#__PURE__*/React.createElement(StyledContainer, {
       as: Box,
       id: id ? id + "__select-drop" : undefined,
       dropHeight: dropHeight
-    }, onSearch && React.createElement(Box, {
+    }, onSearch && /*#__PURE__*/React.createElement(Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,
       flex: false
-    }, React.createElement(SelectTextInput, {
+    }, /*#__PURE__*/React.createElement(SelectTextInput, {
       focusIndicator: !customSearchInput,
       size: "small",
       ref: this.searchRef,
@@ -343,11 +341,11 @@ function (_Component) {
       value: search,
       placeholder: searchPlaceholder,
       onChange: this.onSearchChange
-    })), React.createElement(OptionsBox, {
+    })), /*#__PURE__*/React.createElement(OptionsBox, {
       role: "menubar",
       tabIndex: "-1",
       ref: this.optionsRef
-    }, options.length > 0 ? React.createElement(InfiniteScroll, {
+    }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: options,
       step: theme.select.step,
       onMore: onMore,
@@ -359,7 +357,7 @@ function (_Component) {
       var isSelected = _this3.isSelected(index);
 
       var isActive = activeIndex === index;
-      return React.createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
+      return /*#__PURE__*/React.createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
       , {
         key: index,
         ref: optionRef,
@@ -376,17 +374,17 @@ function (_Component) {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : React.createElement(OptionBox, _extends({}, selectOptionsStyle, {
+      }) : /*#__PURE__*/React.createElement(OptionBox, _extends({}, selectOptionsStyle, {
         selected: isSelected
-      }), React.createElement(Text, theme.select.options.text, _this3.optionLabel(index))));
-    }) : React.createElement(SelectOption, {
+      }), /*#__PURE__*/React.createElement(Text, theme.select.options.text, _this3.optionLabel(index))));
+    }) : /*#__PURE__*/React.createElement(SelectOption, {
       key: "search_empty",
       tabIndex: "-1",
       role: "menuitem",
       hoverIndicator: "background",
       disabled: true,
       option: emptySearchMessage
-    }, React.createElement(OptionBox, selectOptionsStyle, React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
+    }, /*#__PURE__*/React.createElement(OptionBox, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
   };
 
   return SelectContainer;

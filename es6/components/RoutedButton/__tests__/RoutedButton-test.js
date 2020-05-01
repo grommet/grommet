@@ -9,9 +9,7 @@ import 'jest-styled-components';
 import { findAllByType } from '../../../utils';
 import { Grommet, RoutedButton } from '../..';
 
-var FakeRouter =
-/*#__PURE__*/
-function (_Component) {
+var FakeRouter = /*#__PURE__*/function (_Component) {
   _inheritsLoose(FakeRouter, _Component);
 
   function FakeRouter() {
@@ -36,7 +34,7 @@ function (_Component) {
 
   _proto.render = function render() {
     var children = this.props.children;
-    return React.createElement("div", null, children);
+    return /*#__PURE__*/React.createElement("div", null, children);
   };
 
   return FakeRouter;
@@ -56,10 +54,10 @@ describe('RoutedButton', function () {
   var push = jest.fn();
   var replace = jest.fn();
   test('renders', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, React.createElement(RoutedButton, {
+    }, /*#__PURE__*/React.createElement(RoutedButton, {
       label: "Test",
       path: "/"
     }))));
@@ -69,10 +67,10 @@ describe('RoutedButton', function () {
   test('RoutedButton is clickable', function () {
     var preventDefault = jest.fn();
     var onClick = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, React.createElement(RoutedButton, {
+    }, /*#__PURE__*/React.createElement(RoutedButton, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -88,10 +86,10 @@ describe('RoutedButton', function () {
   });
   test('RoutedButton skips onClick if right clicked', function () {
     var onClick = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, React.createElement(RoutedButton, {
+    }, /*#__PURE__*/React.createElement(RoutedButton, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -108,10 +106,10 @@ describe('RoutedButton', function () {
   });
   test('RoutedButton calls router context push', function () {
     var preventDefault = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, React.createElement(RoutedButton, {
+    }, /*#__PURE__*/React.createElement(RoutedButton, {
       label: "Test",
       path: "/"
     }))));
@@ -125,10 +123,10 @@ describe('RoutedButton', function () {
   });
   test('RoutedButton calls router context replace', function () {
     var preventDefault = jest.fn();
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, React.createElement(RoutedButton, {
+    }, /*#__PURE__*/React.createElement(RoutedButton, {
       label: "Test",
       path: "/",
       method: "replace"

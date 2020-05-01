@@ -15,194 +15,194 @@ var ResponsiveTabs = function ResponsiveTabs() {
     return setIndex(nextIndex);
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Tabs, {
+  }, /*#__PURE__*/React.createElement(Tabs, {
     activeIndex: index,
     onActive: onActive
-  }, React.createElement(Tab, {
+  }, /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 1"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 2"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 3"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 4"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 5"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 6"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 7"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 8"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 9"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 10"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 11"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 12"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 13"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 14"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 15"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 16"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 17"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 18"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, React.createElement(TreeOption, {
+  }, /*#__PURE__*/React.createElement(TreeOption, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 19"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, React.createElement(Car, {
+  }, /*#__PURE__*/React.createElement(Car, {
     size: "xlarge"
-  }))), React.createElement(Tab, {
+  }))), /*#__PURE__*/React.createElement(Tab, {
     title: "Tab 20"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, React.createElement(Attraction, {
+  }, /*#__PURE__*/React.createElement(Attraction, {
     size: "xlarge"
   })))));
 };
 
 storiesOf('Tabs', module).add('Responsive', function () {
-  return React.createElement(ResponsiveTabs, null);
+  return /*#__PURE__*/React.createElement(ResponsiveTabs, null);
 });

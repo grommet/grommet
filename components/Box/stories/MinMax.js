@@ -11,17 +11,17 @@ var _themes = require("../../../themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var MinMaxSizesBox = function MinMaxSizesBox() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "small"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "small",
     direction: "row",
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       max: 'small'
@@ -31,7 +31,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "max-height=small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max-height=small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       max: 'small'
@@ -41,7 +41,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "max-height=small"), _react["default"].createElement(_grommet.Text, null, "max-height=small"), _react["default"].createElement(_grommet.Text, null, "max-height=small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max-height=small"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max-height=small"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max-height=small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       max: 'small'
@@ -52,12 +52,14 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     background: "brand",
     overflow: "auto"
   }, Array(20).fill().map(function (_, i) {
-    return (// eslint-disable-next-line react/no-array-index-key
+    return (
+      /*#__PURE__*/
+      // eslint-disable-next-line react/no-array-index-key
       _react["default"].createElement(_grommet.Text, {
         key: i
       }, "Small (" + i + ")")
     );
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       max: '100px'
@@ -68,17 +70,19 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     background: "brand",
     overflow: "auto"
   }, Array(20).fill().map(function (_, i) {
-    return (// eslint-disable-next-line react/no-array-index-key
+    return (
+      /*#__PURE__*/
+      // eslint-disable-next-line react/no-array-index-key
       _react["default"].createElement(_grommet.Text, {
         key: i
       }, "Small (" + i + ")")
     );
-  }))), _react["default"].createElement(_grommet.Box, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "small",
     direction: "row",
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       min: '100px'
@@ -88,7 +92,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "min-height=100px")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-height=100px")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       min: 'small'
@@ -98,7 +102,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "min-height=small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-height=small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       min: 'small'
@@ -108,7 +112,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "min-height=small"), _react["default"].createElement(_grommet.Text, null, "min-height=small"), _react["default"].createElement(_grommet.Text, null, "min-height=small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-height=small"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-height=small"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-height=small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small",
     height: {
       min: 'small'
@@ -119,17 +123,19 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     background: "brand",
     overflow: "auto"
   }, Array(20).fill().map(function (_, i) {
-    return (// eslint-disable-next-line react/no-array-index-key
+    return (
+      /*#__PURE__*/
+      // eslint-disable-next-line react/no-array-index-key
       _react["default"].createElement(_grommet.Text, {
         key: i
       }, "Small (" + i + ")")
     );
-  }))), _react["default"].createElement(_grommet.Box, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "small",
     direction: "row",
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       max: 'small'
     },
@@ -138,7 +144,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "max")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       max: 'small'
     },
@@ -147,7 +153,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "max-width=small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max-width=small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       max: 'small'
     },
@@ -156,7 +162,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "max-width=small, max-width=small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max-width=small, max-width=small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       max: '100px'
     },
@@ -165,12 +171,12 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "max-width=100px, max-width=100px"))), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "max-width=100px, max-width=100px"))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     gap: "small",
     direction: "row",
     align: "start"
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       min: '100px'
     },
@@ -179,7 +185,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "100px")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "100px")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       min: 'small'
     },
@@ -188,7 +194,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       min: 'small'
     },
@@ -197,7 +203,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "min-width=small")), _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-width=small")), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: {
       min: 'small'
     },
@@ -206,9 +212,9 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     justify: "center",
     background: "brand",
     overflow: "auto"
-  }, _react["default"].createElement(_grommet.Text, null, "min-width=small, min-width=small")))));
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-width=small, min-width=small")))));
 };
 
 (0, _react2.storiesOf)('Box', module).add('Min/Max sizes', function () {
-  return _react["default"].createElement(MinMaxSizesBox, null);
+  return /*#__PURE__*/_react["default"].createElement(MinMaxSizesBox, null);
 });

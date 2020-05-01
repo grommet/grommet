@@ -17,15 +17,15 @@ var UnSelect = function UnSelect() {
     setValue('');
   };
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     direction: "row",
     align: "center",
     justify: "center",
     gap: "small"
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     options: optionList,
     onChange: function onChange(e) {
       return _onChange(e);
@@ -33,7 +33,7 @@ var UnSelect = function UnSelect() {
     value: value,
     placeholder: "Select multiple options",
     multiple: true
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     onClick: onClickClearOptions,
     disabled: !value,
     plain: true,
@@ -42,5 +42,5 @@ var UnSelect = function UnSelect() {
 };
 
 storiesOf('Select', module).add('UnSelect', function () {
-  return React.createElement(UnSelect, null);
+  return /*#__PURE__*/React.createElement(UnSelect, null);
 });

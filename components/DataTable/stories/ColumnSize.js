@@ -145,14 +145,14 @@ var columnsDefault = [{
 }];
 
 var Example = function Example() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "horizontal",
     pad: "medium"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: "3"
-  }, " Default DataTable"), _react["default"].createElement(_grommet.DataTable, {
+  }, " Default DataTable"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: columnsDefault,
     data: DATA,
     primaryKey: false,
@@ -161,12 +161,12 @@ var Example = function Example() {
       side: 'vertical',
       size: '1px'
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "horizontal",
     pad: "medium"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: "3"
-  }, "Theme Column Sizes"), _react["default"].createElement(_grommet.DataTable, {
+  }, "Theme Column Sizes"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: columnsThemeSize,
     data: DATA,
     primaryKey: false,
@@ -175,12 +175,12 @@ var Example = function Example() {
       side: 'vertical',
       size: '1px'
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "horizontal",
     pad: "medium"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: "3"
-  }, "Absolute Column Sizes"), _react["default"].createElement(_grommet.DataTable, {
+  }, "Absolute Column Sizes"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: columnsAbsoluteSize,
     data: DATA,
     primaryKey: false,
@@ -189,12 +189,12 @@ var Example = function Example() {
       side: 'vertical',
       size: '1px'
     }
-  })), _react["default"].createElement(_grommet.Box, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "horizontal",
     pad: "medium"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: "3"
-  }, "Relative Column Sizes"), _react["default"].createElement(_grommet.DataTable, {
+  }, "Relative Column Sizes"), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: columnsRelativeSize,
     data: DATA,
     primaryKey: false,
@@ -207,5 +207,5 @@ var Example = function Example() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('Column Sizes', function () {
-  return _react["default"].createElement(Example, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

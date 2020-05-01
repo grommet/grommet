@@ -9,22 +9,22 @@ import { allItems } from './Basics';
 
 var MyItem = function MyItem(_ref) {
   var item = _ref.item;
-  return React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     border: {
       side: 'bottom'
     },
     align: "center"
-  }, React.createElement(Text, null, item));
+  }, /*#__PURE__*/React.createElement(Text, null, item));
 };
 
 var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Box, null, React.createElement(InfiniteScroll, _extends({
+  }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(InfiniteScroll, _extends({
     items: allItems
   }, props), function (item) {
-    return React.createElement(MyItem, {
+    return /*#__PURE__*/React.createElement(MyItem, {
       key: item,
       item: item
     });
@@ -32,5 +32,5 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
 };
 
 storiesOf('InfiniteScroll', module).add('Class Children', function () {
-  return React.createElement(ClassChildrenInfiniteScroll, null);
+  return /*#__PURE__*/React.createElement(ClassChildrenInfiniteScroll, null);
 });

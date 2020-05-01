@@ -12,17 +12,17 @@ var DateRangeMaskedInput = function DateRangeMaskedInput() {
       value = _React$useState[0],
       setValue = _React$useState[1];
 
-  return React.createElement(Grommet, {
+  return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
-  }, React.createElement(MaskedInput, {
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
     mask: [{
       length: [1, 2],
       options: Array.from({
@@ -96,5 +96,5 @@ var DateRangeMaskedInput = function DateRangeMaskedInput() {
 };
 
 storiesOf('MaskedInput', module).add('Date range', function () {
-  return React.createElement(DateRangeMaskedInput, null);
+  return /*#__PURE__*/React.createElement(DateRangeMaskedInput, null);
 });

@@ -301,12 +301,12 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
     }).join('');
   };
 
-  return _react["default"].createElement(_StyledMaskedInput.StyledMaskedInputContainer, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledMaskedInputContainer, {
     plain: plain
-  }, icon && _react["default"].createElement(_StyledMaskedInput.StyledIcon, {
+  }, icon && /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledIcon, {
     reverse: reverse,
     theme: theme
-  }, icon), _react["default"].createElement(_Keyboard.Keyboard, {
+  }, icon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: onEsc,
     onTab: showDrop ? function () {
       return setShowDrop(false);
@@ -319,7 +319,7 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
     },
     onEnter: onSelectOption,
     onKeyDown: onKeyDown
-  }, _react["default"].createElement(_StyledMaskedInput.StyledMaskedInput, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledMaskedInput, _extends({
     ref: ref || inputRef,
     id: id,
     name: name,
@@ -347,7 +347,7 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: onChangeInput
-  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && _react["default"].createElement(_Drop.Drop, {
+  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, {
     id: id ? "masked-input-drop__" + id : undefined,
     align: {
       top: 'bottom',
@@ -361,13 +361,13 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
     onEsc: function onEsc() {
       return setShowDrop(false);
     }
-  }, _react["default"].createElement(_Box.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     ref: dropRef
   }, mask[activeMaskIndex].options.map(function (option, index) {
-    return _react["default"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       key: option,
       flex: false
-    }, _react["default"].createElement(_Button.Button, {
+    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       tabIndex: "-1",
       onClick: onOption(option),
       onMouseOver: function onMouseOver() {
@@ -376,7 +376,7 @@ var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
       onFocus: function onFocus() {},
       active: index === activeOptionIndex,
       hoverIndicator: "background"
-    }, _react["default"].createElement(_Box.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'small',
         vertical: 'xsmall'

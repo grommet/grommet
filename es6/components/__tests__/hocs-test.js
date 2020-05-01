@@ -10,13 +10,13 @@ var TestDiv = React.forwardRef(function (_ref, ref) {
   var focus = _ref.focus,
       rest = _objectWithoutPropertiesLoose(_ref, ["focus"]);
 
-  return React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", _extends({
     ref: ref
   }, rest), focus ? 'focus' : 'no focus');
 });
 var Test = withFocus()(TestDiv);
 test('withFocus set focus', function (done) {
-  var component = renderer.create(React.createElement(Test, null));
+  var component = renderer.create( /*#__PURE__*/React.createElement(Test, null));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
   var container = findAllByType(tree, 'div');
@@ -30,7 +30,7 @@ test('withFocus set focus', function (done) {
 test('withFocus calls callback', function () {
   var onFocus = jest.fn();
   var onBlur = jest.fn();
-  var component = renderer.create(React.createElement(Test, {
+  var component = renderer.create( /*#__PURE__*/React.createElement(Test, {
     onFocus: onFocus,
     onBlur: onBlur
   }));

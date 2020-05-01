@@ -64,9 +64,7 @@ var formatTime = function formatTime(time) {
 
 var videoEvents = ['onAbort', 'onCanPlay', 'onCanPlayThrough', 'onDurationChange', 'onEmptied', 'onEncrypted', 'onEnded', 'onError', 'onLoadedData', 'onLoadedMetadata', 'onLoadStart', 'onPause', 'onPlay', 'onPlaying', 'onProgress', 'onRateChange', 'onSeeked', 'onSeeking', 'onStalled', 'onSuspend', 'onTimeUpdate', 'onVolumeChange', 'onWaiting'];
 
-var Video =
-/*#__PURE__*/
-function (_Component) {
+var Video = /*#__PURE__*/function (_Component) {
   _inheritsLoose(Video, _Component);
 
   Video.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
@@ -419,7 +417,7 @@ function (_Component) {
     };
     var captionControls = captions.map(function (caption) {
       return {
-        icon: caption.label ? undefined : _react["default"].createElement(Icons.ClosedCaption, {
+        icon: caption.label ? undefined : /*#__PURE__*/_react["default"].createElement(Icons.ClosedCaption, {
           color: iconColor
         }),
         label: caption.label,
@@ -429,29 +427,29 @@ function (_Component) {
         }
       };
     });
-    return _react["default"].createElement(_StyledVideo.StyledVideoControls, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoControls, {
       over: over,
       active: !this.hasPlayed || controls === 'below' || over && interacting
-    }, _react["default"].createElement(_Box.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
       justify: "between",
       background: background
-    }, _react["default"].createElement(_Button.Button, {
-      icon: playing ? _react["default"].createElement(Icons.Pause, {
+    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      icon: playing ? /*#__PURE__*/_react["default"].createElement(Icons.Pause, {
         color: iconColor
-      }) : _react["default"].createElement(Icons.Play, {
+      }) : /*#__PURE__*/_react["default"].createElement(Icons.Play, {
         color: iconColor
       }),
       hoverIndicator: "background",
       onClick: playing ? this.pause : this.play
-    }), _react["default"].createElement(_Box.Box, {
+    }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
       flex: true
-    }, _react["default"].createElement(_Box.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: true
-    }, _react["default"].createElement(_Stack.Stack, null, _react["default"].createElement(_Meter.Meter, {
+    }, /*#__PURE__*/_react["default"].createElement(_Stack.Stack, null, /*#__PURE__*/_react["default"].createElement(_Meter.Meter, {
       "aria-label": "Video progress",
       background: over ? theme.video.scrubber && theme.video.scrubber.track && theme.video.scrubber.track.color || 'dark-3' : undefined,
       size: "full",
@@ -459,7 +457,7 @@ function (_Component) {
       values: [{
         value: percentagePlayed || 0
       }]
-    }), _react["default"].createElement(_StyledVideo.StyledVideoScrubber, {
+    }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoScrubber, {
       ref: scrubberRef,
       tabIndex: 0,
       role: "button",
@@ -471,14 +469,14 @@ function (_Component) {
         });
       },
       onClick: this.seek
-    }))), _react["default"].createElement(_Box.Box, {
+    }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'small'
       }
-    }, _react["default"].createElement(_Text.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       margin: "none"
-    }, formattedTime))), _react["default"].createElement(_Menu.Menu, {
-      icon: _react["default"].createElement(Icons.Configure, {
+    }, formattedTime))), /*#__PURE__*/_react["default"].createElement(_Menu.Menu, {
+      icon: /*#__PURE__*/_react["default"].createElement(Icons.Configure, {
         color: iconColor
       }),
       dropAlign: {
@@ -487,19 +485,19 @@ function (_Component) {
       },
       dropBackground: background,
       items: [{
-        icon: _react["default"].createElement(Icons.Volume, {
+        icon: /*#__PURE__*/_react["default"].createElement(Icons.Volume, {
           color: iconColor
         }),
         onClick: volume <= 1 - VOLUME_STEP ? this.louder : undefined,
         close: false
       }, {
-        icon: _react["default"].createElement(Icons.ReduceVolume, {
+        icon: /*#__PURE__*/_react["default"].createElement(Icons.ReduceVolume, {
           color: iconColor
         }),
         onClick: volume >= VOLUME_STEP ? this.quieter : undefined,
         close: false
       }].concat(captionControls, [{
-        icon: _react["default"].createElement(Icons.FullScreen, {
+        icon: /*#__PURE__*/_react["default"].createElement(Icons.FullScreen, {
           color: iconColor
         }),
         onClick: this.fullscreen
@@ -550,12 +548,12 @@ function (_Component) {
       }
     }
 
-    return _react["default"].createElement(_StyledVideo.StyledVideoContainer, _extends({}, mouseEventListeners, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoContainer, _extends({}, mouseEventListeners, {
       alignSelf: alignSelf,
       gridArea: gridArea,
       margin: margin,
       style: style
-    }), _react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
+    }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
       ref: videoRef
     }, this.mediaEventProps, {
       autoPlay: autoPlay || false,

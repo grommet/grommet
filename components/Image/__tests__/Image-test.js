@@ -16,7 +16,7 @@ var opacityTypes = ['weak', 'medium', 'strong', '0.3', true, false];
 var SRC = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII='; // eslint-disable-line max-len
 
 test('Image renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Image, {
     src: SRC
   })));
 
@@ -24,7 +24,7 @@ test('Image renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Image renders with aria-label', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Image, {
     a11yTitle: "aria-label-text",
     src: SRC
   })));
@@ -33,10 +33,10 @@ test('Image renders with aria-label', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Image fit renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Image, {
     fit: "cover",
     src: SRC
-  }), _react["default"].createElement(_.Image, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Image, {
     fit: "contain",
     src: SRC
   })));
@@ -46,7 +46,7 @@ test('Image fit renders', function () {
 });
 opacityTypes.forEach(function (opacity) {
   test("Image opacity of " + opacity + " renders", function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Image, {
       opacity: opacity,
       src: SRC
     })));
@@ -56,16 +56,16 @@ opacityTypes.forEach(function (opacity) {
   });
 });
 test('Image fillProp renders', function () {
-  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Image, {
+  var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Image, {
     fill: true,
     src: SRC
-  }), _react["default"].createElement(_.Image, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Image, {
     fill: false,
     src: SRC
-  }), _react["default"].createElement(_.Image, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Image, {
     fill: "horizontal",
     src: SRC
-  }), _react["default"].createElement(_.Image, {
+  }), /*#__PURE__*/_react["default"].createElement(_.Image, {
     fill: "vertical",
     src: SRC
   })));

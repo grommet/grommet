@@ -40,7 +40,7 @@ var RadioButton = (0, _react.forwardRef)(function (_ref, ref) {
       hover = _useState[0],
       setHover = _useState[1];
 
-  var normalizedLabel = typeof label === 'string' ? _react["default"].createElement("span", null, label) : label;
+  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement("span", null, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = (0, _utils.normalizeColor)(theme.radioButton.border.color, theme);
 
@@ -48,7 +48,7 @@ var RadioButton = (0, _react.forwardRef)(function (_ref, ref) {
     borderColor = (0, _utils.normalizeColor)(theme.radioButton.color || 'control', theme);
   }
 
-  return _react["default"].createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({}, (0, _utils.removeUndefined)({
+  return /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({}, (0, _utils.removeUndefined)({
     htmlFor: id,
     disabled: disabled
   }), {
@@ -65,12 +65,12 @@ var RadioButton = (0, _react.forwardRef)(function (_ref, ref) {
     onMouseLeave: function onMouseLeave() {
       return setHover(false);
     }
-  }), _react["default"].createElement(_StyledRadioButton.StyledRadioButton, {
+  }), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButton, {
     as: _Box.Box,
     margin: label ? {
       right: theme.radioButton.gap || 'small'
     } : undefined
-  }, _react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({}, rest, {
+  }, /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({}, rest, {
     ref: ref,
     type: "radio"
   }, (0, _utils.removeUndefined)({
@@ -82,7 +82,7 @@ var RadioButton = (0, _react.forwardRef)(function (_ref, ref) {
   }))), children ? children({
     checked: checked,
     hover: hover
-  }) : _react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, {
+  }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, {
     focus: focus,
     as: _Box.Box,
     align: "center",
@@ -94,12 +94,12 @@ var RadioButton = (0, _react.forwardRef)(function (_ref, ref) {
       color: borderColor
     },
     round: theme.radioButton.check.radius
-  }, checked && (Icon ? _react["default"].createElement(Icon, {
+  }, checked && (Icon ? /*#__PURE__*/_react["default"].createElement(Icon, {
     as: _StyledRadioButton.StyledRadioButtonIcon
-  }) : _react["default"].createElement(_StyledRadioButton.StyledRadioButtonIcon, {
+  }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonIcon, {
     viewBox: "0 0 24 24",
     preserveAspectRatio: "xMidYMid meet"
-  }, _react["default"].createElement("circle", {
+  }, /*#__PURE__*/_react["default"].createElement("circle", {
     cx: 12,
     cy: 12,
     r: 6

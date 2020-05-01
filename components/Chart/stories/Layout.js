@@ -19,28 +19,28 @@ var values = Array(14).fill(0).map(function (_, index) {
 });
 
 var LayoutChart = function LayoutChart() {
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     margin: "medium"
-  }, _react["default"].createElement(_grommet.Heading, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "full"), _react["default"].createElement(_grommet.Box, {
+  }, "full"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     border: true
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: type,
     values: values,
     size: {
       width: 'full'
     },
     round: true
-  })), _react["default"].createElement(_grommet.Heading, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "auto, gap"), _react["default"].createElement(_grommet.Box, {
+  }, "auto, gap"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     border: true
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: type,
     values: values,
     size: {
@@ -48,12 +48,12 @@ var LayoutChart = function LayoutChart() {
     },
     gap: "small",
     round: true
-  })), _react["default"].createElement(_grommet.Heading, {
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
     level: 2
-  }, "default"), _react["default"].createElement(_grommet.Box, {
+  }, "default"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     border: true
-  }, _react["default"].createElement(_grommet.Chart, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
     type: type,
     values: values,
     round: true
@@ -61,5 +61,5 @@ var LayoutChart = function LayoutChart() {
 };
 
 (0, _react2.storiesOf)('Chart', module).add('Layout', function () {
-  return _react["default"].createElement(LayoutChart, null);
+  return /*#__PURE__*/_react["default"].createElement(LayoutChart, null);
 });

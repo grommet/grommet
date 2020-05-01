@@ -82,7 +82,7 @@ var Box = forwardRef(function (_ref, ref) {
         if (firstIndex === undefined) {
           firstIndex = index;
         } else {
-          contents.push(React.createElement(StyledBoxGap // eslint-disable-next-line react/no-array-index-key
+          contents.push( /*#__PURE__*/React.createElement(StyledBoxGap // eslint-disable-next-line react/no-array-index-key
           , {
             key: "gap-" + index,
             gap: gap,
@@ -103,15 +103,15 @@ var Box = forwardRef(function (_ref, ref) {
 
     if (darkChanged || theme.darkChanged) {
       dark = dark === undefined ? theme.dark : dark;
-      contents = React.createElement(ThemeContext.Provider, {
-        value: _extends({}, theme, {
+      contents = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+        value: _extends(_extends({}, theme), {}, {
           dark: dark
         })
       }, contents);
     }
   }
 
-  var content = React.createElement(StyledBox, _extends({
+  var content = /*#__PURE__*/React.createElement(StyledBox, _extends({
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
     background: background,
@@ -130,7 +130,7 @@ var Box = forwardRef(function (_ref, ref) {
   }, clickProps, rest), contents);
 
   if (onClick) {
-    content = React.createElement(Keyboard, {
+    content = /*#__PURE__*/React.createElement(Keyboard, {
       onEnter: onClick
     }, content);
   }

@@ -82,7 +82,7 @@ var Circle = (0, _react.forwardRef)(function (props, ref) {
 
     if (round) {
       var d1 = (0, _utils.arcCommands)(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.unshift(_react["default"].createElement("path", _extends({
+      paths.unshift( /*#__PURE__*/_react["default"].createElement("path", _extends({
         key: key,
         d: d1,
         fill: "none"
@@ -95,7 +95,7 @@ var Circle = (0, _react.forwardRef)(function (props, ref) {
 
       var d2 = (0, _utils.arcCommands)(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
 
-      var pathCap = _react["default"].createElement("path", _extends({
+      var pathCap = /*#__PURE__*/_react["default"].createElement("path", _extends({
         key: key + "-",
         d: d2,
         fill: "none"
@@ -113,7 +113,7 @@ var Circle = (0, _react.forwardRef)(function (props, ref) {
       pathCaps.unshift(pathCap);
     } else {
       var d = (0, _utils.arcCommands)(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.push(_react["default"].createElement("path", _extends({
+      paths.push( /*#__PURE__*/_react["default"].createElement("path", _extends({
         key: key,
         d: d,
         fill: "none"
@@ -126,12 +126,12 @@ var Circle = (0, _react.forwardRef)(function (props, ref) {
     startValue += value;
     startAngle = endAngle;
   });
-  return _react["default"].createElement(_StyledMeter.StyledMeter, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_StyledMeter.StyledMeter, _extends({
     ref: ref,
     viewBox: "0 0 " + width + " " + width,
     width: size === 'full' ? '100%' : width,
     height: size === 'full' ? '100%' : width
-  }, rest), _react["default"].createElement("circle", _extends({
+  }, rest), /*#__PURE__*/_react["default"].createElement("circle", _extends({
     cx: mid,
     cy: mid,
     r: radius

@@ -19,13 +19,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 describe('Anchor', function () {
   afterEach(_react2.cleanup);
   test('renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, null)));
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, null)));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('renders with children', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       href: "#"
     }, "children")));
 
@@ -35,7 +35,7 @@ describe('Anchor', function () {
   test('warns about invalid label render', function () {
     var warnSpy = jest.spyOn(console, 'warn');
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       href: "#",
       label: "Test"
     }, "invalid")));
@@ -49,9 +49,9 @@ describe('Anchor', function () {
   test('warns about invalid icon render', function () {
     var warnSpy = jest.spyOn(console, 'warn');
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       href: "#",
-      icon: _react["default"].createElement("svg", null)
+      icon: /*#__PURE__*/_react["default"].createElement("svg", null)
     }, "invalid")));
 
     var tree = component.toJSON();
@@ -61,7 +61,7 @@ describe('Anchor', function () {
     warnSpy.mockRestore();
   });
   test('primary renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       href: "#",
       primary: true,
       label: "Test"
@@ -71,7 +71,7 @@ describe('Anchor', function () {
     expect(tree).toMatchSnapshot();
   });
   test('focus renders', function () {
-    var _render = (0, _react2.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var _render = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       href: "#",
       label: "Test"
     }))),
@@ -83,7 +83,7 @@ describe('Anchor', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('disabled renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       disabled: true
     })));
 
@@ -91,8 +91,8 @@ describe('Anchor', function () {
     expect(tree).toMatchSnapshot();
   });
   test('icon label renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
-      icon: _react["default"].createElement("svg", null),
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
+      icon: /*#__PURE__*/_react["default"].createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -101,9 +101,9 @@ describe('Anchor', function () {
     expect(tree).toMatchSnapshot();
   });
   test('reverse icon label renders', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       reverse: true,
-      icon: _react["default"].createElement("svg", null),
+      icon: /*#__PURE__*/_react["default"].createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -114,7 +114,7 @@ describe('Anchor', function () {
   test('is clickable', function () {
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       href: "#",
       label: "Test",
       onClick: onClick
@@ -126,7 +126,7 @@ describe('Anchor', function () {
     expect(onClick).toBeCalled();
   });
   test('renders tag', function () {
-    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Anchor, {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.Anchor, {
       href: "#",
       label: "Test",
       as: "span"

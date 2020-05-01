@@ -7,9 +7,9 @@ import { Keyboard } from '..';
 describe('Keyboard', function () {
   test('onDown', function () {
     var onDown = jest.fn();
-    var component = create(React.createElement(Grommet, null, React.createElement(Keyboard, {
+    var component = create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Keyboard, {
       onDown: onDown
-    }, React.createElement("span", null, "hi"))));
+    }, /*#__PURE__*/React.createElement("span", null, "hi"))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     tree.children[0].props.onKeyDown({
@@ -26,10 +26,10 @@ describe('Keyboard', function () {
   test('onKeyDown', function () {
     var onDown = jest.fn();
     var onKeyDown = jest.fn();
-    var component = create(React.createElement(Grommet, null, React.createElement(Keyboard, {
+    var component = create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Keyboard, {
       onDown: onDown,
       onKeyDown: onKeyDown
-    }, React.createElement("span", null, "hi"))));
+    }, /*#__PURE__*/React.createElement("span", null, "hi"))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     tree.children[0].props.onKeyDown({
@@ -42,10 +42,10 @@ describe('Keyboard', function () {
     var firstOnKeyDown = jest.fn();
     var secondOnKeyDown = jest.fn();
 
-    var _render = render(React.createElement(Keyboard, {
+    var _render = render( /*#__PURE__*/React.createElement(Keyboard, {
       target: "document",
       onKeyDown: firstOnKeyDown
-    }, React.createElement("span", null, "hi"))),
+    }, /*#__PURE__*/React.createElement("span", null, "hi"))),
         container = _render.container,
         getByText = _render.getByText,
         rerender = _render.rerender;
@@ -56,10 +56,10 @@ describe('Keyboard', function () {
       cancelable: true
     }));
     expect(firstOnKeyDown).toBeCalled();
-    rerender(React.createElement(Keyboard, {
+    rerender( /*#__PURE__*/React.createElement(Keyboard, {
       target: "document",
       onKeyDown: secondOnKeyDown
-    }, React.createElement("span", null, "hi")));
+    }, /*#__PURE__*/React.createElement("span", null, "hi")));
     expect(container.firstChild).toMatchSnapshot();
     fireEvent(getByText('hi'), new KeyboardEvent('keydown', {
       bubbles: true,

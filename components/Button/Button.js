@@ -99,7 +99,7 @@ var Button = (0, _react.forwardRef)(function (_ref, ref) {
   var contents;
 
   if (first && second) {
-    contents = _react["default"].createElement(_Box.Box, {
+    contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
       justify: "center",
@@ -114,7 +114,7 @@ var Button = (0, _react.forwardRef)(function (_ref, ref) {
     contents = first || second || children;
   }
 
-  return _react["default"].createElement(_StyledButton.StyledButton, _extends({}, rest, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledButton.StyledButton, _extends({}, rest, {
     as: domTag,
     ref: ref,
     "aria-label": a11yTitle,

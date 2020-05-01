@@ -57,28 +57,28 @@ var CustomRangeSelector = function CustomRangeSelector(_ref) {
     setRange(values);
   };
 
-  return _react["default"].createElement(_grommet.Grommet, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customThemeRangeSelector
-  }, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: direction === 'vertical' ? 'column' : 'row',
     justify: "between"
   }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
-    return _react["default"].createElement(_grommet.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: value,
       width: "xxsmall",
       height: "xxsmall",
       align: "center",
       pad: "small",
       border: false
-    }, _react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       style: {
         fontFamily: 'monospace'
       }
     }, value));
-  })), _react["default"].createElement(_grommet.RangeSelector, _extends({
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, _extends({
     invert: true,
     direction: direction,
     min: 10,
@@ -90,5 +90,5 @@ var CustomRangeSelector = function CustomRangeSelector(_ref) {
 };
 
 (0, _react2.storiesOf)('RangeSelector', module).add('Custom', function () {
-  return _react["default"].createElement(CustomRangeSelector, null);
+  return /*#__PURE__*/_react["default"].createElement(CustomRangeSelector, null);
 });
