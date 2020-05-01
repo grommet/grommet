@@ -8,6 +8,14 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Menu } from '../..';
 
+const customTheme = {
+  menu: {
+    icons: {
+      color: '#F08080',
+    },
+  },
+};
+
 describe('Menu', () => {
   beforeEach(createPortal);
 
@@ -373,5 +381,17 @@ describe('Menu', () => {
       expect.stringMatching(/^Item 1/),
     );
     expect(container).toMatchSnapshot();
+  });
+
+  test('custom theme icon color', () => {
+    const component = renderer.create(
+      <Grommet theme={customTheme}>
+        <Menu
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

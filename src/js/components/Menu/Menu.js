@@ -65,7 +65,7 @@ const Menu = forwardRef((props, ref) => {
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const MenuIcon = theme.menu.icons.down;
-  const iconColor = normalizeColor('control', theme);
+  const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   const align = dropProps.align || dropAlign;
   let controlButtonIndex;
   if (align.top === 'top') {
