@@ -11,7 +11,7 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 
-import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
+import { StyledTabPanel, StyledTabsHeader } from './StyledTabs';
 
 const Tabs = forwardRef(
   (
@@ -77,7 +77,7 @@ const Tabs = forwardRef(
     const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
 
     return (
-      <StyledTabs
+      <Box
         ref={ref}
         as={Box}
         role="tablist"
@@ -103,7 +103,7 @@ const Tabs = forwardRef(
         >
           {activeContent}
         </StyledTabPanel>
-      </StyledTabs>
+      </Box>
     );
   },
 );
