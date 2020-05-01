@@ -245,6 +245,7 @@ export interface ThemeType {
     };
     heading?: {
       level?: string;
+      margin?: MarginType;
     };
     hover?: {
       color?: ColorType;
