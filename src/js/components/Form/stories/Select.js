@@ -1,7 +1,15 @@
 import React, { useCallback, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, Form, FormField, Select, Grommet } from 'grommet';
+import {
+  grommet,
+  Box,
+  Button,
+  Form,
+  FormField,
+  Select,
+  Grommet,
+} from 'grommet';
 
 const options = [
   { label: 'option 1', value: 1 },
@@ -16,9 +24,14 @@ const FormFieldSelect = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <Form value={value} onChange={onChange}>
+        <Form
+          value={value}
+          onChange={onChange}
+          onSubmit={() => console.log('Submit', value)}
+        >
           <FormField label="Label" name="select">
             <Select
+              multiple
               name="select"
               placeholder="placeholder"
               options={options}
@@ -26,6 +39,7 @@ const FormFieldSelect = () => {
               valueKey="value"
             />
           </FormField>
+          <Button type="submit" label="Update" primary />
         </Form>
       </Box>
     </Grommet>
