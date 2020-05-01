@@ -41,9 +41,14 @@ export var doc = function doc(Menu) {
 };
 export var themeDoc = {
   'global.colors.control': {
+    description: "The default color to use for the icon.",
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'accent-1', light: 'brand'}"
+  },
+  'menu.icons.color': {
     description: 'The color to use for the icon.',
     type: 'string | { dark: string, light: string }',
-    defaultValue: undefined
+    defaultValue: 'control'
   },
   'menu.background': {
     description: 'The color for the background of the menu Drop when it is open.',

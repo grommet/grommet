@@ -840,7 +840,8 @@ export var generate = function generate(baseSpacing, scale) {
       // background: undefined,
       // extend: undefined,
       icons: {
-        down: FormDown
+        down: FormDown // color: { dark: undefined, light: undefined },
+
       }
     },
     meter: {

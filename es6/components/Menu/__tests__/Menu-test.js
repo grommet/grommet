@@ -6,6 +6,13 @@ import { getByText as getByTextDOM } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet, Menu } from '../..';
+var customTheme = {
+  menu: {
+    icons: {
+      color: '#F08080'
+    }
+  }
+};
 describe('Menu', function () {
   beforeEach(createPortal);
   afterEach(cleanup);
@@ -375,5 +382,18 @@ describe('Menu', function () {
 
     expect(getByText('Item 1').innerHTML).toEqual(expect.stringMatching(/^Item 1/));
     expect(container).toMatchSnapshot();
+  });
+  test('custom theme icon color', function () {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
+      theme: customTheme
+    }, /*#__PURE__*/React.createElement(Menu, {
+      label: "Test Menu",
+      items: [{
+        label: 'Item 1'
+      }, {
+        label: 'Item 2'
+      }]
+    })));
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

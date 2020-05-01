@@ -82,7 +82,7 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var MenuIcon = theme.menu.icons.down;
-  var iconColor = (0, _utils.normalizeColor)('control', theme);
+  var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme);
   var align = dropProps.align || dropAlign;
   var controlButtonIndex;
 

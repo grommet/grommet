@@ -60,7 +60,7 @@ var Menu = forwardRef(function (props, ref) {
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var MenuIcon = theme.menu.icons.down;
-  var iconColor = normalizeColor('control', theme);
+  var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   var align = dropProps.align || dropAlign;
   var controlButtonIndex;
 
