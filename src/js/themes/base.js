@@ -319,12 +319,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     accordion: {
+      pad: { horizontal: 'xsmall' },
       border: {
         side: 'bottom',
         color: 'border',
       },
       heading: {
         level: '4', // level ranges from 1-6
+        // margin: undefined
       },
       hover: {
         color: { dark: 'light-4', light: 'dark-3' },

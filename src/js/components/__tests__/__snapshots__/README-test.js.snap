@@ -242,6 +242,16 @@ Defaults to
 4
 \`\`\`
 
+**accordion.heading.margin**
+
+The margin size around heading in accordion. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **accordion.icons.collapse**
 
 The icon to use when the panel is expanded. Expects \`React.Element\`.
@@ -270,6 +280,16 @@ Defaults to
 
 \`\`\`
 <FormDown />
+\`\`\`
+
+**accordion.pad**
+
+The pad size around the accordion. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+{ horizontal: xsmall }
 \`\`\`
 
 **accordion.border.color**
@@ -5547,10 +5567,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react[\\"default\\"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`
