@@ -242,6 +242,16 @@ Defaults to
 4
 \`\`\`
 
+**accordion.heading.margin**
+
+The margin size around heading in accordion. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **accordion.icons.collapse**
 
 The icon to use when the panel is expanded. Expects \`React.Element\`.
@@ -5547,10 +5557,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react[\\"default\\"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`
@@ -9407,12 +9417,22 @@ button
   
 **global.colors.control**
 
+The default color to use for the icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand'}
+\`\`\`
+
+**menu.icons.color**
+
 The color to use for the icon. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-undefined
+control
 \`\`\`
 
 **menu.background**
