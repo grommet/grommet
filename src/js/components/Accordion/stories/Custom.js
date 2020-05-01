@@ -9,7 +9,7 @@ const CustomAccordionTheme = {
   accordion: {
     heading: {
       level: 3,
-      margin: { left: '6px', right: '6px', top: '24px', bottom: '24px' },
+      margin: { vertical: '6px', horizontal: '24px' },
     },
     hover: {
       color: 'accent-2',
