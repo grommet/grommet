@@ -88,16 +88,6 @@ Defaults to
 <FormDown />
 ```
 
-**accordion.pad**
-
-The pad size around the accordion. Expects `string`.
-
-Defaults to
-
-```
-{ horizontal: xsmall }
-```
-
 **accordion.border.color**
 
 The border color to use in the accordion. Expects `string | { dark: string, light: string }`.

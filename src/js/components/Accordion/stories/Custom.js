@@ -7,10 +7,9 @@ import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 
 const CustomAccordionTheme = {
   accordion: {
-    pad: '6px',
     heading: {
       level: 3,
-      margin: '12px',
+      margin: { left: '6px', right: '6px', top: '24px', bottom: '24px' },
     },
     hover: {
       color: 'accent-2',

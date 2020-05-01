@@ -73,13 +73,7 @@ const AccordionPanel = forwardRef(
           {header || (
             <Box align="center" direction="row" justify="between" {...rest}>
               {typeof label === 'string' ? (
-                <Box
-                  pad={
-                    theme.accordion.pad || {
-                      horizontal: 'xsmall',
-                    }
-                  }
-                >
+                <Box pad={{ horizontal: 'xsmall' }}>
                   <Heading
                     level={
                       (theme.accordion.heading &&

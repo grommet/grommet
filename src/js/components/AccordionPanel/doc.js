@@ -46,11 +46,6 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: '<FormDown />',
   },
-  'accordion.pad': {
-    description: 'The pad size around the accordion.',
-    type: 'string',
-    defaultValue: '{ horizontal: xsmall }',
-  },
   'accordion.border.color': {
     description: 'The border color to use in the accordion.',
     type: 'string | { dark: string, light: string }',

@@ -319,7 +319,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     accordion: {
-      pad: { horizontal: 'xsmall' },
       border: {
         side: 'bottom',
         color: 'border',
