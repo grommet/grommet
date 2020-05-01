@@ -92,6 +92,7 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
     level: theme.accordion.heading && theme.accordion.heading.level || 4,
+    margin: theme.accordion.heading && theme.accordion.heading.margin || undefined,
     color: hover
   }, label)) : label, AccordionIcon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: {

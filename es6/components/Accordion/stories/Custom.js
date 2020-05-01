@@ -10,7 +10,11 @@ import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 var CustomAccordionTheme = {
   accordion: {
     heading: {
-      level: 3
+      level: 3,
+      margin: {
+        vertical: '6px',
+        horizontal: '24px'
+      }
     },
     hover: {
       color: 'accent-2'
