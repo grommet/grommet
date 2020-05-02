@@ -48,6 +48,16 @@ Defaults to
 4
 ```
 
+**accordion.heading.margin**
+
+The margin size around heading in accordion. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **accordion.icons.collapse**
 
 The icon to use when the panel is expanded. Expects `React.Element`.
