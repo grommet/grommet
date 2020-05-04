@@ -31,7 +31,6 @@ const FormFieldSelect = () => {
         >
           <FormField label="Label" name="select">
             <Select
-              multiple
               name="select"
               placeholder="placeholder"
               options={options}
