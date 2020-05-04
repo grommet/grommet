@@ -4,7 +4,7 @@ export interface FormProps<T> {
   errors?: {};
   infos?: {};
   messages?: {invalid?: string,required?: string};
-  onChange?: (nextState: T) => void;
+  onChange?: (value: T) => void;
   onSubmit?: ((event: React.FormEvent) => void);
   onReset?: ((event: React.SyntheticEvent) => any);
   validate?: 'blur' | 'submit';
