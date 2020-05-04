@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, Form, FormField, Select, Grommet } from 'grommet';
+import { grommet, Box, Button, Form, FormField, Select, Grommet } from 'grommet';
 var options = [{
   label: 'option 1',
   value: 1
@@ -27,7 +27,10 @@ var FormFieldSelect = function FormFieldSelect() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(Form, {
     value: value,
-    onChange: onChange
+    onChange: onChange,
+    onSubmit: function onSubmit() {
+      return console.log('Submit', value);
+    }
   }, /*#__PURE__*/React.createElement(FormField, {
     label: "Label",
     name: "select"
@@ -37,7 +40,11 @@ var FormFieldSelect = function FormFieldSelect() {
     options: options,
     labelKey: "label",
     valueKey: "value"
-  })))));
+  })), /*#__PURE__*/React.createElement(Button, {
+    type: "submit",
+    label: "Update",
+    primary: true
+  }))));
 };
 
 storiesOf('Form', module).add('Select', function () {

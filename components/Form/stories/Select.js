@@ -36,7 +36,10 @@ var FormFieldSelect = function FormFieldSelect() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
     value: value,
-    onChange: onChange
+    onChange: onChange,
+    onSubmit: function onSubmit() {
+      return console.log('Submit', value);
+    }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Label",
     name: "select"
@@ -46,7 +49,11 @@ var FormFieldSelect = function FormFieldSelect() {
     options: options,
     labelKey: "label",
     valueKey: "value"
-  })))));
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    type: "submit",
+    label: "Update",
+    primary: true
+  }))));
 };
 
 (0, _react2.storiesOf)('Form', module).add('Select', function () {

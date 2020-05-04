@@ -140,7 +140,7 @@ var Form = forwardRef(function (_ref, ref) {
   //
   // 1 - form controlled
   //
-  // In this model, the caller sets `value` and `onChange` propeties
+  // In this model, the caller sets `value` and `onChange` properties
   // on the Form component to supply the values used by the input fields.
   // In useFormContext(), componentValue would be undefined and formValue
   // is be set to whatever the form state has. Whenever the form state

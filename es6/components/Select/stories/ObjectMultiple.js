@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
-var defaultOptions = [];
 var objectOptions = [];
 
 for (var i = 1; i <= 200; i += 1) {
-  defaultOptions.push("option " + i);
   objectOptions.push({
     lab: "option " + i,
     val: i,
-    dis: i % 5 === 0,
-    sel: i % 13 === 0
+    dis: i % 5 === 0
   });
 }
 
@@ -20,7 +17,7 @@ var Example = function Example() {
       options = _useState[0],
       setOptions = _useState[1];
 
-  var _useState2 = useState([]),
+  var _useState2 = useState([1, 2]),
       value = _useState2[0],
       setValue = _useState2[1];
 
