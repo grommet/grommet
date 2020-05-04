@@ -590,6 +590,76 @@ describe('Form', function () {
         test: 'a'
       }
     }));
+  });
+  test('validate on blur', function () {
+    var Test = function Test() {
+      return /*#__PURE__*/React.createElement(Form, {
+        validate: "blur"
+      }, /*#__PURE__*/React.createElement(FormField, {
+        label: "Name",
+        name: "name",
+        placeholder: "name",
+        required: true,
+        validate: [{
+          regexp: /^[a-z]/i
+        }, function (name) {
+          if (name && name.length === 1) return 'must be >1 character';
+          return undefined;
+        }, function (name) {
+          if (name === 'good') return {
+            message: 'good',
+            status: 'info'
+          };
+          return undefined;
+        }]
+      }), /*#__PURE__*/React.createElement(FormField, {
+        label: "Email",
+        name: "email",
+        required: true
+      }, /*#__PURE__*/React.createElement(TextInput, {
+        name: "email",
+        type: "email",
+        placeholder: "email"
+      })), /*#__PURE__*/React.createElement(Button, {
+        label: "submit",
+        type: "submit"
+      }));
+    };
+
+    var _render13 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
+        getByText = _render13.getByText,
+        getByPlaceholderText = _render13.getByPlaceholderText,
+        queryAllByText = _render13.queryAllByText,
+        queryByText = _render13.queryByText; // both fields have required error message
+
+
+    fireEvent.click(getByText('submit'));
+    expect(queryAllByText('required')).toHaveLength(2); // one fields has required error message
+
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: {
+        value: 'Input has changed'
+      }
+    });
+    fireEvent.click(getByText('submit'));
+    expect(queryAllByText('required')).toHaveLength(1); // name field has new error and email field still has required error message
+
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: {
+        value: 'a'
+      }
+    });
+    fireEvent.click(getByText('submit'));
+    expect(queryByText('required')).toBeTruthy();
+    expect(queryByText('must be >1 character')).toBeTruthy(); //  new value in name does not remove the error message in email
+
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: {
+        value: 'abc'
+      }
+    });
+    expect(queryByText('required')).toBeTruthy();
+    expect(queryByText('must be >1 character')).toBe(null);
   }); // deprecated FormField+input pattern
 
   test('controlled FormField deprecated', function () {
@@ -621,10 +691,10 @@ describe('Form', function () {
       }));
     };
 
-    var _render13 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
-        getByLabelText = _render13.getByLabelText,
-        getByText = _render13.getByText,
-        container = _render13.container;
+    var _render14 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Test, null))),
+        getByLabelText = _render14.getByLabelText,
+        getByText = _render14.getByText,
+        container = _render14.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.change(getByLabelText('test'), {

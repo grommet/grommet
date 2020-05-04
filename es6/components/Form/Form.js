@@ -104,15 +104,15 @@ var Form = forwardRef(function (_ref, ref) {
       // is checking across fields
 
       setErrors(function (prevErrors) {
-        var nextErrors = _extends({}, prevErrors);
+        if (prevErrors[name] && validations.current[name]) {
+          var nextErrors = _extends({}, prevErrors);
 
-        Object.keys(prevErrors).forEach(function (errName) {
-          if (validations.current[errName]) {
-            var nextError = validations.current[errName](data, nextValue);
-            updateErrors(nextErrors, errName, nextError);
-          }
-        });
-        return nextErrors;
+          var nextError = validations.current[name](data, nextValue);
+          updateErrors(nextErrors, name, nextError);
+          return nextErrors;
+        }
+
+        return prevErrors;
       });
       setInfos(function (prevInfos) {
         var nextInfos = _extends({}, prevInfos); // re-run any validations that have infos, in case the validation
