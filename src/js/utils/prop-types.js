@@ -5,10 +5,15 @@ export const a11yTitlePropType = PropTypes.string.description(
    be added to the element.`,
 );
 
+export const colorPropType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),
+]);
+
 export const backgroundDoc = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({
-    color: PropTypes.string,
+    color: colorPropType,
     dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     image: PropTypes.string,
     position: PropTypes.string,
@@ -31,11 +36,6 @@ export const backgroundDoc = PropTypes.oneOfType([
 ]).description(`Either a color 
 identifier to use for the background color. For example: 'neutral-1'. Or, a 
 'url()' for an image. Dark is not needed if color is provided.`);
-
-export const colorPropType = PropTypes.oneOfType([
-  PropTypes.string,
-  PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),
-]);
 
 const MARGIN_SIZES = [
   'xxsmall',

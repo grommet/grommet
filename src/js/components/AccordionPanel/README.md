@@ -28,6 +28,16 @@ div
 ```
 ## Theme
   
+**accordion.hover.color**
+
+The hover color used for an accordion panel control. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: "light-4", light: "dark-3" }
+```
+
 **accordion.heading.level**
 
 The heading level used for the accordion. Expects `number`.
@@ -36,6 +46,16 @@ Defaults to
 
 ```
 4
+```
+
+**accordion.heading.margin**
+
+The margin size around heading in accordion. Expects `string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **accordion.icons.collapse**

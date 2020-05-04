@@ -14,7 +14,7 @@ const StyledList = styled.ul`
   ${props => !props.margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
-  ${props => props.focus && focusStyle}
+  ${props => props.focus && focusStyle()}
 `;
 
 const StyledItem = styled(Box)`
@@ -140,7 +140,9 @@ const List = React.forwardRef((props, ref) => {
 
             if (action) {
               content = [
-                <Box align="start">{content}</Box>,
+                <Box align="start" key={`actionContainer${index}`}>
+                  {content}
+                </Box>,
                 action(item, index),
               ];
               boxProps = {

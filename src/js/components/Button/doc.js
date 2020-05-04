@@ -200,6 +200,19 @@ export const themeDoc = {
     type: 'number',
     defaultValue: 0.3,
   },
+  'button.disabled.border.color': {
+    description: 'The border color when the button is disabled.',
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.disabled.color': {
+    description: `Fill color for primary buttons, or label color for other
+    button types, when the button is disabled.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.disabled.extend': {
+    description: 'Any additional style for a disabled Button.',
+    type: 'string | (props) => {}',
+  },
   'button.padding.horizontal': {
     description: 'The horizontal padding.',
     type: 'string',
@@ -213,6 +226,21 @@ export const themeDoc = {
   'button.primary.color': {
     description: `The color of the background for primary buttons.`,
     type: 'string | { dark: string, light: string }',
+  },
+  'button.primary.extend': {
+    description: 'Any additional style for a primary button.',
+    type: 'string | (props) => {}',
+    defaultValue: 'undefined',
+  },
+  'button.primary.active.border.color': {
+    description: `The color of the border for active primary buttons.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
+  },
+  'button.primary.active.extend': {
+    description: 'Any additional style for an active primary button.',
+    type: 'string | (props) => {}',
+    defaultValue: 'undefined',
   },
   'button.size.small.border.radius': {
     description: 'The border corner radius.',

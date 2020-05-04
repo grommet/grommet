@@ -1,6 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -29,10 +28,10 @@ const Header = ({
   onToggle,
   pad,
   sort,
-  theme,
   widths,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
     <StyledDataTableHeader {...rest}>
       <StyledDataTableRow>
@@ -48,7 +47,15 @@ const Header = ({
         )}
 
         {columns.map(
-          ({ property, header, align, search, sortable, verticalAlign }) => {
+          ({
+            property,
+            header,
+            align,
+            search,
+            sortable,
+            verticalAlign,
+            size,
+          }) => {
             let content =
               typeof header === 'string' ? <Text>{header}</Text> : header;
 
@@ -59,7 +66,7 @@ const Header = ({
                 sort &&
                 sort.property === property &&
                 theme.dataTable.icons[
-                  sort.ascending ? 'ascending' : 'descending'
+                  sort.direction !== 'asc' ? 'ascending' : 'descending'
                 ];
               content = (
                 <Button plain fill="vertical" onClick={onSort(property)}>
@@ -122,6 +129,7 @@ const Header = ({
                 pad={pad}
                 plain
                 scope="col"
+                size={widths && widths[property] ? undefined : size}
                 style={
                   widths && widths[property]
                     ? { width: widths[property] }
@@ -138,9 +146,9 @@ const Header = ({
   );
 };
 
+Header.displayName = 'Header';
+
 Header.defaultProps = {};
 Object.setPrototypeOf(Header.defaultProps, defaultProps);
 
-const HeaderWrapper = compose(withTheme)(Header);
-
-export { HeaderWrapper as Header };
+export { Header };

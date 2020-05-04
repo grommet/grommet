@@ -35,7 +35,6 @@ const StyledAnchor = styled.a`
   text-decoration: ${props =>
     props.hasIcon ? 'none' : props.theme.anchor.textDecoration};
   cursor: pointer;
-  outline: none;
   ${genericStyles}
 
   ${props =>
@@ -57,7 +56,7 @@ const StyledAnchor = styled.a`
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${props => props.disabled && disabledStyle}
-  ${props => props.focus && focusStyle}
+  ${props => props.focus && focusStyle()}
   ${props => props.theme.anchor.extend}
 `;
 

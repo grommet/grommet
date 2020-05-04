@@ -19,6 +19,7 @@ import { base as iconBase } from 'grommet-icons/themes/base';
 
 import { deepFreeze, deepMerge } from '../utils/object';
 import { normalizeColor } from '../utils/colors';
+import { parseMetricToNum } from '../utils/mixins';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
@@ -135,6 +136,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   });
 
   const borderWidth = 2;
+  const controlBorderWidth = 1;
 
   const result = deepMerge(iconBase, {
     global: {
@@ -206,7 +208,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       colors,
       control: {
         border: {
-          width: '1px',
+          width: `${controlBorderWidth}px`,
           radius: '4px',
           color: 'border',
         },
@@ -254,8 +256,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       focus: {
+        // shadow or outline are required for accessibility
         border: {
+          // remove to only have shadow
           color: 'focus',
+        },
+        // outline: { color: undefined, size: undefined },
+        shadow: {
+          color: 'focus',
+          size: '2px',
         },
       },
       font: {
@@ -274,8 +283,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
-        padding: `${baseSpacing / 2}px`,
-        weight: 600,
+        padding: {
+          horizontal: `${parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)}px`,
+          vertical: `${parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)}px`,
+        },
+        font: {
+          // size: undefined,
+          // height: undefined,
+          weight: 600,
+        },
+        // deprecate in v3
+        // weight: undefined,
       },
       opacity: {
         strong: 0.8,
@@ -303,7 +323,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         side: 'bottom',
         color: 'border',
       },
-      heading: { level: '4' }, // level ranges from 1-6
+      heading: {
+        level: '4', // level ranges from 1-6
+        // margin: undefined
+      },
+      hover: {
+        color: { dark: 'light-4', light: 'dark-3' },
+      },
       icons: {
         collapse: FormUp,
         expand: FormDown,
@@ -323,6 +349,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       // extend: undefined,
+    },
+    avatar: {
+      // extend: undefined,
+      size: {
+        xsmall: `${baseSpacing * 0.75}px`,
+        small: `${baseSpacing}px`,
+        medium: `${baseSpacing * 2}px`, // default 48
+        large: `${baseSpacing * 3}px`,
+        xlarge: `${baseSpacing * 4}px`,
+      },
+      text: {
+        // fontWeight: undefined,
+        // extend: undefined
+      },
     },
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns
@@ -363,9 +403,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
+      disabled: {
+        // border: {
+        //   color: { dark: undefined, light: undefined },
+        // },
+        // color: { dark: undefined, light: undefined }
+        // opacity: undefined,
+        // extend: undefined
+      },
       // color: { dark: undefined, light: undefined }
       primary: {
+        // active: {
+        //   border: {
+        //     color: { dark: undefined, light: undefined }
+        //   },
+        //   extend: undefined,
+        // },
         // color: { dark: undefined, light: undefined }
+        // extend: undefined,
       },
       // disabled: { opacity: undefined },
       padding: {
@@ -587,6 +642,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           opacity: 'medium',
         },
+        // border: {
+        //   color: undefined,
+        // },
+        // label: {
+        //   color: undefined,
+        // },
       },
       error: {
         color: 'status-critical',
@@ -714,6 +775,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       icons: {
         down: FormDown,
+        // color: { dark: undefined, light: undefined },
       },
     },
     meter: {
@@ -793,6 +855,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         margin: { horizontal: 'small' },
         down: FormDown,
+        // up: undefined
       },
       options: {
         container: {

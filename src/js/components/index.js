@@ -1,6 +1,7 @@
 export * from './Accordion';
 export * from './AccordionPanel';
 export * from './Anchor';
+export * from './Avatar';
 export * from './Box';
 export * from './Button';
 export * from './Calendar';
@@ -40,6 +41,7 @@ export * from './RangeSelector';
 export * from './RoutedAnchor';
 export * from './RoutedButton';
 export * from './Select';
+export * from './Sidebar';
 export * from './SkipLink';
 export * from './SkipLinks';
 export * from './SkipLinkTarget';

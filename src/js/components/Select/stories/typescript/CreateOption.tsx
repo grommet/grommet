@@ -1,12 +1,31 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
+import { FormDown, FormUp } from 'grommet-icons';
 
 import { Box, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { ThemeType } from 'grommet/themes';
 
 // the prefix name of the Create option entry
 const prefix = 'Create';
+
+const theme: ThemeType = {
+  select: {
+    control: {
+      open: {
+        background: '#ece0fa',
+        border: '1px solid #7D4CDB',
+      },
+      extend: 'padding: 3px 6px;',
+    },
+    icons: {
+      down: FormDown,
+      up: FormUp,
+      color: 'dark-1',
+      margin: 'small',
+    },
+  },
+};
 
 const defaultOptions = [];
 for (let i = 1; i <= 5; i += 1) {
@@ -40,9 +59,10 @@ const CreateOption = () => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <Grommet full theme={grommet}>
+    <Grommet full theme={theme}>
       <Box fill align="center" justify="start" pad="large">
         <Select
+          open
           size="medium"
           placeholder="Select"
           value={value}

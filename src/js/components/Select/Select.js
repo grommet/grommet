@@ -2,6 +2,7 @@ import React, {
   forwardRef,
   isValidElement,
   useContext,
+  useMemo,
   useState,
   useRef,
   useEffect,
@@ -18,6 +19,7 @@ import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 
 import { SelectContainer } from './SelectContainer';
+import { applyKey } from './utils';
 
 const SelectTextInput = styled(TextInput)`
   cursor: pointer;
@@ -59,6 +61,7 @@ const Select = forwardRef(
       multiple,
       name,
       onChange,
+      onClick,
       onClose,
       onKeyDown,
       onMore,
@@ -83,31 +86,66 @@ const Select = forwardRef(
     const inputRef = useRef();
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    // value is used for what we receive in valueProp and the basis for
+    // what we send with onChange
+    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
+    // valuedValue is the value mapped with any valueKey applied
+    const valuedValue = useMemo(() => {
+      if (Array.isArray(value))
+        return value.map(v =>
+          valueKey && valueKey.reduce ? v : applyKey(v, valueKey),
+        );
+      return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
+    }, [value, valueKey]);
+    // the option indexes present in the value
+    const optionIndexesInValue = useMemo(() => {
+      const result = [];
+      options.forEach((option, index) => {
+        if (selected !== undefined) {
+          if (Array.isArray(selected)) {
+            if (selected.indexOf(index) !== -1) result.push(index);
+          } else if (index === selected) {
+            result.push(index);
+          }
+        } else if (Array.isArray(valuedValue)) {
+          if (valuedValue.some(v => v === applyKey(option, valueKey))) {
+            result.push(index);
+          }
+        } else if (valuedValue === applyKey(option, valueKey)) {
+          result.push(index);
+        }
+      });
+      return result;
+    }, [options, selected, valueKey, valuedValue]);
 
     const [open, setOpen] = useState(propOpen);
-    useEffect(() => {
-      setOpen(propOpen);
-    }, [propOpen]);
+    useEffect(() => setOpen(propOpen), [propOpen]);
 
     const onRequestOpen = () => {
       setOpen(true);
-      if (onOpen) {
-        onOpen();
-      }
+      if (onOpen) onOpen();
     };
 
     const onRequestClose = () => {
       setOpen(false);
-      if (onClose) {
-        onClose();
-      }
+      if (onClose) onClose();
     };
 
-    const onSelectChange = (event, ...args) => {
+    const onSelectChange = (
+      event,
+      { option, value: nextValue, selected: nextSelected },
+    ) => {
       if (closeOnChange) onRequestClose();
-      setValue(event.value);
-      if (onChange) onChange({ ...event, target: inputRef.current }, ...args);
+      setValue(nextValue);
+      if (onChange) {
+        event.persist();
+        const adjustedEvent = event;
+        adjustedEvent.target = inputRef.current;
+        adjustedEvent.value = nextValue;
+        adjustedEvent.option = option;
+        adjustedEvent.selected = nextSelected;
+        onChange(adjustedEvent);
+      }
     };
 
     let SelectIcon;
@@ -116,62 +154,33 @@ const Select = forwardRef(
         break;
       case true:
       case undefined:
-        SelectIcon = theme.select.icons.down;
+        SelectIcon =
+          open && theme.select.icons.up
+            ? theme.select.icons.up
+            : theme.select.icons.down;
         break;
       default:
         SelectIcon = icon;
     }
-    let selectValue;
-    let inputValue = '';
-    if (valueLabel) {
-      selectValue = valueLabel;
-    } else if (Array.isArray(value)) {
-      if (value.length > 1) {
-        if (React.isValidElement(value[0])) {
-          selectValue = value;
-        } else {
-          inputValue = messages.multiple;
-        }
-      } else if (value.length === 1) {
-        if (React.isValidElement(value[0])) {
-          [selectValue] = value;
-        } else if (labelKey && typeof value[0] === 'object') {
-          if (typeof labelKey === 'function') {
-            inputValue = labelKey(value[0]);
-          } else {
-            inputValue = value[0][labelKey];
-          }
-        } else {
-          [inputValue] = value;
-        }
-      } else {
-        inputValue = '';
-      }
-    } else if (labelKey && typeof value === 'object') {
-      if (typeof labelKey === 'function') {
-        inputValue = labelKey(value);
-      } else {
-        inputValue = value[labelKey];
-      }
-    } else if (React.isValidElement(value)) {
-      selectValue = value; // deprecated in favor of valueLabel
-    } else if (selected !== undefined) {
-      if (Array.isArray(selected)) {
-        if (selected.length > 1) {
-          inputValue = messages.multiple;
-        } else if (selected.length === 1) {
-          inputValue = options[selected[0]];
-        }
-      } else {
-        inputValue = options[selected];
-      }
-    } else {
-      inputValue = value;
-    }
 
-    // const dark = theme.select.background
-    // ? colorIsDark(theme.select.background)
-    // : theme.dark;
+    // element to show, trumps inputValue
+    const selectValue = useMemo(() => {
+      if (valueLabel) return valueLabel;
+      if (React.isValidElement(value)) return value; // deprecated
+      return undefined;
+    }, [value, valueLabel]);
+
+    // text to show
+    const inputValue = useMemo(() => {
+      if (!selectValue) {
+        if (optionIndexesInValue.length === 0) return '';
+        if (optionIndexesInValue.length === 1)
+          return applyKey(options[optionIndexesInValue[0]], labelKey);
+        return messages.multiple;
+      }
+      return undefined;
+    }, [labelKey, messages, optionIndexesInValue, options, selectValue]);
+
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
       theme,
@@ -192,6 +201,7 @@ const Select = forwardRef(
           margin={margin}
           onOpen={onRequestOpen}
           onClose={onRequestClose}
+          onClick={onClick}
           dropContent={
             <SelectContainer
               disabled={disabled}
@@ -207,6 +217,7 @@ const Select = forwardRef(
               onMore={onMore}
               onSearch={onSearch}
               options={options}
+              optionIndexesInValue={optionIndexesInValue}
               replace={replace}
               searchPlaceholder={searchPlaceholder}
               selected={selected}

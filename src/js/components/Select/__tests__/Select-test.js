@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import { CaretDown } from 'grommet-icons';
+import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
@@ -17,6 +17,18 @@ describe('Select', () => {
   test('basic', () => {
     const component = renderer.create(
       <Select id="test-select" options={['one', 'two']} />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('0 value', () => {
+    const component = renderer.create(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={[0, 1]}
+        value={0}
+      />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -92,31 +104,6 @@ describe('Select', () => {
     }, 200);
   });
 
-  // NOTE: This isn't really a test for Select
-  // test('closes drop on esc', () => {
-  //   const onClose = jest.fn();
-  //   const component = mount(
-  //     <Select id='test-select' options={['one', 'two']} onClose={onClose} />
-  //   );
-  //
-  //   fireEvent.keyDown(
-  //     component.getDOMNode(),
-  //     { key: 'Down', keyCode: 40, which: 40 }
-  //   );
-  //
-  //   expectPortal('test-select__drop').toMatchSnapshot();
-  //   expect(component.getDOMNode()).toMatchSnapshot();
-  //
-  //   fireEvent.keyDown(
-  //     document.getElementById('test-select__drop'),
-  //     { key: 'Esc', keyCode: 27, which: 27 }
-  //   );
-  //
-  //   expect(onClose).toBeCalled();
-  //   expect(document.getElementById('test-select__drop')).toBeNull();
-  //   expect(component.getDOMNode()).toMatchSnapshot();
-  // });
-
   test('select an option', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
@@ -137,9 +124,9 @@ describe('Select', () => {
       document.getElementById('test-select__drop').querySelector('button'),
     );
 
-    // checks it select has a value assigned to it after option is selected
+    // checks if select has a value assigned to it after option is selected
     expect(select.value).toEqual('one');
-    expect(onChange).toBeCalled();
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'one' }));
     expect(window.scrollTo).toBeCalled();
   });
 
@@ -165,7 +152,9 @@ describe('Select', () => {
     fireEvent.click(
       document.getElementById('test-select__drop').querySelector('button'),
     );
-    expect(onChange).toBeCalled();
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({ value: { test: 'one' } }),
+    );
     expect(window.scrollTo).toBeCalled();
   });
 
@@ -269,7 +258,9 @@ describe('Select', () => {
     fireEvent.click(
       document.getElementById('test-select__drop').querySelector('button'),
     );
-    expect(onChange).toBeCalled();
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({ value: ['two', 'one'] }),
+    );
   });
 
   test('deselect an option', () => {
@@ -292,7 +283,7 @@ describe('Select', () => {
     fireEvent.click(
       document.getElementById('test-select__drop').querySelector('button'),
     );
-    expect(onChange).toBeCalled();
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
   });
 
   test('disabled', () => {
@@ -572,5 +563,319 @@ describe('Select', () => {
     const optionButton = getByText('afternoon').closest('button');
     fireEvent.mouseOver(optionButton);
     expect(optionButton).toMatchSnapshot();
+  });
+
+  test('renders custom up and down icons', () => {
+    const customTheme = {
+      select: {
+        icons: {
+          down: FormDown,
+          up: CaretUp,
+        },
+      },
+    };
+
+    const { getByPlaceholderText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+    // Check that custom up icon is applied when open
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onChange without valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+  });
+
+  test('multiple onChange without valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          value={value}
+          multiple
+          closeOnChange={false}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+        ],
+      }),
+    );
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value2'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+          {
+            id: 2,
+            name: 'Value2',
+          },
+        ],
+      }),
+    );
+  });
+
+  test('onChange with valueKey string', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey="id"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+  });
+
+  test('multiple onChange with valueKey string', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState([]);
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey="id"
+          value={value}
+          multiple
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: [
+          {
+            id: 1,
+            name: 'Value1',
+          },
+        ],
+      }),
+    );
+  });
+
+  test('multiple onChange with valueKey reduce', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey={{ key: 'id', reduce: true }}
+          value={value}
+          multiple
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: [1] }));
+  });
+
+  test('multiple onChange toggle with valueKey reduce', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState([1]);
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey={{ key: 'id', reduce: true }}
+          value={value}
+          multiple
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
   });
 });

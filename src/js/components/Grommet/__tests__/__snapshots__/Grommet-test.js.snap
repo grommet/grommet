@@ -40,8 +40,8 @@ exports[`Grommet background 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  background: blue;
-  color: #444444;
+  background-color: #0000ff;
+  color: #f8f8f8;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -161,7 +161,7 @@ exports[`Grommet grommet theme 1`] = `
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
   line-height: 24px;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -180,7 +180,7 @@ exports[`Grommet hpe theme 1`] = `
   font-family: 'Metric',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   color: #333333;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -312,7 +312,7 @@ exports[`Grommet themeMode 1`] = `
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
   line-height: 24px;
-  background: #000000;
+  background-color: #000000;
   color: #f8f8f8;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
