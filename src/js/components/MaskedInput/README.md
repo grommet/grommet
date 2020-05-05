@@ -154,6 +154,16 @@ Defaults to
 18px
 ```
 
+**maskedInput.disabled.opacity**
+
+The opacity when the MaskedInput is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **global.focus.border.color**
 
 The border color of the component when in focus. Expects `string | { dark: string, light: string }`.

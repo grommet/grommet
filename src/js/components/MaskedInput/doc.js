@@ -84,6 +84,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '18px',
   },
+  'maskedInput.disabled.opacity': {
+    description: 'The opacity when the MaskedInput is disabled.',
+    type: 'number',
+    defaultValue: 0.3,
+  },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,
   ...themeDocUtils.inputStyle,
