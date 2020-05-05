@@ -1987,7 +1987,10 @@ NOTE: This can only be used with non-toggle components",
       Object {
         "description": "An array of the checked options. If options is provided as an object, the
       checked array will be the strings of the checked option valueKey.",
-        "format": "[string]",
+        "format": "[
+  number
+  string
+]",
         "name": "checked",
       },
       Object {
@@ -2005,7 +2008,7 @@ function",
         "name": "labelKey",
       },
       Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> 
+        "description": "The name attribute value to use for the underlying <input/> 
       elements. Required when used in the Context of FormField.",
         "format": "string",
         "name": "name",

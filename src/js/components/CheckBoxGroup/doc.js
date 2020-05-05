@@ -13,7 +13,9 @@ export const doc = CheckBoxGroup => {
     .intrinsicElement('div');
 
   DocumentedCheckBoxGroup.propTypes = {
-    checked: PropTypes.arrayOf(PropTypes.string).description(
+    checked: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    ).description(
       `An array of the checked options. If options is provided as an object, the
       checked array will be the strings of the checked option valueKey.`,
     ),
@@ -29,7 +31,7 @@ export const doc = CheckBoxGroup => {
         provided, it is used as the key to retrieve each option's label.`,
     ),
     name: PropTypes.string.description(
-      `The DOM name attribute value to use for the underlying <input/> 
+      `The name attribute value to use for the underlying <input/> 
       elements. Required when used in the Context of FormField.`,
     ),
     onChange: PropTypes.func.description(

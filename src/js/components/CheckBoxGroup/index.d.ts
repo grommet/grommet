@@ -4,7 +4,7 @@ import { CheckBoxProps } from '../CheckBox' ;
 
 
 export interface CheckBoxGroupProps {
-  checked?: string | object;
+  checked?: (number | string )[]
   disabled?: boolean;
   labelKey?: string | ((...args: any[]) => any);
   name?: string;
