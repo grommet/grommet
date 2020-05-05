@@ -20,10 +20,6 @@ Custom components and props to override html elements such as 'img'
       or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
       with grommet components
 
-**options**
-
-You can see all the options [here](https://github.com/probablyup/markdown-to-jsx).
-
 ```
 {
 
