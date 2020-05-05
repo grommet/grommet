@@ -118,7 +118,7 @@ const LayerContainer = forwardRef(
         {children}
       </StyledContainer>
     );
-
+    // why are there two checks for modal?
     if (modal) {
       content = (
         <StyledLayer
@@ -155,7 +155,7 @@ const LayerContainer = forwardRef(
         );
       }
     }
-
+    // won't this override the previous modal check?
     if (modal) {
       content = (
         <FocusedContainer hidden={position === 'hidden'} restrictScroll>

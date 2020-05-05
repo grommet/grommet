@@ -23,6 +23,7 @@ export const FocusedContainer = ({
       getBodyChildElements()
         .filter(isNotAncestorOf(child))
         .forEach(makeNodeFocusable);
+      // bodyOverflowStyle is causing the layer to constantly update
       if (restrictScroll) {
         document.body.style.overflow = bodyOverflowStyle;
       }
