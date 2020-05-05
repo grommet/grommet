@@ -44,8 +44,7 @@ function
 
 **name**
 
-The name attribute value to use for the underlying <input/> 
-      elements. Required when used in the Context of FormField.
+Required when used in the Context of Form and FormField.
 
 ```
 string

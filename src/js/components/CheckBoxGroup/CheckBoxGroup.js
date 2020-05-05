@@ -75,7 +75,6 @@ export const CheckBoxGroup = forwardRef(
                 disabled={disabledProp || disabled}
                 id={optionRest.id}
                 label={label}
-                name={name}
                 key={label}
                 onChange={event => onCheckBoxChange(event, value)}
                 {...optionRest}

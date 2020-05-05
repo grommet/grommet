@@ -31,8 +31,7 @@ export const doc = CheckBoxGroup => {
         provided, it is used as the key to retrieve each option's label.`,
     ),
     name: PropTypes.string.description(
-      `The name attribute value to use for the underlying <input/> 
-      elements. Required when used in the Context of FormField.`,
+      `Required when used in the Context of Form and FormField.`,
     ),
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks on a CheckBox option. 
