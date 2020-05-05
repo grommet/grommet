@@ -3,9 +3,17 @@ import { storiesOf } from '@storybook/react';
 
 import { SubtractCircle, AddCircle } from 'grommet-icons';
 
-import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
+import {
+  grommet,
+  Accordion,
+  AccordionPanel,
+  Box,
+  Grommet,
+  Text,
+} from 'grommet';
+import { deepMerge } from 'grommet/utils';
 
-const CustomAccordionTheme = {
+const CustomAccordionTheme = deepMerge(grommet, {
   accordion: {
     heading: {
       level: 3,
@@ -20,8 +28,16 @@ const CustomAccordionTheme = {
       color: 'hotpink',
     },
     border: undefined,
+    panel: {
+      // border: {
+      //   side: 'horizontal',
+      //   size: 'medium',
+      //   color: '#DADADA',
+      //   style: 'dotted',
+      // },
+    },
   },
-};
+});
 
 const CustomAccordion = ({ animate, multiple, ...rest }) => (
   <Grommet theme={CustomAccordionTheme}>

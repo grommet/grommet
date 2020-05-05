@@ -158,6 +158,28 @@ describe('Accordion', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('accordion border', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          accordion: {
+            border: undefined,
+            panel: {
+              border: {
+                side: 'horizontal',
+              },
+            },
+          },
+        }}
+      >
+        <Accordion>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('change active index', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(

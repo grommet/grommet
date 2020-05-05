@@ -239,10 +239,10 @@ export interface ThemeType {
     };
   };
   accordion?: {
-    border?: {
-      side?: string;
-      color?: ColorType;
+    panel?: {
+      border?: BorderType;
     };
+    border?: BorderType;
     heading?: {
       level?: string;
       margin?: MarginType;
