@@ -258,6 +258,7 @@ export interface ThemeType {
     };
     heading?: {
       level?: string;
+      margin?: MarginType;
     };
     hover?: {
       color?: ColorType;
@@ -778,6 +779,7 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       down?: any;
+      color?: ColorType;
     };
   };
   meter?: {
