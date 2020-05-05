@@ -66,7 +66,7 @@ const darkContext = backgroundColor => {
 // Either could be undefined.
 // background could be a CSS gradient, like "linear-gradient(...)"
 export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
-  if (!backgroundArg) return [];
+  if (!backgroundArg) return [undefined, textArg];
 
   const { global } = theme;
   const background = normalizeBackground(backgroundArg, theme);
@@ -101,13 +101,16 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
     backgroundColor = normalizeColor(background, theme);
     const shade = darkContext(backgroundColor, theme);
     if (shade) {
-      textColor = normalizeColor(text[shade] || text, theme);
+      textColor = normalizeColor(text[shade] || text, theme, shade === 'dark');
     } else {
       // If we can't determine the shade, we assume this isn't a simple color.
       // It could be a gradient. backgroundStyle() will take care of that case.
-      backgroundColor = undefined;
+      if (backgroundColor !== 'transparent') backgroundColor = undefined;
+      if (text) textColor = normalizeColor(text, theme);
     }
   }
+  // if textArg is false, we don't want the textColor, used for Button hover
+  if (textArg === false) textColor = undefined;
 
   return [backgroundColor, textColor];
 };
@@ -155,7 +158,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
 
   if (typeof background === 'string')
     // This case takes care of gradients
-    // or theme colors that use CSS names like 'red' that we don't parse
+    // or theme colors that use CSS names like 'crimson' that we don't parse
     return css`
       background: ${normalizeColor(background, theme)};
     `;
