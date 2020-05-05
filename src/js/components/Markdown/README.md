@@ -25,6 +25,16 @@ Custom components and props to override html elements such as 'img'
 
 }
 ```
+
+**options**
+
+Used to tune the jsx compiler to specific properties, available options on [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx).
+
+```
+{
+
+}
+```
   
 ## Intrinsic element
 
