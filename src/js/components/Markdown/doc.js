@@ -22,6 +22,9 @@ export const doc = Markdown => {
       or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
       with grommet components`,
     ),
+    options: PropTypes.shape({}).description(
+      `Used to tune the jsx compiler to specific properties, available options on [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx).`,
+    ),
   };
 
   return DocumentedMarkdown;
