@@ -205,7 +205,7 @@ export const themeDoc = {
   'button.active.default': {
     description:
       'Adjustments to the default Button style when the Button is active.',
-    type: '{}',
+    type: 'object',
     defaultValue: undefined,
   },
   'button.active.primary': {
