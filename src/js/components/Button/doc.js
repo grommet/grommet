@@ -198,7 +198,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.active.extend': {
-    description: 'Any additional style for a active Button.',
+    description: 'Any additional style for an active Button.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
