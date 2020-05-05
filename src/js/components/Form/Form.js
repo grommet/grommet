@@ -19,6 +19,7 @@ const updateErrors = (nextErrors, name, error) => {
   // we disable no-param-reassing so we can use this as a utility function
   // to update nextErrors, to avoid code duplication
   /* eslint-disable no-param-reassign */
+
   const hasStatusError = typeof error === 'object' && error.status === 'error';
 
   // typeof error === 'object' is implied for both cases of error with
@@ -88,14 +89,13 @@ const Form = forwardRef(
           // re-run any validations, in case the validation
           // is checking across fields
           setErrors(prevErrors => {
-            const nextErrors = { ...prevErrors };
-            Object.keys(prevErrors).forEach(errName => {
-              if (validations.current[errName]) {
-                const nextError = validations.current[errName](data, nextValue);
-                updateErrors(nextErrors, errName, nextError);
-              }
-            });
-            return nextErrors;
+            if (prevErrors[name] && validations.current[name]) {
+              const nextErrors = { ...prevErrors };
+              const nextError = validations.current[name](data, nextValue);
+              updateErrors(nextErrors, name, nextError);
+              return nextErrors;
+            }
+            return prevErrors;
           });
           setInfos(prevInfos => {
             const nextInfos = { ...prevInfos };
@@ -128,7 +128,7 @@ const Form = forwardRef(
     //
     // 1 - form controlled
     //
-    // In this model, the caller sets `value` and `onChange` propeties
+    // In this model, the caller sets `value` and `onChange` properties
     // on the Form component to supply the values used by the input fields.
     // In useFormContext(), componentValue would be undefined and formValue
     // is be set to whatever the form state has. Whenever the form state
