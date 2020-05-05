@@ -161,6 +161,16 @@ The opacity when the MaskedInput is disabled. Expects `number`.
 Defaults to
 
 ```
+global.control.disabled.opacity
+```
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
 0.3
 ```
 

@@ -354,7 +354,7 @@ The opacity when the textInput is disabled. Expects `number`.
 Defaults to
 
 ```
-0.3
+global.control.disabled.opacity
 ```
 
 **global.focus.border.color**

@@ -199,7 +199,7 @@ export const themeDoc = {
   'textInput.disabled.opacity': {
     description: 'The opacity when the textInput is disabled.',
     type: 'number',
-    defaultValue: 0.3,
+    defaultValue: 'global.control.disabled.opacity',
   },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,

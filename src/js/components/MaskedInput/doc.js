@@ -87,8 +87,9 @@ export const themeDoc = {
   'maskedInput.disabled.opacity': {
     description: 'The opacity when the MaskedInput is disabled.',
     type: 'number',
-    defaultValue: 0.3,
+    defaultValue: 'global.control.disabled.opacity',
   },
+  ...themeDocUtils.disabledStyle,
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,
   ...themeDocUtils.inputStyle,
