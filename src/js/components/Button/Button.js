@@ -21,6 +21,24 @@ import { Box } from '../Box';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 
+// We have two Styled* components to separate
+// the newer default|primary|secondary approach,
+// which we use the term "kind" to refer to,
+// from the previous approach. Hopefully, when we get to grommet v3,
+// we can drop the old way and just use kind.
+//
+// In the kind approach, we rely on the basic structure of the theme
+// being repeated. For example: button.default, button.active,
+// button.active.default all refer to a similar object containing
+// { background, border, color, padding }.
+// This allows us to use the same code to evaluate color and generate CSS.
+// We just need to build up CSS, since selectors override previous ones.
+// See StyledButtonKind.kindStyles() for this.
+// And we build down to determine icon color, once we have a color from
+// the latest applicable state, we can stop. See Button.getIconColor() for this.
+// backgroundAndTextColor() is used in both cases to ensure we are determining
+// color in the same way, so the icon and label align.
+
 // only when default is in the theme
 // Used to get the color for the icon to match what StyledButtonKind
 // and backgroundStyle() will do for the label.
