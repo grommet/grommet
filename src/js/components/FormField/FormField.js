@@ -228,17 +228,21 @@ const FormField = forwardRef(
 
     let borderColor;
 
-    if (disabled) {
-      borderColor =
-        formFieldTheme.disabled.border && formFieldTheme.disabled.border.color;
-    } else if (normalizedError) {
-      borderColor =
-        (themeBorder && themeBorder.error.color) || 'status-critical';
-    } else if (focus) {
-      borderColor =
-        formFieldTheme.focus &&
-        formFieldTheme.focus.border &&
-        formFieldTheme.focus.border.color;
+    if (
+      disabled &&
+      formFieldTheme.disabled.border &&
+      formFieldTheme.disabled.border.color
+    ) {
+      borderColor = formFieldTheme.disabled.border.color;
+    } else if (normalizedError && themeBorder && themeBorder.error.color) {
+      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (
+      focus &&
+      formFieldTheme.focus &&
+      formFieldTheme.focus.border &&
+      formFieldTheme.focus.border.color
+    ) {
+      borderColor = formFieldTheme.focus.border.color;
     } else {
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
@@ -312,12 +316,26 @@ const FormField = forwardRef(
 
     let outerBackground;
     if (themeBorder.position === 'outer') {
-      if (normalizedError && formFieldTheme.error) {
+      if (
+        normalizedError &&
+        formFieldTheme.error &&
+        formFieldTheme.error.background
+      ) {
         outerBackground = formFieldTheme.error.background;
-      } else if (focus && formFieldTheme.focus) {
-        outerBackground = formFieldTheme.focus.background;
-      } else if (disabled && formFieldTheme.disabled) {
-        outerBackground = formFieldTheme.disabled.background;
+      } else if (
+        focus &&
+        formFieldTheme.focus &&
+        formFieldTheme.focus.background &&
+        formFieldTheme.focus.background.color
+      ) {
+        outerBackground = formFieldTheme.focus.background.color;
+      } else if (
+        disabled &&
+        formFieldTheme.disabled &&
+        formFieldTheme.disabled.background &&
+        formFieldTheme.disabled.background.color
+      ) {
+        outerBackground = formFieldTheme.disabled.background.color;
       }
     }
 
