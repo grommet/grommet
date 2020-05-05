@@ -51,7 +51,6 @@ var CenterLayer = function CenterLayer() {
     plain: true
   })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "center",
-    modal: true,
     onClickOutside: onClose,
     onEsc: onClose
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -84,7 +83,6 @@ var CenterLayer = function CenterLayer() {
     color: "status-critical"
   })))), open2 && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     position: "top",
-    modal: true,
     onClickOutside: onClose2,
     onEsc: onClose2
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
