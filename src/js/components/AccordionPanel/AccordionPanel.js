@@ -49,15 +49,17 @@ const AccordionPanel = forwardRef(
         : theme.accordion.hover.heading.color;
 
     const { border: contentBorder } = theme.accordion;
-    const { border } = theme.accordion.panel;
+    const { border: panelBorder } = theme.accordion.panel;
 
     let abutMargin;
-    if (border)
+    if (panelBorder)
+      // abutMargin 'bottom' is set to overlap adjacent border panels
       abutMargin = {
         bottom: `-${parseMetricToNum(
           // in case border.size defined as a t-shirt size
-          theme.global.borderSize[border.size] ||
-          border.size || // or in case border size is a custom size i.e. '5px'
+          // or in case border size is a custom size i.e. '5px'
+          theme.global.borderSize[panelBorder.size] ||
+            panelBorder.size ||
             theme.global.borderSize.xsmall, // '-1px'
         )}px`,
       };
@@ -67,7 +69,7 @@ const AccordionPanel = forwardRef(
         ref={ref}
         flex={false}
         onClick={onClick}
-        border={border}
+        border={panelBorder}
         margin={abutMargin}
       >
         <Button
@@ -93,7 +95,7 @@ const AccordionPanel = forwardRef(
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
-          style={{ zIndex: focus ? 1 : undefined }}
+          style={focus ? { zIndex: 1 } : undefined}
         >
           {header || (
             <Box align="center" direction="row" justify="between" {...rest}>

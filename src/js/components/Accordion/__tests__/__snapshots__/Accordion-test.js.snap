@@ -224,11 +224,6 @@ exports[`Accordion AccordionPanel 1`] = `
         onMouseOut={[Function]}
         onMouseOver={[Function]}
         role="tab"
-        style={
-          Object {
-            "zIndex": undefined,
-          }
-        }
         type="button"
       >
         <div
@@ -286,11 +281,6 @@ exports[`Accordion AccordionPanel 1`] = `
         onMouseOut={[Function]}
         onMouseOver={[Function]}
         role="tab"
-        style={
-          Object {
-            "zIndex": undefined,
-          }
-        }
         type="button"
       >
         <div
@@ -558,11 +548,6 @@ exports[`Accordion accordion border 1`] = `
         onMouseOut={[Function]}
         onMouseOver={[Function]}
         role="tab"
-        style={
-          Object {
-            "zIndex": undefined,
-          }
-        }
         type="button"
       >
         <div
@@ -2048,11 +2033,6 @@ exports[`Accordion complex header 1`] = `
         onMouseOut={[Function]}
         onMouseOver={[Function]}
         role="tab"
-        style={
-          Object {
-            "zIndex": undefined,
-          }
-        }
         type="button"
       >
         <div>
@@ -2076,11 +2056,6 @@ exports[`Accordion complex header 1`] = `
         onMouseOut={[Function]}
         onMouseOver={[Function]}
         role="tab"
-        style={
-          Object {
-            "zIndex": undefined,
-          }
-        }
         type="button"
       >
         <div>
@@ -2302,11 +2277,6 @@ exports[`Accordion complex title 1`] = `
           onMouseOut={[Function]}
           onMouseOver={[Function]}
           role="tab"
-          style={
-            Object {
-              "zIndex": undefined,
-            }
-          }
           type="button"
         >
           <div
@@ -2358,11 +2328,6 @@ exports[`Accordion complex title 1`] = `
           onMouseOut={[Function]}
           onMouseOver={[Function]}
           role="tab"
-          style={
-            Object {
-              "zIndex": undefined,
-            }
-          }
           type="button"
         >
           <div
@@ -2630,11 +2595,6 @@ exports[`Accordion custom accordion 1`] = `
         onMouseOut={[Function]}
         onMouseOver={[Function]}
         role="tab"
-        style={
-          Object {
-            "zIndex": undefined,
-          }
-        }
         type="button"
       >
         <div

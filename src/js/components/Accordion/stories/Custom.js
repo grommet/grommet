@@ -3,17 +3,17 @@ import { storiesOf } from '@storybook/react';
 
 import { SubtractCircle, AddCircle } from 'grommet-icons';
 
-import {
-  grommet,
-  Accordion,
-  AccordionPanel,
-  Box,
-  Grommet,
-  Text,
-} from 'grommet';
-import { deepMerge } from 'grommet/utils';
+import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 
-const CustomAccordionTheme = deepMerge(grommet, {
+const customAccordionTheme = {
+  global: {
+    font: {
+      family: `-apple-system,
+       BlinkMacSystemFont, 
+       "Segoe UI", 
+       Roboto`,
+    },
+  },
   accordion: {
     heading: {
       level: 3,
@@ -37,10 +37,10 @@ const CustomAccordionTheme = deepMerge(grommet, {
       // },
     },
   },
-});
+};
 
 const CustomAccordion = ({ animate, multiple, ...rest }) => (
-  <Grommet theme={CustomAccordionTheme}>
+  <Grommet theme={customAccordionTheme}>
     <Box {...rest} pad="large" align="center" justify="center">
       <Accordion animate={animate} multiple>
         <AccordionPanel
