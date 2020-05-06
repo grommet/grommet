@@ -34,7 +34,7 @@ export const FocusedContainer = ({
         .filter(isNotAncestorOf(child))
         .forEach(makeNodeUnfocusable);
 
-      if (restrictScroll) {
+      if (restrictScroll && bodyOverflowStyle !== 'hidden') {
         setBodyOverflowStyle(document.body.style.overflow);
         document.body.style.overflow = 'hidden';
       }
