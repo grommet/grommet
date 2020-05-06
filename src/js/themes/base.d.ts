@@ -769,6 +769,9 @@ export interface ThemeType {
   };
   maskedInput?: {
     extend?: ExtendType;
+    disabled?: {
+      opacity?: OpacityType;
+    };
   };
   menu?: {
     background?: BackgroundType;

@@ -113,6 +113,7 @@ const parseValue = (mask, value) => {
 };
 
 const defaultMask = [];
+const dropAlign = { top: 'bottom', left: 'left' };
 
 const MaskedInput = forwardRef(
   (
@@ -288,6 +289,8 @@ const MaskedInput = forwardRef(
       [showDrop],
     );
 
+    const onHideDrop = useCallback(() => setShowDrop(false), []);
+
     const renderPlaceholder = () => {
       return mask.map(item => item.placeholder || item.fixed).join('');
     };
@@ -342,11 +345,11 @@ const MaskedInput = forwardRef(
         {showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && (
           <Drop
             id={id ? `masked-input-drop__${id}` : undefined}
-            align={{ top: 'bottom', left: 'left' }}
+            align={dropAlign}
             responsive={false}
             target={(ref || inputRef).current}
-            onClickOutside={() => setShowDrop(false)}
-            onEsc={() => setShowDrop(false)}
+            onClickOutside={onHideDrop}
+            onEsc={onHideDrop}
           >
             <Box ref={dropRef}>
               {mask[activeMaskIndex].options.map((option, index) => (
