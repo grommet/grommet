@@ -489,7 +489,7 @@ undefined
 
 **button.active.extend**
 
-Any additional style for a active Button. Expects `string | (props) => {}`.
+Any additional style for an active Button. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -499,7 +499,7 @@ undefined
 
 **button.active.default**
 
-Adjustments to the default Button style when the Button is active. Expects `{}`.
+Adjustments to the default Button style when the Button is active. Expects `object`.
 
 Defaults to
 
