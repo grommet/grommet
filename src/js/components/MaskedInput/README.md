@@ -156,12 +156,12 @@ Defaults to
 
 **maskedInput.disabled.opacity**
 
-The opacity when the MaskedInput is disabled. Expects `number`.
+The opacity when the MaskedInput is disabled. Expects `number | string`.
 
 Defaults to
 
 ```
-global.control.disabled.opacity
+undefined
 ```
 
 **global.control.disabled.opacity**

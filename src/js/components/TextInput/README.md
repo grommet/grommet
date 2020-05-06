@@ -349,12 +349,12 @@ undefined
 
 **textInput.disabled.opacity**
 
-The opacity when the textInput is disabled. Expects `number`.
+The opacity when the textInput is disabled. Expects `number | string`.
 
 Defaults to
 
 ```
-global.control.disabled.opacity
+undefined
 ```
 
 **global.focus.border.color**
