@@ -31,6 +31,8 @@ const preventLayerClose = event => {
   }
 };
 
+const defaultPortalContext = [];
+
 const DropContainer = forwardRef(
   (
     {
@@ -54,7 +56,7 @@ const DropContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const portalContext = useContext(PortalContext) || [];
+    const portalContext = useContext(PortalContext) || defaultPortalContext;
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(() => [...portalContext, portalId], [
       portalContext,
