@@ -81,7 +81,7 @@ interface ButtonKindType {
   background?: BackgroundType;
   border?: {
     color?: ColorType;
-  };
+  } | boolean;
   color?: ColorType;
   padding?: {
     vertical?: string;
