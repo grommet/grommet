@@ -49,6 +49,13 @@ var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropB
 });
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, _defaultProps.defaultProps);
+var defaultDropAlign = {
+  top: 'bottom',
+  left: 'left'
+};
+var defaultMessages = {
+  multiple: 'multiple'
+};
 var Select = (0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       alignSelf = _ref.alignSelf,
@@ -58,10 +65,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
       disabled = _ref.disabled,
       disabledKey = _ref.disabledKey,
       _ref$dropAlign = _ref.dropAlign,
-      dropAlign = _ref$dropAlign === void 0 ? {
-    top: 'bottom',
-    left: 'left'
-  } : _ref$dropAlign,
+      dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
       dropHeight = _ref.dropHeight,
       dropProps = _ref.dropProps,
       dropTarget = _ref.dropTarget,
@@ -73,9 +77,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
       labelKey = _ref.labelKey,
       margin = _ref.margin,
       _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    multiple: 'multiple'
-  } : _ref$messages,
+      messages = _ref$messages === void 0 ? defaultMessages : _ref$messages,
       multiple = _ref.multiple,
       name = _ref.name,
       onChange = _ref.onChange,

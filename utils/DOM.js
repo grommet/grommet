@@ -190,16 +190,13 @@ var findVisibleParent = function findVisibleParent(element) {
 exports.findVisibleParent = findVisibleParent;
 
 var isNodeAfterScroll = function isNodeAfterScroll(node, target) {
-  if (target === void 0) {
-    target = window;
-  }
-
   var _node$getBoundingClie = node.getBoundingClientRect(),
-      bottom = _node$getBoundingClie.bottom;
+      bottom = _node$getBoundingClie.bottom; // target will be the document from findScrollParent()
 
-  var _target$getBoundingCl = target.getBoundingClientRect(),
-      height = _target$getBoundingCl.height,
-      top = _target$getBoundingCl.top;
+
+  var _ref = target.getBoundingClientRect ? target.getBoundingClientRect() : 0,
+      height = _ref.height,
+      top = _ref.top;
 
   return bottom >= top + height;
 };
@@ -207,15 +204,12 @@ var isNodeAfterScroll = function isNodeAfterScroll(node, target) {
 exports.isNodeAfterScroll = isNodeAfterScroll;
 
 var isNodeBeforeScroll = function isNodeBeforeScroll(node, target) {
-  if (target === void 0) {
-    target = window;
-  }
-
   var _node$getBoundingClie2 = node.getBoundingClientRect(),
-      top = _node$getBoundingClie2.top;
+      top = _node$getBoundingClie2.top; // target will be the document from findScrollParent()
 
-  var _target$getBoundingCl2 = target.getBoundingClientRect(),
-      targetTop = _target$getBoundingCl2.top;
+
+  var _ref2 = target.getBoundingClientRect ? target.getBoundingClientRect() : 0,
+      targetTop = _ref2.top;
 
   return top <= targetTop;
 };

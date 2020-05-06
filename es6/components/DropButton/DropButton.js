@@ -6,15 +6,16 @@ import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils';
+var defaultDropAlign = {
+  top: 'top',
+  left: 'left'
+};
 var DropButton = forwardRef(function (_ref, ref) {
   var _ref$a11yTitle = _ref.a11yTitle,
       a11yTitle = _ref$a11yTitle === void 0 ? 'Open Drop' : _ref$a11yTitle,
       disabled = _ref.disabled,
       _ref$dropAlign = _ref.dropAlign,
-      dropAlign = _ref$dropAlign === void 0 ? {
-    top: 'top',
-    left: 'left'
-  } : _ref$dropAlign,
+      dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
       dropProps = _ref.dropProps,
       dropContent = _ref.dropContent,
       dropTarget = _ref.dropTarget,
