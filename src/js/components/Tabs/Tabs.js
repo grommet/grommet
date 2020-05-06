@@ -11,7 +11,7 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 
-import { StyledTabPanel, StyledTabsHeader } from './StyledTabs';
+import { StyledTabs, StyledTabPanel, StyledTabsHeader } from './StyledTabs';
 
 const Tabs = forwardRef(
   (
@@ -20,6 +20,7 @@ const Tabs = forwardRef(
       flex,
       justify = 'center',
       messages = { tabContents: 'Tab Contents' },
+      responsive = true,
       ...rest
     },
     ref,
@@ -77,11 +78,12 @@ const Tabs = forwardRef(
     const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
 
     return (
-      <Box
+      <StyledTabs
         ref={ref}
         as={Box}
         role="tablist"
         flex={flex}
+        responsive={responsive}
         {...rest}
         background={theme.tabs.background}
       >
@@ -103,7 +105,7 @@ const Tabs = forwardRef(
         >
           {activeContent}
         </StyledTabPanel>
-      </Box>
+      </StyledTabs>
     );
   },
 );
