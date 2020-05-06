@@ -481,6 +481,74 @@ describe('Form', () => {
       }),
     );
   });
+  test('validate on blur', () => {
+    const Test = () => (
+      <Form validate="blur">
+        <FormField
+          label="Name"
+          name="name"
+          placeholder="name"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            name => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+            name => {
+              if (name === 'good')
+                return {
+                  message: 'good',
+                  status: 'info',
+                };
+              return undefined;
+            },
+          ]}
+        />
+
+        <FormField label="Email" name="email" required>
+          <TextInput name="email" type="email" placeholder="email" />
+        </FormField>
+        <Button label="submit" type="submit" />
+      </Form>
+    );
+    const {
+      getByText,
+      getByPlaceholderText,
+      queryAllByText,
+      queryByText,
+    } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    // both fields have required error message
+    fireEvent.click(getByText('submit'));
+    expect(queryAllByText('required')).toHaveLength(2);
+
+    // one fields has required error message
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: { value: 'Input has changed' },
+    });
+    fireEvent.click(getByText('submit'));
+    expect(queryAllByText('required')).toHaveLength(1);
+
+    // name field has new error and email field still has required error message
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: { value: 'a' },
+    });
+    fireEvent.click(getByText('submit'));
+    expect(queryByText('required')).toBeTruthy();
+    expect(queryByText('must be >1 character')).toBeTruthy();
+
+    //  new value in name does not remove the error message in email
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: { value: 'abc' },
+    });
+    expect(queryByText('required')).toBeTruthy();
+    expect(queryByText('must be >1 character')).toBe(null);
+  });
 
   // deprecated FormField+input pattern
 
