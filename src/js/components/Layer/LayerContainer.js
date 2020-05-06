@@ -118,7 +118,6 @@ const LayerContainer = forwardRef(
         {children}
       </StyledContainer>
     );
-
     if (modal) {
       content = (
         <StyledLayer
@@ -155,7 +154,6 @@ const LayerContainer = forwardRef(
         );
       }
     }
-
     if (modal) {
       content = (
         <FocusedContainer hidden={position === 'hidden'} restrictScroll>
