@@ -38,7 +38,7 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       var child = ref.current;
       getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeUnfocusable);
 
-      if (restrictScroll) {
+      if (restrictScroll && bodyOverflowStyle !== 'hidden') {
         setBodyOverflowStyle(document.body.style.overflow);
         document.body.style.overflow = 'hidden';
       }
