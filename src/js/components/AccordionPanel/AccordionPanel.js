@@ -80,6 +80,11 @@ const AccordionPanel = forwardRef(
                         theme.accordion.heading.level) ||
                       4
                     }
+                    margin={
+                      (theme.accordion.heading &&
+                        theme.accordion.heading.margin) ||
+                      undefined
+                    }
                     color={hover}
                   >
                     {label}

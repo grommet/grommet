@@ -242,6 +242,16 @@ Defaults to
 4
 \`\`\`
 
+**accordion.heading.margin**
+
+The margin size around heading in accordion. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **accordion.icons.collapse**
 
 The icon to use when the panel is expanded. Expects \`React.Element\`.
@@ -5547,10 +5557,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react[\\"default\\"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`
@@ -8823,6 +8833,9 @@ import { Main } from 'grommet';
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
+Grommet uses 'markdown-to-jsx' in Markdown component,
+      you can see all the options in the documentation.
+
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Markdown&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=markdown&module=%2Fsrc%2FMarkdown.js)
 ## Usage
 
@@ -8838,6 +8851,16 @@ import { Markdown } from 'grommet';
 Custom components and props to override html elements such as 'img'
       or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
       with grommet components
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**options**
+
+Used to tune the jsx compiler to specific properties, available options on [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx).
 
 \`\`\`
 {
@@ -9407,12 +9430,22 @@ button
   
 **global.colors.control**
 
+The default color to use for the icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand'}
+\`\`\`
+
+**menu.icons.color**
+
 The color to use for the icon. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-undefined
+control
 \`\`\`
 
 **menu.background**
