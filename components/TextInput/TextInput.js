@@ -61,25 +61,27 @@ var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
   return props.dropHeight ? (0, _utils.sizeStyle)('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
 });
+var defaultDropAlign = {
+  top: 'bottom',
+  left: 'left'
+};
+var defaultMessages = {
+  enterSelect: '(Press Enter to Select)',
+  suggestionsCount: 'suggestions available',
+  suggestionsExist: 'This input has suggestions use arrow keys to navigate',
+  suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate'
+};
 var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
   var defaultValue = _ref.defaultValue,
       _ref$dropAlign = _ref.dropAlign,
-      dropAlign = _ref$dropAlign === void 0 ? {
-    top: 'bottom',
-    left: 'left'
-  } : _ref$dropAlign,
+      dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
       dropHeight = _ref.dropHeight,
       dropTarget = _ref.dropTarget,
       dropProps = _ref.dropProps,
       icon = _ref.icon,
       id = _ref.id,
       _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    enterSelect: '(Press Enter to Select)',
-    suggestionsCount: 'suggestions available',
-    suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-    suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate'
-  } : _ref$messages,
+      messages = _ref$messages === void 0 ? defaultMessages : _ref$messages,
       name = _ref.name,
       _onBlur = _ref.onBlur,
       onChange = _ref.onChange,
@@ -183,19 +185,17 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       optionsNode.scrollTo(0, buttonNode.offsetTop);
     }
   }, [activeSuggestionIndex, suggestionRefs]);
-
-  var openDrop = function openDrop() {
+  var openDrop = (0, _react.useCallback)(function () {
     setShowDrop(true);
     announce(messages.suggestionIsOpen);
     announce(suggestions.length + " " + messages.suggestionsCount);
     if (onSuggestionsOpen) onSuggestionsOpen();
-  };
-
-  var closeDrop = function closeDrop() {
+  }, [announce, messages.suggestionsCount, messages.suggestionIsOpen, onSuggestionsOpen, suggestions]);
+  var closeDrop = (0, _react.useCallback)(function () {
     setShowDrop(false);
     if (messages.onSuggestionsClose) onSuggestionsClose();
     if (onSuggestionsClose) onSuggestionsClose();
-  };
+  }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
   var onNextSuggestion = function onNextSuggestion(event) {
     event.preventDefault();

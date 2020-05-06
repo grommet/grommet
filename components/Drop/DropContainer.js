@@ -39,6 +39,7 @@ var preventLayerClose = function preventLayerClose(event) {
   }
 };
 
+var defaultPortalContext = [];
 var DropContainer = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref$align = _ref.align,
       align = _ref$align === void 0 ? {
@@ -62,7 +63,7 @@ var DropContainer = (0, _react.forwardRef)(function (_ref, ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var portalContext = (0, _react.useContext)(_PortalContext.PortalContext) || [];
+  var portalContext = (0, _react.useContext)(_PortalContext.PortalContext) || defaultPortalContext;
   var portalId = (0, _react.useMemo)(function () {
     return portalContext.length;
   }, [portalContext]);

@@ -39,9 +39,6 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     value: value,
-    dropProps: {
-      height: 'small'
-    },
     onChange: onChange,
     onSelect: onSelect,
     suggestions: suggestions

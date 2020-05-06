@@ -106,6 +106,10 @@ var parseValue = function parseValue(mask, value) {
 };
 
 var defaultMask = [];
+var dropAlign = {
+  top: 'bottom',
+  left: 'left'
+};
 var MaskedInput = forwardRef(function (_ref, ref) {
   var focusProp = _ref.focus,
       icon = _ref.icon,
@@ -276,6 +280,9 @@ var MaskedInput = forwardRef(function (_ref, ref) {
       setShowDrop(false);
     }
   }, [showDrop]);
+  var onHideDrop = useCallback(function () {
+    return setShowDrop(false);
+  }, []);
 
   var renderPlaceholder = function renderPlaceholder() {
     return mask.map(function (item) {
@@ -331,18 +338,11 @@ var MaskedInput = forwardRef(function (_ref, ref) {
     onChange: onChangeInput
   }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && /*#__PURE__*/React.createElement(Drop, {
     id: id ? "masked-input-drop__" + id : undefined,
-    align: {
-      top: 'bottom',
-      left: 'left'
-    },
+    align: dropAlign,
     responsive: false,
     target: (ref || inputRef).current,
-    onClickOutside: function onClickOutside() {
-      return setShowDrop(false);
-    },
-    onEsc: function onEsc() {
-      return setShowDrop(false);
-    }
+    onClickOutside: onHideDrop,
+    onEsc: onHideDrop
   }, /*#__PURE__*/React.createElement(Box, {
     ref: dropRef
   }, mask[activeMaskIndex].options.map(function (option, index) {

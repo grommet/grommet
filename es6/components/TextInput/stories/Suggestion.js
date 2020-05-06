@@ -31,9 +31,6 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
     width: "medium"
   }, /*#__PURE__*/React.createElement(TextInput, {
     value: value,
-    dropProps: {
-      height: 'small'
-    },
     onChange: onChange,
     onSelect: onSelect,
     suggestions: suggestions
