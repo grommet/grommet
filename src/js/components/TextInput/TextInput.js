@@ -1,6 +1,7 @@
 import React, {
   forwardRef,
   isValidElement,
+  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -56,24 +57,27 @@ const ContainerBox = styled(Box)`
   }
 `;
 
+const defaultDropAlign = { top: 'bottom', left: 'left' };
+
+const defaultMessages = {
+  enterSelect: '(Press Enter to Select)',
+  suggestionsCount: 'suggestions available',
+  suggestionsExist: 'This input has suggestions use arrow keys to navigate',
+  suggestionIsOpen:
+    'Suggestions drop is open, continue to use arrow keys to navigate',
+};
+
 const TextInput = forwardRef(
   (
     {
       defaultValue,
-      dropAlign = { top: 'bottom', left: 'left' },
+      dropAlign = defaultDropAlign,
       dropHeight,
       dropTarget,
       dropProps,
       icon,
       id,
-      messages = {
-        enterSelect: '(Press Enter to Select)',
-        suggestionsCount: 'suggestions available',
-        suggestionsExist:
-          'This input has suggestions use arrow keys to navigate',
-        suggestionIsOpen:
-          'Suggestions drop is open, continue to use arrow keys to navigate',
-      },
+      messages = defaultMessages,
       name,
       onBlur,
       onChange,
@@ -185,18 +189,24 @@ const TextInput = forwardRef(
       }
     }, [activeSuggestionIndex, suggestionRefs]);
 
-    const openDrop = () => {
+    const openDrop = useCallback(() => {
       setShowDrop(true);
       announce(messages.suggestionIsOpen);
       announce(`${suggestions.length} ${messages.suggestionsCount}`);
       if (onSuggestionsOpen) onSuggestionsOpen();
-    };
+    }, [
+      announce,
+      messages.suggestionsCount,
+      messages.suggestionIsOpen,
+      onSuggestionsOpen,
+      suggestions,
+    ]);
 
-    const closeDrop = () => {
+    const closeDrop = useCallback(() => {
       setShowDrop(false);
       if (messages.onSuggestionsClose) onSuggestionsClose();
       if (onSuggestionsClose) onSuggestionsClose();
-    };
+    }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
     const onNextSuggestion = event => {
       event.preventDefault();
