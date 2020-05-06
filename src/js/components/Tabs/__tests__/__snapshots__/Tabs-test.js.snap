@@ -190,7 +190,7 @@ exports[`Tabs Tab 1`] = `
   className="c0"
 >
   <div
-    className="c1 StyledBox-sc-13pk1d4-0 c1"
+    className="c1 "
     role="tablist"
   >
     <div
@@ -442,7 +442,7 @@ exports[`Tabs change to second tab 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledBox-sc-13pk1d4-0 c1"
+    class="c1 "
     role="tablist"
   >
     <div
@@ -499,7 +499,7 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledBox-sc-13pk1d4-0 bFwQzJ"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
@@ -729,7 +729,7 @@ exports[`Tabs complex title 1`] = `
   className="c0"
 >
   <div
-    className="c1 StyledBox-sc-13pk1d4-0 c1"
+    className="c1 "
     role="tablist"
   >
     <div
@@ -919,7 +919,7 @@ exports[`Tabs no Tab 1`] = `
   className="c0"
 >
   <div
-    className="c1 StyledBox-sc-13pk1d4-0 c1"
+    className="c1 "
     role="tablist"
   >
     <div
@@ -1141,7 +1141,7 @@ exports[`Tabs set on hover 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledBox-sc-13pk1d4-0 c1"
+    class="c1 "
     role="tablist"
   >
     <div
@@ -1198,7 +1198,7 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledBox-sc-13pk1d4-0 bFwQzJ"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
@@ -1255,7 +1255,7 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledBox-sc-13pk1d4-0 bFwQzJ"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
@@ -1312,7 +1312,7 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledBox-sc-13pk1d4-0 bFwQzJ"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
@@ -1369,7 +1369,7 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledBox-sc-13pk1d4-0 bFwQzJ"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ StyledTabs-a4fwxl-2 gjpnHh"
     role="tablist"
   >
     <div
@@ -1637,7 +1637,7 @@ exports[`Tabs with icon + reverse 1`] = `
   className="c0"
 >
   <div
-    className="c1 StyledBox-sc-13pk1d4-0 c1"
+    className="c1 "
     role="tablist"
   >
     <div
