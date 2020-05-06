@@ -769,6 +769,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     maskedInput: {
       // extend: undefined,
+      // disabled: { opacity: undefined },
     },
     menu: {
       // background: undefined,
