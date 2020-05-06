@@ -21,7 +21,7 @@ var plainStyle = (0, _styledComponents.css)(["outline:none;border:none;"]);
 var StyledMaskedInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"
-})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], _utils.inputStyle, function (props) {
   return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
@@ -29,6 +29,8 @@ var StyledMaskedInput = _styledComponents["default"].input.withConfig({
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
 }, function (props) {
   return props.focus && !props.plain && (0, _utils.focusStyle)();
+}, function (props) {
+  return props.disabled && (0, _utils.disabledStyle)(props.theme.maskedInput.disabled && props.theme.maskedInput.disabled.opacity);
 }, function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.extend;
 });

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { focusStyle, getInputPadBySide, inputStyle, placeholderStyle } from '../../utils';
+import { disabledStyle, focusStyle, getInputPadBySide, inputStyle, placeholderStyle } from '../../utils';
 
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.text[props.size];
@@ -10,7 +10,7 @@ var plainStyle = css(["outline:none;border:none;"]);
 export var StyledMaskedInput = styled.input.withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"
-})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], inputStyle, function (props) {
   return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
@@ -18,6 +18,8 @@ export var StyledMaskedInput = styled.input.withConfig({
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
 }, function (props) {
   return props.focus && !props.plain && focusStyle();
+}, function (props) {
+  return props.disabled && disabledStyle(props.theme.maskedInput.disabled && props.theme.maskedInput.disabled.opacity);
 }, function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.extend;
 });

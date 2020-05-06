@@ -104,7 +104,7 @@ export var themeDoc = _extends(_extends(_extends(_extends({
   },
   'textInput.disabled.opacity': {
     description: 'The opacity when the textInput is disabled.',
-    type: 'number',
-    defaultValue: 0.3
+    type: 'number | string',
+    defaultValue: undefined
   }
 }, themeDocUtils.focusStyle), themeDocUtils.placeholderStyle), themeDocUtils.disabledStyle), themeDocUtils.inputStyle);

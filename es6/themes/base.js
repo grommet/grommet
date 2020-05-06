@@ -836,6 +836,7 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     maskedInput: {// extend: undefined,
+      // disabled: { opacity: undefined },
     },
     menu: {
       // background: undefined,

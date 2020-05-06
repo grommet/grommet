@@ -23,7 +23,7 @@ export var doc = function doc(MaskedInput) {
   };
   return DocumentedMaskedInput;
 };
-export var themeDoc = _extends(_extends(_extends({
+export var themeDoc = _extends(_extends(_extends(_extends({
   'global.hover.background': {
     description: 'The background style when hovering.',
     type: 'string | { color: string, opacity: string }',
@@ -43,5 +43,10 @@ export var themeDoc = _extends(_extends(_extends({
     description: 'The size of the text for MaskedInput.',
     type: 'string',
     defaultValue: '18px'
+  },
+  'maskedInput.disabled.opacity': {
+    description: 'The opacity when the MaskedInput is disabled.',
+    type: 'number | string',
+    defaultValue: undefined
   }
-}, themeDocUtils.focusStyle), themeDocUtils.placeholderStyle), themeDocUtils.inputStyle);
+}, themeDocUtils.disabledStyle), themeDocUtils.focusStyle), themeDocUtils.placeholderStyle), themeDocUtils.inputStyle);
