@@ -4,12 +4,14 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils';
 
+const defaultDropAlign = { top: 'top', left: 'left' };
+
 const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
       disabled,
-      dropAlign = { top: 'top', left: 'left' },
+      dropAlign = defaultDropAlign,
       dropProps,
       dropContent,
       dropTarget,

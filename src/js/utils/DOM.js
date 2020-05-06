@@ -156,14 +156,20 @@ export const findVisibleParent = element => {
   return undefined;
 };
 
-export const isNodeAfterScroll = (node, target = window) => {
+export const isNodeAfterScroll = (node, target) => {
   const { bottom } = node.getBoundingClientRect();
-  const { height, top } = target.getBoundingClientRect();
+  // target will be the document from findScrollParent()
+  const { height, top } = target.getBoundingClientRect
+    ? target.getBoundingClientRect()
+    : 0;
   return bottom >= top + height;
 };
 
-export const isNodeBeforeScroll = (node, target = window) => {
+export const isNodeBeforeScroll = (node, target) => {
   const { top } = node.getBoundingClientRect();
-  const { top: targetTop } = target.getBoundingClientRect();
+  // target will be the document from findScrollParent()
+  const { top: targetTop } = target.getBoundingClientRect
+    ? target.getBoundingClientRect()
+    : 0;
   return top <= targetTop;
 };
