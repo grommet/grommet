@@ -559,6 +559,12 @@ export interface ThemeType {
         color?: ColorType;
       },
     };
+    focus?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType
+      },
+    };
     error?: {
       background?: BackgroundType;
       color?: ColorType;
@@ -763,6 +769,9 @@ export interface ThemeType {
   };
   maskedInput?: {
     extend?: ExtendType;
+    disabled?: {
+      opacity?: OpacityType;
+    };
   };
   menu?: {
     background?: BackgroundType;

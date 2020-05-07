@@ -207,6 +207,65 @@ exports[`MaskedInput basic 1`] = `
 </div>
 `;
 
+exports[`MaskedInput disabled 1`] = `
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <input
+    autocomplete="off"
+    class="c1"
+    disabled=""
+    name="item"
+    placeholder=""
+    value=""
+  />
+</div>
+`;
+
 exports[`MaskedInput event target props are available option via keyboard 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -521,7 +580,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 eoUyQk"
+    class="StyledMaskedInput-sc-99vkfa-0 iiIkNh"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1089,7 +1148,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 Cfxjk"
+    class="StyledMaskedInput-sc-99vkfa-0 jJsxjR"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1411,7 +1470,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 eoUyQk"
+    class="StyledMaskedInput-sc-99vkfa-0 iiIkNh"
     data-testid="test-input"
     id="item"
     name="item"
