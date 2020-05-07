@@ -208,13 +208,25 @@ export const fillStyle = fillProp => {
   return undefined;
 };
 
-const focusStyles = (props, { justBorder } = {}) => {
+const focusStyles = (props, { forceOutline, justBorder } = {}) => {
   const {
     theme: {
       global: { focus },
     },
   } = props;
   if (!focus) return ''; // native
+  if (forceOutline && !focus.outline) return ''; // native
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      const color = normalizeColor(focus.outline.color || 'focus', props.theme);
+      const size = focus.outline.size || '2px';
+      return `
+        outline-offset: 0px;
+        outline: ${size} solid ${color};
+      `;
+    }
+    return `outline: ${focus.outline};`;
+  }
   if (focus.shadow && (!focus.border || !justBorder)) {
     if (typeof focus.shadow === 'object') {
       const color = normalizeColor(
@@ -234,17 +246,6 @@ const focusStyles = (props, { justBorder } = {}) => {
       box-shadow: ${focus.shadow};
     `;
   }
-  if (focus.outline && (!focus.border || !justBorder)) {
-    if (typeof focus.outline === 'object') {
-      const color = normalizeColor(focus.outline.color || 'focus', props.theme);
-      const size = focus.outline.size || '2px';
-      return `
-        outline-offset: 0px;
-        outline: ${size} solid ${color};
-      `;
-    }
-    return `outline: ${focus.outline};`;
-  }
   if (focus.border) {
     const color = normalizeColor(focus.border.color || 'focus', props.theme);
     return `
@@ -256,7 +257,11 @@ const focusStyles = (props, { justBorder } = {}) => {
 };
 
 // focus also supports clickable elements inside svg
-export const focusStyle = ({ justBorder, skipSvgChildren } = {}) => css`
+export const focusStyle = ({
+  forceOutline,
+  justBorder,
+  skipSvgChildren,
+} = {}) => css`
   ${props =>
     !skipSvgChildren &&
     `
@@ -269,10 +274,13 @@ export const focusStyle = ({ justBorder, skipSvgChildren } = {}) => css`
   > rect {
     ${focusStyles(props)}
   }`}
-  ${props => focusStyles(props, { justBorder })}
+  ${props => focusStyles(props, { forceOutline, justBorder })}
+  ${!forceOutline &&
+    `
   ::-moz-focus-inner {
     border: 0;
   }
+  `}
 `;
 
 // For backwards compatibility we need to add back the control border width.
