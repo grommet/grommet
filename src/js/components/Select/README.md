@@ -232,7 +232,7 @@ object
 
 **focusIndicator**
 
-Whether when 'plain' it should receive a focus outline.
+Whether it should receive a focus outline.
 
 ```
 boolean

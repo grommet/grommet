@@ -76,7 +76,7 @@ export const doc = Select => {
     ),
     dropProps: PropTypes.object.description('Any valid Drop prop.'),
     focusIndicator: PropTypes.bool.description(
-      "Whether when 'plain' it should receive a focus outline.",
+      'Whether it should receive a focus outline.',
     ),
     icon: PropTypes.oneOfType([
       PropTypes.bool,

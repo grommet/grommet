@@ -47,7 +47,7 @@ export const doc = Button => {
       )
       .defaultValue(false),
     focusIndicator: PropTypes.bool
-      .description("Whether when 'plain' it should receive a focus outline.")
+      .description('Whether it should receive a focus outline.')
       .defaultValue(true),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
