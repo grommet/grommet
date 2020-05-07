@@ -319,6 +319,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     accordion: {
+      panel: {
+        // border: {
+        //   side: 'bottom',
+        //   color: 'border',
+        // },
+      },
       border: {
         side: 'bottom',
         color: 'border',
@@ -328,7 +334,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // margin: undefined
       },
       hover: {
-        color: { dark: 'light-4', light: 'dark-3' },
+        color: { dark: 'light-4', light: 'dark-3' }, // deprecated
+        heading: {
+          color: { dark: 'light-4', light: 'dark-3' },
+        },
       },
       icons: {
         collapse: FormUp,
