@@ -51,23 +51,50 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
       hover = _useState[0],
       setHover = _useState[1];
 
+  var _useState2 = (0, _react.useState)(),
+      focus = _useState2[0],
+      setFocus = _useState2[1];
+
   var iconColor = (0, _react.useMemo)(function () {
     return (0, _utils.normalizeColor)(theme.accordion.icons.color || 'control', theme);
   }, [theme]);
   var AccordionIcon = (0, _react.useMemo)(function () {
     return active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
   }, [active, theme.accordion.icons]);
+  var defaultHoverColor = JSON.stringify({
+    dark: 'light-4',
+    light: 'dark-3'
+  }); // accordion.hover.color will be deprecated in v3.
+
+  if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor) console.warn("The theme style for accordion.hover.color is deprecated, \n        use accordion.hover.heading.color instead."); // accordion.hover.heading.color will trump accordion.hover.color in case 
+  // the user sets its value to be any other value than the 
+  // default value (defaultHoverColor).
+  // accordion.hover.color will be deprecated in v3.
+
+  var headingColor = theme.accordion.hover && JSON.stringify(theme.accordion.hover.heading.color) !== defaultHoverColor ? theme.accordion.hover.heading.color : theme.accordion.hover.color;
+  var contentBorder = theme.accordion.border;
+  var panelBorder = theme.accordion.panel.border;
+  var abutMargin;
+  if (panelBorder) // abutMargin 'bottom' is set to overlap adjacent border panels
+    abutMargin = {
+      bottom: "-" + (0, _utils.parseMetricToNum)( // in case border.size defined as a t-shirt size
+      // or in case border size is a custom size i.e. '5px'
+      theme.global.borderSize[panelBorder.size] || panelBorder.size || theme.global.borderSize.xsmall // '-1px'
+      ) + "px"
+    };
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     ref: ref,
     flex: false,
-    onClick: onClick
+    onClick: onClick,
+    border: panelBorder,
+    margin: abutMargin
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     role: "tab",
     "aria-selected": active,
     "aria-expanded": active,
     onClick: onPanelChange,
     onMouseOver: function onMouseOver(event) {
-      setHover(theme.accordion.hover && theme.accordion.hover.color || undefined);
+      setHover(headingColor);
       if (_onMouseOver) _onMouseOver(event);
     },
     onMouseOut: function onMouseOut(event) {
@@ -75,13 +102,18 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
       if (_onMouseOut) _onMouseOut(event);
     },
     onFocus: function onFocus(event) {
-      setHover(theme.accordion.hover && theme.accordion.hover.color || undefined);
+      setHover(headingColor);
+      setFocus(true);
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {
       setHover(undefined);
+      setFocus(false);
       if (_onBlur) _onBlur(event);
-    }
+    },
+    style: focus ? {
+      zIndex: 1
+    } : undefined
   }, header || /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     align: "center",
     direction: "row",
@@ -101,7 +133,7 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement(AccordionIcon, {
     color: iconColor
   })))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    border: theme.accordion.border
+    border: contentBorder
   }, animate ? /*#__PURE__*/_react["default"].createElement(_Collapsible.Collapsible, {
     open: active
   }, children) : active && children));

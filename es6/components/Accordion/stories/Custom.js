@@ -7,7 +7,12 @@ import { storiesOf } from '@storybook/react';
 import { SubtractCircle } from "grommet-icons/es6/icons/SubtractCircle";
 import { AddCircle } from "grommet-icons/es6/icons/AddCircle";
 import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
-var CustomAccordionTheme = {
+var customAccordionTheme = {
+  global: {
+    font: {
+      family: "-apple-system,\n       BlinkMacSystemFont, \n       \"Segoe UI\", \n       Roboto"
+    }
+  },
   accordion: {
     heading: {
       level: 3,
@@ -24,7 +29,14 @@ var CustomAccordionTheme = {
       expand: AddCircle,
       color: 'hotpink'
     },
-    border: undefined
+    border: undefined,
+    panel: {// border: {
+      //   side: 'horizontal',
+      //   size: 'medium',
+      //   color: '#DADADA',
+      //   style: 'dotted',
+      // },
+    }
   }
 };
 
@@ -34,7 +46,7 @@ var CustomAccordion = function CustomAccordion(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
 
   return /*#__PURE__*/React.createElement(Grommet, {
-    theme: CustomAccordionTheme
+    theme: customAccordionTheme
   }, /*#__PURE__*/React.createElement(Box, _extends({}, rest, {
     pad: "large",
     align: "center",

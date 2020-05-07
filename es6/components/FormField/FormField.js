@@ -269,7 +269,7 @@ var FormField = forwardRef(function (_ref2, ref) {
         abutMargin = margin;
       } else if (themeBorder.size) {
         // if the user defines a margin,
-        // then the default margin below will be overriden
+        // then the default margin below will be overridden
         abutMargin = {
           bottom: "-" + parseMetricToNum(theme.global.borderSize[themeBorder.size] || themeBorder.size) + "px"
         };

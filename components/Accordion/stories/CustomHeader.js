@@ -62,6 +62,6 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Panel 3 contents")))));
 };
 
-(0, _react2.storiesOf)('Accordion', module).add('Custom Header', function () {
+(0, _react2.storiesOf)('Accordion', module).add('Header', function () {
   return /*#__PURE__*/_react["default"].createElement(CustomHeaderAccordion, null);
 });

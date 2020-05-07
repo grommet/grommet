@@ -53,6 +53,6 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
   }, /*#__PURE__*/React.createElement(Text, null, "Panel 3 contents")))));
 };
 
-storiesOf('Accordion', module).add('Custom Header', function () {
+storiesOf('Accordion', module).add('Header', function () {
   return /*#__PURE__*/React.createElement(CustomHeaderAccordion, null);
 });

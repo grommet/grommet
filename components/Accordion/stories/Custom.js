@@ -14,7 +14,12 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var CustomAccordionTheme = {
+var customAccordionTheme = {
+  global: {
+    font: {
+      family: "-apple-system,\n       BlinkMacSystemFont, \n       \"Segoe UI\", \n       Roboto"
+    }
+  },
   accordion: {
     heading: {
       level: 3,
@@ -31,7 +36,14 @@ var CustomAccordionTheme = {
       expand: _grommetIcons.AddCircle,
       color: 'hotpink'
     },
-    border: undefined
+    border: undefined,
+    panel: {// border: {
+      //   side: 'horizontal',
+      //   size: 'medium',
+      //   color: '#DADADA',
+      //   style: 'dotted',
+      // },
+    }
   }
 };
 
@@ -41,7 +53,7 @@ var CustomAccordion = function CustomAccordion(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: CustomAccordionTheme
+    theme: customAccordionTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({}, rest, {
     pad: "large",
     align: "center",

@@ -239,16 +239,19 @@ export interface ThemeType {
     };
   };
   accordion?: {
-    border?: {
-      side?: string;
-      color?: ColorType;
+    panel?: {
+      border?: BorderType;
     };
+    border?: BorderType;
     heading?: {
       level?: string;
       margin?: MarginType;
     };
     hover?: {
-      color?: ColorType;
+      color?: ColorType; // deprecated
+      heading?: {
+        color?: ColorType; 
+      };
     };
     icons?: {
       collapse?: any;

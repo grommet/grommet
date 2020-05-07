@@ -289,7 +289,7 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
         abutMargin = margin;
       } else if (themeBorder.size) {
         // if the user defines a margin,
-        // then the default margin below will be overriden
+        // then the default margin below will be overridden
         abutMargin = {
           bottom: "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[themeBorder.size] || themeBorder.size) + "px"
         };

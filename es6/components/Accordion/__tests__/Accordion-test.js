@@ -121,6 +121,23 @@ describe('Accordion', function () {
     }, "Panel body 1"))));
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('accordion border', function () {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, {
+      theme: {
+        accordion: {
+          border: undefined,
+          panel: {
+            border: {
+              side: 'horizontal'
+            }
+          }
+        }
+      }
+    }, /*#__PURE__*/React.createElement(Accordion, null, /*#__PURE__*/React.createElement(AccordionPanel, {
+      label: "Panel 1"
+    }, "Panel body 1"))));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('change active index', function () {
     var onActive = jest.fn();
 
@@ -141,8 +158,78 @@ describe('Accordion', function () {
     expect(onActive).toBeCalledWith([0]);
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('focus and hover styles', function () {
+    var _render5 = render( /*#__PURE__*/React.createElement(Grommet, {
+      theme: {
+        accordion: {
+          hover: {
+            color: 'red'
+          }
+        }
+      }
+    }, /*#__PURE__*/React.createElement(Accordion, null, /*#__PURE__*/React.createElement(AccordionPanel, {
+      label: "Panel 1",
+      onMouseOver: function onMouseOver() {},
+      onMouseOut: function onMouseOut() {},
+      onFocus: function onFocus() {},
+      onBlur: function onBlur() {}
+    }, "Panel body 1")))),
+        getByText = _render5.getByText,
+        container = _render5.container;
+
+    fireEvent.focus(getByText('Panel 1'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('backward compatibility of hover.color = undefined', function () {
+    var _render6 = render( /*#__PURE__*/React.createElement(Grommet, {
+      theme: {
+        accordion: {
+          hover: {
+            color: undefined
+          }
+        }
+      }
+    }, /*#__PURE__*/React.createElement(Accordion, null, /*#__PURE__*/React.createElement(AccordionPanel, {
+      label: "Panel 1",
+      onMouseOver: function onMouseOver() {},
+      onMouseOut: function onMouseOut() {},
+      onFocus: function onFocus() {},
+      onBlur: function onBlur() {}
+    }, "Panel body 1")))),
+        getByText = _render6.getByText,
+        container = _render6.container;
+
+    fireEvent.focus(getByText('Panel 1')); // hover color should be undefined
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('theme hover of hover.heading.color', function () {
+    var _render7 = render( /*#__PURE__*/React.createElement(Grommet, {
+      theme: {
+        accordion: {
+          hover: {
+            heading: {
+              color: 'teal'
+            }
+          }
+        }
+      }
+    }, /*#__PURE__*/React.createElement(Accordion, null, /*#__PURE__*/React.createElement(AccordionPanel, {
+      label: "Panel 1",
+      onMouseOver: function onMouseOver() {},
+      onMouseOut: function onMouseOut() {},
+      onFocus: function onFocus() {},
+      onBlur: function onBlur() {}
+    }, "Panel body 1")))),
+        getByText = _render7.getByText,
+        container = _render7.container;
+
+    fireEvent.focus(getByText('Panel 1')); // hover color should be undefined
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
   test('set on hover', function () {
-    var _render5 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Accordion, null, /*#__PURE__*/React.createElement(AccordionPanel, {
+    var _render8 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Accordion, null, /*#__PURE__*/React.createElement(AccordionPanel, {
       label: "Panel 1",
       onMouseOver: function onMouseOver() {},
       onMouseOut: function onMouseOut() {},
@@ -155,8 +242,8 @@ describe('Accordion', function () {
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
     }, "Panel body 2")))),
-        getByText = _render5.getByText,
-        container = _render5.container;
+        getByText = _render8.getByText,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.mouseOver(getByText('Panel 1'));
@@ -178,7 +265,7 @@ describe('Accordion', function () {
       }, "Panel body ", index);
     };
 
-    var _render6 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Accordion, {
+    var _render9 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Accordion, {
       animate: false,
       onActive: onActive
     }, [1, 2].map(function (index) {
@@ -187,8 +274,8 @@ describe('Accordion', function () {
         index: index
       });
     })))),
-        getByText = _render6.getByText,
-        container = _render6.container;
+        getByText = _render9.getByText,
+        container = _render9.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Panel 1'));

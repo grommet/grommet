@@ -368,6 +368,11 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     accordion: {
+      panel: {// border: {
+        //   side: 'bottom',
+        //   color: 'border',
+        // },
+      },
       border: {
         side: 'bottom',
         color: 'border'
@@ -381,6 +386,13 @@ var generate = function generate(baseSpacing, scale) {
         color: {
           dark: 'light-4',
           light: 'dark-3'
+        },
+        // deprecated
+        heading: {
+          color: {
+            dark: 'light-4',
+            light: 'dark-3'
+          }
         }
       },
       icons: {

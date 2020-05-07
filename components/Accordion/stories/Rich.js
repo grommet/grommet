@@ -178,7 +178,7 @@ var RichAccordion = function RichAccordion() {
       top: 'small'
     },
     gap: "medium"
-  }, "Yeah believe me, this channel has 2,000 members.")))))));
+  }, "Yeah believe me, this channel has 3,000 members.")))))));
 };
 
 (0, _react2.storiesOf)('Accordion', module).add('Rich', function () {
