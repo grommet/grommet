@@ -116,34 +116,37 @@ exports.fillStyle = fillStyle;
 
 var focusStyles = function focusStyles(props, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
+      forceOutline = _ref.forceOutline,
       justBorder = _ref.justBorder;
 
   var focus = props.theme.global.focus;
   if (!focus) return ''; // native
 
-  if (focus.shadow && (!focus.border || !justBorder)) {
-    if (typeof focus.shadow === 'object') {
-      var color = (0, _colors.normalizeColor)( // If there is a focus.border.color, use that for shadow too.
-      // This is for backwards compatibility in v2.
-      focus.border && focus.border.color || focus.shadow.color || 'focus', props.theme);
-      var size = focus.shadow.size || '2px'; // backwards compatible default
-
-      return "\n        outline: none;\n        box-shadow: 0 0 " + size + " " + size + " " + color + ";\n      ";
-    }
-
-    return "\n      outline: none;\n      box-shadow: " + focus.shadow + ";\n    ";
-  }
+  if (forceOutline && !focus.outline) return ''; // native
 
   if (focus.outline && (!focus.border || !justBorder)) {
     if (typeof focus.outline === 'object') {
-      var _color = (0, _colors.normalizeColor)(focus.outline.color || 'focus', props.theme);
-
-      var _size = focus.outline.size || '2px';
-
-      return "\n        outline-offset: 0px;\n        outline: " + _size + " solid " + _color + ";\n      ";
+      var color = (0, _colors.normalizeColor)(focus.outline.color || 'focus', props.theme);
+      var size = focus.outline.size || '2px';
+      return "\n        outline-offset: 0px;\n        outline: " + size + " solid " + color + ";\n      ";
     }
 
     return "outline: " + focus.outline + ";";
+  }
+
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      var _color = (0, _colors.normalizeColor)( // If there is a focus.border.color, use that for shadow too.
+      // This is for backwards compatibility in v2.
+      focus.border && focus.border.color || focus.shadow.color || 'focus', props.theme);
+
+      var _size = focus.shadow.size || '2px'; // backwards compatible default
+
+
+      return "\n        outline: none;\n        box-shadow: 0 0 " + _size + " " + _size + " " + _color + ";\n      ";
+    }
+
+    return "\n      outline: none;\n      box-shadow: " + focus.shadow + ";\n    ";
   }
 
   if (focus.border) {
@@ -158,16 +161,18 @@ var focusStyles = function focusStyles(props, _temp) {
 
 var focusStyle = function focusStyle(_temp2) {
   var _ref2 = _temp2 === void 0 ? {} : _temp2,
+      forceOutline = _ref2.forceOutline,
       justBorder = _ref2.justBorder,
       skipSvgChildren = _ref2.skipSvgChildren;
 
-  return (0, _styledComponents.css)(["", " ", "::-moz-focus-inner{border:0;}"], function (props) {
+  return (0, _styledComponents.css)(["", " ", " ", ""], function (props) {
     return !skipSvgChildren && "\n  > circle,\n  > ellipse,\n  > line,\n  > path,\n  > polygon,\n  > polyline,\n  > rect {\n    " + focusStyles(props) + "\n  }";
   }, function (props) {
     return focusStyles(props, {
+      forceOutline: forceOutline,
       justBorder: justBorder
     });
-  });
+  }, !forceOutline && "\n  ::-moz-focus-inner {\n    border: 0;\n  }\n  ");
 }; // For backwards compatibility we need to add back the control border width.
 // Based on how grommet was functioning prior to https://github.com/grommet/grommet/pull/3939,
 // the padding was subtracting the border width from the theme value, but the

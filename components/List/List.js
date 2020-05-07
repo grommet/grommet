@@ -3,9 +3,7 @@
 exports.__esModule = true;
 exports.List = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _recompose = require("recompose");
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -19,13 +17,9 @@ var _Text = require("../Text");
 
 var _utils = require("../../utils");
 
-var _hocs = require("../hocs");
-
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -34,11 +28,12 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var StyledList = _styledComponents["default"].ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " ", ""], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}"], function (props) {
   return !props.margin && 'margin: 0;';
-}, _utils.genericStyles, function (props) {
-  return props.focus && (0, _utils.focusStyle)();
-});
+}, _utils.genericStyles, (0, _utils.focusStyle)({
+  forceOutline: true,
+  skipSvgChildren: true
+}));
 
 var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "List__StyledItem",
@@ -55,27 +50,28 @@ var normalize = function normalize(item, index, property) {
   return item[property];
 };
 
-var List = _react["default"].forwardRef(function (props, ref) {
-  var action = props.action,
-      as = props.as,
-      background = props.background,
-      border = props.border,
-      children = props.children,
-      data = props.data,
-      focus = props.focus,
-      itemProps = props.itemProps,
-      pad = props.pad,
-      primaryKey = props.primaryKey,
-      secondaryKey = props.secondaryKey,
-      step = props.step,
-      theme = props.theme,
-      onClickItem = props.onClickItem,
-      onMore = props.onMore,
-      rest = _objectWithoutPropertiesLoose(props, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "theme", "onClickItem", "onMore"]);
+var List = _react["default"].forwardRef(function (_ref, ref) {
+  var action = _ref.action,
+      as = _ref.as,
+      background = _ref.background,
+      border = _ref.border,
+      children = _ref.children,
+      data = _ref.data,
+      focus = _ref.focus,
+      itemProps = _ref.itemProps,
+      pad = _ref.pad,
+      primaryKey = _ref.primaryKey,
+      secondaryKey = _ref.secondaryKey,
+      step = _ref.step,
+      onClickItem = _ref.onClickItem,
+      onMore = _ref.onMore,
+      rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "onClickItem", "onMore"]);
 
-  var _React$useState = _react["default"].useState(),
-      active = _React$useState[0],
-      setActive = _React$useState[1];
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+
+  var _useState = (0, _react.useState)(),
+      active = _useState[0],
+      setActive = _useState[1];
 
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: onClickItem && active >= 0 ? function (event) {
@@ -184,8 +180,8 @@ var List = _react["default"].forwardRef(function (props, ref) {
         tabIndex: -1,
         active: active === index,
         onClick: function onClick(event) {
-          event.persist(); // extract from React's synthetic event pool
-
+          // extract from React's synthetic event pool
+          event.persist();
           var adjustedEvent = event;
           adjustedEvent.item = item;
           adjustedEvent.index = index;
@@ -224,5 +220,5 @@ if (process.env.NODE_ENV !== 'production') {
   ListDoc = require('./doc').doc(List); // eslint-disable-line global-require
 }
 
-var ListWrapper = (0, _recompose.compose)(_styledComponents.withTheme, (0, _hocs.withFocus)(), _hocs.withForwardRef)(ListDoc || List);
+var ListWrapper = ListDoc || List;
 exports.List = ListWrapper;

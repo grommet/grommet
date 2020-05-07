@@ -2,23 +2,22 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, { useContext, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { focusStyle, genericStyles } from '../../utils';
-import { withFocus, withForwardRef } from '../hocs';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " ", ""], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}"], function (props) {
   return !props.margin && 'margin: 0;';
-}, genericStyles, function (props) {
-  return props.focus && focusStyle();
-});
+}, genericStyles, focusStyle({
+  forceOutline: true,
+  skipSvgChildren: true
+}));
 var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
@@ -34,27 +33,28 @@ var normalize = function normalize(item, index, property) {
   return item[property];
 };
 
-var List = React.forwardRef(function (props, ref) {
-  var action = props.action,
-      as = props.as,
-      background = props.background,
-      border = props.border,
-      children = props.children,
-      data = props.data,
-      focus = props.focus,
-      itemProps = props.itemProps,
-      pad = props.pad,
-      primaryKey = props.primaryKey,
-      secondaryKey = props.secondaryKey,
-      step = props.step,
-      theme = props.theme,
-      onClickItem = props.onClickItem,
-      onMore = props.onMore,
-      rest = _objectWithoutPropertiesLoose(props, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "theme", "onClickItem", "onMore"]);
+var List = React.forwardRef(function (_ref, ref) {
+  var action = _ref.action,
+      as = _ref.as,
+      background = _ref.background,
+      border = _ref.border,
+      children = _ref.children,
+      data = _ref.data,
+      focus = _ref.focus,
+      itemProps = _ref.itemProps,
+      pad = _ref.pad,
+      primaryKey = _ref.primaryKey,
+      secondaryKey = _ref.secondaryKey,
+      step = _ref.step,
+      onClickItem = _ref.onClickItem,
+      onMore = _ref.onMore,
+      rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "onClickItem", "onMore"]);
 
-  var _React$useState = React.useState(),
-      active = _React$useState[0],
-      setActive = _React$useState[1];
+  var theme = useContext(ThemeContext);
+
+  var _useState = useState(),
+      active = _useState[0],
+      setActive = _useState[1];
 
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onClickItem && active >= 0 ? function (event) {
@@ -163,8 +163,8 @@ var List = React.forwardRef(function (props, ref) {
         tabIndex: -1,
         active: active === index,
         onClick: function onClick(event) {
-          event.persist(); // extract from React's synthetic event pool
-
+          // extract from React's synthetic event pool
+          event.persist();
           var adjustedEvent = event;
           adjustedEvent.item = item;
           adjustedEvent.index = index;
@@ -202,5 +202,5 @@ if (process.env.NODE_ENV !== 'production') {
   ListDoc = require('./doc').doc(List); // eslint-disable-line global-require
 }
 
-var ListWrapper = compose(withTheme, withFocus(), withForwardRef)(ListDoc || List);
+var ListWrapper = ListDoc || List;
 export { ListWrapper as List };
