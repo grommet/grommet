@@ -562,6 +562,12 @@ export interface ThemeType {
         color?: ColorType;
       },
     };
+    focus?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType
+      },
+    };
     error?: {
       background?: BackgroundType;
       color?: ColorType;
