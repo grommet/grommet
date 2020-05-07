@@ -332,10 +332,9 @@ const FormField = forwardRef(
       } else if (
         disabled &&
         formFieldTheme.disabled &&
-        formFieldTheme.disabled.background &&
-        formFieldTheme.disabled.background.color
+        formFieldTheme.disabled.background
       ) {
-        outerBackground = formFieldTheme.disabled.background.color;
+        outerBackground = formFieldTheme.disabled.background;
       }
     }
 
