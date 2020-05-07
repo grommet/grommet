@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 const objectOptions = [];
 for (let i = 1; i <= 5; i += 1) {
   objectOptions.push({
-    lab: `option ${i}`,
+    label: `option ${i}`,
     val: i,
   });
 }
@@ -16,7 +16,11 @@ const Example = () => {
   return (
     <Grommet theme={grommet}>
       <Box pad="medium">
-        <CheckBoxGroup labelKey="lab" valueKey="val" options={objectOptions} />
+        <CheckBoxGroup
+          labelKey="label"
+          valueKey="val"
+          options={objectOptions}
+        />
       </Box>
     </Grommet>
   );
