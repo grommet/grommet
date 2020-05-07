@@ -39,13 +39,14 @@ var preventLayerClose = function preventLayerClose(event) {
   }
 };
 
+var defaultAlign = {
+  top: 'top',
+  left: 'left'
+};
 var defaultPortalContext = [];
 var DropContainer = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref$align = _ref.align,
-      align = _ref$align === void 0 ? {
-    top: 'top',
-    left: 'left'
-  } : _ref$align,
+      align = _ref$align === void 0 ? defaultAlign : _ref$align,
       children = _ref.children,
       dropTarget = _ref.dropTarget,
       elevation = _ref.elevation,
