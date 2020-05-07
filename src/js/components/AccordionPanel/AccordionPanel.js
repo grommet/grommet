@@ -53,8 +53,9 @@ const AccordionPanel = forwardRef(
         use accordion.hover.heading.color instead.`,
       );
 
-    // accordion.hover.heading.color will trump accordion.hover.color
-    // if the user sets a value other than the default value (defaultHoverColor)
+    // accordion.hover.heading.color will trump accordion.hover.color in case 
+    // the user sets its value to be any other value than the 
+    // default value (defaultHoverColor).
     // accordion.hover.color will be deprecated in v3.
     const headingColor =
       theme.accordion.hover &&
