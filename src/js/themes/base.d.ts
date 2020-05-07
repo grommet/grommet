@@ -248,7 +248,10 @@ export interface ThemeType {
       margin?: MarginType;
     };
     hover?: {
-      color?: ColorType;
+      color?: ColorType; // deprecated
+      heading?: {
+        color?: ColorType; 
+      };
     };
     icons?: {
       collapse?: any;

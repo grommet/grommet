@@ -41,12 +41,26 @@ const AccordionPanel = forwardRef(
       [active, theme.accordion.icons],
     );
 
-    // backward compatibility to the deprecated theme.accordion.hover.color
+    const defaultHoverColor = JSON.stringify({
+      dark: 'light-4',
+      light: 'dark-3',
+    });
+
+    // accordion.hover.color will be deprecated in v3.
+    if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor)
+      console.warn(
+        `The theme style for accordion.hover.color is deprecated, 
+        use accordion.hover.heading.color instead.`,
+      );
+
+    // accordion.hover.heading.color will trump accordion.hover.color
+    // if the user sets a value other than the default value (defaultHoverColor)
+    // accordion.hover.color will be deprecated in v3.
     const headingColor =
       theme.accordion.hover &&
-      theme.accordion.hover.color !== { dark: 'light-4', light: 'dark-3' }
-        ? theme.accordion.hover.color
-        : theme.accordion.hover.heading.color;
+      JSON.stringify(theme.accordion.hover.heading.color) !== defaultHoverColor
+        ? theme.accordion.hover.heading.color
+        : theme.accordion.hover.color;
 
     const { border: contentBorder } = theme.accordion;
     const { border: panelBorder } = theme.accordion.panel;

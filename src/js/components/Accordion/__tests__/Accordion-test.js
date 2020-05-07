@@ -197,6 +197,83 @@ describe('Accordion', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('focus and hover styles', () => {
+    const { getByText, container } = render(
+      <Grommet theme={{ accordion: { hover: { color: 'red' } } }}>
+        <Accordion>
+          <AccordionPanel
+            label="Panel 1"
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={() => {}}
+          >
+            Panel body 1
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+
+    fireEvent.focus(getByText('Panel 1'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('backward compatibility of hover.color = undefined', () => {
+    const { getByText, container } = render(
+      <Grommet
+        theme={{
+          accordion: {
+            hover: { color: undefined },
+          },
+        }}
+      >
+        <Accordion>
+          <AccordionPanel
+            label="Panel 1"
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={() => {}}
+          >
+            Panel body 1
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+
+    fireEvent.focus(getByText('Panel 1'));
+    // hover color should be undefined
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme hover of hover.heading.color', () => {
+    const { getByText, container } = render(
+      <Grommet
+        theme={{
+          accordion: {
+            hover: { heading: { color: 'teal' } },
+          },
+        }}
+      >
+        <Accordion>
+          <AccordionPanel
+            label="Panel 1"
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={() => {}}
+          >
+            Panel body 1
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+
+    fireEvent.focus(getByText('Panel 1'));
+    // hover color should be undefined
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('set on hover', () => {
     const { getByText, container } = render(
       <Grommet>
