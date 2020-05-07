@@ -37,6 +37,9 @@ const StyledSelectDropButton = styled(DropButton)`
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
+const defaultDropAlign = { top: 'bottom', left: 'left' };
+const defaultMessages = { multiple: 'multiple' };
+
 const Select = forwardRef(
   (
     {
@@ -46,7 +49,7 @@ const Select = forwardRef(
       closeOnChange = true,
       disabled,
       disabledKey,
-      dropAlign = { top: 'bottom', left: 'left' },
+      dropAlign = defaultDropAlign,
       dropHeight,
       dropProps,
       dropTarget,
@@ -57,7 +60,7 @@ const Select = forwardRef(
       icon,
       labelKey,
       margin,
-      messages = { multiple: 'multiple' },
+      messages = defaultMessages,
       multiple,
       name,
       onChange,
