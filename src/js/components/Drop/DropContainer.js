@@ -31,15 +31,13 @@ const preventLayerClose = event => {
   }
 };
 
+const defaultAlign = { top: 'top', left: 'left' };
 const defaultPortalContext = [];
 
 const DropContainer = forwardRef(
   (
     {
-      align = {
-        top: 'top',
-        left: 'left',
-      },
+      align = defaultAlign,
       children,
       dropTarget,
       elevation,
