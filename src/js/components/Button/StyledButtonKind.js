@@ -26,7 +26,12 @@ const fontStyle = props => {
 };
 
 const padStyle = ({ sizeProp: size, theme }) => {
-  if (size && theme.button.size && theme.button.size[size]) {
+  if (
+    size &&
+    theme.button.size &&
+    theme.button.size[size] &&
+    theme.button.size[size].padding
+  ) {
     return css`
       padding: ${theme.button.size[size].padding.vertical}
         ${theme.button.size[size].padding.horizontal};
@@ -61,7 +66,7 @@ const basicStyle = props => css`
 const kindPartStyles = (obj, theme, colorValue) => {
   const styles = [];
   if (obj.padding) {
-    if (obj.padding.vertical)
+    if (obj.padding.vertical || obj.padding.horizontal)
       styles.push(
         `padding: ${theme.global.edgeSize[obj.padding.vertical] ||
           obj.padding.vertical ||
@@ -104,6 +109,26 @@ const kindPartStyles = (obj, theme, colorValue) => {
   } else if (obj.border === false) styles.push('border: none;');
   if (colorValue && !obj.border && !obj.background)
     styles.push(`color: ${normalizeColor(colorValue, theme)};`);
+  if (obj.font) {
+    if (obj.font.size) {
+      styles.push(
+        `font-size: ${theme.text[obj.font.size].size || obj.font.size};`,
+      );
+    }
+    if (obj.font.height) {
+      styles.push(`line-height: ${obj.font.height};`);
+    }
+    if (obj.font.weight) {
+      styles.push(`font-weight: ${obj.font.weight};`);
+    }
+  }
+  if (obj.opacity) {
+    const opacity =
+      obj.opacity === true
+        ? theme.global.opacity.medium
+        : theme.global.opacity[obj.opacity] || obj.opacity;
+    styles.push(`opacity: ${opacity};`);
+  }
   if (obj.extend) styles.push(obj.extend);
   return styles;
 };
