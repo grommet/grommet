@@ -103,6 +103,16 @@ var themeDoc = {
     type: 'string | object',
     defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }"
   },
+  'formField.focus.background.color': {
+    description: 'The color of the FormField background when it is in focus.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined
+  },
+  'formField.focus.border.color': {
+    description: 'The color of the FormField border when it is in focus.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined
+  },
   'formField.extend': {
     description: 'Any additional style for FormField.',
     type: 'string | (props) => {}',

@@ -709,6 +709,14 @@ export var generate = function generate(baseSpacing, scale) {
         // },
 
       },
+      // focus: {
+      //   background: {
+      //     color: undefined,
+      //   },
+      //   border: {
+      //     color: undefined,
+      //   },
+      // },
       error: {
         color: 'status-critical',
         margin: {

@@ -244,10 +244,12 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
   contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, contentProps, contents);
   var borderColor;
 
-  if (disabled) {
-    borderColor = formFieldTheme.disabled.border && formFieldTheme.disabled.border.color;
-  } else if (normalizedError) {
-    borderColor = themeBorder && themeBorder.error.color || 'status-critical';
+  if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
+    borderColor = formFieldTheme.disabled.border.color;
+  } else if (normalizedError && themeBorder && themeBorder.error.color) {
+    borderColor = themeBorder.error.color || 'status-critical';
+  } else if (focus && formFieldTheme.focus && formFieldTheme.focus.border && formFieldTheme.focus.border.color) {
+    borderColor = formFieldTheme.focus.border.color;
   } else {
     borderColor = themeBorder && themeBorder.color || 'border';
   }
@@ -303,9 +305,11 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
   var outerBackground;
 
   if (themeBorder.position === 'outer') {
-    if (normalizedError && formFieldTheme.error) {
+    if (normalizedError && formFieldTheme.error && formFieldTheme.error.background) {
       outerBackground = formFieldTheme.error.background;
-    } else if (disabled && formFieldTheme.disabled) {
+    } else if (focus && formFieldTheme.focus && formFieldTheme.focus.background && formFieldTheme.focus.background.color) {
+      outerBackground = formFieldTheme.focus.background.color;
+    } else if (disabled && formFieldTheme.disabled && formFieldTheme.disabled.background) {
       outerBackground = formFieldTheme.disabled.background;
     }
   }
