@@ -5,7 +5,15 @@ import { SubtractCircle, AddCircle } from 'grommet-icons';
 
 import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 
-const CustomAccordionTheme = {
+const customAccordionTheme = {
+  global: {
+    font: {
+      family: `-apple-system,
+       BlinkMacSystemFont, 
+       "Segoe UI", 
+       Roboto`,
+    },
+  },
   accordion: {
     heading: {
       level: 3,
@@ -20,11 +28,19 @@ const CustomAccordionTheme = {
       color: 'hotpink',
     },
     border: undefined,
+    panel: {
+      // border: {
+      //   side: 'horizontal',
+      //   size: 'medium',
+      //   color: '#DADADA',
+      //   style: 'dotted',
+      // },
+    },
   },
 };
 
 const CustomAccordion = ({ animate, multiple, ...rest }) => (
-  <Grommet theme={CustomAccordionTheme}>
+  <Grommet theme={customAccordionTheme}>
     <Box {...rest} pad="large" align="center" justify="center">
       <Accordion animate={animate} multiple>
         <AccordionPanel

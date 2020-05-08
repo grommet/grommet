@@ -16,18 +16,19 @@ export function doc(Panel) {
 }
 
 export const themeDoc = {
-  'accordion.hover.color': {
-    description: 'The hover color used for an accordion panel control.',
+  'accordion.hover.heading.color': {
+    description: `The text color of the heading when hovered. 
+    backward compatible with accordion.hover.color`,
     type: 'string | { dark: string, light: string }',
     defaultValue: '{ dark: "light-4", light: "dark-3" }',
   },
   'accordion.heading.level': {
-    description: 'The heading level used for the accordion.',
+    description: 'The heading level.',
     type: 'number',
     defaultValue: '4',
   },
   'accordion.heading.margin': {
-    description: 'The margin size around heading in accordion.',
+    description: 'The margin size around the heading.',
     type: 'string',
     defaultValue: 'undefined',
   },
@@ -47,13 +48,34 @@ export const themeDoc = {
     defaultValue: '<FormDown />',
   },
   'accordion.border.color': {
-    description: 'The border color to use in the accordion.',
+    description: 'The border color to use in the accordion panel content.',
     type: 'string | { dark: string, light: string }',
     defaultValue: 'border',
   },
   'accordion.border.side': {
-    description: 'The border side to use in the accordion.',
+    description: 'The border side to use in the accordion panel content.',
     type: 'string',
     defaultValue: 'bottom',
+  },
+  'accordion.panel.border.color': {
+    description: 'The border color to use on the accordion panel.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'accordion.panel.border.side': {
+    description: 'The border side to use on the accordion panel.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'accordion.panel.border.size': {
+    description: 'The border size of the accordion panel.',
+    type: `xsmall | small | medium | large | xlarge`,
+    defaultValue: undefined,
+  },
+  'accordion.panel.border.style': {
+    description: 'The border style of the accordion panel.',
+    type: `solid | dashed | dotted | double| groove | ridge 
+      | inset | outset | hidden`,
+    defaultValue: undefined,
   },
 };

@@ -66,14 +66,16 @@ const basicStyle = props => css`
 const primaryStyle = props => css`
   ${backgroundStyle(
     normalizeColor(
-      props.colorValue || props.theme.button.primary.color || 'control',
+      props.colorValue ||
+        (props.theme.button.primary && props.theme.button.primary.color) ||
+        'control',
       props.theme,
     ),
     props.theme,
     props.theme.button.color,
   )}
   border-radius: ${radiusStyle(props)};
-  ${props.theme.button.primary.extend}
+  ${props.theme.button.primary && props.theme.button.primary.extend}
 `;
 
 function getHoverColor(props) {
@@ -83,6 +85,7 @@ function getHoverColor(props) {
   if (
     props.active &&
     props.primary &&
+    props.theme.button.primary &&
     props.theme.button.primary.active &&
     props.theme.button.primary.active.border &&
     props.theme.button.primary.active.border.color
@@ -139,6 +142,7 @@ const plainStyle = props => css`
 const activeButtonStyle = props => css`
   ${activeStyle}
   ${props.primary &&
+    props.theme.button.primary &&
     props.theme.button.primary.active &&
     props.theme.button.primary.active.border &&
     props.theme.button.primary.active.border.color &&
@@ -149,6 +153,7 @@ const activeButtonStyle = props => css`
     )};
     `}
   ${props.primary &&
+    props.theme.button.primary &&
     props.theme.button.primary.active &&
     props.theme.button.primary.active.extend}
 `;

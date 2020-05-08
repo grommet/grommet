@@ -38,6 +38,11 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('disabled', () => {
+    const { container } = render(<MaskedInput disabled name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('mask', async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();

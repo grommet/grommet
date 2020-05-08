@@ -21,7 +21,6 @@ const SuggestionsTextInput = () => {
         <Box width="medium">
           <TextInput
             value={value}
-            dropProps={{ height: 'small' }}
             onChange={onChange}
             onSelect={onSelect}
             suggestions={suggestions}
