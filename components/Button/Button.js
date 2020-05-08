@@ -201,11 +201,13 @@ var Button = (0, _react.forwardRef)(function (_ref, ref) {
 
   if (icon && !icon.props.color) {
     if (kind) {
-      // match what the label will use
-      var iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color);
-      if (iconColor) buttonIcon = (0, _react.cloneElement)(icon, {
-        color: iconColor
-      });
+      if (!plain) {
+        // match what the label will use
+        var iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color);
+        if (iconColor) buttonIcon = (0, _react.cloneElement)(icon, {
+          color: iconColor
+        });
+      }
     } else if (primary) {
       buttonIcon = (0, _react.cloneElement)(icon, {
         color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light']

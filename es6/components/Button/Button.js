@@ -185,11 +185,13 @@ var Button = forwardRef(function (_ref, ref) {
 
   if (icon && !icon.props.color) {
     if (kind) {
-      // match what the label will use
-      var iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color);
-      if (iconColor) buttonIcon = cloneElement(icon, {
-        color: iconColor
-      });
+      if (!plain) {
+        // match what the label will use
+        var iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color);
+        if (iconColor) buttonIcon = cloneElement(icon, {
+          color: iconColor
+        });
+      }
     } else if (primary) {
       buttonIcon = cloneElement(icon, {
         color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light']
