@@ -2,16 +2,20 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Grommet, Box, Button } from 'grommet';
-import { deepMerge } from '../../../utils';
-var customButtonColor = deepMerge(grommet, {
+import { Grommet, Box, Button } from 'grommet';
+var customButtonColor = {
+  global: {
+    font: {
+      family: 'Arial'
+    }
+  },
   button: {
     color: {
       light: 'white',
       dark: 'white'
     }
   }
-});
+};
 
 var Colored = function Colored(props) {
   return /*#__PURE__*/React.createElement(Grommet, {

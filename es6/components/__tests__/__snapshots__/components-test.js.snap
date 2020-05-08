@@ -1329,6 +1329,11 @@ background
         "name": "reverse",
       },
       Object {
+        "description": "Whether this is a secondary button.",
+        "format": "boolean",
+        "name": "secondary",
+      },
+      Object {
         "description": "The possible sizes of Button, that impacts the overall Button 
       padding, border radius, text size and line height. 
       'size' will not impact any icon related sizing.",

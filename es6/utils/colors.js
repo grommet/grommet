@@ -16,7 +16,7 @@ export var normalizeColor = function normalizeColor(color, theme, dark) {
 
 
   if (result && theme.global && theme.global.colors[result] !== undefined) {
-    result = normalizeColor(result, theme);
+    result = normalizeColor(result, theme, dark);
   }
 
   return result;

@@ -81,7 +81,7 @@ var darkContext = function darkContext(backgroundColor) {
 
 
 var backgroundAndTextColors = function backgroundAndTextColors(backgroundArg, textArg, theme) {
-  if (!backgroundArg) return [];
+  if (!backgroundArg) return [undefined, textArg];
   var global = theme.global;
   var background = normalizeBackground(backgroundArg, theme);
   var text = textArg || global.colors.text;
@@ -113,14 +113,17 @@ var backgroundAndTextColors = function backgroundAndTextColors(backgroundArg, te
     var _shade = darkContext(backgroundColor, theme);
 
     if (_shade) {
-      textColor = (0, _colors.normalizeColor)(text[_shade] || text, theme);
+      textColor = (0, _colors.normalizeColor)(text[_shade] || text, theme, _shade === 'dark');
     } else {
       // If we can't determine the shade, we assume this isn't a simple color.
       // It could be a gradient. backgroundStyle() will take care of that case.
-      backgroundColor = undefined;
+      if (backgroundColor !== 'transparent') backgroundColor = undefined;
+      if (text) textColor = (0, _colors.normalizeColor)(text, theme);
     }
-  }
+  } // if textArg is false, we don't want the textColor, used for Button hover
 
+
+  if (textArg === false) textColor = undefined;
   return [backgroundColor, textColor];
 };
 
@@ -149,7 +152,7 @@ var backgroundStyle = function backgroundStyle(backgroundArg, theme, textColorAr
   }
 
   if (typeof background === 'string') // This case takes care of gradients
-    // or theme colors that use CSS names like 'red' that we don't parse
+    // or theme colors that use CSS names like 'crimson' that we don't parse
     return (0, _styledComponents.css)(["background:", ";"], (0, _colors.normalizeColor)(background, theme));
   return undefined;
 };

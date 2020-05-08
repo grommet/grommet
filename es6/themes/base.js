@@ -451,24 +451,65 @@ export var generate = function generate(baseSpacing, scale) {
         width: borderWidth + "px",
         radius: baseSpacing * 0.75 + "px"
       },
-      disabled: {// border: {
-        //   color: { dark: undefined, light: undefined },
-        // },
-        // color: { dark: undefined, light: undefined }
-        // opacity: undefined,
-        // extend: undefined
-      },
       // color: { dark: undefined, light: undefined }
-      primary: {// active: {
-        //   border: {
-        //     color: { dark: undefined, light: undefined }
-        //   },
-        //   extend: undefined,
-        // },
-        // color: { dark: undefined, light: undefined }
-        // extend: undefined,
+      // default: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      // primary: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      // secondary: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      active: {
+        background: 'active-background',
+        //   border: undefined,
+        color: 'active-text' //   extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
+
       },
-      // disabled: { opacity: undefined },
+      disabled: {
+        //   background: undefined,
+        //   border: undefined,
+        //   color: undefined,
+        opacity: 0.3 //   extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
+
+      },
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined},
+      //   extend: undefined,
+      //   default: {},
+      //   primary: {},
+      //   secondary: {},
+      // },
       padding: {
         vertical: baseSpacing / 4 - borderWidth + "px",
         horizontal: baseSpacing - borderWidth + "px"

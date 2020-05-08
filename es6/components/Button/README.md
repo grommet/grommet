@@ -298,6 +298,14 @@ Whether an icon and label should be reversed so that the icon is at the
 boolean
 ```
 
+**secondary**
+
+Whether this is a secondary button.
+
+```
+boolean
+```
+
 **size**
 
 The possible sizes of Button, that impacts the overall Button 
@@ -449,6 +457,76 @@ Defaults to
 24px
 ```
 
+**button.active.background.color**
+
+Background color when the button is active. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.border.color**
+
+The border color when the button is active. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.color**
+
+Label color when the button is active. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.extend**
+
+Any additional style for an active Button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.default**
+
+Adjustments to the default Button style when the Button is active. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.primary**
+
+Adjustments to the primary Button style when the Button is active. Expects `{}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.active.secondary**
+
+Adjustments to the secondary Button style when the Button is active. Expects `{}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **button.border.color**
 
 The color of the border. Expects `string | { dark: string, light: string }`.
@@ -489,14 +567,84 @@ Defaults to
 undefined
 ```
 
-**button.disabled.opacity**
+**button.default.background.color**
 
-The opacity when the button is disabled. Expects `number`.
+The color of the background for default buttons. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-0.3
+undefined
+```
+
+**button.default.background.opacity**
+
+The value used for default button background opacity. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.default.border.color**
+
+The color of the border for default buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.default.color**
+
+The color of the label for default buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.default.extend**
+
+Any additional style for a default button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.default.padding.horizontal**
+
+The horizontal padding for a default button. Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**button.default.padding.vertical**
+
+The vertical padding for a default button. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**button.disabled.color**
+
+Label color when the button is disabled. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **button.disabled.border.color**
@@ -509,10 +657,9 @@ Defaults to
 undefined
 ```
 
-**button.disabled.color**
+**button.disabled.background.color**
 
-Fill color for primary buttons, or label color for other
-    button types, when the button is disabled. Expects `string | { dark: string, light: string }`.
+Background color when the button is disabled. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -520,9 +667,119 @@ Defaults to
 undefined
 ```
 
+**button.disabled.opacity**
+
+The opacity when the button is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **button.disabled.extend**
 
 Any additional style for a disabled Button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.default**
+
+Adjustments to the default Button style when the Button is disabled. Expects `{}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.primary**
+
+Adjustments to the primary Button style when the Button is disabled. Expects `{}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.disabled.secondary**
+
+Adjustments to the secondary Button style when the Button is disabled. Expects `{}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.hover.color**
+
+Label color when the button is hovered. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.hover.border.color**
+
+The border color when the button is hovered. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.hover.background.color**
+
+Background color when the button is hovered. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.hover.extend**
+
+Any additional style for a hovered Button. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.hover.default**
+
+Adjustments to the default Button style when the Button is hovered. Expects `{}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.hover.primary**
+
+Adjustments to the primary Button style when the Button is hovered. Expects `{}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.hover.secondary**
+
+Adjustments to the secondary Button style when the Button is hovered. Expects `{}`.
 
 Defaults to
 
@@ -550,7 +807,7 @@ Defaults to
 4px
 ```
 
-**button.primary.color**
+**button.primary.background.color**
 
 The color of the background for primary buttons. Expects `string | { dark: string, light: string }`.
 
@@ -558,6 +815,56 @@ Defaults to
 
 ```
 undefined
+```
+
+**button.primary.background.opacity**
+
+The value used for primary button background opacity. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.border.color**
+
+The color of the border for primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.color**
+
+The color of the label for primary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.primary.padding.horizontal**
+
+The horizontal padding for a primary button. Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**button.primary.padding.vertical**
+
+The vertical padding for a primary button. Expects `string`.
+
+Defaults to
+
+```
+4px
 ```
 
 **button.primary.extend**
@@ -570,9 +877,9 @@ Defaults to
 undefined
 ```
 
-**button.primary.active.border.color**
+**button.secondary.background.color**
 
-The color of the border for active primary buttons. Expects `string | { dark: string, light: string }`.
+The color of the background for secondary buttons. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -580,9 +887,59 @@ Defaults to
 undefined
 ```
 
-**button.primary.active.extend**
+**button.secondary.background.opacity**
 
-Any additional style for an active primary button. Expects `string | (props) => {}`.
+The value used for secondary button background opacity. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.secondary.border.color**
+
+The color of the border for secondary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.secondary.color**
+
+The color of the label for secondary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.secondary.padding.horizontal**
+
+The horizontal padding for a secondary button. Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**button.secondary.padding.vertical**
+
+The vertical padding for a secondary button. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**button.secondary.extend**
+
+Any additional style for a secondary button. Expects `string | (props) => {}`.
 
 Defaults to
 
