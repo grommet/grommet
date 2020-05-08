@@ -201,13 +201,15 @@ const Button = forwardRef(
 
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
-    if (icon && !icon.props.color && !plain) {
+    if (icon && !icon.props.color) {
       if (kind) {
-        // match what the label will use
-        const iconColor =
-          (hover && getIconColor(themePaths.hover, theme)) ||
-          getIconColor(themePaths.base, theme, color);
-        if (iconColor) buttonIcon = cloneElement(icon, { color: iconColor });
+        if (!plain) {
+          // match what the label will use
+          const iconColor =
+            (hover && getIconColor(themePaths.hover, theme)) ||
+            getIconColor(themePaths.base, theme, color);
+          if (iconColor) buttonIcon = cloneElement(icon, { color: iconColor });
+        }
       } else if (primary) {
         buttonIcon = cloneElement(icon, {
           color:
