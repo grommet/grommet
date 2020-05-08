@@ -77,6 +77,20 @@ type Colors = typeof colors & {
   [x: string]: ColorType;
 };
 
+interface ButtonKindType {
+  background?: BackgroundType;
+  border?: {
+    color?: ColorType;
+    width?: string;
+  } | boolean;
+  color?: ColorType;
+  padding?: {
+    vertical?: string;
+    horizontal?: string;
+  };
+  extend?: ExtendType;
+}
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -294,14 +308,7 @@ export interface ThemeType {
       width?: string;
       radius?: string;
     };
-    disabled?: {
-      border?: {
-        color: ColorType;
-      },
-      color?: ColorType;
-      extend?: ExtendType;
-      opacity?: OpacityType;
-    };
+    color?: ColorType;
     extend?: ExtendType;
     minWidth?: string;
     maxWidth?: string;
@@ -309,15 +316,19 @@ export interface ThemeType {
       vertical?: string;
       horizontal?: string;
     };
-    primary?: {
-      color?: ColorType;
-      active?: {
-        border?: {
-          color?: ColorType;
-        };
-        extend?: ExtendType;
-      };
-      extend?: ExtendType;
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+    active?: ButtonKindType & {
+      default?: ButtonKindType;
+      primary?: ButtonKindType;
+      secondary?: ButtonKindType;
+    };
+    disabled?: ButtonKindType;
+    hover?: ButtonKindType & {
+      default?: ButtonKindType;
+      primary?: ButtonKindType;
+      secondary?: ButtonKindType;
     };
     size?: {
       small?: {

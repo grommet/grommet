@@ -23,7 +23,7 @@ export const normalizeColor = (color, theme, dark) => {
   }
   // allow one level of indirection in color names
   if (result && theme.global && theme.global.colors[result] !== undefined) {
-    result = normalizeColor(result, theme);
+    result = normalizeColor(result, theme, dark);
   }
 
   return result;
