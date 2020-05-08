@@ -201,7 +201,7 @@ const Button = forwardRef(
 
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
-    if (icon && !icon.props.color) {
+    if (icon && !icon.props.color && !plain) {
       if (kind) {
         // match what the label will use
         const iconColor =
