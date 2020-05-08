@@ -11,7 +11,7 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 
-import { StyledTabs, StyledTabPanel, StyledTabsHeader } from './StyledTabs';
+import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 
 const Tabs = forwardRef(
   (
