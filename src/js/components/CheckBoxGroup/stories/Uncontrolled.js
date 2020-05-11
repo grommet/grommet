@@ -9,8 +9,8 @@ const CheckBoxGroupForm = () => {
     <Grommet theme={grommet}>
       <Box pad="medium">
         <Form
-          onSubmit={({ value: values, touched }) =>
-            console.log('Submit', values, touched)
+          onSubmit={({ value, touched }) =>
+            console.log('Submit', value, touched)
           }
         >
           <FormField

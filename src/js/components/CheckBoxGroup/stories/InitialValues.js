@@ -14,7 +14,7 @@ const Example = () => {
         Initial value via options object:
         <CheckBoxGroup
           checked={value}
-          onChange={event => setValue(event.value)}
+          onChange={event => setValue(event.checked)}
           options={['First', 'Second', 'Third']}
         />
         Initial value via options object:
@@ -30,7 +30,11 @@ const Example = () => {
           labelKey="label"
           valueKey="id"
           checked={value2}
-          onChange={({ value: myValue }) => setValue2(myValue)}
+          onChange={({ checked, option }) => {
+            console.log('checked: ', checked);
+            console.log('option: ', option);
+            setValue2(checked);
+          }}
           options={[
             { label: 'Maui', id: 'M' },
             { label: 'Jerusalem', id: 'J' },

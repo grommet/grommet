@@ -35,7 +35,8 @@ export const doc = CheckBoxGroup => {
     ),
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks on a CheckBox option. 
-      It will be passed a React event object with a value.`,
+      It will pass a React event object with the additional CheckBoxGroup 
+      properties of 'option' and 'checked'.`,
     ),
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),

@@ -40,38 +40,45 @@ export const CheckBoxGroup = forwardRef(
     const [checked, setChecked] = formContext.useFormContext(
       name,
       checkedProp,
-      '',
+      [],
     );
 
     // Logic is necessary to maintain a proper data structure for Form logic
-    const onCheckBoxChange = (event, optionChecked) => {
-      const nextChecked = checked || [];
+    const onCheckBoxChange = (event, optionChecked, option) => {
+      // deep copy of checked
+      const nextChecked = JSON.parse(JSON.stringify(checked)) || [];
       const optionIndex = nextChecked.indexOf(optionChecked);
-
+      // If the index of the checked option isn't in the array add the option.
+      // Otherwise, remove the option from the array to simulate a toggle action
       if (optionIndex < 0) nextChecked.push(optionChecked);
       else nextChecked.splice(optionIndex, 1);
-
       setChecked(nextChecked);
-      if (onChange) onChange(event);
+
+      // Same functionalities as Select onChange()
+      if (onChange) {
+        event.persist();
+        const adjustedEvent = event;
+        adjustedEvent.checked = nextChecked;
+        adjustedEvent.option = option;
+        onChange(adjustedEvent);
+      }
     };
 
     return (
       <Box ref={ref} gap={gap} {...rest}>
-        {options.map(({ disabled, checked: checkedOption, ...optionRest }) => {
-          const label = optionRest[labelKey || 'label'];
-          const value = valueKey ? optionRest[valueKey] : optionRest.id;
+        {options.map(option => {
+          const label = labelKey ? option[labelKey] : option.label;
+          const value = valueKey ? option[valueKey] : option.id;
+          const checkedOption =
+            option.checked || (checkedProp && checkedProp.indexOf(value) >= 0);
           return (
             <CheckBox
-              checked={
-                checkedOption ||
-                (checkedProp && checkedProp.indexOf(value) >= 0)
-              }
-              disabled={disabledProp || disabled}
-              id={optionRest.id}
+              checked={checkedOption}
+              disabled={disabledProp || option.disabled}
               label={label}
               key={label}
-              onChange={event => onCheckBoxChange(event, value)}
-              {...optionRest}
+              onChange={event => onCheckBoxChange(event, value, option)}
+              {...option}
             />
           );
         })}
