@@ -391,48 +391,88 @@ const TextInput = forwardRef(
           }
           onKeyDown={onKeyDown}
         >
-          <StyledTextInput
-            ref={ref || inputRef}
-            id={id}
-            name={name}
-            autoComplete="off"
-            plain={plain}
-            placeholder={
-              typeof placeholder === 'string' ? placeholder : undefined
-            }
-            icon={icon}
-            reverse={reverse}
-            focus={focus}
-            {...rest}
-            defaultValue={renderLabel(defaultValue)}
-            value={renderLabel(value)}
-            readOnly={readOnly}
-            onFocus={event => {
-              setFocus(true);
-              if (suggestions && suggestions.length > 0) {
-                announce(messages.suggestionsExist);
-                openDrop();
+          {handleTextSelect.current ? (
+            <StyledTextInput
+              ref={ref || inputRef}
+              id={id}
+              name={name}
+              autoComplete="off"
+              plain={plain}
+              placeholder={
+                typeof placeholder === 'string' ? placeholder : undefined
               }
-              if (onFocus) onFocus(event);
-            }}
-            onBlur={event => {
-              setFocus(false);
-              if (onBlur) onBlur(event);
-            }}
-            onSelect={event => {
-              if (handleTextSelect.current) {
-                handleTextSelect.current(event);
+              icon={icon}
+              reverse={reverse}
+              focus={focus}
+              {...rest}
+              defaultValue={renderLabel(defaultValue)}
+              value={renderLabel(value)}
+              readOnly={readOnly}
+              onFocus={event => {
+                setFocus(true);
+                if (suggestions && suggestions.length > 0) {
+                  announce(messages.suggestionsExist);
+                  openDrop();
+                }
+                if (onFocus) onFocus(event);
+              }}
+              onBlur={event => {
+                setFocus(false);
+                if (onBlur) onBlur(event);
+              }}
+              onSelect={event => {
+                if (handleTextSelect.current) {
+                  handleTextSelect.current(event);
+                }
+              }}
+              onChange={
+                readOnly
+                  ? undefined
+                  : event => {
+                      setValue(event.target.value);
+                      if (onChange) onChange(event);
+                    }
               }
-            }}
-            onChange={
-              readOnly
-                ? undefined
-                : event => {
-                    setValue(event.target.value);
-                    if (onChange) onChange(event);
-                  }
-            }
-          />
+            />
+          ) : (
+            <StyledTextInput
+              ref={ref || inputRef}
+              id={id}
+              name={name}
+              autoComplete="off"
+              plain={plain}
+              placeholder={
+                typeof placeholder === 'string' ? placeholder : undefined
+              }
+              icon={icon}
+              reverse={reverse}
+              focus={focus}
+              {...rest}
+              defaultValue={renderLabel(defaultValue)}
+              value={renderLabel(value)}
+              readOnly={readOnly}
+              onFocus={event => {
+                setFocus(true);
+                if (suggestions && suggestions.length > 0) {
+                  announce(messages.suggestionsExist);
+                  openDrop();
+                }
+                if (onFocus) onFocus(event);
+              }}
+              onBlur={event => {
+                setFocus(false);
+                if (onBlur) onBlur(event);
+              }}
+              onChange={
+                readOnly
+                  ? undefined
+                  : event => {
+                      setValue(event.target.value);
+                      if (onChange) onChange(event);
+                    }
+              }
+            />
+          )}
         </Keyboard>
         {drop}
       </StyledTextInputContainer>
