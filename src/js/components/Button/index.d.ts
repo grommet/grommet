@@ -31,6 +31,7 @@ export interface ButtonProps {
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
+  secondary?: boolean;
   size?: "small" | "medium" | "large";
   type?: "button" | "reset" | "submit";
   as?: PolymorphicType;

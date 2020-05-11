@@ -319,6 +319,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     accordion: {
+      panel: {
+        // border: {
+        //   side: 'bottom',
+        //   color: 'border',
+        // },
+      },
       border: {
         side: 'bottom',
         color: 'border',
@@ -328,7 +334,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // margin: undefined
       },
       hover: {
-        color: { dark: 'light-4', light: 'dark-3' },
+        color: { dark: 'light-4', light: 'dark-3' }, // deprecated
+        heading: {
+          color: { dark: 'light-4', light: 'dark-3' },
+        },
       },
       icons: {
         collapse: FormUp,
@@ -403,26 +412,65 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
-      disabled: {
-        // border: {
-        //   color: { dark: undefined, light: undefined },
-        // },
-        // color: { dark: undefined, light: undefined }
-        // opacity: undefined,
-        // extend: undefined
-      },
       // color: { dark: undefined, light: undefined }
-      primary: {
-        // active: {
-        //   border: {
-        //     color: { dark: undefined, light: undefined }
-        //   },
+      // default: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      // primary: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      // secondary: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      active: {
+        background: 'active-background',
+        //   border: undefined,
+        color: 'active-text',
         //   extend: undefined,
-        // },
-        // color: { dark: undefined, light: undefined }
-        // extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
       },
-      // disabled: { opacity: undefined },
+      disabled: {
+        //   background: undefined,
+        //   border: undefined,
+        //   color: undefined,
+        opacity: 0.3,
+        //   extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
+      },
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined},
+      //   extend: undefined,
+      //   default: {},
+      //   primary: {},
+      //   secondary: {},
+      // },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
