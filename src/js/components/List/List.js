@@ -13,9 +13,13 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
-  &:focus {
-    ${focusStyle({ forceOutline: true, skipSvgChildren: true })}
-  }
+  ${props =>
+    props.onClickItem &&
+    `
+    &:focus {
+      ${focusStyle({ forceOutline: true, skipSvgChildren: true })}
+    }
+  `}
 `;
 
 const StyledItem = styled(Box)`
