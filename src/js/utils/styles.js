@@ -214,7 +214,7 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
       global: { focus },
     },
   } = props;
-  if (forceOutline && (!focus || !focus.outline)) {
+  if (!focus || (forceOutline && !focus.outline)) {
     const color = normalizeColor('focus', props.theme);
     if (color) return `outline: 2px solid ${color};`;
     return ''; // native
