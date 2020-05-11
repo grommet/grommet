@@ -84,6 +84,7 @@ const TextInput = forwardRef(
       onFocus,
       onKeyDown,
       onSelect,
+      onSuggestionSelect,
       onSuggestionsClose,
       onSuggestionsOpen,
       placeholder,
@@ -103,7 +104,6 @@ const TextInput = forwardRef(
     const dropRef = useRef();
     const suggestionsRef = useRef();
     const suggestionRefs = {};
-
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
     const [value, setValue] = formContext.useFormContext(
@@ -113,6 +113,21 @@ const TextInput = forwardRef(
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
+
+    const handleSuggestionSelect = useRef();
+    const handleTextSelect = useRef();
+
+    // assigns select handlers
+    useEffect(() => {
+      if (onSelect && !onSuggestionSelect) {
+        handleSuggestionSelect.current = onSelect;
+      } else if (!onSelect && onSuggestionSelect) {
+        handleSuggestionSelect.current = onSuggestionSelect;
+      } else {
+        handleSuggestionSelect.current = onSuggestionSelect;
+        handleTextSelect.current = onSelect;
+      }
+    }, [onSelect, onSuggestionSelect]);
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
@@ -238,10 +253,10 @@ const TextInput = forwardRef(
             // we stole the focus, give it back
             (ref || inputRef).current.focus();
             closeDrop();
-            if (onSelect) {
+            if (handleSuggestionSelect.current) {
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              onSelect(adjustedEvent);
+              handleSuggestionSelect.current(adjustedEvent);
             }
             setValue(suggestions[activeSuggestionIndex]);
           }}
@@ -286,12 +301,12 @@ const TextInput = forwardRef(
                             // we stole the focus, give it back
                             (ref || inputRef).current.focus();
                             closeDrop();
-                            if (onSelect) {
+                            if (handleSuggestionSelect.current) {
                               event.persist();
                               const adjustedEvent = event;
                               adjustedEvent.suggestion = suggestion;
                               adjustedEvent.target = (ref || inputRef).current;
-                              onSelect(adjustedEvent);
+                              handleSuggestionSelect.current(adjustedEvent);
                             }
                             setValue(suggestion);
                           }}
@@ -330,14 +345,14 @@ const TextInput = forwardRef(
         <Keyboard
           onEnter={event => {
             closeDrop();
-            if (activeSuggestionIndex >= 0 && onSelect) {
+            if (activeSuggestionIndex >= 0 && handleSuggestionSelect.current) {
               // prevent submitting forms when choosing a suggestion
               event.preventDefault();
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
               adjustedEvent.target = (ref || inputRef).current;
-              onSelect(adjustedEvent);
+              handleSuggestionSelect.current(adjustedEvent);
             }
           }}
           onEsc={
@@ -403,6 +418,11 @@ const TextInput = forwardRef(
             onBlur={event => {
               setFocus(false);
               if (onBlur) onBlur(event);
+            }}
+            onSelect={event => {
+              if (handleTextSelect.current) {
+                handleTextSelect.current(event);
+              }
             }}
             onChange={
               readOnly
