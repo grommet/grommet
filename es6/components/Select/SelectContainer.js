@@ -1,14 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { createRef, Component } from 'react';
-import styled, { withTheme } from 'styled-components';
-import { debounce, debounceDelay, selectedStyle, setFocusWithoutScroll } from '../../utils';
+import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
+import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -33,379 +27,300 @@ var SelectOption = styled(Button).withConfig({
   displayName: "SelectContainer__SelectOption",
   componentId: "sc-1wi0ul8-2"
 })(["display:block;width:100%;"]);
+var SelectContainer = forwardRef(function (_ref, ref) {
+  var _ref$children = _ref.children,
+      children = _ref$children === void 0 ? null : _ref$children,
+      disabled = _ref.disabled,
+      disabledKey = _ref.disabledKey,
+      dropHeight = _ref.dropHeight,
+      _ref$emptySearchMessa = _ref.emptySearchMessage,
+      emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
+      id = _ref.id,
+      labelKey = _ref.labelKey,
+      multiple = _ref.multiple,
+      onChange = _ref.onChange,
+      onKeyDown = _ref.onKeyDown,
+      onMore = _ref.onMore,
+      onSearch = _ref.onSearch,
+      optionIndexesInValue = _ref.optionIndexesInValue,
+      options = _ref.options,
+      searchPlaceholder = _ref.searchPlaceholder,
+      selected = _ref.selected,
+      _ref$value = _ref.value,
+      value = _ref$value === void 0 ? '' : _ref$value,
+      valueKey = _ref.valueKey,
+      _ref$replace = _ref.replace,
+      replace = _ref$replace === void 0 ? true : _ref$replace;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
-var SelectContainer = /*#__PURE__*/function (_Component) {
-  _inheritsLoose(SelectContainer, _Component);
+  var _useState = useState(),
+      search = _useState[0],
+      setSearch = _useState[1];
 
-  function SelectContainer(props) {
-    var _this;
+  var _useState2 = useState(-1),
+      activeIndex = _useState2[0],
+      setActiveIndex = _useState2[1];
 
-    _this = _Component.call(this, props) || this;
+  var _useState3 = useState(),
+      keyboardNavigation = _useState3[0],
+      setKeyboardNavigation = _useState3[1];
 
-    _defineProperty(_assertThisInitialized(_this), "searchRef", createRef());
+  var searchRef = useRef();
+  var optionsRef = useRef(); // adjust activeIndex when options change
 
-    _defineProperty(_assertThisInitialized(_this), "optionsRef", createRef());
-
-    _defineProperty(_assertThisInitialized(_this), "onSearchChange", function (event) {
-      _this.setState({
-        search: event.target.value,
-        activeIndex: -1
-      }, function () {
-        var search = _this.state.search;
-
-        _this.onSearch(search);
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSearch", debounce(function (search) {
-      var onSearch = _this.props.onSearch;
-      onSearch(search);
-    }, debounceDelay(_this.props)));
-
-    _defineProperty(_assertThisInitialized(_this), "selectOption", function (index) {
-      return function (event) {
-        var _this$props = _this.props,
-            multiple = _this$props.multiple,
-            onChange = _this$props.onChange,
-            options = _this$props.options,
-            optionIndexesInValue = _this$props.optionIndexesInValue,
-            valueKey = _this$props.valueKey;
-
-        if (onChange) {
-          var nextValue;
-          var nextSelected;
-
-          if (multiple) {
-            var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            var valueIndex = optionIndexesInValue.indexOf(index);
-
-            if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(index);
-            } else {
-              nextOptionIndexesInValue.splice(valueIndex, 1);
-            }
-
-            nextValue = nextOptionIndexesInValue.map(function (i) {
-              return valueKey && valueKey.reduce ? applyKey(options[i], valueKey) : options[i];
-            });
-            nextSelected = nextOptionIndexesInValue;
-          } else {
-            nextValue = valueKey && valueKey.reduce ? applyKey(options[index], valueKey) : options[index];
-            nextSelected = index;
-          }
-
-          onChange(event, {
-            option: options[index],
-            value: nextValue,
-            selected: nextSelected
-          });
-        }
-      };
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "clearKeyboardNavigation", function () {
-      clearTimeout(_this.keyboardNavTimer);
-      _this.keyboardNavTimer = setTimeout(function () {
-        _this.setState({
-          keyboardNavigating: false
-        });
-      }, 100); // 100ms was empirically determined
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onNextOption", function (event) {
-      var options = _this.props.options;
-      var activeIndex = _this.state.activeIndex;
-      event.preventDefault();
-      var nextActiveIndex = activeIndex + 1;
-
-      while (nextActiveIndex < options.length && _this.isDisabled(nextActiveIndex)) {
-        nextActiveIndex += 1;
-      }
-
-      if (nextActiveIndex !== options.length) {
-        _this.setState({
-          activeIndex: nextActiveIndex,
-          keyboardNavigating: true
-        }, function () {
-          return _this.clearKeyboardNavigation();
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onPreviousOption", function (event) {
-      var activeIndex = _this.state.activeIndex;
-      event.preventDefault();
-      var nextActiveIndex = activeIndex - 1;
-
-      while (nextActiveIndex >= 0 && _this.isDisabled(nextActiveIndex)) {
-        nextActiveIndex -= 1;
-      }
-
-      if (nextActiveIndex >= 0) {
-        _this.setState({
-          activeIndex: nextActiveIndex,
-          keyboardNavigating: true
-        }, function () {
-          return _this.clearKeyboardNavigation();
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onActiveOption", function (index) {
-      return function () {
-        var keyboardNavigating = _this.state.keyboardNavigating;
-
-        if (!keyboardNavigating) {
-          _this.setState({
-            activeIndex: index
-          });
-        }
-      };
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSelectOption", function (event) {
-      var activeIndex = _this.state.activeIndex;
-
-      if (activeIndex >= 0) {
-        event.preventDefault(); // prevent submitting forms
-
-        _this.selectOption(activeIndex)(event);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "optionLabel", function (index) {
-      var _this$props2 = _this.props,
-          options = _this$props2.options,
-          labelKey = _this$props2.labelKey;
-      return applyKey(options[index], labelKey);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "optionValue", function (index) {
-      var _this$props3 = _this.props,
-          options = _this$props3.options,
-          valueKey = _this$props3.valueKey;
-      return applyKey(options[index], valueKey);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "isDisabled", function (index) {
-      var _this$props4 = _this.props,
-          disabled = _this$props4.disabled,
-          disabledKey = _this$props4.disabledKey,
-          options = _this$props4.options;
-      var option = options[index];
-      var result;
-
-      if (disabledKey) {
-        result = applyKey(option, disabledKey);
-      } else if (Array.isArray(disabled)) {
-        if (typeof disabled[0] === 'number') {
-          result = disabled.indexOf(index) !== -1;
-        } else {
-          var optionValue = _this.optionValue(index);
-
-          result = disabled.indexOf(optionValue) !== -1;
-        }
-      }
-
-      return result;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "isSelected", function (index) {
-      var _this$props5 = _this.props,
-          selected = _this$props5.selected,
-          value = _this$props5.value,
-          valueKey = _this$props5.valueKey;
-      var result;
-
-      if (selected) {
-        // deprecated in favor of value
-        result = selected.indexOf(index) !== -1;
-      } else {
-        var optionValue = _this.optionValue(index);
-
-        if (Array.isArray(value)) {
-          if (value.length === 0) {
-            result = false;
-          } else if (typeof value[0] !== 'object') {
-            result = value.indexOf(optionValue) !== -1;
-          } else if (valueKey) {
-            result = value.some(function (valueItem) {
-              var valueValue = typeof valueKey === 'function' ? valueKey(valueItem) : valueItem[valueKey];
-              return valueValue === optionValue;
-            });
-          }
-        } else if (valueKey && typeof value === 'object') {
-          var valueValue = typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
-          result = valueValue === optionValue;
-        } else {
-          result = value === optionValue;
-        }
-      }
-
-      return result;
-    });
-
-    _this.state = {
-      search: '',
-      activeIndex: -1
-    };
-    return _this;
-  }
-
-  SelectContainer.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var options = nextProps.options,
-        optionIndexesInValue = nextProps.optionIndexesInValue,
-        onSearch = nextProps.onSearch;
-
+  useEffect(function () {
     if (onSearch) {
-      if (prevState.activeIndex === -1 && prevState.search === '' && options && optionIndexesInValue) {
-        var activeIndex = optionIndexesInValue.length ? optionIndexesInValue[0] : -1;
-        return {
-          activeIndex: activeIndex
-        };
-      }
-
-      if (prevState.activeIndex === -1 && prevState.search !== '') {
-        return {
-          activeIndex: 0
-        };
+      if (activeIndex === -1 && !search && options && optionIndexesInValue) {
+        var nextActiveIndex = optionIndexesInValue.length ? optionIndexesInValue[0] : -1;
+        setActiveIndex(nextActiveIndex);
+      } else if (activeIndex === -1 && search) {
+        setActiveIndex(0);
       }
     }
+  }, [activeIndex, optionIndexesInValue, options, onSearch, search]); // set initial focus
 
-    return null;
-  };
-
-  var _proto = SelectContainer.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    var onSearch = this.props.onSearch; // timeout need to send the operation through event loop and allow
-    // time to the portal to be available
-
-    setTimeout(function () {
-      var optionsNode = _this2.optionsRef.current;
+  useEffect(function () {
+    // need to wait for Drop to be ready
+    var timer = setTimeout(function () {
+      var optionsNode = optionsRef.current;
 
       if (onSearch) {
-        var input = _this2.searchRef.current;
+        var searchInput = searchRef.current;
 
-        if (input && input.focus) {
-          setFocusWithoutScroll(input);
+        if (searchInput && searchInput.focus) {
+          setFocusWithoutScroll(searchInput);
         }
       } else if (optionsNode) {
         setFocusWithoutScroll(optionsNode);
       }
-    }, 0);
-  };
+    }, 100);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [onSearch]); // clear keyboardNavigation after a while
 
-  _proto.render = function render() {
-    var _this3 = this;
+  useEffect(function () {
+    if (keyboardNavigation) {
+      // 100ms was empirically determined
+      var timer = setTimeout(function () {
+        return setKeyboardNavigation(false);
+      }, 100);
+      return function () {
+        return clearTimeout(timer);
+      };
+    }
 
-    var _this$props6 = this.props,
-        children = _this$props6.children,
-        dropHeight = _this$props6.dropHeight,
-        emptySearchMessage = _this$props6.emptySearchMessage,
-        id = _this$props6.id,
-        onMore = _this$props6.onMore,
-        onKeyDown = _this$props6.onKeyDown,
-        onSearch = _this$props6.onSearch,
-        options = _this$props6.options,
-        searchPlaceholder = _this$props6.searchPlaceholder,
-        theme = _this$props6.theme,
-        replace = _this$props6.replace;
-    var _this$state = this.state,
-        activeIndex = _this$state.activeIndex,
-        search = _this$state.search;
-    var customSearchInput = theme.select.searchInput;
-    var SelectTextInput = customSearchInput || TextInput;
+    return undefined;
+  }, [keyboardNavigation]);
+  var optionLabel = useCallback(function (index) {
+    return applyKey(options[index], labelKey);
+  }, [labelKey, options]);
+  var optionValue = useCallback(function (index) {
+    return applyKey(options[index], valueKey);
+  }, [options, valueKey]);
+  var isDisabled = useCallback(function (index) {
+    var option = options[index];
+    var result;
 
-    var selectOptionsStyle = _extends(_extends({}, theme.select.options.box), theme.select.options.container);
+    if (disabledKey) {
+      result = applyKey(option, disabledKey);
+    } else if (Array.isArray(disabled)) {
+      if (typeof disabled[0] === 'number') {
+        result = disabled.indexOf(index) !== -1;
+      } else {
+        var optionVal = optionValue(index);
+        result = disabled.indexOf(optionVal) !== -1;
+      }
+    }
 
-    return /*#__PURE__*/React.createElement(Keyboard, {
-      onEnter: this.onSelectOption,
-      onUp: this.onPreviousOption,
-      onDown: this.onNextOption,
-      onKeyDown: onKeyDown
-    }, /*#__PURE__*/React.createElement(StyledContainer, {
-      as: Box,
-      id: id ? id + "__select-drop" : undefined,
-      dropHeight: dropHeight
-    }, onSearch && /*#__PURE__*/React.createElement(Box, {
-      pad: !customSearchInput ? 'xsmall' : undefined,
-      flex: false
-    }, /*#__PURE__*/React.createElement(SelectTextInput, {
-      focusIndicator: !customSearchInput,
-      size: "small",
-      ref: this.searchRef,
-      type: "search",
-      value: search,
-      placeholder: searchPlaceholder,
-      onChange: this.onSearchChange
-    })), /*#__PURE__*/React.createElement(OptionsBox, {
-      role: "menubar",
-      tabIndex: "-1",
-      ref: this.optionsRef
-    }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
-      items: options,
-      step: theme.select.step,
-      onMore: onMore,
-      replace: replace,
-      show: activeIndex !== -1 ? activeIndex : undefined
-    }, function (option, index, optionRef) {
-      var isDisabled = _this3.isDisabled(index);
+    return result;
+  }, [disabled, disabledKey, options, optionValue]);
+  var isSelected = useCallback(function (index) {
+    var result;
 
-      var isSelected = _this3.isSelected(index);
+    if (selected) {
+      // deprecated in favor of value
+      result = selected.indexOf(index) !== -1;
+    } else {
+      var optionVal = optionValue(index);
 
-      var isActive = activeIndex === index;
-      return /*#__PURE__*/React.createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
-      , {
-        key: index,
-        ref: optionRef,
-        tabIndex: "-1",
-        role: "menuitem",
-        hoverIndicator: "background",
-        disabled: isDisabled || undefined,
-        active: isActive,
-        selected: isSelected,
-        option: option,
-        onMouseOver: !isDisabled ? _this3.onActiveOption(index) : undefined,
-        onClick: !isDisabled ? _this3.selectOption(index) : undefined
-      }, children ? children(option, index, options, {
-        active: isActive,
-        disabled: isDisabled,
-        selected: isSelected
-      }) : /*#__PURE__*/React.createElement(OptionBox, _extends({}, selectOptionsStyle, {
-        selected: isSelected
-      }), /*#__PURE__*/React.createElement(Text, theme.select.options.text, _this3.optionLabel(index))));
-    }) : /*#__PURE__*/React.createElement(SelectOption, {
-      key: "search_empty",
+      if (Array.isArray(value)) {
+        if (value.length === 0) {
+          result = false;
+        } else if (typeof value[0] !== 'object') {
+          result = value.indexOf(optionVal) !== -1;
+        } else if (valueKey) {
+          result = value.some(function (valueItem) {
+            var valueValue = typeof valueKey === 'function' ? valueKey(valueItem) : valueItem[valueKey];
+            return valueValue === optionVal;
+          });
+        }
+      } else if (valueKey && typeof value === 'object') {
+        var valueValue = typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
+        result = valueValue === optionVal;
+      } else {
+        result = value === optionVal;
+      }
+    }
+
+    return result;
+  }, [optionValue, selected, value, valueKey]);
+  var onSearchChange = useCallback(function (event) {
+    var nextSearch = event.target.value;
+    setSearch(nextSearch);
+    setActiveIndex(-1);
+    onSearch(nextSearch);
+  }, [onSearch]);
+  useEffect(function () {
+    if (search !== undefined && onSearch) {
+      var timer = setTimeout(function () {
+        return onSearch(search);
+      }, theme.global.debounceDelay);
+      return function () {
+        return clearTimeout(timer);
+      };
+    }
+
+    return undefined;
+  }, [onSearch, search, theme.global]);
+  var selectOption = useCallback(function (index) {
+    return function (event) {
+      if (onChange) {
+        var nextValue;
+        var nextSelected;
+
+        if (multiple) {
+          var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
+          var valueIndex = optionIndexesInValue.indexOf(index);
+
+          if (valueIndex === -1) {
+            nextOptionIndexesInValue.push(index);
+          } else {
+            nextOptionIndexesInValue.splice(valueIndex, 1);
+          }
+
+          nextValue = nextOptionIndexesInValue.map(function (i) {
+            return valueKey && valueKey.reduce ? applyKey(options[i], valueKey) : options[i];
+          });
+          nextSelected = nextOptionIndexesInValue;
+        } else {
+          nextValue = valueKey && valueKey.reduce ? applyKey(options[index], valueKey) : options[index];
+          nextSelected = index;
+        }
+
+        onChange(event, {
+          option: options[index],
+          value: nextValue,
+          selected: nextSelected
+        });
+      }
+    };
+  }, [multiple, onChange, optionIndexesInValue, options, valueKey]);
+  var onNextOption = useCallback(function (event) {
+    event.preventDefault();
+    var nextActiveIndex = activeIndex + 1;
+
+    while (nextActiveIndex < options.length && isDisabled(nextActiveIndex)) {
+      nextActiveIndex += 1;
+    }
+
+    if (nextActiveIndex !== options.length) {
+      setActiveIndex(nextActiveIndex);
+      setKeyboardNavigation(true);
+    }
+  }, [activeIndex, isDisabled, options]);
+  var onPreviousOption = useCallback(function (event) {
+    event.preventDefault();
+    var nextActiveIndex = activeIndex - 1;
+
+    while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
+      nextActiveIndex -= 1;
+    }
+
+    if (nextActiveIndex >= 0) {
+      setActiveIndex(nextActiveIndex);
+      setKeyboardNavigation(true);
+    }
+  }, [activeIndex, isDisabled]);
+  var onActiveOption = useCallback(function (index) {
+    return function () {
+      if (!keyboardNavigation) setActiveIndex(index);
+    };
+  }, [keyboardNavigation]);
+  var onSelectOption = useCallback(function (event) {
+    if (activeIndex >= 0) {
+      event.preventDefault(); // prevent submitting forms
+
+      selectOption(activeIndex)(event);
+    }
+  }, [activeIndex, selectOption]);
+  var customSearchInput = theme.select.searchInput;
+  var SelectTextInput = customSearchInput || TextInput;
+
+  var selectOptionsStyle = _extends(_extends({}, theme.select.options.box), theme.select.options.container);
+
+  return /*#__PURE__*/React.createElement(Keyboard, {
+    onEnter: onSelectOption,
+    onUp: onPreviousOption,
+    onDown: onNextOption,
+    onKeyDown: onKeyDown
+  }, /*#__PURE__*/React.createElement(StyledContainer, {
+    ref: ref,
+    as: Box,
+    id: id ? id + "__select-drop" : undefined,
+    dropHeight: dropHeight
+  }, onSearch && /*#__PURE__*/React.createElement(Box, {
+    pad: !customSearchInput ? 'xsmall' : undefined,
+    flex: false
+  }, /*#__PURE__*/React.createElement(SelectTextInput, {
+    focusIndicator: !customSearchInput,
+    size: "small",
+    ref: searchRef,
+    type: "search",
+    value: search || '',
+    placeholder: searchPlaceholder,
+    onChange: onSearchChange
+  })), /*#__PURE__*/React.createElement(OptionsBox, {
+    role: "menubar",
+    tabIndex: "-1",
+    ref: optionsRef
+  }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
+    items: options,
+    step: theme.select.step,
+    onMore: onMore,
+    replace: replace,
+    show: activeIndex !== -1 ? activeIndex : undefined
+  }, function (option, index, optionRef) {
+    var optionDisabled = isDisabled(index);
+    var optionSelected = isSelected(index);
+    var optionActive = activeIndex === index;
+    return /*#__PURE__*/React.createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
+    , {
+      key: index,
+      ref: optionRef,
       tabIndex: "-1",
       role: "menuitem",
       hoverIndicator: "background",
-      disabled: true,
-      option: emptySearchMessage
-    }, /*#__PURE__*/React.createElement(OptionBox, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
-  };
-
-  return SelectContainer;
-}(Component);
-
-_defineProperty(SelectContainer, "defaultProps", {
-  children: null,
-  disabled: undefined,
-  emptySearchMessage: 'No matches found',
-  id: undefined,
-  multiple: false,
-  name: undefined,
-  onKeyDown: undefined,
-  onSearch: undefined,
-  options: undefined,
-  searchPlaceholder: undefined,
-  selected: undefined,
-  value: '',
-  replace: true
+      disabled: optionDisabled || undefined,
+      active: optionActive,
+      selected: optionSelected,
+      option: option,
+      onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
+      onClick: !optionDisabled ? selectOption(index) : undefined
+    }, children ? children(option, index, options, {
+      active: optionActive,
+      disabled: optionDisabled,
+      selected: optionSelected
+    }) : /*#__PURE__*/React.createElement(OptionBox, _extends({}, selectOptionsStyle, {
+      selected: optionSelected
+    }), /*#__PURE__*/React.createElement(Text, theme.select.options.text, optionLabel(index))));
+  }) : /*#__PURE__*/React.createElement(SelectOption, {
+    key: "search_empty",
+    tabIndex: "-1",
+    role: "menuitem",
+    hoverIndicator: "background",
+    disabled: true,
+    option: emptySearchMessage
+  }, /*#__PURE__*/React.createElement(OptionBox, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
 });
-
-Object.setPrototypeOf(SelectContainer.defaultProps, defaultProps);
-var SelectContainerWrapper = withTheme(SelectContainer);
-export { SelectContainerWrapper as SelectContainer };
+export { SelectContainer };
