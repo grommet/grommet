@@ -70,6 +70,7 @@ const defaultMessages = {
 const TextInput = forwardRef(
   (
     {
+      a11yTitle,
       defaultValue,
       dropAlign = defaultDropAlign,
       dropHeight,
@@ -377,6 +378,7 @@ const TextInput = forwardRef(
           onKeyDown={onKeyDown}
         >
           <StyledTextInput
+            aria-label={a11yTitle}
             ref={ref || inputRef}
             id={id}
             name={name}
