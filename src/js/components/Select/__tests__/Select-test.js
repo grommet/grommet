@@ -21,6 +21,13 @@ describe('Select', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('a11yTitle', () => {
+    const component = renderer.create(
+      <Select a11yTitle="aria-test" id="test-select" options={['one']} />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('0 value', () => {
     const component = renderer.create(
       <Select
