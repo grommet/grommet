@@ -154,9 +154,11 @@ exports[`Accordion AccordionPanel 1`] = `
 }
 
 .c10 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
@@ -471,9 +473,11 @@ exports[`Accordion accordion border 1`] = `
 }
 
 .c9 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
@@ -767,9 +771,11 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 }
 
 .c10 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
@@ -1437,9 +1443,11 @@ exports[`Accordion change to second Panel 1`] = `
 }
 
 .c10 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
@@ -1653,7 +1661,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 1
         </div>
@@ -1755,7 +1763,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="false"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 hCnAXH"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 gPSerh"
           open=""
         >
           Panel body 2
@@ -2510,9 +2518,11 @@ exports[`Accordion complex title 1`] = `
 }
 
 .c9 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c0 {
@@ -2809,9 +2819,11 @@ exports[`Accordion custom accordion 1`] = `
 }
 
 .c10 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
@@ -3098,9 +3110,11 @@ exports[`Accordion focus and hover styles 1`] = `
 }
 
 .c10 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
@@ -4314,9 +4328,11 @@ exports[`Accordion set on hover 1`] = `
 }
 
 .c10 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
@@ -4530,7 +4546,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 1
         </div>
@@ -4581,7 +4597,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 2
         </div>
@@ -4644,7 +4660,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 1
         </div>
@@ -4695,7 +4711,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 2
         </div>
@@ -4758,7 +4774,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 1
         </div>
@@ -4809,7 +4825,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 2
         </div>
@@ -4872,7 +4888,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 1
         </div>
@@ -4923,7 +4939,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bQEdvX"
+          class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
         >
           Panel body 2
         </div>
@@ -5104,9 +5120,11 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
 }
 
 .c10 {
-  max-height: 0;
-  visibility: hidden;
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .c6 {
