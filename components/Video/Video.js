@@ -5,8 +5,6 @@ exports.Video = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _styledComponents = require("styled-components");
 
 var _defaultProps = require("../../default-props");
@@ -23,8 +21,6 @@ var _Stack = require("../Stack");
 
 var _Text = require("../Text");
 
-var _hocs = require("../hocs");
-
 var _utils = require("../../utils");
 
 var _StyledVideo = require("./StyledVideo");
@@ -33,15 +29,9 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 // Split the volume control into 6 segments. Empirically determined.
 var VOLUME_STEP = 0.166667;
@@ -62,299 +52,81 @@ var formatTime = function formatTime(time) {
   return minutes + ":" + seconds;
 };
 
-var videoEvents = ['onAbort', 'onCanPlay', 'onCanPlayThrough', 'onDurationChange', 'onEmptied', 'onEncrypted', 'onEnded', 'onError', 'onLoadedData', 'onLoadedMetadata', 'onLoadStart', 'onPause', 'onPlay', 'onPlaying', 'onProgress', 'onRateChange', 'onSeeked', 'onSeeking', 'onStalled', 'onSuspend', 'onTimeUpdate', 'onVolumeChange', 'onWaiting'];
+var Video = (0, _react.forwardRef)(function (_ref, ref) {
+  var alignSelf = _ref.alignSelf,
+      autoPlay = _ref.autoPlay,
+      children = _ref.children,
+      _ref$controls = _ref.controls,
+      controls = _ref$controls === void 0 ? 'over' : _ref$controls,
+      gridArea = _ref.gridArea,
+      loop = _ref.loop,
+      margin = _ref.margin,
+      mute = _ref.mute,
+      _onDurationChange = _ref.onDurationChange,
+      _onEnded = _ref.onEnded,
+      _onPause = _ref.onPause,
+      _onPlay = _ref.onPlay,
+      _onTimeUpdate = _ref.onTimeUpdate,
+      _onVolumeChange = _ref.onVolumeChange,
+      rest = _objectWithoutPropertiesLoose(_ref, ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange"]);
 
-var Video = /*#__PURE__*/function (_Component) {
-  _inheritsLoose(Video, _Component);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  Video.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var forwardRef = nextProps.forwardRef;
-    var videoRef = prevState.videoRef;
-    var nextVideoRef = forwardRef || videoRef;
+  var _useState = (0, _react.useState)([]),
+      captions = _useState[0],
+      setCaptions = _useState[1];
 
-    if (nextVideoRef !== videoRef) {
-      return {
-        videoRef: nextVideoRef
-      };
-    }
+  var _useState2 = (0, _react.useState)(),
+      currentTime = _useState2[0],
+      setCurrentTime = _useState2[1];
 
-    return null;
-  };
+  var _useState3 = (0, _react.useState)(),
+      duration = _useState3[0],
+      setDuration = _useState3[1];
 
-  function Video(props) {
-    var _this;
+  var _useState4 = (0, _react.useState)(),
+      percentagePlayed = _useState4[0],
+      setPercentagePlayed = _useState4[1];
 
-    _this = _Component.call(this, props) || this;
+  var _useState5 = (0, _react.useState)(false),
+      playing = _useState5[0],
+      setPlaying = _useState5[1];
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      captions: [],
-      scrubberRef: _react["default"].createRef(),
-      videoRef: _react["default"].createRef()
-    });
+  var _useState6 = (0, _react.useState)(),
+      scrubTime = _useState6[0],
+      setScrubTime = _useState6[1];
 
-    _defineProperty(_assertThisInitialized(_this), "hasPlayed", false);
+  var _useState7 = (0, _react.useState)(),
+      volume = _useState7[0],
+      setVolume = _useState7[1];
 
-    _defineProperty(_assertThisInitialized(_this), "injectUpdateVideoEvents", function () {
-      return videoEvents.reduce(function (previousValue, currentValue) {
-        var nextValue = _extends({}, previousValue);
+  var _useState8 = (0, _react.useState)(false),
+      hasPlayed = _useState8[0],
+      setHasPlayed = _useState8[1];
 
-        nextValue[currentValue] = function (e) {
-          if (currentValue in _this.props &&
-          /* eslint-disable react/destructuring-assignment */
-          typeof _this.props[currentValue] === 'function') {
-            _this.props[currentValue](e);
-            /* eslint-enable react/destructuring-assignment */
+  var _useState9 = (0, _react.useState)(),
+      interacting = _useState9[0],
+      setInteracting = _useState9[1];
 
-          }
+  var _useState10 = (0, _react.useState)(),
+      height = _useState10[0],
+      setHeight = _useState10[1];
 
-          _this.update();
-        };
+  var _useState11 = (0, _react.useState)(),
+      width = _useState11[0],
+      setWidth = _useState11[1];
 
-        return nextValue;
-      }, {});
-    });
+  var containerRef = (0, _react.useRef)();
+  var scrubberRef = (0, _react.useRef)();
+  var videoRef = (0, _utils.useForwardedRef)(ref); // mute if needed
 
-    _defineProperty(_assertThisInitialized(_this), "update", function () {
-      var videoRef = _this.state.videoRef;
-      var video = videoRef.current; // Set flag for Video first play
-
-      if (!_this.hasPlayed && !video.paused && !video.loading || video.currentTime) {
-        _this.hasPlayed = true;
-      }
-
-      var interacting = _this.state.interacting;
-
-      if (video.ended) {
-        interacting = false;
-      }
-
-      _this.setState({
-        duration: video.duration,
-        currentTime: video.currentTime,
-        // buffered: video.buffered,
-        // paused: video.paused,
-        // muted: video.muted,
-        volume: video.volume,
-        // ended: video.ended,
-        // readyState: video.readyState,
-        interacting: interacting,
-        // computed values
-        // hasPlayed: this.hasPlayed,
-        playing: !video.paused && !video.loading,
-        // percentageBuffered: video.buffered.length &&
-        //   (video.buffered.end(video.buffered.length - 1) /
-        //   video.duration) * 100,
-        percentagePlayed: video.currentTime / video.duration * 100 // loading: video.readyState < video.HAVE_ENOUGH_DATA,
-
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "play", function () {
-      var videoRef = _this.state.videoRef;
-      videoRef.current.play();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "pause", function () {
-      var videoRef = _this.state.videoRef;
-      videoRef.current.pause();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "scrub", function (event) {
-      var _this$state = _this.state,
-          duration = _this$state.duration,
-          scrubberRef = _this$state.scrubberRef;
-
-      if (scrubberRef.current) {
-        var scrubberRect = scrubberRef.current.getBoundingClientRect();
-        var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-
-        _this.setState({
-          scrubTime: duration * percent
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "seek", function (event) {
-      var _this$state2 = _this.state,
-          duration = _this$state2.duration,
-          scrubberRef = _this$state2.scrubberRef,
-          videoRef = _this$state2.videoRef;
-
-      if (scrubberRef.current) {
-        var scrubberRect = scrubberRef.current.getBoundingClientRect();
-        var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-        videoRef.current.currentTime = duration * percent;
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "unmute", function () {
-      var videoRef = _this.state.videoRef;
-
-      if (videoRef.current) {
-        videoRef.current.muted = false;
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "mute", function () {
-      var videoRef = _this.state.videoRef;
-
-      if (videoRef.current) {
-        videoRef.current.muted = true;
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "louder", function () {
-      var videoRef = _this.state.videoRef;
-      videoRef.current.volume += VOLUME_STEP;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "quieter", function () {
-      var videoRef = _this.state.videoRef;
-      videoRef.current.volume -= VOLUME_STEP;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "showCaptions", function (index) {
-      var videoRef = _this.state.videoRef;
-      var textTracks = videoRef.current.textTracks;
-
-      for (var i = 0; i < textTracks.length; i += 1) {
-        textTracks[i].mode = i === index ? 'showing' : 'hidden';
-      } // Using forceUpdate to force redraw of controls when changing captions
-
-
-      _this.forceUpdate();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "fullscreen", function () {
-      var videoRef = _this.state.videoRef;
-      var video = videoRef.current;
-
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.msRequestFullscreen) {
-        video.msRequestFullscreen();
-      } else if (video.mozRequestFullScreen) {
-        video.mozRequestFullScreen();
-      } else if (video.webkitRequestFullscreen) {
-        video.webkitRequestFullscreen();
-      } else {
-        console.warn("Your browser doesn't support fullscreen.");
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "interactionStart", function () {
-      _this.setState({
-        interacting: true
-      });
-
-      clearTimeout(_this.interactionTimer);
-      _this.interactionTimer = setTimeout(_this.interactionStop, 3000);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "interactionStop", function () {
-      var focus = _this.state.focus;
-
-      if (!focus && !_this.unmounted) {
-        _this.setState({
-          interacting: false
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "restate", function () {
-      var _this$state3 = _this.state,
-          captions = _this$state3.captions,
-          height = _this$state3.height,
-          videoRef = _this$state3.videoRef,
-          width = _this$state3.width;
-      var video = videoRef.current;
-
-      if (video) {
-        if (video.videoHeight) {
-          // set the size based on the video aspect ratio
-          var rect = video.getBoundingClientRect();
-          var ratio = rect.width / rect.height;
-          var videoRatio = video.videoWidth / video.videoHeight;
-
-          if (videoRatio > ratio) {
-            var nextHeight = rect.width / videoRatio;
-
-            if (nextHeight !== height) {
-              _this.setState({
-                height: nextHeight,
-                width: undefined
-              });
-            }
-          } else {
-            var nextWidth = rect.height * videoRatio;
-
-            if (nextWidth !== width) {
-              _this.setState({
-                height: undefined,
-                width: nextWidth
-              });
-            }
-          }
-        } // remember the state of the text tracks for subsequent rendering
-
-
-        var textTracks = video.textTracks;
-
-        if (textTracks.length > 0) {
-          if (textTracks.length === 1) {
-            var active = textTracks[0].mode === 'showing';
-
-            if (!captions || !captions[0] || captions[0].active !== active) {
-              _this.setState({
-                captions: [{
-                  active: active
-                }]
-              });
-            }
-          } else {
-            var nextCaptions = [];
-            var set = false;
-
-            for (var i = 0; i < textTracks.length; i += 1) {
-              var track = textTracks[i];
-
-              var _active = track.mode === 'showing';
-
-              nextCaptions.push({
-                label: track.label,
-                active: _active
-              });
-
-              if (!captions || !captions[i] || captions[i].active !== _active) {
-                set = true;
-              }
-            }
-
-            if (set) {
-              _this.setState({
-                captions: nextCaptions
-              });
-            }
-          }
-        }
-      }
-    });
-
-    _this.update = (0, _utils.throttle)(_this.update, 100, _assertThisInitialized(_this));
-    _this.mediaEventProps = _this.injectUpdateVideoEvents();
-    return _this;
-  }
-
-  var _proto = Video.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    var mute = this.props.mute;
-    var videoRef = this.state.videoRef;
+  (0, _react.useEffect)(function () {
     var video = videoRef.current;
+    if (video && mute) video.muted = true;
+  }, [mute, videoRef]); // when the video is first rendered, set state from it where needed
 
-    if (mute) {
-      this.mute();
-    }
+  (0, _react.useEffect)(function () {
+    var video = videoRef.current;
 
     if (video) {
       // hide all captioning to start with
@@ -364,47 +136,147 @@ var Video = /*#__PURE__*/function (_Component) {
         textTracks[i].mode = 'hidden';
       }
 
-      this.restate();
+      setCurrentTime(video.currentTime);
+      setPercentagePlayed(video.currentTime / video.duration * 100);
+      setVolume(videoRef.current.volume);
+    }
+  }, [videoRef]); // turn off interacting after a while
+
+  (0, _react.useEffect)(function () {
+    var timer = setTimeout(function () {
+      if (interacting && !(0, _utils.containsFocus)(containerRef.current)) {
+        setInteracting(false);
+      }
+    }, 3000);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [interacting]);
+  (0, _react.useLayoutEffect)(function () {
+    var video = videoRef.current;
+
+    if (video) {
+      if (video.videoHeight) {
+        // set the size based on the video aspect ratio
+        var rect = video.getBoundingClientRect();
+        var ratio = rect.width / rect.height;
+        var videoRatio = video.videoWidth / video.videoHeight;
+
+        if (videoRatio > ratio) {
+          var nextHeight = rect.width / videoRatio;
+
+          if (nextHeight !== height) {
+            setHeight(nextHeight);
+            setWidth(undefined);
+          }
+        } else {
+          var nextWidth = rect.height * videoRatio;
+
+          if (nextWidth !== width) {
+            setHeight(undefined);
+            setWidth(nextWidth);
+          }
+        }
+      } // remember the state of the text tracks for subsequent rendering
+
+
+      var textTracks = video.textTracks;
+
+      if (textTracks.length > 0) {
+        if (textTracks.length === 1) {
+          var active = textTracks[0].mode === 'showing';
+
+          if (!captions || !captions[0] || captions[0].active !== active) {
+            setCaptions([{
+              active: active
+            }]);
+          }
+        } else {
+          var nextCaptions = [];
+          var set = false;
+
+          for (var i = 0; i < textTracks.length; i += 1) {
+            var track = textTracks[i];
+
+            var _active = track.mode === 'showing';
+
+            nextCaptions.push({
+              label: track.label,
+              active: _active
+            });
+
+            if (!captions || !captions[i] || captions[i].active !== _active) {
+              set = true;
+            }
+          }
+
+          if (set) {
+            setCaptions(nextCaptions);
+          }
+        }
+      }
+    }
+  }, [captions, height, videoRef, width]);
+  var play = (0, _react.useCallback)(function () {
+    return videoRef.current.play();
+  }, [videoRef]);
+  var pause = (0, _react.useCallback)(function () {
+    return videoRef.current.pause();
+  }, [videoRef]);
+  var scrub = (0, _react.useCallback)(function (event) {
+    if (scrubberRef.current) {
+      var scrubberRect = scrubberRef.current.getBoundingClientRect();
+      var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
+      setScrubTime(duration * percent);
+    }
+  }, [duration]);
+  var seek = (0, _react.useCallback)(function (event) {
+    if (scrubberRef.current) {
+      var scrubberRect = scrubberRef.current.getBoundingClientRect();
+      var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
+      videoRef.current.currentTime = duration * percent;
+    }
+  }, [duration, videoRef]);
+  var louder = (0, _react.useCallback)(function () {
+    videoRef.current.volume += VOLUME_STEP;
+  }, [videoRef]);
+  var quieter = (0, _react.useCallback)(function () {
+    videoRef.current.volume -= VOLUME_STEP;
+  }, [videoRef]);
+
+  var showCaptions = function showCaptions(index) {
+    var textTracks = videoRef.current.textTracks;
+
+    for (var i = 0; i < textTracks.length; i += 1) {
+      textTracks[i].mode = i === index ? 'showing' : 'hidden';
     }
   };
 
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    var autoPlay = this.props.autoPlay;
+  var fullscreen = (0, _react.useCallback)(function () {
+    var video = videoRef.current;
 
-    if (autoPlay && !prevProps.autoPlay) {
-      // Caller wants the video to play now.
-      this.play();
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else {
+      console.warn("This browser doesn't support fullscreen.");
     }
+  }, [videoRef]);
+  var controlsElement;
 
-    this.restate();
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    this.unmounted = true;
-  };
-
-  _proto.renderControls = function renderControls() {
-    var _this2 = this;
-
-    var _this$props = this.props,
-        controls = _this$props.controls,
-        theme = _this$props.theme;
-    var _this$state4 = this.state,
-        captions = _this$state4.captions,
-        currentTime = _this$state4.currentTime,
-        duration = _this$state4.duration,
-        interacting = _this$state4.interacting,
-        percentagePlayed = _this$state4.percentagePlayed,
-        playing = _this$state4.playing,
-        scrubberRef = _this$state4.scrubberRef,
-        scrubTime = _this$state4.scrubTime,
-        volume = _this$state4.volume;
+  if (controls) {
     var over = controls === 'over';
     var background = over ? theme.video.controls && theme.video.controls.background || {
-      color: 'dark-1',
-      opacity: 'strong'
+      color: 'background-back',
+      opacity: 'strong',
+      dark: true
     } : undefined;
-    var iconColor = over && (theme.video.icons.color || 'light-1');
+    var iconColor = over && (theme.video.icons.color || 'text');
     var formattedTime = formatTime(scrubTime || currentTime || duration);
     var Icons = {
       ClosedCaption: theme.video.icons.closedCaption,
@@ -423,13 +295,16 @@ var Video = /*#__PURE__*/function (_Component) {
         label: caption.label,
         active: caption.active,
         onClick: function onClick() {
-          return _this2.showCaptions(caption.active ? -1 : 0);
+          return showCaptions(caption.active ? -1 : 0);
         }
       };
     });
-    return /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoControls, {
+    controlsElement = /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoControls, {
       over: over,
-      active: !this.hasPlayed || controls === 'below' || over && interacting
+      active: !hasPlayed || controls === 'below' || over && interacting,
+      onBlur: function onBlur() {
+        if (!(0, _utils.containsFocus)(containerRef.current)) setInteracting(false);
+      }
     }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
@@ -442,7 +317,7 @@ var Video = /*#__PURE__*/function (_Component) {
         color: iconColor
       }),
       hoverIndicator: "background",
-      onClick: playing ? this.pause : this.play
+      onClick: playing ? pause : play
     }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
@@ -462,13 +337,11 @@ var Video = /*#__PURE__*/function (_Component) {
       tabIndex: 0,
       role: "button",
       value: scrubTime ? Math.round(scrubTime / duration * 100) : undefined,
-      onMouseMove: this.scrub,
+      onMouseMove: scrub,
       onMouseLeave: function onMouseLeave() {
-        return _this2.setState({
-          scrubTime: undefined
-        });
+        return setScrubTime(undefined);
       },
-      onClick: this.seek
+      onClick: seek
     }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'small'
@@ -488,86 +361,98 @@ var Video = /*#__PURE__*/function (_Component) {
         icon: /*#__PURE__*/_react["default"].createElement(Icons.Volume, {
           color: iconColor
         }),
-        onClick: volume <= 1 - VOLUME_STEP ? this.louder : undefined,
+        onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
         close: false
       }, {
         icon: /*#__PURE__*/_react["default"].createElement(Icons.ReduceVolume, {
           color: iconColor
         }),
-        onClick: volume >= VOLUME_STEP ? this.quieter : undefined,
+        onClick: volume >= VOLUME_STEP ? quieter : undefined,
         close: false
       }].concat(captionControls, [{
         icon: /*#__PURE__*/_react["default"].createElement(Icons.FullScreen, {
           color: iconColor
         }),
-        onClick: this.fullscreen
+        onClick: fullscreen
       }])
     })));
-  };
+  }
 
-  _proto.render = function render() {
-    var _this$props2 = this.props,
-        alignSelf = _this$props2.alignSelf,
-        autoPlay = _this$props2.autoPlay,
-        children = _this$props2.children,
-        controls = _this$props2.controls,
-        gridArea = _this$props2.gridArea,
-        loop = _this$props2.loop,
-        margin = _this$props2.margin,
-        theme = _this$props2.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "theme"]);
+  var mouseEventListeners;
 
-    var _this$state5 = this.state,
-        height = _this$state5.height,
-        videoRef = _this$state5.videoRef,
-        width = _this$state5.width;
-    var controlsElement = controls ? this.renderControls() : undefined;
-    var mouseEventListeners;
+  if (controls === 'over') {
+    mouseEventListeners = {
+      onMouseEnter: function onMouseEnter() {
+        return setInteracting(true);
+      },
+      onMouseMove: function onMouseMove() {
+        return setInteracting(true);
+      },
+      onTouchStart: function onTouchStart() {
+        return setInteracting(true);
+      }
+    };
+  }
 
-    if (controls === 'over') {
-      mouseEventListeners = {
-        onMouseEnter: this.interactionStart,
-        onMouseMove: this.interactionStart,
-        onTouchStart: this.interactionStart
+  var style;
+
+  if (rest.fit === 'contain' && controls === 'over') {
+    // constrain the size to fit the aspect ratio so the controls
+    // overlap correctly
+    if (width) {
+      style = {
+        width: width
+      };
+    } else if (height) {
+      style = {
+        height: height
       };
     }
+  }
 
-    var style;
-
-    if (rest.fit === 'contain' && controls === 'over') {
-      // constrain the size to fit the aspect ratio so the controls
-      // overlap correctly
-      if (width) {
-        style = {
-          width: width
-        };
-      } else if (height) {
-        style = {
-          height: height
-        };
-      }
-    }
-
-    return /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoContainer, _extends({}, mouseEventListeners, {
-      alignSelf: alignSelf,
-      gridArea: gridArea,
-      margin: margin,
-      style: style
-    }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
-      ref: videoRef
-    }, this.mediaEventProps, {
-      autoPlay: autoPlay || false,
-      loop: loop || false
-    }), children), controlsElement);
-  };
-
-  return Video;
-}(_react.Component);
-
-Video.defaultProps = {
-  controls: 'over'
-};
-Object.setPrototypeOf(Video.defaultProps, _defaultProps.defaultProps);
+  return /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoContainer, _extends({
+    ref: containerRef
+  }, mouseEventListeners, {
+    alignSelf: alignSelf,
+    gridArea: gridArea,
+    margin: margin,
+    style: style
+  }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
+    ref: videoRef,
+    onDurationChange: function onDurationChange(event) {
+      var video = videoRef.current;
+      setDuration(video.duration);
+      setPercentagePlayed(video.currentTime / video.duration * 100);
+      if (_onDurationChange) _onDurationChange(event);
+    },
+    onEnded: function onEnded(event) {
+      setPlaying(false);
+      if (_onEnded) _onEnded(event);
+    },
+    onPause: function onPause(event) {
+      setPlaying(false);
+      if (_onPause) _onPause(event);
+    },
+    onPlay: function onPlay(event) {
+      setPlaying(true);
+      setHasPlayed(true);
+      if (_onPlay) _onPlay(event);
+    },
+    onTimeUpdate: function onTimeUpdate(event) {
+      var video = videoRef.current;
+      setCurrentTime(video.currentTime);
+      setPercentagePlayed(video.currentTime / video.duration * 100);
+      if (_onTimeUpdate) _onTimeUpdate(event);
+    },
+    onVolumeChange: function onVolumeChange(event) {
+      setVolume(videoRef.current.volume);
+      if (_onVolumeChange) _onVolumeChange(event);
+    },
+    autoPlay: autoPlay || false,
+    loop: loop || false
+  }), children), controlsElement);
+});
+Video.displayName = 'Video';
 var VideoDoc;
 
 if (process.env.NODE_ENV !== 'production') {
@@ -575,5 +460,5 @@ if (process.env.NODE_ENV !== 'production') {
   VideoDoc = require('./doc').doc(Video);
 }
 
-var VideoWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(VideoDoc || Video);
+var VideoWrapper = VideoDoc || Video;
 exports.Video = VideoWrapper;

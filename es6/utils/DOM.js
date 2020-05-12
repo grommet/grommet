@@ -61,6 +61,16 @@ export var findScrollParents = function findScrollParents(element, horizontal) {
 
   return result;
 };
+export var containsFocus = function containsFocus(node) {
+  var element = document.activeElement;
+
+  while (element) {
+    if (element === node) break;
+    element = element.parentElement;
+  }
+
+  return !!element;
+};
 export var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) {
   var children = element.getElementsByTagName('*');
 

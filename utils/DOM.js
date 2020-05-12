@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.findVisibleParent = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.setFocusWithoutScroll = exports.getNewContainer = exports.getBodyChildElements = exports.getFirstFocusableDescendant = exports.findScrollParents = exports.findScrollParent = void 0;
+exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.findVisibleParent = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.setFocusWithoutScroll = exports.getNewContainer = exports.getBodyChildElements = exports.getFirstFocusableDescendant = exports.containsFocus = exports.findScrollParents = exports.findScrollParent = void 0;
 
 var findScrollParent = function findScrollParent(element, horizontal) {
   var result;
@@ -71,6 +71,19 @@ var findScrollParents = function findScrollParents(element, horizontal) {
 };
 
 exports.findScrollParents = findScrollParents;
+
+var containsFocus = function containsFocus(node) {
+  var element = document.activeElement;
+
+  while (element) {
+    if (element === node) break;
+    element = element.parentElement;
+  }
+
+  return !!element;
+};
+
+exports.containsFocus = containsFocus;
 
 var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) {
   var children = element.getElementsByTagName('*');

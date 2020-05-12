@@ -7,11 +7,12 @@ var FIT_MAP = {
 };
 var fitStyle = css(["flex:1 1;min-height:0;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
-});
+}); // z-index is for Safari so controls aren't hidden
+
 var StyledVideo = styled.video.withConfig({
   displayName: "StyledVideo",
   componentId: "w4v8h9-0"
-})(["max-width:100%;", "::cue{background:", ";}", ";"], function (props) {
+})(["max-width:100%;z-index:1;", "::cue{background:", ";}", ";"], function (props) {
   return props.fit && fitStyle;
 }, function (props) {
   return props.theme.video.captions.background;
@@ -25,8 +26,9 @@ var StyledVideoContainer = styled.div.withConfig({
   componentId: "w4v8h9-1"
 })(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";"], genericStyles);
 StyledVideoContainer.defaultProps = {};
-Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps);
-var positionStyle = css(["position:absolute;left:0;right:0;bottom:0;"]);
+Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps); // z-index is for Safari so controls aren't hidden
+
+var positionStyle = css(["position:absolute;left:0;right:0;bottom:0;z-index:1;"]);
 var StyledVideoControls = styled.div.withConfig({
   displayName: "StyledVideo__StyledVideoControls",
   componentId: "w4v8h9-2"
