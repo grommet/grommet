@@ -53,6 +53,15 @@ export const findScrollParents = (element, horizontal) => {
   return result;
 };
 
+export const containsFocus = node => {
+  let element = document.activeElement;
+  while (element) {
+    if (element === node) break;
+    element = element.parentElement;
+  }
+  return !!element;
+};
+
 export const getFirstFocusableDescendant = element => {
   const children = element.getElementsByTagName('*');
   for (let i = 0; i < children.length; i += 1) {
