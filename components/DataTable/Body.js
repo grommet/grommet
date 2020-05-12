@@ -3,9 +3,7 @@
 exports.__esModule = true;
 exports.Body = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _recompose = require("recompose");
+var _react = _interopRequireWildcard(require("react"));
 
 var _InfiniteScroll = require("../InfiniteScroll");
 
@@ -15,26 +13,25 @@ var _TableCell = require("../TableCell");
 
 var _Keyboard = require("../Keyboard");
 
-var _hocs = require("../hocs");
-
 var _Cell = require("./Cell");
 
 var _StyledDataTable = require("./StyledDataTable");
 
 var _buildState = require("./buildState");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Body = function Body(_ref) {
+var Body = (0, _react.forwardRef)(function (_ref, ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
       data = _ref.data,
-      forwardRef = _ref.forwardRef,
       onMore = _ref.onMore,
       replace = _ref.replace,
       onClickRow = _ref.onClickRow,
@@ -44,7 +41,7 @@ var Body = function Body(_ref) {
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "forwardRef", "onMore", "replace", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
@@ -64,7 +61,7 @@ var Body = function Body(_ref) {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
     } : undefined
   }, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
-    ref: forwardRef,
+    ref: ref,
     size: size,
     tabIndex: onClickRow ? 0 : undefined
   }, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
@@ -119,7 +116,5 @@ var Body = function Body(_ref) {
       });
     }));
   })));
-};
-
-var ButtonWrapper = (0, _recompose.compose)((0, _hocs.withFocus)(), _hocs.withForwardRef)(Body);
-exports.Body = ButtonWrapper;
+});
+exports.Body = Body;

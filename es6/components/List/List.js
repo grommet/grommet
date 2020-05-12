@@ -12,12 +12,14 @@ import { focusStyle, genericStyles } from '../../utils';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " &:focus{", "}"], function (props) {
+})(["list-style:none;", " padding:0;", " ", ""], function (props) {
   return !props.margin && 'margin: 0;';
-}, genericStyles, focusStyle({
-  forceOutline: true,
-  skipSvgChildren: true
-}));
+}, genericStyles, function (props) {
+  return props.onClickItem && "\n    &:focus {\n      " + focusStyle({
+    forceOutline: true,
+    skipSvgChildren: true
+  }) + "\n    }\n  ";
+});
 var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"

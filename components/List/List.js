@@ -28,12 +28,14 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var StyledList = _styledComponents["default"].ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " &:focus{", "}"], function (props) {
+})(["list-style:none;", " padding:0;", " ", ""], function (props) {
   return !props.margin && 'margin: 0;';
-}, _utils.genericStyles, (0, _utils.focusStyle)({
-  forceOutline: true,
-  skipSvgChildren: true
-}));
+}, _utils.genericStyles, function (props) {
+  return props.onClickItem && "\n    &:focus {\n      " + (0, _utils.focusStyle)({
+    forceOutline: true,
+    skipSvgChildren: true
+  }) + "\n    }\n  ";
+});
 
 var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "List__StyledItem",

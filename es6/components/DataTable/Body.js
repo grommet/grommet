@@ -2,23 +2,19 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
-import { compose } from 'recompose';
+import React, { forwardRef } from 'react';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Keyboard } from '../Keyboard';
-import { withFocus, withForwardRef } from '../hocs';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue } from './buildState';
-
-var Body = function Body(_ref) {
+var Body = forwardRef(function (_ref, ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
       data = _ref.data,
-      forwardRef = _ref.forwardRef,
       onMore = _ref.onMore,
       replace = _ref.replace,
       onClickRow = _ref.onClickRow,
@@ -28,7 +24,7 @@ var Body = function Body(_ref) {
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "forwardRef", "onMore", "replace", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
 
   var _React$useState = React.useState(),
       active = _React$useState[0],
@@ -48,7 +44,7 @@ var Body = function Body(_ref) {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
     } : undefined
   }, /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
-    ref: forwardRef,
+    ref: ref,
     size: size,
     tabIndex: onClickRow ? 0 : undefined
   }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
@@ -103,7 +99,5 @@ var Body = function Body(_ref) {
       });
     }));
   })));
-};
-
-var ButtonWrapper = compose(withFocus(), withForwardRef)(Body);
-export { ButtonWrapper as Body };
+});
+export { Body };

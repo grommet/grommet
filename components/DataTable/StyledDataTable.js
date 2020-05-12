@@ -49,15 +49,17 @@ var StyledDataTableRow = (0, _styledComponents["default"])(_TableRow.TableRow).w
 });
 exports.StyledDataTableRow = StyledDataTableRow;
 StyledDataTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableRow.defaultProps, _defaultProps.defaultProps);
+Object.setPrototypeOf(StyledDataTableRow.defaultProps, _defaultProps.defaultProps); // focus styling other than outline doesn't work on <tbody />
+
 var StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "xrlyjm-2"
-})(["", " ", ""], function (props) {
+})(["", " &:focus{", "}"], function (props) {
   return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
-}, function (props) {
-  return props.focus && (0, _utils.focusStyle)();
-});
+}, (0, _utils.focusStyle)({
+  skipSvgChildren: true,
+  forceOutline: true
+}));
 exports.StyledDataTableBody = StyledDataTableBody;
 StyledDataTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableBody.defaultProps, _defaultProps.defaultProps);

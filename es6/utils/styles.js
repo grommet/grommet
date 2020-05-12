@@ -103,15 +103,19 @@ var focusStyles = function focusStyles(props, _temp) {
       justBorder = _ref.justBorder;
 
   var focus = props.theme.global.focus;
-  if (!focus) return ''; // native
 
-  if (forceOutline && !focus.outline) return ''; // native
+  if (!focus || forceOutline && !focus.outline) {
+    var color = normalizeColor('focus', props.theme);
+    if (color) return "outline: 2px solid " + color + ";";
+    return ''; // native
+  }
 
   if (focus.outline && (!focus.border || !justBorder)) {
     if (typeof focus.outline === 'object') {
-      var color = normalizeColor(focus.outline.color || 'focus', props.theme);
+      var _color = normalizeColor(focus.outline.color || 'focus', props.theme);
+
       var size = focus.outline.size || '2px';
-      return "\n        outline-offset: 0px;\n        outline: " + size + " solid " + color + ";\n      ";
+      return "\n        outline-offset: 0px;\n        outline: " + size + " solid " + _color + ";\n      ";
     }
 
     return "outline: " + focus.outline + ";";
@@ -119,23 +123,23 @@ var focusStyles = function focusStyles(props, _temp) {
 
   if (focus.shadow && (!focus.border || !justBorder)) {
     if (typeof focus.shadow === 'object') {
-      var _color = normalizeColor( // If there is a focus.border.color, use that for shadow too.
+      var _color2 = normalizeColor( // If there is a focus.border.color, use that for shadow too.
       // This is for backwards compatibility in v2.
       focus.border && focus.border.color || focus.shadow.color || 'focus', props.theme);
 
       var _size = focus.shadow.size || '2px'; // backwards compatible default
 
 
-      return "\n        outline: none;\n        box-shadow: 0 0 " + _size + " " + _size + " " + _color + ";\n      ";
+      return "\n        outline: none;\n        box-shadow: 0 0 " + _size + " " + _size + " " + _color2 + ";\n      ";
     }
 
     return "\n      outline: none;\n      box-shadow: " + focus.shadow + ";\n    ";
   }
 
   if (focus.border) {
-    var _color2 = normalizeColor(focus.border.color || 'focus', props.theme);
+    var _color3 = normalizeColor(focus.border.color || 'focus', props.theme);
 
-    return "\n      outline: none;\n      border-color: " + _color2 + ";\n    ";
+    return "\n      outline: none;\n      border-color: " + _color3 + ";\n    ";
   }
 
   return ''; // defensive
