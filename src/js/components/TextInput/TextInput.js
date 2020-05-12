@@ -120,10 +120,15 @@ const TextInput = forwardRef(
     // assigns select handlers
     useEffect(() => {
       if (onSelect && !onSuggestionSelect) {
+        // only onSelect is defined - use grommet's onSelect
         handleSuggestionSelect.current = onSelect;
       } else if (!onSelect && onSuggestionSelect) {
+        // only onSuggestionSelect is defined - use grommet's onSelect
         handleSuggestionSelect.current = onSuggestionSelect;
       } else {
+        // both onSelect and onSuggestionSelect are defined -
+        // onSelect uses webAPI version
+        // onSuggestionSelect in grommet's onSelect
         handleSuggestionSelect.current = onSuggestionSelect;
         handleTextSelect.current = onSelect;
       }
@@ -391,88 +396,49 @@ const TextInput = forwardRef(
           }
           onKeyDown={onKeyDown}
         >
-          {handleTextSelect.current ? (
-            <StyledTextInput
-              ref={ref || inputRef}
-              id={id}
-              name={name}
-              autoComplete="off"
-              plain={plain}
-              placeholder={
-                typeof placeholder === 'string' ? placeholder : undefined
+          <StyledTextInput
+            {...rest}
+            ref={ref || inputRef}
+            id={id}
+            name={name}
+            autoComplete="off"
+            plain={plain}
+            placeholder={
+              typeof placeholder === 'string' ? placeholder : undefined
+            }
+            icon={icon}
+            reverse={reverse}
+            focus={focus}
+            {...rest}
+            defaultValue={renderLabel(defaultValue)}
+            value={renderLabel(value)}
+            readOnly={readOnly}
+            onFocus={event => {
+              setFocus(true);
+              if (suggestions && suggestions.length > 0) {
+                announce(messages.suggestionsExist);
+                openDrop();
               }
-              icon={icon}
-              reverse={reverse}
-              focus={focus}
-              {...rest}
-              defaultValue={renderLabel(defaultValue)}
-              value={renderLabel(value)}
-              readOnly={readOnly}
-              onFocus={event => {
-                setFocus(true);
-                if (suggestions && suggestions.length > 0) {
-                  announce(messages.suggestionsExist);
-                  openDrop();
-                }
-                if (onFocus) onFocus(event);
-              }}
-              onBlur={event => {
-                setFocus(false);
-                if (onBlur) onBlur(event);
-              }}
-              onSelect={event => {
-                if (handleTextSelect.current) {
-                  handleTextSelect.current(event);
-                }
-              }}
-              onChange={
-                readOnly
-                  ? undefined
-                  : event => {
-                      setValue(event.target.value);
-                      if (onChange) onChange(event);
-                    }
+              if (onFocus) onFocus(event);
+            }}
+            onBlur={event => {
+              setFocus(false);
+              if (onBlur) onBlur(event);
+            }}
+            onSelect={event => {
+              if (handleTextSelect.current) {
+                handleTextSelect.current(event);
               }
-            />
-          ) : (
-            <StyledTextInput
-              ref={ref || inputRef}
-              id={id}
-              name={name}
-              autoComplete="off"
-              plain={plain}
-              placeholder={
-                typeof placeholder === 'string' ? placeholder : undefined
-              }
-              icon={icon}
-              reverse={reverse}
-              focus={focus}
-              {...rest}
-              defaultValue={renderLabel(defaultValue)}
-              value={renderLabel(value)}
-              readOnly={readOnly}
-              onFocus={event => {
-                setFocus(true);
-                if (suggestions && suggestions.length > 0) {
-                  announce(messages.suggestionsExist);
-                  openDrop();
-                }
-                if (onFocus) onFocus(event);
-              }}
-              onBlur={event => {
-                setFocus(false);
-                if (onBlur) onBlur(event);
-              }}
-              onChange={
-                readOnly
-                  ? undefined
-                  : event => {
-                      setValue(event.target.value);
-                      if (onChange) onChange(event);
-                    }
-              }
-            />
-          )}
+            }}
+            onChange={
+              readOnly
+                ? undefined
+                : event => {
+                    setValue(event.target.value);
+                    if (onChange) onChange(event);
+                  }
+            }
+          />
         </Keyboard>
         {drop}
       </StyledTextInputContainer>

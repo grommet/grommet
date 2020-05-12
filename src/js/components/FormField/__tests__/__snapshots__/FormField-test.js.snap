@@ -419,6 +419,7 @@ exports[`FormField custom label 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
+              onSelect={[Function]}
             />
           </div>
         </div>
@@ -577,6 +578,7 @@ exports[`FormField default 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
+            onSelect={[Function]}
           />
         </div>
       </div>
@@ -744,6 +746,7 @@ exports[`FormField disabled 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
+              onSelect={[Function]}
             />
           </div>
         </div>
@@ -912,6 +915,7 @@ exports[`FormField disabled with custom label 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
+              onSelect={[Function]}
             />
           </div>
         </div>
@@ -1834,6 +1838,7 @@ exports[`FormField required 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
+              onSelect={[Function]}
             />
           </div>
         </div>
