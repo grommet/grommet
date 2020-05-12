@@ -1,7 +1,68 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { grommet, Box, Button, Grommet, Heading } from 'grommet';
+
+const newCustomTheme = {
+  global: {
+    colors: {
+      brand: '#ee9933',
+      'brand-contrast': '#ee993333',
+      active: '#eecc33',
+    },
+    font: { family: 'Arial' },
+  },
+  button: {
+    default: {
+      color: 'text',
+      border: undefined,
+      padding: {
+        horizontal: '12px',
+        vertical: '8px',
+      },
+    },
+    primary: {
+      background: { color: 'brand' },
+      border: undefined,
+      color: 'text-strong',
+      font: { weight: 'bold' },
+      padding: {
+        horizontal: '12px',
+        vertical: '8px',
+      },
+    },
+    secondary: {
+      border: { color: 'brand', width: '4px' },
+      color: 'text',
+      padding: {
+        horizontal: '8px',
+        vertical: '4px',
+      },
+    },
+    active: {
+      background: { color: 'brand-contrast' },
+      color: 'text',
+      secondary: {
+        background: 'none',
+        border: {
+          color: 'brand-contrast',
+        },
+      },
+    },
+    disabled: {
+      opacity: 0.3,
+      secondary: {
+        border: { color: 'text-weak' },
+      },
+    },
+    hover: {
+      background: { color: 'active' },
+      secondary: {
+        border: { color: 'active' },
+      },
+    },
+  },
+};
 
 const customTheme = {
   global: {
@@ -65,6 +126,43 @@ const coloredButton = {
 
 const CustomTheme = () => (
   <>
+    <Grommet theme={newCustomTheme}>
+      <Box gap="small" pad="large">
+        <Heading level={2} size="small">
+          new custom theme
+        </Heading>
+        <Box align="center" direction="row" gap="small">
+          <Button label="default" onClick={() => {}} />
+          <Button label="active default" onClick={() => {}} active />
+          <Button label="disabled default" onClick={() => {}} disabled />
+        </Box>
+        <Box align="center" direction="row" gap="small">
+          <Button label="primary" onClick={() => {}} primary />
+          <Button label="active primary" onClick={() => {}} primary active />
+          <Button
+            label="disabled primary"
+            onClick={() => {}}
+            primary
+            disabled
+          />
+        </Box>
+        <Box align="center" direction="row" gap="small">
+          <Button label="secondary" onClick={() => {}} secondary />
+          <Button
+            label="active secondary"
+            onClick={() => {}}
+            secondary
+            active
+          />
+          <Button
+            label="disabled secondary"
+            onClick={() => {}}
+            secondary
+            disabled
+          />
+        </Box>
+      </Box>
+    </Grommet>
     <Grommet theme={customTheme}>
       <Box
         align="center"

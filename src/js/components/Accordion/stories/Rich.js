@@ -229,7 +229,7 @@ const RichAccordion = () => {
                   }}
                   gap="medium"
                 >
-                  Yeah believe me, this channel has 2,000 members.
+                  Yeah believe me, this channel has 3,000 members.
                 </Box>
               </RichPanel>
             </Accordion>

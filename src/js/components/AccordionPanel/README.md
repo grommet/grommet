@@ -28,9 +28,10 @@ div
 ```
 ## Theme
   
-**accordion.hover.color**
+**accordion.hover.heading.color**
 
-The hover color used for an accordion panel control. Expects `string | { dark: string, light: string }`.
+The text color of the heading when hovered. 
+    backward compatible with accordion.hover.color Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -40,7 +41,7 @@ Defaults to
 
 **accordion.heading.level**
 
-The heading level used for the accordion. Expects `number`.
+The heading level. Expects `number`.
 
 Defaults to
 
@@ -50,7 +51,7 @@ Defaults to
 
 **accordion.heading.margin**
 
-The margin size around heading in accordion. Expects `string`.
+The margin size around the heading. Expects `string`.
 
 Defaults to
 
@@ -90,7 +91,7 @@ Defaults to
 
 **accordion.border.color**
 
-The border color to use in the accordion. Expects `string | { dark: string, light: string }`.
+The border color to use in the accordion panel content. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -100,10 +101,51 @@ border
 
 **accordion.border.side**
 
-The border side to use in the accordion. Expects `string`.
+The border side to use in the accordion panel content. Expects `string`.
 
 Defaults to
 
 ```
 bottom
+```
+
+**accordion.panel.border.color**
+
+The border color to use on the accordion panel. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**accordion.panel.border.side**
+
+The border side to use on the accordion panel. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**accordion.panel.border.size**
+
+The border size of the accordion panel. Expects `xsmall | small | medium | large | xlarge`.
+
+Defaults to
+
+```
+undefined
+```
+
+**accordion.panel.border.style**
+
+The border style of the accordion panel. Expects `solid | dashed | dotted | double| groove | ridge 
+      | inset | outset | hidden`.
+
+Defaults to
+
+```
+undefined
 ```

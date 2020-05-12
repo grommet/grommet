@@ -56,6 +56,6 @@ const CustomHeaderAccordion = () => {
   );
 };
 
-storiesOf('Accordion', module).add('Custom Header', () => (
+storiesOf('Accordion', module).add('Header', () => (
   <CustomHeaderAccordion />
 ));

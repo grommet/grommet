@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  disabledStyle,
   focusStyle,
   getInputPadBySide,
   inputStyle,
@@ -39,6 +40,12 @@ export const StyledMaskedInput = styled.input`
   }
 
   ${props => props.focus && !props.plain && focusStyle()};
+  ${props =>
+    props.disabled &&
+    disabledStyle(
+      props.theme.maskedInput.disabled &&
+        props.theme.maskedInput.disabled.opacity,
+    )}
   ${props => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 
