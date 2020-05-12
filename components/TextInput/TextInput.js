@@ -72,7 +72,8 @@ var defaultMessages = {
   suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate'
 };
 var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
-  var defaultValue = _ref.defaultValue,
+  var a11yTitle = _ref.a11yTitle,
+      defaultValue = _ref.defaultValue,
       _ref$dropAlign = _ref.dropAlign,
       dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
       dropHeight = _ref.dropHeight,
@@ -96,7 +97,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       reverse = _ref.reverse,
       suggestions = _ref.suggestions,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -332,6 +333,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
     } : undefined,
     onKeyDown: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInput, _extends({
+    "aria-label": a11yTitle,
     ref: ref || inputRef,
     id: id,
     name: name,

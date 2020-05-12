@@ -18,6 +18,14 @@ describe('Select', function () {
     }));
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('a11yTitle', function () {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
+      a11yTitle: "aria-test",
+      id: "test-select",
+      options: ['one']
+    }));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('0 value', function () {
     var component = renderer.create( /*#__PURE__*/React.createElement(Select, {
       id: "test-select",

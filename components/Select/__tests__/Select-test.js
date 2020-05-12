@@ -29,6 +29,15 @@ describe('Select', function () {
 
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('a11yTitle', function () {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_2.Select, {
+      a11yTitle: "aria-test",
+      id: "test-select",
+      options: ['one']
+    }));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('0 value', function () {
     var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_2.Select, {
       id: "test-select",

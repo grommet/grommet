@@ -23,31 +23,40 @@ describe('TextInput', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('disabled', function () {
+  test('a11yTitle', function () {
     var _render2 = render( /*#__PURE__*/React.createElement(TextInput, {
-      disabled: true,
+      a11yTitle: "aria-test",
       name: "item"
     })),
         container = _render2.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('icon', function () {
+  test('disabled', function () {
     var _render3 = render( /*#__PURE__*/React.createElement(TextInput, {
-      icon: /*#__PURE__*/React.createElement(Search, null),
+      disabled: true,
       name: "item"
     })),
         container = _render3.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('icon reverse', function () {
+  test('icon', function () {
     var _render4 = render( /*#__PURE__*/React.createElement(TextInput, {
+      icon: /*#__PURE__*/React.createElement(Search, null),
+      name: "item"
+    })),
+        container = _render4.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('icon reverse', function () {
+    var _render5 = render( /*#__PURE__*/React.createElement(TextInput, {
       icon: /*#__PURE__*/React.createElement(Search, null),
       reverse: true,
       name: "item"
     })),
-        container = _render4.container;
+        container = _render5.container;
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -55,7 +64,7 @@ describe('TextInput', function () {
     var onChange = jest.fn();
     var onFocus = jest.fn();
 
-    var _render5 = render( /*#__PURE__*/React.createElement(TextInput, {
+    var _render6 = render( /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -63,8 +72,8 @@ describe('TextInput', function () {
       onChange: onChange,
       onFocus: onFocus
     })),
-        getByTestId = _render5.getByTestId,
-        container = _render5.container;
+        getByTestId = _render6.getByTestId,
+        container = _render6.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
@@ -86,7 +95,7 @@ describe('TextInput', function () {
     }, 50);
   });
   test('complex suggestions', function (done) {
-    var _render6 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+    var _render7 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -97,8 +106,8 @@ describe('TextInput', function () {
         value: 'test1'
       }]
     }))),
-        getByTestId = _render6.getByTestId,
-        container = _render6.container;
+        getByTestId = _render7.getByTestId,
+        container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
@@ -118,14 +127,14 @@ describe('TextInput', function () {
     }, 50);
   });
   test('close suggestion drop', function (done) {
-    var _render7 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+    var _render8 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
       suggestions: ['test', 'test1']
     }))),
-        getByTestId = _render7.getByTestId,
-        container = _render7.container;
+        getByTestId = _render8.getByTestId,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
@@ -151,14 +160,14 @@ describe('TextInput', function () {
   test('let escape events propagage if there are no suggestions', function (done) {
     var callback = jest.fn();
 
-    var _render8 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Keyboard, {
+    var _render9 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Keyboard, {
       onEsc: callback
     }, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item"
     })))),
-        getByTestId = _render8.getByTestId;
+        getByTestId = _render9.getByTestId;
 
     fireEvent.change(getByTestId('test-input'), {
       target: {
@@ -178,14 +187,14 @@ describe('TextInput', function () {
   test('calls onSuggestionsOpen', function (done) {
     var onSuggestionsOpen = jest.fn();
 
-    var _render9 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+    var _render10 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
       suggestions: ['test', 'test1'],
       onSuggestionsOpen: onSuggestionsOpen
     }))),
-        getByTestId = _render9.getByTestId;
+        getByTestId = _render10.getByTestId;
 
     fireEvent.focus(getByTestId('test-input'));
     setTimeout(function () {
@@ -197,15 +206,15 @@ describe('TextInput', function () {
   test('calls onSuggestionsClose', function (done) {
     var onSuggestionsClose = jest.fn();
 
-    var _render10 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+    var _render11 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
       suggestions: ['test', 'test1'],
       onSuggestionsClose: onSuggestionsClose
     }))),
-        getByTestId = _render10.getByTestId,
-        container = _render10.container;
+        getByTestId = _render11.getByTestId,
+        container = _render11.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
@@ -227,7 +236,7 @@ describe('TextInput', function () {
   test('select suggestion', function (done) {
     var onSelect = jest.fn();
 
-    var _render11 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+    var _render12 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       plain: true,
       size: "large",
@@ -236,8 +245,8 @@ describe('TextInput', function () {
       suggestions: ['test', 'test1'],
       onSelect: onSelect
     }))),
-        getByTestId = _render11.getByTestId,
-        container = _render11.container;
+        getByTestId = _render12.getByTestId,
+        container = _render12.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
@@ -260,7 +269,7 @@ describe('TextInput', function () {
   test('select a suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render12 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+    var _render13 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -269,8 +278,8 @@ describe('TextInput', function () {
       }],
       onSelect: onSelect
     }))),
-        getByTestId = _render12.getByTestId,
-        container = _render12.container;
+        getByTestId = _render13.getByTestId,
+        container = _render13.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input'); // pressing enter here nothing will happen
@@ -302,14 +311,14 @@ describe('TextInput', function () {
   test('handles next and previous without suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render13 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+    var _render14 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
       onSelect: onSelect
     }))),
-        getByTestId = _render13.getByTestId,
-        container = _render13.container;
+        getByTestId = _render14.getByTestId,
+        container = _render14.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input');
@@ -331,14 +340,14 @@ describe('TextInput', function () {
   });
   ['small', 'medium', 'large'].forEach(function (dropHeight) {
     test(dropHeight + " drop height", function (done) {
-      var _render14 = render( /*#__PURE__*/React.createElement(TextInput, {
+      var _render15 = render( /*#__PURE__*/React.createElement(TextInput, {
         "data-testid": "test-input",
         id: "item",
         name: "item",
         suggestions: ['test', 'test1'],
         dropHeight: dropHeight
       })),
-          getByTestId = _render14.getByTestId;
+          getByTestId = _render15.getByTestId;
 
       fireEvent.focus(getByTestId('test-input'));
       setTimeout(function () {
@@ -348,21 +357,21 @@ describe('TextInput', function () {
     });
   });
   test('should return focus to input on select', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var onSelect, _render15, getByPlaceholderText, input, selection;
+    var onSelect, _render16, getByPlaceholderText, input, selection;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             onSelect = jest.fn();
-            _render15 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+            _render16 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
               "data-testid": "test-input-focus",
               id: "input-focus",
               name: "input-focus",
               placeholder: "Type to search...",
               suggestions: ['option0', 'option1', 'option2'],
               onSelect: onSelect
-            }))), getByPlaceholderText = _render15.getByPlaceholderText;
+            }))), getByPlaceholderText = _render16.getByPlaceholderText;
             input = getByPlaceholderText('Type to search...');
             expect(document.activeElement).not.toEqual(input);
             fireEvent.focus(input);
@@ -385,7 +394,7 @@ describe('TextInput', function () {
     }, _callee);
   })));
   test('should return focus to ref on select', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-    var inputRef, onSelect, _render16, getByPlaceholderText, input, selection;
+    var inputRef, onSelect, _render17, getByPlaceholderText, input, selection;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -395,7 +404,7 @@ describe('TextInput', function () {
               current: {}
             };
             onSelect = jest.fn();
-            _render16 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
+            _render17 = render( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(TextInput, {
               "data-testid": "test-input-focus",
               id: "input-focus",
               name: "input-focus",
@@ -403,7 +412,7 @@ describe('TextInput', function () {
               suggestions: ['option0', 'option1', 'option2'],
               onSelect: onSelect,
               ref: inputRef
-            }))), getByPlaceholderText = _render16.getByPlaceholderText;
+            }))), getByPlaceholderText = _render17.getByPlaceholderText;
             input = getByPlaceholderText('Type to search...');
             expect(document.activeElement).not.toEqual(input);
             fireEvent.focus(input);

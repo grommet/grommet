@@ -239,7 +239,7 @@ var Select = forwardRef(function (_ref, ref) {
     flex: true,
     basis: "auto"
   }, selectValue || /*#__PURE__*/React.createElement(SelectTextInput, _extends({
-    a11yTitle: a11yTitle && "" + a11yTitle + (typeof value === 'string' ? ", " + value : ''),
+    a11yTitle: a11yTitle && "" + a11yTitle + (value && typeof value === 'string' ? ", " + value : ''),
     id: id ? id + "__input" : undefined,
     name: name,
     ref: inputRef
