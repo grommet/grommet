@@ -246,7 +246,7 @@ const Select = forwardRef(
                   a11yTitle={
                     a11yTitle &&
                     `${a11yTitle}${
-                      typeof value === 'string' ? `, ${value}` : ''
+                      value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
                   id={id ? `${id}__input` : undefined}
