@@ -18,7 +18,9 @@ var Tabs = forwardRef(function (_ref, ref) {
       messages = _ref$messages === void 0 ? {
     tabContents: 'Tab Contents'
   } : _ref$messages,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages"]);
+      _ref$responsive = _ref.responsive,
+      responsive = _ref$responsive === void 0 ? true : _ref$responsive,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages", "responsive"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var propsActiveIndex = rest.activeIndex,
@@ -77,7 +79,8 @@ var Tabs = forwardRef(function (_ref, ref) {
     ref: ref,
     as: Box,
     role: "tablist",
-    flex: flex
+    flex: flex,
+    responsive: responsive
   }, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/React.createElement(StyledTabsHeader, {
