@@ -21,9 +21,9 @@ export interface DataChartProps {
   gridArea?: GridAreaType,
   margin?: MarginType;
   pad?: GridProps["pad"];
-  steps?: number[][];
+  steps?: [number, number];
   thickness?: ChartProps["thickness"];
-  xAxis?: boolean | { guide?: boolean, key?: string, render?: (index:number) => (any) };
+  xAxis?: boolean | { guide?: boolean, key?: string, render?: (index:number) => (void) };
   yAxis?: boolean | { guide?: boolean };
 }
 
