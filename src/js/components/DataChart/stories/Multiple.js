@@ -22,15 +22,15 @@ const MultipleDataChart = () => (
           {
             key: 'percent',
             type: 'area',
+            thickness: 'xsmall',
             color: { color: 'graph-0', opacity: 'medium' },
           },
-          { key: 'percent', type: 'line', round: true },
+          { key: 'percent', type: 'line', thickness: 'xsmall', round: true },
           { key: 'percent', type: 'bar', thickness: 'hair' },
           { key: 'percent', type: 'point', round: true, thickness: 'medium' },
         ]}
         xAxis={{
           guide: true,
-          background: 'brand',
           render: i => (
             <Box pad="xsmall" align="start">
               <Text>
@@ -44,7 +44,6 @@ const MultipleDataChart = () => (
         }}
         yAxis={{ guide: true }}
         steps={[1, 2]}
-        thickness="xsmall"
         gap="medium"
         pad="small"
       />
