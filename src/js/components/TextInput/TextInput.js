@@ -397,7 +397,6 @@ const TextInput = forwardRef(
           onKeyDown={onKeyDown}
         >
           <StyledTextInput
-            {...rest}
             ref={ref || inputRef}
             id={id}
             name={name}
@@ -424,11 +423,6 @@ const TextInput = forwardRef(
             onBlur={event => {
               setFocus(false);
               if (onBlur) onBlur(event);
-            }}
-            onSelect={event => {
-              if (handleTextSelect.current) {
-                handleTextSelect.current(event);
-              }
             }}
             onChange={
               readOnly

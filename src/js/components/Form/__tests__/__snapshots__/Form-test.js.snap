@@ -1485,7 +1485,6 @@ exports[`Form errors 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              onSelect={[Function]}
             />
           </div>
         </div>
@@ -1651,7 +1650,6 @@ exports[`Form infos 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              onSelect={[Function]}
             />
           </div>
         </div>
@@ -2579,7 +2577,6 @@ exports[`Form with field 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              onSelect={[Function]}
             />
           </div>
         </div>
