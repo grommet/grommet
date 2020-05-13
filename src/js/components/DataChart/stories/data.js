@@ -6,6 +6,5 @@ for (let i = 0; i < 8; i += 1) {
     name: `Name ${i + 1}`,
     date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
     percent: Math.abs(v * 100),
-    paid: (v * 17) % 1000,
   });
 }
