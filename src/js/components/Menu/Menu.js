@@ -1,7 +1,6 @@
 import React, { forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -295,20 +294,6 @@ const Menu = forwardRef((props, ref) => {
     </Keyboard>
   );
 });
-
-Menu.propTypes = {
-  dropAlign: PropTypes.shape({
-    top: PropTypes.string,
-    left: PropTypes.string,
-  }),
-  dropProps: PropTypes.shape({}),
-  items: PropTypes.arrayOf({}),
-  messages: PropTypes.shape({
-    openMenu: PropTypes.string,
-    closeMenu: PropTypes.string,
-  }),
-  justifyContent: PropTypes.string,
-};
 
 Menu.defaultProps = {
   dropAlign: {

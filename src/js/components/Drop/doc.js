@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { OVERFLOW_VALUES } from '../Box/doc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 // if you update values here, make sure to update in Box/doc too.
 const dropOverflowPropTypes = PropTypes.oneOfType([

@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
@@ -103,8 +104,18 @@ export const doc = DataTable => {
         search: PropTypes.bool,
         sortable: PropTypes.bool,
         size: PropTypes.oneOfType([
-          PropTypes.oneOf(['small', 'medium', 'large', 'xlarge',
-            '1/2', '1/4', '2/4', '3/4', '1/3', '2/3']),
+          PropTypes.oneOf([
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            '1/2',
+            '1/4',
+            '2/4',
+            '3/4',
+            '1/3',
+            '2/3',
+          ]),
           PropTypes.string,
         ]),
         verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
