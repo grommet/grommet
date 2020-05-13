@@ -17,6 +17,15 @@ const BasicButtons = props => (
     <Box align="center" pad="medium">
       <Button primary label="Primary" onClick={() => {}} {...props} />
     </Box>
+    <Box align="center" pad="medium">
+      <Button
+        primary
+        label="Active Primary"
+        active
+        onClick={() => {}}
+        {...props}
+      />
+    </Box>
   </Grommet>
 );
 

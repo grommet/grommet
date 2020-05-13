@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import {
   disabledStyle,
+  getInputPadBySide,
   focusStyle,
   inputStyle,
   parseMetricToNum,
@@ -18,6 +19,7 @@ const sizeStyle = props => {
 };
 
 const plainStyle = css`
+  outline: none;
   border: none;
 `;
 
@@ -39,7 +41,7 @@ const StyledTextInput = styled.input`
     outline: none;
   }
 
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.focus && !props.plain && focusStyle()};
   ${props =>
     props.disabled &&
     disabledStyle(
@@ -67,7 +69,7 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 const StyledPlaceholder = styled.div`
   position: absolute;
   left: ${props =>
-    parseMetricToNum(props.theme.global.input.padding) -
+    parseMetricToNum(getInputPadBySide(props, 'left')) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
   transform: translateY(-50%);
@@ -93,8 +95,8 @@ const StyledIcon = styled.div`
   pointer-events: none;
   ${props =>
     props.reverse
-      ? `right: ${props.theme.global.input.padding};`
-      : `left: ${props.theme.global.input.padding};`}
+      ? `right: ${getInputPadBySide(props, 'right')};`
+      : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
 const StyledSuggestions = styled.ol`

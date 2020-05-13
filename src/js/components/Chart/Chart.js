@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
@@ -18,6 +19,7 @@ const Chart = React.forwardRef(
     {
       bounds: propsBounds,
       color,
+      dash,
       gap,
       id,
       onClick,
@@ -32,7 +34,7 @@ const Chart = React.forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [values, setValues] = useState([]);
     const [bounds, setBounds] = useState([
       [0, 0],
@@ -42,7 +44,7 @@ const Chart = React.forwardRef(
     const [size, setSize] = useState([0, 0]);
     const [scale, setScale] = useState([1, 1]);
     const [strokeWidth, setStrokeWidth] = useState(0);
-    const containerRef = ref || useRef();
+    const containerRef = useRef();
 
     // calculations
     useEffect(() => {
@@ -111,13 +113,13 @@ const Chart = React.forwardRef(
 
     // set container size when we get ref or when size changes
     if (
-      containerRef.current &&
+      (ref || containerRef).current &&
       propsSize &&
       (propsSize === 'full' ||
         propsSize.height === 'full' ||
         propsSize.width === 'full')
     ) {
-      const containerNode = containerRef.current;
+      const containerNode = (ref || containerRef).current;
       if (containerNode) {
         const { parentNode } = containerNode;
         if (parentNode) {
@@ -135,7 +137,7 @@ const Chart = React.forwardRef(
     // container size, if needed
     useEffect(() => {
       const onResize = () => {
-        const { parentNode } = containerRef.current;
+        const { parentNode } = (ref || containerRef).current;
         const rect = parentNode.getBoundingClientRect();
         setContainerSize([rect.width, rect.height]);
       };
@@ -150,9 +152,18 @@ const Chart = React.forwardRef(
         return () => window.removeEventListener('resize', onResize);
       }
       return undefined;
-    }, [containerRef, propsSize]);
+    }, [containerRef, propsSize, ref]);
 
     const useGradient = color && Array.isArray(color);
+
+    let strokeDasharray;
+    if (dash) {
+      if (round) {
+        strokeDasharray = `${strokeWidth} ${strokeWidth * 1.5}`;
+      } else {
+        strokeDasharray = `${strokeWidth * 2} ${strokeWidth / 2}`;
+      }
+    }
 
     const renderBars = () =>
       (values || []).map((valueArg, index) => {
@@ -183,7 +194,13 @@ const Chart = React.forwardRef(
           return (
             <g key={key} fill="none">
               <title>{label}</title>
-              <path d={d} {...hoverProps} {...clickProps} {...valueRest} />
+              <path
+                d={d}
+                {...hoverProps}
+                {...clickProps}
+                {...valueRest}
+                strokeDasharray={strokeDasharray}
+              />
             </g>
           );
         }
@@ -212,7 +229,12 @@ const Chart = React.forwardRef(
 
       return (
         <g fill="none">
-          <path d={d} {...hoverProps} {...clickProps} />
+          <path
+            d={d}
+            {...hoverProps}
+            {...clickProps}
+            strokeDasharray={strokeDasharray}
+          />
         </g>
       );
     };
@@ -404,7 +426,7 @@ const Chart = React.forwardRef(
 
     return (
       <StyledChart
-        ref={containerRef}
+        ref={ref || containerRef}
         id={id}
         viewBox={viewBox}
         preserveAspectRatio="none"

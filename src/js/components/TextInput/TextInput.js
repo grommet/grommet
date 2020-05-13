@@ -1,6 +1,7 @@
 import React, {
   forwardRef,
   isValidElement,
+  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -56,24 +57,28 @@ const ContainerBox = styled(Box)`
   }
 `;
 
+const defaultDropAlign = { top: 'bottom', left: 'left' };
+
+const defaultMessages = {
+  enterSelect: '(Press Enter to Select)',
+  suggestionsCount: 'suggestions available',
+  suggestionsExist: 'This input has suggestions use arrow keys to navigate',
+  suggestionIsOpen:
+    'Suggestions drop is open, continue to use arrow keys to navigate',
+};
+
 const TextInput = forwardRef(
   (
     {
+      a11yTitle,
       defaultValue,
-      dropAlign = { top: 'bottom', left: 'left' },
+      dropAlign = defaultDropAlign,
       dropHeight,
       dropTarget,
       dropProps,
       icon,
       id,
-      messages = {
-        enterSelect: '(Press Enter to Select)',
-        suggestionsCount: 'suggestions available',
-        suggestionsExist:
-          'This input has suggestions use arrow keys to navigate',
-        suggestionIsOpen:
-          'Suggestions drop is open, continue to use arrow keys to navigate',
-      },
+      messages = defaultMessages,
       name,
       onBlur,
       onChange,
@@ -84,6 +89,7 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
+      readOnly,
       reverse,
       suggestions,
       value: valueProp,
@@ -99,7 +105,12 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     const suggestionRefs = {};
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    // if this is a readOnly property, don't set a name with the form context
+    // this allows Select to control the form context for the name.
+    const [value, setValue] = formContext.useFormContext(
+      readOnly ? undefined : name,
+      valueProp,
+    );
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
@@ -111,6 +122,19 @@ const TextInput = forwardRef(
         if (onSuggestionsClose) onSuggestionsClose();
       }
     }, [onSuggestionsClose, showDrop, suggestions]);
+
+    // If we have suggestions and focus, open drop if it's closed.
+    // This can occur when suggestions are tied to the value.
+    // We don't want focus or showDrop in the dependencies because we
+    // don't want to open the drop just because Esc close it.
+    /* eslint-disable react-hooks/exhaustive-deps */
+    useEffect(() => {
+      if (focus && !showDrop && suggestions && suggestions.length) {
+        setShowDrop(true);
+        if (onSuggestionsOpen) onSuggestionsOpen();
+      }
+    }, [onSuggestionsOpen, suggestions]);
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
 
@@ -166,18 +190,24 @@ const TextInput = forwardRef(
       }
     }, [activeSuggestionIndex, suggestionRefs]);
 
-    const openDrop = () => {
+    const openDrop = useCallback(() => {
       setShowDrop(true);
       announce(messages.suggestionIsOpen);
       announce(`${suggestions.length} ${messages.suggestionsCount}`);
       if (onSuggestionsOpen) onSuggestionsOpen();
-    };
+    }, [
+      announce,
+      messages.suggestionsCount,
+      messages.suggestionIsOpen,
+      onSuggestionsOpen,
+      suggestions,
+    ]);
 
-    const closeDrop = () => {
+    const closeDrop = useCallback(() => {
       setShowDrop(false);
       if (messages.onSuggestionsClose) onSuggestionsClose();
       if (onSuggestionsClose) onSuggestionsClose();
-    };
+    }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
     const onNextSuggestion = event => {
       event.preventDefault();
@@ -234,12 +264,15 @@ const TextInput = forwardRef(
             >
               <StyledSuggestions>
                 <InfiniteScroll items={suggestions} step={theme.select.step}>
-                  {(suggestion, index) => {
+                  {(suggestion, index, itemRef) => {
                     const plainLabel =
                       typeof suggestion === 'object' &&
                       typeof isValidElement(suggestion.label);
                     return (
-                      <li key={`${stringLabel(suggestion)}-${index}`}>
+                      <li
+                        key={`${stringLabel(suggestion)}-${index}`}
+                        ref={itemRef}
+                      >
                         <Button
                           active={
                             activeSuggestionIndex === index ||
@@ -345,6 +378,7 @@ const TextInput = forwardRef(
           onKeyDown={onKeyDown}
         >
           <StyledTextInput
+            aria-label={a11yTitle}
             ref={ref || inputRef}
             id={id}
             name={name}
@@ -358,7 +392,8 @@ const TextInput = forwardRef(
             focus={focus}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
-            value={renderLabel(value) || ''}
+            value={renderLabel(value)}
+            readOnly={readOnly}
             onFocus={event => {
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
@@ -371,10 +406,14 @@ const TextInput = forwardRef(
               setFocus(false);
               if (onBlur) onBlur(event);
             }}
-            onChange={event => {
-              setValue(event.target.value);
-              if (onChange) onChange(event);
-            }}
+            onChange={
+              readOnly
+                ? undefined
+                : event => {
+                    setValue(event.target.value);
+                    if (onChange) onChange(event);
+                  }
+            }
           />
         </Keyboard>
         {drop}

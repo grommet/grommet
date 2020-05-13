@@ -38,6 +38,11 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('disabled', () => {
+    const { container } = render(<MaskedInput disabled name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('mask', async () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
@@ -91,7 +96,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChange}
       />,
     );
@@ -123,7 +127,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChange}
       />,
     );
@@ -172,7 +175,6 @@ describe('MaskedInput', () => {
         data-testid="test-input"
         id="item"
         name="item"
-        value=""
         mask={[
           {
             length: [1, 2],
@@ -218,7 +220,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChangeMock}
       />,
     );
@@ -265,7 +266,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChangeMock}
       />,
     );
@@ -328,7 +328,6 @@ describe('MaskedInput', () => {
             },
             { fixed: '!' },
           ]}
-          value=""
           onChange={onChange}
         />
       </Grommet>,
