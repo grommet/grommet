@@ -48,6 +48,6 @@ const DesignerDataChart = () => (
   </Grommet>
 );
 
-storiesOf('Typescript/DataChart', module).add('Multiple', () => (
+storiesOf('DataChart', module).add('Designer', () => (
   <DesignerDataChart />
 ));
