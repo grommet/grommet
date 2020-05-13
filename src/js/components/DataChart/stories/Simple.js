@@ -3,7 +3,15 @@ import { storiesOf } from '@storybook/react';
 
 import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { data } from './data';
+
+const data = [];
+for (let i = 0; i < 8; i += 1) {
+  const v = Math.sin(i / 2.0);
+  data.push({
+    date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
+    percent: Math.abs(v * 100),
+  });
+}
 
 const SimpleDataChart = () => (
   <Grommet theme={grommet}>
