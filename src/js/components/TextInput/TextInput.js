@@ -247,6 +247,9 @@ const TextInput = forwardRef(
       placeholder && typeof placeholder !== 'string' && !value;
 
     let drop;
+    const extraProps = {
+      onSelect: handleTextSelect.current && handleTextSelect.current,
+    };
     if (showDrop) {
       drop = (
         // keyboard access needed here in case user clicks
@@ -409,6 +412,7 @@ const TextInput = forwardRef(
             reverse={reverse}
             focus={focus}
             {...rest}
+            {...extraProps}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}
