@@ -28,6 +28,7 @@ const DesignerDataChart = () => (
         ]}
         xAxis={{
           guide: true,
+          labels: 7,
           render: i => (
             <Text>
               {new Date(data[i].date).toLocaleDateString('en-US', {
@@ -38,9 +39,9 @@ const DesignerDataChart = () => (
         }}
         yAxis={{
           guide: true,
+          labels: 4,
           render: text => <Text>${text}</Text>,
         }}
-        steps={[7, 4]}
         gap="small"
         pad={{ horizontal: 'medium', vertical: 'small' }}
       />

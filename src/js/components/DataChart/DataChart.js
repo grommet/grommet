@@ -16,7 +16,6 @@ const DataChart = ({
   data,
   pad: padProp,
   size,
-  steps = [1, 1],
   thickness: thicknessProp,
   xAxis,
   yAxis,
@@ -66,6 +65,11 @@ const DataChart = ({
 
   // calculate axis, bounds and thickness
   const { axis, bounds, thickness } = useMemo(() => {
+    const steps = [];
+    if (xAxis && xAxis.labels >= 0) steps[0] = xAxis.labels - 1;
+    else steps[0] = keyValues[Object.keys(keyValues)[0]].length - 1; // all
+    if (yAxis && yAxis.labels >= 0) steps[1] = yAxis.labels - 1;
+    else steps[1] = 1; // ends
     let tmpAxis;
     let tmpBounds;
     let tmpThickness = thicknessProp;
@@ -81,7 +85,7 @@ const DataChart = ({
       });
     });
     return { axis: tmpAxis, bounds: tmpBounds, thickness: tmpThickness };
-  }, [charts, chartValues, steps, thicknessProp]);
+  }, [charts, chartValues, keyValues, thicknessProp, xAxis, yAxis]);
 
   // set the pad to have the thickness, if not defined
   const pad = useMemo(() => {

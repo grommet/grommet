@@ -5,7 +5,7 @@ import { Box, DataChart, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const data = [];
-for (let i = 0; i < 8; i += 1) {
+for (let i = 0; i < 7; i += 1) {
   data.push({
     date: `2020-07-${((i % 31) + 1).toString().padStart(2, 0)}`,
     usage: Math.floor(Math.abs(Math.sin(i / 2.0) * 100)),
@@ -28,8 +28,9 @@ const Example = () => (
           },
         ]}
         xAxis={{
+          labels: 3,
           render: i => (
-            <Text>
+            <Text margin={{ horizontal: 'xsmall' }}>
               {new Date(data[Math.floor(i)].date).toLocaleDateString('en-US', {
                 month: 'numeric',
                 day: 'numeric',

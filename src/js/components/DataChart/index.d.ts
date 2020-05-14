@@ -32,10 +32,9 @@ export interface DataChartProps {
   margin?: MarginType;
   pad?: GridProps["pad"];
   size?: ChartProps["size"];
-  steps?: [number, number];
   thickness?: ChartProps["thickness"];
-  xAxis?: boolean | { guide?: boolean, key?: string, render?: (dataIndex:number, axisIndex:number) => (void) };
-  yAxis?: boolean | { guide?: boolean, render?: (value:(string|number), axisIndex:number) => (void) };
+  xAxis?: boolean | { guide?: boolean, key?: string, labels?: number, render?: (dataIndex:number, axisIndex:number) => (void) };
+  yAxis?: boolean | { guide?: boolean, labels?: number, render?: (value:(string|number), axisIndex:number) => (void) };
 }
 
 declare const DataChart: React.FC<DataChartProps>;

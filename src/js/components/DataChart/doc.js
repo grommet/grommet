@@ -90,17 +90,16 @@ export const doc = DataChart => {
       PropTypes.string,
     ]).description(`The amount of spacing between data points. This
     is only used when the size specifies width as 'auto'.`),
-    steps: PropTypes.arrayOf(PropTypes.number).description(
-      'how many steps in the x and y axis',
-    ),
     thickness: thicknessType.description('Default thickness across charts.'),
     xAxis: PropTypes.shape({
       guide: PropTypes.bool,
       key: PropTypes.string,
+      labels: PropTypes.number, // default undefined, all data points
       render: PropTypes.func, // (dataIndex, axisIndex) => element
     }).description('x-axis configuration'),
     yAxis: PropTypes.shape({
       guide: PropTypes.bool,
+      labels: PropTypes.number, // default 2, top and bottom
       render: PropTypes.func, // (value, axisIndex) => element
     }).description('y-axis configuration'),
   };

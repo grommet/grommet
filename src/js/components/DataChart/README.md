@@ -269,14 +269,6 @@ xlarge
 string
 ```
 
-**steps**
-
-how many steps in the x and y axis
-
-```
-[number]
-```
-
 **thickness**
 
 Default thickness across charts.
@@ -300,6 +292,7 @@ x-axis configuration
 {
   guide: boolean,
   key: string,
+  labels: number,
   render: function
 }
 ```
@@ -311,6 +304,7 @@ y-axis configuration
 ```
 {
   guide: boolean,
+  labels: number,
   render: function
 }
 ```

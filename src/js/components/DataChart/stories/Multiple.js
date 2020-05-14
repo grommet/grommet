@@ -31,6 +31,7 @@ const MultipleDataChart = () => (
         ]}
         xAxis={{
           guide: true,
+          labels: 2,
           render: i => (
             <Box pad="xsmall" align="start">
               <Text>
@@ -42,8 +43,7 @@ const MultipleDataChart = () => (
             </Box>
           ),
         }}
-        yAxis={{ guide: true }}
-        steps={[1, 2]}
+        yAxis={{ guide: true, labels: 3 }}
         gap="medium"
         pad="small"
       />
