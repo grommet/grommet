@@ -7,7 +7,7 @@ import { FormContext } from '../Form/FormContext';
 export const CheckBoxGroup = forwardRef(
   (
     {
-      checked: checkedProp,
+      value: valueProp,
       disabled: disabledProp,
       gap = 'small', // consistent with RadioButtonGroup default
       labelKey,
@@ -36,29 +36,24 @@ export const CheckBoxGroup = forwardRef(
       [optionsProp, disabledProp],
     );
 
-    // 'checked' is an array of checked valueKeys
-    const [checked, setChecked] = formContext.useFormContext(
-      name,
-      checkedProp,
-      [],
-    );
+    // 'value' is an array of checked valueKeys
+    const [value, setValue] = formContext.useFormContext(name, valueProp, []);
 
     // Logic is necessary to maintain a proper data structure for Form logic
-    const onCheckBoxChange = (event, optionChecked, option) => {
-      // deep copy of checked
-      const nextChecked = JSON.parse(JSON.stringify(checked)) || [];
-      const optionIndex = nextChecked.indexOf(optionChecked);
-      // If the index of the checked option isn't in the array add the option.
+    const onCheckBoxChange = (event, optionValue, option) => {
+      // deep copy of value
+      const nextValue = JSON.parse(JSON.stringify(value)) || [];
+      const optionIndex = nextValue.indexOf(optionValue);
+      // If the index of the value option isn't in the array add the option.
       // Otherwise, remove the option from the array to simulate a toggle action
-      if (optionIndex < 0) nextChecked.push(optionChecked);
-      else nextChecked.splice(optionIndex, 1);
-      setChecked(nextChecked);
-
+      if (optionIndex < 0) nextValue.push(optionValue);
+      else nextValue.splice(optionIndex, 1);
+      setValue(nextValue);
       // Same functionalities as Select onChange()
       if (onChange) {
-        event.persist();
+        event.persist(); // extract from React synthetic event pool
         const adjustedEvent = event;
-        adjustedEvent.checked = nextChecked;
+        adjustedEvent.value = nextValue;
         adjustedEvent.option = option;
         onChange(adjustedEvent);
       }
@@ -66,22 +61,34 @@ export const CheckBoxGroup = forwardRef(
 
     return (
       <Box ref={ref} gap={gap} {...rest}>
-        {options.map(option => {
-          const label = labelKey ? option[labelKey] : option.label;
-          const value = valueKey ? option[valueKey] : option.id;
-          const checkedOption =
-            option.checked || (checkedProp && checkedProp.indexOf(value) >= 0);
-          return (
-            <CheckBox
-              checked={checkedOption}
-              disabled={disabledProp || option.disabled}
-              label={label}
-              key={label}
-              onChange={event => onCheckBoxChange(event, value, option)}
-              {...option}
-            />
-          );
-        })}
+        {options.map(
+          ({
+            checked: checkedOption,
+            disabled: disabledOption,
+            label: labelOption,
+            ...optionRest
+          }) => {
+            const label = labelKey
+              ? optionRest[labelKey] || labelOption
+              : labelOption;
+            const disabled = disabledProp || disabledOption;
+            const valueOption = valueKey ? optionRest[valueKey] : optionRest.id;
+            const checked =
+              checkedOption ||
+              (valueProp && valueProp.indexOf(valueOption) >= 0);
+            const option = { label, checked, disabled, ...optionRest };
+            return (
+              <CheckBox
+                key={label}
+                disabled={disabled}
+                checked={checked}
+                label={label}
+                onChange={event => onCheckBoxChange(event, valueOption, option)}
+                {...optionRest}
+              />
+            );
+          },
+        )}
       </Box>
     );
   },

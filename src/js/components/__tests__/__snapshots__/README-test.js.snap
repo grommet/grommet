@@ -4513,10 +4513,11 @@ import { CheckBoxGroup } from 'grommet';
 
 ## Properties
 
-**checked**
+**value**
 
-An array of the checked options. If options is provided as an object, the
-      checked array will be the strings of the checked option valueKey.
+An array of the values for the checked options. 
+      If options is provided as an object, the value array will be the strings 
+      of the valueKeys.
 
 \`\`\`
 [
@@ -4556,7 +4557,7 @@ string
 
 Function that will be called when the user clicks on a CheckBox option. 
       It will pass a React event object with the additional CheckBoxGroup 
-      properties of 'option' and 'checked'.
+      properties of 'option' and 'value'.
 
 \`\`\`
 function

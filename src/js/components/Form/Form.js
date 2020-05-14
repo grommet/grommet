@@ -227,6 +227,7 @@ const Form = forwardRef(
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
             adjustedEvent.value = value;
+            console.log('in Form, adjustedEvent: ', adjustedEvent);
             adjustedEvent.touched = touched;
             onSubmit(adjustedEvent);
           }

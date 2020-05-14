@@ -18,10 +18,10 @@ describe('CheckBoxGroup', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('checked renders', () => {
+  test('value renders', () => {
     const component = renderer.create(
       <Grommet>
-        <CheckBoxGroup checked={['First']} options={['First', 'Second']} />
+        <CheckBoxGroup value={['First']} options={['First', 'Second']} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -48,6 +48,7 @@ describe('CheckBoxGroup', () => {
     const component = renderer.create(
       <Grommet>
         <CheckBoxGroup disabled options={['First', 'Second']} />
+        <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
         <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
       </Grommet>,
     );

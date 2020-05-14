@@ -13,11 +13,12 @@ export const doc = CheckBoxGroup => {
     .intrinsicElement('div');
 
   DocumentedCheckBoxGroup.propTypes = {
-    checked: PropTypes.arrayOf(
+    value: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     ).description(
-      `An array of the checked options. If options is provided as an object, the
-      checked array will be the strings of the checked option valueKey.`,
+      `An array of the values for the checked options. 
+      If options is provided as an object, the value array will be the strings 
+      of the valueKeys.`,
     ),
     disabled: PropTypes.bool
       .description(`Disables all options.`)
@@ -36,7 +37,7 @@ export const doc = CheckBoxGroup => {
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks on a CheckBox option. 
       It will pass a React event object with the additional CheckBoxGroup 
-      properties of 'option' and 'checked'.`,
+      properties of 'option' and 'value'.`,
     ),
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),

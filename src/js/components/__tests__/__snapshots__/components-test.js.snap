@@ -1990,13 +1990,14 @@ NOTE: This can only be used with non-toggle components",
     "name": "CheckBoxGroup",
     "properties": Array [
       Object {
-        "description": "An array of the checked options. If options is provided as an object, the
-      checked array will be the strings of the checked option valueKey.",
+        "description": "An array of the values for the checked options. 
+      If options is provided as an object, the value array will be the strings 
+      of the valueKeys.",
         "format": "[
   number
   string
 ]",
-        "name": "checked",
+        "name": "value",
       },
       Object {
         "defaultValue": undefined,
@@ -2020,7 +2021,7 @@ function",
       Object {
         "description": "Function that will be called when the user clicks on a CheckBox option. 
       It will pass a React event object with the additional CheckBoxGroup 
-      properties of 'option' and 'checked'.",
+      properties of 'option' and 'value'.",
         "format": "function",
         "name": "onChange",
       },

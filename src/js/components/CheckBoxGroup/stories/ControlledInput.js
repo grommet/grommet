@@ -5,7 +5,7 @@ import { Box, Button, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const CheckBoxGroupForm = () => {
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState();
 
   return (
     <Grommet theme={grommet}>

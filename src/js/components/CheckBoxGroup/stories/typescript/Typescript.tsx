@@ -22,7 +22,7 @@ const Example = () => {
         <CheckBoxGroup
           labelKey="lab"
           valueKey="val"
-          checked={value}
+          value={value}
           onChange={event => setValue(event.value)}
           options={objectOptions}
         />
@@ -30,7 +30,7 @@ const Example = () => {
           gap="xsmall"
           labelKey="label"
           valueKey="id"
-          checked={value2}
+          value={value2}
           onChange={event => setValue2(event.value)}
           options={[
             { label: 'Maui', id: 'M' },
