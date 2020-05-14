@@ -21,7 +21,7 @@ const DesignerDataChart = () => (
         chart={[
           {
             key: 'percent',
-            type: 'line',
+            type: 'bar',
             thickness: 'medium',
             color: { color: 'graph-2' },
           },
