@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useLayoutEffect, useMemo, useRef } from 'react';
 import { Box } from '../Box';
 import { Chart, calcs } from '../Chart';
 import { Grid } from '../Grid';
@@ -23,6 +23,10 @@ const DataChart = ({
   yAxis,
   ...rest
 }) => {
+  // refs used for ie11 not having Grid
+  const xRef = useRef();
+  const spacerRef = useRef();
+
   // normalize chart to an array
   const charts = useMemo(() => (Array.isArray(chart) ? chart : [chart]), [
     chart,
@@ -61,7 +65,7 @@ const DataChart = ({
     });
   }, [charts, keyValues]);
 
-  // calculate axis, bounds and thickness based on the first chart
+  // calculate axis, bounds and thickness
   const { axis, bounds, thickness } = useMemo(() => {
     let tmpAxis;
     let tmpBounds;
@@ -114,7 +118,129 @@ const DataChart = ({
     [axis, yAxis],
   );
 
+  // for ie11, align the spacer Box height to the x-axis height
+  useLayoutEffect(() => {
+    if (xRef.current && spacerRef.current) {
+      const rect = xRef.current.getBoundingClientRect();
+      spacerRef.current.style.height = `${rect.height}px`;
+    }
+  }, []);
+
   /* eslint-disable react/no-array-index-key */
+  let xAxisElement;
+  if (xAxis) {
+    xAxisElement = (
+      <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
+        {axis[0].map((a, i) =>
+          xAxis.render ? (
+            <Box key={i} flex align="center">
+              {xAxis.render(i)}
+            </Box>
+          ) : (
+            <Box key={i} flex pad="xsmall" align="center">
+              <Text>{xAxis.key ? data[i][xAxis.key] : a}</Text>
+            </Box>
+          ),
+        )}
+      </Box>
+    );
+  }
+
+  let yAxisElement;
+  if (yAxis) {
+    yAxisElement = (
+      <Box gridArea="yAxis" justify="between" flex>
+        {axis[1].map((a, i) =>
+          yAxis.render ? (
+            <Box key={i} align="end">
+              {yAxis.render(a, i)}
+            </Box>
+          ) : (
+            <Box key={i} pad="xsmall" align="end">
+              <Text>{a}</Text>
+            </Box>
+          ),
+        )}
+      </Box>
+    );
+  }
+
+  const stackElement = (
+    <Stack gridArea="charts" guidingChild="last">
+      {xAxis && xAxis.guide && (
+        <Box fill direction="row" justify="between" pad={pad}>
+          {xGuide.map((_, i) => (
+            <Box key={i} border="left" />
+          ))}
+        </Box>
+      )}
+      {yAxis && yAxis.guide && (
+        <Box fill justify="between" pad={pad}>
+          {yGuide.map((_, i) => (
+            <Box key={i} border="top" />
+          ))}
+        </Box>
+      )}
+      {charts.map(({ key, keys, ...chartRest }, i) => {
+        if (keys) {
+          // reverse to ensure area Charts are stacked in the right order
+          return keys
+            .map((_, j) => (
+              <Chart
+                key={j}
+                values={chartValues[i][j]}
+                color={keys[j].color}
+                bounds={bounds}
+                overflow
+                pad={pad}
+                size={size}
+                thickness={thickness}
+                {...chartRest}
+              />
+            ))
+            .reverse();
+        }
+        return (
+          <Chart
+            key={i}
+            values={chartValues[i]}
+            bounds={bounds}
+            overflow
+            pad={pad}
+            size={size}
+            thickness={thickness}
+            {...chartRest}
+          />
+        );
+      })}
+    </Stack>
+  );
+
+  // IE11
+  if (!Grid.available) {
+    let content = stackElement;
+    if (xAxisElement) {
+      content = (
+        <Box>
+          {content}
+          {xAxisElement}
+        </Box>
+      );
+    }
+    if (yAxisElement) {
+      content = (
+        <Box direction="row">
+          <Box>
+            {yAxisElement}
+            <Box ref={spacerRef} flex={false} />
+          </Box>
+          {content}
+        </Box>
+      );
+    }
+    return content;
+  }
+
   return (
     <Grid
       columns={['auto', 'flex']}
@@ -126,84 +252,9 @@ const DataChart = ({
       ]}
       {...rest}
     >
-      {xAxis && (
-        <Box gridArea="xAxis" direction="row" justify="between">
-          {axis[0].map((a, i) =>
-            xAxis.render ? (
-              <Box key={i} flex align="center">
-                {xAxis.render(i)}
-              </Box>
-            ) : (
-              <Box key={i} flex pad="xsmall" align="center">
-                <Text>{xAxis.key ? data[i][xAxis.key] : a}</Text>
-              </Box>
-            ),
-          )}
-        </Box>
-      )}
-      {yAxis && (
-        <Box gridArea="yAxis" justify="between">
-          {axis[1].map((a, i) =>
-            yAxis.render ? (
-              <Box key={i} align="end">
-                {yAxis.render(a, i)}
-              </Box>
-            ) : (
-              <Box key={i} pad="xsmall" align="end">
-                <Text>{a}</Text>
-              </Box>
-            ),
-          )}
-        </Box>
-      )}
-      <Stack gridArea="charts" guidingChild="last">
-        {xAxis && xAxis.guide && (
-          <Box fill direction="row" justify="between" pad={pad}>
-            {xGuide.map((_, i) => (
-              <Box key={i} border="left" />
-            ))}
-          </Box>
-        )}
-        {yAxis && yAxis.guide && (
-          <Box fill justify="between" pad={pad}>
-            {yGuide.map((_, i) => (
-              <Box key={i} border="top" />
-            ))}
-          </Box>
-        )}
-        {charts.map(({ key, keys, ...chartRest }, i) => {
-          if (keys) {
-            // reverse to ensure area Charts are stacked in the right order
-            return keys
-              .map((_, j) => (
-                <Chart
-                  key={j}
-                  values={chartValues[i][j]}
-                  color={keys[j].color}
-                  bounds={bounds}
-                  overflow
-                  pad={pad}
-                  size={size}
-                  thickness={thickness}
-                  {...chartRest}
-                />
-              ))
-              .reverse();
-          }
-          return (
-            <Chart
-              key={i}
-              values={chartValues[i]}
-              bounds={bounds}
-              overflow
-              pad={pad}
-              size={size}
-              thickness={thickness}
-              {...chartRest}
-            />
-          );
-        })}
-      </Stack>
+      {xAxisElement}
+      {yAxisElement}
+      {stackElement}
     </Grid>
   );
 };

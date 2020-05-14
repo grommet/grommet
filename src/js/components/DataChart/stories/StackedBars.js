@@ -28,20 +28,16 @@ const Example = () => (
           },
         ]}
         xAxis={{
-          guide: true,
           render: i => (
-            <Box pad="xsmall" align="start">
-              <Text>
-                {new Date(data[i].date).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                })}
-              </Text>
-            </Box>
+            <Text>
+              {new Date(data[i].date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+              })}
+            </Text>
           ),
         }}
         yAxis={{ guide: true }}
-        steps={[1, 2]}
         gap="medium"
       />
     </Box>
