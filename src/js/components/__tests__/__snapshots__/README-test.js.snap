@@ -5128,6 +5128,61 @@ string
 how to visualize the data
 
 \`\`\`
+{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}
 [{
   key: string,
   keys: [{

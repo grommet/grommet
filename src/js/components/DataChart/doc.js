@@ -36,6 +36,26 @@ const thicknessType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
+const chartType = PropTypes.shape({
+  key: PropTypes.string,
+  keys: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      color: colorType,
+    }),
+  ),
+  a11yTitle: PropTypes.string,
+  bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+  color: colorType,
+  dash: PropTypes.bool,
+  onClick: PropTypes.func,
+  onHover: PropTypes.func,
+  overflow: PropTypes.bool,
+  round: PropTypes.bool,
+  thickness: thicknessType,
+  type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
+});
+
 export const doc = DataChart => {
   const DocumentedDataChart = describe(DataChart)
     .availableAt(getAvailableAtBadge('DataChart'))
@@ -52,27 +72,10 @@ export const doc = DataChart => {
 
   DocumentedDataChart.propTypes = {
     ...genericProps,
-    chart: PropTypes.arrayOf(
-      PropTypes.shape({
-        key: PropTypes.string,
-        keys: PropTypes.arrayOf(
-          PropTypes.shape({
-            key: PropTypes.string,
-            color: colorType,
-          }),
-        ),
-        a11yTitle: PropTypes.string,
-        bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
-        color: colorType,
-        dash: PropTypes.bool,
-        onClick: PropTypes.func,
-        onHover: PropTypes.func,
-        overflow: PropTypes.bool,
-        round: PropTypes.bool,
-        thickness: thicknessType,
-        type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
-      }),
-    ).description('how to visualize the data'),
+    chart: PropTypes.oneOfType([
+      chartType,
+      PropTypes.arrayOf(chartType),
+    ]).description('how to visualize the data'),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
