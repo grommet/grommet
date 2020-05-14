@@ -97,11 +97,11 @@ export const doc = DataChart => {
     xAxis: PropTypes.shape({
       guide: PropTypes.bool,
       key: PropTypes.string,
-      render: PropTypes.func,
+      render: PropTypes.func, // (dataIndex, axisIndex) => element
     }).description('x-axis configuration'),
     yAxis: PropTypes.shape({
       guide: PropTypes.bool,
-      render: PropTypes.func,
+      render: PropTypes.func, // (value, axisIndex) => element
     }).description('y-axis configuration'),
   };
 

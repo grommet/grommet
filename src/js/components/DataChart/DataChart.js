@@ -148,7 +148,6 @@ const DataChart = ({
         {axis[1].map((a, i) => {
           let content;
           if (yAxis.render) content = yAxis.render(a, i);
-          else if (yAxis.key) content = data[a][yAxis.key];
           else content = a;
           return (
             <Box key={i} align="end">
