@@ -3,7 +3,6 @@ import { Box } from '../Box';
 import { Chart, calcs } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
-import { Text } from '../Text';
 
 const halfPad = {
   xlarge: 'large',
@@ -131,17 +130,13 @@ const DataChart = ({
   if (xAxis) {
     xAxisElement = (
       <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
-        {axis[0].map((a, i) =>
-          xAxis.render ? (
-            <Box key={i} flex align="center">
-              {xAxis.render(i)}
-            </Box>
-          ) : (
-            <Box key={i} flex pad="xsmall" align="center">
-              <Text>{xAxis.key ? data[i][xAxis.key] : a}</Text>
-            </Box>
-          ),
-        )}
+        {axis[0].map((a, i) => {
+          let content;
+          if (xAxis.render) content = xAxis.render(a, i);
+          else if (xAxis.key) content = data[i][xAxis.key];
+          else content = a;
+          return <Box key={i}>{content}</Box>;
+        })}
       </Box>
     );
   }
@@ -150,17 +145,17 @@ const DataChart = ({
   if (yAxis) {
     yAxisElement = (
       <Box gridArea="yAxis" justify="between" flex>
-        {axis[1].map((a, i) =>
-          yAxis.render ? (
+        {axis[1].map((a, i) => {
+          let content;
+          if (yAxis.render) content = yAxis.render(a, i);
+          else if (yAxis.key) content = data[a][yAxis.key];
+          else content = a;
+          return (
             <Box key={i} align="end">
-              {yAxis.render(a, i)}
+              {content}
             </Box>
-          ) : (
-            <Box key={i} pad="xsmall" align="end">
-              <Text>{a}</Text>
-            </Box>
-          ),
-        )}
+          );
+        })}
       </Box>
     );
   }

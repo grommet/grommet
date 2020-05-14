@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 const data = [];
 for (let i = 0; i < 8; i += 1) {
   data.push({
-    date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
+    date: `2020-07-${((i % 31) + 1).toString().padStart(2, 0)}`,
     usage: Math.floor(Math.abs(Math.sin(i / 2.0) * 100)),
     bonus: Math.floor(Math.abs(Math.cos(i / 2.0) * 100)),
   });
@@ -30,8 +30,8 @@ const Example = () => (
         xAxis={{
           render: i => (
             <Text>
-              {new Date(data[i].date).toLocaleDateString('en-US', {
-                month: 'short',
+              {new Date(data[Math.floor(i)].date).toLocaleDateString('en-US', {
+                month: 'numeric',
                 day: 'numeric',
               })}
             </Text>
