@@ -43,12 +43,15 @@ export const doc = CheckBoxGroup => {
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.arrayOf(PropTypes.shape({})),
     ]).description(
-      `Options can be either a string or an object of CheckBox props.`,
+      `Options can be either a string or an object of CheckBox props 
+      excluding the 'checked' property, use CheckBoxGroup 'value' prop instead 
+      of 'checked'.`,
     ).isRequired,
     valueKey: PropTypes.string.description(
       `When the options array contains objects, this property indicates how
-        to determine the value of each option. If a string is
-        provided, it is used as the key to retrieve each option's value.`,
+        to determine the value of each option and defaults to 'key'. 
+        If a string is provided, 
+        it is used as the key to retrieve each option's value.`,
     ),
   };
 

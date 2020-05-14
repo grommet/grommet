@@ -28,12 +28,13 @@ describe('CheckBoxGroup', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('checked on options renders', () => {
+  test('initial value renders', () => {
     const component = renderer.create(
       <Grommet>
         <CheckBoxGroup
+          value={['Maui', 'Jerusalem']}
           options={[
-            { label: 'Maui', checked: true },
+            { label: 'Maui' },
             { label: 'Jerusalem' },
             { label: 'Wuhan' },
           ]}

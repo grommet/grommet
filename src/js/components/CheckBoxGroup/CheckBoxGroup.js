@@ -28,7 +28,7 @@ export const CheckBoxGroup = forwardRef(
           return typeof option === 'string'
             ? {
                 disabled: disabledProp,
-                id: option,
+                key: option,
                 label: option,
               }
             : option;
@@ -72,11 +72,16 @@ export const CheckBoxGroup = forwardRef(
               ? optionRest[labelKey] || labelOption
               : labelOption;
             const disabled = disabledProp || disabledOption;
-            const valueOption = valueKey ? optionRest[valueKey] : optionRest.id;
-            const checked =
-              checkedOption ||
-              (valueProp && valueProp.indexOf(valueOption) >= 0);
-            const option = { label, checked, disabled, ...optionRest };
+            const valueOption = valueKey
+              ? optionRest[valueKey]
+              : optionRest.key || label;
+            if (checkedOption)
+              console.warn(
+                // eslint-disable-next-line max-len
+                `'checked' prop of an individual CheckBox shouldn't be used in a CheckBoxGroup component. Use the CheckBoxGroup 'value' prop instead.`,
+              );
+            const checked = valueProp && valueProp.indexOf(valueOption) >= 0;
+            const option = { label, disabled, ...optionRest };
             return (
               <CheckBox
                 key={label}

@@ -9,7 +9,7 @@ for (let i = 1; i <= 5; i += 1) {
   objectOptions.push({
     lab: `option ${i}`,
     val: i,
-    id: `${i}`,
+    key: `${i}`,
   });
 }
 
@@ -29,13 +29,13 @@ const Example = () => {
         <CheckBoxGroup
           gap="xsmall"
           labelKey="label"
-          valueKey="id"
+          valueKey="key"
           value={value2}
           onChange={event => setValue2(event.value)}
           options={[
-            { label: 'Maui', id: 'M' },
-            { label: 'Jerusalem', id: 'J' },
-            { label: 'Wuhan', id: 'W' },
+            { label: 'Maui', key: 'M' },
+            { label: 'Jerusalem', key: 'J' },
+            { label: 'Wuhan', key: 'W' },
           ]}
         />
       </Box>

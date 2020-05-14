@@ -16,7 +16,7 @@ const Disabled = () => {
           <Text margin={{ vertical: 'small' }}> Disabled Individuals</Text>
           <CheckBoxGroup
             options={[
-              { label: 'Maui', disabled: true, checked: true },
+              { label: 'Maui', disabled: true },
               { label: 'Jerusalem' },
               { label: 'Wuhan', disabled: true },
             ]}

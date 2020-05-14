@@ -14,16 +14,12 @@ const Example = () => {
         Initial value via options object:
         <CheckBoxGroup
           value={value}
-          onChange={event => setValue(event.value)}
+          onChange={event => {
+            console.log('value: ', event.value);
+            console.log('option: ', event.option);
+            setValue(event.value);
+          }}
           options={['First', 'Second', 'Third']}
-        />
-        Initial value via options object:
-        <CheckBoxGroup
-          options={[
-            { label: 'Maui', id: '1', checked: true },
-            { label: 'Jerusalem', id: '2' },
-            { label: 'Wuhan', id: '3' },
-          ]}
         />
         Initial value via controlled options object:
         <CheckBoxGroup

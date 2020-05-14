@@ -40,7 +40,7 @@ const CheckBoxGroupForm = () => {
           <FormField name="am-pm">
             <CheckBoxGroup
               name="am-pm"
-              // valueKey="id"
+              valueKey="id"
               options={[
                 { label: 'Coffee', id: '1' },
                 { label: 'Tea', id: '2' },
