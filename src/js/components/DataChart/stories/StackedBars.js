@@ -28,7 +28,6 @@ const Example = () => (
           },
         ]}
         xAxis={{
-          labels: 3,
           render: i => (
             <Text margin={{ horizontal: 'xsmall' }}>
               {new Date(data[Math.floor(i)].date).toLocaleDateString('en-US', {

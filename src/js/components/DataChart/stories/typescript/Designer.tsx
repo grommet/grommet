@@ -22,16 +22,15 @@ const DesignerDataChart = () => (
           {
             key: 'percent',
             type: 'bar',
-            thickness: 'medium',
+            thickness: 'large',
             color: { color: 'graph-2' },
           },
         ]}
         xAxis={{
           guide: true,
-          labels: 7,
           render: i => (
-            <Text>
-              {new Date(data[i].date).toLocaleDateString('en-US', {
+            <Text margin={{ horizontal: 'xsmall' }}>
+              {new Date(data[Math.floor(i)].date).toLocaleDateString('en-US', {
                 month: 'short',
               })}
             </Text>
@@ -39,8 +38,7 @@ const DesignerDataChart = () => (
         }}
         yAxis={{
           guide: true,
-          labels: 4,
-          render: text => <Text>${text}</Text>,
+          render: value => <Text>${value}</Text>,
         }}
         gap="small"
         pad={{ horizontal: 'medium', vertical: 'small' }}

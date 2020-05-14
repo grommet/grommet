@@ -23,15 +23,14 @@ const AxesDataChart = () => (
           key: 'date',
           guide: true,
           render: i => (
-            <Text margin={{ horizontal: 'xsmall' }}>
+            <Text margin={{ horizontal: 'small' }}>
               {new Date(data[i].date).toLocaleDateString('en-US', {
-                month: 'short',
+                month: 'narrow',
               })}
             </Text>
           ),
         }}
         yAxis={{ guide: true, labels: 3 }}
-        gap="small"
       />
     </Box>
   </Grommet>
