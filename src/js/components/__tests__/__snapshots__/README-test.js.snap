@@ -4018,6 +4018,89 @@ Whether the chart strokes should overflow the component. Set this
 boolean
 \`\`\`
 
+**pad**
+
+The amount of padding around the box contents. An
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box Defaults to \`none\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **round**
 
 Whether to round the line ends.
@@ -4913,7 +4996,9 @@ undefined
 \`\`\`
 ",
   "DataChart": "## DataChart
-Takes a data set and visualizes it.
+Takes a data set and visualizes it. Chart renders a
+    single value across a data set. DataChart allows multiple Charts and adds
+    guides and axes for decoration.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js)
 ## Usage
@@ -5038,13 +5123,126 @@ xlarge
 string
 \`\`\`
 
+**chart**
+
+how to visualize the data
+
+\`\`\`
+[{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}]
+\`\`\`
+
+**data**
+
+the data set
+
+\`\`\`
+[{
+
+}]
+\`\`\`
+
+**gap**
+
+The amount of spacing between data points. This
+    is only used when the size specifies width as 'auto'.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**steps**
+
+how many steps in the x and y axis
+
+\`\`\`
+[number]
+\`\`\`
+
+**thickness**
+
+Default thickness across charts.
+
+\`\`\`
+hair
+xsmall
+small
+medium
+large
+xlarge
+none
+string
+\`\`\`
+
 **xAxis**
 
 x-axis configuration
 
 \`\`\`
 {
-
+  guide: boolean,
+  key: string,
+  render: function
 }
 \`\`\`
 
@@ -5054,7 +5252,8 @@ y-axis configuration
 
 \`\`\`
 {
-
+  guide: boolean,
+  render: function
 }
 \`\`\`
   

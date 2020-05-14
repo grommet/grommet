@@ -8,34 +8,44 @@ const data = [];
 for (let i = 0; i < 8; i += 1) {
   const v = Math.sin(i / 2.0);
   data.push({
-    date: `2020-${((i % 12) + 1).toString().padStart(2, 0)}-01`,
+    date: `2020-${((i % 12) + 1).toString().padStart(2, '0')}-01`,
     percent: Math.abs(v * 100),
   });
 }
 
-const AxesDataChart = () => (
+const DesignerDataChart = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        chart={{ key: 'percent' }}
+        chart={[
+          {
+            key: 'percent',
+            type: 'line',
+            thickness: 'medium',
+            color: { color: 'graph-2' },
+          },
+        ]}
         xAxis={{
-          key: 'date',
           guide: true,
           render: i => (
-            <Text margin={{ horizontal: 'xsmall' }}>
+            <Text>
               {new Date(data[i].date).toLocaleDateString('en-US', {
                 month: 'short',
               })}
             </Text>
           ),
         }}
-        yAxis={{ guide: true }}
+        yAxis={{
+          guide: true,
+          render: text => <Text>${text}</Text>,
+        }}
+        steps={[7, 4]}
         gap="small"
-        steps={[7, 1]}
+        pad={{ horizontal: 'medium', vertical: 'small' }}
       />
     </Box>
   </Grommet>
 );
 
-storiesOf('DataChart', module).add('Axes', () => <AxesDataChart />);
+storiesOf('DataChart', module).add('Designer', () => <DesignerDataChart />);

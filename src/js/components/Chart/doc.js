@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, padPropType } from '../../utils';
 
 export const doc = Chart => {
   const DocumentedChart = describe(Chart)
@@ -75,6 +75,7 @@ export const doc = Chart => {
       align with the component boundaries.`,
       )
       .defaultValue(false),
+    pad: padPropType,
     round: PropTypes.bool
       .description('Whether to round the line ends.')
       .defaultValue(false),

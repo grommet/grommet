@@ -51,7 +51,7 @@ exports[`DataChart renders 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="0 0 384 192"
+          viewBox="-48 0 480 192"
           width={384}
         >
           <g

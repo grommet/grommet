@@ -9,7 +9,8 @@ import { ChartProps } from "../Chart";
 import { GridProps } from "../Grid";
 
 type ChartType = {
-  key: string;
+  key?: string;
+  keys?: { key: string, color?: ChartProps["color"] }[];
   a11yTitle?: A11yTitleType;
   bounds?: ChartProps["bounds"];
   color?: ChartProps["color"];
@@ -34,7 +35,7 @@ export interface DataChartProps {
   steps?: [number, number];
   thickness?: ChartProps["thickness"];
   xAxis?: boolean | { guide?: boolean, key?: string, render?: (index:number) => (void) };
-  yAxis?: boolean | { guide?: boolean };
+  yAxis?: boolean | { guide?: boolean, render?: (value:(string|number), index:number) => (void) };
 }
 
 declare const DataChart: React.FC<DataChartProps>;

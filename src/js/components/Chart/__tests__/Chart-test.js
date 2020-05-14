@@ -121,6 +121,20 @@ test('Chart color renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Chart pad renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Chart pad="xsmall" values={VALUES} />
+      <Chart
+        pad={{ horizontal: 'medium', vertical: 'small' }}
+        values={VALUES}
+      />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Chart calcs', () => {
   const result = calcs([1, 2, 3]);
   expect(result).toMatchSnapshot();

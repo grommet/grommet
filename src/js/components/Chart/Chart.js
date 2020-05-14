@@ -25,6 +25,7 @@ const Chart = React.forwardRef(
       onClick,
       onHover,
       overflow = false,
+      pad,
       round,
       size: propsSize = defaultSize,
       thickness = 'medium',
@@ -353,6 +354,26 @@ const Chart = React.forwardRef(
           size[0] + strokeWidth,
           size[1] + strokeWidth,
         ];
+    if (pad) {
+      if (pad.horizontal) {
+        const padSize = parseMetricToNum(theme.global.edgeSize[pad.horizontal]);
+        viewBounds[0] -= padSize;
+        viewBounds[2] += padSize * 2;
+      }
+      if (pad.vertical) {
+        const padSize = parseMetricToNum(theme.global.edgeSize[pad.vertical]);
+        viewBounds[1] -= padSize;
+        viewBounds[3] += padSize * 2;
+      }
+      if (typeof pad === 'string') {
+        const padSize = parseMetricToNum(theme.global.edgeSize[pad]);
+        viewBounds[0] -= padSize;
+        viewBounds[1] -= padSize;
+        viewBounds[2] += padSize * 2;
+        viewBounds[3] += padSize * 2;
+      }
+    }
+
     const viewBox = viewBounds.join(' ');
     let colorName;
     if (!useGradient) {
