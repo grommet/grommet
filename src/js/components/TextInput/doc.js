@@ -70,7 +70,8 @@ export const doc = TextInput => {
       'Function that will be called when the user types in the input.',
     ),
     onSelect: PropTypes.func.description(
-      `Function that will be called when the user selects a suggestion.
+      `Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
       When used in conjunction with onSuggestionSelect 
       this will default to React's onSelect`,

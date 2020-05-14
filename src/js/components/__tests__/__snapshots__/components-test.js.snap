@@ -5375,7 +5375,8 @@ string",
         "name": "onChange",
       },
       Object {
-        "description": "Function that will be called when the user selects a suggestion.
+        "description": "Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
       When used in conjunction with onSuggestionSelect 
       this will default to React's onSelect",
