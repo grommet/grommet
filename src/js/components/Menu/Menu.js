@@ -217,6 +217,9 @@ const Menu = forwardRef((props, ref) => {
       </Button>
     </Box>
   );
+  console.log(theme.button.default);
+  console.log(!theme.button.default);
+  console.log(!!theme.button.default);
 
   return (
     <Keyboard
@@ -261,7 +264,7 @@ const Menu = forwardRef((props, ref) => {
                       active={activeItemIndex === index}
                       hoverIndicator="background"
                       focusIndicator={false}
-                      plain={!!theme.button.default}
+                      plain={theme.button.default ? true : undefined}
                       {...{ ...item, icon: undefined, label: undefined }}
                       onClick={(...args) => {
                         if (item.onClick) {
