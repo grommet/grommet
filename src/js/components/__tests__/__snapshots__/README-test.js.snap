@@ -4123,6 +4123,7 @@ small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -4132,6 +4133,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -4141,6 +4143,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     auto
     string
@@ -5264,6 +5267,38 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**size**
+
+The size of the DataChart chart. Defaults to \`{
+  \\"width\\": \\"medium\\",
+  \\"height\\": \\"small\\"
+}\`.
+
+\`\`\`
+fill
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    string,
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    auto
+    string
+}
 \`\`\`
 
 **thickness**
@@ -12525,6 +12560,8 @@ Whether to expand to fill
       all of the available width and height in the parent container.
 
 \`\`\`
+horizontal
+vertical
 boolean
 \`\`\`
 

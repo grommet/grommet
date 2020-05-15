@@ -329,6 +329,7 @@ small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -338,6 +339,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -347,6 +349,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     auto
     string

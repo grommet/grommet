@@ -269,6 +269,38 @@ xlarge
 string
 ```
 
+**size**
+
+The size of the DataChart chart. Defaults to `{
+  "width": "medium",
+  "height": "small"
+}`.
+
+```
+fill
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    string,
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    auto
+    string
+}
+```
+
 **thickness**
 
 Default thickness across charts.

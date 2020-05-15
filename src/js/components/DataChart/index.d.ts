@@ -27,6 +27,7 @@ export interface DataChartProps {
   a11yTitle?: A11yTitleType;
   chart: ChartType | ChartType[];
   data: {}[];
+  fill?: GridProps["fill"];
   gap?: GridProps["gap"];
   gridArea?: GridAreaType,
   margin?: MarginType;

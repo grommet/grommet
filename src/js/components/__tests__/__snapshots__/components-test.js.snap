@@ -1905,6 +1905,7 @@ small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -1914,6 +1915,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -1923,6 +1925,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     auto
     string
@@ -2256,7 +2259,325 @@ vertical",
     "usage": "import { Collapsible } from 'grommet';
 <Collapsible open>test</Collapsible>",
   },
-  "DataChart": [Function],
+  "DataChart": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js",
+      },
+    ],
+    "description": "Takes a data set and visualizes it. Chart renders a
+    single value across a data set. DataChart allows multiple Charts and adds
+    guides and axes for decoration.",
+    "intrinsicElement": "div",
+    "name": "DataChart",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "how to visualize the data",
+        "format": "{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}
+[{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}]",
+        "name": "chart",
+      },
+      Object {
+        "description": "the data set",
+        "format": "[{
+
+}]",
+        "name": "data",
+      },
+      Object {
+        "description": "The amount of spacing between data points. This
+    is only used when the size specifies width as 'auto'.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
+      },
+      Object {
+        "defaultValue": Object {
+          "height": "small",
+          "width": "medium",
+        },
+        "description": "The size of the DataChart chart.",
+        "format": "fill
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    string,
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    auto
+    string
+}",
+        "name": "size",
+      },
+      Object {
+        "description": "Default thickness across charts.",
+        "format": "hair
+xsmall
+small
+medium
+large
+xlarge
+none
+string",
+        "name": "thickness",
+      },
+      Object {
+        "description": "x-axis configuration",
+        "format": "{
+  guide: boolean,
+  key: string,
+  labels: number,
+  render: function
+}",
+        "name": "xAxis",
+      },
+      Object {
+        "description": "y-axis configuration",
+        "format": "{
+  guide: boolean,
+  labels: number,
+  render: function
+}",
+        "name": "yAxis",
+      },
+    ],
+    "usage": "import { DataChart } from 'grommet';
+<DataChart data={data} chart={} />",
+  },
   "DataTable": [Function],
   "Diagram": Object {
     "availableAt": Array [

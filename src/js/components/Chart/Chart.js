@@ -1,9 +1,15 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from 'react';
 
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
@@ -35,6 +41,7 @@ const Chart = React.forwardRef(
     },
     ref,
   ) => {
+    const containerRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [values, setValues] = useState([]);
     const [bounds, setBounds] = useState([
@@ -45,7 +52,18 @@ const Chart = React.forwardRef(
     const [size, setSize] = useState([0, 0]);
     const [scale, setScale] = useState([1, 1]);
     const [strokeWidth, setStrokeWidth] = useState(0);
-    const containerRef = useRef();
+
+    const needContainerSize = useMemo(
+      () =>
+        propsSize &&
+        (propsSize === 'full' ||
+          propsSize === 'fill' ||
+          propsSize.height === 'full' ||
+          propsSize.height === 'fill' ||
+          propsSize.width === 'full' ||
+          propsSize.width === 'fill'),
+      [propsSize],
+    );
 
     // calculations
     useEffect(() => {
@@ -74,7 +92,7 @@ const Chart = React.forwardRef(
           ? propsSize
           : propsSize.width || defaultSize.width;
       let width;
-      if (sizeWidth === 'full') {
+      if (sizeWidth === 'full' || sizeWidth === 'fill') {
         [width] = containerSize;
       } else if (sizeWidth === 'auto') {
         width = autoWidth;
@@ -87,7 +105,7 @@ const Chart = React.forwardRef(
           ? propsSize
           : propsSize.height || defaultSize.height;
       let height;
-      if (sizeHeight === 'full') {
+      if (sizeHeight === 'full' || sizeHeight === 'fill') {
         [, height] = containerSize;
       } else {
         height = parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
@@ -113,47 +131,38 @@ const Chart = React.forwardRef(
     ]);
 
     // set container size when we get ref or when size changes
-    if (
-      (ref || containerRef).current &&
-      propsSize &&
-      (propsSize === 'full' ||
-        propsSize.height === 'full' ||
-        propsSize.width === 'full')
-    ) {
-      const containerNode = (ref || containerRef).current;
-      if (containerNode) {
-        const { parentNode } = containerNode;
-        if (parentNode) {
-          const rect = parentNode.getBoundingClientRect();
-          if (
-            rect.width !== containerSize[0] ||
-            rect.height !== containerSize[1]
-          ) {
-            setContainerSize([rect.width, rect.height]);
+    useLayoutEffect(() => {
+      if (containerRef.current && needContainerSize) {
+        const containerNode = containerRef.current;
+        if (containerNode) {
+          const { parentNode } = containerNode;
+          if (parentNode) {
+            const rect = parentNode.getBoundingClientRect();
+            if (
+              rect.width !== containerSize[0] ||
+              rect.height !== containerSize[1]
+            ) {
+              setContainerSize([rect.width, rect.height]);
+            }
           }
         }
       }
-    }
+    }, [containerRef, containerSize, needContainerSize]);
 
     // container size, if needed
     useEffect(() => {
       const onResize = () => {
-        const { parentNode } = (ref || containerRef).current;
+        const { parentNode } = containerRef.current;
         const rect = parentNode.getBoundingClientRect();
         setContainerSize([rect.width, rect.height]);
       };
 
-      if (
-        propsSize &&
-        (propsSize === 'full' ||
-          propsSize.width === 'full' ||
-          propsSize.height === 'full')
-      ) {
+      if (needContainerSize) {
         window.addEventListener('resize', onResize);
         return () => window.removeEventListener('resize', onResize);
       }
       return undefined;
-    }, [containerRef, propsSize, ref]);
+    }, [containerRef, needContainerSize]);
 
     const useGradient = color && Array.isArray(color);
 
@@ -447,7 +456,7 @@ const Chart = React.forwardRef(
 
     return (
       <StyledChart
-        ref={ref || containerRef}
+        ref={containerRef}
         id={id}
         viewBox={viewBox}
         preserveAspectRatio="none"

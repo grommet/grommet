@@ -87,6 +87,7 @@ export const doc = Chart => {
         'medium',
         'large',
         'xlarge',
+        'fill',
         'full',
       ]),
       PropTypes.shape({
@@ -98,6 +99,7 @@ export const doc = Chart => {
             'medium',
             'large',
             'xlarge',
+            'fill',
             'full',
           ]),
           PropTypes.string,
@@ -110,6 +112,7 @@ export const doc = Chart => {
             'medium',
             'large',
             'xlarge',
+            'fill',
             'full',
             'auto',
           ]),

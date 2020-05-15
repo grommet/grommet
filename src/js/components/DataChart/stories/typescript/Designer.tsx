@@ -14,8 +14,8 @@ for (let i = 0; i < 8; i += 1) {
 }
 
 const DesignerDataChart = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" justify="start" pad="large">
+  <Grommet full theme={grommet}>
+    <Box fill="horizontal" align="center" justify="center" pad="large">
       <DataChart
         data={data}
         chart={[
@@ -40,6 +40,7 @@ const DesignerDataChart = () => (
           guide: true,
           render: value => <Text>${value}</Text>,
         }}
+        size={{ width: 'fill' }}
         gap="small"
         pad={{ horizontal: 'medium', vertical: 'small' }}
       />

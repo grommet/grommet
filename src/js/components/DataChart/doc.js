@@ -90,6 +90,38 @@ export const doc = DataChart => {
       PropTypes.string,
     ]).description(`The amount of spacing between data points. This
     is only used when the size specifies width as 'auto'.`),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['fill']),
+      PropTypes.shape({
+        height: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'fill',
+          ]),
+          PropTypes.string,
+        ]),
+        width: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'fill',
+            'auto',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
+    ])
+      .description('The size of the DataChart chart.')
+      .defaultValue({ width: 'medium', height: 'small' }),
     thickness: thicknessType.description('Default thickness across charts.'),
     xAxis: PropTypes.shape({
       guide: PropTypes.bool,
