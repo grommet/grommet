@@ -91,7 +91,7 @@ const AccordionPanel = forwardRef(
           role="tab"
           aria-selected={active}
           aria-expanded={active}
-          plain={theme.button.default}
+          plain={!!theme.button.default}
           onClick={onPanelChange}
           onMouseOver={event => {
             setHover(headingColor);

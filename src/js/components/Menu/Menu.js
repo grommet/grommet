@@ -261,7 +261,7 @@ const Menu = forwardRef((props, ref) => {
                       active={activeItemIndex === index}
                       hoverIndicator="background"
                       focusIndicator={false}
-                      plain={theme.button.default}
+                      plain={!!theme.button.default}
                       {...{ ...item, icon: undefined, label: undefined }}
                       onClick={(...args) => {
                         if (item.onClick) {
