@@ -321,6 +321,7 @@ string
 x-axis configuration
 
 ```
+boolean
 {
   guide: boolean,
   key: string,
@@ -334,6 +335,7 @@ x-axis configuration
 y-axis configuration
 
 ```
+boolean
 {
   guide: boolean,
   labels: number,

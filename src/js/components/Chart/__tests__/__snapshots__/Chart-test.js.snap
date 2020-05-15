@@ -30,7 +30,7 @@ Object {
 }
 `;
 
-exports[`Chart cap renders 1`] = `
+exports[`Chart cap 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -162,7 +162,7 @@ exports[`Chart cap renders 1`] = `
 </div>
 `;
 
-exports[`Chart color renders 1`] = `
+exports[`Chart color 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -294,7 +294,7 @@ exports[`Chart color renders 1`] = `
 </div>
 `;
 
-exports[`Chart dash renders 1`] = `
+exports[`Chart dash 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -344,7 +344,56 @@ exports[`Chart dash renders 1`] = `
 </div>
 `;
 
-exports[`Chart gap renders 1`] = `
+exports[`Chart default 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart gap 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -464,7 +513,7 @@ exports[`Chart gap renders 1`] = `
 </div>
 `;
 
-exports[`Chart pad renders 1`] = `
+exports[`Chart pad 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -539,56 +588,7 @@ exports[`Chart pad renders 1`] = `
 </div>
 `;
 
-exports[`Chart renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: block;
-  max-width: 100%;
-  overflow: visible;
-}
-
-<div
-  className="c0"
->
-  <svg
-    className="c1"
-    height={192}
-    preserveAspectRatio="none"
-    viewBox="-12 -12 408 216"
-    width={384}
-  >
-    <g
-      fill="none"
-      stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
-    >
-      <g
-        fill="none"
-      >
-        <title>
-          sixty
-        </title>
-        <path
-          d="M 384,192 L 384,0"
-        />
-      </g>
-    </g>
-  </svg>
-</div>
-`;
-
-exports[`Chart size renders 1`] = `
+exports[`Chart size 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -786,6 +786,32 @@ exports[`Chart size renders 1`] = `
       className="c1"
       height={192}
       preserveAspectRatio="none"
+      viewBox="-12 -12 24 216"
+      width={0}
+    >
+      <g
+        fill="none"
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <title>
+            sixty
+          </title>
+          <path
+            d="M 0,192 L 0,0"
+          />
+        </g>
+      </g>
+    </svg>
+    <svg
+      className="c1"
+      height={192}
+      preserveAspectRatio="none"
       viewBox="-12 -12 96 216"
       width={72}
     >
@@ -812,7 +838,7 @@ exports[`Chart size renders 1`] = `
 </div>
 `;
 
-exports[`Chart thickness renders 1`] = `
+exports[`Chart thickness 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -965,7 +991,7 @@ exports[`Chart thickness renders 1`] = `
 </div>
 `;
 
-exports[`Chart type renders 1`] = `
+exports[`Chart type 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;

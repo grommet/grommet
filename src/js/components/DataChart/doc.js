@@ -123,17 +123,23 @@ export const doc = DataChart => {
       .description('The size of the DataChart chart.')
       .defaultValue({ width: 'medium', height: 'small' }),
     thickness: thicknessType.description('Default thickness across charts.'),
-    xAxis: PropTypes.shape({
-      guide: PropTypes.bool,
-      key: PropTypes.string,
-      labels: PropTypes.number, // default undefined, all data points
-      render: PropTypes.func, // (dataIndex, axisIndex) => element
-    }).description('x-axis configuration'),
-    yAxis: PropTypes.shape({
-      guide: PropTypes.bool,
-      labels: PropTypes.number, // default 2, top and bottom
-      render: PropTypes.func, // (value, axisIndex) => element
-    }).description('y-axis configuration'),
+    xAxis: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        guide: PropTypes.bool,
+        key: PropTypes.string,
+        labels: PropTypes.number, // default undefined, all data points
+        render: PropTypes.func, // (dataIndex, axisIndex) => element
+      }),
+    ]).description('x-axis configuration'),
+    yAxis: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        guide: PropTypes.bool,
+        labels: PropTypes.number, // default 2, top and bottom
+        render: PropTypes.func, // (value, axisIndex) => element
+      }),
+    ]).description('y-axis configuration'),
   };
 
   return DocumentedDataChart;

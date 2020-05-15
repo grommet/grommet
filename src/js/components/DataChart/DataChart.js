@@ -1,4 +1,11 @@
-import React, { forwardRef, useLayoutEffect, useMemo, useRef } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+} from 'react';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Chart, calcs } from '../Chart';
 import { Grid } from '../Grid';
@@ -25,6 +32,7 @@ const DataChart = forwardRef(
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext);
     // refs used for ie11 not having Grid
     const xRef = useRef();
     const spacerRef = useRef();
@@ -52,6 +60,11 @@ const DataChart = forwardRef(
       return result;
     }, [charts, data]);
 
+    const numValues = useMemo(
+      () => keyValues[Object.keys(keyValues)[0]].length,
+      [keyValues],
+    );
+
     // setup the values for each chart
     const chartValues = useMemo(() => {
       return charts.map(({ key, keys }) => {
@@ -71,7 +84,7 @@ const DataChart = forwardRef(
     const { axis, bounds, thickness } = useMemo(() => {
       const steps = [];
       if (xAxis && xAxis.labels >= 0) steps[0] = xAxis.labels - 1;
-      else steps[0] = keyValues[Object.keys(keyValues)[0]].length - 1; // all
+      else steps[0] = numValues - 1; // all
       if (yAxis && yAxis.labels >= 0) steps[1] = yAxis.labels - 1;
       else steps[1] = 1; // ends
       let tmpAxis;
@@ -89,7 +102,7 @@ const DataChart = forwardRef(
         });
       });
       return { axis: tmpAxis, bounds: tmpBounds, thickness: tmpThickness };
-    }, [charts, chartValues, keyValues, thicknessProp, xAxis, yAxis]);
+    }, [charts, chartValues, numValues, thicknessProp, xAxis, yAxis]);
 
     // set the pad to have the thickness, if not defined
     const pad = useMemo(() => {
@@ -136,6 +149,12 @@ const DataChart = forwardRef(
     /* eslint-disable react/no-array-index-key */
     let xAxisElement;
     if (xAxis) {
+      // Set basis to match thickness. This works well for bar charts,
+      // to align each bar's label.
+      let basis;
+      if (thickness && axis[0].length === numValues) {
+        basis = theme.global.edgeSize[thickness] || thickness;
+      }
       xAxisElement = (
         <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
           {axis[0].map((a, i) => {
@@ -143,7 +162,11 @@ const DataChart = forwardRef(
             if (xAxis.render) content = xAxis.render(a, i);
             else if (xAxis.key) content = data[i][xAxis.key];
             else content = a;
-            return <Box key={i}>{content}</Box>;
+            return (
+              <Box key={i} basis={basis} align={basis ? 'center' : undefined}>
+                {content}
+              </Box>
+            );
           })}
         </Box>
       );
@@ -258,8 +281,14 @@ const DataChart = forwardRef(
       <Grid
         ref={ref}
         fill={stackFill}
-        columns={['auto', 'flex']}
-        rows={['flex', 'auto']}
+        columns={[
+          'auto',
+          stackFill === true || stackFill === 'horizontal' ? 'flex' : 'auto',
+        ]}
+        rows={[
+          stackFill === true || stackFill === 'vertical' ? 'flex' : 'auto',
+          'auto',
+        ]}
         areas={[
           { name: 'yAxis', start: [0, 0], end: [0, 0] },
           { name: 'xAxis', start: [1, 1], end: [1, 1] },

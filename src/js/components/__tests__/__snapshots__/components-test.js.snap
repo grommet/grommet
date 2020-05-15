@@ -2557,7 +2557,8 @@ string",
       },
       Object {
         "description": "x-axis configuration",
-        "format": "{
+        "format": "boolean
+{
   guide: boolean,
   key: string,
   labels: number,
@@ -2567,7 +2568,8 @@ string",
       },
       Object {
         "description": "y-axis configuration",
-        "format": "{
+        "format": "boolean
+{
   guide: boolean,
   labels: number,
   render: function
