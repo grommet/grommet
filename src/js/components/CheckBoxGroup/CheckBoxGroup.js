@@ -49,7 +49,7 @@ export const CheckBoxGroup = forwardRef(
       if (optionIndex < 0) nextValue.push(optionValue);
       else nextValue.splice(optionIndex, 1);
       setValue(nextValue);
-      // Same functionalities as Select onChange()
+      // Similar functionality to Select onChange()
       if (onChange) {
         event.persist(); // extract from React synthetic event pool
         const adjustedEvent = event;
