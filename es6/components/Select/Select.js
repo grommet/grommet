@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, isValidElement, useContext, useMemo, useState, useRef, useEffect } from 'react';
+import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { controlBorderStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -126,18 +126,15 @@ var Select = forwardRef(function (_ref, ref) {
   useEffect(function () {
     return setOpen(propOpen);
   }, [propOpen]);
-
-  var onRequestOpen = function onRequestOpen() {
+  var onRequestOpen = useCallback(function () {
     setOpen(true);
     if (onOpen) onOpen();
-  };
-
-  var onRequestClose = function onRequestClose() {
+  }, [onOpen]);
+  var onRequestClose = useCallback(function () {
     setOpen(false);
     if (onClose) onClose();
-  };
-
-  var onSelectChange = function onSelectChange(event, _ref2) {
+  }, [onClose]);
+  var onSelectChange = useCallback(function (event, _ref2) {
     var option = _ref2.option,
         nextValue = _ref2.value,
         nextSelected = _ref2.selected;
@@ -153,8 +150,7 @@ var Select = forwardRef(function (_ref, ref) {
       adjustedEvent.selected = nextSelected;
       onChange(adjustedEvent);
     }
-  };
-
+  }, [closeOnChange, onChange, onRequestClose, setValue]);
   var SelectIcon;
 
   switch (icon) {

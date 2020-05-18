@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useCallback, useContext, useMemo, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
@@ -62,26 +62,23 @@ var Menu = forwardRef(function (props, ref) {
   var MenuIcon = theme.menu.icons.down;
   var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   var align = dropProps.align || dropAlign;
-  var controlButtonIndex;
-
-  if (align.top === 'top') {
-    controlButtonIndex = -1;
-  } else if (align.bottom === 'bottom') {
-    controlButtonIndex = items.length;
-  } else {
-    controlButtonIndex = undefined;
-  }
-
+  var controlButtonIndex = useMemo(function () {
+    if (align.top === 'top') return -1;
+    if (align.bottom === 'bottom') return items.length;
+    return undefined;
+  }, [align, items]);
   var buttonRefs = {};
-  var constants = {
-    none: 'none',
-    tab: 9,
-    // Menu control button included on top of menu items
-    controlTop: align.top === 'top' || undefined,
-    // Menu control button included on the bottom of menu items
-    controlBottom: align.bottom === 'bottom' || undefined,
-    controlButtonIndex: controlButtonIndex
-  };
+  var constants = useMemo(function () {
+    return {
+      none: 'none',
+      tab: 9,
+      // Menu control button included on top of menu items
+      controlTop: align.top === 'top' || undefined,
+      // Menu control button included on the bottom of menu items
+      controlBottom: align.bottom === 'bottom' || undefined,
+      controlButtonIndex: controlButtonIndex
+    };
+  }, [align, controlButtonIndex]);
 
   var _useState = useState(constants.none),
       activeItemIndex = _useState[0],
@@ -91,14 +88,13 @@ var Menu = forwardRef(function (props, ref) {
       isOpen = _useState2[0],
       setOpen = _useState2[1];
 
-  var onDropClose = function onDropClose() {
+  var onDropClose = useCallback(function () {
     setActiveItemIndex(constants.none);
     setOpen(false);
-  };
-
-  var onDropOpen = function onDropOpen() {
+  }, [constants.none]);
+  var onDropOpen = useCallback(function () {
     setOpen(true);
-  };
+  }, []);
 
   var onSelectMenuItem = function onSelectMenuItem(event) {
     if (isOpen) {

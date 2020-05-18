@@ -84,26 +84,23 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
   var MenuIcon = theme.menu.icons.down;
   var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme);
   var align = dropProps.align || dropAlign;
-  var controlButtonIndex;
-
-  if (align.top === 'top') {
-    controlButtonIndex = -1;
-  } else if (align.bottom === 'bottom') {
-    controlButtonIndex = items.length;
-  } else {
-    controlButtonIndex = undefined;
-  }
-
+  var controlButtonIndex = (0, _react.useMemo)(function () {
+    if (align.top === 'top') return -1;
+    if (align.bottom === 'bottom') return items.length;
+    return undefined;
+  }, [align, items]);
   var buttonRefs = {};
-  var constants = {
-    none: 'none',
-    tab: 9,
-    // Menu control button included on top of menu items
-    controlTop: align.top === 'top' || undefined,
-    // Menu control button included on the bottom of menu items
-    controlBottom: align.bottom === 'bottom' || undefined,
-    controlButtonIndex: controlButtonIndex
-  };
+  var constants = (0, _react.useMemo)(function () {
+    return {
+      none: 'none',
+      tab: 9,
+      // Menu control button included on top of menu items
+      controlTop: align.top === 'top' || undefined,
+      // Menu control button included on the bottom of menu items
+      controlBottom: align.bottom === 'bottom' || undefined,
+      controlButtonIndex: controlButtonIndex
+    };
+  }, [align, controlButtonIndex]);
 
   var _useState = (0, _react.useState)(constants.none),
       activeItemIndex = _useState[0],
@@ -113,14 +110,13 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
       isOpen = _useState2[0],
       setOpen = _useState2[1];
 
-  var onDropClose = function onDropClose() {
+  var onDropClose = (0, _react.useCallback)(function () {
     setActiveItemIndex(constants.none);
     setOpen(false);
-  };
-
-  var onDropOpen = function onDropOpen() {
+  }, [constants.none]);
+  var onDropOpen = (0, _react.useCallback)(function () {
     setOpen(true);
-  };
+  }, []);
 
   var onSelectMenuItem = function onSelectMenuItem(event) {
     if (isOpen) {

@@ -147,18 +147,15 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
   (0, _react.useEffect)(function () {
     return setOpen(propOpen);
   }, [propOpen]);
-
-  var onRequestOpen = function onRequestOpen() {
+  var onRequestOpen = (0, _react.useCallback)(function () {
     setOpen(true);
     if (onOpen) onOpen();
-  };
-
-  var onRequestClose = function onRequestClose() {
+  }, [onOpen]);
+  var onRequestClose = (0, _react.useCallback)(function () {
     setOpen(false);
     if (onClose) onClose();
-  };
-
-  var onSelectChange = function onSelectChange(event, _ref2) {
+  }, [onClose]);
+  var onSelectChange = (0, _react.useCallback)(function (event, _ref2) {
     var option = _ref2.option,
         nextValue = _ref2.value,
         nextSelected = _ref2.selected;
@@ -174,8 +171,7 @@ var Select = (0, _react.forwardRef)(function (_ref, ref) {
       adjustedEvent.selected = nextSelected;
       onChange(adjustedEvent);
     }
-  };
-
+  }, [closeOnChange, onChange, onRequestClose, setValue]);
   var SelectIcon;
 
   switch (icon) {
