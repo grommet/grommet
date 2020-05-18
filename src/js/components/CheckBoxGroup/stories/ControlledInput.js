@@ -22,7 +22,7 @@ const CheckBoxGroupForm = () => {
               id="check-box-group-id"
               name="controlled"
               value={value}
-              onChange={() => setValue()}
+              onChange={({ value: nextValue }) => setValue(nextValue)}
               options={['Maui', 'Jerusalem', 'Wuhan']}
             />
           </FormField>
