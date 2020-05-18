@@ -41,11 +41,12 @@ const DropButton = forwardRef(
           node = node.parentNode;
         }
         if (node !== buttonRef.current) {
-          setShow(false);
+          // don't change internal state if caller is driving
+          if (open === undefined) setShow(false);
           if (onClose) onClose(event);
         }
       },
-      [buttonRef, onClose],
+      [buttonRef, onClose, open],
     );
 
     const onClickInternal = useCallback(
