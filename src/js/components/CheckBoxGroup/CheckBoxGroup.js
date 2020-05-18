@@ -45,7 +45,7 @@ export const CheckBoxGroup = forwardRef(
       const nextValue = JSON.parse(JSON.stringify(value)) || [];
       const optionIndex = nextValue.indexOf(optionValue);
       // If the value option isn't in the array, add it.
-      // Otherwise, remove the option from the array to simulate a toggle action
+      // Otherwise, remove it.
       if (optionIndex < 0) nextValue.push(optionValue);
       else nextValue.splice(optionIndex, 1);
       setValue(nextValue);
