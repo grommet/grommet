@@ -1,6 +1,7 @@
 import React, {
   forwardRef,
   isValidElement,
+  useCallback,
   useContext,
   useMemo,
   useState,
@@ -124,32 +125,32 @@ const Select = forwardRef(
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);
 
-    const onRequestOpen = () => {
+    const onRequestOpen = useCallback(() => {
       setOpen(true);
       if (onOpen) onOpen();
-    };
+    }, [onOpen]);
 
-    const onRequestClose = () => {
+    const onRequestClose = useCallback(() => {
       setOpen(false);
       if (onClose) onClose();
-    };
+    }, [onClose]);
 
-    const onSelectChange = (
-      event,
-      { option, value: nextValue, selected: nextSelected },
-    ) => {
-      if (closeOnChange) onRequestClose();
-      setValue(nextValue);
-      if (onChange) {
-        event.persist();
-        const adjustedEvent = event;
-        adjustedEvent.target = inputRef.current;
-        adjustedEvent.value = nextValue;
-        adjustedEvent.option = option;
-        adjustedEvent.selected = nextSelected;
-        onChange(adjustedEvent);
-      }
-    };
+    const onSelectChange = useCallback(
+      (event, { option, value: nextValue, selected: nextSelected }) => {
+        if (closeOnChange) onRequestClose();
+        setValue(nextValue);
+        if (onChange) {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.target = inputRef.current;
+          adjustedEvent.value = nextValue;
+          adjustedEvent.option = option;
+          adjustedEvent.selected = nextSelected;
+          onChange(adjustedEvent);
+        }
+      },
+      [closeOnChange, onChange, onRequestClose, setValue],
+    );
 
     let SelectIcon;
     switch (icon) {
