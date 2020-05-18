@@ -53,6 +53,15 @@ export const findScrollParents = (element, horizontal) => {
   return result;
 };
 
+export const containsFocus = node => {
+  let element = document.activeElement;
+  while (element) {
+    if (element === node) break;
+    element = element.parentElement;
+  }
+  return !!element;
+};
+
 export const getFirstFocusableDescendant = element => {
   const children = element.getElementsByTagName('*');
   for (let i = 0; i < children.length; i += 1) {
@@ -156,14 +165,25 @@ export const findVisibleParent = element => {
   return undefined;
 };
 
-export const isNodeAfterScroll = (node, target = window) => {
+export const isNodeAfterScroll = (node, target) => {
   const { bottom } = node.getBoundingClientRect();
-  const { height, top } = target.getBoundingClientRect();
+  // target will be the document from findScrollParent()
+  if (target.getBoundingClientRect) {
+    const { height, top } = target.getBoundingClientRect();
+    return bottom >= top + height;
+  }
+  const height = 0;
+  const top = 0;
   return bottom >= top + height;
 };
 
-export const isNodeBeforeScroll = (node, target = window) => {
+export const isNodeBeforeScroll = (node, target) => {
   const { top } = node.getBoundingClientRect();
-  const { top: targetTop } = target.getBoundingClientRect();
+  // target will be the document from findScrollParent()
+  if (target.getBoundingClientRect) {
+    const { top: targetTop } = target.getBoundingClientRect();
+    return top <= targetTop;
+  }
+  const targetTop = 0;
   return top <= targetTop;
 };
