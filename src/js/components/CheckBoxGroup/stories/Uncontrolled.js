@@ -37,9 +37,9 @@ const CheckBoxGroupForm = () => {
             console.log('Submit object options', value, touched)
           }
         >
-          <FormField name="am-pm">
+          <FormField name="drink">
             <CheckBoxGroup
-              name="am-pm"
+              name="drink"
               valueKey="id"
               options={[
                 { label: 'Coffee', id: '1' },
