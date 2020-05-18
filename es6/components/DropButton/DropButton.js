@@ -47,10 +47,11 @@ var DropButton = forwardRef(function (_ref, ref) {
     }
 
     if (node !== buttonRef.current) {
-      setShow(false);
+      // don't change internal state if caller is driving
+      if (open === undefined) setShow(false);
       if (onClose) onClose(event);
     }
-  }, [buttonRef, onClose]);
+  }, [buttonRef, onClose, open]);
   var onClickInternal = useCallback(function (event) {
     if (!show) {
       setShow(true);
