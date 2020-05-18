@@ -1991,8 +1991,8 @@ NOTE: This can only be used with non-toggle components",
     "properties": Array [
       Object {
         "description": "An array of the values for the checked options. 
-      If options is provided as an object, the value array will be the strings 
-      of the valueKeys.",
+      If options is provided as an object, the value array will be the values 
+     that the valueKey maps to.",
         "format": "[
   number
   string
@@ -2009,8 +2009,7 @@ NOTE: This can only be used with non-toggle components",
         "description": "When the options array contains objects, this property indicates how
         to determine the label of each option. If a string is
         provided, it is used as the key to retrieve each option's label.",
-        "format": "string
-function",
+        "format": "string",
         "name": "labelKey",
       },
       Object {

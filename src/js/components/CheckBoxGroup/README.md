@@ -14,8 +14,8 @@ import { CheckBoxGroup } from 'grommet';
 **value**
 
 An array of the values for the checked options. 
-      If options is provided as an object, the value array will be the strings 
-      of the valueKeys.
+      If options is provided as an object, the value array will be the values 
+     that the valueKey maps to.
 
 ```
 [
@@ -40,7 +40,6 @@ When the options array contains objects, this property indicates how
 
 ```
 string
-function
 ```
 
 **name**

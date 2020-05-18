@@ -12,11 +12,11 @@ export type CheckBoxType = Omit<CheckBoxProps & JSX.IntrinsicElements['input'], 
 export interface CheckBoxGroupProps {
   value?: (number | string )[]
   disabled?: boolean;
-  labelKey?: string | ((...args: any[]) => any);  
+  labelKey?: string;  
   name?: string;
   onChange?: ((event?: OnChangeEvent) => void);
   options: (CheckBoxType)[];
-  valueKey?: string | ((...args: any[]) => any);
+  valueKey?: string;
 }
 
 declare const CheckBoxGroup: React.ComponentClass<CheckBoxGroupProps & BoxProps & JSX.IntrinsicElements['div']>;

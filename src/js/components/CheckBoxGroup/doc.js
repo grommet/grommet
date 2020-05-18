@@ -23,10 +23,7 @@ export const doc = CheckBoxGroup => {
     disabled: PropTypes.bool
       .description(`Disables all options.`)
       .defaultValue(undefined),
-    labelKey: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]).description(
+    labelKey: PropTypes.string.description(
       `When the options array contains objects, this property indicates how
         to determine the label of each option. If a string is
         provided, it is used as the key to retrieve each option's label.`,
