@@ -28,7 +28,7 @@ export const CheckBoxGroup = forwardRef(
           return typeof option === 'string'
             ? {
                 disabled: disabledProp,
-                key: option,
+                value: option,
                 label: option,
               }
             : option;
@@ -61,39 +61,33 @@ export const CheckBoxGroup = forwardRef(
 
     return (
       <Box ref={ref} gap={gap} {...rest}>
-        {options.map(
-          ({
-            checked: checkedOption,
-            disabled: disabledOption,
-            label: labelOption,
-            ...optionRest
-          }) => {
-            const label = labelKey
-              ? optionRest[labelKey] || labelOption
-              : labelOption;
-            const disabled = disabledProp || disabledOption;
-            const valueOption = valueKey
-              ? optionRest[valueKey]
-              : optionRest.key || label;
-            if (checkedOption)
-              console.warn(
-                // eslint-disable-next-line max-len
-                `'checked' prop of an individual CheckBox shouldn't be used in a CheckBoxGroup component. Use the CheckBoxGroup 'value' prop instead.`,
-              );
-            const checked = valueProp && valueProp.indexOf(valueOption) >= 0;
-            const option = { label, disabled, ...optionRest };
-            return (
-              <CheckBox
-                key={label}
-                disabled={disabled}
-                checked={checked}
-                label={label}
-                onChange={event => onCheckBoxChange(event, valueOption, option)}
-                {...optionRest}
-              />
+        {options.map(option => {
+          const label = labelKey ? option[labelKey] : option.label;
+          const valueOption = valueKey ? option[valueKey] : option.value;
+          const checked = valueProp && valueProp.indexOf(valueOption) >= 0;
+          const disabled = disabledProp || option.disabled;
+
+          if (option.checked)
+            console.warn(
+              // eslint-disable-next-line max-len
+              `'checked' prop of an individual CheckBox shouldn't be used in a CheckBoxGroup component. Use the CheckBoxGroup 'value' prop instead.`,
             );
-          },
-        )}
+          // value shouldn't propagate the input field and the onChange option
+          const { value: omit, ...optionRest } = option;
+          const optionProps = { ...optionRest, label, disabled };
+          return (
+            <CheckBox
+              key={label}
+              {...optionProps}
+              disabled={disabled}
+              checked={checked}
+              label={label}
+              onChange={event =>
+                onCheckBoxChange(event, valueOption, optionProps)
+              }
+            />
+          );
+        })}
       </Box>
     );
   },

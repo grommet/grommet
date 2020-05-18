@@ -32,11 +32,11 @@ describe('CheckBoxGroup', () => {
     const component = renderer.create(
       <Grommet>
         <CheckBoxGroup
-          value={['Maui', 'Jerusalem']}
+          value={['Wuhan', 'Jerusalem']}
           options={[
-            { label: 'Maui' },
-            { label: 'Jerusalem' },
-            { label: 'Wuhan' },
+            { label: 'Maui', value: 'Maui' },
+            { label: 'Jerusalem', value: 'Jerusalem' },
+            { label: 'Wuhan', value: 'Wuhan' },
           ]}
         />
       </Grommet>,

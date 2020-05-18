@@ -46,8 +46,7 @@ export const doc = CheckBoxGroup => {
     ).isRequired,
     valueKey: PropTypes.string.description(
       `When the options array contains objects, this property indicates how
-        to determine the value of each option and defaults to 'key'. 
-        If a string is provided, 
+        to determine the value of each option. If a string is provided, 
         it is used as the key to retrieve each option's value.`,
     ),
   };

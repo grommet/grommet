@@ -150,16 +150,16 @@ exports[`CheckBoxGroup initial value renders 1`] = `
     className="StyledBox-sc-13pk1d4-0 bFwQzJ"
   >
     <label
-      checked={true}
+      checked={false}
       className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
       onClick={[Function]}
     >
       <div
-        checked={true}
+        checked={false}
         className="StyledBox-sc-13pk1d4-0 fuEVwc StyledCheckBox-sc-1dbk5ju-6 CBoMo"
       >
         <input
-          checked={true}
+          checked={false}
           className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
           onBlur={[Function]}
           onChange={[Function]}
@@ -167,21 +167,9 @@ exports[`CheckBoxGroup initial value renders 1`] = `
           type="checkbox"
         />
         <div
-          checked={true}
-          className="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
-        >
-          <svg
-            checked={true}
-            className="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M6,11.3 L10.3,16 L18,6.2"
-              fill="none"
-            />
-          </svg>
-        </div>
+          checked={false}
+          className="StyledBox-sc-13pk1d4-0 gDUCoH StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+        />
       </div>
       <span>
         Maui
@@ -232,16 +220,16 @@ exports[`CheckBoxGroup initial value renders 1`] = `
       className="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
     />
     <label
-      checked={false}
+      checked={true}
       className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
       onClick={[Function]}
     >
       <div
-        checked={false}
+        checked={true}
         className="StyledBox-sc-13pk1d4-0 fuEVwc StyledCheckBox-sc-1dbk5ju-6 CBoMo"
       >
         <input
-          checked={false}
+          checked={true}
           className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
           onBlur={[Function]}
           onChange={[Function]}
@@ -249,9 +237,21 @@ exports[`CheckBoxGroup initial value renders 1`] = `
           type="checkbox"
         />
         <div
-          checked={false}
-          className="StyledBox-sc-13pk1d4-0 gDUCoH StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
-        />
+          checked={true}
+          className="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+        >
+          <svg
+            checked={true}
+            className="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6,11.3 L10.3,16 L18,6.2"
+              fill="none"
+            />
+          </svg>
+        </div>
       </div>
       <span>
         Wuhan
