@@ -18,7 +18,7 @@ export const doc = CheckBoxGroup => {
     ).description(
       `An array of the values for the checked options. 
       If options is provided as an object, the value array will be the values 
-      of the valueKeys.`,
+     that the valueKey maps to.`,
     ),
     disabled: PropTypes.bool
       .description(`Disables all options.`)
