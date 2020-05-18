@@ -1,5 +1,11 @@
 /* eslint-disable react/no-find-dom-node */
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useCallback,
+} from 'react';
 import {
   findScrollParent,
   findScrollParents,
@@ -8,9 +14,10 @@ import {
 } from '../../utils';
 import { Box } from '../Box';
 
-const Ref = React.forwardRef((props, ref) => (
-  <Box ref={ref}>{props.children}</Box>
-));
+const Ref = React.forwardRef((props, ref) => {
+  const { children } = props;
+  return <Box ref={ref}>{children}</Box>;
+});
 
 const InfiniteScroll = ({
   children,
@@ -42,18 +49,37 @@ const InfiniteScroll = ({
   const [pendingLength, setPendingLength] = useState(0);
 
   const belowMarkerRef = useRef();
-  const firstPageItemRef = useRef();
-  const lastPageItemRef = useRef();
-  const showRef = useRef();
 
   // calculating space based on where the first and last items being displayed
   // are located
-  useEffect(() => {
-    if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
-      /* eslint-disable react/no-find-dom-node */
-      const beginRect = firstPageItemRef.current.getBoundingClientRect();
-      const endRect = lastPageItemRef.current.getBoundingClientRect();
+  const [beginRect, setBeginRect] = useState();
+  const [firstPageNode, setFirstPageNode] = useState();
+  const [endRect, setEndRect] = useState();
+  const [lastPageNode, setLastPageNode] = useState();
+  const [showNode, setShowNode] = useState();
 
+  const firstPageItemRef = useCallback(node => {
+    if (node !== null) {
+      setBeginRect(node.getBoundingClientRect());
+      setFirstPageNode(node);
+    }
+  }, []);
+
+  const lastPageItemRef = useCallback(node => {
+    if (node !== null) {
+      setEndRect(node.getBoundingClientRect());
+      setLastPageNode(node);
+    }
+  }, []);
+
+  const showRefTest = useCallback(node => {
+    if (node !== null) {
+      setShowNode(node);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (beginRect && endRect && !pageHeight) {
       const nextPageHeight = endRect.top + endRect.height - beginRect.top;
       // Check if the items are arranged in a single column or not.
       const nextMultiColumn = nextPageHeight / step < endRect.height;
@@ -62,7 +88,7 @@ const InfiniteScroll = ({
       setPageArea(nextPageArea);
       setMultiColumn(nextMultiColumn);
     }
-  }, [pageHeight, step]);
+  }, [beginRect, endRect, step, pageHeight]);
 
   // scroll handling
   useEffect(() => {
@@ -151,8 +177,7 @@ const InfiniteScroll = ({
   useEffect(() => {
     // ride out any animation delays, 100ms empirically measured
     const timer = setTimeout(() => {
-      if (show && showRef.current) {
-        const showNode = showRef.current.scrollIntoView && showRef.current;
+      if (show && showNode) {
         const scrollParent = findScrollParent(showNode);
         if (isNodeBeforeScroll(showNode, scrollParent)) {
           showNode.scrollIntoView(true);
@@ -162,7 +187,7 @@ const InfiniteScroll = ({
       }
     }, 100);
     return () => clearTimeout(timer);
-  }, [show]);
+  }, [show, showNode]);
 
   const firstIndex = beginPage * step;
   const lastIndex = Math.min((endPage + 1) * step, items.length) - 1;
@@ -186,18 +211,16 @@ const InfiniteScroll = ({
     // We only need page refs if we don't know the pageHeight
     // The new way, we pass the ref we want to the children render function.
     let ref;
-    if (!pageHeight && itemsIndex === 0) ref = firstPageItemRef;
+    if (!pageHeight && itemsIndex === 0) ref = firstPageNode;
     else if (
       !pageHeight &&
       (itemsIndex === step - 1 || itemsIndex === lastIndex)
     )
-      ref = lastPageItemRef;
-    else if (show && show === itemsIndex) ref = showRef;
-
+      ref = lastPageNode;
+    else if (show && show === itemsIndex) ref = showNode;
     let child = children(item, itemsIndex, ref);
-
     // The old way, if we don't see that our ref was set, wrap it
-    if (!pageHeight && itemsIndex === 0 && child.ref !== firstPageItemRef) {
+    if (!pageHeight && itemsIndex === 0 && child.ref !== firstPageNode) {
       child = (
         <Ref key="first" ref={firstPageItemRef}>
           {child}
@@ -206,7 +229,7 @@ const InfiniteScroll = ({
     } else if (
       !pageHeight &&
       (itemsIndex === step - 1 || itemsIndex === lastIndex) &&
-      child.ref !== lastPageItemRef
+      child.ref !== lastPageNode
     ) {
       child = (
         <Ref key="last" ref={lastPageItemRef}>
@@ -214,9 +237,9 @@ const InfiniteScroll = ({
         </Ref>
       );
     }
-    if (show && show === itemsIndex && child.ref !== showRef) {
+    if (show && show === itemsIndex && child.ref !== showNode) {
       child = (
-        <Ref key="show" ref={showRef}>
+        <Ref key="show" ref={showRefTest}>
           {child}
         </Ref>
       );
