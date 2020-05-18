@@ -66,8 +66,8 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
     light: 'dark-3'
   }); // accordion.hover.color will be deprecated in v3.
 
-  if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor) console.warn("The theme style for accordion.hover.color is deprecated, \n        use accordion.hover.heading.color instead."); // accordion.hover.heading.color will trump accordion.hover.color in case 
-  // the user sets its value to be any other value than the 
+  if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor) console.warn("The theme style for accordion.hover.color is deprecated, \n        use accordion.hover.heading.color instead."); // accordion.hover.heading.color will trump accordion.hover.color in case
+  // the user sets its value to be any other value than the
   // default value (defaultHoverColor).
   // accordion.hover.color will be deprecated in v3.
 
@@ -92,6 +92,7 @@ var AccordionPanel = (0, _react.forwardRef)(function (_ref, ref) {
     role: "tab",
     "aria-selected": active,
     "aria-expanded": active,
+    plain: theme.button["default"] ? true : undefined,
     onClick: onPanelChange,
     onMouseOver: function onMouseOver(event) {
       setHover(headingColor);

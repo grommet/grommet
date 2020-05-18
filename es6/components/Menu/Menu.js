@@ -253,7 +253,8 @@ var Menu = forwardRef(function (props, ref) {
           },
           active: activeItemIndex === index,
           hoverIndicator: "background",
-          focusIndicator: false
+          focusIndicator: false,
+          plain: theme.button["default"] ? true : undefined
         }, _extends(_extends({}, item), {}, {
           icon: undefined,
           label: undefined

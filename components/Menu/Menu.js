@@ -277,7 +277,8 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
           },
           active: activeItemIndex === index,
           hoverIndicator: "background",
-          focusIndicator: false
+          focusIndicator: false,
+          plain: theme.button["default"] ? true : undefined
         }, _extends(_extends({}, item), {}, {
           icon: undefined,
           label: undefined
