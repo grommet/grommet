@@ -17,7 +17,7 @@ export const doc = CheckBoxGroup => {
       PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     ).description(
       `An array of the values for the checked options. 
-      If options is provided as an object, the value array will be the strings 
+      If options is provided as an object, the value array will be the values 
       of the valueKeys.`,
     ),
     disabled: PropTypes.bool
