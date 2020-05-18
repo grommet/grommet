@@ -217,9 +217,6 @@ const Menu = forwardRef((props, ref) => {
       </Button>
     </Box>
   );
-  console.log(theme.button.default);
-  console.log(!theme.button.default);
-  console.log(!!theme.button.default);
 
   return (
     <Keyboard
