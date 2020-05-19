@@ -203,7 +203,8 @@ const fillStyle = fillContainer => {
   return undefined;
 };
 
-const plainStyle = () => css`
+const plainStyle = props => css`
+  color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
   outline: none;
   border: none;
   padding: 0;
