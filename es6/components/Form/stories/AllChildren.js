@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import { Box, Button, CheckBoxGroup, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
@@ -48,10 +48,10 @@ var Example = function Example() {
       placeholder: 'com'
     }]
   })), /*#__PURE__*/React.createElement(FormField, {
-    name: "subscribe"
-  }, /*#__PURE__*/React.createElement(CheckBox, {
-    name: "subscribe",
-    label: "Subscribe?"
+    name: "subscription"
+  }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
+    name: "subscription",
+    options: ['subscribe', 'receive email notifications']
   })), /*#__PURE__*/React.createElement(FormField, {
     name: "ampm"
   }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
@@ -62,6 +62,7 @@ var Example = function Example() {
     name: "size"
   }, /*#__PURE__*/React.createElement(Select, {
     name: "size",
+    multiple: true,
     options: ['small', 'medium', 'large']
   })), /*#__PURE__*/React.createElement(FormField, {
     label: "Comments",

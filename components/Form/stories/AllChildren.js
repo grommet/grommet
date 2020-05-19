@@ -55,10 +55,10 @@ var Example = function Example() {
       placeholder: 'com'
     }]
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    name: "subscribe"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
-    name: "subscribe",
-    label: "Subscribe?"
+    name: "subscription"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
+    name: "subscription",
+    options: ['subscribe', 'receive email notifications']
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     name: "ampm"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
@@ -69,6 +69,7 @@ var Example = function Example() {
     name: "size"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     name: "size",
+    multiple: true,
     options: ['small', 'medium', 'large']
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Comments",

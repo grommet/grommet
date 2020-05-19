@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, Button, Form, FormField, CheckBox, Grommet } from 'grommet';
+import { grommet, Box, Button, CheckBox, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
@@ -43,7 +43,21 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
   }, /*#__PURE__*/React.createElement(CheckBox, {
     id: "check-box",
     name: "checkbox",
-    label: "CheckBox"
+    label: "Required"
+  }))), /*#__PURE__*/React.createElement(FormField, {
+    label: "Where would you like to visit",
+    name: "checkboxgroup",
+    htmlFor: "check-box-group",
+    required: true
+  }, /*#__PURE__*/React.createElement(Box, {
+    pad: {
+      horizontal: 'small',
+      vertical: 'xsmall'
+    }
+  }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
+    id: "group",
+    name: "checkboxgroup",
+    options: ['Maui', 'Jerusalem', 'Wuhan']
   }))), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Submit"

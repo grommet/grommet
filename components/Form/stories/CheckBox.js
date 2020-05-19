@@ -49,7 +49,21 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
     id: "check-box",
     name: "checkbox",
-    label: "CheckBox"
+    label: "Required"
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    label: "Where would you like to visit",
+    name: "checkboxgroup",
+    htmlFor: "check-box-group",
+    required: true
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    pad: {
+      horizontal: 'small',
+      vertical: 'xsmall'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
+    id: "group",
+    name: "checkboxgroup",
+    options: ['Maui', 'Jerusalem', 'Wuhan']
   }))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "Submit"

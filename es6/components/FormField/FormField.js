@@ -8,12 +8,13 @@ import { defaultProps } from '../../default-props';
 import { focusStyle, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
+import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 var grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
-var grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
+var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput'];
 
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
@@ -173,7 +174,7 @@ var FormField = forwardRef(function (_ref2, ref) {
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
 
-  var wantContentPad = component && (component === CheckBox || component === RadioButtonGroup);
+  var wantContentPad = component && (component === CheckBox || component === CheckBoxGroup || component === RadioButtonGroup);
   var contents = themeBorder && children && Children.map(children, function (child) {
     if (child && child.type && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
       wantContentPad = true;

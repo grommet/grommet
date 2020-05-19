@@ -58,6 +58,13 @@ Object.keys(_Carousel).forEach(function (key) {
   exports[key] = _Carousel[key];
 });
 
+var _CheckBoxGroup = require("./CheckBoxGroup");
+
+Object.keys(_CheckBoxGroup).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _CheckBoxGroup[key];
+});
+
 var _Chart = require("./Chart");
 
 Object.keys(_Chart).forEach(function (key) {

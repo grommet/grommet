@@ -15,6 +15,8 @@ var _Box = require("../Box");
 
 var _CheckBox = require("../CheckBox");
 
+var _CheckBoxGroup = require("../CheckBoxGroup");
+
 var _RadioButtonGroup = require("../RadioButtonGroup");
 
 var _Text = require("../Text");
@@ -32,7 +34,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
-var grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
+var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput'];
 
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
@@ -193,7 +195,7 @@ var FormField = (0, _react.forwardRef)(function (_ref2, ref) {
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
 
-  var wantContentPad = component && (component === _CheckBox.CheckBox || component === _RadioButtonGroup.RadioButtonGroup);
+  var wantContentPad = component && (component === _CheckBox.CheckBox || component === _CheckBoxGroup.CheckBoxGroup || component === _RadioButtonGroup.RadioButtonGroup);
   var contents = themeBorder && children && _react.Children.map(children, function (child) {
     if (child && child.type && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
       wantContentPad = true;
