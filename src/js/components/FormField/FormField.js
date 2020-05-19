@@ -12,13 +12,19 @@ import { defaultProps } from '../../default-props';
 import { focusStyle, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
+import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
 const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
-const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
+const grommetInputPadNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'RadioButtonGroup',
+  'RangeInput',
+];
 
 const isGrommetInput = comp =>
   comp &&
@@ -166,7 +172,11 @@ const FormField = forwardRef(
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
     let wantContentPad =
-      component && (component === CheckBox || component === RadioButtonGroup);
+      component &&
+      (component === CheckBox ||
+        component === CheckBoxGroup ||
+        component === RadioButtonGroup);
+
     let contents =
       (themeBorder &&
         children &&
