@@ -15,6 +15,7 @@ import {
 } from '../utils';
 import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
+import { BoxProps } from '../components/Box';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -23,6 +24,12 @@ export declare const generate: (
 ) => DeepReadonly<ThemeType>;
 
 type ExtendType = string | ((...args: any) => void);
+
+type CardType = BoxProps | {    
+  header?: BoxProps;
+  content?: BoxProps;
+  footer?: BoxProps
+};
 
 declare const colors: {
   active?: ColorType;
@@ -396,6 +403,7 @@ export interface ThemeType {
       };
     };
   };
+  card?: CardType;
   carousel?: {
     animation?: {
       duration?: number;

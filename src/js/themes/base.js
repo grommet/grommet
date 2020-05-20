@@ -511,6 +511,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       heading: { level: '4' }, // level ranges from 1-6
     },
+    // add to index.d.ts
+    card: {
+      background: 'white', // we might want to set `global.colors.background`
+      gap: 'medium',
+      round: 'small',
+      elevation: 'small',
+      header: {
+        background: 'background-front',
+        // the default value of pad should be removed if the main
+        // use case is using an image pn the header
+        pad: 'small',
+      },
+      content: {
+        pad: 'small',
+      },
+      footer: {
+        background: 'background-front',
+        pad: 'small',
+      },
+    },
     carousel: {
       icons: {
         current: Subtract,
