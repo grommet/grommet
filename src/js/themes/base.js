@@ -511,7 +511,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       heading: { level: '4' }, // level ranges from 1-6
     },
-    // add to index.d.ts
     card: {
       background: 'white', // we might want to set `global.colors.background`
       gap: 'medium',
