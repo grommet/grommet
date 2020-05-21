@@ -1609,6 +1609,20 @@ string",
     "usage": "import { Calendar } from 'grommet';
 <Calendar />",
   },
+  "Card": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "children": undefined,
+      "footer": undefined,
+      "header": undefined,
+    },
+    "propTypes": Object {
+      "children": [Function],
+      "footer": [Function],
+      "header": [Function],
+    },
+    "render": [Function],
+  },
   "Carousel": [Function],
   "Chart": Object {
     "availableAt": Array [

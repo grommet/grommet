@@ -13,14 +13,11 @@ export const doc = Card => {
     .intrinsicElement('div');
 
   DocumentedCard.propTypes = {
-    size: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ])
-      .description('A fixed size.')
-      .defaultValue('medium'),
-    src: PropTypes.oneOfType([PropTypes.string]).description(
-      `Specifies a URL string for an card image.`,
+    footer: PropTypes.node.description(
+      'If specified, a footer element for the Card',
+    ),
+    header: PropTypes.node.description(
+      'If specified, an header element for the Card',
     ),
   };
 
@@ -28,44 +25,69 @@ export const doc = Card => {
 };
 
 export const themeDoc = {
-  'card.extend': {
-    description: 'Any additional style for the Card.',
-    type: 'string | (props) => {}',
+  card: {
+    description: 'Any valid Box prop for the Card container.',
+    type: 'object',
     defaultValue: undefined,
   },
-  'card.size.xsmall': {
-    description: 'The xsmall size of the Card.',
-    type: 'string',
-    defaultValue: '18px',
+  'card.background': {
+    description: 'The background color for the Card container.',
+    type: 'string | object',
+    defaultValue: 'white',
   },
-  'card.size.small': {
-    description: 'The small size of the Card.',
+  'card.elevation': {
+    description: 'The elevation of the Card container.',
     type: 'string',
-    defaultValue: '24px',
+    defaultValue: 'small',
   },
-  'card.size.medium': {
-    description: 'The medium size of the Card.',
+  'card.gap': {
+    description: 'The spacing between the Card elements.',
     type: 'string',
-    defaultValue: '48px',
+    defaultValue: 'medium',
   },
-  'card.size.large': {
-    description: 'The large size of the Card.',
+  'card.round': {
+    description: 'The border radius for the Card corners.',
     type: 'string',
-    defaultValue: '72px',
+    defaultValue: 'small',
   },
-  'card.size.xlarge': {
-    description: 'The xlarge size of the Card.',
-    type: 'string',
-    defaultValue: '96px',
-  },
-  'card.text.extend': {
-    description: 'Any additional style for the text.',
-    type: 'string | (props) => {}',
+  'card.header': {
+    description: 'Any valid Box prop for the Card header.',
+    type: 'object',
     defaultValue: undefined,
   },
-  'card.text.fontWeight': {
-    description: 'The font weight of the label.',
-    type: 'number',
+  'card.header.background': {
+    description: 'The background color for the Card header.',
+    type: 'string | object',
+    defaultValue: 'background-front',
+  },
+  'card.header.pad': {
+    description: 'The padding for the Card header.',
+    type: 'object',
+    defaultValue: 'small',
+  },
+  'card.content': {
+    description: 'Any valid Box prop for the Card children.',
+    type: 'object',
     defaultValue: undefined,
+  },
+  'card.content.pad': {
+    description: 'The padding for the Card content.',
+    type: 'object',
+    defaultValue: 'small',
+  },
+  'card.footer': {
+    description: 'Any valid Box prop for the Card footer.',
+    type: 'object',
+    defaultValue: undefined,
+  },
+  'card.footer.background': {
+    description: 'The background color for the Card footer.',
+    type: 'string | object',
+    defaultValue: 'background-front',
+  },
+  'card.footer.pad': {
+    description: 'The padding for the Card footer.',
+    type: 'object',
+    defaultValue: 'small',
   },
 };

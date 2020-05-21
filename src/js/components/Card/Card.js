@@ -1,4 +1,5 @@
 import React, { forwardRef, useContext } from 'react';
+import PropTypes from 'prop-types';
 
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -14,7 +15,6 @@ export const Card = forwardRef(({ children, header, footer, ...rest }) => {
     <Box align="start" justify="between" {...theme.card} {...rest}>
       {header && (
         <Header
-          id="shimi"
           round={{ size: theme.card.round, corner: 'top' }}
           fill="horizontal"
           overflow="hidden"
@@ -39,3 +39,15 @@ export const Card = forwardRef(({ children, header, footer, ...rest }) => {
     </Box>
   );
 });
+
+Card.propTypes = {
+  children: PropTypes.node,
+  footer: PropTypes.node,
+  header: PropTypes.node,
+};
+
+Card.defaultProps = {
+  children: undefined,
+  footer: undefined,
+  header: undefined,
+};
