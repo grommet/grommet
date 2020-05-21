@@ -222,14 +222,35 @@ div
 \`\`\`
 ## Theme
   
+**accordion.hover.heading.color**
+
+The text color of the heading when hovered. 
+    backward compatible with accordion.hover.color Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: \\"light-4\\", light: \\"dark-3\\" }
+\`\`\`
+
 **accordion.heading.level**
 
-The heading level used for the accordion. Expects \`number\`.
+The heading level. Expects \`number\`.
 
 Defaults to
 
 \`\`\`
 4
+\`\`\`
+
+**accordion.heading.margin**
+
+The margin size around the heading. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **accordion.icons.collapse**
@@ -264,7 +285,7 @@ Defaults to
 
 **accordion.border.color**
 
-The border color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
+The border color to use in the accordion panel content. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -274,12 +295,53 @@ border
 
 **accordion.border.side**
 
-The border side to use in the accordion. Expects \`string\`.
+The border side to use in the accordion panel content. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 bottom
+\`\`\`
+
+**accordion.panel.border.color**
+
+The border color to use on the accordion panel. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**accordion.panel.border.side**
+
+The border side to use on the accordion panel. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**accordion.panel.border.size**
+
+The border size of the accordion panel. Expects \`xsmall | small | medium | large | xlarge\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**accordion.panel.border.style**
+
+The border style of the accordion panel. Expects \`solid | dashed | dotted | double| groove | ridge 
+      | inset | outset | hidden\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Anchor": "## Anchor
@@ -601,12 +663,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.edgeSize**
@@ -2036,6 +2138,14 @@ Whether an icon and label should be reversed so that the icon is at the
 boolean
 \`\`\`
 
+**secondary**
+
+Whether this is a secondary button.
+
+\`\`\`
+boolean
+\`\`\`
+
 **size**
 
 The possible sizes of Button, that impacts the overall Button 
@@ -2187,6 +2297,76 @@ Defaults to
 24px
 \`\`\`
 
+**button.active.background.color**
+
+Background color when the button is active. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.active.border.color**
+
+The border color when the button is active. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.active.color**
+
+Label color when the button is active. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.active.extend**
+
+Any additional style for an active Button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.active.default**
+
+Adjustments to the default Button style when the Button is active. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.active.primary**
+
+Adjustments to the primary Button style when the Button is active. Expects \`{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.active.secondary**
+
+Adjustments to the secondary Button style when the Button is active. Expects \`{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.border.color**
 
 The color of the border. Expects \`string | { dark: string, light: string }\`.
@@ -2227,14 +2407,84 @@ Defaults to
 undefined
 \`\`\`
 
-**button.disabled.opacity**
+**button.default.background.color**
 
-The opacity when the button is disabled. Expects \`number\`.
+The color of the background for default buttons. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-0.3
+undefined
+\`\`\`
+
+**button.default.background.opacity**
+
+The value used for default button background opacity. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.default.border.color**
+
+The color of the border for default buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.default.color**
+
+The color of the label for default buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.default.extend**
+
+Any additional style for a default button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.default.padding.horizontal**
+
+The horizontal padding for a default button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**button.default.padding.vertical**
+
+The vertical padding for a default button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**button.disabled.color**
+
+Label color when the button is disabled. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **button.disabled.border.color**
@@ -2247,10 +2497,9 @@ Defaults to
 undefined
 \`\`\`
 
-**button.disabled.color**
+**button.disabled.background.color**
 
-Fill color for primary buttons, or label color for other
-    button types, when the button is disabled. Expects \`string | { dark: string, light: string }\`.
+Background color when the button is disabled. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2258,9 +2507,119 @@ Defaults to
 undefined
 \`\`\`
 
+**button.disabled.opacity**
+
+The opacity when the button is disabled. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.3
+\`\`\`
+
 **button.disabled.extend**
 
 Any additional style for a disabled Button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.disabled.default**
+
+Adjustments to the default Button style when the Button is disabled. Expects \`{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.disabled.primary**
+
+Adjustments to the primary Button style when the Button is disabled. Expects \`{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.disabled.secondary**
+
+Adjustments to the secondary Button style when the Button is disabled. Expects \`{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.hover.color**
+
+Label color when the button is hovered. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.hover.border.color**
+
+The border color when the button is hovered. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.hover.background.color**
+
+Background color when the button is hovered. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.hover.extend**
+
+Any additional style for a hovered Button. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.hover.default**
+
+Adjustments to the default Button style when the Button is hovered. Expects \`{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.hover.primary**
+
+Adjustments to the primary Button style when the Button is hovered. Expects \`{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.hover.secondary**
+
+Adjustments to the secondary Button style when the Button is hovered. Expects \`{}\`.
 
 Defaults to
 
@@ -2288,7 +2647,7 @@ Defaults to
 4px
 \`\`\`
 
-**button.primary.color**
+**button.primary.background.color**
 
 The color of the background for primary buttons. Expects \`string | { dark: string, light: string }\`.
 
@@ -2296,6 +2655,56 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**button.primary.background.opacity**
+
+The value used for primary button background opacity. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.border.color**
+
+The color of the border for primary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.color**
+
+The color of the label for primary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.primary.padding.horizontal**
+
+The horizontal padding for a primary button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**button.primary.padding.vertical**
+
+The vertical padding for a primary button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
 \`\`\`
 
 **button.primary.extend**
@@ -2308,9 +2717,9 @@ Defaults to
 undefined
 \`\`\`
 
-**button.primary.active.border.color**
+**button.secondary.background.color**
 
-The color of the border for active primary buttons. Expects \`string | { dark: string, light: string }\`.
+The color of the background for secondary buttons. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2318,9 +2727,59 @@ Defaults to
 undefined
 \`\`\`
 
-**button.primary.active.extend**
+**button.secondary.background.opacity**
 
-Any additional style for an active primary button. Expects \`string | (props) => {}\`.
+The value used for secondary button background opacity. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.secondary.border.color**
+
+The color of the border for secondary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.secondary.color**
+
+The color of the label for secondary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.secondary.padding.horizontal**
+
+The horizontal padding for a secondary button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**button.secondary.padding.vertical**
+
+The vertical padding for a secondary button. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**button.secondary.extend**
+
+Any additional style for a secondary button. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -2462,12 +2921,52 @@ undefined
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.control.disabled.opacity**
@@ -4001,6 +4500,96 @@ Defaults to
 48px
 \`\`\`
 ",
+  "CheckBoxGroup": "## CheckBoxGroup
+A group of CheckBoxes.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js)
+## Usage
+
+\`\`\`javascript
+import { CheckBoxGroup } from 'grommet';
+        <CheckBoxGroup />
+\`\`\`
+
+## Properties
+
+**value**
+
+An array of the values for the checked options. 
+      If options is provided as an object, the value array will be the values 
+     that the valueKey maps to.
+
+\`\`\`
+[
+  number
+  string
+]
+\`\`\`
+
+**disabled**
+
+Disables all options.
+
+\`\`\`
+boolean
+\`\`\`
+
+**labelKey**
+
+When the options array contains objects, this property indicates how
+        to determine the label of each option. If a string is
+        provided, it is used as the key to retrieve each option's label.
+
+\`\`\`
+string
+\`\`\`
+
+**name**
+
+Required when used in the Context of Form and FormField.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user clicks on a CheckBox option. 
+      It will pass a React event object with the additional CheckBoxGroup 
+      properties of 'option' and 'value'.
+
+\`\`\`
+function
+\`\`\`
+
+**options**
+
+Required. Options can be either a string or an object of CheckBox props 
+      excluding the 'checked' property, use CheckBoxGroup 'value' prop instead 
+      of 'checked'.
+
+\`\`\`
+[string]
+[{
+
+}]
+\`\`\`
+
+**valueKey**
+
+When the options array contains objects, this property indicates how
+        to determine the value of each option. If a string is provided, 
+        it is used as the key to retrieve each option's value.
+
+\`\`\`
+string
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -5457,10 +6046,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react[\\"default\\"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`
@@ -6348,6 +6937,26 @@ Defaults to
 undefined
 \`\`\`
 
+**formField.disabled.border.color**
+
+The color of the FormField border when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.disabled.label.color**
+
+The color of the FormField label when it is disabled. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.error.background.color**
 
 The color of the FormField background when there is an error. Expects \`string | {'dark': string, 'light': string}\`.
@@ -6386,6 +6995,26 @@ Defaults to
 
 \`\`\`
 { vertical: 'xsmall', horizontal: 'small' }
+\`\`\`
+
+**formField.focus.background.color**
+
+The color of the FormField background when it is in focus. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.focus.border.color**
+
+The color of the FormField border when it is in focus. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.extend**
@@ -8713,6 +9342,9 @@ import { Main } from 'grommet';
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
+Grommet uses 'markdown-to-jsx' in Markdown component,
+      you can see all the options in the documentation.
+
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Markdown&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=markdown&module=%2Fsrc%2FMarkdown.js)
 ## Usage
 
@@ -8728,6 +9360,16 @@ import { Markdown } from 'grommet';
 Custom components and props to override html elements such as 'img'
       or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
       with grommet components
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**options**
+
+Used to tune the jsx compiler to specific properties, available options on [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx).
 
 \`\`\`
 {
@@ -8896,14 +9538,74 @@ Defaults to
 18px
 \`\`\`
 
+**maskedInput.disabled.opacity**
+
+The opacity when the MaskedInput is disabled. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.3
+\`\`\`
+
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.colors.placeholder**
@@ -9257,12 +9959,22 @@ button
   
 **global.colors.control**
 
+The default color to use for the icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand'}
+\`\`\`
+
+**menu.icons.color**
+
 The color to use for the icon. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-undefined
+control
 \`\`\`
 
 **menu.background**
@@ -10123,7 +10835,7 @@ string
 
 **onChange**
 
-Function that will be called when the user clicks on of the radio
+Function that will be called when the user clicks on one of the radio
       buttons. It will be passed a React event object.
 
 \`\`\`
@@ -10132,7 +10844,8 @@ function
 
 **options**
 
-Required. Options can be either a string or an object.
+Required. Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.
 
 \`\`\`
 [string]
@@ -10243,12 +10956,52 @@ input
   
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.spacing**
@@ -12926,12 +13679,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.colors.placeholder**
@@ -13358,22 +14151,62 @@ undefined
 
 **textInput.disabled.opacity**
 
-The opacity when the textInput is disabled. Expects \`number\`.
+The opacity when the textInput is disabled. Expects \`number | string\`.
 
 Defaults to
 
 \`\`\`
-0.3
+undefined
 \`\`\`
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
 \`\`\`
 
 **global.colors.placeholder**

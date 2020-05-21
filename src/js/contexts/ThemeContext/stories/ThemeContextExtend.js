@@ -11,6 +11,9 @@ const customTheme = deepMerge(grommet, {
       border: {
         color: 'red',
       },
+      shadow: {
+        color: 'red',
+      },
     },
   },
 });

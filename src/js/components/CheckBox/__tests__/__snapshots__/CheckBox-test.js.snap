@@ -17,7 +17,6 @@ exports[`CheckBox checked renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -40,7 +39,6 @@ exports[`CheckBox checked renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -180,7 +178,6 @@ exports[`CheckBox controlled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;
@@ -204,7 +201,6 @@ exports[`CheckBox controlled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -336,7 +332,7 @@ exports[`CheckBox controlled 2`] = `
     class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fASNub StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+      class="StyledBox-sc-13pk1d4-0 fuEVwc StyledCheckBox-sc-1dbk5ju-6 CBoMo"
     >
       <input
         checked=""
@@ -344,7 +340,7 @@ exports[`CheckBox controlled 2`] = `
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lpqrQA StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+        class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
       >
         <svg
           class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
@@ -382,7 +378,6 @@ exports[`CheckBox disabled renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -405,7 +400,6 @@ exports[`CheckBox disabled renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -432,7 +426,6 @@ exports[`CheckBox disabled renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -614,7 +607,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -637,7 +629,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -664,7 +655,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;
@@ -845,7 +835,6 @@ exports[`CheckBox label renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;
@@ -869,7 +858,6 @@ exports[`CheckBox label renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1024,7 +1012,6 @@ exports[`CheckBox renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1047,7 +1034,6 @@ exports[`CheckBox renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1193,7 +1179,6 @@ exports[`CheckBox reverse renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   -webkit-align-items: center;
@@ -1217,7 +1202,6 @@ exports[`CheckBox reverse renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1346,7 +1330,6 @@ exports[`CheckBox toggle renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1369,7 +1352,6 @@ exports[`CheckBox toggle renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   -webkit-align-items: center;

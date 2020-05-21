@@ -286,12 +286,22 @@ button
   
 **global.colors.control**
 
+The default color to use for the icon. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
+**menu.icons.color**
+
 The color to use for the icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-undefined
+control
 ```
 
 **menu.background**

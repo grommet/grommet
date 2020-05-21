@@ -70,6 +70,7 @@ const StyledDataTableRow = styled(TableRow)`
 StyledDataTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
 
+// focus styling other than outline doesn't work on <tbody />
 const StyledDataTableBody = styled(TableBody)`
   ${props =>
     props.size &&
@@ -79,7 +80,10 @@ const StyledDataTableBody = styled(TableBody)`
     max-height: ${props.theme.global.size[props.size]};
     overflow: auto;
   `}
-  ${props => props.focus && focusStyle}
+
+  &:focus {
+    ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
 `;
 
 StyledDataTableBody.defaultProps = {};

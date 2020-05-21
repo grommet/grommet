@@ -154,14 +154,74 @@ Defaults to
 18px
 ```
 
+**maskedInput.disabled.opacity**
+
+The opacity when the MaskedInput is disabled. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **global.focus.border.color**
 
-The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+The border color of the component when in focus. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 focus
+```
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+2px
 ```
 
 **global.colors.placeholder**
