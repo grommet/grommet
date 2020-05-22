@@ -9,16 +9,22 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { parseMetricToNum } from '../../utils';
+import { focusStyle, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
+import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
 const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
-const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
+const grommetInputPadNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'RadioButtonGroup',
+  'RangeInput',
+];
 
 const isGrommetInput = comp =>
   comp &&
@@ -26,7 +32,12 @@ const isGrommetInput = comp =>
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
+  ${props => props.focus && focusStyle({ justBorder: true })}
   ${props => props.theme.formField && props.theme.formField.extend}
+`;
+
+const FormFieldContentBox = styled(Box)`
+  ${props => props.focus && focusStyle({ justBorder: true })}
 `;
 
 const Message = ({ message, ...rest }) => {
@@ -154,16 +165,20 @@ const FormField = forwardRef(
       );
     };
 
-    const { formField } = theme;
-    const { border } = formField;
+    const { formField: formFieldTheme } = theme;
+    const { border: themeBorder } = formFieldTheme;
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
     let wantContentPad =
-      component && (component === CheckBox || component === RadioButtonGroup);
+      component &&
+      (component === CheckBox ||
+        component === CheckBoxGroup ||
+        component === RadioButtonGroup);
+
     let contents =
-      (border &&
+      (themeBorder &&
         children &&
         Children.map(children, child => {
           if (
@@ -210,53 +225,76 @@ const FormField = forwardRef(
       }
     }
 
-    const contentProps = pad || wantContentPad ? { ...formField.content } : {};
-    if (border.position === 'inner') {
-      if (normalizedError && formField.error) {
-        contentProps.background = formField.error.background;
-      } else if (disabled && formField.disabled) {
-        contentProps.background = formField.disabled.background;
+    const contentProps =
+      pad || wantContentPad ? { ...formFieldTheme.content } : {};
+    if (themeBorder.position === 'inner') {
+      if (normalizedError && formFieldTheme.error) {
+        contentProps.background = formFieldTheme.error.background;
+      } else if (disabled && formFieldTheme.disabled) {
+        contentProps.background = formFieldTheme.disabled.background;
       }
     }
     contents = <Box {...contentProps}>{contents}</Box>;
 
     let borderColor;
-    if (focus && !normalizedError) {
-      borderColor = 'focus';
-    } else if (normalizedError) {
-      borderColor = (border && border.error.color) || 'status-critical';
+
+    if (
+      disabled &&
+      formFieldTheme.disabled.border &&
+      formFieldTheme.disabled.border.color
+    ) {
+      borderColor = formFieldTheme.disabled.border.color;
+    } else if (normalizedError && themeBorder && themeBorder.error.color) {
+      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (
+      focus &&
+      formFieldTheme.focus &&
+      formFieldTheme.focus.border &&
+      formFieldTheme.focus.border.color
+    ) {
+      borderColor = formFieldTheme.focus.border.color;
     } else {
-      borderColor = (border && border.color) || 'border';
+      borderColor = (themeBorder && themeBorder.color) || 'border';
     }
+
+    const labelStyle = { ...formFieldTheme.label };
+
+    if (disabled) {
+      labelStyle.color =
+        formFieldTheme.disabled && formFieldTheme.disabled.label
+          ? formFieldTheme.disabled.label.color
+          : labelStyle.color;
+    }
+
     let abut;
     let abutMargin;
     let outerStyle = style;
 
-    if (border) {
+    if (themeBorder) {
+      const innerProps =
+        themeBorder.position === 'inner'
+          ? {
+              border: {
+                ...themeBorder,
+                side: themeBorder.side || 'bottom',
+                color: borderColor,
+              },
+              round: formFieldTheme.round,
+              focus,
+            }
+          : {};
       contents = (
-        <Box
-          overflow="hidden"
-          border={
-            border.position === 'inner'
-              ? {
-                  ...border,
-                  side: border.side || 'bottom',
-                  color: borderColor,
-                }
-              : undefined
-          }
-          round={border.position === 'inner' ? formField.round : undefined}
-        >
+        <FormFieldContentBox overflow="hidden" {...innerProps}>
           {contents}
-        </Box>
+        </FormFieldContentBox>
       );
 
-      const mergedMargin = margin || formField.margin;
+      const mergedMargin = margin || formFieldTheme.margin;
       abut =
-        border.position === 'outer' &&
-        (border.side === 'all' ||
-          border.side === 'horizontal' ||
-          !border.side) &&
+        themeBorder.position === 'outer' &&
+        (themeBorder.side === 'all' ||
+          themeBorder.side === 'horizontal' ||
+          !themeBorder.side) &&
         !(
           mergedMargin &&
           ((typeof mergedMargin === 'string' && mergedMargin !== 'none') ||
@@ -268,12 +306,12 @@ const FormField = forwardRef(
         abutMargin = { bottom: '-1px' };
         if (margin) {
           abutMargin = margin;
-        } else if (border.size) {
+        } else if (themeBorder.size) {
           // if the user defines a margin,
-          // then the default margin below will be overriden
+          // then the default margin below will be overridden
           abutMargin = {
             bottom: `-${parseMetricToNum(
-              theme.global.borderSize[border.size] || border.size,
+              theme.global.borderSize[themeBorder.size] || themeBorder.size,
             )}px`,
           };
         }
@@ -287,26 +325,45 @@ const FormField = forwardRef(
     }
 
     let outerBackground;
-    if (border.position === 'outer') {
-      if (normalizedError && formField.error) {
-        outerBackground = formField.error.background;
-      } else if (disabled && formField.disabled) {
-        outerBackground = formField.disabled.background;
+    if (themeBorder.position === 'outer') {
+      if (
+        normalizedError &&
+        formFieldTheme.error &&
+        formFieldTheme.error.background
+      ) {
+        outerBackground = formFieldTheme.error.background;
+      } else if (
+        focus &&
+        formFieldTheme.focus &&
+        formFieldTheme.focus.background &&
+        formFieldTheme.focus.background.color
+      ) {
+        outerBackground = formFieldTheme.focus.background.color;
+      } else if (
+        disabled &&
+        formFieldTheme.disabled &&
+        formFieldTheme.disabled.background
+      ) {
+        outerBackground = formFieldTheme.disabled.background;
       }
     }
+
+    const outerProps =
+      themeBorder && themeBorder.position === 'outer'
+        ? {
+            border: { ...themeBorder, color: borderColor },
+            round: formFieldTheme.round,
+            focus,
+          }
+        : {};
 
     return (
       <FormFieldBox
         ref={ref}
         className={className}
-        border={
-          border && border.position === 'outer'
-            ? { ...border, color: borderColor }
-            : undefined
-        }
         background={outerBackground}
-        margin={abut ? abutMargin : margin || { ...formField.margin }}
-        round={border.position === 'outer' ? formField.round : undefined}
+        margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
+        {...outerProps}
         style={outerStyle}
         onFocus={event => {
           setFocus(true);
@@ -322,18 +379,18 @@ const FormField = forwardRef(
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...formField.label}>
+              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
               </Text>
             )}
-            <Message message={help} {...formField.help} />
+            <Message message={help} {...formFieldTheme.help} />
           </>
         ) : (
           undefined
         )}
         {contents}
-        <Message message={normalizedError} {...formField.error} />
-        <Message message={normalizedInfo} {...formField.info} />
+        <Message message={normalizedError} {...formFieldTheme.error} />
+        <Message message={normalizedInfo} {...formFieldTheme.info} />
       </FormFieldBox>
     );
   },

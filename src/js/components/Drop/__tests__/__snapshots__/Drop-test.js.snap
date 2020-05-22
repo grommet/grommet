@@ -7,7 +7,6 @@ exports[`Drop align left left 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -30,7 +29,7 @@ exports[`Drop align left left 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom left;
@@ -67,13 +66,12 @@ exports[`Drop align left left 1`] = `
 `;
 
 exports[`Drop align left left 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -85,7 +83,7 @@ exports[`Drop align left left 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -105,7 +103,6 @@ exports[`Drop align left right top bottom 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -128,7 +125,7 @@ exports[`Drop align left right top bottom 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -165,13 +162,12 @@ exports[`Drop align left right top bottom 1`] = `
 `;
 
 exports[`Drop align left right top bottom 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -182,7 +178,7 @@ exports[`Drop align left right top bottom 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -194,7 +190,7 @@ exports[`Drop align left right top bottom 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -207,7 +203,7 @@ exports[`Drop align left right top bottom 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -227,7 +223,6 @@ exports[`Drop align right left top top 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -250,7 +245,7 @@ exports[`Drop align right left top top 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
@@ -287,13 +282,12 @@ exports[`Drop align right left top top 1`] = `
 `;
 
 exports[`Drop align right left top top 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -305,7 +299,7 @@ exports[`Drop align right left top top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -325,7 +319,6 @@ exports[`Drop align right right 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -348,7 +341,7 @@ exports[`Drop align right right 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
@@ -385,13 +378,12 @@ exports[`Drop align right right 1`] = `
 `;
 
 exports[`Drop align right right 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -403,7 +395,7 @@ exports[`Drop align right right 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -423,7 +415,6 @@ exports[`Drop align right right bottom top 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -446,7 +437,7 @@ exports[`Drop align right right bottom top 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
@@ -483,13 +474,12 @@ exports[`Drop align right right bottom top 1`] = `
 `;
 
 exports[`Drop align right right bottom top 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -501,7 +491,7 @@ exports[`Drop align right right bottom top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -521,7 +511,6 @@ exports[`Drop align right right bottom top 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -544,7 +533,7 @@ exports[`Drop align right right bottom top 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
@@ -581,13 +570,12 @@ exports[`Drop align right right bottom top 3`] = `
 `;
 
 exports[`Drop align right right bottom top 4`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -599,7 +587,7 @@ exports[`Drop align right right bottom top 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -619,7 +607,6 @@ exports[`Drop basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -642,7 +629,7 @@ exports[`Drop basic 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -679,13 +666,12 @@ exports[`Drop basic 1`] = `
 `;
 
 exports[`Drop basic 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -696,7 +682,7 @@ exports[`Drop basic 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -708,7 +694,7 @@ exports[`Drop basic 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -721,7 +707,7 @@ exports[`Drop basic 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -741,7 +727,6 @@ exports[`Drop close 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -764,7 +749,7 @@ exports[`Drop close 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -801,13 +786,12 @@ exports[`Drop close 1`] = `
 `;
 
 exports[`Drop close 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -818,7 +802,7 @@ exports[`Drop close 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -830,7 +814,7 @@ exports[`Drop close 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -843,7 +827,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -863,7 +847,6 @@ exports[`Drop default elevation renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -886,7 +869,7 @@ exports[`Drop default elevation renders 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -923,13 +906,12 @@ exports[`Drop default elevation renders 1`] = `
 `;
 
 exports[`Drop default elevation renders 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -940,7 +922,7 @@ exports[`Drop default elevation renders 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -952,7 +934,7 @@ exports[`Drop default elevation renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -965,7 +947,7 @@ exports[`Drop default elevation renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -985,7 +967,6 @@ exports[`Drop invalid align 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1008,7 +989,7 @@ exports[`Drop invalid align 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1045,13 +1026,12 @@ exports[`Drop invalid align 1`] = `
 `;
 
 exports[`Drop invalid align 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1062,7 +1042,7 @@ exports[`Drop invalid align 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1074,7 +1054,7 @@ exports[`Drop invalid align 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1087,7 +1067,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1107,7 +1087,6 @@ exports[`Drop invoke onClickOutside 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1130,7 +1109,7 @@ exports[`Drop invoke onClickOutside 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1167,13 +1146,12 @@ exports[`Drop invoke onClickOutside 1`] = `
 `;
 
 exports[`Drop invoke onClickOutside 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1184,7 +1162,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1196,7 +1174,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1209,7 +1187,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1229,7 +1207,6 @@ exports[`Drop no stretch 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1252,7 +1229,7 @@ exports[`Drop no stretch 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1289,13 +1266,12 @@ exports[`Drop no stretch 1`] = `
 `;
 
 exports[`Drop no stretch 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1306,7 +1282,7 @@ exports[`Drop no stretch 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1318,7 +1294,7 @@ exports[`Drop no stretch 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1331,7 +1307,7 @@ exports[`Drop no stretch 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1351,7 +1327,6 @@ exports[`Drop plain renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1409,7 +1384,7 @@ exports[`Drop plain renders 1`] = `
 
 exports[`Drop plain renders 2`] = `
 "@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1429,7 +1404,6 @@ exports[`Drop props elevation renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1452,7 +1426,7 @@ exports[`Drop props elevation renders 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1489,7 +1463,7 @@ exports[`Drop props elevation renders 1`] = `
 `;
 
 exports[`Drop props elevation renders 2`] = `
-".exrnbV {
+".kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1501,7 +1475,7 @@ exports[`Drop props elevation renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1514,7 +1488,7 @@ exports[`Drop props elevation renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1534,7 +1508,6 @@ exports[`Drop resize 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1557,7 +1530,7 @@ exports[`Drop resize 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1594,13 +1567,12 @@ exports[`Drop resize 1`] = `
 `;
 
 exports[`Drop resize 2`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1611,7 +1583,7 @@ exports[`Drop resize 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1623,7 +1595,7 @@ exports[`Drop resize 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1636,7 +1608,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1656,7 +1628,6 @@ exports[`Drop restrict focus 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1679,7 +1650,7 @@ exports[`Drop restrict focus 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1717,7 +1688,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 fUuNUq StyledDrop-sc-16s5rx8-0 exrnbV"
+  class="StyledBox-sc-13pk1d4-0 glPSfV StyledDrop-sc-16s5rx8-0 kQAKuZ"
   data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -1728,13 +1699,12 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-".fUuNUq {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1745,7 +1715,7 @@ exports[`Drop restrict focus 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.exrnbV {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1757,7 +1727,7 @@ exports[`Drop restrict focus 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1770,7 +1740,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1798,7 +1768,6 @@ exports[`Drop theme elevation renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1821,7 +1790,7 @@ exports[`Drop theme elevation renders 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1858,7 +1827,7 @@ exports[`Drop theme elevation renders 1`] = `
 `;
 
 exports[`Drop theme elevation renders 2`] = `
-".exrnbV {
+".kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1870,7 +1839,7 @@ exports[`Drop theme elevation renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1883,7 +1852,7 @@ exports[`Drop theme elevation renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .exrnbV {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

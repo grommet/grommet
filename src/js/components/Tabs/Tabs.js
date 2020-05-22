@@ -20,6 +20,7 @@ const Tabs = forwardRef(
       flex,
       justify = 'center',
       messages = { tabContents: 'Tab Contents' },
+      responsive = true,
       ...rest
     },
     ref,
@@ -82,6 +83,7 @@ const Tabs = forwardRef(
         as={Box}
         role="tablist"
         flex={flex}
+        responsive={responsive}
         {...rest}
         background={theme.tabs.background}
       >

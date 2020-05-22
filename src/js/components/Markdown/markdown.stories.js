@@ -9,7 +9,8 @@ const CONTENT = `
   # Out of Breath
 
   You know, sometimes in life it seems like there's no way out. Like
-  a sheep trapped in a maze designed by wolves.
+  a sheep trapped in a maze designed by wolves. See all the
+  options [here](https://github.com/probablyup/markdown-to-jsx/)
 
   [reference](#)
 

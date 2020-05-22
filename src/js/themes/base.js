@@ -256,8 +256,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       focus: {
+        // shadow or outline are required for accessibility
         border: {
+          // remove to only have shadow
           color: 'focus',
+        },
+        // outline: { color: undefined, size: undefined },
+        shadow: {
+          color: 'focus',
+          size: '2px',
         },
       },
       font: {
@@ -312,11 +319,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     accordion: {
+      panel: {
+        // border: {
+        //   side: 'bottom',
+        //   color: 'border',
+        // },
+      },
       border: {
         side: 'bottom',
         color: 'border',
       },
-      heading: { level: '4' }, // level ranges from 1-6
+      heading: {
+        level: '4', // level ranges from 1-6
+        // margin: undefined
+      },
+      hover: {
+        color: { dark: 'light-4', light: 'dark-3' }, // deprecated
+        heading: {
+          color: { dark: 'light-4', light: 'dark-3' },
+        },
+      },
       icons: {
         collapse: FormUp,
         expand: FormDown,
@@ -390,26 +412,65 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: `${borderWidth}px`,
         radius: `${baseSpacing * 0.75}px`,
       },
-      disabled: {
-        // border: {
-        //   color: { dark: undefined, light: undefined },
-        // },
-        // color: { dark: undefined, light: undefined }
-        // opacity: undefined,
-        // extend: undefined
-      },
       // color: { dark: undefined, light: undefined }
-      primary: {
-        // active: {
-        //   border: {
-        //     color: { dark: undefined, light: undefined }
-        //   },
+      // default: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      // primary: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      // secondary: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
+      active: {
+        background: 'active-background',
+        //   border: undefined,
+        color: 'active-text',
         //   extend: undefined,
-        // },
-        // color: { dark: undefined, light: undefined }
-        // extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
       },
-      // disabled: { opacity: undefined },
+      disabled: {
+        //   background: undefined,
+        //   border: undefined,
+        //   color: undefined,
+        opacity: 0.3,
+        //   extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
+      },
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined},
+      //   extend: undefined,
+      //   default: {},
+      //   primary: {},
+      //   secondary: {},
+      // },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
@@ -629,7 +690,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-disabled',
           opacity: 'medium',
         },
+        // border: {
+        //   color: undefined,
+        // },
+        // label: {
+        //   color: undefined,
+        // },
       },
+      // focus: {
+      //   background: {
+      //     color: undefined,
+      //   },
+      //   border: {
+      //     color: undefined,
+      //   },
+      // },
       error: {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
@@ -750,12 +825,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     maskedInput: {
       // extend: undefined,
+      // disabled: { opacity: undefined },
     },
     menu: {
       // background: undefined,
       // extend: undefined,
       icons: {
         down: FormDown,
+        // color: { dark: undefined, light: undefined },
       },
     },
     meter: {

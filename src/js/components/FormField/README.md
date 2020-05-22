@@ -299,6 +299,26 @@ Defaults to
 undefined
 ```
 
+**formField.disabled.border.color**
+
+The color of the FormField border when it is disabled. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.disabled.label.color**
+
+The color of the FormField label when it is disabled. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **formField.error.background.color**
 
 The color of the FormField background when there is an error. Expects `string | {'dark': string, 'light': string}`.
@@ -337,6 +357,26 @@ Defaults to
 
 ```
 { vertical: 'xsmall', horizontal: 'small' }
+```
+
+**formField.focus.background.color**
+
+The color of the FormField background when it is in focus. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.focus.border.color**
+
+The color of the FormField border when it is in focus. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **formField.extend**

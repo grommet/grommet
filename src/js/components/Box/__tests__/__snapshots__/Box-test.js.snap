@@ -17,7 +17,6 @@ exports[`Box align 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -36,7 +35,6 @@ exports[`Box align 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -55,7 +53,6 @@ exports[`Box align 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: baseline;
   -webkit-box-align: baseline;
@@ -74,7 +71,6 @@ exports[`Box align 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -93,7 +89,6 @@ exports[`Box align 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
@@ -144,7 +139,6 @@ exports[`Box alignContent 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
@@ -162,7 +156,6 @@ exports[`Box alignContent 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
@@ -180,7 +173,6 @@ exports[`Box alignContent 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-content: between;
   -ms-flex-line-pack: between;
@@ -198,7 +190,6 @@ exports[`Box alignContent 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-content: around;
   -ms-flex-line-pack: around;
@@ -216,7 +207,6 @@ exports[`Box alignContent 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
@@ -234,7 +224,6 @@ exports[`Box alignContent 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-content: flex-end;
   -ms-flex-line-pack: end;
@@ -287,7 +276,6 @@ exports[`Box alignSelf 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
@@ -305,7 +293,6 @@ exports[`Box alignSelf 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -323,7 +310,6 @@ exports[`Box alignSelf 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
@@ -341,7 +327,6 @@ exports[`Box alignSelf 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
@@ -388,7 +373,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -406,7 +390,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -424,7 +407,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -444,7 +426,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -464,7 +445,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -484,7 +464,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -504,7 +483,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -524,7 +502,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -544,7 +521,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -564,7 +540,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -584,7 +559,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -605,7 +579,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -623,7 +596,6 @@ exports[`Box animation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -700,7 +672,6 @@ exports[`Box as 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -735,9 +706,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -752,9 +722,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -769,9 +738,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #00873D;
+  background-color: #00873D;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -786,9 +754,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #F8F8F8;
+  background-color: #F8F8F8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -803,9 +770,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #333333;
+  background-color: #333333;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -820,9 +786,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #FF4040;
+  background-color: #FF4040;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -837,9 +802,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #aabbcc;
+  background-color: #aabbcc;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -854,9 +818,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #def;
+  background-color: #def;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -871,9 +834,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: rgb(90,80,50);
+  background-color: rgb(90,80,50);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -888,9 +850,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: rgba(200,100,150,0.8);
+  background-color: rgba(200,100,150,0.8);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -905,9 +866,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: hsl(10,50%,20%);
+  background-color: hsl(10,50%,20%);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -922,9 +882,8 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: hsla(10,50%,70%,0.7);
+  background-color: hsla(10,50%,70%,0.7);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -939,7 +898,6 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
   background-size: cover;
@@ -956,13 +914,11 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: #444444;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -977,13 +933,11 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: #f8f8f8;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -998,13 +952,11 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1018,13 +970,11 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: inherit;
   background-color: rgba(111,255,176,1);
   color: #444444;
   min-width: 0;
@@ -1040,13 +990,11 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1060,13 +1008,11 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: repeat;
   background-position: center center;
   background-size: cover;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1080,13 +1026,11 @@ exports[`Box background 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: inherit;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1177,7 +1121,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1192,7 +1135,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1209,7 +1151,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1226,7 +1167,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1243,7 +1183,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1260,7 +1199,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1277,7 +1215,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1292,7 +1229,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1309,7 +1245,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1326,7 +1261,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1343,7 +1277,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1360,7 +1293,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1377,7 +1309,6 @@ exports[`Box basis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1467,7 +1398,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1483,7 +1413,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1500,7 +1429,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-left: solid 1px rgba(0,0,0,0.33);
   border-right: solid 1px rgba(0,0,0,0.33);
@@ -1517,7 +1445,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1533,7 +1460,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-left: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1549,7 +1475,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1565,7 +1490,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1581,7 +1505,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px #6FFFB0;
   min-width: 0;
@@ -1597,7 +1520,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1613,7 +1535,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1629,7 +1550,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1645,7 +1565,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 24px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1661,7 +1580,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: dotted 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1677,7 +1595,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: double 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1693,7 +1610,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: dashed 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1709,7 +1625,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: dotted 4px #6FFFB0;
   border-left: dashed 12px #FD6FFF;
@@ -1726,7 +1641,6 @@ exports[`Box border 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1964,7 +1878,6 @@ exports[`Box default 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1999,7 +1912,6 @@ exports[`Box direction 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2014,7 +1926,6 @@ exports[`Box direction 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2029,7 +1940,6 @@ exports[`Box direction 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2044,7 +1954,6 @@ exports[`Box direction 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2059,7 +1968,6 @@ exports[`Box direction 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2125,7 +2033,6 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2141,7 +2048,6 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2157,7 +2063,6 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2173,7 +2078,6 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2189,7 +2093,6 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2205,7 +2108,6 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2221,9 +2123,8 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #333333;
+  background-color: #333333;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2239,7 +2140,6 @@ exports[`Box elevation 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2297,7 +2197,6 @@ exports[`Box fill 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2312,7 +2211,6 @@ exports[`Box fill 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2329,7 +2227,6 @@ exports[`Box fill 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2345,7 +2242,6 @@ exports[`Box fill 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2394,7 +2290,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2409,7 +2304,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2427,7 +2321,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2445,7 +2338,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2463,7 +2355,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2481,7 +2372,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2499,7 +2389,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2517,7 +2406,6 @@ exports[`Box flex 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2577,7 +2465,6 @@ exports[`Box gap 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2592,7 +2479,6 @@ exports[`Box gap 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2666,7 +2552,6 @@ exports[`Box gridArea 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   grid-area: header;
   min-width: 0;
@@ -2702,7 +2587,6 @@ exports[`Box height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2718,7 +2602,6 @@ exports[`Box height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2734,7 +2617,6 @@ exports[`Box height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2750,7 +2632,6 @@ exports[`Box height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2766,7 +2647,6 @@ exports[`Box height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2782,7 +2662,6 @@ exports[`Box height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2833,7 +2712,6 @@ exports[`Box justify 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2852,7 +2730,6 @@ exports[`Box justify 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2871,7 +2748,6 @@ exports[`Box justify 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2890,7 +2766,6 @@ exports[`Box justify 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2909,7 +2784,6 @@ exports[`Box justify 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2928,7 +2802,6 @@ exports[`Box justify 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2982,7 +2855,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin: 12px;
   min-width: 0;
@@ -2998,7 +2870,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin: 24px;
   min-width: 0;
@@ -3014,7 +2885,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin: 48px;
   min-width: 0;
@@ -3030,7 +2900,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   margin-right: 12px;
@@ -3047,7 +2916,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -3064,7 +2932,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
@@ -3080,7 +2947,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 12px;
   min-width: 0;
@@ -3096,7 +2962,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 12px;
   min-width: 0;
@@ -3112,7 +2977,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-inline-start: 12px;
   min-width: 0;
@@ -3128,7 +2992,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-inline-end: 12px;
   min-width: 0;
@@ -3144,7 +3007,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-top: 12px;
   min-width: 0;
@@ -3160,7 +3022,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 48px;
   margin-right: 48px;
@@ -3179,7 +3040,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -3197,7 +3057,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -3216,7 +3075,6 @@ exports[`Box margin 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-left: 24px;
   margin-right: 24px;
@@ -3466,7 +3324,6 @@ exports[`Box onClick 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3505,7 +3362,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3521,7 +3377,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3537,7 +3392,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3553,7 +3407,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3570,7 +3423,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3587,7 +3439,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3603,7 +3454,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3619,7 +3469,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3635,7 +3484,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3651,7 +3499,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3667,7 +3514,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3683,7 +3529,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3702,7 +3547,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3723,7 +3567,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3744,7 +3587,6 @@ exports[`Box pad 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4014,7 +3856,6 @@ exports[`Box responsive 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4052,7 +3893,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4068,7 +3908,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4084,7 +3923,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4100,7 +3938,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4116,7 +3953,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4132,7 +3968,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4149,7 +3984,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4166,7 +4000,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4183,7 +4016,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4200,7 +4032,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4216,7 +4047,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4232,7 +4062,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4248,7 +4077,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4264,7 +4092,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4280,7 +4107,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4296,7 +4122,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4312,7 +4137,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4328,7 +4152,6 @@ exports[`Box round 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4472,7 +4295,6 @@ exports[`Box width 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4488,7 +4310,6 @@ exports[`Box width 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4504,7 +4325,6 @@ exports[`Box width 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4520,7 +4340,6 @@ exports[`Box width 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4536,7 +4355,6 @@ exports[`Box width 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4552,7 +4370,6 @@ exports[`Box width 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4603,7 +4420,6 @@ exports[`Box wrap 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4621,7 +4437,6 @@ exports[`Box wrap 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4636,7 +4451,6 @@ exports[`Box wrap 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
