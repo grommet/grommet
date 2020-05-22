@@ -16,6 +16,7 @@ const ANIMATION_TYPE = PropTypes.oneOf([
   'fadeOut',
   'jiggle',
   'pulse',
+  'rotate',
   'slideUp',
   'slideDown',
   'slideLeft',

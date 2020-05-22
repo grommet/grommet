@@ -484,6 +484,7 @@ describe('Box', () => {
           'fadeOut',
           'jiggle',
           'pulse',
+          'rotate',
           'slideUp',
           'slideDown',
           'slideLeft',

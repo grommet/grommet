@@ -451,6 +451,25 @@ exports[`Box animation 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-animation: gCPKsF 1s 0s infinite linear;
+  animation: gCPKsF 1s 0s infinite linear;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
@@ -458,7 +477,7 @@ exports[`Box animation 1`] = `
   animation: tHuyy 1s 0s forwards;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -477,7 +496,7 @@ exports[`Box animation 1`] = `
   animation: gsfyXb 1s 0s forwards;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -496,7 +515,7 @@ exports[`Box animation 1`] = `
   animation: cQvIhn 1s 0s forwards;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -515,7 +534,7 @@ exports[`Box animation 1`] = `
   animation: kQBwsm 1s 0s forwards;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -534,7 +553,7 @@ exports[`Box animation 1`] = `
   animation: KrtCj 1s 0s forwards;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -553,7 +572,7 @@ exports[`Box animation 1`] = `
   animation: ggdLLn 1s 0s forwards;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -573,7 +592,7 @@ exports[`Box animation 1`] = `
   animation: hAsUlT 1s 0s forwards,tHuyy 1s 0s forwards;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -590,7 +609,7 @@ exports[`Box animation 1`] = `
   animation: hAsUlT 1s 0.5s forwards;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -651,6 +670,9 @@ exports[`Box animation 1`] = `
   />
   <div
     className="c13"
+  />
+  <div
+    className="c14"
   />
 </div>
 `;
