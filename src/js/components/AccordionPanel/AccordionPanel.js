@@ -53,8 +53,8 @@ const AccordionPanel = forwardRef(
         use accordion.hover.heading.color instead.`,
       );
 
-    // accordion.hover.heading.color will trump accordion.hover.color in case 
-    // the user sets its value to be any other value than the 
+    // accordion.hover.heading.color will trump accordion.hover.color in case
+    // the user sets its value to be any other value than the
     // default value (defaultHoverColor).
     // accordion.hover.color will be deprecated in v3.
     const headingColor =
@@ -91,6 +91,7 @@ const AccordionPanel = forwardRef(
           role="tab"
           aria-selected={active}
           aria-expanded={active}
+          plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
           onMouseOver={event => {
             setHover(headingColor);

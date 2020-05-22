@@ -5,9 +5,10 @@ import {
   grommet,
   Box,
   Button,
+  CheckBox,
+  CheckBoxGroup,
   Form,
   FormField,
-  CheckBox,
   Grommet,
 } from 'grommet';
 
@@ -34,7 +35,21 @@ const FormFieldCheckBox = props => (
         </FormField>
         <FormField label="Default" name="checkbox" htmlFor="check-box" required>
           <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-            <CheckBox id="check-box" name="checkbox" label="CheckBox" />
+            <CheckBox id="check-box" name="checkbox" label="Required" />
+          </Box>
+        </FormField>
+        <FormField
+          label="Where would you like to visit"
+          name="checkboxgroup"
+          htmlFor="check-box-group"
+          required
+        >
+          <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+            <CheckBoxGroup
+              id="group"
+              name="checkboxgroup"
+              options={['Maui', 'Jerusalem', 'Wuhan']}
+            />
           </Box>
         </FormField>
         <Button type="submit" label="Submit" />
