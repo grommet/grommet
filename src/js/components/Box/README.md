@@ -163,7 +163,8 @@ fadeIn
 fadeOut
 jiggle
 pulse
-rotate
+rotateLeft
+rotateRight
 slideUp
 slideDown
 slideLeft
@@ -176,7 +177,8 @@ zoomOut
     fadeOut
     jiggle
     pulse
-    rotate
+    rotateLeft
+    rotateRight
     slideUp
     slideDown
     slideLeft
@@ -197,7 +199,8 @@ zoomOut
   fadeOut
   jiggle
   pulse
-  rotate
+  rotateLeft
+  rotateRight
   slideUp
   slideDown
   slideLeft
@@ -210,7 +213,8 @@ zoomOut
       fadeOut
       jiggle
       pulse
-      rotate
+      rotateLeft
+      rotateRight
       slideUp
       slideDown
       slideLeft
