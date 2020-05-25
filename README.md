@@ -1,5 +1,3 @@
-# MNET UI BASE
-
 ## Documentation
 
 Visit the [MNET UI BASE](https://mnet-ui-base.netlify.com) website for more information.

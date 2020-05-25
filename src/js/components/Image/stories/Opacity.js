@@ -6,7 +6,7 @@ import { Box, Image } from 'mnet-ui-base';
 const Opacity = () => (
   <>
     <Box gap="small" direction="row">
-      <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+      <Image src="//v2.mnet.io/assets/IMG_4245.jpg" />
       <Image opacity="strong" src="//v2.grommet.io/assets/IMG_4245.jpg" />
     </Box>
     <Box gap="small" direction="row">

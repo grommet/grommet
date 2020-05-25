@@ -63,7 +63,7 @@ const Components = () => {
   );
 
   const content = [
-    <Box key="type" align="start">
+    <Box key="type" align="start" gap="small">
       <Heading margin={{ top: 'none' }}>Heading</Heading>
       <Paragraph>Paragraph</Paragraph>
       <Text>Text</Text>
@@ -73,6 +73,9 @@ const Components = () => {
         items={[{ label: 'One', onClick: () => {} }, { label: 'Two' }]}
       />
       <Button label="Button" onClick={() => {}} />
+      <Button plain onClick={() => {}}>
+        <Text>plain button</Text>
+      </Button>
     </Box>,
     <Box key="input" gap="small">
       <Select
@@ -188,7 +191,7 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={['mnet', 'dark', 'neo']}
+              options={Object.keys(themes)}
               value={themeName}
               onChange={event => setThemeName(event.option)}
             />

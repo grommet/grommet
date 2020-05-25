@@ -6,7 +6,7 @@ import { Box, Calendar } from 'mnet-ui-base';
 const RangeCalendar = () => (
   <>
     <Box align="center" pad="large">
-      <Calendar range />
+      <Calendar dates={[['2020-04-03', '2020-04-08']]} range />
     </Box>
   </>
 );

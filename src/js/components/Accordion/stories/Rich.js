@@ -27,7 +27,7 @@ const richAccordionTheme = {
   },
 };
 
-const RichPanel = ({ children, icon, label }) => {
+const RichPanel = ({ children, icon, label, ...rest }) => {
   const [hovering, setHovering] = React.useState(false);
 
   const renderPanelTitle = () => (
@@ -51,6 +51,7 @@ const RichPanel = ({ children, icon, label }) => {
       onMouseOut={() => setHovering(false)}
       onFocus={() => setHovering(true)}
       onBlur={() => setHovering(false)}
+      {...rest}
     >
       {children}
     </AccordionPanel>
@@ -226,7 +227,7 @@ const RichAccordion = () => {
                   }}
                   gap="medium"
                 >
-                  Yeah believe me, this channel has 2,000 members.
+                  Yeah believe me, this channel has 3,000 members.
                 </Box>
               </RichPanel>
             </Accordion>

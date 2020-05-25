@@ -10,8 +10,18 @@ export const doc = Tab => {
     .intrinsicElement('button');
 
   DocumentedTab.propTypes = {
+    disabled: PropTypes.bool
+      .description('Whether the tab is disabled.')
+      .defaultValue(false),
+    icon: PropTypes.element.description('Icon element to place in the tab.'),
     plain: PropTypes.bool
       .description('Whether this is a plain tab with no style.')
+      .defaultValue(false),
+    reverse: PropTypes.bool
+      .description(
+        `Whether an icon and label should be reversed so that the icon is at the
+              end of the tab.`,
+      )
       .defaultValue(false),
     title: PropTypes.node.description('The title of the tab.'),
   };

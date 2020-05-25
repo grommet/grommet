@@ -11,6 +11,9 @@ const customTheme = deepMerge(mnet, {
       border: {
         color: 'red',
       },
+      shadow: {
+        color: 'red',
+      },
     },
   },
 });

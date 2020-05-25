@@ -27,7 +27,13 @@ class TestInput extends Component {
   }
 
   render() {
-    const { inputProps, theme, elevation, ...rest } = this.props;
+    const {
+      inputProps,
+      theme,
+      elevation,
+      containerTarget,
+      ...rest
+    } = this.props;
     const { showDrop } = this.state;
     let drop;
     if (showDrop) {
@@ -43,7 +49,7 @@ class TestInput extends Component {
       );
     }
     return (
-      <MnetUIBase theme={theme}>
+      <MnetUIBase theme={theme} containerTarget={containerTarget}>
         <input ref={this.inputRef} {...inputProps} />
         {drop}
       </MnetUIBase>
@@ -159,5 +165,25 @@ describe('Drop', () => {
   test('plain renders', () => {
     render(<TestInput plain />);
     expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('default containerTarget', () => {
+    const { getByTestId } = render(<TestInput data-testid="drop" />);
+    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(document.body);
+  });
+
+  test('custom containerTarget', () => {
+    const target = document.createElement('div');
+    document.body.appendChild(target);
+    try {
+      const { getByTestId } = render(
+        <TestInput data-testid="drop" containerTarget={target} />,
+      );
+      const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+      expect(actualRoot).toBe(target);
+    } finally {
+      document.body.removeChild(target);
+    }
   });
 });

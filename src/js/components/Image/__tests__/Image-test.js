@@ -19,6 +19,16 @@ test('Image renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Image renders with aria-label', () => {
+  const component = renderer.create(
+    <MnetUIBase>
+      <Image a11yTitle="aria-label-text" src={SRC} />
+    </MnetUIBase>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Image fit renders', () => {
   const component = renderer.create(
     <MnetUIBase>
@@ -46,6 +56,9 @@ test('Image fillProp renders', () => {
   const component = renderer.create(
     <MnetUIBase>
       <Image fill src={SRC} />
+      <Image fill={false} src={SRC} />
+      <Image fill="horizontal" src={SRC} />
+      <Image fill="vertical" src={SRC} />
     </MnetUIBase>,
   );
   const tree = component.toJSON();

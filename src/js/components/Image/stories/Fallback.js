@@ -6,8 +6,8 @@ import { Image } from 'mnet-ui-base';
 const Fallback = () => (
   <>
     <Image
-      fallback="//v2.grommet.io/assets/IMG_4245.jpg"
-      src="//v2.grommet.io/assets/IMG_4245_not_exists.jpg"
+      fallback="//v2.mnet.io/assets/IMG_4245.jpg"
+      src="//v2.mnet.io/assets/IMG_4245_not_exists.jpg"
     />
   </>
 );

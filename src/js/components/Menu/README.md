@@ -196,7 +196,7 @@ object
 
 **dropProps**
 
-Any valid Drop prop.
+Any valid Drop prop. Defaults to `{}`.
 
 ```
 object
@@ -227,7 +227,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to `[]`.
 
 ```
 [object]
@@ -286,12 +286,22 @@ button
   
 **global.colors.control**
 
+The default color to use for the icon. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
+**menu.icons.color**
+
 The color to use for the icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-undefined
+control
 ```
 
 **menu.background**

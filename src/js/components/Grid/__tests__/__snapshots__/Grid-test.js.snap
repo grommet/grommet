@@ -710,6 +710,74 @@ exports[`Grid pad 1`] = `
   padding-top: 4px;
 }
 
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-inline-start: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-inline-end: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding-top: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -768,6 +836,34 @@ exports[`Grid renders 1`] = `
 <div
   className="c0"
 >
+  <div
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Grid responsive 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
   <div
     className="c1"
   />

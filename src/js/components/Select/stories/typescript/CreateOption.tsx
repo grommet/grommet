@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
+import { FormDown, FormUp } from 'grommet-icons';
 
-import { Box, Select } from 'mnet-ui-base';
+import { Box, Grommet, Select } from 'mnet-ui-base';
+import { ThemeType } from 'mnet-ui-base/themes';
 
 // the prefix name of the Create option entry
 const prefix = 'Create';
+
+const theme: ThemeType = {
+  select: {
+    control: {
+      open: {
+        background: '#ece0fa',
+        border: '1px solid #7D4CDB',
+      },
+      extend: 'padding: 3px 6px;',
+    },
+    icons: {
+      down: FormDown,
+      up: FormUp,
+      color: 'dark-1',
+      margin: 'small',
+    },
+  },
+};
 
 const defaultOptions = [];
 for (let i = 1; i <= 5; i += 1) {
@@ -39,9 +59,10 @@ const CreateOption = () => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
+    <MnetUIBase full theme={theme}>
       <Box fill align="center" justify="start" pad="large">
         <Select
+          open
           size="medium"
           placeholder="Select"
           value={value}
@@ -64,7 +85,7 @@ const CreateOption = () => {
           }}
         />
       </Box>
-    </div>
+    </MnetUIBase>
   );
 };
 

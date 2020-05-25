@@ -3,21 +3,18 @@ import { storiesOf } from '@storybook/react';
 
 import { Box, Select } from 'mnet-ui-base';
 
-const defaultOptions = [];
 const objectOptions = [];
 for (let i = 1; i <= 200; i += 1) {
-  defaultOptions.push(`option ${i}`);
   objectOptions.push({
     lab: `option ${i}`,
     val: i,
     dis: i % 5 === 0,
-    sel: i % 13 === 0,
   });
 }
 
-const ObjectMultiSelect = () => {
+const Example = () => {
   const [options, setOptions] = useState(objectOptions);
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState([1, 2]);
 
   return (
     <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
@@ -29,7 +26,7 @@ const ObjectMultiSelect = () => {
           closeOnChange={false}
           disabledKey="dis"
           labelKey="lab"
-          valueKey="val"
+          valueKey={{ key: 'val', reduce: true }}
           value={value}
           options={options}
           onChange={({ value: nextValue }) => setValue(nextValue)}
@@ -51,4 +48,4 @@ const ObjectMultiSelect = () => {
   );
 };
 
-storiesOf('Select', module).add('Object Multiple', () => <ObjectMultiSelect />);
+storiesOf('Select', module).add('Object Multiple', () => <Example />);

@@ -167,12 +167,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+The border color of the component when in focus. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 focus
+```
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+2px
 ```
 
 **global.colors.placeholder**
@@ -185,9 +225,30 @@ Defaults to
 #AAAAAA
 ```
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects `number`.
+The line-height of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.size**
+
+The size of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects `number | string`.
 
 Defaults to
 
@@ -195,9 +256,21 @@ Defaults to
 600
 ```
 
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.input.padding**
 
-The padding of the text. Expects `string`.
+The padding of the text. Expects `string | { top: string, bottom: string, left: string, right: 
+        string, horizontal: string, vertical: string }`.
 
 Defaults to
 

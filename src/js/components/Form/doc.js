@@ -32,7 +32,8 @@ export const doc = Form => {
       .description('Custom validation messages.')
       .defaultValue({ invalid: 'invalid', required: 'required' }),
     onChange: PropTypes.func.description(
-      'Function that will be called when any fields are updated.',
+      `Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.`,
     ),
     onSubmit: PropTypes.func.description(
       `Function that will be called when the form is submitted. The

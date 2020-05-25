@@ -170,4 +170,81 @@ describe('FormField', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('disabled', () => {
+    const component = renderer.create(
+      <MnetUIBase>
+        <FormField disabled /> {/* don't use FormField without Form */}
+        <Form>
+          <FormField disabled />
+        </Form>
+      </MnetUIBase>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('required', () => {
+    const component = renderer.create(
+      <MnetUIBase>
+        <FormField required /> {/* don't use FormField without Form */}
+        <Form>
+          <FormField required />
+        </Form>
+      </MnetUIBase>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('custom label', () => {
+    const component = renderer.create(
+      <MnetUIBase
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
+        </Form>
+      </MnetUIBase>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('disabled with custom label', () => {
+    const component = renderer.create(
+      <MnetUIBase
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+            disabled: {
+              label: {
+                color: 'teal',
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField disabled label="label" />
+        </Form>
+      </MnetUIBase>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

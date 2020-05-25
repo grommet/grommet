@@ -8,14 +8,16 @@ export interface TextInputProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
+  icon?: JSX.Element,
   id?: string;
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
-  onSuggestionsOpen?: ((...args: any[]) => any);
-  onSuggestionsClose?: ((...args: any[]) => any);
+  onSuggestionsOpen?: (() => void);
+  onSuggestionsClose?: (() => void);
   placeholder?: PlaceHolderType;
   plain?: boolean;
+  reverse?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
   value?: string | number;

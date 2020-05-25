@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box } from 'mnet-ui-base';
+import { Box, Text } from 'mnet-ui-base';
 
 const BackgroundBox = () => (
   <div>
@@ -46,6 +46,34 @@ const BackgroundBox = () => (
       <Box background="light-5" pad="medium">
         <Box background="#11111108" pad="small">
           low opacity on light background
+        </Box>
+      </Box>
+      <Box background={{ color: 'background', dark: true }} pad="medium">
+        <Text color="brand">force dark background</Text>
+      </Box>
+      <Box background="dark-1" pad="medium">
+        <Box background={{ color: 'background', dark: false }} pad="medium">
+          <Text color="brand">force light background</Text>
+        </Box>
+      </Box>
+      <Box
+        background={{
+          color: { dark: 'darkgrey', light: 'lightgrey' },
+          dark: true,
+        }}
+        pad="medium"
+      >
+        <Text color="brand">force dark background with color as object</Text>
+      </Box>
+      <Box background="dark-1" pad="medium">
+        <Box
+          background={{
+            color: { dark: 'darkgrey', light: 'lightgrey' },
+            dark: false,
+          }}
+          pad="medium"
+        >
+          <Text color="brand">force light background with color as object</Text>
         </Box>
       </Box>
     </Box>

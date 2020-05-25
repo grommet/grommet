@@ -5,7 +5,7 @@ import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Tab, Tabs } from 'mnet-ui-base';
 
 const ControlledTabs = () => {
-  const [index, setIndex] = React.useState();
+  const [index, setIndex] = React.useState(0);
 
   const onActive = (nextIndex: number) => setIndex(nextIndex);
 

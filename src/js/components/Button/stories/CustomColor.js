@@ -1,10 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button } from 'mnet-ui-base';
+import { MnetUIBase, Box, Button } from 'mnet-ui-base';
+
+const customButtonColor = {
+  global: { font: { family: 'Arial' } },
+  button: {
+    color: {
+      light: 'white',
+      dark: 'white',
+    },
+  },
+};
 
 const Colored = props => (
-  <div>
+  <MnetUIBase theme={customButtonColor}>
     <Box align="center" pad="large" gap="small">
       <Button primary label="Submit" onClick={() => {}} />
       <Button
@@ -37,7 +47,7 @@ const Colored = props => (
       />
       <Button plain label="plain inherit" onClick={() => {}} {...props} />
     </Box>
-  </div>
+  </MnetUIBase>
 );
 
 storiesOf('Button', module).add('Colored', () => <Colored />);

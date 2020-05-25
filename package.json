@@ -1,6 +1,6 @@
 {
   "name": "mnet-ui-base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -47,8 +47,7 @@
     "markdown-to-jsx": "^6.9.1",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
-    "react-desc": "^4.1.2",
-    "recompose": "^0.30.0"
+    "react-desc": "^4.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -162,6 +161,7 @@
     "design system",
     "framework",
     "react",
+    "theme",
     "theming",
     "templates",
     "sticker sheets",

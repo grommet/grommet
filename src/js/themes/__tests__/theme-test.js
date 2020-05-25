@@ -4,7 +4,7 @@ import 'jest-styled-components';
 
 import { Add } from 'grommet-icons';
 
-import { MnetUIBase, Anchor, Box, Text } from '../../components';
+import { MnetUIBase, Anchor, Box, Text, TextInput } from '../../components';
 import { dark } from '..';
 
 const colors = [
@@ -37,6 +37,15 @@ const colors = [
 
 const customTheme = {
   global: {
+    input: {
+      // test backwards compatibility that string value works for input pad
+      padding: '12px',
+      font: {
+        height: '50px',
+        size: 'large',
+        weight: 'bold',
+      },
+    },
     colors: {
       custom: '#cc6633',
     },
@@ -82,6 +91,9 @@ describe('MnetUIBase', () => {
         <Box background="dark-1">
           <Anchor icon={<Add />} label="Add" />
           <Anchor icon={<Add />} label="Add" color="custom" />
+        </Box>
+        <Box>
+          <TextInput value="Value" />
         </Box>
       </MnetUIBase>,
     );

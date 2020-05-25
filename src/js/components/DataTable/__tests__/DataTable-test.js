@@ -35,6 +35,25 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('!primaryKey', () => {
+    const { container } = render(
+      <MnetUIBase>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey={false}
+        />
+      </MnetUIBase>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('paths', () => {
     const { container } = render(
       <MnetUIBase>
@@ -90,7 +109,7 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('sort', () => {
+  test('sortable', () => {
     const { container, getByText } = render(
       <MnetUIBase>
         <DataTable
@@ -111,6 +130,35 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onSort', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <MnetUIBase>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          onSort={onSort}
+          sortable
+        />
+      </MnetUIBase>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({ property: 'a', direction: 'asc' }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -418,6 +466,60 @@ describe('DataTable', () => {
           primaryKey="b"
           step={2}
           replace
+        />
+      </MnetUIBase>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('themeColumnSizes', () => {
+    const { container } = render(
+      <MnetUIBase>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: 'medium' },
+            { property: 'b', header: 'B', size: 'small' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </MnetUIBase>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('absoluteColumnSizes', () => {
+    const { container } = render(
+      <MnetUIBase>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: '400px' },
+            { property: 'b', header: 'B', size: '200px' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </MnetUIBase>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('relativeColumnSizes', () => {
+    const { container } = render(
+      <MnetUIBase>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: '2/3' },
+            { property: 'b', header: 'B', size: '1/3' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
         />
       </MnetUIBase>,
     );

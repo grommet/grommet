@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, InfiniteScroll, Text } from 'mnet-ui-base';
@@ -6,16 +6,13 @@ import { Box, InfiniteScroll, Text } from 'mnet-ui-base';
 import { allItems } from './Basics';
 
 /* eslint-disable react/prefer-stateless-function */
-class MyItem extends Component {
-  render() {
-    const { item } = this.props;
-    return (
-      <Box pad="medium" border={{ side: 'bottom' }} align="center">
-        <Text>{item}</Text>
-      </Box>
-    );
-  }
-}
+const MyItem = ({ item }) => {
+  return (
+    <Box pad="medium" border={{ side: 'bottom' }} align="center">
+      <Text>{item}</Text>
+    </Box>
+  );
+};
 
 const ClassChildrenInfiniteScroll = props => (
   <>

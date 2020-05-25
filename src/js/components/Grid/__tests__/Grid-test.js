@@ -179,6 +179,17 @@ describe('Grid', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('responsive', () => {
+    const component = renderer.create(
+      <MnetUIBase>
+        <Grid responsive />
+        <Grid responsive={false} />
+      </MnetUIBase>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('as renders', () => {
     const component = renderer.create(
       <MnetUIBase>

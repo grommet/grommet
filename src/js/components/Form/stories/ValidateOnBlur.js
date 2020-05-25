@@ -2,6 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Form, FormField, TextInput } from 'mnet-ui-base';
+import { StatusGood } from 'grommet-icons';
+import { mnet } from 'mnet-ui-base/themes';
 
 const Example = () => (
   <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
@@ -20,6 +22,18 @@ const Example = () => (
               { regexp: /^[a-z]/i },
               name => {
                 if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+              name => {
+                if (name === 'good')
+                  return {
+                    message: (
+                      <Box align="end">
+                        <StatusGood />
+                      </Box>
+                    ),
+                    status: 'info',
+                  };
                 return undefined;
               },
             ]}

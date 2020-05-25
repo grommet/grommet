@@ -21,11 +21,19 @@ import {
 } from 'mnet-ui-base';
 import { mnet } from 'mnet-ui-base/themes';
 
-const richAccordionTheme = {
+const richAccordionTheme: ThemeType = {
   accordion: {
     icons: {
       collapse: FormSubtract,
       expand: FormAdd,
+    },
+    panel: {
+      border: {
+        side: 'horizontal',
+        size: 'medium',
+        color: '#DADADA',
+        style: 'dotted',
+      },
     },
   },
 };
@@ -229,7 +237,7 @@ const RichAccordion = () => {
                   }}
                   gap="medium"
                 >
-                  Yeah believe me, this channel has 2,000 members.
+                  Yeah believe me, this channel has 3,000 members.
                 </Box>
               </RichPanel>
             </Accordion>

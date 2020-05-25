@@ -275,6 +275,18 @@ describe('Layer', () => {
     );
     expectPortal('target-test').toMatchSnapshot();
   });
+
+  test('target not modal', () => {
+    render(
+      <MnetUIBase>
+        <TargetLayer id="target-test" modal={false}>
+          This layer has a target
+        </TargetLayer>
+      </MnetUIBase>,
+    );
+    expectPortal('target-test').toMatchSnapshot();
+  });
+
   test('unmounts from dom', () => {
     render(
       <MnetUIBase>
@@ -284,5 +296,33 @@ describe('Layer', () => {
     setTimeout(() => {
       expect(queryByTestId(document, 'test-dom-removal')).toBeNull();
     }, 1000);
+  });
+
+  test('default containerTarget', () => {
+    render(
+      <MnetUIBase>
+        <Layer data-testid="layer">Test</Layer>
+      </MnetUIBase>,
+    );
+    const layer = getByTestId(document, 'layer');
+    const actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(document.body);
+  });
+
+  test('custom containerTarget', () => {
+    const target = document.createElement('div');
+    document.body.appendChild(target);
+    try {
+      render(
+        <MnetUIBase containerTarget={target}>
+          <Layer data-testid="layer">Test</Layer>
+        </MnetUIBase>,
+      );
+      const layer = getByTestId(document, 'layer');
+      const actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+      expect(actualRoot).toBe(target);
+    } finally {
+      document.body.removeChild(target);
+    }
   });
 });

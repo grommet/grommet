@@ -58,7 +58,7 @@ export const doc = FormField => {
     validate: PropTypes.oneOfType([
       PropTypes.shape({
         regexp: PropTypes.object, // regular expression
-        message: PropTypes.string,
+        message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
         status: PropTypes.oneOf(['error', 'info']),
       }),
       PropTypes.func,
@@ -66,7 +66,7 @@ export const doc = FormField => {
         PropTypes.oneOfType([
           PropTypes.shape({
             regexp: PropTypes.object, // regular expression
-            message: PropTypes.string,
+            message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
             status: PropTypes.oneOf(['error', 'info']),
           }),
           PropTypes.func,
@@ -122,6 +122,16 @@ export const themeDoc = {
     type: 'string | boolean | number',
     defaultValue: undefined,
   },
+  'formField.disabled.border.color': {
+    description: 'The color of the FormField border when it is disabled.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined,
+  },
+  'formField.disabled.label.color': {
+    description: 'The color of the FormField label when it is disabled.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined,
+  },
   'formField.error.background.color': {
     description:
       'The color of the FormField background when there is an error.',
@@ -143,6 +153,16 @@ export const themeDoc = {
     description: 'The margin used for the FormField error.',
     type: 'string | object',
     defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }",
+  },
+  'formField.focus.background.color': {
+    description: 'The color of the FormField background when it is in focus.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined,
+  },
+  'formField.focus.border.color': {
+    description: 'The color of the FormField border when it is in focus.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: undefined,
   },
   'formField.extend': {
     description: 'Any additional style for FormField.',

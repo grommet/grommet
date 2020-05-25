@@ -7,7 +7,10 @@ const SimpleMenu = () => (
   <>
     <Box align="center" pad="large">
       <Menu
-        dropProps={{ align: { top: 'bottom', left: 'left' } }}
+        dropProps={{
+          align: { top: 'bottom', left: 'left' },
+          elevation: 'xlarge',
+        }}
         label="actions"
         items={[
           { label: 'Launch', onClick: () => {} },

@@ -1,52 +1,13 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, Select } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
-import { deepMerge } from 'mnet-ui-base/utils';
+import { Box, Select } from 'mnet-ui-base';
 
-const colors = {
-  selected: 'neutral-3',
-};
-
-const customRoundedTheme = deepMerge(mnet, {
-  global: {
-    colors,
-    control: {
-      border: {
-        radius: '24px',
-      },
-    },
-    input: {
-      weight: 400,
-    },
-    font: {
-      size: '12px',
-    },
-  },
-  text: {
-    medium: '13px',
-  },
-  textInput: {
-    extend: 'padding: 0 12px;',
-  },
-  select: {
-    control: {
-      extend: 'padding: 3px 6px;',
-      open: {
-        background: '#ece0fa',
-        border: '1px solid #7D4CDB',
-      },
-    },
-  },
-});
-
-const SimpleSelect = ({ theme, ...rest }) => {
+const SimpleSelect = ({ ...rest }) => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
   return (
-    <MnetUIBase full theme={theme || mnet}>
+    <>
       <Box fill align="center" justify="start" pad="large">
         <Select
           id="select"
@@ -58,16 +19,8 @@ const SimpleSelect = ({ theme, ...rest }) => {
           {...rest}
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
-};
-
-SimpleSelect.propTypes = {
-  theme: PropTypes.shape({}),
-};
-
-SimpleSelect.defaultProps = {
-  theme: undefined,
 };
 
 const defaultOptions = [];
@@ -82,6 +35,4 @@ for (let i = 1; i <= 200; i += 1) {
   });
 }
 
-storiesOf('Select', module)
-  .add('Simple', () => <SimpleSelect />)
-  .add('Custom Theme', () => <SimpleSelect open theme={customRoundedTheme} />);
+storiesOf('Select', module).add('Simple', () => <SimpleSelect />);

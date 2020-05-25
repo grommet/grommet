@@ -80,7 +80,7 @@ describe('MnetUIBase', () => {
 
   test('background', () => {
     const component = renderer.create(
-      <MnetUIBase full background="blue">
+      <MnetUIBase full background="#0000ff">
         MnetUIBase App
       </MnetUIBase>,
     );

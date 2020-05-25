@@ -14,6 +14,13 @@ describe('InfiniteScroll', () => {
       <MnetUIBase>
         <InfiniteScroll />
         <InfiniteScroll items={items}>
+          {(item, index, ref) => (
+            <div ref={ref} key={index}>
+              {item}
+            </div>
+          )}
+        </InfiniteScroll>
+        <InfiniteScroll items={items}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
       </MnetUIBase>,

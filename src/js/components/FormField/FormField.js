@@ -7,87 +7,122 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
-import { parseMetricToNum } from '../../utils';
+import { focusStyle, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
+import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
-const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
-const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
+const mnetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
+const mnetInputPadNames = [
+  'CheckBox',
+  'CheckBoxGroup',
+  'RadioButtonGroup',
+  'RangeInput',
+];
 
-const validateField = (required, validate, messages) => (value, data) => {
-  let error;
-  if (required && (value === undefined || value === '')) {
-    error = messages.required;
-  } else if (validate) {
-    if (Array.isArray(validate)) {
-      validate.some(oneValidate => {
-        error = validateField(false, oneValidate, messages)(value, data);
-        return !!error;
-      });
-    } else if (typeof validate === 'function') {
-      error = validate(value, data);
-    } else if (validate.regexp) {
-      if (!validate.regexp.test(value)) {
-        error = validate.message || messages.invalid;
-        if (validate.status) {
-          error = { message: error, status: validate.status };
-        }
-      }
-    }
-  }
-  return error;
-};
+const isMnetUIBaseInput = comp =>
+  comp &&
+  (mnetInputNames.indexOf(comp.displayName) !== -1 ||
+    mnetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
+  ${props => props.focus && focusStyle({ justBorder: true })}
   ${props => props.theme.formField && props.theme.formField.extend}
 `;
+
+const FormFieldContentBox = styled(Box)`
+  ${props => props.focus && focusStyle({ justBorder: true })}
+`;
+
+const Message = ({ message, ...rest }) => {
+  if (message) {
+    if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
+    return <Box {...rest}>{message}</Box>;
+  }
+  return null;
+};
 
 const FormField = forwardRef(
   (
     {
-      checked,
       children,
       className,
       component,
-      disabled,
+      disabled, // pass through in renderInput()
       error,
       help,
       htmlFor,
       info,
       label,
       margin,
-      name,
+      name, // pass through in renderInput()
       onBlur,
       onFocus,
       pad,
-      required,
+      required, // pass through in renderInput()
       style,
       validate,
-      value: valueProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
-    const [value, setValue] = useState(valueProp);
-    useEffect(() => setValue(valueProp), [valueProp]);
 
     useEffect(() => {
-      if (
-        context &&
-        context.value &&
-        context.value[name] === undefined &&
-        (value !== undefined || checked !== undefined)
-      ) {
-        context.update(name, value !== undefined ? value : checked, true);
+      if (context && context.addValidation) {
+        const { addValidation, messages, removeValidation } = context;
+
+        const validateSingle = (aValidate, value2, data) => {
+          let result;
+          if (typeof aValidate === 'function') {
+            result = aValidate(value2, data);
+          } else if (validate.regexp) {
+            if (!validate.regexp.test(value2)) {
+              result = validate.message || messages.invalid;
+              if (validate.status) {
+                result = { message: error, status: validate.status };
+              }
+            }
+          }
+          return result;
+        };
+
+        const validateField = (value2, data) => {
+          let result;
+          if (
+            required &&
+            // false is for CheckBox
+            (value2 === undefined || value2 === '' || value2 === false)
+          ) {
+            result = messages.required;
+          } else if (validate) {
+            if (Array.isArray(validate)) {
+              validate.some(aValidate => {
+                result = validateSingle(aValidate, value2, data);
+                return !!result;
+              });
+            } else {
+              result = validateSingle(validate, value2, data);
+            }
+          }
+          return result;
+        };
+
+        if (validate || required) {
+          addValidation(name, validateField);
+          return () => removeValidation(name, validateField);
+        }
+        removeValidation(name, validateField);
       }
-    });
+      return undefined;
+    }, [context, error, name, required, validate]);
 
     const [focus, setFocus] = useState();
 
@@ -98,9 +133,7 @@ const FormField = forwardRef(
           <Input
             name={name}
             label={label}
-            checked={
-              formValue[name] !== undefined ? formValue[name] : checked || false
-            }
+            disabled={disabled}
             aria-invalid={invalid || undefined}
             {...rest}
           />
@@ -109,40 +142,56 @@ const FormField = forwardRef(
       return (
         <Input
           name={name}
-          value={
-            formValue[name] !== undefined ? formValue[name] : valueProp || ''
-          }
+          value={!isMnetUIBaseInput(component) ? formValue[name] : undefined}
+          disabled={disabled}
           plain
           focusIndicator={false}
           aria-invalid={invalid || undefined}
           {...rest}
+          onChange={
+            // MnetUIBase input components already check for FormContext
+            // and, using their `name`, end up calling the context.update()
+            // already. For custom components, we expect they will call
+            // this onChange() and we'll call context.update() here, primarily
+            // for backwards compatibility.
+            isMnetUIBaseInput(component)
+              ? rest.onChange
+              : event => {
+                  context.update(name, event.target.value);
+                  if (rest.onChange) rest.onChange(event);
+                }
+          }
         />
       );
     };
 
-    const { formField } = theme;
-    const { border } = formField;
+    const { formField: formFieldTheme } = theme;
+    const { border: themeBorder } = formFieldTheme;
 
-    // This is here for backwards compatibility. In case the child is a grommet
+    // This is here for backwards compatibility. In case the child is a mnet
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
     let wantContentPad =
-      component && (component === CheckBox || component === RadioButtonGroup);
+      component &&
+      (component === CheckBox ||
+        component === CheckBoxGroup ||
+        component === RadioButtonGroup);
+
     let contents =
-      (border &&
+      (themeBorder &&
         children &&
         Children.map(children, child => {
           if (
             child &&
             child.type &&
-            grommetInputPadNames.indexOf(child.type.displayName) !== -1
+            mnetInputPadNames.indexOf(child.type.displayName) !== -1
           ) {
             wantContentPad = true;
           }
           if (
             child &&
             child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1 &&
+            mnetInputNames.indexOf(child.type.displayName) !== -1 &&
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
@@ -162,14 +211,11 @@ const FormField = forwardRef(
     let containerRest = rest;
     if (context && context.addValidation) {
       const {
-        addValidation,
         errors,
         infos,
         onBlur: onContextBlur,
         value: formValue,
-        messages,
       } = context;
-      addValidation(name, validateField(required, validate, messages));
       normalizedError = error || errors[name];
       normalizedInfo = info || infos[name];
       if (!contents) containerRest = {};
@@ -179,52 +225,76 @@ const FormField = forwardRef(
       }
     }
 
-    const contentProps = pad || wantContentPad ? { ...formField.content } : {};
-    if (border.position === 'inner') {
-      if (normalizedError && formField.error) {
-        contentProps.background = formField.error.background;
-      } else if (disabled && formField.disabled) {
-        contentProps.background = formField.disabled.background;
+    const contentProps =
+      pad || wantContentPad ? { ...formFieldTheme.content } : {};
+    if (themeBorder.position === 'inner') {
+      if (normalizedError && formFieldTheme.error) {
+        contentProps.background = formFieldTheme.error.background;
+      } else if (disabled && formFieldTheme.disabled) {
+        contentProps.background = formFieldTheme.disabled.background;
       }
     }
     contents = <Box {...contentProps}>{contents}</Box>;
 
     let borderColor;
-    if (focus && !normalizedError) {
-      borderColor = 'focus';
-    } else if (normalizedError) {
-      borderColor = (border && border.error.color) || 'status-critical';
+
+    if (
+      disabled &&
+      formFieldTheme.disabled.border &&
+      formFieldTheme.disabled.border.color
+    ) {
+      borderColor = formFieldTheme.disabled.border.color;
+    } else if (normalizedError && themeBorder && themeBorder.error.color) {
+      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (
+      focus &&
+      formFieldTheme.focus &&
+      formFieldTheme.focus.border &&
+      formFieldTheme.focus.border.color
+    ) {
+      borderColor = formFieldTheme.focus.border.color;
     } else {
-      borderColor = (border && border.color) || 'border';
+      borderColor = (themeBorder && themeBorder.color) || 'border';
     }
+
+    const labelStyle = { ...formFieldTheme.label };
+
+    if (disabled) {
+      labelStyle.color =
+        formFieldTheme.disabled && formFieldTheme.disabled.label
+          ? formFieldTheme.disabled.label.color
+          : labelStyle.color;
+    }
+
     let abut;
     let abutMargin;
     let outerStyle = style;
 
-    if (border) {
+    if (themeBorder) {
+      const innerProps =
+        themeBorder.position === 'inner'
+          ? {
+              border: {
+                ...themeBorder,
+                side: themeBorder.side || 'bottom',
+                color: borderColor,
+              },
+              round: formFieldTheme.round,
+              focus,
+            }
+          : {};
       contents = (
-        <Box
-          border={
-            border.position === 'inner'
-              ? {
-                  ...border,
-                  side: border.side || 'bottom',
-                  color: borderColor,
-                }
-              : undefined
-          }
-          round={border.position === 'inner' ? formField.round : undefined}
-        >
+        <FormFieldContentBox overflow="hidden" {...innerProps}>
           {contents}
-        </Box>
+        </FormFieldContentBox>
       );
 
-      const mergedMargin = margin || formField.margin;
+      const mergedMargin = margin || formFieldTheme.margin;
       abut =
-        border.position === 'outer' &&
-        (border.side === 'all' ||
-          border.side === 'horizontal' ||
-          !border.side) &&
+        themeBorder.position === 'outer' &&
+        (themeBorder.side === 'all' ||
+          themeBorder.side === 'horizontal' ||
+          !themeBorder.side) &&
         !(
           mergedMargin &&
           ((typeof mergedMargin === 'string' && mergedMargin !== 'none') ||
@@ -236,12 +306,12 @@ const FormField = forwardRef(
         abutMargin = { bottom: '-1px' };
         if (margin) {
           abutMargin = margin;
-        } else if (border.size) {
+        } else if (themeBorder.size) {
           // if the user defines a margin,
-          // then the default margin below will be overriden
+          // then the default margin below will be overridden
           abutMargin = {
             bottom: `-${parseMetricToNum(
-              theme.global.borderSize[border.size] || border.size,
+              theme.global.borderSize[themeBorder.size] || themeBorder.size,
             )}px`,
           };
         }
@@ -256,26 +326,45 @@ const FormField = forwardRef(
     }
 
     let outerBackground;
-    if (border.position === 'outer') {
-      if (normalizedError && formField.error) {
-        outerBackground = formField.error.background;
-      } else if (disabled && formField.disabled) {
-        outerBackground = formField.disabled.background;
+    if (themeBorder.position === 'outer') {
+      if (
+        normalizedError &&
+        formFieldTheme.error &&
+        formFieldTheme.error.background
+      ) {
+        outerBackground = formFieldTheme.error.background;
+      } else if (
+        focus &&
+        formFieldTheme.focus &&
+        formFieldTheme.focus.background &&
+        formFieldTheme.focus.background.color
+      ) {
+        outerBackground = formFieldTheme.focus.background.color;
+      } else if (
+        disabled &&
+        formFieldTheme.disabled &&
+        formFieldTheme.disabled.background
+      ) {
+        outerBackground = formFieldTheme.disabled.background;
       }
     }
+
+    const outerProps =
+      themeBorder && themeBorder.position === 'outer'
+        ? {
+            border: { ...themeBorder, color: borderColor },
+            round: formFieldTheme.round,
+            focus,
+          }
+        : {};
 
     return (
       <FormFieldBox
         ref={ref}
         className={className}
-        border={
-          border && border.position === 'outer'
-            ? { ...border, color: borderColor }
-            : undefined
-        }
         background={outerBackground}
-        margin={abut ? abutMargin : margin || { ...formField.margin }}
-        round={border.position === 'outer' ? formField.round : undefined}
+        margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
+        {...outerProps}
         style={outerStyle}
         onFocus={event => {
           setFocus(true);
@@ -291,18 +380,18 @@ const FormField = forwardRef(
         {(label && component !== CheckBox) || help ? (
           <>
             {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...formField.label}>
+              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
               </Text>
             )}
-            {help && <Text {...formField.help}>{help}</Text>}
+            <Message message={help} {...formFieldTheme.help} />
           </>
         ) : (
           undefined
         )}
         {contents}
-        {normalizedError && <Text {...formField.error}>{normalizedError}</Text>}
-        {normalizedInfo && <Text {...formField.info}>{normalizedInfo}</Text>}
+        <Message message={normalizedError} {...formFieldTheme.error} />
+        <Message message={normalizedInfo} {...formFieldTheme.info} />
       </FormFieldBox>
     );
   },

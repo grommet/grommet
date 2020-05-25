@@ -402,6 +402,15 @@ xlarge
 string
 ```
 
+**responsive**
+
+Whether margin and pad sizes should be scaled for mobile
+        environments. Defaults to `true`.
+
+```
+boolean
+```
+
 **rows**
 
 Row sizes.

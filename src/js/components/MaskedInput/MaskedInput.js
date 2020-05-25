@@ -18,6 +18,7 @@ import { Keyboard } from '../Keyboard';
 import {
   StyledMaskedInput,
   StyledMaskedInputContainer,
+  StyledIcon,
 } from './StyledMaskedInput';
 
 const parseValue = (mask, value) => {
@@ -112,11 +113,13 @@ const parseValue = (mask, value) => {
 };
 
 const defaultMask = [];
+const dropAlign = { top: 'bottom', left: 'left' };
 
 const MaskedInput = forwardRef(
   (
     {
       focus: focusProp,
+      icon,
       id,
       mask = defaultMask,
       name,
@@ -126,6 +129,7 @@ const MaskedInput = forwardRef(
       onKeyDown,
       placeholder,
       plain,
+      reverse,
       value: valueProp,
       ...rest
     },
@@ -203,9 +207,12 @@ const MaskedInput = forwardRef(
         // Align with the mask.
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
-        if (value !== nextValue) setInputValue(nextValue);
-        if (onChange) onChange(event);
-        setValue(nextValue);
+
+        if (value !== nextValue) {
+          setInputValue(nextValue);
+          setValue(nextValue);
+          if (onChange) onChange(event);
+        }
       },
       [mask, onChange, setInputValue, setValue, value],
     );
@@ -282,12 +289,19 @@ const MaskedInput = forwardRef(
       [showDrop],
     );
 
+    const onHideDrop = useCallback(() => setShowDrop(false), []);
+
     const renderPlaceholder = () => {
       return mask.map(item => item.placeholder || item.fixed).join('');
     };
 
     return (
       <StyledMaskedInputContainer plain={plain}>
+        {icon && (
+          <StyledIcon reverse={reverse} theme={theme}>
+            {icon}
+          </StyledIcon>
+        )}
         <Keyboard
           onEsc={onEsc}
           onTab={showDrop ? () => setShowDrop(false) : undefined}
@@ -305,9 +319,11 @@ const MaskedInput = forwardRef(
             autoComplete="off"
             plain={plain}
             placeholder={placeholder || renderPlaceholder()}
+            icon={icon}
+            reverse={reverse}
             focus={focus}
             {...rest}
-            value={value || ''}
+            value={value}
             theme={theme}
             onFocus={event => {
               setFocus(true);
@@ -329,11 +345,11 @@ const MaskedInput = forwardRef(
         {showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && (
           <Drop
             id={id ? `masked-input-drop__${id}` : undefined}
-            align={{ top: 'bottom', left: 'left' }}
+            align={dropAlign}
             responsive={false}
             target={(ref || inputRef).current}
-            onClickOutside={() => setShowDrop(false)}
-            onEsc={() => setShowDrop(false)}
+            onClickOutside={onHideDrop}
+            onEsc={onHideDrop}
           >
             <Box ref={dropRef}>
               {mask[activeMaskIndex].options.map((option, index) => (

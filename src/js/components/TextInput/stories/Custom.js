@@ -1,4 +1,10 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  useMemo,
+} from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Search } from 'grommet-icons';
@@ -102,7 +108,14 @@ const CustomSuggestionsTextInput = () => {
 
   const onSelect = event => setValue(event.suggestion.value);
 
-  const renderSuggestions = () => {
+  const onOpen = useCallback(() => setSuggestionOpen(true), [
+    setSuggestionOpen,
+  ]);
+  const onClose = useCallback(() => setSuggestionOpen(false), [
+    setSuggestionOpen,
+  ]);
+
+  const suggestions = useMemo(() => {
     return suggestedFolks
       .filter(
         ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0,
@@ -128,7 +141,7 @@ const CustomSuggestionsTextInput = () => {
         ),
         value: name,
       }));
-  };
+  }, [suggestedFolks, value]);
 
   return (
     <MnetUIBase theme={myCustomTheme} full>
@@ -162,10 +175,10 @@ const CustomSuggestionsTextInput = () => {
             value={value}
             onChange={onChange}
             onSelect={onSelect}
-            suggestions={renderSuggestions()}
+            suggestions={suggestions}
             placeholder="Enter your name..."
-            onSuggestionsOpen={() => setSuggestionOpen(true)}
-            onSuggestionsClose={() => setSuggestionOpen(false)}
+            onSuggestionsOpen={onOpen}
+            onSuggestionsClose={onClose}
           />
         </Box>
       </Box>

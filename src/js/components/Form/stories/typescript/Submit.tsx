@@ -20,7 +20,7 @@ const Example = () => (
       <Box width="medium">
         <Form
           onReset={event => console.log(event)}
-          //   onSubmit={({ value }) => console.log('Submit', value)}
+          onChange={(value: FormState) => console.log('Submit', value)}
         >
           <FormField
             label="Name"

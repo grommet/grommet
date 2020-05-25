@@ -3,6 +3,7 @@
 
 // get the value for the property in the datum object
 export const datumValue = (datum, property) => {
+  if (!property) return undefined;
   const parts = property.split('.');
   if (parts.length === 1) {
     return datum[property];
@@ -22,10 +23,11 @@ export const normalizePrimaryProperty = (columns, primaryKey) => {
       result = column.property;
     }
   });
-  if (!result && columns.length > 0) {
-    result = primaryKey || columns[0].property;
+  if (!result) {
+    if (primaryKey === false) result = undefined;
+    else if (primaryKey) result = primaryKey;
+    else if (columns.length > 0) result = columns[0].property;
   }
-
   return result;
 };
 
@@ -64,10 +66,10 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
   }
 
   if (sort) {
-    const { property, ascending } = sort;
+    const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
-    const before = ascending ? 1 : -1;
-    const after = ascending ? -1 : 1;
+    const before = direction === 'asc' ? 1 : -1;
+    const after = direction === 'asc' ? -1 : 1;
     result.sort((d1, d2) => {
       if (d1[property] > d2[property]) return before;
       if (d1[property] < d2[property]) return after;

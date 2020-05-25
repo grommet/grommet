@@ -121,6 +121,16 @@ describe('Button', () => {
     const component = renderer.create(
       <MnetUIBase>
         <Button disabled />
+        <Button disabled primary label="Button" />
+        <Button disabled label="Button" />
+        <Button disabled plain label="Button" />
+        <Button disabled plain={false} label="Button" />
+        <Button disabled icon={<svg />} />
+        <Button disabled icon={<svg />} plain />
+        <Button disabled icon={<svg />} plain={false} />
+        <Button disabled icon={<svg />} label="Button" />
+        <Button disabled icon={<svg />} label="Button" plain />
+        <Button disabled icon={<svg />} label="Button" primary />
       </MnetUIBase>,
     );
     const tree = component.toJSON();

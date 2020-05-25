@@ -136,12 +136,24 @@ string
 {
   header: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   body: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   footer: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 ```
@@ -322,7 +334,23 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  size: 
+    small
+    medium
+    large
+    xlarge
+    1/2
+    1/4
+    2/4
+    3/4
+    1/3
+    2/3
+    string,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 ```
 
@@ -402,6 +430,17 @@ When supplied, and when at least one column has 'search' enabled,
 function
 ```
 
+**onSort**
+
+When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}
+
+```
+function
+```
+
 **pad**
 
 Cell padding. You can set the padding per context by passing an
@@ -471,10 +510,12 @@ string
 When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.
 
 ```
 string
+boolean
 ```
 
 **resizeable**
@@ -512,6 +553,19 @@ medium
 large
 xlarge
 string
+```
+
+**sort**
+
+Which property to sort on and which direction to sort.
+
+```
+{
+  direction: 
+    asc
+    desc,
+  property: string
+}
 ```
 
 **sortable**

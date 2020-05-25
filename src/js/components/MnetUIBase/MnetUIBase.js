@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-import { ResponsiveContext, ThemeContext } from '../../contexts';
+import {
+  ResponsiveContext,
+  ThemeContext,
+  ContainerTargetContext,
+} from '../../contexts';
+
 import {
   backgroundIsDark,
   deepMerge,
@@ -115,7 +120,14 @@ class MnetUIBase extends Component {
   }
 
   render() {
-    const { children, full, ...rest } = this.props;
+    const {
+      children,
+      full,
+      containerTarget = typeof document === 'object'
+        ? document.body
+        : undefined,
+      ...rest
+    } = this.props;
     delete rest.theme;
     const { theme, responsive: stateResponsive } = this.state;
 
@@ -129,10 +141,12 @@ class MnetUIBase extends Component {
     return (
       <ThemeContext.Provider value={theme}>
         <ResponsiveContext.Provider value={responsive}>
-          <StyledMnetUIBase full={full} {...rest}>
-            {children}
-          </StyledMnetUIBase>
-          {full && <FullGlobalStyle />}
+          <ContainerTargetContext.Provider value={containerTarget}>
+            <StyledMnetUIBase full={full} {...rest}>
+              {children}
+            </StyledMnetUIBase>
+            {full && <FullGlobalStyle />}
+          </ContainerTargetContext.Provider>
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
     );

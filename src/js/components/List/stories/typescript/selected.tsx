@@ -25,7 +25,7 @@ for (let i = 0; i < 40; i += 1) {
 }
 
 const SelectedItem = () => {
-  const [selected, setSelected] = React.useState();
+  const [selected, setSelected] = React.useState(undefined);
 
   return (
     <>

@@ -124,6 +124,16 @@ xlarge
 string
 ```
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
+```
+
 **fit**
 
 How the image fills its container.
@@ -151,14 +161,6 @@ weak
 medium
 strong
 string
-boolean
-```
-
-**fill**
-
-Whether the image expands to fill all of the available width and height
-
-```
 boolean
 ```
   

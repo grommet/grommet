@@ -6,8 +6,8 @@ import { Box, Meter, Stack, Text } from 'mnet-ui-base';
 
 const MultipleValues = () => {
   const total = 100;
-  const [active, setActive] = useState();
-  const [label, setLabel] = useState();
+  const [active, setActive] = useState(0);
+  const [label, setLabel] = useState('');
 
   return (
     <>

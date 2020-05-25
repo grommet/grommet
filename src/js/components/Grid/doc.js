@@ -148,6 +148,12 @@ space in the row axis.`,
       'stretch',
     ]).description('How to align the contents along the row axis.'),
     pad: padPropType,
+    responsive: PropTypes.bool
+      .description(
+        `Whether margin and pad sizes should be scaled for mobile
+        environments.`,
+      )
+      .defaultValue(true),
     rows: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([

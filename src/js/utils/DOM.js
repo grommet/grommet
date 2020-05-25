@@ -1,3 +1,30 @@
+export const findScrollParent = (element, horizontal) => {
+  let result;
+  if (element) {
+    let parent = element.parentNode;
+    while (!result && parent && parent.getBoundingClientRect) {
+      const rect = parent.getBoundingClientRect();
+      // 10px is to account for borders and scrollbars in a lazy way
+      if (horizontal) {
+        if (rect.width && parent.scrollWidth > rect.width + 10) {
+          result = parent;
+        }
+      } else if (rect.height && parent.scrollHeight > rect.height + 10) {
+        result = parent;
+      }
+      parent = parent.parentNode;
+    }
+    // last scrollable element will be the document
+    // if nothing else is scrollable in the page
+    if (!result) {
+      result = document;
+    } else if (result.tagName.toLowerCase() === 'body') {
+      result = document;
+    }
+  }
+  return result;
+};
+
 export const findScrollParents = (element, horizontal) => {
   const result = [];
   if (element) {
@@ -26,6 +53,15 @@ export const findScrollParents = (element, horizontal) => {
   return result;
 };
 
+export const containsFocus = node => {
+  let element = document.activeElement;
+  while (element) {
+    if (element === node) break;
+    element = element.parentElement;
+  }
+  return !!element;
+};
+
 export const getFirstFocusableDescendant = element => {
   const children = element.getElementsByTagName('*');
   for (let i = 0; i < children.length; i += 1) {
@@ -49,10 +85,10 @@ export const getBodyChildElements = () => {
   return children;
 };
 
-export const getNewContainer = () => {
+export const getNewContainer = (rootNode = document.body) => {
   // setup DOM
   const container = document.createElement('div');
-  document.body.appendChild(container);
+  rootNode.appendChild(container);
   return container;
 };
 
@@ -129,14 +165,20 @@ export const findVisibleParent = element => {
   return undefined;
 };
 
-export const isNodeAfterScroll = (node, target = window) => {
+export const isNodeAfterScroll = (node, target) => {
   const { bottom } = node.getBoundingClientRect();
-  const { height, top } = target.getBoundingClientRect();
+  // target will be the document from findScrollParent()
+  const { height, top } = target.getBoundingClientRect
+    ? target.getBoundingClientRect()
+    : 0;
   return bottom >= top + height;
 };
 
-export const isNodeBeforeScroll = (node, target = window) => {
+export const isNodeBeforeScroll = (node, target) => {
   const { top } = node.getBoundingClientRect();
-  const { top: targetTop } = target.getBoundingClientRect();
+  // target will be the document from findScrollParent()
+  const { top: targetTop } = target.getBoundingClientRect
+    ? target.getBoundingClientRect()
+    : 0;
   return top <= targetTop;
 };
