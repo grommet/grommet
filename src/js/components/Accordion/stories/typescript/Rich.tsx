@@ -96,7 +96,7 @@ const RichAccordion = () => {
   const [highlightLoaded, setHighlightLoaded] = React.useState(false);
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill direction="row">
         <Box basis="medium" border="all">
           <Box
@@ -236,7 +236,7 @@ const RichAccordion = () => {
           </ThemeContext.Extend>
         </Box>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

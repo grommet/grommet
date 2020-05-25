@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, DataTable } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, DataTable } from 'mnet-ui-base';
 
 import { columns, DATA } from './data';
 
@@ -14,7 +13,7 @@ groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
 const GroupedDataTable = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <DataTable
         columns={groupColumns}
@@ -23,7 +22,7 @@ const GroupedDataTable = () => (
         sortable
       />
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('DataTable', module).add('Grouped', () => <GroupedDataTable />);

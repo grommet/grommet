@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
 
-import { Box, Button, MnetUIBase, Select, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Select, Text } from 'mnet-ui-base';
 
 const allSeasons = [
   'S01',
@@ -70,7 +69,7 @@ const SeasonsSelect = () => {
   );
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="center">
         <Select
           closeOnChange={false}
@@ -99,7 +98,7 @@ const SeasonsSelect = () => {
           {renderOption}
         </Select>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

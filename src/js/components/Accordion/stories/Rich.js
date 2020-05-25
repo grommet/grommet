@@ -13,12 +13,10 @@ import {
   Accordion,
   AccordionPanel,
   Box,
-  MnetUIBase,
   Heading,
   Text,
   ThemeContext,
 } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
 
 const richAccordionTheme = {
   accordion: {
@@ -95,7 +93,7 @@ const RichAccordion = () => {
   const [highlightLoaded, setHighlightLoaded] = React.useState(false);
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill direction="row">
         <Box basis="medium" border="all">
           <Box
@@ -235,7 +233,7 @@ const RichAccordion = () => {
           </ThemeContext.Extend>
         </Box>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, MnetUIBase, Header, Nav } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Anchor, Box, Header, Nav } from 'mnet-ui-base';
 import { Avatar } from '../../Header/stories/Simple';
 
 const items = [
@@ -13,7 +12,7 @@ const items = [
 ];
 
 const OnHeader = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Header background="dark-1" pad="medium">
       <Box direction="row" align="center" gap="small">
         <Avatar />
@@ -27,7 +26,7 @@ const OnHeader = () => (
         ))}
       </Nav>
     </Header>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Nav', module).add('On Header', () => <OnHeader />);

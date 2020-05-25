@@ -48,21 +48,6 @@ exports[`Form errors 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -72,6 +57,21 @@ exports[`Form errors 1`] = `
   outline: none;
   max-width: 100%;
   border: solid 1px #e35e59;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -373,6 +373,18 @@ exports[`Form regexp validation 1`] = `
   color: #e35e59;
 }
 
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
 <span
   class="c0"
 >
@@ -389,6 +401,18 @@ exports[`Form required validation 1`] = `
   font-size: 12px;
   line-height: 16px;
   color: #e35e59;
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
 }
 
 <span
@@ -618,6 +642,18 @@ exports[`Form validate 1`] = `
   color: #e35e59;
 }
 
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
 <span
   class="c0"
 >
@@ -631,6 +667,18 @@ exports[`Form validate 2`] = `
   line-height: 16px;
 }
 
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
 <span
   class="c0"
 >
@@ -640,7 +688,7 @@ exports[`Form validate 2`] = `
 
 exports[`Form validate 3`] = `
 <span
-  class="StyledText-sc-3e83s1-0 jXgkpr"
+  class="StyledText-sc-3e83s1-0 cRZhIG"
 >
   status error
 </span>
@@ -655,6 +703,18 @@ exports[`Form validate 4`] = `
   font-size: 12px;
   line-height: 16px;
   color: #666666;
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
 }
 
 <span

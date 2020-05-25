@@ -2,12 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { MnetUIBase, Box, Grid } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Grid } from 'mnet-ui-base';
 
 const GridAreasAlternative = () => {
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Grid
         rows={['xxsmall', 'medium', 'xsmall']}
         columns={['1/4', '3/4']}
@@ -34,7 +33,7 @@ const GridAreasAlternative = () => {
           Footer
         </Box>
       </Grid>
-    </MnetUIBase>
+    </div>
   );
 };
 

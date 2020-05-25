@@ -1,15 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Box,
-  Button,
-  MnetUIBase,
-  Keyboard,
-  Text,
-  TextInput,
-} from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Keyboard, Text, TextInput } from 'mnet-ui-base';
 import { FormClose } from 'grommet-icons';
 
 const allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
@@ -128,7 +120,7 @@ const TagTextInput = () => {
     );
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box pad="small">
         <TagInput
           placeholder="Search for aliases..."
@@ -139,7 +131,7 @@ const TagTextInput = () => {
           onChange={({ target: { value } }) => onFilterSuggestion(value)}
         />
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

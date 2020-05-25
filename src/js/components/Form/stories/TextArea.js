@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { mnet, Box, FormField, Form, TextArea, MnetUIBase } from 'mnet-ui-base';
+import { Box, FormField, Form, TextArea } from 'mnet-ui-base';
 
 const FormFieldTextArea = props => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Form>
         <FormField
@@ -16,7 +16,7 @@ const FormFieldTextArea = props => (
         />
       </Form>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Form', module).add('TextArea', () => <FormFieldTextArea />);

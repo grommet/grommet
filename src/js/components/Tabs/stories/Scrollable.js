@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { TreeOption } from 'grommet-icons';
-import { Box, Heading, MnetUIBase, Tab, Tabs } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Heading, Tab, Tabs } from 'mnet-ui-base';
 
 const ScrollableTabs = () => (
-  <MnetUIBase theme={mnet} full>
+  <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
     <Box fill>
       <Tabs flex>
         <Tab title="Tab 1">
@@ -45,7 +44,7 @@ const ScrollableTabs = () => (
         </Tab>
       </Tabs>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Tabs', module).add('Scrollable', () => <ScrollableTabs />);

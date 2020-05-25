@@ -7,14 +7,12 @@ import {
   Box,
   Button,
   FormField,
-  MnetUIBase,
   Heading,
   Layer,
   Select,
   TextArea,
   TextInput,
 } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
 
 const FormLayer = () => {
   const [open, setOpen] = React.useState(false);
@@ -25,7 +23,7 @@ const FormLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <MnetUIBase theme={mnet} full>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="center">
         <Button icon={<Add />} label="Add" onClick={onOpen} />
         {open && (
@@ -87,7 +85,7 @@ const FormLayer = () => {
           </Layer>
         )}
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

@@ -25,7 +25,7 @@ const CustomHeaderAccordion = () => {
   const [activeIndex, setActiveIndex] = useState([0]);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <div>
       <Accordion
         activeIndex={activeIndex}
         onActive={newActiveIndex => setActiveIndex(newActiveIndex)}
@@ -53,7 +53,7 @@ const CustomHeaderAccordion = () => {
           </Box>
         </AccordionPanel>
       </Accordion>
-    </MnetUIBase>
+    </div>
   );
 };
 

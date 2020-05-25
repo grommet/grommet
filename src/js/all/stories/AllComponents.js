@@ -2,24 +2,19 @@ import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
-  MnetUIBase,
   Accordion,
   AccordionPanel,
   Anchor,
   Box,
   Button,
   Calendar,
-  Chart,
   CheckBox,
   Clock,
   DataTable,
-  Diagram,
-  Distribution,
   FormField,
   Grid,
   Heading,
   Menu,
-  Meter,
   Paragraph,
   RadioButtonGroup,
   RangeInput,
@@ -31,35 +26,15 @@ import {
   Text,
   TextArea,
   TextInput,
-  Video,
+  MnetUIBase,
 } from 'mnet-ui-base';
 import { mnet, dark } from 'mnet-ui-base/themes';
 import { generate } from 'mnet-ui-base/themes/base';
 import { deepMerge } from 'mnet-ui-base/utils';
-
-const Node = ({ id, ...rest }) => (
-  <Box
-    id={id}
-    basis="xxsmall"
-    margin="small"
-    pad="medium"
-    round="small"
-    background="light-4"
-    {...rest}
-  />
-);
-
-const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
-  fromTarget,
-  toTarget,
-  color: color || 'graph-0',
-  thickness: 'xsmall',
-  round: true,
-  type: 'rectilinear',
-  ...rest,
-});
+import { neo } from 'mnet-ui-base-theme-neo';
 
 const themes = {
+  neo,
   dark,
   mnet,
 };
@@ -140,7 +115,7 @@ const Components = () => {
           invert={false}
           min={0}
           max={3}
-          size="full"
+          size="style={{ width: '100vw', height: '100vh', overflow: 'auto' }}"
           round="small"
           values={rangeSelector}
           onChange={values => setRangeSelector(values)}
@@ -154,54 +129,6 @@ const Components = () => {
       <Calendar size="small" />
       <Clock type="digital" className="chromatic-ignore" />
       <Clock className="chromatic-ignore" />
-    </Box>,
-    <Box key="measure" gap="medium">
-      <Chart
-        type="bar"
-        round
-        size="small"
-        values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
-      />
-      <Meter
-        type="bar"
-        round
-        size="small"
-        background="light-3"
-        values={[{ value: 30 }]}
-      />
-    </Box>,
-    <Box key="visualize" gap="small">
-      <Distribution
-        basis="small"
-        values={[
-          { value: 50, color: 'light-3' },
-          { value: 30, color: 'graph-0' },
-          { value: 20, color: 'light-4' },
-          { value: 10, color: 'light-3' },
-          { value: 5, color: 'light-4' },
-        ]}
-      >
-        {value => (
-          <Box pad="xsmall" background={value.color} fill>
-            <Text size="large">{value.value}</Text>
-          </Box>
-        )}
-      </Distribution>
-      <Stack>
-        <Box>
-          <Box direction="row">
-            {[1, 2].map(id => (
-              <Node key={id} id={id} />
-            ))}
-          </Box>
-          <Box direction="row">
-            {[3, 4].map(id => (
-              <Node key={id} id={id} />
-            ))}
-          </Box>
-        </Box>
-        <Diagram connections={[connection('1', '4')]} />
-      </Stack>
     </Box>,
     <Box key="dataTable" alignSelf="start">
       <DataTable
@@ -245,26 +172,6 @@ const Components = () => {
         </Tab>
       </Tabs>
     </Box>,
-    <Box key="video" alignSelf="start">
-      <Video>
-        <source
-          src="http://techslides.com/demos/sample-videos/small.webm"
-          type="video/webm"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.ogv"
-          type="video/ogg"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.3gp"
-          type="video/3gp"
-        />
-      </Video>
-    </Box>,
   ];
 
   return (
@@ -281,7 +188,7 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={['mnet', 'dark']}
+              options={['mnet', 'dark', 'neo']}
               value={themeName}
               onChange={event => setThemeName(event.option)}
             />

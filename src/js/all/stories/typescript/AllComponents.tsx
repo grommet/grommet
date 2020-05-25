@@ -10,17 +10,14 @@ import {
   Box,
   Button,
   Calendar,
-  Chart,
   CheckBox,
   Clock,
   DataTable,
-  Distribution,
   FormField,
   Grid,
   Heading,
   MaskedInput,
   Menu,
-  Meter,
   Paragraph,
   RadioButtonGroup,
   RangeInput,
@@ -32,7 +29,6 @@ import {
   Text,
   TextArea,
   TextInput,
-  Video,
 } from 'mnet-ui-base';
 import { dark, generate, mnet } from 'mnet-ui-base/themes';
 import { deepMerge } from 'mnet-ui-base/utils';
@@ -168,7 +164,7 @@ const Components = () => {
           invert={false}
           min={0}
           max={3}
-          size="full"
+          size="style={{ width: '100vw', height: '100vh', overflow: 'auto' }}"
           round="small"
           values={rangeSelector}
           onChange={values => setRangeSelector(values)}
@@ -182,54 +178,6 @@ const Components = () => {
       <Calendar size="small" />
       <Clock type="digital" className="chromatic-ignore" />
       <Clock className="chromatic-ignore" />
-    </Box>,
-    <Box key="measure" gap="medium">
-      <Chart
-        type="bar"
-        round
-        size="small"
-        values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
-      />
-      <Meter
-        type="bar"
-        round
-        size="small"
-        background="light-3"
-        values={[{ value: 30 }]}
-      />
-    </Box>,
-    <Box key="visualize" gap="small">
-      <Distribution
-        basis="small"
-        values={[
-          { value: 50, color: 'light-3' },
-          { value: 30, color: 'accent-1' },
-          { value: 20, color: 'light-4' },
-          { value: 10, color: 'light-3' },
-          { value: 5, color: 'light-4' },
-        ]}
-      >
-        {value => (
-          <Box pad="xsmall" background={value.color} fill>
-            <Text size="large">{value.value}</Text>
-          </Box>
-        )}
-      </Distribution>
-      <Stack>
-        <Box>
-          <Box direction="row">
-            {[1, 2].map(id => (
-              <Node key={id} id={id} />
-            ))}
-          </Box>
-          <Box direction="row">
-            {[3, 4].map(id => (
-              <Node key={id} id={id} />
-            ))}
-          </Box>
-        </Box>
-        {/* <Diagram connections={[connection('1', '4')]} /> */}
-      </Stack>
     </Box>,
     <Box key="dataTable" alignSelf="start">
       <DataTable
@@ -273,31 +221,11 @@ const Components = () => {
         </Tab>
       </Tabs>
     </Box>,
-    <Box key="video" alignSelf="start">
-      <Video>
-        <source
-          src="http://techslides.com/demos/sample-videos/small.webm"
-          type="video/webm"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.ogv"
-          type="video/ogg"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.3gp"
-          type="video/3gp"
-        />
-      </Video>
-    </Box>,
   ];
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <MnetUIBase theme={mnet} style={{ flex: '0 0 auto' }}>
+      <div style={{ flex: '0 0 auto' }}>
         <Box
           direction="row-responsive"
           gap="medium"
@@ -335,8 +263,8 @@ const Components = () => {
           </Box>
           <Text size="small">{`${baseSize}px base spacing`}</Text>
         </Box>
-      </MnetUIBase>
-      <MnetUIBase theme={theme} style={{ flex: '1 1' }}>
+      </div>
+      <div style={{ flex: '1 1' }}>
         <Box
           fill
           pad="medium"
@@ -354,7 +282,7 @@ const Components = () => {
             </Box>
           )}
         </Box>
-      </MnetUIBase>
+      </div>
     </div>
   );
 };

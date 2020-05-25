@@ -2,11 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Add } from 'grommet-icons';
 
-import { Box, Button, MnetUIBase } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button } from 'mnet-ui-base';
 
 const IconLabel = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Box round="full" overflow="hidden" background="neutral-1">
         <Button icon={<Add />} hoverIndicator onClick={() => {}} />
@@ -23,7 +22,7 @@ const IconLabel = () => (
         />
       </Box>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Button', module).add('Icon Label', () => <IconLabel />);

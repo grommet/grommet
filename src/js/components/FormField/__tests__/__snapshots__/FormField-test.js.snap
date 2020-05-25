@@ -11,21 +11,6 @@ exports[`FormField abut 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -36,6 +21,21 @@ exports[`FormField abut 1`] = `
   max-width: 100%;
   margin-bottom: 4px;
   border: solid 8px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -85,21 +85,6 @@ exports[`FormField abut with margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -110,6 +95,21 @@ exports[`FormField abut with margin 1`] = `
   max-width: 100%;
   margin: 8px;
   border: solid 8px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -414,6 +414,22 @@ exports[`FormField empty margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -445,31 +461,15 @@ exports[`FormField empty margin 1`] = `
   flex-direction: column;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin: 0px;
+  }
 }
 
 @media only screen and (max-width:512px) {
   .c2 {
     border: solid 1px #cdd3e3;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin: 0px;
   }
 }
 
@@ -519,21 +519,6 @@ exports[`FormField error 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -543,6 +528,21 @@ exports[`FormField error 1`] = `
   outline: none;
   max-width: 100%;
   border: solid 1px #e35e59;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1004,6 +1004,22 @@ exports[`FormField margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 8px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1035,31 +1051,15 @@ exports[`FormField margin 1`] = `
   flex-direction: column;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 8px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin: 8px;
+  }
 }
 
 @media only screen and (max-width:512px) {
   .c2 {
     border: solid 1px #cdd3e3;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c1 {
-    margin: 8px;
   }
 }
 

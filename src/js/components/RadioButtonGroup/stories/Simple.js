@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, RadioButtonGroup } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, RadioButtonGroup } from 'mnet-ui-base';
 
 const SimpleRadioButtonGroup = ({ value: initialValue, ...props }) => {
   const [value, setValue] = useState(initialValue);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <RadioButtonGroup
           name="radio"
@@ -22,7 +21,7 @@ const SimpleRadioButtonGroup = ({ value: initialValue, ...props }) => {
           {...props}
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

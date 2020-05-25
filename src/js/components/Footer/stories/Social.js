@@ -8,15 +8,7 @@ import {
   Twitter,
 } from 'grommet-icons';
 
-import {
-  Anchor,
-  Box,
-  Footer,
-  MnetUIBase,
-  Main,
-  Text,
-  mnet,
-} from 'mnet-ui-base';
+import { Anchor, Box, Footer, Main, Text } from 'mnet-ui-base';
 
 const Media = () => (
   <Box direction="row" gap="xxsmall" justify="center">
@@ -39,7 +31,7 @@ const Media = () => (
 );
 
 const Social = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Main background="light-2" elevation="large" pad="medium" gap="large">
       <Text margin="small" size="xsmall">
         Main Content
@@ -58,7 +50,7 @@ const Social = () => (
         ©Copyright
       </Text>
     </Footer>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Footer', module).add('Social', () => <Social />);

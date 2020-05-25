@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Button } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button } from 'mnet-ui-base';
 
 import { Add } from 'grommet-icons';
 
 const MultipleButton = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Box direction="row" align="center" gap="small" pad="xsmall">
         <Button label="Cancel" onClick={() => {}} />
@@ -44,7 +43,7 @@ const MultipleButton = () => (
         />
       </Box>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Button', module).add('Multiple', () => <MultipleButton />);

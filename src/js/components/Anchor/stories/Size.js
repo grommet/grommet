@@ -1,12 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, MnetUIBase } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Anchor, Box } from 'mnet-ui-base';
 
 const Size = () => {
   return (
-    <MnetUIBase theme={mnet}>
+    <div>
       <Box align="center" pad="large">
         {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(
           size => (
@@ -16,7 +15,7 @@ const Size = () => {
           ),
         )}
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

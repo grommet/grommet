@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { mnet, Box, Button, MnetUIBase } from 'mnet-ui-base';
+import { Box, Button, MnetUIBase } from 'mnet-ui-base';
 
 const customTheme = {
   global: {
@@ -47,11 +47,11 @@ const CustomTheme = () => (
         <Button label="custom theme" onClick={() => {}} primary />
       </Box>
     </MnetUIBase>
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <Button as="span" label="Custom as=span" />
       </Box>
-    </MnetUIBase>
+    </>
   </>
 );
 

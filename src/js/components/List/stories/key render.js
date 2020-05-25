@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, List, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, List, Text } from 'mnet-ui-base';
 
 import { data } from './data';
 
 const RenderedList = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <List
         data={data.slice(0, 10)}
@@ -23,7 +22,7 @@ const RenderedList = () => (
         )}
       />
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('List', module).add('key render', () => <RenderedList />);

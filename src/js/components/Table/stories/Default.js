@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import {
   Box,
-  MnetUIBase,
   Table,
   TableBody,
   TableCell,
@@ -12,11 +11,10 @@ import {
   TableRow,
   Text,
 } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
 import { data, columns } from './data';
 
 const DefaultTable = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Table caption="Default Table">
         <TableHeader>
@@ -50,7 +48,7 @@ const DefaultTable = () => (
         </TableFooter>
       </Table>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Table', module).add('Default', () => <DefaultTable />);

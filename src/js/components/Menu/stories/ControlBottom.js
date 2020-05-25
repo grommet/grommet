@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Menu } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Menu } from 'mnet-ui-base';
 
 const ControlBottom = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box height="medium" justify="center" align="center" pad="large">
       <Menu
         dropProps={{ align: { bottom: 'bottom', left: 'left' } }}
@@ -17,7 +16,7 @@ const ControlBottom = () => (
         ]}
       />
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Menu', module).add('Bottom Control Button', () => <ControlBottom />);

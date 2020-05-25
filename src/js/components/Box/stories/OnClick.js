@@ -2,11 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction } from 'grommet-icons';
 
-import { MnetUIBase, Box, Text } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box, Text } from 'mnet-ui-base';
 
 const OnClickBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box justify="center" align="center" pad="large">
       {/* eslint-disable no-alert */}
       <Box
@@ -24,7 +23,7 @@ const OnClickBox = () => (
         <Text>Party</Text>
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('onClick', () => <OnClickBox />);

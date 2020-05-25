@@ -1,14 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Menu, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Menu, Text } from 'mnet-ui-base';
 import { FormDown, Github, Slack } from 'grommet-icons';
 
 // This story offers a suggested workaround for issue #3209.
 
 const IconItemsMenu = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Menu
         plain
@@ -40,7 +39,7 @@ const IconItemsMenu = () => (
         </Box>
       </Menu>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Menu', module).add('Item with Icon', () => <IconItemsMenu />);

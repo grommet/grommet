@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, MnetUIBase, Tab, Tabs } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Tab, Tabs } from 'mnet-ui-base';
 
 const UncontrolledTabs = ({ plain = false }) => (
-  <MnetUIBase theme={mnet} full>
+  <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
     <Box fill>
       <Tabs flex>
         <Tab plain={plain} title="Tab 1">
@@ -26,7 +25,7 @@ const UncontrolledTabs = ({ plain = false }) => (
         </Tab>
       </Tabs>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 UncontrolledTabs.propTypes = {

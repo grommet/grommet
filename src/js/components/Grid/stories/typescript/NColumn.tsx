@@ -2,11 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { MnetUIBase, Box, Grid } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
-
+import { Box, Grid } from 'mnet-ui-base';
 const NColumnGrid = () => (
-  <MnetUIBase theme={mnet} full>
+  <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
     <Grid
       columns={{
         count: 6,
@@ -21,7 +19,7 @@ const NColumnGrid = () => (
       <Box background="brand">Item 5</Box>
       <Box background="brand">Item 6</Box>
     </Grid>
-  </MnetUIBase>
+  </div>
 );
 
 if (!isChromatic()) {

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
 
 const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   const [range, setRange] = useState([12, 16]);
@@ -11,7 +10,7 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <Stack>
           <Box
@@ -42,7 +41,7 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
           />
         </Stack>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

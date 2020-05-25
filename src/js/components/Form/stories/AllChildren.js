@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   CheckBox,
-  MnetUIBase,
   Form,
   FormField,
   MaskedInput,
@@ -15,10 +14,9 @@ import {
   TextArea,
   TextInput,
 } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
 
 const Example = () => (
-  <MnetUIBase full theme={mnet}>
+  <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
@@ -63,7 +61,7 @@ const Example = () => (
         </Form>
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Form', module).add('All children', () => <Example />);

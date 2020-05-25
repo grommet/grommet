@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Calendar, MnetUIBase, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Calendar, Text } from 'mnet-ui-base';
 
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
 const DSTCalendar = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large" direction="row" justify="center">
       <Box align="center" pad="large" border="right">
         <Text size="xlarge">Daylight MST</Text>
@@ -40,7 +39,7 @@ const DSTCalendar = () => (
         </Box>
       </Box>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Calendar', module).add('Daylight Savings Time', () => (

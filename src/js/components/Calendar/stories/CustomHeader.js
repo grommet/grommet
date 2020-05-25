@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Calendar, MnetUIBase, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Calendar, Text } from 'mnet-ui-base';
 
 import { FormPreviousLink, FormNextLink } from 'grommet-icons';
 
@@ -14,7 +13,7 @@ const CustomHeaderCalendar = () => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <Calendar
           date={date}
@@ -52,7 +51,7 @@ const CustomHeaderCalendar = () => {
           )}
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

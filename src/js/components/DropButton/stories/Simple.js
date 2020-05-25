@@ -3,15 +3,7 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Close } from 'grommet-icons';
 
-import {
-  MnetUIBase,
-  Box,
-  Button,
-  DropButton,
-  Heading,
-  Text,
-} from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, DropButton, Heading, Text } from 'mnet-ui-base';
 
 const DropContent = ({ onClose }) => (
   <Box pad="small">
@@ -39,7 +31,7 @@ const SimpleDropButton = () => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <DropButton
           label="Open"
@@ -50,7 +42,7 @@ const SimpleDropButton = () => {
           dropProps={{ align: { top: 'bottom' } }}
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

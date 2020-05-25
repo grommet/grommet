@@ -1,20 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Grid,
-  MnetUIBase,
-  Box,
-  Image,
-  InfiniteScroll,
-  Text,
-} from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Grid, Box, Image, InfiniteScroll, Text } from 'mnet-ui-base';
 
 import { allItems } from './Basics';
 
 const GridInfiniteScroll = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Grid columns="xsmall" rows="small">
       <InfiniteScroll items={allItems} step={12}>
         {item => (
@@ -25,7 +17,7 @@ const GridInfiniteScroll = () => (
         )}
       </InfiniteScroll>
     </Grid>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('InfiniteScroll', module).add('Grid', () => <GridInfiniteScroll />);

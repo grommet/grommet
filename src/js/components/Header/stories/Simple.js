@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, MnetUIBase, Header } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Anchor, Box, Header } from 'mnet-ui-base';
 
 export const Avatar = ({ ...rest }) => (
   <Box
@@ -16,7 +15,7 @@ export const Avatar = ({ ...rest }) => (
 );
 
 const Simple = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Header background="light-4" pad="small">
       <Avatar />
       <Box direction="row" gap="medium">
@@ -24,7 +23,7 @@ const Simple = () => (
         <Anchor label="Profile" href="#" />
       </Box>
     </Header>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Header', module).add('Simple', () => <Simple />);

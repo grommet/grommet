@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, Layer, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Layer, Text } from 'mnet-ui-base';
 
 const PlainLayer = () => (
-  <MnetUIBase theme={mnet} full>
+  <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
     <Box fill background="dark-3">
       <Layer margin="medium" plain>
         <Box pad="large" border={{ color: 'accent-1', size: 'large' }}>
@@ -13,7 +12,7 @@ const PlainLayer = () => (
         </Box>
       </Layer>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Layer', module).add('Plain', () => <PlainLayer />);

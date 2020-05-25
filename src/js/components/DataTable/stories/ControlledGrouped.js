@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, DataTable } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { DataTable } from 'mnet-ui-base';
 
 import { columns, DATA } from './data';
 
@@ -17,7 +16,7 @@ const ControlledGroupedDataTable = () => {
   const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <DataTable
         columns={groupColumns}
         data={DATA}
@@ -28,7 +27,7 @@ const ControlledGroupedDataTable = () => {
         }}
         sortable
       />
-    </MnetUIBase>
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, MnetUIBase, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, CheckBox, Text } from 'mnet-ui-base';
 
 const CheckBoxInsideButton = () => {
   const [checked, setChecked] = useState(false);
@@ -9,7 +8,7 @@ const CheckBoxInsideButton = () => {
   const onCheckboxChange = () => {};
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <Button hoverIndicator="background" onClick={onButtonClick}>
           <CheckBox
@@ -20,7 +19,7 @@ const CheckBoxInsideButton = () => {
           />
         </Button>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

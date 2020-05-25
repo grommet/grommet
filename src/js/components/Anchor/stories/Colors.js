@@ -3,12 +3,11 @@ import { storiesOf } from '@storybook/react';
 
 import { Add } from 'grommet-icons';
 
-import { Anchor, Box, MnetUIBase } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Anchor, Box } from 'mnet-ui-base';
 
 const Colors = () => {
   return (
-    <MnetUIBase theme={mnet}>
+    <div>
       <Box pad="medium" gap="medium">
         <Anchor icon={<Add />} href="#" />
         <Anchor icon={<Add />} label="Add" href="#" />
@@ -20,7 +19,7 @@ const Colors = () => {
         <Anchor icon={<Add />} label="Add" href="#" />
         <Anchor label="Add" href="#" />
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

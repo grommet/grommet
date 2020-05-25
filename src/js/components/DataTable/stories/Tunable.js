@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, DataTable } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, DataTable } from 'mnet-ui-base';
 
 import { columns, DATA } from './data';
 
 const TunableDataTable = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <DataTable
         columns={columns.map(c => ({
@@ -19,7 +18,7 @@ const TunableDataTable = () => (
         resizeable
       />
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('DataTable', module).add('Tunable', () => <TunableDataTable />);

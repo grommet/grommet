@@ -35,6 +35,30 @@ exports[`SkipLink basic 1`] = `
   position: absolute;
 }
 
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
 <div
   class="c0"
 >
@@ -68,12 +92,12 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 gYUYCt SkipLinkTarget__HiddenAnchor-sc-1cistln-0 bZSZHG"
       id="main"
       tabindex="-1"
     />
@@ -86,7 +110,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 gYUYCt SkipLinkTarget__HiddenAnchor-sc-1cistln-0 bZSZHG"
       id="footer"
       tabindex="-1"
     />
@@ -100,12 +124,12 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledMnetUIBase-sc-17lh5y2-0 iPuYLx"
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 gYUYCt SkipLinkTarget__HiddenAnchor-sc-1cistln-0 bZSZHG"
       data-g-tabindex="-1"
       id="main"
       tabindex="-1"
@@ -121,7 +145,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1meb4kf-0 hUzLU SkipLinkTarget__HiddenAnchor-sc-1cistln-0 eVhvpB"
+      class="StyledAnchor-sc-1meb4kf-0 gYUYCt SkipLinkTarget__HiddenAnchor-sc-1cistln-0 bZSZHG"
       data-g-tabindex="-1"
       id="footer"
       tabindex="-1"

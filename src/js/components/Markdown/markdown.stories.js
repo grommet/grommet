@@ -2,8 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
-import { Box, MnetUIBase, Markdown } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Markdown } from 'mnet-ui-base';
 
 const CONTENT = `
   # Out of Breath
@@ -28,11 +27,11 @@ import { MnetUIBase } from 'mnet-ui-base';
 `;
 
 const SimpleMarkdown = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Markdown>{CONTENT}</Markdown>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 const StyledPre = styled.pre`
@@ -40,11 +39,11 @@ const StyledPre = styled.pre`
 `;
 
 const ComponentOverrideMarkdown = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Markdown components={{ pre: StyledPre }}>{CONTENT}</Markdown>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Markdown', module)

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { mnet, Box, FormField, Select, MnetUIBase } from 'mnet-ui-base';
+import { Box, FormField, Select } from 'mnet-ui-base';
 import { allOptions } from './data';
 
 const FormFieldSelect = props => {
   const [value, setValue] = useState('');
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <FormField label="Label" htmlFor="select" {...props}>
           <Select
@@ -20,7 +20,7 @@ const FormFieldSelect = props => {
           />
         </FormField>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, DataTable, CheckBox } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, DataTable, CheckBox } from 'mnet-ui-base';
 
 import { columns, DATA } from './data';
 
@@ -27,7 +26,7 @@ const ControlledDataTable = () => {
     setChecked(event.target.checked ? DATA.map(datum => datum.name) : []);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="medium">
         <DataTable
           columns={[
@@ -58,7 +57,7 @@ const ControlledDataTable = () => {
           size="medium"
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { FormDown, FormNext } from 'grommet-icons';
 
-import { Box, Button, Collapsible, MnetUIBase, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Collapsible, Text } from 'mnet-ui-base';
 
 const MenuButton = ({ label, open, submenu, ...rest }) => {
   const Icon = open ? FormDown : FormNext;
@@ -29,7 +28,7 @@ const NestedCollapsible = () => {
   const [openMenu2, setOpenMenu2] = React.useState(false);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box width="small">
         <MenuButton
           open={openMenu1}
@@ -101,7 +100,7 @@ const NestedCollapsible = () => {
           {/* eslint-enable no-alert */}
         </Collapsible>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

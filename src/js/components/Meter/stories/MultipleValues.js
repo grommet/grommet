@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Meter, Stack, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Meter, Stack, Text } from 'mnet-ui-base';
 
 const MultipleValues = () => {
   const total = 100;
@@ -10,7 +9,7 @@ const MultipleValues = () => {
   const [label, setLabel] = useState();
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <Stack anchor="center">
           <Meter
@@ -47,7 +46,7 @@ const MultipleValues = () => {
           </Box>
         </Stack>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

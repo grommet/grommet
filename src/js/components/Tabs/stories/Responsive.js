@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, MnetUIBase, Tab, Tabs } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Tab, Tabs } from 'mnet-ui-base';
 
 const ResponsiveTabs = () => {
   const [index, setIndex] = useState();
@@ -10,7 +9,7 @@ const ResponsiveTabs = () => {
   const onActive = nextIndex => setIndex(nextIndex);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Tabs activeIndex={index} onActive={onActive}>
         <Tab title="Tab 1">
           <Box margin="small" pad="large" align="center" background="accent-1">
@@ -113,7 +112,7 @@ const ResponsiveTabs = () => {
           </Box>
         </Tab>
       </Tabs>
-    </MnetUIBase>
+    </>
   );
 };
 

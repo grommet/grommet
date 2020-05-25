@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { SubtractCircle, AddCircle } from 'grommet-icons';
 
-import { Accordion, AccordionPanel, Box, MnetUIBase, Text } from 'mnet-ui-base';
+import { Accordion, AccordionPanel, Box, Text } from 'mnet-ui-base';
 
 const CustomAccordionTheme = {
   accordion: {
@@ -18,7 +18,7 @@ const CustomAccordionTheme = {
 };
 
 const CustomAccordion = ({ animate, multiple, ...rest }) => (
-  <MnetUIBase theme={CustomAccordionTheme}>
+  <div theme={CustomAccordionTheme}>
     <Box {...rest} pad="large" align="center" justify="center">
       <Accordion animate={animate} multiple>
         <AccordionPanel
@@ -47,7 +47,7 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
         </AccordionPanel>
       </Accordion>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Accordion', module).add('Custom', () => <CustomAccordion />);

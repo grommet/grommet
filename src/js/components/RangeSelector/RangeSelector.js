@@ -35,7 +35,10 @@ const RangeSelector = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useContext(ThemeContext);
+    if (!theme) {
+      return null;
+    }
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
     const [moveValue, setMoveValue] = useState();

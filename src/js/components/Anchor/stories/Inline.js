@@ -1,19 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, MnetUIBase, Paragraph } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Anchor, Box, Paragraph } from 'mnet-ui-base';
 
 const Inline = () => {
   return (
-    <MnetUIBase theme={mnet}>
+    <div>
       <Box align="center" pad="large">
         <Paragraph>
           This is <Anchor label="an inline link" href="#" /> with surrounding
           text.
         </Paragraph>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

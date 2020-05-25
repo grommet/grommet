@@ -2,15 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { MnetUIBase as MnetUIBaseIcon } from 'grommet-icons';
-import {
-  Anchor,
-  Box,
-  Footer,
-  MnetUIBase,
-  Main,
-  Text,
-  mnet,
-} from 'mnet-ui-base';
+import { Anchor, Box, Footer, Main, Text } from 'mnet-ui-base';
 import { threeColumns as data } from './data';
 
 const FooterAnchor = ({ ...rest }) => (
@@ -34,7 +26,7 @@ const FooterContent = () => {
 
 const Sitemap = () => {
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Main
         background="light-4"
         elevation="large"
@@ -58,7 +50,7 @@ const Sitemap = () => {
         </Box>
         <FooterContent />
       </Footer>
-    </MnetUIBase>
+    </>
   );
 };
 

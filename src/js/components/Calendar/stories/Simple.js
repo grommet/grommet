@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Calendar, MnetUIBase } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Calendar } from 'mnet-ui-base';
 
 const SimpleCalendar = () => {
   const [date, setDate] = useState();
@@ -12,7 +11,7 @@ const SimpleCalendar = () => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <Calendar
           date={date}
@@ -30,7 +29,7 @@ const SimpleCalendar = () => {
           bounds={['2018-09-08', '2020-12-13']}
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, Text, Heading } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Text, Heading } from 'mnet-ui-base';
 
 const sizes = [
   'xxlarge',
@@ -17,24 +16,24 @@ const sizes = [
 const wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 
 const All = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     {sizes.map(size => (
       <Box key={size} margin="small">
         <Text size={size}>{`Text ${size}`}</Text>
       </Box>
     ))}
-  </MnetUIBase>
+  </>
 );
 
 const Color = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Text color="accent-1">Colored Text</Text>
-  </MnetUIBase>
+  </>
 );
 
 /* eslint-disable max-len */
 const WordBreak = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     {wordBreakValues.map(value => (
       <Box key={value} margin="small" width="medium">
         <Heading level={4}>{`word-break: ${value};`}</Heading>
@@ -45,7 +44,7 @@ const WordBreak = () => (
         </Text>
       </Box>
     ))}
-  </MnetUIBase>
+  </>
 );
 /* eslint-enable max-len */
 

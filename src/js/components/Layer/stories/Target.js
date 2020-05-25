@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, Grid, MnetUIBase, Layer, Select } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Grid, Layer, Select } from 'mnet-ui-base';
 
 const positions = ['left', 'right', 'top', 'bottom', 'center'];
 
@@ -18,7 +17,7 @@ const TargetLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <MnetUIBase theme={mnet} full>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Grid
         fill
         columns={[gutter, 'flex', gutter]}
@@ -59,7 +58,7 @@ const TargetLayer = () => {
           </Box>
         </Layer>
       )}
-    </MnetUIBase>
+    </div>
   );
 };
 

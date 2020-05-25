@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Text } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box, Text } from 'mnet-ui-base';
 
 const FixedSizesBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box pad="small" gap="small">
       <Box
         width="small"
@@ -44,7 +43,7 @@ const FixedSizesBox = () => (
         Large
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('Fixed sizes', () => <FixedSizesBox />);

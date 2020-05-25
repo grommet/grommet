@@ -3,11 +3,10 @@ import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Attraction, Car } from 'grommet-icons';
-import { MnetUIBase, Anchor, Box, Button, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Anchor, Box, Button, Text } from 'mnet-ui-base';
 
 const SimpleBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box
       direction="row-responsive"
       justify="center"
@@ -35,7 +34,7 @@ const SimpleBox = () => (
         <Button label="Button" onClick={() => {}} />
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 if (!isChromatic()) {

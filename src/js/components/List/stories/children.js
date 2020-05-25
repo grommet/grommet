@@ -3,12 +3,12 @@ import { storiesOf } from '@storybook/react';
 
 import { Gremlin } from 'grommet-icons';
 
-import { Box, MnetUIBase, mnet, List, Text } from 'mnet-ui-base';
+import { Box, List, Text } from 'mnet-ui-base';
 
 export const data = ['Boise', 'Fort Collins', 'Bay Area', 'North Carolina'];
 
 export const ChildrenExample = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box pad="large" height="100%" background="light-2">
       <List data={data} pad="medium">
         {(datum, index) => (
@@ -25,7 +25,7 @@ export const ChildrenExample = () => (
         )}
       </List>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('List', module).add('children', () => <ChildrenExample />);

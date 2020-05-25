@@ -114,16 +114,16 @@ exports[`Paragraph size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  font-size: 12px;
-  line-height: 16px;
-  max-width: 192px;
-}
-
 .c1 {
   font-size: 9.333333333333334px;
   line-height: 13.333333333333334px;
   max-width: 149.33333333333334px;
+}
+
+.c2 {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
 }
 
 .c3 {

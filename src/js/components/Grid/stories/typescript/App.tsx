@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { MnetUIBase, Box, Button, Grid, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Grid, Text } from 'mnet-ui-base';
 
 const AppGrid = () => {
   const [sidebar, setSidebar] = useState(true);
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Grid
         fill
         rows={['auto', 'flex']}
@@ -56,7 +55,7 @@ const AppGrid = () => {
           <Text>main</Text>
         </Box>
       </Grid>
-    </MnetUIBase>
+    </div>
   );
 };
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Text } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box, Text } from 'mnet-ui-base';
 
 const ElevationBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box pad="small" align="start">
       <Box pad="medium" background="dark-1" elevation="medium" gap="medium">
         <Text>dark on white</Text>
@@ -25,7 +24,7 @@ const ElevationBox = () => (
         </Box>
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('Elevation', () => <ElevationBox />);

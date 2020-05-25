@@ -6,7 +6,7 @@ import { Accordion, AccordionPanel, Box, MnetUIBase } from 'mnet-ui-base';
 import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleAccordion = ({ animate = false, multiple = false, ...rest }) => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box {...rest}>
       <Accordion animate={animate} multiple={multiple}>
         <AccordionPanel label="Panel 1">
@@ -28,7 +28,7 @@ const SimpleAccordion = ({ animate = false, multiple = false, ...rest }) => (
         </AccordionPanel>
       </Accordion>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 if (!isChromatic()) {

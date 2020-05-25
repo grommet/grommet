@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, Select, Button } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Select, Button } from 'mnet-ui-base';
 
 const optionList = [
   'One',
@@ -29,7 +28,7 @@ const UnSelect = () => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box
         pad="medium"
         direction="row"
@@ -51,7 +50,7 @@ const UnSelect = () => {
           label="Clear All"
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

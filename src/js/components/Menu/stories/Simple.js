@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Menu } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Menu } from 'mnet-ui-base';
 
 const SimpleMenu = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <Menu
         dropProps={{ align: { top: 'bottom', left: 'left' } }}
@@ -17,7 +16,7 @@ const SimpleMenu = () => (
         ]}
       />
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('Menu', module).add('Simple', () => <SimpleMenu />);

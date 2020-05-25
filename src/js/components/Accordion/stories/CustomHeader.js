@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Accordion,
-  AccordionPanel,
-  Box,
-  MnetUIBase,
-  Text,
-  TextInput,
-} from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Accordion, AccordionPanel, Box, Text, TextInput } from 'mnet-ui-base';
 
 const renderPanelHeader = (title, active) => (
   <Box direction="row" align="center" pad="medium" gap="small">
@@ -24,7 +16,7 @@ const CustomHeaderAccordion = () => {
   const [activeIndex, setActiveIndex] = useState([0]);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <div>
       <Accordion
         activeIndex={activeIndex}
         onActive={newActiveIndex => setActiveIndex(newActiveIndex)}
@@ -52,7 +44,7 @@ const CustomHeaderAccordion = () => {
           </Box>
         </AccordionPanel>
       </Accordion>
-    </MnetUIBase>
+    </div>
   );
 };
 

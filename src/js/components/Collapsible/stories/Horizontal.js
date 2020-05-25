@@ -3,21 +3,13 @@ import { storiesOf } from '@storybook/react';
 
 import { Notification } from 'grommet-icons';
 
-import {
-  Box,
-  Button,
-  Collapsible,
-  Heading,
-  MnetUIBase,
-  Text,
-} from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Collapsible, Heading, Text } from 'mnet-ui-base';
 
 const HorizontalCollapsible = () => {
   const [openNotification, setOpenNotification] = React.useState();
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill>
         <Box
           as="header"
@@ -54,7 +46,7 @@ const HorizontalCollapsible = () => {
           </Collapsible>
         </Box>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

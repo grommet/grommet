@@ -3,14 +3,12 @@ import { storiesOf } from '@storybook/react';
 import {
   Box,
   Button,
-  MnetUIBase,
   Keyboard,
   Text,
   Calendar,
   MaskedInput,
   DropButton,
 } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
 import { Schedule } from 'grommet-icons';
 
 const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
@@ -96,7 +94,7 @@ const DateTimeDropButton = () => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <div>
       <Box align="center" pad="large">
         <DropButton
           open={open}
@@ -116,7 +114,7 @@ const DateTimeDropButton = () => {
           </Box>
         </DropButton>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box } from 'mnet-ui-base';
 
 const BackgroundBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box pad="small" gap="small" align="start">
       <Box
         pad="small"
@@ -50,7 +49,7 @@ const BackgroundBox = () => (
         </Box>
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('Background', () => <BackgroundBox />);

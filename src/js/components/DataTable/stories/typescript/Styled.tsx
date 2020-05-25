@@ -2,13 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { MnetUIBase, Box, DataTable } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, DataTable } from 'mnet-ui-base';
 
 import { columns, DATA } from '../data';
 
 const StyledDataTable = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box align="center" pad="large">
       <DataTable
         columns={columns}
@@ -24,7 +23,7 @@ const StyledDataTable = () => (
         rowProps={{ Eric: { background: 'accent-2', pad: 'large' } }}
       />
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 if (!isChromatic()) {

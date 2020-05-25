@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, CheckBox, MnetUIBase, Select } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, CheckBox, Select } from 'mnet-ui-base';
 
 const dummyOptions = Array(2000)
   .fill()
@@ -54,7 +53,7 @@ const LazyLoading = () => {
   const onChange = ({ selected: nextSelected }) => setSelected(nextSelected);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box fill align="center" justify="start" pad="large">
         <Select
           multiple
@@ -72,7 +71,7 @@ const LazyLoading = () => {
           )}
         </Select>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

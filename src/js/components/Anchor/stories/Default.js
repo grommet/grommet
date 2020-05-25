@@ -1,16 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, MnetUIBase } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Anchor, Box } from 'mnet-ui-base';
 
 const Default = () => {
   return (
-    <MnetUIBase theme={mnet}>
+    <div>
       <Box align="center" pad="large">
         <Anchor href="#">Link</Anchor>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

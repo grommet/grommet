@@ -2,11 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Close, Send, User } from 'grommet-icons';
 
-import { Box, Button, MnetUIBase, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Text } from 'mnet-ui-base';
 
 const IconPlain = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box align="center" pad="large">
       <Text margin="small"> plain=true (no padding, no border) </Text>
       <Box direction="row">
@@ -32,7 +31,7 @@ const IconPlain = () => (
         <Button icon={<User />} onClick={() => {}} />
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Button', module).add('Icon Plain', () => <IconPlain />);

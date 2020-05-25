@@ -30,20 +30,20 @@ Set.propTypes = {
 };
 
 const All = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Grid columns="large" gap="medium">
       <Set size="medium" />
       <Set size="small" />
       <Set size="large" />
       <Set size="xlarge" />
     </Grid>
-  </MnetUIBase>
+  </>
 );
 
 const Color = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Heading color="accent-1">Colored Heading</Heading>
-  </MnetUIBase>
+  </>
 );
 
 const customlevel = deepMerge(mnet, {

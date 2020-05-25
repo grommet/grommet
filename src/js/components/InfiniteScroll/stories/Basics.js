@@ -1,15 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, InfiniteScroll, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, InfiniteScroll, Text } from 'mnet-ui-base';
 
 export const allItems = Array(2000)
   .fill()
   .map((_, i) => `item ${i + 1}`);
 
 const SimpleInfiniteScroll = props => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box>
       <InfiniteScroll items={allItems} {...props}>
         {item => (
@@ -24,7 +23,7 @@ const SimpleInfiniteScroll = props => (
         )}
       </InfiniteScroll>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 storiesOf('InfiniteScroll', module)

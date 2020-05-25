@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { MnetUIBase, Box, Stack } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
 
 const SimpleStack = () => (
   <MnetUIBase>
@@ -14,13 +13,13 @@ const SimpleStack = () => (
 );
 
 const FillStack = () => (
-  <MnetUIBase theme={mnet} full>
+  <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
     <Stack fill>
       <Box background="brand" fill>
         Test
       </Box>
     </Stack>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Stack', module)

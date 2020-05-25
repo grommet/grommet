@@ -41,6 +41,10 @@ exports[`DropButton close by clicking outside 1`] = `
 `;
 
 exports[`DropButton close by clicking outside 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
   id="drop-contents"
 >
@@ -48,20 +52,7 @@ exports[`DropButton close by clicking outside 2`] = `
 </div>
 `;
 
-exports[`DropButton close by clicking outside 3`] = `
-"@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iHfJbP {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton close by clicking outside 3`] = `""`;
 
 exports[`DropButton closed 1`] = `
 .c0 {
@@ -188,6 +179,10 @@ exports[`DropButton open and close 1`] = `
 `;
 
 exports[`DropButton open and close 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
   id="drop-contents"
 >
@@ -195,20 +190,7 @@ exports[`DropButton open and close 2`] = `
 </div>
 `;
 
-exports[`DropButton open and close 3`] = `
-"@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iHfJbP {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton open and close 3`] = `""`;
 
 exports[`DropButton opened 1`] = `
 .c0 {
@@ -286,6 +268,10 @@ exports[`DropButton opened ref 1`] = `
   box-shadow: 0px 0px 0px 2px #E15151;
 }
 
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <button
   aria-label="Open Drop"
   class="c0"
@@ -296,6 +282,10 @@ exports[`DropButton opened ref 1`] = `
 `;
 
 exports[`DropButton opened ref 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
   id="drop-contents"
 >
@@ -303,17 +293,4 @@ exports[`DropButton opened ref 2`] = `
 </div>
 `;
 
-exports[`DropButton opened ref 3`] = `
-"@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iHfJbP {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton opened ref 3`] = `""`;

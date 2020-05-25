@@ -2,19 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { CircleInformation, Currency } from 'grommet-icons';
-import {
-  Box,
-  MnetUIBase,
-  FormField,
-  Tab,
-  Tabs,
-  Text,
-  TextInput,
-} from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, FormField, Tab, Tabs, Text, TextInput } from 'mnet-ui-base';
 
 const RichTabs = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Tabs>
       <Tab
         title={
@@ -38,7 +29,7 @@ const RichTabs = () => (
         </FormField>
       </Tab>
     </Tabs>
-  </MnetUIBase>
+  </>
 );
 
 const RichTabTitle = ({ icon, label }) => (

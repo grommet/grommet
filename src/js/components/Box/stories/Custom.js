@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Text } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box, Text } from 'mnet-ui-base';
 
 const GradientColorBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box
       justify="center"
       align="center"
@@ -15,7 +14,7 @@ const GradientColorBox = () => (
     >
       <Text color="white">I have a linear gradient background</Text>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('Gradient', () => <GradientColorBox />);

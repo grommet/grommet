@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Heading, Paragraph, Text } from 'mnet-ui-base';
+import { Box, Heading, Paragraph, Text } from 'mnet-ui-base';
 import { mnet } from 'mnet-ui-base/themes';
 
 const paragraphFiller = `
@@ -12,7 +12,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 const Medium = () => {
   const margin = undefined;
   return (
-    <MnetUIBase theme={mnet}>
+    <div theme={mnet}>
       <Box pad="medium">
         <div>
           <Heading margin={margin}>Heading 1 - Medium</Heading>
@@ -47,12 +47,12 @@ const Medium = () => {
           </Paragraph>
         </div>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 
 const Small = () => (
-  <MnetUIBase theme={MnetUIBase}>
+  <div>
     <Box pad="medium">
       <div>
         <Heading size="small">Heading 1 - Small</Heading>
@@ -87,11 +87,11 @@ const Small = () => (
         </Paragraph>
       </div>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 const Large = () => (
-  <MnetUIBase theme={mnet}>
+  <div theme={mnet}>
     <Box pad="medium">
       <div>
         <Heading size="large">Heading 1 - Large</Heading>
@@ -126,7 +126,7 @@ const Large = () => (
         </Paragraph>
       </div>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Typography', module)

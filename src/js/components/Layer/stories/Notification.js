@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Add, FormClose, StatusGood } from 'grommet-icons';
 
-import { Box, Button, MnetUIBase, Layer, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Layer, Text } from 'mnet-ui-base';
 
 const NotificationLayer = () => {
   const [open, setOpen] = React.useState();
@@ -14,7 +13,7 @@ const NotificationLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <MnetUIBase theme={mnet} full>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="center">
         <Button
           icon={<Add color="brand" />}
@@ -54,7 +53,7 @@ const NotificationLayer = () => {
           </Box>
         </Layer>
       )}
-    </MnetUIBase>
+    </div>
   );
 };
 

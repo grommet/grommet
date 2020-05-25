@@ -2,12 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { MnetUIBase, Box, Menu, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Menu, Text } from 'mnet-ui-base';
 import { FormDown } from 'grommet-icons';
 
 const CustomMenu = () => (
-  <MnetUIBase theme={mnet}>
+  <>
     <Box
       align="center"
       pad="large"
@@ -37,7 +36,7 @@ const CustomMenu = () => (
         }}
       </Menu>
     </Box>
-  </MnetUIBase>
+  </>
 );
 
 if (!isChromatic()) {

@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, DropButton, Text } from 'mnet-ui-base';
+import { Box, DropButton, Text } from 'mnet-ui-base';
 import { Gremlin } from 'grommet-icons';
-import { mnet } from 'mnet-ui-base/themes';
 
 const renderItems = () => (
   <Box>
@@ -32,7 +31,7 @@ const GremlinDropButton = () => (
 );
 const MenuDropButton = () => {
   return (
-    <MnetUIBase theme={mnet} full>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill>
         <Box fill="vertical" width="xxsmall" background="dark-2">
           <GremlinDropButton />
@@ -40,7 +39,7 @@ const MenuDropButton = () => {
           <GremlinDropButton />
         </Box>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

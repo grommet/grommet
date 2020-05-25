@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, Select } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Select } from 'mnet-ui-base';
 
 const defaultOptions = [];
 const objectOptions = [];
@@ -21,7 +20,7 @@ const ObjectMultiSelect = () => {
   const [value, setValue] = useState('');
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="start" pad="large">
         <Select
           size="medium"
@@ -48,7 +47,7 @@ const ObjectMultiSelect = () => {
           }}
         />
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

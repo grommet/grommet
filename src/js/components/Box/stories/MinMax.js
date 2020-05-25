@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Text } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box, Text } from 'mnet-ui-base';
 
 const MinMaxSizesBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box pad="small" gap="small">
       <Box pad="small" gap="small" direction="row" align="start">
         <Box
@@ -203,7 +202,7 @@ const MinMaxSizesBox = () => (
         </Box>
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('Min/Max sizes', () => <MinMaxSizesBox />);

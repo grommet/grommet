@@ -1,12 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Image, Anchor } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Image, Anchor } from 'mnet-ui-base';
 
 const Fill = () => {
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="start" gap="small">
         <Box height="small" width="small" border>
           <Anchor href="#">
@@ -23,7 +22,7 @@ const Fill = () => {
           </Anchor>
         </Box>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

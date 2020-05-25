@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, CheckBox } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, CheckBox } from 'mnet-ui-base';
 
 const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
   const [checked, setChecked] = useState(!!checkedProp);
   const onChange = event => setChecked(event.target.checked);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <CheckBox {...rest} checked={checked} onChange={onChange} />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

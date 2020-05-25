@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, CheckBox, MnetUIBase, Select } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, CheckBox, Select } from 'mnet-ui-base';
 
 class Option extends PureComponent {
   render() {
@@ -28,7 +27,7 @@ const ManyOptions = () => {
   const [options, setOptions] = React.useState(dummyOptions);
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="start" pad="large">
         <Select
           multiple
@@ -65,7 +64,7 @@ const ManyOptions = () => {
           )}
         </Select>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

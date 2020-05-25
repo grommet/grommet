@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box } from 'mnet-ui-base';
 
 const RTLBox = () => (
-  <MnetUIBase theme={mnet} dir="rtl">
+  <div dir="rtl">
     <Box direction="row" align="center" pad="small" gap="small" border>
       <Box direction="row" align="center" pad="small" border="start">
         border start
@@ -27,7 +26,7 @@ const RTLBox = () => (
         margin start
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('RTL', () => <RTLBox />);

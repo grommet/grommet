@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, MnetUIBase, Select } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Select } from 'mnet-ui-base';
 
 const DarkSelect = () => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill background="dark-1" align="center" justify="center">
         <Select
           placeholder="Select"
@@ -18,7 +17,7 @@ const DarkSelect = () => {
           onChange={({ option }) => setValue(option)}
         />
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

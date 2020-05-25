@@ -1,14 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Collapsible, MnetUIBase, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Collapsible, Text } from 'mnet-ui-base';
 
 const SimpleCollapsible = props => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="start" gap="small">
         <Button primary onClick={() => setOpen(!open)} label="Toggle" />
         <Collapsible open={open} {...props}>
@@ -24,7 +23,7 @@ const SimpleCollapsible = props => {
         </Collapsible>
         <Text>This is other content outside the Collapsible box</Text>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

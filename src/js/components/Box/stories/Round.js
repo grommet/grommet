@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Grid } from 'mnet-ui-base';
-import { mnet } from '../../../themes';
+import { Box, Grid } from 'mnet-ui-base';
 
 const RoundBox = () => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box pad="small" gap="small">
       <Box pad="small" background="brand" round alignSelf="start">
         true
@@ -54,7 +53,7 @@ const RoundBox = () => (
         </Box>
       </Grid>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Box', module).add('Round', () => <RoundBox />);

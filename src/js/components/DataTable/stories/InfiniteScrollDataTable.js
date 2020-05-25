@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, DataTable, Heading, Meter, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, DataTable, Heading, Meter, Text } from 'mnet-ui-base';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -311,7 +310,7 @@ const InfiniteScrollDataTable = () => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <Heading level={3}>
           <Box gap="small">
@@ -328,7 +327,7 @@ const InfiniteScrollDataTable = () => {
           onMore={() => load()}
         />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

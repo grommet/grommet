@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, InfiniteScroll, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, InfiniteScroll, Text } from 'mnet-ui-base';
 
 import { allItems } from './Basics';
 
@@ -16,7 +15,7 @@ const OnMoreInfiniteScroll = ({ props }) => {
   };
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box>
         <InfiniteScroll items={items} onMore={onMore} {...props}>
           {item => (
@@ -31,7 +30,7 @@ const OnMoreInfiniteScroll = ({ props }) => {
           )}
         </InfiniteScroll>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

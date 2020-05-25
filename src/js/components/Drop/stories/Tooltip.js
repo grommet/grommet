@@ -1,15 +1,14 @@
 import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Drop, MnetUIBase } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Drop } from 'mnet-ui-base';
 
 const TooltipDrop = () => {
   const [over, setOver] = useState();
   const ref = useRef();
 
   return (
-    <MnetUIBase theme={mnet} full>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="center">
         <Button
           label="Button"
@@ -33,7 +32,7 @@ const TooltipDrop = () => {
           </Drop>
         )}
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

@@ -400,13 +400,6 @@ exports[`Heading size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  font-size: 33.33333333333333px;
-  line-height: 37.33333333333333px;
-  max-width: 533.3333333333333px;
-  font-weight: 600;
-}
-
 .c1 {
   font-size: 22.666666666666664px;
   line-height: 26.666666666666664px;
@@ -414,17 +407,10 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
-.c8 {
-  font-size: 17.333333333333332px;
-  line-height: 21.333333333333332px;
-  max-width: 277.3333333333333px;
-  font-weight: 600;
-}
-
-.c11 {
-  font-size: 12px;
-  line-height: 16px;
-  max-width: 192px;
+.c2 {
+  font-size: 33.33333333333333px;
+  line-height: 37.33333333333333px;
+  max-width: 533.3333333333333px;
   font-weight: 600;
 }
 
@@ -463,6 +449,13 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
+.c8 {
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
+  max-width: 277.3333333333333px;
+  font-weight: 600;
+}
+
 .c9 {
   font-size: 22.666666666666664px;
   line-height: 26.666666666666664px;
@@ -477,19 +470,18 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
+.c11 {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
+  font-weight: 600;
+}
+
 .c12 {
   font-size: 77px;
   line-height: normal;
   max-width: 533.3333333333333px;
   font-weight: 600;
-}
-
-@media only screen and (max-width:512px) {
-  .c2 {
-    font-size: 22.666666666666664px;
-    line-height: 26.666666666666664px;
-    max-width: 362.66666666666663px;
-  }
 }
 
 @media only screen and (max-width:512px) {
@@ -501,18 +493,10 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c8 {
-    font-size: 12px;
-    line-height: 16px;
-    max-width: 192px;
-  }
-}
-
-@media only screen and (max-width:512px) {
-  .c11 {
-    font-size: 12px;
-    line-height: 16px;
-    max-width: 192px;
+  .c2 {
+    font-size: 22.666666666666664px;
+    line-height: 26.666666666666664px;
+    max-width: 362.66666666666663px;
   }
 }
 
@@ -557,6 +541,14 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:512px) {
+  .c8 {
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
+  }
+}
+
+@media only screen and (max-width:512px) {
   .c9 {
     font-size: 12px;
     line-height: 16px;
@@ -566,6 +558,14 @@ exports[`Heading size renders 1`] = `
 
 @media only screen and (max-width:512px) {
   .c10 {
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c11 {
     font-size: 12px;
     line-height: 16px;
     max-width: 192px;
@@ -884,13 +884,6 @@ exports[`Theme based font weight renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
-  font-size: 12px;
-  line-height: 16px;
-  max-width: 192px;
-  font-weight: 600;
-}
-
 .c1 {
   font-size: 33.33333333333333px;
   line-height: 37.33333333333333px;
@@ -912,12 +905,11 @@ exports[`Theme based font weight renders 1`] = `
   font-weight: 200;
 }
 
-@media only screen and (max-width:512px) {
-  .c4 {
-    font-size: 12px;
-    line-height: 16px;
-    max-width: 192px;
-  }
+.c4 {
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 192px;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:512px) {
@@ -938,6 +930,14 @@ exports[`Theme based font weight renders 1`] = `
 
 @media only screen and (max-width:512px) {
   .c3 {
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 192px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c4 {
     font-size: 12px;
     line-height: 16px;
     max-width: 192px;

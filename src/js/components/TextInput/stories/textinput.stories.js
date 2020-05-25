@@ -12,13 +12,13 @@ const SimpleTextInput = () => {
   const onChange = event => setValue(event.target.value);
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <TextInput value={value} onChange={onChange} />
         </Box>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 
@@ -61,7 +61,7 @@ const SuggestionsTextInput = () => {
   const onSelect = event => setValue(event.suggestion);
 
   return (
-    <MnetUIBase full theme={mnet}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium">
           <TextInput
@@ -73,7 +73,7 @@ const SuggestionsTextInput = () => {
           />
         </Box>
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

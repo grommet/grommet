@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, RangeSelector, Stack, Text } from 'mnet-ui-base';
 
 const RANGE_MIN = 0;
 const RANGE_MAX = 100;
@@ -36,11 +35,11 @@ function Thin({ initialRange = [0, 100], label }) {
 
 function App() {
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box pad="small">
         <Thin label="My Range Selector" />
       </Box>
-    </MnetUIBase>
+    </>
   );
 }
 

@@ -1,15 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { MnetUIBase, Box, Button, RadioButton } from 'mnet-ui-base';
+import { Box, Button, RadioButton } from 'mnet-ui-base';
 import { Ascend } from 'grommet-icons';
-import { mnet } from 'mnet-ui-base/themes';
 
 const ChildrenRadioButton = () => {
   const [selected, setSelected] = React.useState();
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large" gap="large">
         <RadioButton
           name="name"
@@ -24,7 +23,7 @@ const ChildrenRadioButton = () => {
 
         <Button label="clear" onClick={() => setSelected(undefined)} />
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

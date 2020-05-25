@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { MnetUIBase, Box, FormField, TextInput } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, FormField, TextInput } from 'mnet-ui-base';
 import { allSuggestions } from './data';
 
 const FormFieldTextInput = props => {
@@ -29,7 +28,7 @@ const FormFieldTextInput = props => {
   const onSelect = event => setState({ ...state, value: event.suggestion });
 
   return (
-    <MnetUIBase theme={mnet}>
+    <>
       <Box align="center" pad="large">
         <FormField
           direction="row"
@@ -47,7 +46,7 @@ const FormFieldTextInput = props => {
           />
         </FormField>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

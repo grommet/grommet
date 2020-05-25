@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Drop, MnetUIBase } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Drop } from 'mnet-ui-base';
 
 const SimpleDrop = () => {
   const targetRef = useRef();
@@ -13,7 +12,7 @@ const SimpleDrop = () => {
   }, []);
 
   return (
-    <MnetUIBase theme={mnet} full>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="center">
         <Box
           background="dark-3"
@@ -33,7 +32,7 @@ const SimpleDrop = () => {
           </Drop>
         )}
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 

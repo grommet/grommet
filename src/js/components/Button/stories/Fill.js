@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { mnet, Box, Button, MnetUIBase } from 'mnet-ui-base';
+import { Box, Button } from 'mnet-ui-base';
 
 const FillButtons = props => (
-  <MnetUIBase theme={mnet}>
+  <div>
     <Box pad="medium" justify="center" direction="row">
       <Box justify="center" align="center" pad="medium" gap="medium">
         <Box
@@ -79,7 +79,7 @@ const FillButtons = props => (
         />
       </Box>
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Button', module).add('Fill', () => <FillButtons />);

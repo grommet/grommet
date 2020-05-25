@@ -1,20 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { mnet, MnetUIBase, Box, Button } from 'mnet-ui-base';
-import { deepMerge } from '../../../utils';
-
-const customButtonColor = deepMerge(mnet, {
-  button: {
-    color: {
-      light: 'white',
-      dark: 'white',
-    },
-  },
-});
+import { Box, Button } from 'mnet-ui-base';
 
 const Colored = props => (
-  <MnetUIBase theme={customButtonColor}>
+  <div>
     <Box align="center" pad="large" gap="small">
       <Button primary label="Submit" onClick={() => {}} />
       <Button
@@ -47,7 +37,7 @@ const Colored = props => (
       />
       <Button plain label="plain inherit" onClick={() => {}} {...props} />
     </Box>
-  </MnetUIBase>
+  </div>
 );
 
 storiesOf('Button', module).add('Colored', () => <Colored />);

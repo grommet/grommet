@@ -1,16 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Box,
-  Button,
-  Drop,
-  DropButton,
-  MnetUIBase,
-  Layer,
-  TextInput,
-} from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
+import { Box, Button, Drop, DropButton, Layer, TextInput } from 'mnet-ui-base';
 
 const MultipleDrop = () => {
   const [showDrop, setShowDrop] = useState(false);
@@ -18,7 +9,7 @@ const MultipleDrop = () => {
   const targetRef = useRef();
 
   return (
-    <MnetUIBase theme={mnet} full>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
       <Box fill align="center" justify="center">
         <DropButton
           label="drop button"
@@ -66,7 +57,7 @@ const MultipleDrop = () => {
           </Layer>
         )}
       </Box>
-    </MnetUIBase>
+    </div>
   );
 };
 
