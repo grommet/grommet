@@ -12,7 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 exports.OVERFLOW_VALUES = OVERFLOW_VALUES;
 
-var ANIMATION_TYPE = _reactDesc.PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
+var ANIMATION_TYPE = _reactDesc.PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
 
 var ANIMATION_SHAPE = _reactDesc.PropTypes.shape({
   type: ANIMATION_TYPE,

@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { backgroundDoc, getAvailableAtBadge, genericProps, hoverIndicatorPropType, padPropType, themeDocUtils } from '../../utils';
 export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
-var ANIMATION_TYPE = PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
+var ANIMATION_TYPE = PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
 var ANIMATION_SHAPE = PropTypes.shape({
   type: ANIMATION_TYPE,
   delay: PropTypes.number,

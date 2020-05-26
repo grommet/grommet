@@ -607,7 +607,7 @@ describe('Box', function () {
     expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
   });
   test('animation', function () {
-    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, ['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut'].map(function (type) {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, ['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut'].map(function (type) {
       return /*#__PURE__*/React.createElement(Box, {
         key: type,
         animation: type
