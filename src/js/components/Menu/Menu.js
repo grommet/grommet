@@ -190,6 +190,7 @@ const Menu = forwardRef((props, ref) => {
       align="center"
       pad="small"
       gap={label && icon !== false ? 'small' : undefined}
+      responsive={false}
     >
       <Text size={size}>{label}</Text>
       {icon !== false
