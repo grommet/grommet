@@ -267,12 +267,6 @@ exports[`Grommet custom theme 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c5 {
-    width: 6px;
-  }
-}
-
 <div
   className="c0"
 >
