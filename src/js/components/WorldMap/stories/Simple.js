@@ -4,20 +4,14 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleWorldMap = () => {
-  const [places, setPlaces] = React.useState();
-
-  const onSelectPlace = place => {
-    setPlaces([{ color: 'accent-1', location: place }]);
-  };
-
+const Example = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <WorldMap onSelectPlace={onSelectPlace} places={places} />
+        <WorldMap />
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('WorldMap', module).add('Simple', () => <SimpleWorldMap />);
+storiesOf('WorldMap', module).add('Simple', () => <Example />);

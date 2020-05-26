@@ -66,18 +66,34 @@ const basicStyle = props => css`
 const primaryStyle = props => css`
   ${backgroundStyle(
     normalizeColor(
-      props.colorValue || props.theme.button.primary.color || 'control',
+      props.colorValue ||
+        (props.theme.button.primary && props.theme.button.primary.color) ||
+        'control',
       props.theme,
     ),
     props.theme,
     props.theme.button.color,
   )}
   border-radius: ${radiusStyle(props)};
+  ${props.theme.button.primary && props.theme.button.primary.extend}
 `;
 
 function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
+  }
+  if (
+    props.active &&
+    props.primary &&
+    props.theme.button.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.border &&
+    props.theme.button.primary.active.border.color
+  ) {
+    return normalizeColor(
+      props.theme.button.primary.active.border.color,
+      props.theme,
+    );
   }
   return normalizeColor(
     props.theme.button.border.color || 'control',
@@ -117,9 +133,52 @@ const fillStyle = fillContainer => {
 
 const plainStyle = props => css`
   color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+`;
+
+const activeButtonStyle = props => css`
+  ${activeStyle}
+  ${props.primary &&
+    props.theme.button.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.border &&
+    props.theme.button.primary.active.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(
+      props.theme.button.primary.active.border.color,
+      props.theme,
+    )};
+    `}
+  ${props.primary &&
+    props.theme.button.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.extend}
+`;
+
+const disabledButtonStyle = props => css`
+  ${disabledStyle(props.theme.button.disabled.opacity)}
+  ${!props.plain &&
+    props.theme.button.disabled.border &&
+    props.theme.button.disabled.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
+  ${props.theme.button.disabled.color &&
+    // if primary button, apply disabled color to background. otherwise,
+    // apply disabled color to the label
+    (props.primary
+      ? backgroundStyle(
+          normalizeColor(props.theme.button.disabled.color, props.theme),
+          props.theme,
+          props.theme.button.color,
+        )
+      : `color: ${normalizeColor(
+          props.theme.button.disabled.color,
+          props.theme,
+        )};`)}
+  ${props.theme.button.disabled && props.theme.button.disabled.extend}
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
@@ -127,7 +186,6 @@ const StyledButton = styled.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   text-decoration: none;
   margin: 0;
@@ -142,24 +200,21 @@ const StyledButton = styled.button`
 
   ${props => !props.disabled && !props.focus && hoverStyle}
 
-  ${props => !props.disabled && props.active && activeStyle}
+  ${props => !props.disabled && props.active && activeButtonStyle(props)}
   ${props =>
     props.disabled &&
     props.theme.button &&
-    disabledStyle(
-      props.theme.button.disabled && props.theme.button.disabled.opacity,
-    )}
+    props.theme.button.disabled &&
+    disabledButtonStyle(props)}
   ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle}
+    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
   ${props =>
     !props.plain &&
+    props.theme.button.transition &&
     `
-    transition-property: color,
-      background-color,
-      border-color,
-      box-shadow;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
+    transition-property: ${props.theme.button.transition.properties.join(',')};
+    transition-duration: ${props.theme.button.transition.duration}s;
+    transition-timing-function: ${props.theme.button.transition.timing};
   `}
   ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props =>

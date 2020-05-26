@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -34,12 +34,14 @@ const DataTable = ({
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
+  onSort: onSortProp,
   replace,
   pad,
   primaryKey,
   resizeable,
   rowProps,
   size,
+  sort: sortProp,
   sortable,
   step = 50,
   ...rest
@@ -62,7 +64,7 @@ const DataTable = ({
   const [filters, setFilters] = useState(initializeFilters(columns));
 
   // which column we are sorting on, with direction
-  const [sort, setSort] = useState({});
+  const [sort, setSort] = useState(sortProp || {});
 
   // the data filtered and sorted, if needed
   const adjustedData = useMemo(
@@ -105,9 +107,13 @@ const DataTable = ({
 
   // toggle the sort direction on this property
   const onSort = property => () => {
-    const ascending =
-      sort && property === sort.property ? !sort.ascending : true;
-    setSort({ property, ascending });
+    let direction;
+    if (!sort || property !== sort.property) direction = 'asc';
+    else if (sort.direction === 'asc') direction = 'desc';
+    else direction = 'asc';
+    const nextSort = { property, direction };
+    setSort(nextSort);
+    if (onSortProp) onSortProp(nextSort);
   };
 
   // toggle whether the group is expanded
@@ -144,11 +150,16 @@ const DataTable = ({
   };
 
   // remember the width this property's column should be
-  const onResize = property => width => {
-    const nextWidths = { ...widths };
-    nextWidths[property] = width;
-    setWidths(nextWidths);
-  };
+  const onResize = useCallback(
+    (property, width) => {
+      if (widths[property] !== width) {
+        const nextWidths = { ...widths };
+        nextWidths[property] = width;
+        setWidths(nextWidths);
+      }
+    },
+    [widths],
+  );
 
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
@@ -171,7 +182,7 @@ const DataTable = ({
         onFiltering={onFiltering}
         onFilter={onFilter}
         onResize={resizeable ? onResize : undefined}
-        onSort={sortable ? onSort : undefined}
+        onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
       />
       {groups ? (

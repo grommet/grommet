@@ -41,7 +41,6 @@ exports[`Calendar date 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -56,7 +55,6 @@ exports[`Calendar date 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -79,7 +77,6 @@ exports[`Calendar date 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -99,7 +96,6 @@ exports[`Calendar date 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -119,7 +115,6 @@ exports[`Calendar date 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -128,6 +123,7 @@ exports[`Calendar date 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -139,7 +135,6 @@ exports[`Calendar date 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -148,6 +143,7 @@ exports[`Calendar date 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -170,7 +166,6 @@ exports[`Calendar date 1`] = `
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
-  outline: none;
 }
 
 .c10 {
@@ -246,7 +241,7 @@ exports[`Calendar date 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -1322,7 +1317,6 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1337,7 +1331,6 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1360,7 +1353,6 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1380,7 +1372,6 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1400,7 +1391,6 @@ exports[`Calendar dates 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1409,6 +1399,7 @@ exports[`Calendar dates 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1420,7 +1411,6 @@ exports[`Calendar dates 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1429,6 +1419,7 @@ exports[`Calendar dates 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1451,7 +1442,6 @@ exports[`Calendar dates 1`] = `
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
-  outline: none;
 }
 
 .c10 {
@@ -1527,7 +1517,7 @@ exports[`Calendar dates 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -2603,7 +2593,6 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2618,7 +2607,6 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2641,7 +2629,6 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2661,7 +2648,6 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2681,7 +2667,6 @@ exports[`Calendar daysOfWeek 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2690,6 +2675,7 @@ exports[`Calendar daysOfWeek 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2701,7 +2687,6 @@ exports[`Calendar daysOfWeek 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2710,6 +2695,7 @@ exports[`Calendar daysOfWeek 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2732,7 +2718,6 @@ exports[`Calendar daysOfWeek 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
-  outline: none;
 }
 
 .c13 {
@@ -2808,7 +2793,7 @@ exports[`Calendar daysOfWeek 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -3951,7 +3936,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3966,7 +3950,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3989,7 +3972,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4009,7 +3991,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4029,7 +4010,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -4038,6 +4018,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -4049,7 +4030,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -4058,6 +4038,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -4080,7 +4061,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
-  outline: none;
 }
 
 .c10 {
@@ -4156,7 +4136,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -4179,14 +4159,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
@@ -4198,22 +4170,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
     line-height: 24px;
     max-width: 432px;
   }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 <div
@@ -6249,7 +6205,6 @@ exports[`Calendar header 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -6264,7 +6219,6 @@ exports[`Calendar header 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -6285,7 +6239,6 @@ exports[`Calendar header 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -6294,6 +6247,7 @@ exports[`Calendar header 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -6303,7 +6257,6 @@ exports[`Calendar header 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -6312,11 +6265,17 @@ exports[`Calendar header 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .c1 {
@@ -6328,7 +6287,6 @@ exports[`Calendar header 1`] = `
 .c7 {
   overflow: hidden;
   height: 164.57142857142856px;
-  outline: none;
 }
 
 .c8 {
@@ -6404,14 +6362,9 @@ exports[`Calendar header 1`] = `
   align-items: center;
   width: 27.428571428571427px;
   height: 27.428571428571427px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-.c6 {
-  font-size: 14px;
-  line-height: 20px;
 }
 
 .c0 {
@@ -6422,18 +6375,6 @@ exports[`Calendar header 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 <div
@@ -7514,7 +7455,6 @@ exports[`Calendar reference 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -7529,7 +7469,6 @@ exports[`Calendar reference 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7552,7 +7491,6 @@ exports[`Calendar reference 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -7572,7 +7510,6 @@ exports[`Calendar reference 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7592,7 +7529,6 @@ exports[`Calendar reference 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -7601,6 +7537,7 @@ exports[`Calendar reference 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -7612,7 +7549,6 @@ exports[`Calendar reference 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -7621,6 +7557,7 @@ exports[`Calendar reference 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -7643,7 +7580,6 @@ exports[`Calendar reference 1`] = `
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
-  outline: none;
 }
 
 .c10 {
@@ -8734,6 +8670,3654 @@ exports[`Calendar reference 1`] = `
 </div>
 `;
 
+exports[`Calendar select date 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c9 {
+  overflow: hidden;
+  height: 329.1428571428571px;
+}
+
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-justify: between;
+  -ms-flex-justify: between;
+  flex-justify: between;
+}
+
+.c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  opacity: 0.5;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <h3
+            class="c5"
+          >
+            January 2018
+          </h3>
+        </div>
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="December 2017"
+            class="c7"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="February 2018"
+            class="c7"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="c9"
+        tabindex="0"
+      >
+        <div
+          class="c10"
+        >
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Dec 31 2017"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 01 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 02 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 03 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 04 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 05 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 06 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 07 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 08 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 09 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 10 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 11 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  11
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 12 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 13 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 14 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c16"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 16 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 17 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 18 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 19 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 20 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 21 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 22 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 23 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 24 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 25 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 26 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 27 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 28 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 29 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 30 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 31 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Feb 01 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Feb 02 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Feb 03 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Feb 04 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Feb 05 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Feb 06 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Feb 07 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Feb 08 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Feb 09 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar select date 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <div
+    class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 VvbUh"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 ecbFEh"
+        >
+          <h3
+            class="StyledHeading-sc-1rdh4aw-0 eEcLoL"
+          >
+            January 2018
+          </h3>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 bBymtc"
+        >
+          <button
+            aria-label="December 2017"
+            class="StyledButton-sc-323bzc-0 tdSht"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="February 2018"
+            class="StyledButton-sc-323bzc-0 tdSht"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jSjbHS"
+        tabindex="0"
+      >
+        <div
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 lpkhRw"
+        >
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Dec 31 2017"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 01 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 02 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 03 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 04 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 05 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 06 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 07 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 08 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 09 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 10 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 11 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  11
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 12 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 13 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 14 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 16 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 17 2018"
+                class="StyledButton-sc-323bzc-0 PtHXf"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gBUPeV"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 18 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 19 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 20 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 21 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 22 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 23 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 24 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 25 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 26 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 27 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 28 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 29 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 30 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 31 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Feb 01 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Feb 02 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Feb 03 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Feb 04 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Feb 05 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Feb 06 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Feb 07 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Feb 08 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Feb 09 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar select dates 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c9 {
+  overflow: hidden;
+  height: 329.1428571428571px;
+}
+
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-justify: between;
+  -ms-flex-justify: between;
+  flex-justify: between;
+}
+
+.c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  opacity: 0.5;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <h3
+            class="c5"
+          >
+            January 2018
+          </h3>
+        </div>
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="December 2017"
+            class="c7"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="February 2018"
+            class="c7"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="c9"
+        tabindex="0"
+      >
+        <div
+          class="c10"
+        >
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Dec 31 2017"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 01 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 02 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 03 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 04 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 05 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 06 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 07 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 08 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 09 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 10 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c16"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 11 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  11
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 12 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c16"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 13 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 14 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 16 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 17 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 18 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 19 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 20 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 21 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 22 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 23 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 24 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Jan 25 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Jan 26 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Jan 27 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Jan 28 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Jan 29 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Jan 30 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Jan 31 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Feb 01 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Feb 02 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Feb 03 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sun Feb 04 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Mon Feb 05 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Tue Feb 06 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Wed Feb 07 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Thu Feb 08 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Fri Feb 09 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar select dates 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <div
+    class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 VvbUh"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 ecbFEh"
+        >
+          <h3
+            class="StyledHeading-sc-1rdh4aw-0 eEcLoL"
+          >
+            January 2018
+          </h3>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 bBymtc"
+        >
+          <button
+            aria-label="December 2017"
+            class="StyledButton-sc-323bzc-0 tdSht"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="February 2018"
+            class="StyledButton-sc-323bzc-0 tdSht"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jSjbHS"
+        tabindex="0"
+      >
+        <div
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 lpkhRw"
+        >
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Dec 31 2017"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 01 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 02 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 03 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 04 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 05 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 06 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 07 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 08 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 09 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 10 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 11 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  11
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 12 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 13 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 14 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 16 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 17 2018"
+                class="StyledButton-sc-323bzc-0 PtHXf"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 18 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 19 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 20 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 21 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 22 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 23 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 24 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Jan 25 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Jan 26 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Jan 27 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Jan 28 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Jan 29 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Jan 30 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Jan 31 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hMtPVo"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Feb 01 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Feb 02 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Feb 03 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+          >
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sun Feb 04 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Mon Feb 05 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Tue Feb 06 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Wed Feb 07 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Thu Feb 08 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Fri Feb 09 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                class="StyledButton-sc-323bzc-0 bwJeiP"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQiACj"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Calendar size 1`] = `
 .c8 {
   display: inline-block;
@@ -8809,7 +12393,6 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -8824,7 +12407,6 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -8847,7 +12429,6 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -8867,7 +12448,6 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -8889,7 +12469,6 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -8909,7 +12488,6 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -8927,7 +12505,6 @@ exports[`Calendar size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -8936,6 +12513,7 @@ exports[`Calendar size 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -8947,7 +12525,6 @@ exports[`Calendar size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -8956,6 +12533,7 @@ exports[`Calendar size 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -9006,19 +12584,16 @@ exports[`Calendar size 1`] = `
 .c9 {
   overflow: hidden;
   height: 164.57142857142856px;
-  outline: none;
 }
 
 .c20 {
   overflow: hidden;
   height: 329.1428571428571px;
-  outline: none;
 }
 
 .c28 {
   overflow: hidden;
   height: 658.2857142857142px;
-  outline: none;
 }
 
 .c10 {
@@ -9094,7 +12669,7 @@ exports[`Calendar size 1`] = `
   align-items: center;
   width: 27.428571428571427px;
   height: 27.428571428571427px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -9149,7 +12724,7 @@ exports[`Calendar size 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }
@@ -9204,7 +12779,7 @@ exports[`Calendar size 1`] = `
   align-items: center;
   width: 109.71428571428571px;
   height: 109.71428571428571px;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
 }

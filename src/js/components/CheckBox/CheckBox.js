@@ -48,13 +48,17 @@ const CheckBox = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [checked, setChecked] = formContext.useFormContext(name, checkedProp);
+    const [checked, setChecked] = formContext.useFormContext(
+      name,
+      checkedProp,
+      false,
+    );
 
     const [focus, setFocus] = useState(focusProp);
     useEffect(() => setFocus(focusProp), [focusProp]);
 
     useEffect(() => {
-      if (checked && indeterminate) {
+      if (checkedProp && indeterminate) {
         console.warn(
           'Checkbox cannot be "checked" and "indeterminate" at the same time.',
         );
@@ -65,7 +69,7 @@ const CheckBox = forwardRef(
           'Checkbox of type toggle does not have "indeterminate" state.',
         );
       }
-    }, [checked, toggle, indeterminate]);
+    }, [checkedProp, toggle, indeterminate]);
 
     const themeableProps = {
       checked,

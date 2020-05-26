@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
+import { StatusGood } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
 const Example = () => (
@@ -21,6 +22,18 @@ const Example = () => (
               { regexp: /^[a-z]/i },
               name => {
                 if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+              name => {
+                if (name === 'good')
+                  return {
+                    message: (
+                      <Box align="end">
+                        <StatusGood />
+                      </Box>
+                    ),
+                    status: 'info',
+                  };
                 return undefined;
               },
             ]}

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { Form } from '../../Form';
 import { FormField } from '..';
 import { TextInput } from '../../TextInput';
 
@@ -165,6 +166,83 @@ describe('FormField', () => {
     const component = renderer.create(
       <Grommet>
         <CustomFormField htmlFor="test-id" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('disabled', () => {
+    const component = renderer.create(
+      <Grommet>
+        <FormField disabled /> {/* don't use FormField without Form */}
+        <Form>
+          <FormField disabled />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('required', () => {
+    const component = renderer.create(
+      <Grommet>
+        <FormField required /> {/* don't use FormField without Form */}
+        <Form>
+          <FormField required />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('disabled with custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+            disabled: {
+              label: {
+                color: 'teal',
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField disabled label="label" />
+        </Form>
       </Grommet>,
     );
     const tree = component.toJSON();

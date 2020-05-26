@@ -1,4 +1,4 @@
-import React, { useState, Children } from 'react';
+import React, { Children, forwardRef, useState } from 'react';
 
 import { Box } from '../Box';
 
@@ -7,68 +7,67 @@ import { AccordionContext } from './AccordionContext';
 const activeAsArray = active =>
   typeof active === 'number' ? [active] : active;
 
-const Accordion = ({
-  activeIndex,
-  animate = true,
-  children,
-  messages = { tabContents: 'Tab Contents' },
-  multiple,
-  onActive,
-  ...rest
-}) => {
-  const [activeIndexes, setActiveIndexes] = useState([]);
-  const [stateActiveIndex, setStateActiveIndex] = useState();
+const Accordion = forwardRef(
+  (
+    { activeIndex, animate = true, children, multiple, onActive, ...rest },
+    ref,
+  ) => {
+    const [activeIndexes, setActiveIndexes] = useState([]);
+    const [stateActiveIndex, setStateActiveIndex] = useState();
 
-  // Derived state from props
-  // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
-  const derivedActiveIndexes = activeAsArray(activeIndex) || [];
-  if (
-    (typeof activeIndex !== 'undefined' || activeIndex !== stateActiveIndex) &&
-    derivedActiveIndexes.join() !== activeIndexes.join()
-  ) {
-    setActiveIndexes(derivedActiveIndexes);
-    setStateActiveIndex(activeIndex);
-  }
-
-  const onPanelChange = index => {
-    let nextActiveIndexes = [...(activeIndexes || [])];
-
-    const nextActiveIndex = nextActiveIndexes.indexOf(index);
-    if (nextActiveIndex > -1) {
-      nextActiveIndexes.splice(nextActiveIndex, 1);
-    } else if (multiple) {
-      nextActiveIndexes.push(index);
-    } else {
-      nextActiveIndexes = [index];
+    // Derived state from props
+    // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
+    const derivedActiveIndexes = activeAsArray(activeIndex) || [];
+    if (
+      (typeof activeIndex !== 'undefined' ||
+        activeIndex !== stateActiveIndex) &&
+      derivedActiveIndexes.join() !== activeIndexes.join()
+    ) {
+      setActiveIndexes(derivedActiveIndexes);
+      setStateActiveIndex(activeIndex);
     }
 
-    setActiveIndexes(nextActiveIndexes);
-    if (onActive) {
-      onActive(nextActiveIndexes);
-    }
-  };
+    const onPanelChange = index => {
+      let nextActiveIndexes = [...(activeIndexes || [])];
 
-  // eslint-disable-next-line no-param-reassign
-  delete rest.onActive;
+      const nextActiveIndex = nextActiveIndexes.indexOf(index);
+      if (nextActiveIndex > -1) {
+        nextActiveIndexes.splice(nextActiveIndex, 1);
+      } else if (multiple) {
+        nextActiveIndexes.push(index);
+      } else {
+        nextActiveIndexes = [index];
+      }
 
-  return (
-    <Box role="tablist" {...rest}>
-      {Children.toArray(children).map((panel, index) => (
-        <AccordionContext.Provider
-          key={`accordion-panel_${index + 0}`}
-          value={{
-            active: activeIndexes.indexOf(index) > -1,
-            animate,
-            messages,
-            onPanelChange: () => onPanelChange(index),
-          }}
-        >
-          {panel}
-        </AccordionContext.Provider>
-      ))}
-    </Box>
-  );
-};
+      setActiveIndexes(nextActiveIndexes);
+      if (onActive) {
+        onActive(nextActiveIndexes);
+      }
+    };
+
+    return (
+      <Box ref={ref} role="tablist" {...rest}>
+        {Children.toArray(children)
+          .filter(child => child)
+          .map((child, index) => (
+            <AccordionContext.Provider
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              value={{
+                active: activeIndexes.indexOf(index) > -1,
+                animate,
+                onPanelChange: () => onPanelChange(index),
+              }}
+            >
+              {child}
+            </AccordionContext.Provider>
+          ))}
+      </Box>
+    );
+  },
+);
+
+Accordion.displayName = 'Accordion';
 
 let AccordionDoc;
 if (process.env.NODE_ENV !== 'production') {

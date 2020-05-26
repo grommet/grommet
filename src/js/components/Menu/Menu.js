@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
@@ -10,7 +15,6 @@ import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 
 const ContainerBox = styled(Box)`
@@ -45,7 +49,7 @@ To make a selection:
 - Space is pressed.
 */
 
-const Menu = props => {
+const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
     children,
@@ -54,7 +58,6 @@ const Menu = props => {
     dropBackground,
     dropProps,
     dropTarget,
-    forwardRef,
     justifyContent,
     icon,
     items,
@@ -64,42 +67,42 @@ const Menu = props => {
     open,
     plain,
     size,
-    theme,
     ...rest
   } = props;
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const MenuIcon = theme.menu.icons.down;
-  const iconColor = normalizeColor('control', theme);
+  const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   const align = dropProps.align || dropAlign;
-  let controlButtonIndex;
-  if (align.top === 'top') {
-    controlButtonIndex = -1;
-  } else if (align.bottom === 'bottom') {
-    controlButtonIndex = items.length;
-  } else {
-    controlButtonIndex = undefined;
-  }
+  const controlButtonIndex = useMemo(() => {
+    if (align.top === 'top') return -1;
+    if (align.bottom === 'bottom') return items.length;
+    return undefined;
+  }, [align, items]);
+
   const buttonRefs = {};
-  const constants = {
-    none: 'none',
-    tab: 9,
-    // Menu control button included on top of menu items
-    controlTop: align.top === 'top' || undefined,
-    // Menu control button included on the bottom of menu items
-    controlBottom: align.bottom === 'bottom' || undefined,
-    controlButtonIndex,
-  };
+  const constants = useMemo(() => {
+    return {
+      none: 'none',
+      tab: 9,
+      // Menu control button included on top of menu items
+      controlTop: align.top === 'top' || undefined,
+      // Menu control button included on the bottom of menu items
+      controlBottom: align.bottom === 'bottom' || undefined,
+      controlButtonIndex,
+    };
+  }, [align, controlButtonIndex]);
 
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
 
-  const onDropClose = () => {
+  const onDropClose = useCallback(() => {
     setActiveItemIndex(constants.none);
     setOpen(false);
-  };
+  }, [constants.none]);
 
-  const onDropOpen = () => {
+  const onDropOpen = useCallback(() => {
     setOpen(true);
-  };
+  }, []);
 
   const onSelectMenuItem = event => {
     if (isOpen) {
@@ -232,12 +235,13 @@ const Menu = props => {
       onKeyDown={onKeyDown}
     >
       <DropButton
-        ref={forwardRef}
+        ref={ref}
         {...rest}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
+        dropProps={dropProps}
         plain={plain}
         open={isOpen}
         onOpen={onDropOpen}
@@ -263,6 +267,7 @@ const Menu = props => {
                       active={activeItemIndex === index}
                       hoverIndicator="background"
                       focusIndicator={false}
+                      plain={theme.button.default ? true : undefined}
                       {...{ ...item, icon: undefined, label: undefined }}
                       onClick={(...args) => {
                         if (item.onClick) {
@@ -296,7 +301,7 @@ const Menu = props => {
       </DropButton>
     </Keyboard>
   );
-};
+});
 
 Menu.propTypes = {
   dropAlign: PropTypes.shape({
@@ -328,12 +333,10 @@ Menu.defaultProps = {
 
 Menu.displayName = 'Menu';
 
-Object.setPrototypeOf(Menu.defaultProps, defaultProps);
-
 let MenuDoc;
 if (process.env.NODE_ENV !== 'production') {
   MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
 }
-const MenuWrapper = compose(withTheme, withForwardRef)(MenuDoc || Menu);
+const MenuWrapper = MenuDoc || Menu;
 
 export { MenuWrapper as Menu };

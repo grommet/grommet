@@ -17,9 +17,8 @@ exports[`List background array 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -43,9 +42,8 @@ exports[`List background array 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #FD6FFF;
+  background-color: #FD6FFF;
   color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -68,9 +66,8 @@ exports[`List background array 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -85,43 +82,6 @@ exports[`List background array 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -217,13 +177,6 @@ exports[`List background array 1`] = `
     >
       four
     </li>
-    <li
-      class="c5"
-    >
-      <div
-        class="c6"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -245,9 +198,8 @@ exports[`List background string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -271,9 +223,8 @@ exports[`List background string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -288,43 +239,6 @@ exports[`List background string 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -390,13 +304,6 @@ exports[`List background string 1`] = `
     >
       two
     </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -418,7 +325,6 @@ exports[`List border boolean 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -433,43 +339,6 @@ exports[`List border boolean 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -514,13 +383,6 @@ exports[`List border boolean 1`] = `
     >
       two
     </li>
-    <li
-      class="c3"
-    >
-      <div
-        class="c4"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -542,7 +404,6 @@ exports[`List border object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 12px #6FFFB0;
   border-bottom: solid 12px #6FFFB0;
@@ -558,43 +419,6 @@ exports[`List border object 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -640,13 +464,6 @@ exports[`List border object 1`] = `
     >
       two
     </li>
-    <li
-      class="c3"
-    >
-      <div
-        class="c4"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -668,7 +485,6 @@ exports[`List border side 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -692,7 +508,6 @@ exports[`List border side 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -707,43 +522,6 @@ exports[`List border side 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -809,13 +587,6 @@ exports[`List border side 1`] = `
     >
       two
     </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -837,7 +608,6 @@ exports[`List children render 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -861,7 +631,6 @@ exports[`List children render 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -876,43 +645,6 @@ exports[`List children render 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -978,13 +710,6 @@ exports[`List children render 1`] = `
     >
       two - 1
     </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -1006,7 +731,6 @@ exports[`List data objects 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1030,7 +754,6 @@ exports[`List data objects 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1045,43 +768,6 @@ exports[`List data objects 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -1146,13 +832,6 @@ exports[`List data objects 1`] = `
       class="c3 "
     >
       two
-    </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
     </li>
   </ul>
 </div>
@@ -1175,7 +854,6 @@ exports[`List data strings 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1199,7 +877,6 @@ exports[`List data strings 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1214,43 +891,6 @@ exports[`List data strings 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -1315,13 +955,6 @@ exports[`List data strings 1`] = `
       class="c3 "
     >
       two
-    </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
     </li>
   </ul>
 </div>
@@ -1370,7 +1003,6 @@ exports[`List itemProps 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1394,9 +1026,8 @@ exports[`List itemProps 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #6FFFB0;
+  background-color: #6FFFB0;
   color: #444444;
   border-top: solid 2px rgba(0,0,0,0.33);
   border-bottom: solid 2px rgba(0,0,0,0.33);
@@ -1409,43 +1040,6 @@ exports[`List itemProps 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 48px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -1504,13 +1098,6 @@ exports[`List itemProps 1`] = `
     >
       two
     </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -1532,7 +1119,6 @@ exports[`List margin object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1556,7 +1142,6 @@ exports[`List margin object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1571,43 +1156,6 @@ exports[`List margin object 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -1674,13 +1222,6 @@ exports[`List margin object 1`] = `
     >
       two
     </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -1702,7 +1243,6 @@ exports[`List margin string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1726,7 +1266,6 @@ exports[`List margin string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1741,43 +1280,6 @@ exports[`List margin string 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -1843,13 +1345,6 @@ exports[`List margin string 1`] = `
     >
       two
     </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -1871,7 +1366,6 @@ exports[`List onClickItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -1896,7 +1390,6 @@ exports[`List onClickItem 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1912,43 +1405,6 @@ exports[`List onClickItem 1`] = `
   padding-top: 12px;
   padding-bottom: 12px;
   cursor: pointer;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -2021,13 +1477,6 @@ exports[`List onClickItem 1`] = `
     >
       beta
     </li>
-    <li
-      class="c5"
-    >
-      <div
-        class="c6"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -2041,23 +1490,16 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iQXWyC List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 hRnMDt List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 lchcXI List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 fbIRTP List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta
-    </li>
-    <li
-      class="StyledBox-sc-13pk1d4-0 hTZIev"
-    >
-      <div
-        class="StyledBox-sc-13pk1d4-0 fmwxyt"
-      />
     </li>
   </ul>
 </div>
@@ -2080,7 +1522,6 @@ exports[`List pad object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -2102,7 +1543,6 @@ exports[`List pad object 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -2115,43 +1555,6 @@ exports[`List pad object 1`] = `
   flex: 0 0 auto;
   padding-left: 48px;
   padding-right: 48px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -2202,13 +1605,6 @@ exports[`List pad object 1`] = `
       class="c3 "
     >
       two
-    </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
     </li>
   </ul>
 </div>
@@ -2231,7 +1627,6 @@ exports[`List pad string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -2252,7 +1647,6 @@ exports[`List pad string 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -2264,43 +1658,6 @@ exports[`List pad string 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 48px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c1 {
@@ -2350,13 +1707,6 @@ exports[`List pad string 1`] = `
     >
       two
     </li>
-    <li
-      class="c4"
-    >
-      <div
-        class="c5"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -2378,7 +1728,6 @@ exports[`List primaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -2402,7 +1751,6 @@ exports[`List primaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -2417,43 +1765,6 @@ exports[`List primaryKey 1`] = `
   padding-right: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c3 {
@@ -2533,13 +1844,6 @@ exports[`List primaryKey 1`] = `
         two
       </span>
     </li>
-    <li
-      class="c5"
-    >
-      <div
-        class="c6"
-      />
-    </li>
   </ul>
 </div>
 `;
@@ -2561,7 +1865,6 @@ exports[`List secondaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2593,7 +1896,6 @@ exports[`List secondaryKey 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2618,47 +1920,13 @@ exports[`List secondaryKey 1`] = `
   padding-bottom: 12px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 24px;
 }
 
@@ -2759,13 +2027,6 @@ exports[`List secondaryKey 1`] = `
       >
         2
       </span>
-    </li>
-    <li
-      class="c7"
-    >
-      <div
-        class="c8"
-      />
     </li>
   </ul>
 </div>

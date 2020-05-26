@@ -7,6 +7,7 @@ import {
   borderStyle,
   breakpointStyle,
   edgeStyle,
+  fillStyle,
   focusStyle,
   genericStyles,
   getHoverIndicatorStyle,
@@ -116,22 +117,6 @@ const flexStyle = css`
       props.flex !== true && !props.basis ? ' auto' : ''
     }`};
 `;
-
-const fillStyle = fillProp => {
-  if (fillProp === 'horizontal') {
-    return 'width: 100%;';
-  }
-  if (fillProp === 'vertical') {
-    return 'height: 100%;';
-  }
-  if (fillProp) {
-    return `
-      width: 100%;
-      height: 100%;
-    `;
-  }
-  return undefined;
-};
 
 const JUSTIFY_MAP = {
   around: 'space-around',
@@ -517,7 +502,6 @@ const widthStyle = css`
 const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
-  outline: none;
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
@@ -563,7 +547,7 @@ const StyledBox = styled.div`
     props.onClick &&
     props.focus &&
     props.focusIndicator !== false &&
-    focusStyle}
+    focusStyle()}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
@@ -576,7 +560,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const hasBetweenBorder =
     border === 'between' || (border && border.side === 'between');
   const styles = [];
-  if (directionProp === 'column' || directionProp === 'column-reverse' ) {
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
     const height = theme.global.edgeSize[gap] || gap;
     styles.push(
       css`
@@ -643,6 +627,7 @@ Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
 const StyledBoxGap = styled.div`
   flex: 0 0 auto;
+  align-self: stretch;
   ${props =>
     props.gap &&
     gapStyle(

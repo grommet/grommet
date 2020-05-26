@@ -8,8 +8,8 @@ exports[`Video autoPlay renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
 }
 
 .c6 g {
@@ -41,7 +41,6 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -66,7 +65,6 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -88,7 +86,6 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -106,7 +103,6 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -123,7 +119,6 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -145,7 +140,6 @@ exports[`Video autoPlay renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -154,6 +148,7 @@ exports[`Video autoPlay renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -163,14 +158,13 @@ exports[`Video autoPlay renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -179,9 +173,21 @@ exports[`Video autoPlay renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c9 {
@@ -199,17 +205,6 @@ exports[`Video autoPlay renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c0 {
@@ -234,6 +229,7 @@ exports[`Video autoPlay renders 1`] = `
 
 .c2 {
   max-width: 100%;
+  z-index: 1;
 }
 
 .c2::cue {
@@ -263,6 +259,7 @@ exports[`Video autoPlay renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -301,35 +298,19 @@ exports[`Video autoPlay renders 1`] = `
       autoPlay={true}
       className="c2"
       loop={false}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c3"
+      onBlur={[Function]}
     >
       <div
         className="c4"
@@ -454,8 +435,8 @@ exports[`Video controls renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
 }
 
 .c6 g {
@@ -481,7 +462,7 @@ exports[`Video controls renders 1`] = `
   stroke: none;
 }
 
-.c21 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -492,25 +473,25 @@ exports[`Video controls renders 1`] = `
   stroke: #666666;
 }
 
-.c21 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c21 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c21 *[stroke*="#"],
-.c21 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c21 *[fill-rule],
-.c21 *[FILL-RULE],
-.c21 *[fill*="#"],
-.c21 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -521,7 +502,6 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -546,7 +526,6 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -568,7 +547,6 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -586,7 +564,6 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -603,7 +580,6 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -627,7 +603,6 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -648,7 +623,6 @@ exports[`Video controls renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -657,6 +631,7 @@ exports[`Video controls renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -666,14 +641,13 @@ exports[`Video controls renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -682,9 +656,46 @@ exports[`Video controls renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c21:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c9 {
@@ -702,17 +713,6 @@ exports[`Video controls renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c0 {
@@ -737,6 +737,7 @@ exports[`Video controls renders 1`] = `
 
 .c2 {
   max-width: 100%;
+  z-index: 1;
 }
 
 .c2::cue {
@@ -766,6 +767,7 @@ exports[`Video controls renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -814,35 +816,19 @@ exports[`Video controls renders 1`] = `
       autoPlay={false}
       className="c2"
       loop={false}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c3"
+      onBlur={[Function]}
     >
       <div
         className="c4"
@@ -963,41 +949,25 @@ exports[`Video controls renders 1`] = `
       autoPlay={false}
       className="c2"
       loop={false}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c19"
+      onBlur={[Function]}
     >
       <div
         className="c20"
       >
         <button
-          className="c5"
+          className="c21"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1007,7 +977,7 @@ exports[`Video controls renders 1`] = `
         >
           <svg
             aria-label="Play"
-            className="c21"
+            className="c22"
             viewBox="0 0 24 24"
           >
             <polygon
@@ -1091,7 +1061,7 @@ exports[`Video controls renders 1`] = `
             />
             <svg
               aria-label="Actions"
-              className="c21"
+              className="c22"
               viewBox="0 0 24 24"
             >
               <path
@@ -1117,8 +1087,8 @@ exports[`Video fit renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
 }
 
 .c6 g {
@@ -1150,7 +1120,6 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1175,7 +1144,6 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1197,7 +1165,6 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1215,7 +1182,6 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1232,7 +1198,6 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1254,7 +1219,6 @@ exports[`Video fit renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1263,6 +1227,7 @@ exports[`Video fit renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1272,14 +1237,13 @@ exports[`Video fit renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1288,9 +1252,21 @@ exports[`Video fit renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c9 {
@@ -1308,17 +1284,6 @@ exports[`Video fit renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c0 {
@@ -1343,6 +1308,7 @@ exports[`Video fit renders 1`] = `
 
 .c2 {
   max-width: 100%;
+  z-index: 1;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
@@ -1356,6 +1322,7 @@ exports[`Video fit renders 1`] = `
 
 .c19 {
   max-width: 100%;
+  z-index: 1;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
@@ -1390,6 +1357,7 @@ exports[`Video fit renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -1428,35 +1396,19 @@ exports[`Video fit renders 1`] = `
       autoPlay={false}
       className="c2"
       loop={false}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c3"
+      onBlur={[Function]}
     >
       <div
         className="c4"
@@ -1580,35 +1532,19 @@ exports[`Video fit renders 1`] = `
       autoPlay={false}
       className="c19"
       loop={false}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c3"
+      onBlur={[Function]}
     >
       <div
         className="c4"
@@ -1733,8 +1669,8 @@ exports[`Video loop renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
 }
 
 .c6 g {
@@ -1766,7 +1702,6 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1791,7 +1726,6 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1813,7 +1747,6 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1831,7 +1764,6 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1848,7 +1780,6 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1870,7 +1801,6 @@ exports[`Video loop renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1879,6 +1809,7 @@ exports[`Video loop renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1888,14 +1819,13 @@ exports[`Video loop renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1904,9 +1834,21 @@ exports[`Video loop renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c9 {
@@ -1924,17 +1866,6 @@ exports[`Video loop renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c0 {
@@ -1959,6 +1890,7 @@ exports[`Video loop renders 1`] = `
 
 .c2 {
   max-width: 100%;
+  z-index: 1;
 }
 
 .c2::cue {
@@ -1988,6 +1920,7 @@ exports[`Video loop renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -2026,35 +1959,19 @@ exports[`Video loop renders 1`] = `
       autoPlay={false}
       className="c2"
       loop={true}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c3"
+      onBlur={[Function]}
     >
       <div
         className="c4"
@@ -2179,8 +2096,8 @@ exports[`Video mute renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
 }
 
 .c6 g {
@@ -2212,7 +2129,6 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2237,7 +2153,6 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2259,7 +2174,6 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2277,7 +2191,6 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2294,7 +2207,6 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2316,7 +2228,6 @@ exports[`Video mute renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2325,6 +2236,7 @@ exports[`Video mute renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2334,14 +2246,13 @@ exports[`Video mute renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2350,9 +2261,21 @@ exports[`Video mute renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c9 {
@@ -2370,17 +2293,6 @@ exports[`Video mute renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c0 {
@@ -2405,6 +2317,7 @@ exports[`Video mute renders 1`] = `
 
 .c2 {
   max-width: 100%;
+  z-index: 1;
 }
 
 .c2::cue {
@@ -2434,6 +2347,7 @@ exports[`Video mute renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -2472,35 +2386,19 @@ exports[`Video mute renders 1`] = `
       autoPlay={false}
       className="c2"
       loop={false}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c3"
+      onBlur={[Function]}
     >
       <div
         className="c4"
@@ -2625,8 +2523,8 @@ exports[`Video renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #F8F8F8;
-  stroke: #F8F8F8;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
 }
 
 .c6 g {
@@ -2658,7 +2556,6 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2683,7 +2580,6 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2705,7 +2601,6 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2723,7 +2618,6 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2740,7 +2634,6 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2762,7 +2655,6 @@ exports[`Video renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2771,6 +2663,7 @@ exports[`Video renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2780,14 +2673,13 @@ exports[`Video renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2796,9 +2688,21 @@ exports[`Video renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c9 {
@@ -2816,17 +2720,6 @@ exports[`Video renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c0 {
@@ -2851,6 +2744,7 @@ exports[`Video renders 1`] = `
 
 .c2 {
   max-width: 100%;
+  z-index: 1;
 }
 
 .c2::cue {
@@ -2880,6 +2774,7 @@ exports[`Video renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -2918,35 +2813,19 @@ exports[`Video renders 1`] = `
       autoPlay={false}
       className="c2"
       loop={false}
-      onAbort={[Function]}
-      onCanPlay={[Function]}
-      onCanPlayThrough={[Function]}
       onDurationChange={[Function]}
-      onEmptied={[Function]}
-      onEncrypted={[Function]}
       onEnded={[Function]}
-      onError={[Function]}
-      onLoadStart={[Function]}
-      onLoadedData={[Function]}
-      onLoadedMetadata={[Function]}
       onPause={[Function]}
       onPlay={[Function]}
-      onPlaying={[Function]}
-      onProgress={[Function]}
-      onRateChange={[Function]}
-      onSeeked={[Function]}
-      onSeeking={[Function]}
-      onStalled={[Function]}
-      onSuspend={[Function]}
       onTimeUpdate={[Function]}
       onVolumeChange={[Function]}
-      onWaiting={[Function]}
     >
       <source />
       <track />
     </video>
     <div
       className="c3"
+      onBlur={[Function]}
     >
       <div
         className="c4"

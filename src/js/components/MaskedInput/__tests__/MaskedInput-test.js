@@ -9,6 +9,7 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -22,6 +23,23 @@ describe('MaskedInput', () => {
 
   test('basic', () => {
     const { container } = render(<MaskedInput name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('icon', () => {
+    const { container } = render(<MaskedInput icon={<Search />} name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('icon reverse', () => {
+    const { container } = render(
+      <MaskedInput icon={<Search />} reverse name="item" />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disabled', () => {
+    const { container } = render(<MaskedInput disabled name="item" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -78,7 +96,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChange}
       />,
     );
@@ -110,7 +127,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChange}
       />,
     );
@@ -159,7 +175,6 @@ describe('MaskedInput', () => {
         data-testid="test-input"
         id="item"
         name="item"
-        value=""
         mask={[
           {
             length: [1, 2],
@@ -205,7 +220,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChangeMock}
       />,
     );
@@ -252,7 +266,6 @@ describe('MaskedInput', () => {
           },
           { fixed: '!' },
         ]}
-        value=""
         onChange={onChangeMock}
       />,
     );
@@ -315,7 +328,6 @@ describe('MaskedInput', () => {
             },
             { fixed: '!' },
           ]}
-          value=""
           onChange={onChange}
         />
       </Grommet>,

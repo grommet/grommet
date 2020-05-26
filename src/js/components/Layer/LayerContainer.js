@@ -6,6 +6,7 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -19,6 +20,8 @@ const HiddenAnchor = styled.a`
   overflow: hidden;
   position: absolute;
 `;
+
+const fullBounds = { left: 0, right: 0, top: 0, bottom: 0 };
 
 const LayerContainer = forwardRef(
   (
@@ -38,8 +41,8 @@ const LayerContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
-    const [targetBounds, setTargetBounds] = useState();
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [targetBounds, setTargetBounds] = useState(fullBounds);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
@@ -79,9 +82,9 @@ const LayerContainer = forwardRef(
           const rect = findVisibleParent(layerTarget).getBoundingClientRect();
           setTargetBounds({
             left: rect.left,
-            right: rect.right,
+            right: window.innerWidth - rect.right,
             top: rect.top,
-            bottom: rect.bottom,
+            bottom: window.innerHeight - rect.bottom,
           });
         };
 
@@ -89,6 +92,7 @@ const LayerContainer = forwardRef(
         window.addEventListener('resize', updateBounds);
         return () => window.removeEventListener('resize', updateBounds);
       }
+      setTargetBounds(fullBounds);
       return undefined;
     }, [layerTarget]);
 
@@ -99,6 +103,7 @@ const LayerContainer = forwardRef(
         full={full}
         margin={margin}
         modal={modal}
+        targetBounds={!modal ? targetBounds : fullBounds}
         {...rest}
         position={position}
         plain={plain}
@@ -113,7 +118,6 @@ const LayerContainer = forwardRef(
         {children}
       </StyledContainer>
     );
-
     if (modal) {
       content = (
         <StyledLayer
@@ -150,7 +154,6 @@ const LayerContainer = forwardRef(
         );
       }
     }
-
     if (modal) {
       content = (
         <FocusedContainer hidden={position === 'hidden'} restrictScroll>
