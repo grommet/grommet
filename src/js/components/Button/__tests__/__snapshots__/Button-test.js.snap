@@ -674,12 +674,6 @@ exports[`Button disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1426,12 +1420,6 @@ exports[`Button icon label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c3 {
-    width: 6px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1587,12 +1575,6 @@ exports[`Button reverse icon label 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    width: 6px;
-  }
 }
 
 <div
@@ -1935,12 +1917,6 @@ exports[`Button size 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    width: 6px;
-  }
 }
 
 <div
