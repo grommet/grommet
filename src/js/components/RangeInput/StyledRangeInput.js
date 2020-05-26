@@ -46,6 +46,12 @@ const trackColorStyle = props => {
       0.2,
     );
     if (color === 'rgba(0,0,0,0.2)') return `background: ${color}`;
+
+    // no bounds are defined but color may have changed
+    return `background: ${rgba(
+      normalizeColor(props.theme.rangeInput.track.color, props.theme),
+      props.theme.rangeInput.track.opacity || 1,
+    )}`;
   }
 
   // 'max' defaults to 100 in case not specified

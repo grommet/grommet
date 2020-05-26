@@ -14,3 +14,13 @@ test('RangeInput renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('RangeInput themed renders', () => {
+  const component = renderer.create(
+    <Grommet theme={{ rangeInput: { track: { color: 'brand' } } }}>
+      <RangeInput value="10" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
