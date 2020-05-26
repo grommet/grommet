@@ -319,24 +319,6 @@ exports[`Video Configure Menu Button 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c17 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   class="c0"
 >
@@ -3164,12 +3146,6 @@ exports[`Video fit  cover renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c17 {
-    padding: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -3614,12 +3590,6 @@ exports[`Video fit contain renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c17 {
-    padding: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -4056,12 +4026,6 @@ exports[`Video loop renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 
@@ -4505,12 +4469,6 @@ exports[`Video mute renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c17 {
-    padding: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -4947,12 +4905,6 @@ exports[`Video renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    padding: 6px;
   }
 }
 

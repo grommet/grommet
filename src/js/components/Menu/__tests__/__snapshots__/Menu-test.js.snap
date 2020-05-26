@@ -87,18 +87,6 @@ exports[`Menu basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -250,18 +238,6 @@ exports[`Menu close by clicking outside 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -507,20 +483,8 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
   }
 }
 
@@ -624,13 +588,7 @@ exports[`Menu close by clicking outside 2`] = `
 </div>
 `;
 
-exports[`Menu close by clicking outside 3`] = `
-"@media only screen and (max-width: 768px) {
-  .hkbjbd {
-    padding: 6px;
-  }
-}"
-`;
+exports[`Menu close by clicking outside 3`] = `""`;
 
 exports[`Menu close on esc 1`] = `
 .c5 {
@@ -751,18 +709,6 @@ exports[`Menu close on esc 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -923,18 +869,6 @@ exports[`Menu close on tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1091,18 +1025,6 @@ exports[`Menu custom a11yTitle 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div>
@@ -1262,18 +1184,6 @@ exports[`Menu custom message 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -1437,18 +1347,6 @@ exports[`Menu custom theme icon color 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -1616,18 +1514,6 @@ exports[`Menu disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1788,19 +1674,7 @@ exports[`Menu gap between icon and label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2083,48 +1957,6 @@ exports[`Menu justify content 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -2470,18 +2302,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -2640,18 +2460,6 @@ exports[`Menu open and close on click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -2700,7 +2508,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hkbjbd"
+      class="StyledBox-sc-13pk1d4-0 hJQWFQ"
     >
       <span
         class="StyledText-sc-1sadyjn-0 hUokoe"
@@ -2708,7 +2516,7 @@ exports[`Menu open and close on click 2`] = `
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bRyuLk"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
       />
       <svg
         aria-label="FormDown"
@@ -2933,20 +2741,8 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
   }
 }
 
@@ -3064,13 +2860,7 @@ exports[`Menu open and close on click 3`] = `
 </div>
 `;
 
-exports[`Menu open and close on click 4`] = `
-"@media only screen and (max-width: 768px) {
-  .hkbjbd {
-    padding: 6px;
-  }
-}"
-`;
+exports[`Menu open and close on click 4`] = `""`;
 
 exports[`Menu reverse icon and label 1`] = `
 .c5 {
@@ -3194,19 +2984,7 @@ exports[`Menu reverse icon and label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -3374,18 +3152,6 @@ exports[`Menu select an item 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -3696,18 +3462,6 @@ exports[`Menu tab through menu until it closes 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -3864,18 +3618,6 @@ exports[`Menu with dropAlign renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -4121,20 +3863,8 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
   }
 }
 
@@ -4238,10 +3968,4 @@ exports[`Menu with dropAlign renders 2`] = `
 </div>
 `;
 
-exports[`Menu with dropAlign renders 3`] = `
-"@media only screen and (max-width: 768px) {
-  .hkbjbd {
-    padding: 6px;
-  }
-}"
-`;
+exports[`Menu with dropAlign renders 3`] = `""`;
