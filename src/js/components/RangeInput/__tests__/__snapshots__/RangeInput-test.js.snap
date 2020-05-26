@@ -23,10 +23,6 @@ exports[`RangeInput renders 1`] = `
   background: transparent;
 }
 
-.c1:focus {
-  outline: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
 }

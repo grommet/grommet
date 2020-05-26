@@ -23,6 +23,10 @@ const backgroundShape = {};
 parts.forEach(part => {
   backgroundShape[part] = PropTypes.oneOfType([
     PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
     PropTypes.arrayOf(PropTypes.string),
   ]);
 });
@@ -98,6 +102,21 @@ export const doc = DataTable => {
         render: PropTypes.func,
         search: PropTypes.bool,
         sortable: PropTypes.bool,
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            '1/2',
+            '1/4',
+            '2/4',
+            '3/4',
+            '1/3',
+            '2/3',
+          ]),
+          PropTypes.string,
+        ]),
         verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
       }),
     ).description(

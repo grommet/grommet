@@ -15,6 +15,17 @@ import {
   TextArea,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { TypedForm } from '../../Form';
+
+interface FormState {
+  name?: string;
+  employeeId?: number;
+  subscribe?: boolean;
+  ampm?: 'morning' | 'afternoon';
+  size?: 'small' | 'medium' | 'large' | 'xlarge';
+  comments?: string;
+  age?: number;
+}
 
 const Example = () => (
   <Grommet full theme={grommet}>
@@ -22,7 +33,7 @@ const Example = () => (
       <Box width="medium">
         <Form
           onReset={event => console.log(event)}
-          //   onSubmit={({ value }) => console.log('Submit', value)}
+          onChange={(value: FormState) => console.log('Submit', value)}
         >
           <FormField
             label="Name"

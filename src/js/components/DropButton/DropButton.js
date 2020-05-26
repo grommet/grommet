@@ -1,20 +1,17 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 
 import { Button } from '../Button';
 import { Drop } from '../Drop';
+import { useForwardedRef } from '../../utils';
+
+const defaultDropAlign = { top: 'top', left: 'left' };
 
 const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
       disabled,
-      dropAlign = { top: 'top', left: 'left' },
+      dropAlign = defaultDropAlign,
       dropProps,
       dropContent,
       dropTarget,
@@ -27,6 +24,7 @@ const DropButton = forwardRef(
     },
     ref,
   ) => {
+    const buttonRef = useForwardedRef(ref);
     const [show, setShow] = useState();
     useEffect(() => {
       if (open !== undefined && open !== show) {
@@ -34,22 +32,21 @@ const DropButton = forwardRef(
       }
     }, [open, show]);
 
-    const buttonRef = useRef();
-
     const onDropClose = useCallback(
       event => {
         // if the user has clicked on our Button, don't do anything here,
         // handle that in onClickInternal() below.
         let node = event.target;
-        while (node !== document && node !== (ref || buttonRef).current) {
+        while (node !== document && node !== buttonRef.current) {
           node = node.parentNode;
         }
-        if (node !== (ref || buttonRef).current) {
-          setShow(false);
+        if (node !== buttonRef.current) {
+          // don't change internal state if caller is driving
+          if (open === undefined) setShow(false);
           if (onClose) onClose(event);
         }
       },
-      [onClose, ref],
+      [buttonRef, onClose, open],
     );
 
     const onClickInternal = useCallback(
@@ -70,18 +67,18 @@ const DropButton = forwardRef(
       <>
         <Button
           id={id}
-          ref={ref || buttonRef}
+          ref={buttonRef}
           a11yTitle={a11yTitle}
           disabled={disabled}
           {...rest}
           onClick={onClickInternal}
         />
-        {show && (ref || buttonRef).current && (
+        {show && buttonRef.current && (
           <Drop
             id={id ? `${id}__drop` : undefined}
             restrictFocus
             align={dropAlign}
-            target={dropTarget || (ref || buttonRef).current}
+            target={dropTarget || buttonRef.current}
             onClickOutside={onDropClose}
             onEsc={onDropClose}
             {...dropProps}

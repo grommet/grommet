@@ -428,9 +428,11 @@ Currently selected value. This can be an array
 string
 element
 object
+number
 [
   string
   object
+  number
 ]
 ```
 
@@ -449,11 +451,17 @@ When the options array contains objects, this property indicates how
       to determine the value of each option. If a string is
       provided, it is used as the key to retrieve each option's value.
       If a function is provided, it is called with the option and the
-      return value indicates the value.
+      return value indicates the value. If reduce is true, the value
+      coming via the key will be used for the onChange value and the value
+      property is expected to be reduced to align.
 
 ```
 string
 function
+{
+  key: string,
+  reduce: boolean
+}
 ```
 
 **emptySearchMessage**
@@ -528,8 +536,8 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control open state of the Select 
-component. Expects `object`.
+Any additional style for the Select DropButton when using the
+    controlled open state. Expects `string | object`.
 
 Defaults to
 
@@ -575,6 +583,16 @@ Defaults to
 
 ```
 <FormDown />
+```
+
+**select.icons.up**
+
+The up icon to use for closing the Select. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **select.searchInput**

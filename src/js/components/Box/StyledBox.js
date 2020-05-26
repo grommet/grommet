@@ -503,7 +503,6 @@ const widthStyle = css`
 const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
-  outline: none;
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
@@ -549,7 +548,7 @@ const StyledBox = styled.div`
     props.onClick &&
     props.focus &&
     props.focusIndicator !== false &&
-    focusStyle}
+    focusStyle()}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 

@@ -19,7 +19,7 @@ Required. Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
       'offset' can be used to shift a bit to reduce the amount of overlap
-      with other connection lines to make the lines easier to distinguish.
+      with other connection lines to make the lines easier to distinguish. Defaults to `[]`.
 
 ```
 [{

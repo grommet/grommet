@@ -17,7 +17,6 @@ exports[`Distribution gap renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -36,7 +35,6 @@ exports[`Distribution gap renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -57,7 +55,6 @@ exports[`Distribution gap renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -78,7 +75,6 @@ exports[`Distribution gap renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -400,7 +396,6 @@ exports[`Distribution values renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -419,7 +414,6 @@ exports[`Distribution values renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -440,7 +434,6 @@ exports[`Distribution values renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -461,7 +454,6 @@ exports[`Distribution values renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -482,7 +474,6 @@ exports[`Distribution values renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -503,7 +494,6 @@ exports[`Distribution values renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -524,7 +514,6 @@ exports[`Distribution values renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;

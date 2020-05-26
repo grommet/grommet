@@ -77,6 +77,20 @@ type Colors = typeof colors & {
   [x: string]: ColorType;
 };
 
+interface ButtonKindType {
+  background?: BackgroundType;
+  border?: {
+    color?: ColorType;
+    width?: string;
+  } | boolean;
+  color?: ColorType;
+  padding?: {
+    vertical?: string;
+    horizontal?: string;
+  };
+  extend?: ExtendType;
+}
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -184,6 +198,14 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      outline?: {
+        color?: ColorType;
+        size?: string;
+      };
+      shadow?: {
+        color?: ColorType;
+        size?: string;
+      };
     };
     font?: {
       face?: string;
@@ -200,8 +222,13 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
-      padding?: string;
-      weight?: number;
+      padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
+      font?: {
+        height?: string;
+        size?: string;
+        weight?: number | string;
+      };
+      weight?: number | string;
     };
     opacity?: {
       strong?: number;
@@ -226,12 +253,19 @@ export interface ThemeType {
     };
   };
   accordion?: {
-    border?: {
-      side?: string;
-      color?: ColorType;
+    panel?: {
+      border?: BorderType;
     };
+    border?: BorderType;
     heading?: {
       level?: string;
+      margin?: MarginType;
+    };
+    hover?: {
+      color?: ColorType; // deprecated
+      heading?: {
+        color?: ColorType; 
+      };
     };
     icons?: {
       collapse?: any;
@@ -274,9 +308,7 @@ export interface ThemeType {
       width?: string;
       radius?: string;
     };
-    disabled?: {
-      opacity?: OpacityType;
-    };
+    color?: ColorType;
     extend?: ExtendType;
     minWidth?: string;
     maxWidth?: string;
@@ -284,8 +316,19 @@ export interface ThemeType {
       vertical?: string;
       horizontal?: string;
     };
-    primary?: {
-      color?: ColorType;
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+    active?: ButtonKindType & {
+      default?: ButtonKindType;
+      primary?: ButtonKindType;
+      secondary?: ButtonKindType;
+    };
+    disabled?: ButtonKindType;
+    hover?: ButtonKindType & {
+      default?: ButtonKindType;
+      primary?: ButtonKindType;
+      secondary?: ButtonKindType;
     };
     size?: {
       small?: {
@@ -523,6 +566,18 @@ export interface ThemeType {
     };
     disabled?: {
       background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      },
+      label?: {
+        color?: ColorType;
+      },
+    };
+    focus?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType
+      },
     };
     error?: {
       background?: BackgroundType;
@@ -728,12 +783,16 @@ export interface ThemeType {
   };
   maskedInput?: {
     extend?: ExtendType;
+    disabled?: {
+      opacity?: OpacityType;
+    };
   };
   menu?: {
     background?: BackgroundType;
     extend?: ExtendType;
     icons?: {
       down?: any;
+      color?: ColorType;
     };
   };
   meter?: {
@@ -818,11 +877,13 @@ export interface ThemeType {
     };
     control?: {
       extend?: ExtendType;
-      open?: boolean;
+      open?: string | object;
     };
     extend?: ExtendType;
     icons?: {
-      down?: any;
+      color?: ColorType;
+      down?: React.ReactNode;
+      up?: React.ReactNode;
       margin?: MarginType;
     };
     options?: {
