@@ -8,7 +8,7 @@ exports[`Sidebar all 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7D4CDB;
+  background-color: #E15151;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -16,7 +16,7 @@ exports[`Sidebar all 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
-  padding: 12px;
+  padding: 4px;
 }
 
 .c2 {
@@ -37,8 +37,8 @@ exports[`Sidebar all 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -80,8 +80,8 @@ exports[`Sidebar all 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -97,20 +97,20 @@ exports[`Sidebar all 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  height: 48px;
+  height: 16px;
 }
 
 .c6 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 14.666666666666666px;
+  line-height: 18.666666666666668px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -118,15 +118,15 @@ exports[`Sidebar all 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    height: 24px;
+    height: 16px;
   }
 }
 
@@ -178,7 +178,7 @@ exports[`Sidebar children 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
-  padding: 12px;
+  padding: 4px;
 }
 
 .c2 {
@@ -216,8 +216,8 @@ exports[`Sidebar children 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -227,8 +227,8 @@ exports[`Sidebar children 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -236,9 +236,9 @@ exports[`Sidebar children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
@@ -274,7 +274,7 @@ exports[`Sidebar footer 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
-  padding: 12px;
+  padding: 4px;
 }
 
 .c2 {
@@ -312,8 +312,8 @@ exports[`Sidebar footer 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -329,12 +329,12 @@ exports[`Sidebar footer 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  height: 48px;
+  height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -342,15 +342,15 @@ exports[`Sidebar footer 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    height: 24px;
+    height: 16px;
   }
 }
 
@@ -387,7 +387,7 @@ exports[`Sidebar header 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
-  padding: 12px;
+  padding: 4px;
 }
 
 .c2 {
@@ -408,8 +408,8 @@ exports[`Sidebar header 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -442,12 +442,12 @@ exports[`Sidebar header 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  height: 48px;
+  height: 16px;
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -455,15 +455,15 @@ exports[`Sidebar header 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    height: 24px;
+    height: 16px;
   }
 }
 
@@ -500,7 +500,7 @@ exports[`Sidebar renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
-  padding: 12px;
+  padding: 4px;
 }
 
 .c2 {
@@ -521,8 +521,8 @@ exports[`Sidebar renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -530,9 +530,9 @@ exports[`Sidebar renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 

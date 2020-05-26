@@ -26,7 +26,6 @@ exports[`Clock hourLimit 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -197,7 +196,6 @@ exports[`Clock run 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -394,7 +392,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledSecond-sc-1qbr2eo-2 bfCRzJ"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 32px 32px;"
+      style="transform: rotate(210deg); transform-origin: 32px 32px;"
       x1="32"
       x2="32"
       y1="32"
@@ -433,7 +431,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledSecond-sc-1qbr2eo-2 bfCRzJ"
       stroke="#000000"
       stroke-linecap="round"
-      style="transform: rotate(204deg); transform-origin: 32px 32px;"
+      style="transform: rotate(198deg); transform-origin: 32px 32px;"
       x1="32"
       x2="32"
       y1="32"
@@ -461,7 +459,7 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <div
-    class="StyledBox-sc-1etxkdl-0 ioqDPF"
+    class="StyledBox-sc-1etxkdl-0 dtxnYq"
   >
     <div
       class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 jPfuWo"
@@ -501,11 +499,42 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 jPfuWo"
     >
-      4
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: gDuLQv 0.5s forwards;
+  animation: gDuLQv 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="up"
+      >
+        4
+      </div>
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: cQwfQi 0.5s forwards;
+  animation: cQwfQi 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="up"
+      >
+        5
+      </div>
     </div>
   </div>
   <div
-    class="StyledBox-sc-1etxkdl-0 ioqDPF"
+    class="StyledBox-sc-1etxkdl-0 dtxnYq"
   >
     <div
       class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 jPfuWo"
@@ -545,7 +574,38 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-sc-1qbr2eo-4 jPfuWo"
     >
-      4
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: buZueW 0.5s forwards;
+  animation: buZueW 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="down"
+      >
+        4
+      </div>
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: ffftsv 0.5s forwards;
+  animation: ffftsv 0.5s forwards;
+}
+
+<div
+        class="c0"
+        direction="down"
+      >
+        3
+      </div>
     </div>
   </div>
 </div>
@@ -577,7 +637,6 @@ exports[`Clock time 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1951,7 +2010,6 @@ exports[`Clock type digital precision hours size large 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2008,7 +2066,6 @@ exports[`Clock type digital precision hours size medium 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2065,7 +2122,6 @@ exports[`Clock type digital precision hours size small 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2122,7 +2178,6 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2179,7 +2234,6 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2236,7 +2290,6 @@ exports[`Clock type digital precision minutes size large 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2311,7 +2364,6 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2386,7 +2438,6 @@ exports[`Clock type digital precision minutes size small 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2461,7 +2512,6 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2536,7 +2586,6 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2611,7 +2660,6 @@ exports[`Clock type digital precision seconds size large 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2704,7 +2752,6 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2797,7 +2844,6 @@ exports[`Clock type digital precision seconds size small 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2890,7 +2936,6 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2983,7 +3028,6 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;

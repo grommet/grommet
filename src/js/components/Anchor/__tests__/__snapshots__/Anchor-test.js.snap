@@ -20,7 +20,6 @@ exports[`Anchor disabled renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
   opacity: 0.3;
   cursor: default;
   -webkit-text-decoration: none;
@@ -60,8 +59,7 @@ exports[`Anchor focus renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  outline-color: #B1C2FE;
-  border-color: #B1C2FE;
+  box-shadow: 0 0 2px 2px #B1C2FE;
 }
 
 .c1:hover {
@@ -76,7 +74,8 @@ exports[`Anchor focus renders 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #B1C2FE solid 1px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #B1C2FE;
 }
 
 .c1::-moz-focus-inner {
@@ -112,7 +111,6 @@ exports[`Anchor icon label renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -129,6 +127,9 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -141,7 +142,6 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {
@@ -198,7 +198,6 @@ exports[`Anchor primary renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {
@@ -240,7 +239,6 @@ exports[`Anchor renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {
@@ -279,7 +277,6 @@ exports[`Anchor renders tag 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {
@@ -321,7 +318,6 @@ exports[`Anchor renders with children 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {
@@ -360,7 +356,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -377,6 +372,9 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -389,7 +387,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {
@@ -446,7 +443,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
   padding: 4px;
 }
 
@@ -491,7 +487,6 @@ exports[`Anchor warns about invalid label render 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c1:hover {

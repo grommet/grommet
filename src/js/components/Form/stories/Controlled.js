@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   CheckBox,
-  MnetUIBase,
   Form,
   FormField,
   MaskedInput,
@@ -15,7 +14,6 @@ import {
   TextArea,
   TextInput,
 } from 'mnet-ui-base';
-import { grommet } from 'mnet-ui-base/themes';
 
 const defaultValue = {
   name: '',
@@ -30,7 +28,7 @@ const defaultValue = {
 const Example = () => {
   const [value, setValue] = React.useState(defaultValue);
   return (
-    <MnetUIBase full theme={mnet}>
+    <>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
@@ -82,7 +80,7 @@ const Example = () => {
           </Form>
         </Box>
       </Box>
-    </MnetUIBase>
+    </>
   );
 };
 

@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, CheckBoxGroup, Form, FormField, MnetUIBase } from 'mnet-ui-base';
+import {
+  Box,
+  Button,
+  CheckBoxGroup,
+  Form,
+  FormField,
+  MnetUIBase,
+} from 'mnet-ui-base';
 import { mnet } from 'mnet-ui-base/themes';
 
 const CheckBoxGroupForm = () => {

@@ -7,7 +7,6 @@ exports[`Menu basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -29,6 +28,9 @@ exports[`Menu basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -36,7 +38,6 @@ exports[`Menu basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -45,6 +46,7 @@ exports[`Menu basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -144,7 +146,6 @@ exports[`Menu close by clicking outside 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -166,6 +167,9 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -173,7 +177,6 @@ exports[`Menu close by clicking outside 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -182,6 +185,7 @@ exports[`Menu close by clicking outside 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -286,7 +290,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -310,7 +313,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -327,7 +329,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -342,7 +343,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -360,7 +360,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -376,7 +375,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -394,6 +392,9 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -401,7 +402,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -410,6 +410,7 @@ exports[`Menu close by clicking outside 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -437,7 +438,7 @@ exports[`Menu close by clicking outside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -567,7 +568,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width:512px) {
-  .fGYPgn {
+  .eIhNPA {
     padding: 4px;
   }
 }"
@@ -614,7 +615,6 @@ exports[`Menu close on esc 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -636,6 +636,9 @@ exports[`Menu close on esc 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -643,7 +646,6 @@ exports[`Menu close on esc 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -652,6 +654,7 @@ exports[`Menu close on esc 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -756,7 +759,6 @@ exports[`Menu close on tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -778,6 +780,9 @@ exports[`Menu close on tab 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -785,7 +790,6 @@ exports[`Menu close on tab 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -794,6 +798,7 @@ exports[`Menu close on tab 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -898,7 +903,6 @@ exports[`Menu custom a11yTitle 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -920,6 +924,9 @@ exports[`Menu custom a11yTitle 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -927,7 +934,6 @@ exports[`Menu custom a11yTitle 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -936,6 +942,7 @@ exports[`Menu custom a11yTitle 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1041,7 +1048,6 @@ exports[`Menu custom message 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1063,6 +1069,9 @@ exports[`Menu custom message 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -1070,7 +1079,6 @@ exports[`Menu custom message 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1079,6 +1087,7 @@ exports[`Menu custom message 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1110,6 +1119,155 @@ exports[`Menu custom message 1`] = `
 >
   <button
     aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c2"
+    >
+      <span
+        className="c3"
+      >
+        Test Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom theme icon color 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #F08080;
+  stroke: #F08080;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 4px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 4px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    padding: 4px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label="Open Menu"
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1188,7 +1346,6 @@ exports[`Menu disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1210,6 +1367,9 @@ exports[`Menu disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -1217,7 +1377,6 @@ exports[`Menu disabled 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1226,6 +1385,7 @@ exports[`Menu disabled 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1333,7 +1493,6 @@ exports[`Menu gap between icon and label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1355,6 +1514,9 @@ exports[`Menu gap between icon and label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -1362,7 +1524,6 @@ exports[`Menu gap between icon and label 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1371,6 +1532,7 @@ exports[`Menu gap between icon and label 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1488,7 +1650,6 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1512,7 +1673,6 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1536,7 +1696,6 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1560,7 +1719,6 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1584,7 +1742,6 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1608,7 +1765,6 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1626,6 +1782,9 @@ exports[`Menu justify content 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -1633,7 +1792,6 @@ exports[`Menu justify content 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1642,6 +1800,7 @@ exports[`Menu justify content 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1961,7 +2120,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1983,6 +2141,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -1990,7 +2151,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1999,6 +2159,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2103,7 +2264,6 @@ exports[`Menu open and close on click 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2125,6 +2285,9 @@ exports[`Menu open and close on click 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -2132,7 +2295,6 @@ exports[`Menu open and close on click 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2141,6 +2303,7 @@ exports[`Menu open and close on click 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2210,12 +2373,12 @@ exports[`Menu open and close on click 2`] = `
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-1hmw3c5-0 dHOWqg"
+    class="StyledButton-sc-1hmw3c5-0 iOsBTY"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-1etxkdl-0 fGYPgn"
+      class="StyledBox-sc-1etxkdl-0 eIhNPA"
     >
       <span
         class="StyledText-sc-3e83s1-0 LsCqY"
@@ -2223,7 +2386,7 @@ exports[`Menu open and close on click 2`] = `
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-1etxkdl-1 dPvxPQ"
+        class="StyledBox__StyledBoxGap-sc-1etxkdl-1 gCDlGS"
       />
       <svg
         aria-label="FormDown"
@@ -2283,7 +2446,6 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2307,7 +2469,6 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2324,7 +2485,6 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2339,7 +2499,6 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2357,7 +2516,6 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -2373,7 +2531,6 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -2391,6 +2548,9 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -2398,7 +2558,6 @@ exports[`Menu open and close on click 3`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2407,6 +2566,7 @@ exports[`Menu open and close on click 3`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2434,7 +2594,7 @@ exports[`Menu open and close on click 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2578,7 +2738,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:512px) {
-  .fGYPgn {
+  .eIhNPA {
     padding: 4px;
   }
 }"
@@ -2625,7 +2785,6 @@ exports[`Menu reverse icon and label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2647,6 +2806,9 @@ exports[`Menu reverse icon and label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -2654,7 +2816,6 @@ exports[`Menu reverse icon and label 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2663,6 +2824,7 @@ exports[`Menu reverse icon and label 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2780,7 +2942,6 @@ exports[`Menu select an item 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2802,6 +2963,9 @@ exports[`Menu select an item 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -2809,7 +2973,6 @@ exports[`Menu select an item 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2818,6 +2981,7 @@ exports[`Menu select an item 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2922,7 +3086,6 @@ exports[`Menu tab through menu until it closes 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2944,6 +3107,9 @@ exports[`Menu tab through menu until it closes 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -2951,7 +3117,6 @@ exports[`Menu tab through menu until it closes 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2960,6 +3125,7 @@ exports[`Menu tab through menu until it closes 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3064,7 +3230,6 @@ exports[`Menu with dropAlign renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3086,6 +3251,9 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -3093,7 +3261,6 @@ exports[`Menu with dropAlign renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3102,6 +3269,7 @@ exports[`Menu with dropAlign renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3206,7 +3374,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3230,7 +3397,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3247,7 +3413,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3262,7 +3427,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3280,7 +3444,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -3296,7 +3459,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -3314,6 +3476,9 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -3321,7 +3486,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3330,6 +3494,7 @@ exports[`Menu with dropAlign renders 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3357,7 +3522,7 @@ exports[`Menu with dropAlign renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
@@ -3487,7 +3652,7 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:512px) {
-  .fGYPgn {
+  .eIhNPA {
     padding: 4px;
   }
 }"

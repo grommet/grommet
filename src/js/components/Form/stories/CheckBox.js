@@ -8,7 +8,6 @@ import {
   CheckBoxGroup,
   Form,
   FormField,
-  MnetUIBase,
 } from 'mnet-ui-base';
 
 const FormFieldCheckBox = props => (

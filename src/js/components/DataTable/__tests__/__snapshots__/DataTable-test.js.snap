@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataTable aggregate 1`] = `
+exports[`DataTable !primaryKey 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -9,25 +9,6 @@ exports[`DataTable aggregate 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c4 {
@@ -44,27 +25,13 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   text-align: start;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.c9 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  border-top: solid 1px #cdd3e3;
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 2px;
@@ -86,16 +53,14 @@ exports[`DataTable aggregate 1`] = `
   line-height: 16px;
 }
 
-.c7 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
-}
-
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -139,23 +104,223 @@ exports[`DataTable aggregate 1`] = `
       </tr>
     </thead>
     <tbody
+      class="c6"
+    >
+      <tr
+        class="c3 "
+      >
+        <td
+          class="c7"
+        >
+          <span
+            class="c5"
+          >
+            one
+          </span>
+        </td>
+        <td
+          class="c7"
+        >
+          <span
+            class="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <td
+          class="c7"
+        >
+          <span
+            class="c5"
+          >
+            two
+          </span>
+        </td>
+        <td
+          class="c7"
+        >
+          <span
+            class="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable absoluteColumnSizes 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 400px;
+  max-width: 400px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 200px;
+  max-width: 200px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 400px;
+  max-width: 400px;
+  overflow: hidden;
+  text-align: start;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 200px;
+  max-width: 200px;
+  overflow: hidden;
+  text-align: start;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
+}
+
+.c7:focus {
+  outline: 2px solid #B1C2FE;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
       class=""
     >
       <tr
         class="c3 "
       >
         <th
+          class="c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
           class="c6"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c7"
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
           scope="row"
         >
           <span
-            class="c7"
+            class="c9"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c10"
         >
           <span
             class="c5"
@@ -168,17 +333,17 @@ exports[`DataTable aggregate 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c8"
           scope="row"
         >
           <span
-            class="c7"
+            class="c9"
           >
             two
           </span>
         </th>
         <td
-          class="c6"
+          class="c10"
         >
           <span
             class="c5"
@@ -187,15 +352,181 @@ exports[`DataTable aggregate 1`] = `
           </span>
         </td>
       </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable aggregate 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-top: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
       <tr
-        class="c3"
+        class="c3 "
       >
-        <td
-          class="c6"
+        <th
+          class="c4"
+          scope="col"
         >
-          <div
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c6"
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c7"
+          scope="row"
+        >
+          <span
             class="c8"
-          />
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="c7"
+        >
+          <span
+            class="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c7"
+          scope="row"
+        >
+          <span
+            class="c8"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c7"
+        >
+          <span
+            class="c5"
+          >
+            2
+          </span>
         </td>
       </tr>
     </tbody>
@@ -234,25 +565,6 @@ exports[`DataTable background 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -260,7 +572,7 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #20314f;
+  background-color: #20314f;
   color: #f8f8f8;
   border-bottom: solid 1px #cdd3e3;
   padding-left: 4px;
@@ -269,14 +581,14 @@ exports[`DataTable background 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #20314f;
+  background-color: #20314f;
   color: #f8f8f8;
   padding-left: 4px;
   padding-right: 4px;
@@ -284,13 +596,16 @@ exports[`DataTable background 1`] = `
   padding-bottom: 2px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   text-align: start;
+  background-color: #20314f;
+  color: #f8f8f8;
+  border-top: solid 1px #cdd3e3;
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 2px;
@@ -304,9 +619,7 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #20314f;
-  color: #f8f8f8;
-  border-top: solid 1px #cdd3e3;
+  border-bottom: solid 1px #cdd3e3;
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 2px;
@@ -320,7 +633,8 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-bottom: solid 1px #cdd3e3;
+  background-color: #519bff;
+  color: #444444;
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 2px;
@@ -334,8 +648,7 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #519bff;
-  color: #444444;
+  border-top: solid 1px #cdd3e3;
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 2px;
@@ -349,21 +662,7 @@ exports[`DataTable background 1`] = `
   text-align: inherit;
   height: 100%;
   text-align: start;
-  border-top: solid 1px #cdd3e3;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.c14 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  background: #4DFFEA;
+  background-color: #4DFFEA;
   color: #444444;
   border-top: solid 1px #cdd3e3;
   padding-left: 4px;
@@ -387,7 +686,7 @@ exports[`DataTable background 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -397,6 +696,10 @@ exports[`DataTable background 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -440,23 +743,23 @@ exports[`DataTable background 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -469,34 +772,23 @@ exports[`DataTable background 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c9"
-          />
         </td>
       </tr>
     </tbody>
@@ -507,16 +799,16 @@ exports[`DataTable background 1`] = `
         class="c3"
       >
         <td
-          class="c10"
+          class="c9"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
         </td>
         <td
-          class="c10"
+          class="c9"
         />
       </tr>
     </tfoot>
@@ -531,7 +823,7 @@ exports[`DataTable background 1`] = `
         class="c3 "
       >
         <th
-          class="c11"
+          class="c10"
           scope="col"
         >
           <span
@@ -541,7 +833,7 @@ exports[`DataTable background 1`] = `
           </span>
         </th>
         <th
-          class="c11"
+          class="c10"
           scope="col"
         >
           <span
@@ -553,23 +845,23 @@ exports[`DataTable background 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -582,34 +874,23 @@ exports[`DataTable background 1`] = `
         class="c3 "
       >
         <th
-          class="c12"
+          class="c11"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c12"
+          class="c11"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c9"
-          />
         </td>
       </tr>
     </tbody>
@@ -620,16 +901,16 @@ exports[`DataTable background 1`] = `
         class="c3"
       >
         <td
-          class="c13"
+          class="c12"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
         </td>
         <td
-          class="c13"
+          class="c12"
         />
       </tr>
     </tfoot>
@@ -666,23 +947,23 @@ exports[`DataTable background 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c12"
+          class="c11"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c12"
+          class="c11"
         >
           <span
             class="c5"
@@ -695,34 +976,23 @@ exports[`DataTable background 1`] = `
         class="c3 "
       >
         <th
-          class="c12"
+          class="c11"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c12"
+          class="c11"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c9"
-          />
         </td>
       </tr>
     </tbody>
@@ -733,16 +1003,16 @@ exports[`DataTable background 1`] = `
         class="c3"
       >
         <td
-          class="c14"
+          class="c13"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
         </td>
         <td
-          class="c14"
+          class="c13"
         />
       </tr>
     </tfoot>
@@ -761,25 +1031,6 @@ exports[`DataTable basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -794,7 +1045,7 @@ exports[`DataTable basic 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -822,7 +1073,7 @@ exports[`DataTable basic 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -832,6 +1083,10 @@ exports[`DataTable basic 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -875,23 +1130,23 @@ exports[`DataTable basic 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -904,34 +1159,23 @@ exports[`DataTable basic 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c6"
-        >
-          <div
-            class="c8"
-          />
         </td>
       </tr>
     </tbody>
@@ -950,25 +1194,6 @@ exports[`DataTable border 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -983,20 +1208,7 @@ exports[`DataTable border 1`] = `
   padding-bottom: 2px;
 }
 
-.c7 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1010,7 +1222,7 @@ exports[`DataTable border 1`] = `
   padding-bottom: 2px;
 }
 
-.c10 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1039,7 +1251,7 @@ exports[`DataTable border 1`] = `
   line-height: 16px;
 }
 
-.c6 {
+.c7 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -1049,6 +1261,10 @@ exports[`DataTable border 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -1092,7 +1308,7 @@ exports[`DataTable border 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
@@ -1102,7 +1318,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <span
-            class="c6"
+            class="c7"
           >
             one
           </span>
@@ -1125,7 +1341,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <span
-            class="c6"
+            class="c7"
           >
             two
           </span>
@@ -1140,17 +1356,6 @@ exports[`DataTable border 1`] = `
           </span>
         </td>
       </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c7"
-        >
-          <div
-            class="c8"
-          />
-        </td>
-      </tr>
     </tbody>
     <tfoot
       class=""
@@ -1162,13 +1367,115 @@ exports[`DataTable border 1`] = `
           class="c4"
         >
           <span
-            class="c6"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
           class="c4"
+        />
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c8"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c6"
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="row"
+        >
+          <span
+            class="c7"
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="c8"
+        >
+          <span
+            class="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="row"
+        >
+          <span
+            class="c7"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c8"
+        >
+          <span
+            class="c5"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class="c3"
+      >
+        <td
+          class="c8"
+        >
+          <span
+            class="c7"
+          >
+            Total
+          </span>
+        </td>
+        <td
+          class="c8"
         />
       </tr>
     </tfoot>
@@ -1205,7 +1512,7 @@ exports[`DataTable border 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
@@ -1215,7 +1522,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <span
-            class="c6"
+            class="c7"
           >
             one
           </span>
@@ -1238,7 +1545,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <span
-            class="c6"
+            class="c7"
           >
             two
           </span>
@@ -1253,17 +1560,6 @@ exports[`DataTable border 1`] = `
           </span>
         </td>
       </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c7"
-        >
-          <div
-            class="c8"
-          />
-        </td>
-      </tr>
     </tbody>
     <tfoot
       class=""
@@ -1275,7 +1571,7 @@ exports[`DataTable border 1`] = `
           class="c9"
         >
           <span
-            class="c6"
+            class="c7"
           >
             Total
           </span>
@@ -1296,7 +1592,7 @@ exports[`DataTable border 1`] = `
         class="c3 "
       >
         <th
-          class="c10"
+          class="c8"
           scope="col"
         >
           <span
@@ -1306,7 +1602,7 @@ exports[`DataTable border 1`] = `
           </span>
         </th>
         <th
-          class="c10"
+          class="c8"
           scope="col"
         >
           <span
@@ -1318,23 +1614,23 @@ exports[`DataTable border 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c10"
+          class="c9"
           scope="row"
         >
           <span
-            class="c6"
+            class="c7"
           >
             one
           </span>
         </th>
         <td
-          class="c10"
+          class="c9"
         >
           <span
             class="c5"
@@ -1347,34 +1643,23 @@ exports[`DataTable border 1`] = `
         class="c3 "
       >
         <th
-          class="c10"
+          class="c9"
           scope="row"
         >
           <span
-            class="c6"
+            class="c7"
           >
             two
           </span>
         </th>
         <td
-          class="c10"
+          class="c9"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c7"
-        >
-          <div
-            class="c8"
-          />
         </td>
       </tr>
     </tbody>
@@ -1385,129 +1670,16 @@ exports[`DataTable border 1`] = `
         class="c3"
       >
         <td
-          class="c10"
+          class="c8"
         >
           <span
-            class="c6"
+            class="c7"
           >
             Total
           </span>
         </td>
         <td
-          class="c10"
-        />
-      </tr>
-    </tfoot>
-  </table>
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class="c3 "
-      >
-        <th
-          class="c9"
-          scope="col"
-        >
-          <span
-            class="c5"
-          >
-            A
-          </span>
-        </th>
-        <th
-          class="c9"
-          scope="col"
-        >
-          <span
-            class="c5"
-          >
-            B
-          </span>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class=""
-    >
-      <tr
-        class="c3 "
-      >
-        <th
-          class="c10"
-          scope="row"
-        >
-          <span
-            class="c6"
-          >
-            one
-          </span>
-        </th>
-        <td
-          class="c10"
-        >
-          <span
-            class="c5"
-          >
-            1
-          </span>
-        </td>
-      </tr>
-      <tr
-        class="c3 "
-      >
-        <th
-          class="c10"
-          scope="row"
-        >
-          <span
-            class="c6"
-          >
-            two
-          </span>
-        </th>
-        <td
-          class="c10"
-        >
-          <span
-            class="c5"
-          >
-            2
-          </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c7"
-        >
-          <div
-            class="c8"
-          />
-        </td>
-      </tr>
-    </tbody>
-    <tfoot
-      class=""
-    >
-      <tr
-        class="c3"
-      >
-        <td
-          class="c9"
-        >
-          <span
-            class="c6"
-          >
-            Total
-          </span>
-        </td>
-        <td
-          class="c9"
+          class="c8"
         />
       </tr>
     </tfoot>
@@ -1526,25 +1698,6 @@ exports[`DataTable click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -1559,7 +1712,7 @@ exports[`DataTable click 1`] = `
   padding-bottom: 2px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1587,7 +1740,7 @@ exports[`DataTable click 1`] = `
   line-height: 16px;
 }
 
-.c8 {
+.c9 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -1599,8 +1752,12 @@ exports[`DataTable click 1`] = `
   height: auto;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -1634,47 +1791,36 @@ exports[`DataTable click 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
       tabindex="0"
     >
       <tr
-        class="c3 c6"
+        class="c3 c7"
       >
         <th
-          class="c7"
+          class="c8"
           scope="row"
         >
           <span
-            class="c8"
+            class="c9"
           >
             alpha
           </span>
         </th>
       </tr>
       <tr
-        class="c3 c6"
+        class="c3 c7"
       >
         <th
-          class="c7"
+          class="c8"
           scope="row"
         >
           <span
-            class="c8"
+            class="c9"
           >
             beta
           </span>
         </th>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c7"
-        >
-          <div
-            class="c9"
-          />
-        </td>
       </tr>
     </tbody>
   </table>
@@ -1707,7 +1853,7 @@ exports[`DataTable click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 vqVdb"
+      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 hekfUZ"
       tabindex="0"
     >
       <tr
@@ -1737,17 +1883,6 @@ exports[`DataTable click 2`] = `
             beta
           </span>
         </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
-        >
-          <div
-            class="StyledBox-sc-1etxkdl-0 jDEkXS"
-          />
-        </td>
       </tr>
     </tbody>
   </table>
@@ -1781,6 +1916,10 @@ exports[`DataTable empty 1`] = `
   height: auto;
 }
 
+.c4:focus {
+  outline: 2px solid #B1C2FE;
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -1801,7 +1940,7 @@ exports[`DataTable empty 1`] = `
       />
     </thead>
     <tbody
-      class=""
+      class="c4"
     />
   </table>
 </div>
@@ -1818,25 +1957,6 @@ exports[`DataTable footer 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -1851,7 +1971,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1893,7 +2013,7 @@ exports[`DataTable footer 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -1903,6 +2023,10 @@ exports[`DataTable footer 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -1946,23 +2070,23 @@ exports[`DataTable footer 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -1975,34 +2099,23 @@ exports[`DataTable footer 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c6"
-        >
-          <div
-            class="c8"
-          />
         </td>
       </tr>
     </tbody>
@@ -2016,7 +2129,7 @@ exports[`DataTable footer 1`] = `
           class="c9"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
@@ -2081,7 +2194,6 @@ exports[`DataTable groupBy 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2099,7 +2211,6 @@ exports[`DataTable groupBy 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2108,6 +2219,7 @@ exports[`DataTable groupBy 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2153,7 +2265,7 @@ exports[`DataTable groupBy 1`] = `
   padding-bottom: 2px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2167,7 +2279,7 @@ exports[`DataTable groupBy 1`] = `
   padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2199,6 +2311,10 @@ exports[`DataTable groupBy 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c10:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media only screen and (max-width:512px) {
@@ -2274,13 +2390,13 @@ exports[`DataTable groupBy 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c10"
     >
       <tr
         class="c3 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -2306,7 +2422,7 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
           <span
@@ -2316,14 +2432,14 @@ exports[`DataTable groupBy 1`] = `
           </span>
         </th>
         <td
-          class="c11"
+          class="c12"
         />
       </tr>
       <tr
         class="c3 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -2349,7 +2465,7 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
           <span
@@ -2359,7 +2475,7 @@ exports[`DataTable groupBy 1`] = `
           </span>
         </th>
         <td
-          class="c11"
+          class="c12"
         />
       </tr>
     </tbody>
@@ -2385,11 +2501,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-1hmw3c5-0 hklpsb"
+            class="StyledButton-sc-1hmw3c5-0 ghLghn"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kDDsWy"
+              class="StyledBox-sc-1etxkdl-0 jlIltN"
             >
               <svg
                 aria-label="FormDown"
@@ -2429,7 +2545,7 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 vqVdb"
+      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 hekfUZ"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
@@ -2439,11 +2555,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-1hmw3c5-0 hklpsb"
+            class="StyledButton-sc-1hmw3c5-0 ghLghn"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kDDsWy"
+              class="StyledBox-sc-1etxkdl-0 jlIltN"
             >
               <svg
                 aria-label="FormDown"
@@ -2482,11 +2598,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-1hmw3c5-0 hklpsb"
+            class="StyledButton-sc-1hmw3c5-0 ghLghn"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kDDsWy"
+              class="StyledBox-sc-1etxkdl-0 jlIltN"
             >
               <svg
                 aria-label="FormDown"
@@ -2573,7 +2689,6 @@ exports[`DataTable groupBy expand 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2591,7 +2706,6 @@ exports[`DataTable groupBy expand 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2600,6 +2714,7 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2645,7 +2760,7 @@ exports[`DataTable groupBy expand 1`] = `
   padding-bottom: 2px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2659,7 +2774,7 @@ exports[`DataTable groupBy expand 1`] = `
   padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2672,7 +2787,7 @@ exports[`DataTable groupBy expand 1`] = `
   padding-bottom: 2px;
 }
 
-.c12 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2705,6 +2820,10 @@ exports[`DataTable groupBy expand 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c10:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media only screen and (max-width:512px) {
@@ -2780,13 +2899,13 @@ exports[`DataTable groupBy expand 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c10"
     >
       <tr
         class="c3 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <button
             aria-label="collapse"
@@ -2813,7 +2932,7 @@ exports[`DataTable groupBy expand 1`] = `
           </button>
         </td>
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
           <span
@@ -2823,21 +2942,21 @@ exports[`DataTable groupBy expand 1`] = `
           </span>
         </th>
         <td
-          class="c11"
+          class="c12"
         />
       </tr>
       <tr
         class="c3 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <div
             class="c6"
           />
         </td>
         <td
-          class="c11"
+          class="c12"
         >
           <span
             class="c9"
@@ -2846,7 +2965,7 @@ exports[`DataTable groupBy expand 1`] = `
           </span>
         </td>
         <td
-          class="c11"
+          class="c12"
         >
           <span
             class="c9"
@@ -2859,14 +2978,14 @@ exports[`DataTable groupBy expand 1`] = `
         class="c3 "
       >
         <td
-          class="c12"
+          class="c13"
         >
           <div
             class="c6"
           />
         </td>
         <td
-          class="c11"
+          class="c12"
         >
           <span
             class="c9"
@@ -2875,7 +2994,7 @@ exports[`DataTable groupBy expand 1`] = `
           </span>
         </td>
         <td
-          class="c11"
+          class="c12"
         >
           <span
             class="c9"
@@ -2888,7 +3007,7 @@ exports[`DataTable groupBy expand 1`] = `
         class="c3 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -2914,7 +3033,7 @@ exports[`DataTable groupBy expand 1`] = `
           </button>
         </td>
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
           <span
@@ -2924,7 +3043,7 @@ exports[`DataTable groupBy expand 1`] = `
           </span>
         </th>
         <td
-          class="c11"
+          class="c12"
         />
       </tr>
     </tbody>
@@ -2989,7 +3108,6 @@ exports[`DataTable groupBy property 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3007,7 +3125,6 @@ exports[`DataTable groupBy property 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3016,6 +3133,7 @@ exports[`DataTable groupBy property 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3061,7 +3179,7 @@ exports[`DataTable groupBy property 1`] = `
   padding-bottom: 2px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3075,7 +3193,7 @@ exports[`DataTable groupBy property 1`] = `
   padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3107,6 +3225,10 @@ exports[`DataTable groupBy property 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c10:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media only screen and (max-width:512px) {
@@ -3182,13 +3304,13 @@ exports[`DataTable groupBy property 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c10"
     >
       <tr
         class="c3 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -3214,7 +3336,7 @@ exports[`DataTable groupBy property 1`] = `
           </button>
         </td>
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
           <span
@@ -3224,14 +3346,14 @@ exports[`DataTable groupBy property 1`] = `
           </span>
         </th>
         <td
-          class="c11"
+          class="c12"
         />
       </tr>
       <tr
         class="c3 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -3257,7 +3379,7 @@ exports[`DataTable groupBy property 1`] = `
           </button>
         </td>
         <th
-          class="c11"
+          class="c12"
           scope="row"
         >
           <span
@@ -3267,7 +3389,7 @@ exports[`DataTable groupBy property 1`] = `
           </span>
         </th>
         <td
-          class="c11"
+          class="c12"
         />
       </tr>
     </tbody>
@@ -3293,11 +3415,11 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-1hmw3c5-0 hklpsb"
+            class="StyledButton-sc-1hmw3c5-0 ghLghn"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kDDsWy"
+              class="StyledBox-sc-1etxkdl-0 jlIltN"
             >
               <svg
                 aria-label="FormDown"
@@ -3337,7 +3459,7 @@ exports[`DataTable groupBy property 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 vqVdb"
+      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 hekfUZ"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
@@ -3347,11 +3469,11 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-1hmw3c5-0 hklpsb"
+            class="StyledButton-sc-1hmw3c5-0 ghLghn"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kDDsWy"
+              class="StyledBox-sc-1etxkdl-0 jlIltN"
             >
               <svg
                 aria-label="FormDown"
@@ -3390,11 +3512,11 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-1hmw3c5-0 hklpsb"
+            class="StyledButton-sc-1hmw3c5-0 ghLghn"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kDDsWy"
+              class="StyledBox-sc-1etxkdl-0 jlIltN"
             >
               <svg
                 aria-label="FormDown"
@@ -3430,7 +3552,7 @@ exports[`DataTable groupBy property 2`] = `
 </div>
 `;
 
-exports[`DataTable pad 1`] = `
+exports[`DataTable onSort 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -3441,23 +3563,443 @@ exports[`DataTable pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c9 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  text-align: start;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c7 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c10 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
+}
+
+.c8:focus {
+  outline: 2px solid #B1C2FE;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c4"
+          scope="col"
+        >
+          <button
+            class="c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <span
+                class="c7"
+              >
+                A
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          class="c4"
+          scope="col"
+        >
+          <button
+            class="c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <span
+                class="c7"
+              >
+                B
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c8"
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c9"
+          scope="row"
+        >
+          <span
+            class="c10"
+          >
+            zero
+          </span>
+        </th>
+        <td
+          class="c9"
+        >
+          <span
+            class="c7"
+          >
+            0
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c9"
+          scope="row"
+        >
+          <span
+            class="c10"
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="c9"
+        >
+          <span
+            class="c7"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c9"
+          scope="row"
+        >
+          <span
+            class="c10"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c9"
+        >
+          <span
+            class="c7"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable onSort 2`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <table
+    class="StyledTable-sc-1iut3o1-6 csqoZy StyledDataTable-ng31qc-0 dPZPXz"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1iut3o1-4 flCdjZ StyledDataTable__StyledDataTableHeader-ng31qc-3 bBiKEO"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 gptwMy"
+          scope="col"
+        >
+          <button
+            class="StyledButton-sc-1hmw3c5-0 cDdMe"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-1etxkdl-0 dimfvq"
+            >
+              <span
+                class="StyledText-sc-3e83s1-0 LsCqY"
+              >
+                A
+              </span>
+              .c0 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 2px;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<div
+                class="c0"
+              />
+              .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                aria-label="FormUp"
+                class="c0"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(1 0 0 -1 0 24)"
+                />
+              </svg>
+            </div>
+          </button>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 gptwMy"
+          scope="col"
+        >
+          <button
+            class="StyledButton-sc-1hmw3c5-0 cDdMe"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-1etxkdl-0 dimfvq"
+            >
+              <span
+                class="StyledText-sc-3e83s1-0 LsCqY"
+              >
+                B
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 hekfUZ"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+          scope="row"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 clKHyy"
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 LsCqY"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+          scope="row"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 clKHyy"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 LsCqY"
+          >
+            2
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+          scope="row"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 clKHyy"
+          >
+            zero
+          </span>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 LsCqY"
+          >
+            0
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable pad 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c4 {
@@ -3471,7 +4013,7 @@ exports[`DataTable pad 1`] = `
   padding: 4px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3481,20 +4023,7 @@ exports[`DataTable pad 1`] = `
   padding: 4px;
 }
 
-.c8 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.c10 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3505,7 +4034,7 @@ exports[`DataTable pad 1`] = `
   padding: 4px;
 }
 
-.c11 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3519,7 +4048,7 @@ exports[`DataTable pad 1`] = `
   padding-bottom: 4px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3532,7 +4061,7 @@ exports[`DataTable pad 1`] = `
   padding-bottom: 4px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3546,7 +4075,7 @@ exports[`DataTable pad 1`] = `
   padding-bottom: 4px;
 }
 
-.c14 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3575,7 +4104,7 @@ exports[`DataTable pad 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -3585,6 +4114,10 @@ exports[`DataTable pad 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -3628,23 +4161,23 @@ exports[`DataTable pad 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -3657,34 +4190,23 @@ exports[`DataTable pad 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c9"
-          />
         </td>
       </tr>
     </tbody>
@@ -3695,16 +4217,16 @@ exports[`DataTable pad 1`] = `
         class="c3"
       >
         <td
-          class="c10"
+          class="c9"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
         </td>
         <td
-          class="c10"
+          class="c9"
         />
       </tr>
     </tfoot>
@@ -3719,7 +4241,7 @@ exports[`DataTable pad 1`] = `
         class="c3 "
       >
         <th
-          class="c11"
+          class="c10"
           scope="col"
         >
           <span
@@ -3729,7 +4251,7 @@ exports[`DataTable pad 1`] = `
           </span>
         </th>
         <th
-          class="c11"
+          class="c10"
           scope="col"
         >
           <span
@@ -3741,23 +4263,23 @@ exports[`DataTable pad 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c12"
+          class="c11"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c12"
+          class="c11"
         >
           <span
             class="c5"
@@ -3770,34 +4292,23 @@ exports[`DataTable pad 1`] = `
         class="c3 "
       >
         <th
-          class="c12"
+          class="c11"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c12"
+          class="c11"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c9"
-          />
         </td>
       </tr>
     </tbody>
@@ -3808,16 +4319,16 @@ exports[`DataTable pad 1`] = `
         class="c3"
       >
         <td
-          class="c13"
+          class="c12"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
         </td>
         <td
-          class="c13"
+          class="c12"
         />
       </tr>
     </tfoot>
@@ -3854,23 +4365,23 @@ exports[`DataTable pad 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c12"
+          class="c11"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c12"
+          class="c11"
         >
           <span
             class="c5"
@@ -3883,34 +4394,23 @@ exports[`DataTable pad 1`] = `
         class="c3 "
       >
         <th
-          class="c12"
+          class="c11"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c12"
+          class="c11"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c9"
-          />
         </td>
       </tr>
     </tbody>
@@ -3921,16 +4421,16 @@ exports[`DataTable pad 1`] = `
         class="c3"
       >
         <td
-          class="c14"
+          class="c13"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
         </td>
         <td
-          class="c14"
+          class="c13"
         />
       </tr>
     </tfoot>
@@ -3949,25 +4449,6 @@ exports[`DataTable paths 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -3982,7 +4463,7 @@ exports[`DataTable paths 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4010,7 +4491,7 @@ exports[`DataTable paths 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -4020,6 +4501,10 @@ exports[`DataTable paths 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4063,23 +4548,23 @@ exports[`DataTable paths 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -4092,34 +4577,23 @@ exports[`DataTable paths 1`] = `
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c6"
-        >
-          <div
-            class="c8"
-          />
         </td>
       </tr>
     </tbody>
@@ -4138,25 +4612,6 @@ exports[`DataTable primaryKey 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -4171,7 +4626,7 @@ exports[`DataTable primaryKey 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4199,7 +4654,7 @@ exports[`DataTable primaryKey 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -4209,6 +4664,10 @@ exports[`DataTable primaryKey 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4252,13 +4711,13 @@ exports[`DataTable primaryKey 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -4267,11 +4726,11 @@ exports[`DataTable primaryKey 1`] = `
           </span>
         </td>
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             1
           </span>
@@ -4281,7 +4740,7 @@ exports[`DataTable primaryKey 1`] = `
         class="c3 "
       >
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -4290,25 +4749,216 @@ exports[`DataTable primaryKey 1`] = `
           </span>
         </td>
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             2
           </span>
         </th>
       </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable relativeColumnSizes 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 66.66%;
+  max-width: 66.66%;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 33.33%;
+  max-width: 33.33%;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 66.66%;
+  max-width: 66.66%;
+  overflow: hidden;
+  text-align: start;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 33.33%;
+  max-width: 33.33%;
+  overflow: hidden;
+  text-align: start;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
+}
+
+.c7:focus {
+  outline: 2px solid #B1C2FE;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
       <tr
-        class="c3"
+        class="c3 "
       >
-        <td
-          class="c6"
+        <th
+          class="c4"
+          scope="col"
         >
-          <div
-            class="c8"
-          />
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c6"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c7"
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="row"
+        >
+          <span
+            class="c9"
+          >
+            one
+          </span>
+        </th>
+        <td
+          class="c10"
+        >
+          <span
+            class="c5"
+          >
+            1
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
+          scope="row"
+        >
+          <span
+            class="c9"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c10"
+        >
+          <span
+            class="c5"
+          >
+            2
+          </span>
         </td>
       </tr>
     </tbody>
@@ -4327,13 +4977,12 @@ exports[`DataTable replace 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -4360,7 +5009,7 @@ exports[`DataTable replace 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4388,7 +5037,7 @@ exports[`DataTable replace 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -4398,6 +5047,10 @@ exports[`DataTable replace 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4441,13 +5094,13 @@ exports[`DataTable replace 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -4456,11 +5109,11 @@ exports[`DataTable replace 1`] = `
           </span>
         </td>
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             1.1
           </span>
@@ -4470,7 +5123,7 @@ exports[`DataTable replace 1`] = `
         class="c3 "
       >
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -4479,11 +5132,11 @@ exports[`DataTable replace 1`] = `
           </span>
         </td>
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             1.2
           </span>
@@ -4493,10 +5146,10 @@ exports[`DataTable replace 1`] = `
         class="c3"
       >
         <td
-          class="c6"
+          class="c7"
         >
           <div
-            class="c8"
+            class="c9"
           />
         </td>
       </tr>
@@ -4522,7 +5175,6 @@ exports[`DataTable resizeable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4546,7 +5198,6 @@ exports[`DataTable resizeable 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border-inline-end: solid 1px #cdd3e3;
   min-width: 0;
@@ -4561,29 +5212,13 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 4px;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -4601,7 +5236,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 2px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4629,7 +5264,7 @@ exports[`DataTable resizeable 1`] = `
   line-height: 16px;
 }
 
-.c11 {
+.c12 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -4643,6 +5278,10 @@ exports[`DataTable resizeable 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c10:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4708,23 +5347,23 @@ exports[`DataTable resizeable 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c10"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c10"
+          class="c11"
           scope="row"
         >
           <span
-            class="c11"
+            class="c12"
           >
             one
           </span>
         </th>
         <td
-          class="c10"
+          class="c11"
         >
           <span
             class="c6"
@@ -4737,34 +5376,23 @@ exports[`DataTable resizeable 1`] = `
         class="c3 "
       >
         <th
-          class="c10"
+          class="c11"
           scope="row"
         >
           <span
-            class="c11"
+            class="c12"
           >
             two
           </span>
         </th>
         <td
-          class="c10"
+          class="c11"
         >
           <span
             class="c6"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c10"
-        >
-          <div
-            class="c12"
-          />
         </td>
       </tr>
     </tbody>
@@ -4783,25 +5411,6 @@ exports[`DataTable rowProps 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c4 {
   margin: 0;
   padding: 0;
@@ -4816,20 +5425,20 @@ exports[`DataTable rowProps 1`] = `
   padding-bottom: 2px;
 }
 
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
   text-align: start;
-  background: #20314f;
+  background-color: #20314f;
   color: #f8f8f8;
   border-bottom: solid 1px #cdd3e3;
   padding: 16px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4871,7 +5480,7 @@ exports[`DataTable rowProps 1`] = `
   line-height: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -4881,6 +5490,10 @@ exports[`DataTable rowProps 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c6:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4924,23 +5537,23 @@ exports[`DataTable rowProps 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c6"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c6"
+          class="c7"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             one
           </span>
         </th>
         <td
-          class="c6"
+          class="c7"
         >
           <span
             class="c5"
@@ -4953,34 +5566,23 @@ exports[`DataTable rowProps 1`] = `
         class="c3 "
       >
         <th
-          class="c8"
+          class="c9"
           scope="row"
         >
           <span
-            class="c7"
+            class="c8"
           >
             two
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c5"
           >
             2
           </span>
-        </td>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c9"
-          />
         </td>
       </tr>
     </tbody>
@@ -4994,7 +5596,7 @@ exports[`DataTable rowProps 1`] = `
           class="c10"
         >
           <span
-            class="c7"
+            class="c8"
           >
             Total
           </span>
@@ -5059,7 +5661,6 @@ exports[`DataTable search 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -5077,29 +5678,13 @@ exports[`DataTable search 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -5107,7 +5692,6 @@ exports[`DataTable search 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -5116,6 +5700,7 @@ exports[`DataTable search 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -5142,7 +5727,7 @@ exports[`DataTable search 1`] = `
   padding-bottom: 2px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5170,7 +5755,7 @@ exports[`DataTable search 1`] = `
   line-height: 16px;
 }
 
-.c11 {
+.c12 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -5180,6 +5765,10 @@ exports[`DataTable search 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c10:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -5238,17 +5827,17 @@ exports[`DataTable search 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c10"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c10"
+          class="c11"
           scope="row"
         >
           <span
-            class="c11"
+            class="c12"
           >
             Alpha
           </span>
@@ -5258,11 +5847,11 @@ exports[`DataTable search 1`] = `
         class="c3 "
       >
         <th
-          class="c10"
+          class="c11"
           scope="row"
         >
           <span
-            class="c11"
+            class="c12"
           >
             beta
           </span>
@@ -5272,26 +5861,15 @@ exports[`DataTable search 1`] = `
         class="c3 "
       >
         <th
-          class="c10"
+          class="c11"
           scope="row"
         >
           <span
-            class="c11"
+            class="c12"
           >
             []
           </span>
         </th>
-      </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c10"
-        >
-          <div
-            class="c12"
-          />
-        </td>
       </tr>
     </tbody>
   </table>
@@ -5316,7 +5894,7 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-1etxkdl-0 khUtZb"
+            class="StyledBox-sc-1etxkdl-0 eWufxk"
           >
             <span
               class="StyledText-sc-3e83s1-0 LsCqY"
@@ -5324,7 +5902,7 @@ exports[`DataTable search 2`] = `
               A
             </span>
             <div
-              class="StyledBox__StyledBoxGap-sc-1etxkdl-1 dPvxPQ"
+              class="StyledBox__StyledBoxGap-sc-1etxkdl-1 gCDlGS"
             />
             .c0 {
   display: -webkit-box;
@@ -5332,7 +5910,6 @@ exports[`DataTable search 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -5352,34 +5929,17 @@ exports[`DataTable search 2`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
-  outline-color: #B1C2FE;
-  border-color: #B1C2FE;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
   width: 100%;
-  outline-color: #B1C2FE;
-  border-color: #B1C2FE;
-}
-
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
-  outline: #B1C2FE solid 1px;
-}
-
-.c2::-moz-focus-inner {
-  border: 0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #B1C2FE;
 }
 
 .c2::-webkit-search-decoration {
@@ -5410,7 +5970,8 @@ exports[`DataTable search 2`] = `
 .c2 > polygon,
 .c2 > polyline,
 .c2 > rect {
-  outline: #B1C2FE solid 1px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #B1C2FE;
 }
 
 .c2::-moz-focus-inner {
@@ -5452,7 +6013,7 @@ exports[`DataTable search 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 vqVdb"
+      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 hekfUZ"
     >
       .c1 {
   margin: 0;
@@ -5499,23 +6060,12 @@ exports[`DataTable search 2`] = `
           </span>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
-        >
-          <div
-            class="StyledBox-sc-1etxkdl-0 jDEkXS"
-          />
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
 `;
 
-exports[`DataTable sort 1`] = `
+exports[`DataTable sortable 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -5532,7 +6082,6 @@ exports[`DataTable sort 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -5545,30 +6094,10 @@ exports[`DataTable sort 1`] = `
   flex-direction: row;
 }
 
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -5577,6 +6106,7 @@ exports[`DataTable sort 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -5597,7 +6127,7 @@ exports[`DataTable sort 1`] = `
   padding-bottom: 2px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5625,7 +6155,7 @@ exports[`DataTable sort 1`] = `
   line-height: 16px;
 }
 
-.c9 {
+.c10 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
@@ -5635,6 +6165,10 @@ exports[`DataTable sort 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: auto;
+}
+
+.c8:focus {
+  outline: 2px solid #B1C2FE;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -5696,23 +6230,23 @@ exports[`DataTable sort 1`] = `
       </tr>
     </thead>
     <tbody
-      class=""
+      class="c8"
     >
       <tr
         class="c3 "
       >
         <th
-          class="c8"
+          class="c9"
           scope="row"
         >
           <span
-            class="c9"
+            class="c10"
           >
             zero
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c7"
@@ -5725,17 +6259,17 @@ exports[`DataTable sort 1`] = `
         class="c3 "
       >
         <th
-          class="c8"
+          class="c9"
           scope="row"
         >
           <span
-            class="c9"
+            class="c10"
           >
             one
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c7"
@@ -5748,17 +6282,17 @@ exports[`DataTable sort 1`] = `
         class="c3 "
       >
         <th
-          class="c8"
+          class="c9"
           scope="row"
         >
           <span
-            class="c9"
+            class="c10"
           >
             two
           </span>
         </th>
         <td
-          class="c8"
+          class="c9"
         >
           <span
             class="c7"
@@ -5767,23 +6301,12 @@ exports[`DataTable sort 1`] = `
           </span>
         </td>
       </tr>
-      <tr
-        class="c3"
-      >
-        <td
-          class="c8"
-        >
-          <div
-            class="c10"
-          />
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
 `;
 
-exports[`DataTable sort 2`] = `
+exports[`DataTable sortable 2`] = `
 <div
   class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
 >
@@ -5801,11 +6324,11 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-1hmw3c5-0 eTtAQe"
+            class="StyledButton-sc-1hmw3c5-0 cDdMe"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kseQLR"
+              class="StyledBox-sc-1etxkdl-0 dimfvq"
             >
               <span
                 class="StyledText-sc-3e83s1-0 LsCqY"
@@ -5816,6 +6339,9 @@ exports[`DataTable sort 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 2px;
 }
 
@@ -5865,7 +6391,7 @@ exports[`DataTable sort 2`] = `
 }
 
 <svg
-                aria-label="FormDown"
+                aria-label="FormUp"
                 class="c0"
                 viewBox="0 0 24 24"
               >
@@ -5874,6 +6400,7 @@ exports[`DataTable sort 2`] = `
                   points="18 9 12 15 6 9"
                   stroke="#000"
                   stroke-width="2"
+                  transform="matrix(1 0 0 -1 0 24)"
                 />
               </svg>
             </div>
@@ -5884,11 +6411,11 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-1hmw3c5-0 eTtAQe"
+            class="StyledButton-sc-1hmw3c5-0 cDdMe"
             type="button"
           >
             <div
-              class="StyledBox-sc-1etxkdl-0 kseQLR"
+              class="StyledBox-sc-1etxkdl-0 dimfvq"
             >
               <span
                 class="StyledText-sc-3e83s1-0 LsCqY"
@@ -5901,124 +6428,136 @@ exports[`DataTable sort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 vqVdb"
+      class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 hekfUZ"
     >
-      .c1 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.c0 {
-  height: 100%;
-}
-
-.c3 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c2 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
-<tr
-        class="c0 "
+      <tr
+        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
       >
         <th
-          class="c1"
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
           scope="row"
         >
           <span
-            class="c2"
+            class="StyledText-sc-3e83s1-0 clKHyy"
           >
             one
           </span>
         </th>
         <td
-          class="c1"
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
         >
           <span
-            class="c3"
+            class="StyledText-sc-3e83s1-0 LsCqY"
           >
             1
           </span>
         </td>
       </tr>
-      .c1 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.c0 {
-  height: 100%;
-}
-
-.c3 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c2 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
-<tr
-        class="c0 "
+      <tr
+        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
       >
         <th
-          class="c1"
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
           scope="row"
         >
           <span
-            class="c2"
+            class="StyledText-sc-3e83s1-0 clKHyy"
           >
             two
           </span>
         </th>
         <td
-          class="c1"
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
         >
           <span
-            class="c3"
+            class="StyledText-sc-3e83s1-0 LsCqY"
           >
             2
           </span>
         </td>
       </tr>
-      .c1 {
+      <tr
+        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI StyledDataTable__StyledDataTableRow-ng31qc-1 dWDqeC"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+          scope="row"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 clKHyy"
+          >
+            zero
+          </span>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+        >
+          <span
+            class="StyledText-sc-3e83s1-0 LsCqY"
+          >
+            0
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable themeColumnSizes 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
+  width: 256px;
+  max-width: 256px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 128px;
+  max-width: 128px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px #cdd3e3;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 256px;
+  max-width: 256px;
+  overflow: hidden;
   text-align: start;
   padding-left: 4px;
   padding-right: 4px;
@@ -6026,57 +6565,140 @@ exports[`DataTable sort 2`] = `
   padding-bottom: 2px;
 }
 
-.c0 {
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
   height: 100%;
+  width: 128px;
+  max-width: 128px;
+  overflow: hidden;
+  text-align: start;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .c3 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
   font-size: 12px;
   line-height: 16px;
 }
 
-.c2 {
+.c9 {
   font-size: 12px;
   line-height: 16px;
   font-weight: bold;
 }
 
-@media all and (min--moz-device-pixel-ratio:0) {
-
+.c2 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: auto;
 }
 
-<tr
-        class="c0 "
+.c7:focus {
+  outline: 2px solid #B1C2FE;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c3 "
       >
         <th
-          class="c1"
+          class="c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c6"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c7"
+    >
+      <tr
+        class="c3 "
+      >
+        <th
+          class="c8"
           scope="row"
         >
           <span
-            class="c2"
+            class="c9"
           >
-            zero
+            one
           </span>
         </th>
         <td
-          class="c1"
+          class="c10"
         >
           <span
-            class="c3"
+            class="c5"
           >
-            0
+            1
           </span>
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1iut3o1-2 cSnWpI"
+        class="c3 "
       >
-        <td
-          class="StyledTable__StyledTableCell-sc-1iut3o1-0 cWIJKE"
+        <th
+          class="c8"
+          scope="row"
         >
-          <div
-            class="StyledBox-sc-1etxkdl-0 jDEkXS"
-          />
+          <span
+            class="c9"
+          >
+            two
+          </span>
+        </th>
+        <td
+          class="c10"
+        >
+          <span
+            class="c5"
+          >
+            2
+          </span>
         </td>
       </tr>
     </tbody>

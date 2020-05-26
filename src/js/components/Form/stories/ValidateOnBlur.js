@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Form, FormField, TextInput } from 'mnet-ui-base';
 import { StatusGood } from 'grommet-icons';
-import { mnet } from 'mnet-ui-base/themes';
 
 const Example = () => (
   <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>

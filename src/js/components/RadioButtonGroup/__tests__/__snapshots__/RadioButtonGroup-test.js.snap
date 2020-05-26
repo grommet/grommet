@@ -17,7 +17,6 @@ exports[`RadioButtonGroup adding additional props 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -32,7 +31,6 @@ exports[`RadioButtonGroup adding additional props 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -57,6 +55,9 @@ exports[`RadioButtonGroup adding additional props 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   height: 4px;
 }
 
@@ -192,7 +193,6 @@ exports[`RadioButtonGroup children 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -207,9 +207,8 @@ exports[`RadioButtonGroup children 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #E15151;
+  background-color: #E15151;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -223,6 +222,9 @@ exports[`RadioButtonGroup children 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   height: 4px;
 }
 
@@ -356,7 +358,6 @@ exports[`RadioButtonGroup default 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -391,7 +392,6 @@ exports[`RadioButtonGroup object options 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -406,7 +406,6 @@ exports[`RadioButtonGroup object options 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 4px;
   min-width: 0;
@@ -422,7 +421,6 @@ exports[`RadioButtonGroup object options 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -447,6 +445,9 @@ exports[`RadioButtonGroup object options 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   height: 4px;
 }
 
@@ -592,7 +593,6 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -607,7 +607,6 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -632,6 +631,9 @@ exports[`RadioButtonGroup object options disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   height: 4px;
 }
 
@@ -799,7 +801,6 @@ exports[`RadioButtonGroup object options just value 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -814,7 +815,6 @@ exports[`RadioButtonGroup object options just value 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -841,7 +841,6 @@ exports[`RadioButtonGroup object options just value 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -866,6 +865,9 @@ exports[`RadioButtonGroup object options just value 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   height: 4px;
 }
 
@@ -1020,7 +1022,6 @@ exports[`RadioButtonGroup string options 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1035,7 +1036,6 @@ exports[`RadioButtonGroup string options 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-right: 4px;
   min-width: 0;
@@ -1051,7 +1051,6 @@ exports[`RadioButtonGroup string options 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1078,7 +1077,6 @@ exports[`RadioButtonGroup string options 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1103,6 +1101,9 @@ exports[`RadioButtonGroup string options 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   height: 4px;
 }
 

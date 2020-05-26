@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Avatar, Button, Box, grommet, Grommet, Nav, Sidebar } from 'mnet-ui-base';
+import { Avatar, Button, Box, Nav, Sidebar } from 'mnet-ui-base';
 
 import {
   Analytics,
@@ -45,7 +45,7 @@ const MainNavigation = () => (
 );
 
 export const SidebarIcons = () => (
-  <Grommet theme={grommet} full>
+  <>
     <Box direction="row" height={{ min: '100%' }}>
       <Sidebar
         background="accent-1"
@@ -55,7 +55,7 @@ export const SidebarIcons = () => (
         <MainNavigation />
       </Sidebar>
     </Box>
-  </Grommet>
+  </>
 );
 
 if (!isChromatic()) {

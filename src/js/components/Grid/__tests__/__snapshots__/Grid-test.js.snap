@@ -710,71 +710,71 @@ exports[`Grid pad 1`] = `
   padding-top: 4px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c1 {
-    padding: 6px;
+    padding: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    padding: 12px;
+    padding: 8px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    padding: 24px;
+    padding: 16px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c7 {
-    padding-left: 6px;
+    padding-left: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c8 {
-    padding-right: 6px;
+    padding-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c9 {
-    padding-inline-start: 6px;
+    padding-inline-start: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c10 {
-    padding-inline-end: 6px;
+    padding-inline-end: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c11 {
-    padding-top: 6px;
+    padding-top: 4px;
   }
 }
 
@@ -844,8 +844,8 @@ exports[`Grid renders 1`] = `
 
 exports[`Grid responsive 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

@@ -1,7 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { mnet, Box, Form, FormField, TextInput, MnetUIBase } from 'mnet-ui-base';
+import {
+  mnet,
+  Box,
+  Form,
+  FormField,
+  TextInput,
+  MnetUIBase,
+} from 'mnet-ui-base';
 import { deepMerge } from '../../../utils';
 
 const customTheme = deepMerge(mnet, {

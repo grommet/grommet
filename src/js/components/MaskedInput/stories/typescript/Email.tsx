@@ -2,9 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Box, Grommet, MaskedInput } from 'mnet-ui-base';
+import { Box, MaskedInput } from 'mnet-ui-base';
 import { MailOption } from 'grommet-icons';
-import { grommet } from 'mnet-ui-base/themes';
 
 const EmailMaskedInput = () => {
   const [value, setValue] = React.useState('');
@@ -27,7 +26,7 @@ const EmailMaskedInput = () => {
   ];
 
   return (
-    <Grommet full theme={grommet}>
+    <>
       <Box fill align="center" justify="start" pad="large">
         <Box width="medium" gap="medium">
           <MaskedInput
@@ -45,7 +44,7 @@ const EmailMaskedInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </>
   );
 };
 

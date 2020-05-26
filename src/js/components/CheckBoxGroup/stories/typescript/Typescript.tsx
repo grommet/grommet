@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, CheckBoxGroup, Grommet } from 'mnet-ui-base';
-import { grommet } from 'mnet-ui-base/themes';
+import { Box, CheckBoxGroup } from 'mnet-ui-base';
 
 const objectOptions = [];
 for (let i = 1; i <= 5; i += 1) {
@@ -17,7 +16,7 @@ const Example = () => {
   const [value, setValue] = useState([]);
   const [value2, setValue2] = useState([]);
   return (
-    <Grommet theme={grommet}>
+    <>
       <Box pad="medium" gap="large">
         <CheckBoxGroup
           labelKey="lab"
@@ -39,7 +38,7 @@ const Example = () => {
           ]}
         />
       </Box>
-    </Grommet>
+    </>
   );
 };
 

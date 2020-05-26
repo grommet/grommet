@@ -1,5 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TextInput a11yTitle 1`] = `
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c1::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c1:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-label="aria-test"
+    autocomplete="off"
+    class="c1"
+    name="item"
+    value=""
+  />
+</div>
+`;
+
 exports[`TextInput basic 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -7,12 +64,11 @@ exports[`TextInput basic 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
@@ -57,7 +113,7 @@ exports[`TextInput basic 1`] = `
 </div>
 `;
 
-exports[`TextInput close suggestion drop 1`] = `
+exports[`TextInput calls onSuggestionsClose 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -74,12 +130,11 @@ exports[`TextInput close suggestion drop 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
@@ -130,14 +185,13 @@ exports[`TextInput close suggestion drop 1`] = `
 </div>
 `;
 
-exports[`TextInput close suggestion drop 2`] = `
+exports[`TextInput calls onSuggestionsClose 2`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -154,7 +208,6 @@ exports[`TextInput close suggestion drop 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -170,7 +223,6 @@ exports[`TextInput close suggestion drop 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -184,30 +236,10 @@ exports[`TextInput close suggestion drop 2`] = `
   padding: 4px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -216,6 +248,7 @@ exports[`TextInput close suggestion drop 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -244,7 +277,7 @@ exports[`TextInput close suggestion drop 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -330,9 +363,467 @@ exports[`TextInput close suggestion drop 2`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`TextInput calls onSuggestionsClose 3`] = `""`;
+
+exports[`TextInput calls onSuggestionsClose 4`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <div
+    class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+  >
+    <input
+      autocomplete="off"
+      class="StyledTextInput-ilbntv-0 dcHvFJ"
+      data-testid="test-input"
+      id="item"
+      name="item"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput calls onSuggestionsOpen 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 4px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c4 {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+@media only screen and (max-width:512px) {
+  .c6 {
+    padding: 4px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+  >
+    <ol
+      class="c4"
+    >
+      <li>
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c6"
+          >
+            test
+          </div>
+        </button>
+      </li>
+      <li>
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c6"
+          >
+            test1
+          </div>
+        </button>
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`TextInput calls onSuggestionsOpen 2`] = `""`;
+
+exports[`TextInput close suggestion drop 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c2::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c2:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      autocomplete="off"
+      class="c2"
+      data-testid="test-input"
+      id="item"
+      name="item"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput close suggestion drop 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 4px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c4 {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+@media only screen and (max-width:512px) {
+  .c6 {
+    padding: 4px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+  >
+    <ol
+      class="c4"
+    >
+      <li>
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c6"
+          >
+            test
+          </div>
+        </button>
+      </li>
+      <li>
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c6"
+          >
+            test1
+          </div>
+        </button>
+      </li>
     </ol>
   </div>
 </div>
@@ -349,11 +840,11 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 bUePXm"
+      class="StyledTextInput-ilbntv-0 dcHvFJ"
       data-testid="test-input"
       id="item"
       name="item"
-      value=" "
+      value=""
     />
   </div>
 </div>
@@ -376,12 +867,11 @@ exports[`TextInput complex suggestions 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
@@ -439,7 +929,6 @@ exports[`TextInput complex suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -456,7 +945,6 @@ exports[`TextInput complex suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -466,30 +954,10 @@ exports[`TextInput complex suggestions 2`] = `
   overflow: auto;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -498,6 +966,7 @@ exports[`TextInput complex suggestions 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -526,7 +995,7 @@ exports[`TextInput complex suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -598,9 +1067,6 @@ exports[`TextInput complex suggestions 2`] = `
           test1
         </button>
       </li>
-      <div
-        class="c6"
-      />
     </ol>
   </div>
 </div>
@@ -615,12 +1081,11 @@ exports[`TextInput disabled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
@@ -685,12 +1150,11 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
@@ -750,13 +1214,263 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 dXMsyq"
+      class="StyledTextInput-ilbntv-0 ipgUiI"
       data-testid="test-input"
       id="item"
       name="item"
       value=""
     />
   </div>
+</div>
+`;
+
+exports[`TextInput icon 1`] = `
+.c2 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c2 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c2 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c3::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c3:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c3::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+.c1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 8px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-label="Search"
+      class="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M15,15 L22,22 L15,15 Z M9.5,17 C13.6421356,17 17,13.6421356 17,9.5 C17,5.35786438 13.6421356,2 9.5,2 C5.35786438,2 2,5.35786438 2,9.5 C2,13.6421356 5.35786438,17 9.5,17 Z"
+        fill="none"
+        stroke="#000"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+  <input
+    autocomplete="off"
+    class="c3"
+    name="item"
+    value=""
+  />
+</div>
+`;
+
+exports[`TextInput icon reverse 1`] = `
+.c2 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c2 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c2 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  padding-right: 16px;
+}
+
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c3::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c3:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c3::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+.c1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 8px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <svg
+      aria-label="Search"
+      class="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M15,15 L22,22 L15,15 Z M9.5,17 C13.6421356,17 17,13.6421356 17,9.5 C17,5.35786438 13.6421356,2 9.5,2 C5.35786438,2 2,5.35786438 2,9.5 C2,13.6421356 5.35786438,17 9.5,17 Z"
+        fill="none"
+        stroke="#000"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+  <input
+    autocomplete="off"
+    class="c3"
+    name="item"
+    value=""
+  />
 </div>
 `;
 
@@ -767,7 +1481,6 @@ exports[`TextInput large drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -784,7 +1497,6 @@ exports[`TextInput large drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -800,7 +1512,6 @@ exports[`TextInput large drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -814,30 +1525,10 @@ exports[`TextInput large drop height 1`] = `
   padding: 4px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -846,6 +1537,7 @@ exports[`TextInput large drop height 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -874,7 +1566,7 @@ exports[`TextInput large drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -960,9 +1652,6 @@ exports[`TextInput large drop height 1`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -977,7 +1666,6 @@ exports[`TextInput medium drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -994,7 +1682,6 @@ exports[`TextInput medium drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1010,7 +1697,6 @@ exports[`TextInput medium drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -1024,30 +1710,10 @@ exports[`TextInput medium drop height 1`] = `
   padding: 4px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1056,6 +1722,7 @@ exports[`TextInput medium drop height 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1084,7 +1751,7 @@ exports[`TextInput medium drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1170,9 +1837,6 @@ exports[`TextInput medium drop height 1`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -1197,12 +1861,11 @@ exports[`TextInput select a suggestion 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
@@ -1270,18 +1933,18 @@ exports[`TextInput select suggestion 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
   width: 100%;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
+  outline: none;
   border: none;
   box-shadow: none;
 }
@@ -1337,7 +2000,6 @@ exports[`TextInput select suggestion 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1354,7 +2016,6 @@ exports[`TextInput select suggestion 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1370,7 +2031,6 @@ exports[`TextInput select suggestion 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -1384,30 +2044,10 @@ exports[`TextInput select suggestion 2`] = `
   padding: 4px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1416,6 +2056,7 @@ exports[`TextInput select suggestion 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1444,7 +2085,7 @@ exports[`TextInput select suggestion 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1530,9 +2171,6 @@ exports[`TextInput select suggestion 2`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -1549,11 +2187,11 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-ilbntv-0 iSNtPd"
+      class="StyledTextInput-ilbntv-0 ipYqWE"
       data-testid="test-input"
       id="item"
       name="item"
-      value="test1"
+      value=""
     />
   </div>
 </div>
@@ -1566,7 +2204,6 @@ exports[`TextInput small drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1583,7 +2220,6 @@ exports[`TextInput small drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1599,7 +2235,6 @@ exports[`TextInput small drop height 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -1613,30 +2248,10 @@ exports[`TextInput small drop height 1`] = `
   padding: 4px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1645,6 +2260,7 @@ exports[`TextInput small drop height 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1673,7 +2289,7 @@ exports[`TextInput small drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1759,9 +2375,6 @@ exports[`TextInput small drop height 1`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>
@@ -1776,12 +2389,11 @@ exports[`TextInput suggestions 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
@@ -1835,7 +2447,6 @@ exports[`TextInput suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1852,7 +2463,6 @@ exports[`TextInput suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1868,7 +2478,6 @@ exports[`TextInput suggestions 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -1882,30 +2491,10 @@ exports[`TextInput suggestions 2`] = `
   padding: 4px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1914,6 +2503,7 @@ exports[`TextInput suggestions 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1942,7 +2532,7 @@ exports[`TextInput suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2028,9 +2618,6 @@ exports[`TextInput suggestions 2`] = `
           </div>
         </button>
       </li>
-      <div
-        class="c7"
-      />
     </ol>
   </div>
 </div>

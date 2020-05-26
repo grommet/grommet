@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CheckBox checked renders 1`] = `
+exports[`checked renders 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -161,10 +161,10 @@ exports[`CheckBox checked renders 1`] = `
 </div>
 `;
 
-exports[`CheckBox controlled 1`] = `
+exports[`controlled 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -179,7 +179,7 @@ exports[`CheckBox controlled 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-right: 12px;
+  margin-right: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -206,14 +206,14 @@ exports[`CheckBox controlled 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px #7D4CDB;
+  border: solid 2px #E15151;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 16px;
+  width: 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -224,9 +224,9 @@ exports[`CheckBox controlled 1`] = `
 .c6 {
   box-sizing: border-box;
   stroke-width: 4px;
-  stroke: #7D4CDB;
-  width: 24px;
-  height: 24px;
+  stroke: #E15151;
+  width: 16px;
+  height: 16px;
 }
 
 .c1 {
@@ -266,8 +266,8 @@ exports[`CheckBox controlled 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
-  background: #7D4CDB;
+  left: calc( 32px - 16px );
+  background: #E15151;
 }
 
 .c3 {
@@ -276,15 +276,15 @@ exports[`CheckBox controlled 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    margin-right: 6px;
+    margin-right: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    border: solid 2px #7D4CDB;
+    border: solid 2px #E15151;
   }
 }
 
@@ -324,26 +324,26 @@ exports[`CheckBox controlled 1`] = `
 </div>
 `;
 
-exports[`CheckBox controlled 2`] = `
+exports[`controlled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-14qttcc-1 hcmdkc"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fuEVwc StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+      class="StyledBox-sc-1etxkdl-0 cTUKhN StyledCheckBox-sc-14qttcc-6 bJyswm"
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+        class="StyledBox-sc-1etxkdl-0 cxCeJz StyledCheckBox__StyledCheckBoxBox-sc-14qttcc-3 fHlFPM"
       >
         <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-14qttcc-0 ia-dhfe"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -361,7 +361,7 @@ exports[`CheckBox controlled 2`] = `
 </div>
 `;
 
-exports[`CheckBox disabled renders 1`] = `
+exports[`disabled renders 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -590,7 +590,7 @@ exports[`CheckBox disabled renders 1`] = `
 </div>
 `;
 
-exports[`CheckBox indeterminate renders 1`] = `
+exports[`indeterminate renders 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -818,7 +818,7 @@ exports[`CheckBox indeterminate renders 1`] = `
 </div>
 `;
 
-exports[`CheckBox label renders 1`] = `
+exports[`label renders 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -995,174 +995,7 @@ exports[`CheckBox label renders 1`] = `
 </div>
 `;
 
-exports[`CheckBox renders 1`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 16px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 16px;
-  width: 16px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 4px;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.c1:hover input:not([disabled]) + div,
-.c1:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
-.c4 {
-  opacity: 0;
-  -moz-appearance: none;
-  width: 0;
-  height: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-.c4:checked + span > span {
-  left: calc( 32px - 16px );
-  background: #E15151;
-}
-
-.c3 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-@media only screen and (max-width:512px) {
-  .c5 {
-    border: solid 2px rgba(0,0,0,0.15);
-  }
-}
-
-<div
-  className="c0"
->
-  <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-  >
-    <div
-      checked={false}
-      className="c2 c3"
-    >
-      <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-      />
-      <div
-        checked={false}
-        className="c5 "
-      />
-    </div>
-  </label>
-  <label
-    checked={false}
-    className="c1"
-    htmlFor="test id"
-    onClick={[Function]}
-  >
-    <div
-      checked={false}
-      className="c2 c3"
-    >
-      <input
-        checked={false}
-        className="c4"
-        id="test id"
-        name="test name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-      />
-      <div
-        checked={false}
-        className="c5 "
-      />
-    </div>
-  </label>
-</div>
-`;
-
-exports[`CheckBox reverse renders 1`] = `
+exports[`reverse renders 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -1313,7 +1146,7 @@ exports[`CheckBox reverse renders 1`] = `
 </div>
 `;
 
-exports[`CheckBox toggle renders 1`] = `
+exports[`toggle renders 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;

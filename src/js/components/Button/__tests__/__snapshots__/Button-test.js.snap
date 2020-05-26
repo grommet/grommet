@@ -5,7 +5,6 @@ exports[`Button as 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -13,14 +12,14 @@ exports[`Button as 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -60,7 +59,6 @@ exports[`Button basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -68,14 +66,14 @@ exports[`Button basic 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -118,7 +116,6 @@ exports[`Button children function 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -126,14 +123,14 @@ exports[`Button children function 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -185,7 +182,6 @@ exports[`Button color 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -193,14 +189,14 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #20314f;
+  border: 2px solid #20314f;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -215,7 +211,6 @@ exports[`Button color 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -223,17 +218,17 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #20314f;
+  border: 2px solid #20314f;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  background: #20314f;
+  background-color: #20314f;
   color: #f8f8f8;
   border-radius: 3.2px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -248,7 +243,6 @@ exports[`Button color 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -256,17 +250,17 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #111111;
+  border: 2px solid #111111;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  background: #111111;
+  background-color: #111111;
   color: #f8f8f8;
   border-radius: 3.2px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -281,7 +275,6 @@ exports[`Button color 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -289,17 +282,17 @@ exports[`Button color 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #123;
+  border: 2px solid #123;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  background: #123;
+  background-color: #123;
   color: #f8f8f8;
   border-radius: 3.2px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -371,11 +364,42 @@ exports[`Button color 1`] = `
 `;
 
 exports[`Button disabled 1`] = `
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 4px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -383,20 +407,142 @@ exports[`Button disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
   opacity: 0.3;
   cursor: default;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #E15151;
+  color: #f8f8f8;
+  border-radius: 3.2px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 4px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  line-height: 0;
+  padding: 4px;
 }
 
 .c0 {
@@ -421,6 +567,142 @@ exports[`Button disabled 1`] = `
     onMouseOver={[Function]}
     type="button"
   />
+  <button
+    className="c2"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Button
+  </button>
+  <button
+    className="c1"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Button
+  </button>
+  <button
+    className="c3"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Button
+  </button>
+  <button
+    className="c1"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Button
+  </button>
+  <button
+    className="c4"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg />
+  </button>
+  <button
+    className="c5"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg />
+  </button>
+  <button
+    className="c6"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg />
+  </button>
+  <button
+    className="c1"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c7"
+    >
+      <svg />
+      <div
+        className="c8"
+      />
+      Button
+    </div>
+  </button>
+  <button
+    className="c3"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c7"
+    >
+      <svg />
+      <div
+        className="c8"
+      />
+      Button
+    </div>
+  </button>
+  <button
+    className="c2"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c7"
+    >
+      <svg
+        color="#f8f8f8"
+      />
+      <div
+        className="c8"
+      />
+      Button
+    </div>
+  </button>
 </div>
 `;
 
@@ -429,7 +711,6 @@ exports[`Button fill 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -438,6 +719,7 @@ exports[`Button fill 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -447,7 +729,6 @@ exports[`Button fill 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -455,14 +736,14 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -483,7 +764,6 @@ exports[`Button fill 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -491,14 +771,14 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -513,7 +793,6 @@ exports[`Button fill 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -521,14 +800,14 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -544,7 +823,6 @@ exports[`Button fill 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -552,14 +830,14 @@ exports[`Button fill 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -633,7 +911,6 @@ exports[`Button focus 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -641,16 +918,16 @@ exports[`Button focus 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  outline-color: #B1C2FE;
-  border-color: #B1C2FE;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  outline: none;
+  box-shadow: 0 0 2px 2px #B1C2FE;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -664,7 +941,8 @@ exports[`Button focus 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #B1C2FE solid 1px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #B1C2FE;
 }
 
 .c1::-moz-focus-inner {
@@ -698,7 +976,6 @@ exports[`Button hoverIndicator as object with color 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -707,6 +984,7 @@ exports[`Button hoverIndicator as object with color 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -749,7 +1027,6 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -758,6 +1035,7 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -800,7 +1078,6 @@ exports[`Button hoverIndicator background 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -809,6 +1086,7 @@ exports[`Button hoverIndicator background 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -851,7 +1129,6 @@ exports[`Button hoverIndicator color 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -860,13 +1137,14 @@ exports[`Button hoverIndicator color 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
 }
 
 .c1:hover {
-  background: #65707d;
+  background-color: #65707d;
   color: #FFFFFF;
 }
 
@@ -902,7 +1180,6 @@ exports[`Button href 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -910,14 +1187,14 @@ exports[`Button href 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -959,7 +1236,6 @@ exports[`Button icon label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -980,6 +1256,9 @@ exports[`Button icon label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -987,7 +1266,6 @@ exports[`Button icon label 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -995,14 +1273,14 @@ exports[`Button icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1053,7 +1331,6 @@ exports[`Button primary 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1061,17 +1338,17 @@ exports[`Button primary 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  background: #FFFFFF;
-  color: #444444;
+  background-color: #E15151;
+  color: #f8f8f8;
   border-radius: 3.2px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1116,7 +1393,6 @@ exports[`Button reverse icon label 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1137,6 +1413,9 @@ exports[`Button reverse icon label 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -1144,7 +1423,6 @@ exports[`Button reverse icon label 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1152,14 +1430,14 @@ exports[`Button reverse icon label 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1213,8 +1491,8 @@ exports[`Button size 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
 }
 
 .c10 g {
@@ -1280,7 +1558,6 @@ exports[`Button size 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1301,6 +1578,9 @@ exports[`Button size 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -1308,7 +1588,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1316,14 +1595,14 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 12px;
   color: #444444;
-  padding: 3px 14px;
+  padding: 2px 12px;
   font-size: 9.333333333333334px;
   line-height: 13.333333333333334px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1338,7 +1617,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1346,14 +1624,14 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 12px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1368,7 +1646,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1376,14 +1653,14 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1398,7 +1675,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1406,14 +1682,14 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 16px;
   color: #444444;
-  padding: 5px 20px;
+  padding: 6px 24px;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1428,7 +1704,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1436,17 +1711,17 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 12px;
   color: #444444;
-  padding: 3px 14px;
+  padding: 2px 12px;
   font-size: 9.333333333333334px;
   line-height: 13.333333333333334px;
-  background: #FFFFFF;
-  color: #444444;
+  background-color: #E15151;
+  color: #f8f8f8;
   border-radius: 12px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1461,7 +1736,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1469,17 +1743,17 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 12px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  background: #FFFFFF;
-  color: #444444;
+  background-color: #E15151;
+  color: #f8f8f8;
   border-radius: 12px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1494,7 +1768,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1502,17 +1775,17 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  background: #FFFFFF;
-  color: #444444;
+  background-color: #E15151;
+  color: #f8f8f8;
   border-radius: 3.2px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1527,7 +1800,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1535,17 +1807,17 @@ exports[`Button size 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 16px;
   color: #444444;
-  padding: 5px 20px;
+  padding: 6px 24px;
   font-size: 14.666666666666666px;
   line-height: 18.666666666666668px;
-  background: #FFFFFF;
-  color: #444444;
+  background-color: #E15151;
+  color: #f8f8f8;
   border-radius: 16px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -1560,7 +1832,6 @@ exports[`Button size 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1569,11 +1840,12 @@ exports[`Button size 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
-  background: #FFFFFF;
-  color: #444444;
+  background-color: #E15151;
+  color: #f8f8f8;
   border-radius: 3.2px;
   line-height: 0;
   padding: 4px;
@@ -1880,7 +2152,6 @@ exports[`Button warns about invalid icon 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1889,6 +2160,7 @@ exports[`Button warns about invalid icon 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1928,7 +2200,6 @@ exports[`Button warns about invalid label 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1937,6 +2208,7 @@ exports[`Button warns about invalid label 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;

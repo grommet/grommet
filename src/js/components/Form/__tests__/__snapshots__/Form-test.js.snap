@@ -1,5 +1,1327 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Form controlled 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #E15151;
+  color: #f8f8f8;
+  border-radius: 3.2px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c5:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <input
+              autocomplete="off"
+              class="c5"
+              name="test"
+              placeholder="test input"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="c6"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled 2`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled 3`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled FormField deprecated 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #E15151;
+  color: #f8f8f8;
+  border-radius: 3.2px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c7:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c6::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c6:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c3 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+        for="test"
+      >
+        test
+      </label>
+      <div
+        class="c3 "
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <input
+              autocomplete="off"
+              class="c6"
+              id="test"
+              name="test"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="c7"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled FormField deprecated 2`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <label
+        class="StyledText-sc-3e83s1-0 dOjTrj"
+        for="test"
+      >
+        test
+      </label>
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              id="test"
+              name="test"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled FormField deprecated 3`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <label
+        class="StyledText-sc-3e83s1-0 dOjTrj"
+        for="test"
+      >
+        test
+      </label>
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              id="test"
+              name="test"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled input 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #E15151;
+  color: #f8f8f8;
+  border-radius: 3.2px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c5:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <input
+              autocomplete="off"
+              class="c5"
+              name="test"
+              placeholder="test input"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="c6"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled input 2`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled input 3`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled input lazy 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #E15151;
+  color: #f8f8f8;
+  border-radius: 3.2px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c5:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <input
+              autocomplete="off"
+              class="c5"
+              name="test"
+              placeholder="test input"
+              value="test"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="c6"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled input lazy 2`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled input lazy 3`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled lazy 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #E15151;
+  color: #f8f8f8;
+  border-radius: 3.2px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c5:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <input
+              autocomplete="off"
+              class="c5"
+              name="test"
+              placeholder="test input"
+              value="test"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="c6"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled lazy 2`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled lazy 3`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value="v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
 exports[`Form empty 1`] = `
 .c0 {
   font-size: 12px;
@@ -38,7 +1360,6 @@ exports[`Form errors 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 4px;
   min-width: 0;
@@ -54,7 +1375,6 @@ exports[`Form errors 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px #e35e59;
   min-width: 0;
@@ -62,6 +1382,7 @@ exports[`Form errors 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -70,7 +1391,6 @@ exports[`Form errors 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -95,16 +1415,16 @@ exports[`Form errors 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   box-shadow: none;
 }
@@ -160,7 +1480,7 @@ exports[`Form errors 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"
@@ -177,7 +1497,6 @@ exports[`Form errors 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>
@@ -209,7 +1528,6 @@ exports[`Form infos 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 4px;
   min-width: 0;
@@ -225,7 +1543,6 @@ exports[`Form infos 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px #cdd3e3;
   min-width: 0;
@@ -233,6 +1550,7 @@ exports[`Form infos 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -241,7 +1559,6 @@ exports[`Form infos 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -266,16 +1583,16 @@ exports[`Form infos 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   box-shadow: none;
 }
@@ -331,7 +1648,7 @@ exports[`Form infos 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"
@@ -347,7 +1664,6 @@ exports[`Form infos 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>
@@ -358,6 +1674,119 @@ exports[`Form infos 1`] = `
         missing
       </span>
     </div>
+  </form>
+</div>
+`;
+
+exports[`Form lazy value 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c2::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c2:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1"
+    >
+      <input
+        autocomplete="off"
+        class="c2"
+        name="test"
+        value=""
+      />
+    </div>
+    <button
+      class="c3"
+      type="button"
+    >
+      set
+    </button>
+    <button
+      class="c3"
+      type="submit"
+    >
+      submit
+    </button>
   </form>
 </div>
 `;
@@ -422,7 +1851,7 @@ exports[`Form required validation 1`] = `
 </span>
 `;
 
-exports[`Form update 1`] = `
+exports[`Form uncontrolled 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
@@ -439,7 +1868,6 @@ exports[`Form update 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 4px;
   min-width: 0;
@@ -455,7 +1883,6 @@ exports[`Form update 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px #cdd3e3;
   min-width: 0;
@@ -463,6 +1890,7 @@ exports[`Form update 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -471,7 +1899,6 @@ exports[`Form update 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -484,7 +1911,6 @@ exports[`Form update 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -492,17 +1918,17 @@ exports[`Form update 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 1px solid #E15151;
+  border: 2px solid #E15151;
   border-radius: 3.2px;
   color: #444444;
-  padding: 3px 15px;
+  padding: 2px 14px;
   font-size: 12px;
   line-height: 16px;
-  background: #FFFFFF;
-  color: #444444;
+  background-color: #E15151;
+  color: #f8f8f8;
   border-radius: 3.2px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
@@ -519,16 +1945,16 @@ exports[`Form update 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   box-shadow: none;
 }
@@ -579,7 +2005,266 @@ exports[`Form update 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <input
+              autocomplete="off"
+              class="c5"
+              name="test"
+              placeholder="test input"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="c6"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form uncontrolled 2`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form uncontrolled 3`] = `
+<div
+  class="StyledMnetUIBase-sc-17lh5y2-0 HlCER"
+>
+  <form>
+    <div
+      class="StyledBox-sc-1etxkdl-0 fOhVdt FormField__FormFieldBox-sc-13hlgkg-0 jiSiYB"
+    >
+      <div
+        class="StyledBox-sc-1etxkdl-0 heeXWd FormField__FormFieldContentBox-sc-13hlgkg-1 bIYGru"
+      >
+        <div
+          class="StyledBox-sc-1etxkdl-0 iRTtrq"
+        >
+          <div
+            class="StyledTextInput__StyledTextInputContainer-ilbntv-1 caQufR"
+          >
+            <input
+              autocomplete="off"
+              class="StyledTextInput-ilbntv-0 gGtFPx"
+              name="test"
+              placeholder="test input"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-1hmw3c5-0 dQfxlu"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form update 1`] = `
+.c0 {
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 4px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #E15151;
+  border-radius: 3.2px;
+  color: #444444;
+  padding: 2px 14px;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #E15151;
+  color: #f8f8f8;
+  border-radius: 3.2px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #E15151;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  padding: 7px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c5:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:512px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c2 {
+    border: solid 1px #cdd3e3;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
       >
         <div
           class="c3"
@@ -602,7 +2287,7 @@ exports[`Form update 1`] = `
       class="c1 "
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -679,6 +2364,14 @@ exports[`Form validate 2`] = `
 
 }
 
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
 <span
   class="c0"
 >
@@ -687,8 +2380,38 @@ exports[`Form validate 2`] = `
 `;
 
 exports[`Form validate 3`] = `
+.c0 {
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #e35e59;
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
 <span
-  class="StyledText-sc-3e83s1-0 cRZhIG"
+  class="c0"
 >
   status error
 </span>
@@ -703,6 +2426,14 @@ exports[`Form validate 4`] = `
   font-size: 12px;
   line-height: 16px;
   color: #666666;
+}
+
+@media only screen and (max-width:512px) {
+
+}
+
+@media only screen and (max-width:512px) {
+
 }
 
 @media only screen and (max-width:512px) {
@@ -741,7 +2472,6 @@ exports[`Form with field 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   margin-bottom: 4px;
   min-width: 0;
@@ -757,7 +2487,6 @@ exports[`Form with field 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   border: solid 1px #cdd3e3;
   min-width: 0;
@@ -765,6 +2494,7 @@ exports[`Form with field 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -773,7 +2503,6 @@ exports[`Form with field 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -788,16 +2517,16 @@ exports[`Form with field 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 7px;
-  outline: none;
   background: transparent;
   color: inherit;
   box-shadow: inset 1px 1px 1px 0 #cdd3e3;
-  font-weight: 400;
+  padding: 7px;
+  font-weight: 600;
   margin: 0;
   border: 1px solid #cdd3e3;
   border-radius: 4px;
   width: 100%;
+  outline: none;
   border: none;
   box-shadow: none;
 }
@@ -853,7 +2582,7 @@ exports[`Form with field 1`] = `
       onFocus={[Function]}
     >
       <div
-        className="c2"
+        className="c2 "
       >
         <div
           className="c3"
@@ -869,7 +2598,6 @@ exports[`Form with field 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              value=""
             />
           </div>
         </div>

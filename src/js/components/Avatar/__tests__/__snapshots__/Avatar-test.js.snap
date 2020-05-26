@@ -12,15 +12,15 @@ exports[`Avatar icon renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFCA58;
+  background-color: #A4FF4D;
   color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -30,8 +30,8 @@ exports[`Avatar icon renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -65,8 +65,8 @@ exports[`Avatar renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -76,8 +76,8 @@ exports[`Avatar renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -118,8 +118,8 @@ exports[`Avatar round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -145,13 +145,13 @@ exports[`Avatar round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -173,13 +173,13 @@ exports[`Avatar round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
@@ -201,13 +201,13 @@ exports[`Avatar round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border-radius: 24px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -229,13 +229,13 @@ exports[`Avatar round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border-radius: 48px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -257,8 +257,8 @@ exports[`Avatar round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -268,8 +268,8 @@ exports[`Avatar round renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -277,27 +277,27 @@ exports[`Avatar round renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c2 {
-    border-radius: 3px;
+    border-radius: 2px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c3 {
-    border-radius: 6px;
+    border-radius: 4px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c4 {
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c5 {
-    border-radius: 24px;
+    border-radius: 16px;
   }
 }
 
@@ -344,8 +344,8 @@ exports[`Avatar size renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 18px;
-  width: 18px;
+  height: 12px;
+  width: 12px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -372,8 +372,8 @@ exports[`Avatar size renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  height: 16px;
+  width: 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -383,6 +383,34 @@ exports[`Avatar size renders 1`] = `
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url() no-repeat center center;
+  background-size: cover;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 32px;
+  width: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -410,37 +438,9 @@ exports[`Avatar size renders 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: url() no-repeat center center;
-  background-size: cover;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 72px;
-  width: 72px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -513,8 +513,8 @@ exports[`Avatar stack renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 18px;
-  width: 18px;
+  height: 12px;
+  width: 12px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -535,7 +535,7 @@ exports[`Avatar stack renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 3px;
+  padding: 1px;
 }
 
 .c8 {
@@ -567,8 +567,8 @@ exports[`Avatar stack renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -591,7 +591,7 @@ exports[`Avatar stack renders 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:512px) {
   .c6 {
     padding: 2px;
   }
@@ -647,15 +647,15 @@ exports[`Avatar text renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #555555;
+  background-color: #4b4d59;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -675,15 +675,15 @@ exports[`Avatar text renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #7D4CDB;
+  background-color: #E15151;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -693,8 +693,8 @@ exports[`Avatar text renders 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -706,8 +706,8 @@ exports[`Avatar text renders 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 17.333333333333332px;
+  line-height: 21.333333333333332px;
 }
 
 <div

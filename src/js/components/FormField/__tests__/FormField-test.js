@@ -6,6 +6,7 @@ import 'jest-styled-components';
 import { MnetUIBase } from '../../MnetUIBase';
 import { FormField } from '..';
 import { TextInput } from '../../TextInput';
+import { Form } from '../../Form';
 
 const CustomFormField = styled(FormField)`
   font-size: 40px;

@@ -1,7 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Avatar, Button, Box, mnet, MnetUIBase, Nav, Sidebar } from 'mnet-ui-base';
+import {
+  Avatar,
+  Button,
+  Box,
+  mnet,
+  MnetUIBase,
+  Nav,
+  Sidebar,
+} from 'mnet-ui-base';
 
 import {
   Analytics,

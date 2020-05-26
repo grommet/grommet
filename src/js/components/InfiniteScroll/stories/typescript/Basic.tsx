@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { grommet, Box, Grommet, InfiniteScroll, Text } from 'mnet-ui-base';
+import { Box, InfiniteScroll, Text } from 'mnet-ui-base';
 
 export const allItems = Array(3) // (2000)
   .fill(0)
@@ -9,7 +9,7 @@ export const allItems = Array(3) // (2000)
 
 const Example = props => (
   <React.StrictMode>
-    <Grommet theme={grommet}>
+    <>
       <Box>
         <InfiniteScroll items={allItems} {...props}>
           {(item, _, ref) => (
@@ -25,7 +25,7 @@ const Example = props => (
           )}
         </InfiniteScroll>
       </Box>
-    </Grommet>
+    </>
   </React.StrictMode>
 );
 

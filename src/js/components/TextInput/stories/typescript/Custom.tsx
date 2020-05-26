@@ -3,11 +3,11 @@ import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Search } from 'grommet-icons';
-import { Box, Image, Grommet, Text, TextInput } from 'mnet-ui-base';
-import { grommet } from 'mnet-ui-base/themes';
+import { Box, Image, MnetUIBase, Text, TextInput } from 'mnet-ui-base';
+import { mnet } from 'mnet-ui-base/themes';
 import { deepMerge } from 'mnet-ui-base/utils';
 
-const myCustomTheme = deepMerge(grommet, {
+const myCustomTheme = deepMerge(mnet, {
   global: {
     drop: {
       background: '#444444',
@@ -132,7 +132,7 @@ const CustomSuggestionsTextInput = () => {
   };
 
   return (
-    <Grommet theme={myCustomTheme} full>
+    <MnetUIBase theme={myCustomTheme} full>
       <Box background="dark-1" fill align="center" pad={{ top: 'large' }}>
         <Box
           ref={boxRef}
@@ -170,7 +170,7 @@ const CustomSuggestionsTextInput = () => {
           />
         </Box>
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

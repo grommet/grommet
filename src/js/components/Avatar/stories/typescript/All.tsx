@@ -9,7 +9,7 @@ import {
   UserNew,
 } from 'grommet-icons';
 
-import { Avatar, Box, Grommet, Stack } from 'mnet-ui-base';
+import { Avatar, Box, MnetUIBase, Stack } from 'mnet-ui-base';
 import { ThemeType } from 'mnet-ui-base/themes';
 
 const theme: ThemeType = {
@@ -79,7 +79,7 @@ const Avatars = () => {
   );
 
   return (
-    <Grommet theme={theme}>
+    <MnetUIBase theme={theme}>
       <Box align="center" gap="medium" pad="large" background="dark-1">
         {/* Nested Avatars */}
         <Stack anchor="bottom-right">
@@ -99,7 +99,7 @@ const Avatars = () => {
         <GroupedGravatarCentered />
         <GroupedGravatarRTL />
       </Box>
-    </Grommet>
+    </MnetUIBase>
   );
 };
 

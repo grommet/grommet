@@ -40,8 +40,8 @@ exports[`MnetUIBase background 1`] = `
 .c0 {
   font-size: 12px;
   line-height: 16px;
-  background: blue;
-  color: #444444;
+  background-color: #0000ff;
+  color: #f8f8f8;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -161,7 +161,7 @@ exports[`MnetUIBase mnet theme 1`] = `
   font-family: 'Open Sans',Arial,sans-serif;
   font-size: 12px;
   line-height: 16px;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -291,7 +291,7 @@ exports[`MnetUIBase themeMode 1`] = `
   font-family: 'Open Sans',Arial,sans-serif;
   font-size: 12px;
   line-height: 16px;
-  background: #1f2024;
+  background-color: #1f2024;
   color: #f8f8f8;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

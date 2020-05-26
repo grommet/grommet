@@ -75,7 +75,6 @@ exports[`MnetUIBase custom theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -90,7 +89,6 @@ exports[`MnetUIBase custom theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -109,9 +107,8 @@ exports[`MnetUIBase custom theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #313340;
+  background-color: #313340;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -124,6 +121,9 @@ exports[`MnetUIBase custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 4px;
 }
 
@@ -136,7 +136,6 @@ exports[`MnetUIBase custom theme 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c2:hover {
@@ -153,12 +152,55 @@ exports[`MnetUIBase custom theme 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  outline: none;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c10 {
+  box-sizing: border-box;
+  font-size: 14.666666666666666px;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  box-shadow: inset 1px 1px 1px 0 #cdd3e3;
+  line-height: 50px;
+  padding: 11px;
+  font-weight: bold;
+  margin: 0;
+  border: 1px solid #cdd3e3;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c10::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c10::-webkit-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c10::-moz-placeholder {
+  color: #e0e4ee;
+}
+
+.c10:-ms-input-placeholder {
+  color: #e0e4ee;
+}
+
+.c10::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c9 {
+  position: relative;
+  width: 100%;
 }
 
 .c0 {
@@ -306,6 +348,23 @@ exports[`MnetUIBase custom theme 1`] = `
       </span>
     </a>
   </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c9"
+    >
+      <input
+        autoComplete="off"
+        className="c10"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        value="Value"
+      />
+    </div>
+  </div>
 </div>
 `;
 
@@ -316,9 +375,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #FD6FFF;
+  background-color: #FD6FFF;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -333,9 +391,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #60EB9F;
+  background-color: #60EB9F;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -350,9 +407,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #60EBE1;
+  background-color: #60EBE1;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -367,9 +423,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #313340;
+  background-color: #313340;
   color: #eeeeee;
   min-width: 0;
   min-height: 0;
@@ -384,9 +439,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #4b4d59;
+  background-color: #4b4d59;
   color: #eeeeee;
   min-width: 0;
   min-height: 0;
@@ -401,9 +455,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #65707d;
+  background-color: #65707d;
   color: #eeeeee;
   min-width: 0;
   min-height: 0;
@@ -418,9 +471,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #8691a8;
+  background-color: #8691a8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -435,9 +487,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #999999;
+  background-color: #999999;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -452,9 +503,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #FFCA58;
+  background-color: #FFCA58;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -469,9 +519,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #fbfbfb;
+  background-color: #fbfbfb;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -486,9 +535,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #f6f6f8;
+  background-color: #f6f6f8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -503,9 +551,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #f5f6f8;
+  background-color: #f5f6f8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -520,9 +567,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #e1e3ef;
+  background-color: #e1e3ef;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -537,9 +583,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #dfdfdf;
+  background-color: #dfdfdf;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -554,9 +599,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #DADADA;
+  background-color: #DADADA;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -571,9 +615,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #EB6060;
+  background-color: #EB6060;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -588,9 +631,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #01C781;
+  background-color: #01C781;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -605,9 +647,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #6095EB;
+  background-color: #6095EB;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -622,9 +663,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #FF3333;
+  background-color: #FF3333;
   color: #eeeeee;
   min-width: 0;
   min-height: 0;
@@ -639,9 +679,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #a8a8a8;
+  background-color: #a8a8a8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -656,9 +695,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #7DD892;
+  background-color: #7DD892;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -673,9 +711,8 @@ exports[`MnetUIBase dark theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #F7E464;
+  background-color: #F7E464;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -693,7 +730,7 @@ exports[`MnetUIBase dark theme 1`] = `
   font-family: Arial;
   font-size: 12px;
   line-height: 16px;
-  background: #111111;
+  background-color: #111111;
   color: #eeeeee;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -940,9 +977,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #20314f;
+  background-color: #20314f;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -957,9 +993,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #519bff;
+  background-color: #519bff;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -974,9 +1009,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #4DFFEA;
+  background-color: #4DFFEA;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -991,9 +1025,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #E15151;
+  background-color: #E15151;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1008,9 +1041,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #313340;
+  background-color: #313340;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1025,9 +1057,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #4b4d59;
+  background-color: #4b4d59;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1042,9 +1073,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #65707d;
+  background-color: #65707d;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1059,9 +1089,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #8691a8;
+  background-color: #8691a8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1076,9 +1105,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #999999;
+  background-color: #999999;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1093,9 +1121,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #B1C2FE;
+  background-color: #B1C2FE;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1110,9 +1137,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #fbfbfb;
+  background-color: #fbfbfb;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1127,9 +1153,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #f6f6f8;
+  background-color: #f6f6f8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1144,9 +1169,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #f5f6f8;
+  background-color: #f5f6f8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1161,9 +1185,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #e1e3ef;
+  background-color: #e1e3ef;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1178,9 +1201,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #dfdfdf;
+  background-color: #dfdfdf;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1195,9 +1217,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #DADADA;
+  background-color: #DADADA;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1212,9 +1233,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #99742E;
+  background-color: #99742E;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1229,9 +1249,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #00739D;
+  background-color: #00739D;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1246,9 +1265,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #e35e59;
+  background-color: #e35e59;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1263,9 +1281,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #CCCCCC;
+  background-color: #CCCCCC;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1280,9 +1297,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #44b88d;
+  background-color: #44b88d;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1297,9 +1313,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  background: #FFAA15;
+  background-color: #FFAA15;
   color: #444444;
   min-width: 0;
   min-height: 0;
