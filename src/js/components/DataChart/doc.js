@@ -1,11 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  genericProps,
-  getAvailableAtBadge,
-  padPropType,
-  // themeDocUtils,
-} from '../../utils';
+import { genericProps, getAvailableAtBadge, padPropType } from '../../utils';
 
 const colorType = PropTypes.oneOfType([
   PropTypes.string,
@@ -163,6 +158,3 @@ export const doc = DataChart => {
 
   return DocumentedDataChart;
 };
-
-// export const themeDoc = {
-// };
