@@ -92,7 +92,8 @@ export const doc = DataChart => {
       ]),
       PropTypes.string,
     ]).description(`The spacing between the axes and the Charts.`),
-    pad: padPropType,
+    pad: padPropType.description(`Spacing around the outer edge of
+    the drawing coordinate area for bars and points to overflow into.`),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['fill']),
       PropTypes.shape({

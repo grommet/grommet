@@ -321,9 +321,8 @@ stretch
 
 **pad**
 
-Spacing around the outer edge of the drawing coordinate area.
-      Related to 'overflow', this allows control over how much space
-      is available for bars and points to overflow into. Defaults to `none`.
+Spacing around the outer edge of
+    the drawing coordinate area for bars and points to overflow into. Defaults to `none`.
 
 ```
 none
