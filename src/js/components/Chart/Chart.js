@@ -180,41 +180,44 @@ const Chart = React.forwardRef(
         const { label, onHover: valueOnHover, value, ...valueRest } = valueArg;
 
         const key = `p-${index}`;
-        const bottom = value.length === 2 ? bounds[1][0] : value[1];
-        const top = value.length === 2 ? value[1] : value[2];
-        if (top !== 0) {
-          const d =
-            `M ${(value[0] - bounds[0][0]) * scale[0]},` +
-            `${size[1] - (bottom - bounds[1][0]) * scale[1]}` +
-            ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
-            `${size[1] - (top - bounds[1][0]) * scale[1]}`;
+        const bottom =
+          value.length === 2
+            ? Math.min(Math.max(0, bounds[1][0]), value[1])
+            : Math.min(value[1], value[2]);
+        const top =
+          value.length === 2
+            ? Math.max(Math.min(0, bounds[1][1]), value[1])
+            : Math.max(value[1], value[2]);
+        const d =
+          `M ${(value[0] - bounds[0][0]) * scale[0]},` +
+          `${size[1] - (bottom - bounds[1][0]) * scale[1]}` +
+          ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
+          `${size[1] - (top - bounds[1][0]) * scale[1]}`;
 
-          let hoverProps;
-          if (valueOnHover) {
-            hoverProps = {
-              onMouseOver: () => valueOnHover(true),
-              onMouseLeave: () => valueOnHover(false),
-            };
-          }
-          let clickProps;
-          if (onClick) {
-            clickProps = { onClick };
-          }
-
-          return (
-            <g key={key} fill="none">
-              <title>{label}</title>
-              <path
-                d={d}
-                {...hoverProps}
-                {...clickProps}
-                {...valueRest}
-                strokeDasharray={strokeDasharray}
-              />
-            </g>
-          );
+        let hoverProps;
+        if (valueOnHover) {
+          hoverProps = {
+            onMouseOver: () => valueOnHover(true),
+            onMouseLeave: () => valueOnHover(false),
+          };
         }
-        return undefined;
+        let clickProps;
+        if (onClick) {
+          clickProps = { onClick };
+        }
+
+        return (
+          <g key={key} fill="none">
+            <title>{label}</title>
+            <path
+              d={d}
+              {...hoverProps}
+              {...clickProps}
+              {...valueRest}
+              strokeDasharray={strokeDasharray}
+            />
+          </g>
+        );
       });
 
     const renderLine = () => {
@@ -258,7 +261,8 @@ const Chart = React.forwardRef(
           `${size[1] - (top - bounds[1][0]) * scale[1]}`;
       });
       (values || []).reverse().forEach(({ value }) => {
-        const bottom = value.length === 2 ? bounds[1][0] : value[1];
+        const bottom =
+          value.length === 2 ? Math.max(0, bounds[1][0]) : value[1];
         d +=
           ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
           `${size[1] - (bottom - bounds[1][0]) * scale[1]}`;

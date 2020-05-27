@@ -74,6 +74,16 @@ exports[`Chart cap 1`] = `
           d="M 384,192 L 384,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -206,6 +216,16 @@ exports[`Chart color 1`] = `
           d="M 384,192 L 384,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -231,6 +251,16 @@ exports[`Chart color 1`] = `
         </title>
         <path
           d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
@@ -277,6 +307,16 @@ exports[`Chart color 1`] = `
             </title>
             <path
               d="M 384,192 L 384,0"
+            />
+          </g>
+          <g
+            fill="none"
+          >
+            <title>
+              zero
+            </title>
+            <path
+              d="M 0,192 L 0,192"
             />
           </g>
         </g>
@@ -339,6 +379,17 @@ exports[`Chart dash 1`] = `
           strokeDasharray="48 12"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+          strokeDasharray="48 12"
+        />
+      </g>
     </g>
   </svg>
 </div>
@@ -386,6 +437,16 @@ exports[`Chart default 1`] = `
         </title>
         <path
           d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
@@ -455,6 +516,16 @@ exports[`Chart gap 1`] = `
             d="M 60,192 L 60,0"
           />
         </g>
+        <g
+          fill="none"
+        >
+          <title>
+            zero
+          </title>
+          <path
+            d="M 0,192 L 0,192"
+          />
+        </g>
       </g>
     </svg>
     <svg
@@ -481,6 +552,16 @@ exports[`Chart gap 1`] = `
             d="M 72,192 L 72,0"
           />
         </g>
+        <g
+          fill="none"
+        >
+          <title>
+            zero
+          </title>
+          <path
+            d="M 0,192 L 0,192"
+          />
+        </g>
       </g>
     </svg>
     <svg
@@ -505,6 +586,16 @@ exports[`Chart gap 1`] = `
           </title>
           <path
             d="M 96,192 L 96,0"
+          />
+        </g>
+        <g
+          fill="none"
+        >
+          <title>
+            zero
+          </title>
+          <path
+            d="M 0,192 L 0,192"
           />
         </g>
       </g>
@@ -557,6 +648,16 @@ exports[`Chart pad 1`] = `
           d="M 384,192 L 384,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -581,6 +682,16 @@ exports[`Chart pad 1`] = `
         </title>
         <path
           d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
@@ -647,6 +758,16 @@ exports[`Chart size 1`] = `
           d="M 96,96 L 96,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,96 L 0,96"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -671,6 +792,16 @@ exports[`Chart size 1`] = `
         </title>
         <path
           d="M 192,192 L 192,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
@@ -699,6 +830,16 @@ exports[`Chart size 1`] = `
           d="M 384,384 L 384,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,384 L 0,384"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -725,6 +866,16 @@ exports[`Chart size 1`] = `
           d="M 768,768 L 768,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,768 L 0,768"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -749,6 +900,16 @@ exports[`Chart size 1`] = `
         </title>
         <path
           d="M 1152,1152 L 1152,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,1152 L 0,1152"
         />
       </g>
     </g>
@@ -780,6 +941,16 @@ exports[`Chart size 1`] = `
             d="M 0,192 L 0,0"
           />
         </g>
+        <g
+          fill="none"
+        >
+          <title>
+            zero
+          </title>
+          <path
+            d="M 0,192 L 0,192"
+          />
+        </g>
       </g>
     </svg>
     <svg
@@ -806,6 +977,16 @@ exports[`Chart size 1`] = `
             d="M 0,192 L 0,0"
           />
         </g>
+        <g
+          fill="none"
+        >
+          <title>
+            zero
+          </title>
+          <path
+            d="M 0,192 L 0,192"
+          />
+        </g>
       </g>
     </svg>
     <svg
@@ -830,6 +1011,16 @@ exports[`Chart size 1`] = `
           </title>
           <path
             d="M 72,192 L 72,0"
+          />
+        </g>
+        <g
+          fill="none"
+        >
+          <title>
+            zero
+          </title>
+          <path
+            d="M 0,192 L 0,192"
           />
         </g>
       </g>
@@ -882,6 +1073,16 @@ exports[`Chart thickness 1`] = `
           d="M 384,192 L 384,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -906,6 +1107,16 @@ exports[`Chart thickness 1`] = `
         </title>
         <path
           d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
@@ -934,6 +1145,16 @@ exports[`Chart thickness 1`] = `
           d="M 384,192 L 384,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -960,6 +1181,16 @@ exports[`Chart thickness 1`] = `
           d="M 384,192 L 384,0"
         />
       </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
     </g>
   </svg>
   <svg
@@ -984,6 +1215,16 @@ exports[`Chart thickness 1`] = `
         </title>
         <path
           d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
@@ -1033,6 +1274,16 @@ exports[`Chart type 1`] = `
         </title>
         <path
           d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
