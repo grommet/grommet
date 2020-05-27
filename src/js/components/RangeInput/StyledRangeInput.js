@@ -45,6 +45,9 @@ const trackColorStyle = props => {
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
       0.2,
     );
+    // Since the track color was changed from border-with-opacity to just border
+    // this condition is used to make sure we are applying the opacity correctly
+    // for 'border' color (for backward compatibility purposes).
     if (color === 'rgba(0,0,0,0.2)') return `background: ${color}`;
 
     // no bounds are defined but color may have changed
@@ -54,9 +57,9 @@ const trackColorStyle = props => {
     )}`;
   }
 
-  // 'max' defaults to 100 in case not specified
-  const max = props.max || 100;
-  const thumbPosition = `${(props.value / max) * 100}%`;
+  const max = props.max || 100; // 'max' defaults to 100 in case not specified
+  const min = props.min || 0; // 'min' defaults to 0 in case not specified
+  const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
 
   const lowerTrackColor = getBoundColor(props, 'lower');
   const upperTrackColor = getBoundColor(props, 'upper');
