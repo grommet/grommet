@@ -110,12 +110,21 @@ const getRepeatCount = count =>
   typeof count === 'number' ? count : `auto-${count}`;
 
 const getRepeatSize = (size, theme) => {
-  if (Array.isArray(size)) {
-    return `minmax(min(${theme.global.size[size[0]] || size[0]}, 100%), ${theme
-      .global.size[size[1]] || size[1]})`;
-  }
   if (size === 'flex') return '1fr';
-  return `minmax(min(${theme.global.size[size] || size}, 100%), 1fr)`;
+  let min;
+  let max;
+  if (Array.isArray(size)) {
+    min = theme.global.size[size[0]] || size[0];
+    max = theme.global.size[size[1]] || size[1];
+  } else {
+    min = theme.global.size[size] || size;
+    max = '1fr';
+  }
+  if (min.search(/\d/) !== -1) {
+    // bound any sized column to the total width available
+    min = `min(${min}, 100%)`;
+  }
+  return `minmax(${min}, ${max})`;
 };
 
 const sizeFor = (size, props, isRow) => {
