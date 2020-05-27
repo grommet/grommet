@@ -5,8 +5,6 @@ exports.base = exports.generate = void 0;
 
 var _polished = require("polished");
 
-var _styledComponents = require("styled-components");
-
 var _Actions = require("grommet-icons/icons/Actions");
 
 var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
@@ -38,8 +36,6 @@ var _VolumeLow = require("grommet-icons/icons/VolumeLow");
 var _base = require("grommet-icons/themes/base");
 
 var _object = require("../utils/object");
-
-var _colors = require("../utils/colors");
 
 var _mixins = require("../utils/mixins");
 
@@ -975,13 +971,23 @@ var generate = function generate(baseSpacing, scale) {
       size: baseSpacing + "px"
     },
     rangeInput: {
+      // extend: undefined
       track: {
         height: '4px',
-        color: (0, _styledComponents.css)(["", ";"], function (props) {
-          return (0, _polished.rgba)((0, _colors.normalizeColor)('border', props.theme), 0.2);
-        })
+        color: 'border' // opacity: undefined,
+        // lower: {
+        //   color: 'undefined',
+        //   opacity: undefined,
+        // },
+        // upper: {
+        //   color: undefined,
+        //   opacity: undefined,
+        // },
+        // extend: undefined
+
       },
       thumb: {// color: { dark: undefined, light: undefined },
+        // extend: undefined
       }
     },
     rangeSelector: {

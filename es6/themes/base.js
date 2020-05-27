@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { rgba } from 'polished';
-import { css } from 'styled-components';
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
@@ -18,7 +17,6 @@ import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
 import { deepFreeze, deepMerge } from '../utils/object';
-import { normalizeColor } from '../utils/colors';
 import { parseMetricToNum } from '../utils/mixins';
 var brandColor = '#7D4CDB';
 var accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
@@ -949,13 +947,23 @@ export var generate = function generate(baseSpacing, scale) {
       size: baseSpacing + "px"
     },
     rangeInput: {
+      // extend: undefined
       track: {
         height: '4px',
-        color: css(["", ";"], function (props) {
-          return rgba(normalizeColor('border', props.theme), 0.2);
-        })
+        color: 'border' // opacity: undefined,
+        // lower: {
+        //   color: 'undefined',
+        //   opacity: undefined,
+        // },
+        // upper: {
+        //   color: undefined,
+        //   opacity: undefined,
+        // },
+        // extend: undefined
+
       },
       thumb: {// color: { dark: undefined, light: undefined },
+        // extend: undefined
       }
     },
     rangeSelector: {
