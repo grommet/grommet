@@ -42,6 +42,12 @@ export const doc = Chart => {
       where the gradient colors change.`,
       )
       .defaultValue('accent-1'),
+    id: PropTypes.string.description(`A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.`),
+    dash: PropTypes.bool
+      .description(`Whether to use dashed lines for line or bar charts.`)
+      .defaultValue(false),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',
@@ -55,12 +61,6 @@ export const doc = Chart => {
       PropTypes.string,
     ]).description(`The amount of spacing between data points. This
       is only used when the size specifies width as 'auto'.`),
-    id: PropTypes.string.description(`A unique identifier for the Chart. This
-      is required if more than one Chart is shown and they use color
-      gradients.`),
-    dash: PropTypes.bool
-      .description(`Whether to use dashed lines for line or bar charts.`)
-      .defaultValue(false),
     onClick: PropTypes.func.description(`Called when the user clicks on the
      visualization. Clicking on individual bars or points are handled via
      values[].onClick for those types of charts.`),
@@ -75,7 +75,11 @@ export const doc = Chart => {
       align with the component boundaries.`,
       )
       .defaultValue(false),
-    pad: padPropType,
+    pad: padPropType.description(
+      `Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into.`,
+    ),
     round: PropTypes.bool
       .description('Whether to round the line ends.')
       .defaultValue(false),

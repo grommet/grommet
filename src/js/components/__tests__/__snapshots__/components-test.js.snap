@@ -907,9 +907,9 @@ string",
       },
       Object {
         "defaultValue": "none",
-        "description": "The amount of padding around the box contents. An
-    object can be specified to distinguish horizontal padding, vertical
-    padding, and padding on a particular side of the box",
+        "description": "Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -1766,19 +1766,6 @@ string",
         "name": "color",
       },
       Object {
-        "description": "The amount of spacing between data points. This
-      is only used when the size specifies width as 'auto'.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "gap",
-      },
-      Object {
         "description": "A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
       gradients.",
@@ -1790,6 +1777,19 @@ string",
         "description": "Whether to use dashed lines for line or bar charts.",
         "format": "boolean",
         "name": "dash",
+      },
+      Object {
+        "description": "The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "description": "Called when the user clicks on the
@@ -1816,9 +1816,9 @@ string",
       },
       Object {
         "defaultValue": "none",
-        "description": "The amount of padding around the box contents. An
-    object can be specified to distinguish horizontal padding, vertical
-    padding, and padding on a particular side of the box",
+        "description": "Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -2354,9 +2354,9 @@ vertical",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js",
       },
     ],
-    "description": "Takes a data set and visualizes it. Chart renders a
-    single value across a data set. DataChart allows multiple Charts and adds
-    guides and axes for decoration.",
+    "description": "Takes a data set and visualizes it. While Chart renders a
+    single value across a data set. DataChart allows multiple overlayed
+    Charts and adds guides and axes for decoration.",
     "intrinsicElement": "div",
     "name": "DataChart",
     "properties": Array [
@@ -2462,7 +2462,11 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "how to visualize the data",
+        "description": "Chart properties indicating how to visualize the data.
+    'key' indicates which property of the data objects to use. 'keys' indicates
+    that multiple properties should be used for a stacked bar chart. DataChart
+    uses the key/keys to build the right 'values' for the underlying Chart.
+    All of the other properties in 'chart' are passed through to the Chart.",
         "format": "{
   key: string,
   keys: [{
@@ -2583,8 +2587,7 @@ string",
         "name": "data",
       },
       Object {
-        "description": "The amount of spacing between data points. This
-    is only used when the size specifies width as 'auto'.",
+        "description": "The spacing between the axes and the Charts.",
         "format": "none
 xxsmall
 xsmall
@@ -2596,11 +2599,93 @@ string",
         "name": "gap",
       },
       Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
+      },
+      Object {
         "defaultValue": Object {
           "height": "small",
           "width": "medium",
         },
-        "description": "The size of the DataChart chart.",
+        "description": "The size of the Charts. This does not include the axes
+      and any gap. It is passed through to the underlying Chart.",
         "format": "fill
 {
   height: 
@@ -2626,7 +2711,8 @@ string",
         "name": "size",
       },
       Object {
-        "description": "Default thickness across charts.",
+        "description": "Chart thickness given to all
+    Charts if not specified per Chart in 'chart'.",
         "format": "hair
 xsmall
 small
@@ -2638,7 +2724,13 @@ string",
         "name": "thickness",
       },
       Object {
-        "description": "x-axis configuration",
+        "description": "x-axis configuration. 'guide' specifies that vertical
+    guide lines should be drawn under the Chart, one per label.
+    'key' specifies what property in the 'data' should be used as
+    any label content. 'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the current data index and axis index and should return
+    the element to render: (dataIndex, axisIndex) => element.",
         "format": "boolean
 {
   guide: boolean,
@@ -2649,7 +2741,12 @@ string",
         "name": "xAxis",
       },
       Object {
-        "description": "y-axis configuration",
+        "description": "y-axis configuration. 'guide' specifies that horizontal
+    guide lines should be drawn under the Chart, one per label.
+    'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the value and axis index and should return
+    the element to render: (value, axisIndex) => element",
         "format": "boolean
 {
   guide: boolean,

@@ -159,22 +159,6 @@ string
 }]
 ```
 
-**gap**
-
-The amount of spacing between data points. This
-      is only used when the size specifies width as 'auto'.
-
-```
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string
-```
-
 **id**
 
 A unique identifier for the Chart. This
@@ -191,6 +175,22 @@ Whether to use dashed lines for line or bar charts.
 
 ```
 boolean
+```
+
+**gap**
+
+The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **onClick**
@@ -226,9 +226,9 @@ boolean
 
 **pad**
 
-The amount of padding around the box contents. An
-    object can be specified to distinguish horizontal padding, vertical
-    padding, and padding on a particular side of the box Defaults to `none`.
+Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into. Defaults to `none`.
 
 ```
 none

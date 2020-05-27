@@ -3,6 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import {
   genericProps,
   getAvailableAtBadge,
+  padPropType,
   // themeDocUtils,
 } from '../../utils';
 
@@ -60,9 +61,9 @@ export const doc = DataChart => {
   const DocumentedDataChart = describe(DataChart)
     .availableAt(getAvailableAtBadge('DataChart'))
     .description(
-      `Takes a data set and visualizes it. Chart renders a
-    single value across a data set. DataChart allows multiple Charts and adds
-    guides and axes for decoration.`,
+      `Takes a data set and visualizes it. While Chart renders a
+    single value across a data set. DataChart allows multiple overlayed
+    Charts and adds guides and axes for decoration.`,
     )
     .usage(
       `import { DataChart } from 'grommet';
@@ -72,10 +73,12 @@ export const doc = DataChart => {
 
   DocumentedDataChart.propTypes = {
     ...genericProps,
-    chart: PropTypes.oneOfType([
-      chartType,
-      PropTypes.arrayOf(chartType),
-    ]).description('how to visualize the data'),
+    chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)])
+      .description(`Chart properties indicating how to visualize the data.
+    'key' indicates which property of the data objects to use. 'keys' indicates
+    that multiple properties should be used for a stacked bar chart. DataChart
+    uses the key/keys to build the right 'values' for the underlying Chart.
+    All of the other properties in 'chart' are passed through to the Chart.`),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
@@ -88,8 +91,8 @@ export const doc = DataChart => {
         'xlarge',
       ]),
       PropTypes.string,
-    ]).description(`The amount of spacing between data points. This
-    is only used when the size specifies width as 'auto'.`),
+    ]).description(`The spacing between the axes and the Charts.`),
+    pad: padPropType,
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['fill']),
       PropTypes.shape({
@@ -120,9 +123,13 @@ export const doc = DataChart => {
         ]),
       }),
     ])
-      .description('The size of the DataChart chart.')
+      .description(
+        `The size of the Charts. This does not include the axes
+      and any gap. It is passed through to the underlying Chart.`,
+      )
       .defaultValue({ width: 'medium', height: 'small' }),
-    thickness: thicknessType.description('Default thickness across charts.'),
+    thickness: thicknessType.description(`Chart thickness given to all
+    Charts if not specified per Chart in 'chart'.`),
     xAxis: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -131,7 +138,13 @@ export const doc = DataChart => {
         labels: PropTypes.number, // default undefined, all data points
         render: PropTypes.func, // (dataIndex, axisIndex) => element
       }),
-    ]).description('x-axis configuration'),
+    ]).description(`x-axis configuration. 'guide' specifies that vertical
+    guide lines should be drawn under the Chart, one per label.
+    'key' specifies what property in the 'data' should be used as
+    any label content. 'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the current data index and axis index and should return
+    the element to render: (dataIndex, axisIndex) => element.`),
     yAxis: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -139,7 +152,12 @@ export const doc = DataChart => {
         labels: PropTypes.number, // default 2, top and bottom
         render: PropTypes.func, // (value, axisIndex) => element
       }),
-    ]).description('y-axis configuration'),
+    ]).description(`y-axis configuration. 'guide' specifies that horizontal
+    guide lines should be drawn under the Chart, one per label.
+    'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the value and axis index and should return
+    the element to render: (value, axisIndex) => element`),
   };
 
   return DocumentedDataChart;
