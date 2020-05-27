@@ -33,7 +33,7 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   };
 
   var onSelect = function onSelect(event) {
-    return setState(_extends(_extends({}, state), {}, {
+    return setState(_extends({}, state, {
       value: event.suggestion
     }));
   };

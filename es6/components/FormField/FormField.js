@@ -51,7 +51,7 @@ var Message = function Message(_ref) {
   return null;
 };
 
-var FormField = forwardRef(function (_ref2, ref) {
+var FormField = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var children = _ref2.children,
       className = _ref2.className,
       component = _ref2.component,
@@ -181,7 +181,7 @@ var FormField = forwardRef(function (_ref2, ref) {
     }
 
     if (child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1 && child.props.plain === undefined && child.props.focusIndicator === undefined) {
-      return cloneElement(child, {
+      return /*#__PURE__*/cloneElement(child, {
         plain: true,
         focusIndicator: false
       });
@@ -247,7 +247,7 @@ var FormField = forwardRef(function (_ref2, ref) {
 
   if (themeBorder) {
     var innerProps = themeBorder.position === 'inner' ? {
-      border: _extends(_extends({}, themeBorder), {}, {
+      border: _extends({}, themeBorder, {
         side: themeBorder.side || 'bottom',
         color: borderColor
       }),
@@ -296,7 +296,7 @@ var FormField = forwardRef(function (_ref2, ref) {
   }
 
   var outerProps = themeBorder && themeBorder.position === 'outer' ? {
-    border: _extends(_extends({}, themeBorder), {}, {
+    border: _extends({}, themeBorder, {
       color: borderColor
     }),
     round: formFieldTheme.round,

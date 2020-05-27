@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Heading) {
   var DocumentedHeading = (0, _reactDesc.describe)(Heading).availableAt((0, _utils.getAvailableAtBadge)('Heading')).description('Heading text structured in levels.').usage("import { Heading } from 'grommet';\n<Heading />").intrinsicElement(['h1', 'h2', 'h3', 'h4']);
-  DocumentedHeading.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedHeading.propTypes = _extends({}, _utils.genericProps, {
     color: _utils.colorPropType.description('A color identifier to use for the text color.'),
     level: _reactDesc.PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']).description("The heading level. It corresponds to the number after the 'H' for\nthe DOM tag. Set the level for semantic accuracy and accessibility.\nThe sizing can be further adjusted using the size property.").defaultValue(1),
     responsive: _reactDesc.PropTypes.bool.description("Whether the font size should be scaled for\n      mobile environments.").defaultValue(true),
@@ -24,7 +24,7 @@ var doc = function doc(Heading) {
 
 exports.doc = doc;
 
-var themeDoc = _extends(_extends(_extends({}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width')), _utils.themeDocUtils.edgeStyle('The possible sizes for margin.')), {}, {
+var themeDoc = _extends({}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'), {
   'heading.extend': {
     description: 'Any additional style for Heading.',
     type: 'string | (props) => {}',

@@ -73,7 +73,7 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   return [start, end];
 };
 
-var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
+var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
       validBounds = _ref.bounds,

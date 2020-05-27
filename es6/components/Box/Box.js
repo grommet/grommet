@@ -8,7 +8,7 @@ import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
-var Box = forwardRef(function (_ref, ref) {
+var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       background = _ref.background,
       border = _ref.border,
@@ -104,7 +104,7 @@ var Box = forwardRef(function (_ref, ref) {
     if (darkChanged || theme.darkChanged) {
       dark = dark === undefined ? theme.dark : dark;
       contents = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
-        value: _extends(_extends({}, theme), {}, {
+        value: _extends({}, theme, {
           dark: dark
         })
       }, contents);

@@ -127,7 +127,7 @@ var dropAlign = {
   top: 'bottom',
   left: 'left'
 };
-var MaskedInput = (0, _react.forwardRef)(function (_ref, ref) {
+var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var focusProp = _ref.focus,
       icon = _ref.icon,
       id = _ref.id,

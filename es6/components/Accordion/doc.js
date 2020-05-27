@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Accordion) {
   var DocumentedAccordion = describe(Accordion).availableAt(getAvailableAtBadge('Accordion')).description('An accordion containing collapsible panels.').usage("import { Accordion, AccordionPanel } from 'grommet';\n<Accordion>\n  <AccordionPanel label='Panel 1'>...</AccordionPanel>\n  <AccordionPanel label='Panel 2'>...</AccordionPanel>\n</Accordion>").intrinsicElement('div');
-  DocumentedAccordion.propTypes = _extends(_extends({}, genericProps), {}, {
+  DocumentedAccordion.propTypes = _extends({}, genericProps, {
     activeIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).description("Active panel index. If specified, Accordion will be a controlled \ncomponent. This means that future panel changes will not work unless you\nsubscribe to onActive function and update activeIndex accordingly.").defaultValue(0),
     animate: PropTypes.bool.description('Transition content in & out with a slide down animation.').defaultValue(true),
     children: PropTypes.node.description('Array of AccordionPanels.'),

@@ -144,7 +144,7 @@ var DataTable = function DataTable(_ref) {
     return function () {
       var nextGroupState = _extends({}, groupState);
 
-      nextGroupState[groupValue] = _extends(_extends({}, nextGroupState[groupValue]), {}, {
+      nextGroupState[groupValue] = _extends({}, nextGroupState[groupValue], {
         expanded: !nextGroupState[groupValue].expanded
       });
       setGroupState(nextGroupState);
@@ -165,7 +165,7 @@ var DataTable = function DataTable(_ref) {
     }).length === 0;
     var nextGroupState = {};
     Object.keys(groupState).forEach(function (k) {
-      nextGroupState[k] = _extends(_extends({}, groupState[k]), {}, {
+      nextGroupState[k] = _extends({}, groupState[k], {
         expanded: !expanded
       });
     });

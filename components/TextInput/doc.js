@@ -58,7 +58,7 @@ var doc = function doc(TextInput) {
 
 exports.doc = doc;
 
-var themeDoc = _extends(_extends(_extends(_extends({
+var themeDoc = _extends({
   'global.colors.border': {
     description: 'The color of the border.',
     type: 'object',
@@ -117,6 +117,6 @@ var themeDoc = _extends(_extends(_extends(_extends({
     type: 'number | string',
     defaultValue: undefined
   }
-}, _utils.themeDocUtils.focusStyle), _utils.themeDocUtils.placeholderStyle), _utils.themeDocUtils.disabledStyle), _utils.themeDocUtils.inputStyle);
+}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.disabledStyle, _utils.themeDocUtils.inputStyle);
 
 exports.themeDoc = themeDoc;

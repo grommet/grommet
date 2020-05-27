@@ -52,7 +52,7 @@ var formatTime = function formatTime(time) {
   return minutes + ":" + seconds;
 };
 
-var Video = (0, _react.forwardRef)(function (_ref, ref) {
+var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var alignSelf = _ref.alignSelf,
       autoPlay = _ref.autoPlay,
       children = _ref.children,

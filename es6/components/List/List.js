@@ -35,7 +35,7 @@ var normalize = function normalize(item, index, property) {
   return item[property];
 };
 
-var List = React.forwardRef(function (_ref, ref) {
+var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var action = _ref.action,
       as = _ref.as,
       background = _ref.background,
@@ -155,7 +155,7 @@ var List = React.forwardRef(function (_ref, ref) {
     }
 
     if (itemProps && itemProps[index]) {
-      boxProps = _extends(_extends({}, boxProps), itemProps[index]);
+      boxProps = _extends({}, boxProps, itemProps[index]);
     }
 
     var clickProps;

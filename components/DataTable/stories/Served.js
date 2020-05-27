@@ -58,7 +58,7 @@ var ServedDataTable = function ServedDataTable() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: _data.columns.map(function (column) {
-      return _extends(_extends({}, column), {}, {
+      return _extends({}, column, {
         search: column.property === 'name' || column.property === 'location'
       });
     }),

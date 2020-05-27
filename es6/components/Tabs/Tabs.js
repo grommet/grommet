@@ -9,7 +9,7 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
-var Tabs = forwardRef(function (_ref, ref) {
+var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       flex = _ref.flex,
       _ref$justify = _ref.justify,
@@ -67,7 +67,7 @@ var Tabs = forwardRef(function (_ref, ref) {
       }
     }
 
-    return cloneElement(tab, {
+    return /*#__PURE__*/cloneElement(tab, {
       active: isTabActive,
       onActivate: function onActivate() {
         return activateTab(index);

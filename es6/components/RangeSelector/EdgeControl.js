@@ -24,7 +24,7 @@ var StyledBox = styled(Box).withConfig({
 })(["", ""], function (props) {
   return props.focus && focusStyle();
 });
-var EdgeControl = forwardRef(function (_ref, ref) {
+var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
       direction = _ref.direction,
       edge = _ref.edge,

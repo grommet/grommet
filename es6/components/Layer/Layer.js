@@ -6,7 +6,7 @@ import { getNewContainer } from '../../utils';
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
-var Layer = forwardRef(function (props, ref) {
+var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
   var animate = props.animate,
       animation = props.animation;
 
@@ -72,7 +72,7 @@ var Layer = forwardRef(function (props, ref) {
       }
     };
   }, [animate, animation, containerTarget, layerContainer, originalFocusedElement]);
-  return layerContainer ? createPortal( /*#__PURE__*/React.createElement(LayerContainer, _extends({
+  return layerContainer ? /*#__PURE__*/createPortal( /*#__PURE__*/React.createElement(LayerContainer, _extends({
     ref: ref
   }, props)), layerContainer) : null;
 });

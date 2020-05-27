@@ -13,7 +13,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Video) {
   var DocumentedVideo = (0, _reactDesc.describe)(Video).availableAt((0, _utils.getAvailableAtBadge)('Video')).description('A video player.').usage("import { Video } from 'grommet';\n<Video />").intrinsicElement('video');
-  DocumentedVideo.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedVideo.propTypes = _extends({}, _utils.genericProps, {
     autoPlay: _reactDesc.PropTypes.bool.description('Enables automatic playback of the video as soon as it is loaded.'),
     controls: _reactDesc.PropTypes.oneOf([false, 'over', 'below']).description('Whether to show playback controls and where to place them.').defaultValue('over'),
     fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
@@ -25,7 +25,7 @@ var doc = function doc(Video) {
 
 exports.doc = doc;
 
-var themeDoc = _extends(_extends({}, _themeDocUtils.themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in the video component layout.')), {}, {
+var themeDoc = _extends({}, _themeDocUtils.themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in the video component layout.'), {
   'global.edgeSize.xsmall': {
     description: 'The width of the video scrubber.',
     type: 'object',

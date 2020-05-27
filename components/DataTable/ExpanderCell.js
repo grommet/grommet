@@ -42,7 +42,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
     });
   }
 
-  var normalizedThemeProps = _extends(_extends({}, theme.table[context]), theme.dataTable[context]);
+  var normalizedThemeProps = _extends({}, theme.table[context], theme.dataTable[context]);
 
   delete normalizedThemeProps.background;
   delete normalizedThemeProps.border;

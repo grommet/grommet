@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef } from 'react';
 import { StyledParagraph } from './StyledParagraph';
-var Paragraph = forwardRef(function (_ref, ref) {
+var Paragraph = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
       fill = _ref.fill,
       rest = _objectWithoutPropertiesLoose(_ref, ["color", "fill"]);

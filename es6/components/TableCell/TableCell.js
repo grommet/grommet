@@ -13,7 +13,7 @@ var verticalAlignToJustify = {
   top: 'start',
   bottom: 'end'
 };
-var TableCell = forwardRef(function (_ref, ref) {
+var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var align = _ref.align,
       background = _ref.background,
       border = _ref.border,
@@ -39,7 +39,7 @@ var TableCell = forwardRef(function (_ref, ref) {
     } // merge tabelContextTheme and rest
 
 
-    var mergedProps = _extends(_extends({}, tableContextTheme), rest);
+    var mergedProps = _extends({}, tableContextTheme, rest);
 
     Object.keys(mergedProps).forEach(function (key) {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];

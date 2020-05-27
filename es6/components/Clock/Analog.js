@@ -36,7 +36,7 @@ var getClockState = function getClockState(_ref) {
   };
 };
 
-var Analog = forwardRef(function (_ref2, ref) {
+var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var elements = _ref2.elements,
       precision = _ref2.precision,
       rest = _objectWithoutPropertiesLoose(_ref2, ["elements", "precision"]);

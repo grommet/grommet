@@ -23,7 +23,7 @@ export var doc = function doc(MaskedInput) {
   };
   return DocumentedMaskedInput;
 };
-export var themeDoc = _extends(_extends(_extends(_extends({
+export var themeDoc = _extends({
   'global.hover.background': {
     description: 'The background style when hovering.',
     type: 'string | { color: string, opacity: string }',
@@ -49,4 +49,4 @@ export var themeDoc = _extends(_extends(_extends(_extends({
     type: 'number | string',
     defaultValue: undefined
   }
-}, themeDocUtils.disabledStyle), themeDocUtils.focusStyle), themeDocUtils.placeholderStyle), themeDocUtils.inputStyle);
+}, themeDocUtils.disabledStyle, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.inputStyle);

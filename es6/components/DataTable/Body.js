@@ -10,7 +10,7 @@ import { Keyboard } from '../Keyboard';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue } from './buildState';
-var Body = forwardRef(function (_ref, ref) {
+var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,

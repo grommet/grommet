@@ -50,7 +50,7 @@ var TestInput = /*#__PURE__*/function (_Component) {
       showDrop: false
     });
 
-    _defineProperty(_assertThisInitialized(_this), "inputRef", _react["default"].createRef());
+    _defineProperty(_assertThisInitialized(_this), "inputRef", /*#__PURE__*/_react["default"].createRef());
 
     return _this;
   }

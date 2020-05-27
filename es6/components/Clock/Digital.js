@@ -79,7 +79,7 @@ var Element = function Element(_ref2) {
   return result;
 };
 
-export var Digital = forwardRef(function (props, ref) {
+export var Digital = /*#__PURE__*/forwardRef(function (props, ref) {
   var elements = props.elements,
       precision = props.precision,
       run = props.run,

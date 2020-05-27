@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Anchor) {
   var DocumentedAnchor = (0, _reactDesc.describe)(Anchor).availableAt((0, _utils.getAvailableAtBadge)('Anchor')).description('A text link.').details("We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.").usage("import { Anchor } from 'grommet';\n" + "<Anchor href={location} label='Label' />").intrinsicElement('a');
-  DocumentedAnchor.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedAnchor.propTypes = _extends({}, _utils.genericProps, {
     a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
     color: _utils.colorPropType.description('Label color and icon color, if not specified on the icon.'),
     disabled: _reactDesc.PropTypes.bool.description('Whether the anchor is disabled.').defaultValue(false),
@@ -28,7 +28,7 @@ var doc = function doc(Anchor) {
 
 exports.doc = doc;
 
-var themeDoc = _extends(_extends({
+var themeDoc = _extends({
   'anchor.color': {
     description: 'The color of the label text and icon strokes.',
     type: 'string | { dark: string, light: string }',
@@ -74,6 +74,6 @@ var themeDoc = _extends(_extends({
     type: 'string',
     defaultValue: '24px'
   }
-}, _utils.themeDocUtils.focusStyle), _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

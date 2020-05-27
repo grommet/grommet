@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { colorPropType, genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(Anchor) {
   var DocumentedAnchor = describe(Anchor).availableAt(getAvailableAtBadge('Anchor')).description('A text link.').details("We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.").usage("import { Anchor } from 'grommet';\n" + "<Anchor href={location} label='Label' />").intrinsicElement('a');
-  DocumentedAnchor.propTypes = _extends(_extends({}, genericProps), {}, {
+  DocumentedAnchor.propTypes = _extends({}, genericProps, {
     a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
     color: colorPropType.description('Label color and icon color, if not specified on the icon.'),
     disabled: PropTypes.bool.description('Whether the anchor is disabled.').defaultValue(false),
@@ -18,7 +18,7 @@ export var doc = function doc(Anchor) {
   });
   return DocumentedAnchor;
 };
-export var themeDoc = _extends(_extends({
+export var themeDoc = _extends({
   'anchor.color': {
     description: 'The color of the label text and icon strokes.',
     type: 'string | { dark: string, light: string }',
@@ -64,4 +64,4 @@ export var themeDoc = _extends(_extends({
     type: 'string',
     defaultValue: '24px'
   }
-}, themeDocUtils.focusStyle), themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, themeDocUtils.focusStyle, themeDocUtils.edgeStyle('The possible sizes for margin.'));

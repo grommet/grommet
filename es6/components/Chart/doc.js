@@ -6,7 +6,7 @@ export var doc = function doc(Chart) {
   var DocumentedChart = describe(Chart).availableAt(getAvailableAtBadge('Chart')).description('A graphical chart.').usage("import { Chart } from 'grommet';\n<Chart />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
-  DocumentedChart.propTypes = _extends(_extends({}, genericProps), {}, {
+  DocumentedChart.propTypes = _extends({}, genericProps, {
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description("The limits for the values, specified as a two dimensional array.\n      If not specified, the bounds will automatically be set to fit\n      the provided values."),
     color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
       color: PropTypes.string,

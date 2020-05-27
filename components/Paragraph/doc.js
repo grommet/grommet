@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Paragraph) {
   var DocumentedParagraph = (0, _reactDesc.describe)(Paragraph).availableAt((0, _utils.getAvailableAtBadge)('Paragraph')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
-  DocumentedParagraph.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedParagraph.propTypes = _extends({}, _utils.genericProps, {
     color: _utils.colorPropType.description('A color identifier to use for the text color.'),
     fill: _reactDesc.PropTypes.bool.description('Whether the width should fill the container.').defaultValue(false),
     responsive: _reactDesc.PropTypes.bool.description("Whether margin should be scaled for mobile environments.").defaultValue(true),

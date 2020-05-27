@@ -39,7 +39,7 @@ var StyledBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 })(["", ""], function (props) {
   return props.focus && (0, _utils.focusStyle)();
 });
-var EdgeControl = (0, _react.forwardRef)(function (_ref, ref) {
+var EdgeControl = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var color = _ref.color,
       direction = _ref.direction,
       edge = _ref.edge,

@@ -13,7 +13,7 @@ var doc = function doc(Meter) {
   var DocumentedMeter = (0, _reactDesc.describe)(Meter).availableAt((0, _utils.getAvailableAtBadge)('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
-  DocumentedMeter.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedMeter.propTypes = _extends({}, _utils.genericProps, {
     background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
       color: _reactDesc.PropTypes.string,
       opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.number, _reactDesc.PropTypes.bool])

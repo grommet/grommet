@@ -5,7 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useContext, useState } from 'react';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
-var RangeInput = forwardRef(function (_ref, ref) {
+var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,

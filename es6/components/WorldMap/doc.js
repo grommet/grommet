@@ -41,7 +41,7 @@ export var themeDoc = {
 };
 export var doc = function doc(WorldMap) {
   var DocumentedWorldMap = describe(WorldMap).availableAt(getAvailableAtBadge('WorldMap')).description('A map of the world, or a continent.').usage("import { WorldMap } from 'grommet';\n<WorldMap />").intrinsicElement('svg');
-  DocumentedWorldMap.propTypes = _extends(_extends({}, genericProps), {}, {
+  DocumentedWorldMap.propTypes = _extends({}, genericProps, {
     color: colorPropType.description('Default color'),
     continents: PropTypes.arrayOf(PropTypes.shape({
       color: colorPropType,

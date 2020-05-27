@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(DropButton) {
   var DocumentedDropButton = describe(DropButton).availableAt(getAvailableAtBadge('DropButton')).description("A Button that controls a Drop. When opened, the Drop will contain\n      whatever is specified via `dropContent`. The Drop will control the focus\n      so that the contents behind it are not focusable. All properties and \n      theme properties of Button or Drop can be passed through.\n      ").usage("import { DropButton } from 'grommet';\n<DropButton dropContent={...} />").intrinsicElement('button');
-  DocumentedDropButton.propTypes = _extends(_extends({}, genericProps), {}, {
+  DocumentedDropButton.propTypes = _extends({}, genericProps, {
     disabled: PropTypes.bool.description('Whether the button should be disabled.').defaultValue(false),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),

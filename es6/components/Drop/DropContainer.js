@@ -26,7 +26,7 @@ var defaultAlign = {
   left: 'left'
 };
 var defaultPortalContext = [];
-var DropContainer = forwardRef(function (_ref, ref) {
+var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _ref$align = _ref.align,
       align = _ref$align === void 0 ? defaultAlign : _ref$align,
       children = _ref.children,
@@ -296,7 +296,7 @@ var DropContainer = forwardRef(function (_ref, ref) {
 
     if (dark !== undefined && dark !== theme.dark) {
       content = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
-        value: _extends(_extends({}, theme), {}, {
+        value: _extends({}, theme, {
           dark: dark
         })
       }, content);

@@ -71,7 +71,7 @@ var defaultMessages = {
   suggestionsExist: 'This input has suggestions use arrow keys to navigate',
   suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate'
 };
-var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
+var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       defaultValue = _ref.defaultValue,
       _ref$dropAlign = _ref.dropAlign,
@@ -254,7 +254,7 @@ var TextInput = (0, _react.forwardRef)(function (_ref, ref) {
       items: suggestions,
       step: theme.select.step
     }, function (suggestion, index, itemRef) {
-      var plainLabel = typeof suggestion === 'object' && typeof (0, _react.isValidElement)(suggestion.label);
+      var plainLabel = typeof suggestion === 'object' && typeof /*#__PURE__*/(0, _react.isValidElement)(suggestion.label);
       return /*#__PURE__*/_react["default"].createElement("li", {
         key: stringLabel(suggestion) + "-" + index,
         ref: itemRef

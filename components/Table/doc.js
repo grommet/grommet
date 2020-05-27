@@ -14,7 +14,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(Table) {
   var DocumentedTable = (0, _reactDesc.describe)(Table).availableAt((0, _utils.getAvailableAtBadge)('Table')).description('A table of data organized in cells.').usage( // eslint-disable-next-line max-len
   "import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';\n<Table />").intrinsicElement('table');
-  DocumentedTable.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedTable.propTypes = _extends({}, _utils.genericProps, {
     caption: _reactDesc.PropTypes.string.description('One line description.')
   });
   return DocumentedTable;
@@ -22,7 +22,7 @@ var doc = function doc(Table) {
 
 exports.doc = doc;
 
-var themeDoc = _extends(_extends({}, _themeDocUtils.themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in Table.')), {}, {
+var themeDoc = _extends({}, _themeDocUtils.themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in Table.'), {
   'global.size': {
     description: 'The size that impacts max-width and width.',
     defaultValue: "{\n      xxsmall: '48px',\n      xsmall: '96px',\n      small: '192px',\n      medium: '384px',\n      large: '768px',\n      xlarge: '1152px',\n      xxlarge: '1536px',\n      full: '100%',\n      }"

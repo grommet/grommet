@@ -106,7 +106,7 @@ describe('DropButton', function () {
     expect(document.getElementById('drop-contents')).toBeNull();
   });
   test('opened ref', function () {
-    var ref = _react["default"].createRef();
+    var ref = /*#__PURE__*/_react["default"].createRef();
 
     var _render4 = (0, _react2.render)( /*#__PURE__*/_react["default"].createElement(_.DropButton, {
       ref: ref,

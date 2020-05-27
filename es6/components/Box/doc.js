@@ -26,7 +26,7 @@ var overflowPropType = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), Pr
 }), PropTypes.string]);
 export var doc = function doc(Box) {
   var DocumentedBox = describe(Box).availableAt(getAvailableAtBadge('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
-  DocumentedBox.propTypes = _extends(_extends({}, genericProps), {}, {
+  DocumentedBox.propTypes = _extends({}, genericProps, {
     align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']).description('How to align the contents along the cross axis.'),
     alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description("How to align the contents when there is extra space in\n        the cross axis.").defaultValue('stretch'),
     animation: PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE, PropTypes.arrayOf(PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]))]).description("Animation effect(s) to use. 'duration' and 'delay' should\n        be in milliseconds. 'jiggle' and 'pulse' types are intended for\n        small elements, like icons."),
@@ -66,7 +66,7 @@ export var doc = function doc(Box) {
   });
   return DocumentedBox;
 };
-export var themeDoc = _extends(_extends({
+export var themeDoc = _extends({
   'global.animation': {
     description: 'The animation configuration for the Box.',
     type: 'object',
@@ -122,4 +122,4 @@ export var themeDoc = _extends(_extends({
     type: 'string',
     defaultValue: 'small'
   }
-}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.')), themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
+}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));

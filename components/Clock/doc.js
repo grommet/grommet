@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var doc = function doc(Clock) {
   var DocumentedClock = (0, _reactDesc.describe)(Clock).availableAt((0, _utils.getAvailableAtBadge)('Clock')).description('A clock with timezone awareness.').usage("import { Clock } from 'grommet';\n<Clock />").intrinsicElement(['div', 'svg']);
-  DocumentedClock.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedClock.propTypes = _extends({}, _utils.genericProps, {
     hourLimit: _reactDesc.PropTypes.oneOf([12, 24, '12', '24']).description('Whether to roll over the hours after 12 or after 24.').defaultValue(24),
     onChange: _reactDesc.PropTypes.func.description("If the clock is running, this function will be called with the\n      current time value each time it changes."),
     precision: _reactDesc.PropTypes.oneOf(['hours', 'minutes', 'seconds']).description('How precise a time to represent.').defaultValue('seconds'),

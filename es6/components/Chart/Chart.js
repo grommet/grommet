@@ -15,7 +15,7 @@ var defaultSize = {
   width: 'medium'
 };
 var defaultValues = [];
-var Chart = React.forwardRef(function (_ref, ref) {
+var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var propsBounds = _ref.bounds,
       color = _ref.color,
       dash = _ref.dash,

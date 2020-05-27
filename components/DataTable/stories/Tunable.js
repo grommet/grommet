@@ -22,7 +22,7 @@ var TunableDataTable = function TunableDataTable() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: _data.columns.map(function (c) {
-      return _extends(_extends({}, c), {}, {
+      return _extends({}, c, {
         search: c.property === 'name' || c.property === 'location'
       });
     }),

@@ -86,7 +86,7 @@ describe('DropButton', function () {
     expect(document.getElementById('drop-contents')).toBeNull();
   });
   test('opened ref', function () {
-    var ref = React.createRef();
+    var ref = /*#__PURE__*/React.createRef();
 
     var _render4 = render( /*#__PURE__*/React.createElement(DropButton, {
       ref: ref,

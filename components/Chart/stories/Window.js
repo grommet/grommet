@@ -127,7 +127,7 @@ var WindowChart = function WindowChart(_ref) {
     overflow: true,
     bounds: innerBounds,
     values: innerValues.map(function (v) {
-      return _extends(_extends({}, v), {}, {
+      return _extends({}, v, {
         onHover: onHover(v)
       });
     }),

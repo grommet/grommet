@@ -51,7 +51,7 @@ var updateInfos = function updateInfos(nextInfos, name, error) {
 
 };
 
-var Form = (0, _react.forwardRef)(function (_ref, ref) {
+var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
       _ref$errors = _ref.errors,
       errorsProp = _ref$errors === void 0 ? defaultErrors : _ref$errors,

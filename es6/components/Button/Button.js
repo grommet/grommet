@@ -69,7 +69,7 @@ var getIconColor = function getIconColor(paths, theme, colorProp) {
   return result[1] || undefined;
 };
 
-var Button = forwardRef(function (_ref, ref) {
+var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       active = _ref.active,
       color = _ref.color,
@@ -188,12 +188,12 @@ var Button = forwardRef(function (_ref, ref) {
       if (!plain) {
         // match what the label will use
         var iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color);
-        if (iconColor) buttonIcon = cloneElement(icon, {
+        if (iconColor) buttonIcon = /*#__PURE__*/cloneElement(icon, {
           color: iconColor
         });
       }
     } else if (primary) {
-      buttonIcon = cloneElement(icon, {
+      buttonIcon = /*#__PURE__*/cloneElement(icon, {
         color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light']
       });
     }

@@ -23,7 +23,7 @@ var Example = function Example() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns.map(function (c) {
-      return _extends(_extends({}, c), {}, {
+      return _extends({}, c, {
         search: c.property === 'name' || c.property === 'location'
       });
     }),

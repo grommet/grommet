@@ -52,7 +52,7 @@ var ServedDataTable = function ServedDataTable() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataTable, {
     columns: columns.map(function (column) {
-      return _extends(_extends({}, column), {}, {
+      return _extends({}, column, {
         search: column.property === 'name' || column.property === 'location'
       });
     }),

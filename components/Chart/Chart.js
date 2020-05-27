@@ -31,7 +31,7 @@ var defaultSize = {
 };
 var defaultValues = [];
 
-var Chart = _react["default"].forwardRef(function (_ref, ref) {
+var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var propsBounds = _ref.bounds,
       color = _ref.color,
       dash = _ref.dash,

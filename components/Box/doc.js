@@ -39,7 +39,7 @@ var overflowPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneO
 
 var doc = function doc(Box) {
   var DocumentedBox = (0, _reactDesc.describe)(Box).availableAt((0, _utils.getAvailableAtBadge)('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
-  DocumentedBox.propTypes = _extends(_extends({}, _utils.genericProps), {}, {
+  DocumentedBox.propTypes = _extends({}, _utils.genericProps, {
     align: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']).description('How to align the contents along the cross axis.'),
     alignContent: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description("How to align the contents when there is extra space in\n        the cross axis.").defaultValue('stretch'),
     animation: _reactDesc.PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]))]).description("Animation effect(s) to use. 'duration' and 'delay' should\n        be in milliseconds. 'jiggle' and 'pulse' types are intended for\n        small elements, like icons."),
@@ -82,7 +82,7 @@ var doc = function doc(Box) {
 
 exports.doc = doc;
 
-var themeDoc = _extends(_extends({
+var themeDoc = _extends({
   'global.animation': {
     description: 'The animation configuration for the Box.',
     type: 'object',
@@ -138,6 +138,6 @@ var themeDoc = _extends(_extends({
     type: 'string',
     defaultValue: 'small'
   }
-}, _utils.themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.')), _utils.themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
+}, _utils.themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), _utils.themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
 
 exports.themeDoc = themeDoc;

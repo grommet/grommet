@@ -66,7 +66,7 @@ var GrommetMarkdown = function GrommetMarkdown(_ref) {
     }
   }, heading, components, options && options.overrides);
   return /*#__PURE__*/React.createElement(Markdown, _extends({
-    options: _extends(_extends({}, options), {}, {
+    options: _extends({}, options, {
       overrides: overrides
     })
   }, rest));

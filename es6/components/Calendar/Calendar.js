@@ -55,7 +55,7 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   return [start, end];
 };
 
-var Calendar = forwardRef(function (_ref, ref) {
+var Calendar = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
       validBounds = _ref.bounds,

@@ -60,7 +60,7 @@ To make a selection:
 - Space is pressed.
 */
 
-var Menu = (0, _react.forwardRef)(function (props, ref) {
+var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       children = props.children,
       disabled = props.disabled,
@@ -223,7 +223,7 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
     ,
     tabIndex: activeItemIndex === constants.none ? '-1' : undefined
   }, typeof content === 'function' ? function () {
-    return content(_extends(_extends({}, props), {}, {
+    return content(_extends({}, props, {
       drop: true
     }));
   } : content));
@@ -275,7 +275,7 @@ var Menu = (0, _react.forwardRef)(function (props, ref) {
           hoverIndicator: "background",
           focusIndicator: false,
           plain: theme.button["default"] ? true : undefined
-        }, _extends(_extends({}, item), {}, {
+        }, _extends({}, item, {
           icon: undefined,
           label: undefined
         }), {

@@ -10,7 +10,7 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { StyledTab } from './StyledTab';
-var Tab = forwardRef(function (_ref, ref) {
+var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var active = _ref.active,
       icon = _ref.icon,
       plain = _ref.plain,
@@ -94,10 +94,10 @@ var Tab = forwardRef(function (_ref, ref) {
 
   var renderIcon = function renderIcon(iconProp) {
     if (active) {
-      return React.cloneElement(iconProp, _extends({}, theme.tab.active));
+      return /*#__PURE__*/React.cloneElement(iconProp, _extends({}, theme.tab.active));
     }
 
-    return React.cloneElement(iconProp, {
+    return /*#__PURE__*/React.cloneElement(iconProp, {
       color: over ? theme.tab.hover.color : theme.tab.color
     });
   };
