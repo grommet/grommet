@@ -111,11 +111,11 @@ const getRepeatCount = count =>
 
 const getRepeatSize = (size, theme) => {
   if (Array.isArray(size)) {
-    return `minmax(${theme.global.size[size[0]] || size[0]}, ${theme.global
-      .size[size[1]] || size[1]})`;
+    return `minmax(min(${theme.global.size[size[0]] || size[0]}, 100%), ${theme
+      .global.size[size[1]] || size[1]})`;
   }
   if (size === 'flex') return '1fr';
-  return `minmax(${theme.global.size[size] || size}, 1fr)`;
+  return `minmax(min(${theme.global.size[size] || size}, 100%), 1fr)`;
 };
 
 const sizeFor = (size, props, isRow) => {
