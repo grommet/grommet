@@ -21,6 +21,7 @@ const halfPad = {
 const DataChart = forwardRef(
   (
     {
+      a11yTitle,
       chart,
       data,
       pad: padProp,
@@ -284,6 +285,7 @@ const DataChart = forwardRef(
     return (
       <Grid
         ref={ref}
+        aria-label={a11yTitle}
         fill={stackFill}
         columns={[
           'auto',
