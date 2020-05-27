@@ -141,11 +141,11 @@
       "lcov"
     ],
     "collectCoverageFrom": [
-      "src/js/components/**/*.{js}",
-      "src/js/contexts/**/*.{js}",
-      "src/js/themes/**/*.{js}",
-      "src/js/utils/**/*.{js}",
-      "!src/js/components/**/*.{stories.js}",
+      "src/js/components/**/*.js",
+      "src/js/contexts/**/*.js",
+      "src/js/themes/**/*.js",
+      "src/js/utils/**/*.js",
+      "!src/js/components/**/*.stories.js",
       "!src/js/components/**/stories/*.js"
     ],
     "modulePathIgnorePatterns": [
