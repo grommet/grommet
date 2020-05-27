@@ -4119,7 +4119,9 @@ boolean
 
 **size**
 
-The size of the Chart. Defaults to \`{
+The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere. Defaults to \`{
   \\"width\\": \\"medium\\",
   \\"height\\": \\"small\\"
 }\`.

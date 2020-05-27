@@ -1904,7 +1904,9 @@ string",
           "height": "small",
           "width": "medium",
         },
-        "description": "The size of the Chart.",
+        "description": "The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere.",
         "format": "xxsmall
 xsmall
 small

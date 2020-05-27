@@ -125,7 +125,11 @@ export const doc = Chart => {
       }),
       PropTypes.string,
     ])
-      .description('The size of the Chart.')
+      .description(
+        `The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere.`,
+      )
       .defaultValue({ width: 'medium', height: 'small' }),
     thickness: PropTypes.oneOfType([
       PropTypes.oneOf([
