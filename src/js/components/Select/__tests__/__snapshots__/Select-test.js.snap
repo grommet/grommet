@@ -1484,7 +1484,7 @@ exports[`Select complex options and children 3`] = `
 `;
 
 exports[`Select complex options and children 4`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -3637,7 +3637,7 @@ exports[`Select multiple onChange toggle with valueKey reduce 2`] = `
 `;
 
 exports[`Select multiple onChange toggle with valueKey reduce 3`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -4105,7 +4105,7 @@ exports[`Select multiple onChange with valueKey reduce 2`] = `
 `;
 
 exports[`Select multiple onChange with valueKey reduce 3`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -4573,7 +4573,7 @@ exports[`Select multiple onChange with valueKey string 2`] = `
 `;
 
 exports[`Select multiple onChange with valueKey string 3`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -5041,7 +5041,7 @@ exports[`Select multiple onChange without valueKey 2`] = `
 `;
 
 exports[`Select multiple onChange without valueKey 3`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -5107,7 +5107,7 @@ exports[`Select multiple onChange without valueKey 4`] = `
 `;
 
 exports[`Select multiple onChange without valueKey 5`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -5615,7 +5615,7 @@ exports[`Select multiple values 3`] = `
 `;
 
 exports[`Select multiple values 4`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -6083,7 +6083,7 @@ exports[`Select onChange with valueKey string 2`] = `
 `;
 
 exports[`Select onChange with valueKey string 3`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -6551,7 +6551,7 @@ exports[`Select onChange without valueKey 2`] = `
 `;
 
 exports[`Select onChange without valueKey 3`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -7054,7 +7054,7 @@ exports[`Select opens 3`] = `
 `;
 
 exports[`Select opens 4`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
@@ -9301,7 +9301,7 @@ exports[`Select search 2`] = `
 `;
 
 exports[`Select search 3`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
     margin-right: 6px;
