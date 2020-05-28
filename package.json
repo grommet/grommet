@@ -29,7 +29,7 @@
   },
   "scripts": {
     "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
-    "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
+    "build": "webpack --mode production && babel ./src/js/ --out-dir ./dist --copy-files --ignore '**/**/__tests__' --ignore 'src/**/portal.js' --no-copy-ignored && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --copy-files --ignore '**/**/__tests__' --ignore 'src/**/portal.js' --no-copy-ignored && rm -r ./dist/__tests__/ ./dist/**/__tests__/ ./dist/**/**/__tests__",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
