@@ -18,7 +18,12 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
-import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
+import {
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+  sizeStyle,
+  useForwardedRef,
+} from '../../utils';
 
 import {
   StyledTextInput,
@@ -100,14 +105,14 @@ const TextInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
-    const inputRef = useRef();
+    const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
     const suggestionRefs = {};
 
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormContext(
+    const [value, setValue] = formContext.useFormInput(
       readOnly ? undefined : name,
       valueProp,
     );
@@ -237,7 +242,7 @@ const TextInput = forwardRef(
           onUp={event => onPreviousSuggestion(event)}
           onEnter={event => {
             // we stole the focus, give it back
-            (ref || inputRef).current.focus();
+            inputRef.current.focus();
             closeDrop();
             if (onSelect) {
               const adjustedEvent = event;
@@ -252,7 +257,7 @@ const TextInput = forwardRef(
             id={id ? `text-input-drop__${id}` : undefined}
             align={dropAlign}
             responsive={false}
-            target={dropTarget || (ref || inputRef).current}
+            target={dropTarget || inputRef.current}
             onClickOutside={closeDrop}
             onEsc={closeDrop}
             {...dropProps}
@@ -285,13 +290,13 @@ const TextInput = forwardRef(
                           hoverIndicator="background"
                           onClick={event => {
                             // we stole the focus, give it back
-                            (ref || inputRef).current.focus();
+                            inputRef.current.focus();
                             closeDrop();
                             if (onSelect) {
                               event.persist();
                               const adjustedEvent = event;
                               adjustedEvent.suggestion = suggestion;
-                              adjustedEvent.target = (ref || inputRef).current;
+                              adjustedEvent.target = inputRef.current;
                               onSelect(adjustedEvent);
                             }
                             setValue(suggestion);
@@ -337,7 +342,7 @@ const TextInput = forwardRef(
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              adjustedEvent.target = (ref || inputRef).current;
+              adjustedEvent.target = inputRef.current;
               onSelect(adjustedEvent);
             }
           }}
@@ -379,7 +384,7 @@ const TextInput = forwardRef(
         >
           <StyledTextInput
             aria-label={a11yTitle}
-            ref={ref || inputRef}
+            ref={inputRef}
             id={id}
             name={name}
             autoComplete="off"

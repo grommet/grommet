@@ -18,16 +18,16 @@ import {
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
+  const onChange = React.useCallback(value => console.log('Change', value), []);
+  const onSubmit = React.useCallback(
+    event => console.log('Submit', event.value, event.touched),
+    [],
+  );
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
-          <Form
-            onChange={value => console.log('Change', value)}
-            onSubmit={event =>
-              console.log('Submit', event.value, event.touched)
-            }
-          >
+          <Form onChange={onChange} onSubmit={onSubmit}>
             <FormField label="Name" name="name">
               <TextInput name="name" />
             </FormField>
