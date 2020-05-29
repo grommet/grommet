@@ -16,21 +16,26 @@ export const calcs = (values, options = {}) => {
   const steps = options.steps || [1, 1];
   const calcValues = normalizeValues(values || []);
 
+  // min and max y values
   let min;
   let max;
   if (calcValues.length) {
     // Calculate the max and min y values.
-    calcValues.forEach(value => {
-      const y = value.value[1];
-      min = min === undefined ? y : Math.min(min, y);
-      max = max === undefined ? y : Math.max(max, y);
-      // handle ranges of values
-      const y2 = value.value[2];
-      if (y2 !== undefined) {
-        min = Math.min(min, y2);
-        max = Math.max(max, y2);
-      }
-    });
+    calcValues
+      .filter(value => value !== undefined)
+      .forEach(value => {
+        const y = value.value[1];
+        if (y !== undefined) {
+          min = min === undefined ? y : Math.min(min, y);
+          max = max === undefined ? y : Math.max(max, y);
+        }
+        // handle ranges of values
+        const y2 = value.value[2];
+        if (y2 !== undefined) {
+          min = Math.min(min, y2);
+          max = Math.max(max, y2);
+        }
+      });
 
     // Calculate some reasonable y bounds based on the max and min y values.
     // This is so values like 87342.12 don't end up being displayed as the
