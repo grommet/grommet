@@ -22,17 +22,18 @@ var doc = function doc(Chart) {
       color: _reactDesc.PropTypes.string,
       value: _reactDesc.PropTypes.number
     }))]).description("A color identifier to use for the graphic color. If an\n      array is specified, it is used to create a gradient mask. Array objects\n      indicate what color to show at what value. In the simplest case, the\n      values should map to the Y bounds values, resulting in a vertical\n      gradient. Specifying more objects allows more fine grained control over\n      where the gradient colors change.").defaultValue('accent-1'),
-    gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between data points. This\n      is only used when the size specifies width as 'auto'."),
     id: _reactDesc.PropTypes.string.description("A unique identifier for the Chart. This\n      is required if more than one Chart is shown and they use color\n      gradients."),
     dash: _reactDesc.PropTypes.bool.description("Whether to use dashed lines for line or bar charts.").defaultValue(false),
+    gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between data points. This\n      is only used when the size specifies width as 'auto'."),
     onClick: _reactDesc.PropTypes.func.description("Called when the user clicks on the\n     visualization. Clicking on individual bars or points are handled via\n     values[].onClick for those types of charts."),
     onHover: _reactDesc.PropTypes.func.description("Called with a boolean argument\n      indicating when the user hovers onto or away from it.\n      This is only available when the type is line or area."),
     overflow: _reactDesc.PropTypes.bool.description("Whether the chart strokes should overflow the component. Set this\n      to true for precise positioning when stacking charts or including\n      precise axes. Set this to false to have the graphical elements\n      align with the component boundaries.").defaultValue(false),
+    pad: _utils.padPropType.description("Spacing around the outer edge of the drawing coordinate area.\n      Related to 'overflow', this allows control over how much space\n      is available for bars and points to overflow into."),
     round: _reactDesc.PropTypes.bool.description('Whether to round the line ends.').defaultValue(false),
-    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _reactDesc.PropTypes.shape({
-      height: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _reactDesc.PropTypes.string]),
-      width: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full', 'auto']), _reactDesc.PropTypes.string])
-    }), _reactDesc.PropTypes.string]).description('The size of the Chart.').defaultValue({
+    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full']), _reactDesc.PropTypes.shape({
+      height: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full']), _reactDesc.PropTypes.string]),
+      width: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full', 'auto']), _reactDesc.PropTypes.string])
+    }), _reactDesc.PropTypes.string]).description("The size of the Chart.\n      'full' is deprecated as 'fill' is more consistent with how that term is\n      used elsewhere.").defaultValue({
       width: 'medium',
       height: 'small'
     }),

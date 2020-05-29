@@ -93,6 +93,13 @@ Object.keys(_Collapsible).forEach(function (key) {
   exports[key] = _Collapsible[key];
 });
 
+var _DataChart = require("./DataChart");
+
+Object.keys(_DataChart).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _DataChart[key];
+});
+
 var _DataTable = require("./DataTable");
 
 Object.keys(_DataTable).forEach(function (key) {

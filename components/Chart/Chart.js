@@ -32,7 +32,8 @@ var defaultSize = {
 var defaultValues = [];
 
 var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var propsBounds = _ref.bounds,
+  var a11yTitle = _ref.a11yTitle,
+      propsBounds = _ref.bounds,
       color = _ref.color,
       dash = _ref.dash,
       gap = _ref.gap,
@@ -41,6 +42,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       onHover = _ref.onHover,
       _ref$overflow = _ref.overflow,
       overflow = _ref$overflow === void 0 ? false : _ref$overflow,
+      pad = _ref.pad,
       round = _ref.round,
       _ref$size = _ref.size,
       propsSize = _ref$size === void 0 ? defaultSize : _ref$size,
@@ -50,7 +52,9 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "pad", "round", "size", "thickness", "type", "values"]);
+
+  var containerRef = (0, _utils.useForwardedRef)(ref);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -78,7 +82,9 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       strokeWidth = _useState6[0],
       setStrokeWidth = _useState6[1];
 
-  var containerRef = (0, _react.useRef)(); // calculations
+  var needContainerSize = (0, _react.useMemo)(function () {
+    return propsSize && (propsSize === 'full' || propsSize === 'fill' || propsSize.height === 'full' || propsSize.height === 'fill' || propsSize.width === 'full' || propsSize.width === 'fill');
+  }, [propsSize]); // calculations
 
   (0, _react.useEffect)(function () {
     var nextValues = (0, _utils2.normalizeValues)(propsValues);
@@ -93,7 +99,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     var sizeWidth = typeof propsSize === 'string' ? propsSize : propsSize.width || defaultSize.width;
     var width;
 
-    if (sizeWidth === 'full') {
+    if (sizeWidth === 'full' || sizeWidth === 'fill') {
       width = containerSize[0];
     } else if (sizeWidth === 'auto') {
       width = autoWidth;
@@ -104,7 +110,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     var sizeHeight = typeof propsSize === 'string' ? propsSize : propsSize.height || defaultSize.height;
     var height;
 
-    if (sizeHeight === 'full') {
+    if (sizeHeight === 'full' || sizeHeight === 'fill') {
       height = containerSize[1];
     } else {
       height = (0, _utils.parseMetricToNum)(theme.global.size[sizeHeight] || sizeHeight);
@@ -115,31 +121,32 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     setScale(nextScale);
   }, [containerSize, gap, propsBounds, propsSize, propsValues, theme.global.edgeSize, theme.global.size, thickness]); // set container size when we get ref or when size changes
 
-  if ((ref || containerRef).current && propsSize && (propsSize === 'full' || propsSize.height === 'full' || propsSize.width === 'full')) {
-    var containerNode = (ref || containerRef).current;
+  (0, _react.useLayoutEffect)(function () {
+    if (containerRef.current && needContainerSize) {
+      var containerNode = containerRef.current;
 
-    if (containerNode) {
-      var parentNode = containerNode.parentNode;
+      if (containerNode) {
+        var parentNode = containerNode.parentNode;
 
-      if (parentNode) {
-        var rect = parentNode.getBoundingClientRect();
+        if (parentNode) {
+          var rect = parentNode.getBoundingClientRect();
 
-        if (rect.width !== containerSize[0] || rect.height !== containerSize[1]) {
-          setContainerSize([rect.width, rect.height]);
+          if (rect.width !== containerSize[0] || rect.height !== containerSize[1]) {
+            setContainerSize([rect.width, rect.height]);
+          }
         }
       }
     }
-  } // container size, if needed
-
+  }, [containerRef, containerSize, needContainerSize]); // container size, if needed
 
   (0, _react.useEffect)(function () {
     var onResize = function onResize() {
-      var parentNode = (ref || containerRef).current.parentNode;
+      var parentNode = containerRef.current.parentNode;
       var rect = parentNode.getBoundingClientRect();
       setContainerSize([rect.width, rect.height]);
     };
 
-    if (propsSize && (propsSize === 'full' || propsSize.width === 'full' || propsSize.height === 'full')) {
+    if (needContainerSize) {
       window.addEventListener('resize', onResize);
       return function () {
         return window.removeEventListener('resize', onResize);
@@ -147,7 +154,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     }
 
     return undefined;
-  }, [containerRef, propsSize, ref]);
+  }, [containerRef, needContainerSize]);
   var useGradient = color && Array.isArray(color);
   var strokeDasharray;
 
@@ -167,43 +174,38 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           valueRest = _objectWithoutPropertiesLoose(valueArg, ["label", "onHover", "value"]);
 
       var key = "p-" + index;
-      var bottom = value.length === 2 ? bounds[1][0] : value[1];
-      var top = value.length === 2 ? value[1] : value[2];
+      var bottom = value.length === 2 ? Math.min(Math.max(0, bounds[1][0]), value[1]) : Math.min(value[1], value[2]);
+      var top = value.length === 2 ? Math.max(Math.min(0, bounds[1][1]), value[1]) : Math.max(value[1], value[2]);
+      var d = "M " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1])) + (" L " + (value[0] - bounds[0][0]) * scale[0] + ",") + ("" + (size[1] - (top - bounds[1][0]) * scale[1]));
+      var hoverProps;
 
-      if (top !== 0) {
-        var d = "M " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1])) + (" L " + (value[0] - bounds[0][0]) * scale[0] + ",") + ("" + (size[1] - (top - bounds[1][0]) * scale[1]));
-        var hoverProps;
-
-        if (valueOnHover) {
-          hoverProps = {
-            onMouseOver: function onMouseOver() {
-              return valueOnHover(true);
-            },
-            onMouseLeave: function onMouseLeave() {
-              return valueOnHover(false);
-            }
-          };
-        }
-
-        var clickProps;
-
-        if (onClick) {
-          clickProps = {
-            onClick: onClick
-          };
-        }
-
-        return /*#__PURE__*/_react["default"].createElement("g", {
-          key: key,
-          fill: "none"
-        }, /*#__PURE__*/_react["default"].createElement("title", null, label), /*#__PURE__*/_react["default"].createElement("path", _extends({
-          d: d
-        }, hoverProps, clickProps, valueRest, {
-          strokeDasharray: strokeDasharray
-        })));
+      if (valueOnHover) {
+        hoverProps = {
+          onMouseOver: function onMouseOver() {
+            return valueOnHover(true);
+          },
+          onMouseLeave: function onMouseLeave() {
+            return valueOnHover(false);
+          }
+        };
       }
 
-      return undefined;
+      var clickProps;
+
+      if (onClick) {
+        clickProps = {
+          onClick: onClick
+        };
+      }
+
+      return /*#__PURE__*/_react["default"].createElement("g", {
+        key: key,
+        fill: "none"
+      }, /*#__PURE__*/_react["default"].createElement("title", null, label), /*#__PURE__*/_react["default"].createElement("path", _extends({
+        d: d
+      }, hoverProps, clickProps, valueRest, {
+        strokeDasharray: strokeDasharray
+      })));
     });
   };
 
@@ -252,7 +254,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     });
     (values || []).reverse().forEach(function (_ref4) {
       var value = _ref4.value;
-      var bottom = value.length === 2 ? bounds[1][0] : value[1];
+      var bottom = value.length === 2 ? Math.max(0, bounds[1][0]) : value[1];
       d += " L " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1]));
     });
 
@@ -357,6 +359,31 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }
 
   var viewBounds = overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
+
+  if (pad) {
+    if (pad.horizontal) {
+      var padSize = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.horizontal]);
+      viewBounds[0] -= padSize;
+      viewBounds[2] += padSize * 2;
+    }
+
+    if (pad.vertical) {
+      var _padSize = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad.vertical]);
+
+      viewBounds[1] -= _padSize;
+      viewBounds[3] += _padSize * 2;
+    }
+
+    if (typeof pad === 'string') {
+      var _padSize2 = (0, _utils.parseMetricToNum)(theme.global.edgeSize[pad]);
+
+      viewBounds[0] -= _padSize2;
+      viewBounds[1] -= _padSize2;
+      viewBounds[2] += _padSize2 * 2;
+      viewBounds[3] += _padSize2 * 2;
+    }
+  }
+
   var viewBox = viewBounds.join(' ');
   var colorName;
 
@@ -422,8 +449,9 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }
 
   return /*#__PURE__*/_react["default"].createElement(_StyledChart.StyledChart, _extends({
-    ref: ref || containerRef,
+    ref: containerRef,
     id: id,
+    "aria-label": a11yTitle,
     viewBox: viewBox,
     preserveAspectRatio: "none",
     width: size === 'full' ? '100%' : size[0],

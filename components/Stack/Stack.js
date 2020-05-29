@@ -21,24 +21,19 @@ var buildStyledChildren = function buildStyledChildren(_ref) {
       guidingIndex = _ref.guidingIndex,
       interactiveChild = _ref.interactiveChild,
       interactiveIndex = _ref.interactiveIndex;
-  var childIndex = 0;
-  return function (child) {
-    if (child) {
-      var interactive = interactiveChild === undefined || interactiveIndex === childIndex;
-      var isGuidingIndex = childIndex === guidingIndex;
-      childIndex += 1;
-      var props = isGuidingIndex ? {
-        guiding: true,
-        fillContainer: fill
-      } : {
-        anchor: anchor
-      };
-      return /*#__PURE__*/_react["default"].createElement(_StyledStack.StyledStackLayer, _extends({
-        interactive: interactive
-      }, props), child);
-    }
-
-    return child;
+  return function (child, index) {
+    var interactive = interactiveChild === undefined || interactiveIndex === index;
+    var isGuidingIndex = index === guidingIndex;
+    var props = isGuidingIndex ? {
+      guiding: true,
+      fillContainer: fill
+    } : {
+      anchor: anchor
+    };
+    return /*#__PURE__*/_react["default"].createElement(_StyledStack.StyledStackLayer, _extends({
+      key: index,
+      interactive: interactive
+    }, props), child);
   };
 };
 
@@ -50,23 +45,25 @@ var Stack = function Stack(_ref2) {
       interactiveChild = _ref2.interactiveChild,
       rest = _objectWithoutPropertiesLoose(_ref2, ["anchor", "children", "fill", "guidingChild", "interactiveChild"]);
 
+  var prunedChildren = _react.Children.toArray(children).filter(function (c) {
+    return c;
+  });
+
   var toChildIndex = function toChildIndex(child) {
     var index = child;
-    if (index === 'first' || !index) index = 0;else if (index === 'last') index = _react["default"].Children.count(children) - 1;
+    if (index === 'first' || !index) index = 0;else if (index === 'last') index = prunedChildren.length - 1;
     return index;
   };
 
   var guidingIndex = toChildIndex(guidingChild);
   var interactiveIndex = interactiveChild && toChildIndex(interactiveChild);
-
-  var styledChildren = _react.Children.map(children, buildStyledChildren({
+  var styledChildren = prunedChildren.map(buildStyledChildren({
     anchor: anchor,
     fill: fill,
     guidingIndex: guidingIndex,
     interactiveChild: interactiveChild,
     interactiveIndex: interactiveIndex
   }));
-
   return /*#__PURE__*/_react["default"].createElement(_StyledStack.StyledStack, _extends({
     fillContainer: fill
   }, rest), styledChildren);

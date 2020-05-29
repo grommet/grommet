@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
-var fillStyle = "\n  width: 100%;\n  height: 100%;\n  max-width: none;\n  flex-grow: 1;\n  display: flex;\n";
+var fillStyle = css(["", " ", " flex-grow:1;display:flex;"], function (props) {
+  return props.fillContainer === true || props.fillContainer === 'horizontal' ? "\n        width: 100%;\n        max-width: none;\n      " : '';
+}, function (props) {
+  return props.fillContainer === true || props.fillContainer === 'vertical' ? 'height: 100%;' : '';
+});
 var StyledStack = styled.div.withConfig({
   displayName: "StyledStack",
   componentId: "ajspsk-0"

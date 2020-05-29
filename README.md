@@ -67,6 +67,7 @@ From your package.json point to stable.
 ```
 "grommet": "https://github.com/grommet/grommet/tarball/stable",
 ```
+
 For more info, read the [stable wiki](https://github.com/grommet/grommet/wiki/What-is-grommet-stable-and-how-to-use-it%3F).
 
 ## Release History
