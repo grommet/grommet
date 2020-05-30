@@ -61,7 +61,9 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
     : {
         value,
         onChange: event => {
-          setValue(event.target.value);
+          setValue(
+            event.value !== undefined ? event.value : event.target.value,
+          );
           if (onChange) onChange(event);
         },
       };
