@@ -91,7 +91,7 @@ const FormField = forwardRef(
       margin,
       name, // pass through in renderInput()
       pad,
-      required, // pass through in renderInput()
+      required,
       style,
       validate,
       ...rest
@@ -158,6 +158,7 @@ const FormField = forwardRef(
           disabled={disabled}
           invalid={!!error}
           name={name}
+          label={component === CheckBox ? label : undefined}
           {...rest}
         />
       );
