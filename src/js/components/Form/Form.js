@@ -149,10 +149,12 @@ const Form = forwardRef(
       return [
         useValue,
         nextComponentValue => {
-          // This is for patterns #1 and #3 
+          // This is for patterns #1 and #3
           if (componentValue === undefined) {
-            if (name) { // we have somewhere to put this
-              if (!touched[name]) { // don't update if not needed
+            if (name) {
+              // we have somewhere to put this
+              if (!touched[name]) {
+                // don't update if not needed
                 setTouched(prevTouched => {
                   const nextTouched = { ...prevTouched };
                   nextTouched[name] = true;
@@ -229,6 +231,7 @@ const Form = forwardRef(
       return {
         error,
         info,
+        inForm: true,
         onBlur:
           validateOn === 'blur'
             ? () => {

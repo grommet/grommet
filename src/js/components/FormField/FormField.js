@@ -47,14 +47,7 @@ const Message = ({ message, ...rest }) => {
   return null;
 };
 
-const Input = ({
-  component,
-  disabled,
-  invalid,
-  name,
-  onChange,
-  ...rest
-}) => {
+const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   const formContext = useContext(FormContext);
   const [value, setValue] = formContext.useFormInput(name, rest.value);
   const InputComponent = component || TextInput;
@@ -65,10 +58,13 @@ const Input = ({
   // for backwards compatibility.
   const extraProps = isGrommetInput(InputComponent)
     ? { focusIndicator: false, onChange, plain: true }
-    : { value, onChange: event => {
-      setValue(event.target.value);
-      if (onChange) onChange(event);
-    }};
+    : {
+        value,
+        onChange: event => {
+          setValue(event.target.value);
+          if (onChange) onChange(event);
+        },
+      };
   return (
     <InputComponent
       name={name}
@@ -104,8 +100,12 @@ const FormField = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
-    const { error, info, onBlur } = formContext.useFormField({
-      error: errorProp, info: infoProp, name, required, validate,
+    const { error, info, inForm, onBlur } = formContext.useFormField({
+      error: errorProp,
+      info: infoProp,
+      name,
+      required,
+      validate,
     });
     const [focus, setFocus] = useState();
 
@@ -150,16 +150,18 @@ const FormField = forwardRef(
 
     // put rest on container, unless we use internal Input
     let containerRest = rest;
-    if (!contents) containerRest = {};
-    contents = contents || (
-      <Input
-        component={component}
-        disabled={disabled}
-        invalid={!!error}
-        name={name}
-        {...rest}
-      />
-    );
+    if (inForm) {
+      if (!contents) containerRest = {};
+      contents = contents || (
+        <Input
+          component={component}
+          disabled={disabled}
+          invalid={!!error}
+          name={name}
+          {...rest}
+        />
+      );
+    }
 
     const contentProps =
       pad || wantContentPad ? { ...formFieldTheme.content } : {};
@@ -262,11 +264,7 @@ const FormField = forwardRef(
 
     let outerBackground;
     if (themeBorder.position === 'outer') {
-      if (
-        error &&
-        formFieldTheme.error &&
-        formFieldTheme.error.background
-      ) {
+      if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
         focus &&
