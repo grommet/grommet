@@ -35,6 +35,7 @@ const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
         hoverIndicator
         disabled={!onToggle}
         onClick={onToggle}
+        plain
       >
         {content}
       </Button>
