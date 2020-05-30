@@ -118,22 +118,12 @@ const Form = forwardRef(
           componentValue !== undefined && // input driving
           componentValue !== formValue // don't already have it
         ) {
-          // don't update touched on initial setting
-          if (formValue !== undefined) {
-            setTouched(prevTouched => {
-              const nextTouched = { ...prevTouched };
-              nextTouched[name] = true;
-              return nextTouched;
-            });
-          }
-
           setValueState(prevValue => {
             const nextValue = { ...prevValue };
             nextValue[name] = componentValue;
-            // don't notify on initial change
-            if (onChange && prevValue[name] !== undefined) onChange(nextValue);
             return nextValue;
           });
+          // don't onChange on programmatic changes
         }
       }, [componentValue, formValue, name]);
 
@@ -149,26 +139,23 @@ const Form = forwardRef(
       return [
         useValue,
         nextComponentValue => {
-          // This is for patterns #1 and #3
-          if (componentValue === undefined) {
-            if (name) {
-              // we have somewhere to put this
-              if (!touched[name]) {
-                // don't update if not needed
-                setTouched(prevTouched => {
-                  const nextTouched = { ...prevTouched };
-                  nextTouched[name] = true;
-                  return nextTouched;
-                });
-              }
-
-              const nextValue = { ...value };
-              nextValue[name] = nextComponentValue;
-              if (onChange) onChange(nextValue);
-              setValueState(nextValue);
+          if (name) {
+            // we have somewhere to put this
+            if (!touched[name]) {
+              // don't update if not needed
+              setTouched(prevTouched => {
+                const nextTouched = { ...prevTouched };
+                nextTouched[name] = true;
+                return nextTouched;
+              });
             }
-            if (initialValue !== undefined) setInputValue(nextComponentValue);
+
+            const nextValue = { ...value };
+            nextValue[name] = nextComponentValue;
+            setValueState(nextValue);
+            if (onChange) onChange(nextValue);
           }
+          if (initialValue !== undefined) setInputValue(nextComponentValue);
         },
       ];
     };
