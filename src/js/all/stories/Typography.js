@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Heading, Paragraph, Text } from 'mnet-ui-base';
-import { mnet } from 'mnet-ui-base/themes';
 
 const paragraphFiller = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -12,7 +11,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 const Medium = () => {
   const margin = undefined;
   return (
-    <div theme={mnet}>
+    <div>
       <Box pad="medium">
         <div>
           <Heading margin={margin}>Heading 1 - Medium</Heading>
@@ -91,7 +90,7 @@ const Small = () => (
 );
 
 const Large = () => (
-  <div theme={mnet}>
+  <div>
     <Box pad="medium">
       <div>
         <Heading size="large">Heading 1 - Large</Heading>
