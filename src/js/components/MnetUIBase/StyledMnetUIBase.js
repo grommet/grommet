@@ -12,7 +12,7 @@ const fullStyle = css`
 const StyledMnetUIBase = styled.div`
   ${props => !props.plain && baseStyle}
   ${props => props.full && fullStyle}
-  ${props => props.theme.global.fonyarface}
+  ${props => props.theme.global.font.face}
   ${props => props.theme.mnet.extend}
   ${props =>
     props.cssVars &&
