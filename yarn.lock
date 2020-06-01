@@ -6600,6 +6600,11 @@ good-listener@^1.2.2:
   dependencies:
     delegate "^3.1.2"
 
+google-fonts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/google-fonts/-/google-fonts-1.0.0.tgz#202e287a0c6272e3d651ac7e00c8f5aefc85b099"
+  integrity sha1-IC4oegxicuPWUax+AMj1rvyFsJk=
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9, graceful-fs@^4.2.0, graceful-fs@^4.2.2, graceful-fs@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
@@ -8821,7 +8826,9 @@ mixin-object@^2.0.1:
 
 mnet-ui-base-theme-neo@sabarnix/mnet-ui-base-theme-neo:
   version "0.0.1"
-  resolved "https://codeload.github.com/sabarnix/mnet-ui-base-theme-neo/tar.gz/92af729f774cca53dcecef29e01a826b22a872ba"
+  resolved "https://codeload.github.com/sabarnix/mnet-ui-base-theme-neo/tar.gz/ae269913b1e5fadad53a31ac32de76777b7018d8"
+  dependencies:
+    google-fonts "^1.0.0"
 
 moment@^2.18.1:
   version "2.24.0"
