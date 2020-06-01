@@ -51,7 +51,7 @@
   "dependencies": {
     "grommet-icons": "^4.2.0",
     "hoist-non-react-statics": "^3.2.0",
-    "markdown-to-jsx": "^6.9.1",
+    "markdown-to-jsx": "^6.11.4",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react-desc": "^4.1.2"
@@ -145,8 +145,11 @@
       "src/js/contexts/**/*.js",
       "src/js/themes/**/*.js",
       "src/js/utils/**/*.js",
-      "!src/js/components/**/*.stories.js",
-      "!src/js/components/**/stories/*.js"
+      "!src/js/**/**/*.stories.js",
+      "!src/js/**/**/stories/*.js",
+      "!src/js/**/**/stories/**/**/*.js",
+      "!src/js/utils/portal.js",
+      "!src/js/**/**/doc.js"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"

@@ -151,6 +151,8 @@ Whether to expand to fill
       all of the available width and height in the parent container.
 
 ```
+horizontal
+vertical
 boolean
 ```
 

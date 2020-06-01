@@ -1,31 +1,41 @@
 import { normalizeValues } from './utils';
 
+const thicknessPad = {
+  xlarge: 'large',
+  large: 'medium',
+  medium: 'small',
+  small: 'xsmall',
+  xsmall: 'xxsmall',
+};
+
 export const calcs = (values, options = {}) => {
+  // coarseness influences the rounding of the bounds, the smaller the
+  // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100
   const coarseness = options.coarseness || 5;
+  // the number of steps is one less than the number of labels
   const steps = options.steps || [1, 1];
   const calcValues = normalizeValues(values || []);
 
+  // min and max y values
   let min;
   let max;
-  if (options.min !== undefined && options.max !== undefined) {
-    ({ min, max } = options);
-  } else if (calcValues.length) {
+  if (calcValues.length) {
     // Calculate the max and min y values.
-    min = calcValues[0].value[1] || 0;
-    max = min;
-    calcValues.forEach(value => {
-      const y = value.value[1];
-      min = Math.min(min, y);
-      max = Math.max(max, y);
-      // handle ranges of values
-      if (value.value[2] !== undefined) {
+    calcValues
+      .filter(value => value !== undefined)
+      .forEach(value => {
+        const y = value.value[1];
+        if (y !== undefined) {
+          min = min === undefined ? y : Math.min(min, y);
+          max = max === undefined ? y : Math.max(max, y);
+        }
+        // handle ranges of values
         const y2 = value.value[2];
-        min = Math.min(min, y2);
-        max = Math.max(max, y2);
-      }
-    });
-    min = options.min !== undefined ? options.min : min;
-    max = options.max !== undefined ? options.max : max;
+        if (y2 !== undefined) {
+          min = Math.min(min, y2);
+          max = Math.max(max, y2);
+        }
+      });
 
     // Calculate some reasonable y bounds based on the max and min y values.
     // This is so values like 87342.12 don't end up being displayed as the
@@ -34,7 +44,28 @@ export const calcs = (values, options = {}) => {
     const interval = Number.parseFloat((delta / coarseness).toPrecision(1));
     max = max - (max % interval) + interval;
     min -= min % interval;
+
+    if (min < 0 && max > 0 && Math.abs(min) !== Math.abs(max)) {
+      // Adjust min and max when crossing 0 to ensure 0 will be shown on
+      // the Y axis based on the number of steps.
+
+      // const ratio = Math.abs(max) / Math.abs(min);
+      let stepInterval = (max - min) / steps[1];
+      const minSteps = min / stepInterval;
+      const maxSteps = max / stepInterval;
+      if (Math.abs(minSteps) < Math.abs(maxSteps)) {
+        stepInterval = max / Math.floor(maxSteps);
+        max = stepInterval * Math.floor(maxSteps);
+        min = stepInterval * Math.floor(minSteps);
+      } else {
+        stepInterval = Math.abs(min / Math.ceil(minSteps));
+        min = stepInterval * Math.ceil(minSteps);
+        max = stepInterval * Math.ceil(maxSteps);
+      }
+    }
   }
+  if (options.min !== undefined) ({ min } = options);
+  if (options.max !== undefined) ({ max } = options);
 
   const bounds = calcValues.length
     ? [
@@ -64,30 +95,28 @@ export const calcs = (values, options = {}) => {
     x += xStepInterval;
   }
 
-  // Set bar thickness based on number of values being rendered.
-  // Someday, it would be better to include the actual rendered size.
-  // These values were emirically determined, trying to balance visibility
-  // and overlap across resolutions.
-  let thickness;
-  let pad;
-  if (calcValues.length < 5) {
-    thickness = 'xlarge';
-    pad = 'large';
-  } else if (calcValues.length < 11) {
-    thickness = 'large';
-    pad = 'medium';
-  } else if (calcValues.length < 21) {
-    thickness = 'medium';
-    pad = 'small';
-  } else if (calcValues.length < 61) {
-    thickness = 'small';
-    pad = 'xsmall';
-  } else if (calcValues.length < 121) {
-    thickness = 'xsmall';
-    pad = 'xxsmall';
-  } else {
-    thickness = 'hair';
+  let { thickness } = options;
+  if (!thickness) {
+    // Set bar thickness based on number of values being rendered.
+    // Someday, it would be better to include the actual rendered size.
+    // These values were emirically determined, trying to balance visibility
+    // and overlap across resolutions.
+    if (calcValues.length < 5) {
+      thickness = 'xlarge';
+    } else if (calcValues.length < 11) {
+      thickness = 'large';
+    } else if (calcValues.length < 21) {
+      thickness = 'medium';
+    } else if (calcValues.length < 61) {
+      thickness = 'small';
+    } else if (calcValues.length < 121) {
+      thickness = 'xsmall';
+    } else {
+      thickness = 'hair';
+    }
   }
+
+  const pad = thicknessPad[thickness];
 
   return { axis: [xAxis, yAxis], bounds, dimensions, pad, thickness };
 };
