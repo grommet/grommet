@@ -145,8 +145,11 @@
       "src/js/contexts/**/*.js",
       "src/js/themes/**/*.js",
       "src/js/utils/**/*.js",
-      "!src/js/components/**/*.stories.js",
-      "!src/js/components/**/stories/*.js"
+      "!src/js/**/**/*.stories.js",
+      "!src/js/**/**/stories/*.js",
+      "!src/js/**/**/stories/**/**/*.js",
+      "!src/js/utils/portal.js",
+      "!src/js/**/**/doc.js"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
