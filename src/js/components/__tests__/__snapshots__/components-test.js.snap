@@ -523,6 +523,8 @@ stretch",
 fadeOut
 jiggle
 pulse
+rotateLeft
+rotateRight
 slideUp
 slideDown
 slideLeft
@@ -535,6 +537,8 @@ zoomOut
     fadeOut
     jiggle
     pulse
+    rotateLeft
+    rotateRight
     slideUp
     slideDown
     slideLeft
@@ -555,6 +559,8 @@ zoomOut
   fadeOut
   jiggle
   pulse
+  rotateLeft
+  rotateRight
   slideUp
   slideDown
   slideLeft
@@ -567,6 +573,8 @@ zoomOut
       fadeOut
       jiggle
       pulse
+      rotateLeft
+      rotateRight
       slideUp
       slideDown
       slideLeft
@@ -899,9 +907,8 @@ string",
       },
       Object {
         "defaultValue": "none",
-        "description": "The amount of padding around the box contents. An
-    object can be specified to distinguish horizontal padding, vertical
-    padding, and padding on a particular side of the box",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for bars and points to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -1758,19 +1765,6 @@ string",
         "name": "color",
       },
       Object {
-        "description": "The amount of spacing between data points. This
-      is only used when the size specifies width as 'auto'.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "gap",
-      },
-      Object {
         "description": "A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
       gradients.",
@@ -1782,6 +1776,19 @@ string",
         "description": "Whether to use dashed lines for line or bar charts.",
         "format": "boolean",
         "name": "dash",
+      },
+      Object {
+        "description": "The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "description": "Called when the user clicks on the
@@ -1807,6 +1814,86 @@ string",
         "name": "overflow",
       },
       Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for bars and points to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether to round the line ends.",
         "format": "boolean",
@@ -1817,13 +1904,16 @@ string",
           "height": "small",
           "width": "medium",
         },
-        "description": "The size of the Chart.",
+        "description": "The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere.",
         "format": "xxsmall
 xsmall
 small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -1833,6 +1923,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -1842,6 +1933,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     auto
     string
@@ -2248,6 +2340,423 @@ vertical",
     ],
     "usage": "import { Collapsible } from 'grommet';
 <Collapsible open>test</Collapsible>",
+  },
+  "DataChart": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js",
+      },
+    ],
+    "description": "Takes a data set and visualizes it. While Chart renders a
+    single value across a data set. DataChart allows multiple overlayed
+    Charts and adds guides and axes for decoration.",
+    "intrinsicElement": "div",
+    "name": "DataChart",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Chart properties indicating how to visualize the data.
+    'key' indicates which property of the data objects to use. 'keys' indicates
+    that multiple properties should be used for a stacked bar chart. DataChart
+    uses the key/keys to build the right 'values' for the underlying Chart.
+    All of the other properties in 'chart' are passed through to the Chart.",
+        "format": "{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}
+[{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}]",
+        "name": "chart",
+      },
+      Object {
+        "description": "the data set",
+        "format": "[{
+
+}]",
+        "name": "data",
+      },
+      Object {
+        "description": "The spacing between the axes and the Charts.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
+      },
+      Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for bars and points to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
+      },
+      Object {
+        "defaultValue": Object {
+          "height": "small",
+          "width": "medium",
+        },
+        "description": "The size of the Charts. This does not include the axes
+      and any gap. It is passed through to the underlying Chart.",
+        "format": "fill
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    string,
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    auto
+    string
+}",
+        "name": "size",
+      },
+      Object {
+        "description": "Chart thickness given to all
+    Charts if not specified per Chart in 'chart'.",
+        "format": "hair
+xsmall
+small
+medium
+large
+xlarge
+none
+string",
+        "name": "thickness",
+      },
+      Object {
+        "description": "x-axis configuration. 'guide' specifies that vertical
+    guide lines should be drawn under the Chart, one per label.
+    'key' specifies what property in the 'data' should be used as
+    any label content. 'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the current data index and axis index and should return
+    the element to render: (dataIndex, axisIndex) => element.",
+        "format": "boolean
+{
+  guide: boolean,
+  key: string,
+  labels: number,
+  render: function
+}",
+        "name": "xAxis",
+      },
+      Object {
+        "description": "y-axis configuration. 'guide' specifies that horizontal
+    guide lines should be drawn under the Chart, one per label.
+    'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the value and axis index and should return
+    the element to render: (value, axisIndex) => element",
+        "format": "boolean
+{
+  guide: boolean,
+  labels: number,
+  render: function
+}",
+        "name": "yAxis",
+      },
+    ],
+    "usage": "import { DataChart } from 'grommet';
+<DataChart data={data} chart={} />",
   },
   "DataTable": [Function],
   "Diagram": Object {

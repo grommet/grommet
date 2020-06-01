@@ -1,5 +1,4 @@
 import { rgba } from 'polished';
-import { css } from 'styled-components';
 
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
@@ -18,7 +17,6 @@ import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
 import { deepFreeze, deepMerge } from '../utils/object';
-import { normalizeColor } from '../utils/colors';
 import { parseMetricToNum } from '../utils/mixins';
 
 const brandColor = '#7D4CDB';
@@ -879,14 +877,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       size: `${baseSpacing}px`,
     },
     rangeInput: {
+      // extend: undefined
       track: {
         height: '4px',
-        color: css`
-          ${props => rgba(normalizeColor('border', props.theme), 0.2)};
-        `,
+        color: 'border',
+        // opacity: undefined,
+        // lower: {
+        //   color: 'undefined',
+        //   opacity: undefined,
+        // },
+        // upper: {
+        //   color: undefined,
+        //   opacity: undefined,
+        // },
+        // extend: undefined
       },
       thumb: {
         // color: { dark: undefined, light: undefined },
+        // extend: undefined
       },
     },
     rangeSelector: {

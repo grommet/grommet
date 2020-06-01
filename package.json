@@ -49,10 +49,9 @@
     "styled-components": ">= 5.X"
   },
   "dependencies": {
-    "css": "^2.2.3",
     "grommet-icons": "^4.2.0",
     "hoist-non-react-statics": "^3.2.0",
-    "markdown-to-jsx": "^6.9.1",
+    "markdown-to-jsx": "^6.11.4",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react-desc": "^4.1.2"
@@ -116,6 +115,7 @@
     "jest-cli": "^25.1.0",
     "jest-styled-components": "^7.0.0",
     "jsdom": "^15.1.1",
+    "postcss": "^7.0.31",
     "pre-commit": "^1.2.2",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.8.0",
@@ -141,12 +141,15 @@
       "lcov"
     ],
     "collectCoverageFrom": [
-      "src/js/components/**/*.{js}",
-      "src/js/contexts/**/*.{js}",
-      "src/js/themes/**/*.{js}",
-      "src/js/utils/**/*.{js}",
-      "!src/js/components/**/*.{stories.js}",
-      "!src/js/components/**/stories/*.js"
+      "src/js/components/**/*.js",
+      "src/js/contexts/**/*.js",
+      "src/js/themes/**/*.js",
+      "src/js/utils/**/*.js",
+      "!src/js/**/**/*.stories.js",
+      "!src/js/**/**/stories/*.js",
+      "!src/js/**/**/stories/**/**/*.js",
+      "!src/js/utils/portal.js",
+      "!src/js/**/**/doc.js"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"

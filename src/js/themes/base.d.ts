@@ -855,10 +855,21 @@ export interface ThemeType {
     track?: {
       height?: string;
       color?: any;
+      extend?: ExtendType;
+      opacity?: OpacityType;
+      lower?: {
+        color?: ColorType;
+        opacity?: OpacityType;
+      }
+      upper?: {
+        color?: ColorType;
+        opacity?: OpacityType;
+      }
     };
     thumb?: {
       color?: ColorType;
     };
+    extend?: ExtendType;
   };
   rangeSelector?: {
     background?: {
