@@ -12,10 +12,12 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
+import { normalizeColor } from '../../utils';
 
 const Tabs = forwardRef(
   (
     {
+      alignTabs,
       children,
       flex,
       justify = 'center',
@@ -75,6 +77,19 @@ const Tabs = forwardRef(
       this,
     );
 
+    const tabsHeaderStyles = {};
+    if (theme.tabs.header && theme.tabs.header.border) {
+      let borderColor =
+        theme.tabs.header.border.color || theme.global.control.border.color;
+      borderColor = normalizeColor(borderColor, theme);
+
+      tabsHeaderStyles.border = {
+        side: theme.tabs.header.border.side,
+        size: theme.tabs.header.border.size,
+        color: borderColor,
+      };
+    }
+
     const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
 
     return (
@@ -91,10 +106,12 @@ const Tabs = forwardRef(
           as={Box}
           direction="row"
           justify={justify}
+          alignSelf={alignTabs}
           flex={false}
           wrap
           background={theme.tabs.header.background}
           gap={theme.tabs.gap}
+          {...tabsHeaderStyles}
         >
           {tabs}
         </StyledTabsHeader>

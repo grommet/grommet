@@ -13058,6 +13058,17 @@ onActive function and update activeIndex accordingly.
 number
 \`\`\`
 
+**alignTabs**
+
+How to align the tabs within the tabs header.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
 **children**
 
 Required. Array of Tab.
@@ -13188,6 +13199,20 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**tabs.header.border**
+
+border styles of the tabs controls Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      // side: undefined,
+      // size: undefined,
+      // color: undefined,
+    }
 \`\`\`
 
 **tabs.header.extend**

@@ -977,6 +977,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // gap: undefined,
       header: {
         // background: undefined,
+        // border: {
+        //   side: undefined,
+        //   size: undefined,
+        //   color: undefined,
+        // },
         // extend: undefined,
       },
       panel: {

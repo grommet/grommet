@@ -5219,6 +5219,14 @@ onActive function and update activeIndex accordingly.",
         "name": "activeIndex",
       },
       Object {
+        "description": "How to align the tabs within the tabs header.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignTabs",
+      },
+      Object {
         "description": "Array of Tab.",
         "format": "node",
         "name": "children",

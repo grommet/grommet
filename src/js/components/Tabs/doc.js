@@ -22,6 +22,12 @@ export const doc = Tabs => {
 This means that future tab changes will not work unless you subscribe to
 onActive function and update activeIndex accordingly.`,
     ),
+    alignTabs: PropTypes.oneOf([
+      'start',
+      'center',
+      'end',
+      'stretch',
+    ]).description('How to align the tabs within the tabs header.'),
     children: PropTypes.node.description('Array of Tab.').isRequired,
     flex: PropTypes.oneOfType([
       PropTypes.oneOf(['grow', 'shrink']),
@@ -89,6 +95,15 @@ export const themeDoc = {
     description: 'The background styles of Tabs header.',
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
+  },
+  'tabs.header.border': {
+    description: 'border styles of the tabs controls',
+    type: 'object',
+    defaultValue: `{
+      // side: undefined,
+      // size: undefined,
+      // color: undefined,
+    }`,
   },
   'tabs.header.extend': {
     description: 'Any additional style for Tabs header.',
