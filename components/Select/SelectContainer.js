@@ -324,6 +324,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       tabIndex: "-1",
       role: "menuitem",
       hoverIndicator: "background",
+      plain: theme.button["default"] ? true : undefined,
       disabled: optionDisabled || undefined,
       active: optionActive,
       selected: optionSelected,

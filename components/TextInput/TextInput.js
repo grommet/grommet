@@ -265,6 +265,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         },
         fill: true,
         hoverIndicator: "background",
+        plain: theme.button["default"] ? true : undefined,
         onClick: function onClick(event) {
           // we stole the focus, give it back
           (ref || inputRef).current.focus();

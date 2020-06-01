@@ -58,7 +58,8 @@ var ExpanderCell = function ExpanderCell(_ref) {
       a11yTitle: expanded ? 'collapse' : 'expand',
       hoverIndicator: true,
       disabled: !onToggle,
-      onClick: onToggle
+      onClick: onToggle,
+      plain: true
     }, content);
   }
 

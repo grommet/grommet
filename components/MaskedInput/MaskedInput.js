@@ -375,7 +375,8 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       },
       onFocus: function onFocus() {},
       active: index === activeOptionIndex,
-      hoverIndicator: "background"
+      hoverIndicator: "background",
+      plain: theme.button["default"] ? true : undefined
     }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'small',

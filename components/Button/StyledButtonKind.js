@@ -157,7 +157,7 @@ var fillStyle = function fillStyle(fillContainer) {
 };
 
 var plainStyle = function plainStyle() {
-  return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;"]);
+  return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;"]);
 };
 
 var StyledButtonKind = _styledComponents["default"].button.withConfig({
