@@ -283,6 +283,7 @@ const TextInput = forwardRef(
                           }}
                           fill
                           hoverIndicator="background"
+                          plain={theme.button.default ? true : undefined}
                           onClick={event => {
                             // we stole the focus, give it back
                             (ref || inputRef).current.focus();
