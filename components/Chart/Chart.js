@@ -167,7 +167,10 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }
 
   var renderBars = function renderBars() {
-    return (values || []).map(function (valueArg, index) {
+    return (values || []).filter(function (_ref2) {
+      var value = _ref2.value;
+      return value[1] !== undefined;
+    }).map(function (valueArg, index) {
       var label = valueArg.label,
           valueOnHover = valueArg.onHover,
           value = valueArg.value,
@@ -211,8 +214,11 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
   var renderLine = function renderLine() {
     var d = '';
-    (values || []).forEach(function (_ref2, index) {
-      var value = _ref2.value;
+    (values || []).filter(function (_ref3) {
+      var value = _ref3.value;
+      return value[1] !== undefined;
+    }).forEach(function (_ref4, index) {
+      var value = _ref4.value;
       d += (index ? ' L' : 'M') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (value[1] - bounds[1][0]) * scale[1]));
     });
     var hoverProps;
@@ -247,13 +253,19 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
   var renderArea = function renderArea() {
     var d = '';
-    (values || []).forEach(function (_ref3, index) {
-      var value = _ref3.value;
+    (values || []).filter(function (_ref5) {
+      var value = _ref5.value;
+      return value[1] !== undefined;
+    }).forEach(function (_ref6, index) {
+      var value = _ref6.value;
       var top = value.length === 2 ? value[1] : value[2];
       d += (!index ? 'M' : ' L') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (top - bounds[1][0]) * scale[1]));
     });
-    (values || []).reverse().forEach(function (_ref4) {
-      var value = _ref4.value;
+    (values || []).reverse().filter(function (_ref7) {
+      var value = _ref7.value;
+      return value[1] !== undefined;
+    }).forEach(function (_ref8) {
+      var value = _ref8.value;
       var bottom = value.length === 2 ? Math.max(0, bounds[1][0]) : value[1];
       d += " L " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1]));
     });
@@ -289,7 +301,10 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   };
 
   var renderPoints = function renderPoints() {
-    return (values || []).map(function (valueArg, index) {
+    return (values || []).filter(function (_ref9) {
+      var value = _ref9.value;
+      return value[1] !== undefined;
+    }).map(function (valueArg, index) {
       var label = valueArg.label,
           valueOnHover = valueArg.onHover,
           value = valueArg.value,
@@ -427,9 +442,9 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       y2: 1
     }, color.sort(function (c1, c2) {
       return c2.value - c1.value;
-    }).map(function (_ref5) {
-      var value = _ref5.value,
-          gradientColor = _ref5.color;
+    }).map(function (_ref10) {
+      var value = _ref10.value,
+          gradientColor = _ref10.color;
       return /*#__PURE__*/_react["default"].createElement("stop", {
         key: value,
         offset: (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],

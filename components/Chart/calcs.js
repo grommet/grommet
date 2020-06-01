@@ -23,16 +23,23 @@ var calcs = function calcs(values, options) {
   var coarseness = options.coarseness || 5; // the number of steps is one less than the number of labels
 
   var steps = options.steps || [1, 1];
-  var calcValues = (0, _utils.normalizeValues)(values || []);
+  var calcValues = (0, _utils.normalizeValues)(values || []); // min and max y values
+
   var min;
   var max;
 
   if (calcValues.length) {
     // Calculate the max and min y values.
-    calcValues.forEach(function (value) {
+    calcValues.filter(function (value) {
+      return value !== undefined;
+    }).forEach(function (value) {
       var y = value.value[1];
-      min = min === undefined ? y : Math.min(min, y);
-      max = max === undefined ? y : Math.max(max, y); // handle ranges of values
+
+      if (y !== undefined) {
+        min = min === undefined ? y : Math.min(min, y);
+        max = max === undefined ? y : Math.max(max, y);
+      } // handle ranges of values
+
 
       var y2 = value.value[2];
 

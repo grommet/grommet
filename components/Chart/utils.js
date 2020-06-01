@@ -5,18 +5,15 @@ exports.areNormalizedBoundsEquals = exports.areNormalizedValuesEquals = exports.
 
 var normalizeValues = function normalizeValues(values) {
   return (values || []).map(function (value, index) {
-    if (Array.isArray(value)) {
-      return {
-        value: value
-      };
-    }
-
-    if (typeof value === 'number') {
-      return {
-        value: [index, value]
-      };
-    }
-
+    if (value === undefined) return {
+      value: [index, undefined]
+    };
+    if (typeof value === 'number') return {
+      value: [index, value]
+    };
+    if (Array.isArray(value)) return {
+      value: value
+    };
     return value;
   });
 };
@@ -29,10 +26,15 @@ var normalizeBounds = function normalizeBounds(bounds, values) {
   if (!result) {
     result = [[0, 1], [0, 1]];
     (values || []).forEach(function (value) {
-      result[0][0] = Math.min(result[0][0], value.value[0]);
-      result[0][1] = Math.max(result[0][1], value.value[0]);
-      result[1][0] = Math.min(result[1][0], value.value[1]);
-      result[1][1] = Math.max(result[1][1], value.value[1]);
+      if (value.value[0] !== undefined) {
+        result[0][0] = Math.min(result[0][0], value.value[0]);
+        result[0][1] = Math.max(result[0][1], value.value[0]);
+      }
+
+      if (value.value[1] !== undefined) {
+        result[1][0] = Math.min(result[1][0], value.value[1]);
+        result[1][1] = Math.max(result[1][1], value.value[1]);
+      }
     });
   }
 

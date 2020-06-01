@@ -11,6 +11,15 @@ var VALUES = [{
   value: [0, 0],
   label: 'zero'
 }];
+var UNDEFINED_VALUES = [{
+  value: [2, 60],
+  label: 'sixty'
+}, {
+  value: [1, undefined]
+}, {
+  value: [0, 0],
+  label: 'zero'
+}];
 describe('Chart', function () {
   test('default', function () {
     var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Chart, {
@@ -179,6 +188,23 @@ describe('Chart', function () {
         vertical: 'small'
       },
       values: VALUES
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('undefined values', function () {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Chart, {
+      type: "bar",
+      values: UNDEFINED_VALUES
+    }), /*#__PURE__*/React.createElement(Chart, {
+      type: "line",
+      values: UNDEFINED_VALUES
+    }), /*#__PURE__*/React.createElement(Chart, {
+      type: "area",
+      values: UNDEFINED_VALUES
+    }), /*#__PURE__*/React.createElement(Chart, {
+      type: "point",
+      values: UNDEFINED_VALUES
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();

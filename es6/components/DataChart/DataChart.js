@@ -70,15 +70,20 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var key = _ref4.key,
           keys = _ref4.keys;
       if (key) return keyValues[key];
-      var totals = [];
-      return keys.map(function (_ref5) {
-        var innerKey = _ref5.key;
-        return keyValues[innerKey].map(function (v, i) {
-          var base = totals[i] || 0;
-          totals[i] = base + v;
-          return [i, base, base + v];
+
+      if (keys) {
+        var totals = [];
+        return keys.map(function (_ref5) {
+          var innerKey = _ref5.key;
+          return keyValues[innerKey].map(function (v, i) {
+            var base = totals[i] || 0;
+            totals[i] = base + v;
+            return [i, base, base + v];
+          });
         });
-      });
+      }
+
+      return [];
     });
   }, [charts, keyValues]); // calculate axis, bounds and thickness
 
@@ -93,7 +98,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var tmpThickness = thicknessProp;
     charts.forEach(function (_ref6, index) {
       var keys = _ref6.keys;
-      (keys ? chartValues[index] : [chartValues[index]]).forEach(function (vals) {
+      (keys ? chartValues[index] : [chartValues[index]]).filter(function (vals) {
+        return vals && vals.length > 0;
+      }).forEach(function (vals) {
         var _calcs = calcs(vals, {
           steps: steps,
           thickness: tmpThickness
