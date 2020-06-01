@@ -338,6 +338,7 @@ const SelectContainer = forwardRef(
                       tabIndex="-1"
                       role="menuitem"
                       hoverIndicator="background"
+                      plain={theme.button.default ? true : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}

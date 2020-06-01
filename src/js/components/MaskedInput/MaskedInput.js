@@ -361,6 +361,7 @@ const MaskedInput = forwardRef(
                     onFocus={() => {}}
                     active={index === activeOptionIndex}
                     hoverIndicator="background"
+                    plain={theme.button.default ? true : undefined}
                   >
                     <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                       {option}
