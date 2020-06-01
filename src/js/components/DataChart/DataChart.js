@@ -74,14 +74,17 @@ const DataChart = forwardRef(
     const chartValues = useMemo(() => {
       return charts.map(({ key, keys }) => {
         if (key) return keyValues[key];
-        const totals = [];
-        return keys.map(({ key: innerKey }) =>
-          keyValues[innerKey].map((v, i) => {
-            const base = totals[i] || 0;
-            totals[i] = base + v;
-            return [i, base, base + v];
-          }),
-        );
+        if (keys) {
+          const totals = [];
+          return keys.map(({ key: innerKey }) =>
+            keyValues[innerKey].map((v, i) => {
+              const base = totals[i] || 0;
+              totals[i] = base + v;
+              return [i, base, base + v];
+            }),
+          );
+        }
+        return [];
       });
     }, [charts, keyValues]);
 
@@ -96,15 +99,17 @@ const DataChart = forwardRef(
       let tmpBounds;
       let tmpThickness = thicknessProp;
       charts.forEach(({ keys }, index) => {
-        (keys ? chartValues[index] : [chartValues[index]]).forEach(vals => {
-          const { axis: a, bounds: b, thickness: t } = calcs(vals, {
-            steps,
-            thickness: tmpThickness,
+        (keys ? chartValues[index] : [chartValues[index]])
+          .filter(vals => vals && vals.length > 0)
+          .forEach(vals => {
+            const { axis: a, bounds: b, thickness: t } = calcs(vals, {
+              steps,
+              thickness: tmpThickness,
+            });
+            tmpAxis = a;
+            tmpBounds = b;
+            tmpThickness = t;
           });
-          tmpAxis = a;
-          tmpBounds = b;
-          tmpThickness = t;
-        });
       });
       return { axis: tmpAxis, bounds: tmpBounds, thickness: tmpThickness };
     }, [charts, chartValues, numValues, thicknessProp, xAxis, yAxis]);

@@ -177,57 +177,66 @@ const Chart = React.forwardRef(
     }
 
     const renderBars = () =>
-      (values || []).map((valueArg, index) => {
-        const { label, onHover: valueOnHover, value, ...valueRest } = valueArg;
+      (values || [])
+        .filter(({ value }) => value[1] !== undefined)
+        .map((valueArg, index) => {
+          const {
+            label,
+            onHover: valueOnHover,
+            value,
+            ...valueRest
+          } = valueArg;
 
-        const key = `p-${index}`;
-        const bottom =
-          value.length === 2
-            ? Math.min(Math.max(0, bounds[1][0]), value[1])
-            : Math.min(value[1], value[2]);
-        const top =
-          value.length === 2
-            ? Math.max(Math.min(0, bounds[1][1]), value[1])
-            : Math.max(value[1], value[2]);
-        const d =
-          `M ${(value[0] - bounds[0][0]) * scale[0]},` +
-          `${size[1] - (bottom - bounds[1][0]) * scale[1]}` +
-          ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
-          `${size[1] - (top - bounds[1][0]) * scale[1]}`;
+          const key = `p-${index}`;
+          const bottom =
+            value.length === 2
+              ? Math.min(Math.max(0, bounds[1][0]), value[1])
+              : Math.min(value[1], value[2]);
+          const top =
+            value.length === 2
+              ? Math.max(Math.min(0, bounds[1][1]), value[1])
+              : Math.max(value[1], value[2]);
+          const d =
+            `M ${(value[0] - bounds[0][0]) * scale[0]},` +
+            `${size[1] - (bottom - bounds[1][0]) * scale[1]}` +
+            ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
+            `${size[1] - (top - bounds[1][0]) * scale[1]}`;
 
-        let hoverProps;
-        if (valueOnHover) {
-          hoverProps = {
-            onMouseOver: () => valueOnHover(true),
-            onMouseLeave: () => valueOnHover(false),
-          };
-        }
-        let clickProps;
-        if (onClick) {
-          clickProps = { onClick };
-        }
+          let hoverProps;
+          if (valueOnHover) {
+            hoverProps = {
+              onMouseOver: () => valueOnHover(true),
+              onMouseLeave: () => valueOnHover(false),
+            };
+          }
+          let clickProps;
+          if (onClick) {
+            clickProps = { onClick };
+          }
 
-        return (
-          <g key={key} fill="none">
-            <title>{label}</title>
-            <path
-              d={d}
-              {...hoverProps}
-              {...clickProps}
-              {...valueRest}
-              strokeDasharray={strokeDasharray}
-            />
-          </g>
-        );
-      });
+          return (
+            <g key={key} fill="none">
+              <title>{label}</title>
+              <path
+                d={d}
+                {...hoverProps}
+                {...clickProps}
+                {...valueRest}
+                strokeDasharray={strokeDasharray}
+              />
+            </g>
+          );
+        });
 
     const renderLine = () => {
       let d = '';
-      (values || []).forEach(({ value }, index) => {
-        d +=
-          `${index ? ' L' : 'M'} ${(value[0] - bounds[0][0]) * scale[0]},` +
-          `${size[1] - (value[1] - bounds[1][0]) * scale[1]}`;
-      });
+      (values || [])
+        .filter(({ value }) => value[1] !== undefined)
+        .forEach(({ value }, index) => {
+          d +=
+            `${index ? ' L' : 'M'} ${(value[0] - bounds[0][0]) * scale[0]},` +
+            `${size[1] - (value[1] - bounds[1][0]) * scale[1]}`;
+        });
 
       let hoverProps;
       if (onHover) {
@@ -255,19 +264,24 @@ const Chart = React.forwardRef(
 
     const renderArea = () => {
       let d = '';
-      (values || []).forEach(({ value }, index) => {
-        const top = value.length === 2 ? value[1] : value[2];
-        d +=
-          `${!index ? 'M' : ' L'} ${(value[0] - bounds[0][0]) * scale[0]},` +
-          `${size[1] - (top - bounds[1][0]) * scale[1]}`;
-      });
-      (values || []).reverse().forEach(({ value }) => {
-        const bottom =
-          value.length === 2 ? Math.max(0, bounds[1][0]) : value[1];
-        d +=
-          ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
-          `${size[1] - (bottom - bounds[1][0]) * scale[1]}`;
-      });
+      (values || [])
+        .filter(({ value }) => value[1] !== undefined)
+        .forEach(({ value }, index) => {
+          const top = value.length === 2 ? value[1] : value[2];
+          d +=
+            `${!index ? 'M' : ' L'} ${(value[0] - bounds[0][0]) * scale[0]},` +
+            `${size[1] - (top - bounds[1][0]) * scale[1]}`;
+        });
+      (values || [])
+        .reverse()
+        .filter(({ value }) => value[1] !== undefined)
+        .forEach(({ value }) => {
+          const bottom =
+            value.length === 2 ? Math.max(0, bounds[1][0]) : value[1];
+          d +=
+            ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
+            `${size[1] - (bottom - bounds[1][0]) * scale[1]}`;
+        });
       if (d.length > 0) {
         d += ' Z';
       }
@@ -292,62 +306,69 @@ const Chart = React.forwardRef(
     };
 
     const renderPoints = () =>
-      (values || []).map((valueArg, index) => {
-        const { label, onHover: valueOnHover, value, ...valueRest } = valueArg;
+      (values || [])
+        .filter(({ value }) => value[1] !== undefined)
+        .map((valueArg, index) => {
+          const {
+            label,
+            onHover: valueOnHover,
+            value,
+            ...valueRest
+          } = valueArg;
 
-        const key = `p-${index}`;
+          const key = `p-${index}`;
 
-        let hoverProps;
-        if (valueOnHover) {
-          hoverProps = {
-            onMouseOver: () => valueOnHover(true),
-            onMouseLeave: () => valueOnHover(false),
-          };
-        }
-        let clickProps;
-        if (onClick) {
-          clickProps = { onClick };
-        }
+          let hoverProps;
+          if (valueOnHover) {
+            hoverProps = {
+              onMouseOver: () => valueOnHover(true),
+              onMouseLeave: () => valueOnHover(false),
+            };
+          }
+          let clickProps;
+          if (onClick) {
+            clickProps = { onClick };
+          }
 
-        const center = value.length === 2 ? value[1] : value[2];
-        let shape;
-        if (round) {
-          const cx = (value[0] - bounds[0][0]) * scale[0];
-          const cy = size[1] - (center - bounds[1][0]) * scale[1];
-          shape = (
-            <circle
-              cx={cx}
-              cy={cy}
-              r={strokeWidth / 2}
-              {...hoverProps}
-              {...clickProps}
-              {...valueRest}
-            />
+          const center = value.length === 2 ? value[1] : value[2];
+          let shape;
+          if (round) {
+            const cx = (value[0] - bounds[0][0]) * scale[0];
+            const cy = size[1] - (center - bounds[1][0]) * scale[1];
+            shape = (
+              <circle
+                cx={cx}
+                cy={cy}
+                r={strokeWidth / 2}
+                {...hoverProps}
+                {...clickProps}
+                {...valueRest}
+              />
+            );
+          } else {
+            const x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
+            const y =
+              size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
+            shape = (
+              <rect
+                x={x}
+                y={y}
+                width={strokeWidth}
+                height={strokeWidth}
+                {...hoverProps}
+                {...clickProps}
+                {...valueRest}
+              />
+            );
+          }
+
+          return (
+            <g key={key} stroke="none">
+              <title>{label}</title>
+              {shape}
+            </g>
           );
-        } else {
-          const x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
-          const y =
-            size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
-          shape = (
-            <rect
-              x={x}
-              y={y}
-              width={strokeWidth}
-              height={strokeWidth}
-              {...hoverProps}
-              {...clickProps}
-              {...valueRest}
-            />
-          );
-        }
-
-        return (
-          <g key={key} stroke="none">
-            <title>{label}</title>
-            {shape}
-          </g>
-        );
-      });
+        });
 
     let contents;
     if (type === 'bar') {
