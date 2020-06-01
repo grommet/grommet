@@ -321,9 +321,8 @@ stretch
 
 **pad**
 
-The amount of padding around the box contents. An
-    object can be specified to distinguish horizontal padding, vertical
-    padding, and padding on a particular side of the box Defaults to `none`.
+Spacing around the outer edge of
+    the drawing coordinate area for bars and points to overflow into. Defaults to `none`.
 
 ```
 none
