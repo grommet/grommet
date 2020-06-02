@@ -98,18 +98,23 @@ export const themeDoc = {
   },
   'tabs.header.border.color': {
     description: 'border color of the tabs controls',
-    type: 'object',
+    type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
   },
   'tabs.header.border.side': {
     description: 'side of the border of the tabs controls',
-    type: 'object',
+    type: 'string',
     defaultValue: undefined,
   },
   'tabs.header.border.size': {
     description: 'border size of the tabs controls',
-    type: 'object',
+    type: 'string',
     defaultValue: undefined,
+  },
+  'tabs.header.border.style': {
+    description: 'border style of the tabs controls',
+    type: 'string',
+    defaultValue: 'undefined',
   },
   'tabs.header.extend': {
     description: 'Any additional style for Tabs header.',

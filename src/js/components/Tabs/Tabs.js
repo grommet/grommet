@@ -86,6 +86,7 @@ const Tabs = forwardRef(
       tabsHeaderStyles.border = {
         side: theme.tabs.header.border.side,
         size: theme.tabs.header.border.size,
+        style: theme.tabs.header.border.style,
         color: borderColor,
       };
     }

@@ -988,6 +988,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // border: {
         //   side: undefined,
         //   size: undefined,
+        //   style: undefined,
         //   color: undefined,
         // },
         // extend: undefined,

@@ -947,6 +947,7 @@ export interface ThemeType {
       border?: {
         side?: string;
         size?: string;
+        style?: string;
         color?: ColorType;
       };
       extend?: ExtendType;

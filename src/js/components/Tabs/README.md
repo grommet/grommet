@@ -282,7 +282,7 @@ undefined
 
 **tabs.header.border.color**
 
-border color of the tabs controls Expects `object`.
+border color of the tabs controls Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -292,7 +292,7 @@ undefined
 
 **tabs.header.border.side**
 
-side of the border of the tabs controls Expects `object`.
+side of the border of the tabs controls Expects `string`.
 
 Defaults to
 
@@ -302,7 +302,17 @@ undefined
 
 **tabs.header.border.size**
 
-border size of the tabs controls Expects `object`.
+border size of the tabs controls Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.border.style**
+
+border style of the tabs controls Expects `string`.
 
 Defaults to
 
