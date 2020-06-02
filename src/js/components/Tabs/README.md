@@ -280,18 +280,34 @@ Defaults to
 undefined
 ```
 
-**tabs.header.border**
+**tabs.header.border.color**
 
-border styles of the tabs controls Expects `object`.
+border color of the tabs controls Expects `object`.
 
 Defaults to
 
 ```
-{
-      // side: undefined,
-      // size: undefined,
-      // color: undefined,
-    }
+undefined
+```
+
+**tabs.header.border.side**
+
+side of the border of the tabs controls Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.border.size**
+
+border size of the tabs controls Expects `object`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **tabs.header.extend**
