@@ -59,7 +59,10 @@ const StyledCheckBoxInput = styled.input`
         ${props => props.theme.checkBox.size}
     );
     background: ${props =>
-      normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
+      normalizeColor(
+        props.theme.checkBox.toggle.color || 'control',
+        props.theme,
+      )};
   }
 `;
 

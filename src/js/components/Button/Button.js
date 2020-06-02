@@ -114,6 +114,7 @@ const Button = forwardRef(
       reverse,
       secondary,
       size,
+      tertiary,
       type = 'button',
       as,
       ...rest
@@ -136,10 +137,11 @@ const Button = forwardRef(
         if (kindArg) return kindArg;
         if (primary) return 'primary';
         if (secondary) return 'secondary';
+        if (tertiary) return 'tertiary';
         return 'default';
       }
       return undefined; // pre-default, no kind
-    }, [kindArg, primary, secondary, theme.button.default]);
+    }, [kindArg, primary, secondary, tertiary, theme.button.default]);
 
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.
