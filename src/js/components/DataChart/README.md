@@ -437,7 +437,9 @@ boolean
 {
   guide: boolean,
   labels: number,
-  render: function
+  prefix: string,
+  render: function,
+  suffix: string
 }
 ```
   

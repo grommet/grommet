@@ -30,7 +30,7 @@ const AxesDataChart = () => (
             </Text>
           ),
         }}
-        yAxis={{ guide: true, labels: 3 }}
+        yAxis={{ guide: true, labels: 3, suffix: '%' }}
       />
     </Box>
   </Grommet>

@@ -190,7 +190,11 @@ const DataChart = forwardRef(
           {axis[1].map((axisValue, i) => {
             let content;
             if (yAxis.render) content = yAxis.render(axisValue, i);
-            else content = axisValue;
+            else {
+              content = axisValue;
+              if (yAxis.prefix) content = `${yAxis.prefix}${content}`;
+              if (yAxis.suffix) content = `${content}${yAxis.suffix}`;
+            }
             return (
               <Box key={i} align="end">
                 {content}

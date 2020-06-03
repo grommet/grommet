@@ -99,11 +99,17 @@ describe('DataChart', () => {
   test('yAxis', () => {
     const component = renderer.create(
       <Grommet>
-        {[true, false, { guide: true }, { labels: 2 }, { render: v => v }].map(
-          yAxis => (
-            <DataChart data={data} chart={{ key: 'a' }} yAxis={yAxis} />
-          ),
-        )}
+        {[
+          true,
+          false,
+          { guide: true },
+          { labels: 2 },
+          { render: v => v },
+          { prefix: '$' },
+          { suffix: '%' },
+        ].map(yAxis => (
+          <DataChart data={data} chart={{ key: 'a' }} yAxis={yAxis} />
+        ))}
       </Grommet>,
     );
     const tree = component.toJSON();

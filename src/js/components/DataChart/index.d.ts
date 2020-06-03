@@ -34,7 +34,7 @@ export interface DataChartProps {
   size?: ChartProps["size"];
   thickness?: ChartProps["thickness"];
   xAxis?: boolean | { guide?: boolean, key?: string, labels?: number, render?: (dataIndex: number, axisIndex: number) => (void) };
-  yAxis?: boolean | { guide?: boolean, labels?: number, render?: (value:any, data:{}[], dataIndex: number, axisIndex: number) => (void) };
+  yAxis?: boolean | { guide?: boolean, labels?: number, prefix?: string, render?: (value:any, data:{}[], dataIndex: number, axisIndex: number) => (void), suffix?: string };
 }
 
 declare const DataChart: React.FC<DataChartProps>;

@@ -148,7 +148,9 @@ export const doc = DataChart => {
       PropTypes.shape({
         guide: PropTypes.bool,
         labels: PropTypes.number, // default 2, top and bottom
+        prefix: PropTypes.string,
         render: PropTypes.func, // (value, axisIndex) => element
+        suffix: PropTypes.string,
       }),
     ]).description(`y-axis configuration. 'guide' specifies that horizontal
     guide lines should be drawn under the Chart, one per label.
