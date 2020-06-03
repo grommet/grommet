@@ -132,7 +132,9 @@ export const doc = DataChart => {
         guide: PropTypes.bool,
         key: PropTypes.string,
         labels: PropTypes.number, // default undefined, all data points
-        render: PropTypes.func, // (dataIndex, axisIndex) => element
+        // (value, data, dataIndex, axisIndex) => element
+        // value is only defined when a 'key' is provided.
+        render: PropTypes.func,
       }),
     ]).description(`x-axis configuration. 'guide' specifies that vertical
     guide lines should be drawn under the Chart, one per label.

@@ -86,7 +86,7 @@ describe('DataChart', () => {
           { guide: true },
           { key: 'b' },
           { labels: 2 },
-          { render: i => data[i].b },
+          { key: 'b', render: b => b },
         ].map(xAxis => (
           <DataChart data={data} chart={{ key: 'a' }} xAxis={xAxis} />
         ))}

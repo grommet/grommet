@@ -22,9 +22,9 @@ const AxesDataChart = () => (
         xAxis={{
           key: 'date',
           guide: true,
-          render: i => (
+          render: date => (
             <Text margin={{ horizontal: 'small' }}>
-              {new Date(data[i].date).toLocaleDateString('en-US', {
+              {new Date(date).toLocaleDateString('en-US', {
                 month: 'narrow',
               })}
             </Text>

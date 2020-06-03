@@ -167,11 +167,12 @@ const DataChart = forwardRef(
       }
       xAxisElement = (
         <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
-          {axis[0].map((a, i) => {
-            let content;
-            if (xAxis.render) content = xAxis.render(a, i);
-            else if (xAxis.key) content = data[i][xAxis.key];
-            else content = a;
+          {axis[0].map((dataIndex, i) => {
+            let content = xAxis.key
+              ? data[Math.floor(dataIndex)][xAxis.key]
+              : dataIndex;
+            if (xAxis.render)
+              content = xAxis.render(content, data, Math.floor(dataIndex), i);
             return (
               <Box key={i} basis={basis} align={basis ? 'center' : undefined}>
                 {content}
@@ -186,10 +187,10 @@ const DataChart = forwardRef(
     if (yAxis) {
       yAxisElement = (
         <Box gridArea="yAxis" justify="between" flex>
-          {axis[1].map((a, i) => {
+          {axis[1].map((axisValue, i) => {
             let content;
-            if (yAxis.render) content = yAxis.render(a, i);
-            else content = a;
+            if (yAxis.render) content = yAxis.render(axisValue, i);
+            else content = axisValue;
             return (
               <Box key={i} align="end">
                 {content}
