@@ -9518,7 +9518,9 @@ mixin-object@^2.0.1:
 
 mnet-ui-base-theme-neo@sabarnix/mnet-ui-base-theme-neo:
   version "0.0.1"
-  resolved "https://codeload.github.com/sabarnix/mnet-ui-base-theme-neo/tar.gz/ae269913b1e5fadad53a31ac32de76777b7018d8"
+  resolved "https://codeload.github.com/sabarnix/mnet-ui-base-theme-neo/tar.gz/af72b430ce47217ba840328d2946a94259c5430b"
+  dependencies:
+    google-fonts "^1.0.0"
 
 moment@^2.18.1:
   version "2.24.0"

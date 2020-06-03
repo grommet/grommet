@@ -27,12 +27,26 @@ const SelectTextInput = styled(TextInput)`
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
+  ${props => ({
+    background: normalizeColor(
+      props.theme.select.background || 'control',
+      props.theme,
+    ),
+  })};
   ${props => !props.plain && controlBorderStyle};
   ${props =>
     props.theme.select &&
     props.theme.select.control &&
     props.theme.select.control.extend};
   ${props => props.open && props.theme.select.control.open};
+`;
+
+const StyledIconContainer = styled(Box)`
+  min-width: auto;
+  ${props =>
+    props.theme.select &&
+    props.theme.select.icons &&
+    props.theme.select.icons.extend};
 `;
 
 StyledSelectDropButton.defaultProps = {};
@@ -190,6 +204,8 @@ const Select = forwardRef(
       theme,
     );
 
+    console.log(theme.select.icons);
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
@@ -235,12 +251,7 @@ const Select = forwardRef(
           dropProps={dropProps}
           theme={theme}
         >
-          <Box
-            align="center"
-            direction="row"
-            justify="between"
-            background={theme.select.background}
-          >
+          <Box align="center" direction="row" justify="between">
             <Box direction="row" flex basis="auto">
               {selectValue || (
                 <SelectTextInput
@@ -267,17 +278,18 @@ const Select = forwardRef(
               )}
             </Box>
             {SelectIcon && (
-              <Box
+              <StyledIconContainer
                 margin={theme.select.icons.margin}
+                pad={theme.select.icons.pad}
+                background={theme.select.icons.background}
                 flex={false}
-                style={{ minWidth: 'auto' }}
               >
                 {isValidElement(SelectIcon) ? (
                   SelectIcon
                 ) : (
                   <SelectIcon color={iconColor} size={size} />
                 )}
-              </Box>
+              </StyledIconContainer>
             )}
           </Box>
         </StyledSelectDropButton>

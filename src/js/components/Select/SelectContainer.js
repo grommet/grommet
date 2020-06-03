@@ -337,11 +337,12 @@ const SelectContainer = forwardRef(
                       ref={optionRef}
                       tabIndex="-1"
                       role="menuitem"
-                      hoverIndicator="background"
+                      hoverIndicator="light-5"
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
                       option={option}
+                      plain
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
