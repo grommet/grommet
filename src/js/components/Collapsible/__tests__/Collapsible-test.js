@@ -1,39 +1,41 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import { cleanup } from '@testing-library/react';
 
-import { Collapsible, Box, Grommet } from '../..';
+import { Collapsible } from '..';
+import { Box } from '../../Box';
+import { Grommet } from '../../Grommet';
 
 describe('Collapsible', () => {
   afterEach(cleanup);
 
   test('direction', () => {
-    const { component } = render(
+    const component = renderer.create(
       <Grommet>
         <Collapsible direction="horizontal">
           <Box background="dark-1">Box Body</Box>
         </Collapsible>
-
         <Collapsible direction="vertical">
           <Box background="dark-1">Box Body</Box>
         </Collapsible>
       </Grommet>,
     );
-    expect(component).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('open', () => {
-    const { component } = render(
+    const component = renderer.create(
       <Grommet>
-        <Collapsible open="false">
+        <Collapsible open={false}>
           <Box background="dark-1">Box Body</Box>
         </Collapsible>
 
-        <Collapsible open="true">
+        <Collapsible open>
           <Box background="dark-1">Box Body</Box>
         </Collapsible>
       </Grommet>,
     );
-    expect(component).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });
