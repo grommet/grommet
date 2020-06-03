@@ -208,6 +208,7 @@ const plainStyle = () => css`
   border: none;
   padding: 0;
   text-align: inherit;
+  color: inherit;
 `;
 
 const StyledButtonKind = styled.button`
