@@ -34,28 +34,25 @@ const Example = () => {
     setComments('initial');
     setAge(60);
   }, []);
-  const onChange = React.useCallback(value => console.log('Change', value), []);
-  const onSubmit = React.useCallback(
-    event => console.log('Submit', event.value, event.touched),
-    [],
-  );
-  const onReset = React.useCallback(
-    () => {
-      setName('');
-      setEmail('');
-      setSubscribe(false);
-      setAmpm('');
-      setSize('');
-      setComments('');
-      setAge('');
-    },
-    [],
-  );
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
-          <Form onChange={onChange} onReset={onReset} onSubmit={onSubmit}>
+          <Form
+            onChange={value => console.log('Change', value)}
+            onReset={() => {
+              setName('');
+              setEmail('');
+              setSubscribe(false);
+              setAmpm('');
+              setSize('');
+              setComments('');
+              setAge('');
+            }}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
+          >
             <FormField label="Name" name="name">
               <TextInput
                 name="name"

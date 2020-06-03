@@ -280,47 +280,7 @@ const Form = forwardRef(
           }
         }}
       >
-        <FormContext.Provider
-          value={{
-            // addValidation: (name, validation) => {
-            //   validations.current[name] = validation;
-            // },
-            // removeValidation: name => {
-            //   delete validations.current[name];
-            // },
-            // onBlur:
-            //   validate === 'blur'
-            //     ? name => {
-            //         if (validations.current[name]) {
-            //           const error = validations.current[name](
-            //             value[name],
-            //             value,
-            //           );
-            //           setErrors(prevErrors => {
-            //             const nextErrors = { ...prevErrors };
-            //             updateErrors(nextErrors, name, error);
-            //             return nextErrors;
-            //           });
-            //           setInfos(prevInfos => {
-            //             const nextInfos = { ...prevInfos };
-            //             updateInfos(nextInfos, name, error);
-            //             return nextInfos;
-            //           });
-            //         }
-            //       }
-            //     : undefined,
-            // errors,
-            // get: name => value[name],
-            // infos,
-            // messages,
-            // set: (name, nextValue) => update(name, nextValue),
-            // touched,
-            // update,
-            useFormField,
-            useFormInput,
-            // value,
-          }}
-        >
+        <FormContext.Provider value={{ useFormField, useFormInput }}>
           {children}
         </FormContext.Provider>
       </form>

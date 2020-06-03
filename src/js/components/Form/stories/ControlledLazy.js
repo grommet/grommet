@@ -42,24 +42,20 @@ const Example = () => {
       }),
     [],
   );
-  const onChange = React.useCallback(nextValue => {
-    console.log('Change', nextValue);
-    setValue(nextValue);
-  }, []);
-  const onSubmit = React.useCallback(
-    event => console.log('Submit', event.value, event.touched),
-    [],
-  );
-  const onReset = React.useCallback(() => setValue(defaultValue), []);
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
             value={value}
-            onChange={onChange}
-            onReset={onReset}
-            onSubmit={onSubmit}
+            onChange={nextValue => {
+              console.log('Change', nextValue);
+              setValue(nextValue);
+            }}
+            onReset={() => setValue(defaultValue)}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
           >
             <FormField label="Name" name="name">
               <TextInput name="name" />
