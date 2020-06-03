@@ -92,6 +92,8 @@ const FormField = forwardRef(
       label,
       margin,
       name, // pass through in renderInput()
+      onBlur,
+      onFocus,
       pad,
       required,
       style,
@@ -102,7 +104,12 @@ const FormField = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
-    const { error, info, inForm, onBlur } = formContext.useFormField({
+    const {
+      error,
+      info,
+      inForm,
+      onBlur: contextOnBlur,
+    } = formContext.useFormField({
       error: errorProp,
       info: infoProp,
       name,
@@ -302,9 +309,13 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        onFocus={() => setFocus(true)}
+        onFocus={event => {
+          setFocus(true);
+          if (onFocus) onFocus(event);
+        }}
         onBlur={event => {
           setFocus(false);
+          if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
         }}
         {...containerRest}
