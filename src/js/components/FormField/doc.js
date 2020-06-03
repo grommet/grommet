@@ -107,6 +107,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'bottom',
   },
+  'formField.content.margin': {
+    description: 'The margin of the FormField content.',
+    type: 'object',
+    defaultValue: undefined,
+  },
   'formField.content.pad': {
     description: 'The pad of the FormField content.',
     type: 'object',

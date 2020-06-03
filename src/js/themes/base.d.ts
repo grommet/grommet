@@ -562,6 +562,7 @@ export interface ThemeType {
   formField?: {
     border?: BorderType;
     content?: {
+      margin?: MarginType;
       pad?: PadType;
     };
     disabled?: {
