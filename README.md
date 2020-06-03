@@ -2,6 +2,8 @@
 
 Visit the [MNET UI BASE](https://mnet-ui-base.netlify.com) website for more information.
 
+For storybook of components visit (https://mnet-ui-base-storybook.netlify.app/)
+
 ## Support / Contributing
 
 Before opening an issue or pull request, please read the [Contributing](https://github.com/sabarnix/mnet-ui-base/blob/master/CONTRIBUTING.md) guide.
@@ -13,13 +15,13 @@ You can install mnet-ui-base using either of the methods given below.
 For npm users:
 
 ```shell
-  $ npm install sabarnix/mnet-ui-base styled-components --save
+  $ npm install mnet-ui/mnet-ui-base#release styled-components --save
 ```
 
 For Yarn users:
 
 ```shell
-  $ yarn add sabarnix/mnet-ui-base styled-components
+  $ yarn add mnet-ui/mnet-ui-base#release styled-components
 ```
 
 ## Explore
