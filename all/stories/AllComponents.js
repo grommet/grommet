@@ -14,10 +14,6 @@ var _utils = require("grommet/utils");
 
 var _grommetThemeHpe = require("grommet-theme-hpe");
 
-var _grommetThemeHpeV = require("grommet-theme-hpe-v0");
-
-var _grommetThemeHpeNext = require("grommet-theme-hpe-next");
-
 var _grommetThemeAruba = require("grommet-theme-aruba");
 
 var _grommetThemeHp = require("grommet-theme-hp");
@@ -66,8 +62,6 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 var themes = {
   grommet: _themes.grommet,
   hpe: _grommetThemeHpe.hpe,
-  hpeNext: _grommetThemeHpeNext.hpe,
-  hpeV0: _grommetThemeHpeV.hpe,
   aruba: _grommetThemeAruba.aruba,
   hp: _grommetThemeHp.hp,
   dxc: _grommetThemeDxc.dxc,
