@@ -319,6 +319,12 @@ const animationBounds = (type, size = 'medium') => {
   if (type === 'pulse') {
     return ['transform: scale(1);', `transform: scale(${PULSE_SIZES[size]})`];
   }
+  if (type === 'rotateRight') {
+    return [`transform: rotate(0deg);`, `transform: rotate(359deg);`];
+  }
+  if (type === 'rotateLeft') {
+    return [`transform: rotate(0deg);`, `transform: rotate(-359deg);`];
+  }
   if (type === 'flipIn') {
     return ['transform: rotateY(90deg);', 'transform: rotateY(0);'];
   }
@@ -367,6 +373,9 @@ const animationEnding = type => {
   }
   if (type === 'pulse') {
     return 'alternate infinite';
+  }
+  if (type === 'rotateRight' || type === 'rotateLeft') {
+    return 'infinite linear';
   }
   return 'forwards';
 };

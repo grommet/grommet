@@ -143,8 +143,7 @@ exports[`Layer animation fadeIn 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -152,14 +151,12 @@ exports[`Layer animation fadeIn 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -321,8 +318,7 @@ exports[`Layer animation false 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -330,14 +326,12 @@ exports[`Layer animation false 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -501,8 +495,7 @@ exports[`Layer animation slide 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -510,14 +503,12 @@ exports[`Layer animation slide 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -681,8 +672,7 @@ exports[`Layer animation true 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -690,14 +680,12 @@ exports[`Layer animation true 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -861,8 +849,7 @@ exports[`Layer custom margin 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -870,14 +857,12 @@ exports[`Layer custom margin 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -974,7 +959,7 @@ exports[`Layer dark context 1`] = `
 `;
 
 exports[`Layer dark context 2`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -982,14 +967,12 @@ exports[`Layer dark context 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -1229,8 +1212,7 @@ exports[`Layer full false 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -1238,14 +1220,12 @@ exports[`Layer full false 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -1410,8 +1390,7 @@ exports[`Layer full horizontal 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -1419,14 +1398,12 @@ exports[`Layer full horizontal 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -1589,8 +1566,7 @@ exports[`Layer full true 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -1598,14 +1574,12 @@ exports[`Layer full true 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -1770,8 +1744,7 @@ exports[`Layer full vertical 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -1779,14 +1752,12 @@ exports[`Layer full vertical 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -1914,7 +1885,7 @@ exports[`Layer hidden 1`] = `
 `;
 
 exports[`Layer hidden 2`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -1922,14 +1893,12 @@ exports[`Layer hidden 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -1993,8 +1962,7 @@ exports[`Layer hidden 4`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -2002,14 +1970,12 @@ exports[`Layer hidden 4`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -2230,8 +2196,7 @@ exports[`Layer margin large 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -2239,14 +2204,12 @@ exports[`Layer margin large 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -2410,8 +2373,7 @@ exports[`Layer margin medium 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -2419,14 +2381,12 @@ exports[`Layer margin medium 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -2590,8 +2550,7 @@ exports[`Layer margin none 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -2599,14 +2558,12 @@ exports[`Layer margin none 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -2770,8 +2727,7 @@ exports[`Layer margin small 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -2779,14 +2735,12 @@ exports[`Layer margin small 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -2950,8 +2904,7 @@ exports[`Layer margin xsmall 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -2959,14 +2912,12 @@ exports[`Layer margin xsmall 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -3063,7 +3014,7 @@ exports[`Layer non-modal 1`] = `
 `;
 
 exports[`Layer non-modal 2`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -3071,14 +3022,12 @@ exports[`Layer non-modal 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -3321,8 +3270,7 @@ exports[`Layer plain 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -3330,14 +3278,12 @@ exports[`Layer plain 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -3501,8 +3447,7 @@ exports[`Layer position bottom 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -3510,14 +3455,12 @@ exports[`Layer position bottom 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -3681,8 +3624,7 @@ exports[`Layer position center 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -3690,14 +3632,12 @@ exports[`Layer position center 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -3861,8 +3801,7 @@ exports[`Layer position end 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -3870,14 +3809,12 @@ exports[`Layer position end 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -4041,8 +3978,7 @@ exports[`Layer position left 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -4050,14 +3986,12 @@ exports[`Layer position left 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -4221,8 +4155,7 @@ exports[`Layer position right 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -4230,14 +4163,12 @@ exports[`Layer position right 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -4401,8 +4332,7 @@ exports[`Layer position start 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -4410,14 +4340,12 @@ exports[`Layer position start 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -4581,8 +4509,7 @@ exports[`Layer position top 2`] = `
   right: 0px;
   bottom: 0px;
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -4590,14 +4517,12 @@ exports[`Layer position top 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -4746,7 +4671,7 @@ exports[`Layer target 1`] = `
 `;
 
 exports[`Layer target 2`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -4754,14 +4679,12 @@ exports[`Layer target 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;
@@ -4862,7 +4785,7 @@ exports[`Layer target not modal 1`] = `
 `;
 
 exports[`Layer target not modal 2`] = `
-"@media only screen and (max-width:768px) {
+"@media only screen and (max-width: 768px) {
   .XIVyE {
     position: absolute;
     width: 100%;
@@ -4870,14 +4793,12 @@ exports[`Layer target not modal 2`] = `
     min-height: 100vh;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .TgNMj {
     position: relative;
   }
 }
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .fYgBNY {
     position: relative;
     max-height: none;

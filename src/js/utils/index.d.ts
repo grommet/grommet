@@ -38,7 +38,7 @@ export {isObject, deepFreeze, deepMerge, removeUndefined};
 type BoxSideType = "top" | "left" | "bottom" | "right" | "start" | "end" | "horizontal" | "vertical" | "all" | "between";
 type BoxSizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
 type BoxStyleType = "solid" | "dashed" | "dotted" | "double" | "groove" | "ridge" | "inset" | "outset" | "hidden";
-type EdgeSizeType = "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge";
+export type EdgeSizeType = "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge";
 type EdgeType = "none" | EdgeSizeType | {bottom?: EdgeSizeType | string,end?: EdgeSizeType | string,horizontal?: EdgeSizeType | string,left?: EdgeSizeType | string,right?: EdgeSizeType | string,start?: EdgeSizeType | string,top?: EdgeSizeType | string,vertical?: EdgeSizeType | string} | string
 
 export type A11yTitleType = string;
