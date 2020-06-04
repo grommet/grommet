@@ -9,6 +9,7 @@ Object {
     ],
     Array [
       3.2,
+      0.8,
     ],
   ],
   "bounds": Array [
@@ -23,7 +24,7 @@ Object {
   ],
   "dimensions": Array [
     2,
-    2.4000000000000004,
+    2.4,
   ],
   "pad": "large",
   "thickness": "xlarge",
