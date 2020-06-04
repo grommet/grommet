@@ -13,7 +13,7 @@ import { Form } from 'grommet';
 
 **errors**
 
-An object representing any errors in the data. They keys should
+An object representing any errors in the data. Their keys should
         match the keys in the value object. Defaults to `{}`.
 
 ```
@@ -25,7 +25,7 @@ An object representing any errors in the data. They keys should
 **infos**
 
 An object representing any information details in the data.
-        They keys should match the keys in the value object. Defaults to `{}`.
+        Their keys should match the keys in the value object. Defaults to `{}`.
 
 ```
 {
