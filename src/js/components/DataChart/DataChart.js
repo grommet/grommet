@@ -18,6 +18,52 @@ const halfPad = {
   small: 'xsmall',
 };
 
+const checkDateFormat = (firstValue, lastValue, full) => {
+  let dateFormat;
+  const startDate = new Date(firstValue);
+  const endDate = new Date(lastValue);
+  if (
+    // check for valid dates, this is the fastest way
+    !Number.isNaN(startDate.getTime()) &&
+    !Number.isNaN(endDate.getTime())
+  ) {
+    const delta = Math.abs(endDate - startDate);
+    let options;
+    if (delta < 60000)
+      // less than 1 minute
+      options = full
+        ? {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            day: undefined,
+          }
+        : { second: '2-digit', day: undefined };
+    else if (delta < 3600000)
+      // less than 1 hour
+      options = full
+        ? { hour: 'numeric', minute: '2-digit', day: undefined }
+        : { minute: '2-digit', day: undefined };
+    else if (delta < 86400000)
+      // less than 1 day
+      options = { hour: 'numeric' };
+    else if (delta < 2592000000)
+      // less than 30 days
+      options = {
+        month: full ? 'short' : 'numeric',
+        day: 'numeric',
+      };
+    else if (delta < 31557600000)
+      // less than 1 year
+      options = { month: full ? 'long' : 'short' };
+    // 1 year or more
+    else options = { year: 'numeric' };
+    if (options)
+      dateFormat = new Intl.DateTimeFormat(undefined, options).format;
+  }
+  return dateFormat;
+};
+
 const DataChart = forwardRef(
   (
     {
@@ -171,51 +217,11 @@ const DataChart = forwardRef(
       // of values
       let dateFormat;
       if (!xAxis.render && xAxis.key && axis[0].length > 1) {
-        const startDate = new Date(data[Math.floor(axis[0][0])][xAxis.key]);
-        const endDate = new Date(
+        dateFormat = checkDateFormat(
+          data[Math.floor(axis[0][0])][xAxis.key],
           data[Math.floor(axis[0][axis[0].length - 1])][xAxis.key],
+          axis[0].length <= 2,
         );
-        if (
-          // check for valid dates, this is the fastest way
-          !Number.isNaN(startDate.getTime()) &&
-          !Number.isNaN(endDate.getTime())
-        ) {
-          const delta = Math.abs(endDate - startDate);
-          let options;
-          if (delta < 60000)
-            // less than 1 minute
-            options =
-              axis[0].length <= 2
-                ? {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    day: undefined,
-                  }
-                : { second: '2-digit', day: undefined };
-          else if (delta < 3600000)
-            // less than 1 hour
-            options =
-              axis[0].length <= 2
-                ? { hour: 'numeric', minute: '2-digit', day: undefined }
-                : { minute: '2-digit', day: undefined };
-          else if (delta < 86400000)
-            // less than 1 day
-            options = { hour: 'numeric' };
-          else if (delta < 2592000000)
-            // less than 30 days
-            options = {
-              month: axis[0].length <= 2 ? 'short' : 'numeric',
-              day: 'numeric',
-            };
-          else if (delta < 31557600000)
-            // less than 1 year
-            options = { month: axis[0].length <= 2 ? 'long' : 'short' };
-          // 1 year or more
-          else options = { year: 'numeric' };
-          if (options)
-            dateFormat = new Intl.DateTimeFormat(undefined, options).format;
-        }
       }
 
       xAxisElement = (
